@@ -1,0 +1,568 @@
+[
+	{
+		"userName": "ecca7ed1-8313-4588-aec3-301b45651afd",
+		"emailAddress": "allen@nodirection.com",
+		"firstName": "Allen",
+		"lastName": "Butler",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Admin",
+				"code": "module_admin",
+				"roles": [
+					{
+						"name": "Admin",
+						"code": "role_admin",
+						"rights": [
+							{
+								"name": "Users - Read",
+								"code": "right_users_read"
+							},
+							{
+								"name": "Users - Write",
+								"code": "right_users_write"
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen1@nodirection.com",
+		"firstName": "Jim",
+		"lastName": "Butler",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen2@nodirection.com",
+		"firstName": "John",
+		"lastName": "Smith",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen3@nodirection.com",
+		"firstName": "Jason",
+		"lastName": "Jones",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen5@nodirection.com",
+		"firstName": "Joe",
+		"lastName": "Burrow",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen11@nodirection.com",
+		"firstName": "Joe",
+		"lastName": "Mixon",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen21@nodirection.com",
+		"firstName": "Hakeem",
+		"lastName": "Adeniji",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen22@nodirection.com",
+		"firstName": "Cal",
+		"lastName": "Adomitis",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen23@nodirection.com",
+		"firstName": "Brandon",
+		"lastName": "Allen",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen25@nodirection.com",
+		"firstName": "Eli",
+		"lastName": "Apple",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen211@nodirection.com",
+		"firstName": "Devin",
+		"lastName": "Asisi",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen31@nodirection.com",
+		"firstName": "Alex",
+		"lastName": "Cappa",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen32@nodirection.com",
+		"firstName": "Jackson",
+		"lastName": "Carman",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen33@nodirection.com",
+		"firstName": "Zach",
+		"lastName": "Carter",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen35@nodirection.com",
+		"firstName": "Ja'Marr",
+		"lastName": "Chase",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen311@nodirection.com",
+		"firstName": "Drue",
+		"lastName": "Chrisman",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen41@nodirection.com",
+		"firstName": "Tre",
+		"lastName": "Flowers",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen42@nodirection.com",
+		"firstName": "Jeff",
+		"lastName": "Gunter",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen43@nodirection.com",
+		"firstName": "Trey",
+		"lastName": "Hendrickson",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen45@nodirection.com",
+		"firstName": "Tee",
+		"lastName": "Higgins",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
+		"userName": null,
+		"emailAddress": "allen411@nodirection.com",
+		"firstName": "BJ",
+		"lastName": "Hill",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	}
+]

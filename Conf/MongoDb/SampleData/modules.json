@@ -1,0 +1,70 @@
+[
+	{
+		"name": "Admin",
+		"code": "module_admin",
+		"roles": [
+			{
+				"name": "Admin",
+				"code": "role_admin",
+				"rights": [
+					{
+						"name": "Users - Read",
+						"code": "right_users_read"
+					},
+					{
+						"name": "Users - Write",
+						"code": "right_users_write"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Blog",
+		"code": "module_blog",
+		"roles": [
+			{
+				"name": "Blog Admin",
+				"code": "role_blog",
+				"rights": [
+					{
+						"name": "Blog Manager",
+						"code": "right_blog_admin"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Vlog",
+		"code": "module_vlog",
+		"roles": [
+			{
+				"name": "Vlog Admin",
+				"code": "role_vlog",
+				"rights": [
+					{
+						"name": "Vlog Manager",
+						"code": "right_vlog_admin"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Project",
+		"code": "module_project",
+		"roles": [
+			{
+				"name": "Project Admin",
+				"code": "role_project",
+				"rights": [
+					{
+						"name": "Project Manager",
+						"code": "right_project_admin"
+					}
+				]
+			}
+		]
+	}
+]

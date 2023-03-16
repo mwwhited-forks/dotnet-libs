@@ -1,0 +1,137 @@
+﻿using Nucleus.Core.Contracts.Interfaces;
+using Nucleus.Core.Contracts.Managers;
+using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Contracts.Models.Filters;
+using Nucleus.Core.Contracts.Models.Keys;
+using Nucleus.Core.Contracts.Providers;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Nucleus.Core.Business.Managers
+{
+    public class DocumentManager: IDocumentManager
+    {
+        private readonly IConfiguration _config;
+        public IDocumentProvider _documentProvider { get; set; }
+        public IDocumentService _documentService { get; set; }
+        public DocumentManager(IConfiguration config, IDocumentService documentService, IDocumentProvider documentProvider)
+        {
+            _config = config;
+            _documentService= documentService;
+            _documentProvider = documentProvider;
+        }
+
+        public async Task<DocumentModel?> GetDocument(DocumentsFilter filter) =>
+            await _documentService.GetDocumentAsync(filter);
+
+        public async Task<List<DocumentModel>?> GetDocuments(DocumentsFilter filter) =>
+            await _documentService.GetDocumentsAsync(filter);
+
+        public async Task<BlobDto?> DownloadDocument(string DocumentName) =>
+            await _documentProvider.DownloadAsync(DocumentName);
+
+        public async Task<ResponseModel<DocumentModel?>> SaveDocument(DocumentModel document, Stream content)
+        {
+            if (document == null 
+                || content == null
+                || string.IsNullOrEmpty(document.DocumentName) 
+                )
+                return new ResponseModel<DocumentModel?>()
+                {
+                    IsSuccess = false,
+                    Message = "Missing Required Fields"
+                };
+
+            if (!string.IsNullOrEmpty(document.DocumentId))
+                await _documentProvider.DeleteAsync(document.DocumentKey);
+            else
+                document.DocumentKey = GetDocumentDirectory(document.DocumentCategory) + GenerateDocumentKey(document.DocumentName, 10);
+
+            // Will make this more robust later through config, but for not we are capturing who owns this document 
+            document.DocumentRepository = _config[ConfigKeys.Container.DefaultProvider];
+
+            BlobResponseDto response = await _documentProvider.UploadAsync(document, content);
+
+            ResponseModel<DocumentModel?> result = new ResponseModel<DocumentModel?>();
+            if (response.Error == false)
+            {
+               
+                if (string.IsNullOrEmpty(document.DocumentId))
+                {
+                    document.CreatedOn = DateTimeOffset.Now;
+                    await _documentService.CreateAsync(document);
+                    result.Response = document;
+                }
+                else
+                {
+                    await _documentService.UpdateAsync(document);
+                    result.Response = document;
+                }
+            } 
+            else
+            {
+                result.Message = response.Status;
+                result.IsSuccess = false;
+            }
+            return result;
+        }
+
+        public async Task<ResponseModel<Boolean>> RemoveDocument(DocumentModel document)
+        {
+            if (document == null || string.IsNullOrEmpty(document.DocumentName))
+                return new ResponseModel<Boolean>()
+                {
+                    Response = false,
+                    IsSuccess = false,
+                    Message = "Missing Required Fields"
+                };
+
+            await _documentProvider.DeleteAsync(document.DocumentName);
+            await _documentService.RemoveAsync(document.DocumentName);
+            return new ResponseModel<Boolean>()
+            {
+                Response = true
+            };
+        }
+
+        private string? GetDocumentDirectory(string? documentType)
+        {
+            if (documentType == null || _config.GetSection(ConfigKeys.Container.Directories._Base + documentType).Exists() == false)
+                return _config[ConfigKeys.Container.Directories.Misc];
+
+            return _config[ConfigKeys.Container.Directories._Base + documentType];
+        }
+
+        private string GenerateDocumentKey(string documentName, int length)
+        {
+            Random random = new Random();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string key = new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+
+            string[] documentparts = documentName.Split('.');
+            if (documentparts.Length > 0)
+            {
+                StringBuilder str = new StringBuilder();
+                for (int i = 0; i < documentparts.Length; i++)
+                {
+                    if (i == documentparts.Length - 1)
+                        str.Append("." + key);
+                    
+                    if (i == 0)
+                        str.Append(documentparts[i]);
+                    else
+                        str.Append("." + documentparts[i]);
+                }
+                return str.ToString();
+            }
+            else
+                return documentName + "." + key;
+        }
+    }
+}
