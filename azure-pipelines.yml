@@ -39,7 +39,7 @@ steps:
   displayName: 'Deploying API...'
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'AB-Paid-Sub'
+    azureSubscription: 'AppDev Practice'
     appType: 'webApp'
-    WebAppName: 'abcloudprojectsweb'
+    WebAppName: 'nucleusaccnetapi'
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'

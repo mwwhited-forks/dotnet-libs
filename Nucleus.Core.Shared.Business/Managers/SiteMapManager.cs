@@ -35,7 +35,7 @@ namespace Nucleus.Core.Shared.Business.Managers
         {
             // Not many good ways to do this because it is reflection of the UI Routing files
 
-           string host = "https://api.abcloudprojects.com";
+           string host = "https://nucleusaccnetapi.azurewebsites.net";
 
            StringBuilder output = new StringBuilder();
 
