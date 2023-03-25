@@ -39,7 +39,7 @@ steps:
   displayName: 'Deploying API...'
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'AppDev Practice'
+    azureSubscription: 'AppDev Project Nucleus'
     appType: 'webApp'
     WebAppName: 'nucleusaccnetapi'
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
