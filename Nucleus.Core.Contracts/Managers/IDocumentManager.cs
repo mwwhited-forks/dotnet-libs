@@ -18,6 +18,6 @@ namespace Nucleus.Core.Contracts.Managers
 
         Task<ResponseModel<DocumentModel?>> SaveDocument(DocumentModel document, Stream content);
 
-        Task<ResponseModel<Boolean>> RemoveDocument(DocumentModel document);
+        Task<ResponseModel<Boolean>> RemoveDocument(string id);
     }
 }

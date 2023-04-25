@@ -20,14 +20,14 @@ namespace Nucleus.Core.Controllers.Controllers
         }
 
         [Authorize]
-        [HttpGet("UserProfile")]
+        [HttpGet]
         public async Task<IActionResult> GetUserProfile()
         {
             return new JsonResult(await _userProfileManager.GetUserProfile(_userSession.Username));
         }
 
         [Authorize]
-        [HttpPost("UserProfile")]
+        [HttpPut]
         public async Task<IActionResult> UpdateUserProfile(User user)
         {
             Thread.Sleep(2000);
