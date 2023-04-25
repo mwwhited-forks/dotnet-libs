@@ -33,7 +33,7 @@ namespace Nucleus.Core.Controllers.Controllers
         }
 
         [Authorize]
-        [HttpPost("Save")]
+        [HttpPost]
         [ApplicationRight(Rights.Vlog.Manager, Rights.Blog.Manager, Rights.Project.Manager)]
         public async Task<IActionResult> SaveDocument([FromForm] DocumentModel document)
         {
@@ -52,11 +52,11 @@ namespace Nucleus.Core.Controllers.Controllers
         }
 
         [Authorize]
-        [HttpPost("Delete")]
+        [HttpDelete("{**id}")]
         [ApplicationRight(Rights.Vlog.Manager, Rights.Blog.Manager, Rights.Project.Manager)]
-        public async Task<IActionResult> DeleteDocument(DocumentModel document)
+        public async Task<IActionResult> DeleteDocument(string id)
         {
-            return new JsonResult(await _documentManager.RemoveDocument(document));
+            return new JsonResult(await _documentManager.RemoveDocument(id));
         }
     }
 }

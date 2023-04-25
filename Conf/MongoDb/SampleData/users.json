@@ -46,6 +46,52 @@
 		"createdOn": [ "636415154304356493", 120 ]
 	},
 	{
+		"userName": "2fee4890-2c51-4380-a44a-094e6a7ccdae",
+		"emailAddress": "demo@eliassen.com",
+		"firstName": "Allen",
+		"lastName": "Butler",
+		"active": true,
+		"userModules": [
+			{
+				"name": "Admin",
+				"code": "module_admin",
+				"roles": [
+					{
+						"name": "Admin",
+						"code": "role_admin",
+						"rights": [
+							{
+								"name": "Users - Read",
+								"code": "right_users_read"
+							},
+							{
+								"name": "Users - Write",
+								"code": "right_users_write"
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "Blog",
+				"code": "module_blog",
+				"roles": [
+					{
+						"name": "Blog Admin",
+						"code": "role_blog",
+						"rights": [
+							{
+								"name": "Blog Manager",
+								"code": "right_blog_admin"
+							}
+						]
+					}
+				]
+			}
+		],
+		"createdOn": [ "636415154304356493", 120 ]
+	},
+	{
 		"userName": null,
 		"emailAddress": "allen1@nodirection.com",
 		"firstName": "Jim",

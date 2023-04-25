@@ -24,7 +24,7 @@ namespace Nucleus.Core.Controllers.Controllers
 
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
-        [HttpPost("SaveUser")]
+        [HttpPost]
         public async Task<IActionResult> SaveUser(UserAction? user) =>
             new JsonResult(await _usersManager.SaveUserAsync(user));
 

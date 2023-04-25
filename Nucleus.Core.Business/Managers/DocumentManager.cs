@@ -81,21 +81,39 @@ namespace Nucleus.Core.Business.Managers
             return result;
         }
 
-        public async Task<ResponseModel<Boolean>> RemoveDocument(DocumentModel document)
+        public async Task<ResponseModel<Boolean>> RemoveDocument(string id)
         {
-            if (document == null || string.IsNullOrEmpty(document.DocumentName))
+            if (id == null)
                 return new ResponseModel<Boolean>()
                 {
                     Response = false,
                     IsSuccess = false,
                     Message = "Missing Required Fields"
                 };
+            DocumentsFilter filter = new DocumentsFilter();
+            DocumentFilterItem filterItem = new DocumentFilterItem
+            {
+                DocumentId = id
+            };
 
-            await _documentProvider.DeleteAsync(document.DocumentName);
-            await _documentService.RemoveAsync(document.DocumentName);
+            filter.DocumentsFilters = filterItem;
+
+
+            var document = await _documentService.GetDocumentAsync(filter);
+            if(document == null)
+            {
+                return new ResponseModel<Boolean>()
+                {
+                    Response = false,
+                    IsSuccess = true
+                };
+            }
+            await _documentProvider.DeleteAsync(document.DocumentKey);
+            await _documentService.RemoveAsync(id);
             return new ResponseModel<Boolean>()
             {
-                Response = true
+                Response = true,
+                IsSuccess = true
             };
         }
 
