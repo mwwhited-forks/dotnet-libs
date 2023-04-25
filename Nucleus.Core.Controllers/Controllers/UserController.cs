@@ -8,12 +8,12 @@ namespace Nucleus.Core.Controllers.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class UserController : ControllerBase
     {
         private IUserSession _userSession { get; set; }
         private IUserProfileManager _userProfileManager { get; set; }
 
-        public UsersController(IUserSession userSession, IUserProfileManager userProfileManager)
+        public UserController(IUserSession userSession, IUserProfileManager userProfileManager)
         {
             _userSession = userSession;
             _userProfileManager = userProfileManager;
