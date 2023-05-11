@@ -50,7 +50,7 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'AppDev Project Nucleus'
     appType: 'webApp'
-    WebAppName: '$(WEBAPP_SERVICE)'
+    WebAppName: $WEBAPP_SERVICE
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
   env:
     WEBAPP_SERVICE: $(${{parameters.targetEnvironment}}WebAppService)
