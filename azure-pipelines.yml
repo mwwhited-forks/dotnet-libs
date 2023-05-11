@@ -19,13 +19,13 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  -group: Azure.Environment.Nucleus.Acc.Vue
+  apiservice:
+  ${{if eq(parameters.targetEnvironment, 'Dev')}}: 'nucleusaccnetdevapi'
+  ${{if eq(parameters.targetEnvironment, 'Test')}}: 'nucleusaccnetapi'
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  apiservice:
-   ${{if parameters.targetEnvironment == 'Dev'}}: 'nucleusaccnetdevapi'
-   ${{if parameters.targetEnvironment == 'Test'}}: 'nucleusaccnetapi'
+  
 
 steps:
 - task: NuGetToolInstaller@1
