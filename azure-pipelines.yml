@@ -53,4 +53,4 @@ steps:
     WebAppName: '$WEBAPP_SERVICE'
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
   env:
-    WEBAPP_SERVICE: $(${{parameters.targetEnvironment}}WebAppService
+    WEBAPP_SERVICE: $(${{parameters.targetEnvironment}}WebAppService)
