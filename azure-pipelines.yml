@@ -19,9 +19,10 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  apiservice:
-  ${{if eq(parameters.targetEnvironment, 'Dev')}}: 'nucleusaccnetdevapi'
-  ${{if eq(parameters.targetEnvironment, 'Test')}}: 'nucleusaccnetapi'
+  ${{if eq(parameters.targetEnvironment, 'Dev')}}: 
+    apiservice: 'nucleusaccnetdevapi'
+  ${{elseif eq(parameters.targetEnvironment, 'Test')}}: 
+    apiservice: 'nucleusaccnetapi'
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
