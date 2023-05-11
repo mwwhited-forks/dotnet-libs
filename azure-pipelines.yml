@@ -3,6 +3,15 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
+parameters:
+  - name: targetEnvironment
+    displayName: Target Environment 
+    type: string
+    default: Test
+    values:
+    - Dev
+    - Test
+
 trigger:
 - master
 
@@ -22,7 +31,7 @@ steps:
     restoreSolution: '$(solution)'
 
 - task: VSBuild@1
-  displayName: 'Building...'
+  displayName: 'Building ${{ parameters.targetEnvironment }}'
   inputs:
     solution: '$(solution)'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
@@ -36,10 +45,12 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: AzureRmWebAppDeployment@4
-  displayName: 'Deploying API...'
+  displayName: 'Deploying API to ${{ parameters.targetEnvironment }}'
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'AppDev Project Nucleus'
     appType: 'webApp'
-    WebAppName: 'nucleusaccnetapi'
+    WebAppName: '$WEBAPP_SERVICE'
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
+  env:
+    WEBAPP_SERVICE: $(${{parameters.targetEnvironment}}WebAppService
