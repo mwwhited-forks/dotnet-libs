@@ -23,6 +23,9 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  apiservice:
+   ${{if parameters.targetEnvironment == 'Dev'}}: 'nucleusaccnetdevapi'
+   ${{if parameters.targetEnvironment == 'Test'}}: 'nucleusaccnetapi'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -51,5 +54,5 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'AppDev Project Nucleus'
     appType: 'webApp'
-    WebAppName: '$(${{parameters.targetEnvironment}}WebAppService)'
+    WebAppName: '$(apiservice)'
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
