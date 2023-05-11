@@ -19,10 +19,10 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
+  -group: Azure.Environment.Nucleus.Acc.Vue
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  group: Azure.Environment.Nucleus.Acc.Vue
 
 steps:
 - task: NuGetToolInstaller@1
