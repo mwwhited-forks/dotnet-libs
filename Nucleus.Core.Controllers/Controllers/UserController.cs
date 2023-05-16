@@ -21,17 +21,12 @@ namespace Nucleus.Core.Controllers.Controllers
 
         [Authorize]
         [HttpGet]
-        public async Task<User?> GetUserProfile()
-        {
-            return await _userProfileManager.GetUserProfile(_userSession.Username);
-        }
+        public async Task<User?> GetUserProfile()=>
+            await _userProfileManager.GetUserProfile(_userSession.Username);
 
         [Authorize]
         [HttpPut]
-        public async Task<ResponseModel<User?>> UpdateUserProfile(User user)
-        {
-            await Task.Delay(2000);
-            return await _userProfileManager.UpdateUserProfile(_userSession.Username, user);
-        }
+        public async Task<ResponseModel<User?>> UpdateUserProfile(User user)=>
+            await _userProfileManager.UpdateUserProfile(_userSession.Username, user);
     }
 }
