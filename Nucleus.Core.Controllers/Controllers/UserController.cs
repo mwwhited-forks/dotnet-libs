@@ -1,8 +1,8 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Nucleus.Core.Controllers.Controllers
 {
@@ -21,17 +21,17 @@ namespace Nucleus.Core.Controllers.Controllers
 
         [Authorize]
         [HttpGet]
-        public async Task<IActionResult> GetUserProfile()
+        public async Task<User?> GetUserProfile()
         {
-            return new JsonResult(await _userProfileManager.GetUserProfile(_userSession.Username));
+            return await _userProfileManager.GetUserProfile(_userSession.Username);
         }
 
         [Authorize]
         [HttpPut]
-        public async Task<IActionResult> UpdateUserProfile(User user)
+        public async Task<ResponseModel<User?>> UpdateUserProfile(User user)
         {
-            Thread.Sleep(2000);
-            return new JsonResult(await _userProfileManager.UpdateUserProfile(_userSession.Username, user));
+            await Task.Delay(2000);
+            return await _userProfileManager.UpdateUserProfile(_userSession.Username, user);
         }
     }
 }
