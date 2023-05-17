@@ -34,7 +34,7 @@ namespace Nucleus.Core.Controllers.Controllers
 
         [Authorize]
         [HttpPost]
-        [ApplicationRight(Rights.Vlog.Manager, Rights.Blog.Manager, Rights.Project.Manager)]
+        [ApplicationRight(Rights.Lesson.Manager, Rights.Blog.Manager, Rights.Project.Manager)]
         public async Task<IActionResult> SaveDocument([FromForm] DocumentModel document)
         {
             IFormFile? file = null;
@@ -53,7 +53,7 @@ namespace Nucleus.Core.Controllers.Controllers
 
         [Authorize]
         [HttpDelete("{**id}")]
-        [ApplicationRight(Rights.Vlog.Manager, Rights.Blog.Manager, Rights.Project.Manager)]
+        [ApplicationRight(Rights.Lesson.Manager, Rights.Blog.Manager, Rights.Project.Manager)]
         public async Task<IActionResult> DeleteDocument(string id)
         {
             return new JsonResult(await _documentManager.RemoveDocument(id));

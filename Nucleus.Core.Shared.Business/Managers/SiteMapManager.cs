@@ -3,8 +3,8 @@ using Nucleus.Blog.Contracts.Models;
 using Nucleus.Core.Shared.Contracts.Managers;
 using Nucleus.Project.Contracts.Managers;
 using Nucleus.Project.Contracts.Models;
-using Nucleus.Vlog.Contracts.Managers;
-using Nucleus.Vlog.Contracts.Models;
+using Nucleus.Lesson.Contracts.Managers;
+using Nucleus.Lesson.Contracts.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,17 +17,17 @@ namespace Nucleus.Core.Shared.Business.Managers
     public class SiteMapManager : ISiteMapManager
     {
         private IPublicBlogManager _publicBlogManager { get; set; }
-        private IPublicLessonManager _publicVlogManager { get; set; }
+        private IPublicLessonManager _publicLessonManager { get; set; }
         private IPublicProjectManager _publicProjectManager { get; set; }
 
         public SiteMapManager(
                   IPublicBlogManager publicBlogManager,
-                  IPublicLessonManager publicVlogManager, 
+                  IPublicLessonManager publicLessonManager, 
                   IPublicProjectManager publicProjectManager
             ) 
         { 
             _publicBlogManager = publicBlogManager;
-            _publicVlogManager = publicVlogManager;
+            _publicLessonManager = publicLessonManager;
             _publicProjectManager = publicProjectManager;
         }
 
@@ -61,15 +61,15 @@ namespace Nucleus.Core.Shared.Business.Managers
                     xml.WriteEndElement();
                 }
 
-                // Vlogs
+                // Lessons
                 xml.WriteStartElement("url");
-                xml.WriteElementString("loc", host + "/vlogs");
+                xml.WriteElementString("loc", host + "/lessons");
                 xml.WriteEndElement();
 
-                foreach (LessonModel vlog in await _publicVlogManager.GetLessons())
+                foreach (LessonModel lesson in await _publicLessonManager.GetLessons())
                 {
                     xml.WriteStartElement("url");
-                    xml.WriteElementString("loc", host + "/vlog/" + vlog.Slug);
+                    xml.WriteElementString("loc", host + "/lesson/" + lesson.Slug);
                     xml.WriteEndElement();
                 }
 

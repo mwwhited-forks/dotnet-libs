@@ -35,9 +35,9 @@
     <ProjectReference Include="..\Nucleus.Project.Business\Nucleus.Project.Business.csproj" />
     <ProjectReference Include="..\Nucleus.Project.Controllers\Nucleus.Project.Controllers.csproj" />
     <ProjectReference Include="..\Nucleus.Project.Persistence\Nucleus.Project.Persistence.csproj" />
-    <ProjectReference Include="..\Nucleus.Vlog.Business\Nucleus.Vlog.Business.csproj" />
-    <ProjectReference Include="..\Nucleus.Vlog.Controllers\Nucleus.Vlog.Controllers.csproj" />
-    <ProjectReference Include="..\Nucleus.Vlog.Persistence\Nucleus.Vlog.Persistence.csproj" />
+    <ProjectReference Include="..\Nucleus.Lesson.Business\Nucleus.Lesson.Business.csproj" />
+    <ProjectReference Include="..\Nucleus.Lesson.Controllers\Nucleus.Lesson.Controllers.csproj" />
+    <ProjectReference Include="..\Nucleus.Lesson.Persistence\Nucleus.Lesson.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
