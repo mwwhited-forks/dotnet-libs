@@ -2,12 +2,12 @@
 
 namespace Nucleus.Vlog.Contracts.Models.Filters
 {
-    public class VlogsFilter
+    public class LessonsFilter
     {
-        public VlogsFilterItem? VlogFilters { get; set; }
+        public LessonsFilterItem? LessonFilters { get; set; }
         public PagingModel? PagingModel { get; set; }
     }
-    public class VlogsFilterItem
+    public class LessonsFilterItem
     {
         public string? InputValue { get; set; }
     }

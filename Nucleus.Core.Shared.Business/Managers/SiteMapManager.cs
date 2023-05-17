@@ -17,12 +17,12 @@ namespace Nucleus.Core.Shared.Business.Managers
     public class SiteMapManager : ISiteMapManager
     {
         private IPublicBlogManager _publicBlogManager { get; set; }
-        private IPublicVlogManager _publicVlogManager { get; set; }
+        private IPublicLessonManager _publicVlogManager { get; set; }
         private IPublicProjectManager _publicProjectManager { get; set; }
 
         public SiteMapManager(
                   IPublicBlogManager publicBlogManager,
-                  IPublicVlogManager publicVlogManager, 
+                  IPublicLessonManager publicVlogManager, 
                   IPublicProjectManager publicProjectManager
             ) 
         { 
@@ -66,7 +66,7 @@ namespace Nucleus.Core.Shared.Business.Managers
                 xml.WriteElementString("loc", host + "/vlogs");
                 xml.WriteEndElement();
 
-                foreach (VlogModel vlog in await _publicVlogManager.GetVlogs())
+                foreach (LessonModel vlog in await _publicVlogManager.GetLessons())
                 {
                     xml.WriteStartElement("url");
                     xml.WriteElementString("loc", host + "/vlog/" + vlog.Slug);

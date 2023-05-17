@@ -4,9 +4,9 @@ namespace Nucleus.Vlog.Business
 {
     public static class ServiceCollectionEx
     {
-        public static IServiceCollection AddVlogBusinessServices(this IServiceCollection services)
+        public static IServiceCollection AddLessonBusinessServices(this IServiceCollection services)
         {
-            new VlogAccessRegistrar().AddServices(services);
+            new LessonAccessRegistrar().AddServices(services);
             return services;
         }
     }

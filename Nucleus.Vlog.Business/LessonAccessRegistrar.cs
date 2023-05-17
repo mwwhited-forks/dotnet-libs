@@ -5,12 +5,12 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Nucleus.Vlog.Business
 {
-    public class VlogAccessRegistrar : IRegistrar
+    public class LessonAccessRegistrar : IRegistrar
     {
         public IServiceCollection AddServices(IServiceCollection services)
         {
-            services.AddTransient<IVlogManager, VlogManager>();
-            services.AddTransient<IPublicVlogManager, PublicVlogManager>();
+            services.AddTransient<ILessonManager, LessonManager>();
+            services.AddTransient<IPublicLessonManager, PublicLessonManager>();
             return services;
         }
     }

@@ -6,11 +6,11 @@ using System;
 namespace Nucleus.Vlog.Contracts.Collections
 {
     [BsonIgnoreExtraElements]
-    public class VlogCollection
+    public class LessonCollection
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string? VlogId { get; set; }
+        public string? LessonId { get; set; }
 
         [BsonElement("title")]
         public string? Title {  get; set; }

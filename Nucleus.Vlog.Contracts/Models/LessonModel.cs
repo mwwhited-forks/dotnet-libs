@@ -2,9 +2,9 @@
 
 namespace Nucleus.Vlog.Contracts.Models
 {
-    public class VlogModel
+    public class LessonModel
     {
-        public string? VlogId { get; set; }
+        public string? LessonId { get; set; }
         public string? Title { get; set; }
         public string? MediaLink { get; set; }
         public string? Preview { get; set; }

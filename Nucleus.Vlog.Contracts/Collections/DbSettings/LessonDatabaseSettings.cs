@@ -1,6 +1,6 @@
 ﻿namespace Nucleus.Vlog.Contracts.Collections.DbSettings
 {
-    public class VlogDatabaseSettings
+    public class LessonDatabaseSettings
     {
         public string ConnectionString { get; set; } = null!;
 

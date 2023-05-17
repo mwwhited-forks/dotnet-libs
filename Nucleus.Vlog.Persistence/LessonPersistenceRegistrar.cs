@@ -5,11 +5,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Nucleus.Vlog.Persistence
 {
-    public class VlogPersistenceRegistrar : IRegistrar
+    public class LessonPersistenceRegistrar : IRegistrar
     {
         public IServiceCollection AddServices(IServiceCollection services)
         {
-            services.AddTransient<IVlogService, VlogService>();
+            services.AddTransient<ILessonService, LessonService>();
             return services;
         }
     }

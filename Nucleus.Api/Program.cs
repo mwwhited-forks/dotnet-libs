@@ -24,7 +24,7 @@ builder.Services.Configure<DocumentDatabaseSettings>(
     builder.Configuration.GetSection("MongoDatabase"));
 builder.Services.Configure<BlogDatabaseSettings>(
     builder.Configuration.GetSection("MongoDatabase"));
-builder.Services.Configure<VlogDatabaseSettings>(
+builder.Services.Configure<LessonDatabaseSettings>(
     builder.Configuration.GetSection("MongoDatabase"));
 builder.Services.Configure<ProjectDatabaseSettings>(
     builder.Configuration.GetSection("MongoDatabase"));
@@ -49,11 +49,11 @@ builder.Services
     .AddCoreBusinessServices()
     .AddSharedBusinessServices()
     .AddPublicBusinessServices()
-    .AddVlogBusinessServices()
+    .AddLessonBusinessServices()
     .AddProjectBusinessServices()
     .AddProjectPersistenceServices()
     .AddBlogPersistenceServices()
-    .AddVlogPersistenceServices()
+    .AddLessonPersistenceServices()
     ;
 
 // Adding in the magic sauce that connects B2C Bearer tokens to our internal users
