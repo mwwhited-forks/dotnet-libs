@@ -105,6 +105,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.TestUtilities", "F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.TestUtilities.Tests", "Framework\Eliassen.TestUtilities.Tests\Eliassen.TestUtilities.Tests.csproj", "{93A1F684-0F32-4FF7-B4EE-59FE8E63F2BF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.AspNetCore.Mvc", "Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj", "{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -223,6 +225,10 @@ Global
 		{93A1F684-0F32-4FF7-B4EE-59FE8E63F2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93A1F684-0F32-4FF7-B4EE-59FE8E63F2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93A1F684-0F32-4FF7-B4EE-59FE8E63F2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -266,6 +272,7 @@ Global
 		{4BA71EDF-C6E6-4127-A223-0874B5F571F3} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{4C49EAE2-1F82-465F-9C70-5E63557A6E83} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{93A1F684-0F32-4FF7-B4EE-59FE8E63F2BF} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
+		{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}
