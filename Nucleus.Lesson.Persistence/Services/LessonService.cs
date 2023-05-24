@@ -9,6 +9,7 @@ using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Lesson.Contracts.Collections.DbSettings;
+using System;
 
 namespace Nucleus.Lesson.Persistence.Services
 {
@@ -47,8 +48,21 @@ namespace Nucleus.Lesson.Persistence.Services
                 Title = item.Title,
                 CreatedOn = item.CreatedOn,
                 Enabled = item.Enabled,
+                Attendees = item.Attendees,
+                Teacher = item.Teacher,
+                Duration = item.Duration,
+                StartDateTime = item.StartDateTime,
+                EndDateTime = GetEndDateTime(item.StartDateTime, item.Duration),
+                Goals = item.Goals,
+                Price = item.Price,
+                Tags = item.Tags,
                 CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
             });
+        }
+
+        public DateTimeOffset GetEndDateTime(DateTimeOffset startDateTime, int? duration)
+        {
+            return startDateTime.AddMinutes(Convert.ToDouble(duration));
         }
 
         // need to extend/re-work this so I do not pass in multiple parameters to each method, just a proper filter item from the business layer

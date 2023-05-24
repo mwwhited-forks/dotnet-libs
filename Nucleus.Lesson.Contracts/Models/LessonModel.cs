@@ -20,7 +20,7 @@ namespace Nucleus.Lesson.Contracts.Models
         public int? Duration { get; set; }
 
         public DateTimeOffset StartDateTime { get; set; }
-        public DateTimeOffset EndDateTime { get; }
+        public DateTimeOffset? EndDateTime { get; set; }
 
         public string[]? Tags { get; set; }
 
