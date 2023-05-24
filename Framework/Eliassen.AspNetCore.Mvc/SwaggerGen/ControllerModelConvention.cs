@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
-namespace Nucleus.Api.SwaggerGen;
+namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 
 public class ControllerModelConvention : IControllerModelConvention
 {

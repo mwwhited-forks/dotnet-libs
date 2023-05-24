@@ -16,13 +16,13 @@ namespace Eliassen.System.Tests.Linq
     {
         public TestContext? TestContext { get; set; }
 
-        private IQueryable<TestTargetModel> GetTestData() =>
+        private static IQueryable<TestTargetModel> GetTestData() =>
             Enumerable
             .Range(0, SearchQueryExtensions.DefaultPageSize * 100)
             .Select(i => new TestTargetModel(i))
             .AsQueryable()
             ;
-        private IQueryable<TestTargetExtendedModel> GetTestDataExtended() =>
+        private static IQueryable<TestTargetExtendedModel> GetTestDataExtended() =>
             Enumerable
             .Range(0, SearchQueryExtensions.DefaultPageSize * 100)
             .Select(i => new TestTargetExtendedModel(i))

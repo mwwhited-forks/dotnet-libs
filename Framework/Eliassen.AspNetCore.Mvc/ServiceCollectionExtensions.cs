@@ -1,7 +1,12 @@
 ﻿using Eliassen.AspNetCore.Mvc.Filters;
+using Eliassen.AspNetCore.Mvc.SwaggerGen;
 using Eliassen.System.Accessors;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Options;
+using Nucleus.Api.SwaggerGen;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Globalization;
 
 namespace Eliassen.AspNetCore.Mvc
@@ -20,7 +25,13 @@ namespace Eliassen.AspNetCore.Mvc
             services.AddControllers(opt =>
             {
                 opt.Filters.Add(typeof(SearchQueryResultFilter));
+                opt.Conventions.Add(new ControllerModelConvention());
             });
+
+            services.TryAddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
+            services.TryAddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
+            services.AddSwaggerGen(c => c.OperationFilter<SwaggerFileOperationFilter>());
+
             return services;
         }
     }

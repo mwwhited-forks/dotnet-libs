@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Graph;
 using Nucleus.AspNetCore.Mvc.Attributes;
 using Nucleus.AspNetCore.Mvc.IdentityModel;
 using Nucleus.Core.Contracts;
@@ -12,20 +13,18 @@ namespace Nucleus.Core.Controllers.Controllers
     [ApiController]
     public class UserManagementController : ControllerBase
     {
-        private IUserSession _userSession { get; set; }
-        private IUserManagementManager _usersManager { get; set; }
+        private readonly IUserManagementManager _usersManager;
 
-        public UserManagementController(IUserSession userSession, IUserManagementManager usersManager)
+        public UserManagementController(IUserManagementManager usersManager)
         {
-            _userSession = userSession;
             _usersManager = usersManager;
         }
 
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpPost]
-        public async Task<IActionResult> SaveUser(UserAction? user) =>
-            new JsonResult(await _usersManager.SaveUserAsync(user));
+        public async Task<ResponseModel<Contracts.Models.User>> SaveUser(UserAction? user) =>
+            await _usersManager.SaveUserAsync(user);
 
         //TODO: restore
 #warning RESTORE THIS FEATURE
@@ -38,8 +37,8 @@ namespace Nucleus.Core.Controllers.Controllers
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpGet("ApplicationPemissions")]
-        public async Task<IActionResult> GetApplicationPermissions() =>
-            new JsonResult(await _usersManager.GetApplicationPermissionsAsync());
+        public async Task<List<Module>> GetApplicationPermissions() =>
+            await _usersManager.GetApplicationPermissionsAsync();
 
     }
 }

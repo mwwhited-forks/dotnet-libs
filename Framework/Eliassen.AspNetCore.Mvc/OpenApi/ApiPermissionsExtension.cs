@@ -1,8 +1,10 @@
 ﻿using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Writers;
 using Microsoft.OpenApi;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Nucleus.Api.Auth;
+namespace Eliassen.AspNetCore.Mvc.OpenApi;
 
 public class ApiPermissionsExtension : IOpenApiExtension
 {

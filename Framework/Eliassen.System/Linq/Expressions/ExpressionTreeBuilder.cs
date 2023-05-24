@@ -37,7 +37,7 @@ namespace Eliassen.System.Linq.Expressions
                 }
             }
 
-            if (!(queryParameter is string))
+            if (queryParameter is not string)
             {
                 queryParameter = queryParameter switch
                 {

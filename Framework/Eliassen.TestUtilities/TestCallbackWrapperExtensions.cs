@@ -16,7 +16,7 @@ namespace Eliassen.TestUtilities
             [CallerMemberName] string? operation = null
             )
         {
-            log?.LogInformation(operation);
+            log?.LogInformation($"{{{nameof(operation)}}}", operation);
             var result = callback.ServiceRequest?.Invoke(typeof(S), service, operation ?? "UNKNOWN", request);
             if (result is T ret) return ret;
             else if (@default != null) return @default();
@@ -32,7 +32,7 @@ namespace Eliassen.TestUtilities
            [CallerMemberName] string? operation = null
            )
         {
-            log?.LogInformation(operation);
+            log?.LogInformation($"{{{nameof(operation)}}}", operation);
             _ = callback.ServiceRequest?.Invoke(typeof(S), service, operation ?? "UNKNOWN", request);
         }
 

@@ -16,7 +16,7 @@ namespace Eliassen.System.Linq
             // copied from EF Core 
             // https://github.com/dotnet/efcore/blob/main/src/EFCore/Extensions/EntityFrameworkQueryableExtensions.cs
             var list = new List<TModel>();
-            await foreach (var element in source.AsAsyncEnumerable().WithCancellation(cancellationToken))
+            await foreach (var element in source.AsAsyncEnumerable(cancellationToken))
             {
                 list.Add(element);
             }

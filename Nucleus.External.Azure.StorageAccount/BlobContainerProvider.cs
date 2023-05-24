@@ -1,11 +1,11 @@
-﻿using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.Keys;
-using Nucleus.Core.Contracts.Providers;
-using Azure;
+﻿using Azure;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Contracts.Models.Keys;
+using Nucleus.Core.Contracts.Providers;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -30,7 +30,7 @@ namespace Nucleus.External.Azure.StorageAccount.Providers
 
         public async Task<List<BlobDto>> ListAsync()
         {
-           
+
             // Create a new list object for 
             List<BlobDto> files = new List<BlobDto>();
 
@@ -62,7 +62,7 @@ namespace Nucleus.External.Azure.StorageAccount.Providers
             {
                 // Get a reference to the blob just uploaded from the API in a container from configuration settings
                 BlobClient client = _blobClient.GetBlobClient(document.DocumentKey);
-                
+
                 await client.UploadAsync(content);
 
                 // Everything is OK and file got uploaded
@@ -76,7 +76,7 @@ namespace Nucleus.External.Azure.StorageAccount.Providers
             catch (RequestFailedException ex)
                when (ex.ErrorCode == BlobErrorCode.BlobAlreadyExists)
             {
-                _logger.LogError($"File with name {document.DocumentKey} already exists in container. Set another name to store the file in the container: '{_containerName}.'");
+                _logger.LogError($"File with name {{{nameof(document.DocumentKey)}}} already exists in container. Set another name to store the file in the container: '{{containerName}}.'", document.DocumentKey, _containerName);
                 response.Status = $"File with name {document.DocumentKey} already exists. Please use another name to store your file.";
                 response.Error = true;
                 return response;
@@ -84,8 +84,9 @@ namespace Nucleus.External.Azure.StorageAccount.Providers
             // If we get an unexpected error, we catch it here and return the error message
             catch (RequestFailedException ex)
             {
+#warning should not return stack trace in response
                 // Log error to console and create a new response we can return to the requesting method
-                _logger.LogError($"Unhandled Exception. ID: {ex.StackTrace} - Message: {ex.Message}");
+                _logger.LogError($"Unhandled Exception. ID: {{{nameof(ex.StackTrace)}}} - Message: {{{nameof(ex.Message)}}}", ex.StackTrace, ex.Message);
                 response.Status = $"Unexpected error: {ex.StackTrace}. Check log with StackTrace ID.";
                 response.Error = true;
                 return response;
@@ -123,7 +124,7 @@ namespace Nucleus.External.Azure.StorageAccount.Providers
                 when (ex.ErrorCode == BlobErrorCode.BlobNotFound)
             {
                 // Log error to console
-                _logger.LogError($"File {blobFilename} was not found.");
+                _logger.LogError($"File {{{nameof(blobFilename)}}} was not found.", blobFilename);
             }
 
             // File does not exist, return null and handle that in requesting method
@@ -142,7 +143,7 @@ namespace Nucleus.External.Azure.StorageAccount.Providers
                 when (ex.ErrorCode == BlobErrorCode.BlobNotFound)
             {
                 // File did not exist, log to console and return new response to requesting method
-                _logger.LogError($"File {blobFilename} was not found.");
+                _logger.LogError($"File {{{nameof(blobFilename)}}} was not found.", blobFilename);
                 return new BlobResponseDto { Error = true, Status = $"File with name {blobFilename} not found." };
             }
 

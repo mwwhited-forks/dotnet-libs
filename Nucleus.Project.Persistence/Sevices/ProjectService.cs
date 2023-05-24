@@ -128,9 +128,9 @@ namespace Nucleus.Project.Persistence.Services
 
 
         // Need to make this re-usable for all collection repositories  .. mongodb should handle datetimeoffset sorting better
-        private string renderSortByName(string column)
+        private static string renderSortByName(string column)
         {
-            System.Reflection.PropertyInfo pi = new ProjectModel().GetType().GetProperty(column[0].ToString().ToUpper() + column.Substring(1));
+            System.Reflection.PropertyInfo pi = new ProjectModel().GetType().GetProperty(column[0].ToString().ToUpper() + column[1..]);
             if (pi != null && pi.PropertyType == typeof(DateTimeOffset))
             {
                 return "\"" + column + ".0\""; 

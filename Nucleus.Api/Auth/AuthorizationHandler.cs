@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Eliassen.System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Logging;
 using Newtonsoft.Json.Linq;
 using Nucleus.AspNetCore.Mvc.IdentityModel;
 using Nucleus.Core.Contracts.Models;
 using System.Security.Authentication;
-using Eliassen.System.Security.Claims;
 using System.Security.Claims;
+using static Nucleus.Core.Contracts.Rights;
 
 namespace Nucleus.Api.Auth
 {
@@ -35,16 +36,18 @@ namespace Nucleus.Api.Auth
                 {
                     // Get the Username which was given to the user from the B2C Claims (ObjectId in B2C User Screen)
                     var userName = user.GetClaimValue(AzB2cClaims.ObjectId, AzB2cClaims.ObjectIdentifier);
-                    _logger.LogDebug($"UserName: {userName}");
+                    _logger.LogDebug($"UserName: {{{nameof(userName)}}}", userName);
                     if (!Guid.TryParse(userName, out var userNameGuid))
                     {
-                        _logger.LogError("ERR-401-Invalid authentication Header | UserName Parsed - " + userName);
+                        _logger.LogError($"ERR-401-Invalid authentication Header | UserName Parsed - {{{nameof(userName)}}}", userName);
                         context.Fail();
                         return;
                     }
 
-                    var data = new JObject();
-                    data[AzB2cClaims.ObjectId] = userName;
+                    var data = new JObject
+                    {
+                        [AzB2cClaims.ObjectId] = userName
+                    };
 
                     // Initiating the process to get additional claims from our Claims Enhancers (Core->Business->Claims->Enhancers)
                     var result = await _claims.GetAdditionalClaimsAsync(data).ConfigureAwait(false);
@@ -54,9 +57,9 @@ namespace Nucleus.Api.Auth
                     {
                         // Custom loggin which will be removed after enough data has been collected
                         if (result != null && result.HasValues)
-                            _logger.LogError("ERR-401-User not found | userName " + userName + " | result " + result.ToString(Newtonsoft.Json.Formatting.None));
+                            _logger.LogError($"ERR-401-User not found | userName {{{nameof(userName)}}} | result {{{nameof(result)}}}", userName, result.ToString(Newtonsoft.Json.Formatting.None));
                         else
-                            _logger.LogError("ERR-401-User not found | userName " + userName);
+                            _logger.LogError($"ERR-401-User not found | userName {{{nameof(userName)}}}", userName);
                         // ------------------------------------------------------------------------
                         throw new AuthenticationException("User not found");
                     }
@@ -73,19 +76,19 @@ namespace Nucleus.Api.Auth
                 {
                     context.Fail();
                     // Custom loggin which will be removed after enough data has been collected
-                    _logger.LogError("ERR-401-innerError" + ex.Message);
+                    _logger.LogError($"ERR-401-innerError: {{{nameof(ex.Message)}}}", ex.Message);
                     return;
                 }
                 catch (Exception ex)
                 {
                     var existingClaims = context?.User?.Claims ?? Enumerable.Empty<Claim>();
 
-                    _logger.LogError(ex, $"Authentication Exception: Has Claims \"{string.Join(';', existingClaims.Select(s => s.Type))}\"");
-                    _logger.LogDebug($"Authentication Exception: Has Claims \"{string.Join(';', existingClaims.Select(s => s.Type))}\":: {ex}");
+                    _logger.LogError($"Authentication Exception: Has Claims \"{{{nameof(existingClaims)}}}\"", string.Join(';', existingClaims.Select(s => s.Type)));
+                    _logger.LogDebug($"Authentication Exception: Has Claims \"{{{nameof(existingClaims)}}}\":: {{{nameof(Exception)}}}", string.Join(';', existingClaims.Select(s => s.Type)), ex);
 
                     context.Fail();
                     // Custom loggin which will be removed after enough data has been collected
-                    _logger.LogError("ERR-401-outerError" + ex.Message);
+                    _logger.LogError($"ERR-401-outerError: {{{nameof(ex.Message)}}}", ex.Message);
                     return;
                 }
             }

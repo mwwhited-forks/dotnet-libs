@@ -29,8 +29,8 @@ namespace Nucleus.Core.Business.Managers
                 foreach (UserModule m in user.UserModules)
                     if (m.Roles != null)
                         foreach (Role role in m.Roles)
-                            if (role.Rights != null && role.Rights.Count() > 0)
-                                rights.AddRange(role.Rights.Select(r => r.Code).ToList());
+                            if (role.Rights != null && role.Rights.Count > 0)
+                                rights.AddRange(role.Rights.Select(r => r.Code));
             
             return rights;
         }

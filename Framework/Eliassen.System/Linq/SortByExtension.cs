@@ -92,11 +92,11 @@ namespace Eliassen.System.Linq
 
             IOrderedQueryable<T>? ordered = null;
 
-            foreach (var orderBy in orderBys)
+            foreach (var (column, direction) in orderBys)
             {
-                if (!compositeSortMap.TryGetValue(orderBy.column, out var keySelector)) continue;
+                if (!compositeSortMap.TryGetValue(column, out var keySelector)) continue;
 
-                ordered = (ordered, orderBy.direction) switch
+                ordered = (ordered, direction) switch
                 {
                     (null, OrderDirections.Ascending) => query.OrderBy(keySelector),
                     (null, OrderDirections.Descending) => query.OrderByDescending(keySelector),

@@ -1,17 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc.Controllers;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Options;
-using Nucleus.Api.Auth;
 using Swashbuckle.AspNetCore.SwaggerUI;
+using System.Linq;
 
-namespace Nucleus.Api.SwaggerGen;
+namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 
 public class AdditionalSwaggerUIEndpointsOptions : IConfigureOptions<SwaggerUIOptions>
 {
     private readonly IActionDescriptorCollectionProvider _provider;
     public AdditionalSwaggerUIEndpointsOptions(
-        IActionDescriptorCollectionProvider provider,
-        IOptions<AzureB2CConfig> b2cConfig
+        IActionDescriptorCollectionProvider provider
         )
     {
         _provider = provider;

@@ -23,6 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
+    <ProjectReference Include="..\Nucleus.AspNetCore.Mvc\Nucleus.AspNetCore.Mvc.csproj" />
     <ProjectReference Include="..\Nucleus.Blog.Controllers\Nucleus.Blog.Controllers.csproj" />
     <ProjectReference Include="..\Nucleus.Blog.Persistence\Nucleus.Blog.Persistence.csproj" />
     <ProjectReference Include="..\Nucleus.Core.Business\Nucleus.Core.Business.csproj" />

@@ -19,12 +19,12 @@ namespace Nucleus.AspNetCore.Mvc.Attributes
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             bool? userAuthenticated = context.HttpContext.User.Identity?.IsAuthenticated;
-            var userRigths = context.HttpContext.User.GetClaimValues(AppClaims.Rights);
+            var userRights = context.HttpContext.User.GetClaimValues(AppClaims.Rights);
 
             if (userAuthenticated == null || userAuthenticated == false)
                 context.Result = new ForbidResult();
             else if (Rights.Any())
-                if (!Any(userRigths))
+                if (!Any(userRights))
                     context.Result = new ForbidResult();
         }
 

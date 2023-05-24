@@ -6,4 +6,3 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Design", "CA1034:Nested types should not be visible")]
-[assembly: SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "<Pending>", Scope = "member", Target = "~M:Eliassen.TestUtilities.Communications.DebugCommunicationServiceExtensions.AddDebugCommunication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.VisualStudio.TestTools.UnitTesting.TestContext)~Microsoft.Extensions.DependencyInjection.IServiceCollection")]

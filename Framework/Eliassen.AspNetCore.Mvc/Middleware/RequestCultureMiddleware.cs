@@ -31,7 +31,7 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
                 if (!string.IsNullOrWhiteSpace(fromheader))
                 {
                     var language = fromheader.Split(',').Select(GetCultureInfo).FirstOrDefault();
-                    logger.LogInformation($"Set CultureInfo to \"{fromheader}\"::{language}");
+                    logger.LogInformation($"Set CultureInfo to \"{{{nameof(fromheader)}}}\"::{{{nameof(language)}}}", fromheader, language);
                     accessor.CultureInfo = language ?? CultureInfo.CurrentCulture;
                     CultureInfo.CurrentCulture = CultureInfo.CurrentUICulture = accessor.CultureInfo;
                 }
@@ -42,7 +42,7 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
                     var culture = accessor.CultureInfo?.ToString();
                     if (!string.IsNullOrWhiteSpace(culture))
                     {
-                        logger.LogInformation($"Return CultureInfo as {culture}");
+                        logger.LogInformation($"Return CultureInfo as {{{nameof(culture)}}}", culture);
                         context.Response.Headers["Content-Language"] = culture;
                     }
 
@@ -54,8 +54,8 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
             }
             catch (Exception ex)
             {
-                logger.LogError(ex.Message);
-                logger.LogDebug(ex.ToString());
+                logger.LogError($"{{{nameof(ex.Message)}}}", ex.Message);
+                logger.LogDebug($"{{{nameof(Exception)}}}", ex);
                 throw;
             }
         }

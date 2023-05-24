@@ -27,24 +27,24 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
             _log = log;
         }
 
-        private ControllerActionDescriptor? GetControllerActionDescriptor(HttpContext context) =>
+        private static ControllerActionDescriptor? GetControllerActionDescriptor(HttpContext context) =>
             context.GetEndpoint()?.Metadata.OfType<ControllerActionDescriptor>().FirstOrDefault();
 
-        private ActionContext? GetActionContext(HttpContext context, ControllerActionDescriptor descriptor) =>
+        private static ActionContext? GetActionContext(HttpContext context, ControllerActionDescriptor descriptor) =>
              descriptor switch
              {
                  ControllerActionDescriptor => new ActionContext(context, context.GetRouteData(), descriptor),
                  _ => null
              };
 
-        private ControllerContext? GetControllerContext(ActionContext? context) =>
+        private static ControllerContext? GetControllerContext(ActionContext? context) =>
             context switch
             {
                 ActionContext actionContext => new ControllerContext(actionContext),
                 _ => null
             };
 
-        private async Task<T?> GetModelAsync<T>(HttpContext context, string modelName = "")
+        private static async Task<T?> GetModelAsync<T>(HttpContext context, string modelName = "")
             where T : class
         {
             var descriptor = GetControllerActionDescriptor(context);
@@ -110,7 +110,7 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
             catch (Exception ex)
             {
                 _log.LogInformation("Error");
-                _log.LogError(ex.Message);
+                _log.LogError($"{{{nameof(ex.Message)}}}", ex.Message);
                 throw;
             }
         }

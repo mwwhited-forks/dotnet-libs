@@ -5,7 +5,7 @@ using Nucleus.AspNetCore.Mvc.IdentityModel;
 
 namespace Nucleus.AspNetCore.Mvc
 {
-    public static class ServiceCollectionEx
+    public static class ServiceCollectionExtensions
     {
         public static IServiceCollection AddApplicationAspNetCoreServices(this IServiceCollection services)
         {

@@ -131,7 +131,7 @@ namespace Nucleus.Core.Business.Managers
             return _config[ConfigKeys.Container.Directories._Base + documentType];
         }
 
-        private string GenerateDocumentKey(string documentName, int length)
+        private static string GenerateDocumentKey(string documentName, int length)
         {
             Random random = new Random();
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

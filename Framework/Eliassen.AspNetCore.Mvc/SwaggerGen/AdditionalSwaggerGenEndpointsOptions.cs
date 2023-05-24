@@ -1,11 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using Nucleus.Api.Auth;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System;
+using System.IO;
+using System.Linq;
 
-namespace Nucleus.Api.SwaggerGen;
+namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 
 public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGenOptions>
 {

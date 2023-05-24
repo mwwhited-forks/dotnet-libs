@@ -42,9 +42,7 @@ namespace Eliassen.System.Linq
                              where inf.GetGenericTypeDefinition() == typeof(IQueryable<>)
                              select inf;
 
-            var @interface = interfaces.FirstOrDefault();
-            if (@interface == null) throw new NotSupportedException($"{query.GetType()} is not supported");
-
+            var @interface = interfaces.FirstOrDefault() ?? throw new NotSupportedException($"{query.GetType()} is not supported");
             var elementType = @interface.GetGenericArguments()[0];
 
             var queryType = Type.MakeGenericSignatureType(typeof(IQueryable<>), Type.MakeGenericMethodParameter(0));

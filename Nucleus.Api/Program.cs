@@ -1,25 +1,26 @@
-using System.Reflection;
-using Nucleus.Core.Business;
-using Nucleus.Blog.Business;
-using Nucleus.Lesson.Business;
-using Nucleus.Project.Business;
-using Nucleus.Core.Shared.Persistence;
-using Nucleus.Core.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Nucleus.Api.Auth;
-using Nucleus.Core.Contracts.Models.DbSettings;
-using System.Security.Claims;
-using Nucleus.Blog.Contracts.Collections.DbSettings;
-using Nucleus.Lesson.Contracts.Collections.DbSettings;
-using Nucleus.Project.Contracts.Collections.DbSettings;
-using Nucleus.Blog.Persistence;
-using Nucleus.Lesson.Persistence;
-using Nucleus.Core.Shared.Business;
 using Microsoft.Extensions.Options;
-using Nucleus.Api.SwaggerGen;
+using Nucleus.Api.Auth;
+using Nucleus.Blog.Business;
+using Nucleus.Blog.Contracts.Collections.DbSettings;
+using Nucleus.Blog.Persistence;
+using Nucleus.Core.Business;
+using Nucleus.Core.Contracts.Models.DbSettings;
+using Nucleus.Core.Persistence;
+using Nucleus.Core.Shared.Business;
+using Nucleus.Core.Shared.Persistence;
+using Nucleus.Lesson.Business;
+using Nucleus.Lesson.Contracts.Collections.DbSettings;
+using Nucleus.Lesson.Persistence;
+using Nucleus.Project.Business;
+using Nucleus.Project.Contracts.Collections.DbSettings;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
+using System.Reflection;
+using System.Security.Claims;
+using Eliassen.AspNetCore.Mvc;
+using Nucleus.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -100,10 +101,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.Configure<AzureB2CConfig>(options => builder.Configuration.Bind(AzureB2CConfig.ConfigKey, options));
-builder.Services.AddControllers(opt =>
-{
-    opt.Conventions.Add(new ControllerModelConvention());
-});
+
+builder.Services.TryAddAspNetCoreExtensionServices();
+builder.Services.AddApplicationAspNetCoreServices();
+
 
 builder.Services.AddAuthorization(options =>
 {
@@ -117,12 +118,8 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
 builder.Services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, OAuthSwaggerUIOptions>();
-builder.Services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
 builder.Services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, OAuthSwaggerGenOptions>();
-builder.Services.AddSwaggerGen(c => c.OperationFilter<SwaggerFileOperationFilter>());
-
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(
@@ -151,6 +148,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors();
+
+app.UseAspNetCoreExtensionMiddleware();
 
 app.UseResponseCaching();
 

@@ -35,17 +35,17 @@ namespace Nucleus.Core.Business.Claims.Enhancers
         {
             var userName = (string)claims[AzB2cClaims.ObjectId];
 
-            _log.LogInformation($@"Look up user for {AzB2cClaims.ObjectId}:""{userName}""");
+            _log.LogInformation($@"Look up user for {{{nameof(AzB2cClaims.ObjectId)}}}:""{{{nameof(userName)}}}""", AzB2cClaims.ObjectId, userName);
 
             var userid = await _userProfileManager.GetUserIdForUserNameAsync(userName: userName);
             if (String.IsNullOrEmpty(userid))
             {
-                _log.LogError($@"No user found for {AzB2cClaims.ObjectId}:""{userName}""");
+                _log.LogError($@"No user found for {{{nameof(AzB2cClaims.ObjectId)}}}:""{{{nameof(userName)}}}""", AzB2cClaims.ObjectId, userName);
                 // Custom loggin which will be removed after enough data has been collected
                 if (claims != null && claims.HasValues)
-                    _log.LogError("ERR-401-No user found for | userName " + userName + " | result " + claims.ToString(Newtonsoft.Json.Formatting.None));
+                    _log.LogError($"ERR-401-No user found for | userName {{{nameof(userName)}}} | {{{nameof(claims)}}}", userName, claims.ToString(Newtonsoft.Json.Formatting.None));
                 else
-                    _log.LogError("ERR-401-No user found for | userName " + userName);
+                    _log.LogError($"ERR-401-No user found for | userName {{{nameof(userName)}}}", userName);
                 // ------------------------------------------------------------------------
                 throw new ApplicationException("Invalid User Requested");
             }
