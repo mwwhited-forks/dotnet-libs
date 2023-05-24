@@ -36,7 +36,7 @@ namespace Nucleus.Core.Controllers.Controllers
 
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
-        [HttpGet("ApplicationPemissions")]
+        [HttpGet("ApplicationPermissions")]
         public async Task<List<Module>> GetApplicationPermissions() =>
             await _usersManager.GetApplicationPermissionsAsync();
 
