@@ -1,0 +1,18 @@
+{
+  "Summary": {
+    "Services": {},
+    "Database": {
+      "Reads": [],
+      "Writes": []
+    }
+  },
+  "Details": {
+    "Operations": [],
+    "DebugEvents": [],
+    "MessageTypes": {
+      "TotalProviderCount": null,
+      "MessageTypes": []
+    },
+    "Database": null
+  }
+}
