@@ -9,10 +9,14 @@ namespace Nucleus.Lesson.Contracts.Services
 {
     public interface ILessonService
     {
+        //TODO: restore
+#warning RESTORE THIS FEATURE
 
-        Task<List<LessonModel>> GetPagedAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive);
+        //Task<List<LessonModel>> GetPagedAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive);
 
-        Task<long> GetPagedCountAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive);
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //Task<long> GetPagedCountAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive);
 
         Task<List<LessonModel>> GetAsync();
 

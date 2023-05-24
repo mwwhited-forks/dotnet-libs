@@ -1,11 +1,10 @@
-﻿using Nucleus.Core.Busines.Attributes;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Nucleus.AspNetCore.Mvc.Attributes;
+using Nucleus.AspNetCore.Mvc.IdentityModel;
 using Nucleus.Core.Contracts;
-using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.Filters;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Nucleus.Core.Controllers.Controllers
 {
@@ -28,11 +27,13 @@ namespace Nucleus.Core.Controllers.Controllers
         public async Task<IActionResult> SaveUser(UserAction? user) =>
             new JsonResult(await _usersManager.SaveUserAsync(user));
 
-        [Authorize]
-        [ApplicationRight(Rights.UserManagement.Manager)]
-        [HttpPost("UserList")]
-        public async Task<IActionResult> GetUserProfile(UsersFilter userFilter) =>
-            new JsonResult(await _usersManager.GetUsers(userFilter));
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //[Authorize]
+        //[ApplicationRight(Rights.UserManagement.Manager)]
+        //[HttpPost("UserList")]
+        //public async Task<IActionResult> GetUserProfile(UsersFilter userFilter) =>
+        //    new JsonResult(await _usersManager.GetUsers(userFilter));
 
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]

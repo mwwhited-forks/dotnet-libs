@@ -10,6 +10,9 @@ namespace Nucleus.Blog.Contracts.Managers
     {
         Task<BlogModel?> GetBlog(string blogId);
         Task<ResponseModel<BlogModel?>> SaveBlogAsync(BlogModel blog);
-        Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter);
+
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+     //   Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter);
     }
 }

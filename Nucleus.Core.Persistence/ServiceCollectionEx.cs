@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Nucleus.Core.Contracts.Interfaces;
+using Nucleus.Core.Persistence.Services;
 
 namespace Nucleus.Core.Persistence
 {
@@ -6,7 +9,8 @@ namespace Nucleus.Core.Persistence
     {
         public static IServiceCollection AddCorePersistenceServices(this IServiceCollection services)
         {
-            new CorePersistenceRegistrar().AddServices(services);
+            services.TryAddTransient<IDocumentService, DocumentService>();
+            services.TryAddTransient<IUserService, UserService>();
             return services;
         }
     }

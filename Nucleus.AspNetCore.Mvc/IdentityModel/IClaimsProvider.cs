@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Nucleus.Core.Contracts.Interfaces
+namespace Nucleus.AspNetCore.Mvc.IdentityModel
 {
     public interface IClaimsProvider
     {

@@ -1,11 +1,9 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
-using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Extensions;
+﻿using Nucleus.AspNetCore.Mvc.IdentityModel;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Eliassen.System.Reflection;
 
-namespace Nucleus.Core.Business.Claims
+namespace Nucleus.AspNetCore.Mvc.Claims
 {
     public class ClaimsEnhancerFactory : IClaimsEnhancerFactory
     {

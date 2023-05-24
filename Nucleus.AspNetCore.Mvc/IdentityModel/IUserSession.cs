@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Nucleus.Core.Contracts.Interfaces
+namespace Nucleus.AspNetCore.Mvc.IdentityModel
 {
     public interface IUserSession
     {

@@ -9,8 +9,10 @@ namespace Nucleus.Lesson.Contracts.Managers
     public interface ILessonManager
     {
         Task<LessonModel?> GetLesson(string lessonId);
+        //TODO: restore
+#warning RESTORE THIS FEATURE
 
-        Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter);
+        //Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter);
 
         Task<ResponseModel<LessonModel?>> SaveLessonAsync(LessonModel lesson);
     }

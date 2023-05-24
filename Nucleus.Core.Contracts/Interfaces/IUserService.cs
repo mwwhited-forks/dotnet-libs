@@ -9,9 +9,12 @@ namespace Nucleus.Core.Contracts.Interfaces
     {
         Task<List<User>> GetAsync();
 
-        Task<List<User>> GetPagedAsync(PagingModel pagingModel, UserFilterItem filterItems);
-
-        Task<long> GetPagedCountAsync(PagingModel pagingModel, UserFilterItem? filterItems);
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //Task<List<User>> GetPagedAsync(PagingModel pagingModel, UserFilterItem filterItems);
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //Task<long> GetPagedCountAsync(PagingModel pagingModel, UserFilterItem? filterItems);
 
         Task<User?> GetAsync(string id);
 

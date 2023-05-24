@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Nucleus.Core.Busines.Attributes
+namespace Nucleus.AspNetCore.Mvc.Attributes
 {
     public class ApplicationRightAttribute : TypeFilterAttribute
     {
@@ -10,7 +10,7 @@ namespace Nucleus.Core.Busines.Attributes
         {
             Rights = rights;
 
-            this.Arguments = new[] { rights };
+            Arguments = new[] { rights };
         }
     }
 }

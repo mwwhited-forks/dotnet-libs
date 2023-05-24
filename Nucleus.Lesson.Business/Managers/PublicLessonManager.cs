@@ -1,10 +1,8 @@
 ﻿using Nucleus.Lesson.Contracts.Managers;
+using Nucleus.Lesson.Contracts.Models;
+using Nucleus.Lesson.Contracts.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Nucleus.Lesson.Contracts.Services;
-using Nucleus.Lesson.Contracts.Models;
-using Nucleus.Core.Contracts.Models;
-using Nucleus.Lesson.Contracts.Models.Filters;
 
 namespace Nucleus.Lesson.Business.Managers
 {
@@ -17,19 +15,21 @@ namespace Nucleus.Lesson.Business.Managers
         {
             _lessonService = LessonService;
         }
-        public async Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter)
-        {
-            List<LessonModel> lessons = await _lessonService.GetPagedAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, true);
-            PagedResult<LessonModel> result = new PagedResult<LessonModel>()
-            {
-                CurrentPage = lessonsFilter.PagingModel.CurrentPage,
-                PageSize = lessonsFilter.PagingModel.PageSize,
-                Results = lessons,
-                RowCount = await _lessonService.GetPagedCountAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, true),
-                PageCount = lessons.Count
-            };
-            return result;
-        }
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //public async Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter)
+        //{
+        //    List<LessonModel> lessons = await _lessonService.GetPagedAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, true);
+        //    PagedResult<LessonModel> result = new PagedResult<LessonModel>()
+        //    {
+        //        CurrentPage = lessonsFilter.PagingModel.CurrentPage,
+        //        PageSize = lessonsFilter.PagingModel.PageSize,
+        //        Results = lessons,
+        //        RowCount = await _lessonService.GetPagedCountAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, true),
+        //        PageCount = lessons.Count
+        //    };
+        //    return result;
+        //}
 
         public async Task<List<LessonModel>> GetLessons() =>
           await _lessonService.GetAsync();

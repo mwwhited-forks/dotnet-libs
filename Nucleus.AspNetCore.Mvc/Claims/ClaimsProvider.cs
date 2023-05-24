@@ -1,8 +1,8 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
+using Nucleus.AspNetCore.Mvc.IdentityModel;
 using System.Threading.Tasks;
 
-namespace Nucleus.Core.Business.Claims
+namespace Nucleus.AspNetCore.Mvc.Claims
 {
     public class ClaimsProvider : IClaimsProvider
     {

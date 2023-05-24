@@ -1,12 +1,9 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json.Linq;
+using Nucleus.AspNetCore.Mvc.IdentityModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Nucleus.Core.Business.Claims
+namespace Nucleus.AspNetCore.Mvc.Claims
 {
     public class ClaimsEnhancerPipeline : IClaimsEnhancerPipeline
     {

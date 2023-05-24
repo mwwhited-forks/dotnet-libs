@@ -1,6 +1,5 @@
-﻿using Nucleus.Blog.Contracts.Managers;
-using Nucleus.Blog.Contracts.Models.Filters;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Nucleus.Blog.Contracts.Managers;
 
 namespace Nucleus.Blog.Controllers.Controllers
 {
@@ -15,9 +14,11 @@ namespace Nucleus.Blog.Controllers.Controllers
             _publicBlogManager = publicBlogManager;
         }
 
-        [HttpPost("Blogs")]
-        public async Task<IActionResult> GetAllBlogsPagedAsync(BlogsFilter filter) =>
-            new JsonResult(await _publicBlogManager.GetBlogsPagedAsync(filter));
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //[HttpPost("Blogs")]
+        //public async Task<IActionResult> GetAllBlogsPagedAsync(BlogsFilter filter) =>
+        //    new JsonResult(await _publicBlogManager.GetBlogsPagedAsync(filter));
 
         [HttpGet("Slug/{id}")]
         public async Task<IActionResult> GetBlogSlug(string id) =>

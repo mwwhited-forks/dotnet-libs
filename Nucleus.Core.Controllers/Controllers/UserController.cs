@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Nucleus.Core.Contracts.Interfaces;
+using Nucleus.AspNetCore.Mvc.IdentityModel;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
 

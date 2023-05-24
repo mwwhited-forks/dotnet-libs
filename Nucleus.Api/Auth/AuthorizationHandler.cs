@@ -1,10 +1,10 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
-using Nucleus.Core.Contracts.Models;
-using Microsoft.AspNetCore.Authorization;
-using Nucleus.Core.Contracts.Extensions;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Logging;
 using Newtonsoft.Json.Linq;
+using Nucleus.AspNetCore.Mvc.IdentityModel;
+using Nucleus.Core.Contracts.Models;
 using System.Security.Authentication;
+using Eliassen.System.Security.Claims;
 using System.Security.Claims;
 
 namespace Nucleus.Api.Auth
@@ -27,7 +27,7 @@ namespace Nucleus.Api.Auth
 #endif
             var user = context.User;
 
-            var userId = user.GetClaimValue(Claims.UserId);
+            var userId = user.GetClaimValue(AppClaims.UserId);
             if (String.IsNullOrEmpty(userId))
             {
                 // This user has not been set yet because we have not assigned their UserId from the DB to the Claim... so lets get crackin
@@ -49,7 +49,7 @@ namespace Nucleus.Api.Auth
                     // Initiating the process to get additional claims from our Claims Enhancers (Core->Business->Claims->Enhancers)
                     var result = await _claims.GetAdditionalClaimsAsync(data).ConfigureAwait(false);
 
-                    userId = (string?)result[Claims.UserId];
+                    userId = (string?)result[AppClaims.UserId];
                     if (String.IsNullOrEmpty(userId))
                     {
                         // Custom loggin which will be removed after enough data has been collected

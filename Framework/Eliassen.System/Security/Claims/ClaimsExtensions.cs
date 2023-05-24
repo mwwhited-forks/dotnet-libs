@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 
-namespace Nucleus.Core.Contracts.Extensions
+namespace Eliassen.System.Security.Claims
 {
     public static class ClaimsExtensions
     {
@@ -16,7 +16,7 @@ namespace Nucleus.Core.Contracts.Extensions
             where !string.IsNullOrWhiteSpace(c.Value)
             select c.Value;
 
-        public static string GetClaimValue(this ClaimsPrincipal principal, params string[] claims) =>
+        public static string? GetClaimValue(this ClaimsPrincipal principal, params string[] claims) =>
             principal.GetClaimValues(claims).FirstOrDefault();
 
         public static Guid? GetClaimId(this ClaimsPrincipal principal, params string[] claims) =>

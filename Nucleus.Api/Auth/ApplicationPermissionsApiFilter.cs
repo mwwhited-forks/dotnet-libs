@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
-using Nucleus.Core.Busines.Attributes;
+using Nucleus.AspNetCore.Mvc.Attributes;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 

@@ -10,8 +10,12 @@ namespace Nucleus.Core.Contracts.Interfaces
 {
     public interface IDocumentService
     {
-        Task<DocumentModel?> GetDocumentAsync(DocumentsFilter filter);
-        Task<List<DocumentModel>?> GetDocumentsAsync(DocumentsFilter filter);
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //Task<DocumentModel?> GetDocumentAsync(DocumentsFilter filter);
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //Task<List<DocumentModel>?> GetDocumentsAsync(DocumentsFilter filter);
         Task CreateAsync(DocumentModel document);
         Task UpdateAsync(DocumentModel document);
         Task RemoveAsync(string id);

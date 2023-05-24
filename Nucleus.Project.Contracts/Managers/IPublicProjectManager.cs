@@ -9,7 +9,9 @@ namespace Nucleus.Project.Contracts.Managers
 {
     public interface IPublicProjectManager
     {
-        Task<PagedResult<ProjectModel>> GetProjectsPagedAsync(ProjectFilter projectsFilter);
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //Task<PagedResult<ProjectModel>> GetProjectsPagedAsync(ProjectFilter projectsFilter);
         Task<List<ProjectModel>> GetProjects();
         Task<ProjectModel?> GetProjectSlug(string slug);
         Task<List<ProjectModel>?> GetRecentProjects(int i);

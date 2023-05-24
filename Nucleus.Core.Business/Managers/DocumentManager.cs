@@ -1,10 +1,9 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
+﻿using Microsoft.Extensions.Configuration;
+using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.Filters;
 using Nucleus.Core.Contracts.Models.Keys;
 using Nucleus.Core.Contracts.Providers;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Nucleus.Core.Business.Managers
 {
-    public class DocumentManager: IDocumentManager
+    public class DocumentManager : IDocumentManager
     {
         private readonly IConfiguration _config;
         public IDocumentProvider _documentProvider { get; set; }
@@ -22,24 +21,28 @@ namespace Nucleus.Core.Business.Managers
         public DocumentManager(IConfiguration config, IDocumentService documentService, IDocumentProvider documentProvider)
         {
             _config = config;
-            _documentService= documentService;
+            _documentService = documentService;
             _documentProvider = documentProvider;
         }
 
-        public async Task<DocumentModel?> GetDocument(DocumentsFilter filter) =>
-            await _documentService.GetDocumentAsync(filter);
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //public async Task<DocumentModel?> GetDocument(DocumentsFilter filter) =>
+        //    await _documentService.GetDocumentAsync(filter);
 
-        public async Task<List<DocumentModel>?> GetDocuments(DocumentsFilter filter) =>
-            await _documentService.GetDocumentsAsync(filter);
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //public async Task<List<DocumentModel>?> GetDocuments(DocumentsFilter filter) =>
+        //    await _documentService.GetDocumentsAsync(filter);
 
         public async Task<BlobDto?> DownloadDocument(string DocumentName) =>
             await _documentProvider.DownloadAsync(DocumentName);
 
         public async Task<ResponseModel<DocumentModel?>> SaveDocument(DocumentModel document, Stream content)
         {
-            if (document == null 
+            if (document == null
                 || content == null
-                || string.IsNullOrEmpty(document.DocumentName) 
+                || string.IsNullOrEmpty(document.DocumentName)
                 )
                 return new ResponseModel<DocumentModel?>()
                 {
@@ -60,7 +63,7 @@ namespace Nucleus.Core.Business.Managers
             ResponseModel<DocumentModel?> result = new ResponseModel<DocumentModel?>();
             if (response.Error == false)
             {
-               
+
                 if (string.IsNullOrEmpty(document.DocumentId))
                 {
                     document.CreatedOn = DateTimeOffset.Now;
@@ -72,7 +75,7 @@ namespace Nucleus.Core.Business.Managers
                     await _documentService.UpdateAsync(document);
                     result.Response = document;
                 }
-            } 
+            }
             else
             {
                 result.Message = response.Status;
@@ -83,38 +86,41 @@ namespace Nucleus.Core.Business.Managers
 
         public async Task<ResponseModel<Boolean>> RemoveDocument(string id)
         {
-            if (id == null)
-                return new ResponseModel<Boolean>()
-                {
-                    Response = false,
-                    IsSuccess = false,
-                    Message = "Missing Required Fields"
-                };
-            DocumentsFilter filter = new DocumentsFilter();
-            DocumentFilterItem filterItem = new DocumentFilterItem
-            {
-                DocumentId = id
-            };
+            throw new NotSupportedException();
+            //TODO: restore
+#warning RESTORE THIS FEATURE
+            //if (id == null)
+            //    return new ResponseModel<Boolean>()
+            //    {
+            //        Response = false,
+            //        IsSuccess = false,
+            //        Message = "Missing Required Fields"
+            //    };
+            //DocumentsFilter filter = new DocumentsFilter();
+            //DocumentFilterItem filterItem = new DocumentFilterItem
+            //{
+            //    DocumentId = id
+            //};
 
-            filter.DocumentsFilters = filterItem;
+            //filter.DocumentsFilters = filterItem;
 
 
-            var document = await _documentService.GetDocumentAsync(filter);
-            if(document == null)
-            {
-                return new ResponseModel<Boolean>()
-                {
-                    Response = false,
-                    IsSuccess = true
-                };
-            }
-            await _documentProvider.DeleteAsync(document.DocumentKey);
-            await _documentService.RemoveAsync(id);
-            return new ResponseModel<Boolean>()
-            {
-                Response = true,
-                IsSuccess = true
-            };
+            //var document = await _documentService.GetDocumentAsync(filter);
+            //if (document == null)
+            //{
+            //    return new ResponseModel<Boolean>()
+            //    {
+            //        Response = false,
+            //        IsSuccess = true
+            //    };
+            //}
+            //await _documentProvider.DeleteAsync(document.DocumentKey);
+            //await _documentService.RemoveAsync(id);
+            //return new ResponseModel<Boolean>()
+            //{
+            //    Response = true,
+            //    IsSuccess = true
+            //};
         }
 
         private string? GetDocumentDirectory(string? documentType)
@@ -140,7 +146,7 @@ namespace Nucleus.Core.Business.Managers
                 {
                     if (i == documentparts.Length - 1)
                         str.Append("." + key);
-                    
+
                     if (i == 0)
                         str.Append(documentparts[i]);
                     else

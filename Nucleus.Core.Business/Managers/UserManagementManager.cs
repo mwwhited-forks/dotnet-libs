@@ -1,11 +1,9 @@
 ﻿using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.Filters;
 using Nucleus.Core.Contracts.Models.Keys;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Nucleus.Core.Business.Managers
@@ -23,22 +21,24 @@ namespace Nucleus.Core.Business.Managers
             _userService = userService;
         }
 
-        public async Task<PagedResult<User>> GetUsers(UsersFilter userFilter)
-        {
-            PagedResult<User> result = new PagedResult<User>();
-            // Get all users
-            List<User> users = await _userService.GetPagedAsync(userFilter.PagingModel, userFilter.UserFilters);
-            result = new PagedResult<User>()
-            {
-                 CurrentPage = userFilter.PagingModel.CurrentPage,
-                 PageSize = userFilter.PagingModel.PageSize,
-                 Results = users,
-                 RowCount = await _userService.GetPagedCountAsync(userFilter.PagingModel, userFilter.UserFilters),
-                 PageCount = users.Count()
-            };
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //public async Task<PagedResult<User>> GetUsers(UsersFilter userFilter)
+        //{
+        //    PagedResult<User> result = new PagedResult<User>();
+        //    // Get all users
+        //    List<User> users = await _userService.GetPagedAsync(userFilter.PagingModel, userFilter.UserFilters);
+        //    result = new PagedResult<User>()
+        //    {
+        //         CurrentPage = userFilter.PagingModel.CurrentPage,
+        //         PageSize = userFilter.PagingModel.PageSize,
+        //         Results = users,
+        //         RowCount = await _userService.GetPagedCountAsync(userFilter.PagingModel, userFilter.UserFilters),
+        //         PageCount = users.Count()
+        //    };
             
-            return result;
-        }
+        //    return result;
+        //}
 
         public async Task<List<Module>> GetApplicationPermissionsAsync() =>
              await _userService.GetModulesAsync();

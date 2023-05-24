@@ -115,6 +115,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{F1FE
 		.config\dotnet-tools.json = .config\dotnet-tools.json
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleus.AspNetCore.Mvc", "Nucleus.AspNetCore.Mvc\Nucleus.AspNetCore.Mvc.csproj", "{C6F18893-079B-4008-B799-5D99747B05B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -237,6 +239,10 @@ Global
 		{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6F18893-079B-4008-B799-5D99747B05B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6F18893-079B-4008-B799-5D99747B05B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6F18893-079B-4008-B799-5D99747B05B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6F18893-079B-4008-B799-5D99747B05B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -282,6 +288,7 @@ Global
 		{93A1F684-0F32-4FF7-B4EE-59FE8E63F2BF} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{F1FECC6B-DCFF-461F-9B99-CA7E6C1FF543} = {6BEF035F-ABDF-47D9-B230-B88FEE87B53B}
+		{C6F18893-079B-4008-B799-5D99747B05B9} = {D5D421B7-FCDC-4AE5-BEB7-6614DEEBF2C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

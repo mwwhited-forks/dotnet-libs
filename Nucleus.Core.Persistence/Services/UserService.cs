@@ -1,14 +1,13 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
+﻿using Microsoft.Extensions.Options;
+using MongoDB.Driver;
+using Nucleus.Core.Contracts.Collections;
+using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.DbSettings;
-using Microsoft.Extensions.Options;
-using MongoDB.Driver;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Nucleus.Core.Contracts.Models.Filters;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
-using Nucleus.Core.Contracts.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Nucleus.Core.Persistence.Services
 {
@@ -88,51 +87,56 @@ namespace Nucleus.Core.Persistence.Services
 
         public async Task<List<User>> GetAsync() =>
             await _usersCollection.Find(_ => true).Project(_userProjection).ToListAsync();
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //private FilterDefinition<UserCollection> GetUsersPredicateBuilder(UserFilterItem? filterItems)
+        //{
+        //    // Keeping this business logic in the access layer.  Cannot move it to the business layer yet
+        //    // until I can create an extension that can translate for multiple database.  Moving this to db
+        //    // layer forces you to include mongo drivers which will no longer make this a good solution to be
+        //    // a hybrid database solution just by changing interfaces in the IOC
+        //    var builder = Builders<UserCollection>.Filter;
+        //    var filter = builder.Empty;
+        //    if (!string.IsNullOrWhiteSpace(filterItems.InputValue))
+        //    {
+        //        var textSearch = builder.Text(filterItems.InputValue);
+        //        filter &= textSearch;
+        //    }
+        //    if (!string.IsNullOrEmpty(filterItems.UserStatus) && filterItems.UserStatus != "-1")
+        //    {
+        //        var statusBuilder = builder.Where(e => (filterItems.UserStatus == null || filterItems.UserStatus == "-1" || (filterItems.UserStatus == "1" && e.Active == true) || (filterItems.UserStatus == "0" && e.Active == false)));
+        //        filter &= statusBuilder;
+        //    }
+        //    if (!string.IsNullOrEmpty(filterItems.Module) && filterItems.Module != "module_authenticated")
+        //    {
+        //        var moduleBuilder = builder.Where(e =>  e.UserModules.Any(m => m.Code == filterItems.Module));
+        //        filter &= moduleBuilder;
+        //    }
 
-        private FilterDefinition<UserCollection> GetUsersPredicateBuilder(UserFilterItem? filterItems)
-        {
-            // Keeping this business logic in the access layer.  Cannot move it to the business layer yet
-            // until I can create an extension that can translate for multiple database.  Moving this to db
-            // layer forces you to include mongo drivers which will no longer make this a good solution to be
-            // a hybrid database solution just by changing interfaces in the IOC
-            var builder = Builders<UserCollection>.Filter;
-            var filter = builder.Empty;
-            if (!string.IsNullOrWhiteSpace(filterItems.InputValue))
-            {
-                var textSearch = builder.Text(filterItems.InputValue);
-                filter &= textSearch;
-            }
-            if (!string.IsNullOrEmpty(filterItems.UserStatus) && filterItems.UserStatus != "-1")
-            {
-                var statusBuilder = builder.Where(e => (filterItems.UserStatus == null || filterItems.UserStatus == "-1" || (filterItems.UserStatus == "1" && e.Active == true) || (filterItems.UserStatus == "0" && e.Active == false)));
-                filter &= statusBuilder;
-            }
-            if (!string.IsNullOrEmpty(filterItems.Module) && filterItems.Module != "module_authenticated")
-            {
-                var moduleBuilder = builder.Where(e =>  e.UserModules.Any(m => m.Code == filterItems.Module));
-                filter &= moduleBuilder;
-            }
+        //    return filter;
+        //}
 
-            return filter;
-        }
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //public async Task<List<User>> GetPagedAsync(PagingModel pagingModel, UserFilterItem? filterItems)
+        //{
+        //    // TODO: Make an extension that does all of this pagination plumbing
+        //    string sortDefinition = $"{{ {pagingModel.SortBy}: 1 }}";
+        //    if (pagingModel.SortDirection == "descend")
+        //        sortDefinition = $"{{ {pagingModel.SortBy}: -1 }}";
 
-        public async Task<List<User>> GetPagedAsync(PagingModel pagingModel, UserFilterItem? filterItems)
-        {
-            // TODO: Make an extension that does all of this pagination plumbing
-            string sortDefinition = $"{{ {pagingModel.SortBy}: 1 }}";
-            if (pagingModel.SortDirection == "descend")
-                sortDefinition = $"{{ {pagingModel.SortBy}: -1 }}";
+        //    return await _usersCollection.Find(GetUsersPredicateBuilder(filterItems))
+        //        .Skip((pagingModel.CurrentPage -1) * pagingModel.PageSize)
+        //        .Limit(pagingModel.PageSize)
+        //        .Sort(sortDefinition)
+        //        .Project(_userProjection)
+        //        .ToListAsync();
+        //}
 
-            return await _usersCollection.Find(GetUsersPredicateBuilder(filterItems))
-                .Skip((pagingModel.CurrentPage -1) * pagingModel.PageSize)
-                .Limit(pagingModel.PageSize)
-                .Sort(sortDefinition)
-                .Project(_userProjection)
-                .ToListAsync();
-        }
-
-        public async Task<long> GetPagedCountAsync(PagingModel pagingModel, UserFilterItem? filterItems) =>
-            await _usersCollection.Find(GetUsersPredicateBuilder(filterItems)).CountDocumentsAsync();
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //public async Task<long> GetPagedCountAsync(PagingModel pagingModel, UserFilterItem? filterItems) =>
+        //    await _usersCollection.Find(GetUsersPredicateBuilder(filterItems)).CountDocumentsAsync();
 
         public async Task<User?> GetAsync(string id) =>
             await _usersCollection.Find(x => x.UserId == id).Project(_userProjection).FirstOrDefaultAsync();

@@ -9,7 +9,9 @@ namespace Nucleus.Core.Contracts.Managers
     public interface IUserManagementManager
     {
         Task<ResponseModel<User>> SaveUserAsync(UserAction user);
-        Task<PagedResult<User>> GetUsers(UsersFilter userFilter);
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //Task<PagedResult<User>> GetUsers(UsersFilter userFilter);
         Task<List<Module>> GetApplicationPermissionsAsync();
     }
 }

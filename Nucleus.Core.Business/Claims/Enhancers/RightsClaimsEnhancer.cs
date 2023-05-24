@@ -1,7 +1,8 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
+﻿using Newtonsoft.Json.Linq;
+using Nucleus.AspNetCore.Mvc.Claims;
+using Nucleus.AspNetCore.Mvc.IdentityModel;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,11 +25,11 @@ namespace Nucleus.Core.Business.Claims.Enhancers
 
         public async Task<JObject> EnhanceAsync(JObject claims)
         {
-            var userId = (string?)claims[Contracts.Models.Claims.UserId];
+            var userId = (string?)claims[AppClaims.UserId];
             if (!String.IsNullOrEmpty(userId))
             {
                 var lookupRights = await _userProfileManager.GetRightsForUserIdAsync(userId);
-                claims[Contracts.Models.Claims.Rights] = new JArray(lookupRights.ToArray());
+                claims[AppClaims.Rights] = new JArray(lookupRights.ToArray());
             }
             return claims;
         }

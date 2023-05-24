@@ -1,11 +1,11 @@
-﻿using Nucleus.Core.Busines.Attributes;
-using Nucleus.Core.Contracts;
-using Nucleus.Core.Contracts.Interfaces;
-using Nucleus.Core.Contracts.Managers;
-using Nucleus.Core.Contracts.Models;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Nucleus.AspNetCore.Mvc.Attributes;
+using Nucleus.AspNetCore.Mvc.IdentityModel;
+using Nucleus.Core.Contracts;
+using Nucleus.Core.Contracts.Managers;
+using Nucleus.Core.Contracts.Models;
 
 namespace Nucleus.Core.Controllers.Controllers
 {

@@ -153,5 +153,11 @@ namespace Eliassen.System.Reflection
 
         public static IEnumerable<Attribute> GetAttributes(this object @object) =>
             TypeDescriptor.GetAttributes(@object).OfType<Attribute>();
+
+        public static IEnumerable<TAttribute> GetAttributes<TAttribute>(this Type type) where TAttribute : Attribute =>
+            type.GetAttributes().OfType<TAttribute>();
+
+        public static IEnumerable<TAttribute> GetAttributes<TAttribute>(this object @object) where TAttribute : Attribute =>
+            @object.GetAttributes().OfType<TAttribute>();
     }
 }

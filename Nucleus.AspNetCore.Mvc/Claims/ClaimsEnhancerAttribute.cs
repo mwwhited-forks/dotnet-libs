@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Nucleus.Core.Contracts.Models
+namespace Nucleus.AspNetCore.Mvc.Claims
 {
     [AttributeUsage(AttributeTargets.Class)]
     public sealed class ClaimsEnhancerAttribute : Attribute

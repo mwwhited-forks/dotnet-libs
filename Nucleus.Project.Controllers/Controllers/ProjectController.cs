@@ -1,6 +1,5 @@
-﻿using Nucleus.Project.Contracts.Managers;
-using Nucleus.Project.Contracts.Models.Filters;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Nucleus.Project.Contracts.Managers;
 
 namespace Nucleus.Project.Controllers.Controllers
 {
@@ -14,10 +13,11 @@ namespace Nucleus.Project.Controllers.Controllers
         {
             _publicProjectManager = publicProjectManager;
         }
-
-        [HttpPost("Projects")]
-        public async Task<IActionResult> GetAllBlogsPagedAsync(ProjectFilter filter) =>
-            new JsonResult(await _publicProjectManager.GetProjectsPagedAsync(filter));
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //[HttpPost("Projects")]
+        //public async Task<IActionResult> GetAllBlogsPagedAsync(ProjectFilter filter) =>
+        //    new JsonResult(await _publicProjectManager.GetProjectsPagedAsync(filter));
 
         [HttpGet("Slug/{id}")]
         public async Task<IActionResult> GetProjectSlug(string id) =>

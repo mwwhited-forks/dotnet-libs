@@ -1,6 +1,5 @@
-﻿using Nucleus.Lesson.Contracts.Managers;
-using Nucleus.Lesson.Contracts.Models.Filters;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Nucleus.Lesson.Contracts.Managers;
 
 namespace Nucleus.Lesson.Controllers.Controllers
 {
@@ -14,10 +13,12 @@ namespace Nucleus.Lesson.Controllers.Controllers
         {
             _publicLessonManager = publicLessonManager;
         }
+        //TODO: restore
+#warning RESTORE THIS FEATURE
 
-        [HttpPost("Lessons")]
-        public async Task<IActionResult> GetAllLessons(LessonsFilter filter) =>
-            new JsonResult(await _publicLessonManager.GetLessonsPagedAsync(filter));
+        //[HttpPost("Lessons")]
+        //public async Task<IActionResult> GetAllLessons(LessonsFilter filter) =>
+        //    new JsonResult(await _publicLessonManager.GetLessonsPagedAsync(filter));
 
         [HttpGet("Slug/{id}")]
         public async Task<IActionResult> GetLessonSlug(string id) =>

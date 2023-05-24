@@ -8,9 +8,12 @@ namespace Nucleus.Blog.Contracts.Services
 {
     public interface IBlogService
     {
-        Task<List<BlogModel>> GetPagedAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive);
-
-        Task<long> GetPagedCountAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive);
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //Task<List<BlogModel>> GetPagedAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive);
+        //TODO: restore
+#warning RESTORE THIS FEATURE
+        //Task<long> GetPagedCountAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive);
 
         Task<List<BlogModel>> GetAsync(bool onlyActive);
 
