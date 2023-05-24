@@ -56,13 +56,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Blog.Controllers", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Blog.Persistence", "Nucleus.Blog.Persistence\Nucleus.Blog.Persistence.csproj", "{E5B63B9B-ED88-40D7-870F-1F691D004DF6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vlog", "Vlog", "{A47F1809-F6B0-433D-A467-9C3BA49F18B4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson", "Lesson", "{A47F1809-F6B0-433D-A467-9C3BA49F18B4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{31EE9514-7C40-4285-97D5-BCD136BE8CF9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Vlog.Business", "Nucleus.Vlog.Business\Nucleus.Vlog.Business.csproj", "{FCF46590-E4BB-4189-8DFF-9A9AB805C694}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Lesson.Business", "Nucleus.Lesson.Business\Nucleus.Lesson.Business.csproj", "{FCF46590-E4BB-4189-8DFF-9A9AB805C694}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Vlog.Contracts", "Nucleus.Vlog.Contracts\Nucleus.Vlog.Contracts.csproj", "{5FC8DED3-982A-45C4-BC8F-0775F39CD723}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Lesson.Contracts", "Nucleus.Lesson.Contracts\Nucleus.Lesson.Contracts.csproj", "{5FC8DED3-982A-45C4-BC8F-0775F39CD723}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Project.Business", "Nucleus.Project.Business\Nucleus.Project.Business.csproj", "{9AB14EF3-9F11-4C0E-A333-51E05EEBB47D}"
 EndProject
@@ -70,11 +70,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Project.Contracts",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Project.Controllers", "Nucleus.Project.Controllers\Nucleus.Project.Controllers.csproj", "{BB9B7122-D33B-4602-B688-16A23BCC7189}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Vlog.Controllers", "Nucleus.Vlog.Controllers\Nucleus.Vlog.Controllers.csproj", "{B5993C46-2DD1-478C-A2BE-3EFFEB5CFE11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Lesson.Controllers", "Nucleus.Lesson.Controllers\Nucleus.Lesson.Controllers.csproj", "{B5993C46-2DD1-478C-A2BE-3EFFEB5CFE11}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Project.Persistence", "Nucleus.Project.Persistence\Nucleus.Project.Persistence.csproj", "{B7BA7642-A6D9-409B-9F63-C5596577E1B7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Vlog.Persistence", "Nucleus.Vlog.Persistence\Nucleus.Vlog.Persistence.csproj", "{E4055A9F-29B6-4A7F-95E6-DA46D2053E08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Lesson.Persistence", "Nucleus.Lesson.Persistence\Nucleus.Lesson.Persistence.csproj", "{E4055A9F-29B6-4A7F-95E6-DA46D2053E08}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalServices", "ExternalServices", "{23338E7F-E943-4D99-B58C-CFBB7F2F53B2}"
 EndProject

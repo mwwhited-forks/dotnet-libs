@@ -36,16 +36,16 @@
 		]
 	},
 	{
-		"name": "Vlog",
-		"code": "module_vlog",
+		"name": "Lesson",
+		"code": "module_lesson",
 		"roles": [
 			{
-				"name": "Vlog Admin",
-				"code": "role_vlog",
+				"name": "Lesson Admin",
+				"code": "role_lesson",
 				"rights": [
 					{
-						"name": "Vlog Manager",
-						"code": "right_vlog_admin"
+						"name": "Lesson Manager",
+						"code": "right_lesson_admin"
 					}
 				]
 			}

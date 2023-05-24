@@ -6,14 +6,14 @@ This application requires 6 initial collections to be created on the target Mong
 - Documents
 - Users
 - Projects
-- Vlogs
+- Lessons
 - Blogs
 
 All Collection Names are defined within the appsettings.json under the "MongoDatabase" Node
 - "ModuleCollectionName": "modules",
 - "DocumentsCollectionName": "documents",
 - "BlogsCollectionName": "blog",
-- "VlogsCollectionName": "vlog",
+- "LessonsCollectionName": "lesson",
 - "ProjectsCollectionName": "project",
 - "UsersCollectionName": "users"
 
@@ -22,7 +22,7 @@ The application requires a text based index to be setup on the following collect
 features can be performed.
 
 - Projects (content, title fields should be added to the text index)
-- Vlogs (content, title fields should be added to the text index)
+- Lessons (content, title fields should be added to the text index)
 - Blogs (content, title, and tags fields should be added to the text index)
 
 ## Sample Datasets

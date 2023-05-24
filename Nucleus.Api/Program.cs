@@ -1,7 +1,7 @@
 using System.Reflection;
 using Nucleus.Core.Business;
 using Nucleus.Blog.Business;
-using Nucleus.Vlog.Business;
+using Nucleus.Lesson.Business;
 using Nucleus.Project.Business;
 using Nucleus.Core.Shared.Persistence;
 using Nucleus.Core.Persistence;
@@ -11,11 +11,15 @@ using Nucleus.Api.Auth;
 using Nucleus.Core.Contracts.Models.DbSettings;
 using System.Security.Claims;
 using Nucleus.Blog.Contracts.Collections.DbSettings;
-using Nucleus.Vlog.Contracts.Collections.DbSettings;
+using Nucleus.Lesson.Contracts.Collections.DbSettings;
 using Nucleus.Project.Contracts.Collections.DbSettings;
 using Nucleus.Blog.Persistence;
-using Nucleus.Vlog.Persistence;
+using Nucleus.Lesson.Persistence;
 using Nucleus.Core.Shared.Business;
+using Microsoft.Extensions.Options;
+using Nucleus.Api.SwaggerGen;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Swashbuckle.AspNetCore.SwaggerUI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +28,7 @@ builder.Services.Configure<DocumentDatabaseSettings>(
     builder.Configuration.GetSection("MongoDatabase"));
 builder.Services.Configure<BlogDatabaseSettings>(
     builder.Configuration.GetSection("MongoDatabase"));
-builder.Services.Configure<VlogDatabaseSettings>(
+builder.Services.Configure<LessonDatabaseSettings>(
     builder.Configuration.GetSection("MongoDatabase"));
 builder.Services.Configure<ProjectDatabaseSettings>(
     builder.Configuration.GetSection("MongoDatabase"));
@@ -36,7 +40,7 @@ builder.Services.Configure<ModuleDatabaseSettings>(
 // Add additional assemblies here so we can keep our API Project clean and easily scalable
 builder.Services.AddControllers()
     .AddApplicationPart(Assembly.Load("Nucleus.Blog.Controllers"))
-    .AddApplicationPart(Assembly.Load("Nucleus.Vlog.Controllers"))
+    .AddApplicationPart(Assembly.Load("Nucleus.Lesson.Controllers"))
     .AddApplicationPart(Assembly.Load("Nucleus.Project.Controllers"))
     .AddApplicationPart(Assembly.Load("Nucleus.Core.Controllers"))
     .AddApplicationPart(Assembly.Load("Nucleus.Core.Shared.Controllers"));
@@ -49,11 +53,11 @@ builder.Services
     .AddCoreBusinessServices()
     .AddSharedBusinessServices()
     .AddPublicBusinessServices()
-    .AddVlogBusinessServices()
+    .AddLessonBusinessServices()
     .AddProjectBusinessServices()
     .AddProjectPersistenceServices()
     .AddBlogPersistenceServices()
-    .AddVlogPersistenceServices()
+    .AddLessonPersistenceServices()
     ;
 
 // Adding in the magic sauce that connects B2C Bearer tokens to our internal users
@@ -93,7 +97,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         //        return Task.CompletedTask;
         //    }
         //};
-    }); 
+    });
+
+builder.Services.Configure<AzureB2CConfig>(options => builder.Configuration.Bind(AzureB2CConfig.ConfigKey, options));
+builder.Services.AddControllers(opt =>
+{
+    opt.Conventions.Add(new ControllerModelConvention());
+});
 
 builder.Services.AddAuthorization(options =>
 {
@@ -106,6 +116,12 @@ builder.Services.AddAuthorization(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
+builder.Services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, OAuthSwaggerUIOptions>();
+builder.Services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
+builder.Services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, OAuthSwaggerGenOptions>();
+builder.Services.AddSwaggerGen(c => c.OperationFilter<SwaggerFileOperationFilter>());
 
 builder.Services.AddCors(options =>
 {

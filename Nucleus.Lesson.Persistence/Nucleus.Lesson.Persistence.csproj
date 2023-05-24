@@ -6,9 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Nucleus.Blog.Contracts\Nucleus.Blog.Contracts.csproj" />
-    <ProjectReference Include="..\Nucleus.Core.Shared.Contracts\Nucleus.Core.Shared.Contracts.csproj" />
-    <ProjectReference Include="..\Nucleus.Project.Contracts\Nucleus.Project.Contracts.csproj" />
+    <PackageReference Include="MongoDB.Driver" Version="2.19.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nucleus.Core.Shared.Persistence\Nucleus.Core.Shared.Persistence.csproj" />
     <ProjectReference Include="..\Nucleus.Lesson.Contracts\Nucleus.Lesson.Contracts.csproj" />
   </ItemGroup>
 

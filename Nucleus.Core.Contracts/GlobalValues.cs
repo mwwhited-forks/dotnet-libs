@@ -13,9 +13,9 @@ namespace Nucleus.Core.Contracts
         {
             public const string Manager = "right_users_write";
         }
-        public static class Vlog
+        public static class Lesson
         {
-            public const string Manager = "right_vlog_admin";
+            public const string Manager = "right_lesson_admin";
         }
         public static class Blog
         {
