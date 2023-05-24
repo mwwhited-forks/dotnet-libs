@@ -16,6 +16,10 @@ using Nucleus.Project.Contracts.Collections.DbSettings;
 using Nucleus.Blog.Persistence;
 using Nucleus.Lesson.Persistence;
 using Nucleus.Core.Shared.Business;
+using Microsoft.Extensions.Options;
+using Nucleus.Api.SwaggerGen;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Swashbuckle.AspNetCore.SwaggerUI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -93,7 +97,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         //        return Task.CompletedTask;
         //    }
         //};
-    }); 
+    });
+
+builder.Services.Configure<AzureB2CConfig>(options => builder.Configuration.Bind(AzureB2CConfig.ConfigKey, options));
+builder.Services.AddControllers(opt =>
+{
+    opt.Conventions.Add(new ControllerModelConvention());
+});
 
 builder.Services.AddAuthorization(options =>
 {
@@ -106,6 +116,12 @@ builder.Services.AddAuthorization(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
+builder.Services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, OAuthSwaggerUIOptions>();
+builder.Services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
+builder.Services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, OAuthSwaggerGenOptions>();
+builder.Services.AddSwaggerGen(c => c.OperationFilter<SwaggerFileOperationFilter>());
 
 builder.Services.AddCors(options =>
 {
