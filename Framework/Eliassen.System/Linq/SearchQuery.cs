@@ -46,12 +46,12 @@ namespace Eliassen.System.Linq
         public virtual string? SearchTerm { get; set; }
 
         /// <inheritdoc cref="IFilterQuery.Filter"/>
-        public virtual Dictionary<string, SearchOption>? Filter { get; init; } = new();
+        public virtual Dictionary<string, SearchOption> Filter { get; init; } = new();
 
         /// <inheritdoc cref="ISortQuery.OrderBy"/>
-        public virtual Dictionary<string, OrderDirections>? OrderBy { get; init; } = new();
+        public virtual Dictionary<string, OrderDirections> OrderBy { get; init; } = new();
 
-        IDictionary<string, SearchOption>? IFilterQuery.Filter => Filter;
+        IDictionary<string, SearchOption> IFilterQuery.Filter => Filter;
 
         IDictionary<string, OrderDirections> ISortQuery.OrderBy => OrderBy;
         //    (OrderBy ?? new Dictionary<string, OrderDirections>()).ToDictionary(k => k.Key, v => ToOrderDirections(v.Value));

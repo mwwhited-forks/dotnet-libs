@@ -35,6 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Core.Persistence.En
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{6BEF035F-ABDF-47D9-B230-B88FEE87B53B}"
 	ProjectSection(SolutionItems) = preProject
+		.runsettings = .runsettings
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
 		GitVersion.yml = GitVersion.yml
@@ -115,7 +116,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{F1FE
 		.config\dotnet-tools.json = .config\dotnet-tools.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleus.AspNetCore.Mvc", "Nucleus.AspNetCore.Mvc\Nucleus.AspNetCore.Mvc.csproj", "{C6F18893-079B-4008-B799-5D99747B05B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.AspNetCore.Mvc", "Nucleus.AspNetCore.Mvc\Nucleus.AspNetCore.Mvc.csproj", "{C6F18893-079B-4008-B799-5D99747B05B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

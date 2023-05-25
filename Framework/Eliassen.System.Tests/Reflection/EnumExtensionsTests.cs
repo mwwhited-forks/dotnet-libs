@@ -59,8 +59,8 @@ EnumModel { Id = 32767, Name = All, Code = ALL, Description = , Order = 0, Value
             var expected = @"EnumModel { Id = 0, Name = Val0, Code = VAL0, Description = , Order = 0, Value = Val0, IsEndState = False, IsExcludeFromUnique = False, PossibleNames = System.String[], Value = Val0 }
 EnumModel { Id = 1, Name = Val1, Code = VAL1, Description = , Order = 0, Value = Val1, IsEndState = False, IsExcludeFromUnique = False, PossibleNames = System.String[], Value = Val1 }
 EnumModel { Id = 2, Name = Val2, Code = VAL2, Description = , Order = 0, Value = Val2, IsEndState = False, IsExcludeFromUnique = False, PossibleNames = System.String[], Value = Val2 }
-EnumModel { Id = 4, Name = WithEnumValue, Code = WITHENUMVALUE, Description = , Order = 0, Value = WithEnumValue, IsEndState = False, IsExcludeFromUnique = False, PossibleNames = System.String[], Value = WithEnumValue }
-EnumModel { Id = 8, Name = WithMemberName, Code = WITHMEMBERNAME, Description = , Order = 0, Value = WithMemberName, IsEndState = False, IsExcludeFromUnique = False, PossibleNames = System.String[], Value = WithMemberName }
+EnumModel { Id = 4, Name = WithEnumValue, Code = name, Description = , Order = 0, Value = WithEnumValue, IsEndState = False, IsExcludeFromUnique = False, PossibleNames = System.String[], Value = WithEnumValue }
+EnumModel { Id = 8, Name = WithMemberName, Code = name2, Description = , Order = 0, Value = WithMemberName, IsEndState = False, IsExcludeFromUnique = False, PossibleNames = System.String[], Value = WithMemberName }
 EnumModel { Id = 16, Name = WithDescription, Code = WITHDESCRIPTION, Description = test description, Order = 0, Value = WithDescription, IsEndState = False, IsExcludeFromUnique = False, PossibleNames = System.String[], Value = WithDescription }
 EnumModel { Id = 32, Name = test name, Code = test short, Description = test display, Order = 0, Value = WithDisplay, IsEndState = False, IsExcludeFromUnique = False, PossibleNames = System.String[], Value = WithDisplay }
 ";

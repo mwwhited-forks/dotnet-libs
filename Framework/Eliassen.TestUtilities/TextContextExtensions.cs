@@ -1,15 +1,15 @@
 ﻿using Eliassen.System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Eliassen.TestUtilities
@@ -123,7 +123,12 @@ namespace Eliassen.TestUtilities
             else if (value != null)
             {
                 var file = changeExtension(composedFileName, ".json");
-                var json = JsonConvert.SerializeObject(value, Formatting.Indented);
+                var json = JsonSerializer.Serialize(value, options: new JsonSerializerOptions
+                {
+                    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull | JsonIgnoreCondition.WhenWritingDefault,
+                    WriteIndented = true,
+
+                });
                 AddResultFile(context, file, Encoding.UTF8.GetBytes(json), out outFile);
                 context.WriteLine($"{file}: Attached");
             }
@@ -217,7 +222,7 @@ namespace Eliassen.TestUtilities
                     .BuildServiceProvider()
                     ;
 
-            var result = global::System.Text.Json.JsonSerializer.Deserialize(content, type);
+            var result = JsonSerializer.Deserialize(content, type);
             return result;
         }
 

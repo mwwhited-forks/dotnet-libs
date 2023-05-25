@@ -12,7 +12,7 @@ namespace Eliassen.System.Reflection
     public static class EnumExtensions
     {
         public static string? AsString<TEnum>(this TEnum? input) where TEnum : struct, Enum =>
-            AsModels<TEnum>().FirstOrDefault(e => e.Value.Equals(input))?.Name;
+            AsModels<TEnum>().FirstOrDefault(e => e.Value.Equals(input))?.Code;
 
         public static TEnum ToEnum<TEnum>(this int input) where TEnum : struct, Enum =>
             (TEnum)(object)input;
@@ -63,7 +63,12 @@ namespace Eliassen.System.Reflection
 
                 Name = First(displayValues?.Name, v.ToString().Replace("_", " ")) ??
                     throw new NullReferenceException(nameof(EnumModel<TEnum>.Name)),
-                Code = First(displayValues?.ShortName, v.ToString().ToUpper()) ??
+                Code = First(
+                    enumValue?.Name,
+                    enumMember?.Value, 
+                    displayValues?.ShortName,
+                    displayValues?.Name,
+                    v.ToString().ToUpper()) ??
                     throw new NullReferenceException(nameof(EnumModel<TEnum>.Code)),
                 Description = First(description, displayValues?.Description),
                 Order = displayValues?.GetOrder() ?? 0,

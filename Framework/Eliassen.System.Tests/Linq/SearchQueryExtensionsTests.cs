@@ -293,6 +293,116 @@ namespace Eliassen.System.Tests.Linq
             Assert.AreEqual("300,301,302,303,304,305,306,307,308,309", string.Join(',', results.Rows.Select(i => i.Index)));
         }
 
+
+        [TestMethod]
+        [TestCategory(TestCategories.Unit)]
+        public void ExecuteByTest_Search_Range_GT()
+        {
+            var query = new SearchQuery
+            {
+                Filter =
+                {
+                    { nameof(TestTargetExtendedModel.Date),
+                        new SearchOption{
+                            GreaterThan = TestTargetExtendedModel.BaseDate.AddMonths(2),
+                        } }
+                }
+            };
+            this.TestContext.AddResult(query);
+            var results = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(results);
+
+            Assert.AreEqual(997, results.TotalRowCount);
+        }
+
+
+        [TestMethod]
+        [TestCategory(TestCategories.Unit)]
+        public void ExecuteByTest_Search_Range_GTE()
+        {
+            var query = new SearchQuery
+            {
+                Filter =
+                {
+                    { nameof(TestTargetExtendedModel.Date),
+                        new SearchOption{
+                            GreaterThanOrEqualTo = TestTargetExtendedModel.BaseDate.AddMonths(2),
+                        } }
+                }
+            };
+            this.TestContext.AddResult(query);
+            var results = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(results);
+
+            Assert.AreEqual(998, results.TotalRowCount);
+        }
+
+        [TestMethod]
+        [TestCategory(TestCategories.Unit)]
+        public void ExecuteByTest_Search_Range_LT()
+        {
+            var query = new SearchQuery
+            {
+                Filter =
+                {
+                    { nameof(TestTargetExtendedModel.Date),
+                        new SearchOption{
+                            LessThan = TestTargetExtendedModel.BaseDate.AddMonths(2),
+                        } }
+                }
+            };
+            this.TestContext.AddResult(query);
+            var results = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(results);
+
+            Assert.AreEqual(2, results.TotalRowCount);
+        }
+
+        [TestMethod]
+        [TestCategory(TestCategories.Unit)]
+        public void ExecuteByTest_Search_Range_LTE()
+        {
+            var query = new SearchQuery
+            {
+                Filter =
+                {
+                    { nameof(TestTargetExtendedModel.Date),
+                        new SearchOption{
+                            LessThanOrEqualTo = TestTargetExtendedModel.BaseDate.AddMonths(2),
+                        } }
+                }
+            };
+            this.TestContext.AddResult(query);
+            var results = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(results);
+
+            Assert.AreEqual(3, results.TotalRowCount);
+        }
+
+
+        [TestMethod]
+        [TestCategory(TestCategories.Unit)]
+        public void ExecuteByTest_Search_Range_Bounds()
+        {
+            var query = new SearchQuery
+            {
+                Filter =
+                {
+                    { nameof(TestTargetExtendedModel.Date),
+                        new SearchOption{
+                            GreaterThanOrEqualTo = TestTargetExtendedModel.BaseDate.AddMonths(2),
+                            LessThanOrEqualTo = TestTargetExtendedModel.BaseDate.AddMonths(6),
+                        }
+                    }
+                }
+            };
+            this.TestContext.AddResult(query);
+            var results = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(results);
+
+            Assert.AreEqual(5, results.TotalRowCount);
+        }
+
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
         public void ExecuteByTest_Page_Default()
