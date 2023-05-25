@@ -35,7 +35,7 @@ namespace Eliassen.System.Linq
                 OrderDirections @enum => @enum,
                 int num => (OrderDirections)num,
                 string str when Enum.TryParse<OrderDirections>(str, out var enu) => enu,
-                string str => str.StartsWith("desc", StringComparison.InvariantCultureIgnoreCase) ? OrderDirections.Descending : OrderDirections.Ascending,
+                string str => str.StartsWith(OrderDirectionsExtensions.DescendingShort, StringComparison.InvariantCultureIgnoreCase) ? OrderDirections.Descending : OrderDirections.Ascending,
                 _ => OrderDirections.Ascending,
             };
 

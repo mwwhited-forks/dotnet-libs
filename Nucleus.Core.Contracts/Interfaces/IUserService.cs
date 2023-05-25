@@ -1,6 +1,7 @@
 ﻿using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.Filters;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Nucleus.Core.Contracts.Interfaces
@@ -29,5 +30,6 @@ namespace Nucleus.Core.Contracts.Interfaces
         Task RemoveAsync(string id);
 
         Task<List<Module>> GetModulesAsync();
+        IQueryable<User> Query();
     }
 }

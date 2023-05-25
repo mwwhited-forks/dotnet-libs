@@ -1,7 +1,6 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
-using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.Filters;
+﻿using Nucleus.Core.Contracts.Models;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Nucleus.Core.Contracts.Managers
@@ -9,9 +8,7 @@ namespace Nucleus.Core.Contracts.Managers
     public interface IUserManagementManager
     {
         Task<ResponseModel<User>> SaveUserAsync(UserAction user);
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //Task<PagedResult<User>> GetUsers(UsersFilter userFilter);
+        IQueryable<User> Query();
         Task<List<Module>> GetApplicationPermissionsAsync();
     }
 }

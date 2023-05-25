@@ -4,6 +4,7 @@ using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.Keys;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Nucleus.Core.Business.Managers
@@ -21,24 +22,8 @@ namespace Nucleus.Core.Business.Managers
             _userService = userService;
         }
 
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //public async Task<PagedResult<User>> GetUsers(UsersFilter userFilter)
-        //{
-        //    PagedResult<User> result = new PagedResult<User>();
-        //    // Get all users
-        //    List<User> users = await _userService.GetPagedAsync(userFilter.PagingModel, userFilter.UserFilters);
-        //    result = new PagedResult<User>()
-        //    {
-        //         CurrentPage = userFilter.PagingModel.CurrentPage,
-        //         PageSize = userFilter.PagingModel.PageSize,
-        //         Results = users,
-        //         RowCount = await _userService.GetPagedCountAsync(userFilter.PagingModel, userFilter.UserFilters),
-        //         PageCount = users.Count()
-        //    };
-            
-        //    return result;
-        //}
+        public IQueryable<User> Query() => 
+            _userService.Query();
 
         public async Task<List<Module>> GetApplicationPermissionsAsync() =>
              await _userService.GetModulesAsync();
@@ -92,5 +77,6 @@ namespace Nucleus.Core.Business.Managers
                 Response = user
             };
         }
+
     }
 }

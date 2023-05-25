@@ -13,7 +13,7 @@ namespace Eliassen.TestUtilities
             simpleName ??= testContext?.TestName;
 
             var methodInfo = instance?.GetType()?.GetMethod(nameof(OnExecuteDbDataReader), new[] { typeof(DbCommand), typeof(string) });
-            var result = methodInfo?.Invoke(instance, new object[] { command, simpleName });
+            var result = methodInfo?.Invoke(instance, new object?[] { command, simpleName });
 
             testContext?.WriteLine($"==>{nameof(OnExecuteDbDataReader)}:: {command.CommandText} ({string.Join(';', command.Parameters.OfType<DbParameter>().Select(s => s.ParameterName))})");
 
@@ -28,7 +28,7 @@ namespace Eliassen.TestUtilities
             simpleName ??= testContext.TestName;
 
             var methodInfo = instance?.GetType()?.GetMethod(nameof(OnExecuteNonQuery), new[] { typeof(DbCommand), typeof(string) });
-            var result = methodInfo?.Invoke(instance, new object[] { command, simpleName });
+            var result = methodInfo?.Invoke(instance, new object?[] { command, simpleName });
 
             testContext?.WriteLine($"==>{nameof(OnExecuteNonQuery)}:: {command.CommandText} ({string.Join(';', command.Parameters.OfType<DbParameter>().Select(s => s.ParameterName))})");
 
@@ -43,7 +43,7 @@ namespace Eliassen.TestUtilities
             simpleName ??= testContext.TestName;
 
             var methodInfo = instance?.GetType()?.GetMethod(nameof(OnExecuteScalar), new[] { typeof(DbCommand), typeof(string) });
-            var result = methodInfo?.Invoke(instance, new object[] { command, simpleName });
+            var result = methodInfo?.Invoke(instance, new object?[] { command, simpleName });
 
             testContext?.WriteLine($"==>{nameof(OnExecuteScalar)}:: {command.CommandText} ({string.Join(';', command.Parameters.OfType<DbParameter>().Select(s => s.ParameterName))})");
 

@@ -31,14 +31,9 @@ namespace Eliassen.System.Linq
             // Modified from EF Core to also enable Async iteration over enumerables that are not natively async.  
             if (items is IAsyncEnumerable<TModel> asyncItems)
             {
-                //    var enumerator = asyncItems.GetAsyncEnumerator(cancellationToken);
-                //    await using var _ = enumerator.ConfigureAwait(false);
-                //    while (await enumerator.MoveNextAsync().ConfigureAwait(false))
-                //    {
-                //        yield return enumerator.Current;
-                //    }
                 await foreach (var item in asyncItems)
                 {
+                    if (cancellationToken.IsCancellationRequested) break;
                     yield return item;
                 }
             }
