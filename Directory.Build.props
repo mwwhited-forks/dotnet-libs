@@ -27,6 +27,7 @@
 		<EmbeddedResource Include="**\*.html" />
 		<EmbeddedResource Include="**\*.csv" />
 		<EmbeddedResource Include="**\*.sql" />
+		<EmbeddedResource Include="**\*.xml" />
 
 		<EmbeddedResource Remove="bin\**\*.*" />
 		<EmbeddedResource Remove="obj\**\*.*" />

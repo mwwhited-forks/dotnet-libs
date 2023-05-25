@@ -11,21 +11,45 @@ namespace Eliassen.System.Linq.Expressions
 {
     public static class ExpressionTreeBuilder
     {
-        public static IDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions<TModel>() =>
+        public static IReadOnlyDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions<TModel>() =>
          new Dictionary<string, Expression<Func<TModel, object>>>(BuildExpressions<TModel>(), StringComparer.InvariantCultureIgnoreCase);
 
-        public static IEnumerable<KeyValuePair<string, Expression<Func<TModel, object>>>> BuildExpressions<TModel>() =>
+        public static IReadOnlyCollection<KeyValuePair<string, Expression<Func<TModel, object>>>> BuildExpressions<TModel>() =>
+            (
             from pi in typeof(TModel).GetProperties(ReflectionExtensions.PublicProperties)
             let exp = pi.BuildExpression<TModel>()
             where exp != null
-            select KeyValuePair.Create(pi.Name, exp);
+            select KeyValuePair.Create(pi.Name, exp)
+            ).ToArray();
 
         public static Expression<Func<TModel, bool>>? BuildPredicate<TModel>(
             this Expression<Func<TModel, object>>? expression,
-            object? queryParameter
+            SearchOption? search
             )
         {
+            if (search == null) return null;
+            var predicates = new[]
+            {
+                expression.BuildPredicate(search.EqualTo, ExpressionOperators.EqualTo),
+                expression.BuildPredicate(search.InSet, ExpressionOperators.InSet),
+                expression.BuildPredicate(search.LessThan, ExpressionOperators.LessThan),
+                expression.BuildPredicate(search.LessThanOrEqualTo, ExpressionOperators.LessThanOrEqualTo),
+                expression.BuildPredicate(search.GreaterThan, ExpressionOperators.GreaterThan),
+                expression.BuildPredicate(search.GreaterThanOrEqualTo, ExpressionOperators.GreaterThanOrEqualTo),
+            };
+            var predicate = predicates.AndChain();
+            return predicate;
+        }
+
+        private static Expression<Func<TModel, bool>>? BuildPredicate<TModel>(
+            this Expression<Func<TModel, object>>? expression,
+            object? queryParameter,
+            ExpressionOperators expressionOperator
+            )
+
+        {
             if (expression == null || queryParameter == null) return null;
+            if (queryParameter is SearchOption search) return expression.BuildPredicate(search);
 
             Expression unwrapped = expression.Body;
             if ((expression.Body.NodeType == ExpressionType.Convert) ||
@@ -75,7 +99,7 @@ namespace Eliassen.System.Linq.Expressions
                     var safeArray = ReflectionExtensions.MakeSafeArray(unwrapped.Type, (Array)queryParameter);
                     if (safeArray != null)
                     {
-                        var recursive = BuildPredicate<TModel>(expression, safeArray);
+                        var recursive = BuildPredicate<TModel>(expression, safeArray, expressionOperator);
                         if (recursive != null) return recursive;
                     }
                 }
@@ -89,27 +113,42 @@ namespace Eliassen.System.Linq.Expressions
                     if (queryString.StartsWith('*') && queryString.EndsWith('*'))
                     {
                         var method = typeof(string)
-                            .GetMethod(name: nameof(string.Contains), bindingAttr: ReflectionExtensions.PublicInstanceMethod, binder: null, new[] { typeof(string) }, modifiers: null)
+                            .GetMethod(
+                                name: nameof(string.Contains),
+                                bindingAttr: ReflectionExtensions.PublicInstanceMethod,
+                                binder: null, new[] { typeof(string) },
+                                modifiers: null
+                                )
                             ?? throw new NotSupportedException();
                         predicate = Expression.Call(unwrapped, method, Expression.Constant(queryString.Trim('*')));
                     }
                     else if (queryString.StartsWith('*'))
                     {
                         var method = typeof(string)
-                            .GetMethod(name: nameof(string.EndsWith), bindingAttr: ReflectionExtensions.PublicInstanceMethod, binder: null, new[] { typeof(string) }, modifiers: null)
+                            .GetMethod(
+                                name: nameof(string.EndsWith),
+                                bindingAttr: ReflectionExtensions.PublicInstanceMethod,
+                                binder: null, new[] { typeof(string) },
+                                modifiers: null
+                                )
                             ?? throw new NotSupportedException();
                         predicate = Expression.Call(unwrapped, method, Expression.Constant(queryString.TrimStart('*')));
                     }
                     else if (queryString.EndsWith('*'))
                     {
                         var method = typeof(string)
-                            .GetMethod(name: nameof(string.StartsWith), bindingAttr: ReflectionExtensions.PublicInstanceMethod, binder: null, new[] { typeof(string) }, modifiers: null)
+                            .GetMethod(
+                                name: nameof(string.StartsWith),
+                                bindingAttr: ReflectionExtensions.PublicInstanceMethod,
+                                binder: null, new[] { typeof(string) },
+                                modifiers: null
+                                )
                             ?? throw new NotSupportedException();
                         predicate = Expression.Call(unwrapped, method, Expression.Constant(queryString.TrimEnd('*')));
                     }
                     else
                     {
-                        predicate = Expression.Equal(unwrapped, Expression.Constant(queryString));
+                        predicate = expressionOperator.BuildBinaryExpression(unwrapped, Expression.Constant(queryParameter));
                     }
 
                     var parameter = Expression.Parameter(typeof(TModel), "n");
@@ -128,7 +167,7 @@ namespace Eliassen.System.Linq.Expressions
             {
                 //TODO: needs to be a bit more creative.  type casting not supported
                 var parameter = Expression.Parameter(typeof(TModel), "n");
-                var replaced = new ParameterReplacer(parameter).Visit(Expression.Equal(unwrapped, Expression.Constant(queryParameter)));
+                var replaced = new ParameterReplacer(parameter).Visit(expressionOperator.BuildBinaryExpression(unwrapped, Expression.Constant(queryParameter)));
                 var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
                 return lambda;
             }
@@ -138,15 +177,28 @@ namespace Eliassen.System.Linq.Expressions
             }
         }
 
+        private static BinaryExpression BuildBinaryExpression(this ExpressionOperators expressionOperator, Expression left, Expression right) =>
+            expressionOperator switch
+            {
+                ExpressionOperators.EqualTo => Expression.Equal(left, right),
+
+                ExpressionOperators.LessThan => Expression.LessThan(left, right),
+                ExpressionOperators.LessThanOrEqualTo => Expression.LessThanOrEqual(left, right),
+                ExpressionOperators.GreaterThan => Expression.GreaterThan(left, right),
+                ExpressionOperators.GreaterThanOrEqualTo => Expression.GreaterThanOrEqual(left, right),
+
+                _ => throw new NotSupportedException($"{expressionOperator} is not supported"),
+            };
+
         public static Expression<Func<TModel, bool>>? BuildExpression<TModel>(object? queryParameter) =>
             OrChain(
                 from searchExpression in GetSearchableExpressions<TModel>()
-                let builtExpression = searchExpression.expression.BuildPredicate(queryParameter)
+                let builtExpression = searchExpression.expression.BuildPredicate(queryParameter, ExpressionOperators.EqualTo)
                 where builtExpression != null
                 select builtExpression
             );
 
-        public static IEnumerable<string> GetSearchablePropertyNames<TModel>()
+        public static IReadOnlyCollection<string> GetSearchablePropertyNames<TModel>()
         {
             var modelType = typeof(TModel);
 
@@ -178,7 +230,7 @@ namespace Eliassen.System.Linq.Expressions
             return results;
         }
 
-        public static IEnumerable<string> GetSortablePropertyNames<TModel>()
+        public static IReadOnlyCollection<string> GetSortablePropertyNames<TModel>()
         {
             var modelType = typeof(TModel);
 
@@ -204,7 +256,7 @@ namespace Eliassen.System.Linq.Expressions
             return results;
         }
 
-        public static IEnumerable<string> GetFilterablePropertyNames<TModel>()
+        public static IReadOnlyCollection<string> GetFilterablePropertyNames<TModel>()
         {
             var modelType = typeof(TModel);
 
@@ -230,13 +282,13 @@ namespace Eliassen.System.Linq.Expressions
             return results;
         }
 
-
-
-        public static IEnumerable<(string property, Expression<Func<TModel, object>> expression)> GetSearchableExpressions<TModel>() =>
+        public static IReadOnlyCollection<(string property, Expression<Func<TModel, object>> expression)> GetSearchableExpressions<TModel>() =>
+            (
             from property in GetSearchablePropertyNames<TModel>()
             let expression = TryGetExpression<TModel>(property, out var exp) ? exp : null
             where expression != null
-            select (property, expression);
+            select (property, expression)
+            ).ToArray();
 
         public static Expression<Func<TModel, object>>? BuildExpression<TModel>(this PropertyInfo? prop)
         {
@@ -284,17 +336,36 @@ namespace Eliassen.System.Linq.Expressions
             this Expression<Func<TModel, bool>> or,
             params Expression<Func<TModel, bool>>[] ors
             ) => new[] { or }.Concat(ors).OrChain();
-        public static Expression<Func<TModel, bool>>? OrChain<TModel>(this IEnumerable<Expression<Func<TModel, bool>>> ors
+
+        public static Expression<Func<TModel, bool>>? OrChain<TModel>(
+            this IEnumerable<Expression<Func<TModel, bool>>> ors
+        ) => Chain(ors, ChainTypes.OrElse);
+
+        public static Expression<Func<TModel, bool>>? AndChain<TModel>(
+            this Expression<Func<TModel, bool>> and,
+            params Expression<Func<TModel, bool>>[] ands
+            ) => new[] { and }.Concat(ands).AndChain();
+
+        public static Expression<Func<TModel, bool>>? AndChain<TModel>(
+            this IEnumerable<Expression<Func<TModel, bool>>?> ands
+        ) => Chain(ands, ChainTypes.AndAlso);
+
+        private static Expression<Func<TModel, bool>>? Chain<TModel>(
+            IEnumerable<Expression<Func<TModel, bool>>?> expressions, ChainTypes type
         )
         {
             Expression? chain = null;
 
-            foreach (var or in ors.Where(o => o != null))
+            foreach (var expression in expressions.Where(o => o != null))
             {
-                chain = (chain, or) switch
+                chain = (chain, expression) switch
                 {
-                    (null, _) => or.Body,
-                    (_, _) => Expression.OrElse(chain, or.Body)
+                    (null, _) => expression.Body,
+                    (_, _) => type switch
+                    {
+                        ChainTypes.AndAlso => Expression.AndAlso(chain, expression.Body),
+                        ChainTypes.OrElse => Expression.OrElse(chain, expression.Body),
+                    }
                 };
             }
 
@@ -304,6 +375,23 @@ namespace Eliassen.System.Linq.Expressions
             var replaced = new ParameterReplacer(parameter).Visit(chain);
             var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
             return lambda;
+        }
+
+        private enum ChainTypes
+        {
+            AndAlso,
+            OrElse,
+        }
+
+        private enum ExpressionOperators
+        {
+            Unknown,
+            EqualTo,
+            InSet,
+            LessThan,
+            LessThanOrEqualTo,
+            GreaterThan,
+            GreaterThanOrEqualTo,
         }
 
         internal class ParameterReplacer : ExpressionVisitor

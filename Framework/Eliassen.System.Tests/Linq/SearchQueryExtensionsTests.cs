@@ -2,11 +2,9 @@
 using Eliassen.System.Tests.Linq.TestTargets;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Eliassen.System.Tests.Linq
@@ -46,20 +44,23 @@ namespace Eliassen.System.Tests.Linq
   ""ExcludePageCount"": false,
   ""SearchTerm"": ""Name*"",
   ""Filter"": {
-    ""Index"": [
+    ""Index"": { ""in"": [
       1,
       2,
       3
-    ]
+    ]}
   },
   ""OrderBy"": {
     ""Email"": ""desc""
   }
 }";
-            var query = JsonConvert.DeserializeObject<SearchQuery>(json);
+
+            var query = JsonSerializer.Deserialize<SearchQuery>(json);
 
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
+
+            var data = GetTestData();
+            var results = data.ExecuteBy(query);
             this.TestContext.AddResult(results);
 
             Assert.AreEqual(3, results.Rows.Count());
@@ -76,17 +77,17 @@ namespace Eliassen.System.Tests.Linq
   ""ExcludePageCount"": false,
   ""SearchTerm"": ""Name*"",
   ""Filter"": {
-    ""index"": [
+    ""index"": { ""in"": [
       1,
       2,
       3
-    ]
+    ]}
   },
   ""OrderBy"": {
     ""email"": ""desc""
   }
 }";
-            var query = JsonConvert.DeserializeObject<SearchQuery>(json);
+            var query = JsonSerializer.Deserialize<SearchQuery>(json);
 
             this.TestContext.AddResult(query);
             var results = GetTestData().ExecuteBy(query);
@@ -107,17 +108,18 @@ namespace Eliassen.System.Tests.Linq
   ""ExcludePageCount"": false,
   ""SearchTerm"": ""Name*"",
   ""Filter"": {
-    ""Index"": [
+    ""Index"": { ""in"": [
       1,
       2,
       3
-    ]
+    ] }
   },
   ""OrderBy"": {
     ""Email"": ""desc""
   }
 }";
-            var query = JsonConvert.DeserializeObject<SearchQuery>(json);
+
+            var query = JsonSerializer.Deserialize<SearchQuery>(json);
 
             this.TestContext.AddResult(query);
             var results = await GetTestData().ExecuteByAsync(query);
@@ -133,9 +135,9 @@ namespace Eliassen.System.Tests.Linq
         {
             var query = new SearchQuery
             {
-                Filter = new Dictionary<string, object>
+                Filter = new()
                 {
-                    { nameof(TestTargetModel.Index), new [] {1,2,3 } }
+                    { nameof(TestTargetModel.Index), new SearchOption{ InSet = new object?[] { 1, 2, 3 } } }
                 }
             };
             this.TestContext.AddResult(query);
@@ -152,9 +154,9 @@ namespace Eliassen.System.Tests.Linq
         {
             var query = new SearchQuery
             {
-                Filter = new Dictionary<string, object>
+                Filter = new()
                 {
-                    { nameof(TestTargetModel.Index), 1 }
+                    { nameof(TestTargetModel.Index), new SearchOption{ EqualTo =  1 } }
                 }
             };
             this.TestContext.AddResult(query);
@@ -171,9 +173,9 @@ namespace Eliassen.System.Tests.Linq
         {
             var query = new SearchQuery
             {
-                Filter = new Dictionary<string, object>
+                Filter = new()
                 {
-                    { nameof(TestTargetModel.Name), new [] {"Name1","Name2","Name3" } }
+                    { nameof(TestTargetModel.Name), new SearchOption{ InSet =  new [] {"Name1","Name2","Name3" } } }
                 }
             };
             this.TestContext.AddResult(query);
@@ -190,9 +192,9 @@ namespace Eliassen.System.Tests.Linq
         {
             var query = new SearchQuery
             {
-                Filter = new Dictionary<string, object>
+                Filter = new()
                 {
-                    { nameof(TestTargetModel.Name), "Name3" }
+                    { nameof(TestTargetModel.Name), new SearchOption{ EqualTo =  "Name3" } }
                 }
             };
             this.TestContext.AddResult(query);
@@ -351,9 +353,9 @@ namespace Eliassen.System.Tests.Linq
         {
             var query = new SearchQuery
             {
-                OrderBy = new Dictionary<string, object>
+                OrderBy = new()
                 {
-                    { nameof(TestTargetModel.Name), "desc" }
+                    { nameof(TestTargetModel.Name), OrderDirections.Descending }
                 }
             };
             this.TestContext.AddResult(query);
@@ -372,7 +374,7 @@ namespace Eliassen.System.Tests.Linq
         {
             var query = new SearchQuery
             {
-                OrderBy = new Dictionary<string, object>
+                OrderBy = new()
                 {
                     { nameof(TestTargetModel.Name), OrderDirections.Descending }
                 }
@@ -393,9 +395,9 @@ namespace Eliassen.System.Tests.Linq
         {
             var query = new SearchQuery
             {
-                OrderBy = new Dictionary<string, object>
+                OrderBy = new Dictionary<string, OrderDirections>
                  {
-                    { nameof(TestTargetModel.Name), 1 }
+                    { nameof(TestTargetModel.Name), (OrderDirections)1 }
                  }
             };
             this.TestContext.AddResult(query);

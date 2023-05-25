@@ -7,7 +7,6 @@ using Microsoft.Extensions.Options;
 using Nucleus.Api.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using System.Globalization;
 
 namespace Eliassen.AspNetCore.Mvc
 {
@@ -30,7 +29,11 @@ namespace Eliassen.AspNetCore.Mvc
 
             services.TryAddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
             services.TryAddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
-            services.AddSwaggerGen(c => c.OperationFilter<SwaggerFileOperationFilter>());
+            services.AddSwaggerGen(setup =>
+            {
+                setup.OperationFilter<SwaggerFileOperationFilter>();
+                setup.OperationFilter<SwaggerSearchOperationFilter>();
+            });
 
             return services;
         }

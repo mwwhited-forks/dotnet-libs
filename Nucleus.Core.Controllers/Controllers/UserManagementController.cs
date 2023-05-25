@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Eliassen.System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Nucleus.AspNetCore.Mvc.Attributes;
 using Nucleus.Core.Contracts;
@@ -24,13 +25,22 @@ namespace Nucleus.Core.Controllers.Controllers
         public async Task<ResponseModel<User>> SaveUser(UserAction user) =>
             await _usersManager.SaveUserAsync(user);
 
-#warning restore permisions
-        //[Authorize]
-        //[ApplicationRight(Rights.UserManagement.Manager)]
+        [Authorize]
+        [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpPost("UserList")]
         [HttpGet("UserList")]
         public IQueryable<User> ListUsers() =>
             _usersManager.Query();
+
+        [Authorize]
+        [HttpPost("Search")]
+        [HttpGet("Search")]
+        public SearchResult<User> EXP(SearchQuery<User> model) => throw new NotSupportedException();
+
+        [Authorize]
+        [HttpPost("EXP")]
+        [HttpGet("EXP")]
+        public async Task<List<Module>> EXP( User model) => throw new NotSupportedException();
 
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]

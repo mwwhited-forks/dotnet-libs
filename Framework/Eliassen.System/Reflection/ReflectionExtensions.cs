@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json;
 
 namespace Eliassen.System.Reflection
 {
@@ -71,9 +72,33 @@ namespace Eliassen.System.Reflection
 
             try
             {
-                return Convert.ChangeType(input, type);
+                if (input is IConvertible convertible)
+                {
+                    return Convert.ChangeType(convertible, type);
+                }
+                else if (input is JsonElement json)
+                {
+                    return JsonSerializer.Deserialize(json, type);
+                }
+                else
+                {
+                    var to = TypeDescriptor.GetConverter(type);
+                    if (to.CanConvertFrom(input.GetType()))
+                    {
+                        return to.ConvertFrom(input);
+                    }
+
+                    var from = TypeDescriptor.GetConverter(input);
+                    if (from.CanConvertTo(type))
+                    {
+                        return from.ConvertTo(input, type);
+                    }
+                }
             }
-            catch { }
+            catch
+            {
+                //TODO: should probably do something smarter
+            }
 
             return default;
         }
@@ -154,10 +179,12 @@ namespace Eliassen.System.Reflection
         public static IEnumerable<Attribute> GetAttributes(this object @object) =>
             TypeDescriptor.GetAttributes(@object).OfType<Attribute>();
 
-        public static IEnumerable<TAttribute> GetAttributes<TAttribute>(this Type type) where TAttribute : Attribute =>
+        public static IEnumerable<TAttribute> GetAttributes<TAttribute>(this Type type)
+            where TAttribute : Attribute =>
             type.GetAttributes().OfType<TAttribute>();
 
-        public static IEnumerable<TAttribute> GetAttributes<TAttribute>(this object @object) where TAttribute : Attribute =>
+        public static IEnumerable<TAttribute> GetAttributes<TAttribute>(this object @object)
+            where TAttribute : Attribute =>
             @object.GetAttributes().OfType<TAttribute>();
     }
 }
