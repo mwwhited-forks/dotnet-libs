@@ -11,6 +11,7 @@ namespace Nucleus.Core.Persistence
         {
             services.TryAddTransient<IDocumentService, DocumentService>();
             services.TryAddTransient<IUserService, UserService>();
+            services.TryAddTransient<IModuleService, ModuleServices>();
             return services;
         }
     }

@@ -3,6 +3,7 @@ using Eliassen.System.Tests.Linq.TestTargets;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -60,7 +61,7 @@ namespace Eliassen.System.Tests.Linq
             this.TestContext.AddResult(query);
 
             var data = GetTestData();
-            var results = data.ExecuteBy(query);
+            var results = data.ExecuteBy(query ?? throw new NotSupportedException());
             this.TestContext.AddResult(results);
 
             Assert.AreEqual(3, results.Rows.Count());
@@ -90,7 +91,7 @@ namespace Eliassen.System.Tests.Linq
             var query = JsonSerializer.Deserialize<SearchQuery>(json);
 
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
+            var results = GetTestData().ExecuteBy(query ?? throw new NotSupportedException());
             this.TestContext.AddResult(results);
 
             Assert.AreEqual(3, results.Rows.Count());
@@ -122,7 +123,7 @@ namespace Eliassen.System.Tests.Linq
             var query = JsonSerializer.Deserialize<SearchQuery>(json);
 
             this.TestContext.AddResult(query);
-            var results = await GetTestData().ExecuteByAsync(query);
+            var results = await GetTestData().ExecuteByAsync(query ?? throw new NotSupportedException());
             this.TestContext.AddResult(results);
 
             Assert.AreEqual(3, results.Rows.Count());

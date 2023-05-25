@@ -86,7 +86,7 @@ namespace Nucleus.Api.Auth
                     _logger.LogError($"Authentication Exception: Has Claims \"{{{nameof(existingClaims)}}}\"", string.Join(';', existingClaims.Select(s => s.Type)));
                     _logger.LogDebug($"Authentication Exception: Has Claims \"{{{nameof(existingClaims)}}}\":: {{{nameof(Exception)}}}", string.Join(';', existingClaims.Select(s => s.Type)), ex);
 
-                    context.Fail();
+                    context?.Fail();
                     // Custom loggin which will be removed after enough data has been collected
                     _logger.LogError($"ERR-401-outerError: {{{nameof(ex.Message)}}}", ex.Message);
                     return;

@@ -4,7 +4,9 @@ using Nucleus.Core.Contracts.Collections;
 using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.DbSettings;
+using Nucleus.Core.Contracts.Models.Filters;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Nucleus.Core.Persistence.Services
@@ -43,48 +45,47 @@ namespace Nucleus.Core.Persistence.Services
                 CreatedOn = item.CreatedOn
             });
         }
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //private FilterDefinition<DocumentCollection> GetDocumentsPredicateBuilder(DocumentFilterItem? filterItems)
-        //{
-        //    // Keeping this business logic in the access layer.  Cannot move it to the business layer yet
-        //    // until I can create an extension that can translate for multiple database.  Moving this to db
-        //    // layer forces you to include mongo drivers which will no longer make this a good solution to be
-        //    // a hybrid database solution just by changing interfaces in the IOC
-        //    var builder = Builders<DocumentCollection>.Filter;
-        //    var filter = builder.Empty;
 
-        //    // Document Id
-        //    if (!string.IsNullOrWhiteSpace(filterItems?.DocumentId))
-        //        filter &= builder.Where(r => r.DocumentId == filterItems.DocumentId);
+#warning Retire this
+        private FilterDefinition<DocumentCollection> GetDocumentsPredicateBuilder(DocumentFilterItem? filterItems)
+        {
+            // Keeping this business logic in the access layer.  Cannot move it to the business layer yet
+            // until I can create an extension that can translate for multiple database.  Moving this to db
+            // layer forces you to include mongo drivers which will no longer make this a good solution to be
+            // a hybrid database solution just by changing interfaces in the IOC
+            var builder = Builders<DocumentCollection>.Filter;
+            var filter = builder.Empty;
 
-        //    // Document Name
-        //    if (!string.IsNullOrEmpty(filterItems?.DocumentName))
-        //        filter &= builder.Where(r => r.DocumentName == filterItems.DocumentName);
+            // Document Id
+            if (!string.IsNullOrWhiteSpace(filterItems?.DocumentId))
+                filter &= builder.Where(r => r.DocumentId == filterItems.DocumentId);
 
-        //    // Document Key
-        //    if (!string.IsNullOrEmpty(filterItems?.DocumentKey))
-        //        filter &= builder.Where(r => r.DocumentKey == filterItems.DocumentKey);
+            // Document Name
+            if (!string.IsNullOrEmpty(filterItems?.DocumentName))
+                filter &= builder.Where(r => r.DocumentName == filterItems.DocumentName);
 
-        //    // Created on or after
-        //    if (filterItems?.CreatedOnAfter != null)
-        //        filter &= builder.Where(r => r.CreatedOn >= filterItems.CreatedOnAfter);
+            // Document Key
+            if (!string.IsNullOrEmpty(filterItems?.DocumentKey))
+                filter &= builder.Where(r => r.DocumentKey == filterItems.DocumentKey);
 
-        //    // Created on or before
-        //    if (filterItems?.CreatedOnBefore != null)
-        //        filter &= builder.Where(r => r.CreatedOn <= filterItems.CreatedOnBefore);
+            // Created on or after
+            if (filterItems?.CreatedOnAfter != null)
+                filter &= builder.Where(r => r.CreatedOn >= filterItems.CreatedOnAfter);
 
-        //    return filter;
-        //}
+            // Created on or before
+            if (filterItems?.CreatedOnBefore != null)
+                filter &= builder.Where(r => r.CreatedOn <= filterItems.CreatedOnBefore);
 
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //public async Task<DocumentModel?> GetDocumentAsync(DocumentsFilter filter) =>
-        //    await _documentsCollection.Find(GetDocumentsPredicateBuilder(filter.DocumentsFilters)).Project(_documentProjection).FirstOrDefaultAsync();
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //public async Task<List<DocumentModel>?> GetDocumentsAsync(DocumentsFilter filter) =>
-        //    await _documentsCollection.Find(GetDocumentsPredicateBuilder(filter.DocumentsFilters)).Project(_documentProjection).ToListAsync();
+            return filter;
+        }
+
+#warning Retire this
+        public async Task<DocumentModel?> GetDocumentAsync(DocumentsFilter filter) =>
+            await _documentsCollection.Find(GetDocumentsPredicateBuilder(filter.DocumentsFilters)).Project(_documentProjection).FirstOrDefaultAsync();
+
+#warning Retire this
+        public async Task<List<DocumentModel>?> GetDocumentsAsync(DocumentsFilter filter) =>
+            await _documentsCollection.Find(GetDocumentsPredicateBuilder(filter.DocumentsFilters)).Project(_documentProjection).ToListAsync();
 
         public async Task CreateAsync(DocumentModel document) =>
           await _documentsCollection.InsertOneAsync(_documentCollectionBuilder.BuildCollection(document));

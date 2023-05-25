@@ -143,9 +143,9 @@ namespace Eliassen.TestUtilities
         public static TestContext AddResultFile(this TestContext context, string fileName, byte[] content) => context.AddResultFile(fileName, content, out var _);
         public static TestContext AddResultFile(this TestContext context, string fileName, byte[] content, out string outFile)
         {
-            outFile = Path.Combine(context.TestRunResultsDirectory, fileName);
+            outFile = Path.Combine(context.TestRunResultsDirectory ?? ".", fileName);
             var dir = Path.GetDirectoryName(outFile);
-            if (!Directory.Exists(dir))
+            if (!string.IsNullOrWhiteSpace(dir) && !Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
             File.WriteAllBytes(outFile, content);
             context.AddResultFile(outFile);
@@ -233,7 +233,7 @@ namespace Eliassen.TestUtilities
             $"{context.FullyQualifiedTestClassName}+{context.TestName}";
 
         public static IEnumerable<string> GetTestRunResultFiles(this TestContext context) =>
-            Directory.EnumerateDirectories(context.TestRunResultsDirectory);
+            Directory.EnumerateDirectories(context.TestRunResultsDirectory ?? ".");
 
 
         public static Type ResolveTestType(this TestContext testContext)

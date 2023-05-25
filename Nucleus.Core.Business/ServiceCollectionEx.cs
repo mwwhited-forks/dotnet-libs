@@ -25,7 +25,6 @@ namespace Nucleus.Core.Business
             // Identity Server (Change Implementation to use other Identity Servers on the line below)
             services.TryAddTransient<IIdentityManager, B2CIdentityManager>();
             return services;
-            return services;
         }
     }
 }

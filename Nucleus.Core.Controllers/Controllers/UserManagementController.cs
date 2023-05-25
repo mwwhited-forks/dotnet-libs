@@ -5,6 +5,7 @@ using Nucleus.AspNetCore.Mvc.Attributes;
 using Nucleus.Core.Contracts;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Contracts.Models.Filters;
 
 namespace Nucleus.Core.Controllers.Controllers
 {
@@ -25,28 +26,40 @@ namespace Nucleus.Core.Controllers.Controllers
         public async Task<ResponseModel<User>> SaveUser(UserAction user) =>
             await _usersManager.SaveUserAsync(user);
 
+
+        [Authorize]
+        //[ApplicationRight(Rights.UserManagement.Manager)]
+        [HttpPost("UserList")]
+        [Obsolete]
+        public PagedResult<User> GetUserProfile(UsersFilter userFilter) =>
+            new PagedResult<User>(
+             _usersManager.QueryUsers().ExecuteBy(new SearchQuery
+             {
+                 CurrentPage = userFilter.PagingModel.CurrentPage,
+                 
+                 //ExcludePageCount = userFilter.PagingModel.ExcludePageCount,
+             }));
+
+
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
-        [HttpPost("UserList")]
-        [HttpGet("UserList")]
-        public IQueryable<User> ListUsers() =>
-            _usersManager.Query();
-
-        [Authorize]
-        [HttpPost("Search")]
-        [HttpGet("Search")]
-        public SearchResult<User> EXP(SearchQuery<User> model) => throw new NotSupportedException();
-
-        [Authorize]
-        [HttpPost("EXP")]
-        [HttpGet("EXP")]
-        public async Task<List<Module>> EXP( User model) => throw new NotSupportedException();
+        [HttpPost("Users")]
+        public IQueryable<User> ListUsers() => _usersManager.QueryUsers();
 
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpGet("ApplicationPermissions")]
-        public async Task<List<Module>> GetApplicationPermissions() =>
-            await _usersManager.GetApplicationPermissionsAsync();
+        public IQueryable<Module> GetApplicationPermissions() => _usersManager.QueryModules();
+
+
+
+        [Authorize]
+        [HttpPost(nameof(SearchUserExample))]
+        public SearchResult<User> SearchUserExample(SearchQuery<User> model) => throw new NotSupportedException();
+
+        [Authorize]
+        [HttpPost(nameof(SearchModuleExample))]
+        public SearchResult<Module> SearchModuleExample(SearchQuery<Module> model) => throw new NotSupportedException();
 
     }
 }
