@@ -186,5 +186,9 @@ namespace Eliassen.System.Reflection
         public static IEnumerable<TAttribute> GetAttributes<TAttribute>(this object @object)
             where TAttribute : Attribute =>
             @object.GetAttributes().OfType<TAttribute>();
+
+        public static MethodInfo? GetStaticMethod(this Type type, string methodName, params Type[] parameterTypes) =>
+            type.GetMethod(name: methodName, bindingAttr: PublicStaticMethod, binder: null, parameterTypes, modifiers: null);
+
     }
 }

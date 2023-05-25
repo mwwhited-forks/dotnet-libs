@@ -297,7 +297,7 @@ namespace Eliassen.System.Tests.Linq
 
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Search_Range_GT()
+        public void ExecuteByTest_Filter_Range_GT()
         {
             var query = new SearchQuery
             {
@@ -319,7 +319,7 @@ namespace Eliassen.System.Tests.Linq
 
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Search_Range_GTE()
+        public void ExecuteByTest_Filter_Range_GTE()
         {
             var query = new SearchQuery
             {
@@ -340,7 +340,7 @@ namespace Eliassen.System.Tests.Linq
 
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Search_Range_LT()
+        public void ExecuteByTest_Filter_Range_LT()
         {
             var query = new SearchQuery
             {
@@ -361,7 +361,7 @@ namespace Eliassen.System.Tests.Linq
 
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Search_Range_LTE()
+        public void ExecuteByTest_Filter_Range_LTE()
         {
             var query = new SearchQuery
             {
@@ -383,7 +383,7 @@ namespace Eliassen.System.Tests.Linq
 
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Search_Range_Bounds()
+        public void ExecuteByTest_Filter_Range_Bounds()
         {
             var query = new SearchQuery
             {
@@ -402,6 +402,25 @@ namespace Eliassen.System.Tests.Linq
             this.TestContext.AddResult(results);
 
             Assert.AreEqual(5, results.TotalRowCount);
+        }
+
+
+        [TestMethod]
+        [TestCategory(TestCategories.Unit)]
+        public void ExecuteByTest_Filter_PredicateLookup()
+        {
+            var query = new SearchQuery
+            {
+                Filter =
+                {
+                    { TestTargetExtendedModel.FC, new SearchOption{ EqualTo = "ame1" } }
+                }
+            };
+            this.TestContext.AddResult(query);
+            var results = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(results);
+
+            Assert.AreEqual(1, results.TotalRowCount);
         }
 
         [TestMethod]

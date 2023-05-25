@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.ComponentModel;
+using Eliassen.System.Linq;
 using System;
 using System.Diagnostics;
 using System.Linq.Expressions;
@@ -7,12 +8,13 @@ namespace Eliassen.System.Tests.Linq.TestTargets
 {
     [Searchable(FirstNameLastName)]
     [Searchable(LastNameFirstName)]
-    [DebuggerDisplay("{FirstName} {LastName}")]
+    [DebuggerDisplay("{FName} {LName}")]
     public class TestTargetExtendedModel
     {
         public static readonly DateTime BaseDate = new DateTime(2020, 1, 1);
         public const string FirstNameLastName = nameof(FirstNameLastName);
         public const string LastNameFirstName = nameof(LastNameFirstName);
+        public const string FC = nameof(FC);
 
         public TestTargetExtendedModel(int index)
         {
@@ -38,9 +40,17 @@ namespace Eliassen.System.Tests.Linq.TestTargets
         public static Expression<Func<TestTargetExtendedModel, object>>? PropertyMap(string key) =>
             key switch
             {
-                "FirstNameLastName" => e => e.FName + " " + e.LName,
-                "LastNameFirstName" => e => e.LName + " " + e.FName,
+                FirstNameLastName => e => e.FName + " " + e.LName,
+                LastNameFirstName => e => e.LName + " " + e.FName,
                 _ => null
             };
+
+        public static Expression<Func<TestTargetExtendedModel, bool>>? PredicateMap(string key, object value) =>
+            key switch
+            {
+                FC => e => e.FName.Contains(value.ToString()),
+                _ => null
+            };
+
     }
 }

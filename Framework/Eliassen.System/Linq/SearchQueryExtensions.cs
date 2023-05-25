@@ -113,7 +113,7 @@ namespace Eliassen.System.Linq
             {
                 foreach (var item in filter.Filter)
                 {
-                    var filterExpression = ExpressionTreeBuilder.GetExpression<TModel>(item.Key)?.BuildPredicate(item.Value);
+                    var filterExpression = ExpressionTreeBuilder.GetPredicateExpression<TModel>(item.Key, item.Value);
                     if (filterExpression != null)
                         query = query.Where(filterExpression);
                 }

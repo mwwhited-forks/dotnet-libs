@@ -13,22 +13,22 @@ namespace Eliassen.System.ComponentModel.DataAnnotations.SensitivityClassificati
         /// <summary>
         /// Is the human readable name of the sensitivity label. Sensitivity labels represent the sensitivity of the data stored in the database column.
         /// </summary>
-        public string Label { get; set; }
+        public string Label { get; init; } = null!;
         /// <summary>
         /// Is an identifier associated with the sensitivity label. This is often used by centralized information protection platforms to uniquely identify labels in the system.
         /// </summary>
-        public string LabelId { get; set; }
+        public string LabelId { get; init; } = null!;
         /// <summary>
         /// Is an identifier associated with the sensitivity label. This is often used by centralized information protection platforms to uniquely identify labels in the system.
         /// </summary>
-        public string InformationType { get; set; }
+        public string InformationType { get; init; } = null!;
         /// <summary>
         /// Is an identifier associated with the information type. This is often used by centralized information protection platforms to uniquely identify information types in the system.
         /// </summary>
-        public string InformationTypeId { get; set; }
+        public string InformationTypeId { get; init; } = null!;
         /// <summary>
         /// Is an identifier based on a predefined set of values which define sensitivity rank. Used by other services like Advanced Threat Protection to detect anomalies based on their rank.
         /// </summary>
-        public SensitivityClassificationRanks Rank { get; set; }
+        public SensitivityClassificationRanks Rank { get; init; }
     }
 }

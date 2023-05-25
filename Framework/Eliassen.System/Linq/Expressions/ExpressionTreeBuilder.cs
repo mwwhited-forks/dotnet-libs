@@ -11,6 +11,10 @@ namespace Eliassen.System.Linq.Expressions
 {
     public static class ExpressionTreeBuilder
     {
+        public const string PropertyMap = nameof(PropertyMap);
+        public const string PredicateMap = nameof(PredicateMap);
+
+
         public static IReadOnlyDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions<TModel>() =>
          new Dictionary<string, Expression<Func<TModel, object>>>(BuildExpressions<TModel>(), StringComparer.InvariantCultureIgnoreCase);
 
@@ -22,24 +26,24 @@ namespace Eliassen.System.Linq.Expressions
             select KeyValuePair.Create(pi.Name, exp)
             ).ToArray();
 
+        public static IEnumerable<Expression<Func<TModel, bool>>?> GetPredicates<TModel>(
+            this Expression<Func<TModel, object>>? expression,
+            SearchOption? search)
+        {
+            if (search == null) yield break;
+
+            yield return expression.BuildPredicate(search.EqualTo, ExpressionOperators.EqualTo);
+            yield return expression.BuildPredicate(search.InSet, ExpressionOperators.InSet);
+            yield return expression.BuildPredicate(search.LessThan, ExpressionOperators.LessThan);
+            yield return expression.BuildPredicate(search.LessThanOrEqualTo, ExpressionOperators.LessThanOrEqualTo);
+            yield return expression.BuildPredicate(search.GreaterThan, ExpressionOperators.GreaterThan);
+            yield return expression.BuildPredicate(search.GreaterThanOrEqualTo, ExpressionOperators.GreaterThanOrEqualTo);
+        }
+
         public static Expression<Func<TModel, bool>>? BuildPredicate<TModel>(
             this Expression<Func<TModel, object>>? expression,
             SearchOption? search
-            )
-        {
-            if (search == null) return null;
-            var predicates = new[]
-            {
-                expression.BuildPredicate(search.EqualTo, ExpressionOperators.EqualTo),
-                expression.BuildPredicate(search.InSet, ExpressionOperators.InSet),
-                expression.BuildPredicate(search.LessThan, ExpressionOperators.LessThan),
-                expression.BuildPredicate(search.LessThanOrEqualTo, ExpressionOperators.LessThanOrEqualTo),
-                expression.BuildPredicate(search.GreaterThan, ExpressionOperators.GreaterThan),
-                expression.BuildPredicate(search.GreaterThanOrEqualTo, ExpressionOperators.GreaterThanOrEqualTo),
-            };
-            var predicate = predicates.AndChain();
-            return predicate;
-        }
+            ) => GetPredicates(expression, search).AndChain();
 
         private static Expression<Func<TModel, bool>>? BuildPredicate<TModel>(
             this Expression<Func<TModel, object>>? expression,
@@ -285,7 +289,7 @@ namespace Eliassen.System.Linq.Expressions
         public static IReadOnlyCollection<(string property, Expression<Func<TModel, object>> expression)> GetSearchableExpressions<TModel>() =>
             (
             from property in GetSearchablePropertyNames<TModel>()
-            let expression = TryGetExpression<TModel>(property, out var exp) ? exp : null
+            let expression = TryGetPropertyExpression<TModel>(property, out var exp) ? exp : null
             where expression != null
             select (property, expression)
             ).ToArray();
@@ -304,14 +308,53 @@ namespace Eliassen.System.Linq.Expressions
             return exp;
         }
 
-        public static Expression<Func<TModel, object>>? GetExpression<TModel>(
+        public static Expression<Func<TModel, bool>>? GetPredicateExpression<TModel>(
+            string name,
+            SearchOption value,
+            StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
+            ) =>
+            (TryGetPredicateExpression<TModel>(name, value, out var expression, stringComparison) ?
+                expression : null);
+
+        public static bool TryGetPredicateExpression<TModel>(
+            string name,
+            SearchOption value,
+            out Expression<Func<TModel, bool>>? expression,
+            StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
+            )
+        {
+            var modelType = typeof(TModel);
+
+            expression = modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(SearchOption))
+                ?.Invoke(null, new object[] { name, value }) as Expression<Func<TModel, bool>>;
+
+            expression ??= modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(SearchOption), typeof(StringComparison))
+                ?.Invoke(null, new object[] { name, value, stringComparison }) as Expression<Func<TModel, bool>>;
+
+            if (value.EqualTo != null)
+            {
+                expression = modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(object))
+                    ?.Invoke(null, new object[] { name, value.EqualTo }) as Expression<Func<TModel, bool>>;
+
+                expression ??= modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(object), typeof(StringComparison))
+                    ?.Invoke(null, new object[] { name, value.EqualTo, stringComparison }) as Expression<Func<TModel, bool>>;
+            }
+
+            //TODO: should I add support to unroll the searchoption?
+
+            expression ??= GetPropertyExpression<TModel>(name)?.BuildPredicate(value);
+
+            return expression != null;
+        }
+
+        public static Expression<Func<TModel, object>>? GetPropertyExpression<TModel>(
             string name,
             StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
             ) =>
-            (TryGetExpression<TModel>(name, out var expression, stringComparison) ?
+            (TryGetPropertyExpression<TModel>(name, out var expression, stringComparison) ?
                 expression : null);
 
-        public static bool TryGetExpression<TModel>(
+        public static bool TryGetPropertyExpression<TModel>(
             string name,
             out Expression<Func<TModel, object>>? expression,
             StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
@@ -319,15 +362,15 @@ namespace Eliassen.System.Linq.Expressions
         {
             var modelType = typeof(TModel);
 
-            expression = modelType
-                .GetMethod(name: "PropertyMap", bindingAttr: ReflectionExtensions.PublicStaticMethod, binder: null, new[] { typeof(string) }, modifiers: null)
+            expression = modelType.GetStaticMethod(PropertyMap, typeof(string))
                 ?.Invoke(null, new[] { name }) as Expression<Func<TModel, object>>;
 
-            expression ??= modelType
-                .GetMethod(name: "PropertyMap", bindingAttr: ReflectionExtensions.PublicStaticMethod, binder: null, new[] { typeof(StringComparison) }, modifiers: null)
+            expression ??= modelType.GetStaticMethod(PropertyMap, typeof(string), typeof(StringComparison))
                 ?.Invoke(null, new object[] { name, stringComparison }) as Expression<Func<TModel, object>>;
 
-            expression ??= modelType.GetProperties(ReflectionExtensions.PublicProperties).FirstOrDefault(pi => string.Equals(pi.Name, name, stringComparison)).BuildExpression<TModel>();
+            expression ??= modelType.GetProperties(ReflectionExtensions.PublicProperties)
+                .FirstOrDefault(pi => string.Equals(pi.Name, name, stringComparison))
+                .BuildExpression<TModel>();
 
             return expression != null;
         }
