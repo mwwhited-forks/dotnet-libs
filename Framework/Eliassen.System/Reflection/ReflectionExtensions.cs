@@ -188,7 +188,13 @@ namespace Eliassen.System.Reflection
             @object.GetAttributes().OfType<TAttribute>();
 
         public static MethodInfo? GetStaticMethod(this Type type, string methodName, params Type[] parameterTypes) =>
-            type.GetMethod(name: methodName, bindingAttr: PublicStaticMethod, binder: null, parameterTypes, modifiers: null);
+             type.GetMethod(name: methodName, bindingAttr: PublicStaticMethod, types: parameterTypes) switch
+             {
+                 MethodInfo method when method.GetParametersTypes().SequenceEqual(parameterTypes) => method,
+                 _ => default
+             };
 
+        public static IEnumerable<Type> GetParametersTypes(this MethodInfo method) =>
+             method.GetParameters().Select(p => p.ParameterType);
     }
 }

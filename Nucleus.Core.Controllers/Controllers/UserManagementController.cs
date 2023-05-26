@@ -35,7 +35,7 @@ namespace Nucleus.Core.Controllers.Controllers
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpPost("UserList")]
         [Obsolete("Change to the `ListUsers` /api/UserManagement/Query")]
-        public IPagedResult<User> GetUserProfile(UsersFilter userFilter) =>
+        public IQueryResult<User> GetUserProfile(UsersFilter userFilter) =>
              _usersManager.QueryUsers().ExecuteBy(new SearchQuery
              {
                  CurrentPage = userFilter.PagingModel.CurrentPage,
@@ -43,17 +43,24 @@ namespace Nucleus.Core.Controllers.Controllers
                  ExcludePageCount = userFilter.PagingModel.ExcludePageCount,
                  SearchTerm = userFilter.UserFilters.InputValue,
                  Filter = {
-                     {nameof(userFilter.UserFilters.Module), new SearchOption{ EqualTo= userFilter.UserFilters.Module } },
-                     {nameof(userFilter.UserFilters.UserStatus), new SearchOption{ EqualTo= userFilter.UserFilters.UserStatus } },
+                     {nameof(userFilter.UserFilters.Module), new SearchParameter{ EqualTo= userFilter.UserFilters.Module } },
+                     {nameof(userFilter.UserFilters.UserStatus), new SearchParameter{ EqualTo= userFilter.UserFilters.UserStatus } },
                  },
              });
 
-
-        //[Authorize]
-        //[ApplicationRight(Rights.UserManagement.Manager)]
+        /// <summary>
+        /// Query all user accounts
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpPost("Query")]
         public IQueryable<User> ListUsers() => _usersManager.QueryUsers();
 
+        /// <summary>
+        /// Query all modules
+        /// </summary>
+        /// <returns></returns>
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpGet("ApplicationPermissions")]
@@ -62,11 +69,11 @@ namespace Nucleus.Core.Controllers.Controllers
 
         [Authorize]
         [HttpPost(nameof(SearchUserExample))]
-        public SearchResult<User> SearchUserExample(SearchQuery<User> model) => throw new NotSupportedException();
+        public PagedSearchResult<User> SearchUserExample(SearchQuery<User> model) => throw new NotSupportedException();
 
         [Authorize]
         [HttpPost(nameof(SearchModuleExample))]
-        public SearchResult<Module> SearchModuleExample(SearchQuery<Module> model) => throw new NotSupportedException();
+        public PagedSearchResult<Module> SearchModuleExample(SearchQuery<Module> model) => throw new NotSupportedException();
 
     }
 }

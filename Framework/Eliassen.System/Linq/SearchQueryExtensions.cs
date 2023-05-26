@@ -35,7 +35,7 @@ namespace Eliassen.System.Linq
             .SortBy(searchQuery as ISortQuery)
             ;
 
-        public static IPagedResult ExecuteBy(this IQueryable query, object searchQuery)
+        public static IQueryResult ExecuteBy(this IQueryable query, object searchQuery)
         {
             var interfaces = from inf in query.GetType().GetInterfaces()
                              where inf.IsGenericType
@@ -56,7 +56,7 @@ namespace Eliassen.System.Linq
             var method = methodSignature.MakeGenericMethod(elementType);
 
             var result = method.Invoke(null, new[] { query, searchQuery });
-            var paged = (IPagedResult)result;
+            var paged = (IPagedQueryResult)result;
             return paged;
         }
 
@@ -72,8 +72,12 @@ namespace Eliassen.System.Linq
         /// <param name="query"></param>
         /// <param name="searchQuery"></param>
         /// <returns></returns>
-        public static IPagedResult<TModel> ExecuteBy<TModel>(this IQueryable<TModel> query, object searchQuery) =>
-            query.BuildFrom(searchQuery).PageBy(searchQuery as IPageQuery);
+        public static IQueryResult<TModel> ExecuteBy<TModel>(this IQueryable<TModel> query, object searchQuery) =>
+            (searchQuery, query.BuildFrom(searchQuery)) switch
+            {
+                (IPageQuery pager, IOrderedQueryable<TModel> ordered) when pager.PageSize >= 0 => ordered.PageBy(pager),
+                (_, IOrderedQueryable<TModel> ordered) => new QueryResult<TModel>(ordered)
+            };
 
         /// <summary>
         /// this method will compose and execute a query build from IHaveSearchTerm, IHaveSearchFilter
@@ -87,12 +91,16 @@ namespace Eliassen.System.Linq
         /// <param name="query"></param>
         /// <param name="searchQuery"></param>
         /// <returns></returns>
-        public static async Task<IPagedResult<TModel>> ExecuteByAsync<TModel>(
+        public static async Task<IQueryResult<TModel>> ExecuteByAsync<TModel>(
             this IQueryable<TModel> query,
             object searchQuery,
             CancellationToken cancellationToken = default
             ) =>
-            await query.BuildFrom(searchQuery).PageByAsync(searchQuery as IPageQuery, cancellationToken);
+            (searchQuery, query.BuildFrom(searchQuery)) switch
+            {
+                (IPageQuery pager, IOrderedQueryable<TModel> ordered) when pager.PageSize >= 0 => await ordered.PageByAsync(pager),
+                (_, IOrderedQueryable<TModel> ordered) => new QueryResult<TModel>(await ordered.ToListAsync())
+            };
 
         public static IQueryable<TModel> SearchBy<TModel>(this IQueryable<TModel> query, ISearchTermQuery? search)
         {
@@ -131,7 +139,7 @@ namespace Eliassen.System.Linq
         }
 
         public const int DefaultPageSize = 10;
-        public static IPagedResult<TModel> PageBy<TModel>(this IOrderedQueryable<TModel> query, IPageQuery? pager)
+        public static IPagedQueryResult<TModel> PageBy<TModel>(this IOrderedQueryable<TModel> query, IPageQuery? pager)
         {
             if (query == null) throw new ArgumentNullException(nameof(query));
 
@@ -147,7 +155,7 @@ namespace Eliassen.System.Linq
                 _ => query.Skip(page * pageLength).Take(pageLength).ToArray()
             };
 
-            var result = new SearchResult<TModel>(
+            var result = new PagedSearchResult<TModel>(
                 currentPage: page,
                 totalPageCount: totalRows == -1 ? totalRows : (int)Math.Ceiling((decimal)totalRows / pageLength),
                 totalRowCount: totalRows,
@@ -156,7 +164,7 @@ namespace Eliassen.System.Linq
             return result;
         }
 
-        public static async Task<IPagedResult<TModel>> PageByAsync<TModel>(
+        public static async Task<IPagedQueryResult<TModel>> PageByAsync<TModel>(
             this IOrderedQueryable<TModel> query,
             IPageQuery? pager,
             CancellationToken cancellationToken = default
@@ -176,7 +184,7 @@ namespace Eliassen.System.Linq
                 _ => await query.Skip(page * pageLength).Take(pageLength).ToListAsync(cancellationToken)
             };
 
-            var result = new SearchResult<TModel>(
+            var result = new PagedSearchResult<TModel>(
                 currentPage: page,
                 totalPageCount: (int)Math.Ceiling((decimal)totalRows / pageLength),
                 totalRowCount: totalRows,

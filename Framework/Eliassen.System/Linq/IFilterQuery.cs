@@ -4,6 +4,6 @@ namespace Eliassen.System.Linq
 {
     public interface IFilterQuery
     {
-        IDictionary<string, SearchOption>? Filter { get; }
+        IDictionary<string, SearchParameter>? Filter { get; }
     }
 }

@@ -7,9 +7,9 @@ namespace Eliassen.System.Linq
 {
     public interface ISearchQuery : IPageQuery, ISortQuery, ISearchTermQuery, IFilterQuery
     {
-        IPagedResult<TModel> For<TModel>(IEnumerable<TModel> query);
-        IPagedResult<TModel> For<TModel>(IQueryable<TModel> query);
-        Task<IPagedResult<TModel>> ForAsync<TModel>(IEnumerable<TModel> query, CancellationToken cancellationToken = default);
-        Task<IPagedResult<TModel>> ForAsync<TModel>(IQueryable<TModel> query, CancellationToken cancellationToken = default);
+        //IPagedQueryResult<TModel> For<TModel>(IEnumerable<TModel> query);
+        //IPagedQueryResult<TModel> For<TModel>(IQueryable<TModel> query);
+        //Task<IPagedQueryResult<TModel>> ForAsync<TModel>(IEnumerable<TModel> query, CancellationToken cancellationToken = default);
+        //Task<IPagedQueryResult<TModel>> ForAsync<TModel>(IQueryable<TModel> query, CancellationToken cancellationToken = default);
     }
 }

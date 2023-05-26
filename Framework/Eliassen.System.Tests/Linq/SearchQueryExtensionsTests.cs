@@ -61,8 +61,11 @@ namespace Eliassen.System.Tests.Linq
             this.TestContext.AddResult(query);
 
             var data = GetTestData();
-            var results = data.ExecuteBy(query ?? throw new NotSupportedException());
-            this.TestContext.AddResult(results);
+            var queryResults = data.ExecuteBy(query ?? throw new NotSupportedException());
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(3, results.Rows.Count());
             Assert.AreEqual("3,2,1", string.Join(',', results.Rows.Select(i => i.Index)));
@@ -91,8 +94,11 @@ namespace Eliassen.System.Tests.Linq
             var query = JsonSerializer.Deserialize<SearchQuery>(json);
 
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query ?? throw new NotSupportedException());
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query ?? throw new NotSupportedException());
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(3, results.Rows.Count());
             Assert.AreEqual("3,2,1", string.Join(',', results.Rows.Select(i => i.Index)));
@@ -123,8 +129,11 @@ namespace Eliassen.System.Tests.Linq
             var query = JsonSerializer.Deserialize<SearchQuery>(json);
 
             this.TestContext.AddResult(query);
-            var results = await GetTestData().ExecuteByAsync(query ?? throw new NotSupportedException());
-            this.TestContext.AddResult(results);
+            var queryResults = await GetTestData().ExecuteByAsync(query ?? throw new NotSupportedException());
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(3, results.Rows.Count());
             Assert.AreEqual("3,2,1", string.Join(',', results.Rows.Select(i => i.Index)));
@@ -138,12 +147,15 @@ namespace Eliassen.System.Tests.Linq
             {
                 Filter = new()
                 {
-                    { nameof(TestTargetModel.Index), new SearchOption{ InSet = new object?[] { 1, 2, 3 } } }
+                    { nameof(TestTargetModel.Index), new SearchParameter{ InSet = new object?[] { 1, 2, 3 } } }
                 }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(3, results.Rows.Count());
             Assert.AreEqual("1,2,3", string.Join(',', results.Rows.Select(i => i.Index)));
@@ -157,12 +169,15 @@ namespace Eliassen.System.Tests.Linq
             {
                 Filter = new()
                 {
-                    { nameof(TestTargetModel.Index), new SearchOption{ EqualTo =  1 } }
+                    { nameof(TestTargetModel.Index), new SearchParameter{ EqualTo =  1 } }
                 }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(1, results.Rows.Count());
             Assert.AreEqual("1", string.Join(',', results.Rows.Select(i => i.Index)));
@@ -176,12 +191,15 @@ namespace Eliassen.System.Tests.Linq
             {
                 Filter = new()
                 {
-                    { nameof(TestTargetModel.Name), new SearchOption{ InSet =  new [] {"Name1","Name2","Name3" } } }
+                    { nameof(TestTargetModel.Name), new SearchParameter{ InSet =  new [] {"Name1","Name2","Name3" } } }
                 }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(3, results.Rows.Count());
             Assert.AreEqual("1,2,3", string.Join(',', results.Rows.Select(i => i.Index)));
@@ -195,12 +213,15 @@ namespace Eliassen.System.Tests.Linq
             {
                 Filter = new()
                 {
-                    { nameof(TestTargetModel.Name), new SearchOption{ EqualTo =  "Name3" } }
+                    { nameof(TestTargetModel.Name), new SearchParameter{ EqualTo =  "Name3" } }
                 }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(1, results.Rows.Count());
             Assert.AreEqual("3", string.Join(',', results.Rows.Select(i => i.Index)));
@@ -215,8 +236,11 @@ namespace Eliassen.System.Tests.Linq
                 SearchTerm = "Name3",
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(1, results.Rows.Count());
             Assert.AreEqual("3", string.Join(',', results.Rows.Select(i => i.Index)));
@@ -231,8 +255,11 @@ namespace Eliassen.System.Tests.Linq
                 SearchTerm = "Name3*",
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(12, results.TotalPageCount);
             Assert.AreEqual(111, results.TotalRowCount);
@@ -249,8 +276,11 @@ namespace Eliassen.System.Tests.Linq
                 SearchTerm = "*3",
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(10, results.TotalPageCount);
             Assert.AreEqual(100, results.TotalRowCount);
@@ -267,8 +297,11 @@ namespace Eliassen.System.Tests.Linq
                 SearchTerm = "*e3*",
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(12, results.TotalPageCount);
             Assert.AreEqual(111, results.TotalRowCount);
@@ -285,8 +318,11 @@ namespace Eliassen.System.Tests.Linq
                 SearchTerm = "*e03*",
             };
             this.TestContext.AddResult(query);
-            var results = GetTestDataExtended().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(20, results.TotalPageCount);
             Assert.AreEqual(200, results.TotalRowCount);
@@ -304,14 +340,17 @@ namespace Eliassen.System.Tests.Linq
                 Filter =
                 {
                     { nameof(TestTargetExtendedModel.Date),
-                        new SearchOption{
+                        new SearchParameter{
                             GreaterThan = TestTargetExtendedModel.BaseDate.AddMonths(2),
                         } }
                 }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestDataExtended().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(997, results.TotalRowCount);
         }
@@ -326,14 +365,17 @@ namespace Eliassen.System.Tests.Linq
                 Filter =
                 {
                     { nameof(TestTargetExtendedModel.Date),
-                        new SearchOption{
+                        new SearchParameter{
                             GreaterThanOrEqualTo = TestTargetExtendedModel.BaseDate.AddMonths(2),
                         } }
                 }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestDataExtended().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(998, results.TotalRowCount);
         }
@@ -347,14 +389,17 @@ namespace Eliassen.System.Tests.Linq
                 Filter =
                 {
                     { nameof(TestTargetExtendedModel.Date),
-                        new SearchOption{
+                        new SearchParameter{
                             LessThan = TestTargetExtendedModel.BaseDate.AddMonths(2),
                         } }
                 }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestDataExtended().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(2, results.TotalRowCount);
         }
@@ -368,14 +413,17 @@ namespace Eliassen.System.Tests.Linq
                 Filter =
                 {
                     { nameof(TestTargetExtendedModel.Date),
-                        new SearchOption{
+                        new SearchParameter{
                             LessThanOrEqualTo = TestTargetExtendedModel.BaseDate.AddMonths(2),
                         } }
                 }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestDataExtended().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(3, results.TotalRowCount);
         }
@@ -390,7 +438,7 @@ namespace Eliassen.System.Tests.Linq
                 Filter =
                 {
                     { nameof(TestTargetExtendedModel.Date),
-                        new SearchOption{
+                        new SearchParameter{
                             GreaterThanOrEqualTo = TestTargetExtendedModel.BaseDate.AddMonths(2),
                             LessThanOrEqualTo = TestTargetExtendedModel.BaseDate.AddMonths(6),
                         }
@@ -398,8 +446,11 @@ namespace Eliassen.System.Tests.Linq
                 }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestDataExtended().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(5, results.TotalRowCount);
         }
@@ -413,12 +464,15 @@ namespace Eliassen.System.Tests.Linq
             {
                 Filter =
                 {
-                    { TestTargetExtendedModel.FC, new SearchOption{ EqualTo = "ame1" } }
+                    { TestTargetExtendedModel.FC, new SearchParameter{ EqualTo = "ame1" } }
                 }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestDataExtended().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestDataExtended().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(1, results.TotalRowCount);
         }
@@ -431,8 +485,11 @@ namespace Eliassen.System.Tests.Linq
             {
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(100, results.TotalPageCount);
             Assert.AreEqual(1000, results.TotalRowCount);
@@ -449,8 +506,11 @@ namespace Eliassen.System.Tests.Linq
                 CurrentPage = 1,
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(100, results.TotalPageCount);
             Assert.AreEqual(1000, results.TotalRowCount);
@@ -468,8 +528,11 @@ namespace Eliassen.System.Tests.Linq
                 PageSize = 5
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(200, results.TotalPageCount);
             Assert.AreEqual(1000, results.TotalRowCount);
@@ -489,8 +552,11 @@ namespace Eliassen.System.Tests.Linq
                 }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(100, results.TotalPageCount);
             Assert.AreEqual(1000, results.TotalRowCount);
@@ -510,8 +576,11 @@ namespace Eliassen.System.Tests.Linq
                 }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(100, results.TotalPageCount);
             Assert.AreEqual(1000, results.TotalRowCount);
@@ -531,8 +600,11 @@ namespace Eliassen.System.Tests.Linq
                  }
             };
             this.TestContext.AddResult(query);
-            var results = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(results);
+            var queryResults = GetTestData().ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            Assert.IsNotNull(results);
 
             Assert.AreEqual(100, results.TotalPageCount);
             Assert.AreEqual(1000, results.TotalRowCount);

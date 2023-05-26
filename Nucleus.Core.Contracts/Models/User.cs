@@ -10,6 +10,8 @@ namespace Nucleus.Core.Contracts.Models
 {
     [Searchable(FirstNameLastName)]
     [Searchable(LastNameFirstName)]
+    [Filterable(Module)]
+    [Filterable(UserStatus)]
     [DebuggerDisplay("{FirstName} {LastName}")]
     public class User
     {
@@ -50,35 +52,9 @@ namespace Nucleus.Core.Contracts.Models
         public static Expression<Func<User, bool>>? PredicateMap(string key, object value) =>
             key switch
             {
-                Module => e => e.UserModules.Any(um=>um.Code == value),
-                UserStatus => e => value == "-1" || e.Active == (value == "1"),
+                Module => e => e.UserModules.Any(um => um.Code.Equals(value)),
+                UserStatus => e => value.Equals("-1") || e.Active == value.Equals("1"),
                 _ => null
             };
-
-        /*
-     }
-            if (!string.IsNullOrEmpty(filterItems.UserStatus) && filterItems.UserStatus != "-1")
-            {
-                var statusBuilder = builder.Where(e => (
-        
-        filterItems.UserStatus == null || 
-        filterItems.UserStatus == "-1" || 
-        (filterItems.UserStatus == "1" && e.Active == true) || 
-        (filterItems.UserStatus == "0" && e.Active == false)
-        
-        ));
-                filter &= statusBuilder;
-            }
-            if (!string.IsNullOrEmpty(filterItems.Module) && filterItems.Module != "module_authenticated")
-            {
-                var moduleBuilder = builder.Where(e =>  e.UserModules.Any(m => m.Code == filterItems.Module));
-                filter &= moduleBuilder;
-            }
-        */
-
-
-        //{nameof(userFilter.UserFilters.Module), new Eliassen.System.Linq.SearchOption{ EqualTo= userFilter.UserFilters.Module } },
-        //{nameof(userFilter.UserFilters.UserStatus), new Eliassen.System.Linq.SearchOption{ EqualTo= userFilter.UserFilters.UserStatus } },
-
     }
 }

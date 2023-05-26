@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Eliassen.System.Linq
 {
-    public interface IPagedResult
+    public interface IPagedQueryResult : IQueryResult
     {
         public int CurrentPage { get; }
 
@@ -12,7 +12,7 @@ namespace Eliassen.System.Linq
 
         public IEnumerable Rows { get; }
     }
-    public interface IPagedResult<TModel> : IPagedResult
+    public interface IPagedQueryResult<TModel> : IPagedQueryResult, IQueryResult<TModel>
     {
         public new IEnumerable<TModel> Rows { get; }
     }

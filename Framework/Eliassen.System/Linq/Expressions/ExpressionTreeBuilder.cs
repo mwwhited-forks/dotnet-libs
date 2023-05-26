@@ -28,7 +28,7 @@ namespace Eliassen.System.Linq.Expressions
 
         public static IEnumerable<Expression<Func<TModel, bool>>?> GetPredicates<TModel>(
             this Expression<Func<TModel, object>>? expression,
-            SearchOption? search)
+            SearchParameter? search)
         {
             if (search == null) yield break;
 
@@ -42,7 +42,7 @@ namespace Eliassen.System.Linq.Expressions
 
         public static Expression<Func<TModel, bool>>? BuildPredicate<TModel>(
             this Expression<Func<TModel, object>>? expression,
-            SearchOption? search
+            SearchParameter? search
             ) => GetPredicates(expression, search).AndChain();
 
         private static Expression<Func<TModel, bool>>? BuildPredicate<TModel>(
@@ -53,7 +53,7 @@ namespace Eliassen.System.Linq.Expressions
 
         {
             if (expression == null || queryParameter == null) return null;
-            if (queryParameter is SearchOption search) return expression.BuildPredicate(search);
+            if (queryParameter is SearchParameter search) return expression.BuildPredicate(search);
 
             Expression unwrapped = expression.Body;
             if ((expression.Body.NodeType == ExpressionType.Convert) ||
@@ -264,7 +264,7 @@ namespace Eliassen.System.Linq.Expressions
             var modelType = typeof(TModel);
 
             var properties = modelType
-                .GetCustomAttributes<SearchableAttribute>().Select(a => a.TargetName)
+                .GetCustomAttributes<FilterableAttribute>().Select(a => a.TargetName)
                 .Concat(from prop in modelType.GetProperties(ReflectionExtensions.PublicProperties)
                         select prop.Name)
                 .Distinct();
@@ -309,7 +309,7 @@ namespace Eliassen.System.Linq.Expressions
 
         public static Expression<Func<TModel, bool>>? GetPredicateExpression<TModel>(
             string name,
-            SearchOption value,
+            SearchParameter value,
             StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
             ) =>
             (TryGetPredicateExpression<TModel>(name, value, out var expression, stringComparison) ?
@@ -317,17 +317,17 @@ namespace Eliassen.System.Linq.Expressions
 
         public static bool TryGetPredicateExpression<TModel>(
             string name,
-            SearchOption value,
+            SearchParameter value,
             out Expression<Func<TModel, bool>>? expression,
             StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
             )
         {
             var modelType = typeof(TModel);
 
-            expression = modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(SearchOption))
+            expression = modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(SearchParameter))
                 ?.Invoke(null, new object[] { name, value }) as Expression<Func<TModel, bool>>;
 
-            expression ??= modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(SearchOption), typeof(StringComparison))
+            expression ??= modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(SearchParameter), typeof(StringComparison))
                 ?.Invoke(null, new object[] { name, value, stringComparison }) as Expression<Func<TModel, bool>>;
 
             if (value.EqualTo != null)

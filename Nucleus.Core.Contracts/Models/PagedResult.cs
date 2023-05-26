@@ -6,19 +6,15 @@ using System.Collections.Generic;
 
 namespace Nucleus.Core.Contracts.Models
 {
-    public class PagedResult<T> : PagedResult, IPagedResult<T> where T : class
+    public class PagedResult<T> : PagedResult, IPagedQueryResult<T> where T : class
     {
-        public IList<T> Results { get; set; }
-        public IEnumerable<T> Rows { get; }
-        public int TotalPageCount { get; }
-        public int TotalRowCount { get; }
+        public IList<T> Results { get; set; } = new List<T>();
 
-        IEnumerable IPagedResult.Rows => Rows;
+        public IEnumerable<T> Rows => Results;
+        public int TotalPageCount => this.PageCount;
+        public int TotalRowCount => Convert.ToInt32(this.RowCount);
 
-        public PagedResult()
-        {
-            Results = new List<T>();
-        }
+        IEnumerable IPagedQueryResult.Rows => Rows;
     }
 
     public abstract class PagedResult

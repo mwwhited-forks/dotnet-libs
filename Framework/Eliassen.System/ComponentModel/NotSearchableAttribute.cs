@@ -2,6 +2,9 @@
 
 namespace Eliassen.System.ComponentModel
 {
+    /// <summary>
+    /// explicitly exclude properties from search
+    /// </summary>
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
     public class NotSearchableAttribute : Attribute
     {
