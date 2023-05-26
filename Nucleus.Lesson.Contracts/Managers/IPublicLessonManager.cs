@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 namespace Nucleus.Lesson.Contracts.Managers
 {
     public interface IPublicLessonManager
-    {    
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        // Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter);
+    {
+#warning retire this
+        Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter);
         Task<List<LessonModel>> GetLessons();
         Task<LessonModel?> GetLessonSlug(string slug);
         Task<List<LessonModel>?> GetRecentLessons(int i);

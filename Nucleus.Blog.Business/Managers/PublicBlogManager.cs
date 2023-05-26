@@ -1,6 +1,8 @@
 ﻿using Nucleus.Blog.Contracts.Managers;
 using Nucleus.Blog.Contracts.Models;
+using Nucleus.Blog.Contracts.Models.Filters;
 using Nucleus.Blog.Contracts.Services;
+using Nucleus.Core.Contracts.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -15,21 +17,21 @@ namespace Nucleus.Blog.Business.Managers
         {
             _blogService = blogService;
         }
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //public async Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter)
-        //{
-        //    List<BlogModel> blogs = await _blogService.GetPagedAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, true);
-        //    PagedResult<BlogModel> result = new PagedResult<BlogModel>()
-        //    {
-        //        CurrentPage = blogsFilter.PagingModel.CurrentPage,
-        //        PageSize = blogsFilter.PagingModel.PageSize,
-        //        Results = blogs,
-        //        RowCount = await _blogService.GetPagedCountAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, true),
-        //        PageCount = blogs.Count
-        //    };
-        //    return result;
-        //}
+
+#warning retire this
+        public async Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter)
+        {
+            List<BlogModel> blogs = await _blogService.GetPagedAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, true);
+            PagedResult<BlogModel> result = new PagedResult<BlogModel>()
+            {
+                CurrentPage = blogsFilter.PagingModel.CurrentPage,
+                PageSize = blogsFilter.PagingModel.PageSize,
+                Results = blogs,
+                RowCount = await _blogService.GetPagedCountAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, true),
+                PageCount = blogs.Count
+            };
+            return result;
+        }
 
         public async Task<List<BlogModel>> GetBlogs() =>
             await _blogService.GetAsync(true);

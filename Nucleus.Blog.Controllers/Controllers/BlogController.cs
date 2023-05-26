@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Nucleus.Blog.Contracts.Managers;
+using Nucleus.Blog.Contracts.Models.Filters;
 
 namespace Nucleus.Blog.Controllers.Controllers
 {
@@ -7,18 +8,18 @@ namespace Nucleus.Blog.Controllers.Controllers
     [ApiController]
     public class BlogController : ControllerBase
     {
-        private IPublicBlogManager _publicBlogManager { get; set; }
+        private readonly IPublicBlogManager _publicBlogManager;
 
         public BlogController(IPublicBlogManager publicBlogManager)
         {
             _publicBlogManager = publicBlogManager;
         }
 
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //[HttpPost("Blogs")]
-        //public async Task<IActionResult> GetAllBlogsPagedAsync(BlogsFilter filter) =>
-        //    new JsonResult(await _publicBlogManager.GetBlogsPagedAsync(filter));
+#warning retire this
+        [HttpPost("Blogs")]
+        [Obsolete]
+        public async Task<IActionResult> GetAllBlogsPagedAsync(BlogsFilter filter) =>
+            new JsonResult(await _publicBlogManager.GetBlogsPagedAsync(filter));
 
         [HttpGet("Slug/{id}")]
         public async Task<IActionResult> GetBlogSlug(string id) =>

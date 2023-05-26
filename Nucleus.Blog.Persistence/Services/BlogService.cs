@@ -3,7 +3,9 @@ using MongoDB.Driver;
 using Nucleus.Blog.Contracts.Collections;
 using Nucleus.Blog.Contracts.Collections.DbSettings;
 using Nucleus.Blog.Contracts.Models;
+using Nucleus.Blog.Contracts.Models.Filters;
 using Nucleus.Blog.Contracts.Services;
+using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -35,29 +37,28 @@ namespace Nucleus.Blog.Persistence.Services
             BuildProjections();
         }
 
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //// need to extend/re-work this so I do not pass in multiple parameters to each method, just a proper filter item from the business layer
-        //private FilterDefinition<BlogCollection> GetBlogsPredicateBuilder(bool onlyActive, BlogsFilterItem? filterItems)
-        //{
-        //    // Keeping this business logic in the access layer.  Cannot move it to the business layer yet
-        //    // until I can create an extension that can translate for multiple database.  Moving this to db
-        //    // layer forces you to include mongo drivers which will no longer make this a good solution to be
-        //    // a hybrid database solution just by changing interfaces in the IOC
-        //    var builder = Builders<BlogCollection>.Filter;
-        //    var filter = builder.Empty;
+#warning retire this
+        // need to extend/re-work this so I do not pass in multiple parameters to each method, just a proper filter item from the business layer
+        private FilterDefinition<BlogCollection> GetBlogsPredicateBuilder(bool onlyActive, BlogsFilterItem? filterItems)
+        {
+            // Keeping this business logic in the access layer.  Cannot move it to the business layer yet
+            // until I can create an extension that can translate for multiple database.  Moving this to db
+            // layer forces you to include mongo drivers which will no longer make this a good solution to be
+            // a hybrid database solution just by changing interfaces in the IOC
+            var builder = Builders<BlogCollection>.Filter;
+            var filter = builder.Empty;
 
-        //    if (onlyActive) 
-        //        filter &= builder.AnyEq("enabled", true);
+            if (onlyActive)
+                filter &= builder.AnyEq("enabled", true);
 
-        //    if (filterItems != null && !string.IsNullOrWhiteSpace(filterItems.InputValue))
-        //    {
-        //        var textSearch = builder.Text(filterItems.InputValue);
-        //        filter &= textSearch;
-        //    }
+            if (filterItems != null && !string.IsNullOrWhiteSpace(filterItems.InputValue))
+            {
+                var textSearch = builder.Text(filterItems.InputValue);
+                filter &= textSearch;
+            }
 
-        //    return filter;
-        //}
+            return filter;
+        }
 
         private void BuildProjections()
         {
@@ -89,27 +90,26 @@ namespace Nucleus.Blog.Persistence.Services
                 CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
             });
         }
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //public async Task<List<BlogModel>> GetPagedAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive)
-        //{
-        //    // TODO: Make an extension that does all of this pagination plumbing
-        //    string sortDefinition = $"{{ {pagingModel.SortBy}: 1 }}";
-        //    if (pagingModel.SortDirection == "descend")
-        //        sortDefinition = $"{{ {pagingModel.SortBy}: -1 }}";
 
-        //    return await _blogsCollection.Find(GetBlogsPredicateBuilder(onlyActive, filterItems))
-        //        .Skip((pagingModel.CurrentPage - 1) * pagingModel.PageSize)
-        //        .Limit(pagingModel.PageSize)
-        //        .Sort(sortDefinition)
-        //        .Project(_blogsProjection)
-        //        .ToListAsync();
-        //}
+#warning retire this
+        public async Task<List<BlogModel>> GetPagedAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive)
+        {
+            // TODO: Make an extension that does all of this pagination plumbing
+            string sortDefinition = $"{{ {pagingModel.SortBy}: 1 }}";
+            if (pagingModel.SortDirection == "descend")
+                sortDefinition = $"{{ {pagingModel.SortBy}: -1 }}";
 
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //public async Task<long> GetPagedCountAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive) =>
-        //   await _blogsCollection.Find(GetBlogsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
+            return await _blogsCollection.Find(GetBlogsPredicateBuilder(onlyActive, filterItems))
+                .Skip((pagingModel.CurrentPage - 1) * pagingModel.PageSize)
+                .Limit(pagingModel.PageSize)
+                .Sort(sortDefinition)
+                .Project(_blogsProjection)
+                .ToListAsync();
+        }
+
+#warning retire this
+        public async Task<long> GetPagedCountAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive) =>
+           await _blogsCollection.Find(GetBlogsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
 
         public async Task<List<BlogModel>> GetRecentAsync(int i, bool onlyActive) =>
             await _blogsCollection.Find(_ => true)

@@ -1,6 +1,7 @@
 ﻿using Nucleus.Core.Contracts.Models;
 using Nucleus.Lesson.Contracts.Managers;
 using Nucleus.Lesson.Contracts.Models;
+using Nucleus.Lesson.Contracts.Models.Filters;
 using Nucleus.Lesson.Contracts.Services;
 using System;
 using System.Collections.Generic;
@@ -21,22 +22,21 @@ namespace Nucleus.Lesson.Business.Managers
         public async Task<LessonModel?> GetLesson(string lessonId) =>
           await _lessonService.GetAsync(lessonId);
 
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //public async Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter)
-        //{
-        //    PagedResult<LessonModel> result = new PagedResult<LessonModel>();
-        //    List<LessonModel> blogs = await _lessonService.GetPagedAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, false);
-        //    result = new PagedResult<LessonModel>()
-        //    {
-        //        CurrentPage = lessonsFilter.PagingModel.CurrentPage,
-        //        PageSize = lessonsFilter.PagingModel.PageSize,
-        //        Results = blogs,
-        //        RowCount = await _lessonService.GetPagedCountAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, false),
-        //        PageCount = blogs.Count
-        //    };
-        //    return result;
-        //}
+#warning retire this
+        public async Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter)
+        {
+            PagedResult<LessonModel> result = new PagedResult<LessonModel>();
+            List<LessonModel> blogs = await _lessonService.GetPagedAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, false);
+            result = new PagedResult<LessonModel>()
+            {
+                CurrentPage = lessonsFilter.PagingModel.CurrentPage,
+                PageSize = lessonsFilter.PagingModel.PageSize,
+                Results = blogs,
+                RowCount = await _lessonService.GetPagedCountAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, false),
+                PageCount = blogs.Count
+            };
+            return result;
+        }
 
         public async Task<ResponseModel<LessonModel?>> SaveLessonAsync(LessonModel lesson)
         {

@@ -1,7 +1,8 @@
-﻿namespace Nucleus.Core.Contracts.Models.Filters
+﻿using Eliassen.System.Linq;
+
+namespace Nucleus.Core.Contracts.Models
 {
-#warning Retire this
-    public class PagingModel
+    public class PagingModel : IPageQuery
     {
         public int CurrentPage { get; set; }
         public int PageSize { get; set; }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Nucleus.Blog.Contracts.Managers;
 using Nucleus.Blog.Contracts.Models;
+using Nucleus.Blog.Contracts.Models.Filters;
 using Nucleus.Core.Contracts;
 
 namespace Nucleus.Blog.Controllers.Controllers
@@ -19,12 +20,12 @@ namespace Nucleus.Blog.Controllers.Controllers
             _blogManager = blogManager;
         }
 
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //[HttpPost("Blogs")]
-        //[ApplicationRight(Rights.Blog.Manager)]
-        //public async Task<IActionResult> GetAllBlogsPagedAsync(BlogsFilter filter) =>
-        //    new JsonResult(await _blogManager.GetBlogsPagedAsync(filter));
+#warning retire this
+        [HttpPost("Blogs")]
+        [ApplicationRight(Rights.Blog.Manager)]
+        [Obsolete]
+        public async Task<IActionResult> GetAllBlogsPagedAsync(BlogsFilter filter) =>
+            new JsonResult(await _blogManager.GetBlogsPagedAsync(filter));
 
         [HttpGet("Blog/{id}")]
         [ApplicationRight(Rights.Blog.Manager)]

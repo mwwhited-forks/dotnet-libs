@@ -44,8 +44,8 @@ namespace Nucleus.Core.Controllers.Controllers
              });
 
 
-        [Authorize]
-        [ApplicationRight(Rights.UserManagement.Manager)]
+        //[Authorize]
+        //[ApplicationRight(Rights.UserManagement.Manager)]
         [HttpPost("Query")]
         public IQueryable<User> ListUsers() => _usersManager.QueryUsers();
 

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Nucleus.Core.Contracts;
 using Nucleus.Lesson.Contracts.Managers;
 using Nucleus.Lesson.Contracts.Models;
+using Nucleus.Lesson.Contracts.Models.Filters;
 
 namespace Nucleus.Lesson.Controllers.Controllers
 {
@@ -19,12 +20,12 @@ namespace Nucleus.Lesson.Controllers.Controllers
             _lessonManager = lessonManager;
         }
 
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //[HttpPost("Lessons")]
-        //[ApplicationRight(Rights.Lesson.Manager)]
-        //public async Task<IActionResult> GetAllLessonsPagedAsync(LessonsFilter filter) =>
-        //   new JsonResult(await _lessonManager.GetLessonsPagedAsync(filter));
+#warning retire this
+        [Obsolete]
+        [HttpPost("Lessons")]
+        [ApplicationRight(Rights.Lesson.Manager)]
+        public async Task<IActionResult> GetAllLessonsPagedAsync(LessonsFilter filter) =>
+           new JsonResult(await _lessonManager.GetLessonsPagedAsync(filter));
 
         [HttpGet("Lesson/{id}")]
         [ApplicationRight(Rights.Lesson.Manager)]

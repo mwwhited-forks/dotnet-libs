@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Nucleus.Core.Contracts;
 using Nucleus.Project.Contracts.Managers;
 using Nucleus.Project.Contracts.Models;
+using Nucleus.Project.Contracts.Models.Filters;
 
 namespace Nucleus.Project.Controllers.Controllers
 {
@@ -19,12 +20,12 @@ namespace Nucleus.Project.Controllers.Controllers
             _projectManager = projectManager;
         }
 
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //[HttpPost("Projects")]
-        //[ApplicationRight(Rights.Project.Manager)]
-        //public async Task<IActionResult> GetAllProjectsPagedAsync(ProjectFilter filter) =>
-        //    new JsonResult(await _projectManager.GetProjectsPagedAsync(filter));
+#warning retire this
+        [Obsolete]
+        [HttpPost("Projects")]
+        [ApplicationRight(Rights.Project.Manager)]
+        public async Task<IActionResult> GetAllProjectsPagedAsync(ProjectFilter filter) =>
+            new JsonResult(await _projectManager.GetProjectsPagedAsync(filter));
 
         [HttpGet("Project/{id}")]
         [ApplicationRight(Rights.Project.Manager)]

@@ -1,9 +1,11 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using Nucleus.Project.Contracts.Collections;
 using Nucleus.Project.Contracts.Collections.DbSettings;
 using Nucleus.Project.Contracts.Models;
+using Nucleus.Project.Contracts.Models.Filters;
 using Nucleus.Project.Contracts.Services;
 using System;
 using System.Collections.Generic;
@@ -51,51 +53,49 @@ namespace Nucleus.Project.Persistence.Services
             });
         }
 
-        //TODO: restore
-#warning RESTORE THIS FEATURE
+#warning retire this
         // need to extend/re-work this so I do not pass in multiple parameters to each method, just a proper filter item from the business layer
-        //private FilterDefinition<ProjectCollection> GetProjectsPredicateBuilder(bool onlyActive, ProjectsFilterItem? filterItems)
-        //{
-        //    // Keeping this business logic in the access layer.  Cannot move it to the business layer yet
-        //    // until I can create an extension that can translate for multiple database.  Moving this to db
-        //    // layer forces you to include mongo drivers which will no longer make this a good solution to be
-        //    // a hybrid database solution just by changing interfaces in the IOC
-        //    var builder = Builders<ProjectCollection>.Filter;
-        //    var filter = builder.Empty;
+        private FilterDefinition<ProjectCollection> GetProjectsPredicateBuilder(bool onlyActive, ProjectsFilterItem? filterItems)
+        {
+            // Keeping this business logic in the access layer.  Cannot move it to the business layer yet
+            // until I can create an extension that can translate for multiple database.  Moving this to db
+            // layer forces you to include mongo drivers which will no longer make this a good solution to be
+            // a hybrid database solution just by changing interfaces in the IOC
+            var builder = Builders<ProjectCollection>.Filter;
+            var filter = builder.Empty;
 
-        //    if (onlyActive)
-        //        filter &= builder.AnyEq("enabled", true);
+            if (onlyActive)
+                filter &= builder.AnyEq("enabled", true);
 
-        //    if (filterItems != null && !string.IsNullOrWhiteSpace(filterItems.InputValue))
-        //    {
-        //        var textSearch = builder.Text(filterItems.InputValue);
-        //        filter &= textSearch;
-        //    }
+            if (filterItems != null && !string.IsNullOrWhiteSpace(filterItems.InputValue))
+            {
+                var textSearch = builder.Text(filterItems.InputValue);
+                filter &= textSearch;
+            }
 
-        //    return filter;
-        //}
+            return filter;
+        }
 
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //public async Task<List<ProjectModel>> GetPagedAsync(PagingModel pagingModel, ProjectsFilterItem? filterItems, bool onlyActive)
-        //{
-        //    // TODO: Make an extension that does all of this pagination plumbing
-        //    string sortDefinition = $"{{ {renderSortByName(pagingModel.SortBy)}: 1 }}";
-        //    if (pagingModel.SortDirection == "descend")
-        //        sortDefinition = $"{{ {renderSortByName(pagingModel.SortBy)}: -1 }}";
+#warning retire this
+        public async Task<List<ProjectModel>> GetPagedAsync(PagingModel pagingModel, ProjectsFilterItem? filterItems, bool onlyActive)
+        {
+            // TODO: Make an extension that does all of this pagination plumbing
+            string sortDefinition = $"{{ {renderSortByName(pagingModel.SortBy)}: 1 }}";
+            if (pagingModel.SortDirection == "descend")
+                sortDefinition = $"{{ {renderSortByName(pagingModel.SortBy)}: -1 }}";
 
-        //    return await _projectsCollection.Find(GetProjectsPredicateBuilder(onlyActive, filterItems))
-        //        .Sort(sortDefinition)
-        //        .Skip((pagingModel.CurrentPage - 1) * pagingModel.PageSize)
-        //        .Limit(pagingModel.PageSize)
-        //        .Project(_projectProjection)
-        //        .ToListAsync();
-        //}
+            return await _projectsCollection.Find(GetProjectsPredicateBuilder(onlyActive, filterItems))
+                .Sort(sortDefinition)
+                .Skip((pagingModel.CurrentPage - 1) * pagingModel.PageSize)
+                .Limit(pagingModel.PageSize)
+                .Project(_projectProjection)
+                .ToListAsync();
+        }
 
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //public async Task<long> GetPagedCountAsync(PagingModel pagingModel, ProjectsFilterItem? filterItems, bool onlyActive) =>
-        //  await _projectsCollection.Find(GetProjectsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
+#warning retire this
+        public async Task<long> GetPagedCountAsync(PagingModel pagingModel, ProjectsFilterItem? filterItems, bool onlyActive) =>
+
+         await _projectsCollection.Find(GetProjectsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
 
         public async Task<List<ProjectModel>> GetAsync(bool onlyActive) =>
             await _projectsCollection.Find(x => (onlyActive == false) || (x.Enabled == true && onlyActive == true)).Project(_projectProjection).ToListAsync();
@@ -133,7 +133,7 @@ namespace Nucleus.Project.Persistence.Services
             System.Reflection.PropertyInfo pi = new ProjectModel().GetType().GetProperty(column[0].ToString().ToUpper() + column[1..]);
             if (pi != null && pi.PropertyType == typeof(DateTimeOffset))
             {
-                return "\"" + column + ".0\""; 
+                return "\"" + column + ".0\"";
             }
             return column;
         }

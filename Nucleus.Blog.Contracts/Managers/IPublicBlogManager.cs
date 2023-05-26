@@ -12,8 +12,8 @@ namespace Nucleus.Blog.Contracts.Managers
         Task<BlogModel?> GetBlog(string blogId);
         Task<BlogModel?> GetBlogSlug(string slug);
         Task<List<BlogModel>?> GetRecentBlogs(int i);
-        //TODO: restore
-#warning RESTORE THIS FEATURE
-        //  Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter);
+
+#warning retire this
+        Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter);
     }
 }
