@@ -1,11 +1,10 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
+using Newtonsoft.Json.Linq;
 using Nucleus.AspNetCore.Mvc.Claims;
+using Nucleus.AspNetCore.Mvc.Claims.Enhancers;
 using Nucleus.AspNetCore.Mvc.IdentityModel;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Nucleus.Core.Business.Claims.Enhancers
 {
@@ -29,7 +28,7 @@ namespace Nucleus.Core.Business.Claims.Enhancers
             if (!String.IsNullOrEmpty(userId))
             {
                 var lookupRights = await _userProfileManager.GetRightsForUserIdAsync(userId);
-                claims[AppClaims.Rights] = new JArray(lookupRights.ToArray());
+                claims[ApplicationRightAttribute.Claim] = new JArray(lookupRights.ToArray());
             }
             return claims;
         }

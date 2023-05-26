@@ -1,4 +1,5 @@
-﻿using Eliassen.AspNetCore.Mvc.OpenApi;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
+using Eliassen.AspNetCore.Mvc.OpenApi;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -14,15 +15,15 @@ public class ApplicationPermissionsApiFilter : IOperationFilter
         var allowAnonymous =
             context.MethodInfo.GetCustomAttributes<AllowAnonymousAttribute>()
             .Concat(
-            context.MethodInfo.DeclaringType.GetCustomAttributes<AllowAnonymousAttribute>()
+            context.MethodInfo.DeclaringType?.GetCustomAttributes<AllowAnonymousAttribute>() ?? 
+                Enumerable.Empty<AllowAnonymousAttribute>()
             ).Any();
 
-#warning RETORE FUNCTIONALITY
-        //var applicationRights =
-        //    context.MethodInfo.GetCustomAttributes<ApplicationRightAttribute>()
-        //    .Concat(
-        //    context.MethodInfo.DeclaringType.GetCustomAttributes<ApplicationRightAttribute>()
-        //    ).SelectMany(a => a.Rights);
+        var applicationRights =
+            context.MethodInfo.GetCustomAttributes<ApplicationRightAttribute>()
+            .Concat(
+            context.MethodInfo.DeclaringType.GetCustomAttributes<ApplicationRightAttribute>()
+            ).SelectMany(a => a.Rights);
 
         operation.Extensions.Add("x-permissions", new ApiPermissionsExtension(allowAnonymous, Enumerable.Empty<string>()));
     }

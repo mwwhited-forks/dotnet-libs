@@ -24,4 +24,8 @@
     <ProjectReference Include="..\Nucleus.External.Azure.StorageAccount\Nucleus.External.Azure.StorageAccount.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Claims\Enhancers\" />
+  </ItemGroup>
+
 </Project>

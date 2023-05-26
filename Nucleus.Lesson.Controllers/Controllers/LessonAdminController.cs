@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Nucleus.AspNetCore.Mvc.Attributes;
 using Nucleus.Core.Contracts;
 using Nucleus.Lesson.Contracts.Managers;
 using Nucleus.Lesson.Contracts.Models;
@@ -12,7 +12,7 @@ namespace Nucleus.Lesson.Controllers.Controllers
     [ApiController]
     public class LessonAdminController : ControllerBase
     {
-        private ILessonManager _lessonManager { get; set; }
+        private readonly ILessonManager _lessonManager;
 
         public LessonAdminController(ILessonManager lessonManager)
         {

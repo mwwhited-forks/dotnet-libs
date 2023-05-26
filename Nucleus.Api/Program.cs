@@ -21,6 +21,7 @@ using System.Reflection;
 using System.Security.Claims;
 using Eliassen.AspNetCore.Mvc;
 using Nucleus.AspNetCore.Mvc;
+using Nucleus.Core.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,16 +51,22 @@ builder.Services.AddControllers()
 builder.Services
     .AddSingleton<IHttpContextAccessor, HttpContextAccessor>()
     .AddTransient(sp => sp.GetRequiredService<IHttpContextAccessor>().HttpContext?.User ?? ClaimsPrincipal.Current)
+
     .AddCorePersistenceServices()
     .AddCoreBusinessServices()
+    .AddCoreWebServices()
+
     .AddSharedBusinessServices()
     .AddPublicBusinessServices()
-    .AddLessonBusinessServices()
     .AddProjectBusinessServices()
     .AddProjectPersistenceServices()
     .AddBlogPersistenceServices()
+    .AddLessonBusinessServices()
     .AddLessonPersistenceServices()
     ;
+
+builder.Services.AddAspNetCoreExtensions();
+builder.Services.AddApplicationAspNetCoreServices();
 
 // Adding in the magic sauce that connects B2C Bearer tokens to our internal users
 builder.Services.AddSingleton<IAuthorizationHandler, AuthorizationHandler>();
@@ -101,9 +108,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.Configure<AzureB2CConfig>(options => builder.Configuration.Bind(AzureB2CConfig.ConfigKey, options));
-
-builder.Services.TryAddAspNetCoreExtensionServices();
-builder.Services.AddApplicationAspNetCoreServices();
 
 
 builder.Services.AddAuthorization(options =>

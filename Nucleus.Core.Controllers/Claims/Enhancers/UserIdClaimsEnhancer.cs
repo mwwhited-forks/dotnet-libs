@@ -7,9 +7,9 @@ using Nucleus.Core.Contracts.Models;
 using System;
 using System.Threading.Tasks;
 
-namespace Nucleus.Core.Business.Claims.Enhancers
+namespace Nucleus.AspNetCore.Mvc.Claims.Enhancers
 {
-    [ClaimsEnhancer(Priority = UserIdClaimsEnhancer.Priority)]
+    [ClaimsEnhancer(Priority = Priority)]
     public class UserIdClaimsEnhancer : IClaimsEnhancer
     {
         public const int Priority = -1;
@@ -38,7 +38,7 @@ namespace Nucleus.Core.Business.Claims.Enhancers
             _log.LogInformation($@"Look up user for {{{nameof(AzB2cClaims.ObjectId)}}}:""{{{nameof(userName)}}}""", AzB2cClaims.ObjectId, userName);
 
             var userid = await _userProfileManager.GetUserIdForUserNameAsync(userName: userName);
-            if (String.IsNullOrEmpty(userid))
+            if (string.IsNullOrEmpty(userid))
             {
                 _log.LogError($@"No user found for {{{nameof(AzB2cClaims.ObjectId)}}}:""{{{nameof(userName)}}}""", AzB2cClaims.ObjectId, userName);
                 // Custom loggin which will be removed after enough data has been collected

@@ -12,6 +12,7 @@ namespace Nucleus.AspNetCore.Mvc
             services.TryAddTransient<IClaimsProvider, ClaimsProvider>();
             services.TryAddTransient<IClaimsEnhancerPipeline, ClaimsEnhancerPipeline>();
             services.TryAddTransient<IClaimsEnhancerFactory, ClaimsEnhancerFactory>();
+
             return services;
         }
     }

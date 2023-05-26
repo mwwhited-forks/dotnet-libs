@@ -1,11 +1,10 @@
 ﻿using Eliassen.System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Nucleus.Core.Contracts.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Nucleus.AspNetCore.Mvc.Attributes
+namespace Eliassen.AspNetCore.Mvc.Filters
 {
     public class ApplicationRightRequirementFilter : IAuthorizationFilter
     {
@@ -19,7 +18,7 @@ namespace Nucleus.AspNetCore.Mvc.Attributes
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             bool? userAuthenticated = context.HttpContext.User.Identity?.IsAuthenticated;
-            var userRights = context.HttpContext.User.GetClaimValues(AppClaims.Rights);
+            var userRights = context.HttpContext.User.GetClaimValues(ApplicationRightAttribute.Claim);
 
             if (userAuthenticated == null || userAuthenticated == false)
                 context.Result = new ForbidResult();
@@ -35,6 +34,5 @@ namespace Nucleus.AspNetCore.Mvc.Attributes
                     return true;
             return false;
         }
-
     }
 }

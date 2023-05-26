@@ -1,7 +1,7 @@
-﻿using Eliassen.System.Linq;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
+using Eliassen.System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Nucleus.AspNetCore.Mvc.Attributes;
 using Nucleus.Core.Contracts;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
@@ -55,13 +55,13 @@ namespace Nucleus.Core.Controllers.Controllers
         public IQueryable<Module> GetApplicationPermissions() => _usersManager.QueryModules();
 
 
-        //[Authorize]
-        //[HttpPost(nameof(SearchUserExample))]
-        //public SearchResult<User> SearchUserExample(SearchQuery<User> model) => throw new NotSupportedException();
+        [Authorize]
+        [HttpPost(nameof(SearchUserExample))]
+        public SearchResult<User> SearchUserExample(SearchQuery<User> model) => throw new NotSupportedException();
 
-        //[Authorize]
-        //[HttpPost(nameof(SearchModuleExample))]
-        //public SearchResult<Module> SearchModuleExample(SearchQuery<Module> model) => throw new NotSupportedException();
+        [Authorize]
+        [HttpPost(nameof(SearchModuleExample))]
+        public SearchResult<Module> SearchModuleExample(SearchQuery<Module> model) => throw new NotSupportedException();
 
     }
 }

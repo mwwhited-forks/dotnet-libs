@@ -12,7 +12,7 @@ namespace Eliassen.AspNetCore.Mvc
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection TryAddAspNetCoreExtensionServices(this IServiceCollection services)
+        public static IServiceCollection AddAspNetCoreExtensions(this IServiceCollection services)
         {
             services.TryAddScoped<ICultureInfoAccessor, CultureInfoAccessor>();
             services.TryAddScoped(sp => sp.GetRequiredService<ICultureInfoAccessor>().CultureInfo);

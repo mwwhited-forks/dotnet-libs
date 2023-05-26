@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Nucleus.AspNetCore.Mvc.Attributes;
 using Nucleus.Blog.Contracts.Managers;
 using Nucleus.Blog.Contracts.Models;
 using Nucleus.Core.Contracts;

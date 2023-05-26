@@ -1,10 +1,10 @@
-﻿using Nucleus.AspNetCore.Mvc.IdentityModel;
-using Nucleus.Core.Contracts.Models;
-using System.Collections.Generic;
-using System.Security.Claims;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
 using Eliassen.System.Security.Claims;
+using Nucleus.AspNetCore.Mvc.IdentityModel;
+using Nucleus.Core.Contracts.Models;
+using System.Security.Claims;
 
-namespace Nucleus.Core.Business.Managers
+namespace Nucleus.Core.Controllers.Security
 {
     public class ApplicationUser : IUserSession
     {
@@ -21,7 +21,7 @@ namespace Nucleus.Core.Business.Managers
 
         public string Culture => _principal.GetClaimValue(AppClaims.Culture);
 
-        public IEnumerable<string> Rights => _principal.GetClaimValues(AppClaims.Rights);
+        public IEnumerable<string> Rights => _principal.GetClaimValues(ApplicationRightAttribute.Claim);
 
     }
 }
