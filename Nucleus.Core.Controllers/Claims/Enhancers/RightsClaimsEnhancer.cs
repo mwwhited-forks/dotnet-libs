@@ -5,6 +5,8 @@ using Nucleus.AspNetCore.Mvc.Claims.Enhancers;
 using Nucleus.AspNetCore.Mvc.IdentityModel;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Nucleus.Core.Business.Claims.Enhancers
 {
@@ -25,7 +27,7 @@ namespace Nucleus.Core.Business.Claims.Enhancers
         public async Task<JObject> EnhanceAsync(JObject claims)
         {
             var userId = (string?)claims[AppClaims.UserId];
-            if (!String.IsNullOrEmpty(userId))
+            if (!string.IsNullOrEmpty(userId))
             {
                 var lookupRights = await _userProfileManager.GetRightsForUserIdAsync(userId);
                 claims[ApplicationRightAttribute.Claim] = new JArray(lookupRights.ToArray());

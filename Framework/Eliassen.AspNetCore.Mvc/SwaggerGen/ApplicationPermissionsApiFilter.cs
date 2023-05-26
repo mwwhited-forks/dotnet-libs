@@ -25,6 +25,6 @@ public class ApplicationPermissionsApiFilter : IOperationFilter
             context.MethodInfo.DeclaringType.GetCustomAttributes<ApplicationRightAttribute>()
             ).SelectMany(a => a.Rights);
 
-        operation.Extensions.Add("x-permissions", new ApiPermissionsExtension(allowAnonymous, Enumerable.Empty<string>()));
+        operation.Extensions.Add("x-permissions", new ApiPermissionsExtension(allowAnonymous, applicationRights));
     }
 }

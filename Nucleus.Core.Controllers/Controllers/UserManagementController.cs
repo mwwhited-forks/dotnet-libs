@@ -6,6 +6,9 @@ using Nucleus.Core.Contracts;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.Filters;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Nucleus.Core.Controllers.Controllers
 {
@@ -40,8 +43,8 @@ namespace Nucleus.Core.Controllers.Controllers
                  ExcludePageCount = userFilter.PagingModel.ExcludePageCount,
                  SearchTerm = userFilter.UserFilters.InputValue,
                  Filter = {
-                     {nameof(userFilter.UserFilters.Module), new Eliassen.System.Linq.SearchOption{ EqualTo= userFilter.UserFilters.Module } },
-                     {nameof(userFilter.UserFilters.UserStatus), new Eliassen.System.Linq.SearchOption{ EqualTo= userFilter.UserFilters.UserStatus } },
+                     {nameof(userFilter.UserFilters.Module), new SearchOption{ EqualTo= userFilter.UserFilters.Module } },
+                     {nameof(userFilter.UserFilters.UserStatus), new SearchOption{ EqualTo= userFilter.UserFilters.UserStatus } },
                  },
              });
 

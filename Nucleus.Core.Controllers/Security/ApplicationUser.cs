@@ -2,6 +2,7 @@
 using Eliassen.System.Security.Claims;
 using Nucleus.AspNetCore.Mvc.IdentityModel;
 using Nucleus.Core.Contracts.Models;
+using System.Collections.Generic;
 using System.Security.Claims;
 
 namespace Nucleus.Core.Controllers.Security
