@@ -13,7 +13,7 @@ namespace Nucleus.Project.Controllers.Controllers
     [ApiController]
     public class ProjectAdminController : ControllerBase
     {
-        private IProjectManager _projectManager { get; set; }
+        private readonly IProjectManager _projectManager;
 
         public ProjectAdminController(IProjectManager projectManager)
         {

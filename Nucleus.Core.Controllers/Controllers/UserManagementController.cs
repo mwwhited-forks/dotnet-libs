@@ -15,7 +15,9 @@ namespace Nucleus.Core.Controllers.Controllers
     {
         private readonly IUserManagementManager _usersManager;
 
-        public UserManagementController(IUserManagementManager usersManager)
+        public UserManagementController(
+            IUserManagementManager usersManager
+            )
         {
             _usersManager = usersManager;
         }

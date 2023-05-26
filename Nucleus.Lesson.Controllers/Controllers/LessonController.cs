@@ -8,7 +8,7 @@ namespace Nucleus.Lesson.Controllers.Controllers
     [ApiController]
     public class LessonController : ControllerBase
     {
-        private IPublicLessonManager _publicLessonManager { get; set; }
+        private readonly IPublicLessonManager _publicLessonManager;
 
         public LessonController(IPublicLessonManager publicLessonManager)
         {

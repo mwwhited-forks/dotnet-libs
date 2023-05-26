@@ -16,8 +16,8 @@ namespace Nucleus.Project.Persistence.Services
     public class ProjectService : IProjectService
     {
         private readonly IMongoCollection<ProjectCollection> _projectsCollection;
-        private ProjectionDefinition<ProjectCollection, ProjectModel>? _projectProjection { get; set; }
-        private BsonCollectionBuilder<ProjectModel, ProjectCollection> _projectCollectionBuilder { get; set; }
+        private readonly ProjectionDefinition<ProjectCollection, ProjectModel>? _projectProjection;
+        private readonly BsonCollectionBuilder<ProjectModel, ProjectCollection> _projectCollectionBuilder;
 
         public ProjectService(IOptions<ProjectDatabaseSettings> projectDatabaseSettings)
         {
@@ -32,11 +32,6 @@ namespace Nucleus.Project.Persistence.Services
 
             _projectCollectionBuilder = new BsonCollectionBuilder<ProjectModel, ProjectCollection>();
 
-            BuildProjections();
-        }
-
-        private void BuildProjections()
-        {
             _projectProjection = Builders<ProjectCollection>.Projection.Expression(item => new ProjectModel()
             {
                 ProjectId = item.ProjectId,

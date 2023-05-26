@@ -10,10 +10,13 @@ namespace Nucleus.Core.Controllers.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private IUserSession _userSession { get; set; }
-        private IUserProfileManager _userProfileManager { get; set; }
+        private readonly IUserSession _userSession;
+        private readonly IUserProfileManager _userProfileManager;
 
-        public UserController(IUserSession userSession, IUserProfileManager userProfileManager)
+        public UserController(
+            IUserSession userSession,
+            IUserProfileManager userProfileManager
+            )
         {
             _userSession = userSession;
             _userProfileManager = userProfileManager;

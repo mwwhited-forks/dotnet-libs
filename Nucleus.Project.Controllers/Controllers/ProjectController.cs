@@ -8,7 +8,7 @@ namespace Nucleus.Project.Controllers.Controllers
     [ApiController]
     public class ProjectController : ControllerBase
     {
-        private IPublicProjectManager _publicProjectManager { get; set; }
+        private readonly IPublicProjectManager _publicProjectManager;
 
         public ProjectController(IPublicProjectManager publicProjectManager)
         {

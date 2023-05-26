@@ -6,8 +6,6 @@ using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.DbSettings;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 

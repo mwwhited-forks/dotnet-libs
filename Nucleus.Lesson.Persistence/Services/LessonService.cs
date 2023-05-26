@@ -15,8 +15,8 @@ namespace Nucleus.Lesson.Persistence.Services
     public class LessonService : ILessonService
     {
         private readonly IMongoCollection<LessonCollection> _lessonsCollection;
-        private ProjectionDefinition<LessonCollection, LessonModel>? _lessonProjection { get; set; }
-        private BsonCollectionBuilder<LessonModel, LessonCollection> _lessonCollectionBuilder { get; set; }
+        private readonly ProjectionDefinition<LessonCollection, LessonModel>? _lessonProjection;
+        private readonly BsonCollectionBuilder<LessonModel, LessonCollection> _lessonCollectionBuilder;
 
         public LessonService(IOptions<LessonDatabaseSettings> lessonDatabaseSettings)
         {
@@ -31,11 +31,6 @@ namespace Nucleus.Lesson.Persistence.Services
 
             _lessonCollectionBuilder = new BsonCollectionBuilder<LessonModel, LessonCollection>();
 
-            BuildProjections();
-        }
-
-        private void BuildProjections()
-        {
             _lessonProjection = Builders<LessonCollection>.Projection.Expression(item => new LessonModel()
             {
                 LessonId = item.LessonId,
