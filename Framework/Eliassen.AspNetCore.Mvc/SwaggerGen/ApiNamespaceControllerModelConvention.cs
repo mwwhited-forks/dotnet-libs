@@ -2,7 +2,7 @@
 
 namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 
-public class ControllerModelConvention : IControllerModelConvention
+public class ApiNamespaceControllerModelConvention : IControllerModelConvention
 {
     public void Apply(ControllerModel controller)
     {

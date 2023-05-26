@@ -1,4 +1,4 @@
-﻿namespace Eliassen.System.Linq
+﻿namespace Eliassen.System.Linq.Search
 {
     public interface IPageQuery
     {

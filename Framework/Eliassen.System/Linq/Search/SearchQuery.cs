@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Eliassen.System.Linq
+namespace Eliassen.System.Linq.Search
 {
     public record SearchQuery<TModel> : SearchQuery
     {

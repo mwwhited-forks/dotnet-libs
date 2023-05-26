@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Eliassen.System.Linq
+namespace Eliassen.System.Linq.Search
 {
     public interface IFilterQuery
     {

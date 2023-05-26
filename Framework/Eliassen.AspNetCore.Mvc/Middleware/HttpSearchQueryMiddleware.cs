@@ -1,5 +1,5 @@
 ﻿using Eliassen.System.Accessors;
-using Eliassen.System.Linq;
+using Eliassen.System.Linq.Search;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;

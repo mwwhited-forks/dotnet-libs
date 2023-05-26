@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using Eliassen.System.ComponentModel;
+using Eliassen.System.Linq.Search;
 using Eliassen.System.Reflection;
 
 namespace Eliassen.System.Linq.Expressions
@@ -263,6 +264,12 @@ namespace Eliassen.System.Linq.Expressions
         {
             var modelType = typeof(TModel);
 
+            var searchableProperties = modelType
+                .GetCustomAttributes<SearchableAttribute>().Select(a => a.TargetName)
+                .Concat(from prop in modelType.GetProperties(ReflectionExtensions.PublicProperties)
+                        select prop.Name)
+                .Distinct();
+
             var properties = modelType
                 .GetCustomAttributes<FilterableAttribute>().Select(a => a.TargetName)
                 .Concat(from prop in modelType.GetProperties(ReflectionExtensions.PublicProperties)
@@ -276,7 +283,9 @@ namespace Eliassen.System.Linq.Expressions
                         select attrib.TargetName ?? prop.Name)
                 .Distinct();
 
-            var results = properties
+            var results =
+                searchableProperties
+                .Concat(properties)
                 .Except(notSearchable)
                 .Where(s => !string.IsNullOrWhiteSpace(s))
                 .Cast<string>()

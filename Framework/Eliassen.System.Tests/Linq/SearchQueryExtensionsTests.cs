@@ -1,5 +1,4 @@
-﻿using Eliassen.System.Linq;
-using Eliassen.System.Tests.Linq.TestTargets;
+﻿using Eliassen.System.Tests.Linq.TestTargets;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
@@ -7,6 +6,7 @@ using System;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Eliassen.System.Linq.Search;
 
 namespace Eliassen.System.Tests.Linq
 {
@@ -321,7 +321,7 @@ namespace Eliassen.System.Tests.Linq
             var queryResults = GetTestDataExtended().ExecuteBy(query);
             this.TestContext.AddResult(queryResults);
 
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
             Assert.IsNotNull(results);
 
             Assert.AreEqual(20, results.TotalPageCount);
@@ -349,7 +349,7 @@ namespace Eliassen.System.Tests.Linq
             var queryResults = GetTestDataExtended().ExecuteBy(query);
             this.TestContext.AddResult(queryResults);
 
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
             Assert.IsNotNull(results);
 
             Assert.AreEqual(997, results.TotalRowCount);
@@ -374,7 +374,7 @@ namespace Eliassen.System.Tests.Linq
             var queryResults = GetTestDataExtended().ExecuteBy(query);
             this.TestContext.AddResult(queryResults);
 
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
             Assert.IsNotNull(results);
 
             Assert.AreEqual(998, results.TotalRowCount);
@@ -398,7 +398,7 @@ namespace Eliassen.System.Tests.Linq
             var queryResults = GetTestDataExtended().ExecuteBy(query);
             this.TestContext.AddResult(queryResults);
 
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
             Assert.IsNotNull(results);
 
             Assert.AreEqual(2, results.TotalRowCount);
@@ -422,12 +422,11 @@ namespace Eliassen.System.Tests.Linq
             var queryResults = GetTestDataExtended().ExecuteBy(query);
             this.TestContext.AddResult(queryResults);
 
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
             Assert.IsNotNull(results);
 
             Assert.AreEqual(3, results.TotalRowCount);
         }
-
 
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
@@ -449,7 +448,7 @@ namespace Eliassen.System.Tests.Linq
             var queryResults = GetTestDataExtended().ExecuteBy(query);
             this.TestContext.AddResult(queryResults);
 
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
             Assert.IsNotNull(results);
 
             Assert.AreEqual(5, results.TotalRowCount);
@@ -471,7 +470,7 @@ namespace Eliassen.System.Tests.Linq
             var queryResults = GetTestDataExtended().ExecuteBy(query);
             this.TestContext.AddResult(queryResults);
 
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
             Assert.IsNotNull(results);
 
             Assert.AreEqual(1, results.TotalRowCount);

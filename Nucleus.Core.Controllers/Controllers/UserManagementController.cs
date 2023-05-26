@@ -1,5 +1,5 @@
 ﻿using Eliassen.AspNetCore.Mvc.Filters;
-using Eliassen.System.Linq;
+using Eliassen.System.Linq.Search;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Nucleus.Core.Contracts;

@@ -1,4 +1,4 @@
-﻿using Eliassen.System.Linq;
+﻿using Eliassen.System.Linq.Search;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Logging;
@@ -23,25 +23,28 @@ public class SwaggerSearchOperationFilter : IOperationFilter
         _logger = logger;
     }
 
-    //public record SearchSchema : SearchQuery, IOpenApiAny
-    //{
-    //    //private readonly Type _type;
-
-    //    //public SearchSchema(Type type)
-    //    //{
-    //    //    _type = type;
-    //    //}
-
-    //    public AnyType AnyType => AnyType.;
-
-    //    public void Write(IOpenApiWriter writer, OpenApiSpecVersion specVersion)
-    //    {
-    //        //writer.WriteAny(this);
-    //    }
-    //}
-
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
+        if (context.MethodInfo.ReturnType.IsAssignableTo(typeof(IQueryable)))
+        {
+        }
+        else if (context.MethodInfo.ReturnType.IsAssignableTo(typeof(IQueryResult)))
+        {
+        }
+
+        //if (action.ActionMethod.ReturnType.IsAssignableTo(typeof(IQueryable)))
+        //{
+        //    if (!action.Parameters.Any())
+        //    {
+        //        var element = action.ActionMethod.ReturnType.GetElementType();
+        //        var searchType = typeof(SearchQuery<>).MakeGenericType(element);
+        //    }
+        //    // SearchQuery
+        //}
+        //else if (action.ActionMethod.ReturnType.IsAssignableTo(typeof(IQueryResult)))
+        //{
+        //}
+
 #warning add modeling for Search
         //TODO: add modeling for Search
         //if (context.MethodInfo.Name == "EXP")

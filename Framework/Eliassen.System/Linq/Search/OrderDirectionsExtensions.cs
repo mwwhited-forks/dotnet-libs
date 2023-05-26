@@ -1,6 +1,6 @@
-﻿namespace Eliassen.System.Linq
+﻿namespace Eliassen.System.Linq.Search
 {
-    public static class OrderDirectionsExtensions
+    public static class OrderDirectionsConstants
     {
         public const string Ascending = nameof(OrderDirections.Ascending);
         public const string AscendingShort = "asc";

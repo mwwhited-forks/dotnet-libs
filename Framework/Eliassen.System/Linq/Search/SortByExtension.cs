@@ -6,7 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Eliassen.System.Linq
+namespace Eliassen.System.Linq.Search
 {
     public static class SortByExtension
     {
@@ -42,8 +42,8 @@ namespace Eliassen.System.Linq
 
             var columns = sortBy.Split(delimter).Select(s => s.Trim());
             var directions = (direction?.Split(delimter) ?? Array.Empty<string>())
-                .Concat(Enumerable.Range(0, columns.Count()).Select(_ => OrderDirectionsExtensions.AscendingShort))
-                .Select(v => v?.StartsWith(OrderDirectionsExtensions.DescendingShort, StringComparison.InvariantCultureIgnoreCase) ?? false ? OrderDirections.Descending : OrderDirections.Ascending)
+                .Concat(Enumerable.Range(0, columns.Count()).Select(_ => OrderDirectionsConstants.AscendingShort))
+                .Select(v => v?.StartsWith(OrderDirectionsConstants.DescendingShort, StringComparison.InvariantCultureIgnoreCase) ?? false ? OrderDirections.Descending : OrderDirections.Ascending)
                 ;
             var orderBys = columns.Zip(directions, (order, direction) => (order, direction));
             return query.SortBy(orderBys);
@@ -82,12 +82,12 @@ namespace Eliassen.System.Linq
 
             var compositeSortMap =
                   (remap ?? Enumerable.Empty<(string column, Expression<Func<T, object>> expression)>()).Select(i => (Key: i.column, Expression: i.expression, Weight: 1))
-                  .Concat(sortLookup.Select(kvp => (Key: kvp.Key, Expression: kvp.Value, Weight: 2)))
+                  .Concat(sortLookup.Select(kvp => (kvp.Key, Expression: kvp.Value, Weight: 2)))
                   .GroupBy(k => k.Key).Select(i => (i.Key, i.OrderBy(x => x.Weight).First().Expression))
                   .ToDictionary(k => k.Key, v => v.Expression, StringComparer.InvariantCultureIgnoreCase)
                   ;
 
-            if (!orderBys.Any()) 
+            if (!orderBys.Any())
                 orderBys = DefaultSortOrder<T>();
 
             IOrderedQueryable<T>? ordered = null;

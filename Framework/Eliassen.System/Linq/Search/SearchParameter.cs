@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Eliassen.System.Linq
+namespace Eliassen.System.Linq.Search
 {
     public record SearchParameter
     {

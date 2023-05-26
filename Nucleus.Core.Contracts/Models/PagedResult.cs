@@ -1,4 +1,4 @@
-﻿using Eliassen.System.Linq;
+﻿using Eliassen.System.Linq.Search;
 using Nucleus.Core.Contracts.Interfaces;
 using System;
 using System.Collections;

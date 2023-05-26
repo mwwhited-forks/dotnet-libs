@@ -1,5 +1,5 @@
 ﻿using Eliassen.System.ComponentModel;
-using Eliassen.System.Linq;
+using Eliassen.System.Linq.Search;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

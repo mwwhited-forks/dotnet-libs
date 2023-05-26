@@ -1,13 +1,11 @@
-﻿using Eliassen.System.ComponentModel;
-using Eliassen.System.Reflection;
+﻿using Eliassen.System.Reflection;
 using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Eliassen.System.Linq
+namespace Eliassen.System.Text.Json.Serialization
 {
-
-    public class JsonStringEnumConverterEx<TEnum> : JsonConverter<TEnum> where TEnum : struct, global::System.Enum
+    public class JsonStringEnumConverterEx<TEnum> : JsonConverter<TEnum> where TEnum : struct, Enum
     {
         public override TEnum Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
@@ -15,14 +13,14 @@ namespace Eliassen.System.Linq
             if (type == JsonTokenType.String)
             {
                 var value = reader.GetString();
-                var enumValue = EnumExtensions.ToEnum<TEnum>(value);
+                var enumValue = value.ToEnum<TEnum>();
                 return enumValue ?? default;
             }
             else if (type == JsonTokenType.Number)
             {
                 var value = reader.GetInt32();
-                var enumValue = EnumExtensions.ToEnum<TEnum>(value);
-                return enumValue ;
+                var enumValue = value.ToEnum<TEnum>();
+                return enumValue;
             }
 
             return default;
@@ -32,14 +30,5 @@ namespace Eliassen.System.Linq
         {
             writer.WriteStringValue(EnumExtensions.AsString<TEnum>(value));
         }
-    }
-
-    [JsonConverter(typeof(JsonStringEnumConverterEx<OrderDirections>))]
-    public enum OrderDirections
-    {
-        [EnumValue(OrderDirectionsExtensions.AscendingShort)]
-        Ascending = 0,
-        [EnumValue(OrderDirectionsExtensions.DescendingShort)]
-        Descending = 1,
     }
 }

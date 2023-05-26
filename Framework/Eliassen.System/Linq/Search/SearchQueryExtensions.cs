@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Eliassen.System.Linq;
 
-namespace Eliassen.System.Linq
+namespace Eliassen.System.Linq.Search
 {
     public static class SearchQueryExtensions
     {
@@ -143,8 +142,8 @@ namespace Eliassen.System.Linq
         {
             if (query == null) throw new ArgumentNullException(nameof(query));
 
-            var pageLength = (pager?.PageSize ?? 0) <= 0 ? DefaultPageSize : (pager?.PageSize ?? DefaultPageSize);
-            var page = (pager?.CurrentPage ?? 0) < 0 ? 0 : (pager?.CurrentPage ?? 0);
+            var pageLength = (pager?.PageSize ?? 0) <= 0 ? DefaultPageSize : pager?.PageSize ?? DefaultPageSize;
+            var page = (pager?.CurrentPage ?? 0) < 0 ? 0 : pager?.CurrentPage ?? 0;
             var excludePageCount = pager?.ExcludePageCount ?? false;
 
             var totalRows = excludePageCount ? -1 : query.Count();
@@ -172,8 +171,8 @@ namespace Eliassen.System.Linq
         {
             if (query == null) throw new ArgumentNullException(nameof(query));
 
-            var pageLength = (pager?.PageSize ?? 0) <= 0 ? DefaultPageSize : (pager?.PageSize ?? DefaultPageSize);
-            var page = (pager?.CurrentPage ?? 0) < 0 ? 0 : (pager?.CurrentPage ?? 0);
+            var pageLength = (pager?.PageSize ?? 0) <= 0 ? DefaultPageSize : pager?.PageSize ?? DefaultPageSize;
+            var page = (pager?.CurrentPage ?? 0) < 0 ? 0 : pager?.CurrentPage ?? 0;
             var excludePageCount = pager?.ExcludePageCount ?? false;
 
             var totalRows = excludePageCount ? int.MaxValue : query.Count();

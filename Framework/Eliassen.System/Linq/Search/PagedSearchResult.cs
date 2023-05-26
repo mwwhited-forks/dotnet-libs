@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Eliassen.System.Linq
+namespace Eliassen.System.Linq.Search
 {
     public class PagedSearchResult<TModel> : IPagedQueryResult<TModel>
     {
@@ -21,7 +21,7 @@ namespace Eliassen.System.Linq
 
         public PagedSearchResult(
             IPagedQueryResult<TModel> toWrap
-            ): this(
+            ) : this(
                 currentPage: toWrap.CurrentPage,
                 totalPageCount: toWrap.TotalPageCount,
                 totalRowCount: toWrap.TotalRowCount,
@@ -40,6 +40,6 @@ namespace Eliassen.System.Linq
         public int TotalRowCount { get; init; }
         public IEnumerable<TModel> Rows { get; init; }
 
-        IEnumerable IPagedQueryResult.Rows => this.Rows;
+        IEnumerable IPagedQueryResult.Rows => Rows;
     }
 }
