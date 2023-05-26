@@ -76,7 +76,6 @@ namespace Eliassen.System.Linq.Expressions
                 };
             }
 
-            //TODO: consider some sort of "range" support
 
             var queryParameterType = queryParameter.GetType();
 
