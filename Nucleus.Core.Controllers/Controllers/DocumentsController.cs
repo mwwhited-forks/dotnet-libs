@@ -1,11 +1,11 @@
-﻿using Nucleus.Core.Busines.Attributes;
-using Nucleus.Core.Contracts;
-using Nucleus.Core.Contracts.Interfaces;
-using Nucleus.Core.Contracts.Managers;
-using Nucleus.Core.Contracts.Models;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Nucleus.Core.Contracts;
+using Nucleus.Core.Contracts.Managers;
+using Nucleus.Core.Contracts.Models;
+using System.Threading.Tasks;
 
 namespace Nucleus.Core.Controllers.Controllers
 {
@@ -13,12 +13,10 @@ namespace Nucleus.Core.Controllers.Controllers
     [ApiController]
     public class DocumentsController : ControllerBase
     {
-        private IUserSession _userSession { get; set; }
-        private IDocumentManager _documentManager { get; set; }
+        private readonly IDocumentManager _documentManager;
 
-        public DocumentsController(IUserSession userSession, IDocumentManager documentManager)
+        public DocumentsController(IDocumentManager documentManager)
         {
-            _userSession = userSession;
             _documentManager = documentManager;
         }
 
@@ -35,6 +33,8 @@ namespace Nucleus.Core.Controllers.Controllers
         [Authorize]
         [HttpPost]
         [ApplicationRight(Rights.Lesson.Manager, Rights.Blog.Manager, Rights.Project.Manager)]
+        [ProducesResponseType(200, Type = typeof(ResponseModel<DocumentModel>))]
+        [ProducesResponseType(400)]
         public async Task<IActionResult> SaveDocument([FromForm] DocumentModel document)
         {
             IFormFile? file = null;
@@ -48,15 +48,14 @@ namespace Nucleus.Core.Controllers.Controllers
             document.DocumentType = file.ContentType;
             document.DocumentSize = file.Length;
 
-            return new JsonResult(await _documentManager.SaveDocument(document, file.OpenReadStream()));
+            return Ok(await _documentManager.SaveDocument(document, file.OpenReadStream()));
         }
 
         [Authorize]
         [HttpDelete("{**id}")]
         [ApplicationRight(Rights.Lesson.Manager, Rights.Blog.Manager, Rights.Project.Manager)]
-        public async Task<IActionResult> DeleteDocument(string id)
-        {
-            return new JsonResult(await _documentManager.RemoveDocument(id));
-        }
+        public async Task<ResponseModel<bool>> DeleteDocument(string id) =>
+            await _documentManager.RemoveDocument(id);
+
     }
 }

@@ -1,16 +1,15 @@
-﻿using Nucleus.Core.Contracts.Collections;
+﻿using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.Filters;
-using Nucleus.Core.Contracts.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Nucleus.Core.Contracts.Interfaces
 {
     public interface IDocumentService
     {
+#warning retire this
         Task<DocumentModel?> GetDocumentAsync(DocumentsFilter filter);
+#warning retire this
         Task<List<DocumentModel>?> GetDocumentsAsync(DocumentsFilter filter);
         Task CreateAsync(DocumentModel document);
         Task UpdateAsync(DocumentModel document);

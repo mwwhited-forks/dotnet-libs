@@ -1,5 +1,7 @@
-﻿using Nucleus.Lesson.Persistence;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Nucleus.Lesson.Contracts.Services;
+using Nucleus.Lesson.Persistence.Services;
 
 namespace Nucleus.Lesson.Persistence
 {
@@ -7,7 +9,7 @@ namespace Nucleus.Lesson.Persistence
     {
         public static IServiceCollection AddLessonPersistenceServices(this IServiceCollection services)
         {
-            new LessonPersistenceRegistrar().AddServices(services);
+            services.TryAddTransient<ILessonService, LessonService>();
             return services;
         }
     }

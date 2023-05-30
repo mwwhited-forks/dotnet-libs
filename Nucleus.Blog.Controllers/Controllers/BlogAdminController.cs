@@ -1,10 +1,10 @@
-﻿using Nucleus.Blog.Contracts.Managers;
-using Nucleus.Blog.Contracts.Models;
-using Nucleus.Blog.Contracts.Models.Filters;
-using Nucleus.Core.Busines.Attributes;
-using Nucleus.Core.Contracts;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Nucleus.Blog.Contracts.Managers;
+using Nucleus.Blog.Contracts.Models;
+using Nucleus.Blog.Contracts.Models.Filters;
+using Nucleus.Core.Contracts;
 
 namespace Nucleus.Blog.Controllers.Controllers
 {
@@ -20,8 +20,10 @@ namespace Nucleus.Blog.Controllers.Controllers
             _blogManager = blogManager;
         }
 
+#warning retire this
         [HttpPost("Blogs")]
         [ApplicationRight(Rights.Blog.Manager)]
+        [Obsolete]
         public async Task<IActionResult> GetAllBlogsPagedAsync(BlogsFilter filter) =>
             new JsonResult(await _blogManager.GetBlogsPagedAsync(filter));
 

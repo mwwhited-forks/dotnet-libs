@@ -16,13 +16,13 @@
 
         public static class Scopes
         {
-            public static string IdentityRead { get; set; }
-            public static string IdentityReadWrite { get; set; }
+            public const string IdentityRead = nameof(IdentityRead);
+            public const string IdentityReadWrite = nameof(IdentityReadWrite);
         }
 
         public static class Roles
         {
-            public static string IdentityReader { get; set; }
+            public const string IdentityReader = nameof(IdentityReader);
         }
     }
 }

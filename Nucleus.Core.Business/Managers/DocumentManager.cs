@@ -1,10 +1,10 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
+﻿using Microsoft.Extensions.Configuration;
+using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.Filters;
 using Nucleus.Core.Contracts.Models.Keys;
 using Nucleus.Core.Contracts.Providers;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,21 +14,25 @@ using System.Threading.Tasks;
 
 namespace Nucleus.Core.Business.Managers
 {
-    public class DocumentManager: IDocumentManager
+    public class DocumentManager : IDocumentManager
     {
         private readonly IConfiguration _config;
-        public IDocumentProvider _documentProvider { get; set; }
-        public IDocumentService _documentService { get; set; }
-        public DocumentManager(IConfiguration config, IDocumentService documentService, IDocumentProvider documentProvider)
+        private readonly IDocumentProvider _documentProvider;
+        private readonly IDocumentService _documentService;
+        public DocumentManager(
+            IConfiguration config,
+            IDocumentService documentService,
+            IDocumentProvider documentProvider
+            )
         {
             _config = config;
-            _documentService= documentService;
+            _documentService = documentService;
             _documentProvider = documentProvider;
         }
-
+#warning retire this
         public async Task<DocumentModel?> GetDocument(DocumentsFilter filter) =>
             await _documentService.GetDocumentAsync(filter);
-
+#warning retire this
         public async Task<List<DocumentModel>?> GetDocuments(DocumentsFilter filter) =>
             await _documentService.GetDocumentsAsync(filter);
 
@@ -37,9 +41,9 @@ namespace Nucleus.Core.Business.Managers
 
         public async Task<ResponseModel<DocumentModel?>> SaveDocument(DocumentModel document, Stream content)
         {
-            if (document == null 
+            if (document == null
                 || content == null
-                || string.IsNullOrEmpty(document.DocumentName) 
+                || string.IsNullOrEmpty(document.DocumentName)
                 )
                 return new ResponseModel<DocumentModel?>()
                 {
@@ -60,7 +64,7 @@ namespace Nucleus.Core.Business.Managers
             ResponseModel<DocumentModel?> result = new ResponseModel<DocumentModel?>();
             if (response.Error == false)
             {
-               
+
                 if (string.IsNullOrEmpty(document.DocumentId))
                 {
                     document.CreatedOn = DateTimeOffset.Now;
@@ -72,7 +76,7 @@ namespace Nucleus.Core.Business.Managers
                     await _documentService.UpdateAsync(document);
                     result.Response = document;
                 }
-            } 
+            }
             else
             {
                 result.Message = response.Status;
@@ -100,7 +104,7 @@ namespace Nucleus.Core.Business.Managers
 
 
             var document = await _documentService.GetDocumentAsync(filter);
-            if(document == null)
+            if (document == null)
             {
                 return new ResponseModel<Boolean>()
                 {
@@ -125,7 +129,7 @@ namespace Nucleus.Core.Business.Managers
             return _config[ConfigKeys.Container.Directories._Base + documentType];
         }
 
-        private string GenerateDocumentKey(string documentName, int length)
+        private static string GenerateDocumentKey(string documentName, int length)
         {
             Random random = new Random();
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -140,7 +144,7 @@ namespace Nucleus.Core.Business.Managers
                 {
                     if (i == documentparts.Length - 1)
                         str.Append("." + key);
-                    
+
                     if (i == 0)
                         str.Append(documentparts[i]);
                     else

@@ -1,11 +1,11 @@
-﻿using Nucleus.Lesson.Contracts.Managers;
+﻿using Nucleus.Core.Contracts.Models;
+using Nucleus.Lesson.Contracts.Managers;
+using Nucleus.Lesson.Contracts.Models;
+using Nucleus.Lesson.Contracts.Models.Filters;
+using Nucleus.Lesson.Contracts.Services;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Nucleus.Lesson.Contracts.Services;
-using Nucleus.Lesson.Contracts.Models;
-using Nucleus.Core.Contracts.Models;
-using Nucleus.Lesson.Contracts.Models.Filters;
-using System;
 
 namespace Nucleus.Lesson.Business.Managers
 {
@@ -22,6 +22,7 @@ namespace Nucleus.Lesson.Business.Managers
         public async Task<LessonModel?> GetLesson(string lessonId) =>
           await _lessonService.GetAsync(lessonId);
 
+#warning retire this
         public async Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter)
         {
             PagedResult<LessonModel> result = new PagedResult<LessonModel>();

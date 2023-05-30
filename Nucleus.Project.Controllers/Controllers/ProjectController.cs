@@ -1,6 +1,6 @@
-﻿using Nucleus.Project.Contracts.Managers;
+﻿using Microsoft.AspNetCore.Mvc;
+using Nucleus.Project.Contracts.Managers;
 using Nucleus.Project.Contracts.Models.Filters;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Nucleus.Project.Controllers.Controllers
 {
@@ -8,13 +8,14 @@ namespace Nucleus.Project.Controllers.Controllers
     [ApiController]
     public class ProjectController : ControllerBase
     {
-        private IPublicProjectManager _publicProjectManager { get; set; }
+        private readonly IPublicProjectManager _publicProjectManager;
 
         public ProjectController(IPublicProjectManager publicProjectManager)
         {
             _publicProjectManager = publicProjectManager;
         }
 
+#warning retire this
         [HttpPost("Projects")]
         public async Task<IActionResult> GetAllBlogsPagedAsync(ProjectFilter filter) =>
             new JsonResult(await _publicProjectManager.GetProjectsPagedAsync(filter));
