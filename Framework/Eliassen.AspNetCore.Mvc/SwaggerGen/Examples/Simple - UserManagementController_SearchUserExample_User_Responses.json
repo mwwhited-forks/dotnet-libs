@@ -1,0 +1,35 @@
+{
+  "200": {
+    "Description": "Success",
+    "Content": {
+      "text/plain": {
+        "Schema": {
+          "Reference": {
+            "Id": "Eliassen.System.Linq.Search.PagedSearchResult\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+            "ReferenceV3": "#/components/schemas/Eliassen.System.Linq.Search.PagedSearchResult\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+            "ReferenceV2": "#/definitions/Eliassen.System.Linq.Search.PagedSearchResult\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+          }
+        }
+      },
+      "application/json": {
+        "Schema": {
+          "Reference": {
+            "Type": 0,
+            "Id": "Eliassen.System.Linq.Search.PagedSearchResult\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+            "ReferenceV3": "#/components/schemas/Eliassen.System.Linq.Search.PagedSearchResult\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+            "ReferenceV2": "#/definitions/Eliassen.System.Linq.Search.PagedSearchResult\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+          }
+        }
+      },
+      "text/json": {
+        "Schema": {
+          "Reference": {
+            "Id": "Eliassen.System.Linq.Search.PagedSearchResult\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+            "ReferenceV3": "#/components/schemas/Eliassen.System.Linq.Search.PagedSearchResult\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+            "ReferenceV2": "#/definitions/Eliassen.System.Linq.Search.PagedSearchResult\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+          }
+        }
+      }
+    }
+  }
+}

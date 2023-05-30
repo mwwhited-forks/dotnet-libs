@@ -7,6 +7,57 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Remove="SwaggerGen\Examples\Simple - UserManagementController_SearchUserExample_User_RequestBody.json" />
+	  <EmbeddedResource Remove="SwaggerGen\Examples\Simple - UserManagementController_SearchUserExample_User_Responses.json" />
+	  <EmbeddedResource Remove="SwaggerGen\Examples\Simple - UserManagementController_SearchUserExample_User_Schemas.json" />
+	  <EmbeddedResource Remove="SwaggerGen\Examples\UserManagementController_SearchUserExample_User_Schemas.json" />
+	  <EmbeddedResource Remove="SwaggerGen\UserManagementController_SearchUserExample_User_RequestBody.json" />
+	  <EmbeddedResource Remove="SwaggerGen\UserManagementController_SearchUserExample_User_Responses.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="SwaggerGen\Examples\Simple - UserManagementController_SearchUserExample_User_RequestBody.json" />
+	  <None Remove="SwaggerGen\Examples\Simple - UserManagementController_SearchUserExample_User_Responses.json" />
+	  <None Remove="SwaggerGen\Examples\Simple - UserManagementController_SearchUserExample_User_Schemas.json" />
+	  <None Remove="SwaggerGen\Examples\UserManagementController_SearchUserExample_User_Schemas.json" />
+	  <None Remove="SwaggerGen\UserManagementController_SearchUserExample_User_RequestBody.json" />
+	  <None Remove="SwaggerGen\UserManagementController_SearchUserExample_User_Responses.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="SwaggerGen\Examples\Simple - UserManagementController_SearchUserExample_User_RequestBody.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	  <Content Include="SwaggerGen\Examples\UserManagementController_SearchUserExample_User_RequestBody.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	  <Content Include="SwaggerGen\Examples\Simple - UserManagementController_SearchUserExample_User_Responses.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	  <Content Include="SwaggerGen\Examples\UserManagementController_SearchUserExample_User_Responses.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	  <Content Include="SwaggerGen\Examples\Simple - UserManagementController_SearchUserExample_User_Schemas.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	  <Content Include="SwaggerGen\Examples\UserManagementController_SearchUserExample_User_Schemas.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.3.1" />

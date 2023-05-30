@@ -67,13 +67,13 @@ namespace Nucleus.Core.Controllers.Controllers
         public IQueryable<Module> GetApplicationPermissions() => _usersManager.QueryModules();
 
 
-        [Authorize]
-        [HttpPost(nameof(SearchUserExample))]
-        public PagedSearchResult<User> SearchUserExample(SearchQuery<User> model) => throw new NotSupportedException();
+        //[Authorize]
+        //[HttpPost(nameof(SearchUserExample))]
+        //public PagedSearchResult<User> SearchUserExample(SearchQuery<User> model) => throw new NotSupportedException();
 
-        [Authorize]
-        [HttpPost(nameof(SearchModuleExample))]
-        public PagedSearchResult<Module> SearchModuleExample(SearchQuery<Module> model) => throw new NotSupportedException();
+        //[Authorize]
+        //[HttpPost(nameof(SearchModuleExample))]
+        //public PagedSearchResult<Module> SearchModuleExample(SearchQuery<Module> model) => throw new NotSupportedException();
 
     }
 }

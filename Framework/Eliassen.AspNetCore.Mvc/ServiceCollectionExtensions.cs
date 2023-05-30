@@ -25,7 +25,6 @@ namespace Eliassen.AspNetCore.Mvc
             {
                 opt.Filters.Add(typeof(SearchQueryResultFilter));
                 opt.Conventions.Add(new ApiNamespaceControllerModelConvention());
-                opt.Conventions.Add(new SearchQueryActionModelConvention());
             });
 
             services.TryAddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
