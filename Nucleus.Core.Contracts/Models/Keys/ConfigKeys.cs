@@ -14,6 +14,7 @@ namespace Nucleus.Core.Contracts.Models.Keys
                 public const string Issuer = "Azure:AdB2C:Issuer";
                 public const string ClientSecret = "Azure:AdB2C:ClientSecret";
                 public const string Tenant = "Azure:AdB2C:Tenant";
+                public const string Domain = "Azure:AdB2C:Domain";
             }
            
         }
