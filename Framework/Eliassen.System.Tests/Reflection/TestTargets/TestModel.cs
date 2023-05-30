@@ -2,6 +2,6 @@
 {
     public class TestModel
     {
-        public string Property { get; set; }
+        public string Property { get; set; } = null!;
     }
 }

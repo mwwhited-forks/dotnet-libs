@@ -6,14 +6,14 @@ namespace Eliassen.System.Reflection
     internal record EnumModel : IEnumModel
     {
         public int Id { get; init; }
-        public string Name { get; init; }
-        public string Code { get; init; }
+        public string Name { get; init; } = null!;
+        public string Code { get; init; } = null!;
 
-        public string? Description { get; init; }
+        public string? Description { get; init; } = null!;
 
         public int? Order { get; init; }
 
-        public object Value { get; init; }
+        public object Value { get; init; } = null!;
         public bool IsEndState { get; init; }
         public bool IsExcludeFromUnique { get; init; }
 
