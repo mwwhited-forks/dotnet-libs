@@ -74,16 +74,17 @@ namespace Nucleus.Core.Business.Managers.Identity
         {
             try
             {
-                // Query existing users by email, iff it already exists, return that id.
+                var tenant = _config[ConfigKeys.Azure.ADB2C.Domain];
                 var existingUsers = await _graphServiceClient.Users
                     .Request()
-                    .Filter($"mail eq '{email}'")
+                    .Filter($"identities/any(c:c/issuerAssignedId eq '{email}' and c/issuer eq '{tenant}')")
                     .Select(u => new
                     {
                         u.Id,
                         u.Mail
                     })
                     .GetAsync();
+
                 if (existingUsers.Count > 0)
                     return existingUsers[0].Id;
 

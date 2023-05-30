@@ -64,9 +64,21 @@ namespace Nucleus.Core.Business.Managers
             }
             else if (string.IsNullOrEmpty(user.UserId))
             {
-                user.CreatedOn = DateTimeOffset.Now;
+                var userExists = await _userService.GetByEmailAddressAsync(user.EmailAddress);
+                if (userExists != null)
+                {
+                    return new ResponseModel<User>()
+                    {
+                        IsSuccess = false,
+                        Message = "Duplicate Email Address"
+                    };
+                }
+                else
+                {
+                    user.CreatedOn = DateTimeOffset.Now;
                 await _users.CreateAsync(user);
                 result.Response = await _users.GetByEmailAddressAsync(user.EmailAddress);
+                }
             }
             else
             {
