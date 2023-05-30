@@ -64,7 +64,7 @@ namespace Nucleus.Core.Business.Managers
             }
             else if (string.IsNullOrEmpty(user.UserId))
             {
-                var userExists = await _userService.GetByEmailAddressAsync(user.EmailAddress);
+                var userExists = await _users.GetByEmailAddressAsync(user.EmailAddress);
                 if (userExists != null)
                 {
                     return new ResponseModel<User>()
