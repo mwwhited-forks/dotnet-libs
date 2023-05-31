@@ -154,11 +154,11 @@ namespace Eliassen.System.Linq.Search
                 _ => query.Skip(page * pageLength).Take(pageLength).ToArray()
             };
 
-            var result = new PagedSearchResult<TModel>(
+            var result = new PagedQueryResult<TModel>(
                 currentPage: page,
                 totalPageCount: totalRows == -1 ? totalRows : (int)Math.Ceiling((decimal)totalRows / pageLength),
                 totalRowCount: totalRows,
-                rows: rows
+                items: rows
                 );
             return result;
         }
@@ -183,11 +183,11 @@ namespace Eliassen.System.Linq.Search
                 _ => await query.Skip(page * pageLength).Take(pageLength).ToListAsync(cancellationToken)
             };
 
-            var result = new PagedSearchResult<TModel>(
+            var result = new PagedQueryResult<TModel>(
                 currentPage: page,
                 totalPageCount: (int)Math.Ceiling((decimal)totalRows / pageLength),
                 totalRowCount: totalRows,
-                rows: rows
+                items: rows
                 );
             return result;
         }

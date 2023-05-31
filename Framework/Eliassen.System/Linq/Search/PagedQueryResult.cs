@@ -1,45 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace Eliassen.System.Linq.Search
 {
-    public class PagedSearchResult<TModel> : IPagedQueryResult<TModel>
+    public class PagedQueryResult<TModel> : QueryResult<TModel>, IPagedQueryResult<TModel>
     {
-        public PagedSearchResult(
+        public PagedQueryResult(
             int currentPage,
             int totalPageCount,
             int totalRowCount,
-            IEnumerable<TModel> rows
-            )
+            IEnumerable<TModel> items
+            ) : base(items)
         {
             CurrentPage = currentPage;
             TotalPageCount = totalPageCount;
             TotalRowCount = totalRowCount;
-            Rows = rows;
         }
 
-        public PagedSearchResult(
+        public PagedQueryResult(
             IPagedQueryResult<TModel> toWrap
             ) : this(
                 currentPage: toWrap.CurrentPage,
                 totalPageCount: toWrap.TotalPageCount,
                 totalRowCount: toWrap.TotalRowCount,
-                rows: toWrap.Rows
+                items: toWrap.Rows
                 )
         {
         }
 
-        public PagedSearchResult()
+        public PagedQueryResult()
         {
-            Rows = Enumerable.Empty<TModel>();
         }
 
         public int CurrentPage { get; init; }
         public int TotalPageCount { get; init; }
         public int TotalRowCount { get; init; }
-        public IEnumerable<TModel> Rows { get; init; }
-
-        IEnumerable IPagedQueryResult.Rows => Rows;
     }
 }

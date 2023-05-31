@@ -4,9 +4,9 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Linq;
 
-namespace Nucleus.Api.SwaggerGen;
+namespace Eliassen.AspNetCore.Mvc.Filters;
 
-public class SwaggerFileOperationFilter : IOperationFilter
+public class FormFileOperationFilter : IOperationFilter
 {
     // https://dejanstojanovic.net/aspnet/2021/april/handling-file-upload-in-aspnet-core-5-with-swagger-ui/?theme=light
     public void Apply(OpenApiOperation operation, OperationFilterContext context)

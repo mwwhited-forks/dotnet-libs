@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Controllers;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

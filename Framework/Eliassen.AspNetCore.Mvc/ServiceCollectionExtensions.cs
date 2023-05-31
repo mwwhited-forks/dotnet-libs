@@ -4,7 +4,6 @@ using Eliassen.System.Accessors;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
-using Nucleus.Api.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
@@ -31,8 +30,8 @@ namespace Eliassen.AspNetCore.Mvc
             services.TryAddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
             services.AddSwaggerGen(setup =>
             {
-                setup.OperationFilter<SwaggerFileOperationFilter>();
-                setup.OperationFilter<SwaggerSearchOperationFilter>();
+                setup.OperationFilter<FormFileOperationFilter>();
+                setup.OperationFilter<SearchQueryOperationFilter>();
             });
 
             return services;

@@ -13,14 +13,14 @@ using System.Threading.Tasks;
 
 namespace Eliassen.AspNetCore.Mvc.Middleware
 {
-    public class HttpSearchQueryMiddleware
+    public class SearchQueryMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger _log;
 
-        public HttpSearchQueryMiddleware(
+        public SearchQueryMiddleware(
             RequestDelegate next,
-            ILogger<HttpSearchQueryMiddleware> log
+            ILogger<SearchQueryMiddleware> log
             )
         {
             _next = next;
