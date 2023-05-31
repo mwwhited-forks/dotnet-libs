@@ -157,8 +157,8 @@ public class SwaggerSearchOperationFilter : IOperationFilter
         {
             Type = "object",
         };
-        var getter = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty);
-        foreach (var property in getter)
+        var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.SetProperty);
+        foreach (var property in properties)
         {
             schema.Properties.Add(property.Name, GetSchema(property.PropertyType));
         }
