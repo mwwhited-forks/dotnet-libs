@@ -4,17 +4,18 @@ using System.Linq;
 
 namespace Eliassen.System.Linq.Search
 {
+    /// <inheritdoc/>
     public class QueryResult<TModel> : IQueryResult<TModel>
     {
-        private readonly IReadOnlyList<TModel> _items;
-
+        /// <inheritdoc/>
         public QueryResult(
             IEnumerable<TModel> items
             )
         {
-            _items = (items as List<TModel>) ?? items.ToList();
+            Rows = (items as List<TModel>) ?? items.ToList();
         }
 
+        /// <inheritdoc/>
         public QueryResult(
             IQueryResult<TModel> toWrap
             ) : this(
@@ -23,11 +24,13 @@ namespace Eliassen.System.Linq.Search
         {
         }
 
+        /// <inheritdoc/>
         public QueryResult()
         {
         }
 
+        /// <inheritdoc/>
         public IReadOnlyList<TModel> Rows { get; init; } = new List<TModel>();
-        IEnumerable IQueryResult.Rows => _items;
+        IEnumerable IQueryResult.Rows => Rows;
     }
 }

@@ -8,8 +8,6 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 
 namespace Eliassen.AspNetCore.Mvc.Filters;
 
@@ -76,7 +74,7 @@ public class SearchQueryOperationFilter : IOperationFilter
 
         if (properties.TryGetValue(nameof(ISearchQuery.PageSize), out var pageSize))
         {
-            pageSize.Description = $"**Default size:** `{SearchQueryExtensions.DefaultPageSize}`, `-1` will disable paging";
+            pageSize.Description = $"**Default size:** `{QueryableExtensions.DefaultPageSize}`, `-1` will disable paging";
         }
         if (properties.TryGetValue(nameof(ISearchQuery.ExcludePageCount), out var excludePageCount))
         {

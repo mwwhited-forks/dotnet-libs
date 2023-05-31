@@ -5,7 +5,7 @@
 		<Authors>Eliassen - AppDev</Authors>
 		<Copyright>Eliassen Group, 2023</Copyright>
 
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<!--<GenerateDocumentationFile>True</GenerateDocumentationFile>-->
 	</PropertyGroup>
 
 	<ItemGroup>

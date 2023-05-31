@@ -43,8 +43,8 @@ namespace Nucleus.Core.Controllers.Controllers
                  ExcludePageCount = userFilter.PagingModel.ExcludePageCount,
                  SearchTerm = userFilter.UserFilters.InputValue,
                  Filter = {
-                     {nameof(userFilter.UserFilters.Module), new SearchParameter{ EqualTo= userFilter.UserFilters.Module } },
-                     {nameof(userFilter.UserFilters.UserStatus), new SearchParameter{ EqualTo= userFilter.UserFilters.UserStatus } },
+                     {nameof(userFilter.UserFilters.Module), new FilterParameter{ EqualTo= userFilter.UserFilters.Module } },
+                     {nameof(userFilter.UserFilters.UserStatus), new FilterParameter{ EqualTo= userFilter.UserFilters.UserStatus } },
                  },
              });
 

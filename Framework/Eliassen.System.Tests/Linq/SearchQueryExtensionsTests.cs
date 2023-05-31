@@ -1,29 +1,29 @@
-﻿using Eliassen.System.Tests.Linq.TestTargets;
+﻿using Eliassen.System.Linq.Search;
+using Eliassen.System.Tests.Linq.TestTargets;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Eliassen.System.Linq.Search;
 
 namespace Eliassen.System.Tests.Linq
 {
     [TestClass]
-    public class SearchQueryExtensionsTests
+    public class QueryableExtensionsTests
     {
         public TestContext? TestContext { get; set; }
 
         private static IQueryable<TestTargetModel> GetTestData() =>
             Enumerable
-            .Range(0, SearchQueryExtensions.DefaultPageSize * 100)
+            .Range(0, QueryableExtensions.DefaultPageSize * 100)
             .Select(i => new TestTargetModel(i))
             .AsQueryable()
             ;
         private static IQueryable<TestTargetExtendedModel> GetTestDataExtended() =>
             Enumerable
-            .Range(0, SearchQueryExtensions.DefaultPageSize * 100)
+            .Range(0, QueryableExtensions.DefaultPageSize * 100)
             .Select(i => new TestTargetExtendedModel(i))
             .AsQueryable()
             ;
@@ -32,7 +32,7 @@ namespace Eliassen.System.Tests.Linq
         [TestCategory(TestCategories.Unit)]
         public void DefaultPageSizeTest()
         {
-            Assert.AreEqual(10, SearchQueryExtensions.DefaultPageSize);
+            Assert.AreEqual(10, QueryableExtensions.DefaultPageSize);
         }
 
         [TestMethod]
@@ -147,7 +147,7 @@ namespace Eliassen.System.Tests.Linq
             {
                 Filter = new()
                 {
-                    { nameof(TestTargetModel.Index), new SearchParameter{ InSet = new object?[] { 1, 2, 3 } } }
+                    { nameof(TestTargetModel.Index), new FilterParameter{ InSet = new object?[] { 1, 2, 3 } } }
                 }
             };
             this.TestContext.AddResult(query);
@@ -169,7 +169,7 @@ namespace Eliassen.System.Tests.Linq
             {
                 Filter = new()
                 {
-                    { nameof(TestTargetModel.Index), new SearchParameter{ EqualTo =  1 } }
+                    { nameof(TestTargetModel.Index), new FilterParameter{ EqualTo =  1 } }
                 }
             };
             this.TestContext.AddResult(query);
@@ -191,7 +191,7 @@ namespace Eliassen.System.Tests.Linq
             {
                 Filter = new()
                 {
-                    { nameof(TestTargetModel.Name), new SearchParameter{ InSet =  new [] {"Name1","Name2","Name3" } } }
+                    { nameof(TestTargetModel.Name), new FilterParameter{ InSet =  new [] {"Name1","Name2","Name3" } } }
                 }
             };
             this.TestContext.AddResult(query);
@@ -213,7 +213,7 @@ namespace Eliassen.System.Tests.Linq
             {
                 Filter = new()
                 {
-                    { nameof(TestTargetModel.Name), new SearchParameter{ EqualTo =  "Name3" } }
+                    { nameof(TestTargetModel.Name), new FilterParameter{ EqualTo =  "Name3" } }
                 }
             };
             this.TestContext.AddResult(query);
@@ -340,7 +340,7 @@ namespace Eliassen.System.Tests.Linq
                 Filter =
                 {
                     { nameof(TestTargetExtendedModel.Date),
-                        new SearchParameter{
+                        new FilterParameter{
                             GreaterThan = TestTargetExtendedModel.BaseDate.AddMonths(2),
                         } }
                 }
@@ -365,7 +365,7 @@ namespace Eliassen.System.Tests.Linq
                 Filter =
                 {
                     { nameof(TestTargetExtendedModel.Date),
-                        new SearchParameter{
+                        new FilterParameter{
                             GreaterThanOrEqualTo = TestTargetExtendedModel.BaseDate.AddMonths(2),
                         } }
                 }
@@ -389,7 +389,7 @@ namespace Eliassen.System.Tests.Linq
                 Filter =
                 {
                     { nameof(TestTargetExtendedModel.Date),
-                        new SearchParameter{
+                        new FilterParameter{
                             LessThan = TestTargetExtendedModel.BaseDate.AddMonths(2),
                         } }
                 }
@@ -413,7 +413,7 @@ namespace Eliassen.System.Tests.Linq
                 Filter =
                 {
                     { nameof(TestTargetExtendedModel.Date),
-                        new SearchParameter{
+                        new FilterParameter{
                             LessThanOrEqualTo = TestTargetExtendedModel.BaseDate.AddMonths(2),
                         } }
                 }
@@ -437,7 +437,7 @@ namespace Eliassen.System.Tests.Linq
                 Filter =
                 {
                     { nameof(TestTargetExtendedModel.Date),
-                        new SearchParameter{
+                        new FilterParameter{
                             GreaterThanOrEqualTo = TestTargetExtendedModel.BaseDate.AddMonths(2),
                             LessThanOrEqualTo = TestTargetExtendedModel.BaseDate.AddMonths(6),
                         }
@@ -463,7 +463,7 @@ namespace Eliassen.System.Tests.Linq
             {
                 Filter =
                 {
-                    { TestTargetExtendedModel.FC, new SearchParameter{ EqualTo = "ame1" } }
+                    { TestTargetExtendedModel.FC, new FilterParameter{ EqualTo = "ame1" } }
                 }
             };
             this.TestContext.AddResult(query);

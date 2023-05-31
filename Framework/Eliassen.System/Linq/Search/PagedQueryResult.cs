@@ -2,8 +2,10 @@
 
 namespace Eliassen.System.Linq.Search
 {
+    /// <inheritdoc/>
     public class PagedQueryResult<TModel> : QueryResult<TModel>, IPagedQueryResult<TModel>
     {
+        /// <inheritdoc/>
         public PagedQueryResult(
             int currentPage,
             int totalPageCount,
@@ -16,6 +18,7 @@ namespace Eliassen.System.Linq.Search
             TotalRowCount = totalRowCount;
         }
 
+        /// <inheritdoc/>
         public PagedQueryResult(
             IPagedQueryResult<TModel> toWrap
             ) : this(
@@ -27,12 +30,16 @@ namespace Eliassen.System.Linq.Search
         {
         }
 
+        /// <inheritdoc/>
         public PagedQueryResult()
         {
         }
 
+        /// <inheritdoc/>
         public int CurrentPage { get; init; }
+        /// <inheritdoc/>
         public int TotalPageCount { get; init; }
+        /// <inheritdoc/>
         public int TotalRowCount { get; init; }
     }
 }

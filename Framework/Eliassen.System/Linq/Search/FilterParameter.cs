@@ -2,7 +2,10 @@
 
 namespace Eliassen.System.Linq.Search
 {
-    public class SearchParameter
+    /// <summary>
+    /// Filter parameter
+    /// </summary>
+    public class FilterParameter
     {
         /// <summary>
         /// `Equal To`: pass in the value to match for a given property  

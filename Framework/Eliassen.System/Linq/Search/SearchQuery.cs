@@ -2,9 +2,12 @@
 
 namespace Eliassen.System.Linq.Search
 {
+    /// <inheritdoc/>
     public class SearchQuery<TModel> : SearchQuery, ISearchQuery<TModel>
     {
     }
+
+    /// <inheritdoc/>
     public class SearchQuery : ISearchQuery
     {
         /// <inheritdoc cref="IPageQuery.CurrentPage"/>
@@ -18,12 +21,12 @@ namespace Eliassen.System.Linq.Search
         public string? SearchTerm { get; set; }
 
         /// <inheritdoc cref="IFilterQuery.Filter"/>
-        public Dictionary<string, SearchParameter> Filter { get; init; } = new();
+        public Dictionary<string, FilterParameter> Filter { get; init; } = new();
 
         /// <inheritdoc cref="ISortQuery.OrderBy"/>
         public Dictionary<string, OrderDirections> OrderBy { get; init; } = new();
 
-        IDictionary<string, SearchParameter> IFilterQuery.Filter => Filter;
+        IDictionary<string, FilterParameter> IFilterQuery.Filter => Filter;
         IDictionary<string, OrderDirections> ISortQuery.OrderBy => OrderBy;
     }
 }
