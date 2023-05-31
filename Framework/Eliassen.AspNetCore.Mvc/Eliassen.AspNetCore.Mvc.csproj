@@ -7,68 +7,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Remove="docs\CultureInfoMiddleware.md" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Remove="docs\Examples\Simple - UserManagementController_SearchUserExample_User_RequestBody.json" />
-	  <EmbeddedResource Remove="docs\Examples\Simple - UserManagementController_SearchUserExample_User_Responses.json" />
-	  <EmbeddedResource Remove="docs\Examples\Simple - UserManagementController_SearchUserExample_User_Schemas.json" />
-	  <EmbeddedResource Remove="docs\Examples\UserManagementController_SearchUserExample_User_Schemas.json" />
-	  <EmbeddedResource Remove="SwaggerGen\UserManagementController_SearchUserExample_User_RequestBody.json" />
-	  <EmbeddedResource Remove="SwaggerGen\UserManagementController_SearchUserExample_User_Responses.json" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="docs\CultureInfoMiddleware.md" />
-	  <None Remove="docs\Examples\PagedResult.json" />
-	  <None Remove="docs\Examples\SearchQuery.json" />
-	  <None Remove="docs\Examples\Simple - UserManagementController_SearchUserExample_User_RequestBody.json" />
-	  <None Remove="docs\Examples\Simple - UserManagementController_SearchUserExample_User_Responses.json" />
-	  <None Remove="docs\Examples\Simple - UserManagementController_SearchUserExample_User_Schemas.json" />
-	  <None Remove="docs\Examples\UserManagementController_SearchUserExample_User_Schemas.json" />
-	  <None Remove="SwaggerGen\UserManagementController_SearchUserExample_User_RequestBody.json" />
-	  <None Remove="SwaggerGen\UserManagementController_SearchUserExample_User_Responses.json" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Include="docs\CultureInfoMiddleware.md" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Content Include="docs\Examples\Simple - UserManagementController_SearchUserExample_User_RequestBody.json">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-	  </Content>
-	  <Content Include="docs\Examples\UserManagementController_SearchUserExample_User_RequestBody.json">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-	  </Content>
-	  <Content Include="docs\Examples\Simple - UserManagementController_SearchUserExample_User_Responses.json">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-	  </Content>
-	  <Content Include="docs\Examples\UserManagementController_SearchUserExample_User_Responses.json">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-	  </Content>
-	  <Content Include="docs\Examples\Simple - UserManagementController_SearchUserExample_User_Schemas.json">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-	  </Content>
-	  <Content Include="docs\Examples\UserManagementController_SearchUserExample_User_Schemas.json">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-	  </Content>
-	</ItemGroup>
-
-	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.3.1" />
@@ -84,7 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Eliassen.System\Eliassen.System.csproj" />
+		<ProjectReference Include="..\Eliassen.System\Eliassen.System.csproj" />
 	</ItemGroup>
 
 </Project>

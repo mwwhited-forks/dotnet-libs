@@ -1,4 +1,4 @@
-﻿using Eliassen.System.ComponentModel;
+﻿using Eliassen.System.ComponentModel.Search;
 
 namespace Eliassen.System.Tests.Linq.TestTargets
 {

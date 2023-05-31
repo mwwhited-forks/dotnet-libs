@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Eliassen.System.ComponentModel;
+using Eliassen.System.ComponentModel.Search;
 using Eliassen.System.Linq.Search;
 using Eliassen.System.Reflection;
 
@@ -14,7 +14,6 @@ namespace Eliassen.System.Linq.Expressions
     {
         public const string PropertyMap = nameof(PropertyMap);
         public const string PredicateMap = nameof(PredicateMap);
-
 
         public static IReadOnlyDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions<TModel>() =>
          new Dictionary<string, Expression<Func<TModel, object>>>(BuildExpressions<TModel>(), StringComparer.InvariantCultureIgnoreCase);
@@ -76,7 +75,6 @@ namespace Eliassen.System.Linq.Expressions
                     _ => Convert.ToString(queryParameter)
                 };
             }
-
 
             var queryParameterType = queryParameter.GetType();
 
@@ -202,6 +200,11 @@ namespace Eliassen.System.Linq.Expressions
                 select builtExpression
             );
 
+        public static IReadOnlyCollection<string> GetSearchablePropertyNames(Type modelType) =>
+            (IReadOnlyCollection<string>)typeof(ExpressionTreeBuilder)
+                .GetStaticMethod(nameof(GetSearchablePropertyNames))
+                .MakeGenericMethod(modelType)
+                .Invoke(null, null);
         public static IReadOnlyCollection<string> GetSearchablePropertyNames<TModel>()
         {
             var modelType = typeof(TModel);
@@ -234,6 +237,11 @@ namespace Eliassen.System.Linq.Expressions
             return results;
         }
 
+        public static IReadOnlyCollection<string> GetSortablePropertyNames(Type modelType) =>
+            (IReadOnlyCollection<string>)typeof(ExpressionTreeBuilder)
+                .GetStaticMethod(nameof(GetSortablePropertyNames))
+                .MakeGenericMethod(modelType)
+                .Invoke(null, null);
         public static IReadOnlyCollection<string> GetSortablePropertyNames<TModel>()
         {
             var modelType = typeof(TModel);
@@ -260,6 +268,11 @@ namespace Eliassen.System.Linq.Expressions
             return results;
         }
 
+        public static IReadOnlyCollection<string> GetFilterablePropertyNames(Type modelType) =>
+            (IReadOnlyCollection<string>)typeof(ExpressionTreeBuilder)
+                .GetStaticMethod(nameof(GetFilterablePropertyNames))
+                .MakeGenericMethod(modelType)
+                .Invoke(null, null);
         public static IReadOnlyCollection<string> GetFilterablePropertyNames<TModel>()
         {
             var modelType = typeof(TModel);
@@ -293,6 +306,7 @@ namespace Eliassen.System.Linq.Expressions
 
             return results;
         }
+
 
         public static IReadOnlyCollection<(string property, Expression<Func<TModel, object>> expression)> GetSearchableExpressions<TModel>() =>
             (
@@ -411,11 +425,13 @@ namespace Eliassen.System.Linq.Expressions
             {
                 chain = (chain, expression) switch
                 {
+                    (_, null) => null,
                     (null, _) => expression.Body,
                     (_, _) => type switch
                     {
                         ChainTypes.AndAlso => Expression.AndAlso(chain, expression.Body),
                         ChainTypes.OrElse => Expression.OrElse(chain, expression.Body),
+                        _ => throw new NotSupportedException($"{type}")
                     }
                 };
             }
@@ -426,33 +442,6 @@ namespace Eliassen.System.Linq.Expressions
             var replaced = new ParameterReplacer(parameter).Visit(chain);
             var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
             return lambda;
-        }
-
-        private enum ChainTypes
-        {
-            AndAlso,
-            OrElse,
-        }
-
-        private enum ExpressionOperators
-        {
-            Unknown,
-            EqualTo,
-            InSet,
-            LessThan,
-            LessThanOrEqualTo,
-            GreaterThan,
-            GreaterThanOrEqualTo,
-        }
-
-        internal class ParameterReplacer : ExpressionVisitor
-        {
-            private readonly ParameterExpression _parameter;
-
-            internal ParameterReplacer(ParameterExpression parameter) =>
-                _parameter = parameter;
-
-            protected override Expression VisitParameter(ParameterExpression node) => _parameter;
         }
     }
 }

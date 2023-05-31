@@ -1,5 +1,6 @@
-﻿using Eliassen.System.ComponentModel;
+﻿using Eliassen.System.ComponentModel.Search;
 using Eliassen.System.Linq.Expressions;
+using Eliassen.System.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -109,7 +110,12 @@ namespace Eliassen.System.Linq.Search
             return ordered ?? query.OrderBy(_ => 0);
         }
 
-        private static IEnumerable<(string column, OrderDirections direction)> DefaultSortOrder<T>() =>
+        public static IEnumerable<(string column, OrderDirections direction)> DefaultSortOrder(Type modelType) =>
+            (IEnumerable<(string column, OrderDirections direction)>)typeof(SortByExtension)
+                .GetStaticMethod(nameof(DefaultSortOrder))
+                .MakeGenericMethod(modelType)
+                .Invoke(null, null);
+        public static IEnumerable<(string column, OrderDirections direction)> DefaultSortOrder<T>() =>
             from prop in typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty)
             let attribute = prop.GetCustomAttribute<DefaultSortAttribute>()
             where attribute != null

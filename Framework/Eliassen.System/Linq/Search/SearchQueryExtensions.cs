@@ -9,13 +9,6 @@ namespace Eliassen.System.Linq.Search
 {
     public static class SearchQueryExtensions
     {
-        public static IEnumerable<string> SearchableProperties<TModel>() =>
-            ExpressionTreeBuilder.GetSearchablePropertyNames<TModel>();
-        public static IEnumerable<string> SortableProperties<TModel>() =>
-            ExpressionTreeBuilder.GetSortablePropertyNames<TModel>();
-        public static IEnumerable<string> FilterableProperties<TModel>() =>
-            ExpressionTreeBuilder.GetFilterablePropertyNames<TModel>();
-
         /// <summary>
         /// this method will compose and execute a query build from IHaveSearchTerm, IHaveSearchFilter
         /// <seealso cref="ISearchTermQuery"/>

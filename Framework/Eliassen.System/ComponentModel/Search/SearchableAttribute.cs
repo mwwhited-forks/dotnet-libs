@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Eliassen.System.ComponentModel
+namespace Eliassen.System.ComponentModel.Search
 {
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
     public class SearchableAttribute : Attribute
