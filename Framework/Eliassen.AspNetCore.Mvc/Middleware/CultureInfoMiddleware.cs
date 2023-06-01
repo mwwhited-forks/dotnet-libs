@@ -32,6 +32,7 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
                 {
                     var language = fromheader.Split(',').Select(GetCultureInfo).FirstOrDefault();
                     logger.LogInformation($"Set CultureInfo to \"{{{nameof(fromheader)}}}\"::{{{nameof(language)}}}", fromheader, language);
+
                     accessor.CultureInfo = language ?? CultureInfo.CurrentCulture;
                     CultureInfo.CurrentCulture = CultureInfo.CurrentUICulture = accessor.CultureInfo;
                 }

@@ -8,7 +8,7 @@ namespace Eliassen.AspNetCore.Mvc
         public static IApplicationBuilder UseAspNetCoreExtensionMiddleware(this IApplicationBuilder builder)
         {
             builder.UseMiddleware<CultureInfoMiddleware>();
-            builder.UseMiddleware<HttpSearchQueryMiddleware>();
+            builder.UseMiddleware<SearchQueryMiddleware>();
             return builder;
         }
     }

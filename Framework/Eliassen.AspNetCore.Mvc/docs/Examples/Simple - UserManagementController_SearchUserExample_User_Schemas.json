@@ -1,0 +1,306 @@
+{
+  "Nucleus.Core.Contracts.Models.User": {
+    "Type": "object",
+    "ReadOnly": false,
+    "WriteOnly": false,
+    "AllOf": [],
+    "OneOf": [],
+    "AnyOf": [],
+    "Required": [],
+    "Properties": {
+      "userId": {
+        "Type": "string",
+        "ReadOnly": false,
+        "WriteOnly": false,
+        "AllOf": [],
+        "OneOf": [],
+        "AnyOf": [],
+        "Required": [],
+        "Properties": {},
+        "AdditionalPropertiesAllowed": true,
+        "Enum": [],
+        "Nullable": true,
+        "Deprecated": false,
+        "Extensions": {},
+        "UnresolvedReference": false
+      },
+      "userName": {
+        "Type": "string",
+        "ReadOnly": false,
+        "WriteOnly": false,
+        "AllOf": [],
+        "OneOf": [],
+        "AnyOf": [],
+        "Required": [],
+        "Properties": {},
+        "AdditionalPropertiesAllowed": true,
+        "Enum": [],
+        "Nullable": true,
+        "Deprecated": false,
+        "Extensions": {},
+        "UnresolvedReference": false
+      },
+      "emailAddress": {
+        "Type": "string",
+        "ReadOnly": false,
+        "WriteOnly": false,
+        "AllOf": [],
+        "OneOf": [],
+        "AnyOf": [],
+        "Required": [],
+        "Properties": {},
+        "AdditionalPropertiesAllowed": true,
+        "Enum": [],
+        "Nullable": true,
+        "Deprecated": false,
+        "Extensions": {},
+        "UnresolvedReference": false
+      },
+      "firstName": {
+        "Type": "string",
+        "ReadOnly": false,
+        "WriteOnly": false,
+        "AllOf": [],
+        "OneOf": [],
+        "AnyOf": [],
+        "Required": [],
+        "Properties": {},
+        "AdditionalPropertiesAllowed": true,
+        "Enum": [],
+        "Nullable": true,
+        "Deprecated": false,
+        "Extensions": {},
+        "UnresolvedReference": false
+      },
+      "lastName": {
+        "Type": "string",
+        "ReadOnly": false,
+        "WriteOnly": false,
+        "AllOf": [],
+        "OneOf": [],
+        "AnyOf": [],
+        "Required": [],
+        "Properties": {},
+        "AdditionalPropertiesAllowed": true,
+        "Enum": [],
+        "Nullable": true,
+        "Deprecated": false,
+        "Extensions": {},
+        "UnresolvedReference": false
+      },
+      "active": {
+        "Type": "boolean",
+        "ReadOnly": false,
+        "WriteOnly": false,
+        "AllOf": [],
+        "OneOf": [],
+        "AnyOf": [],
+        "Required": [],
+        "Properties": {},
+        "AdditionalPropertiesAllowed": true,
+        "Enum": [],
+        "Nullable": false,
+        "Deprecated": false,
+        "Extensions": {},
+        "UnresolvedReference": false
+      },
+      "userModules": {
+        "Type": "array",
+        "ReadOnly": false,
+        "WriteOnly": false,
+        "AllOf": [],
+        "OneOf": [],
+        "AnyOf": [],
+        "Required": [],
+        "Items": {
+          "ReadOnly": false,
+          "WriteOnly": false,
+          "AllOf": [],
+          "OneOf": [],
+          "AnyOf": [],
+          "Required": [],
+          "Properties": {},
+          "AdditionalPropertiesAllowed": true,
+          "Enum": [],
+          "Nullable": false,
+          "Deprecated": false,
+          "Extensions": {},
+          "UnresolvedReference": false,
+          "Reference": {
+            "Type": 0,
+            "Id": "Nucleus.Core.Contracts.Models.UserModule",
+            "IsExternal": false,
+            "IsLocal": true,
+            "ReferenceV3": "#/components/schemas/Nucleus.Core.Contracts.Models.UserModule",
+            "ReferenceV2": "#/definitions/Nucleus.Core.Contracts.Models.UserModule"
+          }
+        },
+        "Properties": {},
+        "AdditionalPropertiesAllowed": true,
+        "Enum": [],
+        "Nullable": true,
+        "Deprecated": false,
+        "Extensions": {},
+        "UnresolvedReference": false
+      },
+      "createdOn": {
+        "Type": "string",
+        "Format": "date-time",
+        "ReadOnly": false,
+        "WriteOnly": false,
+        "AllOf": [],
+        "OneOf": [],
+        "AnyOf": [],
+        "Required": [],
+        "Properties": {},
+        "AdditionalPropertiesAllowed": true,
+        "Enum": [],
+        "Nullable": true,
+        "Deprecated": false,
+        "Extensions": {},
+        "UnresolvedReference": false
+      }
+    },
+    "AdditionalPropertiesAllowed": false,
+    "Enum": [],
+    "Nullable": false,
+    "Deprecated": false,
+    "Extensions": {},
+    "UnresolvedReference": false
+  },
+
+  "Eliassen.System.Linq.Search.IQueryResult\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+    "Type": "object"
+  },
+  "Eliassen.System.Linq.Search.SearchParameter": {
+    "Type": "object",
+    "Properties": {
+      "eq": {
+      },
+      "in": {
+        "Type": "array",
+        "Items": {
+        }
+      },
+      "gt": {
+      },
+      "gte": {
+      },
+      "lt": {
+      },
+      "lte": {
+      }
+    }
+  },
+  "Eliassen.System.Linq.Search.OrderDirections": {
+    "Type": "string",
+    "Enum": [
+      {
+        "AnyType": 0
+      },
+      {
+        "AnyType": 0
+      }
+    ]
+  },
+  "Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+    "Type": "object",
+    "Required": [],
+    "Properties": {
+      "currentPage": {
+        "Type": "integer",
+        "Format": "int32"
+      },
+      "pageSize": {
+        "Type": "integer",
+        "Format": "int32"
+      },
+      "excludePageCount": {
+        "Type": "boolean"
+      },
+      "searchTerm": {
+        "Type": "string"
+      },
+      "filter": {
+        "Type": "object",
+        "AdditionalProperties": {
+          "Reference": {
+            "Type": 0,
+            "Id": "Eliassen.System.Linq.Search.SearchParameter",
+            "IsExternal": false,
+            "IsLocal": true,
+            "ReferenceV3": "#/components/schemas/Eliassen.System.Linq.Search.SearchParameter",
+            "ReferenceV2": "#/definitions/Eliassen.System.Linq.Search.SearchParameter"
+          }
+        }
+      },
+      "orderBy": {
+        "Type": "object",
+        "AdditionalProperties": {
+          "Reference": {
+            "Type": 0,
+            "Id": "Eliassen.System.Linq.Search.OrderDirections",
+            "IsExternal": false,
+            "IsLocal": true,
+            "ReferenceV3": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections",
+            "ReferenceV2": "#/definitions/Eliassen.System.Linq.Search.OrderDirections"
+          }
+        }
+      },
+      "filterable": {
+        "Type": "array",
+        "Items": {
+          "Type": "string"
+        }
+      },
+      "searchable": {
+        "Type": "array"
+        "Items": {
+          "Type": "string"
+        }
+      },
+      "sortable": {
+        "Type": "array"
+        "Items": {
+          "Type": "string"
+        }
+      }
+    },
+    "AdditionalPropertiesAllowed": false,
+    "Enum": [],
+    "Nullable": false,
+    "Deprecated": false,
+    "Extensions": {},
+    "UnresolvedReference": false
+  },
+  "Eliassen.System.Linq.Search.PagedSearchResult\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+    "Type": "object",
+    "Properties": {
+      "currentPage": {
+        "Type": "integer",
+        "Format": "int32"
+      },
+      "totalPageCount": {
+        "Type": "integer",
+        "Format": "int32"
+      },
+      "totalRowCount": {
+        "Type": "integer",
+        "Format": "int32"
+      },
+      "rows": {
+        "Type": "array",
+        "Items": {
+          "Reference": {
+            "Type": 0,
+            "Id": "Nucleus.Core.Contracts.Models.User",
+            "IsExternal": false,
+            "IsLocal": true,
+            "ReferenceV3": "#/components/schemas/Nucleus.Core.Contracts.Models.User",
+            "ReferenceV2": "#/definitions/Nucleus.Core.Contracts.Models.User"
+          }
+        }
+      }
+    }
+  }
+}

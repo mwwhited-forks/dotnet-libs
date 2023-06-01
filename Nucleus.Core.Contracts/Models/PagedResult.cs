@@ -1,5 +1,4 @@
 ﻿using Eliassen.System.Linq.Search;
-using Nucleus.Core.Contracts.Interfaces;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,17 +7,19 @@ namespace Nucleus.Core.Contracts.Models
 {
     public class PagedResult<T> : PagedResult, IPagedQueryResult<T> where T : class
     {
-        public IList<T> Results { get; set; } = new List<T>();
+#warning retire this
+        public List<T> Results { get; set; } = new List<T>();
 
         public IEnumerable<T> Rows => Results;
+        IReadOnlyList<T> IQueryResult<T>.Rows => Results;
+        IEnumerable IQueryResult.Rows => Rows;
+
         public int TotalPageCount => this.PageCount;
         public int TotalRowCount => Convert.ToInt32(this.RowCount);
-
-        IEnumerable IPagedQueryResult.Rows => Rows;
     }
-
     public abstract class PagedResult
     {
+#warning retire this
         public int CurrentPage { get; set; }
         public int PageCount { get; set; }
         public int PageSize { get; set; }

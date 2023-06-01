@@ -1,4 +1,4 @@
-﻿using Eliassen.System.ComponentModel;
+﻿using Eliassen.System.ComponentModel.Search;
 using Eliassen.System.Linq.Search;
 using System;
 using System.Collections.Generic;

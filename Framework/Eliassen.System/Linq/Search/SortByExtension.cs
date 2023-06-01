@@ -1,5 +1,6 @@
-﻿using Eliassen.System.ComponentModel;
+﻿using Eliassen.System.ComponentModel.Search;
 using Eliassen.System.Linq.Expressions;
+using Eliassen.System.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace Eliassen.System.Linq.Search
 {
     public static class SortByExtension
     {
-        public static IOrderedQueryable<T> DecodeSortBy<T>(this IEnumerable<T> query, string? sortBy, string? direction = default, string delimter = ",") =>
-            query.AsQueryable().DecodeSortBy(sortBy, direction, delimter);
+        public static IOrderedQueryable<T> DecodeSortBy<T>(this IEnumerable<T> query, string? sortBy, string? direction = default, string delimiter = ",") =>
+            query.AsQueryable().DecodeSortBy(sortBy, direction, delimiter);
 
         public static IOrderedQueryable<T> SortBy<T>(this IEnumerable<T> query, params string[] columns) =>
             query.AsQueryable().SortBy(columns);
@@ -36,12 +37,12 @@ namespace Eliassen.System.Linq.Search
         public static IOrderedQueryable<T> SortBy<T>(this IEnumerable<T> query, IEnumerable<(string column, OrderDirections direction)> orderBys) =>
             query.AsQueryable().SortBy(orderBys);
 
-        public static IOrderedQueryable<T> DecodeSortBy<T>(this IQueryable<T> query, string? sortBy, string? direction = default, string delimter = ",")
+        public static IOrderedQueryable<T> DecodeSortBy<T>(this IQueryable<T> query, string? sortBy, string? direction = default, string delimiter = ",")
         {
             if (sortBy == null) return query.OrderBy(_ => 0);
 
-            var columns = sortBy.Split(delimter).Select(s => s.Trim());
-            var directions = (direction?.Split(delimter) ?? Array.Empty<string>())
+            var columns = sortBy.Split(delimiter).Select(s => s.Trim());
+            var directions = (direction?.Split(delimiter) ?? Array.Empty<string>())
                 .Concat(Enumerable.Range(0, columns.Count()).Select(_ => OrderDirectionsConstants.AscendingShort))
                 .Select(v => v?.StartsWith(OrderDirectionsConstants.DescendingShort, StringComparison.InvariantCultureIgnoreCase) ?? false ? OrderDirections.Descending : OrderDirections.Ascending)
                 ;
@@ -109,7 +110,12 @@ namespace Eliassen.System.Linq.Search
             return ordered ?? query.OrderBy(_ => 0);
         }
 
-        private static IEnumerable<(string column, OrderDirections direction)> DefaultSortOrder<T>() =>
+        public static IEnumerable<(string column, OrderDirections direction)> DefaultSortOrder(Type modelType) =>
+            (IEnumerable<(string column, OrderDirections direction)>)typeof(SortByExtension)
+                .GetStaticMethod(nameof(DefaultSortOrder))
+                .MakeGenericMethod(modelType)
+                .Invoke(null, null);
+        public static IEnumerable<(string column, OrderDirections direction)> DefaultSortOrder<T>() =>
             from prop in typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty)
             let attribute = prop.GetCustomAttribute<DefaultSortAttribute>()
             where attribute != null

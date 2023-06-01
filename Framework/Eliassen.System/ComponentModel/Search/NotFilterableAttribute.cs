@@ -1,18 +1,18 @@
 ﻿using System;
 
-namespace Eliassen.System.ComponentModel
+namespace Eliassen.System.ComponentModel.Search
 {
     /// <summary>
-    /// explicitly exclude properties from search
+    /// Explicitly exclude fields from filter selection. 
     /// </summary>
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
-    public class NotSearchableAttribute : Attribute
+    public class NotFilterableAttribute : Attribute
     {
-        public NotSearchableAttribute(string targetName)
+        public NotFilterableAttribute(string targetName)
         {
             TargetName = targetName;
         }
-        public NotSearchableAttribute() { }
+        public NotFilterableAttribute() { }
 
         public string? TargetName { get; }
     }

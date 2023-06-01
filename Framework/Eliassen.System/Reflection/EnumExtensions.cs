@@ -11,8 +11,11 @@ namespace Eliassen.System.Reflection
 {
     public static class EnumExtensions
     {
-        public static string? AsString<TEnum>(this TEnum? input) where TEnum : struct, Enum =>
-            AsModels<TEnum>().FirstOrDefault(e => e.Value.Equals(input))?.Code;
+        private static string? First(params string?[] values) =>
+            (values ?? Array.Empty<string?>()).FirstOrDefault(v => !string.IsNullOrWhiteSpace(v));
+
+        public static string? AsString<TEnum>(this TEnum input) where TEnum : struct, Enum =>
+            input.AsModel()?.Code;
 
         public static TEnum ToEnum<TEnum>(this int input) where TEnum : struct, Enum =>
             (TEnum)(object)input;
@@ -23,7 +26,7 @@ namespace Eliassen.System.Reflection
             else if (Enum.TryParse<TEnum>(input?.Replace('|', ','), out var parsed)) return parsed;
 
             var enumModel = AsModels<TEnum>();
-            var enumValues = input.Split('|', ',');
+            var enumValues = input?.Split('|', ',') ?? Array.Empty<string>();
 
             var map = from m in enumModel
                       from v in enumValues
@@ -37,52 +40,47 @@ namespace Eliassen.System.Reflection
             return result;
         }
 
-        private static string? First(params string?[] values) =>
-            (values ?? Array.Empty<string?>()).FirstOrDefault(v => !string.IsNullOrWhiteSpace(v));
+        public static IEnumModel<TEnum>? AsModel<TEnum>(this TEnum @enum) where TEnum : struct, Enum
+        {
+            var enumName = Enum.GetName(typeof(TEnum), @enum);
+            if (string.IsNullOrEmpty(enumName)) return null;
 
-        /// <summary>
-        /// List enumerations values
-        /// </summary>
-        /// <typeparam name="TEnum"></typeparam>
-        /// <returns></returns>
-        public static IReadOnlyCollection<IEnumModel> AsModels<TEnum>() where TEnum : struct, Enum =>
-            (
-            from v in Enum.GetValues(typeof(TEnum)).Cast<TEnum>()
-            let member = v.GetType().GetMember(Enum.GetName(v.GetType(), v)).FirstOrDefault()
-            let description = member?.GetCustomAttributes<DescriptionAttribute>()?.FirstOrDefault()?.Description
-            let displayValues = member?.GetCustomAttributes<DisplayAttribute>()?.FirstOrDefault()
+            var member = @enum.GetType().GetMember(enumName).FirstOrDefault();
+            var description = member?.GetCustomAttributes<DescriptionAttribute>()?.FirstOrDefault()?.Description;
+            var displayValues = member?.GetCustomAttributes<DisplayAttribute>()?.FirstOrDefault();
 
-            let enumValue = member?.GetCustomAttributes<EnumValueAttribute>()?.FirstOrDefault()
-            let enumMember = member?.GetCustomAttributes<EnumMemberAttribute>()?.FirstOrDefault()
+            var enumValue = member?.GetCustomAttributes<EnumValueAttribute>()?.FirstOrDefault();
+            var enumMember = member?.GetCustomAttributes<EnumMemberAttribute>()?.FirstOrDefault();
 
-            let isEndState = member?.GetCustomAttributes<EndStateAttribute>()?.Any() ?? false
-            let isExcludeFromUnique = member?.GetCustomAttributes<ExcludeFromUniqueAttribute>()?.Any() ?? false
-            select new EnumModel<TEnum>
+            var isEndState = member?.GetCustomAttributes<EndStateAttribute>()?.Any() ?? false;
+            var isExcludeFromUnique = member?.GetCustomAttributes<ExcludeFromUniqueAttribute>()?.Any() ?? false;
+
+            return new EnumModel<TEnum>
             {
-                Id = Convert.ToInt32(v),
+                Id = Convert.ToInt32(@enum),
 
-                Name = First(displayValues?.Name, v.ToString().Replace("_", " ")) ??
+                Name = First(displayValues?.Name, @enum.ToString().Replace("_", " ")) ??
                     throw new NullReferenceException(nameof(EnumModel<TEnum>.Name)),
                 Code = First(
                     enumValue?.Name,
-                    enumMember?.Value, 
+                    enumMember?.Value,
                     displayValues?.ShortName,
                     displayValues?.Name,
-                    v.ToString().ToUpper()) ??
+                    @enum.ToString().ToUpper()) ??
                     throw new NullReferenceException(nameof(EnumModel<TEnum>.Code)),
                 Description = First(description, displayValues?.Description),
                 Order = displayValues?.GetOrder() ?? 0,
 
-                Value = v,
+                Value = @enum,
 
                 IsEndState = isEndState,
                 IsExcludeFromUnique = isExcludeFromUnique,
 
                 PossibleNames = new[]
                 {
-                    v.ToString(),
-                    v.ToString().Replace("_", " "),
-                    v.ToString().ToUpper(),
+                    @enum.ToString(),
+                    @enum.ToString().Replace("_", " "),
+                    @enum.ToString().ToUpper(),
                     displayValues?.Name,
                     displayValues?.ShortName,
                     description,
@@ -90,7 +88,15 @@ namespace Eliassen.System.Reflection
                     enumValue?.Name,
                     enumMember?.Value,
                 }.Where(s => !string.IsNullOrWhiteSpace(s)).OfType<string>().ToArray()
-            }
-            ).ToArray();
+            };
+        }
+
+        /// <summary>
+        /// List enumerations values
+        /// </summary>
+        /// <typeparam name="TEnum"></typeparam>
+        /// <returns></returns>
+        public static IReadOnlyCollection<IEnumModel> AsModels<TEnum>() where TEnum : struct, Enum =>
+           Enum.GetValues(typeof(TEnum)).Cast<TEnum>().Select(AsModel).Where(e => e != null).ToArray();
     }
 }

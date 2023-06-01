@@ -43,8 +43,8 @@ namespace Nucleus.Core.Controllers.Controllers
                  ExcludePageCount = userFilter.PagingModel.ExcludePageCount,
                  SearchTerm = userFilter.UserFilters.InputValue,
                  Filter = {
-                     {nameof(userFilter.UserFilters.Module), new SearchParameter{ EqualTo= userFilter.UserFilters.Module } },
-                     {nameof(userFilter.UserFilters.UserStatus), new SearchParameter{ EqualTo= userFilter.UserFilters.UserStatus } },
+                     {nameof(userFilter.UserFilters.Module), new FilterParameter{ EqualTo= userFilter.UserFilters.Module } },
+                     {nameof(userFilter.UserFilters.UserStatus), new FilterParameter{ EqualTo= userFilter.UserFilters.UserStatus } },
                  },
              });
 
@@ -67,13 +67,13 @@ namespace Nucleus.Core.Controllers.Controllers
         public IQueryable<Module> GetApplicationPermissions() => _usersManager.QueryModules();
 
 
-        [Authorize]
-        [HttpPost(nameof(SearchUserExample))]
-        public PagedSearchResult<User> SearchUserExample(SearchQuery<User> model) => throw new NotSupportedException();
+        //[Authorize]
+        //[HttpPost(nameof(SearchUserExample))]
+        //public PagedSearchResult<User> SearchUserExample(SearchQuery<User> model) => throw new NotSupportedException();
 
-        [Authorize]
-        [HttpPost(nameof(SearchModuleExample))]
-        public PagedSearchResult<Module> SearchModuleExample(SearchQuery<Module> model) => throw new NotSupportedException();
+        //[Authorize]
+        //[HttpPost(nameof(SearchModuleExample))]
+        //public PagedSearchResult<Module> SearchModuleExample(SearchQuery<Module> model) => throw new NotSupportedException();
 
     }
 }

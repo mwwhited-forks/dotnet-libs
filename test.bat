@@ -31,7 +31,12 @@ ECHO "%TestFilter%"
 dotnet tool install --global dotnet-reportgenerator-globaltool 2>NUL
 rmdir /s/q ".\TestResults"
 
-dotnet test "%TestProject%" --configuration %Configuration% --results-directory .\TestResults --nologo --settings .runsettings --filter "%TestFilter%"
+dotnet test "%TestProject%" ^
+--configuration %Configuration% ^
+--results-directory .\TestResults ^
+--nologo ^
+--settings .runsettings ^
+--filter "%TestFilter%"
 
 SET TEST_ERR=%ERRORLEVEL%
 
