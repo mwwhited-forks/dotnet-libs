@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 using System.Text.Json;
@@ -13,6 +14,13 @@ namespace Eliassen.System.Reflection
         public const BindingFlags PublicProperties = BindingFlags.GetProperty | BindingFlags.Public | BindingFlags.Instance;
         public const BindingFlags PublicStaticMethod = BindingFlags.Static | BindingFlags.Public | BindingFlags.InvokeMethod;
         public const BindingFlags PublicInstanceMethod = BindingFlags.Instance | BindingFlags.Public | BindingFlags.InvokeMethod;
+
+        public static object? GetKeyValue(this object item)
+        {
+            var properties = item.GetType().GetPropertiesByAttribute<KeyAttribute>();
+            var keys = properties.Select(i => i.GetValue(item)).ToArray();
+            return keys.Length == 1 ? keys[0] : keys;
+        }
 
         public static object? MakeSafeArray(this Type? type, Array? inputs)
         {
@@ -187,8 +195,21 @@ namespace Eliassen.System.Reflection
             where TAttribute : Attribute =>
             @object.GetAttributes().OfType<TAttribute>();
 
+        public static IEnumerable<PropertyDescriptor> GetPropertiesByAttribute<TAttribute>(this Type type)
+            where TAttribute : Attribute =>
+            from p in TypeDescriptor.GetProperties(type).OfType<PropertyDescriptor>()
+            where p.Attributes.OfType<TAttribute>().Any()
+            select p;
+
         public static MethodInfo? GetStaticMethod(this Type type, string methodName, params Type[] parameterTypes) =>
              type.GetMethod(name: methodName, bindingAttr: PublicStaticMethod, types: parameterTypes) switch
+             {
+                 MethodInfo method when method.GetParametersTypes().SequenceEqual(parameterTypes) => method,
+                 _ => default
+             };
+
+        public static MethodInfo? GetInstanceMethod(this Type type, string methodName, params Type[] parameterTypes) =>
+             type.GetMethod(name: methodName, bindingAttr: PublicInstanceMethod, types: parameterTypes) switch
              {
                  MethodInfo method when method.GetParametersTypes().SequenceEqual(parameterTypes) => method,
                  _ => default

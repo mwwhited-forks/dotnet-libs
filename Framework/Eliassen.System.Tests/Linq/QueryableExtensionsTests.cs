@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Linq.Search;
+using Eliassen.System.Reflection;
 using Eliassen.System.Tests.Linq.TestTargets;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -10,10 +11,16 @@ using System.Threading.Tasks;
 
 namespace Eliassen.System.Tests.Linq
 {
+
     [TestClass]
     public class QueryableExtensionsTests
     {
         public TestContext? TestContext { get; set; }
+
+        private static IQueryable GetTestData(Type type) =>
+            type == typeof(TestTargetModel) ? GetTestData() :
+            type == typeof(TestTargetExtendedModel) ? GetTestDataExtended() :
+            throw new NotSupportedException();
 
         private static IQueryable<TestTargetModel> GetTestData() =>
             Enumerable
@@ -227,107 +234,46 @@ namespace Eliassen.System.Tests.Linq
             Assert.AreEqual("3", string.Join(',', results.Rows.Select(i => i.Index)));
         }
 
-        [TestMethod]
+        [DataTestMethod]
         [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Search_Item_Equals()
+        [DataRow(typeof(TestTargetModel), "Name3", 1, 1, 1, "3", DisplayName = "Equals")]
+        [DataRow(typeof(TestTargetModel), "Name3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38", DisplayName = "Starts With")]
+        [DataRow(typeof(TestTargetModel), "*3", 10, 100, 10, "3,13,23,33,43,53,63,73,83,93", DisplayName = "Ends With")]
+        [DataRow(typeof(TestTargetModel), "*e3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38", DisplayName = "Contains")]
+        public void ExecuteByTest_SearchTerm(Type type, string searchTerm, int expectedTotalPages, int expectedTotalRows, int expectedRows, string expectedKeys)
         {
-            var query = new SearchQuery
-            {
-                SearchTerm = "Name3",
-            };
-            this.TestContext.AddResult(query);
-            var queryResults = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(queryResults);
-
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
-            Assert.IsNotNull(results);
-
-            Assert.AreEqual(1, results.Rows.Count());
-            Assert.AreEqual("3", string.Join(',', results.Rows.Select(i => i.Index)));
+            this.GetType().GetMethods()
+                .Where(mi => mi.IsGenericMethod)
+                .Where(mi => mi.Name == nameof(ExecuteByTest_SearchTerm))
+                .Select(mi => mi.MakeGenericMethod(type))
+                .First()
+                .Invoke(this, new object[]
+                {
+                    searchTerm,
+                    expectedTotalPages,
+                    expectedTotalRows,
+                    expectedRows,
+                    expectedKeys
+                });
         }
 
-        [TestMethod]
-        [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Search_Item_StartsWith()
+        public void ExecuteByTest_SearchTerm<T>(string searchTerm, int expectedTotalPages, int expectedTotalRows, int expectedRows, string expectedKeys)
         {
-            var query = new SearchQuery
+            var query = new SearchQuery<T>
             {
-                SearchTerm = "Name3*",
+                SearchTerm = searchTerm,
             };
             this.TestContext.AddResult(query);
-            var queryResults = GetTestData().ExecuteBy(query);
+            var queryResults = GetTestData(typeof(T)).ExecuteBy(query);
             this.TestContext.AddResult(queryResults);
-
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
+            var results = queryResults as IPagedQueryResult<T>;
             Assert.IsNotNull(results);
-
-            Assert.AreEqual(12, results.TotalPageCount);
-            Assert.AreEqual(111, results.TotalRowCount);
-            Assert.AreEqual(10, results.Rows.Count());
-            Assert.AreEqual("3,30,31,32,33,34,35,36,37,38", string.Join(',', results.Rows.Select(i => i.Index)));
-        }
-
-        [TestMethod]
-        [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Search_Item_EndsWith()
-        {
-            var query = new SearchQuery
-            {
-                SearchTerm = "*3",
-            };
-            this.TestContext.AddResult(query);
-            var queryResults = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(queryResults);
-
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
-            Assert.IsNotNull(results);
-
-            Assert.AreEqual(10, results.TotalPageCount);
-            Assert.AreEqual(100, results.TotalRowCount);
-            Assert.AreEqual(10, results.Rows.Count());
-            Assert.AreEqual("3,13,23,33,43,53,63,73,83,93", string.Join(',', results.Rows.Select(i => i.Index)));
-        }
-
-        [TestMethod]
-        [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Search_Item_Contains()
-        {
-            var query = new SearchQuery
-            {
-                SearchTerm = "*e3*",
-            };
-            this.TestContext.AddResult(query);
-            var queryResults = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(queryResults);
-
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
-            Assert.IsNotNull(results);
-
-            Assert.AreEqual(12, results.TotalPageCount);
-            Assert.AreEqual(111, results.TotalRowCount);
-            Assert.AreEqual(10, results.Rows.Count());
-            Assert.AreEqual("3,30,31,32,33,34,35,36,37,38", string.Join(',', results.Rows.Select(i => i.Index)));
-        }
-
-        [TestMethod]
-        [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Search_Item_PropertyMap_Contains()
-        {
-            var query = new SearchQuery
-            {
-                SearchTerm = "*e03*",
-            };
-            this.TestContext.AddResult(query);
-            var queryResults = GetTestDataExtended().ExecuteBy(query);
-            this.TestContext.AddResult(queryResults);
-
-            var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
-            Assert.IsNotNull(results);
-
-            Assert.AreEqual(20, results.TotalPageCount);
-            Assert.AreEqual(200, results.TotalRowCount);
-            Assert.AreEqual(10, results.Rows.Count());
-            Assert.AreEqual("300,301,302,303,304,305,306,307,308,309", string.Join(',', results.Rows.Select(i => i.Index)));
+            var resultKeys = string.Join(',', results.Rows.Select(i => i?.GetKeyValue()));
+            this.TestContext.WriteLine($"{nameof(resultKeys)}: {resultKeys}");
+            Assert.AreEqual(expectedTotalPages, results.TotalPageCount);
+            Assert.AreEqual(expectedTotalRows, results.TotalRowCount);
+            Assert.AreEqual(expectedRows, results.Rows.Count());
+            Assert.AreEqual(expectedKeys, resultKeys);
         }
 
 

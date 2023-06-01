@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.Tests.Linq.TestTargets
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Eliassen.System.Tests.Linq.TestTargets
 {
     public class TestTargetModel
     {
@@ -9,6 +11,7 @@
             Email = $"{nameof(Email)}{index:000}@domain.com";
         }
 
+        [Key]
         public int Index { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }

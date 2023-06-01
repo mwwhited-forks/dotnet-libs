@@ -1,5 +1,6 @@
 ﻿using Eliassen.System.ComponentModel.Search;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq.Expressions;
 
@@ -25,6 +26,7 @@ namespace Eliassen.System.Tests.Linq.TestTargets
             Date = BaseDate.AddMonths(index);
         }
 
+        [Key]
         public int Index { get; set; }
         [Searchable]
         public string FName { get; set; }

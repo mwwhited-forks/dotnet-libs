@@ -11,12 +11,23 @@ namespace Eliassen.System.Linq.Search
         /// `Equal To`: pass in the value to match for a given property  
         /// 
         /// If you are using string values you may also use wild cards  
-        /// *bc -> Ends with  
-        /// *b* -> Contains  
-        /// ab* -> Starts with
+        /// \*bc -> Ends with  
+        /// \*b\* -> Contains  
+        /// ab\* -> Starts with
         /// </summary>
         [JsonPropertyName("eq")]
         public object? EqualTo { get; set; }
+
+        /// <summary>
+        /// `Not Equal To`: pass in the value to match for a given property  
+        /// 
+        /// If you are using string values you may also use wild cards  
+        /// \*bc -> Ends with  
+        /// \*b\* -> Contains  
+        /// ab\* -> Starts with
+        /// </summary>
+        [JsonPropertyName("neq")]
+        public object? NotEqualTo { get; set; }
 
         /// <summary>
         /// This allows for providing a set of values for filtering for multiple values

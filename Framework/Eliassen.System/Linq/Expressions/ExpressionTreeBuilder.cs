@@ -33,6 +33,7 @@ namespace Eliassen.System.Linq.Expressions
             if (search == null) yield break;
 
             yield return expression.BuildPredicate(search.EqualTo, ExpressionOperators.EqualTo);
+            yield return expression.BuildPredicate(search.NotEqualTo, ExpressionOperators.NotEqualTo);
             yield return expression.BuildPredicate(search.InSet, ExpressionOperators.InSet);
             yield return expression.BuildPredicate(search.LessThan, ExpressionOperators.LessThan);
             yield return expression.BuildPredicate(search.LessThanOrEqualTo, ExpressionOperators.LessThanOrEqualTo);
@@ -98,7 +99,7 @@ namespace Eliassen.System.Linq.Expressions
                 }
                 else
                 {
-                    var safeArray = ReflectionExtensions.MakeSafeArray(unwrapped.Type, (Array)queryParameter);
+                    var safeArray = unwrapped.Type.MakeSafeArray((Array)queryParameter);
                     if (safeArray != null)
                     {
                         var recursive = BuildPredicate(expression, safeArray, expressionOperator);
@@ -110,48 +111,31 @@ namespace Eliassen.System.Linq.Expressions
             {
                 if (unwrapped.Type == typeof(string))
                 {
-                    Expression? predicate = null;
+                    var (method, queryValue) = (queryString[..1], queryString[^1..]) switch
+                    {
+                        ("*", "*") => (
+                            typeof(string).GetInstanceMethod(nameof(string.Contains), typeof(string)),
+                            queryString[1..^1]
+                            ),
 
-                    if (queryString.StartsWith('*') && queryString.EndsWith('*'))
-                    {
-                        var method = typeof(string)
-                            .GetMethod(
-                                name: nameof(string.Contains),
-                                bindingAttr: ReflectionExtensions.PublicInstanceMethod,
-                                binder: null, new[] { typeof(string) },
-                                modifiers: null
-                                )
-                            ?? throw new NotSupportedException();
-                        predicate = Expression.Call(unwrapped, method, Expression.Constant(queryString.Trim('*')));
-                    }
-                    else if (queryString.StartsWith('*'))
-                    {
-                        var method = typeof(string)
-                            .GetMethod(
-                                name: nameof(string.EndsWith),
-                                bindingAttr: ReflectionExtensions.PublicInstanceMethod,
-                                binder: null, new[] { typeof(string) },
-                                modifiers: null
-                                )
-                            ?? throw new NotSupportedException();
-                        predicate = Expression.Call(unwrapped, method, Expression.Constant(queryString.TrimStart('*')));
-                    }
-                    else if (queryString.EndsWith('*'))
-                    {
-                        var method = typeof(string)
-                            .GetMethod(
-                                name: nameof(string.StartsWith),
-                                bindingAttr: ReflectionExtensions.PublicInstanceMethod,
-                                binder: null, new[] { typeof(string) },
-                                modifiers: null
-                                )
-                            ?? throw new NotSupportedException();
-                        predicate = Expression.Call(unwrapped, method, Expression.Constant(queryString.TrimEnd('*')));
-                    }
-                    else
-                    {
-                        predicate = expressionOperator.BuildBinaryExpression(unwrapped, Expression.Constant(queryParameter));
-                    }
+                        ("*", _) => (
+                            typeof(string).GetInstanceMethod(nameof(string.EndsWith), typeof(string)),
+                            queryString[1..]
+                            ),
+
+                        (_, "*") => (
+                            typeof(string).GetInstanceMethod(nameof(string.StartsWith), typeof(string)),
+                            queryString[..^1]
+                            ),
+
+                        (_, _) => (
+                            typeof(string).GetInstanceMethod(nameof(string.Equals), typeof(string)),
+                            queryString
+                            )
+                    };
+                    if (method == null) throw new NotSupportedException("Method not defined");
+
+                    var predicate = Expression.Call(unwrapped, method, Expression.Constant(queryValue));
 
                     var parameter = Expression.Parameter(typeof(TModel), "n");
                     var replaced = new ParameterReplacer(parameter).Visit(predicate);
@@ -169,7 +153,7 @@ namespace Eliassen.System.Linq.Expressions
             {
                 //TODO: needs to be a bit more creative.  type casting not supported
                 var parameter = Expression.Parameter(typeof(TModel), "n");
-                var replaced = new ParameterReplacer(parameter).Visit(expressionOperator.BuildBinaryExpression(unwrapped, Expression.Constant(queryParameter)));
+                var replaced = new ParameterReplacer(parameter).Visit(expressionOperator.BuildBinaryExpression(unwrapped, queryParameter));
                 var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
                 return lambda;
             }
@@ -178,19 +162,6 @@ namespace Eliassen.System.Linq.Expressions
                 return default;
             }
         }
-
-        private static BinaryExpression BuildBinaryExpression(this ExpressionOperators expressionOperator, Expression left, Expression right) =>
-            expressionOperator switch
-            {
-                ExpressionOperators.EqualTo => Expression.Equal(left, right),
-
-                ExpressionOperators.LessThan => Expression.LessThan(left, right),
-                ExpressionOperators.LessThanOrEqualTo => Expression.LessThanOrEqual(left, right),
-                ExpressionOperators.GreaterThan => Expression.GreaterThan(left, right),
-                ExpressionOperators.GreaterThanOrEqualTo => Expression.GreaterThanOrEqual(left, right),
-
-                _ => throw new NotSupportedException($"{expressionOperator} is not supported"),
-            };
 
         public static Expression<Func<TModel, bool>>? BuildExpression<TModel>(object? queryParameter) =>
             OrChain(
