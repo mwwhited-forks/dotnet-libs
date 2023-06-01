@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -160,12 +161,14 @@ namespace Eliassen.System.Tests.Linq
         [DataRow(nameof(TestTargetModel.Name), Operators.EqualTo, "*03", 9, "103,203,303,403,503,603,703,803,903", DisplayName = "Ends With (string)")]
         [DataRow(nameof(TestTargetModel.Name), Operators.EqualTo, "*e2*", 10, "2,20,21,22,23,24,25,26,27,28", DisplayName = "Contains (string)")]
         [DataRow(nameof(TestTargetModel.Name), Operators.EqualTo, "Name1*", 10, "1,10,11,12,13,14,15,16,17,18", DisplayName = "Starts With (string)")]
-        [DataRow(nameof(TestTargetModel.Name), Operators.NotEqualTo, "*03", 1, "103,203,303,403,503,603,703,803,903", DisplayName = "Not Ends With (string)")]
-        [DataRow(nameof(TestTargetModel.Name), Operators.NotEqualTo, "*e2*", 10, "2,20,21,22,23,24,25,26,27,28", DisplayName = "Not Contains (string)")]
-        [DataRow(nameof(TestTargetModel.Name), Operators.NotEqualTo, "Name1*", 10, "1,10,11,12,13,14,15,16,17,18", DisplayName = "Not Starts With (string)")]
-        [DataRow(nameof(TestTargetModel.Index), Operators.NotEqualTo, 1, 1, "1", DisplayName = "Not Filter Equals (int)")]
+        [DataRow(nameof(TestTargetModel.Name), Operators.NotEqualTo, "*3", 10, "0,1,2,4,5,6,7,8,9,10", DisplayName = "Not Ends With (string)")]
+        [DataRow(nameof(TestTargetModel.Name), Operators.NotEqualTo, "*e2*", 10, "0,1,3,4,5,6,7,8,9,10", DisplayName = "Not Contains (string)")]
+        [DataRow(nameof(TestTargetModel.Name), Operators.NotEqualTo, "Name1*", 10, "0,2,3,4,5,6,7,8,9,20", DisplayName = "Not Starts With (string)")]
+        [DataRow(nameof(TestTargetModel.Index), Operators.NotEqualTo, 1, 10, "0,2,3,4,5,6,7,8,9,10", DisplayName = "Not Filter Equals (int)")]
         public void ExecuteByTest_Filter(string propertyName, Operators expressionOperator, object filterValue, int expectedRows, string expectedKeys)
         {
+            Expression<Func<TestTargetModel, bool>> exp = m => !(m.Name=="hi");
+
             var query = new SearchQuery
             {
                 Filter = new()

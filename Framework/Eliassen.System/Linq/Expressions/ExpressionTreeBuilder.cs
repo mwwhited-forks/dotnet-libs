@@ -119,7 +119,7 @@ namespace Eliassen.System.Linq.Expressions
                     if (expressionOperator == Operators.NotEqualTo)
                     {
                         var eq = expression.BuildPredicate(Operators.EqualTo, queryParameter);
-                        var predicate = Expression.Not(eq);
+                        var predicate = Expression.Not(eq.Body);
                         var parameter = Expression.Parameter(typeof(TModel), "n");
                         var replaced = new ParameterReplacer(parameter).Visit(predicate);
                         var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
