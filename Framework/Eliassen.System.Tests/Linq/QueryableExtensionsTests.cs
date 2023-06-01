@@ -1,4 +1,5 @@
-﻿using Eliassen.System.Linq.Search;
+﻿using Eliassen.System.Linq;
+using Eliassen.System.Linq.Search;
 using Eliassen.System.Reflection;
 using Eliassen.System.Tests.Linq.TestTargets;
 using Eliassen.TestUtilities;
@@ -111,7 +112,6 @@ namespace Eliassen.System.Tests.Linq
             Assert.AreEqual("3,2,1", string.Join(',', results.Rows.Select(i => i.Index)));
         }
 
-
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
         public async Task ExecuteByAsyncTest_Filter_FromJson_Async()
@@ -146,136 +146,46 @@ namespace Eliassen.System.Tests.Linq
             Assert.AreEqual("3,2,1", string.Join(',', results.Rows.Select(i => i.Index)));
         }
 
-        [TestMethod]
-        [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Filter_Index_Array()
-        {
-            var query = new SearchQuery
-            {
-                Filter = new()
-                {
-                    { nameof(TestTargetModel.Index), new FilterParameter{ InSet = new object?[] { 1, 2, 3 } } }
-                }
-            };
-            this.TestContext.AddResult(query);
-            var queryResults = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(queryResults);
-
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
-            Assert.IsNotNull(results);
-
-            Assert.AreEqual(3, results.Rows.Count());
-            Assert.AreEqual("1,2,3", string.Join(',', results.Rows.Select(i => i.Index)));
-        }
-
-        [TestMethod]
-        [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Filter_Index_Item()
-        {
-            var query = new SearchQuery
-            {
-                Filter = new()
-                {
-                    { nameof(TestTargetModel.Index), new FilterParameter{ EqualTo =  1 } }
-                }
-            };
-            this.TestContext.AddResult(query);
-            var queryResults = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(queryResults);
-
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
-            Assert.IsNotNull(results);
-
-            Assert.AreEqual(1, results.Rows.Count());
-            Assert.AreEqual("1", string.Join(',', results.Rows.Select(i => i.Index)));
-        }
-
-        [TestMethod]
-        [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Filter_Name_Array()
-        {
-            var query = new SearchQuery
-            {
-                Filter = new()
-                {
-                    { nameof(TestTargetModel.Name), new FilterParameter{ InSet =  new [] {"Name1","Name2","Name3" } } }
-                }
-            };
-            this.TestContext.AddResult(query);
-            var queryResults = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(queryResults);
-
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
-            Assert.IsNotNull(results);
-
-            Assert.AreEqual(3, results.Rows.Count());
-            Assert.AreEqual("1,2,3", string.Join(',', results.Rows.Select(i => i.Index)));
-        }
-
-        [TestMethod]
-        [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Filter_Name_Item()
-        {
-            var query = new SearchQuery
-            {
-                Filter = new()
-                {
-                    { nameof(TestTargetModel.Name), new FilterParameter{ EqualTo =  "Name3" } }
-                }
-            };
-            this.TestContext.AddResult(query);
-            var queryResults = GetTestData().ExecuteBy(query);
-            this.TestContext.AddResult(queryResults);
-
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
-            Assert.IsNotNull(results);
-
-            Assert.AreEqual(1, results.Rows.Count());
-            Assert.AreEqual("3", string.Join(',', results.Rows.Select(i => i.Index)));
-        }
-
         [DataTestMethod]
         [TestCategory(TestCategories.Unit)]
-        [DataRow(typeof(TestTargetModel), "Name3", 1, 1, 1, "3", DisplayName = "Equals")]
-        [DataRow(typeof(TestTargetModel), "Name3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38", DisplayName = "Starts With")]
-        [DataRow(typeof(TestTargetModel), "*3", 10, 100, 10, "3,13,23,33,43,53,63,73,83,93", DisplayName = "Ends With")]
-        [DataRow(typeof(TestTargetModel), "*e3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38", DisplayName = "Contains")]
-        public void ExecuteByTest_SearchTerm(Type type, string searchTerm, int expectedTotalPages, int expectedTotalRows, int expectedRows, string expectedKeys)
+        [DataRow(nameof(TestTargetModel.Index), Operators.EqualTo, 1, 1, "1", DisplayName = "Filter Equals (int)")]
+        [DataRow(nameof(TestTargetModel.Name), Operators.EqualTo, "Name3", 1, "3", DisplayName = "Filter Equals (string)")]
+        [DataRow(nameof(TestTargetModel.Name), Operators.InSet, new[] { "Name1", "Name2", "Name3" }, 3, "1,2,3", DisplayName = "Contains in Set (string)")]
+        [DataRow(nameof(TestTargetModel.Index), Operators.InSet, new[] { 1, 2, 3 }, 3, "1,2,3", DisplayName = "Contains in Set (int)")]
+        [DataRow(nameof(TestTargetModel.Index), Operators.LessThan, 5, 5, "0,1,2,3,4", DisplayName = "LessThan (int)")]
+        [DataRow(nameof(TestTargetModel.Index), Operators.LessThan, "5", 5, "0,1,2,3,4", DisplayName = "LessThan (string parsed)")]
+        [DataRow(nameof(TestTargetModel.Index), Operators.LessThanOrEqualTo, "5", 6, "0,1,2,3,4,5", DisplayName = "LessThan (string parsed)")]
+        [DataRow(nameof(TestTargetModel.Index), Operators.GreaterThan, 995, 4, "996,997,998,999", DisplayName = "GreaterThan  (int)")]
+        [DataRow(nameof(TestTargetModel.Index), Operators.GreaterThanOrEqualTo, 995, 5, "995,996,997,998,999", DisplayName = "GreaterThanOrEqualTo  (int)")]
+        [DataRow(nameof(TestTargetModel.Name), Operators.EqualTo, "*03", 9, "103,203,303,403,503,603,703,803,903", DisplayName = "Ends With (string)")]
+        [DataRow(nameof(TestTargetModel.Name), Operators.EqualTo, "*e2*", 10, "2,20,21,22,23,24,25,26,27,28", DisplayName = "Contains (string)")]
+        [DataRow(nameof(TestTargetModel.Name), Operators.EqualTo, "Name1*", 10, "1,10,11,12,13,14,15,16,17,18", DisplayName = "Starts With (string)")]
+        [DataRow(nameof(TestTargetModel.Name), Operators.NotEqualTo, "*03", 1, "103,203,303,403,503,603,703,803,903", DisplayName = "Not Ends With (string)")]
+        [DataRow(nameof(TestTargetModel.Name), Operators.NotEqualTo, "*e2*", 10, "2,20,21,22,23,24,25,26,27,28", DisplayName = "Not Contains (string)")]
+        [DataRow(nameof(TestTargetModel.Name), Operators.NotEqualTo, "Name1*", 10, "1,10,11,12,13,14,15,16,17,18", DisplayName = "Not Starts With (string)")]
+        [DataRow(nameof(TestTargetModel.Index), Operators.NotEqualTo, 1, 1, "1", DisplayName = "Not Filter Equals (int)")]
+        public void ExecuteByTest_Filter(string propertyName, Operators expressionOperator, object filterValue, int expectedRows, string expectedKeys)
         {
-            this.GetType().GetMethods()
-                .Where(mi => mi.IsGenericMethod)
-                .Where(mi => mi.Name == nameof(ExecuteByTest_SearchTerm))
-                .Select(mi => mi.MakeGenericMethod(type))
-                .First()
-                .Invoke(this, new object[]
-                {
-                    searchTerm,
-                    expectedTotalPages,
-                    expectedTotalRows,
-                    expectedRows,
-                    expectedKeys
-                });
-        }
-
-        public void ExecuteByTest_SearchTerm<T>(string searchTerm, int expectedTotalPages, int expectedTotalRows, int expectedRows, string expectedKeys)
-        {
-            var query = new SearchQuery<T>
+            var query = new SearchQuery
             {
-                SearchTerm = searchTerm,
+                Filter = new()
+                {
+                    { propertyName, expressionOperator.AsFilter(filterValue ) }
+                }
             };
             this.TestContext.AddResult(query);
-            var queryResults = GetTestData(typeof(T)).ExecuteBy(query);
+            var queryResults = GetTestData().ExecuteBy(query);
             this.TestContext.AddResult(queryResults);
-            var results = queryResults as IPagedQueryResult<T>;
+
+            var results = queryResults as IPagedQueryResult<TestTargetModel>;
             Assert.IsNotNull(results);
             var resultKeys = string.Join(',', results.Rows.Select(i => i?.GetKeyValue()));
             this.TestContext.WriteLine($"{nameof(resultKeys)}: {resultKeys}");
-            Assert.AreEqual(expectedTotalPages, results.TotalPageCount);
-            Assert.AreEqual(expectedTotalRows, results.TotalRowCount);
-            Assert.AreEqual(expectedRows, results.Rows.Count());
-            Assert.AreEqual(expectedKeys, resultKeys);
-        }
 
+            Assert.AreEqual(expectedRows, results.Rows.Count());
+            if (expectedKeys != null)
+                Assert.AreEqual(expectedKeys, resultKeys);
+        }
 
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
@@ -300,8 +210,6 @@ namespace Eliassen.System.Tests.Linq
 
             Assert.AreEqual(997, results.TotalRowCount);
         }
-
-
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
         public void ExecuteByTest_Filter_Range_GTE()
@@ -325,7 +233,6 @@ namespace Eliassen.System.Tests.Linq
 
             Assert.AreEqual(998, results.TotalRowCount);
         }
-
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
         public void ExecuteByTest_Filter_Range_LT()
@@ -349,7 +256,6 @@ namespace Eliassen.System.Tests.Linq
 
             Assert.AreEqual(2, results.TotalRowCount);
         }
-
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
         public void ExecuteByTest_Filter_Range_LTE()
@@ -373,7 +279,6 @@ namespace Eliassen.System.Tests.Linq
 
             Assert.AreEqual(3, results.TotalRowCount);
         }
-
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
         public void ExecuteByTest_Filter_Range_Bounds()
@@ -399,8 +304,6 @@ namespace Eliassen.System.Tests.Linq
 
             Assert.AreEqual(5, results.TotalRowCount);
         }
-
-
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
         public void ExecuteByTest_Filter_PredicateLookup()
@@ -420,6 +323,48 @@ namespace Eliassen.System.Tests.Linq
             Assert.IsNotNull(results);
 
             Assert.AreEqual(1, results.TotalRowCount);
+        }
+
+
+        [DataTestMethod]
+        [TestCategory(TestCategories.Unit)]
+        [DataRow(typeof(TestTargetModel), "Name3", 1, 1, 1, "3", DisplayName = "Equals")]
+        [DataRow(typeof(TestTargetModel), "Name3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38", DisplayName = "Starts With")]
+        [DataRow(typeof(TestTargetModel), "*3", 10, 100, 10, "3,13,23,33,43,53,63,73,83,93", DisplayName = "Ends With")]
+        [DataRow(typeof(TestTargetModel), "*e3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38", DisplayName = "Contains")]
+        public void ExecuteByTest_SearchTerm(Type type, string searchTerm, int expectedTotalPages, int expectedTotalRows, int expectedRows, string expectedKeys)
+        {
+            this.GetType().GetMethods()
+                .Where(mi => mi.IsGenericMethod)
+                .Where(mi => mi.Name == nameof(ExecuteByTest_SearchTerm))
+                .Select(mi => mi.MakeGenericMethod(type))
+                .First()
+                .Invoke(this, new object[]
+                {
+                    searchTerm,
+                    expectedTotalPages,
+                    expectedTotalRows,
+                    expectedRows,
+                    expectedKeys
+                });
+        }
+        public void ExecuteByTest_SearchTerm<T>(string searchTerm, int expectedTotalPages, int expectedTotalRows, int expectedRows, string expectedKeys)
+        {
+            var query = new SearchQuery<T>
+            {
+                SearchTerm = searchTerm,
+            };
+            this.TestContext.AddResult(query);
+            var queryResults = GetTestData(typeof(T)).ExecuteBy(query);
+            this.TestContext.AddResult(queryResults);
+            var results = queryResults as IPagedQueryResult<T>;
+            Assert.IsNotNull(results);
+            var resultKeys = string.Join(',', results.Rows.Select(i => i?.GetKeyValue()));
+            this.TestContext.WriteLine($"{nameof(resultKeys)}: {resultKeys}");
+            Assert.AreEqual(expectedTotalPages, results.TotalPageCount);
+            Assert.AreEqual(expectedTotalRows, results.TotalRowCount);
+            Assert.AreEqual(expectedRows, results.Rows.Count());
+            Assert.AreEqual(expectedKeys, resultKeys);
         }
 
         [TestMethod]

@@ -32,13 +32,13 @@ namespace Eliassen.System.Linq.Expressions
         {
             if (search == null) yield break;
 
-            yield return expression.BuildPredicate(search.EqualTo, ExpressionOperators.EqualTo);
-            yield return expression.BuildPredicate(search.NotEqualTo, ExpressionOperators.NotEqualTo);
-            yield return expression.BuildPredicate(search.InSet, ExpressionOperators.InSet);
-            yield return expression.BuildPredicate(search.LessThan, ExpressionOperators.LessThan);
-            yield return expression.BuildPredicate(search.LessThanOrEqualTo, ExpressionOperators.LessThanOrEqualTo);
-            yield return expression.BuildPredicate(search.GreaterThan, ExpressionOperators.GreaterThan);
-            yield return expression.BuildPredicate(search.GreaterThanOrEqualTo, ExpressionOperators.GreaterThanOrEqualTo);
+            yield return expression.BuildPredicate(Operators.EqualTo, search.EqualTo);
+            yield return expression.BuildPredicate(Operators.NotEqualTo, search.NotEqualTo);
+            yield return expression.BuildPredicate(Operators.InSet, search.InSet);
+            yield return expression.BuildPredicate(Operators.LessThan, search.LessThan);
+            yield return expression.BuildPredicate(Operators.LessThanOrEqualTo, search.LessThanOrEqualTo);
+            yield return expression.BuildPredicate(Operators.GreaterThan, search.GreaterThan);
+            yield return expression.BuildPredicate(Operators.GreaterThanOrEqualTo, search.GreaterThanOrEqualTo);
         }
 
         public static Expression<Func<TModel, bool>>? BuildPredicate<TModel>(
@@ -46,11 +46,10 @@ namespace Eliassen.System.Linq.Expressions
             FilterParameter? search
             ) => GetPredicates(expression, search).AndChain();
 
-        private static Expression<Func<TModel, bool>>? BuildPredicate<TModel>(
+        public static Expression<Func<TModel, bool>>? BuildPredicate<TModel>(
             this Expression<Func<TModel, object>>? expression,
-            object? queryParameter,
-            ExpressionOperators expressionOperator
-            )
+            Operators expressionOperator,
+            object? queryParameter)
 
         {
             if (expression == null || queryParameter == null) return null;
@@ -79,81 +78,99 @@ namespace Eliassen.System.Linq.Expressions
 
             var queryParameterType = queryParameter.GetType();
 
-            if (queryParameterType.IsArray) //TODO: this should support IEnumerable<> as well
+            if (expressionOperator == Operators.InSet)
             {
-                var elementType = queryParameterType.GetElementType();
-                if (elementType == unwrapped.Type)
+                if (queryParameterType.IsArray) //TODO: this should support IEnumerable<> as well
                 {
-                    var enumerable = typeof(IEnumerable<>).MakeGenericType(elementType);
+                    var elementType = queryParameterType.GetElementType();
+                    if (elementType == unwrapped.Type)
+                    {
+                        var enumerable = typeof(IEnumerable<>).MakeGenericType(elementType);
 
-                    Expression<Func<object, bool>> model = e => Enumerable.Contains((object[])queryParameter, e);
-                    var containsMethod = (model.Body as MethodCallExpression)?.Method.GetGenericMethodDefinition().MakeGenericMethod(elementType);
-                    if (containsMethod != null)
+                        Expression<Func<object, bool>> model = e => Enumerable.Contains((object[])queryParameter, e);
+                        var containsMethod = (model.Body as MethodCallExpression)?.Method.GetGenericMethodDefinition().MakeGenericMethod(elementType);
+                        if (containsMethod != null)
+                        {
+                            var containsCall = Expression.Call(method: containsMethod, Expression.Constant(queryParameter), unwrapped);
+                            var parameter = Expression.Parameter(typeof(TModel), "n");
+                            var replaced = new ParameterReplacer(parameter).Visit(containsCall);
+                            var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
+                            return lambda;
+                        }
+                    }
+                    else
                     {
-                        var containsCall = Expression.Call(method: containsMethod, Expression.Constant(queryParameter), unwrapped);
-                        var parameter = Expression.Parameter(typeof(TModel), "n");
-                        var replaced = new ParameterReplacer(parameter).Visit(containsCall);
-                        var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
-                        return lambda;
+                        var safeArray = unwrapped.Type.MakeSafeArray((Array)queryParameter);
+                        if (safeArray != null)
+                        {
+                            var recursive = BuildPredicate(expression, expressionOperator, safeArray);
+                            if (recursive != null) return recursive;
+                        }
                     }
                 }
-                else
-                {
-                    var safeArray = unwrapped.Type.MakeSafeArray((Array)queryParameter);
-                    if (safeArray != null)
-                    {
-                        var recursive = BuildPredicate(expression, safeArray, expressionOperator);
-                        if (recursive != null) return recursive;
-                    }
-                }
+                throw new NotSupportedException($"{nameof(expressionOperator)}: {expressionOperator} does not support \"{queryParameterType}\"");
+
             }
-            else if (queryParameter is string queryString)
+
+            if (queryParameter is string queryString) //TODO: should this be "like"
             {
                 if (unwrapped.Type == typeof(string))
                 {
-                    var (method, queryValue) = (queryString[..1], queryString[^1..]) switch
+                    if (expressionOperator == Operators.NotEqualTo)
                     {
-                        ("*", "*") => (
-                            typeof(string).GetInstanceMethod(nameof(string.Contains), typeof(string)),
-                            queryString[1..^1]
-                            ),
+                        var eq = expression.BuildPredicate(Operators.EqualTo, queryParameter);
+                        var predicate = Expression.Not(eq);
+                        var parameter = Expression.Parameter(typeof(TModel), "n");
+                        var replaced = new ParameterReplacer(parameter).Visit(predicate);
+                        var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
+                        return lambda;
+                    }
+                    else
+                    {
+                        var (method, queryValue) = (queryString[..1], queryString[^1..]) switch
+                        {
+                            ("*", "*") => (
+                                typeof(string).GetInstanceMethod(nameof(string.Contains), typeof(string)),
+                                queryString[1..^1]
+                                ),
 
-                        ("*", _) => (
-                            typeof(string).GetInstanceMethod(nameof(string.EndsWith), typeof(string)),
-                            queryString[1..]
-                            ),
+                            ("*", _) => (
+                                typeof(string).GetInstanceMethod(nameof(string.EndsWith), typeof(string)),
+                                queryString[1..]
+                                ),
 
-                        (_, "*") => (
-                            typeof(string).GetInstanceMethod(nameof(string.StartsWith), typeof(string)),
-                            queryString[..^1]
-                            ),
+                            (_, "*") => (
+                                typeof(string).GetInstanceMethod(nameof(string.StartsWith), typeof(string)),
+                                queryString[..^1]
+                                ),
 
-                        (_, _) => (
-                            typeof(string).GetInstanceMethod(nameof(string.Equals), typeof(string)),
-                            queryString
-                            )
-                    };
-                    if (method == null) throw new NotSupportedException("Method not defined");
+                            (_, _) => (
+                                typeof(string).GetInstanceMethod(nameof(string.Equals), typeof(string)),
+                                queryString
+                                )
+                        };
+                        if (method == null) throw new NotSupportedException("Method not defined");
 
-                    var predicate = Expression.Call(unwrapped, method, Expression.Constant(queryValue));
+                        var predicate = Expression.Call(unwrapped, method, Expression.Constant(queryValue));
 
-                    var parameter = Expression.Parameter(typeof(TModel), "n");
-                    var replaced = new ParameterReplacer(parameter).Visit(predicate);
-                    var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
-                    return lambda;
+                        var parameter = Expression.Parameter(typeof(TModel), "n");
+                        var replaced = new ParameterReplacer(parameter).Visit(predicate);
+                        var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
+                        return lambda;
+                    }
                 }
                 else if (unwrapped.Type.TryParse(queryString, out var value))
                 {
                     queryParameter = value;
                 }
-
             }
 
             if (unwrapped.Type == queryParameter?.GetType())
             {
                 //TODO: needs to be a bit more creative.  type casting not supported
                 var parameter = Expression.Parameter(typeof(TModel), "n");
-                var replaced = new ParameterReplacer(parameter).Visit(expressionOperator.BuildBinaryExpression(unwrapped, queryParameter));
+                var predicate = expressionOperator.BuildBinaryExpression(unwrapped, queryParameter);
+                var replaced = new ParameterReplacer(parameter).Visit(predicate);
                 var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
                 return lambda;
             }
@@ -166,7 +183,7 @@ namespace Eliassen.System.Linq.Expressions
         public static Expression<Func<TModel, bool>>? BuildExpression<TModel>(object? queryParameter) =>
             OrChain(
                 from searchExpression in GetSearchableExpressions<TModel>()
-                let builtExpression = searchExpression.expression.BuildPredicate(queryParameter, ExpressionOperators.EqualTo)
+                let builtExpression = searchExpression.expression.BuildPredicate(Operators.EqualTo, queryParameter)
                 where builtExpression != null
                 select builtExpression
             );

@@ -5,7 +5,7 @@ namespace Eliassen.System.Linq.Search
     /// <summary>
     /// Filter parameter
     /// </summary>
-    public class FilterParameter
+    public record FilterParameter
     {
         /// <summary>
         /// `Equal To`: pass in the value to match for a given property  
