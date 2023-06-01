@@ -8,12 +8,12 @@
 		<!--<GenerateDocumentationFile>True</GenerateDocumentationFile>-->
 	</PropertyGroup>
 
-	<ItemGroup>
+	<!--<ItemGroup>
 		<PackageReference Include="GitVersion.MsBuild" Version="5.10.3">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		</PackageReference>
-	</ItemGroup>
+	</ItemGroup>-->
 
 	<ItemGroup>
 		<Content Include="**\*.md" />
