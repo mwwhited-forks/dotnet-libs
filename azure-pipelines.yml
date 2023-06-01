@@ -4,6 +4,10 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 parameters:
+  - name: doDeployment
+    displayName: Deploy To Environment 
+    default: true
+    type: boolean
   - name: targetEnvironment
     displayName: Target Environment 
     type: string
@@ -27,7 +31,6 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   
-
 steps:
 - task: NuGetToolInstaller@1
 
@@ -39,17 +42,33 @@ steps:
   displayName: 'Building ${{ parameters.targetEnvironment }}'
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+    msbuildArgs: >
+      /p:DeployOnBuild=true 
+      /p:WebPublishMethod=Package 
+      /p:PackageAsSingleFile=true 
+      /p:SkipInvalidConfigurations=true 
+      /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" 
+      /p:DeployIisAppPath="Default Web Site"
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
-  displayName: 'Unit Tests...'
+- task: DotNetCoreCLI@2
+  displayName: Run Unit Tests as $(buildConfiguration)
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: 'test'
+    projects: '$(solution)'
+    arguments: >
+      --configuration $(buildConfiguration) 
+      --no-build 
+      --no-restore 
+      --filter "TestCategory=Unit|TestCategory=Simulate" 
+      --collect:"XPlat Code Coverage" 
+      --nologo 
+      --settings "$(Build.SourcesDirectory)\.runsettings"
+    publishTestResults: true
 
 - task: AzureRmWebAppDeployment@4
+  condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true))
   displayName: 'Deploying API to ${{ parameters.targetEnvironment }}'
   inputs:
     ConnectionType: 'AzureRM'
