@@ -31,23 +31,6 @@ namespace Nucleus.Core.Controllers.Controllers
         public async Task<ResponseModel<User>> SaveUser(UserAction user) =>
             await _usersManager.SaveUserAsync(user);
 
-        [Authorize]
-        [ApplicationRight(Rights.UserManagement.Manager)]
-        [HttpPost("UserList")]
-        [Obsolete("Change to the `ListUsers` /api/UserManagement/Query")]
-        public IQueryResult<User> GetUserProfile(UsersFilter userFilter) =>
-             _usersManager.QueryUsers().ExecuteBy(new SearchQuery
-             {
-                 CurrentPage = userFilter.PagingModel.CurrentPage,
-                 PageSize = userFilter.PagingModel.PageSize,
-                 ExcludePageCount = userFilter.PagingModel.ExcludePageCount,
-                 SearchTerm = userFilter.UserFilters.InputValue,
-                 Filter = {
-                     {nameof(userFilter.UserFilters.Module), new FilterParameter{ EqualTo= userFilter.UserFilters.Module } },
-                     {nameof(userFilter.UserFilters.UserStatus), new FilterParameter{ EqualTo= userFilter.UserFilters.UserStatus } },
-                 },
-             });
-
         /// <summary>
         /// Query all user accounts
         /// </summary>
@@ -66,14 +49,41 @@ namespace Nucleus.Core.Controllers.Controllers
         [HttpGet("ApplicationPermissions")]
         public IQueryable<Module> GetApplicationPermissions() => _usersManager.QueryModules();
 
+        //[Authorize]
+        //[HttpPost(nameof(SearchUserExample) + "Json")]
+        //public PagedQueryResult<User> SearchUserExample(SearchQuery<User> model) => throw new NotSupportedException();
 
         //[Authorize]
-        //[HttpPost(nameof(SearchUserExample))]
-        //public PagedSearchResult<User> SearchUserExample(SearchQuery<User> model) => throw new NotSupportedException();
+        //[HttpPost(nameof(SearchUserExample) + "Form")]
+        //public PagedQueryResult<User> SearchUserExampleForm([FromForm] SearchQuery<User> model) => throw new NotSupportedException();
 
-        //[Authorize]
-        //[HttpPost(nameof(SearchModuleExample))]
-        //public PagedSearchResult<Module> SearchModuleExample(SearchQuery<Module> model) => throw new NotSupportedException();
+        //[HttpGet(nameof(SearchUserExample) + "Get")]
+        //public PagedQueryResult<User> SearchUserExampleGet([FromQuery] SearchQuery<User> model) => throw new NotSupportedException();
+
+
+        [Authorize]
+        [ApplicationRight(Rights.UserManagement.Manager)]
+        [HttpPost("UserList")]
+        [Obsolete("Change to the `ListUsers` /api/UserManagement/Query")]
+        public PagedResult<User> GetUserProfile(UsersFilter userFilter) =>
+             _usersManager.QueryUsers().ExecuteBy(new SearchQuery
+             {
+                 CurrentPage = userFilter.PagingModel.CurrentPage - 1,
+                 PageSize = userFilter.PagingModel.PageSize,
+                 ExcludePageCount = userFilter.PagingModel.ExcludePageCount,
+                 SearchTerm = userFilter.UserFilters.InputValue,
+                 Filter = {
+                     {nameof(userFilter.UserFilters.Module), new FilterParameter{ EqualTo= userFilter.UserFilters.Module } },
+                     {nameof(userFilter.UserFilters.UserStatus), new FilterParameter{ EqualTo= userFilter.UserFilters.UserStatus } },
+                 },
+             }).AsLegacy(userFilter.PagingModel);
+
+        [Authorize]
+        [ApplicationRight(Rights.UserManagement.Manager)]
+        [HttpGet("ApplicationPemissions")]
+        [Obsolete("Change to the `ApplicationPemissions` /api/UserManagement/ApplicationPermissions")]
+        public PagedResult<Module> GetApplicationPermissionsLegacy() =>
+             _usersManager.QueryModules().ExecuteBy(new SearchQuery { }).AsLegacy();
 
     }
 }
