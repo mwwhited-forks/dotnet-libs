@@ -1,6 +1,6 @@
-﻿namespace Eliassen.System.Linq.Expressions
+﻿namespace Eliassen.System.Linq.Search
 {
-    internal enum ExpressionOperators
+    public enum Operators
     {
         Unknown,
         EqualTo,
@@ -9,5 +9,6 @@
         LessThanOrEqualTo,
         GreaterThan,
         GreaterThanOrEqualTo,
+        NotEqualTo,
     }
 }
