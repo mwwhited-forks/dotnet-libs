@@ -44,7 +44,7 @@ namespace Nucleus.Project.Persistence.Services
                 Title = item.Title,
                 Enabled = item.Enabled,
                 CreatedOn = item.CreatedOn,
-                CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
+                //CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
             });
         }
 

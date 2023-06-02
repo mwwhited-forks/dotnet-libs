@@ -55,7 +55,7 @@ namespace Nucleus.Lesson.Business.Managers
             }
             else
             {
-                lesson.CreatedOn = DateTimeOffset.FromUnixTimeMilliseconds(lesson.CreatedOnUnix);
+                //lesson.CreatedOn = DateTimeOffset.FromUnixTimeMilliseconds(lesson.CreatedOnUnix);
                 await _lessonService.UpdateAsync(lesson);
                 result.Response = lesson;
                 return result;

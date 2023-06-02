@@ -14,6 +14,6 @@ namespace Nucleus.Blog.Contracts.Models
         public Boolean? Enabled { get; set; }
         public string? Author { get; set; }
         public DateTimeOffset CreatedOn { get; set; }
-        public long CreatedOnUnix { get; set; }
+        //public long CreatedOnUnix { get; set; }
     }
 }
