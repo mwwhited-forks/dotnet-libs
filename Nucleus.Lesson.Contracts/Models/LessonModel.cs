@@ -13,7 +13,7 @@ namespace Nucleus.Lesson.Contracts.Models
         public string? Content { get; set; }
         public Boolean? Enabled { get; set; }
         public DateTimeOffset CreatedOn { get; set; }
-        public long CreatedOnUnix { get; set; }
+        //public long CreatedOnUnix { get; set; }
 
         public string[]? Attendees { get; set; }
         public string? Teacher { get; set; }

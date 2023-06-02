@@ -58,7 +58,7 @@ namespace Nucleus.Project.Business.Managers
             }
             else
             {
-                project.CreatedOn = DateTimeOffset.FromUnixTimeMilliseconds(project.CreatedOnUnix);
+                //project.CreatedOn = DateTimeOffset.FromUnixTimeMilliseconds(project.CreatedOnUnix);
                 await _projectService.UpdateAsync(project);
                 result.Response = project;
                 return result;
