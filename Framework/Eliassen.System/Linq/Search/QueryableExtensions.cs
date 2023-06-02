@@ -69,7 +69,7 @@ namespace Eliassen.System.Linq.Search
             var method = methodSignature.MakeGenericMethod(elementType);
             var result = method.Invoke(null, new[] { query, searchQuery }) ??
                 throw new NotSupportedException($"{query.GetType()} is not supported");
-            var paged = (IPagedQueryResult)result;
+            var paged = (IQueryResult)result;
             return paged;
         }
 
