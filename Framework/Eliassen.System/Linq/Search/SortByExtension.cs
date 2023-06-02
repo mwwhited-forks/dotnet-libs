@@ -116,10 +116,15 @@ namespace Eliassen.System.Linq.Search
                 .MakeGenericMethod(modelType)
                 .Invoke(null, null);
         public static IEnumerable<(string column, OrderDirections direction)> DefaultSortOrder<T>() =>
-            from prop in typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty)
-            let attribute = prop.GetCustomAttribute<DefaultSortAttribute>()
-            where attribute != null
-            orderby attribute.Priority
-            select (prop.Name, attribute.Order);
+            (
+                from attribute in typeof(T).GetCustomAttributes<DefaultSortAttribute>()
+                where !string.IsNullOrWhiteSpace(attribute.TargetName)
+                select (name: attribute.TargetName, attribute.Order, attribute.Priority)
+            ).Concat(
+                from prop in typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty)
+                let attribute = prop.GetCustomAttribute<DefaultSortAttribute>()
+                where attribute != null
+                select (name: attribute.TargetName ?? prop.Name, attribute.Order, attribute.Priority)
+            ).OrderBy(p => p.Priority).Select(o => (o.name, o.Order));
     }
 }
