@@ -149,6 +149,7 @@ namespace Eliassen.System.Tests.Linq
 
         [DataTestMethod]
         [TestCategory(TestCategories.Unit)]
+        [DataRow(nameof(TestTargetModel.Index), Operators.EqualTo, "!1", 10, "0,2,3,4,5,6,7,8,9,10", DisplayName = "Not Equals Filter Equals (converted string)")]
         [DataRow(nameof(TestTargetModel.Index), Operators.EqualTo, 1, 1, "1", DisplayName = "Filter Equals (int)")]
         [DataRow(nameof(TestTargetModel.Name), Operators.EqualTo, "Name3", 1, "3", DisplayName = "Filter Equals (string)")]
         [DataRow(nameof(TestTargetModel.Name), Operators.InSet, new[] { "Name1", "Name2", "Name3" }, 3, "1,2,3", DisplayName = "Contains in Set (string)")]

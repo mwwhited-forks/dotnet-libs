@@ -114,7 +114,11 @@ namespace Eliassen.System.Linq.Expressions
 
             if (queryParameter is string queryString) //TODO: should this be "like"
             {
-                if (unwrapped.Type == typeof(string))
+                if (queryString[..1] == "!")
+                {
+                    return expression.BuildPredicate(Operators.NotEqualTo, queryString[1..]);
+                }
+                else if (unwrapped.Type == typeof(string))
                 {
                     if (expressionOperator == Operators.NotEqualTo)
                     {
