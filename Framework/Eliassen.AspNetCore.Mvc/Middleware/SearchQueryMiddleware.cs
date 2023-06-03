@@ -96,14 +96,14 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
 
             return null;
         }
-        public async Task InvokeAsync(HttpContext context, ISearchQueryAccessor accessor)
+        public async Task InvokeAsync(HttpContext context, IAccessor<ISearchQuery> searchQuery)
         {
             try
             {
                 //TODO: dictionary <string, object> does not map for forms and query string
                 var searchModel = await GetModelAsync<SearchQuery>(context);
                 _log.LogInformation($"Invoking: {{{nameof(searchModel)}}}", searchModel);
-                accessor.SearchQuery = searchModel;
+                searchQuery.Value = searchModel;
                 await _next(context);
                 _log.LogInformation($"Invoked: {{{nameof(searchModel)}}}", searchModel);
             }

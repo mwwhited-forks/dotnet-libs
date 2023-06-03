@@ -4,7 +4,6 @@ namespace Eliassen.AspNetCore.Mvc.Filters
 {
     public class ApplicationRightAttribute : TypeFilterAttribute
     {
-        public const string Claim = "app__application_right";
         public string[] Rights { get; }
 
         public ApplicationRightAttribute(params string[] rights) : 

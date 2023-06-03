@@ -1,35 +1,36 @@
 ﻿using Eliassen.System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Threading.Tasks;
 using Microsoft.IdentityModel.Logging;
-using Newtonsoft.Json.Linq;
-using Nucleus.AspNetCore.Mvc.IdentityModel;
 using Nucleus.Core.Contracts.Models;
 using System.Security.Authentication;
+using System.Linq;
 using System.Security.Claims;
-using static Nucleus.Core.Contracts.Rights;
 
-namespace Nucleus.Api.Auth
+namespace Nucleus.AspNetCore.Mvc.Authorization
 {
-    public class AuthorizationHandler : AuthorizationHandler<UserAuthorizationRequirement>
+    public class NucleusUserAuthorizationHandler : AuthorizationHandler<NucleusUserAuthorizationRequirement>
     {
-        private readonly ILogger<AuthorizationHandler> _logger;
-        private readonly IClaimsProvider _claims;
+        private readonly ILogger _logger;
 
-        public AuthorizationHandler(ILogger<AuthorizationHandler> logger, IClaimsProvider claims)
+        public NucleusUserAuthorizationHandler(
+            ILogger<NucleusUserAuthorizationHandler> logger
+            )
         {
             _logger = logger;
-            _claims = claims;
         }
 
-        protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, UserAuthorizationRequirement requirement)
+        protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, NucleusUserAuthorizationRequirement requirement)
         {
 #if DEBUG
             IdentityModelEventSource.ShowPII = true;
 #endif
             var user = context.User;
 
-            var userId = user.GetClaimValue(AppClaims.UserId);
-            if (String.IsNullOrEmpty(userId))
+            var userId = user.GetClaimValue(ApplicationsClaims.UserId);
+            if (string.IsNullOrEmpty(userId))
             {
                 // This user has not been set yet because we have not assigned their UserId from the DB to the Claim... so lets get crackin
                 try
@@ -44,31 +45,17 @@ namespace Nucleus.Api.Auth
                         return;
                     }
 
-                    var data = new JObject
-                    {
-                        [AzB2cClaims.ObjectId] = userName
-                    };
-
-                    // Initiating the process to get additional claims from our Claims Enhancers (Core->Business->Claims->Enhancers)
-                    var result = await _claims.GetAdditionalClaimsAsync(data).ConfigureAwait(false);
-
-                    userId = (string?)result[AppClaims.UserId];
-                    if (String.IsNullOrEmpty(userId))
-                    {
-                        // Custom loggin which will be removed after enough data has been collected
-                        if (result != null && result.HasValues)
-                            _logger.LogError($"ERR-401-User not found | userName {{{nameof(userName)}}} | result {{{nameof(result)}}}", userName, result.ToString(Newtonsoft.Json.Formatting.None));
-                        else
-                            _logger.LogError($"ERR-401-User not found | userName {{{nameof(userName)}}}", userName);
-                        // ------------------------------------------------------------------------
-                        throw new AuthenticationException("User not found");
-                    }
-
-                    var newClaims = from p in result.Properties()
-                                    let vs = p.Value is JArray arr ? arr.Values<string>() : new[] { (string)p.Value }
-                                    from v in vs
-                                    select new Claim(p.Name, v);
-                    user.AddIdentity(new ClaimsIdentity(user.Identity, newClaims));
+                    //userId = (string?)result[ApplicationsClaims.UserId];
+                    //if (string.IsNullOrEmpty(userId))
+                    //{
+                    //    // Custom loggin which will be removed after enough data has been collected
+                    //    if (result != null && result.HasValues)
+                    //        _logger.LogError($"ERR-401-User not found | userName {{{nameof(userName)}}} | result {{{nameof(result)}}}", userName, result.ToString(Newtonsoft.Json.Formatting.None));
+                    //    else
+                    //        _logger.LogError($"ERR-401-User not found | userName {{{nameof(userName)}}}", userName);
+                    //    // ------------------------------------------------------------------------
+                    //    throw new AuthenticationException("User not found");
+                    //}
 
                     context.Succeed(requirement);
                 }

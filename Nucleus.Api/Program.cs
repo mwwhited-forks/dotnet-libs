@@ -1,12 +1,12 @@
+using Eliassen.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.Extensions.Options;
-using Nucleus.Api.Auth;
+using Nucleus.AspNetCore.Mvc;
 using Nucleus.Blog.Business;
 using Nucleus.Blog.Contracts.Collections.DbSettings;
 using Nucleus.Blog.Persistence;
 using Nucleus.Core.Business;
 using Nucleus.Core.Contracts.Models.DbSettings;
+using Nucleus.Core.Controllers;
 using Nucleus.Core.Persistence;
 using Nucleus.Core.Shared.Business;
 using Nucleus.Core.Shared.Persistence;
@@ -15,13 +15,8 @@ using Nucleus.Lesson.Contracts.Collections.DbSettings;
 using Nucleus.Lesson.Persistence;
 using Nucleus.Project.Business;
 using Nucleus.Project.Contracts.Collections.DbSettings;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Reflection;
 using System.Security.Claims;
-using Eliassen.AspNetCore.Mvc;
-using Nucleus.AspNetCore.Mvc;
-using Nucleus.Core.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -49,9 +44,6 @@ builder.Services.AddControllers()
 
 // Adding Module Registrations for IOC
 builder.Services
-    .AddSingleton<IHttpContextAccessor, HttpContextAccessor>()
-    .AddTransient(sp => sp.GetRequiredService<IHttpContextAccessor>().HttpContext?.User ?? ClaimsPrincipal.Current)
-
     .AddCorePersistenceServices()
     .AddCoreBusinessServices()
     .AddCoreWebServices()
@@ -67,9 +59,6 @@ builder.Services
 
 builder.Services.AddAspNetCoreExtensions();
 builder.Services.AddApplicationAspNetCoreServices();
-
-// Adding in the magic sauce that connects B2C Bearer tokens to our internal users
-builder.Services.AddSingleton<IAuthorizationHandler, AuthorizationHandler>();
 
 // B2C Configuration
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -109,21 +98,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.Configure<AzureB2CConfig>(options => builder.Configuration.Bind(AzureB2CConfig.ConfigKey, options));
 
-
-builder.Services.AddAuthorization(options =>
-{
-    options.DefaultPolicy = new AuthorizationPolicyBuilder()
-    .RequireAuthenticatedUser()
-    .AddRequirements(new UserAuthorizationRequirement())
-    .Build();
-});
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, OAuthSwaggerUIOptions>();
-builder.Services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, OAuthSwaggerGenOptions>();
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(

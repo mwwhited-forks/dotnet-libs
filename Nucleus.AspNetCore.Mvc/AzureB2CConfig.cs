@@ -1,4 +1,4 @@
-﻿namespace Nucleus.Api.Auth;
+﻿namespace Nucleus.AspNetCore.Mvc;
 public class AzureB2CConfig
 {
     public const string ConfigKey = "Azure:AdB2C";

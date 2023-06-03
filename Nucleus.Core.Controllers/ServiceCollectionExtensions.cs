@@ -1,8 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Eliassen.System.Security.Claims;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Nucleus.AspNetCore.Mvc.Claims.Enhancers;
 using Nucleus.AspNetCore.Mvc.IdentityModel;
-using Nucleus.Core.Business.Claims.Enhancers;
 using Nucleus.Core.Controllers.Security;
 
 namespace Nucleus.Core.Controllers
@@ -13,9 +12,7 @@ namespace Nucleus.Core.Controllers
         {
             services.TryAddTransient<IUserSession, ApplicationUser>();
 
-            // Claims management services
-            services.AddTransient<IClaimsEnhancer, UserIdClaimsEnhancer>();
-            services.AddTransient<IClaimsEnhancer, RightsClaimsEnhancer>();
+            services.AddTransient<IUserClaimsProvider, NucleusApplicationRightsProvider>();
 
             return services;
         }

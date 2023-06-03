@@ -7,16 +7,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<FrameworkReference Include="Microsoft.AspNetCore.App" />
-
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-		
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.3" />
+		<PackageReference Include="Microsoft.IdentityModel.Logging" Version="6.25.0" />
 	</ItemGroup>
-
+	
 	<ItemGroup>
-	  <ProjectReference Include="..\Framework\Eliassen.System\Eliassen.System.csproj" />
+		<ProjectReference Include="..\Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
+		<ProjectReference Include="..\Framework\Eliassen.System\Eliassen.System.csproj" />
 	</ItemGroup>
 
 </Project>

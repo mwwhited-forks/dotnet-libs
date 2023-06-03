@@ -21,7 +21,7 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
         public async Task Invoke(
             HttpContext context,
             ILogger<CultureInfoMiddleware> logger,
-            ICultureInfoAccessor accessor
+            IAccessor<CultureInfo> cultureInfo
             )
         {
             try
@@ -33,14 +33,14 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
                     var language = fromheader.Split(',').Select(GetCultureInfo).FirstOrDefault();
                     logger.LogInformation($"Set CultureInfo to \"{{{nameof(fromheader)}}}\"::{{{nameof(language)}}}", fromheader, language);
 
-                    accessor.CultureInfo = language ?? CultureInfo.CurrentCulture;
-                    CultureInfo.CurrentCulture = CultureInfo.CurrentUICulture = accessor.CultureInfo;
+                    cultureInfo.Value = language ?? CultureInfo.CurrentCulture;
+                    CultureInfo.CurrentCulture = CultureInfo.CurrentUICulture = cultureInfo.Value;
                 }
 
                 context.Response.OnStarting(cia =>
                 {
                     //https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language
-                    var culture = accessor.CultureInfo?.ToString();
+                    var culture = cultureInfo.Value?.ToString();
                     if (!string.IsNullOrWhiteSpace(culture))
                     {
                         logger.LogInformation($"Return CultureInfo as {{{nameof(culture)}}}", culture);
@@ -49,7 +49,7 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
 
                     return Task.CompletedTask;
 
-                }, accessor);
+                }, cultureInfo);
 
                 await _next.Invoke(context);
             }

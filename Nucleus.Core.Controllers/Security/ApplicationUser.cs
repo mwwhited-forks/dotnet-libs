@@ -20,9 +20,9 @@ namespace Nucleus.Core.Controllers.Security
 
         public string Username => _principal.GetClaimValue(AzB2cClaims.ObjectIdentifier);
 
-        public string Culture => _principal.GetClaimValue(AppClaims.Culture);
+        public string Culture => _principal.GetClaimValue(ApplicationsClaims.Culture);
 
-        public IEnumerable<string> Rights => _principal.GetClaimValues(ApplicationRightAttribute.Claim);
+        public IEnumerable<string> Rights => _principal.GetClaimValues(ApplicationsClaims.ApplicationRight);
 
     }
 }
