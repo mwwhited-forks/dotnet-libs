@@ -18,7 +18,7 @@ namespace Eliassen.AspNetCore.Mvc.Filters
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             bool? userAuthenticated = context.HttpContext.User.Identity?.IsAuthenticated;
-            var userRights = context.HttpContext.User.GetClaimValues(ApplicationsClaims.ApplicationRight);
+            var userRights = context.HttpContext.User.GetClaimValues(CommonClaims.ApplicationRight);
 
             if (userAuthenticated == null || userAuthenticated == false)
                 context.Result = new ForbidResult();

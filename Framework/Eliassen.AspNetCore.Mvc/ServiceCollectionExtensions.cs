@@ -1,5 +1,4 @@
-﻿using Eliassen.AspNetCore.Mvc.Authentication;
-using Eliassen.AspNetCore.Mvc.Filters;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
 using Eliassen.AspNetCore.Mvc.SwaggerGen;
 using Eliassen.System.Accessors;
 using Eliassen.System.Linq.Search;
@@ -39,8 +38,6 @@ namespace Eliassen.AspNetCore.Mvc
                 setup.OperationFilter<SearchQueryOperationFilter>();
                 setup.OperationFilter<FormFileOperationFilter>();
             });
-
-            services.AddTransient<IClaimsTransformation, RightsClaimsTransformation>();
 
             services.AddHttpContextAccessor();
             services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();

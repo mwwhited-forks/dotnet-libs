@@ -7,10 +7,10 @@ namespace Eliassen.AspNetCore.Mvc.Filters
 {
     public class SearchQueryResultFilter : IResultFilter
     {
-        private readonly ISearchQuery _searchQuery;
+        private readonly IAccessor<ISearchQuery> _searchQuery;
 
         public SearchQueryResultFilter(
-            ISearchQuery searchQuery
+            IAccessor<ISearchQuery> searchQuery = default
             )
         {
             _searchQuery = searchQuery;
@@ -22,7 +22,7 @@ namespace Eliassen.AspNetCore.Mvc.Filters
 
         public void OnResultExecuting(ResultExecutingContext context)
         {
-            var search = _searchQuery;
+            var search = _searchQuery.Value;
             if (search == null)
                 return;
 

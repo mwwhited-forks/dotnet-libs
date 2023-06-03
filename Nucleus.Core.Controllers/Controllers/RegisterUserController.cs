@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using Nucleus.Core.Contracts;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.Filters;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,7 +31,7 @@ namespace Nucleus.Core.Controllers.Controllers
         [HttpGet("ApplicationPermissions")]
         public IQueryable<Module> GetApplicationPermissions() => _usersManager.QueryModules();
 
-        [Authorize]
+        [AllowAnonymous]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpGet("ApplicationPemissions")]
         [Obsolete("Change to the `ApplicationPemissions` /api/UserManagement/ApplicationPermissions")]

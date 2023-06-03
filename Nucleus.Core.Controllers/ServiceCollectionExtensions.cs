@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Nucleus.AspNetCore.Mvc.IdentityModel;
@@ -12,7 +13,7 @@ namespace Nucleus.Core.Controllers
         {
             services.TryAddTransient<IUserSession, ApplicationUser>();
 
-            services.AddTransient<IUserClaimsProvider, NucleusApplicationRightsProvider>();
+            services.AddTransient<IClaimsTransformation, NucluesClaimsTransformation>();
 
             return services;
         }

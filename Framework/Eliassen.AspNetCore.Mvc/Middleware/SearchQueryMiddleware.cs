@@ -17,14 +17,17 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger _log;
+        private readonly IAccessor<ISearchQuery> _searchQuery;
 
         public SearchQueryMiddleware(
             RequestDelegate next,
-            ILogger<SearchQueryMiddleware> log
+            ILogger<SearchQueryMiddleware> log,
+            IAccessor<ISearchQuery> searchQuery
             )
         {
             _next = next;
             _log = log;
+            _searchQuery = searchQuery;
         }
 
         private static ControllerActionDescriptor? GetControllerActionDescriptor(HttpContext context) =>
@@ -96,16 +99,17 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
 
             return null;
         }
-        public async Task InvokeAsync(HttpContext context, IAccessor<ISearchQuery> searchQuery)
+        public async Task InvokeAsync(HttpContext context)
         {
             try
             {
-                //TODO: dictionary <string, object> does not map for forms and query string
                 var searchModel = await GetModelAsync<SearchQuery>(context);
-                _log.LogInformation($"Invoking: {{{nameof(searchModel)}}}", searchModel);
-                searchQuery.Value = searchModel;
+                if (searchModel != null)
+                    _log.LogInformation($"Invoking: {{{nameof(searchModel)}}}", searchModel);
+                _searchQuery.Value = searchModel;
                 await _next(context);
-                _log.LogInformation($"Invoked: {{{nameof(searchModel)}}}", searchModel);
+                if (searchModel != null)
+                    _log.LogInformation($"Invoked: {{{nameof(searchModel)}}}", searchModel);
             }
             catch (Exception ex)
             {
