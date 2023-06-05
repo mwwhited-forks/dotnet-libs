@@ -1,15 +1,12 @@
-﻿using Eliassen.System.Linq.Expressions;
+﻿using Eliassen.System.Internal;
+using Eliassen.System.Linq.Expressions;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 
 namespace Eliassen.System.Linq.Search
 {
-    public interface IQueryBuilder<TModel>
-    {
-        IOrderedQueryable<TModel> BuildFrom(IQueryable<TModel> query, ISearchQuery searchQuery, StringComparison stringComparison);
-        IPagedQueryResult<TModel> PageBy(IOrderedQueryable<TModel> query, IPageQuery? pager);
-    }
-    public class QueryBuilder
+    public abstract class QueryBuilder
     {
         /// <summary>
         /// Default page size when not defined on request
@@ -20,30 +17,44 @@ namespace Eliassen.System.Linq.Search
     {
         private readonly ISortBuilder<TModel> _sortBuilder;
         private readonly IExpressionTreeBuilder<TModel> _expressionBuilder;
+        private readonly ILogger _logger;
 
         public QueryBuilder(
             ISortBuilder<TModel> sortBuilder,
-            IExpressionTreeBuilder<TModel> expressionBuilder
+            IExpressionTreeBuilder<TModel> expressionBuilder,
+            ILogger<QueryBuilder>? logger = null
             )
         {
             _sortBuilder = sortBuilder;
             _expressionBuilder = expressionBuilder;
+            _logger = logger ?? new ConsoleLogger<QueryBuilder>();
         }
 
         public IOrderedQueryable<TModel> BuildFrom(IQueryable<TModel> query, ISearchQuery searchQuery, StringComparison stringComparison)
         {
-            var searched = SearchBy(query, searchQuery, stringComparison);
+            var searched = SearchBy(query, searchQuery, stringComparison, true);
             var filtered = FilterBy(searched, searchQuery, stringComparison);
+
+            if (query.ToString() == filtered.ToString())
+            {
+                _logger.LogWarning(
+                    $"No filtering detected: {{{nameof(query)}}}: {{{nameof(searchQuery)}}}",
+                    query.ToString(),
+                    searchQuery.ToString()
+                    );
+            }
+
             var sorted = SortBy(filtered, searchQuery);
+
             return sorted;
         }
 
-        private IQueryable<TModel> SearchBy(IQueryable<TModel> query, ISearchTermQuery? search, StringComparison stringComparison)
+        private IQueryable<TModel> SearchBy(IQueryable<TModel> query, ISearchTermQuery? search, StringComparison stringComparison, bool isSearchTerm)
         {
             if (query == null) throw new ArgumentNullException(nameof(query));
             if (!string.IsNullOrWhiteSpace(search?.SearchTerm))
             {
-                var searchTermExpression = _expressionBuilder.BuildExpression(search.SearchTerm, stringComparison);
+                var searchTermExpression = _expressionBuilder.BuildExpression(search.SearchTerm, stringComparison, isSearchTerm);
                 if (searchTermExpression != null)
                     return query.Where(searchTermExpression);
             }
@@ -57,9 +68,15 @@ namespace Eliassen.System.Linq.Search
             {
                 foreach (var item in filter.Filter)
                 {
-                    var filterExpression = _expressionBuilder.GetPredicateExpression(item.Key, item.Value, stringComparison);
+                    var filterExpression = _expressionBuilder.GetPredicateExpression(item.Key, item.Value, stringComparison, false);
                     if (filterExpression != null)
+                    {
                         query = query.Where(filterExpression);
+                    }
+                    else
+                    {
+                        _logger.LogWarning($"No filter mapped for property: {{name}} => {{filter}}", item.Key, item.Value);
+                    }
                 }
             }
             return query;

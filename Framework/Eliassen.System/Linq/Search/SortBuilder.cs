@@ -1,16 +1,27 @@
-﻿using Eliassen.System.Linq.Expressions;
+﻿using Eliassen.System.Internal;
+using Eliassen.System.Linq.Expressions;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 
 namespace Eliassen.System.Linq.Search
 {
-    public interface ISortBuilder<TModel>
-    {
-        IOrderedQueryable<TModel> SortBy(IQueryable<TModel> query, ISortQuery searchRequest, IExpressionTreeBuilder<TModel> treeBuilder);
-    }
     internal class SortBuilder<TModel> : ISortBuilder<TModel>
     {
-        public IOrderedQueryable<TModel> SortBy(IQueryable<TModel> query, ISortQuery searchRequest, IExpressionTreeBuilder<TModel> treeBuilder)
+        private readonly ILogger _logger;
+
+        public SortBuilder(
+            ILogger<SortBuilder<TModel>>? logger = null
+            )
+        {
+            _logger = logger ?? new ConsoleLogger<SortBuilder<TModel>>();
+        }
+
+        public IOrderedQueryable<TModel> SortBy(
+            IQueryable<TModel> query,
+            ISortQuery searchRequest,
+            IExpressionTreeBuilder<TModel> treeBuilder
+            )
         {
             var sortLookup = treeBuilder.PropertyExpressions();
 
@@ -22,9 +33,16 @@ namespace Eliassen.System.Linq.Search
                   .ToDictionary(k => k.Key, v => v.Expression, StringComparer.InvariantCultureIgnoreCase)
                   ;
 
-            if (!orderBys.Any())
+            if (!orderBys.Any() && treeBuilder.DefaultSortOrder().Any())
+            {
                 orderBys = treeBuilder.DefaultSortOrder()
                   .ToDictionary(k => k.column, v => v.direction, StringComparer.InvariantCultureIgnoreCase);
+                _logger.LogInformation(
+                    $"Applying default sort for {{type}}: {{{nameof(orderBys)}}}",
+                    typeof(TModel),
+                    string.Join("; ", treeBuilder.DefaultSortOrder())
+                    );
+            }
 
             IOrderedQueryable<TModel>? ordered = null;
 
@@ -42,7 +60,13 @@ namespace Eliassen.System.Linq.Search
                 };
             }
 
-            return ordered ?? query.OrderBy(_ => 0);
+            if (ordered == null)
+            {
+                _logger.LogWarning($"No sort applied for {{type}}", typeof(TModel));
+                ordered ??= query.OrderBy(_ => 0);
+            }
+
+            return ordered;
         }
     }
 }

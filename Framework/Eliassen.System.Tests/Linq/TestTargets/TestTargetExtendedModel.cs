@@ -24,6 +24,8 @@ namespace Eliassen.System.Tests.Linq.TestTargets
             Email = $"{nameof(Email)}{index:0000}@domain.com";
 
             Date = BaseDate.AddMonths(index);
+            if (index >= 0)
+                DateTimeOffsetNullable = DateTimeNullable = Date;
         }
 
         [Key]
@@ -37,6 +39,9 @@ namespace Eliassen.System.Tests.Linq.TestTargets
 
         [Searchable]
         public DateTime Date { get; set; }
+
+        public DateTime? DateTimeNullable { get; set; }
+        public DateTimeOffset? DateTimeOffsetNullable { get; set; }
 
         public static Expression<Func<TestTargetExtendedModel, object>>? PropertyMap(string key) =>
             key switch

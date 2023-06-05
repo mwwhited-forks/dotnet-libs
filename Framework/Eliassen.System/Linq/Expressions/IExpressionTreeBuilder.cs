@@ -15,8 +15,8 @@ namespace Eliassen.System.Linq.Expressions
 
     public interface IExpressionTreeBuilder<TModel> : IExpressionTreeBuilder
     {
-        Expression<Func<TModel, bool>>? GetPredicateExpression(string name, FilterParameter value, StringComparison stringComparison);
-        Expression<Func<TModel, bool>>? BuildExpression(object? queryParameter, StringComparison stringComparison);
+        Expression<Func<TModel, bool>>? GetPredicateExpression(string name, FilterParameter value, StringComparison stringComparison, bool isSearchTerm);
+        Expression<Func<TModel, bool>>? BuildExpression(object? queryParameter, StringComparison stringComparison, bool isSearchTerm);
         IReadOnlyDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions();
     }
 }

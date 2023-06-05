@@ -1,6 +1,8 @@
 ﻿using Eliassen.System.ComponentModel.Search;
+using Eliassen.System.Internal;
 using Eliassen.System.Linq.Search;
 using Eliassen.System.Reflection;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,23 +12,33 @@ using System.Reflection;
 
 namespace Eliassen.System.Linq.Expressions
 {
+
     public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
     {
         private const string PropertyMap = nameof(PropertyMap);
         private const string PredicateMap = nameof(PredicateMap);
 
+        private readonly ILogger _logger;
+
+        public ExpressionTreeBuilder(
+            ILogger<ExpressionTreeBuilder<TModel>>? logger = null
+            )
+        {
+            _logger = logger ?? new ConsoleLogger<ExpressionTreeBuilder<TModel>>();
+        }
+
         public Expression<Func<TModel, bool>>? GetPredicateExpression(
             string name,
             FilterParameter value,
-            StringComparison stringComparison
+            StringComparison stringComparison,
+            bool isSearchTerm
             ) =>
-            (TryGetPredicateExpression(name, value, out var expression, stringComparison) ?
-                expression : null);
+            TryGetPredicateExpression(name, value, out var expression, stringComparison, isSearchTerm) ? expression : null;
 
-        public Expression<Func<TModel, bool>>? BuildExpression(object? queryParameter, StringComparison stringComparison) =>
+        public Expression<Func<TModel, bool>>? BuildExpression(object? queryParameter, StringComparison stringComparison, bool isSearchTerm) =>
             ExpressionExtensions.OrChain(
                 from searchExpression in GetSearchableExpressions(stringComparison)
-                let builtExpression = BuildPredicate(searchExpression.expression, Operators.EqualTo, queryParameter)
+                let builtExpression = BuildPredicate(searchExpression.expression, Operators.EqualTo, queryParameter, isSearchTerm)
                 where builtExpression != null
                 select builtExpression
             );
@@ -41,32 +53,36 @@ namespace Eliassen.System.Linq.Expressions
 
         private IEnumerable<Expression<Func<TModel, bool>>?> GetPredicates(
             Expression<Func<TModel, object>>? expression,
-            FilterParameter? search)
+            FilterParameter? search,
+            bool isSearchTerm
+            )
         {
             if (search == null) yield break;
 
-            yield return BuildPredicate(expression, Operators.EqualTo, search.EqualTo);
-            yield return BuildPredicate(expression, Operators.NotEqualTo, search.NotEqualTo);
-            yield return BuildPredicate(expression, Operators.InSet, search.InSet);
-            yield return BuildPredicate(expression, Operators.LessThan, search.LessThan);
-            yield return BuildPredicate(expression, Operators.LessThanOrEqualTo, search.LessThanOrEqualTo);
-            yield return BuildPredicate(expression, Operators.GreaterThan, search.GreaterThan);
-            yield return BuildPredicate(expression, Operators.GreaterThanOrEqualTo, search.GreaterThanOrEqualTo);
+            yield return BuildPredicate(expression, Operators.EqualTo, search.EqualTo, isSearchTerm);
+            yield return BuildPredicate(expression, Operators.NotEqualTo, search.NotEqualTo, isSearchTerm);
+            yield return BuildPredicate(expression, Operators.InSet, search.InSet, isSearchTerm);
+            yield return BuildPredicate(expression, Operators.LessThan, search.LessThan, isSearchTerm);
+            yield return BuildPredicate(expression, Operators.LessThanOrEqualTo, search.LessThanOrEqualTo, isSearchTerm);
+            yield return BuildPredicate(expression, Operators.GreaterThan, search.GreaterThan, isSearchTerm);
+            yield return BuildPredicate(expression, Operators.GreaterThanOrEqualTo, search.GreaterThanOrEqualTo, isSearchTerm);
         }
 
         private Expression<Func<TModel, bool>>? BuildPredicate(
             Expression<Func<TModel, object>>? expression,
-            FilterParameter? search
-            ) => GetPredicates(expression, search).AndChain();
+            FilterParameter? search,
+            bool isSearchTerm
+            ) => GetPredicates(expression, search, isSearchTerm).AndChain();
 
         private Expression<Func<TModel, bool>>? BuildPredicate(
             Expression<Func<TModel, object>>? expression,
             Operators expressionOperator,
-            object? queryParameter)
-
+            object? queryParameter,
+            bool isSearchTerm
+            )
         {
             if (expression == null || queryParameter == null) return null;
-            if (queryParameter is FilterParameter search) return BuildPredicate(expression, search);
+            if (queryParameter is FilterParameter search) return BuildPredicate(expression, search, isSearchTerm);
 
             Expression unwrapped = expression.Body;
             if ((expression.Body.NodeType == ExpressionType.Convert) ||
@@ -89,7 +105,8 @@ namespace Eliassen.System.Linq.Expressions
                 };
             }
 
-            var queryParameterType = queryParameter.GetType();
+            var queryParameterType = queryParameter?.GetType() ??
+                throw new NullReferenceException($"{nameof(queryParameter)} may not be null");
 
             if (expressionOperator == Operators.InSet)
             {
@@ -116,7 +133,7 @@ namespace Eliassen.System.Linq.Expressions
                         var safeArray = unwrapped.Type.MakeSafeArray((Array)queryParameter);
                         if (safeArray != null)
                         {
-                            var recursive = BuildPredicate(expression, expressionOperator, safeArray);
+                            var recursive = BuildPredicate(expression, expressionOperator, safeArray, isSearchTerm);
                             if (recursive != null) return recursive;
                         }
                     }
@@ -129,13 +146,13 @@ namespace Eliassen.System.Linq.Expressions
             {
                 if (queryString[..1] == "!")
                 {
-                    return BuildPredicate(expression, Operators.NotEqualTo, queryString[1..]);
+                    return BuildPredicate(expression, Operators.NotEqualTo, queryString[1..], isSearchTerm);
                 }
                 else if (unwrapped.Type == typeof(string))
                 {
                     if (expressionOperator == Operators.NotEqualTo)
                     {
-                        var eq = BuildPredicate(expression, Operators.EqualTo, queryParameter);
+                        var eq = BuildPredicate(expression, Operators.EqualTo, queryParameter, isSearchTerm);
                         var predicate = Expression.Not(eq.Body);
                         var parameter = Expression.Parameter(typeof(TModel), "n");
                         var replaced = new ParameterReplacer(parameter).Visit(predicate);
@@ -178,21 +195,41 @@ namespace Eliassen.System.Linq.Expressions
                 }
                 else if (unwrapped.Type.TryParse(queryString, out var value))
                 {
+                    _logger.LogWarning(
+                        $"{{{nameof(queryString)}}} parsed to {{{nameof(value)}}} ({{type}})",
+                        queryString,
+                        value,
+                        value.GetType()
+                        );
                     queryParameter = value;
                 }
             }
 
-            if (unwrapped.Type == queryParameter?.GetType())
+            if (unwrapped.Type.IsAssignableFrom(queryParameter.GetType()))
             {
                 //TODO: needs to be a bit more creative.  type casting not supported
                 var parameter = Expression.Parameter(typeof(TModel), "n");
-                var predicate = expressionOperator.BuildBinaryExpression(unwrapped, queryParameter);
+                var predicate = BuildBinaryExpression(expressionOperator, unwrapped, queryParameter);
                 var replaced = new ParameterReplacer(parameter).Visit(predicate);
                 var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
                 return lambda;
             }
             else
             {
+                if (!isSearchTerm)
+                {
+                    _logger.LogWarning(
+                        $"Unable to map filter expression: {nameof(expression)} {nameof(expressionOperator)} {nameof(queryParameter)} (type)",
+                        expression,
+                        expressionOperator,
+                        queryParameter,
+                        queryParameter?.GetType()
+                        );
+#if DEBUG
+                    throw new NotSupportedException($"Filter not mapped: {expression} {expressionOperator} {queryParameter}");
+#endif
+                }
+
                 return default;
             }
         }
@@ -305,6 +342,30 @@ namespace Eliassen.System.Linq.Expressions
             ).OrderBy(p => p.Priority).Select(o => (o.name, o.Order))
             .ToArray();
 
+        private BinaryExpression BuildBinaryExpression(Operators expressionOperator, Expression left, object right) =>
+            BuildBinaryExpression(expressionOperator, left, right as Expression ?? Expression.Constant(right));
+        private BinaryExpression BuildBinaryExpression(Operators expressionOperator, Expression left, Expression right)
+        {
+            if (left.Type != right.Type)
+            {
+                right = Expression.Convert(right, left.Type);
+            }
+
+            var result = expressionOperator switch
+            {
+                Operators.EqualTo => Expression.Equal(left, right),
+                Operators.NotEqualTo => Expression.NotEqual(left, right),
+
+                Operators.LessThan => Expression.LessThan(left, right),
+                Operators.LessThanOrEqualTo => Expression.LessThanOrEqual(left, right),
+                Operators.GreaterThan => Expression.GreaterThan(left, right),
+                Operators.GreaterThanOrEqualTo => Expression.GreaterThanOrEqual(left, right),
+
+                _ => throw new NotSupportedException($"{expressionOperator} is not supported"),
+            };
+            return result;
+        }
+
         private IReadOnlyCollection<(string property, Expression<Func<TModel, object>> expression)> GetSearchableExpressions(StringComparison stringComparison) =>
             (
             from property in GetSearchablePropertyNames()
@@ -331,7 +392,8 @@ namespace Eliassen.System.Linq.Expressions
             string name,
             FilterParameter value,
             out Expression<Func<TModel, bool>>? expression,
-            StringComparison stringComparison
+            StringComparison stringComparison,
+            bool isSearchTerm
             )
         {
             var modelType = typeof(TModel);
@@ -353,7 +415,7 @@ namespace Eliassen.System.Linq.Expressions
 
             //TODO: should I add support to unroll the searchOption?
 
-            expression ??= BuildPredicate(GetPropertyExpression(name, stringComparison), value);
+            expression ??= BuildPredicate(GetPropertyExpression(name, stringComparison), value, isSearchTerm);
 
             return expression != null;
         }
@@ -383,6 +445,11 @@ namespace Eliassen.System.Linq.Expressions
                 modelType.GetProperties(ReflectionExtensions.PublicProperties)
                 .FirstOrDefault(pi => string.Equals(pi.Name, name, stringComparison))
                 );
+
+            if (expression == null)
+            {
+                _logger.LogInformation($"{nameof(TryGetPropertyExpression)}: {{{nameof(name)}}}", name);
+            }
 
             return expression != null;
         }

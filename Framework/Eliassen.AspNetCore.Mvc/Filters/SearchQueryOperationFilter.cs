@@ -41,7 +41,7 @@ public class SearchQueryOperationFilter : IOperationFilter
 
         if (context.MethodInfo.ReturnType.IsAssignableTo(typeof(IQueryable)) && context.MethodInfo.ReturnType.IsGenericType)
         {
-            var elementType = context.MethodInfo.ReturnType.GetGenericArguments()[0]; 
+            var elementType = context.MethodInfo.ReturnType.GetGenericArguments()[0];
             var treeBuilder = (IExpressionTreeBuilder)ActivatorUtilities.CreateInstance(_serviceProvider, typeof(ExpressionTreeBuilder<>).MakeGenericType(elementType));
 
             var requestType = typeof(SearchQuery<>).MakeGenericType(elementType);
@@ -62,7 +62,7 @@ public class SearchQueryOperationFilter : IOperationFilter
             var contentTypes = (
                 from responseType in context.ApiDescription.SupportedResponseTypes
                 from format in responseType.ApiResponseFormats
-                //where format.MediaType.EndsWith("/json")
+                where format.MediaType.EndsWith("/json")
                 select format.MediaType
                 ).Distinct();
 
