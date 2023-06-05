@@ -1,59 +1,88 @@
-﻿using System;
+﻿using Eliassen.System.ComponentModel.Search;
+using Eliassen.System.Internal;
+using Eliassen.System.Linq.Search;
+using Eliassen.System.Reflection;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Eliassen.System.ComponentModel.Search;
-using Eliassen.System.Linq.Search;
-using Eliassen.System.Reflection;
 
 namespace Eliassen.System.Linq.Expressions
 {
-    public static class ExpressionTreeBuilder
+
+    public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
     {
-        public const string PropertyMap = nameof(PropertyMap);
-        public const string PredicateMap = nameof(PredicateMap);
+        private const string PropertyMap = nameof(PropertyMap);
+        private const string PredicateMap = nameof(PredicateMap);
 
-        public static IReadOnlyDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions<TModel>() =>
-         new Dictionary<string, Expression<Func<TModel, object>>>(BuildExpressions<TModel>(), StringComparer.InvariantCultureIgnoreCase);
+        private readonly ILogger _logger;
 
-        public static IReadOnlyCollection<KeyValuePair<string, Expression<Func<TModel, object>>>> BuildExpressions<TModel>() =>
+        public ExpressionTreeBuilder(
+            ILogger<ExpressionTreeBuilder<TModel>>? logger = null
+            )
+        {
+            _logger = logger ?? new ConsoleLogger<ExpressionTreeBuilder<TModel>>();
+        }
+
+        public Expression<Func<TModel, bool>>? GetPredicateExpression(
+            string name,
+            FilterParameter value,
+            StringComparison stringComparison,
+            bool isSearchTerm
+            ) =>
+            TryGetPredicateExpression(name, value, out var expression, stringComparison, isSearchTerm) ? expression : null;
+
+        public Expression<Func<TModel, bool>>? BuildExpression(object? queryParameter, StringComparison stringComparison, bool isSearchTerm) =>
+            ExpressionExtensions.OrChain(
+                from searchExpression in GetSearchableExpressions(stringComparison)
+                let builtExpression = BuildPredicate(searchExpression.expression, Operators.EqualTo, queryParameter, isSearchTerm)
+                where builtExpression != null
+                select builtExpression
+            );
+
+        private IReadOnlyCollection<KeyValuePair<string, Expression<Func<TModel, object>>>> BuildExpressions() =>
             (
             from pi in typeof(TModel).GetProperties(ReflectionExtensions.PublicProperties)
-            let exp = pi.BuildExpression<TModel>()
+            let exp = BuildExpression(pi)
             where exp != null
             select KeyValuePair.Create(pi.Name, exp)
             ).ToArray();
 
-        public static IEnumerable<Expression<Func<TModel, bool>>?> GetPredicates<TModel>(
-            this Expression<Func<TModel, object>>? expression,
-            FilterParameter? search)
+        private IEnumerable<Expression<Func<TModel, bool>>?> GetPredicates(
+            Expression<Func<TModel, object>>? expression,
+            FilterParameter? search,
+            bool isSearchTerm
+            )
         {
             if (search == null) yield break;
 
-            yield return expression.BuildPredicate(Operators.EqualTo, search.EqualTo);
-            yield return expression.BuildPredicate(Operators.NotEqualTo, search.NotEqualTo);
-            yield return expression.BuildPredicate(Operators.InSet, search.InSet);
-            yield return expression.BuildPredicate(Operators.LessThan, search.LessThan);
-            yield return expression.BuildPredicate(Operators.LessThanOrEqualTo, search.LessThanOrEqualTo);
-            yield return expression.BuildPredicate(Operators.GreaterThan, search.GreaterThan);
-            yield return expression.BuildPredicate(Operators.GreaterThanOrEqualTo, search.GreaterThanOrEqualTo);
+            yield return BuildPredicate(expression, Operators.EqualTo, search.EqualTo, isSearchTerm);
+            yield return BuildPredicate(expression, Operators.NotEqualTo, search.NotEqualTo, isSearchTerm);
+            yield return BuildPredicate(expression, Operators.InSet, search.InSet, isSearchTerm);
+            yield return BuildPredicate(expression, Operators.LessThan, search.LessThan, isSearchTerm);
+            yield return BuildPredicate(expression, Operators.LessThanOrEqualTo, search.LessThanOrEqualTo, isSearchTerm);
+            yield return BuildPredicate(expression, Operators.GreaterThan, search.GreaterThan, isSearchTerm);
+            yield return BuildPredicate(expression, Operators.GreaterThanOrEqualTo, search.GreaterThanOrEqualTo, isSearchTerm);
         }
 
-        public static Expression<Func<TModel, bool>>? BuildPredicate<TModel>(
-            this Expression<Func<TModel, object>>? expression,
-            FilterParameter? search
-            ) => GetPredicates(expression, search).AndChain();
+        private Expression<Func<TModel, bool>>? BuildPredicate(
+            Expression<Func<TModel, object>>? expression,
+            FilterParameter? search,
+            bool isSearchTerm
+            ) => GetPredicates(expression, search, isSearchTerm).AndChain();
 
-        public static Expression<Func<TModel, bool>>? BuildPredicate<TModel>(
-            this Expression<Func<TModel, object>>? expression,
+        private Expression<Func<TModel, bool>>? BuildPredicate(
+            Expression<Func<TModel, object>>? expression,
             Operators expressionOperator,
-            object? queryParameter)
-
+            object? queryParameter,
+            bool isSearchTerm
+            )
         {
             if (expression == null || queryParameter == null) return null;
-            if (queryParameter is FilterParameter search) return expression.BuildPredicate(search);
+            if (queryParameter is FilterParameter search) return BuildPredicate(expression, search, isSearchTerm);
 
             Expression unwrapped = expression.Body;
             if ((expression.Body.NodeType == ExpressionType.Convert) ||
@@ -76,11 +105,12 @@ namespace Eliassen.System.Linq.Expressions
                 };
             }
 
-            var queryParameterType = queryParameter.GetType();
+            var queryParameterType = queryParameter?.GetType() ??
+                throw new NullReferenceException($"{nameof(queryParameter)} may not be null");
 
             if (expressionOperator == Operators.InSet)
             {
-                if (queryParameterType.IsArray) //TODO: this should support IEnumerable<> as well
+                if (queryParameterType.IsArray) //TODO: should support IEnumerable<> as well
                 {
                     var elementType = queryParameterType.GetElementType();
                     if (elementType == unwrapped.Type)
@@ -103,7 +133,7 @@ namespace Eliassen.System.Linq.Expressions
                         var safeArray = unwrapped.Type.MakeSafeArray((Array)queryParameter);
                         if (safeArray != null)
                         {
-                            var recursive = BuildPredicate(expression, expressionOperator, safeArray);
+                            var recursive = BuildPredicate(expression, expressionOperator, safeArray, isSearchTerm);
                             if (recursive != null) return recursive;
                         }
                     }
@@ -112,17 +142,17 @@ namespace Eliassen.System.Linq.Expressions
 
             }
 
-            if (queryParameter is string queryString) //TODO: should this be "like"
+            if (queryParameter is string queryString) //TODO: should be "like"
             {
                 if (queryString[..1] == "!")
                 {
-                    return expression.BuildPredicate(Operators.NotEqualTo, queryString[1..]);
+                    return BuildPredicate(expression, Operators.NotEqualTo, queryString[1..], isSearchTerm);
                 }
                 else if (unwrapped.Type == typeof(string))
                 {
                     if (expressionOperator == Operators.NotEqualTo)
                     {
-                        var eq = expression.BuildPredicate(Operators.EqualTo, queryParameter);
+                        var eq = BuildPredicate(expression, Operators.EqualTo, queryParameter, isSearchTerm);
                         var predicate = Expression.Not(eq.Body);
                         var parameter = Expression.Parameter(typeof(TModel), "n");
                         var replaced = new ParameterReplacer(parameter).Visit(predicate);
@@ -165,39 +195,49 @@ namespace Eliassen.System.Linq.Expressions
                 }
                 else if (unwrapped.Type.TryParse(queryString, out var value))
                 {
+                    _logger.LogWarning(
+                        $"{{{nameof(queryString)}}} parsed to {{{nameof(value)}}} ({{type}})",
+                        queryString,
+                        value,
+                        value.GetType()
+                        );
                     queryParameter = value;
                 }
             }
 
-            if (unwrapped.Type == queryParameter?.GetType())
+            if (unwrapped.Type.IsAssignableFrom(queryParameter.GetType()))
             {
                 //TODO: needs to be a bit more creative.  type casting not supported
                 var parameter = Expression.Parameter(typeof(TModel), "n");
-                var predicate = expressionOperator.BuildBinaryExpression(unwrapped, queryParameter);
+                var predicate = BuildBinaryExpression(expressionOperator, unwrapped, queryParameter);
                 var replaced = new ParameterReplacer(parameter).Visit(predicate);
                 var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
                 return lambda;
             }
             else
             {
+                if (!isSearchTerm)
+                {
+                    _logger.LogWarning(
+                        $"Unable to map filter expression: {nameof(expression)} {nameof(expressionOperator)} {nameof(queryParameter)} (type)",
+                        expression,
+                        expressionOperator,
+                        queryParameter,
+                        queryParameter?.GetType()
+                        );
+#if DEBUG
+                    throw new NotSupportedException($"Filter not mapped: {expression} {expressionOperator} {queryParameter}");
+#endif
+                }
+
                 return default;
             }
         }
 
-        public static Expression<Func<TModel, bool>>? BuildExpression<TModel>(object? queryParameter) =>
-            OrChain(
-                from searchExpression in GetSearchableExpressions<TModel>()
-                let builtExpression = searchExpression.expression.BuildPredicate(Operators.EqualTo, queryParameter)
-                where builtExpression != null
-                select builtExpression
-            );
+        public IReadOnlyDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions() =>
+            new Dictionary<string, Expression<Func<TModel, object>>>(BuildExpressions(), StringComparer.InvariantCultureIgnoreCase);
 
-        public static IReadOnlyCollection<string> GetSearchablePropertyNames(Type modelType) =>
-            (IReadOnlyCollection<string>)typeof(ExpressionTreeBuilder)
-                .GetStaticMethod(nameof(GetSearchablePropertyNames))
-                .MakeGenericMethod(modelType)
-                .Invoke(null, null);
-        public static IReadOnlyCollection<string> GetSearchablePropertyNames<TModel>()
+        public IReadOnlyCollection<string> GetSearchablePropertyNames()
         {
             var modelType = typeof(TModel);
 
@@ -229,12 +269,7 @@ namespace Eliassen.System.Linq.Expressions
             return results;
         }
 
-        public static IReadOnlyCollection<string> GetSortablePropertyNames(Type modelType) =>
-            (IReadOnlyCollection<string>)typeof(ExpressionTreeBuilder)
-                .GetStaticMethod(nameof(GetSortablePropertyNames))
-                .MakeGenericMethod(modelType)
-                .Invoke(null, null);
-        public static IReadOnlyCollection<string> GetSortablePropertyNames<TModel>()
+        public IReadOnlyCollection<string> GetSortablePropertyNames()
         {
             var modelType = typeof(TModel);
 
@@ -260,12 +295,7 @@ namespace Eliassen.System.Linq.Expressions
             return results;
         }
 
-        public static IReadOnlyCollection<string> GetFilterablePropertyNames(Type modelType) =>
-            (IReadOnlyCollection<string>)typeof(ExpressionTreeBuilder)
-                .GetStaticMethod(nameof(GetFilterablePropertyNames))
-                .MakeGenericMethod(modelType)
-                .Invoke(null, null);
-        public static IReadOnlyCollection<string> GetFilterablePropertyNames<TModel>()
+        public IReadOnlyCollection<string> GetFilterablePropertyNames()
         {
             var modelType = typeof(TModel);
 
@@ -299,16 +329,52 @@ namespace Eliassen.System.Linq.Expressions
             return results;
         }
 
-
-        public static IReadOnlyCollection<(string property, Expression<Func<TModel, object>> expression)> GetSearchableExpressions<TModel>() =>
+        public IReadOnlyCollection<(string column, OrderDirections direction)> DefaultSortOrder() =>
             (
-            from property in GetSearchablePropertyNames<TModel>()
-            let expression = TryGetPropertyExpression<TModel>(property, out var exp) ? exp : null
+                from attribute in typeof(TModel).GetCustomAttributes<DefaultSortAttribute>()
+                where !string.IsNullOrWhiteSpace(attribute.TargetName)
+                select (name: attribute.TargetName, attribute.Order, attribute.Priority)
+            ).Concat(
+                from prop in typeof(TModel).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty)
+                let attribute = prop.GetCustomAttribute<DefaultSortAttribute>()
+                where attribute != null
+                select (name: attribute.TargetName ?? prop.Name, attribute.Order, attribute.Priority)
+            ).OrderBy(p => p.Priority).Select(o => (o.name, o.Order))
+            .ToArray();
+
+        private BinaryExpression BuildBinaryExpression(Operators expressionOperator, Expression left, object right) =>
+            BuildBinaryExpression(expressionOperator, left, right as Expression ?? Expression.Constant(right));
+        private BinaryExpression BuildBinaryExpression(Operators expressionOperator, Expression left, Expression right)
+        {
+            if (left.Type != right.Type)
+            {
+                right = Expression.Convert(right, left.Type);
+            }
+
+            var result = expressionOperator switch
+            {
+                Operators.EqualTo => Expression.Equal(left, right),
+                Operators.NotEqualTo => Expression.NotEqual(left, right),
+
+                Operators.LessThan => Expression.LessThan(left, right),
+                Operators.LessThanOrEqualTo => Expression.LessThanOrEqual(left, right),
+                Operators.GreaterThan => Expression.GreaterThan(left, right),
+                Operators.GreaterThanOrEqualTo => Expression.GreaterThanOrEqual(left, right),
+
+                _ => throw new NotSupportedException($"{expressionOperator} is not supported"),
+            };
+            return result;
+        }
+
+        private IReadOnlyCollection<(string property, Expression<Func<TModel, object>> expression)> GetSearchableExpressions(StringComparison stringComparison) =>
+            (
+            from property in GetSearchablePropertyNames()
+            let expression = TryGetPropertyExpression(property, out var exp, stringComparison) ? exp : null
             where expression != null
             select (property, expression)
             ).ToArray();
 
-        public static Expression<Func<TModel, object>>? BuildExpression<TModel>(this PropertyInfo? prop)
+        private Expression<Func<TModel, object>>? BuildExpression(PropertyInfo? prop)
         {
             if (prop == null) return null;
             var parameter = Expression.Parameter(typeof(TModel), "n");
@@ -322,19 +388,12 @@ namespace Eliassen.System.Linq.Expressions
             return exp;
         }
 
-        public static Expression<Func<TModel, bool>>? GetPredicateExpression<TModel>(
-            string name,
-            FilterParameter value,
-            StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
-            ) =>
-            (TryGetPredicateExpression<TModel>(name, value, out var expression, stringComparison) ?
-                expression : null);
-
-        public static bool TryGetPredicateExpression<TModel>(
+        private bool TryGetPredicateExpression(
             string name,
             FilterParameter value,
             out Expression<Func<TModel, bool>>? expression,
-            StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
+            StringComparison stringComparison,
+            bool isSearchTerm
             )
         {
             var modelType = typeof(TModel);
@@ -354,24 +413,24 @@ namespace Eliassen.System.Linq.Expressions
                     ?.Invoke(null, new object[] { name, value.EqualTo, stringComparison }) as Expression<Func<TModel, bool>>;
             }
 
-            //TODO: should I add support to unroll the searchoption?
+            //TODO: should I add support to unroll the searchOption?
 
-            expression ??= GetPropertyExpression<TModel>(name)?.BuildPredicate(value);
+            expression ??= BuildPredicate(GetPropertyExpression(name, stringComparison), value, isSearchTerm);
 
             return expression != null;
         }
 
-        public static Expression<Func<TModel, object>>? GetPropertyExpression<TModel>(
+        private Expression<Func<TModel, object>>? GetPropertyExpression(
             string name,
-            StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
+            StringComparison stringComparison
             ) =>
-            (TryGetPropertyExpression<TModel>(name, out var expression, stringComparison) ?
+            (TryGetPropertyExpression(name, out var expression, stringComparison) ?
                 expression : null);
 
-        public static bool TryGetPropertyExpression<TModel>(
+        private bool TryGetPropertyExpression(
             string name,
             out Expression<Func<TModel, object>>? expression,
-            StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
+            StringComparison stringComparison
             )
         {
             var modelType = typeof(TModel);
@@ -382,58 +441,18 @@ namespace Eliassen.System.Linq.Expressions
             expression ??= modelType.GetStaticMethod(PropertyMap, typeof(string), typeof(StringComparison))
                 ?.Invoke(null, new object[] { name, stringComparison }) as Expression<Func<TModel, object>>;
 
-            expression ??= modelType.GetProperties(ReflectionExtensions.PublicProperties)
+            expression ??= BuildExpression(
+                modelType.GetProperties(ReflectionExtensions.PublicProperties)
                 .FirstOrDefault(pi => string.Equals(pi.Name, name, stringComparison))
-                .BuildExpression<TModel>();
+                );
+
+            if (expression == null)
+            {
+                _logger.LogInformation($"{nameof(TryGetPropertyExpression)}: {{{nameof(name)}}}", name);
+            }
 
             return expression != null;
         }
 
-        public static Expression<Func<TModel, bool>>? OrChain<TModel>(
-            this Expression<Func<TModel, bool>> or,
-            params Expression<Func<TModel, bool>>[] ors
-            ) => new[] { or }.Concat(ors).OrChain();
-
-        public static Expression<Func<TModel, bool>>? OrChain<TModel>(
-            this IEnumerable<Expression<Func<TModel, bool>>> ors
-        ) => Chain(ors, ChainTypes.OrElse);
-
-        public static Expression<Func<TModel, bool>>? AndChain<TModel>(
-            this Expression<Func<TModel, bool>> and,
-            params Expression<Func<TModel, bool>>[] ands
-            ) => new[] { and }.Concat(ands).AndChain();
-
-        public static Expression<Func<TModel, bool>>? AndChain<TModel>(
-            this IEnumerable<Expression<Func<TModel, bool>>?> ands
-        ) => Chain(ands, ChainTypes.AndAlso);
-
-        private static Expression<Func<TModel, bool>>? Chain<TModel>(
-            IEnumerable<Expression<Func<TModel, bool>>?> expressions, ChainTypes type
-        )
-        {
-            Expression? chain = null;
-
-            foreach (var expression in expressions.Where(o => o != null))
-            {
-                chain = (chain, expression) switch
-                {
-                    (_, null) => null,
-                    (null, _) => expression.Body,
-                    (_, _) => type switch
-                    {
-                        ChainTypes.AndAlso => Expression.AndAlso(chain, expression.Body),
-                        ChainTypes.OrElse => Expression.OrElse(chain, expression.Body),
-                        _ => throw new NotSupportedException($"{type}")
-                    }
-                };
-            }
-
-            if (chain == null) return null;
-
-            var parameter = Expression.Parameter(typeof(TModel), "n");
-            var replaced = new ParameterReplacer(parameter).Visit(chain);
-            var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
-            return lambda;
-        }
     }
 }

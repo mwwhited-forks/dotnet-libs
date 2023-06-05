@@ -8,7 +8,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Remove="docs\SearchQueryMiddleware.md" />
+	  <EmbeddedResource Remove="docs\Examples\CaseSensitiveSearch.json" />
+	  <EmbeddedResource Remove="docs\Examples\DateTimeOffsetQuery.json" />
 	</ItemGroup>
 
 	<ItemGroup>
