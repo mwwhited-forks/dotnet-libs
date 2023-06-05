@@ -1,11 +1,13 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace Eliassen.System.Linq.Search
 {
-    public interface IQueryBuilder<TModel>
+    public interface IQueryBuilder
     {
-        IOrderedQueryable<TModel> BuildFrom(IQueryable<TModel> query, ISearchQuery searchQuery, StringComparison stringComparison);
-        IPagedQueryResult<TModel> PageBy(IOrderedQueryable<TModel> query, IPageQuery? pager);
+        IQueryResult ExecuteBy(IQueryable query, ISearchQuery searchQuery);
+    }
+    public interface IQueryBuilder<TModel> : IQueryBuilder
+    {
+        IQueryResult<TModel> ExecuteBy(IQueryable<TModel> query, ISearchQuery searchQuery);
     }
 }

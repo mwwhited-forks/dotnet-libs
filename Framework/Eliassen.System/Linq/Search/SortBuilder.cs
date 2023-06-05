@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Eliassen.System.Linq.Search
 {
-    internal class SortBuilder<TModel> : ISortBuilder<TModel>
+    public class SortBuilder<TModel> : ISortBuilder<TModel>
     {
         private readonly ILogger _logger;
 

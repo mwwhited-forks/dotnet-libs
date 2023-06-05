@@ -109,7 +109,7 @@ namespace Eliassen.System.Tests.Linq
             this.TestContext.AddResult(query);
             var rawData = GetTestData<T>();
             this.TestContext.AddResult(rawData);
-            var queryResults = rawData.ExecuteBy(query);
+            var queryResults = QueryBuilder.Execute(rawData, query);
             this.TestContext.AddResult(queryResults);
 
             var results = queryResults as IPagedQueryResult<T>;
@@ -139,7 +139,7 @@ namespace Eliassen.System.Tests.Linq
                 }
             };
             this.TestContext.AddResult(query);
-            var queryResults = GetTestDataExtended().ExecuteBy(query);
+            var queryResults = QueryBuilder.Execute(GetTestDataExtended(), query);
             this.TestContext.AddResult(queryResults);
 
             var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
@@ -180,7 +180,7 @@ namespace Eliassen.System.Tests.Linq
             this.TestContext.AddResult(query);
             var rawData = GetTestData<T>();
             this.TestContext.AddResult(rawData);
-            var queryResults = rawData.ExecuteBy(query);
+            var queryResults = QueryBuilder.Execute(rawData, query);
             this.TestContext.AddResult(queryResults);
             var results = queryResults as IPagedQueryResult<T>;
             Assert.IsNotNull(results);
@@ -211,7 +211,7 @@ namespace Eliassen.System.Tests.Linq
             this.TestContext.AddResult(query);
             var rawData = GetTestData<TestTargetModel>();
             this.TestContext.AddResult(rawData);
-            var queryResults = rawData.ExecuteBy(query);
+            var queryResults = QueryBuilder.Execute(rawData, query);
             this.TestContext.AddResult(queryResults);
 
 
@@ -249,7 +249,7 @@ namespace Eliassen.System.Tests.Linq
                 }
             };
             this.TestContext.AddResult(query);
-            var queryResults = GetTestData().ExecuteBy(query);
+            var queryResults = QueryBuilder.Execute(GetTestData(), query);
             this.TestContext.AddResult(queryResults);
 
             var results = queryResults as IPagedQueryResult<TestTargetModel>;
@@ -273,7 +273,7 @@ namespace Eliassen.System.Tests.Linq
                 }
             };
             this.TestContext.AddResult(query);
-            var queryResults = GetTestData().ExecuteBy(query);
+            var queryResults = QueryBuilder.Execute(GetTestData(), query);
             this.TestContext.AddResult(queryResults);
 
             var results = queryResults as IPagedQueryResult<TestTargetModel>;
@@ -297,7 +297,7 @@ namespace Eliassen.System.Tests.Linq
                  }
             };
             this.TestContext.AddResult(query);
-            var queryResults = GetTestData().ExecuteBy(query);
+            var queryResults = QueryBuilder.Execute(GetTestData(), query);
             this.TestContext.AddResult(queryResults);
 
             var results = queryResults as IPagedQueryResult<TestTargetModel>;
