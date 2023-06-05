@@ -1,6 +1,7 @@
 ﻿using Eliassen.AspNetCore.Mvc.Filters;
 using Eliassen.AspNetCore.Mvc.SwaggerGen;
 using Eliassen.System.Accessors;
+using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
@@ -21,8 +22,10 @@ namespace Eliassen.AspNetCore.Mvc
         {
             services.AddAccessor<CultureInfo>();
             services.AddAccessor<ISearchQuery>();
-
             services.TryAddSingleton<SearchQueryResultFilter>();
+            services.TryAddSingleton(typeof(IQueryBuilder<>), typeof(QueryBuilder<>));
+            services.TryAddSingleton(typeof(ISortBuilder<>), typeof(SortBuilder<>));
+            services.TryAddSingleton(typeof(IExpressionTreeBuilder<>), typeof(ExpressionTreeBuilder<>));
 
             services.TryAddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
             services.TryAddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();

@@ -30,6 +30,13 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
             _searchQuery = searchQuery;
         }
 
+        private enum RequestType
+        {
+            Query,
+            Json,
+            Form,
+        }
+
         private static ControllerActionDescriptor? GetControllerActionDescriptor(HttpContext context) =>
             context.GetEndpoint()?.Metadata.OfType<ControllerActionDescriptor>().FirstOrDefault();
 
@@ -47,42 +54,60 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
                 _ => null
             };
 
-        private static async Task<T?> GetModelAsync<T>(HttpContext context, string modelName = "")
+        private static RequestType GetRequestType(HttpContext context) => context.Request switch
+        {
+            HttpRequest request when request.HasFormContentType => RequestType.Form,
+            HttpRequest request when request.HasJsonContentType() => RequestType.Json,
+            HttpRequest request when request.Method.Equals("POST", StringComparison.InvariantCultureIgnoreCase) => RequestType.Json,
+            _ => RequestType.Query,
+        };
+        private static IBindingSourceMetadata GetBindingType(RequestType requestType) => requestType switch
+        {
+            RequestType.Form => new FromFormAttribute(),
+            RequestType.Json => new FromBodyAttribute(),
+            RequestType.Query => new FromQueryAttribute(),
+            _ => throw new NotSupportedException($"{nameof(requestType)}: {requestType} is not supported"),
+        };
+
+        private static async Task<IValueProvider> GetValueProviderAsync(
+            HttpContext context,
+            ControllerContext controllerContext,
+            RequestType requestType
+            ) => requestType switch
+            {
+                //TODO: dictionary <string, object> does not map for forms and query string
+                RequestType.Form => new FormValueProvider(BindingSource.Form, context.Request.Form, null),
+                RequestType.Json => await CompositeValueProvider.CreateAsync(controllerContext),
+                RequestType.Query => new QueryStringValueProvider(BindingSource.Query, context.Request.Query, null),
+                _ => throw new NotSupportedException($"{nameof(requestType)}: {requestType} is not supported"),
+            };
+
+        private static async Task<(bool isSearch, T? model)> GetModelAsync<T>(HttpContext context, string modelName = "")
             where T : class
         {
             var descriptor = GetControllerActionDescriptor(context);
-            if (descriptor == null) return null;
+            if (descriptor == null) return (false, default);
 
-            if (!descriptor.MethodInfo.ReturnType.IsAssignableTo(typeof(IQueryable))) return null;
+            if (!descriptor.MethodInfo.ReturnType.IsAssignableTo(typeof(IQueryable))) return (false, default);
 
             var actionContext = GetActionContext(context, descriptor);
-            if (actionContext == null) return null;
+            if (actionContext == null) return (false, default);
             var controllerContext = GetControllerContext(actionContext);
-            if (controllerContext == null) return null;
+            if (controllerContext == null) return (false, default);
 
             var modelBinderFactory = context.RequestServices.GetRequiredService<IModelBinderFactory>();
 
-            IBindingSourceMetadata bindingType = context.Request switch
-            {
-                HttpRequest request when request.HasFormContentType => new FromFormAttribute(),
-                HttpRequest request when request.HasJsonContentType() => new FromBodyAttribute(),
-                _ => new FromQueryAttribute(),
-            };
+            var requestType = GetRequestType(context);
+            var bindingType = GetBindingType(requestType);
 
             var modelBinderContext = new ModelBinderFactoryContext
             {
                 Metadata = new EmptyModelMetadataProvider().GetMetadataForType(typeof(T)),
                 BindingInfo = BindingInfo.GetBindingInfo(new[] { bindingType })
             };
+
             var modelBinder = modelBinderFactory.CreateBinder(modelBinderContext);
-
-
-            IValueProvider valueProvider = context.Request switch
-            {
-                HttpRequest request when request.HasFormContentType => new FormValueProvider(BindingSource.Form, context.Request.Form, null),
-                HttpRequest request when request.HasJsonContentType() => await CompositeValueProvider.CreateAsync(controllerContext),
-                _ => new QueryStringValueProvider(BindingSource.Query, context.Request.Query, null)
-            };
+            var valueProvider = await GetValueProviderAsync(context, controllerContext, requestType);
 
             var modelBindingContext = DefaultModelBindingContext.CreateBindingContext(
                 actionContext: actionContext,
@@ -95,21 +120,28 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
 
             if (modelBindingContext.Result.IsModelSet &&
                 modelBindingContext.Result.Model is T model)
-                return model;
+                return (true, model);
 
-            return null;
+            return (true, default);
         }
         public async Task InvokeAsync(HttpContext context)
         {
             try
             {
-                var searchModel = await GetModelAsync<SearchQuery>(context);
-                if (searchModel != null)
-                    _log.LogInformation($"Invoking: {{{nameof(searchModel)}}}", searchModel);
-                _searchQuery.Value = searchModel;
+                var (isSearch, searchModel) = await GetModelAsync<SearchQuery>(context);
+                if (isSearch)
+                {
+                    if (searchModel == null)
+                    {
+                        _log.LogWarning($"SearchQuery not bound");
+                    }
+                    else
+                    {
+                        _log.LogInformation($"Invoking: {{{nameof(searchModel)}}}", searchModel);
+                    }
+                    _searchQuery.Value = searchModel;
+                }
                 await _next(context);
-                if (searchModel != null)
-                    _log.LogInformation($"Invoked: {{{nameof(searchModel)}}}", searchModel);
             }
             catch (Exception ex)
             {

@@ -4,6 +4,7 @@ using Eliassen.System.Linq.Search;
 using Eliassen.System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
@@ -17,12 +18,15 @@ namespace Eliassen.AspNetCore.Mvc.Filters;
 public class SearchQueryOperationFilter : IOperationFilter
 {
     private readonly ILogger _logger;
+    private readonly IServiceProvider _serviceProvider;
 
     public SearchQueryOperationFilter(
-         ILogger<SearchQueryOperationFilter> logger
+         ILogger<SearchQueryOperationFilter> logger,
+         IServiceProvider serviceProvider
         )
     {
         _logger = logger;
+        _serviceProvider = serviceProvider;
     }
 
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
@@ -38,6 +42,8 @@ public class SearchQueryOperationFilter : IOperationFilter
         if (context.MethodInfo.ReturnType.IsAssignableTo(typeof(IQueryable)) && context.MethodInfo.ReturnType.IsGenericType)
         {
             var elementType = context.MethodInfo.ReturnType.GetGenericArguments()[0];
+            var treeBuilder = (IExpressionTreeBuilder)ActivatorUtilities.CreateInstance(_serviceProvider, typeof(ExpressionTreeBuilder<>).MakeGenericType(elementType));
+
             var requestType = typeof(SearchQuery<>).MakeGenericType(elementType);
             //var responseType = typeof(QueryResult<>).MakeGenericType(elementType);
             var pagedResponseType = typeof(PagedQueryResult<>).MakeGenericType(elementType);
@@ -56,12 +62,13 @@ public class SearchQueryOperationFilter : IOperationFilter
             var contentTypes = (
                 from responseType in context.ApiDescription.SupportedResponseTypes
                 from format in responseType.ApiResponseFormats
+                where format.MediaType.EndsWith("/json")
                 select format.MediaType
                 ).Distinct();
 
             if (context.ApiDescription.HttpMethod == "POST")
             {
-                var schema = UpdateRequestSchema(elementType, context.SchemaRepository, requestSchema);
+                var schema = UpdateRequestSchema(elementType, context.SchemaRepository, requestSchema, treeBuilder);
 
                 ApplyContent(
                     (operation.RequestBody ??= new OpenApiRequestBody()).Content,
@@ -74,10 +81,10 @@ public class SearchQueryOperationFilter : IOperationFilter
             }
             else
             {
-                var request = UpdateRequestSchema(elementType, context.SchemaRepository, requestSchema);
+                var request = UpdateRequestSchema(elementType, context.SchemaRepository, requestSchema, treeBuilder);
 
                 context.SchemaRepository.TryLookupByType(typeof(FilterParameter), out var filterSchemaReference);
-                var filterSchema = UpdateRequestSchema(elementType, context.SchemaRepository, filterSchemaReference);
+                var filterSchema = UpdateRequestSchema(elementType, context.SchemaRepository, filterSchemaReference, treeBuilder);
 
                 context.SchemaRepository.TryLookupByType(typeof(OrderDirections), out var orderSchema);
 
@@ -113,7 +120,7 @@ public class SearchQueryOperationFilter : IOperationFilter
                     }
                     else if (property.Key.Equals(nameof(ISearchQuery.OrderBy), StringComparison.InvariantCultureIgnoreCase))
                     {
-                        var sortableProperties = ExpressionTreeBuilder.GetSortablePropertyNames(elementType);
+                        var sortableProperties = treeBuilder.GetSortablePropertyNames();
                         foreach (var sort in sortableProperties)
                         {
                             parameters.Add(new OpenApiParameter()
@@ -151,7 +158,8 @@ public class SearchQueryOperationFilter : IOperationFilter
     private OpenApiSchema UpdateRequestSchema(
         Type elementType,
         SchemaRepository schemaRepository,
-        OpenApiSchema requestSchema
+        OpenApiSchema requestSchema,
+        IExpressionTreeBuilder treebuilder
         )
     {
         var schema = schemaRepository.Schemas[requestSchema.Reference.Id];
@@ -161,7 +169,7 @@ public class SearchQueryOperationFilter : IOperationFilter
 
         if (properties.TryGetValue(nameof(ISearchQuery.PageSize), out var pageSize))
         {
-            pageSize.Description = $"**Default size:** `{QueryableExtensions.DefaultPageSize}`, `-1` will disable paging";
+            pageSize.Description = $"**Default size:** `{QueryBuilder.DefaultPageSize}`, `-1` will disable paging";
         }
         if (properties.TryGetValue(nameof(ISearchQuery.ExcludePageCount), out var excludePageCount))
         {
@@ -170,13 +178,13 @@ public class SearchQueryOperationFilter : IOperationFilter
 
         if (properties.TryGetValue(nameof(ISearchQuery.Filter), out var filter))
         {
-            filter.Description = $"**Filterable Properties:** {string.Join("; ", ExpressionTreeBuilder.GetFilterablePropertyNames(elementType))}";
+            filter.Description = $"**Filterable Properties:** {string.Join("; ", treebuilder.GetFilterablePropertyNames())}";
         }
 
         if (properties.TryGetValue(nameof(ISearchQuery.OrderBy), out var orderBy))
         {
-            var sortableProperties = ExpressionTreeBuilder.GetSortablePropertyNames(elementType);
-            var defaultSort = from ordinal in SortByExtension.DefaultSortOrder(elementType)
+            var sortableProperties = treebuilder.GetSortablePropertyNames();
+            var defaultSort = from ordinal in treebuilder.DefaultSortOrder()
                               select $"{ordinal.column} {ordinal.direction.AsString()}";
             orderBy.Description =
                 $"**Sortable Properties:** {string.Join(", ", sortableProperties)}  " +
@@ -186,7 +194,7 @@ public class SearchQueryOperationFilter : IOperationFilter
 
         if (properties.TryGetValue(nameof(ISearchQuery.SearchTerm), out var searchTerm))
         {
-            searchTerm.Description = $"**Searched Properties:** {string.Join("; ", ExpressionTreeBuilder.GetSearchablePropertyNames(elementType))}";
+            searchTerm.Description = $"**Searched Properties:** {string.Join("; ", treebuilder.GetSearchablePropertyNames())}";
         }
         return schema;
     }

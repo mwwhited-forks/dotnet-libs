@@ -15,11 +15,16 @@ namespace Nucleus.Core.Controllers.Controllers
     [ApiController]
     public class RegisterUserController : ControllerBase
     {
-        private IUserManagementManager _usersManager { get; set; }
+        private readonly IUserManagementManager _usersManager;
+        private readonly IQueryBuilder<Module> _queryBuilder;
 
-        public RegisterUserController(IUserManagementManager usersManager)
+        public RegisterUserController(
+            IUserManagementManager usersManager,
+            IQueryBuilder<Module> queryBuilder
+            )
         {
             _usersManager = usersManager;
+            _queryBuilder = queryBuilder;
         }
 
         [AllowAnonymous]
@@ -36,6 +41,6 @@ namespace Nucleus.Core.Controllers.Controllers
         [HttpGet("ApplicationPemissions")]
         [Obsolete("Change to the `ApplicationPemissions` /api/UserManagement/ApplicationPermissions")]
         public PagedResult<Module> GetApplicationPermissionsLegacy() =>
-             _usersManager.QueryModules().ExecuteBy(new SearchQuery { }).AsLegacy();
+           _queryBuilder.ExecuteBy(_usersManager.QueryModules(), new SearchQuery { }).AsLegacy();
     }
 }

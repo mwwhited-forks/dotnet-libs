@@ -18,11 +18,20 @@ namespace Nucleus.Core.Controllers.Controllers
     {
         private readonly IUserManagementManager _usersManager;
 
+#warning retire this
+        //NOTE: DO NOT IMPORT THESE... Use the IQueryable pattern
+        private readonly IQueryBuilder<User> _userQuery;
+        private readonly IQueryBuilder<Module> _moduleQuery;
+
         public UserManagementController(
-            IUserManagementManager usersManager
+            IUserManagementManager usersManager,
+            IQueryBuilder<User> userQuery,
+            IQueryBuilder<Module> moduleQuery
             )
         {
             _usersManager = usersManager;
+            _userQuery = userQuery;
+            _moduleQuery = moduleQuery;
         }
 
         [Authorize]
@@ -66,24 +75,24 @@ namespace Nucleus.Core.Controllers.Controllers
         [HttpPost("UserList")]
         [Obsolete("Change to the `ListUsers` /api/UserManagement/Query")]
         public PagedResult<User> GetUserProfile(UsersFilter userFilter) =>
-             _usersManager.QueryUsers().ExecuteBy(new SearchQuery
-             {
-                 CurrentPage = userFilter.PagingModel.CurrentPage - 1,
-                 PageSize = userFilter.PagingModel.PageSize,
-                 ExcludePageCount = userFilter.PagingModel.ExcludePageCount,
-                 SearchTerm = userFilter.UserFilters.InputValue,
-                 Filter = {
+          _userQuery.ExecuteBy(_usersManager.QueryUsers(), new SearchQuery
+          {
+              CurrentPage = userFilter.PagingModel.CurrentPage - 1,
+              PageSize = userFilter.PagingModel.PageSize,
+              ExcludePageCount = userFilter.PagingModel.ExcludePageCount,
+              SearchTerm = userFilter.UserFilters.InputValue,
+              Filter = {
                      {nameof(userFilter.UserFilters.Module), new FilterParameter{ EqualTo= userFilter.UserFilters.Module } },
                      {nameof(userFilter.UserFilters.UserStatus), new FilterParameter{ EqualTo= userFilter.UserFilters.UserStatus } },
                  },
-             }).AsLegacy(userFilter.PagingModel);
+          }).AsLegacy(userFilter.PagingModel);
 
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpGet("ApplicationPemissions")]
         [Obsolete("Change to the `ApplicationPemissions` /api/UserManagement/ApplicationPermissions")]
         public PagedResult<Module> GetApplicationPermissionsLegacy() =>
-             _usersManager.QueryModules().ExecuteBy(new SearchQuery { }).AsLegacy();
+             _moduleQuery.ExecuteBy(_usersManager.QueryModules(), new SearchQuery { }).AsLegacy();
 
     }
 }
