@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
 namespace Eliassen.System.Linq.Search
 {
     /// <inheritdoc/>
-    public class SearchQuery<TModel> : SearchQuery, ISearchQuery<TModel>
+    public record SearchQuery<TModel> : SearchQuery, ISearchQuery<TModel>
     {
     }
 
     /// <inheritdoc/>
-    public class SearchQuery : ISearchQuery
+    public record SearchQuery : ISearchQuery
     {
         /// <inheritdoc cref="IPageQuery.CurrentPage"/>
         public int CurrentPage { get; set; }
@@ -28,5 +29,25 @@ namespace Eliassen.System.Linq.Search
 
         IDictionary<string, FilterParameter> IFilterQuery.Filter => Filter;
         IDictionary<string, OrderDirections> ISortQuery.OrderBy => OrderBy;
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine($"{nameof(CurrentPage)}: {CurrentPage}");
+            sb.AppendLine($"{nameof(PageSize)}: {PageSize}");
+            sb.AppendLine($"{nameof(ExcludePageCount)}: {ExcludePageCount}");
+            sb.AppendLine($"{nameof(SearchTerm)}: {SearchTerm ?? "(null)"}");
+
+            foreach (var item in Filter ?? new Dictionary<string, FilterParameter>())
+            {
+                sb.AppendLine($"\tF:{item.Key}: {item.Value}");
+            }
+            foreach (var item in OrderBy ?? new Dictionary<string, OrderDirections>())
+            {
+                sb.AppendLine($"\tS:{item.Key}: {item.Value}");
+            }
+            return sb.ToString();
+        }
     }
 }

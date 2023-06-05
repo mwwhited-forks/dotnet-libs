@@ -56,6 +56,7 @@ public class SearchQueryOperationFilter : IOperationFilter
             var contentTypes = (
                 from responseType in context.ApiDescription.SupportedResponseTypes
                 from format in responseType.ApiResponseFormats
+                where format.MediaType.EndsWith("/json")
                 select format.MediaType
                 ).Distinct();
 
