@@ -1,7 +1,5 @@
-﻿using Nucleus.Core.Shared.Contracts.Managers;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System.Runtime.InteropServices;
+﻿using Microsoft.AspNetCore.Mvc;
+using Nucleus.Core.Shared.Contracts.Managers;
 using System.Text;
 
 namespace Nucleus.Core.Shared.Controllers.Controllers
@@ -10,7 +8,7 @@ namespace Nucleus.Core.Shared.Controllers.Controllers
     [ApiController]
     public class SiteMapController : ControllerBase
     {
-        private ISiteMapManager _siteMapManager { get; set; }
+        private readonly ISiteMapManager _siteMapManager;
 
         public SiteMapController(ISiteMapManager siteMapManager)
         {

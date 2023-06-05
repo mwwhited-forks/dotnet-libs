@@ -1,25 +1,25 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
+﻿using Eliassen.System.Linq.Search;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Nucleus.Core.Contracts.Models
 {
-    public class PagedResult<T> : PagedResult, IPagedResult<T> where T : class
+    public class PagedResult<T> : PagedResult, IPagedQueryResult<T> where T : class
     {
-        public IList<T> Results { get; set; }
+#warning retire this
+        public List<T> Results { get; set; } = new List<T>();
 
-        int IPagedResult<T>.TotalPageCount => PageCount;
-        long IPagedResult<T>.TotalRowCount => RowCount;
-        IEnumerable<T> IPagedResult<T>.Rows => Results;
+        public IEnumerable<T> Rows => Results;
+        IReadOnlyList<T> IQueryResult<T>.Rows => Results;
+        IEnumerable IQueryResult.Rows => Rows;
 
-        public PagedResult()
-        {
-            Results = new List<T>();
-        }
+        public int TotalPageCount => this.PageCount;
+        public int TotalRowCount => Convert.ToInt32(this.RowCount);
     }
-
     public abstract class PagedResult
     {
+#warning retire this
         public int CurrentPage { get; set; }
         public int PageCount { get; set; }
         public int PageSize { get; set; }

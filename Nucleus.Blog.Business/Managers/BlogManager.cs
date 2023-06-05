@@ -1,11 +1,11 @@
 ﻿using Nucleus.Blog.Contracts.Managers;
-using System;
-using System.Threading.Tasks;
-using Nucleus.Blog.Contracts.Services;
 using Nucleus.Blog.Contracts.Models;
-using Nucleus.Core.Contracts.Models;
 using Nucleus.Blog.Contracts.Models.Filters;
+using Nucleus.Blog.Contracts.Services;
+using Nucleus.Core.Contracts.Models;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Nucleus.Blog.Business.Managers
 {
@@ -22,6 +22,7 @@ namespace Nucleus.Blog.Business.Managers
         public async Task<BlogModel?> GetBlog(string blogId) =>
             await _blogService.GetAsync(blogId, false);
 
+#warning retire this
         public async Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter)
         {
             PagedResult<BlogModel> result = new PagedResult<BlogModel>();

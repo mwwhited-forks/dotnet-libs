@@ -8,6 +8,7 @@ namespace Nucleus.Lesson.Contracts.Managers
 {
     public interface IPublicLessonManager
     {
+#warning retire this
         Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter);
         Task<List<LessonModel>> GetLessons();
         Task<LessonModel?> GetLessonSlug(string slug);

@@ -1,7 +1,14 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
+using Eliassen.System.Linq.Search;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Nucleus.Core.Contracts;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Contracts.Models.Filters;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Nucleus.Core.Controllers.Controllers
 {
@@ -18,12 +25,18 @@ namespace Nucleus.Core.Controllers.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> SaveUser(UserAction? user) =>
-            new JsonResult(await _usersManager.SaveUserAsync(user));
+        public async Task<ResponseModel<User>> SaveUser(UserAction? user) =>
+            await _usersManager.SaveUserAsync(user);
 
         [AllowAnonymous]
+        [HttpGet("ApplicationPermissions")]
+        public IQueryable<Module> GetApplicationPermissions() => _usersManager.QueryModules();
+
+        [Authorize]
+        [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpGet("ApplicationPemissions")]
-        public async Task<IActionResult> GetApplicationPermissions() =>
-           new JsonResult(await _usersManager.GetApplicationPermissionsAsync());
+        [Obsolete("Change to the `ApplicationPemissions` /api/UserManagement/ApplicationPermissions")]
+        public PagedResult<Module> GetApplicationPermissionsLegacy() =>
+             _usersManager.QueryModules().ExecuteBy(new SearchQuery { }).AsLegacy();
     }
 }

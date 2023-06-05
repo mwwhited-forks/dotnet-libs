@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Nucleus.Core.Contracts
+﻿namespace Nucleus.Core.Contracts
 {
     // TODO: Core module should not contain external module business logic.  Need to refactor how this works
     public static class Rights

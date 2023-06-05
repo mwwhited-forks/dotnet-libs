@@ -10,6 +10,8 @@ namespace Nucleus.Project.Contracts.Managers
     {
         Task<List<ProjectModel>> GetProjects();
         Task<ProjectModel?> GetProject(string ProjectId);
+
+#warning retire this
         Task<PagedResult<ProjectModel>> GetProjectsPagedAsync(ProjectFilter projectsFilter);
         Task<ResponseModel<ProjectModel?>> SaveProjectAsync(ProjectModel project);
     }

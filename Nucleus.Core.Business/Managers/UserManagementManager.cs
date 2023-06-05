@@ -1,7 +1,6 @@
 ﻿using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.Filters;
 using Nucleus.Core.Contracts.Models.Keys;
 using System;
 using System.Collections.Generic;
@@ -12,40 +11,29 @@ namespace Nucleus.Core.Business.Managers
 {
     public class UserManagementManager : IUserManagementManager
     {
-        private IIdentityManager _identityManager { get; set; }
-        private IUserService _userService { get; set; }
+        private readonly IIdentityManager _identityManager;
+        private readonly IUserService _users;
+        private readonly IModuleService _modules;
 
         public UserManagementManager(
             IIdentityManager identityManager,
-            IUserService userService)
+            IUserService users,
+            IModuleService modules
+            )
         {
             _identityManager = identityManager;
-            _userService = userService;
+            _users = users;
+            _modules = modules;
         }
 
-        public async Task<PagedResult<User>> GetUsers(UsersFilter userFilter)
-        {
-            PagedResult<User> result = new PagedResult<User>();
-            // Get all users
-            List<User> users = await _userService.GetPagedAsync(userFilter.PagingModel, userFilter.UserFilters);
-            result = new PagedResult<User>()
-            {
-                 CurrentPage = userFilter.PagingModel.CurrentPage,
-                 PageSize = userFilter.PagingModel.PageSize,
-                 Results = users,
-                 RowCount = await _userService.GetPagedCountAsync(userFilter.PagingModel, userFilter.UserFilters),
-                 PageCount = users.Count()
-            };
-            
-            return result;
-        }
+        public IQueryable<User> QueryUsers() => _users.Query();
 
-        public async Task<List<Module>> GetApplicationPermissionsAsync() =>
-             await _userService.GetModulesAsync();
+
+        public IQueryable<Module> QueryModules() => _modules.Query();
 
         public async Task<ResponseModel<User>> SaveUserAsync(UserAction user)
         {
-            
+
             if (user == null || string.IsNullOrEmpty(user.FirstName) || string.IsNullOrEmpty(user.LastName) || string.IsNullOrEmpty(user.EmailAddress))
                 return new ResponseModel<User>()
                 {
@@ -60,7 +48,7 @@ namespace Nucleus.Core.Business.Managers
                 user.UserName = newId;
             }
 
-            if ((user.IdentityAction == UserActionsConst.IdentityActions.RemoveIdentity 
+            if ((user.IdentityAction == UserActionsConst.IdentityActions.RemoveIdentity
                 || user.IdentityAction == UserActionsConst.IdentityActions.RemoveAccount)
                 && user.UserName != null)
             {
@@ -72,11 +60,11 @@ namespace Nucleus.Core.Business.Managers
             ResponseModel<User?> result = new ResponseModel<User?>();
             if (user.IdentityAction == UserActionsConst.IdentityActions.RemoveAccount)
             {
-                await _userService.RemoveAsync(user.UserId);
-            } 
-            else if (String.IsNullOrEmpty(user.UserId))
+                await _users.RemoveAsync(user.UserId ?? throw new NotSupportedException($"{nameof(user.UserId)}: {user.UserId}"));
+            }
+            else if (string.IsNullOrEmpty(user.UserId))
             {
-                var userExists = await _userService.GetByEmailAddressAsync(user.EmailAddress);
+                var userExists = await _users.GetByEmailAddressAsync(user.EmailAddress);
                 if (userExists != null)
                 {
                     return new ResponseModel<User>()
@@ -88,14 +76,14 @@ namespace Nucleus.Core.Business.Managers
                 else
                 {
                     user.CreatedOn = DateTimeOffset.Now;
-                    await _userService.CreateAsync(user);
-                    result.Response = await _userService.GetByEmailAddressAsync(user.EmailAddress);
+                await _users.CreateAsync(user);
+                result.Response = await _users.GetByEmailAddressAsync(user.EmailAddress);
                 }
             }
             else
             {
-                await _userService.UpdateAsync(user);
-                result.Response = await _userService.GetAsync(user.UserId);
+                await _users.UpdateAsync(user);
+                result.Response = await _users.GetByUserIdAsync(user.UserId);
             }
 
             return new ResponseModel<User>()

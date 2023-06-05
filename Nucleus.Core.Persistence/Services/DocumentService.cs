@@ -1,21 +1,21 @@
-﻿using Nucleus.Core.Contracts.Collections;
+﻿using Microsoft.Extensions.Options;
+using MongoDB.Driver;
+using Nucleus.Core.Contracts.Collections;
+using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.DbSettings;
 using Nucleus.Core.Contracts.Models.Filters;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
-using Microsoft.Extensions.Options;
-using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Nucleus.Core.Contracts.Interfaces;
 
 namespace Nucleus.Core.Persistence.Services
 {
-    public class DocumentService: IDocumentService
+    public class DocumentService : IDocumentService
     {
         private readonly IMongoCollection<DocumentCollection> _documentsCollection;
-        private ProjectionDefinition<DocumentCollection, DocumentModel>? _documentProjection { get; set; }
-        private BsonCollectionBuilder<DocumentModel, DocumentCollection> _documentCollectionBuilder { get; set; }
+        private readonly ProjectionDefinition<DocumentCollection, DocumentModel>? _documentProjection;
+        private readonly BsonCollectionBuilder<DocumentModel, DocumentCollection> _documentCollectionBuilder;
 
         public DocumentService(
             IOptions<DocumentDatabaseSettings> documentDatabaseSettings)
@@ -28,16 +28,11 @@ namespace Nucleus.Core.Persistence.Services
 
             _documentsCollection = mongoDatabase.GetCollection<DocumentCollection>(documentDatabaseSettings.Value.DocumentsCollectionName);
             _documentCollectionBuilder = new BsonCollectionBuilder<DocumentModel, DocumentCollection>();
-            BuildProjections();
-        }
-
-        private void BuildProjections()
-        {
             _documentProjection = Builders<DocumentCollection>.Projection.Expression(item => new DocumentModel()
             {
                 DocumentId = item.DocumentId,
                 DocumentName = item.DocumentName,
-                DocumentType = item.DocumentType,                
+                DocumentType = item.DocumentType,
                 DocumentKey = item.DocumentKey,
                 DocumentRepository = item.DocumentRepository,
                 DocumentSize = item.documentSize,
@@ -46,6 +41,7 @@ namespace Nucleus.Core.Persistence.Services
             });
         }
 
+#warning Retire this
         private FilterDefinition<DocumentCollection> GetDocumentsPredicateBuilder(DocumentFilterItem? filterItems)
         {
             // Keeping this business logic in the access layer.  Cannot move it to the business layer yet
@@ -78,9 +74,11 @@ namespace Nucleus.Core.Persistence.Services
             return filter;
         }
 
+#warning Retire this
         public async Task<DocumentModel?> GetDocumentAsync(DocumentsFilter filter) =>
             await _documentsCollection.Find(GetDocumentsPredicateBuilder(filter.DocumentsFilters)).Project(_documentProjection).FirstOrDefaultAsync();
 
+#warning Retire this
         public async Task<List<DocumentModel>?> GetDocumentsAsync(DocumentsFilter filter) =>
             await _documentsCollection.Find(GetDocumentsPredicateBuilder(filter.DocumentsFilters)).Project(_documentProjection).ToListAsync();
 

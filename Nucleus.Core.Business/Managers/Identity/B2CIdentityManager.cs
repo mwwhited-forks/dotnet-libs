@@ -1,20 +1,19 @@
-﻿using Nucleus.Core.Contracts.Managers;
-using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.Keys;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Graph;
 using Microsoft.Graph.Auth;
 using Microsoft.Identity.Client;
+using Nucleus.Core.Contracts.Managers;
+using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Contracts.Models.Keys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Nucleus.Core.Business.Managers.Identity
 {
-    public class B2CIdentityManager: IIdentityManager
+    public class B2CIdentityManager : IIdentityManager
     {
         private readonly ILogger<B2CIdentityManager> _log;
         private readonly IConfiguration _config;
@@ -120,8 +119,7 @@ namespace Nucleus.Core.Business.Managers.Identity
             }
             catch (Exception ex)
             {
-                _log.LogDebug(ex.Message);
-                _log.LogDebug(ex.StackTrace);
+                _log.LogDebug($"{{{nameof(ex.Message)}}}: {{{nameof(ex.StackTrace)}}}", ex.Message, ex.StackTrace);
                 throw;
             }
         }
@@ -145,8 +143,7 @@ namespace Nucleus.Core.Business.Managers.Identity
             }
             catch (Exception ex)
             {
-                _log.LogDebug(ex.Message);
-                _log.LogDebug(ex.StackTrace);
+                _log.LogDebug($"{{{nameof(ex.Message)}}}: {{{nameof(ex.StackTrace)}}}", ex.Message, ex.StackTrace);
                 return false;
             }
         }

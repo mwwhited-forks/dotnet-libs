@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Nucleus.Core.Contracts.Models.Filters
 {
+#warning Retire this
     public class DocumentsFilter
     {
         public DocumentFilterItem? DocumentsFilters { get; set; }
         public PagingModel? PagingModel { get; set; }
     }
 
+#warning Retire this
     public class DocumentFilterItem
     {
         public string? DocumentId { get; set; }

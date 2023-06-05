@@ -1,4 +1,4 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
+﻿using Eliassen.System.Linq.Search;
 
 namespace Nucleus.Core.Contracts.Models
 {

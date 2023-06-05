@@ -1,23 +1,23 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Nucleus.Project.Contracts.Collections.DbSettings;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
-using Nucleus.Project.Contracts.Services;
-using Nucleus.Project.Contracts.Collections;
-using Nucleus.Project.Contracts.Models;
 using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
+using Nucleus.Project.Contracts.Collections;
+using Nucleus.Project.Contracts.Collections.DbSettings;
+using Nucleus.Project.Contracts.Models;
 using Nucleus.Project.Contracts.Models.Filters;
+using Nucleus.Project.Contracts.Services;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Nucleus.Project.Persistence.Services
 {
     public class ProjectService : IProjectService
     {
         private readonly IMongoCollection<ProjectCollection> _projectsCollection;
-        private ProjectionDefinition<ProjectCollection, ProjectModel>? _projectProjection { get; set; }
-        private BsonCollectionBuilder<ProjectModel, ProjectCollection> _projectCollectionBuilder { get; set; }
+        private readonly ProjectionDefinition<ProjectCollection, ProjectModel>? _projectProjection;
+        private readonly BsonCollectionBuilder<ProjectModel, ProjectCollection> _projectCollectionBuilder;
 
         public ProjectService(IOptions<ProjectDatabaseSettings> projectDatabaseSettings)
         {
@@ -32,11 +32,6 @@ namespace Nucleus.Project.Persistence.Services
 
             _projectCollectionBuilder = new BsonCollectionBuilder<ProjectModel, ProjectCollection>();
 
-            BuildProjections();
-        }
-
-        private void BuildProjections()
-        {
             _projectProjection = Builders<ProjectCollection>.Projection.Expression(item => new ProjectModel()
             {
                 ProjectId = item.ProjectId,
@@ -53,6 +48,7 @@ namespace Nucleus.Project.Persistence.Services
             });
         }
 
+#warning retire this
         // need to extend/re-work this so I do not pass in multiple parameters to each method, just a proper filter item from the business layer
         private FilterDefinition<ProjectCollection> GetProjectsPredicateBuilder(bool onlyActive, ProjectsFilterItem? filterItems)
         {
@@ -75,6 +71,7 @@ namespace Nucleus.Project.Persistence.Services
             return filter;
         }
 
+#warning retire this
         public async Task<List<ProjectModel>> GetPagedAsync(PagingModel pagingModel, ProjectsFilterItem? filterItems, bool onlyActive)
         {
             // TODO: Make an extension that does all of this pagination plumbing
@@ -90,8 +87,10 @@ namespace Nucleus.Project.Persistence.Services
                 .ToListAsync();
         }
 
+#warning retire this
         public async Task<long> GetPagedCountAsync(PagingModel pagingModel, ProjectsFilterItem? filterItems, bool onlyActive) =>
-          await _projectsCollection.Find(GetProjectsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
+
+         await _projectsCollection.Find(GetProjectsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
 
         public async Task<List<ProjectModel>> GetAsync(bool onlyActive) =>
             await _projectsCollection.Find(x => (onlyActive == false) || (x.Enabled == true && onlyActive == true)).Project(_projectProjection).ToListAsync();
@@ -124,12 +123,12 @@ namespace Nucleus.Project.Persistence.Services
 
 
         // Need to make this re-usable for all collection repositories  .. mongodb should handle datetimeoffset sorting better
-        private string renderSortByName(string column)
+        private static string renderSortByName(string column)
         {
-            System.Reflection.PropertyInfo pi = new ProjectModel().GetType().GetProperty(column[0].ToString().ToUpper() + column.Substring(1));
+            System.Reflection.PropertyInfo pi = new ProjectModel().GetType().GetProperty(column[0].ToString().ToUpper() + column[1..]);
             if (pi != null && pi.PropertyType == typeof(DateTimeOffset))
             {
-                return "\"" + column + ".0\""; 
+                return "\"" + column + ".0\"";
             }
             return column;
         }

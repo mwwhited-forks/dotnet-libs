@@ -1,5 +1,4 @@
 ﻿using Nucleus.Core.Contracts.Models;
-using Nucleus.Project.Contracts.Collections;
 using Nucleus.Project.Contracts.Models;
 using Nucleus.Project.Contracts.Models.Filters;
 using System.Collections.Generic;
@@ -9,8 +8,9 @@ namespace Nucleus.Project.Contracts.Services
 {
     public interface IProjectService
     {
+#warning retire this
         Task<List<ProjectModel>> GetPagedAsync(PagingModel pagingModel, ProjectsFilterItem? filterItems, bool onlyActive);
-
+#warning retire this
         Task<long> GetPagedCountAsync(PagingModel pagingModel, ProjectsFilterItem? filterItems, bool onlyActive);
 
         Task<List<ProjectModel>> GetAsync(bool onlyActive);

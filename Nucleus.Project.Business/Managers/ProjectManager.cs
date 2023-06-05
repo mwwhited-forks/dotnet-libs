@@ -1,11 +1,11 @@
-﻿using Nucleus.Project.Contracts.Managers;
+﻿using Nucleus.Core.Contracts.Models;
+using Nucleus.Project.Contracts.Managers;
+using Nucleus.Project.Contracts.Models;
+using Nucleus.Project.Contracts.Models.Filters;
+using Nucleus.Project.Contracts.Services;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Nucleus.Project.Contracts.Services;
-using Nucleus.Project.Contracts.Models;
-using Nucleus.Core.Contracts.Models;
-using System;
-using Nucleus.Project.Contracts.Models.Filters;
 
 namespace Nucleus.Project.Business.Managers
 {
@@ -26,10 +26,11 @@ namespace Nucleus.Project.Business.Managers
         public async Task<ProjectModel?> GetProject(string ProjectId) =>
            await _projectService.GetAsync(ProjectId, false);
 
+#warning retire this
         public async Task<PagedResult<ProjectModel>> GetProjectsPagedAsync(ProjectFilter projectsFilter)
         {
             List<ProjectModel> Projects = await _projectService.GetPagedAsync(projectsFilter.PagingModel, projectsFilter.ProjectFilters, false);
-            PagedResult<ProjectModel>  result = new PagedResult<ProjectModel>()
+            PagedResult<ProjectModel> result = new PagedResult<ProjectModel>()
             {
                 CurrentPage = projectsFilter.PagingModel.CurrentPage,
                 PageSize = projectsFilter.PagingModel.PageSize,

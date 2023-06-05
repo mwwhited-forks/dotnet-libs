@@ -1,11 +1,14 @@
-﻿using Nucleus.Core.Busines.Attributes;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
+using Eliassen.System.Linq.Search;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Nucleus.Core.Contracts;
-using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.Filters;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Nucleus.Core.Controllers.Controllers
 {
@@ -13,32 +16,74 @@ namespace Nucleus.Core.Controllers.Controllers
     [ApiController]
     public class UserManagementController : ControllerBase
     {
-        private IUserSession _userSession { get; set; }
-        private IUserManagementManager _usersManager { get; set; }
+        private readonly IUserManagementManager _usersManager;
 
-        public UserManagementController(IUserSession userSession, IUserManagementManager usersManager)
+        public UserManagementController(
+            IUserManagementManager usersManager
+            )
         {
-            _userSession = userSession;
             _usersManager = usersManager;
         }
 
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpPost]
-        public async Task<IActionResult> SaveUser(UserAction? user) =>
-            new JsonResult(await _usersManager.SaveUserAsync(user));
+        public async Task<ResponseModel<User>> SaveUser(UserAction user) =>
+            await _usersManager.SaveUserAsync(user);
+
+        /// <summary>
+        /// Query all user accounts
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        [ApplicationRight(Rights.UserManagement.Manager)]
+        [HttpPost("Query")]
+        public IQueryable<User> ListUsers() => _usersManager.QueryUsers();
+
+        /// <summary>
+        /// Query all modules
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        [ApplicationRight(Rights.UserManagement.Manager)]
+        [HttpGet("ApplicationPermissions")]
+        public IQueryable<Module> GetApplicationPermissions() => _usersManager.QueryModules();
+
+        //[Authorize]
+        //[HttpPost(nameof(SearchUserExample) + "Json")]
+        //public PagedQueryResult<User> SearchUserExample(SearchQuery<User> model) => throw new NotSupportedException();
+
+        //[Authorize]
+        //[HttpPost(nameof(SearchUserExample) + "Form")]
+        //public PagedQueryResult<User> SearchUserExampleForm([FromForm] SearchQuery<User> model) => throw new NotSupportedException();
+
+        //[HttpGet(nameof(SearchUserExample) + "Get")]
+        //public PagedQueryResult<User> SearchUserExampleGet([FromQuery] SearchQuery<User> model) => throw new NotSupportedException();
+
 
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpPost("UserList")]
-        public async Task<IActionResult> GetUserProfile(UsersFilter userFilter) =>
-            new JsonResult(await _usersManager.GetUsers(userFilter));
+        [Obsolete("Change to the `ListUsers` /api/UserManagement/Query")]
+        public PagedResult<User> GetUserProfile(UsersFilter userFilter) =>
+             _usersManager.QueryUsers().ExecuteBy(new SearchQuery
+             {
+                 CurrentPage = userFilter.PagingModel.CurrentPage - 1,
+                 PageSize = userFilter.PagingModel.PageSize,
+                 ExcludePageCount = userFilter.PagingModel.ExcludePageCount,
+                 SearchTerm = userFilter.UserFilters.InputValue,
+                 Filter = {
+                     {nameof(userFilter.UserFilters.Module), new FilterParameter{ EqualTo= userFilter.UserFilters.Module } },
+                     {nameof(userFilter.UserFilters.UserStatus), new FilterParameter{ EqualTo= userFilter.UserFilters.UserStatus } },
+                 },
+             }).AsLegacy(userFilter.PagingModel);
 
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpGet("ApplicationPemissions")]
-        public async Task<IActionResult> GetApplicationPermissions() =>
-            new JsonResult(await _usersManager.GetApplicationPermissionsAsync());
+        [Obsolete("Change to the `ApplicationPemissions` /api/UserManagement/ApplicationPermissions")]
+        public PagedResult<Module> GetApplicationPermissionsLegacy() =>
+             _usersManager.QueryModules().ExecuteBy(new SearchQuery { }).AsLegacy();
 
     }
 }

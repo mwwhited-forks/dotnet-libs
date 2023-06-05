@@ -1,5 +1,4 @@
 ﻿using Nucleus.Core.Contracts.Models;
-using Nucleus.Lesson.Contracts.Collections;
 using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
 using System.Collections.Generic;
@@ -9,9 +8,11 @@ namespace Nucleus.Lesson.Contracts.Services
 {
     public interface ILessonService
     {
+#warning retire this
 
         Task<List<LessonModel>> GetPagedAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive);
 
+#warning retire this
         Task<long> GetPagedCountAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive);
 
         Task<List<LessonModel>> GetAsync();
