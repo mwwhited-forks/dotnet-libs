@@ -11,7 +11,6 @@ using System.Reflection;
 
 namespace Eliassen.System.Tests.Linq
 {
-
     [TestClass]
     public class QueryableExtensionsTests
     {
@@ -26,13 +25,13 @@ namespace Eliassen.System.Tests.Linq
 
         private static IQueryable<TestTargetModel> GetTestData() =>
             Enumerable
-            .Range(0, QueryableExtensions.DefaultPageSize * 100)
+            .Range(0, QueryBuilder.DefaultPageSize * 100)
             .Select(i => new TestTargetModel(i))
             .AsQueryable()
             ;
         private static IQueryable<TestTargetExtendedModel> GetTestDataExtended() =>
             Enumerable
-            .Range(0, QueryableExtensions.DefaultPageSize * 100)
+            .Range(0, QueryBuilder.DefaultPageSize * 100)
             .Select(i => new TestTargetExtendedModel(i))
             .AsQueryable()
             ;
@@ -41,7 +40,7 @@ namespace Eliassen.System.Tests.Linq
         [TestCategory(TestCategories.Unit)]
         public void DefaultPageSizeTest()
         {
-            Assert.AreEqual(10, QueryableExtensions.DefaultPageSize);
+            Assert.AreEqual(10, QueryBuilder.DefaultPageSize);
         }
 
         [DataTestMethod]
