@@ -2,11 +2,11 @@
 
 namespace Eliassen.System.Linq.Expressions
 {
-    internal class ParameterReplacer : ExpressionVisitor
+    internal class ParameterReplacerExpressionVisitor : ExpressionVisitor
     {
         private readonly ParameterExpression _parameter;
 
-        internal ParameterReplacer(ParameterExpression parameter) =>
+        internal ParameterReplacerExpressionVisitor(ParameterExpression parameter) =>
             _parameter = parameter;
 
         protected override Expression VisitParameter(ParameterExpression node) => _parameter;
