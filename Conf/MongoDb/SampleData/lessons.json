@@ -1,84 +1,218 @@
 [
-	{
-		"title": "ecca7ed1-8313-4588-aec3-301b45651afd",
-		"slug": "allen@nodirection.com",
-		"mediaLink": "Allen",
-		"previewImage": "Butler",
-		"preview": "",
-		"content": "",
-		"enabled":  true,
-		"createdOn": [ "636415154304356493", 120 ],
-		"attendees": [],
-		"teacher": "",
-		"duration": 10,
-		"tags": [],
-		"price": 1.99,
-		"goals": [],
-		"startdatetime": null,
-		"enddatetime": null
-	},
-	{
-		"title": "ecca7ed1-8313-4588-aec3-301b45651afd",
-		"slug": "allen@nodirection.com",
-		"mediaLink": "Allen",
-		"previewImage": "Butler",
-		"preview": "",
-		"content": "",
-		"enabled": true,
-		"createdOn": [ "636415154304356493", 120 ],
-		"attendees": [],
-		"teacher": "",
-		"duration": 10,
-		"tags": [],
-		"price": 1.99,
-		"goals": [],
-		"startdatetime": null,
-		"enddatetime": null
-	},
-	{
-		"title": "ecca7ed1-8313-4588-aec3-301b45651afd",
-		"slug": "allen@nodirection.com",
-		"mediaLink": "Allen",
-		"previewImage": "Butler",
-		"preview": "",
-		"content": "",
-		"enabled": true,
-		"createdOn": [ "636415154304356493", 120 ],
-		"attendees": [],
-		"teacher": "",
-		"duration": 10,
-		"tags": [],
-		"price": 1.99,
-		"goals": [],
-		"startdatetime": null,
-		"enddatetime": null
-	},
-	{
-		"title": "ecca7ed1-8313-4588-aec3-301b45651afd",
-		"slug": "allen@nodirection.com",
-		"mediaLink": "Allen",
-		"previewImage": "Butler",
-		"preview": "",
-		"content": "",
-		"enabled": true,
-		"createdOn": [ "636415154304356493", 120 ],
-		"attendees": [],
-		"teacher": "",
-		"duration": 10,
-		"tags": [],
-		"price": 1.99,
-		"goals": [],
-		"startdatetime": null,
-		"enddatetime": null
-	},
-	{
-		"title": "ecca7ed1-8313-4588-aec3-301b45651afd",
-		"slug": "allen@nodirection.com",
-		"mediaLink": "Allen",
-		"previewImage": "Butler",
-		"preview": "",
-		"content": "",
-		"enabled": true,
-		"createdOn": [ "636415154304356493", 120 ]
-	}
+  {
+    "_id": {
+      "$oid": "647f5966e7abf8eb062387e5"
+    },
+    "title": "How to be less bad at golf.",
+    "slug": "allen@nodirection.com",
+    "mediaLink": "Allen",
+    "previewImage": "Butler",
+    "preview": "",
+    "content": "",
+    "enabled": true,
+    "createdOn": [
+      "636415154304356493",
+      120
+    ],
+    "attendees": [],
+    "teacher": "George Golferson",
+    "duration": 10,
+    "tags": [],
+    "price": 1.99,
+    "goals": [],
+    "startdatetime": null,
+    "enddatetime": null
+  },
+  {
+    "_id": {
+      "$oid": "647f5966e7abf8eb062387e6"
+    },
+    "title": "How not to drop your club.",
+    "slug": "allen@nodirection.com",
+    "mediaLink": "Allen",
+    "previewImage": "Butler",
+    "preview": "",
+    "content": "",
+    "enabled": true,
+    "createdOn": [
+      "636415154304356493",
+      120
+    ],
+    "attendees": [],
+    "teacher": "Bobby Butterfingers",
+    "duration": 10,
+    "tags": [],
+    "price": 1.99,
+    "goals": [],
+    "startdatetime": null,
+    "enddatetime": null
+  },
+  {
+    "_id": {
+      "$oid": "647f5966e7abf8eb062387e7"
+    },
+    "title": "How not to miss every swing.",
+    "slug": "allen@nodirection.com",
+    "mediaLink": "Allen",
+    "previewImage": "Butler",
+    "preview": "",
+    "content": "",
+    "enabled": true,
+    "createdOn": [
+      "636415154304356493",
+      120
+    ],
+    "attendees": [],
+    "teacher": "John Smith",
+    "duration": 10,
+    "tags": [],
+    "price": 1.99,
+    "goals": [],
+    "startdatetime": null,
+    "enddatetime": null
+  },
+  {
+    "_id": {
+      "$oid": "647f5966e7abf8eb062387e8"
+    },
+    "title": "How to avoid the water.",
+    "slug": "allen@nodirection.com",
+    "mediaLink": "Allen",
+    "previewImage": "Butler",
+    "preview": "",
+    "content": "",
+    "enabled": true,
+    "createdOn": [
+      "636415154304356493",
+      120
+    ],
+    "attendees": [],
+    "teacher": "Waterlogged Walter",
+    "duration": 10,
+    "tags": [],
+    "price": 1.99,
+    "goals": [],
+    "startdatetime": null,
+    "enddatetime": null
+  },
+  {
+    "_id": {
+      "$oid": "647f5966e7abf8eb062387e9"
+    },
+    "title": "How to avoid losing.",
+    "slug": "allen@nodirection.com",
+    "mediaLink": "Allen",
+    "previewImage": "Butler",
+    "preview": "",
+    "content": "",
+    "enabled": true,
+    "createdOn": [
+      "636415154304356493",
+      120
+    ],
+    "attendees": [],
+    "teacher": "Never-Defeated Daryl",
+    "duration": 10,
+    "tags": [],
+    "price": 1.99,
+    "goals": [],
+    "startdatetime": null,
+    "enddatetime": null
+  },
+  {
+    "_id": {
+      "$oid": "647f5966e7abf8eb06238710"
+    },
+    "title": "How to avoid burn out.",
+    "slug": "allen@nodirection.com",
+    "mediaLink": "Allen",
+    "previewImage": "Butler",
+    "preview": "",
+    "content": "",
+    "enabled": true,
+    "createdOn": [
+      "636415154304356493",
+      120
+    ],
+    "attendees": [],
+    "teacher": "Seasoned-Golfer Susan",
+    "duration": 10,
+    "tags": [],
+    "price": 1.99,
+    "goals": [],
+    "startdatetime": null,
+    "enddatetime": null
+  },
+  {
+    "_id": {
+      "$oid": "647f5966e7abf8eb06238711"
+    },
+    "title": "Quantum mechanics - and how it relates to the power of your drive.",
+    "slug": "allen@nodirection.com",
+    "mediaLink": "Allen",
+    "previewImage": "Butler",
+    "preview": "",
+    "content": "",
+    "enabled": true,
+    "createdOn": [
+      "636415154304356493",
+      120
+    ],
+    "attendees": [],
+    "teacher": "Albert Einstein",
+    "duration": 10,
+    "tags": [],
+    "price": 1.99,
+    "goals": [],
+    "startdatetime": null,
+    "enddatetime": null
+  },
+  {
+    "_id": {
+      "$oid": "647f5966e7abf8eb06238712"
+    },
+    "title": "How to use Kinimatic-Centric-Dynamics to stop being bad at golf.",
+    "slug": "allen@nodirection.com",
+    "mediaLink": "Allen",
+    "previewImage": "Butler",
+    "preview": "",
+    "content": "",
+    "enabled": true,
+    "createdOn": [
+      "636415154304356493",
+      120
+    ],
+    "attendees": [],
+    "teacher": "Focused Freddy",
+    "duration": 10,
+    "tags": [],
+    "price": 1.99,
+    "goals": [],
+    "startdatetime": null,
+    "enddatetime": null
+  },
+  {
+    "_id": {
+      "$oid": "647f5966e7abf8eb06238713"
+    },
+    "title": "How to always win no matter what happens. 100% winrate guaranteed!",
+    "slug": "allen@nodirection.com",
+    "mediaLink": "Allen",
+    "previewImage": "Butler",
+    "preview": "",
+    "content": "",
+    "enabled": true,
+    "createdOn": [
+      "636415154304356493",
+      120
+    ],
+    "attendees": [],
+    "teacher": "NotAScammer Steve",
+    "duration": 10,
+    "tags": [],
+    "price": 1.99,
+    "goals": [],
+    "startdatetime": null,
+    "enddatetime": null
+  }
 ]

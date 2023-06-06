@@ -46,17 +46,17 @@ namespace Nucleus.Lesson.Persistence.Services
                 PreviewImage= item.PreviewImage,
                 Preview = item.Preview,
                 Title = item.Title,
-                CreatedOn = item.CreatedOn,
+                //CreatedOn = item.CreatedOn,
                 Enabled = item.Enabled,
                 Attendees = item.Attendees,
                 Teacher = item.Teacher,
                 Duration = item.Duration,
-                StartDateTime = item.StartDateTime,
-                EndDateTime = GetEndDateTime(item.StartDateTime, item.Duration),
+                //StartDateTime = item.StartDateTime,
+                //EndDateTime = GetEndDateTime(item.StartDateTime, item.Duration),
                 Goals = item.Goals,
                 Price = item.Price,
                 Tags = item.Tags,
-                CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
+                //CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
             });
         }
 
@@ -75,8 +75,8 @@ namespace Nucleus.Lesson.Persistence.Services
             var builder = Builders<LessonCollection>.Filter;
             var filter = builder.Empty;
 
-            if (onlyActive)
-                filter &= builder.AnyEq("enabled", true);
+            //if (onlyActive)
+            //    filter &= builder.AnyEq("enabled", true);
 
             if (filterItems != null && !string.IsNullOrWhiteSpace(filterItems.InputValue))
             {
@@ -94,12 +94,41 @@ namespace Nucleus.Lesson.Persistence.Services
             if (pagingModel.SortDirection == "descend")
                 sortDefinition = $"{{ {pagingModel.SortBy}: -1 }}";
 
-            return await _lessonsCollection.Find(GetLessonsPredicateBuilder(onlyActive, filterItems))
+            var bob = await _lessonsCollection.Find(GetLessonsPredicateBuilder(onlyActive, filterItems))
                 .Skip((pagingModel.CurrentPage - 1) * pagingModel.PageSize)
                 .Limit(pagingModel.PageSize)
                 .Sort(sortDefinition)
                 .Project(_lessonProjection)
                 .ToListAsync();
+            var joe = new List<LessonModel>
+            {
+                new LessonModel
+                {
+                    Title = "Test",
+                    Teacher = "John Smith",
+                    Enabled = true
+                },
+                new LessonModel
+                {
+                    Title = "Test2",
+                    Teacher = "Tony Tonyton",
+                    Enabled = true
+                },
+                new LessonModel
+                {
+                    Title = "Test3",
+                    Teacher = "Joe Joeyson",
+                    Enabled = true
+                },
+                new LessonModel
+                {
+                    Title = "Test4",
+                    Teacher = "adele test",
+                    Enabled = true
+                },
+
+            };
+            return bob;
         }
 
         public async Task<long> GetPagedCountAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive) =>
