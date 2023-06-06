@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Nucleus.Blog.Contracts.Managers;
+using Nucleus.Blog.Contracts.Models;
 using Nucleus.Blog.Contracts.Models.Filters;
 
 namespace Nucleus.Blog.Controllers.Controllers
@@ -28,6 +29,9 @@ namespace Nucleus.Blog.Controllers.Controllers
         [HttpGet("RecentBlogs/{id}")]
         public async Task<IActionResult> GetRecentBlogs(int id) =>
             new JsonResult(await _publicBlogManager.GetRecentBlogs(id));
+
+        [HttpPost("Query")]
+        public IQueryable<BlogModel> ListBlogs() => _publicBlogManager.QueryBlogs();
 
     }
 }
