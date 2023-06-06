@@ -2,6 +2,7 @@
 using Eliassen.System.Linq.Expressions;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Eliassen.System.Linq.Search
@@ -77,17 +78,20 @@ namespace Eliassen.System.Linq.Search
     {
         private readonly ISortBuilder<TModel> _sortBuilder;
         private readonly IExpressionTreeBuilder<TModel> _expressionBuilder;
+        private readonly IEnumerable<IPostBuildExpressionVisitor> _visitors;
         private readonly ILogger _logger;
 
         /// <inheritdoc/>
         public QueryBuilder(
             ISortBuilder<TModel> sortBuilder,
             IExpressionTreeBuilder<TModel> expressionBuilder,
+            IEnumerable<IPostBuildExpressionVisitor>? visitors = null,
             ILogger<QueryBuilder>? logger = null
             )
         {
             _sortBuilder = sortBuilder;
             _expressionBuilder = expressionBuilder;
+            _visitors = visitors ?? Enumerable.Empty<IPostBuildExpressionVisitor>();
             _logger = logger ?? new ConsoleLogger<QueryBuilder>();
         }
 
@@ -126,7 +130,15 @@ namespace Eliassen.System.Linq.Search
                     );
             }
 
-            var sorted = SortBy(filtered, searchQuery);
+            var visited = filtered;
+            foreach (var visitor in _visitors)
+            {
+                var expression = visitor.Visit(visited.Expression);
+                if (expression == null) continue;
+                visited = query.Provider.CreateQuery<TModel>(expression);
+            }
+
+            var sorted = SortBy(visited, searchQuery);
 
             return sorted;
         }

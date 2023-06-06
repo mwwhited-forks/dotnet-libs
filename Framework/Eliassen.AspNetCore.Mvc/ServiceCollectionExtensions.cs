@@ -26,6 +26,7 @@ namespace Eliassen.AspNetCore.Mvc
             services.TryAddSingleton(typeof(IQueryBuilder<>), typeof(QueryBuilder<>));
             services.TryAddSingleton(typeof(ISortBuilder<>), typeof(SortBuilder<>));
             services.TryAddSingleton(typeof(IExpressionTreeBuilder<>), typeof(ExpressionTreeBuilder<>));
+            services.TryAddTransient<IPostBuildExpressionVisitor, StringIgnoreCaseReplacerExpressionVisitor>();
 
             services.TryAddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
             services.TryAddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();

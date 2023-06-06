@@ -50,7 +50,7 @@ namespace Eliassen.System.Linq.Expressions
             if (chain == null) return null;
 
             var parameter = Expression.Parameter(typeof(TModel), "n");
-            var replaced = new ParameterReplacer(parameter).Visit(chain);
+            var replaced = new ParameterReplacerExpressionVisitor(parameter).Visit(chain);
             var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
             return lambda;
         }
