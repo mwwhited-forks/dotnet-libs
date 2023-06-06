@@ -123,7 +123,7 @@ namespace Eliassen.System.Linq.Expressions
                         {
                             var containsCall = Expression.Call(method: containsMethod, Expression.Constant(queryParameter), unwrapped);
                             var parameter = Expression.Parameter(typeof(TModel), "n");
-                            var replaced = new ParameterReplacer(parameter).Visit(containsCall);
+                            var replaced = new ParameterReplacerExpressionVisitor(parameter).Visit(containsCall);
                             var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
                             return lambda;
                         }
@@ -155,7 +155,7 @@ namespace Eliassen.System.Linq.Expressions
                         var eq = BuildPredicate(expression, Operators.EqualTo, queryParameter, isSearchTerm);
                         var predicate = Expression.Not(eq.Body);
                         var parameter = Expression.Parameter(typeof(TModel), "n");
-                        var replaced = new ParameterReplacer(parameter).Visit(predicate);
+                        var replaced = new ParameterReplacerExpressionVisitor(parameter).Visit(predicate);
                         var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
                         return lambda;
                     }
@@ -188,7 +188,7 @@ namespace Eliassen.System.Linq.Expressions
                         var predicate = Expression.Call(unwrapped, method, Expression.Constant(queryValue));
 
                         var parameter = Expression.Parameter(typeof(TModel), "n");
-                        var replaced = new ParameterReplacer(parameter).Visit(predicate);
+                        var replaced = new ParameterReplacerExpressionVisitor(parameter).Visit(predicate);
                         var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
                         return lambda;
                     }
@@ -210,7 +210,7 @@ namespace Eliassen.System.Linq.Expressions
                 //TODO: needs to be a bit more creative.  type casting not supported
                 var parameter = Expression.Parameter(typeof(TModel), "n");
                 var predicate = BuildBinaryExpression(expressionOperator, unwrapped, queryParameter);
-                var replaced = new ParameterReplacer(parameter).Visit(predicate);
+                var replaced = new ParameterReplacerExpressionVisitor(parameter).Visit(predicate);
                 var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
                 return lambda;
             }
