@@ -7,8 +7,12 @@ using System.Reflection;
 
 namespace Eliassen.AspNetCore.Mvc.Filters;
 
+/// <summary>
+/// operation filter to extend swagger to include application rights 
+/// </summary>
 public class ApplicationPermissionsApiFilter : IOperationFilter
 {
+    /// <inheritdoc />
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
         var allowAnonymous =
@@ -21,7 +25,8 @@ public class ApplicationPermissionsApiFilter : IOperationFilter
         var applicationRights =
             context.MethodInfo.GetCustomAttributes<ApplicationRightAttribute>()
             .Concat(
-            context.MethodInfo.DeclaringType.GetCustomAttributes<ApplicationRightAttribute>()
+            context.MethodInfo.DeclaringType?.GetCustomAttributes<ApplicationRightAttribute>() ?? 
+                Enumerable.Empty<ApplicationRightAttribute>()
             ).SelectMany(a => a.Rights);
 
         //operation.Security.Add(new OpenApiSecurityRequirement()

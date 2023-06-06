@@ -13,18 +13,25 @@ using System.Threading.Tasks;
 
 namespace Eliassen.AspNetCore.Mvc.Middleware
 {
+    /// <summary>
+    /// ASP.Net MVC Middlware to enable IQueryable{T} responses from  Controller Actions
+    /// </summary>
     public class SearchQueryMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger _log;
+        private readonly IAccessor<ISearchQuery> _searchQuery;
 
+        /// <inheritdoc />
         public SearchQueryMiddleware(
             RequestDelegate next,
-            ILogger<SearchQueryMiddleware> log
+            ILogger<SearchQueryMiddleware> log,
+            IAccessor<ISearchQuery> searchQuery
             )
         {
             _next = next;
             _log = log;
+            _searchQuery = searchQuery;
         }
 
         private enum RequestType
@@ -33,7 +40,6 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
             Json,
             Form,
         }
-
 
         private static ControllerActionDescriptor? GetControllerActionDescriptor(HttpContext context) =>
             context.GetEndpoint()?.Metadata.OfType<ControllerActionDescriptor>().FirstOrDefault();
@@ -122,7 +128,9 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
 
             return (true, default);
         }
-        public async Task InvokeAsync(HttpContext context, ISearchQueryAccessor accessor)
+
+        /// <inheritdoc />
+        public async Task InvokeAsync(HttpContext context)
         {
             try
             {
@@ -137,7 +145,7 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
                     {
                         _log.LogInformation($"Invoking: {{{nameof(searchModel)}}}", searchModel);
                     }
-                    accessor.SearchQuery = searchModel;
+                    _searchQuery.Value = searchModel;
                 }
                 await _next(context);
             }

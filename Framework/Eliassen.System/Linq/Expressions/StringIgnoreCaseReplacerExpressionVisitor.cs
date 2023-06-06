@@ -6,28 +6,35 @@ using System.Linq.Expressions;
 
 namespace Eliassen.System.Linq.Expressions
 {
+    /// <summary>
+    /// Expression visitor to replace string functions with the matching 
+    /// functions that end with a StringComparison parameter
+    /// </summary>
     public class StringIgnoreCaseReplacerExpressionVisitor : ExpressionVisitor, IPostBuildExpressionVisitor
     {
         private readonly StringComparison _stringComparison;
         private readonly ILogger _logger;
 
-
+        /// <inheritdoc/>
         public StringIgnoreCaseReplacerExpressionVisitor(
             ILogger<StringIgnoreCaseReplacerExpressionVisitor>? logger = null,
             StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
             )
         {
-            _logger = logger  ?? new ConsoleLogger<StringIgnoreCaseReplacerExpressionVisitor>();
+            _logger = logger ?? new ConsoleLogger<StringIgnoreCaseReplacerExpressionVisitor>();
             _stringComparison = stringComparison;
         }
 
+        /// <inheritdoc/>
         protected override Expression VisitMethodCall(MethodCallExpression input)
         {
             var declaringType = input.Method.DeclaringType;
-            if (declaringType != typeof(string)) goto finish;
+            if (declaringType != typeof(string))
+                goto done;
 
             var parameters = input.Method.GetParameters();
-            if (parameters.LastOrDefault()?.ParameterType == typeof(StringComparison)) goto finish;
+            if (parameters.LastOrDefault()?.ParameterType == typeof(StringComparison))
+                goto done;
 
             var typeArgs = new Type[parameters.Length + 1];
             for (var idx = 0; idx < parameters.Length; idx++)
@@ -35,7 +42,8 @@ namespace Eliassen.System.Linq.Expressions
             typeArgs[parameters.Length] = typeof(StringComparison);
 
             var method = declaringType.GetMethod(input.Method.Name, typeArgs);
-            if (method == null) goto finish;
+            if (method == null)
+                goto done;
 
             var args = input.Arguments.Concat(new[] { Expression.Constant(_stringComparison) });
             var replacement = Expression.Call(input.Object, method, args);
@@ -44,7 +52,7 @@ namespace Eliassen.System.Linq.Expressions
 
             return replacement;
 
-        finish:
+        done:
             return base.VisitMethodCall(input);
         }
     }

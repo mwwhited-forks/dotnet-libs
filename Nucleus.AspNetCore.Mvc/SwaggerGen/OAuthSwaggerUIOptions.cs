@@ -1,7 +1,8 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
-namespace Nucleus.Api.Auth;
+namespace Nucleus.AspNetCore.Mvc.SwaggerGen;
 
 public class OAuthSwaggerUIOptions : IConfigureOptions<SwaggerUIOptions>
 {

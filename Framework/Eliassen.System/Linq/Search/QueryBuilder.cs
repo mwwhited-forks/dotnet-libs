@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace Eliassen.System.Linq.Search
 {
@@ -78,20 +79,20 @@ namespace Eliassen.System.Linq.Search
     {
         private readonly ISortBuilder<TModel> _sortBuilder;
         private readonly IExpressionTreeBuilder<TModel> _expressionBuilder;
-        private readonly IEnumerable<IPostBuildExpressionVisitor> _visitors;
+        private readonly IEnumerable<IPostBuildExpressionVisitor> _postBuildVisitors;
         private readonly ILogger _logger;
 
         /// <inheritdoc/>
         public QueryBuilder(
             ISortBuilder<TModel> sortBuilder,
             IExpressionTreeBuilder<TModel> expressionBuilder,
-            IEnumerable<IPostBuildExpressionVisitor>? visitors = null,
+            IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
             ILogger<QueryBuilder>? logger = null
             )
         {
             _sortBuilder = sortBuilder;
             _expressionBuilder = expressionBuilder;
-            _visitors = visitors ?? Enumerable.Empty<IPostBuildExpressionVisitor>();
+            _postBuildVisitors = postBuildVisitors ?? Enumerable.Empty<IPostBuildExpressionVisitor>();
             _logger = logger ?? new ConsoleLogger<QueryBuilder>();
         }
 
@@ -130,15 +131,16 @@ namespace Eliassen.System.Linq.Search
                     );
             }
 
-            var visited = filtered;
-            foreach (var visitor in _visitors)
-            {
-                var expression = visitor.Visit(visited.Expression);
-                if (expression == null) continue;
-                visited = query.Provider.CreateQuery<TModel>(expression);
-            }
 
-            var sorted = SortBy(visited, searchQuery);
+            var sorted = SortBy(filtered, searchQuery);
+
+            if (_postBuildVisitors.Any())
+            {
+                var toVisit = sorted.Expression;
+                foreach (var visitor in _postBuildVisitors)
+                    toVisit = visitor.Visit(toVisit);
+                sorted = (IOrderedQueryable<TModel>)query.Provider.CreateQuery<TModel>(toVisit);
+            }
 
             return sorted;
         }

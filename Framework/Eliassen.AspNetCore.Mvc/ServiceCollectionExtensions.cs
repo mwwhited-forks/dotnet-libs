@@ -3,11 +3,16 @@ using Eliassen.AspNetCore.Mvc.SwaggerGen;
 using Eliassen.System.Accessors;
 using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
+using System.Globalization;
+using System.Security.Claims;
 
 namespace Eliassen.AspNetCore.Mvc
 {
@@ -15,15 +20,16 @@ namespace Eliassen.AspNetCore.Mvc
     {
         public static IServiceCollection AddAspNetCoreExtensions(this IServiceCollection services)
         {
-            services.TryAddScoped<ICultureInfoAccessor, CultureInfoAccessor>();
-            services.TryAddScoped(sp => sp.GetRequiredService<ICultureInfoAccessor>().CultureInfo);
-
-            services.TryAddScoped<ISearchQueryAccessor, SearchQueryAccessor>();
-            services.TryAddScoped<SearchQueryResultFilter>();
+            services.AddAccessor<CultureInfo>();
+            services.AddAccessor<ISearchQuery>();
+            services.TryAddSingleton<SearchQueryResultFilter>();
             services.TryAddSingleton(typeof(IQueryBuilder<>), typeof(QueryBuilder<>));
             services.TryAddSingleton(typeof(ISortBuilder<>), typeof(SortBuilder<>));
             services.TryAddSingleton(typeof(IExpressionTreeBuilder<>), typeof(ExpressionTreeBuilder<>));
             services.TryAddTransient<IPostBuildExpressionVisitor, StringIgnoreCaseReplacerExpressionVisitor>();
+
+            services.TryAddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
+            services.TryAddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
 
             services.AddControllers(opt =>
             {
@@ -31,13 +37,17 @@ namespace Eliassen.AspNetCore.Mvc
                 opt.Conventions.Add(new ApiNamespaceControllerModelConvention());
             });
 
-            services.TryAddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
-            services.TryAddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
             services.AddSwaggerGen(setup =>
             {
-                setup.OperationFilter<FormFileOperationFilter>();
                 setup.OperationFilter<SearchQueryOperationFilter>();
+                setup.OperationFilter<FormFileOperationFilter>();
             });
+
+            services.AddHttpContextAccessor();
+            services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
+            services.TryAddTransient(sp => sp.GetRequiredService<IHttpContextAccessor>().HttpContext?.User ?? ClaimsPrincipal.Current);
+
 
             return services;
         }

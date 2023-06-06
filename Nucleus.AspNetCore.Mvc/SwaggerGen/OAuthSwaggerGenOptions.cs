@@ -1,8 +1,11 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System;
+using System.Collections.Generic;
 
-namespace Nucleus.Api.Auth;
+namespace Nucleus.AspNetCore.Mvc.SwaggerGen;
 
 public class OAuthSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
 {

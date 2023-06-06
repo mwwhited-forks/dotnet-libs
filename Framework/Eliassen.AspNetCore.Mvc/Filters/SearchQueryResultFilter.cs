@@ -10,12 +10,13 @@ namespace Eliassen.AspNetCore.Mvc.Filters
 {
     public class SearchQueryResultFilter : IResultFilter
     {
-        private readonly ISearchQueryAccessor _searchQuery;
+
+        private readonly IAccessor<ISearchQuery> _searchQuery;
         private readonly ILogger _logger;
         private readonly IServiceProvider _serviceProvider;
 
         public SearchQueryResultFilter(
-            ISearchQueryAccessor searchQuery,
+            IAccessor<ISearchQuery> searchQuery,
             ILogger<SearchQueryResultFilter> logger,
             IServiceProvider serviceProvider
             )
@@ -38,15 +39,15 @@ namespace Eliassen.AspNetCore.Mvc.Filters
 
                 _logger.LogInformation($"Base Query: {{{nameof(query)}}} ({{{nameof(elementType)}}})", query.ToString(), elementType);
 
-                if (elementType != null && _searchQuery.SearchQuery != null)
+                if (elementType != null && _searchQuery.Value != null)
                 {
                     var queryBuilder = (IQueryBuilder)_serviceProvider.GetRequiredService(typeof(IQueryBuilder<>).MakeGenericType(elementType));
-                    objectResult.Value = queryBuilder.ExecuteBy(query, _searchQuery.SearchQuery);
+                    objectResult.Value = queryBuilder.ExecuteBy(query, _searchQuery.Value);
                 }
                 else
                 {
                     _logger.LogWarning(
-                        $"No {nameof(_searchQuery.SearchQuery)} ({{{nameof(elementType)}}}) found, results will not be filtered",
+                        $"No {nameof(SearchQuery)} ({{{nameof(elementType)}}}) found, results will not be filtered",
                         elementType
                         );
                 }
