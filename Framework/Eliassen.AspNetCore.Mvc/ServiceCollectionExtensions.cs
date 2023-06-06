@@ -1,6 +1,8 @@
 ﻿using Eliassen.AspNetCore.Mvc.Filters;
 using Eliassen.AspNetCore.Mvc.SwaggerGen;
 using Eliassen.System.Accessors;
+using Eliassen.System.Linq.Expressions;
+using Eliassen.System.Linq.Search;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
@@ -17,8 +19,11 @@ namespace Eliassen.AspNetCore.Mvc
             services.TryAddScoped(sp => sp.GetRequiredService<ICultureInfoAccessor>().CultureInfo);
 
             services.TryAddScoped<ISearchQueryAccessor, SearchQueryAccessor>();
-
             services.TryAddScoped<SearchQueryResultFilter>();
+            services.TryAddSingleton(typeof(IQueryBuilder<>), typeof(QueryBuilder<>));
+            services.TryAddSingleton(typeof(ISortBuilder<>), typeof(SortBuilder<>));
+            services.TryAddSingleton(typeof(IExpressionTreeBuilder<>), typeof(ExpressionTreeBuilder<>));
+            services.TryAddTransient<IPostBuildExpressionVisitor, StringIgnoreCaseReplacerExpressionVisitor>();
 
             services.AddControllers(opt =>
             {

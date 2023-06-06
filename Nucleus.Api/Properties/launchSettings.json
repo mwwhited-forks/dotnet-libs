@@ -18,6 +18,19 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    "27018": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MongoDatabase__ConnectionString": "mongodb://localhost:27018"
+        //"MongoDatabase__ConnectionString": "mongodb://localhost:27018?collation={locale:'en_US',caseLevel:false,strength:2 }"
+      },
+      "applicationUrl": "http://localhost:5276;https://localhost:7276",
+      "dotnetRunMessages": true,
+      "nativeDebugging": false
     }
   },
   "$schema": "https://json.schemastore.org/launchsettings.json",

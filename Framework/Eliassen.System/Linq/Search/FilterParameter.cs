@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Eliassen.System.Linq.Search
 {
@@ -55,5 +56,19 @@ namespace Eliassen.System.Linq.Search
         /// </summary>
         [JsonPropertyName("lte")]
         public object? LessThanOrEqualTo { get; set; }
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            if (EqualTo != null) sb.AppendLine($"{nameof(EqualTo)}: {EqualTo} ");
+            if (NotEqualTo != null) sb.AppendLine($"{nameof(NotEqualTo)}: {NotEqualTo} ");
+            if (InSet != null) sb.AppendLine($"{nameof(InSet)}: {string.Join("; ",InSet)} ");
+            if (GreaterThan != null) sb.AppendLine($"{nameof(GreaterThan)}: {GreaterThan} ");
+            if (GreaterThanOrEqualTo != null) sb.AppendLine($"{nameof(GreaterThanOrEqualTo)}: {GreaterThanOrEqualTo} ");
+            if (LessThan != null) sb.AppendLine($"{nameof(LessThan)}: {LessThan} ");
+            if (LessThanOrEqualTo != null) sb.AppendLine($"{nameof(LessThanOrEqualTo)}: {LessThanOrEqualTo} ");
+            return sb.ToString().Trim();
+        }
     }
 }
