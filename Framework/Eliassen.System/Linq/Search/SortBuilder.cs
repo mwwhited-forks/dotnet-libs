@@ -33,7 +33,15 @@ namespace Eliassen.System.Linq.Search
                   .ToDictionary(k => k.Key, v => v.Expression, StringComparer.InvariantCultureIgnoreCase)
                   ;
 
-            if (!orderBys.Any() && treeBuilder.DefaultSortOrder().Any())
+            var unmatchedKeys = searchRequest.OrderBy.Keys.Except(compositeSortMap.Keys);
+            var matchedKeys = searchRequest.OrderBy.Keys.Intersect(compositeSortMap.Keys);
+
+            if (unmatchedKeys.Any())
+            {
+                _logger.LogWarning($"Could not use properties: {{{nameof(unmatchedKeys)}}} as they are not on the model", string.Join("; ", unmatchedKeys));
+            }
+
+            if (!matchedKeys.Any() && treeBuilder.DefaultSortOrder().Any())
             {
                 orderBys = treeBuilder.DefaultSortOrder()
                   .ToDictionary(k => k.column, v => v.direction, StringComparer.InvariantCultureIgnoreCase);
@@ -45,7 +53,6 @@ namespace Eliassen.System.Linq.Search
             }
 
             IOrderedQueryable<TModel>? ordered = null;
-
             foreach (var orderBy in orderBys)
             {
                 if (!compositeSortMap.TryGetValue(orderBy.Key, out var keySelector)) continue;
@@ -62,7 +69,7 @@ namespace Eliassen.System.Linq.Search
 
             if (ordered == null)
             {
-                _logger.LogWarning($"No sort applied for {{type}}", typeof(TModel));
+                _logger.LogWarning($"Force sort by 0 applied for {{type}}", typeof(TModel));
                 ordered ??= query.OrderBy(_ => 0);
             }
 
