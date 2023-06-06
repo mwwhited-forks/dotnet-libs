@@ -6,15 +6,20 @@ using System.Linq;
 
 namespace Eliassen.AspNetCore.Mvc.Filters
 {
+    /// <summary>
+    /// Authorization filter to compared application rights for user to rights required by endpoint
+    /// </summary>
     public class ApplicationRightRequirementFilter : IAuthorizationFilter
     {
         private readonly IReadOnlyList<string> _rights;
 
+        /// <inheritdoc/>
         public ApplicationRightRequirementFilter(string[] rights)
         {
             _rights = rights;
         }
 
+        /// <inheritdoc/>
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             bool? userAuthenticated = context.HttpContext.User.Identity?.IsAuthenticated;

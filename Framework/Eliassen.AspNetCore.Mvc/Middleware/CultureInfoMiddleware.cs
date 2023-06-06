@@ -8,9 +8,15 @@ using System.Threading.Tasks;
 
 namespace Eliassen.AspNetCore.Mvc.Middleware
 {
+    /// <summary>
+    /// Custom middleware to enable detection of language/culture from HTTP 
+    /// request header as well as assignment for response header
+    /// </summary>
     public class CultureInfoMiddleware
     {
         private readonly RequestDelegate _next;
+
+        /// <inheritdoc />
         public CultureInfoMiddleware(
             RequestDelegate next
             )
@@ -18,6 +24,7 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
             _next = next;
         }
 
+        /// <inheritdoc />
         public async Task Invoke(
             HttpContext context,
             ILogger<CultureInfoMiddleware> logger,
@@ -27,11 +34,11 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
             try
             {
                 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language
-                var fromheader = (string)context.Request.Headers["Accept-Language"];
-                if (!string.IsNullOrWhiteSpace(fromheader))
+                var fromHeader = (string)context.Request.Headers["Accept-Language"];
+                if (!string.IsNullOrWhiteSpace(fromHeader))
                 {
-                    var language = fromheader.Split(',').Select(GetCultureInfo).FirstOrDefault();
-                    logger.LogInformation($"Set CultureInfo to \"{{{nameof(fromheader)}}}\"::{{{nameof(language)}}}", fromheader, language);
+                    var language = fromHeader.Split(',').Select(GetCultureInfo).FirstOrDefault();
+                    logger.LogInformation($"Set CultureInfo to \"{{{nameof(fromHeader)}}}\"::{{{nameof(language)}}}", fromHeader, language);
 
                     cultureInfo.Value = language ?? CultureInfo.CurrentCulture;
                     CultureInfo.CurrentCulture = CultureInfo.CurrentUICulture = cultureInfo.Value;

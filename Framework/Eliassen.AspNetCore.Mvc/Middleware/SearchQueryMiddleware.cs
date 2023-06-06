@@ -13,12 +13,16 @@ using System.Threading.Tasks;
 
 namespace Eliassen.AspNetCore.Mvc.Middleware
 {
+    /// <summary>
+    /// ASP.Net MVC Middlware to enable IQueryable{T} responses from  Controller Actions
+    /// </summary>
     public class SearchQueryMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger _log;
         private readonly IAccessor<ISearchQuery> _searchQuery;
 
+        /// <inheritdoc />
         public SearchQueryMiddleware(
             RequestDelegate next,
             ILogger<SearchQueryMiddleware> log,
@@ -124,6 +128,8 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
 
             return (true, default);
         }
+
+        /// <inheritdoc />
         public async Task InvokeAsync(HttpContext context)
         {
             try
