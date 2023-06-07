@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Eliassen.System.ComponentModel.Search;
+using System;
 using System.Collections.Generic;
 
 namespace Nucleus.Blog.Contracts.Models
 {
     public class BlogModel
     {
+        [ExcludeCaseReplacer]
         public string? BlogId { get; set; }
         public string? Title { get; set; }
         public string? Slug { get; set; }

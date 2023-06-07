@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.ComponentModel.Search;
+using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace Nucleus.Core.Contracts.Models
         public const string Module = nameof(Module);
         public const string UserStatus = nameof(UserStatus);
 
+        [ExcludeCaseReplacer]
         public string? UserId { get; set; }
         public string? UserName { get; set; }
 

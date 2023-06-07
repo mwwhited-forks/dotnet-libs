@@ -131,6 +131,7 @@ namespace Eliassen.System.Linq.Search
             }
 
             var visited = filtered;
+
             foreach (var visitor in _visitors)
             {
                 var expression = visitor.Visit(visited.Expression);
