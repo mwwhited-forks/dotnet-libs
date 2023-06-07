@@ -1,5 +1,4 @@
 ﻿using Eliassen.System.ComponentModel.Search;
-using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
 using System;
 using System.Collections.Generic;
@@ -13,6 +12,7 @@ namespace Nucleus.Core.Contracts.Models
     [Searchable(LastNameFirstName)]
     [Filterable(Module)]
     [Filterable(UserStatus)]
+    [SearchTermDefault(SearchTermDefaults.StartsWith)]
     [DebuggerDisplay("{FirstName} {LastName}")]
     public class User
     {

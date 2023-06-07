@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace Nucleus.Blog.Contracts.Models
 {
+    [SearchTermDefault(SearchTermDefaults.Contains)]
     public class BlogModel
     {
         [ExcludeCaseReplacer]

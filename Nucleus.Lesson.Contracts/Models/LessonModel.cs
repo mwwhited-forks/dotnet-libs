@@ -3,6 +3,7 @@ using System;
 
 namespace Nucleus.Lesson.Contracts.Models
 {
+    [SearchTermDefault(SearchTermDefaults.Contains)]
     public class LessonModel
     {
         [ExcludeCaseReplacer]
