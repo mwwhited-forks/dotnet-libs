@@ -5,6 +5,7 @@ namespace Nucleus.Lesson.Contracts.Models
 {
     public class LessonModel
     {
+        [NotSearchable]
         public string? LessonId { get; set; }
         public string? Title { get; set; }
         public string? MediaLink { get; set; }

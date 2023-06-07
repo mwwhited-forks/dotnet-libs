@@ -6,6 +6,7 @@ namespace Nucleus.Blog.Contracts.Models
 {
     public class BlogModel
     {
+        [NotSearchable]
         public string? BlogId { get; set; }
         public string? Title { get; set; }
         [DefaultSort(priority: 1)]
