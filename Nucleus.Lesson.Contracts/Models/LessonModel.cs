@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Eliassen.System.ComponentModel.Search;
+using System;
 
 namespace Nucleus.Lesson.Contracts.Models
 {
+    [SearchTermDefault(SearchTermDefaults.Contains)]
     public class LessonModel
     {
+        [ExcludeCaseReplacer]
         public string? LessonId { get; set; }
         public string? Title { get; set; }
         public string? MediaLink { get; set; }

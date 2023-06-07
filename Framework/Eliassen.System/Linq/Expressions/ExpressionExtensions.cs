@@ -5,24 +5,19 @@ using System.Linq.Expressions;
 
 namespace Eliassen.System.Linq.Expressions
 {
+    /// <summary>
+    /// Extensions for System.Linq.Expressions.Expression
+    /// <seealso cref="global::System.Linq.Expressions.Expression"/>
+    /// </summary>
     public static class ExpressionExtensions
     {
-
-        public static Expression<Func<TModel, bool>>? OrChain<TModel>(
-            this Expression<Func<TModel, bool>> or,
-            params Expression<Func<TModel, bool>>[] ors
-            ) => new[] { or }.Concat(ors).OrChain();
-
-        public static Expression<Func<TModel, bool>>? OrChain<TModel>(
+        /// <inheritdoc cref="global::System.Linq.Expressions.Expression.OrElse"/>
+        public static Expression<Func<TModel, bool>>? OrElse<TModel>(
             this IEnumerable<Expression<Func<TModel, bool>>> ors
         ) => Chain(ors, ChainTypes.OrElse);
 
-        public static Expression<Func<TModel, bool>>? AndChain<TModel>(
-            this Expression<Func<TModel, bool>> and,
-            params Expression<Func<TModel, bool>>[] ands
-            ) => new[] { and }.Concat(ands).AndChain();
-
-        public static Expression<Func<TModel, bool>>? AndChain<TModel>(
+        /// <inheritdoc cref="global::System.Linq.Expressions.Expression.AndAlso"/>
+        public static Expression<Func<TModel, bool>>? AndAlso<TModel>(
             this IEnumerable<Expression<Func<TModel, bool>>?> ands
         ) => Chain(ands, ChainTypes.AndAlso);
 
@@ -53,6 +48,47 @@ namespace Eliassen.System.Linq.Expressions
             var replaced = new ParameterReplacerExpressionVisitor(parameter).Visit(chain);
             var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
             return lambda;
+        }
+
+        public static IEnumerable<Attribute> GetAttributes(this Expression expression)
+        {
+            if (expression is MethodCallExpression methodCallExpression)
+            {
+                foreach (var argument in methodCallExpression.Arguments)
+                {
+                    foreach (var attribute in argument.GetAttributes())
+                    {
+                        yield return attribute;
+                    }
+                }
+            }
+            else if (expression is BinaryExpression binaryExpression)
+            {
+                foreach (var attribute in binaryExpression.Left.GetAttributes())
+                {
+                    yield return attribute;
+                }
+                foreach (var attribute in binaryExpression.Right.GetAttributes())
+                {
+                    yield return attribute;
+                }
+            }
+            else if (expression is MemberExpression memberExpression)
+            {
+                var memberInfo = memberExpression.Member;
+                foreach (var attribute in Attribute.GetCustomAttributes(memberInfo))
+                {
+                    yield return attribute;
+                }
+            }
+            else if (expression is LambdaExpression lambdaExpression)
+            {
+                var children = lambdaExpression.Body.GetAttributes();
+                foreach (var attribute in children)
+                {
+                    yield return attribute;
+                }
+            }
         }
     }
 }

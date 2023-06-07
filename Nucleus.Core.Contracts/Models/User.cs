@@ -12,6 +12,7 @@ namespace Nucleus.Core.Contracts.Models
     [Searchable(LastNameFirstName)]
     [Filterable(Module)]
     [Filterable(UserStatus)]
+    [SearchTermDefault(SearchTermDefaults.StartsWith)]
     [DebuggerDisplay("{FirstName} {LastName}")]
     public class User
     {
@@ -20,6 +21,7 @@ namespace Nucleus.Core.Contracts.Models
         public const string Module = nameof(Module);
         public const string UserStatus = nameof(UserStatus);
 
+        [ExcludeCaseReplacer]
         public string? UserId { get; set; }
         public string? UserName { get; set; }
 

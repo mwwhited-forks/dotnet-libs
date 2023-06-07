@@ -1,5 +1,7 @@
-﻿using Eliassen.System.Internal;
+﻿using Eliassen.System.ComponentModel.Search;
+using Eliassen.System.Internal;
 using Eliassen.System.Linq.Expressions;
+using Eliassen.System.Reflection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,11 @@ namespace Eliassen.System.Linq.Search
         /// </summary>
         public const int DefaultPageSize = 10;
 
+        /// <summary>
+        /// Get the underlying element type for a given IQueryable
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
         public static Type? GetElementType(IQueryable query)
         {
             var interfaces = from inf in query.GetType().GetInterfaces()
@@ -119,6 +126,15 @@ namespace Eliassen.System.Linq.Search
 
         private IOrderedQueryable<TModel> BuildFrom(IQueryable<TModel> query, ISearchQuery searchQuery, StringComparison stringComparison)
         {
+            var queryIntercepts = query.ElementType.GetAttributes<ISearchQueryIntercept>();
+            foreach (var interceptor in queryIntercepts)
+            {
+                _logger.LogDebug($"Intercepted by: {{{nameof(interceptor)}}}", interceptor);
+                searchQuery = interceptor.Intercept(searchQuery);
+            }
+
+            _logger.LogInformation($"Build query for {{{nameof(searchQuery)}}}", searchQuery);
+
             var searched = SearchBy(query, searchQuery, stringComparison, true);
             var filtered = FilterBy(searched, searchQuery, stringComparison);
 
