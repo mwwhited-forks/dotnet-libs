@@ -1,0 +1,13 @@
+{
+  "Int": 123,
+  "String": "Test String",
+  "Guid": "38b7ba3d-321e-4d41-bc90-c58b921d8df0",
+  "Bytes": "SGVsbG8gV29ybGQ=",
+  "Object": {
+    "Hello": "World!"
+  },
+  "Array": [
+    "Test",
+    " Data"
+  ]
+}

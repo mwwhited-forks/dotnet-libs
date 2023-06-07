@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Eliassen.System.ComponentModel.Search;
+using System.Collections.Generic;
 
 namespace Nucleus.Core.Contracts.Models
 {
-    public class Module: PermissionBase
+    [DefaultSort(targetName: nameof(Name))]
+    public class Module : PermissionBase
     {
         public string? ModuleId { get; set; }
 

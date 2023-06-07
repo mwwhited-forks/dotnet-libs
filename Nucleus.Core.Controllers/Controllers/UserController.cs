@@ -1,8 +1,9 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Nucleus.AspNetCore.Mvc.IdentityModel;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Nucleus.Core.Controllers.Controllers
 {
@@ -10,28 +11,35 @@ namespace Nucleus.Core.Controllers.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private IUserSession _userSession { get; set; }
-        private IUserProfileManager _userProfileManager { get; set; }
+        private readonly IUserSession _userSession;
+        private readonly IUserProfileManager _userProfileManager;
 
-        public UserController(IUserSession userSession, IUserProfileManager userProfileManager)
+        public UserController(
+            IUserSession userSession,
+            IUserProfileManager userProfileManager
+            )
         {
             _userSession = userSession;
             _userProfileManager = userProfileManager;
         }
 
+        /// <summary>
+        /// Get user profile for currently logged in user
+        /// </summary>
+        /// <returns></returns>
         [Authorize]
         [HttpGet]
-        public async Task<IActionResult> GetUserProfile()
-        {
-            return new JsonResult(await _userProfileManager.GetUserProfile(_userSession.Username));
-        }
+        public async Task<User?> GetUserProfile()=>
+            await _userProfileManager.GetUserProfile(_userSession.Username);
 
+        /// <summary>
+        /// Save user profile for current logged in user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [Authorize]
         [HttpPut]
-        public async Task<IActionResult> UpdateUserProfile(User user)
-        {
-            Thread.Sleep(2000);
-            return new JsonResult(await _userProfileManager.UpdateUserProfile(_userSession.Username, user));
-        }
+        public async Task<ResponseModel<User?>> UpdateUserProfile(User user)=>
+            await _userProfileManager.UpdateUserProfile(_userSession.Username, user);
     }
 }

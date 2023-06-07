@@ -1,14 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
-using Nucleus.Blog.Contracts.Services;
 using Nucleus.Blog.Contracts.Collections;
-using Nucleus.Blog.Contracts.Models;
 using Nucleus.Blog.Contracts.Collections.DbSettings;
-using Nucleus.Core.Contracts.Models;
+using Nucleus.Blog.Contracts.Models;
 using Nucleus.Blog.Contracts.Models.Filters;
+using Nucleus.Blog.Contracts.Services;
+using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Nucleus.Blog.Persistence.Services
 {
@@ -37,6 +38,7 @@ namespace Nucleus.Blog.Persistence.Services
             BuildProjections();
         }
 
+#warning retire this
         // need to extend/re-work this so I do not pass in multiple parameters to each method, just a proper filter item from the business layer
         private FilterDefinition<BlogCollection> GetBlogsPredicateBuilder(bool onlyActive, BlogsFilterItem? filterItems)
         {
@@ -47,7 +49,7 @@ namespace Nucleus.Blog.Persistence.Services
             var builder = Builders<BlogCollection>.Filter;
             var filter = builder.Empty;
 
-            if (onlyActive) 
+            if (onlyActive)
                 filter &= builder.AnyEq("enabled", true);
 
             if (filterItems != null && !string.IsNullOrWhiteSpace(filterItems.InputValue))
@@ -73,7 +75,7 @@ namespace Nucleus.Blog.Persistence.Services
                 Enabled = item.Enabled,
                 Author = item.Author,
                 CreatedOn = item.CreatedOn,
-                CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
+                //CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
             });
             _blogsProjection = Builders<BlogCollection>.Projection.Expression(item => new BlogModel()
             {
@@ -86,9 +88,11 @@ namespace Nucleus.Blog.Persistence.Services
                 Enabled = item.Enabled,
                 Author = item.Author,
                 CreatedOn = item.CreatedOn,
-                CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
+                //CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
             });
         }
+
+#warning retire this
         public async Task<List<BlogModel>> GetPagedAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive)
         {
             // TODO: Make an extension that does all of this pagination plumbing
@@ -104,6 +108,7 @@ namespace Nucleus.Blog.Persistence.Services
                 .ToListAsync();
         }
 
+#warning retire this
         public async Task<long> GetPagedCountAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive) =>
            await _blogsCollection.Find(GetBlogsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
 
@@ -135,6 +140,8 @@ namespace Nucleus.Blog.Persistence.Services
 
         public async Task RemoveAsync(string id) =>
             await _blogsCollection.DeleteOneAsync(x => x.BlogId == id);
+        public IQueryable<BlogModel> Query() =>
+            _blogsCollection.AsQueryable().Select(Projections.Blogs);
 
     }
 }

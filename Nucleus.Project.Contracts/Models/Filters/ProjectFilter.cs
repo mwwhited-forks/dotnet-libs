@@ -1,10 +1,8 @@
 ﻿using Nucleus.Core.Contracts.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Nucleus.Project.Contracts.Models.Filters
 {
+#warning retire this
     public class ProjectFilter
     {
         public ProjectsFilterItem? ProjectFilters { get; set; }

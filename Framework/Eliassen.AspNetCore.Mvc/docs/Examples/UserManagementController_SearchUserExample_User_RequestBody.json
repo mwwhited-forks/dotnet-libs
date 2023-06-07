@@ -1,0 +1,91 @@
+{
+  "UnresolvedReference": false,
+  "Required": false,
+  "Content": {
+    "application/json": {
+      "Schema": {
+        "ReadOnly": false,
+        "WriteOnly": false,
+        "AllOf": [],
+        "OneOf": [],
+        "AnyOf": [],
+        "Required": [],
+        "Properties": {},
+        "AdditionalPropertiesAllowed": true,
+        "Enum": [],
+        "Nullable": false,
+        "Deprecated": false,
+        "Extensions": {},
+        "UnresolvedReference": false,
+        "Reference": {
+          "Type": 0,
+          "Id": "Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+          "IsExternal": false,
+          "IsLocal": true,
+          "ReferenceV3": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+          "ReferenceV2": "#/definitions/Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        }
+      },
+      "Examples": {},
+      "Encoding": {},
+      "Extensions": {}
+    },
+    "text/json": {
+      "Schema": {
+        "ReadOnly": false,
+        "WriteOnly": false,
+        "AllOf": [],
+        "OneOf": [],
+        "AnyOf": [],
+        "Required": [],
+        "Properties": {},
+        "AdditionalPropertiesAllowed": true,
+        "Enum": [],
+        "Nullable": false,
+        "Deprecated": false,
+        "Extensions": {},
+        "UnresolvedReference": false,
+        "Reference": {
+          "Type": 0,
+          "Id": "Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+          "IsExternal": false,
+          "IsLocal": true,
+          "ReferenceV3": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+          "ReferenceV2": "#/definitions/Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        }
+      },
+      "Examples": {},
+      "Encoding": {},
+      "Extensions": {}
+    },
+    "application/*\u002Bjson": {
+      "Schema": {
+        "ReadOnly": false,
+        "WriteOnly": false,
+        "AllOf": [],
+        "OneOf": [],
+        "AnyOf": [],
+        "Required": [],
+        "Properties": {},
+        "AdditionalPropertiesAllowed": true,
+        "Enum": [],
+        "Nullable": false,
+        "Deprecated": false,
+        "Extensions": {},
+        "UnresolvedReference": false,
+        "Reference": {
+          "Type": 0,
+          "Id": "Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+          "IsExternal": false,
+          "IsLocal": true,
+          "ReferenceV3": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+          "ReferenceV2": "#/definitions/Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        }
+      },
+      "Examples": {},
+      "Encoding": {},
+      "Extensions": {}
+    }
+  },
+  "Extensions": {}
+}

@@ -1,10 +1,10 @@
-﻿using Nucleus.Core.Busines.Attributes;
+﻿using Eliassen.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Nucleus.Core.Contracts;
 using Nucleus.Lesson.Contracts.Managers;
 using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Nucleus.Lesson.Controllers.Controllers
 {
@@ -13,13 +13,15 @@ namespace Nucleus.Lesson.Controllers.Controllers
     [ApiController]
     public class LessonAdminController : ControllerBase
     {
-        private ILessonManager _lessonManager { get; set; }
+        private readonly ILessonManager _lessonManager;
 
         public LessonAdminController(ILessonManager lessonManager)
         {
             _lessonManager = lessonManager;
         }
 
+#warning retire this
+        [Obsolete]
         [HttpPost("Lessons")]
         [ApplicationRight(Rights.Lesson.Manager)]
         public async Task<IActionResult> GetAllLessonsPagedAsync(LessonsFilter filter) =>

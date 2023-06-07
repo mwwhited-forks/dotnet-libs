@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Nucleus.Blog.Contracts.Services;
+using Nucleus.Blog.Persistence.Services;
 
 namespace Nucleus.Blog.Persistence
 {
@@ -9,7 +9,7 @@ namespace Nucleus.Blog.Persistence
     {
         public static IServiceCollection AddBlogPersistenceServices(this IServiceCollection services)
         {
-            new BlogPersistenceRegistrar().AddServices(services);
+            services.TryAddTransient<IBlogService, BlogService>();
             return services;
         }
     }

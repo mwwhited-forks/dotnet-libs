@@ -1,0 +1,31 @@
+{
+  "Content": {
+    "application/json": {
+      "Schema": {
+        "Reference": {
+          "Id": "Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+          "ReferenceV3": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+          "ReferenceV2": "#/definitions/Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        }
+      }
+    },
+    "text/json": {
+      "Schema": {
+        "Reference": {
+          "Id": "Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+          "ReferenceV3": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+          "ReferenceV2": "#/definitions/Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        }
+      }
+    },
+    "application/*\u002Bjson": {
+      "Schema": {
+        "Reference": {
+          "Id": "Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+          "ReferenceV3": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+          "ReferenceV2": "#/definitions/Eliassen.System.Linq.Search.SearchQuery\u00601[[Nucleus.Core.Contracts.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+        }
+      }
+    }
+  }
+}

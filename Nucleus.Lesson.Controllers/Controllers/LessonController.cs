@@ -1,6 +1,7 @@
-﻿using Nucleus.Lesson.Contracts.Managers;
+﻿using Microsoft.AspNetCore.Mvc;
+using Nucleus.Lesson.Contracts.Managers;
+using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Nucleus.Lesson.Controllers.Controllers
 {
@@ -8,12 +9,14 @@ namespace Nucleus.Lesson.Controllers.Controllers
     [ApiController]
     public class LessonController : ControllerBase
     {
-        private IPublicLessonManager _publicLessonManager { get; set; }
+        private readonly IPublicLessonManager _publicLessonManager;
 
         public LessonController(IPublicLessonManager publicLessonManager)
         {
             _publicLessonManager = publicLessonManager;
         }
+#warning retire this
+        [Obsolete]
 
         [HttpPost("Lessons")]
         public async Task<IActionResult> GetAllLessons(LessonsFilter filter) =>
@@ -26,6 +29,8 @@ namespace Nucleus.Lesson.Controllers.Controllers
         [HttpGet("RecentLessons/{id}")]
         public async Task<IActionResult> GetRecentLessons(int id) =>
             new JsonResult(await _publicLessonManager.GetRecentLessons(id));
+        [HttpPost("Query")]
+        public IQueryable<LessonModel> ListLessons() => _publicLessonManager.QueryLessons();
 
     }
 }

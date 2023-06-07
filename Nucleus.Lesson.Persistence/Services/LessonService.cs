@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
-using Nucleus.Lesson.Contracts.Services;
 using Nucleus.Lesson.Contracts.Collections;
+using Nucleus.Lesson.Contracts.Collections.DbSettings;
 using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
+using Nucleus.Lesson.Contracts.Services;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Lesson.Contracts.Collections.DbSettings;
 using System;
@@ -16,8 +19,8 @@ namespace Nucleus.Lesson.Persistence.Services
     public class LessonService : ILessonService
     {
         private readonly IMongoCollection<LessonCollection> _lessonsCollection;
-        private ProjectionDefinition<LessonCollection, LessonModel>? _lessonProjection { get; set; }
-        private BsonCollectionBuilder<LessonModel, LessonCollection> _lessonCollectionBuilder { get; set; }
+        private readonly ProjectionDefinition<LessonCollection, LessonModel>? _lessonProjection;
+        private readonly BsonCollectionBuilder<LessonModel, LessonCollection> _lessonCollectionBuilder;
 
         public LessonService(IOptions<LessonDatabaseSettings> lessonDatabaseSettings)
         {
@@ -32,11 +35,6 @@ namespace Nucleus.Lesson.Persistence.Services
 
             _lessonCollectionBuilder = new BsonCollectionBuilder<LessonModel, LessonCollection>();
 
-            BuildProjections();
-        }
-
-        private void BuildProjections()
-        {
             _lessonProjection = Builders<LessonCollection>.Projection.Expression(item => new LessonModel()
             {
                 LessonId = item.LessonId,
@@ -86,7 +84,7 @@ namespace Nucleus.Lesson.Persistence.Services
 
             return filter;
         }
-
+#warning retire this
         public async Task<List<LessonModel>> GetPagedAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive)
         {
             // TODO: Make an extension that does all of this pagination plumbing
@@ -130,7 +128,7 @@ namespace Nucleus.Lesson.Persistence.Services
             };
             return bob;
         }
-
+#warning retire this
         public async Task<long> GetPagedCountAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive) =>
            await _lessonsCollection.Find(GetLessonsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
 
@@ -163,5 +161,7 @@ namespace Nucleus.Lesson.Persistence.Services
         public async Task RemoveAsync(string id) =>
             await _lessonsCollection.DeleteOneAsync(x => x.LessonId == id);
 
+        public IQueryable<LessonModel> Query() =>
+            _lessonsCollection.AsQueryable().Select(Projections.Lessons);
     }
 }

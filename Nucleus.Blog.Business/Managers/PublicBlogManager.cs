@@ -1,11 +1,11 @@
 ﻿using Nucleus.Blog.Contracts.Managers;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Nucleus.Blog.Contracts.Services;
 using Nucleus.Blog.Contracts.Models;
 using Nucleus.Blog.Contracts.Models.Filters;
+using Nucleus.Blog.Contracts.Services;
 using Nucleus.Core.Contracts.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Nucleus.Blog.Business.Managers
 {
@@ -19,6 +19,7 @@ namespace Nucleus.Blog.Business.Managers
             _blogService = blogService;
         }
 
+#warning retire this
         public async Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter)
         {
             List<BlogModel> blogs = await _blogService.GetPagedAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, true);
@@ -45,5 +46,6 @@ namespace Nucleus.Blog.Business.Managers
         public async Task<List<BlogModel>?> GetRecentBlogs(int i) =>
             await _blogService.GetRecentAsync(i, true);
 
+        public IQueryable<BlogModel> QueryBlogs() => _blogService.Query();
     }
 }

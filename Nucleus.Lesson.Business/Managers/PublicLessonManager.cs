@@ -1,10 +1,11 @@
-﻿using Nucleus.Lesson.Contracts.Managers;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Nucleus.Lesson.Contracts.Services;
+﻿using Nucleus.Core.Contracts.Models;
+using Nucleus.Lesson.Contracts.Managers;
 using Nucleus.Lesson.Contracts.Models;
-using Nucleus.Core.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
+using Nucleus.Lesson.Contracts.Services;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Nucleus.Lesson.Business.Managers
 {
@@ -17,6 +18,7 @@ namespace Nucleus.Lesson.Business.Managers
         {
             _lessonService = LessonService;
         }
+#warning retire this
         public async Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter)
         {
             List<LessonModel> lessons = await _lessonService.GetPagedAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, true);
@@ -39,5 +41,6 @@ namespace Nucleus.Lesson.Business.Managers
 
         public async Task<List<LessonModel>?> GetRecentLessons(int i) =>
             await _lessonService.GetRecentAsync(i, true);
+        public IQueryable<LessonModel> QueryLessons() => _lessonService.Query();
     }
 }

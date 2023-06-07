@@ -1,13 +1,10 @@
 ﻿using Nucleus.Blog.Contracts.Managers;
 using Nucleus.Blog.Contracts.Models;
 using Nucleus.Core.Shared.Contracts.Managers;
-using Nucleus.Project.Contracts.Managers;
-using Nucleus.Project.Contracts.Models;
 using Nucleus.Lesson.Contracts.Managers;
 using Nucleus.Lesson.Contracts.Models;
-using System;
-using System.Collections.Generic;
-using System.IO;
+using Nucleus.Project.Contracts.Managers;
+using Nucleus.Project.Contracts.Models;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -16,9 +13,9 @@ namespace Nucleus.Core.Shared.Business.Managers
 {
     public class SiteMapManager : ISiteMapManager
     {
-        private IPublicBlogManager _publicBlogManager { get; set; }
-        private IPublicLessonManager _publicLessonManager { get; set; }
-        private IPublicProjectManager _publicProjectManager { get; set; }
+        private readonly IPublicBlogManager _publicBlogManager;
+        private readonly IPublicLessonManager _publicLessonManager;
+        private readonly IPublicProjectManager _publicProjectManager;
 
         public SiteMapManager(
                   IPublicBlogManager publicBlogManager,

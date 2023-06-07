@@ -10,7 +10,7 @@ namespace Nucleus.Core.Business.Managers
 {
     public class UserProfileManager : IUserProfileManager
     {
-        private IUserService _userService { get; set; }
+        private readonly IUserService _userService;
 
         public UserProfileManager(IUserService userService)
         {
@@ -19,19 +19,16 @@ namespace Nucleus.Core.Business.Managers
 
         public async Task<IEnumerable<string>> GetRightsForUserIdAsync(string userId)
         {
-            User? user = await _userService.GetAsync(userId);
+            var user = await _userService.GetByUserIdAsync(userId);
 
-            if (user == null)
-                return new List<string>();
+            if (user == null) return new List<string>();
 
-            List<string> rights = new List<string>() { "module_authenticated" };
-            if (user.UserModules != null)
-                foreach (UserModule m in user.UserModules)
-                    if (m.Roles != null)
-                        foreach (Role role in m.Roles)
-                            if (role.Rights != null && role.Rights.Count() > 0)
-                                rights.AddRange(role.Rights.Select(r => r.Code).ToList());
-            
+            var query = from module in user.UserModules ?? Enumerable.Empty<UserModule>()
+                        from role in module.Roles ?? Enumerable.Empty<Role>()
+                        from right in role.Rights ?? Enumerable.Empty<PermissionBase>()
+                        select right.Code;
+
+            var rights = new[] { "module_authenticated" }.Concat(query).Distinct().ToList();
             return rights;
         }
 
@@ -39,7 +36,7 @@ namespace Nucleus.Core.Business.Managers
             (await GetUserProfile(userName))?.UserId;
 
         public async Task<User?> GetUserProfile(string objectId) =>
-            await _userService.GetByUsernameAsync(objectId);
+            await _userService.GetByUserNameAsync(objectId);
 
         public async Task<ResponseModel<User?>> UpdateUserProfile(string requesterObjectId, User user)
         {
@@ -48,13 +45,16 @@ namespace Nucleus.Core.Business.Managers
             {
                 response.IsSuccess = false;
                 response.Message = "You are not authorized to update another persons profile";
-            } else {
-                User? targetUser = await _userService.GetByUsernameAsync(user.UserName);
+            }
+            else
+            {
+                User? targetUser = await _userService.GetByUserNameAsync(user.UserName);
                 if (targetUser == null)
                 {
                     response.IsSuccess = false;
                     response.Message = "Unable to locate user data";
-                } else
+                }
+                else
                 {
                     UserAction action = new UserAction()
                     {

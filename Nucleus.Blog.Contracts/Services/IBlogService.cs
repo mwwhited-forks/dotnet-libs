@@ -2,14 +2,17 @@
 using Nucleus.Blog.Contracts.Models.Filters;
 using Nucleus.Core.Contracts.Models;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Nucleus.Blog.Contracts.Services
 {
     public interface IBlogService
     {
+#warning retire this
         Task<List<BlogModel>> GetPagedAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive);
 
+#warning retire this
         Task<long> GetPagedCountAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive);
 
         Task<List<BlogModel>> GetAsync(bool onlyActive);
@@ -25,5 +28,6 @@ namespace Nucleus.Blog.Contracts.Services
         Task UpdateAsync(BlogModel updatedBlog);
 
         Task RemoveAsync(string id);
+        IQueryable<BlogModel> Query();
     }
 }
