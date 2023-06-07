@@ -8,6 +8,7 @@ using Nucleus.Blog.Contracts.Services;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Nucleus.Blog.Persistence.Services
@@ -139,6 +140,8 @@ namespace Nucleus.Blog.Persistence.Services
 
         public async Task RemoveAsync(string id) =>
             await _blogsCollection.DeleteOneAsync(x => x.BlogId == id);
+        public IQueryable<BlogModel> Query() =>
+            _blogsCollection.AsQueryable().Select(Projections.Blogs);
 
     }
 }
