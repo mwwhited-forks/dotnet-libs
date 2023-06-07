@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Nucleus.Lesson.Contracts.Managers;
+using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
 
 namespace Nucleus.Lesson.Controllers.Controllers
@@ -28,6 +29,8 @@ namespace Nucleus.Lesson.Controllers.Controllers
         [HttpGet("RecentLessons/{id}")]
         public async Task<IActionResult> GetRecentLessons(int id) =>
             new JsonResult(await _publicLessonManager.GetRecentLessons(id));
+        [HttpPost("Query")]
+        public IQueryable<LessonModel> ListLessons() => _publicLessonManager.QueryLessons();
 
     }
 }

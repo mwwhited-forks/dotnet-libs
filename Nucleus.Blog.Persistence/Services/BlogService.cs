@@ -75,7 +75,7 @@ namespace Nucleus.Blog.Persistence.Services
                 Enabled = item.Enabled,
                 Author = item.Author,
                 CreatedOn = item.CreatedOn,
-                CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
+                //CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
             });
             _blogsProjection = Builders<BlogCollection>.Projection.Expression(item => new BlogModel()
             {
@@ -88,7 +88,7 @@ namespace Nucleus.Blog.Persistence.Services
                 Enabled = item.Enabled,
                 Author = item.Author,
                 CreatedOn = item.CreatedOn,
-                CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
+                //CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
             });
         }
 

@@ -8,6 +8,7 @@ using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
 using Nucleus.Lesson.Contracts.Services;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Nucleus.Lesson.Persistence.Services
@@ -42,7 +43,7 @@ namespace Nucleus.Lesson.Persistence.Services
                 Title = item.Title,
                 CreatedOn = item.CreatedOn,
                 Enabled = item.Enabled,
-                CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
+                //CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
             });
         }
 
@@ -116,5 +117,7 @@ namespace Nucleus.Lesson.Persistence.Services
         public async Task RemoveAsync(string id) =>
             await _lessonsCollection.DeleteOneAsync(x => x.LessonId == id);
 
+        public IQueryable<LessonModel> Query() =>
+            _lessonsCollection.AsQueryable().Select(Projections.Lessons);
     }
 }
