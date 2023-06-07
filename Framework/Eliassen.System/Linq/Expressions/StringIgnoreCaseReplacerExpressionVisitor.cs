@@ -46,7 +46,7 @@ namespace Eliassen.System.Linq.Expressions
             if (method == null)
                 goto done;
 
-            if (input.Object?.GetAttributes().OfType<ExcludeCaseReplacerAttribute>().Any() ?? false) goto finish;
+            if (input.Object?.GetAttributes().OfType<ExcludeCaseReplacerAttribute>().Any() ?? false) goto done;
 
             var args = input.Arguments.Concat(new[] { Expression.Constant(_stringComparison) });
             var replacement = Expression.Call(input.Object, method, args);

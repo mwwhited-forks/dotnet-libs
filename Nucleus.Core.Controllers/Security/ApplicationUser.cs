@@ -19,7 +19,7 @@ namespace Nucleus.Core.Controllers.Security
         }
 
         /// <inheritdoc />
-        public string? Username => _principal.GetClaimValue(CommonClaims.ObjectIdentifier);
+        public string? UserName => _principal.GetClaimValue(CommonClaims.ObjectIdentifier);
 
         /// <inheritdoc />
         public string? UserId => _principal.GetClaimValue(CommonClaims.UserId);

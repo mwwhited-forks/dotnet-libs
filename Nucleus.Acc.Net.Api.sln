@@ -31,6 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Core.Persistence", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{6BEF035F-ABDF-47D9-B230-B88FEE87B53B}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		.runsettings = .runsettings
 		build.bat = build.bat
 		Directory.Build.props = Directory.Build.props
@@ -84,6 +85,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Collections", "Collections", "{2D920C75-AEDB-4BC3-B8BD-51F3AD6CFA3D}"
 	ProjectSection(SolutionItems) = preProject
 		Conf\MongoDb\SampleData\blogv1.json = Conf\MongoDb\SampleData\blogv1.json
+		Conf\MongoDb\SampleData\documents.json = Conf\MongoDb\SampleData\documents.json
 		Conf\MongoDb\SampleData\modules.json = Conf\MongoDb\SampleData\modules.json
 		Conf\MongoDb\SampleData\projectv1.json = Conf\MongoDb\SampleData\projectv1.json
 		Conf\MongoDb\SampleData\users.json = Conf\MongoDb\SampleData\users.json

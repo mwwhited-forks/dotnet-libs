@@ -6,7 +6,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 
 namespace Eliassen.System.Linq.Search
 {
@@ -147,14 +146,16 @@ namespace Eliassen.System.Linq.Search
                     );
             }
 
-
             var sorted = SortBy(filtered, searchQuery);
 
             if (_postBuildVisitors.Any())
             {
                 var toVisit = sorted.Expression;
                 foreach (var visitor in _postBuildVisitors)
+                {
+                    _logger.LogDebug($"Visited by: {{{nameof(visitor)}}}", visitor);
                     toVisit = visitor.Visit(toVisit);
+                }
                 sorted = (IOrderedQueryable<TModel>)query.Provider.CreateQuery<TModel>(toVisit);
             }
 
