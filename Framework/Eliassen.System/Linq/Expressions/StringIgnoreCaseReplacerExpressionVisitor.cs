@@ -1,4 +1,5 @@
-﻿using Eliassen.System.Internal;
+﻿using Eliassen.System.ComponentModel.Search;
+using Eliassen.System.Internal;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
@@ -44,6 +45,8 @@ namespace Eliassen.System.Linq.Expressions
             var method = declaringType.GetMethod(input.Method.Name, typeArgs);
             if (method == null)
                 goto done;
+
+            if (input.Object?.GetAttributes().OfType<ExcludeCaseReplacerAttribute>().Any() ?? false) goto done;
 
             var args = input.Arguments.Concat(new[] { Expression.Constant(_stringComparison) });
             var replacement = Expression.Call(input.Object, method, args);

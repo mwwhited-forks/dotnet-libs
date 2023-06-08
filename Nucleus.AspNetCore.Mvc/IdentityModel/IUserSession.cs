@@ -4,7 +4,7 @@ namespace Nucleus.AspNetCore.Mvc.IdentityModel
 {
     public interface IUserSession
     {
-        string? Username { get; }
+        string? UserName { get; }
         string? UserId { get; }
         string? Culture { get; }
         IEnumerable<string> Rights { get; }

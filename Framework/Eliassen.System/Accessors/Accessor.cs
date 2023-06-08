@@ -6,7 +6,7 @@ namespace Eliassen.System.Accessors
     {
         private readonly AsyncLocal<T> _local = new();
 
-        public T Value
+        public T? Value
         {
             get => _local.Value;
             set => _local.Value = value;

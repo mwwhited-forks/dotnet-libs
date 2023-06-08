@@ -8,18 +8,20 @@ using System.Threading.Tasks;
 
 namespace Nucleus.Core.Controllers.Security
 {
-
-    public class NucluesClaimsTransformation : IClaimsTransformation
+    /// <inheritdoc />
+    public class NucleusClaimsTransformation : IClaimsTransformation
     {
         private readonly IUserProfileManager _manager;
 
-        public NucluesClaimsTransformation(
+        /// <inheritdoc />
+        public NucleusClaimsTransformation(
              IUserProfileManager manager
             )
         {
             _manager = manager;
         }
 
+        /// <inheritdoc />
         public async Task<ClaimsPrincipal> TransformAsync(ClaimsPrincipal principal)
         {
             var claims = new List<Claim>();
@@ -51,6 +53,5 @@ namespace Nucleus.Core.Controllers.Security
 
             return principal;
         }
-
     }
 }

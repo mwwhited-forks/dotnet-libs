@@ -13,7 +13,7 @@ namespace Nucleus.Core.Controllers
         {
             services.TryAddTransient<IUserSession, ApplicationUser>();
 
-            services.AddTransient<IClaimsTransformation, NucluesClaimsTransformation>();
+            services.AddTransient<IClaimsTransformation, NucleusClaimsTransformation>();
 
             return services;
         }

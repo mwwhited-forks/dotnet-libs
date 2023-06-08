@@ -30,7 +30,7 @@ namespace Nucleus.Core.Controllers.Controllers
         [Authorize]
         [HttpGet]
         public async Task<User?> GetUserProfile()=>
-            await _userProfileManager.GetUserProfile(_userSession.Username);
+            await _userProfileManager.GetUserProfile(_userSession.UserName);
 
         /// <summary>
         /// Save user profile for current logged in user
@@ -40,6 +40,6 @@ namespace Nucleus.Core.Controllers.Controllers
         [Authorize]
         [HttpPut]
         public async Task<ResponseModel<User?>> UpdateUserProfile(User user)=>
-            await _userProfileManager.UpdateUserProfile(_userSession.Username, user);
+            await _userProfileManager.UpdateUserProfile(_userSession.UserName, user);
     }
 }

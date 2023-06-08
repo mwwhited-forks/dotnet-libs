@@ -5,19 +5,19 @@ namespace Eliassen.System.Linq
     public static class DictionaryExtensions
     {
         public static bool TryGetValue<TKey, TValue>(
-            this IDictionary<TKey, TValue> dict, 
+            this IDictionary<TKey, TValue> dictionary, 
             TKey key, 
-            out TValue value, 
+            out TValue? value, 
             IEqualityComparer<TKey> comparer
             )
             where TKey : notnull =>
-            dict.ChangeComparer( comparer).TryGetValue(key, out value);
+            dictionary.ChangeComparer( comparer).TryGetValue(key, out value);
 
         public static IDictionary<TKey, TValue> ChangeComparer<TKey, TValue>(
-            this IDictionary<TKey, TValue> dict,
+            this IDictionary<TKey, TValue> dictionary,
             IEqualityComparer<TKey> comparer
             )
             where TKey : notnull => 
-            new Dictionary<TKey, TValue>(dict, comparer);
+            new Dictionary<TKey, TValue>(dictionary, comparer);
     }
 }

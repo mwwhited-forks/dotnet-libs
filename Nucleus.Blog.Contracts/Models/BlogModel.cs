@@ -4,12 +4,14 @@ using System.Collections.Generic;
 
 namespace Nucleus.Blog.Contracts.Models
 {
+    [SearchTermDefault(SearchTermDefaults.Contains)]
     public class BlogModel
     {
+        [ExcludeCaseReplacer]
         [NotSearchable]
         public string? BlogId { get; set; }
-        public string? Title { get; set; }
         [DefaultSort(priority: 1)]
+        public string? Title { get; set; }
         public string? Slug { get; set; }
         public List<string?>? Tags { get; set; }
         public string? Preview { get; set; }
