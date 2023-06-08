@@ -7,7 +7,7 @@ namespace Nucleus.Blog.Contracts.Models
     [SearchTermDefault(SearchTermDefaults.Contains)]
     public class BlogModel
     {
-        [ExcludeCaseReplacer]
+        [IgnoreStringComparisonReplacement]
         public string? BlogId { get; set; }
         public string? Title { get; set; }
         public string? Slug { get; set; }

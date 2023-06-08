@@ -31,7 +31,8 @@ namespace Eliassen.System.Linq.Search
         public object? NotEqualTo { get; set; }
 
         /// <summary>
-        /// This allows for providing a set of values for filtering for multiple values
+        /// This allows for providing a set of values where the value from the queries data must match at least 
+        /// one of provided values
         /// </summary>
         [JsonPropertyName("in")]
         public object?[]? InSet { get; set; }
@@ -63,7 +64,7 @@ namespace Eliassen.System.Linq.Search
             var sb = new StringBuilder();
             if (EqualTo != null) sb.AppendLine($"{nameof(EqualTo)}: {EqualTo} ");
             if (NotEqualTo != null) sb.AppendLine($"{nameof(NotEqualTo)}: {NotEqualTo} ");
-            if (InSet != null) sb.AppendLine($"{nameof(InSet)}: {string.Join("; ",InSet)} ");
+            if (InSet != null) sb.AppendLine($"{nameof(InSet)}: {string.Join("; ", InSet)} ");
             if (GreaterThan != null) sb.AppendLine($"{nameof(GreaterThan)}: {GreaterThan} ");
             if (GreaterThanOrEqualTo != null) sb.AppendLine($"{nameof(GreaterThanOrEqualTo)}: {GreaterThanOrEqualTo} ");
             if (LessThan != null) sb.AppendLine($"{nameof(LessThan)}: {LessThan} ");

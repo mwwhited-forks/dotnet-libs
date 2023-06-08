@@ -11,18 +11,18 @@ namespace Eliassen.System.Linq.Expressions
     /// Expression visitor to replace string functions with the matching 
     /// functions that end with a StringComparison parameter
     /// </summary>
-    public class StringIgnoreCaseReplacerExpressionVisitor : ExpressionVisitor, IPostBuildExpressionVisitor
+    public class StringComparisonReplacementExpressionVisitor : ExpressionVisitor, IPostBuildExpressionVisitor
     {
         private readonly StringComparison _stringComparison;
         private readonly ILogger _logger;
 
         /// <inheritdoc/>
-        public StringIgnoreCaseReplacerExpressionVisitor(
-            ILogger<StringIgnoreCaseReplacerExpressionVisitor>? logger = null,
+        public StringComparisonReplacementExpressionVisitor(
+            ILogger<StringComparisonReplacementExpressionVisitor>? logger = null,
             StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
             )
         {
-            _logger = logger ?? new ConsoleLogger<StringIgnoreCaseReplacerExpressionVisitor>();
+            _logger = logger ?? new ConsoleLogger<StringComparisonReplacementExpressionVisitor>();
             _stringComparison = stringComparison;
         }
 
@@ -46,7 +46,7 @@ namespace Eliassen.System.Linq.Expressions
             if (method == null)
                 goto done;
 
-            if (input.Object?.GetAttributes().OfType<ExcludeCaseReplacerAttribute>().Any() ?? false) goto done;
+            if (input.Object?.GetAttributes().OfType<IgnoreStringComparisonReplacementAttribute>().Any() ?? false) goto done;
 
             var args = input.Arguments.Concat(new[] { Expression.Constant(_stringComparison) });
             var replacement = Expression.Call(input.Object, method, args);

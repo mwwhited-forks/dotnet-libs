@@ -3,7 +3,7 @@
 namespace Eliassen.System.ComponentModel.Search
 {
     [AttributeUsage(AttributeTargets.Property)]
-    public class ExcludeCaseReplacerAttribute : Attribute
+    public class IgnoreStringComparisonReplacementAttribute : Attribute
     {
     }
 }

@@ -21,7 +21,7 @@ namespace Nucleus.Core.Contracts.Models
         public const string Module = nameof(Module);
         public const string UserStatus = nameof(UserStatus);
 
-        [ExcludeCaseReplacer]
+        [IgnoreStringComparisonReplacement]
         public string? UserId { get; set; }
         public string? UserName { get; set; }
 
