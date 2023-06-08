@@ -6,6 +6,11 @@ This enables for a common means to query anything using the `IQueryable<T>` mode
 by this engine are a common reusable pattern for writing queries that support searching, filtering, sorting 
 and paging.  This may be used directly in .Net or transparently as part of ASP.Net Core MVC Actions.
 
+## Known issues and suggested future features
+
+* Currently if filters are used NULL values are excluded. 
+* Add the ability to recursively declare *OR* / *AND* FilterParameters
+
 ## Class Registration 
 
 ### ASP.Net MVC

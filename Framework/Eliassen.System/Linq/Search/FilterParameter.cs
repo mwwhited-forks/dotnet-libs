@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System;
+using System.Linq;
+using System.Text;
 using System.Text.Json.Serialization;
 
 namespace Eliassen.System.Linq.Search
@@ -47,6 +49,7 @@ namespace Eliassen.System.Linq.Search
         /// </summary>
         [JsonPropertyName("gte")]
         public object? GreaterThanOrEqualTo { get; set; }
+
         /// <summary>
         /// `Less than`
         /// </summary>
@@ -57,6 +60,23 @@ namespace Eliassen.System.Linq.Search
         /// </summary>
         [JsonPropertyName("lte")]
         public object? LessThanOrEqualTo { get; set; }
+
+        ///// <summary>
+        ///// build `or` predicate chain
+        ///// </summary>
+        //[JsonPropertyName("or")]
+        //public FilterParameter[] Ors { get; set; }
+        ///// <summary>
+        ///// build `and` predicate chain
+        ///// </summary>
+        //[JsonPropertyName("and")]
+        //public FilterParameter[] Ands { get; set; }
+
+        ///// <summary>
+        ///// include null values if true
+        ///// </summary>
+        //[JsonPropertyName("isnull")]
+        //public bool OrNull { get; set; }
 
         /// <inheritdoc />
         public override string ToString()
@@ -69,6 +89,9 @@ namespace Eliassen.System.Linq.Search
             if (GreaterThanOrEqualTo != null) sb.AppendLine($"{nameof(GreaterThanOrEqualTo)}: {GreaterThanOrEqualTo} ");
             if (LessThan != null) sb.AppendLine($"{nameof(LessThan)}: {LessThan} ");
             if (LessThanOrEqualTo != null) sb.AppendLine($"{nameof(LessThanOrEqualTo)}: {LessThanOrEqualTo} ");
+            //if (Ors != null) sb.AppendLine($"{nameof(Ors)}: ({string.Join(" | ", (Ors ?? Array.Empty<FilterParameter>()).AsEnumerable())}) ");
+            //if (Ands != null) sb.AppendLine($"{nameof(Ands)}: ({string.Join(" | ", (Ands ?? Array.Empty<FilterParameter>()).AsEnumerable())}) ");
+            //if (OrNull != null) sb.AppendLine($"{nameof(OrNull)}: {OrNull} ");
             return sb.ToString().Trim();
         }
     }

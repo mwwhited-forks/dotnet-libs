@@ -10,5 +10,8 @@
         GreaterThan,
         GreaterThanOrEqualTo,
         NotEqualTo,
+        //Ors,
+        //Ands,
+        //OrNull,
     }
 }

@@ -60,11 +60,19 @@ namespace Eliassen.System.Linq.Expressions
 
             yield return BuildPredicate(expression, Operators.EqualTo, search.EqualTo, isSearchTerm);
             yield return BuildPredicate(expression, Operators.NotEqualTo, search.NotEqualTo, isSearchTerm);
+
             yield return BuildPredicate(expression, Operators.InSet, search.InSet, isSearchTerm);
+
             yield return BuildPredicate(expression, Operators.LessThan, search.LessThan, isSearchTerm);
             yield return BuildPredicate(expression, Operators.LessThanOrEqualTo, search.LessThanOrEqualTo, isSearchTerm);
+
             yield return BuildPredicate(expression, Operators.GreaterThan, search.GreaterThan, isSearchTerm);
             yield return BuildPredicate(expression, Operators.GreaterThanOrEqualTo, search.GreaterThanOrEqualTo, isSearchTerm);
+
+            //TODO: add support for these operations
+            //yield return BuildPredicate(expression, Operators.Ands, search.Ands, isSearchTerm);
+            //yield return BuildPredicate(expression, Operators.Ors, search.Ors, isSearchTerm);
+            //yield return BuildPredicate(expression, Operators.OrNull, search.OrNull, isSearchTerm);
         }
 
         private Expression<Func<TModel, bool>>? BuildPredicate(
