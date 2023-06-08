@@ -2,6 +2,7 @@
 using Eliassen.AspNetCore.Mvc.SwaggerGen;
 using Eliassen.System.Accessors;
 using Eliassen.System.Linq.Search;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
@@ -14,32 +15,23 @@ namespace Eliassen.AspNetCore.Mvc.Extensions
     {
         public static IServiceCollection TryAddCommonOpenApiExtensions(this IServiceCollection services)
         {
-            services.TryAddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
-            services.TryAddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
+            services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<FormFileOperationFilter>>();
+            services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
+            services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
             services.AddControllers(opt =>
             {
                 opt.Conventions.Add(new ApiNamespaceControllerModelConvention());
-            });
-            services.AddSwaggerGen(setup =>
-            {
-                setup.OperationFilter<FormFileOperationFilter>();
             });
             return services;
         }
 
         public static IServiceCollection TryAddAspNetCoreSearchQuery(this IServiceCollection services)
         {
+            services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<SearchQueryOperationFilter>>();
+            services.AddSingleton<IConfigureOptions<MvcOptions>, AddMvcFilterOptions<SearchQueryResultFilter>>();
             services.AddAccessor<ISearchQuery>();
             services.TryAddSingleton<SearchQueryResultFilter>();
             services.TryAddSearchQueryExtensions();
-            services.AddControllers(opt =>
-            {
-                opt.Filters.Add(typeof(SearchQueryResultFilter));
-            });
-            services.AddSwaggerGen(setup =>
-            {
-                setup.OperationFilter<SearchQueryOperationFilter>();
-            });
 
             return services;
         }

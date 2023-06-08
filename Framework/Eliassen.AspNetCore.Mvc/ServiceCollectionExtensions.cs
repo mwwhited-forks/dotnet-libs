@@ -13,8 +13,8 @@ namespace Eliassen.AspNetCore.Mvc
     {
         public static IServiceCollection AddAspNetCoreExtensions(this IServiceCollection services)
         {
-            services.TryAddAspNetCoreSearchQuery();
             services.TryAddCommonOpenApiExtensions();
+            services.TryAddAspNetCoreSearchQuery();
 
             services.AddAccessor<CultureInfo>();
 
@@ -22,6 +22,7 @@ namespace Eliassen.AspNetCore.Mvc
             services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.TryAddTransient(sp => sp.GetRequiredService<IHttpContextAccessor>().HttpContext?.User ?? ClaimsPrincipal.Current);
 
+            services.AddSwaggerGen();
 
             return services;
         }

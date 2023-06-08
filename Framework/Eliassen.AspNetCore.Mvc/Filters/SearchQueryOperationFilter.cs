@@ -31,124 +31,133 @@ public class SearchQueryOperationFilter : IOperationFilter
 
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
-        //if (context.MethodInfo.ReturnType.IsAssignableTo(typeof(IPagedQueryResult)) )
-        //{
-        //    var requestType = new
-        //    {
-        //        methods = context.MethodInfo.GetCustomAttributes(true).OfType<HttpMethodAttribute>(),
-        //    };
-        //}
-
-        if (context.MethodInfo.ReturnType.IsAssignableTo(typeof(IQueryable)) && context.MethodInfo.ReturnType.IsGenericType)
+        try
         {
-            var elementType = context.MethodInfo.ReturnType.GetGenericArguments()[0];
-            var treeBuilder = (IExpressionTreeBuilder)ActivatorUtilities.CreateInstance(_serviceProvider, typeof(ExpressionTreeBuilder<>).MakeGenericType(elementType));
+            //if (context.MethodInfo.ReturnType.IsAssignableTo(typeof(IPagedQueryResult)) )
+            //{
+            //    var requestType = new
+            //    {
+            //        methods = context.MethodInfo.GetCustomAttributes(true).OfType<HttpMethodAttribute>(),
+            //    };
+            //}
 
-            var requestType = typeof(SearchQuery<>).MakeGenericType(elementType);
-            //var responseType = typeof(QueryResult<>).MakeGenericType(elementType);
-            var pagedResponseType = typeof(PagedQueryResult<>).MakeGenericType(elementType);
-
-            _logger.LogInformation(
-                $"{{{nameof(context.MethodInfo.DeclaringType)}}}::{{{nameof(context.MethodInfo)}}}:>{{{nameof(elementType)}}}",
-                context.MethodInfo.DeclaringType?.Name ?? "[Lambda]",
-                context.MethodInfo.Name,
-                elementType
-                );
-
-            var elementSchema = context.SchemaGenerator.GenerateSchema(elementType, context.SchemaRepository);
-            var requestSchema = context.SchemaGenerator.GenerateSchema(requestType, context.SchemaRepository);
-            //var responseSchema = _schemaGenerator.GenerateSchema(responseType, context.SchemaRepository);
-            var pagedResponseSchema = context.SchemaGenerator.GenerateSchema(pagedResponseType, context.SchemaRepository);
-            var contentTypes = (
-                from responseType in context.ApiDescription.SupportedResponseTypes
-                from format in responseType.ApiResponseFormats
-                where format.MediaType.EndsWith("/json")
-                select format.MediaType
-                ).Distinct();
-
-            if (context.ApiDescription.HttpMethod == "POST")
+            if (context.MethodInfo.ReturnType.IsAssignableTo(typeof(IQueryable)) && context.MethodInfo.ReturnType.IsGenericType)
             {
-                var schema = UpdateRequestSchema(elementType, context.SchemaRepository, requestSchema, treeBuilder);
+                var elementType = context.MethodInfo.ReturnType.GetGenericArguments()[0];
+                var treeBuilder = (IExpressionTreeBuilder)ActivatorUtilities.CreateInstance(_serviceProvider, typeof(ExpressionTreeBuilder<>).MakeGenericType(elementType));
 
-                ApplyContent(
-                    (operation.RequestBody ??= new OpenApiRequestBody()).Content,
-                    requestSchema.Reference,
-                    contentTypes
+                var requestType = typeof(SearchQuery<>).MakeGenericType(elementType);
+                //var responseType = typeof(QueryResult<>).MakeGenericType(elementType);
+                var pagedResponseType = typeof(PagedQueryResult<>).MakeGenericType(elementType);
+
+                _logger.LogInformation(
+                    $"{{{nameof(context.MethodInfo.DeclaringType)}}}::{{{nameof(context.MethodInfo)}}}:>{{{nameof(elementType)}}}",
+                    context.MethodInfo.DeclaringType?.Name ?? "[Lambda]",
+                    context.MethodInfo.Name,
+                    elementType
                     );
 
-                //TODO: add request type for form data
-                //var formDataTypes = new[] { "multipart/form-data", "multipart/form-data" };
-            }
-            else
-            {
-                var request = UpdateRequestSchema(elementType, context.SchemaRepository, requestSchema, treeBuilder);
+                var elementSchema = context.SchemaGenerator.GenerateSchema(elementType, context.SchemaRepository);
+                var requestSchema = context.SchemaGenerator.GenerateSchema(requestType, context.SchemaRepository);
+                //var responseSchema = _schemaGenerator.GenerateSchema(responseType, context.SchemaRepository);
+                var pagedResponseSchema = context.SchemaGenerator.GenerateSchema(pagedResponseType, context.SchemaRepository);
+                var contentTypes = (
+                    from responseType in context.ApiDescription.SupportedResponseTypes
+                    from format in responseType.ApiResponseFormats
+                    where format.MediaType.EndsWith("/json")
+                    select format.MediaType
+                    ).Distinct();
 
-                context.SchemaRepository.TryLookupByType(typeof(FilterParameter), out var filterSchemaReference);
-                var filterSchema = UpdateRequestSchema(elementType, context.SchemaRepository, filterSchemaReference, treeBuilder);
-
-                context.SchemaRepository.TryLookupByType(typeof(OrderDirections), out var orderSchema);
-
-                //Type getPropertyType(string propertyName) => elementType.GetProperty(propertyName)?.PropertyType;
-
-                //(OpenApiSchema item, OpenApiSchema array) getSchema(string propertyName) =>
-                //    (
-                //    context.SchemaRepository.TryLookupByType(elementType.GetProperty(propertyName)?.PropertyType, out var ps) ? ps : null,
-                //    context.SchemaRepository.TryLookupByType(elementType.GetProperty(propertyName)?.PropertyType, out var pas) ? pas : null
-                //    );
-
-                var parameters = operation.Parameters ??= new List<OpenApiParameter>();
-                //TODO: build query request
-                foreach (var property in request.Properties)
+                if (context.ApiDescription.HttpMethod == "POST")
                 {
-                    if (property.Key.Equals(nameof(ISearchQuery.Filter), StringComparison.InvariantCultureIgnoreCase))
+                    var schema = UpdateRequestSchema(elementType, context.SchemaRepository, requestSchema, treeBuilder);
+
+                    ApplyContent(
+                        (operation.RequestBody ??= new OpenApiRequestBody()).Content,
+                        requestSchema.Reference,
+                        contentTypes
+                        );
+
+                    //TODO: add request type for form data
+                    //var formDataTypes = new[] { "multipart/form-data", "multipart/form-data" };
+                }
+                else
+                {
+                    var request = UpdateRequestSchema(elementType, context.SchemaRepository, requestSchema, treeBuilder);
+
+                    context.SchemaRepository.TryLookupByType(typeof(FilterParameter), out var filterSchemaReference);
+                    var filterSchema = UpdateRequestSchema(elementType, context.SchemaRepository, filterSchemaReference, treeBuilder);
+
+                    context.SchemaRepository.TryLookupByType(typeof(OrderDirections), out var orderSchema);
+
+                    //Type getPropertyType(string propertyName) => elementType.GetProperty(propertyName)?.PropertyType;
+
+                    //(OpenApiSchema item, OpenApiSchema array) getSchema(string propertyName) =>
+                    //    (
+                    //    context.SchemaRepository.TryLookupByType(elementType.GetProperty(propertyName)?.PropertyType, out var ps) ? ps : null,
+                    //    context.SchemaRepository.TryLookupByType(elementType.GetProperty(propertyName)?.PropertyType, out var pas) ? pas : null
+                    //    );
+
+                    var parameters = operation.Parameters ??= new List<OpenApiParameter>();
+                    //TODO: build query request
+                    foreach (var property in request.Properties)
                     {
-                        //TODO: ignore filter support for now.
-                        //var fitlerableProperties = ExpressionTreeBuilder.GetFilterablePropertyNames(elementType);
-                        //foreach (var filter in fitlerableProperties)
-                        //{
-                        //    var localFilterSchema = getSchema(filter);
-                        //    foreach (var filtertype in filterSchema.Properties)
-                        //    {
-                        //        parameters.Add(new OpenApiParameter()
-                        //        {
-                        //            Name = $"{property.Key}.{filter}.{filtertype.Key}",
-                        //            Schema = (filtertype.Key == "in") ? localFilterSchema.array : localFilterSchema.item,
-                        //            In = ParameterLocation.Query,
-                        //        });
-                        //    }
-                        //}
-                    }
-                    else if (property.Key.Equals(nameof(ISearchQuery.OrderBy), StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        var sortableProperties = treeBuilder.GetSortablePropertyNames();
-                        foreach (var sort in sortableProperties)
+                        if (property.Key.Equals(nameof(ISearchQuery.Filter), StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            //TODO: ignore filter support for now.
+                            //var fitlerableProperties = ExpressionTreeBuilder.GetFilterablePropertyNames(elementType);
+                            //foreach (var filter in fitlerableProperties)
+                            //{
+                            //    var localFilterSchema = getSchema(filter);
+                            //    foreach (var filtertype in filterSchema.Properties)
+                            //    {
+                            //        parameters.Add(new OpenApiParameter()
+                            //        {
+                            //            Name = $"{property.Key}.{filter}.{filtertype.Key}",
+                            //            Schema = (filtertype.Key == "in") ? localFilterSchema.array : localFilterSchema.item,
+                            //            In = ParameterLocation.Query,
+                            //        });
+                            //    }
+                            //}
+                        }
+                        else if (property.Key.Equals(nameof(ISearchQuery.OrderBy), StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            var sortableProperties = treeBuilder.GetSortablePropertyNames();
+                            foreach (var sort in sortableProperties)
+                            {
+                                parameters.Add(new OpenApiParameter()
+                                {
+                                    Name = $"{property.Key}.{sort}",
+                                    Schema = orderSchema,
+                                    In = ParameterLocation.Query,
+                                });
+                            }
+                        }
+                        else
                         {
                             parameters.Add(new OpenApiParameter()
                             {
-                                Name = $"{property.Key}.{sort}",
-                                Schema = orderSchema,
+                                Name = property.Key,
+                                Description = property.Value.Description,
+                                Schema = property.Value,
                                 In = ParameterLocation.Query,
                             });
                         }
                     }
-                    else
-                    {
-                        parameters.Add(new OpenApiParameter()
-                        {
-                            Name = property.Key,
-                            Description = property.Value.Description,
-                            Schema = property.Value,
-                            In = ParameterLocation.Query,
-                        });
-                    }
-                }
 
+                }
+                ApplyContent(
+                    (operation.Responses["200"] ??= new OpenApiResponse()).Content,
+                    pagedResponseSchema.Reference,
+                    context.ApiDescription.SupportedResponseTypes.SelectMany(m => m.ApiResponseFormats.Select(i => i.MediaType)).Distinct()
+                    );
             }
-            ApplyContent(
-                (operation.Responses["200"] ??= new OpenApiResponse()).Content,
-                pagedResponseSchema.Reference,
-                context.ApiDescription.SupportedResponseTypes.SelectMany(m => m.ApiResponseFormats.Select(i => i.MediaType)).Distinct()
-                );
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Error: {nameof(Exception)}", ex.Message);
+            _logger.LogDebug($"Error: {nameof(Exception)}", ex);
+            throw;
         }
     }
 
