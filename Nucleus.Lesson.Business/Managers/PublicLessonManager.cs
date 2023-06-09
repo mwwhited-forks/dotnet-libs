@@ -4,6 +4,7 @@ using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
 using Nucleus.Lesson.Contracts.Services;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Nucleus.Lesson.Business.Managers
@@ -40,5 +41,6 @@ namespace Nucleus.Lesson.Business.Managers
 
         public async Task<List<LessonModel>?> GetRecentLessons(int i) =>
             await _lessonService.GetRecentAsync(i, true);
+        public IQueryable<LessonModel> QueryLessons() => _lessonService.Query();
     }
 }
