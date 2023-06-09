@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using Nucleus.Core.Contracts.Collections;
 using Nucleus.Core.Contracts.Interfaces;
@@ -31,8 +32,27 @@ namespace Nucleus.Core.Persistence.Services
             _userProjection = Builders<UserCollection>.Projection.Expression(Projections.Users);
         }
 
-        public IQueryable<User> Query() =>
-            _usersCollection.AsQueryable().Select(Projections.Users);
+        public IQueryable<User> Query() => _usersCollection.AsQueryable().Select(Projections.Users);
+//        {
+//            var collection = _usersCollection;
+//            var bson = BsonDocument.Parse(@"{
+//      ""CreatedOn-Built"": {
+//          $add: [
+//            { $toLong: {$multiply:[ { $arrayElemAt: [""$createdOn"",1] }, 60, 1000 ]}},
+//            { $toLong: [{ $arrayElemAt: [""$createdOn"",0] }]}
+//          ]
+//      }
+//}");
+//            var projection = Builders<UserCollection>.Projection
+//                .Combine(bson)
+//                .Include(u => u.UserId)
+//                .Include(u => u.CreatedOn)
+//                ;
+//            var aggregate = _usersCollection.Aggregate().Project(projection);
+//            var items = aggregate.ToList();
+//            var x = 1;
+//            return _usersCollection.AsQueryable().Select(Projections.Users);
+//        }
 
         public Task<User?> GetByUserIdAsync(string userId) =>
             Task.FromResult(Query().FirstOrDefault(u => u.UserId == userId));

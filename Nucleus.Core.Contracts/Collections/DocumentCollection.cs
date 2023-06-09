@@ -32,6 +32,7 @@ namespace Nucleus.Core.Contracts.Collections
         public string? DocumentCategory { get; set; }
 
         [BsonElement("createdOn")]
+        [BsonRepresentation(BsonType.DateTime)]
         public DateTimeOffset? CreatedOn { get; set; }
     }
 }

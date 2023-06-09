@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Nucleus.Dataloader.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "$(SolutionDir)\\Conf\\MongoDb"
+    }
+  }
+}

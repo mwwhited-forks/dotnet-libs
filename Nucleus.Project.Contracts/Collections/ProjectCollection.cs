@@ -28,6 +28,7 @@ namespace Nucleus.Project.Contracts.Collections
         [BsonElement("enabled")]
         public Boolean? Enabled { get; set; }
         [BsonElement("createdOn")]
+        [BsonRepresentation(BsonType.DateTime)]
         public DateTimeOffset CreatedOn { get; set; }
     }
 }

@@ -28,6 +28,7 @@ namespace Nucleus.Blog.Contracts.Collections
         [BsonElement("author")]
         public string? Author { get; set; }
         [BsonElement("createdOn")]
+        [BsonRepresentation(BsonType.DateTime)]
         public DateTimeOffset CreatedOn { get; set; }
     }
 }

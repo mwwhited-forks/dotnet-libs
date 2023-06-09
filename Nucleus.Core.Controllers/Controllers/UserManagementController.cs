@@ -2,7 +2,9 @@
 using Eliassen.System.Linq.Search;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using Nucleus.Core.Contracts;
+using Nucleus.Core.Contracts.Collections;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.Filters;
@@ -49,11 +51,11 @@ namespace Nucleus.Core.Controllers.Controllers
         [HttpPost("Query")]
         public IQueryable<User> ListUsers() => _usersManager.QueryUsers();
 
-        /// <summary>
-        /// Query all modules
-        /// </summary>
-        /// <returns></returns>
-        [Authorize]
+            /// <summary>
+            /// Query all modules
+            /// </summary>
+            /// <returns></returns>
+            [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpGet("ApplicationPermissions")]
         public IQueryable<Module> GetApplicationPermissions() => _usersManager.QueryModules();
