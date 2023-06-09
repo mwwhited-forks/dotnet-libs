@@ -42,7 +42,7 @@ namespace Nucleus.Lesson.Persistence.Services
                 Title = item.Title,
                 CreatedOn = item.CreatedOn,
                 Enabled = item.Enabled,
-                CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
+                //CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
             });
         }
 
