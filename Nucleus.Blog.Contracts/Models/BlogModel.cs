@@ -4,9 +4,11 @@ using System.Collections.Generic;
 
 namespace Nucleus.Blog.Contracts.Models
 {
+    [SearchTermDefault(SearchTermDefaults.Contains)]
     public class BlogModel
     {
         [NotSearchable]
+        [IgnoreStringComparisonReplacement]
         public string? BlogId { get; set; }
         public string? Title { get; set; }
         [DefaultSort(priority: 1)]

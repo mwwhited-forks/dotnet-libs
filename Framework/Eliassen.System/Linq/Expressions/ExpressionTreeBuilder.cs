@@ -12,7 +12,6 @@ using System.Reflection;
 
 namespace Eliassen.System.Linq.Expressions
 {
-
     public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
     {
         private const string PropertyMap = nameof(PropertyMap);
@@ -36,7 +35,7 @@ namespace Eliassen.System.Linq.Expressions
             TryGetPredicateExpression(name, value, out var expression, stringComparison, isSearchTerm) ? expression : null;
 
         public Expression<Func<TModel, bool>>? BuildExpression(object? queryParameter, StringComparison stringComparison, bool isSearchTerm) =>
-            ExpressionExtensions.OrChain(
+            ExpressionExtensions.OrElse(
                 from searchExpression in GetSearchableExpressions(stringComparison)
                 let builtExpression = BuildPredicate(searchExpression.expression, Operators.EqualTo, queryParameter, isSearchTerm)
                 where builtExpression != null
@@ -72,7 +71,7 @@ namespace Eliassen.System.Linq.Expressions
             Expression<Func<TModel, object>>? expression,
             FilterParameter? search,
             bool isSearchTerm
-            ) => GetPredicates(expression, search, isSearchTerm).AndChain();
+            ) => GetPredicates(expression, search, isSearchTerm).AndAlso();
 
         private Expression<Func<TModel, bool>>? BuildPredicate(
             Expression<Func<TModel, object>>? expression,

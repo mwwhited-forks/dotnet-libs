@@ -24,6 +24,33 @@ namespace Eliassen.System.Linq
             return list;
         }
 
+        public static async Task<IEnumerable<TModel>> AsEnumerableAsync<TModel>(
+            this IAsyncEnumerable<TModel> items,
+            CancellationToken token = default
+            )
+        {
+            var list = new List<TModel>();
+            await foreach (var item in items)
+            {
+                if (token.IsCancellationRequested) break;
+                list.Add(item);
+            }
+            return list.AsReadOnly();
+        }
+
+        public static async IAsyncEnumerable<TModel> AsAsyncEnumerable<TModel>(
+            this Task<IEnumerable<TModel>> items,
+            [EnumeratorCancellation] CancellationToken cancellationToken = default
+            )
+        {
+            foreach (var item in await items)
+            {
+                if (cancellationToken.IsCancellationRequested) break;
+                yield return item;
+                await Task.Yield();
+            }
+        }
+
         public static async IAsyncEnumerable<TModel> AsAsyncEnumerable<TModel>(
             this IEnumerable<TModel> items,
             [EnumeratorCancellation] CancellationToken cancellationToken = default)

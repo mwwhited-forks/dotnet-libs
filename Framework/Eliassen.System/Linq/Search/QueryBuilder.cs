@@ -1,5 +1,7 @@
-﻿using Eliassen.System.Internal;
+﻿using Eliassen.System.ComponentModel.Search;
+using Eliassen.System.Internal;
 using Eliassen.System.Linq.Expressions;
+using Eliassen.System.Reflection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,11 @@ namespace Eliassen.System.Linq.Search
         /// </summary>
         public const int DefaultPageSize = 10;
 
+        /// <summary>
+        /// Get the underlying element type for a given IQueryable
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
         public static Type? GetElementType(IQueryable query)
         {
             var interfaces = from inf in query.GetType().GetInterfaces()
@@ -78,20 +85,20 @@ namespace Eliassen.System.Linq.Search
     {
         private readonly ISortBuilder<TModel> _sortBuilder;
         private readonly IExpressionTreeBuilder<TModel> _expressionBuilder;
-        private readonly IEnumerable<IPostBuildExpressionVisitor> _visitors;
+        private readonly IEnumerable<IPostBuildExpressionVisitor> _postBuildVisitors;
         private readonly ILogger _logger;
 
         /// <inheritdoc/>
         public QueryBuilder(
             ISortBuilder<TModel> sortBuilder,
             IExpressionTreeBuilder<TModel> expressionBuilder,
-            IEnumerable<IPostBuildExpressionVisitor>? visitors = null,
+            IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
             ILogger<QueryBuilder>? logger = null
             )
         {
             _sortBuilder = sortBuilder;
             _expressionBuilder = expressionBuilder;
-            _visitors = visitors ?? Enumerable.Empty<IPostBuildExpressionVisitor>();
+            _postBuildVisitors = postBuildVisitors ?? Enumerable.Empty<IPostBuildExpressionVisitor>();
             _logger = logger ?? new ConsoleLogger<QueryBuilder>();
         }
 
@@ -118,6 +125,15 @@ namespace Eliassen.System.Linq.Search
 
         private IOrderedQueryable<TModel> BuildFrom(IQueryable<TModel> query, ISearchQuery searchQuery, StringComparison stringComparison)
         {
+            var queryIntercepts = query.ElementType.GetAttributes<ISearchQueryIntercept>();
+            foreach (var interceptor in queryIntercepts)
+            {
+                _logger.LogDebug($"Intercepted by: {{{nameof(interceptor)}}}", interceptor);
+                searchQuery = interceptor.Intercept(searchQuery);
+            }
+
+            _logger.LogInformation($"Build query for {{{nameof(searchQuery)}}}", searchQuery);
+
             var searched = SearchBy(query, searchQuery, stringComparison, true);
             var filtered = FilterBy(searched, searchQuery, stringComparison);
 
@@ -130,15 +146,18 @@ namespace Eliassen.System.Linq.Search
                     );
             }
 
-            var visited = filtered;
-            foreach (var visitor in _visitors)
-            {
-                var expression = visitor.Visit(visited.Expression);
-                if (expression == null) continue;
-                visited = query.Provider.CreateQuery<TModel>(expression);
-            }
+            var sorted = SortBy(filtered, searchQuery);
 
-            var sorted = SortBy(visited, searchQuery);
+            if (_postBuildVisitors.Any())
+            {
+                var toVisit = sorted.Expression;
+                foreach (var visitor in _postBuildVisitors)
+                {
+                    _logger.LogDebug($"Visited by: {{{nameof(visitor)}}}", visitor);
+                    toVisit = visitor.Visit(toVisit);
+                }
+                sorted = (IOrderedQueryable<TModel>)query.Provider.CreateQuery<TModel>(toVisit);
+            }
 
             return sorted;
         }

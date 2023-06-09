@@ -36,7 +36,7 @@ namespace Nucleus.Core.Controllers.Controllers
         [HttpGet("ApplicationPermissions")]
         public IQueryable<Module> GetApplicationPermissions() => _usersManager.QueryModules();
 
-        [Authorize]
+        [AllowAnonymous]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpGet("ApplicationPemissions")]
         [Obsolete("Change to the `ApplicationPemissions` /api/UserManagement/ApplicationPermissions")]

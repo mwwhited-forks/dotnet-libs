@@ -3,9 +3,11 @@ using System;
 
 namespace Nucleus.Lesson.Contracts.Models
 {
+    [SearchTermDefault(SearchTermDefaults.Contains)]
     public class LessonModel
     {
         [NotSearchable]
+        [IgnoreStringComparisonReplacement]
         public string? LessonId { get; set; }
         public string? Title { get; set; }
         public string? MediaLink { get; set; }
