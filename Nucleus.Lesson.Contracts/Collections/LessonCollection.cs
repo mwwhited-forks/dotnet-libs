@@ -28,5 +28,29 @@ namespace Nucleus.Lesson.Contracts.Collections
         public Boolean? Enabled { get; set; }
         [BsonElement("createdOn")]
         public DateTimeOffset CreatedOn { get; set; }
+
+        [BsonElement("attendees")]
+        public string[]? Attendees { get; set; }
+
+        [BsonElement("teacher")]
+        public string? Teacher { get; set; }
+
+        [BsonElement("duration")]
+        public int? Duration { get; set; }
+
+        [BsonElement("tags")]
+        public string[]? Tags { get; set; }
+
+        [BsonElement("price")]
+        public double Price { get; set; }
+
+        [BsonElement("goals")]
+        public string[]? Goals { get; set; }
+
+        [BsonElement("startdatetime")]
+        public DateTimeOffset StartDateTime { get; set; }
+
+        [BsonElement("enddatetime")]
+        public DateTimeOffset? EndDateTime { get; set; }
     }
 }

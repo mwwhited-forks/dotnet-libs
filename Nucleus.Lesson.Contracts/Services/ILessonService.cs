@@ -2,6 +2,7 @@
 using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Nucleus.Lesson.Contracts.Services
@@ -28,5 +29,6 @@ namespace Nucleus.Lesson.Contracts.Services
         Task UpdateAsync(LessonModel updatedBlog);
 
         Task RemoveAsync(string id);
+        IQueryable<LessonModel> Query();
     }
 }

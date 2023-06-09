@@ -8,7 +8,11 @@ using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
 using Nucleus.Lesson.Contracts.Services;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using Nucleus.Core.Contracts.Models;
+using Nucleus.Lesson.Contracts.Collections.DbSettings;
+using System;
 
 namespace Nucleus.Lesson.Persistence.Services
 {
@@ -40,13 +44,25 @@ namespace Nucleus.Lesson.Persistence.Services
                 PreviewImage= item.PreviewImage,
                 Preview = item.Preview,
                 Title = item.Title,
-                CreatedOn = item.CreatedOn,
+                //CreatedOn = item.CreatedOn,
                 Enabled = item.Enabled,
+                Attendees = item.Attendees,
+                Teacher = item.Teacher,
+                Duration = item.Duration,
+                //StartDateTime = item.StartDateTime,
+                //EndDateTime = GetEndDateTime(item.StartDateTime, item.Duration),
+                Goals = item.Goals,
+                Price = item.Price,
+                Tags = item.Tags,
                 //CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
             });
         }
 
-#warning retire this
+        public DateTimeOffset GetEndDateTime(DateTimeOffset startDateTime, int? duration)
+        {
+            return startDateTime.AddMinutes(Convert.ToDouble(duration));
+        }
+
         // need to extend/re-work this so I do not pass in multiple parameters to each method, just a proper filter item from the business layer
         private FilterDefinition<LessonCollection> GetLessonsPredicateBuilder(bool onlyActive, LessonsFilterItem? filterItems)
         {
@@ -57,8 +73,8 @@ namespace Nucleus.Lesson.Persistence.Services
             var builder = Builders<LessonCollection>.Filter;
             var filter = builder.Empty;
 
-            if (onlyActive)
-                filter &= builder.AnyEq("enabled", true);
+            //if (onlyActive)
+            //    filter &= builder.AnyEq("enabled", true);
 
             if (filterItems != null && !string.IsNullOrWhiteSpace(filterItems.InputValue))
             {
@@ -76,12 +92,41 @@ namespace Nucleus.Lesson.Persistence.Services
             if (pagingModel.SortDirection == "descend")
                 sortDefinition = $"{{ {pagingModel.SortBy}: -1 }}";
 
-            return await _lessonsCollection.Find(GetLessonsPredicateBuilder(onlyActive, filterItems))
+            var bob = await _lessonsCollection.Find(GetLessonsPredicateBuilder(onlyActive, filterItems))
                 .Skip((pagingModel.CurrentPage - 1) * pagingModel.PageSize)
                 .Limit(pagingModel.PageSize)
                 .Sort(sortDefinition)
                 .Project(_lessonProjection)
                 .ToListAsync();
+            var joe = new List<LessonModel>
+            {
+                new LessonModel
+                {
+                    Title = "Test",
+                    Teacher = "John Smith",
+                    Enabled = true
+                },
+                new LessonModel
+                {
+                    Title = "Test2",
+                    Teacher = "Tony Tonyton",
+                    Enabled = true
+                },
+                new LessonModel
+                {
+                    Title = "Test3",
+                    Teacher = "Joe Joeyson",
+                    Enabled = true
+                },
+                new LessonModel
+                {
+                    Title = "Test4",
+                    Teacher = "adele test",
+                    Enabled = true
+                },
+
+            };
+            return bob;
         }
 #warning retire this
         public async Task<long> GetPagedCountAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive) =>
@@ -116,5 +161,7 @@ namespace Nucleus.Lesson.Persistence.Services
         public async Task RemoveAsync(string id) =>
             await _lessonsCollection.DeleteOneAsync(x => x.LessonId == id);
 
+        public IQueryable<LessonModel> Query() =>
+            _lessonsCollection.AsQueryable().Select(Projections.Lessons);
     }
 }
