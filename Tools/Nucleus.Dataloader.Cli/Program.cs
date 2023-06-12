@@ -1,7 +1,9 @@
 ﻿using Microsoft.Extensions.FileSystemGlobbing;
 using MongoDB.Bson;
+using MongoDB.Bson.IO;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
+using System.Text.Json;
 
 namespace Nucleus.Dataloader.Cli
 {
@@ -42,10 +44,18 @@ namespace Nucleus.Dataloader.Cli
 
                     item["createdOn"] = value ?? DateTime.UtcNow;
 
-                    collection.InsertOne(item.AsBsonDocument);
+                    //  collection.InsertOne(item.AsBsonDocument);
                 }
 
                 Console.WriteLine($" => {doc}");
+
+                //using (var fileWriter = File.Create(file))
+                //using (var textWriter = new StreamWriter(fileWriter))
+                //{
+                //    BsonSerializer.Serialize(textWriter, bsonArray);
+                //}
+
+                File.WriteAllText(file, bsonArray.ToString());
             }
         }
     }
