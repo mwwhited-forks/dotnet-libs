@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 using System;
 
@@ -24,6 +26,11 @@ namespace Eliassen.MongoDB.Extensions
             var database = client.GetDatabase(settings.Value.DatabaseName);
             var proxy = MongoDispatchProxy.Create<TDatabase>(database, settings.Value);
             return proxy;
+        }
+
+        static MongoDatabaseFactory()
+        {
+            BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(global::MongoDB.Bson.BsonType.DateTime));
         }
     }
 }

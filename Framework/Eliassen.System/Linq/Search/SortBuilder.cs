@@ -23,6 +23,8 @@ namespace Eliassen.System.Linq.Search
             IExpressionTreeBuilder<TModel> treeBuilder
             )
         {
+            var stringComparer = StringComparer.InvariantCultureIgnoreCase;
+
             var sortLookup = treeBuilder.PropertyExpressions();
 
             var orderBys = searchRequest.OrderBy;
@@ -30,11 +32,11 @@ namespace Eliassen.System.Linq.Search
             var compositeSortMap =
                   sortLookup.Select(kvp => (kvp.Key, Expression: kvp.Value, Weight: 2))
                   .GroupBy(k => k.Key).Select(i => (i.Key, i.OrderBy(x => x.Weight).First().Expression))
-                  .ToDictionary(k => k.Key, v => v.Expression, StringComparer.InvariantCultureIgnoreCase)
+                  .ToDictionary(k => k.Key, v => v.Expression, stringComparer)
                   ;
 
-            var unmatchedKeys = searchRequest.OrderBy.Keys.Except(compositeSortMap.Keys);
-            var matchedKeys = searchRequest.OrderBy.Keys.Intersect(compositeSortMap.Keys);
+            var unmatchedKeys = searchRequest.OrderBy.Keys.Except(compositeSortMap.Keys, stringComparer);
+            var matchedKeys = searchRequest.OrderBy.Keys.Intersect(compositeSortMap.Keys, stringComparer);
 
             if (unmatchedKeys.Any())
             {
@@ -44,7 +46,7 @@ namespace Eliassen.System.Linq.Search
             if (!matchedKeys.Any() && treeBuilder.DefaultSortOrder().Any())
             {
                 orderBys = treeBuilder.DefaultSortOrder()
-                  .ToDictionary(k => k.column, v => v.direction, StringComparer.InvariantCultureIgnoreCase);
+                  .ToDictionary(k => k.column, v => v.direction, stringComparer);
                 _logger.LogInformation(
                     $"Applying default sort for {{type}}: {{{nameof(orderBys)}}}",
                     typeof(TModel),

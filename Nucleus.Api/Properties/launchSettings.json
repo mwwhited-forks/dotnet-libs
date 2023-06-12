@@ -26,7 +26,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "MongoDatabase__ConnectionString": "mongodb://localhost:27018",
-        "MongoDatabase__DatabaseName": "nucleus2"
+        "MongoDatabase__DatabaseName": "nucleus"
       },
       "applicationUrl": "http://localhost:5276;https://localhost:7276",
       "dotnetRunMessages": true,
