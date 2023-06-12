@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Nucleus.Core.Contracts.Models
+namespace Nucleus.Core.Persistence.Models
 {
     public class UserModule : PermissionBase
     {

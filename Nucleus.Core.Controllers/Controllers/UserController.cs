@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Nucleus.AspNetCore.Mvc.IdentityModel;
-using Nucleus.Core.Contracts.Managers;
-using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Persistence.Managers;
+using Nucleus.Core.Persistence.Models;
 using System.Threading.Tasks;
 
 namespace Nucleus.Core.Controllers.Controllers

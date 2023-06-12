@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Nucleus.Core.Contracts.Models.Keys
+namespace Nucleus.Core.Persistence.Models.Keys
 {
     public static class ConfigKeys
     {

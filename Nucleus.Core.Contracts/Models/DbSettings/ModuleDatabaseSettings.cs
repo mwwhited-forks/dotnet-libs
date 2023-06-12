@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Nucleus.Core.Contracts.Models.DbSettings
+namespace Nucleus.Core.Persistence.Models.DbSettings
 {
     public class ModuleDatabaseSettings
     {

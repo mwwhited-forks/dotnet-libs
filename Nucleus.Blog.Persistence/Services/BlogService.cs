@@ -1,11 +1,9 @@
-﻿using Microsoft.Extensions.Options;
-using MongoDB.Driver;
-using Nucleus.Blog.Contracts.Collections;
-using Nucleus.Blog.Contracts.Collections.DbSettings;
+﻿using MongoDB.Driver;
 using Nucleus.Blog.Contracts.Models;
 using Nucleus.Blog.Contracts.Models.Filters;
 using Nucleus.Blog.Contracts.Services;
-using Nucleus.Core.Contracts.Models;
+using Nucleus.Blog.Persistence.Collections;
+using Nucleus.Core.Persistence.Models;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,23 +13,20 @@ namespace Nucleus.Blog.Persistence.Services
 {
     public class BlogService : IBlogService
     {
-        private readonly IMongoCollection<BlogCollection> _blogsCollection;
+        private readonly IBlogMongoDatabase _db;
+
         // Projection for a single blog (getting all fields)
         private ProjectionDefinition<BlogCollection, BlogModel>? _blogProjection { get; set; }
         // Projection for a multiple blogs (getting most fields)
         private ProjectionDefinition<BlogCollection, BlogModel>? _blogsProjection { get; set; }
         private BsonCollectionBuilder<BlogModel, BlogCollection> _blogCollectionBuilder { get; set; }
 
-        public BlogService(IOptions<BlogDatabaseSettings> blogDatabaseSettings)
+
+        public BlogService(
+            IBlogMongoDatabase db
+            )
         {
-            var mongoClient = new MongoClient(
-                blogDatabaseSettings.Value.ConnectionString);
-
-            var mongoDatabase = mongoClient.GetDatabase(
-                blogDatabaseSettings.Value.DatabaseName);
-
-            _blogsCollection = mongoDatabase.GetCollection<BlogCollection>(
-                blogDatabaseSettings.Value.BlogsCollectionName);
+            _db = db;
 
             _blogCollectionBuilder = new BsonCollectionBuilder<BlogModel, BlogCollection>();
 
@@ -100,7 +95,7 @@ namespace Nucleus.Blog.Persistence.Services
             if (pagingModel.SortDirection == "descend")
                 sortDefinition = $"{{ {pagingModel.SortBy}: -1 }}";
 
-            return await _blogsCollection.Find(GetBlogsPredicateBuilder(onlyActive, filterItems))
+            return await _db.Blogs.Find(GetBlogsPredicateBuilder(onlyActive, filterItems))
                 .Skip((pagingModel.CurrentPage - 1) * pagingModel.PageSize)
                 .Limit(pagingModel.PageSize)
                 .Sort(sortDefinition)
@@ -110,38 +105,38 @@ namespace Nucleus.Blog.Persistence.Services
 
 #warning retire this
         public async Task<long> GetPagedCountAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive) =>
-           await _blogsCollection.Find(GetBlogsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
+           await _db.Blogs.Find(GetBlogsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
 
         public async Task<List<BlogModel>> GetRecentAsync(int i, bool onlyActive) =>
-            await _blogsCollection.Find(_ => true)
+            await _db.Blogs.Find(_ => true)
                 .Sort("{ \"createdOn\": -1}")
                 .Limit(i)
                 .Project(_blogsProjection).ToListAsync();
 
         public async Task<List<BlogModel>> GetAsync(bool onlyActive) =>
-            await _blogsCollection.Find(x => (onlyActive == false) || (x.Enabled == true && onlyActive == true)).Project(_blogsProjection).ToListAsync();
+            await _db.Blogs.Find(x => (onlyActive == false) || (x.Enabled == true && onlyActive == true)).Project(_blogsProjection).ToListAsync();
 
         public async Task<BlogModel?> GetAsync(string id, bool onlyActive) =>
-            await _blogsCollection.Find(x => x.BlogId == id).Project(_blogProjection).FirstOrDefaultAsync();
+            await _db.Blogs.Find(x => x.BlogId == id).Project(_blogProjection).FirstOrDefaultAsync();
 
         public async Task<BlogModel?> GetSlugAsync(string slug, bool onlyActive) =>
-            await _blogsCollection.Find(x => x.Slug == slug).Project(_blogProjection).FirstOrDefaultAsync();
+            await _db.Blogs.Find(x => x.Slug == slug).Project(_blogProjection).FirstOrDefaultAsync();
 
         public async Task<BlogModel> CreateAsync(BlogModel newBlog)
         {
             BlogCollection blog = _blogCollectionBuilder.BuildCollection(newBlog);
-            await _blogsCollection.InsertOneAsync(blog);
+            await _db.Blogs.InsertOneAsync(blog);
             newBlog.BlogId = blog.BlogId;
             return newBlog;
         }
 
         public async Task UpdateAsync(BlogModel updatedBlog) =>
-            await _blogsCollection.ReplaceOneAsync(x => x.BlogId == updatedBlog.BlogId, _blogCollectionBuilder.BuildCollection(updatedBlog));
+            await _db.Blogs.ReplaceOneAsync(x => x.BlogId == updatedBlog.BlogId, _blogCollectionBuilder.BuildCollection(updatedBlog));
 
         public async Task RemoveAsync(string id) =>
-            await _blogsCollection.DeleteOneAsync(x => x.BlogId == id);
+            await _db.Blogs.DeleteOneAsync(x => x.BlogId == id);
         public IQueryable<BlogModel> Query() =>
-            _blogsCollection.AsQueryable().Select(Projections.Blogs);
+            _db.Blogs.AsQueryable().Select(Projections.Blogs);
 
     }
 }

@@ -1,9 +1,9 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
+﻿using Nucleus.Core.Persistence.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Nucleus.Core.Contracts.Models
+namespace Nucleus.Core.Persistence.Models
 {
     public class UserAction: User
     {

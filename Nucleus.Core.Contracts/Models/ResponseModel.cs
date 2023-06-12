@@ -1,4 +1,4 @@
-﻿namespace Nucleus.Core.Contracts.Models
+﻿namespace Nucleus.Core.Persistence.Models
 {
     public class ResponseModel<T>
     {

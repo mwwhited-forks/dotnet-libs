@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
-using Nucleus.Core.Contracts.Collections;
-using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Persistence.Collections;
+using Nucleus.Core.Persistence.Models;
 using System;
 using System.Linq;
 using System.Linq.Expressions;

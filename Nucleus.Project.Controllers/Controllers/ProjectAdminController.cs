@@ -1,7 +1,7 @@
 ﻿using Eliassen.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Nucleus.Core.Contracts;
+using Nucleus.Core.Persistence;
 using Nucleus.Project.Contracts.Managers;
 using Nucleus.Project.Contracts.Models;
 using Nucleus.Project.Contracts.Models.Filters;

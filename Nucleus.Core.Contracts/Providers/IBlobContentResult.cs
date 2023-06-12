@@ -1,4 +1,4 @@
-﻿namespace Nucleus.Core.Contracts.Providers
+﻿namespace Nucleus.Core.Persistence.Providers
 {
     public interface IBlobContentResult
     {

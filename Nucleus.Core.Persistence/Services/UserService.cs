@@ -1,7 +1,7 @@
 ﻿using MongoDB.Driver;
-using Nucleus.Core.Contracts.Collections;
-using Nucleus.Core.Contracts.Interfaces;
-using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Persistence.Interfaces;
+using Nucleus.Core.Persistence.Models;
+using Nucleus.Core.Persistence.Collections;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using System.Linq;
 using System.Threading.Tasks;

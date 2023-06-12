@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Nucleus.Core.Contracts.Models
+namespace Nucleus.Core.Persistence.Models
 {
     public class BlobDto
     {

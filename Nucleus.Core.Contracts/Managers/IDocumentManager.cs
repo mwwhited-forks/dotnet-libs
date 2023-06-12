@@ -1,11 +1,11 @@
-﻿using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.Filters;
+﻿using Nucleus.Core.Persistence.Models;
+using Nucleus.Core.Persistence.Models.Filters;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Nucleus.Core.Contracts.Managers
+namespace Nucleus.Core.Persistence.Managers
 {
     public interface IDocumentManager
     {

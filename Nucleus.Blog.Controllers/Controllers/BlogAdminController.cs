@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Nucleus.Blog.Contracts.Managers;
 using Nucleus.Blog.Contracts.Models;
 using Nucleus.Blog.Contracts.Models.Filters;
-using Nucleus.Core.Contracts;
+using Nucleus.Core.Persistence;
 
 namespace Nucleus.Blog.Controllers.Controllers
 {

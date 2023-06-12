@@ -1,10 +1,9 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace Nucleus.Blog.Contracts.Collections
+namespace Nucleus.Blog.Persistence.Collections
 {
     [BsonIgnoreExtraElements]
     public class BlogCollection
@@ -14,7 +13,7 @@ namespace Nucleus.Blog.Contracts.Collections
         public string? BlogId { get; set; }
 
         [BsonElement("title")]
-        public string? Title {  get; set; }
+        public string? Title { get; set; }
         [BsonElement("slug")]
         public string? Slug { get; set; }
         [BsonElement("tags")]
@@ -24,7 +23,7 @@ namespace Nucleus.Blog.Contracts.Collections
         [BsonElement("content")]
         public string? Content { get; set; }
         [BsonElement("enabled")]
-        public Boolean? Enabled { get; set; }
+        public bool? Enabled { get; set; }
         [BsonElement("author")]
         public string? Author { get; set; }
         [BsonElement("createdOn")]

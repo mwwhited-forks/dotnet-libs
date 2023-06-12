@@ -1,12 +1,11 @@
-﻿using Microsoft.Extensions.Options;
-using MongoDB.Driver;
-using Nucleus.Core.Contracts.Models;
+﻿using MongoDB.Driver;
+using Nucleus.Core.Persistence.Models;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using Nucleus.Project.Contracts.Collections;
-using Nucleus.Project.Contracts.Collections.DbSettings;
 using Nucleus.Project.Contracts.Models;
 using Nucleus.Project.Contracts.Models.Filters;
 using Nucleus.Project.Contracts.Services;
+using Nucleus.Project.Persistence.Sevices;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -15,20 +14,16 @@ namespace Nucleus.Project.Persistence.Services
 {
     public class ProjectService : IProjectService
     {
-        private readonly IMongoCollection<ProjectCollection> _projectsCollection;
+        private readonly IProjectMongoDatabase _db;
+
         private readonly ProjectionDefinition<ProjectCollection, ProjectModel>? _projectProjection;
         private readonly BsonCollectionBuilder<ProjectModel, ProjectCollection> _projectCollectionBuilder;
 
-        public ProjectService(IOptions<ProjectDatabaseSettings> projectDatabaseSettings)
+        public ProjectService(
+            IProjectMongoDatabase db
+            )
         {
-            var mongoClient = new MongoClient(
-                projectDatabaseSettings.Value.ConnectionString);
-
-            var mongoDatabase = mongoClient.GetDatabase(
-                projectDatabaseSettings.Value.DatabaseName);
-
-            _projectsCollection = mongoDatabase.GetCollection<ProjectCollection>(
-                projectDatabaseSettings.Value.ProjectsCollectionName);
+            _db = db;
 
             _projectCollectionBuilder = new BsonCollectionBuilder<ProjectModel, ProjectCollection>();
 
@@ -44,7 +39,6 @@ namespace Nucleus.Project.Persistence.Services
                 Title = item.Title,
                 Enabled = item.Enabled,
                 CreatedOn = item.CreatedOn,
-                //CreatedOnUnix = item.CreatedOn.ToUnixTimeMilliseconds()
             });
         }
 
@@ -79,7 +73,7 @@ namespace Nucleus.Project.Persistence.Services
             if (pagingModel.SortDirection == "descend")
                 sortDefinition = $"{{ {renderSortByName(pagingModel.SortBy)}: -1 }}";
 
-            return await _projectsCollection.Find(GetProjectsPredicateBuilder(onlyActive, filterItems))
+            return await _db.Projects.Find(GetProjectsPredicateBuilder(onlyActive, filterItems))
                 .Sort(sortDefinition)
                 .Skip((pagingModel.CurrentPage - 1) * pagingModel.PageSize)
                 .Limit(pagingModel.PageSize)
@@ -90,19 +84,19 @@ namespace Nucleus.Project.Persistence.Services
 #warning retire this
         public async Task<long> GetPagedCountAsync(PagingModel pagingModel, ProjectsFilterItem? filterItems, bool onlyActive) =>
 
-         await _projectsCollection.Find(GetProjectsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
+         await _db.Projects.Find(GetProjectsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
 
         public async Task<List<ProjectModel>> GetAsync(bool onlyActive) =>
-            await _projectsCollection.Find(x => (onlyActive == false) || (x.Enabled == true && onlyActive == true)).Project(_projectProjection).ToListAsync();
+            await _db.Projects.Find(x => (onlyActive == false) || (x.Enabled == true && onlyActive == true)).Project(_projectProjection).ToListAsync();
 
         public async Task<ProjectModel?> GetAsync(string id, bool onlyActive) =>
-            await _projectsCollection.Find(x => x.ProjectId == id).Project(_projectProjection).FirstOrDefaultAsync();
+            await _db.Projects.Find(x => x.ProjectId == id).Project(_projectProjection).FirstOrDefaultAsync();
 
         public async Task<ProjectModel?> GetSlugAsync(string slug, bool onlyActive) =>
-            await _projectsCollection.Find(x => x.Slug == slug).Project(_projectProjection).FirstOrDefaultAsync();
+            await _db.Projects.Find(x => x.Slug == slug).Project(_projectProjection).FirstOrDefaultAsync();
 
         public async Task<List<ProjectModel>> GetRecentAsync(int i, bool onlyActive) =>
-          await _projectsCollection.Find(_ => true)
+          await _db.Projects.Find(_ => true)
               .Sort("{ \"createdOn.0\": -1}")
               .Limit(i)
               .Project(_projectProjection).ToListAsync();
@@ -110,16 +104,16 @@ namespace Nucleus.Project.Persistence.Services
         public async Task<ProjectModel> CreateAsync(ProjectModel newProject)
         {
             ProjectCollection project = _projectCollectionBuilder.BuildCollection(newProject);
-            await _projectsCollection.InsertOneAsync(project);
+            await _db.Projects.InsertOneAsync(project);
             newProject.ProjectId = project.ProjectId;
             return newProject;
         }
 
         public async Task UpdateAsync(ProjectModel updatedProject) =>
-            await _projectsCollection.ReplaceOneAsync(x => x.ProjectId == updatedProject.ProjectId, _projectCollectionBuilder.BuildCollection(updatedProject));
+            await _db.Projects.ReplaceOneAsync(x => x.ProjectId == updatedProject.ProjectId, _projectCollectionBuilder.BuildCollection(updatedProject));
 
         public async Task RemoveAsync(string id) =>
-            await _projectsCollection.DeleteOneAsync(x => x.ProjectId == id);
+            await _db.Projects.DeleteOneAsync(x => x.ProjectId == id);
 
 
         // Need to make this re-usable for all collection repositories  .. mongodb should handle datetimeoffset sorting better

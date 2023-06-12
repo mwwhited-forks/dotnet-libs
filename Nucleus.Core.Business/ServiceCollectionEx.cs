@@ -2,8 +2,8 @@
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Nucleus.Core.Business.Managers;
 using Nucleus.Core.Business.Managers.Identity;
-using Nucleus.Core.Contracts.Managers;
-using Nucleus.Core.Contracts.Providers;
+using Nucleus.Core.Persistence.Managers;
+using Nucleus.Core.Persistence.Providers;
 using Nucleus.External.Azure.StorageAccount.Providers;
 
 namespace Nucleus.Core.Business

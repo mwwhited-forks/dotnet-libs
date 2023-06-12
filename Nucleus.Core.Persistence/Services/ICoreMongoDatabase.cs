@@ -1,6 +1,6 @@
 ﻿using Eliassen.MongoDB.Extensions;
 using MongoDB.Driver;
-using Nucleus.Core.Contracts.Collections;
+using Nucleus.Core.Persistence.Collections;
 
 namespace Nucleus.Core.Persistence.Services
 {

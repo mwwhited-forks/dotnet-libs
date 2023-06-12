@@ -1,4 +1,4 @@
-﻿using Nucleus.Core.Contracts.Models;
+﻿using Nucleus.Core.Persistence.Models;
 using Nucleus.Project.Contracts.Managers;
 using Nucleus.Project.Contracts.Models;
 using Nucleus.Project.Contracts.Models.Filters;

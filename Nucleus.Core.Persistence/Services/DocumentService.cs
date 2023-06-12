@@ -1,8 +1,8 @@
 ﻿using MongoDB.Driver;
-using Nucleus.Core.Contracts.Collections;
-using Nucleus.Core.Contracts.Interfaces;
-using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.Filters;
+using Nucleus.Core.Persistence.Collections;
+using Nucleus.Core.Persistence.Interfaces;
+using Nucleus.Core.Persistence.Models;
+using Nucleus.Core.Persistence.Models.Filters;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -15,7 +15,6 @@ namespace Nucleus.Core.Persistence.Services
 
         private readonly ProjectionDefinition<DocumentCollection, DocumentModel>? _documentProjection;
         private readonly BsonCollectionBuilder<DocumentModel, DocumentCollection> _documentCollectionBuilder;
-
 
         public DocumentService(
             ICoreMongoDatabase db

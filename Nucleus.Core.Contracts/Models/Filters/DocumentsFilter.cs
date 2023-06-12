@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Nucleus.Core.Contracts.Models.Filters
+namespace Nucleus.Core.Persistence.Models.Filters
 {
 #warning Retire this
     public class DocumentsFilter

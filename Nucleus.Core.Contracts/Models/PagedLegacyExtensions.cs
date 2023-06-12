@@ -1,7 +1,7 @@
 ﻿using Eliassen.System.Linq.Search;
 using System.Linq;
 
-namespace Nucleus.Core.Contracts.Models
+namespace Nucleus.Core.Persistence.Models
 {
 #warning retire this
     public static class PagedLegacyExtensions

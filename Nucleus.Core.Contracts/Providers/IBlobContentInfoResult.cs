@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Nucleus.Core.Contracts.Providers
+namespace Nucleus.Core.Persistence.Providers
 {
     public interface IBlobContentInfoResult
     {

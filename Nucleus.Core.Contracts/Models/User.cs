@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Nucleus.Core.Contracts.Models
+namespace Nucleus.Core.Persistence.Models
 {
     [Searchable(FirstNameLastName)]
     [Searchable(LastNameFirstName)]

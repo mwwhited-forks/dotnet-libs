@@ -1,9 +1,9 @@
-﻿using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.Filters;
+﻿using Nucleus.Core.Persistence.Models;
+using Nucleus.Core.Persistence.Models.Filters;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Nucleus.Core.Contracts.Interfaces
+namespace Nucleus.Core.Persistence.Interfaces
 {
     public interface IDocumentService
     {
