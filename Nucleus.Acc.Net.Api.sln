@@ -84,12 +84,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.External.Azure.Stor
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleData", "SampleData", "{2D920C75-AEDB-4BC3-B8BD-51F3AD6CFA3D}"
 	ProjectSection(SolutionItems) = preProject
-		Conf\MongoDb\SampleData\documents.json = Conf\MongoDb\SampleData\documents.json
 		Conf\MongoDb\SampleData\blogs.json = Conf\MongoDb\SampleData\blogs.json
+		Conf\MongoDb\SampleData\documents.json = Conf\MongoDb\SampleData\documents.json
 		Conf\MongoDb\SampleData\lessons.json = Conf\MongoDb\SampleData\lessons.json
 		Conf\MongoDb\SampleData\modules.json = Conf\MongoDb\SampleData\modules.json
-		Conf\MongoDb\SampleData\users.json = Conf\MongoDb\SampleData\users.json
 		Conf\MongoDb\SampleData\projects.json = Conf\MongoDb\SampleData\projects.json
+		Conf\MongoDb\SampleData\users.json = Conf\MongoDb\SampleData\users.json
 		Conf\MongoDb\SampleData\vlogs.json = Conf\MongoDb\SampleData\vlogs.json
 	EndProjectSection
 EndProject
@@ -121,7 +121,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.AspNetCore.Mvc", "N
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{DE55B0F9-B6E3-46BA-A211-B778D687E980}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleus.Dataloader.Cli", "Tools\Nucleus.Dataloader.Cli\Nucleus.Dataloader.Cli.csproj", "{E7EEE536-1B46-420D-A078-87FCD0587C64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Dataloader.Cli", "Tools\Nucleus.Dataloader.Cli\Nucleus.Dataloader.Cli.csproj", "{E7EEE536-1B46-420D-A078-87FCD0587C64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MongoDB.Extensions", "Framework\Eliassen.MongoDB.Extensions\Eliassen.MongoDB.Extensions.csproj", "{9DF8B275-5C90-4FD9-8560-267754F781B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -245,6 +247,10 @@ Global
 		{E7EEE536-1B46-420D-A078-87FCD0587C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7EEE536-1B46-420D-A078-87FCD0587C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7EEE536-1B46-420D-A078-87FCD0587C64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DF8B275-5C90-4FD9-8560-267754F781B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DF8B275-5C90-4FD9-8560-267754F781B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DF8B275-5C90-4FD9-8560-267754F781B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DF8B275-5C90-4FD9-8560-267754F781B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -290,6 +296,7 @@ Global
 		{F1FECC6B-DCFF-461F-9B99-CA7E6C1FF543} = {6BEF035F-ABDF-47D9-B230-B88FEE87B53B}
 		{C6F18893-079B-4008-B799-5D99747B05B9} = {D5D421B7-FCDC-4AE5-BEB7-6614DEEBF2C0}
 		{E7EEE536-1B46-420D-A078-87FCD0587C64} = {DE55B0F9-B6E3-46BA-A211-B778D687E980}
+		{9DF8B275-5C90-4FD9-8560-267754F781B2} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

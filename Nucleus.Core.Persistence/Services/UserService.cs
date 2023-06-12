@@ -1,58 +1,51 @@
-﻿using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using MongoDB.Bson;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using Nucleus.Core.Contracts.Collections;
 using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.DbSettings;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Nucleus.Core.Persistence.Services
 {
+
     public class UserService : IUserService
     {
-        private readonly IMongoCollection<UserCollection> _usersCollection;
+        private readonly ICoreMongoDatabase _db;
         private readonly ProjectionDefinition<UserCollection, User>? _userProjection;
         private readonly BsonCollectionBuilder<UserAction, UserCollection> _userCollectionBuilder;
 
         public UserService(
-            IOptions<UserDatabaseSettings> userDatabaseSettings,
-            ILoggerFactory loggerFactory)
+            ICoreMongoDatabase db
+            )
         {
-            var clientSettings = MongoClientSettings.FromConnectionString(userDatabaseSettings.Value.ConnectionString);
-            clientSettings.LoggingSettings = new MongoDB.Driver.Core.Configuration.LoggingSettings(loggerFactory);
-            var mongoClient = new MongoClient(clientSettings);
-            var mongoDatabase = mongoClient.GetDatabase(userDatabaseSettings.Value.DatabaseName);
+            _db = db;
 
-            _usersCollection = mongoDatabase.GetCollection<UserCollection>(userDatabaseSettings.Value.UsersCollectionName);
             _userCollectionBuilder = new BsonCollectionBuilder<UserAction, UserCollection>();
             _userProjection = Builders<UserCollection>.Projection.Expression(Projections.Users);
         }
 
-        public IQueryable<User> Query() => _usersCollection.AsQueryable().Select(Projections.Users);
-//        {
-//            var collection = _usersCollection;
-//            var bson = BsonDocument.Parse(@"{
-//      ""CreatedOn-Built"": {
-//          $add: [
-//            { $toLong: {$multiply:[ { $arrayElemAt: [""$createdOn"",1] }, 60, 1000 ]}},
-//            { $toLong: [{ $arrayElemAt: [""$createdOn"",0] }]}
-//          ]
-//      }
-//}");
-//            var projection = Builders<UserCollection>.Projection
-//                .Combine(bson)
-//                .Include(u => u.UserId)
-//                .Include(u => u.CreatedOn)
-//                ;
-//            var aggregate = _usersCollection.Aggregate().Project(projection);
-//            var items = aggregate.ToList();
-//            var x = 1;
-//            return _usersCollection.AsQueryable().Select(Projections.Users);
-//        }
+        public IQueryable<User> Query() => _db.Users.AsQueryable().Select(Projections.Users);
+        //        {
+        //            var collection = _usersCollection;
+        //            var bson = BsonDocument.Parse(@"{
+        //      ""CreatedOn-Built"": {
+        //          $add: [
+        //            { $toLong: {$multiply:[ { $arrayElemAt: [""$createdOn"",1] }, 60, 1000 ]}},
+        //            { $toLong: [{ $arrayElemAt: [""$createdOn"",0] }]}
+        //          ]
+        //      }
+        //}");
+        //            var projection = Builders<UserCollection>.Projection
+        //                .Combine(bson)
+        //                .Include(u => u.UserId)
+        //                .Include(u => u.CreatedOn)
+        //                ;
+        //            var aggregate = _usersCollection.Aggregate().Project(projection);
+        //            var items = aggregate.ToList();
+        //            var x = 1;
+        //            return _usersCollection.AsQueryable().Select(Projections.Users);
+        //        }
 
         public Task<User?> GetByUserIdAsync(string userId) =>
             Task.FromResult(Query().FirstOrDefault(u => u.UserId == userId));
@@ -62,13 +55,13 @@ namespace Nucleus.Core.Persistence.Services
             Task.FromResult(Query().FirstOrDefault(u => u.EmailAddress.ToLower() == emailAddress.ToLower()));
 
         public async Task CreateAsync(UserAction user) =>
-            await _usersCollection.InsertOneAsync(_userCollectionBuilder.BuildCollection(user));
+            await _db.Users.InsertOneAsync(_userCollectionBuilder.BuildCollection(user));
 
         public async Task UpdateAsync(UserAction user) =>
-            await _usersCollection.ReplaceOneAsync(x => x.UserId == user.UserId, _userCollectionBuilder.BuildCollection(user));
+            await _db.Users.ReplaceOneAsync(x => x.UserId == user.UserId, _userCollectionBuilder.BuildCollection(user));
 
         public async Task RemoveAsync(string id) =>
-            await _usersCollection.DeleteOneAsync(x => x.UserId == id);
+            await _db.Users.DeleteOneAsync(x => x.UserId == id);
 
     }
 }

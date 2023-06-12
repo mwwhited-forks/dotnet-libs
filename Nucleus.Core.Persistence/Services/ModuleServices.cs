@@ -5,32 +5,38 @@ using Nucleus.Core.Contracts.Collections;
 using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.DbSettings;
+using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using System.Linq;
 
 namespace Nucleus.Core.Persistence.Services
 {
     public class ModuleServices : IModuleService
     {
-        private readonly IMongoCollection<ModuleCollection> _moduleCollection;
-        //private readonly ProjectionDefinition<ModuleCollection, Module>? _moduleProjection;
-        //private readonly BsonCollectionBuilder<Module, ModuleCollection> _moduleCollectionBuilder;
-
+        private readonly ICoreMongoDatabase _db;
         public ModuleServices(
-            IOptions<UserDatabaseSettings> userDatabaseSettings,
-            IOptions<ModuleDatabaseSettings> moduleDatabaseSettings,
-            ILoggerFactory loggerFactory)
+            ICoreMongoDatabase db
+            )
         {
-            var clientSettings = MongoClientSettings.FromConnectionString(userDatabaseSettings.Value.ConnectionString);
-            clientSettings.LoggingSettings = new MongoDB.Driver.Core.Configuration.LoggingSettings(loggerFactory);
-            var mongoClient = new MongoClient(clientSettings);
-            var mongoDatabase = mongoClient.GetDatabase(userDatabaseSettings.Value.DatabaseName);
-
-            _moduleCollection = mongoDatabase.GetCollection<ModuleCollection>(moduleDatabaseSettings.Value.ModuleCollectionName);
-            //_moduleCollectionBuilder = new BsonCollectionBuilder<Module, ModuleCollection>();
-            //_moduleProjection = Builders<ModuleCollection>.Projection.Expression(Projections.Modules);
+            _db = db;
         }
 
         public IQueryable<Module> Query() =>
-            _moduleCollection.AsQueryable().Select(Projections.Modules);
+            from module in _db.Modules.AsQueryable()
+            select new Module()
+            {
+                ModuleId = module.ModuleId,
+                Roles = module.Roles == null ? null : module.Roles.Select(role => new Role()
+                {
+                    Code = role.Code,
+                    Name = role.Name,
+                    Rights = role.Rights == null ? null : role.Rights.Select(right => new PermissionBase()
+                    {
+                        Name = right.Name,
+                        Code = right.Code
+                    }).ToList()
+                }).ToList(),
+                Name = module.Name,
+                Code = module.Code
+            };
     }
 }

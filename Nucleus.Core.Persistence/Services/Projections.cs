@@ -34,22 +34,5 @@ namespace Nucleus.Core.Persistence.Services
             }).ToList(),
             CreatedOn = user.CreatedOn
         };
-
-        public static Expression<Func<ModuleCollection, Module>> Modules => module => new Module()
-        {
-            ModuleId = module.ModuleId,
-            Roles = module.Roles == null ? null : module.Roles.Select(role => new Role()
-            {
-                Code = role.Code,
-                Name = role.Name,
-                Rights = role.Rights == null ? null : role.Rights.Select(right => new PermissionBase()
-                {
-                    Name = right.Name,
-                    Code = right.Code
-                }).ToList()
-            }).ToList(),
-            Name = module.Name,
-            Code = module.Code
-        };
     }
 }

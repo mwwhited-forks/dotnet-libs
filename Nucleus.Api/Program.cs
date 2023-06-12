@@ -16,23 +16,11 @@ using Nucleus.Lesson.Persistence;
 using Nucleus.Project.Business;
 using Nucleus.Project.Contracts.Collections.DbSettings;
 using System.Reflection;
-using System.Security.Claims;
+using Eliassen.MongoDB.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Setup connection strings
-builder.Services.Configure<DocumentDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDatabase"));
-builder.Services.Configure<BlogDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDatabase"));
-builder.Services.Configure<LessonDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDatabase"));
-builder.Services.Configure<ProjectDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDatabase"));
-builder.Services.Configure<UserDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDatabase"));
-builder.Services.Configure<ModuleDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDatabase"));
+builder.Services.AddMongoServices(builder.Configuration);
 
 // Add additional assemblies here so we can keep our API Project clean and easily scalable
 builder.Services.AddControllers()
@@ -40,7 +28,8 @@ builder.Services.AddControllers()
     .AddApplicationPart(Assembly.Load("Nucleus.Lesson.Controllers"))
     .AddApplicationPart(Assembly.Load("Nucleus.Project.Controllers"))
     .AddApplicationPart(Assembly.Load("Nucleus.Core.Controllers"))
-    .AddApplicationPart(Assembly.Load("Nucleus.Core.Shared.Controllers"));
+    .AddApplicationPart(Assembly.Load("Nucleus.Core.Shared.Controllers"))
+    ;
 
 // Adding Module Registrations for IOC
 builder.Services
