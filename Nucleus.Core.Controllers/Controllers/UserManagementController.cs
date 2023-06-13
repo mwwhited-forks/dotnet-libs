@@ -49,11 +49,11 @@ namespace Nucleus.Core.Controllers.Controllers
         [HttpPost("Query")]
         public IQueryable<User> ListUsers() => _usersManager.QueryUsers();
 
-            /// <summary>
-            /// Query all modules
-            /// </summary>
-            /// <returns></returns>
-            [Authorize]
+        /// <summary>
+        /// Query all modules
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpGet("ApplicationPermissions")]
         public IQueryable<Module> GetApplicationPermissions() => _usersManager.QueryModules();

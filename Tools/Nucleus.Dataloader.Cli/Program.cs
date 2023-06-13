@@ -1,62 +1,40 @@
-﻿using Microsoft.Extensions.FileSystemGlobbing;
-using MongoDB.Bson;
-using MongoDB.Bson.IO;
-using MongoDB.Bson.Serialization;
-using MongoDB.Driver;
-using System.Text.Json;
+﻿using Eliassen.MongoDB.Extensions;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Nucleus.Blog.Persistence.Services;
+using Nucleus.Core.Persistence.Services;
+using Nucleus.Lesson.Persistence.Services;
+using Nucleus.Project.Persistence.Sevices;
+using Eliassen.System.Configuration;
 
 namespace Nucleus.Dataloader.Cli
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
-            var connectionString = Environment.GetEnvironmentVariable("MongoDatabase__ConnectionString");
-            var path = args.FirstOrDefault();
-            var matcher = new Matcher(StringComparison.OrdinalIgnoreCase);
-            matcher.AddInclude(@"**/*.json");
-
-            var mongoClient = new MongoClient(connectionString);
-            var database = mongoClient.GetDatabase("nucleus2");
-
-            Console.WriteLine($"dir: {path}");
-            foreach (var file in matcher.GetResultsInFullPath(path))
-            {
-                Console.WriteLine($"file: {file}");
-                var collectionName = Path.GetFileNameWithoutExtension(file);
-                var collection = database.GetCollection<BsonDocument>(collectionName);
-                Console.Write($"\tCollection: {collectionName}");
-
-                var jsonContent = File.ReadAllText(file);
-                var bsonArray = BsonSerializer.Deserialize<BsonArray>(jsonContent);
-
-                var doc = 0;
-                foreach (var item in bsonArray.OfType<BsonDocument>())
+        static async Task Main(string[] args) =>
+            await Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((context, config) =>
                 {
-                    doc++;
-                    DateTime? value = item.Names.Contains("createdOn") ? item["createdOn"] switch
-                    {
-                        BsonArray arr when arr[0].BsonType == BsonType.String => new DateTime(long.Parse(arr[0].AsString) + (arr[1].AsInt32 * 60 * 1000)),
-                        BsonArray arr when arr[0].BsonType == BsonType.Int64 => new DateTime(arr[0].AsInt64 + (arr[1].AsInt32 * 60 * 1000)),
-                        BsonDateTime bdt => bdt.ToUniversalTime(),
-                        _ => null
-                    } : null;
+                    //config.AddCommandLine(cli=>cli.SwitchMappings.Appdend);
+                })
+                .ConfigureServices((context, services) =>
+                {
+                    services.AddConfiguration<DefaultMongoDatabaseSettings>(context.Configuration);
 
-                    item["createdOn"] = value ?? DateTime.UtcNow;
+                    services.AddHostedService<DataLoaderService>();
 
-                    //  collection.InsertOne(item.AsBsonDocument);
-                }
+                    services
+                        .AddMongoServices(context.Configuration)
 
-                Console.WriteLine($" => {doc}");
+                        .TryAddMongoDatabase<IBlogMongoDatabase>()
+                        .TryAddMongoDatabase<ILessonMongoDatabase>()
+                        .TryAddMongoDatabase<ICoreMongoDatabase>()
+                        .TryAddMongoDatabase<IProjectMongoDatabase>()
+                        .TryAddMongoDatabase<IProjectMongoDatabase>()
+                        ;
+                })
+                .RunConsoleAsync();
 
-                //using (var fileWriter = File.Create(file))
-                //using (var textWriter = new StreamWriter(fileWriter))
-                //{
-                //    BsonSerializer.Serialize(textWriter, bsonArray);
-                //}
-
-                File.WriteAllText(file, bsonArray.ToString());
-            }
-        }
     }
 }

@@ -3,6 +3,13 @@
     "Nucleus.Dataloader.Cli": {
       "commandName": "Project",
       "commandLineArgs": "$(SolutionDir)\\Conf\\MongoDb"
+    },
+    "27018": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "MongoDatabase__ConnectionString": "mongodb://localhost:27018",
+        "MongoDatabase__DatabaseName": "nucleus2"
+      }
     }
   }
 }

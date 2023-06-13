@@ -1,8 +1,6 @@
 [
   {
-    "_id": {
-      "$oid": "647f5966e7abf8eb062387e5"
-    },
+    "_id": ObjectId("647f5966e7abf8eb062387e5"),
     "title": "How to be less bad at golf.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -10,23 +8,21 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": [
-      "636415154304356493",
-      120
+    "createdOn": ISODate("2017-09-20T18:43:51.155Z"),
+    "attendees": [
     ],
-    "attendees": [],
     "teacher": "George Golferson",
     "duration": 10,
-    "tags": [],
+    "tags": [
+    ],
     "price": 1.99,
-    "goals": [],
+    "goals": [
+    ],
     "startdatetime": null,
     "enddatetime": null
   },
   {
-    "_id": {
-      "$oid": "647f5966e7abf8eb062387e6"
-    },
+    "_id": ObjectId("647f5966e7abf8eb062387e6"),
     "title": "How not to drop your club.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -34,23 +30,21 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": [
-      "636415154304356493",
-      120
+    "createdOn": ISODate("2017-09-20T18:43:51.155Z"),
+    "attendees": [
     ],
-    "attendees": [],
     "teacher": "Bobby Butterfingers",
     "duration": 10,
-    "tags": [],
+    "tags": [
+    ],
     "price": 1.99,
-    "goals": [],
+    "goals": [
+    ],
     "startdatetime": null,
     "enddatetime": null
   },
   {
-    "_id": {
-      "$oid": "647f5966e7abf8eb062387e7"
-    },
+    "_id": ObjectId("647f5966e7abf8eb062387e7"),
     "title": "How not to miss every swing.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -58,23 +52,21 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": [
-      "636415154304356493",
-      120
+    "createdOn": ISODate("2017-09-20T18:43:51.155Z"),
+    "attendees": [
     ],
-    "attendees": [],
     "teacher": "John Smith",
     "duration": 10,
-    "tags": [],
+    "tags": [
+    ],
     "price": 1.99,
-    "goals": [],
+    "goals": [
+    ],
     "startdatetime": null,
     "enddatetime": null
   },
   {
-    "_id": {
-      "$oid": "647f5966e7abf8eb062387e8"
-    },
+    "_id": ObjectId("647f5966e7abf8eb062387e8"),
     "title": "How to avoid the water.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -82,23 +74,21 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": [
-      "636415154304356493",
-      120
+    "createdOn": ISODate("2017-09-20T18:43:51.155Z"),
+    "attendees": [
     ],
-    "attendees": [],
     "teacher": "Waterlogged Walter",
     "duration": 10,
-    "tags": [],
+    "tags": [
+    ],
     "price": 1.99,
-    "goals": [],
+    "goals": [
+    ],
     "startdatetime": null,
     "enddatetime": null
   },
   {
-    "_id": {
-      "$oid": "647f5966e7abf8eb062387e9"
-    },
+    "_id": ObjectId("647f5966e7abf8eb062387e9"),
     "title": "How to avoid losing.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -106,23 +96,21 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": [
-      "636415154304356493",
-      120
+    "createdOn": ISODate("2017-09-20T18:43:51.155Z"),
+    "attendees": [
     ],
-    "attendees": [],
     "teacher": "Never-Defeated Daryl",
     "duration": 10,
-    "tags": [],
+    "tags": [
+    ],
     "price": 1.99,
-    "goals": [],
+    "goals": [
+    ],
     "startdatetime": null,
     "enddatetime": null
   },
   {
-    "_id": {
-      "$oid": "647f5966e7abf8eb06238710"
-    },
+    "_id": ObjectId("647f5966e7abf8eb06238710"),
     "title": "How to avoid burn out.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -130,23 +118,21 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": [
-      "636415154304356493",
-      120
+    "createdOn": ISODate("2017-09-20T18:43:51.155Z"),
+    "attendees": [
     ],
-    "attendees": [],
     "teacher": "Seasoned-Golfer Susan",
     "duration": 10,
-    "tags": [],
+    "tags": [
+    ],
     "price": 1.99,
-    "goals": [],
+    "goals": [
+    ],
     "startdatetime": null,
     "enddatetime": null
   },
   {
-    "_id": {
-      "$oid": "647f5966e7abf8eb06238711"
-    },
+    "_id": ObjectId("647f5966e7abf8eb06238711"),
     "title": "Quantum mechanics - and how it relates to the power of your drive.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -154,23 +140,21 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": [
-      "636415154304356493",
-      120
+    "createdOn": ISODate("2017-09-20T18:43:51.155Z"),
+    "attendees": [
     ],
-    "attendees": [],
     "teacher": "Albert Einstein",
     "duration": 10,
-    "tags": [],
+    "tags": [
+    ],
     "price": 1.99,
-    "goals": [],
+    "goals": [
+    ],
     "startdatetime": null,
     "enddatetime": null
   },
   {
-    "_id": {
-      "$oid": "647f5966e7abf8eb06238712"
-    },
+    "_id": ObjectId("647f5966e7abf8eb06238712"),
     "title": "How to use Kinimatic-Centric-Dynamics to stop being bad at golf.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -178,23 +162,21 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": [
-      "636415154304356493",
-      120
+    "createdOn": ISODate("2017-09-20T18:43:51.155Z"),
+    "attendees": [
     ],
-    "attendees": [],
     "teacher": "Focused Freddy",
     "duration": 10,
-    "tags": [],
+    "tags": [
+    ],
     "price": 1.99,
-    "goals": [],
+    "goals": [
+    ],
     "startdatetime": null,
     "enddatetime": null
   },
   {
-    "_id": {
-      "$oid": "647f5966e7abf8eb06238713"
-    },
+    "_id": ObjectId("647f5966e7abf8eb06238713"),
     "title": "How to always win no matter what happens. 100% winrate guaranteed!",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -202,16 +184,16 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": [
-      "636415154304356493",
-      120
+    "createdOn": ISODate("2017-09-20T18:43:51.155Z"),
+    "attendees": [
     ],
-    "attendees": [],
     "teacher": "NotAScammer Steve",
     "duration": 10,
-    "tags": [],
+    "tags": [
+    ],
     "price": 1.99,
-    "goals": [],
+    "goals": [
+    ],
     "startdatetime": null,
     "enddatetime": null
   }
