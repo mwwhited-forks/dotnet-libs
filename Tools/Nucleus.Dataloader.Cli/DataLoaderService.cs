@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using System.Reflection;
+using static Nucleus.Core.Persistence.Rights;
 
 namespace Nucleus.Dataloader.Cli
 {
@@ -48,7 +49,26 @@ namespace Nucleus.Dataloader.Cli
                 .Invoke(this, new[] { input });
         public T[] AsArray<T>(IMongoCollection<T> collection) => collection.AsQueryable().ToArray();
 
-        public Task StartAsync(CancellationToken cancellationToken)
+        public async Task ExportAsync(PropertyInfo collection, object instance, CancellationToken cancellationToken)
+        {
+            var elementType = collection.PropertyType.GetGenericArguments()[0];
+            var collectionName = collection.GetCustomAttributes<CollectionNameAttribute>().FirstOrDefault()?.CollectionName ?? elementType.Name;
+
+            _log.LogInformation($"Exporting: {{{nameof(collectionName)}}}", collectionName);
+
+            var data = collection.GetValue(instance);
+            var arr = AsArray(data, elementType);
+            var json = System.Text.Json.JsonSerializer.Serialize(arr, options: new System.Text.Json.JsonSerializerOptions
+            {
+                WriteIndented = true,
+            });
+            var targetFile = Path.Combine(_dataloader.SourcePath, $"{collectionName}.json");
+            await File.WriteAllTextAsync(targetFile, json);
+
+            _log.LogInformation($"Exported: {{{nameof(collectionName)}}} to \"{{{nameof(targetFile)}}}\"", collectionName, targetFile);
+        }
+
+        public async Task StartAsync(CancellationToken cancellationToken)
         {
             var databases = from type in _databases.Types
                             select (type, ConvertTo(_serviceProvider.GetRequiredService(type), type));
@@ -58,22 +78,8 @@ namespace Nucleus.Dataloader.Cli
             {
                 foreach (var collection in db.type.GetProperties())
                 {
-                    var elementType = collection.PropertyType.GetGenericArguments()[0];
-
-                    var collectionName = collection.GetCustomAttributes<CollectionNameAttribute>().FirstOrDefault()?.CollectionName ?? elementType.Name;
-
-                    var dateProps = elementType.GetProperties()
-                                               .Where(t => new[] { typeof(DateTimeOffset), typeof(DateTimeOffset?) }.Contains(t.PropertyType))
-                                               .ToArray();
-
-                    if (dateProps.Any())
-                    {
-                        var data = collection.GetValue(db.Item2);
-                        var arr = AsArray(data, elementType);
-                        var json = System.Text.Json.JsonSerializer.Serialize(arr);
-                        var targetFile = Path.Combine(_dataloader.SourcePath, $"{collectionName}.json");
-                        File.WriteAllText(targetFile, json);
-                    }
+                    if (cancellationToken.IsCancellationRequested) return;
+                    await ExportAsync(collection, db.Item2, cancellationToken);
                 }
             }
 
@@ -125,7 +131,6 @@ namespace Nucleus.Dataloader.Cli
             //    File.WriteAllText(file, bsonArray.ToString());
             //}
 
-            return Task.CompletedTask;
         }
 
         public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
