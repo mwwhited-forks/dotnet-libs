@@ -7,6 +7,7 @@ namespace Nucleus.Dataloader.Cli
     {
         public const string SectionGroup = "DataLoader";
 
+        [CommandParameter(Value = "source-path")]
         public string SourcePath { get; set; } = @"./";
         public string IncludePath { get; set; } = @"**/*.json";
     }

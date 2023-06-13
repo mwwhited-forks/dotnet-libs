@@ -1,17 +1,10 @@
 ﻿using Eliassen.MongoDB.Extensions;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using MongoDB.Bson;
-using MongoDB.Bson.IO;
-using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
-using MongoDB.Driver.Core.Configuration;
-using System;
-using System.Data.Entity.Core.Mapping;
-using Eliassen.System.Configuration;
+using System.Reflection;
 
 namespace Nucleus.Dataloader.Cli
 {
@@ -63,21 +56,23 @@ namespace Nucleus.Dataloader.Cli
 
             foreach (var db in dbs)
             {
-                foreach (var prop in db.type.GetProperties())
+                foreach (var collection in db.type.GetProperties())
                 {
-                    var elementType = prop.PropertyType.GetGenericArguments()[0];
+                    var elementType = collection.PropertyType.GetGenericArguments()[0];
+
+                    var collectionName = collection.GetCustomAttributes<CollectionNameAttribute>().FirstOrDefault()?.CollectionName ?? elementType.Name;
+
                     var dateProps = elementType.GetProperties()
                                                .Where(t => new[] { typeof(DateTimeOffset), typeof(DateTimeOffset?) }.Contains(t.PropertyType))
                                                .ToArray();
 
                     if (dateProps.Any())
                     {
-                        var data = prop.GetValue(db.Item2);
+                        var data = collection.GetValue(db.Item2);
                         var arr = AsArray(data, elementType);
                         var json = System.Text.Json.JsonSerializer.Serialize(arr);
-                        //var bson = BsonValue.Create(arr);
-                        //var database = 
-
+                        var targetFile = Path.Combine(_dataloader.SourcePath, $"{collectionName}.json");
+                        File.WriteAllText(targetFile, json);
                     }
                 }
             }

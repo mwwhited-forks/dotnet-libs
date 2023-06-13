@@ -13,5 +13,7 @@ namespace Eliassen.System.Configuration
         {
             ConfigurationSection = configurationSection;
         }
+
+        public override object TypeId => this;
     }
 }

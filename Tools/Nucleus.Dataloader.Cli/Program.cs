@@ -1,4 +1,5 @@
 ﻿using Eliassen.MongoDB.Extensions;
+using Eliassen.System.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -6,7 +7,6 @@ using Nucleus.Blog.Persistence.Services;
 using Nucleus.Core.Persistence.Services;
 using Nucleus.Lesson.Persistence.Services;
 using Nucleus.Project.Persistence.Sevices;
-using Eliassen.System.Configuration;
 
 namespace Nucleus.Dataloader.Cli
 {
@@ -16,11 +16,15 @@ namespace Nucleus.Dataloader.Cli
             await Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((context, config) =>
                 {
-                    //config.AddCommandLine(cli=>cli.SwitchMappings.Appdend);
+                    config.AddCommandLine(args,
+                        CommandLine.BuildParameters<DefaultMongoDatabaseSettings>()
+                                   .AddParameters<DataLoaderSettings>()
+                        );
                 })
                 .ConfigureServices((context, services) =>
                 {
                     services.AddConfiguration<DefaultMongoDatabaseSettings>(context.Configuration);
+                    services.AddConfiguration<DataLoaderSettings>(context.Configuration);
 
                     services.AddHostedService<DataLoaderService>();
 
@@ -30,7 +34,6 @@ namespace Nucleus.Dataloader.Cli
                         .TryAddMongoDatabase<IBlogMongoDatabase>()
                         .TryAddMongoDatabase<ILessonMongoDatabase>()
                         .TryAddMongoDatabase<ICoreMongoDatabase>()
-                        .TryAddMongoDatabase<IProjectMongoDatabase>()
                         .TryAddMongoDatabase<IProjectMongoDatabase>()
                         ;
                 })

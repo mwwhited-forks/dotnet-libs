@@ -12,5 +12,7 @@ namespace Eliassen.MongoDB.Extensions
         {
             CollectionName = collectionName;
         }
+
+        public override object TypeId => this;
     }
 }
