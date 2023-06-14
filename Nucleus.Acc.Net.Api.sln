@@ -123,7 +123,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{DE55B0F9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Dataloader.Cli", "Tools\Nucleus.Dataloader.Cli\Nucleus.Dataloader.Cli.csproj", "{E7EEE536-1B46-420D-A078-87FCD0587C64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MongoDB.Extensions", "Framework\Eliassen.MongoDB.Extensions\Eliassen.MongoDB.Extensions.csproj", "{9DF8B275-5C90-4FD9-8560-267754F781B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MongoDB.Extensions", "Framework\Eliassen.MongoDB.Extensions\Eliassen.MongoDB.Extensions.csproj", "{9DF8B275-5C90-4FD9-8560-267754F781B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
