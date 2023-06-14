@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Eliassen.System.Reflection
+﻿namespace Eliassen.System.Reflection
 {
     public interface IResolveType
     {

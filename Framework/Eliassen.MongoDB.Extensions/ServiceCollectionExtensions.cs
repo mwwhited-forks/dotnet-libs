@@ -1,9 +1,7 @@
-﻿using Eliassen.System.Configuration;
-using Eliassen.System.DependencyInjection;
+﻿using Eliassen.System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System.Linq;
 
 namespace Eliassen.MongoDB.Extensions
 {

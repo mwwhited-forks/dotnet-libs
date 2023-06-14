@@ -14,5 +14,9 @@
 		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="6.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj" />
+	</ItemGroup>
+
 
 </Project>

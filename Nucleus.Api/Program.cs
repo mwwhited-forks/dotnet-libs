@@ -1,5 +1,6 @@
 using Eliassen.AspNetCore.Mvc;
 using Eliassen.MongoDB.Extensions;
+using Eliassen.System;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Nucleus.AspNetCore.Mvc;
 using Nucleus.Blog.Business;
@@ -17,6 +18,7 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMongoServices(builder.Configuration);
+builder.Services.TryAllSystemExtensions(builder.Configuration);
 
 // Add additional assemblies here so we can keep our API Project clean and easily scalable
 builder.Services.AddControllers()

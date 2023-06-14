@@ -125,6 +125,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.Dataloader.Cli", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MongoDB.Extensions", "Framework\Eliassen.MongoDB.Extensions\Eliassen.MongoDB.Extensions.csproj", "{9DF8B275-5C90-4FD9-8560-267754F781B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleus.TemplateEngine.Cli", "Tools\Nucleus.TemplateEngine.Cli\Nucleus.TemplateEngine.Cli.csproj", "{37677667-A1F2-4A6A-8C4F-03CDB993BE6F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Handlebars.Extensions", "Framework\Eliassen.Handlebars.Extensions\Eliassen.Handlebars.Extensions.csproj", "{A020AC66-3934-4529-B661-DDD79AE7A43B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.System.Abstractions", "Framework\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj", "{FA9DEE5A-48BF-478D-ABBB-1300660FB786}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -251,6 +257,18 @@ Global
 		{9DF8B275-5C90-4FD9-8560-267754F781B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DF8B275-5C90-4FD9-8560-267754F781B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DF8B275-5C90-4FD9-8560-267754F781B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37677667-A1F2-4A6A-8C4F-03CDB993BE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37677667-A1F2-4A6A-8C4F-03CDB993BE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37677667-A1F2-4A6A-8C4F-03CDB993BE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37677667-A1F2-4A6A-8C4F-03CDB993BE6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A020AC66-3934-4529-B661-DDD79AE7A43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A020AC66-3934-4529-B661-DDD79AE7A43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A020AC66-3934-4529-B661-DDD79AE7A43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A020AC66-3934-4529-B661-DDD79AE7A43B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA9DEE5A-48BF-478D-ABBB-1300660FB786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9DEE5A-48BF-478D-ABBB-1300660FB786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9DEE5A-48BF-478D-ABBB-1300660FB786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9DEE5A-48BF-478D-ABBB-1300660FB786}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -297,6 +315,9 @@ Global
 		{C6F18893-079B-4008-B799-5D99747B05B9} = {D5D421B7-FCDC-4AE5-BEB7-6614DEEBF2C0}
 		{E7EEE536-1B46-420D-A078-87FCD0587C64} = {DE55B0F9-B6E3-46BA-A211-B778D687E980}
 		{9DF8B275-5C90-4FD9-8560-267754F781B2} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
+		{37677667-A1F2-4A6A-8C4F-03CDB993BE6F} = {DE55B0F9-B6E3-46BA-A211-B778D687E980}
+		{A020AC66-3934-4529-B661-DDD79AE7A43B} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
+		{FA9DEE5A-48BF-478D-ABBB-1300660FB786} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}
