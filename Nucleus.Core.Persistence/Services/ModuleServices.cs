@@ -1,11 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Persistence;
-using Nucleus.Core.Persistence.Collections;
-using Nucleus.Core.Persistence.Models.DbSettings;
-using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using System.Linq;
 
 namespace Nucleus.Core.Persistence.Services

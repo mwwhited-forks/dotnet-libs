@@ -100,12 +100,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel"
+                "$ref": "#/components/schemas/Eliassen.System.Linq.Search-SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel"
+                "$ref": "#/components/schemas/Eliassen.System.Linq.Search-SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel"
               }
             }
           }
@@ -116,17 +116,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel"
                 }
               }
             }
@@ -284,17 +284,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-System-Boolean"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-System-Boolean"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-System-Boolean"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-System-Boolean"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-System-Boolean"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-System-Boolean"
                 }
               }
             }
@@ -356,17 +356,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-DocumentModel"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-DocumentModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-DocumentModel"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-DocumentModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-DocumentModel"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-DocumentModel"
                 }
               }
             }
@@ -497,12 +497,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel"
+                "$ref": "#/components/schemas/Eliassen.System.Linq.Search-SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel"
+                "$ref": "#/components/schemas/Eliassen.System.Linq.Search-SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel"
               }
             }
           }
@@ -513,17 +513,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel"
                 }
               }
             }
@@ -834,17 +834,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserAction"
+                "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-UserAction"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserAction"
+                "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-UserAction"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserAction"
+                "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-UserAction"
               }
             }
           }
@@ -855,17 +855,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User"
                 }
               }
             }
@@ -954,17 +954,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module"
                 }
               }
             }
@@ -986,17 +986,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module"
                 }
               }
             }
@@ -1038,17 +1038,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-User"
                 }
               }
             }
@@ -1068,17 +1068,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
+                "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-User"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
+                "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-User"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
+                "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-User"
               }
             }
           }
@@ -1089,17 +1089,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User"
                 }
               }
             }
@@ -1119,17 +1119,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserAction"
+                "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-UserAction"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserAction"
+                "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-UserAction"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserAction"
+                "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-UserAction"
               }
             }
           }
@@ -1140,17 +1140,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User"
                 }
               }
             }
@@ -1174,12 +1174,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Persistence.Models-User"
+                "$ref": "#/components/schemas/Eliassen.System.Linq.Search-SearchQuery-Nucleus.Core.Contracts.Models-User"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Persistence.Models-User"
+                "$ref": "#/components/schemas/Eliassen.System.Linq.Search-SearchQuery-Nucleus.Core.Contracts.Models-User"
               }
             }
           }
@@ -1190,17 +1190,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-User"
                 }
               }
             }
@@ -1293,17 +1293,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module"
                 }
               }
             }
@@ -1326,17 +1326,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Filters-UsersFilter"
+                "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models.Filters-UsersFilter"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Filters-UsersFilter"
+                "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models.Filters-UsersFilter"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Filters-UsersFilter"
+                "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models.Filters-UsersFilter"
               }
             }
           }
@@ -1347,17 +1347,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-User"
                 }
               }
             }
@@ -1383,17 +1383,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module"
+                  "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module"
                 }
               }
             }
@@ -1447,7 +1447,7 @@
         ],
         "type": "string"
       },
-      "Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel": {
+      "Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel": {
         "type": "object",
         "properties": {
           "rows": {
@@ -1472,13 +1472,13 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module": {
+      "Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module": {
         "type": "object",
         "properties": {
           "rows": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-Module"
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-Module"
             },
             "nullable": true
           },
@@ -1497,13 +1497,13 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-User": {
+      "Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-User": {
         "type": "object",
         "properties": {
           "rows": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-User"
             },
             "nullable": true
           },
@@ -1522,7 +1522,7 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel": {
+      "Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel": {
         "type": "object",
         "properties": {
           "rows": {
@@ -1547,7 +1547,7 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel": {
+      "Eliassen.System.Linq.Search-SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel": {
         "type": "object",
         "properties": {
           "currentPage": {
@@ -1587,7 +1587,7 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Persistence.Models-Module": {
+      "Eliassen.System.Linq.Search-SearchQuery-Nucleus.Core.Contracts.Models-Module": {
         "type": "object",
         "properties": {
           "currentPage": {
@@ -1627,7 +1627,7 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Persistence.Models-User": {
+      "Eliassen.System.Linq.Search-SearchQuery-Nucleus.Core.Contracts.Models-User": {
         "type": "object",
         "properties": {
           "currentPage": {
@@ -1667,7 +1667,7 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel": {
+      "Eliassen.System.Linq.Search-SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel": {
         "type": "object",
         "properties": {
           "currentPage": {
@@ -1790,7 +1790,7 @@
             "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters-BlogsFilterItem"
           },
           "pagingModel": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-PagingModel"
+            "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagingModel"
           }
         },
         "additionalProperties": false
@@ -1805,7 +1805,7 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models-DocumentModel": {
+      "Nucleus.Core.Contracts.Models-DocumentModel": {
         "type": "object",
         "properties": {
           "documentId": {
@@ -1845,7 +1845,7 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models-Module": {
+      "Nucleus.Core.Contracts.Models-Module": {
         "type": "object",
         "properties": {
           "name": {
@@ -1863,14 +1863,128 @@
           "roles": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-Role"
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-Role"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models-PagingModel": {
+      "Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module": {
+        "type": "object",
+        "properties": {
+          "currentPage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rowCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "firstRowOnPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "lastRowOnPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-Module"
+            },
+            "nullable": true
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-Module"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "totalPageCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalRowCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-User": {
+        "type": "object",
+        "properties": {
+          "currentPage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rowCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "firstRowOnPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "lastRowOnPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-User"
+            },
+            "nullable": true
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-User"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "totalPageCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalRowCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Core.Contracts.Models-PagingModel": {
         "type": "object",
         "properties": {
           "currentPage": {
@@ -1896,7 +2010,7 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models-PermissionBase": {
+      "Nucleus.Core.Contracts.Models-PermissionBase": {
         "type": "object",
         "properties": {
           "name": {
@@ -1910,7 +2024,55 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models-Role": {
+      "Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-DocumentModel": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "response": {
+            "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-DocumentModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "response": {
+            "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-User"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Core.Contracts.Models-ResponseModel-System-Boolean": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "response": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Core.Contracts.Models-Role": {
         "type": "object",
         "properties": {
           "name": {
@@ -1924,14 +2086,14 @@
           "rights": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-PermissionBase"
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PermissionBase"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models-User": {
+      "Nucleus.Core.Contracts.Models-User": {
         "type": "object",
         "properties": {
           "userId": {
@@ -1960,7 +2122,7 @@
           "userModules": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserModule"
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-UserModule"
             },
             "nullable": true
           },
@@ -1972,7 +2134,7 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models-UserAction": {
+      "Nucleus.Core.Contracts.Models-UserAction": {
         "type": "object",
         "properties": {
           "userId": {
@@ -2001,7 +2163,7 @@
           "userModules": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserModule"
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-UserModule"
             },
             "nullable": true
           },
@@ -2017,7 +2179,7 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models-UserModule": {
+      "Nucleus.Core.Contracts.Models-UserModule": {
         "type": "object",
         "properties": {
           "name": {
@@ -2031,14 +2193,14 @@
           "roles": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-Role"
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-Role"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models.Filters-UserFilterItem": {
+      "Nucleus.Core.Contracts.Models.Filters-UserFilterItem": {
         "type": "object",
         "properties": {
           "inputValue": {
@@ -2056,176 +2218,14 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models.Filters-UsersFilter": {
+      "Nucleus.Core.Contracts.Models.Filters-UsersFilter": {
         "type": "object",
         "properties": {
           "userFilters": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Filters-UserFilterItem"
+            "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models.Filters-UserFilterItem"
           },
           "pagingModel": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-PagingModel"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module": {
-        "type": "object",
-        "properties": {
-          "currentPage": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "pageCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "pageSize": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "rowCount": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "firstRowOnPage": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "lastRowOnPage": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-Module"
-            },
-            "nullable": true
-          },
-          "rows": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-Module"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "totalPageCount": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "totalRowCount": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-User": {
-        "type": "object",
-        "properties": {
-          "currentPage": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "pageCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "pageSize": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "rowCount": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "firstRowOnPage": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "lastRowOnPage": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
-            },
-            "nullable": true
-          },
-          "rows": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "totalPageCount": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "totalRowCount": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-DocumentModel": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "response": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-DocumentModel"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "response": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Core.Persistence.Models.ResponseModel-System-Boolean": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "response": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagingModel"
           }
         },
         "additionalProperties": false
@@ -2327,7 +2327,7 @@
             "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters-LessonsFilterItem"
           },
           "pagingModel": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-PagingModel"
+            "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagingModel"
           }
         },
         "additionalProperties": false
@@ -2399,7 +2399,7 @@
             "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters-ProjectsFilterItem"
           },
           "pagingModel": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-PagingModel"
+            "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models-PagingModel"
           }
         },
         "additionalProperties": false

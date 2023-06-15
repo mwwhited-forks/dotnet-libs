@@ -63,23 +63,23 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel'
+              $ref: '#/components/schemas/Eliassen.System.Linq.Search-SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel'
           text/json:
             schema:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel'
+              $ref: '#/components/schemas/Eliassen.System.Linq.Search-SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel'
       responses:
         '200':
           description: Success
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel'
             application/json:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel'
             text/json:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel'
       x-permissions:
         anonymous: true
   /api/BlogAdmin/Blogs:
@@ -174,13 +174,13 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-System-Boolean'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-System-Boolean'
             application/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-System-Boolean'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-System-Boolean'
             text/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-System-Boolean'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-System-Boolean'
       x-permissions:
         anonymous: false
         right:
@@ -219,13 +219,13 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-DocumentModel'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-DocumentModel'
             application/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-DocumentModel'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-DocumentModel'
             text/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-DocumentModel'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-DocumentModel'
         '400':
           description: Bad Request
           content:
@@ -304,23 +304,23 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel'
+              $ref: '#/components/schemas/Eliassen.System.Linq.Search-SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel'
           text/json:
             schema:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel'
+              $ref: '#/components/schemas/Eliassen.System.Linq.Search-SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel'
       responses:
         '200':
           description: Success
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel'
             application/json:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel'
             text/json:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel'
       x-permissions:
         anonymous: true
   /api/LessonAdmin/Lessons:
@@ -506,26 +506,26 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-UserAction'
+              $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-UserAction'
           text/json:
             schema:
-              $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-UserAction'
+              $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-UserAction'
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-UserAction'
+              $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-UserAction'
       responses:
         '200':
           description: Success
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User'
             application/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User'
             text/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User'
       x-permissions:
         anonymous: true
   /api/RegisterUser/ApplicationPermissions:
@@ -580,13 +580,13 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module'
             application/json:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module'
             text/json:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module'
       x-permissions:
         anonymous: true
   /api/RegisterUser/ApplicationPemissions:
@@ -599,13 +599,13 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module'
             application/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module'
             text/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module'
       deprecated: true
       x-permissions:
         anonymous: true
@@ -631,13 +631,13 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-User'
             application/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-User'
             text/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-User'
       x-permissions:
         anonymous: false
     put:
@@ -649,26 +649,26 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-User'
+              $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-User'
           text/json:
             schema:
-              $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-User'
+              $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-User'
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-User'
+              $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-User'
       responses:
         '200':
           description: Success
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User'
             application/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User'
             text/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User'
       x-permissions:
         anonymous: false
   /api/UserManagement:
@@ -679,26 +679,26 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-UserAction'
+              $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-UserAction'
           text/json:
             schema:
-              $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-UserAction'
+              $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-UserAction'
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-UserAction'
+              $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-UserAction'
       responses:
         '200':
           description: Success
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User'
             application/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User'
             text/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User'
       x-permissions:
         anonymous: false
         right:
@@ -712,23 +712,23 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Persistence.Models-User'
+              $ref: '#/components/schemas/Eliassen.System.Linq.Search-SearchQuery-Nucleus.Core.Contracts.Models-User'
           text/json:
             schema:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Persistence.Models-User'
+              $ref: '#/components/schemas/Eliassen.System.Linq.Search-SearchQuery-Nucleus.Core.Contracts.Models-User'
       responses:
         '200':
           description: Success
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-User'
             application/json:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-User'
             text/json:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-User'
       x-permissions:
         anonymous: false
         right:
@@ -786,13 +786,13 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module'
             application/json:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module'
             text/json:
               schema:
-                $ref: '#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module'
+                $ref: '#/components/schemas/Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module'
       x-permissions:
         anonymous: false
         right:
@@ -805,26 +805,26 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.Filters-UsersFilter'
+              $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.Filters-UsersFilter'
           text/json:
             schema:
-              $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.Filters-UsersFilter'
+              $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.Filters-UsersFilter'
           application/*+json:
             schema:
-              $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.Filters-UsersFilter'
+              $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.Filters-UsersFilter'
       responses:
         '200':
           description: Success
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-User'
             application/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-User'
             text/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-User'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-User'
       deprecated: true
       x-permissions:
         anonymous: false
@@ -840,13 +840,13 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module'
             application/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module'
             text/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module'
       deprecated: true
       x-permissions:
         anonymous: false
@@ -879,7 +879,7 @@ components:
         - asc
         - desc
       type: string
-    Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel:
+    Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel:
       type: object
       properties:
         rows:
@@ -897,13 +897,13 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module:
+    Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-Module:
       type: object
       properties:
         rows:
           type: array
           items:
-            $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-Module'
+            $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-Module'
           nullable: true
         currentPage:
           type: integer
@@ -915,13 +915,13 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-User:
+    Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Core.Contracts.Models-User:
       type: object
       properties:
         rows:
           type: array
           items:
-            $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-User'
+            $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-User'
           nullable: true
         currentPage:
           type: integer
@@ -933,7 +933,7 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel:
+    Eliassen.System.Linq.Search-PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel:
       type: object
       properties:
         rows:
@@ -951,7 +951,7 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel:
+    Eliassen.System.Linq.Search-SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel:
       type: object
       properties:
         currentPage:
@@ -981,7 +981,7 @@ components:
           description: '**Sortable Properties:** BlogId, Title, Slug, Tags, Preview, Content, Enabled, Author, CreatedOn, CreatedOnUnix  **Default Order:** CreatedOn asc, Slug asc'
           nullable: true
       additionalProperties: false
-    Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Persistence.Models-Module:
+    Eliassen.System.Linq.Search-SearchQuery-Nucleus.Core.Contracts.Models-Module:
       type: object
       properties:
         currentPage:
@@ -1011,7 +1011,7 @@ components:
           description: '**Sortable Properties:** ModuleId, Roles, Name, Code  **Default Order:** Name asc'
           nullable: true
       additionalProperties: false
-    Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Persistence.Models-User:
+    Eliassen.System.Linq.Search-SearchQuery-Nucleus.Core.Contracts.Models-User:
       type: object
       properties:
         currentPage:
@@ -1041,7 +1041,7 @@ components:
           description: '**Sortable Properties:** FirstNameLastName, LastNameFirstName, UserId, UserName, EmailAddress, FirstName, LastName, Active, UserModules, CreatedOn  **Default Order:** LastName asc, FirstName asc, EmailAddress asc'
           nullable: true
       additionalProperties: false
-    Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel:
+    Eliassen.System.Linq.Search-SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel:
       type: object
       properties:
         currentPage:
@@ -1133,7 +1133,7 @@ components:
         blogFilters:
           $ref: '#/components/schemas/Nucleus.Blog.Contracts.Models.Filters-BlogsFilterItem'
         pagingModel:
-          $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-PagingModel'
+          $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagingModel'
       additionalProperties: false
     Nucleus.Blog.Contracts.Models.Filters-BlogsFilterItem:
       type: object
@@ -1142,7 +1142,7 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    Nucleus.Core.Persistence.Models-DocumentModel:
+    Nucleus.Core.Contracts.Models-DocumentModel:
       type: object
       properties:
         documentId:
@@ -1172,7 +1172,7 @@ components:
           format: date-time
           nullable: true
       additionalProperties: false
-    Nucleus.Core.Persistence.Models-Module:
+    Nucleus.Core.Contracts.Models-Module:
       type: object
       properties:
         name:
@@ -1187,10 +1187,96 @@ components:
         roles:
           type: array
           items:
-            $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-Role'
+            $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-Role'
           nullable: true
       additionalProperties: false
-    Nucleus.Core.Persistence.Models-PagingModel:
+    Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-Module:
+      type: object
+      properties:
+        currentPage:
+          type: integer
+          format: int32
+        pageCount:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        rowCount:
+          type: integer
+          format: int64
+        firstRowOnPage:
+          type: integer
+          format: int32
+          readOnly: true
+        lastRowOnPage:
+          type: integer
+          format: int32
+          readOnly: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-Module'
+          nullable: true
+        rows:
+          type: array
+          items:
+            $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-Module'
+          nullable: true
+          readOnly: true
+        totalPageCount:
+          type: integer
+          format: int32
+          readOnly: true
+        totalRowCount:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
+    Nucleus.Core.Contracts.Models-PagedResult-Nucleus.Core.Contracts.Models-User:
+      type: object
+      properties:
+        currentPage:
+          type: integer
+          format: int32
+        pageCount:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        rowCount:
+          type: integer
+          format: int64
+        firstRowOnPage:
+          type: integer
+          format: int32
+          readOnly: true
+        lastRowOnPage:
+          type: integer
+          format: int32
+          readOnly: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-User'
+          nullable: true
+        rows:
+          type: array
+          items:
+            $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-User'
+          nullable: true
+          readOnly: true
+        totalPageCount:
+          type: integer
+          format: int32
+          readOnly: true
+        totalRowCount:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
+    Nucleus.Core.Contracts.Models-PagingModel:
       type: object
       properties:
         currentPage:
@@ -1209,7 +1295,7 @@ components:
           type: boolean
           readOnly: true
       additionalProperties: false
-    Nucleus.Core.Persistence.Models-PermissionBase:
+    Nucleus.Core.Contracts.Models-PermissionBase:
       type: object
       properties:
         name:
@@ -1219,7 +1305,40 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    Nucleus.Core.Persistence.Models-Role:
+    Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-DocumentModel:
+      type: object
+      properties:
+        isSuccess:
+          type: boolean
+        message:
+          type: string
+          nullable: true
+        response:
+          $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-DocumentModel'
+      additionalProperties: false
+    Nucleus.Core.Contracts.Models-ResponseModel-Nucleus.Core.Contracts.Models-User:
+      type: object
+      properties:
+        isSuccess:
+          type: boolean
+        message:
+          type: string
+          nullable: true
+        response:
+          $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-User'
+      additionalProperties: false
+    Nucleus.Core.Contracts.Models-ResponseModel-System-Boolean:
+      type: object
+      properties:
+        isSuccess:
+          type: boolean
+        message:
+          type: string
+          nullable: true
+        response:
+          type: boolean
+      additionalProperties: false
+    Nucleus.Core.Contracts.Models-Role:
       type: object
       properties:
         name:
@@ -1231,10 +1350,10 @@ components:
         rights:
           type: array
           items:
-            $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-PermissionBase'
+            $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PermissionBase'
           nullable: true
       additionalProperties: false
-    Nucleus.Core.Persistence.Models-User:
+    Nucleus.Core.Contracts.Models-User:
       type: object
       properties:
         userId:
@@ -1257,14 +1376,14 @@ components:
         userModules:
           type: array
           items:
-            $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-UserModule'
+            $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-UserModule'
           nullable: true
         createdOn:
           type: string
           format: date-time
           nullable: true
       additionalProperties: false
-    Nucleus.Core.Persistence.Models-UserAction:
+    Nucleus.Core.Contracts.Models-UserAction:
       type: object
       properties:
         userId:
@@ -1287,7 +1406,7 @@ components:
         userModules:
           type: array
           items:
-            $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-UserModule'
+            $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-UserModule'
           nullable: true
         createdOn:
           type: string
@@ -1297,7 +1416,7 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    Nucleus.Core.Persistence.Models-UserModule:
+    Nucleus.Core.Contracts.Models-UserModule:
       type: object
       properties:
         name:
@@ -1309,10 +1428,10 @@ components:
         roles:
           type: array
           items:
-            $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-Role'
+            $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-Role'
           nullable: true
       additionalProperties: false
-    Nucleus.Core.Persistence.Models.Filters-UserFilterItem:
+    Nucleus.Core.Contracts.Models.Filters-UserFilterItem:
       type: object
       properties:
         inputValue:
@@ -1325,132 +1444,13 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    Nucleus.Core.Persistence.Models.Filters-UsersFilter:
+    Nucleus.Core.Contracts.Models.Filters-UsersFilter:
       type: object
       properties:
         userFilters:
-          $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.Filters-UserFilterItem'
+          $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.Filters-UserFilterItem'
         pagingModel:
-          $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-PagingModel'
-      additionalProperties: false
-    Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module:
-      type: object
-      properties:
-        currentPage:
-          type: integer
-          format: int32
-        pageCount:
-          type: integer
-          format: int32
-        pageSize:
-          type: integer
-          format: int32
-        rowCount:
-          type: integer
-          format: int64
-        firstRowOnPage:
-          type: integer
-          format: int32
-          readOnly: true
-        lastRowOnPage:
-          type: integer
-          format: int32
-          readOnly: true
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-Module'
-          nullable: true
-        rows:
-          type: array
-          items:
-            $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-Module'
-          nullable: true
-          readOnly: true
-        totalPageCount:
-          type: integer
-          format: int32
-          readOnly: true
-        totalRowCount:
-          type: integer
-          format: int32
-          readOnly: true
-      additionalProperties: false
-    Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-User:
-      type: object
-      properties:
-        currentPage:
-          type: integer
-          format: int32
-        pageCount:
-          type: integer
-          format: int32
-        pageSize:
-          type: integer
-          format: int32
-        rowCount:
-          type: integer
-          format: int64
-        firstRowOnPage:
-          type: integer
-          format: int32
-          readOnly: true
-        lastRowOnPage:
-          type: integer
-          format: int32
-          readOnly: true
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-User'
-          nullable: true
-        rows:
-          type: array
-          items:
-            $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-User'
-          nullable: true
-          readOnly: true
-        totalPageCount:
-          type: integer
-          format: int32
-          readOnly: true
-        totalRowCount:
-          type: integer
-          format: int32
-          readOnly: true
-      additionalProperties: false
-    Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-DocumentModel:
-      type: object
-      properties:
-        isSuccess:
-          type: boolean
-        message:
-          type: string
-          nullable: true
-        response:
-          $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-DocumentModel'
-      additionalProperties: false
-    Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User:
-      type: object
-      properties:
-        isSuccess:
-          type: boolean
-        message:
-          type: string
-          nullable: true
-        response:
-          $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-User'
-      additionalProperties: false
-    Nucleus.Core.Persistence.Models.ResponseModel-System-Boolean:
-      type: object
-      properties:
-        isSuccess:
-          type: boolean
-        message:
-          type: string
-          nullable: true
-        response:
-          type: boolean
+          $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagingModel'
       additionalProperties: false
     Nucleus.Lesson.Contracts.Models-LessonModel:
       type: object
@@ -1525,7 +1525,7 @@ components:
         lessonFilters:
           $ref: '#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters-LessonsFilterItem'
         pagingModel:
-          $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-PagingModel'
+          $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagingModel'
       additionalProperties: false
     Nucleus.Lesson.Contracts.Models.Filters-LessonsFilterItem:
       type: object
@@ -1577,7 +1577,7 @@ components:
         projectFilters:
           $ref: '#/components/schemas/Nucleus.Project.Contracts.Models.Filters-ProjectsFilterItem'
         pagingModel:
-          $ref: '#/components/schemas/Nucleus.Core.Persistence.Models-PagingModel'
+          $ref: '#/components/schemas/Nucleus.Core.Contracts.Models-PagingModel'
       additionalProperties: false
     Nucleus.Project.Contracts.Models.Filters-ProjectsFilterItem:
       type: object
