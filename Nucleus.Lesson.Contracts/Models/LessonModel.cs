@@ -6,7 +6,7 @@ namespace Nucleus.Lesson.Contracts.Models
     [SearchTermDefault(SearchTermDefaults.Contains)]
     public class LessonModel
     {
-        [ExcludeCaseReplacer]
+        [IgnoreStringComparisonReplacement]
         [NotSearchable]
         public string? LessonId { get; set; }
         [DefaultSort(priority: 1)]
