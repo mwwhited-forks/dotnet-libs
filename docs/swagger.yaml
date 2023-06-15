@@ -880,9 +880,11 @@ components:
         - desc
       type: string
     'Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Blog.Contracts.Models.BlogModel, Nucleus.Blog.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]':
+      title: 'Eliassen.System.Linq.Search.PagedQueryResult[Nucleus.Blog.Contracts.Models.BlogModel]'
       type: object
       properties:
         rows:
+          title: 'System.Collections.Generic.IReadOnlyList[Nucleus.Blog.Contracts.Models.BlogModel]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Blog.Contracts.Models.BlogModel'
@@ -898,9 +900,11 @@ components:
           format: int32
       additionalProperties: false
     'Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]':
+      title: 'Eliassen.System.Linq.Search.PagedQueryResult[Nucleus.Core.Persistence.Models.Module]'
       type: object
       properties:
         rows:
+          title: 'System.Collections.Generic.IReadOnlyList[Nucleus.Core.Persistence.Models.Module]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.Module'
@@ -916,9 +920,11 @@ components:
           format: int32
       additionalProperties: false
     'Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]':
+      title: 'Eliassen.System.Linq.Search.PagedQueryResult[Nucleus.Core.Persistence.Models.User]'
       type: object
       properties:
         rows:
+          title: 'System.Collections.Generic.IReadOnlyList[Nucleus.Core.Persistence.Models.User]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.User'
@@ -934,9 +940,11 @@ components:
           format: int32
       additionalProperties: false
     'Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Lesson.Contracts.Models.LessonModel, Nucleus.Lesson.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]':
+      title: 'Eliassen.System.Linq.Search.PagedQueryResult[Nucleus.Lesson.Contracts.Models.LessonModel]'
       type: object
       properties:
         rows:
+          title: 'System.Collections.Generic.IReadOnlyList[Nucleus.Lesson.Contracts.Models.LessonModel]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel'
@@ -952,6 +960,7 @@ components:
           format: int32
       additionalProperties: false
     'Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Blog.Contracts.Models.BlogModel, Nucleus.Blog.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]':
+      title: 'Eliassen.System.Linq.Search.SearchQuery[Nucleus.Blog.Contracts.Models.BlogModel]'
       type: object
       properties:
         currentPage:
@@ -969,12 +978,14 @@ components:
           description: '**Searched Properties:** Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn; CreatedOnUnix'
           nullable: true
         filter:
+          title: 'System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.FilterParameter]'
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
           description: '**Filterable Properties:** BlogId; Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn; CreatedOnUnix'
           nullable: true
         orderBy:
+          title: 'System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.OrderDirections]'
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
@@ -982,6 +993,7 @@ components:
           nullable: true
       additionalProperties: false
     'Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]':
+      title: 'Eliassen.System.Linq.Search.SearchQuery[Nucleus.Core.Persistence.Models.Module]'
       type: object
       properties:
         currentPage:
@@ -999,12 +1011,14 @@ components:
           description: '**Searched Properties:** ModuleId; Roles; Name; Code'
           nullable: true
         filter:
+          title: 'System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.FilterParameter]'
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
           description: '**Filterable Properties:** ModuleId; Roles; Name; Code'
           nullable: true
         orderBy:
+          title: 'System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.OrderDirections]'
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
@@ -1012,6 +1026,7 @@ components:
           nullable: true
       additionalProperties: false
     'Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]':
+      title: 'Eliassen.System.Linq.Search.SearchQuery[Nucleus.Core.Persistence.Models.User]'
       type: object
       properties:
         currentPage:
@@ -1029,12 +1044,14 @@ components:
           description: '**Searched Properties:** FirstNameLastName; LastNameFirstName; EmailAddress; FirstName; LastName'
           nullable: true
         filter:
+          title: 'System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.FilterParameter]'
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
           description: '**Filterable Properties:** FirstNameLastName; LastNameFirstName; UserId; UserName; EmailAddress; FirstName; LastName; Active; UserModules; CreatedOn; Module; UserStatus'
           nullable: true
         orderBy:
+          title: 'System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.OrderDirections]'
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
@@ -1042,6 +1059,7 @@ components:
           nullable: true
       additionalProperties: false
     'Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Lesson.Contracts.Models.LessonModel, Nucleus.Lesson.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]':
+      title: 'Eliassen.System.Linq.Search.SearchQuery[Nucleus.Lesson.Contracts.Models.LessonModel]'
       type: object
       properties:
         currentPage:
@@ -1059,12 +1077,14 @@ components:
           description: '**Searched Properties:** Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals'
           nullable: true
         filter:
+          title: 'System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.FilterParameter]'
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
           description: '**Filterable Properties:** LessonId; Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals'
           nullable: true
         orderBy:
+          title: 'System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.OrderDirections]'
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
@@ -1081,6 +1101,7 @@ components:
           type: string
           nullable: true
         status:
+          title: 'System.Nullable[System.Int32]'
           type: integer
           format: int32
           nullable: true
@@ -1104,6 +1125,7 @@ components:
           type: string
           nullable: true
         tags:
+          title: 'System.Collections.Generic.List[System.String]'
           type: array
           items:
             type: string
@@ -1115,6 +1137,7 @@ components:
           type: string
           nullable: true
         enabled:
+          title: 'System.Nullable[System.Boolean]'
           type: boolean
           nullable: true
         author:
@@ -1158,6 +1181,7 @@ components:
           type: string
           nullable: true
         documentSize:
+          title: 'System.Nullable[System.Int64]'
           type: integer
           format: int64
           nullable: true
@@ -1168,6 +1192,7 @@ components:
           type: string
           nullable: true
         createdOn:
+          title: 'System.Nullable[System.DateTimeOffset]'
           type: string
           format: date-time
           nullable: true
@@ -1206,12 +1231,14 @@ components:
           type: string
           nullable: true
         roles:
+          title: 'System.Collections.Generic.List[Nucleus.Core.Persistence.Models.Role]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.Role'
           nullable: true
       additionalProperties: false
     'Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]':
+      title: 'Nucleus.Core.Persistence.Models.PagedResult[Nucleus.Core.Persistence.Models.Module]'
       type: object
       properties:
         currentPage:
@@ -1235,11 +1262,13 @@ components:
           format: int32
           readOnly: true
         results:
+          title: 'System.Collections.Generic.List[Nucleus.Core.Persistence.Models.Module]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.Module'
           nullable: true
         rows:
+          title: 'System.Collections.Generic.IEnumerable[Nucleus.Core.Persistence.Models.Module]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.Module'
@@ -1255,6 +1284,7 @@ components:
           readOnly: true
       additionalProperties: false
     'Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]':
+      title: 'Nucleus.Core.Persistence.Models.PagedResult[Nucleus.Core.Persistence.Models.User]'
       type: object
       properties:
         currentPage:
@@ -1278,11 +1308,13 @@ components:
           format: int32
           readOnly: true
         results:
+          title: 'System.Collections.Generic.List[Nucleus.Core.Persistence.Models.User]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.User'
           nullable: true
         rows:
+          title: 'System.Collections.Generic.IEnumerable[Nucleus.Core.Persistence.Models.User]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.User'
@@ -1327,6 +1359,7 @@ components:
           nullable: true
       additionalProperties: false
     'Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.DocumentModel, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]':
+      title: 'Nucleus.Core.Persistence.Models.ResponseModel[Nucleus.Core.Persistence.Models.DocumentModel]'
       type: object
       properties:
         isSuccess:
@@ -1338,6 +1371,7 @@ components:
           $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.DocumentModel'
       additionalProperties: false
     'Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]':
+      title: 'Nucleus.Core.Persistence.Models.ResponseModel[Nucleus.Core.Persistence.Models.User]'
       type: object
       properties:
         isSuccess:
@@ -1349,6 +1383,7 @@ components:
           $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.User'
       additionalProperties: false
     'Nucleus.Core.Persistence.Models.ResponseModel`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]':
+      title: 'Nucleus.Core.Persistence.Models.ResponseModel[System.Boolean]'
       type: object
       properties:
         isSuccess:
@@ -1369,6 +1404,7 @@ components:
           type: string
           nullable: true
         rights:
+          title: 'System.Collections.Generic.List[Nucleus.Core.Persistence.Models.PermissionBase]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.PermissionBase'
@@ -1395,11 +1431,13 @@ components:
         active:
           type: boolean
         userModules:
+          title: 'System.Collections.Generic.List[Nucleus.Core.Persistence.Models.UserModule]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.UserModule'
           nullable: true
         createdOn:
+          title: 'System.Nullable[System.DateTimeOffset]'
           type: string
           format: date-time
           nullable: true
@@ -1425,11 +1463,13 @@ components:
         active:
           type: boolean
         userModules:
+          title: 'System.Collections.Generic.List[Nucleus.Core.Persistence.Models.UserModule]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.UserModule'
           nullable: true
         createdOn:
+          title: 'System.Nullable[System.DateTimeOffset]'
           type: string
           format: date-time
           nullable: true
@@ -1447,6 +1487,7 @@ components:
           type: string
           nullable: true
         roles:
+          title: 'System.Collections.Generic.List[Nucleus.Core.Persistence.Models.Role]'
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Core.Persistence.Models.Role'
@@ -1492,9 +1533,11 @@ components:
           type: string
           nullable: true
         enabled:
+          title: 'System.Nullable[System.Boolean]'
           type: boolean
           nullable: true
         createdOn:
+          title: 'System.Nullable[System.DateTimeOffset]'
           type: string
           format: date-time
           nullable: true
@@ -1510,6 +1553,7 @@ components:
           type: string
           nullable: true
         duration:
+          title: 'System.Nullable[System.Int32]'
           type: integer
           format: int32
           nullable: true
@@ -1517,6 +1561,7 @@ components:
           type: string
           format: date-time
         endDateTime:
+          title: 'System.Nullable[System.DateTimeOffset]'
           type: string
           format: date-time
           nullable: true
@@ -1577,6 +1622,7 @@ components:
           type: string
           nullable: true
         enabled:
+          title: 'System.Nullable[System.Boolean]'
           type: boolean
           nullable: true
         createdOn:

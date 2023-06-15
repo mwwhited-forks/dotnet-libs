@@ -29,7 +29,7 @@ public class Program
 
                 services.AddHostedService<DataLoaderService>();
 
-                services.TryAllSystemExtensions();
+                services.TryAllSystemExtensions(context.Configuration);
 
                 services
                     .AddMongoServices(context.Configuration)
@@ -40,5 +40,5 @@ public class Program
                     .TryAddMongoDatabase<IProjectMongoDatabase>()
                     ;
             })
-            .RunConsoleAsync();
+            .StartAsync();
 }

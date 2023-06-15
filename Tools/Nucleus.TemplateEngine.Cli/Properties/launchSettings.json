@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Nucleus.TemplateEngine.Cli": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "Logging__LogLevel__Eliassen": "Debug"
+      }
+    }
+  }
+}

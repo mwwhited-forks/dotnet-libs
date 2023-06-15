@@ -27,5 +27,5 @@ public class Program
                 services.TryAllSystemExtensions(context.Configuration);
                 services.AddHandlebarServices();
             })
-            .RunConsoleAsync();
+            .StartAsync();
 }

@@ -8,6 +8,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Content Remove="Service-Endpoints.md" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
 	</ItemGroup>
@@ -15,6 +19,12 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\Framework\Eliassen.Handlebars.Extensions\Eliassen.Handlebars.Extensions.csproj" />
 		<ProjectReference Include="..\..\Framework\Eliassen.System\Eliassen.System.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Service-Endpoints.md">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>
