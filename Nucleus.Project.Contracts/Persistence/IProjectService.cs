@@ -4,7 +4,7 @@ using Nucleus.Project.Contracts.Models.Filters;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Nucleus.Project.Contracts.Services
+namespace Nucleus.Project.Contracts.Persistence
 {
     public interface IProjectService
     {

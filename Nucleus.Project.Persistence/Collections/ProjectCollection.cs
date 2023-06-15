@@ -2,7 +2,7 @@
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 
-namespace Nucleus.Project.Contracts.Collections
+namespace Nucleus.Project.Persistence.Collections
 {
     [BsonIgnoreExtraElements]
     public class ProjectCollection
@@ -12,7 +12,7 @@ namespace Nucleus.Project.Contracts.Collections
         public string? ProjectId { get; set; }
 
         [BsonElement("title")]
-        public string? Title {  get; set; }
+        public string? Title { get; set; }
         [BsonElement("slug")]
         public string? Slug { get; set; }
         [BsonElement("projectLink")]
@@ -26,7 +26,7 @@ namespace Nucleus.Project.Contracts.Collections
         [BsonElement("page")]
         public string? Page { get; set; }
         [BsonElement("enabled")]
-        public Boolean? Enabled { get; set; }
+        public bool? Enabled { get; set; }
         [BsonElement("createdOn")]
         [BsonRepresentation(BsonType.DateTime)]
         public DateTimeOffset CreatedOn { get; set; }

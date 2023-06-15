@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Nucleus.Blog.Persistence.Services;
 using Nucleus.Core.Persistence.Services;
 using Nucleus.Lesson.Persistence.Services;
-using Nucleus.Project.Persistence.Sevices;
+using Nucleus.Project.Persistence.Services;
 
 namespace Nucleus.Dataloader.Cli;
 

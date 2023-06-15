@@ -1,8 +1,8 @@
 ﻿using Eliassen.MongoDB.Extensions;
 using MongoDB.Driver;
-using Nucleus.Project.Contracts.Collections;
+using Nucleus.Project.Persistence.Collections;
 
-namespace Nucleus.Project.Persistence.Sevices
+namespace Nucleus.Project.Persistence.Services
 {
     public interface IProjectMongoDatabase
     {

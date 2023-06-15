@@ -1,7 +1,7 @@
 ﻿using Eliassen.MongoDB.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Nucleus.Lesson.Contracts.Services;
+using Nucleus.Lesson.Contracts.Persistence;
 using Nucleus.Lesson.Persistence.Services;
 
 namespace Nucleus.Lesson.Persistence

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Nucleus.Lesson.Contracts.Services
+namespace Nucleus.Lesson.Contracts.Persistence
 {
     public interface ILessonService
     {

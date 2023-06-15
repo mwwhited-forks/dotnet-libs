@@ -1,4 +1,4 @@
-﻿namespace Nucleus.Project.Contracts.Collections.DbSettings
+﻿namespace Nucleus.Project.Contracts.Models.DbSettings
 {
     public class ProjectDatabaseSettings
     {

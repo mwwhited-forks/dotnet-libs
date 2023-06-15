@@ -2,7 +2,7 @@
 using Nucleus.Lesson.Contracts.Managers;
 using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
-using Nucleus.Lesson.Contracts.Services;
+using Nucleus.Lesson.Contracts.Persistence;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

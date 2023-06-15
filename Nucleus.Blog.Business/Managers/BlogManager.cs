@@ -1,7 +1,7 @@
 ﻿using Nucleus.Blog.Contracts.Managers;
 using Nucleus.Blog.Contracts.Models;
 using Nucleus.Blog.Contracts.Models.Filters;
-using Nucleus.Blog.Contracts.Services;
+using Nucleus.Blog.Contracts.Persistence;
 using Nucleus.Core.Contracts.Models;
 using System;
 using System.Collections.Generic;

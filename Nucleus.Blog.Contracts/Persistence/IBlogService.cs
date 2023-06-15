@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Nucleus.Blog.Contracts.Services
+namespace Nucleus.Blog.Contracts.Persistence
 {
     public interface IBlogService
     {

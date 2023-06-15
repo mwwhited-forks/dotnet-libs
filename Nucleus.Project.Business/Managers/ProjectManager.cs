@@ -2,7 +2,7 @@
 using Nucleus.Project.Contracts.Managers;
 using Nucleus.Project.Contracts.Models;
 using Nucleus.Project.Contracts.Models.Filters;
-using Nucleus.Project.Contracts.Services;
+using Nucleus.Project.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

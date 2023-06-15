@@ -4,7 +4,7 @@ using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using Nucleus.Lesson.Contracts.Collections;
 using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
-using Nucleus.Lesson.Contracts.Services;
+using Nucleus.Lesson.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
