@@ -14,17 +14,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter"
+                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters-BlogsFilter"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter"
+                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters-BlogsFilter"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter"
+                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters-BlogsFilter"
               }
             }
           }
@@ -100,12 +100,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Blog.Contracts.Models.BlogModel, Nucleus.Blog.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Blog.Contracts.Models.BlogModel, Nucleus.Blog.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel"
               }
             }
           }
@@ -116,17 +116,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Blog.Contracts.Models.BlogModel, Nucleus.Blog.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Blog.Contracts.Models.BlogModel, Nucleus.Blog.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Blog.Contracts.Models.BlogModel, Nucleus.Blog.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel"
                 }
               }
             }
@@ -146,17 +146,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter"
+                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters-BlogsFilter"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter"
+                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters-BlogsFilter"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter"
+                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters-BlogsFilter"
               }
             }
           }
@@ -212,17 +212,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.BlogModel"
+                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models-BlogModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.BlogModel"
+                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models-BlogModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.BlogModel"
+                "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models-BlogModel"
               }
             }
           }
@@ -284,17 +284,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-System-Boolean"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-System-Boolean"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-System-Boolean"
                 }
               }
             }
@@ -356,17 +356,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.DocumentModel, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-DocumentModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.DocumentModel, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-DocumentModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.DocumentModel, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-DocumentModel"
                 }
               }
             }
@@ -376,17 +376,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc-ProblemDetails"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc-ProblemDetails"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc-ProblemDetails"
                 }
               }
             }
@@ -411,17 +411,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter"
+                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters-LessonsFilter"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter"
+                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters-LessonsFilter"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter"
+                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters-LessonsFilter"
               }
             }
           }
@@ -497,12 +497,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Lesson.Contracts.Models.LessonModel, Nucleus.Lesson.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Lesson.Contracts.Models.LessonModel, Nucleus.Lesson.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel"
               }
             }
           }
@@ -513,17 +513,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Lesson.Contracts.Models.LessonModel, Nucleus.Lesson.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Lesson.Contracts.Models.LessonModel, Nucleus.Lesson.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Lesson.Contracts.Models.LessonModel, Nucleus.Lesson.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel"
                 }
               }
             }
@@ -543,17 +543,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter"
+                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters-LessonsFilter"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter"
+                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters-LessonsFilter"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter"
+                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters-LessonsFilter"
               }
             }
           }
@@ -609,17 +609,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel"
+                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models-LessonModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel"
+                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models-LessonModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel"
+                "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models-LessonModel"
               }
             }
           }
@@ -646,17 +646,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter"
+                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters-ProjectFilter"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter"
+                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters-ProjectFilter"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter"
+                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters-ProjectFilter"
               }
             }
           }
@@ -731,17 +731,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter"
+                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters-ProjectFilter"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter"
+                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters-ProjectFilter"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter"
+                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters-ProjectFilter"
               }
             }
           }
@@ -797,17 +797,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.ProjectModel"
+                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models-ProjectModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.ProjectModel"
+                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models-ProjectModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.ProjectModel"
+                "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models-ProjectModel"
               }
             }
           }
@@ -834,17 +834,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.UserAction"
+                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserAction"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.UserAction"
+                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserAction"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.UserAction"
+                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserAction"
               }
             }
           }
@@ -855,17 +855,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
                 }
               }
             }
@@ -923,28 +923,28 @@
             "name": "orderBy.ModuleId",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-OrderDirections"
             }
           },
           {
             "name": "orderBy.Roles",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-OrderDirections"
             }
           },
           {
             "name": "orderBy.Name",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-OrderDirections"
             }
           },
           {
             "name": "orderBy.Code",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-OrderDirections"
             }
           }
         ],
@@ -954,17 +954,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module"
                 }
               }
             }
@@ -986,17 +986,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module"
                 }
               }
             }
@@ -1038,17 +1038,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.User"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
                 }
               }
             }
@@ -1068,17 +1068,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.User"
+                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.User"
+                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.User"
+                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
               }
             }
           }
@@ -1089,17 +1089,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
                 }
               }
             }
@@ -1119,17 +1119,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.UserAction"
+                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserAction"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.UserAction"
+                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserAction"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.UserAction"
+                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserAction"
               }
             }
           }
@@ -1140,17 +1140,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User"
                 }
               }
             }
@@ -1174,12 +1174,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Persistence.Models-User"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                "$ref": "#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Persistence.Models-User"
               }
             }
           }
@@ -1190,17 +1190,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-User"
                 }
               }
             }
@@ -1262,28 +1262,28 @@
             "name": "orderBy.ModuleId",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-OrderDirections"
             }
           },
           {
             "name": "orderBy.Roles",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-OrderDirections"
             }
           },
           {
             "name": "orderBy.Name",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-OrderDirections"
             }
           },
           {
             "name": "orderBy.Code",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-OrderDirections"
             }
           }
         ],
@@ -1293,17 +1293,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module"
                 }
               }
             }
@@ -1326,17 +1326,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Filters.UsersFilter"
+                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Filters-UsersFilter"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Filters.UsersFilter"
+                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Filters-UsersFilter"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Filters.UsersFilter"
+                "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Filters-UsersFilter"
               }
             }
           }
@@ -1347,17 +1347,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-User"
                 }
               }
             }
@@ -1383,17 +1383,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module"
                 }
               }
             }
@@ -1411,7 +1411,7 @@
   },
   "components": {
     "schemas": {
-      "Eliassen.System.Linq.Search.FilterParameter": {
+      "Eliassen.System.Linq.Search-FilterParameter": {
         "type": "object",
         "properties": {
           "eq": {
@@ -1440,22 +1440,20 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.OrderDirections": {
+      "Eliassen.System.Linq.Search-OrderDirections": {
         "enum": [
           "asc",
           "desc"
         ],
         "type": "string"
       },
-      "Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Blog.Contracts.Models.BlogModel, Nucleus.Blog.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "title": "Eliassen.System.Linq.Search.PagedQueryResult[Nucleus.Blog.Contracts.Models.BlogModel]",
+      "Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models-BlogModel": {
         "type": "object",
         "properties": {
           "rows": {
-            "title": "System.Collections.Generic.IReadOnlyList[Nucleus.Blog.Contracts.Models.BlogModel]",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.BlogModel"
+              "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models-BlogModel"
             },
             "nullable": true
           },
@@ -1474,15 +1472,13 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "title": "Eliassen.System.Linq.Search.PagedQueryResult[Nucleus.Core.Persistence.Models.Module]",
+      "Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-Module": {
         "type": "object",
         "properties": {
           "rows": {
-            "title": "System.Collections.Generic.IReadOnlyList[Nucleus.Core.Persistence.Models.Module]",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Module"
+              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-Module"
             },
             "nullable": true
           },
@@ -1501,15 +1497,13 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "title": "Eliassen.System.Linq.Search.PagedQueryResult[Nucleus.Core.Persistence.Models.User]",
+      "Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Persistence.Models-User": {
         "type": "object",
         "properties": {
           "rows": {
-            "title": "System.Collections.Generic.IReadOnlyList[Nucleus.Core.Persistence.Models.User]",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.User"
+              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
             },
             "nullable": true
           },
@@ -1528,15 +1522,13 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.PagedQueryResult`1[[Nucleus.Lesson.Contracts.Models.LessonModel, Nucleus.Lesson.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "title": "Eliassen.System.Linq.Search.PagedQueryResult[Nucleus.Lesson.Contracts.Models.LessonModel]",
+      "Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models-LessonModel": {
         "type": "object",
         "properties": {
           "rows": {
-            "title": "System.Collections.Generic.IReadOnlyList[Nucleus.Lesson.Contracts.Models.LessonModel]",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel"
+              "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models-LessonModel"
             },
             "nullable": true
           },
@@ -1555,8 +1547,7 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Blog.Contracts.Models.BlogModel, Nucleus.Blog.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "title": "Eliassen.System.Linq.Search.SearchQuery[Nucleus.Blog.Contracts.Models.BlogModel]",
+      "Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models-BlogModel": {
         "type": "object",
         "properties": {
           "currentPage": {
@@ -1578,19 +1569,17 @@
             "nullable": true
           },
           "filter": {
-            "title": "System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.FilterParameter]",
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.FilterParameter"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-FilterParameter"
             },
             "description": "**Filterable Properties:** BlogId; Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn; CreatedOnUnix",
             "nullable": true
           },
           "orderBy": {
-            "title": "System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.OrderDirections]",
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-OrderDirections"
             },
             "description": "**Sortable Properties:** BlogId, Title, Slug, Tags, Preview, Content, Enabled, Author, CreatedOn, CreatedOnUnix  **Default Order:** CreatedOn asc, Slug asc",
             "nullable": true
@@ -1598,8 +1587,7 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "title": "Eliassen.System.Linq.Search.SearchQuery[Nucleus.Core.Persistence.Models.Module]",
+      "Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Persistence.Models-Module": {
         "type": "object",
         "properties": {
           "currentPage": {
@@ -1621,19 +1609,17 @@
             "nullable": true
           },
           "filter": {
-            "title": "System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.FilterParameter]",
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.FilterParameter"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-FilterParameter"
             },
             "description": "**Filterable Properties:** ModuleId; Roles; Name; Code",
             "nullable": true
           },
           "orderBy": {
-            "title": "System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.OrderDirections]",
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-OrderDirections"
             },
             "description": "**Sortable Properties:** ModuleId, Roles, Name, Code  **Default Order:** Name asc",
             "nullable": true
@@ -1641,8 +1627,7 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "title": "Eliassen.System.Linq.Search.SearchQuery[Nucleus.Core.Persistence.Models.User]",
+      "Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Persistence.Models-User": {
         "type": "object",
         "properties": {
           "currentPage": {
@@ -1664,19 +1649,17 @@
             "nullable": true
           },
           "filter": {
-            "title": "System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.FilterParameter]",
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.FilterParameter"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-FilterParameter"
             },
             "description": "**Filterable Properties:** FirstNameLastName; LastNameFirstName; UserId; UserName; EmailAddress; FirstName; LastName; Active; UserModules; CreatedOn; Module; UserStatus",
             "nullable": true
           },
           "orderBy": {
-            "title": "System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.OrderDirections]",
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-OrderDirections"
             },
             "description": "**Sortable Properties:** FirstNameLastName, LastNameFirstName, UserId, UserName, EmailAddress, FirstName, LastName, Active, UserModules, CreatedOn  **Default Order:** LastName asc, FirstName asc, EmailAddress asc",
             "nullable": true
@@ -1684,8 +1667,7 @@
         },
         "additionalProperties": false
       },
-      "Eliassen.System.Linq.Search.SearchQuery`1[[Nucleus.Lesson.Contracts.Models.LessonModel, Nucleus.Lesson.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "title": "Eliassen.System.Linq.Search.SearchQuery[Nucleus.Lesson.Contracts.Models.LessonModel]",
+      "Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models-LessonModel": {
         "type": "object",
         "properties": {
           "currentPage": {
@@ -1707,19 +1689,17 @@
             "nullable": true
           },
           "filter": {
-            "title": "System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.FilterParameter]",
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.FilterParameter"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-FilterParameter"
             },
             "description": "**Filterable Properties:** LessonId; Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals",
             "nullable": true
           },
           "orderBy": {
-            "title": "System.Collections.Generic.Dictionary[System.String,Eliassen.System.Linq.Search.OrderDirections]",
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
+              "$ref": "#/components/schemas/Eliassen.System.Linq.Search-OrderDirections"
             },
             "description": "**Sortable Properties:** LessonId, Title, MediaLink, Preview, PreviewImage, Slug, Content, Enabled, CreatedOn, CreatedOnUnix, Attendees, Teacher, Duration, StartDateTime, EndDateTime, Tags, Price, Goals  **Default Order:** CreatedOn asc, Slug asc",
             "nullable": true
@@ -1727,7 +1707,7 @@
         },
         "additionalProperties": false
       },
-      "Microsoft.AspNetCore.Mvc.ProblemDetails": {
+      "Microsoft.AspNetCore.Mvc-ProblemDetails": {
         "type": "object",
         "properties": {
           "type": {
@@ -1739,7 +1719,6 @@
             "nullable": true
           },
           "status": {
-            "title": "System.Nullable[System.Int32]",
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -1755,7 +1734,7 @@
         },
         "additionalProperties": { }
       },
-      "Nucleus.Blog.Contracts.Models.BlogModel": {
+      "Nucleus.Blog.Contracts.Models-BlogModel": {
         "type": "object",
         "properties": {
           "blogId": {
@@ -1771,7 +1750,6 @@
             "nullable": true
           },
           "tags": {
-            "title": "System.Collections.Generic.List[System.String]",
             "type": "array",
             "items": {
               "type": "string"
@@ -1787,7 +1765,6 @@
             "nullable": true
           },
           "enabled": {
-            "title": "System.Nullable[System.Boolean]",
             "type": "boolean",
             "nullable": true
           },
@@ -1806,19 +1783,19 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Blog.Contracts.Models.Filters.BlogsFilter": {
+      "Nucleus.Blog.Contracts.Models.Filters-BlogsFilter": {
         "type": "object",
         "properties": {
           "blogFilters": {
-            "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilterItem"
+            "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.Filters-BlogsFilterItem"
           },
           "pagingModel": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagingModel"
+            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-PagingModel"
           }
         },
         "additionalProperties": false
       },
-      "Nucleus.Blog.Contracts.Models.Filters.BlogsFilterItem": {
+      "Nucleus.Blog.Contracts.Models.Filters-BlogsFilterItem": {
         "type": "object",
         "properties": {
           "inputValue": {
@@ -1828,7 +1805,7 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models.DocumentModel": {
+      "Nucleus.Core.Persistence.Models-DocumentModel": {
         "type": "object",
         "properties": {
           "documentId": {
@@ -1848,7 +1825,6 @@
             "nullable": true
           },
           "documentSize": {
-            "title": "System.Nullable[System.Int64]",
             "type": "integer",
             "format": "int64",
             "nullable": true
@@ -1862,7 +1838,6 @@
             "nullable": true
           },
           "createdOn": {
-            "title": "System.Nullable[System.DateTimeOffset]",
             "type": "string",
             "format": "date-time",
             "nullable": true
@@ -1870,37 +1845,7 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models.Filters.UserFilterItem": {
-        "type": "object",
-        "properties": {
-          "inputValue": {
-            "type": "string",
-            "nullable": true
-          },
-          "module": {
-            "type": "string",
-            "nullable": true
-          },
-          "userStatus": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Core.Persistence.Models.Filters.UsersFilter": {
-        "type": "object",
-        "properties": {
-          "userFilters": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Filters.UserFilterItem"
-          },
-          "pagingModel": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagingModel"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Core.Persistence.Models.Module": {
+      "Nucleus.Core.Persistence.Models-Module": {
         "type": "object",
         "properties": {
           "name": {
@@ -1916,137 +1861,16 @@
             "nullable": true
           },
           "roles": {
-            "title": "System.Collections.Generic.List[Nucleus.Core.Persistence.Models.Role]",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Role"
+              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-Role"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.Module, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "title": "Nucleus.Core.Persistence.Models.PagedResult[Nucleus.Core.Persistence.Models.Module]",
-        "type": "object",
-        "properties": {
-          "currentPage": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "pageCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "pageSize": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "rowCount": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "firstRowOnPage": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "lastRowOnPage": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "results": {
-            "title": "System.Collections.Generic.List[Nucleus.Core.Persistence.Models.Module]",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Module"
-            },
-            "nullable": true
-          },
-          "rows": {
-            "title": "System.Collections.Generic.IEnumerable[Nucleus.Core.Persistence.Models.Module]",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Module"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "totalPageCount": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "totalRowCount": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Core.Persistence.Models.PagedResult`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "title": "Nucleus.Core.Persistence.Models.PagedResult[Nucleus.Core.Persistence.Models.User]",
-        "type": "object",
-        "properties": {
-          "currentPage": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "pageCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "pageSize": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "rowCount": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "firstRowOnPage": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "lastRowOnPage": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "results": {
-            "title": "System.Collections.Generic.List[Nucleus.Core.Persistence.Models.User]",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.User"
-            },
-            "nullable": true
-          },
-          "rows": {
-            "title": "System.Collections.Generic.IEnumerable[Nucleus.Core.Persistence.Models.User]",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.User"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "totalPageCount": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "totalRowCount": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Core.Persistence.Models.PagingModel": {
+      "Nucleus.Core.Persistence.Models-PagingModel": {
         "type": "object",
         "properties": {
           "currentPage": {
@@ -2072,7 +1896,7 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models.PermissionBase": {
+      "Nucleus.Core.Persistence.Models-PermissionBase": {
         "type": "object",
         "properties": {
           "name": {
@@ -2086,58 +1910,7 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.DocumentModel, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "title": "Nucleus.Core.Persistence.Models.ResponseModel[Nucleus.Core.Persistence.Models.DocumentModel]",
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "response": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.DocumentModel"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Core.Persistence.Models.ResponseModel`1[[Nucleus.Core.Persistence.Models.User, Nucleus.Core.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "title": "Nucleus.Core.Persistence.Models.ResponseModel[Nucleus.Core.Persistence.Models.User]",
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "response": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.User"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Core.Persistence.Models.ResponseModel`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
-        "title": "Nucleus.Core.Persistence.Models.ResponseModel[System.Boolean]",
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "response": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Core.Persistence.Models.Role": {
+      "Nucleus.Core.Persistence.Models-Role": {
         "type": "object",
         "properties": {
           "name": {
@@ -2149,17 +1922,16 @@
             "nullable": true
           },
           "rights": {
-            "title": "System.Collections.Generic.List[Nucleus.Core.Persistence.Models.PermissionBase]",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PermissionBase"
+              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-PermissionBase"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models.User": {
+      "Nucleus.Core.Persistence.Models-User": {
         "type": "object",
         "properties": {
           "userId": {
@@ -2186,15 +1958,13 @@
             "type": "boolean"
           },
           "userModules": {
-            "title": "System.Collections.Generic.List[Nucleus.Core.Persistence.Models.UserModule]",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.UserModule"
+              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserModule"
             },
             "nullable": true
           },
           "createdOn": {
-            "title": "System.Nullable[System.DateTimeOffset]",
             "type": "string",
             "format": "date-time",
             "nullable": true
@@ -2202,7 +1972,7 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models.UserAction": {
+      "Nucleus.Core.Persistence.Models-UserAction": {
         "type": "object",
         "properties": {
           "userId": {
@@ -2229,15 +1999,13 @@
             "type": "boolean"
           },
           "userModules": {
-            "title": "System.Collections.Generic.List[Nucleus.Core.Persistence.Models.UserModule]",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.UserModule"
+              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-UserModule"
             },
             "nullable": true
           },
           "createdOn": {
-            "title": "System.Nullable[System.DateTimeOffset]",
             "type": "string",
             "format": "date-time",
             "nullable": true
@@ -2249,7 +2017,7 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Core.Persistence.Models.UserModule": {
+      "Nucleus.Core.Persistence.Models-UserModule": {
         "type": "object",
         "properties": {
           "name": {
@@ -2261,39 +2029,208 @@
             "nullable": true
           },
           "roles": {
-            "title": "System.Collections.Generic.List[Nucleus.Core.Persistence.Models.Role]",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Role"
+              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-Role"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter": {
-        "type": "object",
-        "properties": {
-          "lessonFilters": {
-            "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilterItem"
-          },
-          "pagingModel": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagingModel"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nucleus.Lesson.Contracts.Models.Filters.LessonsFilterItem": {
+      "Nucleus.Core.Persistence.Models.Filters-UserFilterItem": {
         "type": "object",
         "properties": {
           "inputValue": {
+            "type": "string",
+            "nullable": true
+          },
+          "module": {
+            "type": "string",
+            "nullable": true
+          },
+          "userStatus": {
             "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nucleus.Lesson.Contracts.Models.LessonModel": {
+      "Nucleus.Core.Persistence.Models.Filters-UsersFilter": {
+        "type": "object",
+        "properties": {
+          "userFilters": {
+            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.Filters-UserFilterItem"
+          },
+          "pagingModel": {
+            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-PagingModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-Module": {
+        "type": "object",
+        "properties": {
+          "currentPage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rowCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "firstRowOnPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "lastRowOnPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-Module"
+            },
+            "nullable": true
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-Module"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "totalPageCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalRowCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Core.Persistence.Models.PagedResult-Nucleus.Core.Persistence.Models-User": {
+        "type": "object",
+        "properties": {
+          "currentPage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rowCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "firstRowOnPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "lastRowOnPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
+            },
+            "nullable": true
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "totalPageCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalRowCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-DocumentModel": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "response": {
+            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-DocumentModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Core.Persistence.Models.ResponseModel-Nucleus.Core.Persistence.Models-User": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "response": {
+            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-User"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Core.Persistence.Models.ResponseModel-System-Boolean": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "response": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Lesson.Contracts.Models-LessonModel": {
         "type": "object",
         "properties": {
           "lessonId": {
@@ -2325,12 +2262,10 @@
             "nullable": true
           },
           "enabled": {
-            "title": "System.Nullable[System.Boolean]",
             "type": "boolean",
             "nullable": true
           },
           "createdOn": {
-            "title": "System.Nullable[System.DateTimeOffset]",
             "type": "string",
             "format": "date-time",
             "nullable": true
@@ -2351,7 +2286,6 @@
             "nullable": true
           },
           "duration": {
-            "title": "System.Nullable[System.Int32]",
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -2361,7 +2295,6 @@
             "format": "date-time"
           },
           "endDateTime": {
-            "title": "System.Nullable[System.DateTimeOffset]",
             "type": "string",
             "format": "date-time",
             "nullable": true
@@ -2387,19 +2320,19 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Project.Contracts.Models.Filters.ProjectFilter": {
+      "Nucleus.Lesson.Contracts.Models.Filters-LessonsFilter": {
         "type": "object",
         "properties": {
-          "projectFilters": {
-            "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectsFilterItem"
+          "lessonFilters": {
+            "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters-LessonsFilterItem"
           },
           "pagingModel": {
-            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models.PagingModel"
+            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-PagingModel"
           }
         },
         "additionalProperties": false
       },
-      "Nucleus.Project.Contracts.Models.Filters.ProjectsFilterItem": {
+      "Nucleus.Lesson.Contracts.Models.Filters-LessonsFilterItem": {
         "type": "object",
         "properties": {
           "inputValue": {
@@ -2409,7 +2342,7 @@
         },
         "additionalProperties": false
       },
-      "Nucleus.Project.Contracts.Models.ProjectModel": {
+      "Nucleus.Project.Contracts.Models-ProjectModel": {
         "type": "object",
         "properties": {
           "projectId": {
@@ -2445,7 +2378,6 @@
             "nullable": true
           },
           "enabled": {
-            "title": "System.Nullable[System.Boolean]",
             "type": "boolean",
             "nullable": true
           },
@@ -2456,6 +2388,28 @@
           "createdOnUnix": {
             "type": "integer",
             "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Project.Contracts.Models.Filters-ProjectFilter": {
+        "type": "object",
+        "properties": {
+          "projectFilters": {
+            "$ref": "#/components/schemas/Nucleus.Project.Contracts.Models.Filters-ProjectsFilterItem"
+          },
+          "pagingModel": {
+            "$ref": "#/components/schemas/Nucleus.Core.Persistence.Models-PagingModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nucleus.Project.Contracts.Models.Filters-ProjectsFilterItem": {
+        "type": "object",
+        "properties": {
+          "inputValue": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

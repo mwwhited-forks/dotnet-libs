@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Nucleus.Core.Persistence.Interfaces;
-using Nucleus.Core.Persistence.Managers;
-using Nucleus.Core.Persistence.Models;
-using Nucleus.Core.Persistence.Models.Filters;
-using Nucleus.Core.Persistence.Models.Keys;
-using Nucleus.Core.Persistence.Providers;
+using Nucleus.Core.Contracts.Managers;
+using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Contracts.Models.Filters;
+using Nucleus.Core.Contracts.Models.Keys;
+using Nucleus.Core.Contracts.Persistence;
+using Nucleus.Core.Contracts.Providers;
 using System;
 using System.Collections.Generic;
 using System.IO;

@@ -1,4 +1,5 @@
 ﻿using MongoDB.Driver;
+using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Persistence.Collections;
 using Nucleus.Core.Persistence.Models;
 using System;

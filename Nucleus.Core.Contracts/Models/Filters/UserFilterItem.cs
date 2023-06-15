@@ -1,4 +1,4 @@
-﻿namespace Nucleus.Core.Persistence.Models.Filters
+﻿namespace Nucleus.Core.Contracts.Models.Filters
 {
 #warning Retire this
     public class UserFilterItem

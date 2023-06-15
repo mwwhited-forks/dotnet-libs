@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Nucleus.Core.Persistence.Models.Keys
+﻿namespace Nucleus.Core.Contracts.Models.Keys
 {
     public static class UserActionsConst
     {

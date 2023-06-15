@@ -1,7 +1,7 @@
 ﻿using Eliassen.System.ComponentModel.Search;
 using System.Collections.Generic;
 
-namespace Nucleus.Core.Persistence.Models
+namespace Nucleus.Core.Contracts.Models
 {
     [DefaultSort(targetName: nameof(Name))]
     public class Module : PermissionBase

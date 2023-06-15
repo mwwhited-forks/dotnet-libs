@@ -1,6 +1,6 @@
 ﻿using Eliassen.System.Linq.Search;
 
-namespace Nucleus.Core.Persistence.Models
+namespace Nucleus.Core.Contracts.Models
 {
     public class PagingModel : IPageQuery
     {

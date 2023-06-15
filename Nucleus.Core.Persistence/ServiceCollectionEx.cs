@@ -1,7 +1,7 @@
 ﻿using Eliassen.MongoDB.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Nucleus.Core.Persistence.Interfaces;
+using Nucleus.Core.Contracts.Persistence;
 using Nucleus.Core.Persistence.Services;
 
 namespace Nucleus.Core.Persistence

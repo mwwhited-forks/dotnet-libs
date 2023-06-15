@@ -1,8 +1,8 @@
-﻿using Nucleus.Core.Persistence.Models;
+﻿using Nucleus.Core.Contracts.Models;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Nucleus.Core.Persistence.Interfaces
+namespace Nucleus.Core.Contracts.Persistence
 {
     public interface IUserService
     {

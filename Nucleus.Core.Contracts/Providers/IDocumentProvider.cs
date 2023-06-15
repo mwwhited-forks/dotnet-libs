@@ -1,9 +1,9 @@
-﻿using Nucleus.Core.Persistence.Models;
+﻿using Nucleus.Core.Contracts.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Nucleus.Core.Persistence.Providers
+namespace Nucleus.Core.Contracts.Providers
 {
     public interface IDocumentProvider
     {

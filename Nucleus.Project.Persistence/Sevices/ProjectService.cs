@@ -1,5 +1,5 @@
 ﻿using MongoDB.Driver;
-using Nucleus.Core.Persistence.Models;
+using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using Nucleus.Project.Contracts.Collections;
 using Nucleus.Project.Contracts.Models;

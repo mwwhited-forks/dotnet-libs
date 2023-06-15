@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Nucleus.Core.Persistence.Models.Keys
+﻿namespace Nucleus.Core.Contracts.Models.Keys
 {
     public static class ConfigKeys
     {
@@ -16,14 +12,14 @@ namespace Nucleus.Core.Persistence.Models.Keys
                 public const string Tenant = "Azure:AdB2C:Tenant";
                 public const string Domain = "Azure:AdB2C:Domain";
             }
-           
+
         }
         public static class Container
         {
             public const string DefaultProvider = "StorageContainer:DefaultProvider";
             public const string DefaultConnectionString = "StorageContainer:ConnectionString";
             public const string DefaultContainerName = "StorageContainer:ContainerName";
-            
+
             public static class Directories
             {
                 public const string _Base = "StorageContainer:ContainerDirectories:";

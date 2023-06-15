@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Nucleus.Core.Persistence.Providers
+namespace Nucleus.Core.Contracts.Providers
 {
     public interface IBlobContentInfoResult
     {

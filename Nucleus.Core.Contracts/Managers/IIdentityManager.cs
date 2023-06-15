@@ -1,10 +1,8 @@
-﻿using Nucleus.Core.Persistence.Models;
-using System;
+﻿using Nucleus.Core.Contracts.Models;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Nucleus.Core.Persistence.Managers
+namespace Nucleus.Core.Contracts.Managers
 {
     public interface IIdentityManager
     {

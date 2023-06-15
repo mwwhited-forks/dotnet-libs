@@ -1,8 +1,8 @@
-﻿using Nucleus.Core.Persistence.Models;
+﻿using Nucleus.Core.Contracts.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Nucleus.Core.Persistence.Managers
+namespace Nucleus.Core.Contracts.Managers
 {
     public interface IUserProfileManager
     {

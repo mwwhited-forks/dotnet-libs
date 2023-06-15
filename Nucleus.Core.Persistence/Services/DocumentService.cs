@@ -1,8 +1,8 @@
 ﻿using MongoDB.Driver;
+using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Contracts.Models.Filters;
+using Nucleus.Core.Contracts.Persistence;
 using Nucleus.Core.Persistence.Collections;
-using Nucleus.Core.Persistence.Interfaces;
-using Nucleus.Core.Persistence.Models;
-using Nucleus.Core.Persistence.Models.Filters;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using System.Collections.Generic;
 using System.Threading.Tasks;

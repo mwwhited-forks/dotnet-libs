@@ -1,10 +1,10 @@
 ﻿using MongoDB.Driver;
-using Nucleus.Core.Persistence.Interfaces;
-using Nucleus.Core.Persistence.Models;
 using Nucleus.Core.Persistence.Collections;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using System.Linq;
 using System.Threading.Tasks;
+using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Contracts.Persistence;
 
 namespace Nucleus.Core.Persistence.Services
 {

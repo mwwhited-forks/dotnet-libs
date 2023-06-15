@@ -3,7 +3,7 @@ using Nucleus.Blog.Contracts.Models;
 using Nucleus.Blog.Contracts.Models.Filters;
 using Nucleus.Blog.Contracts.Services;
 using Nucleus.Blog.Persistence.Collections;
-using Nucleus.Core.Persistence.Models;
+using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using System.Collections.Generic;
 using System.Linq;

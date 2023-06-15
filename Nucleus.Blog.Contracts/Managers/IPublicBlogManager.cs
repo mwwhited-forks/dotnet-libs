@@ -1,6 +1,6 @@
 ﻿using Nucleus.Blog.Contracts.Models;
 using Nucleus.Blog.Contracts.Models.Filters;
-using Nucleus.Core.Persistence.Models;
+using Nucleus.Core.Contracts.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

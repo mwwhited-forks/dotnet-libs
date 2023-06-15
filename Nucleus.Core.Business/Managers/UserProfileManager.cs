@@ -1,7 +1,7 @@
-﻿using Nucleus.Core.Persistence.Interfaces;
-using Nucleus.Core.Persistence.Managers;
-using Nucleus.Core.Persistence.Models;
-using Nucleus.Core.Persistence.Models.Keys;
+﻿using Nucleus.Core.Contracts.Managers;
+using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Contracts.Models.Keys;
+using Nucleus.Core.Contracts.Persistence;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

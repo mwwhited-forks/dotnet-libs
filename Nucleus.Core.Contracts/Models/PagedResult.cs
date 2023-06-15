@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Nucleus.Core.Persistence.Models
+namespace Nucleus.Core.Contracts.Models
 {
     public class PagedResult<T> : PagedResult, IPagedQueryResult<T> where T : class
     {
@@ -14,8 +14,8 @@ namespace Nucleus.Core.Persistence.Models
         IReadOnlyList<T> IQueryResult<T>.Rows => Results;
         IEnumerable IQueryResult.Rows => Rows;
 
-        public int TotalPageCount => this.PageCount;
-        public int TotalRowCount => Convert.ToInt32(this.RowCount);
+        public int TotalPageCount => PageCount;
+        public int TotalRowCount => Convert.ToInt32(RowCount);
     }
     public abstract class PagedResult
     {

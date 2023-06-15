@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Linq.Search;
+using Nucleus.Core.Contracts.Models;
 using System.Linq;
 
 namespace Nucleus.Core.Persistence.Models

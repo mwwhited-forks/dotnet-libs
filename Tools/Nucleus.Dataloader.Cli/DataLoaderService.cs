@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using System.Reflection;
-using static Nucleus.Core.Persistence.Rights;
+using static Nucleus.Core.Contracts.Rights;
 
 namespace Nucleus.Dataloader.Cli
 {

@@ -2,8 +2,9 @@
 using Eliassen.System.Linq.Search;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Nucleus.Core.Persistence;
-using Nucleus.Core.Persistence.Managers;
+using Nucleus.Core.Contracts;
+using Nucleus.Core.Contracts.Managers;
+using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Persistence.Models;
 using System;
 using System.Linq;

@@ -1,6 +1,6 @@
 ﻿using Eliassen.System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
-using Nucleus.Core.Persistence.Managers;
+using Nucleus.Core.Contracts.Managers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
