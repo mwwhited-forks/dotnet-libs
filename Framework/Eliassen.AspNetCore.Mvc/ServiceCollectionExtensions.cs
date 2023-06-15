@@ -36,7 +36,6 @@ namespace Eliassen.AspNetCore.Mvc
         public static IServiceCollection TryAddCommonOpenApiExtensions(this IServiceCollection services)
         {
             services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<FormFileOperationFilter>>();
-            services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddSchemaFilterOptions<TypeSchemaFilter>>();
             services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
             services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
             services.AddControllers(opt =>

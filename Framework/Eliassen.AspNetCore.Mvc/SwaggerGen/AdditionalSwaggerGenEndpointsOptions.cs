@@ -9,6 +9,8 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 
 namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 
@@ -33,7 +35,7 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
         var assemblyName = GetType().Assembly.GetName();
 
         options.DocInclusionPredicate((name, desc) => name == "all" || name == desc.GroupName);
-        options.CustomSchemaIds(x => x.FullName); // https://wegotcode.com/microsoft/swagger-fix-for-dotnetcore/
+        options.CustomSchemaIds(ResolveSchemaId); // https://wegotcode.com/microsoft/swagger-fix-for-dotnetcore/
 
         options.SwaggerDoc("all", new OpenApiInfo
         {
@@ -67,4 +69,39 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
             }
         }
     }
+
+    private readonly (string replace, string with)[] _replacements = new[]
+    {
+        //("Eliassen.", ""),
+        //("Lightwell.", ""),
+        //("Nucleus.", ""),
+        //("Microsoft.", "Ms."),
+        //("AspNetCore.", "AspNet."),
+        //(".Persistence.", "."),
+        //(".Contracts.", "."),
+        //(".Models.", "."),
+        ("System.", ""),
+        ("Linq.", ""),
+        (".", "_"),
+    };
+    // WebUtility.UrlEncode(...)
+    private string ResolveSchemaId(Type type) =>
+        ResolveSchemaType(type);//.Replace('.', '_');
+        //_replacements.Aggregate(
+        //    new StringBuilder(ResolveSchemaType(type)),
+        //    (sb, v) => sb.Replace(v.replace, v.with),
+        //    sb => sb.ToString()
+        //    )
+        //    ;
+
+    private string ResolveSchemaType(Type type)
+    {
+        if (type.IsGenericType)
+        {
+            return $"{type.Namespace}-{type.Name.Split('`')[0]}-{string.Join("__", type.GetGenericArguments().Select(ResolveSchemaId))}";
+        }
+
+        return $"{type.Namespace}-{type.Name}";
+    }
+
 }
