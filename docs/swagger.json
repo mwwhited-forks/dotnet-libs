@@ -1574,7 +1574,7 @@
           },
           "searchTerm": {
             "type": "string",
-            "description": "**Searched Properties:** Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn; CreatedOnUnix",
+            "description": "**Searched Properties:** Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn",
             "nullable": true
           },
           "filter": {
@@ -1582,7 +1582,7 @@
             "additionalProperties": {
               "$ref": "#/components/schemas/Eliassen.System.Linq.Search.FilterParameter"
             },
-            "description": "**Filterable Properties:** BlogId; Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn; CreatedOnUnix",
+            "description": "**Filterable Properties:** BlogId; Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn",
             "nullable": true
           },
           "orderBy": {
@@ -1590,7 +1590,7 @@
             "additionalProperties": {
               "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
             },
-            "description": "**Sortable Properties:** BlogId, Title, Slug, Tags, Preview, Content, Enabled, Author, CreatedOn, CreatedOnUnix  **Default Order:** CreatedOn asc, Slug asc",
+            "description": "**Sortable Properties:** BlogId, Title, Slug, Tags, Preview, Content, Enabled, Author, CreatedOn  **Default Order:** CreatedOn asc, Title asc",
             "nullable": true
           }
         },
@@ -1694,7 +1694,7 @@
           },
           "searchTerm": {
             "type": "string",
-            "description": "**Searched Properties:** Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals",
+            "description": "**Searched Properties:** Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals; Notes",
             "nullable": true
           },
           "filter": {
@@ -1702,7 +1702,7 @@
             "additionalProperties": {
               "$ref": "#/components/schemas/Eliassen.System.Linq.Search.FilterParameter"
             },
-            "description": "**Filterable Properties:** LessonId; Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals",
+            "description": "**Filterable Properties:** LessonId; Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals; Notes",
             "nullable": true
           },
           "orderBy": {
@@ -1710,7 +1710,7 @@
             "additionalProperties": {
               "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
             },
-            "description": "**Sortable Properties:** LessonId, Title, MediaLink, Preview, PreviewImage, Slug, Content, Enabled, CreatedOn, CreatedOnUnix, Attendees, Teacher, Duration, StartDateTime, EndDateTime, Tags, Price, Goals  **Default Order:** CreatedOn asc, Slug asc",
+            "description": "**Sortable Properties:** LessonId, Title, MediaLink, Preview, PreviewImage, Slug, Content, Enabled, CreatedOn, Attendees, Teacher, Duration, StartDateTime, EndDateTime, Tags, Price, Goals, Notes  **Default Order:** CreatedOn asc, Title asc",
             "nullable": true
           }
         },
@@ -1784,10 +1784,6 @@
           "createdOn": {
             "type": "string",
             "format": "date-time"
-          },
-          "createdOnUnix": {
-            "type": "integer",
-            "format": "int64"
           }
         },
         "additionalProperties": false
@@ -2300,10 +2296,6 @@
             "type": "string",
             "format": "date-time"
           },
-          "createdOnUnix": {
-            "type": "integer",
-            "format": "int64"
-          },
           "attendees": {
             "type": "array",
             "items": {
@@ -2345,6 +2337,10 @@
             "items": {
               "type": "string"
             },
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -2414,10 +2410,6 @@
           "createdOn": {
             "type": "string",
             "format": "date-time"
-          },
-          "createdOnUnix": {
-            "type": "integer",
-            "format": "int64"
           }
         },
         "additionalProperties": false
