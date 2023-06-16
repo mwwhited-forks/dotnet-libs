@@ -166,8 +166,8 @@
       "code": "module_lessons",
       "roles": [
         {
-          "name": "Lessons",
-          "code": "role_lessons",
+          "name": "Lessons Golfer",
+          "code": "role_lessons_golfer",
           "rights": [
             {
               "name": "Lessons - Read",
@@ -251,8 +251,8 @@
       "code": "module_lessons",
       "roles": [
         {
-          "name": "Lessons",
-          "code": "role_lessons",
+          "name": "Lessons Golfer Pro",
+          "code": "role_lessons_pro",
           "rights": [
             {
               "name": "Lessons - Read",
