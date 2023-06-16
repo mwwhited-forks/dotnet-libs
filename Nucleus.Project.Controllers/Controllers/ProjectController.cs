@@ -17,6 +17,7 @@ namespace Nucleus.Project.Controllers.Controllers
 
 #warning retire this
         [HttpPost("Projects")]
+        [Obsolete]
         public async Task<IActionResult> GetAllBlogsPagedAsync(ProjectFilter filter) =>
             new JsonResult(await _publicProjectManager.GetProjectsPagedAsync(filter));
 
