@@ -514,22 +514,18 @@
       "code": "module_lessons",
       "roles": [
         {
-          "name": "Lessons",
-          "code": "role_lessons",
+          "name": "Lessons Golfer Pro",
+		      "code": "role_lessons_pro",
           "rights": [
-            {
-              "name": "Lessons - Read",
-              "code": "right_lessons_read"
-            },
-            {
-              "name": "Lessons - Write",
-              "code": "right_lessons_write"
-            },
-			{
-              "name": "Lessons - Read Golfer Pro",
-              "code": "right_lessons_read_golfer_pro"
-            }
-          ]
+			        {
+				      "name": "Lessons - Read",
+				      "code": "right_lessons_pro_read"
+			        },
+			        {
+				      "name": "Lessons - Write",
+				      "code": "right_lessons_pro_write"
+			        }
+		      ]
         }
       ]
     }
