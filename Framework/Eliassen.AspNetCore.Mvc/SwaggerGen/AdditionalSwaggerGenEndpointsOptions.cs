@@ -33,7 +33,7 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
         var assemblyName = GetType().Assembly.GetName();
 
         options.DocInclusionPredicate((name, desc) => name == "all" || name == desc.GroupName);
-        options.CustomSchemaIds(x => x.FullName); // https://wegotcode.com/microsoft/swagger-fix-for-dotnetcore/
+        options.CustomSchemaIds(ResolveSchemaType); // https://wegotcode.com/microsoft/swagger-fix-for-dotnetcore/
 
         options.SwaggerDoc("all", new OpenApiInfo
         {
@@ -66,5 +66,15 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
                 _log.LogWarning($"{{{nameof(file)}}}: {{{nameof(e.Message)}}}", Path.GetFileName(file), e.Message);
             }
         }
+    }
+
+    private string ResolveSchemaType(Type type)
+    {
+        if (type.IsGenericType)
+        {
+            return $"{type.Namespace}.{type.Name.Split('`')[0]}-{string.Join("_", type.GetGenericArguments().Select(ResolveSchemaType))}";
+        }
+
+        return $"{type.Namespace}.{type.Name}";
     }
 }
