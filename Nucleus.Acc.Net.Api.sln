@@ -39,6 +39,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		GitVersion.yml = GitVersion.yml
 		global.json = global.json
 		ProjectSetup.md = ProjectSetup.md
+		readme.md = readme.md
 		test.bat = test.bat
 	EndProjectSection
 EndProject
