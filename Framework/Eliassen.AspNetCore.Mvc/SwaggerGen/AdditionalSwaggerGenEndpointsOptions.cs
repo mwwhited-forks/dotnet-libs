@@ -9,8 +9,6 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Text;
 
 namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 
@@ -79,5 +77,4 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
 
         return $"{type.Namespace}.{type.Name}";
     }
-
 }

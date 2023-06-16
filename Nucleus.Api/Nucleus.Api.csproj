@@ -1,40 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="6.0.11" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.AzureADB2C.UI" Version="6.0.11" />
-		<PackageReference Include="Microsoft.Identity.Web" Version="1.25.8" />
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-		<PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="6.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureADB2C.UI" Version="6.0.11" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="1.25.8" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
-		<ProjectReference Include="..\Nucleus.AspNetCore.Mvc\Nucleus.AspNetCore.Mvc.csproj" />
-		<ProjectReference Include="..\Nucleus.Blog.Controllers\Nucleus.Blog.Controllers.csproj" />
-		<ProjectReference Include="..\Nucleus.Blog.Persistence\Nucleus.Blog.Persistence.csproj" />
-		<ProjectReference Include="..\Nucleus.Core.Business\Nucleus.Core.Business.csproj" />
-		<ProjectReference Include="..\Nucleus.Core.Controllers\Nucleus.Core.Controllers.csproj" />
-		<ProjectReference Include="..\Nucleus.Core.Persistence\Nucleus.Core.Persistence.csproj" />
-		<ProjectReference Include="..\Nucleus.Blog.Business\Nucleus.Blog.Business.csproj" />
-		<ProjectReference Include="..\Nucleus.Core.Shared.Business\Nucleus.Core.Shared.Business.csproj" />
-		<ProjectReference Include="..\Nucleus.Core.Shared.Controllers\Nucleus.Core.Shared.Controllers.csproj" />
-		<ProjectReference Include="..\Nucleus.Core.Shared.Persistence\Nucleus.Core.Shared.Persistence.csproj" />
-		<ProjectReference Include="..\Nucleus.Project.Business\Nucleus.Project.Business.csproj" />
-		<ProjectReference Include="..\Nucleus.Project.Controllers\Nucleus.Project.Controllers.csproj" />
-		<ProjectReference Include="..\Nucleus.Project.Persistence\Nucleus.Project.Persistence.csproj" />
-		<ProjectReference Include="..\Nucleus.Lesson.Business\Nucleus.Lesson.Business.csproj" />
-		<ProjectReference Include="..\Nucleus.Lesson.Controllers\Nucleus.Lesson.Controllers.csproj" />
-		<ProjectReference Include="..\Nucleus.Lesson.Persistence\Nucleus.Lesson.Persistence.csproj" />
-	</ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
+    <ProjectReference Include="..\Nucleus.AspNetCore.Mvc\Nucleus.AspNetCore.Mvc.csproj" />
+    <ProjectReference Include="..\Nucleus.Blog.Controllers\Nucleus.Blog.Controllers.csproj" />
+    <ProjectReference Include="..\Nucleus.Blog.Persistence\Nucleus.Blog.Persistence.csproj" />
+    <ProjectReference Include="..\Nucleus.Core.Business\Nucleus.Core.Business.csproj" />
+    <ProjectReference Include="..\Nucleus.Core.Controllers\Nucleus.Core.Controllers.csproj" />
+    <ProjectReference Include="..\Nucleus.Core.Persistence\Nucleus.Core.Persistence.csproj" />
+    <ProjectReference Include="..\Nucleus.Blog.Business\Nucleus.Blog.Business.csproj" />
+    <ProjectReference Include="..\Nucleus.Core.Shared.Business\Nucleus.Core.Shared.Business.csproj" />
+    <ProjectReference Include="..\Nucleus.Core.Shared.Controllers\Nucleus.Core.Shared.Controllers.csproj" />
+    <ProjectReference Include="..\Nucleus.Core.Shared.Persistence\Nucleus.Core.Shared.Persistence.csproj" />
+    <ProjectReference Include="..\Nucleus.Project.Business\Nucleus.Project.Business.csproj" />
+    <ProjectReference Include="..\Nucleus.Project.Controllers\Nucleus.Project.Controllers.csproj" />
+    <ProjectReference Include="..\Nucleus.Project.Persistence\Nucleus.Project.Persistence.csproj" />
+    <ProjectReference Include="..\Nucleus.Lesson.Business\Nucleus.Lesson.Business.csproj" />
+    <ProjectReference Include="..\Nucleus.Lesson.Controllers\Nucleus.Lesson.Controllers.csproj" />
+    <ProjectReference Include="..\Nucleus.Lesson.Persistence\Nucleus.Lesson.Persistence.csproj" />
+  </ItemGroup>
+	
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<MakeDir Directories="..\docs" Condition="!Exists('..\docs')" />
 		<Exec Command="dotnet tool restore" />
 		<Exec Command="dotnet swagger tofile --output &quot;..\docs\swagger.json&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" />
 		<Exec Command="dotnet swagger tofile --yaml --output &quot;..\docs\swagger.yaml&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" />
