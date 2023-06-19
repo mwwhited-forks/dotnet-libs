@@ -87,16 +87,16 @@
     "code": "module_lessons",
     "roles": [
       {
-        "name": "Lessons",
-        "code": "role_lessons",
+        "name": "Lessons Admin",
+        "code": "role_lessons_admin",
         "rights": [
           {
             "name": "Lessons - Read",
-            "code": "right_lessons_read"
+            "code": "right_lessons_admin_read"
           },
           {
             "name": "Lessons - Write",
-            "code": "right_lessons_write"
+            "code": "right_lessons_admin_write"
           }
         ]
       },
@@ -106,11 +106,11 @@
         "rights": [
           {
             "name": "Lessons - Read",
-            "code": "right_lessons_read"
+            "code": "right_lessons_golfer_read"
           },
           {
             "name": "Lessons - Write",
-            "code": "right_lessons_write"
+            "code": "right_lessons_golfer_write"
           }
         ]
       },
@@ -120,11 +120,11 @@
         "rights": [
           {
             "name": "Lessons - Read",
-            "code": "right_lessons_read"
+            "code": "right_lessons_pro_read"
           },
           {
             "name": "Lessons - Write",
-            "code": "right_lessons_write"
+            "code": "right_lessons_pro_write"
           }
         ]
       }
