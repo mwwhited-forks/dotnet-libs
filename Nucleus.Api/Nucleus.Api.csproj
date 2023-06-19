@@ -10,7 +10,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="6.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureADB2C.UI" Version="6.0.11" />
     <PackageReference Include="Microsoft.Identity.Web" Version="1.25.8" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
   </ItemGroup>
 
@@ -33,5 +33,12 @@
     <ProjectReference Include="..\Nucleus.Lesson.Controllers\Nucleus.Lesson.Controllers.csproj" />
     <ProjectReference Include="..\Nucleus.Lesson.Persistence\Nucleus.Lesson.Persistence.csproj" />
   </ItemGroup>
+	
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<MakeDir Directories="..\docs" Condition="!Exists('..\docs')" />
+		<Exec Command="dotnet tool restore" />
+		<Exec Command="dotnet swagger tofile --output &quot;..\docs\swagger.json&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" />
+		<Exec Command="dotnet swagger tofile --yaml --output &quot;..\docs\swagger.yaml&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" />
+	</Target>
 
 </Project>
