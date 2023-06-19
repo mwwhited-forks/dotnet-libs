@@ -23,9 +23,10 @@ namespace Eliassen.Handlebars.Extensions.Templating
             _log = log;
         }
 
-        public bool CanApply(string template, object data) => true;
+        public bool CanApply(ITemplateContext context) =>
+            string.Equals(context.TemplateContentType, "text/x-handlebars-template", StringComparison.InvariantCultureIgnoreCase);
 
-        public string Apply(string template, object data)
+        public bool Apply(ITemplateContext context, object data, Stream target)
         {
             // https://github.com/Handlebars-Net/Handlebars.Net
             var handlebar = HandlebarsDotNet.Handlebars.Create();
@@ -53,6 +54,7 @@ namespace Eliassen.Handlebars.Extensions.Templating
             handlebar.RegisterHelper("log", (output, context, arguments) =>
             {
                 _log.LogInformation($"{{message}}", string.Join(' ', arguments));
+                return null;
             });
 
             var dictionary = new Dictionary<string, object>();
@@ -87,10 +89,13 @@ namespace Eliassen.Handlebars.Extensions.Templating
                 }
             });
 
-            var compiled = handlebar.Compile(template);
-            var rendered = compiled(data);
-            return rendered;
-        }
+            using var template = context.OpenTemplate();
+            var reader = new StreamReader(template);
+            var compiled = handlebar.Compile(reader);
 
+            using var writer = new StreamWriter(target, leaveOpen: true);
+            compiled(writer, context, data);
+            return true;
+        }
     }
 }

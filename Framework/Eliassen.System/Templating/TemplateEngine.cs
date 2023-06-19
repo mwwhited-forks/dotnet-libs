@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 
 namespace Eliassen.System.Templating
@@ -21,45 +23,40 @@ namespace Eliassen.System.Templating
             _providers = providers;
         }
 
-        private ITemplateSource? GetSource(string templateName, string targetName) =>
-            _sources.FirstOrDefault(s => s.CanGet(templateName, targetName));
-        private ITemplateProvider? GetProvider(string template, object data) =>
-            _providers.FirstOrDefault(s => s.CanApply(template, data));
+        /// <inheritdoc/>
+        public ITemplateContext? Apply(string templateName, object data, Stream target)
+        {
+            var templates =
+                from context in GetAll(templateName)
+                from provider in _providers
+                where provider.CanApply(context)
+                select (context, provider);
+
+            var template = templates.FirstOrDefault();
+            if (template == default || template.context == null) return null;
+
+            template.provider.Apply(template.context, data, target);
+            return template.context;
+        }
 
         /// <inheritdoc/>
-        public string? Apply(string templateName, string targetName, object data) =>
-            Get(templateName, targetName) switch
-            {
-                string template => GetProvider(template, data) switch
-                {
-                    ITemplateProvider provider => provider.Apply(template, data),
-                    _ => null,
-                },
-                _ => null,
-            };
+        public bool Apply(ITemplateContext context, object data, Stream target)
+        {
+            var provider = _providers.FirstOrDefault(p => p.CanApply(context));
+            if (provider == null) return false;
+            provider.Apply(context, data, target);
+            return true;
+        }
 
         /// <inheritdoc/>
-        public string? Get(string templateName, string targetName) =>
-            GetSource(templateName, targetName) switch
-            {
-                ITemplateSource source => source.Get(templateName, targetName),
-                _ => null,
-            };
+        public ITemplateContext? Get(string templateName) => 
+            GetAll(templateName).FirstOrDefault();
 
         /// <inheritdoc/>
-        public string? SuggestedContentType(string templateName, string targetName) =>
-            GetSource(templateName, targetName) switch
-            {
-                ITemplateSource source => source.SuggestedContentType(templateName, targetName),
-                _ => null,
-            };
-
-        /// <inheritdoc/>
-        public string? SuggestedFileName(string templateName, string targetName) =>
-            GetSource(templateName, targetName) switch
-            {
-                ITemplateSource source => source.SuggestedFileName(templateName, targetName),
-                _ => null,
-            };
+        public IEnumerable<ITemplateContext> GetAll(string templateName) =>
+            from source in _sources
+            from context in source.Get(templateName)
+            orderby context.Priority
+            select context;
     }
 }

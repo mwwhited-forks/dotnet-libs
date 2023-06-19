@@ -2,7 +2,7 @@
 {
     public interface ITemplateProvider
     {
-        bool CanApply(string template, object data);
-        string? Apply(string template, object data);
+        bool CanApply(ITemplateContext context);
+        bool Apply(ITemplateContext context, object data, Stream target);
     }
 }

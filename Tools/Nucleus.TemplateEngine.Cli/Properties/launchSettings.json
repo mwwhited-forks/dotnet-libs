@@ -1,9 +1,10 @@
 {
   "profiles": {
-    "Nucleus.TemplateEngine.Cli": {
+    "Service-Endpoints": {
       "commandName": "Project",
+      "commandLineArgs": "--input \"$(SolutionDir)docs\\swagger.json\"\r\n--output \"$(SolutionDir)docs\\Service-Endpoints.md\"\r\n--template \"$(ProjectDir)$(OutputPath)Service-Endpoints.md\"",
       "environmentVariables": {
-        "Logging__LogLevel__Eliassen": "Debug"
+        //"Logging__LogLevel__Eliassen": "Debug"
       }
     }
   }

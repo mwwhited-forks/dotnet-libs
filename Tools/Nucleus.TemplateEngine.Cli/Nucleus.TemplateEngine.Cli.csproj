@@ -8,10 +8,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Remove="Service-Endpoints.md" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
 	</ItemGroup>
@@ -22,7 +18,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="Service-Endpoints.md">
+	  <None Update="Service-Endpoints.md.hbs">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	</ItemGroup>

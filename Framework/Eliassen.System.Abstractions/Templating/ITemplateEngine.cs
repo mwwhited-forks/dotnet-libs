@@ -2,10 +2,10 @@
 {
     public interface ITemplateEngine
     {
-        string? Get(string templateName, string targetName);
-        string? Apply(string templateName, string targetName, object data);
+        ITemplateContext? Get(string templateName);
+        IEnumerable<ITemplateContext> GetAll(string templateName);
 
-        string? SuggestedFileName(string templateName, string targetName);
-        string? SuggestedContentType(string templateName, string targetName);
+        ITemplateContext? Apply(string templateName, object data, Stream target);
+        bool Apply(ITemplateContext context, object data, Stream target);
     }
 }
