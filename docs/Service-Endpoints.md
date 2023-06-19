@@ -1,29 +1,29 @@
 # Swagger Description
 
-## Endpoints 
+## Endpoints
 
-### /api/Blog/Blogs 
+### /api/Blog/Blogs
 
 HTTP Method: post
 Anonymous:   True
 
 Request:     #/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter
 
-### /api/Blog/Slug/{id} 
+### /api/Blog/Slug/{id}
 
 HTTP Method: get
 Anonymous:   True
 
 
 
-### /api/Blog/RecentBlogs/{id} 
+### /api/Blog/RecentBlogs/{id}
 
 HTTP Method: get
 Anonymous:   True
 
 
 
-### /api/Blog/Query 
+### /api/Blog/Query
 
 HTTP Method: post
 Anonymous:   True
@@ -32,7 +32,7 @@ Request:     #/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleu
 
 Response: #/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel
 
-### /api/BlogAdmin/Blogs 
+### /api/BlogAdmin/Blogs
 
 HTTP Method: post
 Anonymous:   False
@@ -41,7 +41,7 @@ Rights:
 
 Request:     #/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter
 
-### /api/BlogAdmin/Blog/{id} 
+### /api/BlogAdmin/Blog/{id}
 
 HTTP Method: get
 Anonymous:   False
@@ -50,7 +50,7 @@ Rights:
 
 
 
-### /api/BlogAdmin/Save 
+### /api/BlogAdmin/Save
 
 HTTP Method: post
 Anonymous:   False
@@ -59,7 +59,7 @@ Rights:
 
 Request:     #/components/schemas/Nucleus.Blog.Contracts.Models.BlogModel
 
-### /api/Documents/{id} 
+### /api/Documents/{id}
 
 HTTP Method: get
 Anonymous:   False
@@ -78,7 +78,7 @@ Rights:
 
 Response: #/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-System.Boolean
 
-### /api/Documents 
+### /api/Documents
 
 HTTP Method: post
 Anonymous:   False
@@ -93,28 +93,28 @@ Rights:
 
 Response: #/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel
 
-### /api/Lesson/Lessons 
+### /api/Lesson/Lessons
 
 HTTP Method: post
 Anonymous:   True
 
 Request:     #/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter
 
-### /api/Lesson/Slug/{id} 
+### /api/Lesson/Slug/{id}
 
 HTTP Method: get
 Anonymous:   True
 
 
 
-### /api/Lesson/RecentLessons/{id} 
+### /api/Lesson/RecentLessons/{id}
 
 HTTP Method: get
 Anonymous:   True
 
 
 
-### /api/Lesson/Query 
+### /api/Lesson/Query
 
 HTTP Method: post
 Anonymous:   True
@@ -123,7 +123,7 @@ Request:     #/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleu
 
 Response: #/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel
 
-### /api/LessonAdmin/Lessons 
+### /api/LessonAdmin/Lessons
 
 HTTP Method: post
 Anonymous:   False
@@ -132,7 +132,7 @@ Rights:
 
 Request:     #/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter
 
-### /api/LessonAdmin/Lesson/{id} 
+### /api/LessonAdmin/Lesson/{id}
 
 HTTP Method: get
 Anonymous:   False
@@ -141,7 +141,7 @@ Rights:
 
 
 
-### /api/LessonAdmin/Save 
+### /api/LessonAdmin/Save
 
 HTTP Method: post
 Anonymous:   False
@@ -150,28 +150,28 @@ Rights:
 
 Request:     #/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel
 
-### /api/Project/Projects 
+### /api/Project/Projects
 
 HTTP Method: post
 Anonymous:   False
 
 Request:     #/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter
 
-### /api/Project/Slug/{id} 
+### /api/Project/Slug/{id}
 
 HTTP Method: get
 Anonymous:   False
 
 
 
-### /api/Project/RecentProjects/{id} 
+### /api/Project/RecentProjects/{id}
 
 HTTP Method: get
 Anonymous:   False
 
 
 
-### /api/ProjectAdmin/Projects 
+### /api/ProjectAdmin/Projects
 
 HTTP Method: post
 Anonymous:   False
@@ -180,7 +180,7 @@ Rights:
 
 Request:     #/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter
 
-### /api/ProjectAdmin/Project/{id} 
+### /api/ProjectAdmin/Project/{id}
 
 HTTP Method: get
 Anonymous:   False
@@ -189,7 +189,7 @@ Rights:
 
 
 
-### /api/ProjectAdmin/Save 
+### /api/ProjectAdmin/Save
 
 HTTP Method: post
 Anonymous:   False
@@ -198,7 +198,7 @@ Rights:
 
 Request:     #/components/schemas/Nucleus.Project.Contracts.Models.ProjectModel
 
-### /api/RegisterUser 
+### /api/RegisterUser
 
 HTTP Method: post
 Anonymous:   True
@@ -207,7 +207,7 @@ Request:     #/components/schemas/Nucleus.Core.Contracts.Models.UserAction
 
 Response: #/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User
 
-### /api/RegisterUser/ApplicationPermissions 
+### /api/RegisterUser/ApplicationPermissions
 
 HTTP Method: get
 Anonymous:   True
@@ -216,7 +216,7 @@ Anonymous:   True
 
 Response: #/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module
 
-### /api/RegisterUser/ApplicationPemissions 
+### /api/RegisterUser/ApplicationPemissions
 
 HTTP Method: get
 Anonymous:   True
@@ -227,14 +227,14 @@ Rights:
 
 Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module
 
-### /api/SiteMap 
+### /api/SiteMap
 
 HTTP Method: get
 Anonymous:   False
 
 
 
-### /api/User 
+### /api/User
 
 HTTP Method: get
 Anonymous:   False
@@ -249,7 +249,7 @@ Request:     #/components/schemas/Nucleus.Core.Contracts.Models.User
 
 Response: #/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User
 
-### /api/UserManagement 
+### /api/UserManagement
 
 HTTP Method: post
 Anonymous:   False
@@ -260,7 +260,7 @@ Request:     #/components/schemas/Nucleus.Core.Contracts.Models.UserAction
 
 Response: #/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User
 
-### /api/UserManagement/Query 
+### /api/UserManagement/Query
 
 HTTP Method: post
 Anonymous:   False
@@ -271,7 +271,7 @@ Request:     #/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleu
 
 Response: #/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User
 
-### /api/UserManagement/ApplicationPermissions 
+### /api/UserManagement/ApplicationPermissions
 
 HTTP Method: get
 Anonymous:   False
@@ -282,7 +282,7 @@ Rights:
 
 Response: #/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module
 
-### /api/UserManagement/UserList 
+### /api/UserManagement/UserList
 
 HTTP Method: post
 Anonymous:   False
@@ -293,7 +293,7 @@ Request:     #/components/schemas/Nucleus.Core.Contracts.Models.Filters.UsersFil
 
 Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.User
 
-### /api/UserManagement/ApplicationPemissions 
+### /api/UserManagement/ApplicationPemissions
 
 HTTP Method: get
 Anonymous:   False
@@ -304,9 +304,9 @@ Rights:
 
 Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module
 
-## Models 
+## Models
 
-### Eliassen.System.Linq.Search.FilterParameter 
+### Eliassen.System.Linq.Search.FilterParameter
 
 
 #### Properties
@@ -319,20 +319,10 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * lt : object?
 * lte : object?
 
-### Eliassen.System.Linq.Search.OrderDirections 
+### Eliassen.System.Linq.Search.OrderDirections
 
 
-### Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel 
-
-
-#### Properties
-
-* rows : array?
-* currentPage : integer
-* totalPageCount : integer
-* totalRowCount : integer
-
-### Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module 
+### Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel
 
 
 #### Properties
@@ -342,7 +332,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * totalPageCount : integer
 * totalRowCount : integer
 
-### Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User 
+### Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module
 
 
 #### Properties
@@ -352,7 +342,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * totalPageCount : integer
 * totalRowCount : integer
 
-### Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel 
+### Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User
 
 
 #### Properties
@@ -362,7 +352,17 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * totalPageCount : integer
 * totalRowCount : integer
 
-### Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models.BlogModel 
+### Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel
+
+
+#### Properties
+
+* rows : array?
+* currentPage : integer
+* totalPageCount : integer
+* totalRowCount : integer
+
+### Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models.BlogModel
 
 
 #### Properties
@@ -374,7 +374,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * filter : object?
 * orderBy : object?
 
-### Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.Module 
+### Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.Module
 
 
 #### Properties
@@ -386,7 +386,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * filter : object?
 * orderBy : object?
 
-### Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.User 
+### Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.User
 
 
 #### Properties
@@ -398,7 +398,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * filter : object?
 * orderBy : object?
 
-### Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models.LessonModel 
+### Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models.LessonModel
 
 
 #### Properties
@@ -410,7 +410,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * filter : object?
 * orderBy : object?
 
-### Microsoft.AspNetCore.Mvc.ProblemDetails 
+### Microsoft.AspNetCore.Mvc.ProblemDetails
 
 
 #### Properties
@@ -421,7 +421,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * detail : string?
 * instance : string?
 
-### Nucleus.Blog.Contracts.Models.BlogModel 
+### Nucleus.Blog.Contracts.Models.BlogModel
 
 
 #### Properties
@@ -437,7 +437,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * createdOn : string
 * createdOnUnix : integer
 
-### Nucleus.Blog.Contracts.Models.Filters.BlogsFilter 
+### Nucleus.Blog.Contracts.Models.Filters.BlogsFilter
 
 
 #### Properties
@@ -445,14 +445,14 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * blogFilters : Nucleus.Blog.Contracts.Models.Filters.BlogsFilterItem
 * pagingModel : Nucleus.Core.Contracts.Models.PagingModel
 
-### Nucleus.Blog.Contracts.Models.Filters.BlogsFilterItem 
+### Nucleus.Blog.Contracts.Models.Filters.BlogsFilterItem
 
 
 #### Properties
 
 * inputValue : string?
 
-### Nucleus.Core.Contracts.Models.DocumentModel 
+### Nucleus.Core.Contracts.Models.DocumentModel
 
 
 #### Properties
@@ -466,7 +466,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * documentCategory : string?
 * createdOn : string?
 
-### Nucleus.Core.Contracts.Models.Filters.UserFilterItem 
+### Nucleus.Core.Contracts.Models.Filters.UserFilterItem
 
 
 #### Properties
@@ -475,7 +475,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * module : string?
 * userStatus : string?
 
-### Nucleus.Core.Contracts.Models.Filters.UsersFilter 
+### Nucleus.Core.Contracts.Models.Filters.UsersFilter
 
 
 #### Properties
@@ -483,7 +483,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * userFilters : Nucleus.Core.Contracts.Models.Filters.UserFilterItem
 * pagingModel : Nucleus.Core.Contracts.Models.PagingModel
 
-### Nucleus.Core.Contracts.Models.Module 
+### Nucleus.Core.Contracts.Models.Module
 
 
 #### Properties
@@ -493,7 +493,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * moduleId : string?
 * roles : array?
 
-### Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module 
+### Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module
 
 
 #### Properties
@@ -509,7 +509,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * totalPageCount : integer
 * totalRowCount : integer
 
-### Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.User 
+### Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.User
 
 
 #### Properties
@@ -525,7 +525,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * totalPageCount : integer
 * totalRowCount : integer
 
-### Nucleus.Core.Contracts.Models.PagingModel 
+### Nucleus.Core.Contracts.Models.PagingModel
 
 
 #### Properties
@@ -536,7 +536,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * sortDirection : string?
 * excludePageCount : boolean
 
-### Nucleus.Core.Contracts.Models.PermissionBase 
+### Nucleus.Core.Contracts.Models.PermissionBase
 
 
 #### Properties
@@ -544,7 +544,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * name : string?
 * code : string?
 
-### Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel 
+### Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel
 
 
 #### Properties
@@ -553,7 +553,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * message : string?
 * response : Nucleus.Core.Contracts.Models.DocumentModel
 
-### Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User 
+### Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User
 
 
 #### Properties
@@ -562,7 +562,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * message : string?
 * response : Nucleus.Core.Contracts.Models.User
 
-### Nucleus.Core.Contracts.Models.ResponseModel-System.Boolean 
+### Nucleus.Core.Contracts.Models.ResponseModel-System.Boolean
 
 
 #### Properties
@@ -571,7 +571,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * message : string?
 * response : boolean
 
-### Nucleus.Core.Contracts.Models.Role 
+### Nucleus.Core.Contracts.Models.Role
 
 
 #### Properties
@@ -580,7 +580,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * code : string?
 * rights : array?
 
-### Nucleus.Core.Contracts.Models.User 
+### Nucleus.Core.Contracts.Models.User
 
 
 #### Properties
@@ -594,7 +594,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * userModules : array?
 * createdOn : string?
 
-### Nucleus.Core.Contracts.Models.UserAction 
+### Nucleus.Core.Contracts.Models.UserAction
 
 
 #### Properties
@@ -609,7 +609,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * createdOn : string?
 * identityAction : string?
 
-### Nucleus.Core.Contracts.Models.UserModule 
+### Nucleus.Core.Contracts.Models.UserModule
 
 
 #### Properties
@@ -618,7 +618,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * code : string?
 * roles : array?
 
-### Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter 
+### Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter
 
 
 #### Properties
@@ -626,14 +626,14 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * lessonFilters : Nucleus.Lesson.Contracts.Models.Filters.LessonsFilterItem
 * pagingModel : Nucleus.Core.Contracts.Models.PagingModel
 
-### Nucleus.Lesson.Contracts.Models.Filters.LessonsFilterItem 
+### Nucleus.Lesson.Contracts.Models.Filters.LessonsFilterItem
 
 
 #### Properties
 
 * inputValue : string?
 
-### Nucleus.Lesson.Contracts.Models.LessonModel 
+### Nucleus.Lesson.Contracts.Models.LessonModel
 
 
 #### Properties
@@ -657,7 +657,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * price : number
 * goals : string[]?
 
-### Nucleus.Project.Contracts.Models.Filters.ProjectFilter 
+### Nucleus.Project.Contracts.Models.Filters.ProjectFilter
 
 
 #### Properties
@@ -665,14 +665,14 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * projectFilters : Nucleus.Project.Contracts.Models.Filters.ProjectsFilterItem
 * pagingModel : Nucleus.Core.Contracts.Models.PagingModel
 
-### Nucleus.Project.Contracts.Models.Filters.ProjectsFilterItem 
+### Nucleus.Project.Contracts.Models.Filters.ProjectsFilterItem
 
 
 #### Properties
 
 * inputValue : string?
 
-### Nucleus.Project.Contracts.Models.ProjectModel 
+### Nucleus.Project.Contracts.Models.ProjectModel
 
 
 #### Properties
@@ -688,4 +688,11 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * enabled : boolean?
 * createdOn : string
 * createdOnUnix : integer
+
+---
+
+6/19/2023 4:54:11 PM -04:00
+
+xyz
+reatedOnUnix : integer
 

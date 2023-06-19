@@ -27,7 +27,7 @@ public class TemplateEngineService : IHostedService
     public async Task StartAsync(CancellationToken cancellationToken)
     {
         if (string.IsNullOrWhiteSpace(_settings.InputFile)) throw new ArgumentNullException(nameof(_settings.InputFile));
-        if (string.IsNullOrWhiteSpace(_settings.TemplateFile)) throw new ArgumentNullException(nameof(_settings.TemplateFile));
+        if (string.IsNullOrWhiteSpace(_settings.Template)) throw new ArgumentNullException(nameof(_settings.Template));
         if (string.IsNullOrWhiteSpace(_settings.OutputFile)) throw new ArgumentNullException(nameof(_settings.OutputFile));
 
         var contentType = GetFileType(_settings.InputFileType, _settings.InputFile) ??
@@ -36,16 +36,18 @@ public class TemplateEngineService : IHostedService
             throw new NotSupportedException("No content found");
         var data = GetData(contentType, content);
 
-        _log.LogInformation($"Loaded: {{{nameof(_settings.InputFile)}}}", _settings.InputFile);
-
-        var result = _engine.Apply("Service-Endpoints", null, data);
-
-        _log.LogInformation($"Built: {{{nameof(_settings.TemplateFile)}}}", _settings.TemplateFile);
+        _log.LogInformation(
+            $"Loaded: {{{nameof(_settings.InputFile)}}} for {{{nameof(_settings.Template)}}}",
+            _settings.InputFile,
+            _settings.Template
+            );
 
         var dir = Path.GetDirectoryName(_settings.OutputFile);
         if (dir != null && !Directory.Exists(dir)) Directory.CreateDirectory(dir);
-        await File.WriteAllTextAsync(_settings.OutputFile, result);
+        using var fileWriter = File.Open(_settings.OutputFile, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read);
 
+        var result = await _engine.ApplyAsync(_settings.Template, data, fileWriter);
+        await fileWriter.FlushAsync();
         _log.LogInformation($"Written: {{{nameof(_settings.OutputFile)}}}", _settings.OutputFile);
     }
 

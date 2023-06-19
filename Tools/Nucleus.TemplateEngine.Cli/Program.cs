@@ -21,6 +21,7 @@ public class Program
             .ConfigureServices((context, services) =>
             {
                 services.AddConfiguration<TemplateEngineSettings>(context.Configuration);
+                services.AddConfiguration<FileTemplatingSettings>(context.Configuration);
 
                 services.AddHostedService<TemplateEngineService>();
 

@@ -3,6 +3,6 @@
     public interface ITemplateProvider
     {
         bool CanApply(ITemplateContext context);
-        bool Apply(ITemplateContext context, object data, Stream target);
+        Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target);
     }
 }

@@ -3,18 +3,38 @@ using System.IO;
 
 namespace Eliassen.System.Templating
 {
+    /// <inheritdoc/>
     public record TemplateContext : ITemplateContext
     {
-        public string TemplateName { get; set; }
-        public string TemplateContentType { get; set; }
-        public string TemplateFileExtension { get; set; }
-        public ITemplateSource TemplateSource { get; set; }
+        /// <inheritdoc/>
+        public string TemplateName { get; set; } = null!;
+        /// <inheritdoc/>
+        public string TemplateContentType { get; set; } = null!;
+        /// <inheritdoc/>
+        public string TemplateFileExtension { get; set; } = null!;
+        /// <inheritdoc/>
+        public ITemplateSource TemplateSource { get; set; } = null!;
 
-        public string TemplateReference { get; set; }
-        public Func<Stream> OpenTemplate { get; set; }
+        /// <inheritdoc/>
+        public string TemplateReference { get; set; } = null!;
+        /// <inheritdoc/>
+        public Func<ITemplateContext, Stream> OpenTemplate { get; set; } = null!;
 
-        public string TargetContentType { get; set; }
-        public string TargetFileExtension { get; set; }
+        /// <inheritdoc/>
+        public string TargetContentType { get; set; } = null!;
+        /// <inheritdoc/>
+        public string TargetFileExtension { get; set; } = null!;
+
+        /// <inheritdoc/>
         public int Priority { get; set; }
+
+        /// <inheritdoc/>
+        public override string ToString() =>
+            string.Join("",
+                TemplateName,
+                TargetFileExtension == TemplateFileExtension ? null : TargetFileExtension,
+                TemplateFileExtension,
+                $" ({TemplateContentType} -> {TargetContentType})"
+                );
     }
 }

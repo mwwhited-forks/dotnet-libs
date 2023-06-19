@@ -1,9 +1,9 @@
 # Swagger Description
 
-## Endpoints 
+## Endpoints
 {{#each this.paths}}
 
-### {{@key}} 
+### {{@key}}
 
 {{#each this}}
 HTTP Method: {{@key}}
@@ -20,17 +20,21 @@ Request:     {{@value.requestBody.content.[application/json].schema.[$ref]}}{{/i
 {{/each}}
 {{/each}}
 
-## Models 
+## Models
 {{#each this.components.schemas}}
 
 {{#if @value.title}}### {{@value.title}}
 
 * {{@key}}
 
-{{else}}### {{@key}} 
+{{else}}### {{@key}}
 {{/if}}{{#if this.properties}}
 
 #### Properties
 {{#each this.properties}}{{set 'property-reference-key' (str-replace @value.$ref '#/components/schemas/')}}
 * {{@key}} : {{#if @value.items.type}}{{@value.items.type}}[]{{else if @value.$ref}}{{get 'property-reference-key'}}{{else if @value.type}}{{@value.type}}{{else}}object{{/if}}{{#if @value.nullable}}?{{/if}}{{/each}}{{/if}}
 {{/each}}
+
+---
+
+Generated: {{date_now 'yyyy-MM-dd HH:mm:ss'}}

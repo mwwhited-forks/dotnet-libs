@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Eliassen.System.Templating
 {
@@ -12,20 +14,29 @@ namespace Eliassen.System.Templating
     {
         private readonly IEnumerable<ITemplateSource> _sources;
         private readonly IEnumerable<ITemplateProvider> _providers;
+        private readonly ILogger _logger;
 
         /// <inheritdoc/>
         public TemplateEngine(
             IEnumerable<ITemplateSource> sources,
-            IEnumerable<ITemplateProvider> providers
+            IEnumerable<ITemplateProvider> providers,
+            ILogger<TemplateEngine> logger
             )
         {
             _sources = sources;
             _providers = providers;
+            _logger = logger;
         }
 
         /// <inheritdoc/>
-        public ITemplateContext? Apply(string templateName, object data, Stream target)
+        public async Task<ITemplateContext?> ApplyAsync(string templateName, object data, Stream target)
         {
+            _logger.LogInformation(
+                $"Apply {{{nameof(templateName)}}} => {{{nameof(data)}}}", 
+                templateName, 
+                data
+                );
+
             var templates =
                 from context in GetAll(templateName)
                 from provider in _providers
@@ -33,23 +44,38 @@ namespace Eliassen.System.Templating
                 select (context, provider);
 
             var template = templates.FirstOrDefault();
-            if (template == default || template.context == null) return null;
+            if (template == default || template.context == null)
+            {
+                _logger.LogInformation(
+                    $"No template {{{nameof(templateName)}}}",
+                    templateName
+                    );
+                return null;
+            }
 
-            template.provider.Apply(template.context, data, target);
-            return template.context;
+            if (await template.provider.ApplyAsync(template.context, data, target))
+            {
+                _logger.LogInformation(
+                    $"Applied {{{nameof(templateName)}}} => {{{nameof(template)}}}",
+                    templateName,
+                    template
+                    );
+                return template.context;
+            }
+
+            return null;
         }
 
         /// <inheritdoc/>
-        public bool Apply(ITemplateContext context, object data, Stream target)
+        public async Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target)
         {
             var provider = _providers.FirstOrDefault(p => p.CanApply(context));
             if (provider == null) return false;
-            provider.Apply(context, data, target);
-            return true;
+            return await provider.ApplyAsync(context, data, target);
         }
 
         /// <inheritdoc/>
-        public ITemplateContext? Get(string templateName) => 
+        public ITemplateContext? Get(string templateName) =>
             GetAll(templateName).FirstOrDefault();
 
         /// <inheritdoc/>

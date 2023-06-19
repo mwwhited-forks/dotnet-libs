@@ -5,7 +5,7 @@
         ITemplateContext? Get(string templateName);
         IEnumerable<ITemplateContext> GetAll(string templateName);
 
-        ITemplateContext? Apply(string templateName, object data, Stream target);
-        bool Apply(ITemplateContext context, object data, Stream target);
+        Task<ITemplateContext?> ApplyAsync(string templateName, object data, Stream target);
+        Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target);
     }
 }

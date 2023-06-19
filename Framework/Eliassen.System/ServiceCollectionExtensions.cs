@@ -39,11 +39,23 @@ namespace Eliassen.System
         public static IServiceCollection TryTemplatingExtensions(this IServiceCollection services, IConfiguration config)
         {
             services.TryAddTransient<ITemplateEngine, TemplateEngine>();
-            services.TryAddTransient<ITemplateSource, FileTemplateSource>();
+
+            services.AddTransient<ITemplateSource, FileTemplateSource>();
             services.AddConfiguration<FileTemplatingSettings>(config);
+
+            services.AddTransient<ITemplateProvider, XsltTemplateProvider>();
+
+            services.AddTransient<IFileType>(_ => new FileType { Extension = ".md", ContentType = "text/markdown", IsTemplateType = false });
+            services.AddTransient<IFileType>(_ => new FileType { Extension = ".yaml", ContentType = "text/yaml", IsTemplateType = false });
+
+            services.AddTransient<IFileType>(_ => new FileType { Extension = ".html", ContentType = "text/html", IsTemplateType = false });
+            services.AddTransient<IFileType>(_ => new FileType { Extension = ".txt", ContentType = "text/plain", IsTemplateType = false });
+            services.AddTransient<IFileType>(_ => new FileType { Extension = ".json", ContentType = "text/json", IsTemplateType = false });
+            services.AddTransient<IFileType>(_ => new FileType { Extension = ".xml", ContentType = "text/xml", IsTemplateType = false });
+            services.AddTransient<IFileType>(_ => new FileType { Extension = ".xslt", ContentType = XsltTemplateProvider.ContentType, IsTemplateType = true });
+
             return services;
         }
-
 
         public static IServiceCollection AddAccessor<TService>(this IServiceCollection services)
             where TService : class

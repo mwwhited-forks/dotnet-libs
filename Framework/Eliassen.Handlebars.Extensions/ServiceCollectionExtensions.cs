@@ -10,7 +10,8 @@ namespace Eliassen.Handlebars.Extensions
     {
         public static IServiceCollection AddHandlebarServices(this IServiceCollection services)
         {
-            services.TryAddTransient<ITemplateProvider, HandlebarsTemplateProvider>();
+            services.AddTransient<ITemplateProvider, HandlebarsTemplateProvider>();
+            services.AddTransient<IFileType>(_ => new FileType { Extension = ".hbs", ContentType = "text/x-handlebars-template", IsTemplateType = true });
             return services;
         }
     }

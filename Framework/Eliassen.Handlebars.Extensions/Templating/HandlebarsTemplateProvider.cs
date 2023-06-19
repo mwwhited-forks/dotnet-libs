@@ -1,11 +1,26 @@
 ﻿using Eliassen.System.Security.Cryptography;
 using Eliassen.System.Templating;
 using HandlebarsDotNet;
+using HandlebarsDotNet.Collections;
 using HandlebarsDotNet.Extension.Json;
+using HandlebarsDotNet.Helpers;
 using Microsoft.Extensions.Logging;
 
 namespace Eliassen.Handlebars.Extensions.Templating
 {
+    public class HelpersRegistry : IHelpersRegistry
+    {
+        public IIndexed<string, IHelperDescriptor<BlockHelperOptions>> GetBlockHelpers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IIndexed<string, IHelperDescriptor<HelperOptions>> GetHelpers()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
     public class HandlebarsTemplateProvider : ITemplateProvider
     {
         private readonly IHash _hash;
@@ -26,20 +41,37 @@ namespace Eliassen.Handlebars.Extensions.Templating
         public bool CanApply(ITemplateContext context) =>
             string.Equals(context.TemplateContentType, "text/x-handlebars-template", StringComparison.InvariantCultureIgnoreCase);
 
-        public bool Apply(ITemplateContext context, object data, Stream target)
+        public async Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target)
         {
             // https://github.com/Handlebars-Net/Handlebars.Net
             var handlebar = HandlebarsDotNet.Handlebars.Create();
             handlebar.Configuration.UseJson();
 
+
             foreach (var helpersRegistry in _helpersRegistry ?? Enumerable.Empty<IHelpersRegistry>())
-                foreach (var helper in helpersRegistry.GetHelpers())
+            {
+                foreach (var helper in helpersRegistry.GetBlockHelpers())
+                {
                     handlebar.RegisterHelper(helper.Value);
+                }
+                foreach (var helper in helpersRegistry.GetHelpers())
+                {
+                    handlebar.RegisterHelper(helper.Value);
+                }
+            }
 
             //TODO: These should be abstracted out to the IoC container
             handlebar.RegisterHelper("date_now", (output, context, arguments) =>
             {
-                output.WriteSafeString(DateTimeOffset.Now);
+                var format = arguments.FirstOrDefault() as string;
+                if (string.IsNullOrWhiteSpace(format))
+                {
+                    output.WriteSafeString(DateTimeOffset.Now);
+                }
+                else
+                {
+                    output.WriteSafeString(DateTimeOffset.Now.ToString(format));
+                }
             });
             handlebar.RegisterHelper("guid_new", (output, context, arguments) =>
             {
@@ -89,12 +121,16 @@ namespace Eliassen.Handlebars.Extensions.Templating
                 }
             });
 
-            using var template = context.OpenTemplate();
+            using var template = context.OpenTemplate(context);
             var reader = new StreamReader(template);
             var compiled = handlebar.Compile(reader);
 
-            using var writer = new StreamWriter(target, leaveOpen: true);
-            compiled(writer, context, data);
+            using var writer = new StreamWriter(target, leaveOpen: true)
+            {
+                AutoFlush = true,
+            };
+            compiled(writer, data, context);
+            await writer.FlushAsync();
             return true;
         }
     }

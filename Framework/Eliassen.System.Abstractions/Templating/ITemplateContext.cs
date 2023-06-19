@@ -8,7 +8,7 @@
         public ITemplateSource TemplateSource { get; }
 
         public string TemplateReference { get; }
-        public Func<Stream> OpenTemplate { get; }
+        public Func<ITemplateContext, Stream> OpenTemplate { get; }
 
         public string TargetContentType { get; }
         public string TargetFileExtension { get; }
