@@ -263,7 +263,10 @@
     "tags": ["18 100% winrate"],
     "price": 1.99,
     "goals": [],
-    "startdatetime": null,
+     "startdatetime": [
+      "636415154304356493",
+      20
+    ],
     "enddatetime": null,
 	"notes": "How to always win no matter what happens"
   },
@@ -288,7 +291,10 @@
     "tags": ["100% winrate"],
     "price": 1.99,
     "goals": [],
-    "startdatetime": null,
+     "startdatetime": [
+      "636415154304356493",
+      20
+    ],
     "enddatetime": null,
 	"notes": "How to always win no matter what happens 19"
   }
