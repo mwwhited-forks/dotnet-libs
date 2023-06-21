@@ -21,7 +21,9 @@ namespace Nucleus.Lesson.Persistence.Services
             Duration = item.Duration,
             Price = item.Price,
             Tags= item.Tags,
-            Notes = item.Notes
+            Notes = item.Notes,
+            StartDateTime = item.StartDateTime,
+            EndDateTime = item.EndDateTime
             
         };
     }
