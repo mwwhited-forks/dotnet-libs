@@ -20,7 +20,10 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startdatetime": null,
+    "startdatetime": [
+      "636415154304356493",
+      120
+    ],
     "enddatetime": null
   },
   {
@@ -44,7 +47,10 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startdatetime": null,
+    "startdatetime": [
+      "636415154304356493",
+      120
+    ],
     "enddatetime": null
   },
   {
@@ -68,7 +74,10 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startdatetime": null,
+     "startdatetime": [
+      "636415154304356493",
+      120
+    ],
     "enddatetime": null
   },
   {
@@ -92,7 +101,10 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startdatetime": null,
+     "startdatetime": [
+      "636415154304356493",
+      120
+    ],
     "enddatetime": null
   },
   {
@@ -116,7 +128,10 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startdatetime": null,
+     "startdatetime": [
+      "636415154304356493",
+      120
+    ],
     "enddatetime": null
   },
   {
@@ -140,7 +155,10 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startdatetime": null,
+     "startdatetime": [
+      "636415154304356493",
+      120
+    ],
     "enddatetime": null
   },
   {
@@ -164,7 +182,10 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startdatetime": null,
+     "startdatetime": [
+      "636415154304356493",
+      120
+    ],
     "enddatetime": null
   },
   {
@@ -188,7 +209,10 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startdatetime": null,
+     "startdatetime": [
+      "636415154304356493",
+      20
+    ],
     "enddatetime": null
   },
   {
@@ -204,7 +228,7 @@
     "enabled": true,
     "createdOn": [
       "636415154304356493",
-      120
+      20
     ],
     "attendees": [],
     "teacher": "NotAScammer Steve",
@@ -212,7 +236,10 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startdatetime": null,
+     "startdatetime": [
+      "636415154304356493",
+      20
+    ],
     "enddatetime": null
   },
   {
