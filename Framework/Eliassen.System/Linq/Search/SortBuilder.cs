@@ -20,9 +20,11 @@ namespace Eliassen.System.Linq.Search
         public IOrderedQueryable<TModel> SortBy(
             IQueryable<TModel> query,
             ISortQuery searchRequest,
-            IExpressionTreeBuilder<TModel> treeBuilder
+            IExpressionTreeBuilder<TModel> treeBuilder,
+            StringComparison stringComparison
             )
         {
+            var stringComparer = StringComparer.FromComparison(stringComparison);
             var sortLookup = treeBuilder.PropertyExpressions();
 
             var orderBys = searchRequest.OrderBy;
@@ -30,21 +32,24 @@ namespace Eliassen.System.Linq.Search
             var compositeSortMap =
                   sortLookup.Select(kvp => (kvp.Key, Expression: kvp.Value, Weight: 2))
                   .GroupBy(k => k.Key).Select(i => (i.Key, i.OrderBy(x => x.Weight).First().Expression))
-                  .ToDictionary(k => k.Key, v => v.Expression, StringComparer.InvariantCultureIgnoreCase)
+                  .ToDictionary(k => k.Key, v => v.Expression, stringComparer)
                   ;
 
-            var unmatchedKeys = searchRequest.OrderBy.Keys.Except(compositeSortMap.Keys);
-            var matchedKeys = searchRequest.OrderBy.Keys.Intersect(compositeSortMap.Keys);
+            var unmatchedKeys = searchRequest.OrderBy.Keys.Except(compositeSortMap.Keys, stringComparer);
+            var matchedKeys = searchRequest.OrderBy.Keys.Intersect(compositeSortMap.Keys, stringComparer);
 
             if (unmatchedKeys.Any())
             {
-                _logger.LogWarning($"Could not use properties: {{{nameof(unmatchedKeys)}}} as they are not on the model", string.Join("; ", unmatchedKeys));
+                _logger.LogWarning(
+                    $"Could not use properties: {{{nameof(unmatchedKeys)}}} as they are not on the model",
+                    string.Join("; ", unmatchedKeys)
+                    );
             }
 
             if (!matchedKeys.Any() && treeBuilder.DefaultSortOrder().Any())
             {
                 orderBys = treeBuilder.DefaultSortOrder()
-                  .ToDictionary(k => k.column, v => v.direction, StringComparer.InvariantCultureIgnoreCase);
+                  .ToDictionary(k => k.column, v => v.direction, stringComparer);
                 _logger.LogInformation(
                     $"Applying default sort for {{type}}: {{{nameof(orderBys)}}}",
                     typeof(TModel),
@@ -55,7 +60,7 @@ namespace Eliassen.System.Linq.Search
             IOrderedQueryable<TModel>? ordered = null;
             foreach (var orderBy in orderBys)
             {
-                if (!compositeSortMap.TryGetValue(orderBy.Key, out var keySelector)) continue;
+                if (!compositeSortMap.TryGetValue(orderBy.Key, out var keySelector, stringComparer)) continue;
 
                 ordered = (ordered, orderBy.Value) switch
                 {
