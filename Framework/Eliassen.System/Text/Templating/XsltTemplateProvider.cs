@@ -1,12 +1,7 @@
-﻿using Eliassen.System.Reflection;
+﻿using Eliassen.System.Text.Json;
 using System;
 using System.IO;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Text.Json;
-using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
@@ -60,13 +55,13 @@ namespace Eliassen.System.Text.Templating
                 data = jsonDocument.RootElement;
             }
 
-            //if (data is JsonElement jsonElement)
-            //{
-            //    var built = jsonElement.ToXmlDocument();
-            //    var builtNavigator = built?.CreateNavigator();
-            //    if (builtNavigator != null)
-            //        return builtNavigator;
-            //}
+            if (data is JsonElement jsonElement)
+            {
+                var built = jsonElement.ToXmlDocument();
+                var builtNavigator = built?.CreateNavigator();
+                if (builtNavigator != null)
+                    return builtNavigator;
+            }
 
             var serializer = new global::System.Xml.Serialization.XmlSerializer(data.GetType());
             using var xml = new MemoryStream();

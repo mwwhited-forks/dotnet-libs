@@ -136,6 +136,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{26D6201D-81AD-4596-BEE5-DE42FC5EE58D}"
 	ProjectSection(SolutionItems) = preProject
 		docs\swagger.json = docs\swagger.json
+		docs\swagger.xml = docs\swagger.xml
+		docs\swagger.yaml = docs\swagger.yaml
 	EndProjectSection
 EndProject
 Global

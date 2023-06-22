@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 using System.Xml;
 
@@ -12,51 +14,63 @@ namespace Eliassen.System.Text.Json
             rootName = XmlConvert.EncodeName(rootName);
 
             var document = new XmlDocument();
-            document.AppendChild(
-                document.CreateElement(rootName).AppendChildren(
-                    Gather(document, "", json)
-                    )
-            );
+            var element = document.CreateElement(rootName);
+            var children = GetChildren(document, "", json);
+
+            foreach (var child in children)
+            {
+                if (child.node is XmlAttribute attribute)
+                    element.Attributes.Append(attribute);
+                else
+                    element.AppendChild(child.node);
+            }
 
             return document;
         }
 
-        private static XmlElement AppendChildren(this XmlElement element, IEnumerable<XmlNode> children)
+        private static IEnumerable<(string name, XmlNode node)> GetChildren(XmlDocument document, string name, JsonElement json)
         {
-            foreach (var child in children)
-            {
-                if (child is XmlAttribute attribute)
-                    element.Attributes.Append(attribute);
-                else
-                    element.AppendChild(child);
-            }
-            return element;
-        }
-
-        private static IEnumerable<XmlNode> Gather(XmlDocument document, string name, JsonElement json)
-        {
-            if (string.IsNullOrWhiteSpace(name)) name = json.ValueKind.ToString();
-            name = XmlConvert.EncodeName(name);
+            var nodeName = XmlConvert.EncodeName(string.IsNullOrWhiteSpace(name) ? json.ValueKind.ToString() : name);
             switch (json.ValueKind)
             {
                 case JsonValueKind.Object:
                     {
+                        //var element = document.CreateElement(nodeName);
+
                         foreach (var item in json.EnumerateObject())
-                            yield return document.CreateElement(name).AppendChildren(
-                                Gather(document, item.Name, item.Value)
-                                );
+                        {
+                            var children = GetChildren(document, item.Name, item.Value);
+                            foreach (var child in children)
+                            {
+                                if (child.node is XmlText attribute)
+                                {
+                                    if (attribute.Value != null)
+                                    {
+                                        var attElement = document.CreateAttribute(XmlConvert.EncodeName(attribute.Name));
+                                        attElement.InnerText = attribute.Value;
+                                        yield return (attribute.Name, attElement);
+                                        //element.Attributes.Append(attElement);
+                                    }
+                                }
+                                else
+                                {
+                                    yield return (child.name, child.node);
+                                }
+                            }
+                        }
+
+                        //yield return ("object", element);
                     }
                     break;
                 case JsonValueKind.Array:
                     {
-                        var array = document.CreateElement(name);
                         foreach (var item in json.EnumerateArray())
                         {
-                            //var itemElement = document.CreateElement(name);
-                            var children = Gather(document, "", item);
+                            var array = document.CreateElement(nodeName);
+                            var children = GetChildren(document, nodeName, item);
                             foreach (var child in children)
                             {
-                                if (child is XmlAttribute attribute)
+                                if (child.node is XmlAttribute attribute)
                                 {
                                     var attElement = document.CreateElement(attribute.Name);
                                     attElement.InnerText = attribute.Value;
@@ -64,11 +78,11 @@ namespace Eliassen.System.Text.Json
                                 }
                                 else
                                 {
-                                    array.AppendChild(child);
+                                    array.AppendChild(child.node);
                                 }
                             }
+                            yield return ("item", array);
                         }
-                        yield return array;
                     }
                     break;
 
@@ -77,9 +91,8 @@ namespace Eliassen.System.Text.Json
                 case JsonValueKind.True:
                 case JsonValueKind.False:
                     {
-                        var attribute = document.CreateAttribute(name);
-                        attribute.Value = json.ToString();
-                        yield return attribute;
+                        var attribute = document.CreateTextNode(json.ToString());
+                        yield return (nodeName, attribute);
                     };
                     break;
 
@@ -88,6 +101,105 @@ namespace Eliassen.System.Text.Json
                 default:
                     break;
             }
+
         }
+
+
+
+        //private XmlElement  
+
+
+        //private static IEnumerable<XmlNode> Gather(XmlDocument document, string name, JsonElement json)
+        //{
+        //    if (string.IsNullOrWhiteSpace(name)) name = json.ValueKind.ToString();
+        //    name = XmlConvert.EncodeName(name);
+        //    switch (json.ValueKind)
+        //    {
+        //        case JsonValueKind.Object:
+        //            {
+        //                //var element = document.CreateElement(name);
+
+        //                //foreach (var item in json.EnumerateObject())
+        //                //{
+        //                //    var children = Gather(document, item.Name, item.Value);
+        //                //    foreach (var child in children)
+        //                //    {
+        //                //        if (child is XmlAttribute attribute)
+        //                //        {
+        //                //            element.Attributes.Append(attribute);
+        //                //        }
+        //                //        else
+        //                //        {
+        //                //            element.AppendChild(child);
+        //                //        }
+        //                //    }
+        //                //}
+
+        //               // yield return element;
+
+
+        //                //var children = Gather(document, "", json);
+
+        //                //foreach (var child in children)
+        //                //{
+        //                //    if (child is XmlAttribute attribute)
+        //                //        element.Attributes.Append(attribute);
+        //                //    else
+        //                //        element.AppendChild(child);
+        //                //}
+
+        //                //return document;
+
+        //                //foreach (var item in json.EnumerateObject())
+        //                //{
+        //                //    yield return document.CreateElement(name).AppendChildren(
+        //                //        Gather(document, item.Name, item.Value)
+        //                //        );
+        //                //}
+
+        //            }
+        //            break;
+        //        case JsonValueKind.Array:
+        //            {
+        //                var array = document.CreateElement(name);
+        //                foreach (var item in json.EnumerateArray())
+        //                {
+        //                    //var itemElement = document.CreateElement(name);
+        //                    var children = Gather(document, "", item);
+        //                    foreach (var child in children)
+        //                    {
+        //                        if (child is XmlAttribute attribute)
+        //                        {
+        //                            var attElement = document.CreateElement(attribute.Name);
+        //                            attElement.InnerText = attribute.Value;
+        //                            array.AppendChild(attElement);
+        //                        }
+        //                        else
+        //                        {
+        //                            array.AppendChild(child);
+        //                        }
+        //                    }
+        //                }
+        //                yield return array;
+        //            }
+        //            break;
+
+        //        case JsonValueKind.String:
+        //        case JsonValueKind.Number:
+        //        case JsonValueKind.True:
+        //        case JsonValueKind.False:
+        //            {
+        //                var attribute = document.CreateAttribute(name);
+        //                attribute.Value = json.ToString();
+        //                yield return attribute;
+        //            };
+        //            break;
+
+        //        case JsonValueKind.Undefined:
+        //        case JsonValueKind.Null:
+        //        default:
+        //            break;
+        //    }
+        //}
     }
 }
