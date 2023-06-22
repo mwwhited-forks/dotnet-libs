@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,20 +24,29 @@ namespace Eliassen.System.Templating
     {
         private readonly FileTemplatingSettings _settings;
         private readonly IEnumerable<IFileType> _fileTypes;
+        private readonly ILogger _logger;
 
         public FileTemplateSource(
             IOptions<FileTemplatingSettings> settings,
-            IEnumerable<IFileType> fileTypes
+            IEnumerable<IFileType> fileTypes,
+            ILogger<FileTemplateSource> logger
             )
         {
             _settings = settings.Value;
             _fileTypes = fileTypes;
+            _logger = logger;
         }
 
         /// <inheritdoc />
         public IEnumerable<ITemplateContext> Get(string templateName)
         {
             var sandbox = string.IsNullOrWhiteSpace(_settings.SandboxPath) ? null : Path.GetFullPath(_settings.SandboxPath + "/");
+
+            _logger.LogInformation(
+                $"Search for {{{nameof(templateName)}}} in \"{{{nameof(templateName)}}}\"", 
+                templateName, 
+                _settings.TemplatePath
+                );
 
             var templateTypes =
                 from template in _fileTypes

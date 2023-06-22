@@ -52,6 +52,7 @@ namespace Eliassen.System
             services.AddTransient<IFileType>(_ => new FileType { Extension = ".txt", ContentType = "text/plain", IsTemplateType = false });
             services.AddTransient<IFileType>(_ => new FileType { Extension = ".json", ContentType = "text/json", IsTemplateType = false });
             services.AddTransient<IFileType>(_ => new FileType { Extension = ".xml", ContentType = "text/xml", IsTemplateType = false });
+
             services.AddTransient<IFileType>(_ => new FileType { Extension = ".xslt", ContentType = XsltTemplateProvider.ContentType, IsTemplateType = true });
 
             return services;

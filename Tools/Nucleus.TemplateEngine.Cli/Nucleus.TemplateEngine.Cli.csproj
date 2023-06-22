@@ -18,9 +18,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="Service-Endpoints.md.hbs">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
+		<None Update="*.hbs">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="*.xslt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
 
 </Project>

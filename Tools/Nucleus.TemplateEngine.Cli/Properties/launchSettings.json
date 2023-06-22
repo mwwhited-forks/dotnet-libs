@@ -4,9 +4,9 @@
       "commandName": "Project",
       "commandLineArgs": "--input $(SolutionDir)docs\\swagger.json\r\n--output $(SolutionDir)docs\\Service-Endpoints.md\r\n--Template Service-Endpoints\r\n--file-template-path $(ProjectDir)$(OutputPath) "
     },
-    "Xml": {
+    "DuplicateXml": {
       "commandName": "Project",
-      "commandLineArgs": "--input \"$(SolutionDir)docs\\swagger.json\"\r\n--output \"$(SolutionDir)docs\\swagger.xml\"\r\n--file-template-path \"$(ProjectDir)$(OutputPath)\""
+      "commandLineArgs": "--input $(SolutionDir)docs\\swagger.json\r\n--output $(SolutionDir)docs\\swagger.xml\r\n--Template DuplicateXml\r\n--file-template-path $(ProjectDir)$(OutputPath)"
     }
   }
 }

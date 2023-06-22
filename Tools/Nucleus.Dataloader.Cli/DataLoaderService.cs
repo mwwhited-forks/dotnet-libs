@@ -14,21 +14,21 @@ namespace Nucleus.Dataloader.Cli
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger _log;
         private readonly IMongoSettings _mongo;
-        private readonly DataLoaderSettings _dataloader;
+        private readonly DataLoaderSettings _settings;
         private readonly IMongoDatabaseRegistation _databases;
 
         public DataLoaderService(
             IServiceProvider serviceProvider,
             ILogger<DataLoaderService> log,
             IOptions<DefaultMongoDatabaseSettings> mongo,
-            IOptions<DataLoaderSettings> dataloader,
+            IOptions<DataLoaderSettings> settings,
             IMongoDatabaseRegistation databases
             )
         {
             _serviceProvider = serviceProvider;
             _log = log;
             _mongo = mongo.Value;
-            _dataloader = dataloader.Value;
+            _settings = settings.Value;
             _databases = databases;
         }
 
@@ -62,7 +62,7 @@ namespace Nucleus.Dataloader.Cli
             {
                 WriteIndented = true,
             });
-            var targetFile = Path.Combine(_dataloader.SourcePath, $"{collectionName}.json");
+            var targetFile = Path.Combine(_settings.SourcePath, $"{collectionName}.json");
             await File.WriteAllTextAsync(targetFile, json);
 
             _log.LogInformation($"Exported: {{{nameof(collectionName)}}} to \"{{{nameof(targetFile)}}}\"", collectionName, targetFile);
@@ -79,7 +79,15 @@ namespace Nucleus.Dataloader.Cli
                 foreach (var collection in db.type.GetProperties())
                 {
                     if (cancellationToken.IsCancellationRequested) return;
-                    await ExportAsync(collection, db.Item2, cancellationToken);
+
+                    if (_settings.Action == DataLoaderActions.Export)
+                    {
+                        await ExportAsync(collection, db.Item2, cancellationToken);
+                    }
+                    else 
+                    {
+                        throw new NotSupportedException($"{_settings.Action}");
+                    }
                 }
             }
 

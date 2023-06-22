@@ -10,5 +10,7 @@ namespace Nucleus.Dataloader.Cli
         [CommandParameter(Value = "source-path")]
         public string SourcePath { get; set; } = @"./";
         public string IncludePath { get; set; } = @"**/*.json";
+
+        public DataLoaderActions Action { get; set; } = DataLoaderActions.Export;
     }
 }

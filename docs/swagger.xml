@@ -1,0 +1,2519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Object>
+	<Object openapi="3.0.1" />
+	<Object>
+		<info title="Eliassen.AspNetCore.Mvc" />
+		<info version="1.0.0.0" />
+	</Object>
+	<Object>
+		<paths>
+			<_x002F_api_x002F_Blog_x002F_Blogs>
+				<post>
+					<tags>
+						<String>Blog</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</post>
+				<post deprecated="True" />
+				<post>
+					<x-permissions anonymous="True" />
+				</post>
+			</_x002F_api_x002F_Blog_x002F_Blogs>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_Blog_x002F_Slug_x002F__x007B_id_x007D_>
+				<get>
+					<tags>
+						<String>Blog</String>
+					</tags>
+				</get>
+				<get>
+					<parameters>
+						<Object name="id" />
+						<Object in="path" />
+						<Object required="True" />
+						<Object>
+							<schema type="string" />
+						</Object>
+					</parameters>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="True" />
+				</get>
+			</_x002F_api_x002F_Blog_x002F_Slug_x002F__x007B_id_x007D_>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_Blog_x002F_RecentBlogs_x002F__x007B_id_x007D_>
+				<get>
+					<tags>
+						<String>Blog</String>
+					</tags>
+				</get>
+				<get>
+					<parameters>
+						<Object name="id" />
+						<Object in="path" />
+						<Object required="True" />
+						<Object>
+							<schema type="integer" />
+							<schema format="int32" />
+						</Object>
+					</parameters>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="True" />
+				</get>
+			</_x002F_api_x002F_Blog_x002F_RecentBlogs_x002F__x007B_id_x007D_>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_Blog_x002F_Query>
+				<post>
+					<tags>
+						<String>Blog</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models.BlogModel" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models.BlogModel" />
+							</text_x002F_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</post>
+				<post>
+					<x-permissions anonymous="True" />
+				</post>
+			</_x002F_api_x002F_Blog_x002F_Query>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_BlogAdmin_x002F_Blogs>
+				<post>
+					<tags>
+						<String>BlogAdmin</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilter" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</post>
+				<post deprecated="True" />
+				<post>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_blog_admin</String>
+						</right>
+					</x-permissions>
+				</post>
+			</_x002F_api_x002F_BlogAdmin_x002F_Blogs>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_BlogAdmin_x002F_Blog_x002F__x007B_id_x007D_>
+				<get>
+					<tags>
+						<String>BlogAdmin</String>
+					</tags>
+				</get>
+				<get>
+					<parameters>
+						<Object name="id" />
+						<Object in="path" />
+						<Object required="True" />
+						<Object>
+							<schema type="string" />
+						</Object>
+					</parameters>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_blog_admin</String>
+						</right>
+					</x-permissions>
+				</get>
+			</_x002F_api_x002F_BlogAdmin_x002F_Blog_x002F__x007B_id_x007D_>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_BlogAdmin_x002F_Save>
+				<post>
+					<tags>
+						<String>BlogAdmin</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Blog.Contracts.Models.BlogModel" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Blog.Contracts.Models.BlogModel" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Blog.Contracts.Models.BlogModel" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</post>
+				<post>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_blog_admin</String>
+						</right>
+					</x-permissions>
+				</post>
+			</_x002F_api_x002F_BlogAdmin_x002F_Save>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_Documents_x002F__x007B_id_x007D_>
+				<get>
+					<tags>
+						<String>Documents</String>
+					</tags>
+				</get>
+				<get>
+					<parameters>
+						<Object name="id" />
+						<Object in="path" />
+						<Object required="True" />
+						<Object>
+							<schema type="string" />
+						</Object>
+					</parameters>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="False" />
+				</get>
+			</_x002F_api_x002F_Documents_x002F__x007B_id_x007D_>
+			<_x002F_api_x002F_Documents_x002F__x007B_id_x007D_>
+				<delete>
+					<tags>
+						<String>Documents</String>
+					</tags>
+				</delete>
+				<delete>
+					<parameters>
+						<Object name="id" />
+						<Object in="path" />
+						<Object required="True" />
+						<Object>
+							<schema type="string" />
+						</Object>
+					</parameters>
+				</delete>
+				<delete>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-System.Boolean" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-System.Boolean" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-System.Boolean" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</delete>
+				<delete>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_lesson_admin</String>
+							<String>right_blog_admin</String>
+							<String>right_project_admin</String>
+						</right>
+					</x-permissions>
+				</delete>
+			</_x002F_api_x002F_Documents_x002F__x007B_id_x007D_>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_Documents>
+				<post>
+					<tags>
+						<String>Documents</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<multipart_x002F_form-data>
+								<schema type="object" />
+							</multipart_x002F_form-data>
+							<multipart_x002F_form-data>
+								<encoding>
+									<DocumentId style="form" />
+								</encoding>
+								<encoding>
+									<DocumentKey style="form" />
+								</encoding>
+								<encoding>
+									<DocumentName style="form" />
+								</encoding>
+								<encoding>
+									<DocumentType style="form" />
+								</encoding>
+								<encoding>
+									<DocumentSize style="form" />
+								</encoding>
+								<encoding>
+									<DocumentRepository style="form" />
+								</encoding>
+								<encoding>
+									<DocumentCategory style="form" />
+								</encoding>
+								<encoding>
+									<CreatedOn style="form" />
+								</encoding>
+							</multipart_x002F_form-data>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+					<responses>
+						<_x0034_00 description="Bad Request" />
+						<_x0034_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails" />
+								</text_x002F_json>
+							</content>
+						</_x0034_00>
+					</responses>
+				</post>
+				<post>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_lesson_admin</String>
+							<String>right_blog_admin</String>
+							<String>right_project_admin</String>
+						</right>
+					</x-permissions>
+				</post>
+			</_x002F_api_x002F_Documents>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_Lesson_x002F_Lessons>
+				<post>
+					<tags>
+						<String>Lesson</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</post>
+				<post deprecated="True" />
+				<post>
+					<x-permissions anonymous="True" />
+				</post>
+			</_x002F_api_x002F_Lesson_x002F_Lessons>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_Lesson_x002F_Slug_x002F__x007B_id_x007D_>
+				<get>
+					<tags>
+						<String>Lesson</String>
+					</tags>
+				</get>
+				<get>
+					<parameters>
+						<Object name="id" />
+						<Object in="path" />
+						<Object required="True" />
+						<Object>
+							<schema type="string" />
+						</Object>
+					</parameters>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="True" />
+				</get>
+			</_x002F_api_x002F_Lesson_x002F_Slug_x002F__x007B_id_x007D_>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_Lesson_x002F_RecentLessons_x002F__x007B_id_x007D_>
+				<get>
+					<tags>
+						<String>Lesson</String>
+					</tags>
+				</get>
+				<get>
+					<parameters>
+						<Object name="id" />
+						<Object in="path" />
+						<Object required="True" />
+						<Object>
+							<schema type="integer" />
+							<schema format="int32" />
+						</Object>
+					</parameters>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="True" />
+				</get>
+			</_x002F_api_x002F_Lesson_x002F_RecentLessons_x002F__x007B_id_x007D_>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_Lesson_x002F_Query>
+				<post>
+					<tags>
+						<String>Lesson</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models.LessonModel" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models.LessonModel" />
+							</text_x002F_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</post>
+				<post>
+					<x-permissions anonymous="True" />
+				</post>
+			</_x002F_api_x002F_Lesson_x002F_Query>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_LessonAdmin_x002F_Lessons>
+				<post>
+					<tags>
+						<String>LessonAdmin</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</post>
+				<post deprecated="True" />
+				<post>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_lesson_admin</String>
+						</right>
+					</x-permissions>
+				</post>
+			</_x002F_api_x002F_LessonAdmin_x002F_Lessons>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_LessonAdmin_x002F_Lesson_x002F__x007B_id_x007D_>
+				<get>
+					<tags>
+						<String>LessonAdmin</String>
+					</tags>
+				</get>
+				<get>
+					<parameters>
+						<Object name="id" />
+						<Object in="path" />
+						<Object required="True" />
+						<Object>
+							<schema type="string" />
+						</Object>
+					</parameters>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_lesson_admin</String>
+						</right>
+					</x-permissions>
+				</get>
+			</_x002F_api_x002F_LessonAdmin_x002F_Lesson_x002F__x007B_id_x007D_>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_LessonAdmin_x002F_Save>
+				<post>
+					<tags>
+						<String>LessonAdmin</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</post>
+				<post>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_lesson_admin</String>
+						</right>
+					</x-permissions>
+				</post>
+			</_x002F_api_x002F_LessonAdmin_x002F_Save>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_Project_x002F_Projects>
+				<post>
+					<tags>
+						<String>Project</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</post>
+				<post deprecated="True" />
+				<post>
+					<x-permissions anonymous="False" />
+				</post>
+			</_x002F_api_x002F_Project_x002F_Projects>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_Project_x002F_Slug_x002F__x007B_id_x007D_>
+				<get>
+					<tags>
+						<String>Project</String>
+					</tags>
+				</get>
+				<get>
+					<parameters>
+						<Object name="id" />
+						<Object in="path" />
+						<Object required="True" />
+						<Object>
+							<schema type="string" />
+						</Object>
+					</parameters>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="False" />
+				</get>
+			</_x002F_api_x002F_Project_x002F_Slug_x002F__x007B_id_x007D_>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_Project_x002F_RecentProjects_x002F__x007B_id_x007D_>
+				<get>
+					<tags>
+						<String>Project</String>
+					</tags>
+				</get>
+				<get>
+					<parameters>
+						<Object name="id" />
+						<Object in="path" />
+						<Object required="True" />
+						<Object>
+							<schema type="integer" />
+							<schema format="int32" />
+						</Object>
+					</parameters>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="False" />
+				</get>
+			</_x002F_api_x002F_Project_x002F_RecentProjects_x002F__x007B_id_x007D_>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_ProjectAdmin_x002F_Projects>
+				<post>
+					<tags>
+						<String>ProjectAdmin</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectFilter" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</post>
+				<post deprecated="True" />
+				<post>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_project_admin</String>
+						</right>
+					</x-permissions>
+				</post>
+			</_x002F_api_x002F_ProjectAdmin_x002F_Projects>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_ProjectAdmin_x002F_Project_x002F__x007B_id_x007D_>
+				<get>
+					<tags>
+						<String>ProjectAdmin</String>
+					</tags>
+				</get>
+				<get>
+					<parameters>
+						<Object name="id" />
+						<Object in="path" />
+						<Object required="True" />
+						<Object>
+							<schema type="string" />
+						</Object>
+					</parameters>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_project_admin</String>
+						</right>
+					</x-permissions>
+				</get>
+			</_x002F_api_x002F_ProjectAdmin_x002F_Project_x002F__x007B_id_x007D_>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_ProjectAdmin_x002F_Save>
+				<post>
+					<tags>
+						<String>ProjectAdmin</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Project.Contracts.Models.ProjectModel" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Project.Contracts.Models.ProjectModel" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Project.Contracts.Models.ProjectModel" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</post>
+				<post>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_project_admin</String>
+						</right>
+					</x-permissions>
+				</post>
+			</_x002F_api_x002F_ProjectAdmin_x002F_Save>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_RegisterUser>
+				<post>
+					<tags>
+						<String>RegisterUser</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.UserAction" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.UserAction" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.UserAction" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</post>
+				<post>
+					<x-permissions anonymous="True" />
+				</post>
+			</_x002F_api_x002F_RegisterUser>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_RegisterUser_x002F_ApplicationPermissions>
+				<get>
+					<tags>
+						<String>RegisterUser</String>
+					</tags>
+				</get>
+				<get>
+					<parameters>
+						<Object name="currentPage" />
+						<Object in="query" />
+						<Object>
+							<schema type="integer" />
+							<schema format="int32" />
+						</Object>
+						<Object name="pageSize" />
+						<Object in="query" />
+						<Object description="**Default size:** `10`, `-1` will disable paging" />
+						<Object>
+							<schema type="integer" />
+							<schema description="**Default size:** `10`, `-1` will disable paging" />
+							<schema format="int32" />
+						</Object>
+						<Object name="excludePageCount" />
+						<Object in="query" />
+						<Object description="`true` will disable row/page counts and may decrease processing time without effecting paging functions" />
+						<Object>
+							<schema type="boolean" />
+							<schema description="`true` will disable row/page counts and may decrease processing time without effecting paging functions" />
+						</Object>
+						<Object name="searchTerm" />
+						<Object in="query" />
+						<Object description="**Searched Properties:** ModuleId; Roles; Name; Code" />
+						<Object>
+							<schema type="string" />
+							<schema description="**Searched Properties:** ModuleId; Roles; Name; Code" />
+							<schema nullable="True" />
+						</Object>
+						<Object name="orderBy.ModuleId" />
+						<Object in="query" />
+						<Object>
+							<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.OrderDirections" />
+						</Object>
+						<Object name="orderBy.Roles" />
+						<Object in="query" />
+						<Object>
+							<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.OrderDirections" />
+						</Object>
+						<Object name="orderBy.Name" />
+						<Object in="query" />
+						<Object>
+							<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.OrderDirections" />
+						</Object>
+						<Object name="orderBy.Code" />
+						<Object in="query" />
+						<Object>
+							<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.OrderDirections" />
+						</Object>
+					</parameters>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="True" />
+				</get>
+			</_x002F_api_x002F_RegisterUser_x002F_ApplicationPermissions>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_RegisterUser_x002F_ApplicationPemissions>
+				<get>
+					<tags>
+						<String>RegisterUser</String>
+					</tags>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</get>
+				<get deprecated="True" />
+				<get>
+					<x-permissions anonymous="True" />
+					<x-permissions>
+						<right>
+							<String>right_users_write</String>
+						</right>
+					</x-permissions>
+				</get>
+			</_x002F_api_x002F_RegisterUser_x002F_ApplicationPemissions>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_SiteMap>
+				<get>
+					<tags>
+						<String>SiteMap</String>
+					</tags>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="False" />
+				</get>
+			</_x002F_api_x002F_SiteMap>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_User>
+				<get>
+					<tags>
+						<String>User</String>
+					</tags>
+				</get>
+				<get summary="Get user profile for currently logged in user" />
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.User" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.User" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.User" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="False" />
+				</get>
+			</_x002F_api_x002F_User>
+			<_x002F_api_x002F_User>
+				<put>
+					<tags>
+						<String>User</String>
+					</tags>
+				</put>
+				<put summary="Save user profile for current logged in user" />
+				<put>
+					<requestBody description="" />
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.User" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.User" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.User" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</put>
+				<put>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</put>
+				<put>
+					<x-permissions anonymous="False" />
+				</put>
+			</_x002F_api_x002F_User>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_UserManagement>
+				<post>
+					<tags>
+						<String>UserManagement</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.UserAction" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.UserAction" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.UserAction" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</post>
+				<post>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_users_write</String>
+						</right>
+					</x-permissions>
+				</post>
+			</_x002F_api_x002F_UserManagement>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_UserManagement_x002F_Query>
+				<post>
+					<tags>
+						<String>UserManagement</String>
+					</tags>
+				</post>
+				<post summary="Query all user accounts" />
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.User" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.User" />
+							</text_x002F_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</post>
+				<post>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_users_write</String>
+						</right>
+					</x-permissions>
+				</post>
+			</_x002F_api_x002F_UserManagement_x002F_Query>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_UserManagement_x002F_ApplicationPermissions>
+				<get>
+					<tags>
+						<String>UserManagement</String>
+					</tags>
+				</get>
+				<get summary="Query all modules" />
+				<get>
+					<parameters>
+						<Object name="currentPage" />
+						<Object in="query" />
+						<Object>
+							<schema type="integer" />
+							<schema format="int32" />
+						</Object>
+						<Object name="pageSize" />
+						<Object in="query" />
+						<Object description="**Default size:** `10`, `-1` will disable paging" />
+						<Object>
+							<schema type="integer" />
+							<schema description="**Default size:** `10`, `-1` will disable paging" />
+							<schema format="int32" />
+						</Object>
+						<Object name="excludePageCount" />
+						<Object in="query" />
+						<Object description="`true` will disable row/page counts and may decrease processing time without effecting paging functions" />
+						<Object>
+							<schema type="boolean" />
+							<schema description="`true` will disable row/page counts and may decrease processing time without effecting paging functions" />
+						</Object>
+						<Object name="searchTerm" />
+						<Object in="query" />
+						<Object description="**Searched Properties:** ModuleId; Roles; Name; Code" />
+						<Object>
+							<schema type="string" />
+							<schema description="**Searched Properties:** ModuleId; Roles; Name; Code" />
+							<schema nullable="True" />
+						</Object>
+						<Object name="orderBy.ModuleId" />
+						<Object in="query" />
+						<Object>
+							<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.OrderDirections" />
+						</Object>
+						<Object name="orderBy.Roles" />
+						<Object in="query" />
+						<Object>
+							<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.OrderDirections" />
+						</Object>
+						<Object name="orderBy.Name" />
+						<Object in="query" />
+						<Object>
+							<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.OrderDirections" />
+						</Object>
+						<Object name="orderBy.Code" />
+						<Object in="query" />
+						<Object>
+							<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.OrderDirections" />
+						</Object>
+					</parameters>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</get>
+				<get>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_users_write</String>
+						</right>
+					</x-permissions>
+				</get>
+			</_x002F_api_x002F_UserManagement_x002F_ApplicationPermissions>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_UserManagement_x002F_UserList>
+				<post>
+					<tags>
+						<String>UserManagement</String>
+					</tags>
+				</post>
+				<post>
+					<requestBody>
+						<content>
+							<application_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.Filters.UsersFilter" />
+							</application_x002F_json>
+						</content>
+						<content>
+							<text_x002F_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.Filters.UsersFilter" />
+							</text_x002F_json>
+						</content>
+						<content>
+							<application_x002F__x002A__x002B_json>
+								<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.Filters.UsersFilter" />
+							</application_x002F__x002A__x002B_json>
+						</content>
+					</requestBody>
+				</post>
+				<post>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.User" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.User" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.User" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</post>
+				<post deprecated="True" />
+				<post>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_users_write</String>
+						</right>
+					</x-permissions>
+				</post>
+			</_x002F_api_x002F_UserManagement_x002F_UserList>
+		</paths>
+		<paths>
+			<_x002F_api_x002F_UserManagement_x002F_ApplicationPemissions>
+				<get>
+					<tags>
+						<String>UserManagement</String>
+					</tags>
+				</get>
+				<get>
+					<responses>
+						<_x0032_00 description="Success" />
+						<_x0032_00>
+							<content>
+								<text_x002F_plain>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module" />
+								</text_x002F_plain>
+							</content>
+							<content>
+								<application_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module" />
+								</application_x002F_json>
+							</content>
+							<content>
+								<text_x002F_json>
+									<schema _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module" />
+								</text_x002F_json>
+							</content>
+						</_x0032_00>
+					</responses>
+				</get>
+				<get deprecated="True" />
+				<get>
+					<x-permissions anonymous="False" />
+					<x-permissions>
+						<right>
+							<String>right_users_write</String>
+						</right>
+					</x-permissions>
+				</get>
+			</_x002F_api_x002F_UserManagement_x002F_ApplicationPemissions>
+		</paths>
+	</Object>
+	<Object>
+		<components>
+			<schemas>
+				<Eliassen.System.Linq.Search.FilterParameter type="object" />
+				<Eliassen.System.Linq.Search.FilterParameter>
+					<properties>
+						<eq nullable="True" />
+					</properties>
+					<properties>
+						<neq nullable="True" />
+					</properties>
+					<properties>
+						<in type="array" />
+						<in />
+						<in nullable="True" />
+					</properties>
+					<properties>
+						<gt nullable="True" />
+					</properties>
+					<properties>
+						<gte nullable="True" />
+					</properties>
+					<properties>
+						<lt nullable="True" />
+					</properties>
+					<properties>
+						<lte nullable="True" />
+					</properties>
+				</Eliassen.System.Linq.Search.FilterParameter>
+				<Eliassen.System.Linq.Search.FilterParameter additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Eliassen.System.Linq.Search.OrderDirections>
+					<enum>
+						<String>asc</String>
+						<String>desc</String>
+					</enum>
+				</Eliassen.System.Linq.Search.OrderDirections>
+				<Eliassen.System.Linq.Search.OrderDirections type="string" />
+			</schemas>
+			<schemas>
+				<Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel type="object" />
+				<Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel>
+					<properties>
+						<rows type="array" />
+						<rows>
+							<items _x0024_ref="#/components/schemas/Nucleus.Blog.Contracts.Models.BlogModel" />
+						</rows>
+						<rows nullable="True" />
+					</properties>
+					<properties>
+						<currentPage type="integer" />
+						<currentPage format="int32" />
+					</properties>
+					<properties>
+						<totalPageCount type="integer" />
+						<totalPageCount format="int32" />
+					</properties>
+					<properties>
+						<totalRowCount type="integer" />
+						<totalRowCount format="int32" />
+					</properties>
+				</Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel>
+				<Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module type="object" />
+				<Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module>
+					<properties>
+						<rows type="array" />
+						<rows>
+							<items _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.Module" />
+						</rows>
+						<rows nullable="True" />
+					</properties>
+					<properties>
+						<currentPage type="integer" />
+						<currentPage format="int32" />
+					</properties>
+					<properties>
+						<totalPageCount type="integer" />
+						<totalPageCount format="int32" />
+					</properties>
+					<properties>
+						<totalRowCount type="integer" />
+						<totalRowCount format="int32" />
+					</properties>
+				</Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module>
+				<Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User type="object" />
+				<Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User>
+					<properties>
+						<rows type="array" />
+						<rows>
+							<items _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.User" />
+						</rows>
+						<rows nullable="True" />
+					</properties>
+					<properties>
+						<currentPage type="integer" />
+						<currentPage format="int32" />
+					</properties>
+					<properties>
+						<totalPageCount type="integer" />
+						<totalPageCount format="int32" />
+					</properties>
+					<properties>
+						<totalRowCount type="integer" />
+						<totalRowCount format="int32" />
+					</properties>
+				</Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User>
+				<Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel type="object" />
+				<Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel>
+					<properties>
+						<rows type="array" />
+						<rows>
+							<items _x0024_ref="#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel" />
+						</rows>
+						<rows nullable="True" />
+					</properties>
+					<properties>
+						<currentPage type="integer" />
+						<currentPage format="int32" />
+					</properties>
+					<properties>
+						<totalPageCount type="integer" />
+						<totalPageCount format="int32" />
+					</properties>
+					<properties>
+						<totalRowCount type="integer" />
+						<totalRowCount format="int32" />
+					</properties>
+				</Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel>
+				<Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models.BlogModel type="object" />
+				<Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models.BlogModel>
+					<properties>
+						<currentPage type="integer" />
+						<currentPage format="int32" />
+					</properties>
+					<properties>
+						<pageSize type="integer" />
+						<pageSize description="**Default size:** `10`, `-1` will disable paging" />
+						<pageSize format="int32" />
+					</properties>
+					<properties>
+						<excludePageCount type="boolean" />
+						<excludePageCount description="`true` will disable row/page counts and may decrease processing time without effecting paging functions" />
+					</properties>
+					<properties>
+						<searchTerm type="string" />
+						<searchTerm description="**Searched Properties:** Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn; CreatedOnUnix" />
+						<searchTerm nullable="True" />
+					</properties>
+					<properties>
+						<filter type="object" />
+						<filter>
+							<additionalProperties _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.FilterParameter" />
+						</filter>
+						<filter description="**Filterable Properties:** BlogId; Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn; CreatedOnUnix" />
+						<filter nullable="True" />
+					</properties>
+					<properties>
+						<orderBy type="object" />
+						<orderBy>
+							<additionalProperties _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.OrderDirections" />
+						</orderBy>
+						<orderBy description="**Sortable Properties:** BlogId, Title, Slug, Tags, Preview, Content, Enabled, Author, CreatedOn, CreatedOnUnix  **Default Order:** CreatedOn asc, Slug asc" />
+						<orderBy nullable="True" />
+					</properties>
+				</Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models.BlogModel>
+				<Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models.BlogModel additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.Module type="object" />
+				<Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.Module>
+					<properties>
+						<currentPage type="integer" />
+						<currentPage format="int32" />
+					</properties>
+					<properties>
+						<pageSize type="integer" />
+						<pageSize description="**Default size:** `10`, `-1` will disable paging" />
+						<pageSize format="int32" />
+					</properties>
+					<properties>
+						<excludePageCount type="boolean" />
+						<excludePageCount description="`true` will disable row/page counts and may decrease processing time without effecting paging functions" />
+					</properties>
+					<properties>
+						<searchTerm type="string" />
+						<searchTerm description="**Searched Properties:** ModuleId; Roles; Name; Code" />
+						<searchTerm nullable="True" />
+					</properties>
+					<properties>
+						<filter type="object" />
+						<filter>
+							<additionalProperties _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.FilterParameter" />
+						</filter>
+						<filter description="**Filterable Properties:** ModuleId; Roles; Name; Code" />
+						<filter nullable="True" />
+					</properties>
+					<properties>
+						<orderBy type="object" />
+						<orderBy>
+							<additionalProperties _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.OrderDirections" />
+						</orderBy>
+						<orderBy description="**Sortable Properties:** ModuleId, Roles, Name, Code  **Default Order:** Name asc" />
+						<orderBy nullable="True" />
+					</properties>
+				</Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.Module>
+				<Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.Module additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.User type="object" />
+				<Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.User>
+					<properties>
+						<currentPage type="integer" />
+						<currentPage format="int32" />
+					</properties>
+					<properties>
+						<pageSize type="integer" />
+						<pageSize description="**Default size:** `10`, `-1` will disable paging" />
+						<pageSize format="int32" />
+					</properties>
+					<properties>
+						<excludePageCount type="boolean" />
+						<excludePageCount description="`true` will disable row/page counts and may decrease processing time without effecting paging functions" />
+					</properties>
+					<properties>
+						<searchTerm type="string" />
+						<searchTerm description="**Searched Properties:** FirstNameLastName; LastNameFirstName; EmailAddress; FirstName; LastName" />
+						<searchTerm nullable="True" />
+					</properties>
+					<properties>
+						<filter type="object" />
+						<filter>
+							<additionalProperties _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.FilterParameter" />
+						</filter>
+						<filter description="**Filterable Properties:** FirstNameLastName; LastNameFirstName; UserId; UserName; EmailAddress; FirstName; LastName; Active; UserModules; CreatedOn; Module; UserStatus" />
+						<filter nullable="True" />
+					</properties>
+					<properties>
+						<orderBy type="object" />
+						<orderBy>
+							<additionalProperties _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.OrderDirections" />
+						</orderBy>
+						<orderBy description="**Sortable Properties:** FirstNameLastName, LastNameFirstName, UserId, UserName, EmailAddress, FirstName, LastName, Active, UserModules, CreatedOn  **Default Order:** LastName asc, FirstName asc, EmailAddress asc" />
+						<orderBy nullable="True" />
+					</properties>
+				</Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.User>
+				<Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.User additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models.LessonModel type="object" />
+				<Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models.LessonModel>
+					<properties>
+						<currentPage type="integer" />
+						<currentPage format="int32" />
+					</properties>
+					<properties>
+						<pageSize type="integer" />
+						<pageSize description="**Default size:** `10`, `-1` will disable paging" />
+						<pageSize format="int32" />
+					</properties>
+					<properties>
+						<excludePageCount type="boolean" />
+						<excludePageCount description="`true` will disable row/page counts and may decrease processing time without effecting paging functions" />
+					</properties>
+					<properties>
+						<searchTerm type="string" />
+						<searchTerm description="**Searched Properties:** Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals" />
+						<searchTerm nullable="True" />
+					</properties>
+					<properties>
+						<filter type="object" />
+						<filter>
+							<additionalProperties _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.FilterParameter" />
+						</filter>
+						<filter description="**Filterable Properties:** LessonId; Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals" />
+						<filter nullable="True" />
+					</properties>
+					<properties>
+						<orderBy type="object" />
+						<orderBy>
+							<additionalProperties _x0024_ref="#/components/schemas/Eliassen.System.Linq.Search.OrderDirections" />
+						</orderBy>
+						<orderBy description="**Sortable Properties:** LessonId, Title, MediaLink, Preview, PreviewImage, Slug, Content, Enabled, CreatedOn, CreatedOnUnix, Attendees, Teacher, Duration, StartDateTime, EndDateTime, Tags, Price, Goals  **Default Order:** CreatedOn asc, Slug asc" />
+						<orderBy nullable="True" />
+					</properties>
+				</Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models.LessonModel>
+				<Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models.LessonModel additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Microsoft.AspNetCore.Mvc.ProblemDetails type="object" />
+				<Microsoft.AspNetCore.Mvc.ProblemDetails>
+					<properties>
+						<type type="string" />
+						<type nullable="True" />
+					</properties>
+					<properties>
+						<title type="string" />
+						<title nullable="True" />
+					</properties>
+					<properties>
+						<status type="integer" />
+						<status format="int32" />
+						<status nullable="True" />
+					</properties>
+					<properties>
+						<detail type="string" />
+						<detail nullable="True" />
+					</properties>
+					<properties>
+						<instance type="string" />
+						<instance nullable="True" />
+					</properties>
+				</Microsoft.AspNetCore.Mvc.ProblemDetails>
+				<Microsoft.AspNetCore.Mvc.ProblemDetails />
+			</schemas>
+			<schemas>
+				<Nucleus.Blog.Contracts.Models.BlogModel type="object" />
+				<Nucleus.Blog.Contracts.Models.BlogModel>
+					<properties>
+						<blogId type="string" />
+						<blogId nullable="True" />
+					</properties>
+					<properties>
+						<title type="string" />
+						<title nullable="True" />
+					</properties>
+					<properties>
+						<slug type="string" />
+						<slug nullable="True" />
+					</properties>
+					<properties>
+						<tags type="array" />
+						<tags>
+							<items type="string" />
+						</tags>
+						<tags nullable="True" />
+					</properties>
+					<properties>
+						<preview type="string" />
+						<preview nullable="True" />
+					</properties>
+					<properties>
+						<content type="string" />
+						<content nullable="True" />
+					</properties>
+					<properties>
+						<enabled type="boolean" />
+						<enabled nullable="True" />
+					</properties>
+					<properties>
+						<author type="string" />
+						<author nullable="True" />
+					</properties>
+					<properties>
+						<createdOn type="string" />
+						<createdOn format="date-time" />
+					</properties>
+					<properties>
+						<createdOnUnix type="integer" />
+						<createdOnUnix format="int64" />
+					</properties>
+				</Nucleus.Blog.Contracts.Models.BlogModel>
+				<Nucleus.Blog.Contracts.Models.BlogModel additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Blog.Contracts.Models.Filters.BlogsFilter type="object" />
+				<Nucleus.Blog.Contracts.Models.Filters.BlogsFilter>
+					<properties>
+						<blogFilters _x0024_ref="#/components/schemas/Nucleus.Blog.Contracts.Models.Filters.BlogsFilterItem" />
+					</properties>
+					<properties>
+						<pagingModel _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagingModel" />
+					</properties>
+				</Nucleus.Blog.Contracts.Models.Filters.BlogsFilter>
+				<Nucleus.Blog.Contracts.Models.Filters.BlogsFilter additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Blog.Contracts.Models.Filters.BlogsFilterItem type="object" />
+				<Nucleus.Blog.Contracts.Models.Filters.BlogsFilterItem>
+					<properties>
+						<inputValue type="string" />
+						<inputValue nullable="True" />
+					</properties>
+				</Nucleus.Blog.Contracts.Models.Filters.BlogsFilterItem>
+				<Nucleus.Blog.Contracts.Models.Filters.BlogsFilterItem additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.DocumentModel type="object" />
+				<Nucleus.Core.Contracts.Models.DocumentModel>
+					<properties>
+						<documentId type="string" />
+						<documentId nullable="True" />
+					</properties>
+					<properties>
+						<documentKey type="string" />
+						<documentKey nullable="True" />
+					</properties>
+					<properties>
+						<documentName type="string" />
+						<documentName nullable="True" />
+					</properties>
+					<properties>
+						<documentType type="string" />
+						<documentType nullable="True" />
+					</properties>
+					<properties>
+						<documentSize type="integer" />
+						<documentSize format="int64" />
+						<documentSize nullable="True" />
+					</properties>
+					<properties>
+						<documentRepository type="string" />
+						<documentRepository nullable="True" />
+					</properties>
+					<properties>
+						<documentCategory type="string" />
+						<documentCategory nullable="True" />
+					</properties>
+					<properties>
+						<createdOn type="string" />
+						<createdOn format="date-time" />
+						<createdOn nullable="True" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.DocumentModel>
+				<Nucleus.Core.Contracts.Models.DocumentModel additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.Filters.UserFilterItem type="object" />
+				<Nucleus.Core.Contracts.Models.Filters.UserFilterItem>
+					<properties>
+						<inputValue type="string" />
+						<inputValue nullable="True" />
+					</properties>
+					<properties>
+						<module type="string" />
+						<module nullable="True" />
+					</properties>
+					<properties>
+						<userStatus type="string" />
+						<userStatus nullable="True" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.Filters.UserFilterItem>
+				<Nucleus.Core.Contracts.Models.Filters.UserFilterItem additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.Filters.UsersFilter type="object" />
+				<Nucleus.Core.Contracts.Models.Filters.UsersFilter>
+					<properties>
+						<userFilters _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.Filters.UserFilterItem" />
+					</properties>
+					<properties>
+						<pagingModel _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagingModel" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.Filters.UsersFilter>
+				<Nucleus.Core.Contracts.Models.Filters.UsersFilter additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.Module type="object" />
+				<Nucleus.Core.Contracts.Models.Module>
+					<properties>
+						<name type="string" />
+						<name nullable="True" />
+					</properties>
+					<properties>
+						<code type="string" />
+						<code nullable="True" />
+					</properties>
+					<properties>
+						<moduleId type="string" />
+						<moduleId nullable="True" />
+					</properties>
+					<properties>
+						<roles type="array" />
+						<roles>
+							<items _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.Role" />
+						</roles>
+						<roles nullable="True" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.Module>
+				<Nucleus.Core.Contracts.Models.Module additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module type="object" />
+				<Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module>
+					<properties>
+						<currentPage type="integer" />
+						<currentPage format="int32" />
+					</properties>
+					<properties>
+						<pageCount type="integer" />
+						<pageCount format="int32" />
+					</properties>
+					<properties>
+						<pageSize type="integer" />
+						<pageSize format="int32" />
+					</properties>
+					<properties>
+						<rowCount type="integer" />
+						<rowCount format="int64" />
+					</properties>
+					<properties>
+						<firstRowOnPage type="integer" />
+						<firstRowOnPage format="int32" />
+						<firstRowOnPage readOnly="True" />
+					</properties>
+					<properties>
+						<lastRowOnPage type="integer" />
+						<lastRowOnPage format="int32" />
+						<lastRowOnPage readOnly="True" />
+					</properties>
+					<properties>
+						<results type="array" />
+						<results>
+							<items _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.Module" />
+						</results>
+						<results nullable="True" />
+					</properties>
+					<properties>
+						<rows type="array" />
+						<rows>
+							<items _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.Module" />
+						</rows>
+						<rows nullable="True" />
+						<rows readOnly="True" />
+					</properties>
+					<properties>
+						<totalPageCount type="integer" />
+						<totalPageCount format="int32" />
+						<totalPageCount readOnly="True" />
+					</properties>
+					<properties>
+						<totalRowCount type="integer" />
+						<totalRowCount format="int32" />
+						<totalRowCount readOnly="True" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module>
+				<Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.Module additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.User type="object" />
+				<Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.User>
+					<properties>
+						<currentPage type="integer" />
+						<currentPage format="int32" />
+					</properties>
+					<properties>
+						<pageCount type="integer" />
+						<pageCount format="int32" />
+					</properties>
+					<properties>
+						<pageSize type="integer" />
+						<pageSize format="int32" />
+					</properties>
+					<properties>
+						<rowCount type="integer" />
+						<rowCount format="int64" />
+					</properties>
+					<properties>
+						<firstRowOnPage type="integer" />
+						<firstRowOnPage format="int32" />
+						<firstRowOnPage readOnly="True" />
+					</properties>
+					<properties>
+						<lastRowOnPage type="integer" />
+						<lastRowOnPage format="int32" />
+						<lastRowOnPage readOnly="True" />
+					</properties>
+					<properties>
+						<results type="array" />
+						<results>
+							<items _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.User" />
+						</results>
+						<results nullable="True" />
+					</properties>
+					<properties>
+						<rows type="array" />
+						<rows>
+							<items _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.User" />
+						</rows>
+						<rows nullable="True" />
+						<rows readOnly="True" />
+					</properties>
+					<properties>
+						<totalPageCount type="integer" />
+						<totalPageCount format="int32" />
+						<totalPageCount readOnly="True" />
+					</properties>
+					<properties>
+						<totalRowCount type="integer" />
+						<totalRowCount format="int32" />
+						<totalRowCount readOnly="True" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.User>
+				<Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.User additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.PagingModel type="object" />
+				<Nucleus.Core.Contracts.Models.PagingModel>
+					<properties>
+						<currentPage type="integer" />
+						<currentPage format="int32" />
+					</properties>
+					<properties>
+						<pageSize type="integer" />
+						<pageSize format="int32" />
+					</properties>
+					<properties>
+						<sortBy type="string" />
+						<sortBy nullable="True" />
+					</properties>
+					<properties>
+						<sortDirection type="string" />
+						<sortDirection nullable="True" />
+					</properties>
+					<properties>
+						<excludePageCount type="boolean" />
+						<excludePageCount readOnly="True" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.PagingModel>
+				<Nucleus.Core.Contracts.Models.PagingModel additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.PermissionBase type="object" />
+				<Nucleus.Core.Contracts.Models.PermissionBase>
+					<properties>
+						<name type="string" />
+						<name nullable="True" />
+					</properties>
+					<properties>
+						<code type="string" />
+						<code nullable="True" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.PermissionBase>
+				<Nucleus.Core.Contracts.Models.PermissionBase additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel type="object" />
+				<Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel>
+					<properties>
+						<isSuccess type="boolean" />
+					</properties>
+					<properties>
+						<message type="string" />
+						<message nullable="True" />
+					</properties>
+					<properties>
+						<response _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.DocumentModel" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel>
+				<Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User type="object" />
+				<Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User>
+					<properties>
+						<isSuccess type="boolean" />
+					</properties>
+					<properties>
+						<message type="string" />
+						<message nullable="True" />
+					</properties>
+					<properties>
+						<response _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.User" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User>
+				<Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.ResponseModel-System.Boolean type="object" />
+				<Nucleus.Core.Contracts.Models.ResponseModel-System.Boolean>
+					<properties>
+						<isSuccess type="boolean" />
+					</properties>
+					<properties>
+						<message type="string" />
+						<message nullable="True" />
+					</properties>
+					<properties>
+						<response type="boolean" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.ResponseModel-System.Boolean>
+				<Nucleus.Core.Contracts.Models.ResponseModel-System.Boolean additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.Role type="object" />
+				<Nucleus.Core.Contracts.Models.Role>
+					<properties>
+						<name type="string" />
+						<name nullable="True" />
+					</properties>
+					<properties>
+						<code type="string" />
+						<code nullable="True" />
+					</properties>
+					<properties>
+						<rights type="array" />
+						<rights>
+							<items _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PermissionBase" />
+						</rights>
+						<rights nullable="True" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.Role>
+				<Nucleus.Core.Contracts.Models.Role additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.User type="object" />
+				<Nucleus.Core.Contracts.Models.User>
+					<properties>
+						<userId type="string" />
+						<userId nullable="True" />
+					</properties>
+					<properties>
+						<userName type="string" />
+						<userName nullable="True" />
+					</properties>
+					<properties>
+						<emailAddress type="string" />
+						<emailAddress nullable="True" />
+					</properties>
+					<properties>
+						<firstName type="string" />
+						<firstName nullable="True" />
+					</properties>
+					<properties>
+						<lastName type="string" />
+						<lastName nullable="True" />
+					</properties>
+					<properties>
+						<active type="boolean" />
+					</properties>
+					<properties>
+						<userModules type="array" />
+						<userModules>
+							<items _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.UserModule" />
+						</userModules>
+						<userModules nullable="True" />
+					</properties>
+					<properties>
+						<createdOn type="string" />
+						<createdOn format="date-time" />
+						<createdOn nullable="True" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.User>
+				<Nucleus.Core.Contracts.Models.User additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.UserAction type="object" />
+				<Nucleus.Core.Contracts.Models.UserAction>
+					<properties>
+						<userId type="string" />
+						<userId nullable="True" />
+					</properties>
+					<properties>
+						<userName type="string" />
+						<userName nullable="True" />
+					</properties>
+					<properties>
+						<emailAddress type="string" />
+						<emailAddress nullable="True" />
+					</properties>
+					<properties>
+						<firstName type="string" />
+						<firstName nullable="True" />
+					</properties>
+					<properties>
+						<lastName type="string" />
+						<lastName nullable="True" />
+					</properties>
+					<properties>
+						<active type="boolean" />
+					</properties>
+					<properties>
+						<userModules type="array" />
+						<userModules>
+							<items _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.UserModule" />
+						</userModules>
+						<userModules nullable="True" />
+					</properties>
+					<properties>
+						<createdOn type="string" />
+						<createdOn format="date-time" />
+						<createdOn nullable="True" />
+					</properties>
+					<properties>
+						<identityAction type="string" />
+						<identityAction nullable="True" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.UserAction>
+				<Nucleus.Core.Contracts.Models.UserAction additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Core.Contracts.Models.UserModule type="object" />
+				<Nucleus.Core.Contracts.Models.UserModule>
+					<properties>
+						<name type="string" />
+						<name nullable="True" />
+					</properties>
+					<properties>
+						<code type="string" />
+						<code nullable="True" />
+					</properties>
+					<properties>
+						<roles type="array" />
+						<roles>
+							<items _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.Role" />
+						</roles>
+						<roles nullable="True" />
+					</properties>
+				</Nucleus.Core.Contracts.Models.UserModule>
+				<Nucleus.Core.Contracts.Models.UserModule additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter type="object" />
+				<Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter>
+					<properties>
+						<lessonFilters _x0024_ref="#/components/schemas/Nucleus.Lesson.Contracts.Models.Filters.LessonsFilterItem" />
+					</properties>
+					<properties>
+						<pagingModel _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagingModel" />
+					</properties>
+				</Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter>
+				<Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Lesson.Contracts.Models.Filters.LessonsFilterItem type="object" />
+				<Nucleus.Lesson.Contracts.Models.Filters.LessonsFilterItem>
+					<properties>
+						<inputValue type="string" />
+						<inputValue nullable="True" />
+					</properties>
+				</Nucleus.Lesson.Contracts.Models.Filters.LessonsFilterItem>
+				<Nucleus.Lesson.Contracts.Models.Filters.LessonsFilterItem additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Lesson.Contracts.Models.LessonModel type="object" />
+				<Nucleus.Lesson.Contracts.Models.LessonModel>
+					<properties>
+						<lessonId type="string" />
+						<lessonId nullable="True" />
+					</properties>
+					<properties>
+						<title type="string" />
+						<title nullable="True" />
+					</properties>
+					<properties>
+						<mediaLink type="string" />
+						<mediaLink nullable="True" />
+					</properties>
+					<properties>
+						<preview type="string" />
+						<preview nullable="True" />
+					</properties>
+					<properties>
+						<previewImage type="string" />
+						<previewImage nullable="True" />
+					</properties>
+					<properties>
+						<slug type="string" />
+						<slug nullable="True" />
+					</properties>
+					<properties>
+						<content type="string" />
+						<content nullable="True" />
+					</properties>
+					<properties>
+						<enabled type="boolean" />
+						<enabled nullable="True" />
+					</properties>
+					<properties>
+						<createdOn type="string" />
+						<createdOn format="date-time" />
+						<createdOn nullable="True" />
+					</properties>
+					<properties>
+						<createdOnUnix type="integer" />
+						<createdOnUnix format="int64" />
+					</properties>
+					<properties>
+						<attendees type="array" />
+						<attendees>
+							<items type="string" />
+						</attendees>
+						<attendees nullable="True" />
+					</properties>
+					<properties>
+						<teacher type="string" />
+						<teacher nullable="True" />
+					</properties>
+					<properties>
+						<duration type="integer" />
+						<duration format="int32" />
+						<duration nullable="True" />
+					</properties>
+					<properties>
+						<startDateTime type="string" />
+						<startDateTime format="date-time" />
+					</properties>
+					<properties>
+						<endDateTime type="string" />
+						<endDateTime format="date-time" />
+						<endDateTime nullable="True" />
+					</properties>
+					<properties>
+						<tags type="array" />
+						<tags>
+							<items type="string" />
+						</tags>
+						<tags nullable="True" />
+					</properties>
+					<properties>
+						<price type="number" />
+						<price format="double" />
+					</properties>
+					<properties>
+						<goals type="array" />
+						<goals>
+							<items type="string" />
+						</goals>
+						<goals nullable="True" />
+					</properties>
+				</Nucleus.Lesson.Contracts.Models.LessonModel>
+				<Nucleus.Lesson.Contracts.Models.LessonModel additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Project.Contracts.Models.Filters.ProjectFilter type="object" />
+				<Nucleus.Project.Contracts.Models.Filters.ProjectFilter>
+					<properties>
+						<projectFilters _x0024_ref="#/components/schemas/Nucleus.Project.Contracts.Models.Filters.ProjectsFilterItem" />
+					</properties>
+					<properties>
+						<pagingModel _x0024_ref="#/components/schemas/Nucleus.Core.Contracts.Models.PagingModel" />
+					</properties>
+				</Nucleus.Project.Contracts.Models.Filters.ProjectFilter>
+				<Nucleus.Project.Contracts.Models.Filters.ProjectFilter additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Project.Contracts.Models.Filters.ProjectsFilterItem type="object" />
+				<Nucleus.Project.Contracts.Models.Filters.ProjectsFilterItem>
+					<properties>
+						<inputValue type="string" />
+						<inputValue nullable="True" />
+					</properties>
+				</Nucleus.Project.Contracts.Models.Filters.ProjectsFilterItem>
+				<Nucleus.Project.Contracts.Models.Filters.ProjectsFilterItem additionalProperties="False" />
+			</schemas>
+			<schemas>
+				<Nucleus.Project.Contracts.Models.ProjectModel type="object" />
+				<Nucleus.Project.Contracts.Models.ProjectModel>
+					<properties>
+						<projectId type="string" />
+						<projectId nullable="True" />
+					</properties>
+					<properties>
+						<title type="string" />
+						<title nullable="True" />
+					</properties>
+					<properties>
+						<projectLink type="string" />
+						<projectLink nullable="True" />
+					</properties>
+					<properties>
+						<projectImage type="string" />
+						<projectImage nullable="True" />
+					</properties>
+					<properties>
+						<slug type="string" />
+						<slug nullable="True" />
+					</properties>
+					<properties>
+						<preview type="string" />
+						<preview nullable="True" />
+					</properties>
+					<properties>
+						<content type="string" />
+						<content nullable="True" />
+					</properties>
+					<properties>
+						<page type="string" />
+						<page nullable="True" />
+					</properties>
+					<properties>
+						<enabled type="boolean" />
+						<enabled nullable="True" />
+					</properties>
+					<properties>
+						<createdOn type="string" />
+						<createdOn format="date-time" />
+					</properties>
+					<properties>
+						<createdOnUnix type="integer" />
+						<createdOnUnix format="int64" />
+					</properties>
+				</Nucleus.Project.Contracts.Models.ProjectModel>
+				<Nucleus.Project.Contracts.Models.ProjectModel additionalProperties="False" />
+			</schemas>
+		</components>
+		<components>
+			<securitySchemes>
+				<oauth2 type="oauth2" />
+				<oauth2 description="B2C authentication" />
+				<oauth2>
+					<flows>
+						<implicit authorizationUrl="https://lightwellnucleusdev.b2clogin.com/lightwellnucleusdev.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_NucAcc_Signin" />
+						<implicit tokenUrl="https://lightwellnucleusdev.b2clogin.com/lightwellnucleusdev.onmicrosoft.com/oauth2/v2.0/token?p=B2C_1_NucAcc_Signin" />
+						<implicit>
+							<scopes _x002F__x002F_lightwellnucleusdev.onmicrosoft.com_x002F_user.read_x002F_read="UserReadApiClaim" />
+						</implicit>
+					</flows>
+				</oauth2>
+			</securitySchemes>
+		</components>
+	</Object>
+	<Object>
+		<security>
+			<Object>
+				<oauth2 />
+			</Object>
+		</security>
+	</Object>
+</Object>
