@@ -35,9 +35,9 @@ namespace Eliassen.AspNetCore.Mvc.Filters
             if (context.Result is Microsoft.AspNetCore.Mvc.ObjectResult objectResult &&
                 objectResult.Value is IQueryable query)
             {
-                var elementType = QueryBuilder.GetElementType(query);
+                var elementType = query.ElementType;
 
-                _logger.LogInformation($"Base Query: {{{nameof(query)}}} ({{{nameof(elementType)}}})", query.ToString(), elementType);
+                _logger.LogInformation($"Base Query: {{{nameof(query)}}} ({{{nameof(query.ElementType)}}})", query.ToString(), elementType);
 
                 if (elementType != null && _searchQuery.Value != null)
                 {
