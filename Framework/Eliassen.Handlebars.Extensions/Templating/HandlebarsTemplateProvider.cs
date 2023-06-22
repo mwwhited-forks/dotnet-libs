@@ -1,5 +1,5 @@
 ﻿using Eliassen.System.Security.Cryptography;
-using Eliassen.System.Templating;
+using Eliassen.System.Text.Templating;
 using HandlebarsDotNet;
 using HandlebarsDotNet.Collections;
 using HandlebarsDotNet.Extension.Json;

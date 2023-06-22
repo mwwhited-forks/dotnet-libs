@@ -4,19 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Eliassen.System.Templating
+namespace Eliassen.System.Text.Templating
 {
-    /// <inheritdoc />
-    public record FileType : IFileType
-    {
-        /// <inheritdoc />
-        public string Extension { get; set; }
-        /// <inheritdoc />
-        public string ContentType { get; set; }
-        /// <inheritdoc />
-        public bool IsTemplateType { get; set; }
-    }
-
     /// <summary>
     /// Access template from file system
     /// </summary>
@@ -43,8 +32,8 @@ namespace Eliassen.System.Templating
             var sandbox = string.IsNullOrWhiteSpace(_settings.SandboxPath) ? null : Path.GetFullPath(_settings.SandboxPath + "/");
 
             _logger.LogInformation(
-                $"Search for {{{nameof(templateName)}}} in \"{{{nameof(templateName)}}}\"", 
-                templateName, 
+                $"Search for {{{nameof(templateName)}}} in \"{{{nameof(templateName)}}}\"",
+                templateName,
                 _settings.TemplatePath
                 );
 

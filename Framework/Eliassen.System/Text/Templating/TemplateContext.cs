@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Eliassen.System.Templating
+namespace Eliassen.System.Text.Templating
 {
     /// <inheritdoc/>
     public record TemplateContext : ITemplateContext

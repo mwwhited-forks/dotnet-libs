@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Eliassen.System.Templating
+namespace Eliassen.System.Text.Templating
 {
     /// <summary>
     /// Generate templating engine that will try to use best match for source and provider
@@ -32,8 +32,8 @@ namespace Eliassen.System.Templating
         public async Task<ITemplateContext?> ApplyAsync(string templateName, object data, Stream target)
         {
             _logger.LogInformation(
-                $"Apply {{{nameof(templateName)}}} => {{{nameof(data)}}}", 
-                templateName, 
+                $"Apply {{{nameof(templateName)}}} => {{{nameof(data)}}}",
+                templateName,
                 data
                 );
 

@@ -3,7 +3,7 @@ using Eliassen.System.Configuration;
 using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
 using Eliassen.System.Security.Cryptography;
-using Eliassen.System.Templating;
+using Eliassen.System.Text.Templating;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;

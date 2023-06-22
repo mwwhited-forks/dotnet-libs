@@ -1,6 +1,6 @@
 ﻿using Eliassen.System.Configuration;
 
-namespace Eliassen.System.Templating
+namespace Eliassen.System.Text.Templating
 {
     [ConfigurationSection("FileTemplating")]
     public class FileTemplatingSettings

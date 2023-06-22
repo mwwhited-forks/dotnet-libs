@@ -1,4 +1,4 @@
-﻿namespace Eliassen.System.Templating
+﻿namespace Eliassen.System.Text.Templating
 {
     public interface ITemplateContext
     {
