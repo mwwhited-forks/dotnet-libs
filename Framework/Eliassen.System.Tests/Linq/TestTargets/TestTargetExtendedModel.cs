@@ -51,12 +51,14 @@ namespace Eliassen.System.Tests.Linq.TestTargets
                 _ => null
             };
 
+#pragma warning disable CS8604 // Possible null reference argument.
         public static Expression<Func<TestTargetExtendedModel, bool>>? PredicateMap(string key, object value) =>
             key switch
             {
                 FC => e => e.FName.Contains(value.ToString()),
                 _ => null
             };
+#pragma warning restore CS8604 // Possible null reference argument.
 
     }
 }

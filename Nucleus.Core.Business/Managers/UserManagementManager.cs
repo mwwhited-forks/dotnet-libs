@@ -31,7 +31,7 @@ namespace Nucleus.Core.Business.Managers
 
         public IQueryable<Module> QueryModules() => _modules.Query();
 
-        public async Task<ResponseModel<User>> SaveUserAsync(UserAction user)
+        public async Task<ResponseModel<User>> SaveUserAsync(UserAction? user)
         {
 
             if (user == null || string.IsNullOrEmpty(user.FirstName) || string.IsNullOrEmpty(user.LastName) || string.IsNullOrEmpty(user.EmailAddress))

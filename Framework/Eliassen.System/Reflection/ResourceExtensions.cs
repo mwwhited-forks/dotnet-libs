@@ -39,7 +39,7 @@ namespace Eliassen.System.Reflection
         /// <summary>
         /// Lookup resource stream based on filename relative the scope of Type
         /// </summary>
-        /// <param name="type"></param>
+        /// <param name="assembly"></param>
         /// <param name="resourceName"></param>
         /// <returns></returns>
         public static Stream? GetResourceStream(this Assembly assembly, string resourceName) =>

@@ -93,7 +93,9 @@ namespace Eliassen.System.Reflection
         /// </summary>
         /// <typeparam name="TEnum"></typeparam>
         /// <returns></returns>
+#pragma warning disable CS8619 // Nullability of reference types in value doesn't match target type.
         public static IReadOnlyCollection<IEnumModel> AsModels<TEnum>() where TEnum : struct, Enum =>
            Enum.GetValues(typeof(TEnum)).Cast<TEnum>().Select(AsModel).Where(e => e != null).ToArray();
+#pragma warning restore CS8619 // Nullability of reference types in value doesn't match target type.
     }
 }

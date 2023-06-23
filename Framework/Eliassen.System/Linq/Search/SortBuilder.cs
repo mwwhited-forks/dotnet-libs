@@ -60,7 +60,9 @@ namespace Eliassen.System.Linq.Search
             IOrderedQueryable<TModel>? ordered = null;
             foreach (var orderBy in orderBys)
             {
-                if (!compositeSortMap.TryGetValue(orderBy.Key, out var keySelector, stringComparer)) continue;
+                if (!compositeSortMap.TryGetValue(orderBy.Key, out var keySelector, stringComparer) || 
+                    keySelector == null
+                    ) continue;
 
                 ordered = (ordered, orderBy.Value) switch
                 {

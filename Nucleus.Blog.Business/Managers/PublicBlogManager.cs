@@ -22,6 +22,7 @@ namespace Nucleus.Blog.Business.Managers
 #warning retire this
         public async Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter)
         {
+            blogsFilter.PagingModel ??= PagingModel.Default;
             List<BlogModel> blogs = await _blogService.GetPagedAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, true);
             PagedResult<BlogModel> result = new PagedResult<BlogModel>()
             {

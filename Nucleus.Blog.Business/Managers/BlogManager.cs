@@ -5,6 +5,7 @@ using Nucleus.Blog.Contracts.Persistence;
 using Nucleus.Core.Contracts.Models;
 using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 using System.Threading.Tasks;
 
 namespace Nucleus.Blog.Business.Managers
@@ -25,6 +26,7 @@ namespace Nucleus.Blog.Business.Managers
 #warning retire this
         public async Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter)
         {
+            blogsFilter.PagingModel ??= PagingModel.Default;
             PagedResult<BlogModel> result = new PagedResult<BlogModel>();
             List<BlogModel> blogs = await _blogService.GetPagedAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, false);
             result = new PagedResult<BlogModel>()

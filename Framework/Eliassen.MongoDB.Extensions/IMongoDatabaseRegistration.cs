@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Eliassen.MongoDB.Extensions
 {
-    public interface IMongoDatabaseRegistation
+    public interface IMongoDatabaseRegistration
     {
         IReadOnlyCollection<Type> Types { get; }
     }

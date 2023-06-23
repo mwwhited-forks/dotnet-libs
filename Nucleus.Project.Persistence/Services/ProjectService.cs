@@ -7,7 +7,9 @@ using Nucleus.Project.Contracts.Persistence;
 using Nucleus.Project.Persistence.Collections;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Threading.Tasks;
+using ZstdSharp;
 
 namespace Nucleus.Project.Persistence.Services
 {
@@ -68,9 +70,9 @@ namespace Nucleus.Project.Persistence.Services
         public async Task<List<ProjectModel>> GetPagedAsync(PagingModel pagingModel, ProjectsFilterItem? filterItems, bool onlyActive)
         {
             // TODO: Make an extension that does all of this pagination plumbing
-            string sortDefinition = $"{{ {renderSortByName(pagingModel.SortBy)}: 1 }}";
+            string sortDefinition = $"{{ {RenderSortByName(pagingModel.SortBy)}: 1 }}";
             if (pagingModel.SortDirection == "descend")
-                sortDefinition = $"{{ {renderSortByName(pagingModel.SortBy)}: -1 }}";
+                sortDefinition = $"{{ {RenderSortByName(pagingModel.SortBy)}: -1 }}";
 
             return await _db.Projects.Find(GetProjectsPredicateBuilder(onlyActive, filterItems))
                 .Sort(sortDefinition)
@@ -116,9 +118,11 @@ namespace Nucleus.Project.Persistence.Services
 
 
         // Need to make this re-usable for all collection repositories  .. mongodb should handle datetimeoffset sorting better
-        private static string renderSortByName(string column)
+        private static string? RenderSortByName(string? column)
         {
-            System.Reflection.PropertyInfo pi = new ProjectModel().GetType().GetProperty(column[0].ToString().ToUpper() + column[1..]);
+            if (column == null) return null;
+
+            var pi = typeof(ProjectModel).GetProperty(column, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
             if (pi != null && pi.PropertyType == typeof(DateTimeOffset))
             {
                 return "\"" + column + ".0\"";

@@ -52,7 +52,7 @@ namespace Nucleus.Core.Business.Managers
                 };
 
             if (!string.IsNullOrEmpty(document.DocumentId))
-                await _documentProvider.DeleteAsync(document.DocumentKey);
+                await _documentProvider.DeleteAsync(document.DocumentId);
             else
                 document.DocumentKey = GetDocumentDirectory(document.DocumentCategory) + GenerateDocumentKey(document.DocumentName, 10);
 
@@ -112,9 +112,10 @@ namespace Nucleus.Core.Business.Managers
                     IsSuccess = true
                 };
             }
-            await _documentProvider.DeleteAsync(document.DocumentKey);
+            if (document.DocumentKey != null)
+                await _documentProvider.DeleteAsync(document.DocumentKey);
             await _documentService.RemoveAsync(id);
-            return new ResponseModel<Boolean>()
+            return new ResponseModel<bool>()
             {
                 Response = true,
                 IsSuccess = true

@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Configuration;
+using System.ComponentModel.DataAnnotations;
 
 namespace Nucleus.TemplateEngine.Cli;
 
@@ -8,7 +9,8 @@ public class TemplateEngineSettings
     [CommandParameter(Value = "input")]
     public string? InputFile { get; set; }
 
-    public string Template { get; set; }
+    [Required]
+    public string Template { get; set; } = null!;
 
     [CommandParameter(Value = "input-type")]
     public FileTypes? InputFileType { get; set; }

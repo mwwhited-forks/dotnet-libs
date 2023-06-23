@@ -25,9 +25,9 @@ namespace Nucleus.Lesson.Business.Managers
 #warning retire this
         public async Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter)
         {
-            PagedResult<LessonModel> result = new PagedResult<LessonModel>();
+            lessonsFilter.PagingModel ??= PagingModel.Default;
             List<LessonModel> blogs = await _lessonService.GetPagedAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, false);
-            result = new PagedResult<LessonModel>()
+            var result = new PagedResult<LessonModel>()
             {
                 CurrentPage = lessonsFilter.PagingModel.CurrentPage,
                 PageSize = lessonsFilter.PagingModel.PageSize,

@@ -34,7 +34,8 @@ public class TemplateEngineService : IHostedService
             throw new NotSupportedException(@$"""{_settings.InputFile}"" => ""{_settings.InputFileType}""");
         var content = GetContent(_settings.InputFile) ??
             throw new NotSupportedException("No content found");
-        var data = GetData(contentType, content);
+        var data = GetData(contentType, content) ??
+            throw new NotSupportedException("No data found"); ;
 
         _log.LogInformation(
             $"Loaded: {{{nameof(_settings.InputFile)}}} for {{{nameof(_settings.Template)}}}",

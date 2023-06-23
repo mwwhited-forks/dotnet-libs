@@ -19,7 +19,7 @@ namespace Eliassen.MongoDB.Extensions
             where TDatabase : class
             where TSettings : class, IMongoSettings
         {
-            services.GetSingletonInstance<IMongoDatabaseRegistation, MongoDatabaseRegistation>(out var db);
+            services.GetSingletonInstance<IMongoDatabaseRegistration, MongoDatabaseRegistration>(out var db);
 
             services.TryAddTransient(sp => sp.GetRequiredService<IMongoDatabaseFactory>().Create<TDatabase, TSettings>());
             db.InternalTypes.Add(typeof(TDatabase));

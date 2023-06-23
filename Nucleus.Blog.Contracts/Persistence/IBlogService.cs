@@ -10,7 +10,7 @@ namespace Nucleus.Blog.Contracts.Persistence
     public interface IBlogService
     {
 #warning retire this
-        Task<List<BlogModel>> GetPagedAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive);
+        Task<List<BlogModel>> GetPagedAsync(PagingModel? pagingModel, BlogsFilterItem? filterItems, bool onlyActive);
 
 #warning retire this
         Task<long> GetPagedCountAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive);

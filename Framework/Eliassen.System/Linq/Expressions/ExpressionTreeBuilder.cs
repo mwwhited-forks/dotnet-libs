@@ -159,7 +159,8 @@ namespace Eliassen.System.Linq.Expressions
                 {
                     if (expressionOperator == Operators.NotEqualTo)
                     {
-                        var eq = BuildPredicate(expression, Operators.EqualTo, queryParameter, isSearchTerm);
+                        var eq = BuildPredicate(expression, Operators.EqualTo, queryParameter, isSearchTerm) ??
+                            throw new NotSupportedException(nameof(Operators.NotEqualTo));
                         var predicate = Expression.Not(eq.Body);
                         var parameter = Expression.Parameter(typeof(TModel), "n");
                         var replaced = new ParameterReplacerExpressionVisitor(parameter).Visit(predicate);
@@ -206,13 +207,13 @@ namespace Eliassen.System.Linq.Expressions
                         $"{{{nameof(queryString)}}} parsed to {{{nameof(value)}}} ({{type}})",
                         queryString,
                         value,
-                        value.GetType()
+                        value?.GetType()
                         );
                     queryParameter = value;
                 }
             }
 
-            if (unwrapped.Type.IsAssignableFrom(queryParameter.GetType()))
+            if (queryParameter != null && unwrapped.Type.IsAssignableFrom(queryParameter.GetType()))
             {
                 //TODO: needs to be a bit more creative.  type casting not supported
                 var parameter = Expression.Parameter(typeof(TModel), "n");
@@ -226,7 +227,7 @@ namespace Eliassen.System.Linq.Expressions
                 if (!isSearchTerm)
                 {
                     _logger.LogWarning(
-                        $"Unable to map filter expression: {nameof(expression)} {nameof(expressionOperator)} {nameof(queryParameter)} (type)",
+                        $"Unable to map filter expression: {{{nameof(expression)}}} {{{nameof(expressionOperator)}}} {{{nameof(queryParameter)}}} ({{type}})",
                         expression,
                         expressionOperator,
                         queryParameter,

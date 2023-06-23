@@ -51,6 +51,8 @@ namespace Nucleus.Core.Contracts.Models
                 _ => null
             };
 
+#pragma warning disable CS8604 // Possible null reference argument.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
         public static Expression<Func<User, bool>>? PredicateMap(string key, object value) =>
             key switch
             {
@@ -58,5 +60,7 @@ namespace Nucleus.Core.Contracts.Models
                 UserStatus => e => value.Equals("-1") || e.Active == value.Equals("1"),
                 _ => null
             };
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+#pragma warning restore CS8604 // Possible null reference argument.
     }
 }

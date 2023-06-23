@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Nucleus.AspNetCore.Mvc.IdentityModel;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
+using System;
 using System.Threading.Tasks;
 
 namespace Nucleus.Core.Controllers.Controllers
@@ -29,8 +30,10 @@ namespace Nucleus.Core.Controllers.Controllers
         /// <returns></returns>
         [Authorize]
         [HttpGet]
-        public async Task<User?> GetUserProfile()=>
-            await _userProfileManager.GetUserProfile(_userSession.UserName);
+        public async Task<User?> GetUserProfile() =>
+            await _userProfileManager.GetUserProfile(
+                _userSession.UserName ?? throw new NotSupportedException($"{nameof(_userSession.UserName)} must not be null")
+                );
 
         /// <summary>
         /// Save user profile for current logged in user
@@ -39,7 +42,10 @@ namespace Nucleus.Core.Controllers.Controllers
         /// <returns></returns>
         [Authorize]
         [HttpPut]
-        public async Task<ResponseModel<User?>> UpdateUserProfile(User user)=>
-            await _userProfileManager.UpdateUserProfile(_userSession.UserName, user);
+        public async Task<ResponseModel<User?>> UpdateUserProfile(User user) =>
+            await _userProfileManager.UpdateUserProfile(
+                _userSession.UserName ?? throw new NotSupportedException($"{nameof(_userSession.UserName)} must not be null"),
+                user
+                );
     }
 }

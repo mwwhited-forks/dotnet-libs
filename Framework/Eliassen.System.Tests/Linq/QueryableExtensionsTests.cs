@@ -115,7 +115,7 @@ namespace Eliassen.System.Tests.Linq
             var results = queryResults as IPagedQueryResult<T>;
             Assert.IsNotNull(results);
             var resultKeys = string.Join(',', results.Rows.Select(i => i?.GetKeyValue()));
-            this.TestContext.WriteLine($"{nameof(resultKeys)}: {resultKeys}");
+            this.TestContext?.WriteLine($"{nameof(resultKeys)}: {resultKeys}");
 
             Assert.AreEqual(expectedRows, results.Rows.Count());
             if (expectedKeys != null)
@@ -185,7 +185,7 @@ namespace Eliassen.System.Tests.Linq
             var results = queryResults as IPagedQueryResult<T>;
             Assert.IsNotNull(results);
             var resultKeys = string.Join(',', results.Rows.Select(i => i?.GetKeyValue()));
-            this.TestContext.WriteLine($"{nameof(resultKeys)}: {resultKeys}");
+            this.TestContext?.WriteLine($"{nameof(resultKeys)}: {resultKeys}");
 
             Assert.AreEqual(expectedTotalPages, results.TotalPageCount, message: nameof(expectedTotalPages));
             Assert.AreEqual(expectedTotalRows, results.TotalRowCount, message: nameof(expectedTotalRows));

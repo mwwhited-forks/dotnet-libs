@@ -49,10 +49,14 @@ namespace Nucleus.Core.Persistence.Services
 
         public Task<User?> GetByUserIdAsync(string userId) =>
             Task.FromResult(Query().FirstOrDefault(u => u.UserId == userId));
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
         public Task<User?> GetByUserNameAsync(string userName) =>
             Task.FromResult(Query().FirstOrDefault(u => u.UserName.ToLower() == userName.ToLower()));
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
         public Task<User?> GetByEmailAddressAsync(string emailAddress) =>
             Task.FromResult(Query().FirstOrDefault(u => u.EmailAddress.ToLower() == emailAddress.ToLower()));
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
         public async Task CreateAsync(UserAction user) =>
             await _db.Users.InsertOneAsync(_userCollectionBuilder.BuildCollection(user));

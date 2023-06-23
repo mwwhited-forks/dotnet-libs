@@ -88,16 +88,16 @@ namespace Nucleus.Blog.Persistence.Services
         }
 
 #warning retire this
-        public async Task<List<BlogModel>> GetPagedAsync(PagingModel pagingModel, BlogsFilterItem? filterItems, bool onlyActive)
+        public async Task<List<BlogModel>> GetPagedAsync(PagingModel? pagingModel, BlogsFilterItem? filterItems, bool onlyActive)
         {
             // TODO: Make an extension that does all of this pagination plumbing
-            string sortDefinition = $"{{ {pagingModel.SortBy}: 1 }}";
-            if (pagingModel.SortDirection == "descend")
+            string sortDefinition = $"{{ {pagingModel?.SortBy}: 1 }}";
+            if (pagingModel?.SortDirection == "descend")
                 sortDefinition = $"{{ {pagingModel.SortBy}: -1 }}";
 
             return await _db.Blogs.Find(GetBlogsPredicateBuilder(onlyActive, filterItems))
-                .Skip((pagingModel.CurrentPage - 1) * pagingModel.PageSize)
-                .Limit(pagingModel.PageSize)
+                .Skip((pagingModel?.CurrentPage - 1) * (pagingModel?.PageSize ?? 10))
+                .Limit(pagingModel?.PageSize ?? 10)
                 .Sort(sortDefinition)
                 .Project(_blogsProjection)
                 .ToListAsync();

@@ -2,6 +2,6 @@
 {
     public class UserAction : User
     {
-        public string IdentityAction { get; set; }
+        public string IdentityAction { get; set; } = null!;
     }
 }

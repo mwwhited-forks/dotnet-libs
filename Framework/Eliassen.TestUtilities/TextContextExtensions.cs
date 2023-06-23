@@ -152,39 +152,39 @@ namespace Eliassen.TestUtilities
             return context;
         }
 
-        public static object? GetTestData(this TestContext context, Type type, string? target = null, IServiceProvider? serviceProvider = null) =>
+        public static object? GetTestData(this TestContext? context, Type type, string? target = null, IServiceProvider? serviceProvider = null) =>
             context.GetTestDataAsync(type, target, serviceProvider).GetAwaiter().GetResult();
 
-        public static async Task<object?> GetTestDataAsync(this TestContext context, Type type, string? target = null, IServiceProvider? serviceProvider = null)
+        public static async Task<object?> GetTestDataAsync(this TestContext? context, Type type, string? target = null, IServiceProvider? serviceProvider = null)
         {
             if (type == null) return null;
 
             var typeQuery = from assembly in AppDomain.CurrentDomain.GetAssemblies()
                             from assemblyType in assembly.GetTypes()
                             select assemblyType;
-            var testType = typeQuery.FirstOrDefault(t => t.FullName == context.FullyQualifiedTestClassName);
+            var testType = typeQuery.FirstOrDefault(t => t.FullName == context?.FullyQualifiedTestClassName);
 
-            var targetName = string.IsNullOrWhiteSpace(target) ? context.TestName : target;
+            var targetName = string.IsNullOrWhiteSpace(target) ? context?.TestName : target;
 
             if (string.IsNullOrWhiteSpace(target))
                 target = null;
 
             var possibleResources = target != null ? new[] {
-              $"{testType?.Name}_{context.TestName}_{target}" ,
-              $"{testType?.Name}_{context.TestName}_{target}.json",
+              $"{testType?.Name}_{context?.TestName}_{target}" ,
+              $"{testType?.Name}_{context?.TestName}_{target}.json",
               $"{testType?.Name}_{target}" ,
               $"{testType?.Name}_{target}.json",
 
-              $"{context.TestName}_{target}",
-              $"{context.TestName}_{target}.json",
+              $"{context?.TestName}_{target}",
+              $"{context?.TestName}_{target}.json",
               $"{target}",
               $"{target}.json",
             } : new[]
             {
-              $"{testType?.Name}_{context.TestName}",
-              $"{testType?.Name}_{context.TestName}.json",
-              $"{context.TestName}",
-              $"{context.TestName}.json",
+              $"{testType?.Name}_{context?.TestName}",
+              $"{testType?.Name}_{context?.TestName}.json",
+              $"{context?.TestName}",
+              $"{context?.TestName}.json",
             }.Where(i => i != null);
 
             async Task<string?> getValueAsync()
@@ -230,7 +230,7 @@ namespace Eliassen.TestUtilities
             (T?)await context.GetTestDataAsync(typeof(T), target, serviceProvider);
 
         public static string GetQualifiedTestName(this TestContext context) =>
-            $"{context.FullyQualifiedTestClassName}+{context.TestName}";
+            $"{context.FullyQualifiedTestClassName}+{context?.TestName}";
 
         public static IEnumerable<string> GetTestRunResultFiles(this TestContext context) =>
             Directory.EnumerateDirectories(context.TestRunResultsDirectory ?? ".");
@@ -250,21 +250,21 @@ namespace Eliassen.TestUtilities
             }
         }
 
-        public static string[] GetResourcePrefixes(this TestContext testContext)
+        public static string[] GetResourcePrefixes(this TestContext? testContext)
         {
-            var testClass = testContext.ResolveTestType();
-            var assemblyName = testClass.Assembly.GetName().Name;
+            var testClass = testContext?.ResolveTestType();
+            var assemblyName = testClass?.Assembly.GetName().Name;
 
             return new[]
             {
-                $"{testClass.FullName}.{testContext.TestName}",
-                $"{testClass.FullName}.{testContext.TestName}.data",
+                $"{testClass?.FullName}.{testContext?.TestName}",
+                $"{testClass?.FullName}.{testContext?.TestName}.data",
 
-                $"{testClass.FullName}",
-                $"{testClass.FullName}.data",
+                $"{testClass?.FullName}",
+                $"{testClass?.FullName}.data",
 
-                $"{testClass.Namespace}",
-                $"{testClass.Namespace}.data",
+                $"{testClass?.Namespace}",
+                $"{testClass?.Namespace}.data",
 
                 $"{assemblyName}.data",
 

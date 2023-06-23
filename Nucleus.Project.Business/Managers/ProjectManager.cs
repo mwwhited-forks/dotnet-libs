@@ -29,6 +29,7 @@ namespace Nucleus.Project.Business.Managers
 #warning retire this
         public async Task<PagedResult<ProjectModel>> GetProjectsPagedAsync(ProjectFilter projectsFilter)
         {
+            projectsFilter.PagingModel ??= PagingModel.Default;
             List<ProjectModel> Projects = await _projectService.GetPagedAsync(projectsFilter.PagingModel, projectsFilter.ProjectFilters, false);
             PagedResult<ProjectModel> result = new PagedResult<ProjectModel>()
             {

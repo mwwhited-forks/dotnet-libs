@@ -38,6 +38,8 @@ namespace Nucleus.AspNetCore.Mvc.Authorization
                 //TODO: consider active check here
                 ;
 
+            await Task.Yield();
+
             if (isAuthorized)
             {
                 context.Succeed(requirement);

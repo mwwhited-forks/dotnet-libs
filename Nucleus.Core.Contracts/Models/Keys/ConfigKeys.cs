@@ -4,7 +4,9 @@
     {
         public static class Azure
         {
+#pragma warning disable VSSpell001 // Spell Check
             public static class ADB2C
+#pragma warning restore VSSpell001 // Spell Check
             {
                 public const string ClientID = "Azure:AdB2C:ClientId";
                 public const string Issuer = "Azure:AdB2C:Issuer";

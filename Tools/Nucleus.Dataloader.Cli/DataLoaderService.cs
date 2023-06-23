@@ -15,14 +15,14 @@ namespace Nucleus.Dataloader.Cli
         private readonly ILogger _log;
         private readonly IMongoSettings _mongo;
         private readonly DataLoaderSettings _settings;
-        private readonly IMongoDatabaseRegistation _databases;
+        private readonly IMongoDatabaseRegistration _databases;
 
         public DataLoaderService(
             IServiceProvider serviceProvider,
             ILogger<DataLoaderService> log,
             IOptions<DefaultMongoDatabaseSettings> mongo,
             IOptions<DataLoaderSettings> settings,
-            IMongoDatabaseRegistation databases
+            IMongoDatabaseRegistration databases
             )
         {
             _serviceProvider = serviceProvider;
@@ -32,14 +32,23 @@ namespace Nucleus.Dataloader.Cli
             _databases = databases;
         }
 
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+#pragma warning disable CS8603 // Possible null reference return.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
         public object ConvertTo(object input, Type type) =>
             this.GetType()
                 .GetMethod(nameof(this.ConvertTo), 1, new[] { typeof(object) })
                 .MakeGenericMethod(type)
                 .Invoke(this, new[] { input });
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+#pragma warning restore CS8603 // Possible null reference return.
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
         public T ConvertTo<T>(object input) =>
             (T)input;
 
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+#pragma warning disable CS8603 // Possible null reference return.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
         public Array AsArray(object input, Type type) =>
             (Array)this.GetType()
                 .GetMethod(nameof(this.AsArray), 1, new[] {
@@ -47,6 +56,9 @@ namespace Nucleus.Dataloader.Cli
                 })
                 .MakeGenericMethod(type)
                 .Invoke(this, new[] { input });
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+#pragma warning restore CS8603 // Possible null reference return.
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
         public T[] AsArray<T>(IMongoCollection<T> collection) => collection.AsQueryable().ToArray();
 
         public async Task ExportAsync(PropertyInfo collection, object instance, CancellationToken cancellationToken)
@@ -57,7 +69,7 @@ namespace Nucleus.Dataloader.Cli
             _log.LogInformation($"Exporting: {{{nameof(collectionName)}}}", collectionName);
 
             var data = collection.GetValue(instance);
-            var arr = AsArray(data, elementType);
+            var arr = AsArray(data ?? throw new NotSupportedException(nameof(data)), elementType);
             var json = System.Text.Json.JsonSerializer.Serialize(arr, options: new System.Text.Json.JsonSerializerOptions
             {
                 WriteIndented = true,

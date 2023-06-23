@@ -33,7 +33,7 @@ namespace Eliassen.MongoDB.Extensions
             var collection = _database.GetType()
                 ?.GetMethod(nameof(IMongoDatabase.GetCollection))
                 ?.MakeGenericMethod(collectionType)
-                ?.Invoke(_database, new object[]
+                ?.Invoke(_database, new object?[]
                 {
                     name,
                     null //MongoCollectionSettings

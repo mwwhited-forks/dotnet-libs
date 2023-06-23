@@ -4,8 +4,8 @@
     {
         public int RightId { get; set; }
 
-        public string Code { get; set; }
+        public string Code { get; set; } = null!;
 
-        public string LocalizationCode { get; set; }
+        public string LocalizationCode { get; set; } = null!;
     }
 }
