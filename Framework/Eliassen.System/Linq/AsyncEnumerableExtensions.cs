@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace Eliassen.System.Linq
 {
-    public static class EnumerableExtensions
+    /// <summary>
+    /// Extensions to add async support to existing IEnumerable{T}
+    /// </summary>
+    public static class AsyncEnumerableExtensions
     {
+        /// <summary>
+        /// Process IQueryable{T} to a List{T} as async
+        /// </summary>
+        /// <typeparam name="TModel"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public static async Task<List<TModel>> ToListAsync<TModel>(
             this IQueryable<TModel> source,
             CancellationToken cancellationToken = default
@@ -24,6 +34,13 @@ namespace Eliassen.System.Linq
             return list;
         }
 
+        /// <summary>
+        /// Convert IAsyncEnumerable{TModel} to Task{IEnumerable{TModel}}
+        /// </summary>
+        /// <typeparam name="TModel"></typeparam>
+        /// <param name="items"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
         public static async Task<IEnumerable<TModel>> AsEnumerableAsync<TModel>(
             this IAsyncEnumerable<TModel> items,
             CancellationToken token = default
@@ -38,6 +55,13 @@ namespace Eliassen.System.Linq
             return list.AsReadOnly();
         }
 
+        /// <summary>
+        /// Convert Task{IEnumerable{TModel}} to IAsyncEnumerable{TModel}
+        /// </summary>
+        /// <typeparam name="TModel"></typeparam>
+        /// <param name="items"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public static async IAsyncEnumerable<TModel> AsAsyncEnumerable<TModel>(
             this Task<IEnumerable<TModel>> items,
             [EnumeratorCancellation] CancellationToken cancellationToken = default
@@ -51,11 +75,18 @@ namespace Eliassen.System.Linq
             }
         }
 
+        /// <summary>
+        /// Convert IEnumerable{TModel} to IAsyncEnumerable{TModel}
+        /// </summary>
+        /// <typeparam name="TModel"></typeparam>
+        /// <param name="items"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public static async IAsyncEnumerable<TModel> AsAsyncEnumerable<TModel>(
             this IEnumerable<TModel> items,
             [EnumeratorCancellation] CancellationToken cancellationToken = default)
         {
-            // Modified from EF Core to also enable Async iteration over enumerables that are not natively async.  
+            // Modified from EF Core to also enable Async iteration over enumerable that are not natively async.  
             if (items is IAsyncEnumerable<TModel> asyncItems)
             {
                 await foreach (var item in asyncItems)

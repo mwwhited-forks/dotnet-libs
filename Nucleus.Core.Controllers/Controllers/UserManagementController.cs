@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 
 namespace Nucleus.Core.Controllers.Controllers
 {
+    /// <summary>
+    /// This controller is used for admin management of user accounts
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class UserManagementController : ControllerBase
@@ -24,6 +27,7 @@ namespace Nucleus.Core.Controllers.Controllers
         private readonly IQueryBuilder<User> _userQuery;
         private readonly IQueryBuilder<Module> _moduleQuery;
 
+        /// <inheritdoc/>
         public UserManagementController(
             IUserManagementManager usersManager,
             IQueryBuilder<User> userQuery,
@@ -35,6 +39,11 @@ namespace Nucleus.Core.Controllers.Controllers
             _moduleQuery = moduleQuery;
         }
 
+        /// <summary>
+        /// Save user profile
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpPost]
@@ -70,7 +79,11 @@ namespace Nucleus.Core.Controllers.Controllers
         //[HttpGet(nameof(SearchUserExample) + "Get")]
         //public PagedQueryResult<User> SearchUserExampleGet([FromQuery] SearchQuery<User> model) => throw new NotSupportedException();
 
-
+        /// <summary>
+        /// Do not use for new development
+        /// </summary>
+        /// <param name="userFilter"></param>
+        /// <returns></returns>
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpPost("UserList")]
@@ -88,12 +101,15 @@ namespace Nucleus.Core.Controllers.Controllers
                  },
           }).AsLegacy(userFilter.PagingModel);
 
+        /// <summary>
+        /// Do not use for new development
+        /// </summary>
+        /// <returns></returns>
         [Authorize]
         [ApplicationRight(Rights.UserManagement.Manager)]
         [HttpGet("ApplicationPemissions")]
         [Obsolete("Change to the `ApplicationPemissions` /api/UserManagement/ApplicationPermissions")]
         public PagedResult<Module> GetApplicationPermissionsLegacy() =>
              _moduleQuery.ExecuteBy(_usersManager.QueryModules(), new SearchQuery { }).AsLegacy();
-
     }
 }

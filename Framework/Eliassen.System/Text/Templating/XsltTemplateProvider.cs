@@ -39,6 +39,7 @@ namespace Eliassen.System.Text.Templating
             using var writer = XmlWriter.Create(target, new XmlWriterSettings
             {
                 CloseOutput = false,
+                ConformanceLevel = ConformanceLevel.Auto,
             });
             xslt.Transform(navigator, writer);
             return true;
@@ -53,6 +54,14 @@ namespace Eliassen.System.Text.Templating
             else if (data is JsonDocument jsonDocument)
             {
                 data = jsonDocument.RootElement;
+            }
+            else if (data is XmlDocument xmlDocument)
+            {
+                return xmlDocument.CreateNavigator() ?? throw new NotSupportedException("xmlDocument.CreateNavigator()");
+            }
+            else if (data is XDocument XDocument)
+            {
+                return XDocument.CreateNavigator();
             }
 
             if (data is JsonElement jsonElement)

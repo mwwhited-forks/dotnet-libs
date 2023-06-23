@@ -30,26 +30,35 @@ public class TemplateEngineService : IHostedService
         if (string.IsNullOrWhiteSpace(_settings.Template)) throw new ArgumentNullException(nameof(_settings.Template));
         if (string.IsNullOrWhiteSpace(_settings.OutputFile)) throw new ArgumentNullException(nameof(_settings.OutputFile));
 
-        var contentType = GetFileType(_settings.InputFileType, _settings.InputFile) ??
-            throw new NotSupportedException(@$"""{_settings.InputFile}"" => ""{_settings.InputFileType}""");
-        var content = GetContent(_settings.InputFile) ??
-            throw new NotSupportedException("No content found");
-        var data = GetData(contentType, content) ??
-            throw new NotSupportedException("No data found"); ;
+        var inputPath = Path.GetFullPath(Path.GetDirectoryName(_settings.InputFile) ?? ".");
+        var inputFile = Path.GetFileName(_settings.InputFile);
 
-        _log.LogInformation(
-            $"Loaded: {{{nameof(_settings.InputFile)}}} for {{{nameof(_settings.Template)}}}",
-            _settings.InputFile,
-            _settings.Template
-            );
+        foreach (var file in Directory.EnumerateFiles(inputPath, inputFile))
+        {
+            var contentType = GetFileType(_settings.InputFileType, file) ??
+                throw new NotSupportedException(@$"""{file}"" => ""{_settings.InputFileType}""");
+            var content = GetContent(file) ??
+                throw new NotSupportedException($"No content found: \"{file}\"");
+            var data = GetData(contentType, content) ??
+                throw new NotSupportedException($"No data found: ({contentType}:{content?.Length})"); ;
 
-        var dir = Path.GetDirectoryName(_settings.OutputFile);
-        if (dir != null && !Directory.Exists(dir)) Directory.CreateDirectory(dir);
-        using var fileWriter = File.Open(_settings.OutputFile, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read);
+            _log.LogInformation(
+                $"Loaded: {{{nameof(file)}}} for {{{nameof(_settings.Template)}}}",
+                _settings.InputFile,
+                _settings.Template
+                );
 
-        var result = await _engine.ApplyAsync(_settings.Template, data, fileWriter);
-        await fileWriter.FlushAsync();
-        _log.LogInformation($"Written: {{{nameof(_settings.OutputFile)}}}", _settings.OutputFile);
+            var outFile = _settings.OutputFile
+                .Replace("[file]", Path.GetFileNameWithoutExtension(file), StringComparison.InvariantCultureIgnoreCase)
+                ;
+            var dir = Path.GetDirectoryName(outFile);
+            if (dir != null && !Directory.Exists(dir)) Directory.CreateDirectory(dir);
+            using var fileWriter = File.Open(outFile, FileMode.Create, FileAccess.Write, FileShare.Read);
+
+            var result = await _engine.ApplyAsync(_settings.Template, data, fileWriter);
+            await fileWriter.FlushAsync();
+            _log.LogInformation($"Written: {{{nameof(outFile)}}}", outFile);
+        }
     }
 
     private string? GetContent(string fileName) => File.Exists(fileName) ? File.ReadAllText(fileName) : null;

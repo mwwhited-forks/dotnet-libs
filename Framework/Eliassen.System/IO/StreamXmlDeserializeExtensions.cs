@@ -1,41 +1,22 @@
 ﻿using System;
 using System.IO;
-using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace Eliassen.System.IO
 {
-    public static class StreamExtensions
+    /// <summary>
+    /// Set of extension method to centralize deserialize of stream using System.Xml
+    /// </summary>
+    public static class StreamXmlDeserializeExtensions
     {
-        public static async ValueTask<T?> AsJsonAsync<T>(this Stream? stream, JsonSerializerOptions? options = default) =>
-            stream switch
-            {
-                null => default,
-                _ => await JsonSerializer.DeserializeAsync<T>(stream, options)
-            };
-
-        public static T? AsJson<T>(this Stream? stream, JsonSerializerOptions? options = default) =>
-            stream switch
-            {
-                null => default,
-                _ => JsonSerializer.Deserialize<T>(stream, options)
-            };
-
-        public static async ValueTask<object?> AsJsonAsync(this Stream? stream, Type type, JsonSerializerOptions? options = default) =>
-            stream switch
-            {
-                null => default,
-                _ => await JsonSerializer.DeserializeAsync(stream, type, options)
-            };
-
-        public static object? AsJson(this Stream? stream, Type type, JsonSerializerOptions? options = default) =>
-            stream switch
-            {
-                null => default,
-                _ => JsonSerializer.Deserialize(stream, type, options)
-            };
-
+        /// <summary>
+        /// Convert XML Stream to .Net Object
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="stream"></param>
+        /// <param name="extraTypes"></param>
+        /// <returns></returns>
         public static ValueTask<T?> AsXmlAsync<T>(this Stream? stream, params Type[] extraTypes) =>
             ValueTask.FromResult(stream switch
             {
@@ -43,6 +24,13 @@ namespace Eliassen.System.IO
                 _ => (T?)new XmlSerializer(typeof(T), extraTypes).Deserialize(stream)
             });
 
+        /// <summary>
+        /// Convert XML Stream to .Net Object
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="stream"></param>
+        /// <param name="extraTypes"></param>
+        /// <returns></returns>
         public static T? AsXml<T>(this Stream? stream, params Type[] extraTypes) =>
             stream switch
             {
@@ -50,6 +38,13 @@ namespace Eliassen.System.IO
                 _ => (T?)new XmlSerializer(typeof(T), extraTypes).Deserialize(stream)
             };
 
+        /// <summary>
+        /// Convert XML Stream to .Net Object
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <param name="type"></param>
+        /// <param name="extraTypes"></param>
+        /// <returns></returns>
         public static ValueTask<object?> AsXmlAsync(this Stream? stream, Type type, params Type[] extraTypes) =>
              ValueTask.FromResult(stream switch
              {
@@ -57,6 +52,13 @@ namespace Eliassen.System.IO
                  _ => new XmlSerializer(type, extraTypes).Deserialize(stream)
              });
 
+        /// <summary>
+        /// Convert XML Stream to .Net Object
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <param name="type"></param>
+        /// <param name="extraTypes"></param>
+        /// <returns></returns>
         public static object? AsXml(this Stream? stream, Type type, params Type[] extraTypes) =>
              stream switch
              {

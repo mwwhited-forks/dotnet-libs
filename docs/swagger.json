@@ -1116,7 +1116,9 @@
         "tags": [
           "UserManagement"
         ],
+        "summary": "Save user profile",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -1323,7 +1325,9 @@
         "tags": [
           "UserManagement"
         ],
+        "summary": "Do not use for new development",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -1378,6 +1382,7 @@
         "tags": [
           "UserManagement"
         ],
+        "summary": "Do not use for new development",
         "responses": {
           "200": {
             "description": "Success",

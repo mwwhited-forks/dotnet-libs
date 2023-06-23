@@ -7,6 +7,14 @@
     "DuplicateXml": {
       "commandName": "Project",
       "commandLineArgs": "--input $(SolutionDir)docs\\swagger.json\r\n--output $(SolutionDir)docs\\swagger.xml\r\n--Template DuplicateXml\r\n--file-template-path $(ProjectDir)$(OutputPath)"
+    },
+    "GenerateDocuments - Eliassen.System.xml": {
+      "commandName": "Project",
+      "commandLineArgs": "--input $(SolutionDir)Nucleus.Api\\bin\\Debug\\net6.0\\Eliassen.System.xml\r\n--output $(SolutionDir)docs\\Libraries\\Eliassen.System.md\r\n--Template Documentation.md\r\n--file-template-path $(ProjectDir)$(OutputPath)"
+    },
+    "GenerateDocuments - *.xml": {
+      "commandName": "Project",
+      "commandLineArgs": "--input $(SolutionDir)Nucleus.Api\\bin\\Debug\\net6.0\\*.xml\r\n--output $(SolutionDir)docs\\Libraries\\[file].md\r\n--Template Documentation.md\r\n--file-template-path $(ProjectDir)$(OutputPath)"
     }
   }
 }
