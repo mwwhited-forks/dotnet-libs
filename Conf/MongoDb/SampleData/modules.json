@@ -1,100 +1,100 @@
 [
   {
     "_id": "646cfd1ab7f1713dab0fb865",
-    "Roles": [
+    "roles": [
       {
-        "Rights": [
+        "rights": [
           {
-            "Name": "Users - Read",
-            "Code": "right_users_read"
+            "name": "Users - Read",
+            "code": "right_users_read"
           },
           {
-            "Name": "Users - Write",
-            "Code": "right_users_write"
+            "name": "Users - Write",
+            "code": "right_users_write"
           }
         ],
-        "Name": "Admin",
-        "Code": "role_admin"
+        "name": "Admin",
+        "code": "role_admin"
       }
     ],
-    "CreatedOn": "2023-06-09T20:08:56.176+00:00",
-    "Name": "Admin",
-    "Code": "module_admin"
+    "createdOn": "2023-06-09T20:08:56.176+00:00",
+    "name": "Admin",
+    "code": "module_admin"
   },
   {
     "_id": "646cfd1ab7f1713dab0fb866",
-    "Roles": [
+    "roles": [
       {
-        "Rights": [
+        "rights": [
           {
-            "Name": "Blog Manager",
-            "Code": "right_blog_admin"
+            "name": "Blog Manager",
+            "code": "right_blog_admin"
           }
         ],
-        "Name": "Blog Admin",
-        "Code": "role_blog"
+        "name": "Blog Admin",
+        "code": "role_blog"
       }
     ],
-    "CreatedOn": "2023-06-09T20:08:56.212+00:00",
-    "Name": "Blog",
-    "Code": "module_blog"
+    "createdOn": "2023-06-09T20:08:56.212+00:00",
+    "name": "Blog",
+    "code": "module_blog"
   },
   {
     "_id": "646cfd1ab7f1713dab0fb867",
-    "Roles": [
+    "roles": [
       {
-        "Rights": [
+        "rights": [
           {
-            "Name": "Lesson Vlog Manager",
-            "Code": "right_vlog_admin"
+            "name": "Lesson Vlog Manager",
+            "code": "right_vlog_admin"
           }
         ],
-        "Name": "Lesson Vlog Admin",
-        "Code": "role_vlog"
+        "name": "Lesson Vlog Admin",
+        "code": "role_vlog"
       }
     ],
-    "CreatedOn": "2023-06-09T20:08:56.213+00:00",
-    "Name": "Lessons Vlog",
-    "Code": "module_vlog"
+    "createdOn": "2023-06-09T20:08:56.213+00:00",
+    "name": "Lessons Vlog",
+    "code": "module_vlog"
   },
   {
     "_id": "646cfd1ab7f1713dab0fb868",
-    "Roles": [
+    "roles": [
       {
-        "Rights": [
+        "rights": [
           {
-            "Name": "Tee Times Manager",
-            "Code": "right_teetimes_admin"
+            "name": "Tee Times Manager",
+            "code": "right_teetimes_admin"
           }
         ],
-        "Name": "Tee Times Admin",
-        "Code": "role_teetimes"
+        "name": "Tee Times Admin",
+        "code": "role_teetimes"
       }
     ],
-    "CreatedOn": "2023-06-09T20:08:56.214+00:00",
-    "Name": "Tee Times",
-    "Code": "module_teetimes"
+    "createdOn": "2023-06-09T20:08:56.214+00:00",
+    "name": "Tee Times",
+    "code": "module_teetimes"
   },
   {
     "_id": "646cfd1ab7f1713dab0fb869",
-    "Roles": [
+    "roles": [
       {
-        "Rights": [
+        "rights": [
           {
-            "Name": "Lessons - Read",
-            "Code": "right_lessons_read"
+            "name": "Lessons - Read",
+            "code": "right_lessons_read"
           },
           {
-            "Name": "Lessons - Write",
-            "Code": "right_lessons_write"
+            "name": "Lessons - Write",
+            "code": "right_lessons_write"
           }
         ],
-        "Name": "Lessons",
-        "Code": "role_lessons"
+        "name": "Lessons",
+        "code": "role_lessons"
       }
     ],
-    "CreatedOn": "2023-06-09T20:08:56.215+00:00",
-    "Name": "Lessons",
-    "Code": "module_lessons"
+    "createdOn": "2023-06-09T20:08:56.215+00:00",
+    "name": "Lessons",
+    "code": "module_lessons"
   }
 ]

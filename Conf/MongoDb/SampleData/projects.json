@@ -1,38 +1,38 @@
 [
   {
     "_id": "648386d82c1fe86e6b363704",
-    "Title": "Crossfit New Albany Summer Jam",
-    "Slug": "Crossfit-New-Albany-Summer-Jam",
-    "ProjectLink": "https://www.cfnasummerjam.com/",
-    "ProjectImage": "",
-    "Preview": "This is a highly effective, low cost site built using a mainstream CMS system; all media and content was created and managed by us.",
-    "Content": "This is a highly effective, low cost site built using a mainstream CMS system; all media and content was created and managed by us.",
-    "Page": "",
-    "Enabled": true,
-    "CreatedOn": "2017-09-20T18:43:51.155+00:00"
+    "title": "Crossfit New Albany Summer Jam",
+    "slug": "Crossfit-New-Albany-Summer-Jam",
+    "projectLink": "https://www.cfnasummerjam.com/",
+    "projectImage": "",
+    "preview": "This is a highly effective, low cost site built using a mainstream CMS system; all media and content was created and managed by us.",
+    "content": "This is a highly effective, low cost site built using a mainstream CMS system; all media and content was created and managed by us.",
+    "page": "",
+    "enabled": true,
+    "createdOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
     "_id": "648386d82c1fe86e6b363705",
-    "Title": "Joe Mixon Named AFC Player of the Week",
-    "Slug": "Ohio-Military-Reserve",
-    "ProjectLink": "http://www.ohiomilitaryreserve.com",
-    "ProjectImage": "",
-    "Preview": "This is a custom solution built from the ground up",
-    "Content": "This is a custom solution built from the ground up",
-    "Page": "",
-    "Enabled": true,
-    "CreatedOn": "2017-09-20T18:43:51.155+00:00"
+    "title": "Joe Mixon Named AFC Player of the Week",
+    "slug": "Ohio-Military-Reserve",
+    "projectLink": "http://www.ohiomilitaryreserve.com",
+    "projectImage": "",
+    "preview": "This is a custom solution built from the ground up",
+    "content": "This is a custom solution built from the ground up",
+    "page": "",
+    "enabled": true,
+    "createdOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
     "_id": "648386d82c1fe86e6b363706",
-    "Title": "Basics of the Raspberry Pi \u2013 Setup",
-    "Slug": "Basics-of-the-Raspberry-Pi-Setup",
-    "ProjectLink": "http://www.ohiomilitaryreserve.com",
-    "ProjectImage": "",
-    "Preview": "I kept hearing about the Raspberry Pi and all of the wonderful things you can do with it. It was time for me to roll up my sleeves and dig in with my first real project.  I can honestly say that I seriously struggled to find all of the information and documentation out there that I needed put together in a way that I could easily take it and run with it.  Well after many hours of tinkering I decided to write my own guide in words that makes sense to how my mind works.",
-    "Content": "I kept hearing about the Raspberry Pi and all of the wonderful things you can do with it. It was time for me to roll up my sleeves and dig in with my first real project.  I can honestly say that I seriously struggled to find all of the information and documentation out there that I needed put together in a way that I could easily take it and run with it.  Well after many hours of tinkering I decided to write my own guide in words that makes sense to how my mind works.",
-    "Page": "",
-    "Enabled": true,
-    "CreatedOn": "2017-09-20T18:43:51.155+00:00"
+    "title": "Basics of the Raspberry Pi \u2013 Setup",
+    "slug": "Basics-of-the-Raspberry-Pi-Setup",
+    "projectLink": "http://www.ohiomilitaryreserve.com",
+    "projectImage": "",
+    "preview": "I kept hearing about the Raspberry Pi and all of the wonderful things you can do with it. It was time for me to roll up my sleeves and dig in with my first real project.  I can honestly say that I seriously struggled to find all of the information and documentation out there that I needed put together in a way that I could easily take it and run with it.  Well after many hours of tinkering I decided to write my own guide in words that makes sense to how my mind works.",
+    "content": "I kept hearing about the Raspberry Pi and all of the wonderful things you can do with it. It was time for me to roll up my sleeves and dig in with my first real project.  I can honestly say that I seriously struggled to find all of the information and documentation out there that I needed put together in a way that I could easily take it and run with it.  Well after many hours of tinkering I decided to write my own guide in words that makes sense to how my mind works.",
+    "page": "",
+    "enabled": true,
+    "createdOn": "2017-09-20T18:43:51.155+00:00"
   }
 ]

@@ -4,8 +4,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using Newtonsoft.Json.Serialization;
 using System.ComponentModel;
 using System.Reflection;
+using System.Text.Json;
 using static Nucleus.Core.Contracts.Rights;
 
 namespace Nucleus.Dataloader.Cli
@@ -75,13 +77,17 @@ namespace Nucleus.Dataloader.Cli
                 var json = System.Text.Json.JsonSerializer.Serialize(arr, options: new System.Text.Json.JsonSerializerOptions
                 {
                     WriteIndented = true,
+                    PropertyNameCaseInsensitive = true,
+                    IgnoreReadOnlyFields = true,
+                    IgnoreReadOnlyProperties = true,
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 });
                 var targetFile = Path.Combine(_settings.SourcePath, $"{collectionName}.json");
                 await File.WriteAllTextAsync(targetFile, json, cancellationToken);
 
                 _log.LogInformation($"Exported: {{{nameof(collectionName)}}} to \"{{{nameof(targetFile)}}}\"", collectionName, targetFile);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _log.LogError($"{{{nameof(collection)}}}::{{{nameof(instance)}}}->{{{nameof(ex.Message)}}}", collection, instance, ex.Message);
                 _log.LogDebug($"{{{nameof(collection)}}}->{{{nameof(Exception)}}}", collection, ex);
