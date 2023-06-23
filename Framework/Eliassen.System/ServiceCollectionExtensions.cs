@@ -3,10 +3,13 @@ using Eliassen.System.Configuration;
 using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
 using Eliassen.System.Security.Cryptography;
+using Eliassen.System.Text.Json.Serialization;
 using Eliassen.System.Text.Templating;
+using Eliassen.System.Text.Xml.Serialization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Nucleus.Dataloader.Cli;
 using System.ComponentModel;
 using System.Linq;
 
@@ -19,6 +22,7 @@ namespace Eliassen.System
             .TryAddSearchQueryExtensions()
             .TrySecurityExtensions()
             .TryTemplatingExtensions(config)
+            .TrySerializerExtensions()
             ;
 
         public static IServiceCollection TryAddSearchQueryExtensions(this IServiceCollection services)
@@ -36,6 +40,15 @@ namespace Eliassen.System
             return services;
         }
 
+        public static IServiceCollection TrySerializerExtensions(this IServiceCollection services)
+        {
+            services.TryAddSingleton<ISerializer>(sp => sp.GetRequiredService<IJsonSerializer>());
+            services.TryAddSingleton<IJsonSerializer, DefaultJsonSerializer>();
+            //TODO: services.TryAddSingleton<IXmlSerializer, DefaultXmlSerializer>();
+            services.TryAddSingleton(_ => DefaultJsonSerializer.DefaultOptions);
+            return services;
+        }
+
         public static IServiceCollection TryTemplatingExtensions(this IServiceCollection services, IConfiguration config)
         {
             services.TryAddTransient<ITemplateEngine, TemplateEngine>();
@@ -50,8 +63,8 @@ namespace Eliassen.System
 
             services.AddTransient<IFileType>(_ => new FileType { Extension = ".html", ContentType = "text/html", IsTemplateType = false });
             services.AddTransient<IFileType>(_ => new FileType { Extension = ".txt", ContentType = "text/plain", IsTemplateType = false });
-            services.AddTransient<IFileType>(_ => new FileType { Extension = ".json", ContentType = "text/json", IsTemplateType = false });
-            services.AddTransient<IFileType>(_ => new FileType { Extension = ".xml", ContentType = "text/xml", IsTemplateType = false });
+            services.AddTransient<IFileType>(_ => new FileType { Extension = ".json", ContentType = DefaultJsonSerializer.DefaultContentType, IsTemplateType = false });
+            services.AddTransient<IFileType>(_ => new FileType { Extension = ".xml", ContentType = DefaultXmlSerializer.DefaultContentType, IsTemplateType = false });
 
             services.AddTransient<IFileType>(_ => new FileType { Extension = ".xslt", ContentType = XsltTemplateProvider.ContentType, IsTemplateType = true });
 

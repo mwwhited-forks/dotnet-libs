@@ -39,7 +39,7 @@ namespace Eliassen.MongoDB.Extensions
                 ?.Invoke(_database, new object?[]
                 {
                     name,
-                    null //MongoCollectionSettings
+                    null
                 })
                 ?? throw new NotSupportedException();
 
