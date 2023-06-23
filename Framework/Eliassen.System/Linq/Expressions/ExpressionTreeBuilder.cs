@@ -12,6 +12,7 @@ using System.Reflection;
 
 namespace Eliassen.System.Linq.Expressions
 {
+    /// <inheritdoc/>
     public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
     {
         private const string PropertyMap = nameof(PropertyMap);
@@ -19,6 +20,7 @@ namespace Eliassen.System.Linq.Expressions
 
         private readonly ILogger _logger;
 
+        /// <inheritdoc/>
         public ExpressionTreeBuilder(
             ILogger<ExpressionTreeBuilder<TModel>>? logger = null
             )
@@ -26,6 +28,7 @@ namespace Eliassen.System.Linq.Expressions
             _logger = logger ?? new ConsoleLogger<ExpressionTreeBuilder<TModel>>();
         }
 
+        /// <inheritdoc/>
         public Expression<Func<TModel, bool>>? GetPredicateExpression(
             string name,
             FilterParameter value,
@@ -34,6 +37,7 @@ namespace Eliassen.System.Linq.Expressions
             ) =>
             TryGetPredicateExpression(name, value, out var expression, stringComparison, isSearchTerm) ? expression : null;
 
+        /// <inheritdoc/>
         public Expression<Func<TModel, bool>>? BuildExpression(object? queryParameter, StringComparison stringComparison, bool isSearchTerm) =>
             ExpressionExtensions.OrElse(
                 from searchExpression in GetSearchableExpressions(stringComparison)
@@ -242,9 +246,11 @@ namespace Eliassen.System.Linq.Expressions
             }
         }
 
+        /// <inheritdoc/>
         public IReadOnlyDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions() =>
             new Dictionary<string, Expression<Func<TModel, object>>>(BuildExpressions(), StringComparer.InvariantCultureIgnoreCase);
 
+        /// <inheritdoc/>
         public IReadOnlyCollection<string> GetSearchablePropertyNames()
         {
             var modelType = typeof(TModel);
@@ -277,6 +283,7 @@ namespace Eliassen.System.Linq.Expressions
             return results;
         }
 
+        /// <inheritdoc/>
         public IReadOnlyCollection<string> GetSortablePropertyNames()
         {
             var modelType = typeof(TModel);
@@ -303,6 +310,7 @@ namespace Eliassen.System.Linq.Expressions
             return results;
         }
 
+        /// <inheritdoc/>
         public IReadOnlyCollection<string> GetFilterablePropertyNames()
         {
             var modelType = typeof(TModel);
@@ -337,6 +345,7 @@ namespace Eliassen.System.Linq.Expressions
             return results;
         }
 
+        /// <inheritdoc/>
         public IReadOnlyCollection<(string column, OrderDirections direction)> DefaultSortOrder() =>
             (
                 from attribute in typeof(TModel).GetCustomAttributes<DefaultSortAttribute>()
@@ -461,6 +470,5 @@ namespace Eliassen.System.Linq.Expressions
 
             return expression != null;
         }
-
     }
 }

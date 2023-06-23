@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace Eliassen.System.Reflection
 {
-    //TODO: Make this an interface library and extension methods.  
+    /// <summary>
+    /// Set of extension methods for embedded resources
+    /// </summary>
     public static class ResourceExtensions
     {
         /// <summary>

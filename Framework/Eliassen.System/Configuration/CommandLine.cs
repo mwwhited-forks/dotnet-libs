@@ -5,16 +5,30 @@ using System.Linq;
 
 namespace Eliassen.System.Configuration
 {
+    /// <summary>
+    /// builder pattern for command parameter arguments
+    /// </summary>
     public static class CommandLine
     {
         private static StringComparer Comparer = StringComparer.InvariantCultureIgnoreCase;
 
+        /// <summary>
+        /// add additional configurable parameters
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items"></param>
+        /// <returns></returns>
         public static IDictionary<string, string> AddParameters<T>(this IDictionary<string, string> items) =>
             items.Concat(BuildParameters<T>())
                  .GroupBy(i => i.Key, Comparer)
                  .ToDictionary(i => i.Key, i => i.First().Value, Comparer)
                  ;
 
+        /// <summary>
+        /// entry point or defining configurable parameters
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static IDictionary<string, string> BuildParameters<T>()
         {
             var type = typeof(T);
@@ -35,10 +49,5 @@ namespace Eliassen.System.Configuration
                           ;
             return dictionary;
         }
-
-        public static IDictionary<string, string> ToDictionary(this IEnumerable<(string key, string value)> items) =>
-            items.GroupBy(i => i.key, Comparer)
-                 .ToDictionary(i => i.Key, i => i.First().value, Comparer)
-                 ;
     }
 }
