@@ -4,7 +4,7 @@
       "commandName": "Project",
       "commandLineArgs": "$(SolutionDir)\\Conf\\MongoDb"
     },
-    "27018": {
+    "27018 - Export": {
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)\\Conf\\MongoDb\\SampleData",
       "environmentVariables": {

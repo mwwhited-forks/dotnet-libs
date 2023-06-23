@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using System.ComponentModel;
 using System.Reflection;
 using static Nucleus.Core.Contracts.Rights;
 
@@ -62,27 +63,35 @@ namespace Nucleus.Dataloader.Cli
 
         public async Task ExportAsync(PropertyInfo collection, object instance, CancellationToken cancellationToken)
         {
-            var elementType = collection.PropertyType.GetGenericArguments()[0];
-            var collectionName = collection.GetCustomAttributes<CollectionNameAttribute>().FirstOrDefault()?.CollectionName ?? elementType.Name;
-
-            _log.LogInformation($"Exporting: {{{nameof(collectionName)}}}", collectionName);
-
-            var data = collection.GetValue(instance);
-            var arr = AsArray(data ?? throw new NotSupportedException(nameof(data)), elementType);
-            var json = System.Text.Json.JsonSerializer.Serialize(arr, options: new System.Text.Json.JsonSerializerOptions
+            try
             {
-                WriteIndented = true,
-            });
-            var targetFile = Path.Combine(_settings.SourcePath, $"{collectionName}.json");
-            await File.WriteAllTextAsync(targetFile, json, cancellationToken);
+                var elementType = collection.PropertyType.GetGenericArguments()[0];
+                var collectionName = collection.GetCustomAttributes<CollectionNameAttribute>().FirstOrDefault()?.CollectionName ?? elementType.Name;
 
-            _log.LogInformation($"Exported: {{{nameof(collectionName)}}} to \"{{{nameof(targetFile)}}}\"", collectionName, targetFile);
+                _log.LogInformation($"Exporting: {{{nameof(collectionName)}}}", collectionName);
+
+                var data = collection.GetValue(instance);
+                var arr = AsArray(data ?? throw new NotSupportedException(nameof(data)), elementType);
+                var json = System.Text.Json.JsonSerializer.Serialize(arr, options: new System.Text.Json.JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                });
+                var targetFile = Path.Combine(_settings.SourcePath, $"{collectionName}.json");
+                await File.WriteAllTextAsync(targetFile, json, cancellationToken);
+
+                _log.LogInformation($"Exported: {{{nameof(collectionName)}}} to \"{{{nameof(targetFile)}}}\"", collectionName, targetFile);
+            }
+            catch(Exception ex)
+            {
+                _log.LogError($"{{{nameof(collection)}}}::{{{nameof(instance)}}}->{{{nameof(ex.Message)}}}", collection, instance, ex.Message);
+                _log.LogDebug($"{{{nameof(collection)}}}->{{{nameof(Exception)}}}", collection, ex);
+            }
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
             var databases = from type in _databases.Types
-                            select (type, ConvertTo(_serviceProvider.GetRequiredService(type), type));
+                            select (type: type, database: ConvertTo(_serviceProvider.GetRequiredService(type), type));
             var dbs = databases.ToList();
 
             foreach (var db in dbs)
@@ -93,9 +102,9 @@ namespace Nucleus.Dataloader.Cli
 
                     if (_settings.Action == DataLoaderActions.Export)
                     {
-                        await ExportAsync(collection, db.Item2, cancellationToken);
+                        await ExportAsync(collection, db.database, cancellationToken);
                     }
-                    else 
+                    else
                     {
                         throw new NotSupportedException($"{_settings.Action}");
                     }

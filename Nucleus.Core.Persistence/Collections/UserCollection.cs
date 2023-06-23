@@ -2,6 +2,7 @@
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Nucleus.Core.Persistence.Collections;
 
@@ -10,6 +11,7 @@ public class UserCollection
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
+    [JsonPropertyName("_id")]
     public string? UserId { get; set; }
 
     [BsonElement("userName")]
@@ -31,6 +33,5 @@ public class UserCollection
     public List<UserModuleCollection>? UserModules { get; set; }
 
     [BsonElement("createdOn")]
-    [BsonRepresentation(BsonType.DateTime)]
     public DateTimeOffset? CreatedOn { get; set; }
 }

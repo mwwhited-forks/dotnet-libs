@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
+using System.Text.Json.Serialization;
 
 namespace Nucleus.Project.Persistence.Collections
 {
@@ -9,6 +10,7 @@ namespace Nucleus.Project.Persistence.Collections
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        [JsonPropertyName("_id")]
         public string? ProjectId { get; set; }
 
         [BsonElement("title")]
@@ -28,7 +30,6 @@ namespace Nucleus.Project.Persistence.Collections
         [BsonElement("enabled")]
         public bool? Enabled { get; set; }
         [BsonElement("createdOn")]
-        [BsonRepresentation(BsonType.DateTime)]
         public DateTimeOffset CreatedOn { get; set; }
     }
 }

@@ -1,100 +1,100 @@
 [
   {
-    "_id": ObjectId("646cfd1ab7f1713dab0fb865"),
-    "name": "Admin",
-    "code": "module_admin",
-    "roles": [
+    "_id": "646cfd1ab7f1713dab0fb865",
+    "Roles": [
       {
-        "name": "Admin",
-        "code": "role_admin",
-        "rights": [
+        "Rights": [
           {
-            "name": "Users - Read",
-            "code": "right_users_read"
+            "Name": "Users - Read",
+            "Code": "right_users_read"
           },
           {
-            "name": "Users - Write",
-            "code": "right_users_write"
+            "Name": "Users - Write",
+            "Code": "right_users_write"
           }
-        ]
+        ],
+        "Name": "Admin",
+        "Code": "role_admin"
       }
     ],
-    "createdOn": ISODate("2023-06-13T13:14:06.396Z")
+    "CreatedOn": "2023-06-09T20:08:56.176+00:00",
+    "Name": "Admin",
+    "Code": "module_admin"
   },
   {
-    "_id": ObjectId("646cfd1ab7f1713dab0fb866"),
-    "name": "Blog",
-    "code": "module_blog",
-    "roles": [
+    "_id": "646cfd1ab7f1713dab0fb866",
+    "Roles": [
       {
-        "name": "Blog Admin",
-        "code": "role_blog",
-        "rights": [
+        "Rights": [
           {
-            "name": "Blog Manager",
-            "code": "right_blog_admin"
+            "Name": "Blog Manager",
+            "Code": "right_blog_admin"
           }
-        ]
+        ],
+        "Name": "Blog Admin",
+        "Code": "role_blog"
       }
     ],
-    "createdOn": ISODate("2023-06-13T13:14:06.396Z")
+    "CreatedOn": "2023-06-09T20:08:56.212+00:00",
+    "Name": "Blog",
+    "Code": "module_blog"
   },
   {
-    "_id": ObjectId("646cfd1ab7f1713dab0fb867"),
-    "name": "Lessons Vlog",
-    "code": "module_vlog",
-    "roles": [
+    "_id": "646cfd1ab7f1713dab0fb867",
+    "Roles": [
       {
-        "name": "Lesson Vlog Admin",
-        "code": "role_vlog",
-        "rights": [
+        "Rights": [
           {
-            "name": "Lesson Vlog Manager",
-            "code": "right_vlog_admin"
+            "Name": "Lesson Vlog Manager",
+            "Code": "right_vlog_admin"
           }
-        ]
+        ],
+        "Name": "Lesson Vlog Admin",
+        "Code": "role_vlog"
       }
     ],
-    "createdOn": ISODate("2023-06-13T13:14:06.396Z")
+    "CreatedOn": "2023-06-09T20:08:56.213+00:00",
+    "Name": "Lessons Vlog",
+    "Code": "module_vlog"
   },
   {
-    "_id": ObjectId("646cfd1ab7f1713dab0fb868"),
-    "name": "Tee Times",
-    "code": "module_teetimes",
-    "roles": [
+    "_id": "646cfd1ab7f1713dab0fb868",
+    "Roles": [
       {
-        "name": "Tee Times Admin",
-        "code": "role_teetimes",
-        "rights": [
+        "Rights": [
           {
-            "name": "Tee Times Manager",
-            "code": "right_teetimes_admin"
+            "Name": "Tee Times Manager",
+            "Code": "right_teetimes_admin"
           }
-        ]
+        ],
+        "Name": "Tee Times Admin",
+        "Code": "role_teetimes"
       }
     ],
-    "createdOn": ISODate("2023-06-13T13:14:06.396Z")
+    "CreatedOn": "2023-06-09T20:08:56.214+00:00",
+    "Name": "Tee Times",
+    "Code": "module_teetimes"
   },
   {
-    "_id": ObjectId("646cfd1ab7f1713dab0fb869"),
-    "name": "Lessons",
-    "code": "module_lessons",
-    "roles": [
+    "_id": "646cfd1ab7f1713dab0fb869",
+    "Roles": [
       {
-        "name": "Lessons",
-        "code": "role_lessons",
-        "rights": [
+        "Rights": [
           {
-            "name": "Lessons - Read",
-            "code": "right_lessons_read"
+            "Name": "Lessons - Read",
+            "Code": "right_lessons_read"
           },
           {
-            "name": "Lessons - Write",
-            "code": "right_lessons_write"
+            "Name": "Lessons - Write",
+            "Code": "right_lessons_write"
           }
-        ]
+        ],
+        "Name": "Lessons",
+        "Code": "role_lessons"
       }
     ],
-    "createdOn": ISODate("2023-06-13T13:14:06.396Z")
+    "CreatedOn": "2023-06-09T20:08:56.215+00:00",
+    "Name": "Lessons",
+    "Code": "module_lessons"
   }
 ]

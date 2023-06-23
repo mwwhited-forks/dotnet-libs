@@ -1,6 +1,6 @@
 [
   {
-    "ProjectId": "648386d82c1fe86e6b363704",
+    "_id": "648386d82c1fe86e6b363704",
     "Title": "Crossfit New Albany Summer Jam",
     "Slug": "Crossfit-New-Albany-Summer-Jam",
     "ProjectLink": "https://www.cfnasummerjam.com/",
@@ -12,7 +12,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "ProjectId": "648386d82c1fe86e6b363705",
+    "_id": "648386d82c1fe86e6b363705",
     "Title": "Joe Mixon Named AFC Player of the Week",
     "Slug": "Ohio-Military-Reserve",
     "ProjectLink": "http://www.ohiomilitaryreserve.com",
@@ -24,7 +24,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "ProjectId": "648386d82c1fe86e6b363706",
+    "_id": "648386d82c1fe86e6b363706",
     "Title": "Basics of the Raspberry Pi \u2013 Setup",
     "Slug": "Basics-of-the-Raspberry-Pi-Setup",
     "ProjectLink": "http://www.ohiomilitaryreserve.com",

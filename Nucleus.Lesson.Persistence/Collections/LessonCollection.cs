@@ -2,6 +2,7 @@
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 using System;
+using System.Text.Json.Serialization;
 
 namespace Nucleus.Lesson.Contracts.Collections
 {
@@ -10,6 +11,7 @@ namespace Nucleus.Lesson.Contracts.Collections
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        [JsonPropertyName("_id")]
         public string? LessonId { get; set; }
 
         [BsonElement("title")]
@@ -26,8 +28,8 @@ namespace Nucleus.Lesson.Contracts.Collections
         public string? Content { get; set; }
         [BsonElement("enabled")]
         public Boolean? Enabled { get; set; }
+
         [BsonElement("createdOn")]
-        [BsonRepresentation(BsonType.DateTime)]
         public DateTimeOffset? CreatedOn { get; set; }
 
         [BsonElement("attendees")]

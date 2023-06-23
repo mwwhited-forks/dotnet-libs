@@ -2,6 +2,7 @@
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Nucleus.Blog.Persistence.Collections
 {
@@ -10,6 +11,7 @@ namespace Nucleus.Blog.Persistence.Collections
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        [JsonPropertyName("_id")]
         public string? BlogId { get; set; }
 
         [BsonElement("title")]
@@ -26,8 +28,8 @@ namespace Nucleus.Blog.Persistence.Collections
         public bool? Enabled { get; set; }
         [BsonElement("author")]
         public string? Author { get; set; }
+
         [BsonElement("createdOn")]
-        [BsonRepresentation(BsonType.DateTime)]
         public DateTimeOffset CreatedOn { get; set; }
     }
 }

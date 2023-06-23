@@ -1,6 +1,6 @@
 [
   {
-    "LessonId": "647f5966e7abf8eb062387e5",
+    "_id": "647f5966e7abf8eb062387e5",
     "Title": "How to be less bad at golf.",
     "Slug": "allen@nodirection.com",
     "MediaLink": "Allen",
@@ -19,7 +19,7 @@
     "EndDateTime": null
   },
   {
-    "LessonId": "647f5966e7abf8eb062387e6",
+    "_id": "647f5966e7abf8eb062387e6",
     "Title": "How not to drop your club.",
     "Slug": "allen@nodirection.com",
     "MediaLink": "Allen",
@@ -38,7 +38,7 @@
     "EndDateTime": null
   },
   {
-    "LessonId": "647f5966e7abf8eb062387e7",
+    "_id": "647f5966e7abf8eb062387e7",
     "Title": "How not to miss every swing.",
     "Slug": "allen@nodirection.com",
     "MediaLink": "Allen",
@@ -57,7 +57,7 @@
     "EndDateTime": null
   },
   {
-    "LessonId": "647f5966e7abf8eb062387e8",
+    "_id": "647f5966e7abf8eb062387e8",
     "Title": "How to avoid the water.",
     "Slug": "allen@nodirection.com",
     "MediaLink": "Allen",
@@ -76,7 +76,7 @@
     "EndDateTime": null
   },
   {
-    "LessonId": "647f5966e7abf8eb062387e9",
+    "_id": "647f5966e7abf8eb062387e9",
     "Title": "How to avoid losing.",
     "Slug": "allen@nodirection.com",
     "MediaLink": "Allen",
@@ -95,7 +95,7 @@
     "EndDateTime": null
   },
   {
-    "LessonId": "647f5966e7abf8eb06238710",
+    "_id": "647f5966e7abf8eb06238710",
     "Title": "How to avoid burn out.",
     "Slug": "allen@nodirection.com",
     "MediaLink": "Allen",
@@ -114,7 +114,7 @@
     "EndDateTime": null
   },
   {
-    "LessonId": "647f5966e7abf8eb06238711",
+    "_id": "647f5966e7abf8eb06238711",
     "Title": "Quantum mechanics - and how it relates to the power of your drive.",
     "Slug": "allen@nodirection.com",
     "MediaLink": "Allen",
@@ -133,7 +133,7 @@
     "EndDateTime": null
   },
   {
-    "LessonId": "647f5966e7abf8eb06238712",
+    "_id": "647f5966e7abf8eb06238712",
     "Title": "How to use Kinimatic-Centric-Dynamics to stop being bad at golf.",
     "Slug": "allen@nodirection.com",
     "MediaLink": "Allen",
@@ -152,7 +152,7 @@
     "EndDateTime": null
   },
   {
-    "LessonId": "647f5966e7abf8eb06238713",
+    "_id": "647f5966e7abf8eb06238713",
     "Title": "How to always win no matter what happens. 100% winrate guaranteed!",
     "Slug": "allen@nodirection.com",
     "MediaLink": "Allen",

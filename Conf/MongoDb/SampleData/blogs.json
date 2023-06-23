@@ -1,6 +1,6 @@
 [
   {
-    "BlogId": "648386d72c1fe86e6b3636fa",
+    "_id": "648386d72c1fe86e6b3636fa",
     "Title": "Bengals Ramp It Up For Veterans",
     "Slug": "Bengals-Ramp-It-Up-For-Veterans",
     "Tags": [
@@ -15,7 +15,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648386d82c1fe86e6b3636fb",
+    "_id": "648386d82c1fe86e6b3636fb",
     "Title": "Joe Mixon Named AFC Player of the Week",
     "Slug": "Joe-Mixon-Named-AFC-Player-of-the-Week",
     "Tags": [
@@ -29,7 +29,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648386d82c1fe86e6b3636fc",
+    "_id": "648386d82c1fe86e6b3636fc",
     "Title": "Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -43,7 +43,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648386d82c1fe86e6b3636fd",
+    "_id": "648386d82c1fe86e6b3636fd",
     "Title": "1-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -57,7 +57,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648386d82c1fe86e6b3636fe",
+    "_id": "648386d82c1fe86e6b3636fe",
     "Title": "2-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -71,7 +71,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648386d82c1fe86e6b3636ff",
+    "_id": "648386d82c1fe86e6b3636ff",
     "Title": "3-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -85,7 +85,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648386d82c1fe86e6b363700",
+    "_id": "648386d82c1fe86e6b363700",
     "Title": "4-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -99,7 +99,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648386d82c1fe86e6b363701",
+    "_id": "648386d82c1fe86e6b363701",
     "Title": "5-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -113,7 +113,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648386d82c1fe86e6b363702",
+    "_id": "648386d82c1fe86e6b363702",
     "Title": "6-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -127,7 +127,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648386d82c1fe86e6b363703",
+    "_id": "648386d82c1fe86e6b363703",
     "Title": "7-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -141,7 +141,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648388450f1567796e0175c7",
+    "_id": "648388450f1567796e0175c7",
     "Title": "Bengals Ramp It Up For Veterans",
     "Slug": "Bengals-Ramp-It-Up-For-Veterans",
     "Tags": [
@@ -156,7 +156,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648388450f1567796e0175c8",
+    "_id": "648388450f1567796e0175c8",
     "Title": "Joe Mixon Named AFC Player of the Week",
     "Slug": "Joe-Mixon-Named-AFC-Player-of-the-Week",
     "Tags": [
@@ -170,7 +170,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648388450f1567796e0175c9",
+    "_id": "648388450f1567796e0175c9",
     "Title": "Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -184,7 +184,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648388450f1567796e0175ca",
+    "_id": "648388450f1567796e0175ca",
     "Title": "1-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -198,7 +198,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648388450f1567796e0175cb",
+    "_id": "648388450f1567796e0175cb",
     "Title": "2-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -212,7 +212,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648388450f1567796e0175cc",
+    "_id": "648388450f1567796e0175cc",
     "Title": "3-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -226,7 +226,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648388450f1567796e0175cd",
+    "_id": "648388450f1567796e0175cd",
     "Title": "4-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -240,7 +240,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648388450f1567796e0175ce",
+    "_id": "648388450f1567796e0175ce",
     "Title": "5-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -254,7 +254,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648388450f1567796e0175cf",
+    "_id": "648388450f1567796e0175cf",
     "Title": "6-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
@@ -268,7 +268,7 @@
     "CreatedOn": "2017-09-20T18:43:51.155+00:00"
   },
   {
-    "BlogId": "648388450f1567796e0175d0",
+    "_id": "648388450f1567796e0175d0",
     "Title": "7-Bengals\u0027 Joe Mixon trolls NFL with coin flip TD celebration",
     "Slug": "Bengals-Joe-Mixon-trolls-NFL-with-coin-flip-TD-celebration",
     "Tags": [
