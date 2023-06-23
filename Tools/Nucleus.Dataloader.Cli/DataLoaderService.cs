@@ -32,7 +32,6 @@ namespace Nucleus.Dataloader.Cli
             _databases = databases;
         }
 
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
 #pragma warning disable CS8603 // Possible null reference return.
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
         public object ConvertTo(object input, Type type) =>
@@ -42,7 +41,6 @@ namespace Nucleus.Dataloader.Cli
                 .Invoke(this, new[] { input });
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
 #pragma warning restore CS8603 // Possible null reference return.
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
         public T ConvertTo<T>(object input) =>
             (T)input;
 
@@ -59,6 +57,7 @@ namespace Nucleus.Dataloader.Cli
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
 #pragma warning restore CS8603 // Possible null reference return.
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+
         public T[] AsArray<T>(IMongoCollection<T> collection) => collection.AsQueryable().ToArray();
 
         public async Task ExportAsync(PropertyInfo collection, object instance, CancellationToken cancellationToken)
@@ -75,7 +74,7 @@ namespace Nucleus.Dataloader.Cli
                 WriteIndented = true,
             });
             var targetFile = Path.Combine(_settings.SourcePath, $"{collectionName}.json");
-            await File.WriteAllTextAsync(targetFile, json);
+            await File.WriteAllTextAsync(targetFile, json, cancellationToken);
 
             _log.LogInformation($"Exported: {{{nameof(collectionName)}}} to \"{{{nameof(targetFile)}}}\"", collectionName, targetFile);
         }

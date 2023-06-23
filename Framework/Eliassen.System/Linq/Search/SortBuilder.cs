@@ -6,10 +6,12 @@ using System.Linq;
 
 namespace Eliassen.System.Linq.Search
 {
+    /// <inheritdoc/>
     public class SortBuilder<TModel> : ISortBuilder<TModel>
     {
         private readonly ILogger _logger;
 
+        /// <inheritdoc/>
         public SortBuilder(
             ILogger<SortBuilder<TModel>>? logger = null
             )
@@ -17,6 +19,7 @@ namespace Eliassen.System.Linq.Search
             _logger = logger ?? new ConsoleLogger<SortBuilder<TModel>>();
         }
 
+        /// <inheritdoc/>
         public IOrderedQueryable<TModel> SortBy(
             IQueryable<TModel> query,
             ISortQuery searchRequest,

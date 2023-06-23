@@ -4,7 +4,7 @@ using System;
 
 namespace Eliassen.System.Linq
 {
-    public static class OperatorExtensions
+    internal static class OperatorExtensions
     {
         public static FilterParameter AsFilter(this Operators expressionOperator, object? value) =>
             new FilterParameter().And(expressionOperator, value);
