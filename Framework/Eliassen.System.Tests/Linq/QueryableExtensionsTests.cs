@@ -200,7 +200,6 @@ namespace Eliassen.System.Tests.Linq
         [DataRow(0, 1, 1000, 1000, 0, 1, "0")]
         [DataRow(1, 1, 1000, 1000, 1, 1, "1")]
         [DataRow(1, -1, null, null, null, 1000, null)]
-
         public void ExecuteByTest_Page(int currentPage, int pageSize, int? expectedTotalPages, int? expectedTotalRows, int? expectedPageNumber, int expectedRows, string? expectedKeys)
         {
             var query = new SearchQuery
@@ -218,7 +217,7 @@ namespace Eliassen.System.Tests.Linq
             if (queryResults is IPagedQueryResult<TestTargetModel> pagedResults)
             {
                 var resultKeys = string.Join(',', pagedResults.Rows.Select(i => i?.GetKeyValue()));
-                this.TestContext.WriteLine($"{nameof(resultKeys)}: {resultKeys}");
+                this.TestContext?.WriteLine($"{nameof(resultKeys)}: {resultKeys}");
 
                 Assert.AreEqual(expectedTotalPages, pagedResults.TotalPageCount, message: nameof(expectedTotalPages));
                 Assert.AreEqual(expectedTotalRows, pagedResults.TotalRowCount, message: nameof(expectedTotalRows));
@@ -237,15 +236,19 @@ namespace Eliassen.System.Tests.Linq
             }
         }
 
-        [TestMethod]
+        [DataTestMethod]
         [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Sort_Descending_ShortString()
+        [DataRow(nameof(TestTargetModel.Name), OrderDirections.Descending, "999,998,997,996,995,994,993,992,991,990")]
+        [DataRow("name", OrderDirections.Descending, "999,998,997,996,995,994,993,992,991,990")]
+        [DataRow("NAME", OrderDirections.Descending, "999,998,997,996,995,994,993,992,991,990")]
+        [DataRow(nameof(TestTargetModel.Name), OrderDirections.Ascending, "0,1,10,100,101,102,103,104,105,106")]
+        public void ExecuteByTest_Sort(string fieldName, OrderDirections direction, string expected)
         {
             var query = new SearchQuery
             {
                 OrderBy = new()
                 {
-                    { nameof(TestTargetModel.Name), OrderDirections.Descending }
+                    { fieldName, direction }
                 }
             };
             this.TestContext.AddResult(query);
@@ -254,59 +257,7 @@ namespace Eliassen.System.Tests.Linq
 
             var results = queryResults as IPagedQueryResult<TestTargetModel>;
             Assert.IsNotNull(results);
-
-            Assert.AreEqual(100, results.TotalPageCount);
-            Assert.AreEqual(1000, results.TotalRowCount);
-            Assert.AreEqual(10, results.Rows.Count());
-            Assert.AreEqual("999,998,997,996,995,994,993,992,991,990", string.Join(',', results.Rows.Select(i => i.Index)));
-        }
-
-        [TestMethod]
-        [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Sort_Descending_Enum()
-        {
-            var query = new SearchQuery
-            {
-                OrderBy = new()
-                {
-                    { nameof(TestTargetModel.Name), OrderDirections.Descending }
-                }
-            };
-            this.TestContext.AddResult(query);
-            var queryResults = QueryBuilder.Execute(GetTestData(), query);
-            this.TestContext.AddResult(queryResults);
-
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
-            Assert.IsNotNull(results);
-
-            Assert.AreEqual(100, results.TotalPageCount);
-            Assert.AreEqual(1000, results.TotalRowCount);
-            Assert.AreEqual(10, results.Rows.Count());
-            Assert.AreEqual("999,998,997,996,995,994,993,992,991,990", string.Join(',', results.Rows.Select(i => i.Index)));
-        }
-
-        [TestMethod]
-        [TestCategory(TestCategories.Unit)]
-        public void ExecuteByTest_Sort_Descending_Value()
-        {
-            var query = new SearchQuery
-            {
-                OrderBy = new Dictionary<string, OrderDirections>
-                 {
-                    { nameof(TestTargetModel.Name), (OrderDirections)1 }
-                 }
-            };
-            this.TestContext.AddResult(query);
-            var queryResults = QueryBuilder.Execute(GetTestData(), query);
-            this.TestContext.AddResult(queryResults);
-
-            var results = queryResults as IPagedQueryResult<TestTargetModel>;
-            Assert.IsNotNull(results);
-
-            Assert.AreEqual(100, results.TotalPageCount);
-            Assert.AreEqual(1000, results.TotalRowCount);
-            Assert.AreEqual(10, results.Rows.Count());
-            Assert.AreEqual("999,998,997,996,995,994,993,992,991,990", string.Join(',', results.Rows.Select(i => i.Index)));
+            Assert.AreEqual(expected, string.Join(',', results.Rows.Select(i => i.Index)));
         }
     }
 }

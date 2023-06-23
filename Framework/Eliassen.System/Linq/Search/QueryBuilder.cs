@@ -18,20 +18,6 @@ namespace Eliassen.System.Linq.Search
         public const int DefaultPageSize = 10;
 
         /// <summary>
-        /// Get the underlying element type for a given IQueryable
-        /// </summary>
-        /// <param name="query"></param>
-        /// <returns></returns>
-        public static Type? GetElementType(IQueryable query)
-        {
-            var interfaces = from inf in query.GetType().GetInterfaces()
-                             where inf.IsGenericType
-                             where inf.GetGenericTypeDefinition() == typeof(IQueryable<>)
-                             select inf;
-            return interfaces.FirstOrDefault()?.GetGenericArguments()[0];
-        }
-
-        /// <summary>
         /// this method will compose and execute a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery
         /// <seealso cref="ISearchTermQuery"/>
         /// <seealso cref="IFilterQuery"/>
@@ -44,8 +30,6 @@ namespace Eliassen.System.Linq.Search
         /// <returns></returns>
         public static IQueryResult Execute(IQueryable query, ISearchQuery searchQuery)
         {
-            var elementType = GetElementType(query);
-
             var queryType = Type.MakeGenericSignatureType(typeof(IQueryable<>), Type.MakeGenericMethodParameter(0)) ??
                 throw new NotSupportedException($"{query.GetType()} is not supported");
 
@@ -56,7 +40,7 @@ namespace Eliassen.System.Linq.Search
                 ) ??
                 throw new NotSupportedException($"{query.GetType()} is not supported");
 
-            var method = methodSignature.MakeGenericMethod(elementType);
+            var method = methodSignature.MakeGenericMethod(query.ElementType);
             var result = method.Invoke(null, new object[] { query, searchQuery }) ??
                 throw new NotSupportedException($"{query.GetType()} is not supported");
             var paged = (IQueryResult)result;
@@ -103,7 +87,10 @@ namespace Eliassen.System.Linq.Search
         }
 
         /// <inheritdoc/>
-        public IQueryResult<TModel> ExecuteBy(IQueryable<TModel> query, ISearchQuery searchQuery)
+        public IQueryResult<TModel> ExecuteBy(
+            IQueryable<TModel> query, 
+            ISearchQuery searchQuery
+            )
         {
             var ordered = BuildFrom(query, searchQuery, StringComparison.InvariantCultureIgnoreCase);
 
@@ -122,8 +109,11 @@ namespace Eliassen.System.Linq.Search
         public IQueryResult ExecuteBy(IQueryable query, ISearchQuery searchQuery) =>
             ExecuteBy((query as IQueryable<TModel>) ?? throw new NotSupportedException(), searchQuery);
 
-
-        private IOrderedQueryable<TModel> BuildFrom(IQueryable<TModel> query, ISearchQuery searchQuery, StringComparison stringComparison)
+        private IOrderedQueryable<TModel> BuildFrom(
+            IQueryable<TModel> query, 
+            ISearchQuery searchQuery, 
+            StringComparison stringComparison
+            )
         {
             var queryIntercepts = query.ElementType.GetAttributes<ISearchQueryIntercept>();
             foreach (var interceptor in queryIntercepts)
@@ -146,7 +136,7 @@ namespace Eliassen.System.Linq.Search
                     );
             }
 
-            var sorted = SortBy(filtered, searchQuery);
+            var sorted = SortBy(filtered, searchQuery, stringComparison);
 
             if (_postBuildVisitors.Any())
             {
@@ -162,7 +152,10 @@ namespace Eliassen.System.Linq.Search
             return sorted;
         }
 
-        private IPagedQueryResult<TModel> PageBy(IOrderedQueryable<TModel> query, IPageQuery? pager)
+        private IPagedQueryResult<TModel> PageBy(
+            IOrderedQueryable<TModel> query, 
+            IPageQuery? pager
+            )
         {
             if (query == null) throw new ArgumentNullException(nameof(query));
 
@@ -191,7 +184,12 @@ namespace Eliassen.System.Linq.Search
             return result;
         }
 
-        private IQueryable<TModel> SearchBy(IQueryable<TModel> query, ISearchTermQuery? search, StringComparison stringComparison, bool isSearchTerm)
+        private IQueryable<TModel> SearchBy(
+            IQueryable<TModel> query, 
+            ISearchTermQuery? search, 
+            StringComparison stringComparison,
+            bool isSearchTerm
+            )
         {
             if (query == null) throw new ArgumentNullException(nameof(query));
             if (!string.IsNullOrWhiteSpace(search?.SearchTerm))
@@ -203,7 +201,11 @@ namespace Eliassen.System.Linq.Search
             return query;
         }
 
-        private IQueryable<TModel> FilterBy(IQueryable<TModel> query, IFilterQuery? filter, StringComparison stringComparison)
+        private IQueryable<TModel> FilterBy(
+            IQueryable<TModel> query,
+            IFilterQuery? filter, 
+            StringComparison stringComparison
+            )
         {
             if (query == null) throw new ArgumentNullException(nameof(query));
             if (filter?.Filter != null)
@@ -224,11 +226,15 @@ namespace Eliassen.System.Linq.Search
             return query;
         }
 
-        private IOrderedQueryable<TModel> SortBy(IQueryable<TModel> query, ISortQuery? sortBy)
+        private IOrderedQueryable<TModel> SortBy(
+            IQueryable<TModel> query,
+            ISortQuery? sortBy,
+            StringComparison keyStringComparer
+            )
         {
             if (query == null) throw new ArgumentNullException(nameof(query));
 
-            query = sortBy != null ? _sortBuilder.SortBy(query, sortBy, _expressionBuilder) : query;
+            query = sortBy != null ? _sortBuilder.SortBy(query, sortBy, _expressionBuilder, keyStringComparer) : query;
             if (query is IOrderedQueryable<TModel> sorted)
                 return sorted;
             return query.OrderBy(_ => 0);

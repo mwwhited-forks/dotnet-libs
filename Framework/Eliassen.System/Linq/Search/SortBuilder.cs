@@ -20,11 +20,11 @@ namespace Eliassen.System.Linq.Search
         public IOrderedQueryable<TModel> SortBy(
             IQueryable<TModel> query,
             ISortQuery searchRequest,
-            IExpressionTreeBuilder<TModel> treeBuilder
+            IExpressionTreeBuilder<TModel> treeBuilder,
+            StringComparison stringComparison
             )
         {
-            var stringComparer = StringComparer.InvariantCultureIgnoreCase;
-
+            var stringComparer = StringComparer.FromComparison(stringComparison);
             var sortLookup = treeBuilder.PropertyExpressions();
 
             var orderBys = searchRequest.OrderBy;
@@ -40,7 +40,10 @@ namespace Eliassen.System.Linq.Search
 
             if (unmatchedKeys.Any())
             {
-                _logger.LogWarning($"Could not use properties: {{{nameof(unmatchedKeys)}}} as they are not on the model", string.Join("; ", unmatchedKeys));
+                _logger.LogWarning(
+                    $"Could not use properties: {{{nameof(unmatchedKeys)}}} as they are not on the model",
+                    string.Join("; ", unmatchedKeys)
+                    );
             }
 
             if (!matchedKeys.Any() && treeBuilder.DefaultSortOrder().Any())
@@ -57,7 +60,7 @@ namespace Eliassen.System.Linq.Search
             IOrderedQueryable<TModel>? ordered = null;
             foreach (var orderBy in orderBys)
             {
-                if (!compositeSortMap.TryGetValue(orderBy.Key, out var keySelector)) continue;
+                if (!compositeSortMap.TryGetValue(orderBy.Key, out var keySelector, stringComparer)) continue;
 
                 ordered = (ordered, orderBy.Value) switch
                 {
