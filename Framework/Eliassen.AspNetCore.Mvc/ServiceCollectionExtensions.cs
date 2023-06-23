@@ -15,8 +15,14 @@ using System.Security.Claims;
 
 namespace Eliassen.AspNetCore.Mvc
 {
+    /// <inheritdoc/>
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// Add IOC configurations to support all ASP.Net Core extensions provided by this library.
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection AddAspNetCoreExtensions(this IServiceCollection services)
         {
             services.TryAddCommonOpenApiExtensions();
@@ -37,6 +43,11 @@ namespace Eliassen.AspNetCore.Mvc
             return services;
         }
 
+        /// <summary>
+        /// Enable extensions for Swagger/OpenAPI (included in AddAspNetCoreExtensions)
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection TryAddCommonOpenApiExtensions(this IServiceCollection services)
         {
             services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<FormFileOperationFilter>>();
@@ -49,6 +60,11 @@ namespace Eliassen.AspNetCore.Mvc
             return services;
         }
 
+        /// <summary>
+        /// Enable extensions for shared Search Query extensions (included in AddAspNetCoreExtensions)
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection TryAddAspNetCoreSearchQuery(this IServiceCollection services)
         {
             services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<SearchQueryOperationFilter>>();

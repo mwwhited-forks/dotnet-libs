@@ -2,11 +2,8 @@
 using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
 using Eliassen.System.Reflection;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
@@ -15,11 +12,15 @@ using System.Linq;
 
 namespace Eliassen.AspNetCore.Mvc.Filters;
 
+/// <summary>
+/// Search Query Operation filter extends Swagger/OpenAPI to provide details on IQueryable{T} endpoints.
+/// </summary>
 public class SearchQueryOperationFilter : IOperationFilter
 {
     private readonly ILogger _logger;
     private readonly IServiceProvider _serviceProvider;
 
+    /// <inheritdoc/>
     public SearchQueryOperationFilter(
          ILogger<SearchQueryOperationFilter> logger,
          IServiceProvider serviceProvider
@@ -29,6 +30,7 @@ public class SearchQueryOperationFilter : IOperationFilter
         _serviceProvider = serviceProvider;
     }
 
+    /// <inheritdoc/>
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
         try
