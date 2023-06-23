@@ -5,9 +5,17 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Eliassen.MongoDB.Extensions
 {
-
+    /// <summary>
+    /// Common libraries to enable MongoDB Support
+    /// </summary>
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// Enable common infrastructure.  
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="config"></param>
+        /// <returns></returns>
         public static IServiceCollection AddMongoServices(this IServiceCollection services, IConfiguration config)
         {
             services.AddConfiguration<DefaultMongoDatabaseSettings>(config);
@@ -15,6 +23,13 @@ namespace Eliassen.MongoDB.Extensions
             return services;
         }
 
+        /// <summary>
+        /// register MongoDatabase instance with custom configuration options
+        /// </summary>
+        /// <typeparam name="TDatabase"></typeparam>
+        /// <typeparam name="TSettings"></typeparam>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection TryAddMongoDatabase<TDatabase, TSettings>(this IServiceCollection services)
             where TDatabase : class
             where TSettings : class, IMongoSettings
@@ -26,6 +41,12 @@ namespace Eliassen.MongoDB.Extensions
             return services;
         }
 
+        /// <summary>
+        /// register MongoDatabase instance that will use the <seealso cref="DefaultMongoDatabaseSettings"/> configuration options
+        /// </summary>
+        /// <typeparam name="TDatabase"></typeparam>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection TryAddMongoDatabase<TDatabase>(this IServiceCollection services)
             where TDatabase : class => TryAddMongoDatabase<TDatabase, DefaultMongoDatabaseSettings>(services);
     }

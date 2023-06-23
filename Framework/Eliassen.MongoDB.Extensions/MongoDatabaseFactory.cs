@@ -7,10 +7,12 @@ using System;
 
 namespace Eliassen.MongoDB.Extensions
 {
+    /// <inheritdoc/>
     public class MongoDatabaseFactory : IMongoDatabaseFactory
     {
         private readonly IServiceProvider _serviceProvider;
 
+        /// <inheritdoc/>
         public MongoDatabaseFactory(
             IServiceProvider serviceProvider
             )
@@ -18,6 +20,7 @@ namespace Eliassen.MongoDB.Extensions
             _serviceProvider = serviceProvider;
         }
 
+        /// <inheritdoc/>
         public IMongoDatabase Create<TSettings>()
             where TSettings : class, IMongoSettings
         {
@@ -27,6 +30,7 @@ namespace Eliassen.MongoDB.Extensions
             return database;
         }
 
+        /// <inheritdoc/>
         public TDatabase Create<TDatabase, TSettings>()
             where TSettings : class, IMongoSettings
         {

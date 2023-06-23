@@ -6,7 +6,10 @@ using System.Reflection;
 
 namespace Eliassen.MongoDB.Extensions
 {
-    public class MongoDispatchProxy : DispatchProxy
+    /// <summary>
+    /// This proxy allow for dynamic creation of wrapper classes to expose MongoDatabase instances
+    /// </summary>
+    internal class MongoDispatchProxy : DispatchProxy
     {
         private IMongoDatabase _database = null!;
         private IMongoSettings _settings = null!;
