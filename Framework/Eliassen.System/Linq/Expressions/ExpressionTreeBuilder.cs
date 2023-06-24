@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace Eliassen.System.Linq.Expressions
 {
@@ -153,13 +154,15 @@ namespace Eliassen.System.Linq.Expressions
 
             }
 
+            var isElementSet = IsElementSet(unwrapped.Type, out var unwrappedElementType);
+
             if (queryParameter is string queryString) //TODO: should be "like"
             {
                 if (queryString[..1] == "!")
                 {
                     return BuildPredicate(expression, Operators.NotEqualTo, queryString[1..], isSearchTerm);
                 }
-                else if (unwrapped.Type == typeof(string))
+                else if (unwrappedElementType == typeof(string))
                 {
                     if (expressionOperator == Operators.NotEqualTo)
                     {
@@ -197,12 +200,36 @@ namespace Eliassen.System.Linq.Expressions
                         };
                         if (method == null) throw new NotSupportedException("Method not defined");
 
-                        var predicate = Expression.Call(unwrapped, method, Expression.Constant(queryValue));
+                        if (isElementSet)
+                        {
+                            //Note: target is a set
 
-                        var parameter = Expression.Parameter(typeof(TModel), "n");
-                        var replaced = new ParameterReplacerExpressionVisitor(parameter).Visit(predicate);
-                        var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
-                        return lambda;
+                            Expression<Func<object[], bool>> example = i => i.Any(_ => true);
+                            var anyMethod = ((MethodCallExpression)example.Body).Method
+                                .GetGenericMethodDefinition()
+                                .MakeGenericMethod(unwrappedElementType)
+                                ;
+
+                            var childParameter = Expression.Parameter(unwrappedElementType, "child");
+                            var childCall = Expression.Call(childParameter, method, Expression.Constant(queryValue));
+                            var childLambda = Expression.Lambda(childCall, childParameter);
+
+                            var modelCall = Expression.Call(anyMethod, unwrapped, childLambda);
+
+                            var parameter = Expression.Parameter(typeof(TModel), "n");
+                            var replaced = new ParameterReplacerExpressionVisitor(parameter).Visit(modelCall);
+                            var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
+                            return lambda;
+                        }
+                        else
+                        {
+                            var predicate = Expression.Call(unwrapped, method, Expression.Constant(queryValue));
+
+                            var parameter = Expression.Parameter(typeof(TModel), "n");
+                            var replaced = new ParameterReplacerExpressionVisitor(parameter).Visit(predicate);
+                            var lambda = Expression.Lambda<Func<TModel, bool>>(replaced, parameter);
+                            return lambda;
+                        }
                     }
                 }
                 else if (unwrapped.Type.TryParse(queryString, out var value))
@@ -217,6 +244,7 @@ namespace Eliassen.System.Linq.Expressions
                 }
             }
 
+            //TODO: if target is a set
             if (queryParameter != null && unwrapped.Type.IsAssignableFrom(queryParameter.GetType()))
             {
                 //TODO: needs to be a bit more creative.  type casting not supported
@@ -244,6 +272,30 @@ namespace Eliassen.System.Linq.Expressions
 
                 return default;
             }
+        }
+
+        private static bool IsElementSet(Type type, out Type elementType)
+        {
+            if (type != typeof(string))
+            {
+                if (type.IsArray)
+                {
+                    elementType = type.GetElementType() ?? typeof(object);
+                    return true;
+                }
+                else if (type.IsAssignableTo(typeof(IEnumerable)))
+                {
+                    var query = from i in type.GetInterfaces()
+                                where i.IsGenericType
+                                where i.GetGenericTypeDefinition().IsAssignableTo(typeof(IEnumerable<>))
+                                select i.GetGenericArguments()[0];
+
+                    elementType = query.FirstOrDefault() ?? typeof(object);
+                    return true;
+                }
+            }
+            elementType = type;
+            return false;
         }
 
         /// <inheritdoc/>

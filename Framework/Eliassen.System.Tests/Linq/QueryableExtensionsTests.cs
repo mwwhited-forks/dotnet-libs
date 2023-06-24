@@ -17,33 +17,29 @@ namespace Eliassen.System.Tests.Linq
     {
         public TestContext? TestContext { get; set; }
 
-        private static IQueryable GetTestData<T>() => (IQueryable<T>)GetTestData(typeof(T));
+        private static Dictionary<Type, ConstructorInfo> _cache = new();
+        private static ConstructorInfo Constructor<T>()
+        {
+            if (_cache.TryGetValue(typeof(T), out var constructor)) return constructor;
+            _cache.Add(typeof(T), typeof(T).GetConstructor(new[] { typeof(int) })
+                ?? throw new NotSupportedException($"No Constructor(int) found")
+                );
+            if (_cache.TryGetValue(typeof(T), out constructor)) return constructor;
+            throw new NotSupportedException($"No Constructor(int) found");
+        }
 
-        private static IQueryable GetTestData(Type type) =>
-            type == typeof(TestTargetModel) ? GetTestData() :
-            type == typeof(TestTargetExtendedModel) ? GetTestDataExtended() :
-            throw new NotSupportedException();
+        private static T Factory<T>(int index) => (T)Constructor<T>().Invoke(new object?[] { index });
 
-        private static IQueryable<TestTargetModel> GetTestData() =>
-            Enumerable
-            .Range(0, QueryBuilder.DefaultPageSize * 100)
-            .Select(i => new TestTargetModel(i))
-            //.Concat(new[]
-            //{
-            //    new TestTargetModel(-1)
-            //})
-            .AsQueryable()
-            ;
-        private static IQueryable<TestTargetExtendedModel> GetTestDataExtended() =>
-            Enumerable
-            .Range(0, QueryBuilder.DefaultPageSize * 100)
-            .Select(i => new TestTargetExtendedModel(i))
-            .Concat(new[]
-            {
-                new TestTargetExtendedModel(-1)
-            })
-            .AsQueryable()
-            ;
+        private static IQueryable<T> GetTestData<T>(int seed) =>
+            Enumerable.Range(seed, QueryBuilder.DefaultPageSize * 100)
+                      .Select(Factory<T>)
+                      .AsQueryable();
+
+        private static IQueryable GetTestData(Type type, int seed) =>
+            (typeof(QueryableExtensionsTests)
+            .GetMethod(nameof(GetTestData), 1, new[] { typeof(int) })
+            ?.Invoke(null, null) as IQueryable)
+            ?? throw new NotSupportedException($"No GetTestData<> Found");
 
         [TestMethod]
         [TestCategory(TestCategories.Unit)]
@@ -55,6 +51,9 @@ namespace Eliassen.System.Tests.Linq
         [DataTestMethod]
         [TestCategory(TestCategories.Unit)]
         [DataRow(typeof(TestTargetModel), nameof(TestTargetModel.Index), Operators.EqualTo, "!1", 10, "0,2,3,4,5,6,7,8,9,10")]
+        [DataRow(typeof(TestTargetModel), "index", Operators.EqualTo, "!1", 10, "0,2,3,4,5,6,7,8,9,10")]
+        [DataRow(typeof(TestTargetModel), "INDEX", Operators.EqualTo, "!1", 10, "0,2,3,4,5,6,7,8,9,10")]
+        [DataRow(typeof(TestTargetModel), "InDeX", Operators.EqualTo, "!1", 10, "0,2,3,4,5,6,7,8,9,10")]
         [DataRow(typeof(TestTargetModel), nameof(TestTargetModel.Index), Operators.EqualTo, 1, 1, "1")]
         [DataRow(typeof(TestTargetModel), nameof(TestTargetModel.Name), Operators.EqualTo, "Name3", 1, "3")]
         [DataRow(typeof(TestTargetModel), nameof(TestTargetModel.Name), Operators.InSet, new[] { "Name1", "Name2", "Name3" }, 3, "1,2,3")]
@@ -73,14 +72,16 @@ namespace Eliassen.System.Tests.Linq
         [DataRow(typeof(TestTargetModel), nameof(TestTargetModel.Index), Operators.NotEqualTo, 1, 10, "0,2,3,4,5,6,7,8,9,10")]
         [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.Date), Operators.GreaterThan, "3/1/2020", 10, "3,4,5,6,7,8,9,10,11,12")]
         [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.Date), Operators.GreaterThanOrEqualTo, "3/1/2020", 10, "2,3,4,5,6,7,8,9,10,11")]
-        [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.Date), Operators.LessThan, "3/1/2020", 3, "0,1,-1")]
-        [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.Date), Operators.LessThan, "2020-03-01", 3, "0,1,-1")]
-        [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.Date), Operators.LessThan, "2020-03-01T01:01:01", 4, "0,1,2,-1")]
-        [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.Date), Operators.LessThan, "2020-03-01T01:01:01.4356493+02:00", 3, "0,1,-1")]
+        [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.Date), Operators.LessThan, "3/1/2020", 3, "-1,0,1")]
+        [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.Date), Operators.LessThan, "2020-03-01", 3, "-1,0,1")]
+        [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.Date), Operators.LessThan, "2020-03-01T01:01:01", 4, "-1,0,1,2")]
+        [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.Date), Operators.LessThan, "2020-03-01T01:01:01.4356493+02:00", 3, "-1,0,1")]
         [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.DateTimeNullable), Operators.LessThan, "2020-03-01T01:01:01.4356493+02:00", 2, "0,1")]
         [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.DateTimeOffsetNullable), Operators.LessThan, "2020-03-01T01:01:01.4356493+02:00", 2, "0,1")]
-        [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.Date), Operators.LessThanOrEqualTo, "3/1/2020", 4, "0,1,2,-1")]
-        [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.FC), Operators.EqualTo, "ame1", 2, "0,-1")]
+        [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.Date), Operators.LessThanOrEqualTo, "3/1/2020", 4, "-1,0,1,2")]
+        [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.FC), Operators.EqualTo, "ame1", 2, "-1,0")]
+        [DataRow(typeof(TestTargetWithInnerArrayModel), nameof(TestTargetWithInnerArrayModel.Children), Operators.EqualTo, "*001", 10, "2,3,4,5,6,7,8,9,12,13")]
+        [DataRow(typeof(TestTargetWithInnerListModel), nameof(TestTargetWithInnerListModel.Children), Operators.EqualTo, "*001", 10, "2,3,4,5,6,7,8,9,12,13")]
         public void ExecuteByTest_Filter(Type type, string propertyName, Operators expressionOperator, object filterValue, int expectedRows, string expectedKeys)
         {
             this.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
@@ -107,7 +108,7 @@ namespace Eliassen.System.Tests.Linq
                 }
             };
             this.TestContext.AddResult(query);
-            var rawData = GetTestData<T>();
+            var rawData = GetTestData<T>(typeof(T) == typeof(TestTargetExtendedModel) ? -1 : 0);
             this.TestContext.AddResult(rawData);
             var queryResults = QueryBuilder.Execute(rawData, query);
             this.TestContext.AddResult(queryResults);
@@ -139,7 +140,7 @@ namespace Eliassen.System.Tests.Linq
                 }
             };
             this.TestContext.AddResult(query);
-            var queryResults = QueryBuilder.Execute(GetTestDataExtended(), query);
+            var queryResults = QueryBuilder.Execute(GetTestData<TestTargetExtendedModel>(0), query);
             this.TestContext.AddResult(queryResults);
 
             var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
@@ -178,7 +179,7 @@ namespace Eliassen.System.Tests.Linq
                 SearchTerm = searchTerm,
             };
             this.TestContext.AddResult(query);
-            var rawData = GetTestData<T>();
+            var rawData = GetTestData<T>(0);
             this.TestContext.AddResult(rawData);
             var queryResults = QueryBuilder.Execute(rawData, query);
             this.TestContext.AddResult(queryResults);
@@ -208,7 +209,7 @@ namespace Eliassen.System.Tests.Linq
                 PageSize = pageSize,
             };
             this.TestContext.AddResult(query);
-            var rawData = GetTestData<TestTargetModel>();
+            var rawData = GetTestData<TestTargetModel>(0);
             this.TestContext.AddResult(rawData);
             var queryResults = QueryBuilder.Execute(rawData, query);
             this.TestContext.AddResult(queryResults);
@@ -252,7 +253,7 @@ namespace Eliassen.System.Tests.Linq
                 }
             };
             this.TestContext.AddResult(query);
-            var queryResults = QueryBuilder.Execute(GetTestData(), query);
+            var queryResults = QueryBuilder.Execute(GetTestData<TestTargetModel>(0), query);
             this.TestContext.AddResult(queryResults);
 
             var results = queryResults as IPagedQueryResult<TestTargetModel>;
