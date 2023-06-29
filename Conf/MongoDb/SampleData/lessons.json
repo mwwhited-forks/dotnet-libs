@@ -1,6 +1,8 @@
 [
   {
-    "_id": "647f5966e7abf8eb062387e5",
+    "_id": {
+      "$oid": "647f5966e7abf8eb062387e5"
+    },
     "title": "How to be less bad at golf.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -19,7 +21,9 @@
     "endDateTime": null
   },
   {
-    "_id": "647f5966e7abf8eb062387e6",
+    "_id": {
+      "$oid": "647f5966e7abf8eb062387e6"
+    },
     "title": "How not to drop your club.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -38,7 +42,9 @@
     "endDateTime": null
   },
   {
-    "_id": "647f5966e7abf8eb062387e7",
+    "_id": {
+      "$oid": "647f5966e7abf8eb062387e7"
+    },
     "title": "How not to miss every swing.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -57,7 +63,9 @@
     "endDateTime": null
   },
   {
-    "_id": "647f5966e7abf8eb062387e8",
+    "_id": {
+      "$oid": "647f5966e7abf8eb062387e8"
+    },
     "title": "How to avoid the water.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -76,7 +84,9 @@
     "endDateTime": null
   },
   {
-    "_id": "647f5966e7abf8eb062387e9",
+    "_id": {
+      "$oid": "647f5966e7abf8eb062387e9"
+    },
     "title": "How to avoid losing.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -95,7 +105,9 @@
     "endDateTime": null
   },
   {
-    "_id": "647f5966e7abf8eb06238710",
+    "_id": {
+      "$oid": "647f5966e7abf8eb06238710"
+    },
     "title": "How to avoid burn out.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -114,7 +126,9 @@
     "endDateTime": null
   },
   {
-    "_id": "647f5966e7abf8eb06238711",
+    "_id": {
+      "$oid": "647f5966e7abf8eb06238711"
+    },
     "title": "Quantum mechanics - and how it relates to the power of your drive.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -133,7 +147,9 @@
     "endDateTime": null
   },
   {
-    "_id": "647f5966e7abf8eb06238712",
+    "_id": {
+      "$oid": "647f5966e7abf8eb06238712"
+    },
     "title": "How to use Kinimatic-Centric-Dynamics to stop being bad at golf.",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",
@@ -152,7 +168,9 @@
     "endDateTime": null
   },
   {
-    "_id": "647f5966e7abf8eb06238713",
+    "_id": {
+      "$oid": "647f5966e7abf8eb06238713"
+    },
     "title": "How to always win no matter what happens. 100% winrate guaranteed!",
     "slug": "allen@nodirection.com",
     "mediaLink": "Allen",

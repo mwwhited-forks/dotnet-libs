@@ -1,6 +1,8 @@
 [
   {
-    "_id": "646cfd1ab7f1713dab0fb865",
+    "_id": {
+      "$oid": "646cfd1ab7f1713dab0fb865"
+    },
     "roles": [
       {
         "rights": [
@@ -22,7 +24,9 @@
     "code": "module_admin"
   },
   {
-    "_id": "646cfd1ab7f1713dab0fb866",
+    "_id": {
+      "$oid": "646cfd1ab7f1713dab0fb866"
+    },
     "roles": [
       {
         "rights": [
@@ -40,7 +44,9 @@
     "code": "module_blog"
   },
   {
-    "_id": "646cfd1ab7f1713dab0fb867",
+    "_id": {
+      "$oid": "646cfd1ab7f1713dab0fb867"
+    },
     "roles": [
       {
         "rights": [
@@ -58,7 +64,9 @@
     "code": "module_vlog"
   },
   {
-    "_id": "646cfd1ab7f1713dab0fb868",
+    "_id": {
+      "$oid": "646cfd1ab7f1713dab0fb868"
+    },
     "roles": [
       {
         "rights": [
@@ -76,7 +84,9 @@
     "code": "module_teetimes"
   },
   {
-    "_id": "646cfd1ab7f1713dab0fb869",
+    "_id": {
+      "$oid": "646cfd1ab7f1713dab0fb869"
+    },
     "roles": [
       {
         "rights": [

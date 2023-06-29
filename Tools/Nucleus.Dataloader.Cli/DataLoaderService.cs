@@ -12,6 +12,7 @@ using Nucleus.Core.Persistence.Collections;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Linq;
+using MongoDB.Bson;
 
 namespace Nucleus.Dataloader.Cli
 {
@@ -122,20 +123,26 @@ namespace Nucleus.Dataloader.Cli
 
                     var eee = users.AsQueryable().ToList();
 
-                    var exists = users.AsQueryable()
+
+                    var qe = users.AsQueryable()
                         .Where(u => ids.Contains(u.UserId))
+                        .Select(u => new { u.UserId, u.CreatedOn });
+                    var tqe = qe.ToString();
+
+                    var exists = users.AsQueryable()
+                        .Where(u => ids.Contains(  u.UserId.ToString()))
                         .Select(u => new { u.UserId, u.CreatedOn })
                         .ToArray()
                         ;
 
-                    var qqq = users.AsQueryable().Where(q=>q.UserId == "641cd44eaa22983c3e4edb32");
-                    var tsq = qqq.ToString();
+                    //var qqq = users.AsQueryable().Where(q=>q.UserId.ToString() == "641cd44eaa22983c3e4edb32");
+                    //var tsq = qqq.ToString();
 
                     var matched = from u in userArrays
                                   select new
                                   {
                                       User = u,
-                                      Match = exists.FirstOrDefault(i => i.UserId == u.UserId),
+                                      Match = exists.FirstOrDefault(i => i.UserId.ToString() == u.UserId.ToString()),
                                   };
                     var ma = matched.ToArray();
 
