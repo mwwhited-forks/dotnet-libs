@@ -4,8 +4,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
+using MongoDB.Driver.Core.Operations.ElementNameValidators;
+using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Persistence.Collections;
 using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Linq;
 
 namespace Nucleus.Dataloader.Cli
 {
@@ -77,9 +83,107 @@ namespace Nucleus.Dataloader.Cli
 
                 var targetFile = Path.Combine(_settings.SourcePath, $"{collectionName}.json");
                 using var fileStream = File.Create(targetFile);
-                await _jsonSerializer.SerializeToAsync(arr, fileStream);
+                await _jsonSerializer.SerializeAsync(arr, fileStream);
 
                 _log.LogInformation($"Exported: {{{nameof(collectionName)}}} to \"{{{nameof(targetFile)}}}\"", collectionName, targetFile);
+            }
+            catch (Exception ex)
+            {
+                _log.LogError($"{{{nameof(collection)}}}::{{{nameof(instance)}}} -> {{{nameof(ex.Message)}}}", collection, instance, ex.Message);
+                _log.LogDebug($"{{{nameof(collection)}}}::{{{nameof(instance)}}} -> {{{nameof(Exception)}}}", collection, instance, ex);
+            }
+        }
+
+        public async Task ImportAsync(PropertyInfo collection, object instance, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var elementType = collection.PropertyType.GetGenericArguments()[0];
+                var setType = elementType.MakeArrayType();
+                var collectionName = collection.GetCustomAttributes<CollectionNameAttribute>().FirstOrDefault()?.CollectionName ?? elementType.Name;
+
+                _log.LogInformation($"Importing: {{{nameof(collectionName)}}}", collectionName);
+
+                var sourceFile = Path.Combine(_settings.SourcePath, $"{collectionName}.json");
+                using var fileStream = File.OpenRead(sourceFile);
+                var result = await _jsonSerializer.DeserializeAsync(fileStream, setType);
+
+                var data = collection.GetValue(instance);
+                var collectionType = typeof(IMongoCollection<>).MakeGenericType(elementType);
+
+                var idProperty = elementType.GetProperties().FirstOrDefault(e => e.GetCustomAttribute<BsonIdAttribute>() != null)
+                    ?? throw new NotSupportedException();
+                var createdOn = elementType.GetProperty("CreatedOn", BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase)
+                    ?? throw new NotSupportedException();
+
+                if (data is IMongoCollection<UserCollection> users && result is UserCollection[] userArrays)
+                {
+                    var ids = userArrays.Select(e => e.UserId).ToArray();
+
+                    var eee = users.AsQueryable().ToList();
+
+                    var exists = users.AsQueryable()
+                        .Where(u => ids.Contains(u.UserId))
+                        .Select(u => new { u.UserId, u.CreatedOn })
+                        .ToArray()
+                        ;
+
+                    var qqq = users.AsQueryable().Where(q=>q.UserId == "641cd44eaa22983c3e4edb32");
+                    var tsq = qqq.ToString();
+
+                    var matched = from u in userArrays
+                                  select new
+                                  {
+                                      User = u,
+                                      Match = exists.FirstOrDefault(i => i.UserId == u.UserId),
+                                  };
+                    var ma = matched.ToArray();
+
+
+                    foreach (var u in userArrays)
+                    {
+                        var idValue = idProperty.GetValue(u) as string;
+                        //var modifiedOnValue = modifiedOn.GetValue(u) as DateTimeOffset?;
+                        var createdOnValue = createdOn.GetValue(u) as DateTimeOffset?;
+                        _log.LogInformation(idValue);
+
+                        //new FindOneAndReplaceOptions<UserCollection, UserCollection>();
+
+                        //var ret = users.FindOneAndReplace(
+                        //    usr => usr.UserId == idValue && (!usr.CreatedOn.HasValue || usr.CreatedOn < createdOnValue),
+                        //    u,
+                        //    );
+                        //users.UP
+                        // 
+                        //new UpdateOptions { IsUpsert = true, }
+                    }
+
+                }
+
+                //if (data.GetType().IsAssignableTo(collectionType))
+                //{
+                //    //     [BsonId]
+                //}
+
+                //IMongoCollection<UserCollection> user;
+                //string userId = "";
+                //DateTimeOffset createdOn = DateTimeOffset.Now;
+
+                //var updateDef = Builders<UserCollection>.Update;
+
+                //user.FindOneAndUpdate(u => u.UserId == userId && u.CreatedOn < createdOn, updateDef.);
+
+                //var arr = AsArray(data ?? throw new NotSupportedException(nameof(data)), elementType);
+                //TODO: do partial updates
+
+                //TODO: create partial/build update
+
+                //IMongoCollection<UserCollection> users;
+                ////users.Find()
+
+                _log.LogInformation($"Imported: {{{nameof(collectionName)}}} to \"{{{nameof(sourceFile)}}}\"", collectionName, sourceFile);
+
+                throw new NotSupportedException($"ImportAsync");
             }
             catch (Exception ex)
             {
@@ -103,6 +207,10 @@ namespace Nucleus.Dataloader.Cli
                     if (_settings.Action == DataLoaderActions.Export)
                     {
                         await ExportAsync(collection, db.database, cancellationToken);
+                    }
+                    else if (_settings.Action == DataLoaderActions.Import)
+                    {
+                        await ImportAsync(collection, db.database, cancellationToken);
                     }
                     else
                     {

@@ -45,12 +45,12 @@ namespace Eliassen.System.Text.Xml.Serialization
             throw new NotImplementedException();
         }
 
-        public ValueTask<T?> DeserializeToAsync<T>(Stream stream, CancellationToken cancellationToken = default)
+        public ValueTask<T?> DeserializeAsync<T>(Stream stream, CancellationToken cancellationToken = default)
         {
             throw new NotImplementedException();
         }
 
-        public ValueTask<object?> DeserializeToAsync(Stream stream, Type type, CancellationToken cancellationToken = default)
+        public ValueTask<object?> DeserializeAsync(Stream stream, Type type, CancellationToken cancellationToken = default)
         {
             throw new NotImplementedException();
         }
@@ -65,12 +65,12 @@ namespace Eliassen.System.Text.Xml.Serialization
             throw new NotImplementedException();
         }
 
-        public Task SerializeToAsync(object obj, Type type, Stream stream, CancellationToken cancellationToken = default)
+        public Task SerializeAsync(object obj, Type type, Stream stream, CancellationToken cancellationToken = default)
         {
             throw new NotImplementedException();
         }
 
-        public Task SerializeToAsync<T>(T obj, Stream stream, CancellationToken cancellationToken = default)
+        public Task SerializeAsync<T>(T obj, Stream stream, CancellationToken cancellationToken = default)
         {
             throw new NotImplementedException();
         }

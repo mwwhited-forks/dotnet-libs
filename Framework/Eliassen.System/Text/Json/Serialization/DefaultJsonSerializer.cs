@@ -32,18 +32,18 @@ namespace Nucleus.Dataloader.Cli
         public string Serialize<T>(T obj) => JsonSerializer.Serialize(obj, _options);
         public string Serialize(object obj, Type type) => JsonSerializer.Serialize(obj, type, _options);
 
-        public async Task SerializeToAsync<T>(T obj, Stream stream, CancellationToken cancellationToken = default) =>
+        public async Task SerializeAsync<T>(T obj, Stream stream, CancellationToken cancellationToken = default) =>
             await JsonSerializer.SerializeAsync(stream, obj, _options, cancellationToken);
-        public async Task SerializeToAsync(object obj, Type type, Stream stream, CancellationToken cancellationToken = default) =>
+        public async Task SerializeAsync(object obj, Type type, Stream stream, CancellationToken cancellationToken = default) =>
             await JsonSerializer.SerializeAsync(stream, obj, _options, cancellationToken);
 
         public T? Deserialize<T>(Stream stream) => JsonSerializer.Deserialize<T>(stream, _options);
         public object? Deserialize(Stream stream, Type type) => JsonSerializer.Deserialize(stream, type, _options);
 
-        public async ValueTask<T?> DeserializeToAsync<T>(Stream stream, CancellationToken cancellationToken = default) =>
+        public async ValueTask<T?> DeserializeAsync<T>(Stream stream, CancellationToken cancellationToken = default) =>
             await JsonSerializer.DeserializeAsync<T>(stream, _options, cancellationToken);
 
-        public async ValueTask<object?> DeserializeToAsync(Stream stream, Type type, CancellationToken cancellationToken = default) =>
+        public async ValueTask<object?> DeserializeAsync(Stream stream, Type type, CancellationToken cancellationToken = default) =>
             await JsonSerializer.DeserializeAsync(stream, type, _options, cancellationToken);
 
         public T? Deserialize<T>(string input) => JsonSerializer.Deserialize<T>(input, _options);
