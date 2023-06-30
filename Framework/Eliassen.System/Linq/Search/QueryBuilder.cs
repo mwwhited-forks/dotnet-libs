@@ -1,5 +1,4 @@
-﻿using Eliassen.System.Accessors;
-using Eliassen.System.ComponentModel.Search;
+﻿using Eliassen.System.ComponentModel.Search;
 using Eliassen.System.Internal;
 using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Reflection;
@@ -140,8 +139,8 @@ public class QueryBuilder<TModel> : QueryBuilder, IQueryBuilder<TModel>
             _messages.Publish(new ResultMessage
             {
                 Level = MessageLevels.Warning,
-                Message = ResultMessage.Messages.NoSearchQueryFilter,
-                MessageCode = ResultMessage.Messages.NoSearchQueryFilterCode,
+                Message = SearchQuery.Messages.NoSearchQueryFilter,
+                MessageCode = SearchQuery.Messages.NoSearchQueryFilterCode,
             });
             _logger.LogWarning(
                 $"No filtering detected: {{{nameof(query)}}}: {{{nameof(searchQuery)}}}",
@@ -238,8 +237,8 @@ public class QueryBuilder<TModel> : QueryBuilder, IQueryBuilder<TModel>
                 {
                     _messages.Publish(new ResultMessage
                     {
-                        Message = ResultMessage.Messages.NoPropertyFilter,
-                        MessageCode = ResultMessage.Messages.NoPropertyFilterCode,
+                        Message = SearchQuery.Messages.NoPropertyFilter,
+                        MessageCode = SearchQuery.Messages.NoPropertyFilterCode,
                         Context = item.Key,
                         MetaData = item.Value,
                     });

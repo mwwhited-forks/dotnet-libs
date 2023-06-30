@@ -6,10 +6,14 @@ namespace Eliassen.System.ResponseModel
     /// <inheritdoc/>
     public class CaptureResultMessage : ICaptureResultMessage
     {
-        private readonly ConcurrentStack<ResultMessage> _stack = new();
+        private readonly ConcurrentBag<ResultMessage> _stack = new();
 
         /// <inheritdoc/>
-        public void Publish(params ResultMessage[] resultMessage) =>_stack.PushRange(resultMessage);
+        public void Publish(params ResultMessage[] resultMessages)
+        {
+            foreach (var resultMessage in resultMessages)
+                _stack.Add(resultMessage);
+        }
 
         /// <inheritdoc/>
         public IReadOnlyCollection<ResultMessage> Peek() => _stack.ToArray();
