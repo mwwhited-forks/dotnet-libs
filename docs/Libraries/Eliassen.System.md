@@ -1,12 +1,6 @@
 ﻿# Eliassen.System
 
 
-## Class: System.Accessors.Accessor`1
-### Properties
-
-#### Value
-
-
 ## Class: System.Configuration.CommandLine
 builder pattern for command parameter arguments
 ### Methods
@@ -206,26 +200,6 @@ Extensions for System.Linq.Expressions.Expression
 
 #### AndAlso``1(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}}})
 
-## Class: System.Linq.Expressions.ExpressionTreeBuilder`1
-### Methods
-
-
-####Constructor
-
-#### GetPredicateExpression(System.String,Eliassen.System.Linq.Search.FilterParameter,System.StringComparison,System.Boolean)
-
-#### BuildExpression(System.Object,System.StringComparison,System.Boolean)
-
-#### PropertyExpressions
-
-#### GetSearchablePropertyNames
-
-#### GetSortablePropertyNames
-
-#### GetFilterablePropertyNames
-
-#### DefaultSortOrder
-
 ## Class: System.Linq.Expressions.StringComparisonReplacementExpressionVisitor
 Expression visitor to replace string functions with the matching functions that end with a StringComparison parameter
 ### Methods
@@ -255,58 +229,6 @@ value is greater than provided
 value is less greater or equal to provided
 #### NotEqualTo
 value not equal to
-
-## Class: System.Linq.Search.QueryBuilder
-### Fields
-
-#### DefaultPageSize
-Default page size when not defined on request
-### Methods
-
-
-#### Execute(System.Linq.IQueryable,Eliassen.System.Linq.Search.ISearchQuery)
-this method will compose and execute a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery
-    #####Parameters
-    **query:** 
-
-    **searchQuery:** 
-
-    ##### Return value
-    
-
-#### Execute``1(System.Linq.IQueryable{``0},Eliassen.System.Linq.Search.ISearchQuery)
-this method will compose and execute a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery
-    #####Parameters
-    **query:** 
-
-    **searchQuery:** 
-
-    ##### Return value
-    
-
-####Constructor
-
-#### 
-
-#### 
-
-## Class: System.Linq.Search.QueryBuilder`1
-### Methods
-
-
-####Constructor
-
-#### ExecuteBy(System.Linq.IQueryable{`0},Eliassen.System.Linq.Search.ISearchQuery)
-
-#### ExecuteBy(System.Linq.IQueryable,Eliassen.System.Linq.Search.ISearchQuery)
-
-## Class: System.Linq.Search.SortBuilder`1
-### Methods
-
-
-####Constructor
-
-#### SortBy(System.Linq.IQueryable{`0},Eliassen.System.Linq.Search.ISortQuery,Eliassen.System.Linq.Expressions.IExpressionTreeBuilder{`0},System.StringComparison)
 
 ## Class: System.Reflection.ResourceExtensions
 Set of extension methods for embedded resources
@@ -363,18 +285,6 @@ Lookup resource content based on filename relative the scope of context
     ##### Return value
     
 
-## Class: System.ResponseModel.CaptureResultMessage
-### Methods
-
-
-#### Publish(Eliassen.System.ResponseModel.ResultMessage[])
-
-#### Peek
-
-#### Clear
-
-#### Capture
-
 ## Class: System.Security.Claims.ClaimsPrincipalExtensions
 Extensions to manage on
 ### Methods
@@ -408,54 +318,12 @@ Get first matched on
     ##### Return value
     
 
-## Class: System.Security.Cryptography.Hash
-### Methods
-
-
-#### GetHash(System.String)
-
 ## Class: System.Text.Templating.FileTemplateSource
 Access template from file system
 ### Methods
 
 
 #### Get(System.String)
-
-## Class: System.Text.Templating.FileType
-### Properties
-
-#### Extension
-
-#### ContentType
-
-#### IsTemplateType
-
-
-## Class: System.Text.Templating.TemplateContext
-### Properties
-
-#### TemplateName
-
-#### TemplateContentType
-
-#### TemplateFileExtension
-
-#### TemplateSource
-
-#### TemplateReference
-
-#### OpenTemplate
-
-#### TargetContentType
-
-#### TargetFileExtension
-
-#### Priority
-
-### Methods
-
-
-#### ToString
 
 ## Class: System.Text.Templating.TemplateEngine
 Generate templating engine that will try to use best match for source and provider
@@ -471,15 +339,3 @@ Generate templating engine that will try to use best match for source and provid
 #### Get(System.String)
 
 #### GetAll(System.String)
-
-## Class: System.Text.Templating.XsltTemplateProvider
-### Fields
-
-#### ContentType
-HTTP Content Type Supported for this Provider
-### Methods
-
-
-#### ApplyAsync(Eliassen.System.Text.Templating.ITemplateContext,System.Object,System.IO.Stream)
-
-#### CanApply(Eliassen.System.Text.Templating.ITemplateContext)

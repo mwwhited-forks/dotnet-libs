@@ -21,7 +21,7 @@
 	</xsl:template>
 
 	<!-- Type template -->
-	<xsl:template match="//member[contains(@name,'T:')]">
+	<xsl:template match="//member[contains(@name,'T:') and not (descendant::inheritdoc)]">
 		<xsl:variable name="FullMemberName" select="substring-after(@name, ':')"/>
 		<xsl:variable name="MemberName">
 			<xsl:choose>

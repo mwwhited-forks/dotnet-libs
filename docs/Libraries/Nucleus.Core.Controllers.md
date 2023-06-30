@@ -38,27 +38,3 @@ Do not use for new development
 Do not use for new development
     ##### Return value
     
-
-## Class: Core.Controllers.Security.ApplicationUser
-### Properties
-
-#### UserName
-
-#### UserId
-
-#### Culture
-
-#### Rights
-
-### Methods
-
-
-####Constructor
-
-## Class: Core.Controllers.Security.NucleusClaimsTransformation
-### Methods
-
-
-####Constructor
-
-#### TransformAsync(System.Security.Claims.ClaimsPrincipal)

@@ -54,22 +54,6 @@ MongoDB Connection String
 #### DatabaseName
 Name of database to map for MongoDB
 
-## Class: MongoDB.Extensions.MongoDatabaseFactory
-### Methods
-
-
-####Constructor
-
-#### Create``1
-
-#### Create``2
-
-## Class: MongoDB.Extensions.MongoDatabaseRegistration
-### Properties
-
-#### Types
-
-
 ## Class: MongoDB.Extensions.MongoDispatchProxy
 This proxy allow for dynamic creation of wrapper classes to expose MongoDatabase instances
 

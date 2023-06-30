@@ -49,12 +49,6 @@ Ensure that current authenticated user matches as least one requested right
     **context:** 
 
 
-## Class: AspNetCore.Mvc.Filters.FormFileOperationFilter
-### Methods
-
-
-#### Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)
-
 ## Class: AspNetCore.Mvc.Filters.SearchQueryOperationFilter
 Search Query Operation filter extends Swagger/OpenAPI to provide details on IQueryable{T} endpoints.
 ### Methods
@@ -113,34 +107,6 @@ end point requires at least one of these permissions
 
 
 #### Write(Microsoft.OpenApi.Writers.IOpenApiWriter,Microsoft.OpenApi.OpenApiSpecVersion)
-
-## Class: AspNetCore.Mvc.ServiceCollectionExtensions
-### Methods
-
-
-#### AddAspNetCoreExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-Add IOC configurations to support all ASP.Net Core extensions provided by this library.
-    #####Parameters
-    **services:** 
-
-    ##### Return value
-    
-
-#### TryAddCommonOpenApiExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-Enable extensions for Swagger/OpenAPI (included in AddAspNetCoreExtensions)
-    #####Parameters
-    **services:** 
-
-    ##### Return value
-    
-
-#### TryAddAspNetCoreSearchQuery(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-Enable extensions for shared Search Query extensions (included in AddAspNetCoreExtensions)
-    #####Parameters
-    **services:** 
-
-    ##### Return value
-    
 
 ## Class: AspNetCore.Mvc.SwaggerGen.AdditionalSwaggerGenEndpointsOptions
 SwaggerGen extensions to enable presenting permissions, application versions and XMLDocs
