@@ -363,6 +363,18 @@ Lookup resource content based on filename relative the scope of context
     ##### Return value
     
 
+## Class: System.ResponseModel.CaptureResultMessage
+### Methods
+
+
+#### Publish(Eliassen.System.ResponseModel.ResultMessage[])
+
+#### Peek
+
+#### Clear
+
+#### Capture
+
 ## Class: System.Security.Claims.ClaimsPrincipalExtensions
 Extensions to manage on
 ### Methods

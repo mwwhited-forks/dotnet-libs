@@ -30,7 +30,7 @@ Anonymous:   True
 
 Request:     #/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models.BlogModel
 
-Response: #/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel
+Response: #/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel
 
 ### /api/BlogAdmin/Blogs
 
@@ -121,7 +121,7 @@ Anonymous:   True
 
 Request:     #/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Lesson.Contracts.Models.LessonModel
 
-Response: #/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel
+Response: #/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel
 
 ### /api/LessonAdmin/Lessons
 
@@ -214,7 +214,7 @@ Anonymous:   True
 
 
 
-Response: #/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module
+Response: #/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.Module
 
 ### /api/RegisterUser/ApplicationPemissions
 
@@ -269,7 +269,7 @@ Rights:
 
 Request:     #/components/schemas/Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.User
 
-Response: #/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User
+Response: #/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.User
 
 ### /api/UserManagement/ApplicationPermissions
 
@@ -280,7 +280,7 @@ Rights:
 
 
 
-Response: #/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module
+Response: #/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.Module
 
 ### /api/UserManagement/UserList
 
@@ -321,46 +321,6 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 
 ### Eliassen.System.Linq.Search.OrderDirections
 
-
-### Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel
-
-
-#### Properties
-
-* rows : array?
-* currentPage : integer
-* totalPageCount : integer
-* totalRowCount : integer
-
-### Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module
-
-
-#### Properties
-
-* rows : array?
-* currentPage : integer
-* totalPageCount : integer
-* totalRowCount : integer
-
-### Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User
-
-
-#### Properties
-
-* rows : array?
-* currentPage : integer
-* totalPageCount : integer
-* totalRowCount : integer
-
-### Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel
-
-
-#### Properties
-
-* rows : array?
-* currentPage : integer
-* totalPageCount : integer
-* totalRowCount : integer
 
 ### Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models.BlogModel
 
@@ -409,6 +369,64 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * searchTerm : string?
 * filter : object?
 * orderBy : object?
+
+### Eliassen.System.ResponseModel.MessageLevels
+
+
+### Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel
+
+
+#### Properties
+
+* rows : array?
+* messages : array?
+* currentPage : integer
+* totalPageCount : integer
+* totalRowCount : integer
+
+### Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.Module
+
+
+#### Properties
+
+* rows : array?
+* messages : array?
+* currentPage : integer
+* totalPageCount : integer
+* totalRowCount : integer
+
+### Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.User
+
+
+#### Properties
+
+* rows : array?
+* messages : array?
+* currentPage : integer
+* totalPageCount : integer
+* totalRowCount : integer
+
+### Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel
+
+
+#### Properties
+
+* rows : array?
+* messages : array?
+* currentPage : integer
+* totalPageCount : integer
+* totalRowCount : integer
+
+### Eliassen.System.ResponseModel.ResultMessage
+
+
+#### Properties
+
+* level : Eliassen.System.ResponseModel.MessageLevels
+* message : string?
+* messageCode : string?
+* context : string?
+* metaData : object?
 
 ### Microsoft.AspNetCore.Mvc.ProblemDetails
 
@@ -508,6 +526,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * rows : array?
 * totalPageCount : integer
 * totalRowCount : integer
+* messages : array?
 
 ### Nucleus.Core.Contracts.Models.PagedResult-Nucleus.Core.Contracts.Models.User
 
@@ -524,6 +543,7 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * rows : array?
 * totalPageCount : integer
 * totalRowCount : integer
+* messages : array?
 
 ### Nucleus.Core.Contracts.Models.PagingModel
 
@@ -691,8 +711,4 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 
 ---
 
-6/19/2023 4:54:11 PM -04:00
-
-xyz
-reatedOnUnix : integer
-
+Generated: 2023-06-30 15:24:08

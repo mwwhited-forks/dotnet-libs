@@ -92,38 +92,6 @@ sort related items in descending order
 #### DescendingShort
 
 
-## Class: System.Linq.Search.PagedQueryResult`1
-### Properties
-
-#### CurrentPage
-
-#### TotalPageCount
-
-#### TotalRowCount
-
-### Methods
-
-
-####Constructor
-
-####Constructor
-
-####Constructor
-
-## Class: System.Linq.Search.QueryResult`1
-### Properties
-
-#### Rows
-
-### Methods
-
-
-####Constructor
-
-####Constructor
-
-####Constructor
-
 ## Class: System.Linq.Search.SearchQuery`1
 
 ## Class: System.Linq.Search.SearchQuery
@@ -145,6 +113,38 @@ sort related items in descending order
 
 
 #### ToString
+
+## Class: System.ResponseModel.PagedQueryResult`1
+### Properties
+
+#### CurrentPage
+
+#### TotalPageCount
+
+#### TotalRowCount
+
+### Methods
+
+
+####Constructor
+
+####Constructor
+
+####Constructor
+
+## Class: System.ResponseModel.QueryResult`1
+### Properties
+
+#### Rows
+
+### Methods
+
+
+####Constructor
+
+####Constructor
+
+####Constructor
 
 ## Class: System.Security.Cryptography.IHash
 Simplified hash generator
