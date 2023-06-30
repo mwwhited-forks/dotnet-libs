@@ -1,5 +1,6 @@
 ﻿using Eliassen.System.Accessors;
 using Eliassen.System.Linq.Search;
+using Eliassen.System.ResponseModel;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

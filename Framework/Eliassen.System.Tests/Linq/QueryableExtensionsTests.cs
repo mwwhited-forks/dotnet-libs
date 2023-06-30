@@ -1,6 +1,7 @@
 ﻿using Eliassen.System.Linq;
 using Eliassen.System.Linq.Search;
 using Eliassen.System.Reflection;
+using Eliassen.System.ResponseModel;
 using Eliassen.System.Tests.Linq.TestTargets;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

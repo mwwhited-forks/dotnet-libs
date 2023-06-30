@@ -1,4 +1,4 @@
-﻿using Eliassen.System.Linq.Search;
+﻿using Eliassen.System.ResponseModel;
 using Nucleus.Core.Contracts.Models;
 using System.Linq;
 

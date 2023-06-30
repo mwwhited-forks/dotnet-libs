@@ -119,52 +119,42 @@ namespace Nucleus.Dataloader.Cli
 
                 if (data is IMongoCollection<UserCollection> users && result is UserCollection[] userArrays)
                 {
-                    var ids = userArrays.Select(e => e.UserId).ToArray();
-
-                    var eee = users.AsQueryable().ToList();
-
-
-                    var qe = users.AsQueryable()
-                        .Where(u => ids.Contains(u.UserId))
-                        .Select(u => new { u.UserId, u.CreatedOn });
-                    var tqe = qe.ToString();
-
-                    var exists = users.AsQueryable()
-                        .Where(u => ids.Contains(  u.UserId.ToString()))
-                        .Select(u => new { u.UserId, u.CreatedOn })
-                        .ToArray()
-                        ;
-
-                    //var qqq = users.AsQueryable().Where(q=>q.UserId.ToString() == "641cd44eaa22983c3e4edb32");
-                    //var tsq = qqq.ToString();
-
-                    var matched = from u in userArrays
-                                  select new
-                                  {
-                                      User = u,
-                                      Match = exists.FirstOrDefault(i => i.UserId.ToString() == u.UserId.ToString()),
-                                  };
-                    var ma = matched.ToArray();
-
-
-                    foreach (var u in userArrays)
-                    {
-                        var idValue = idProperty.GetValue(u) as string;
-                        //var modifiedOnValue = modifiedOn.GetValue(u) as DateTimeOffset?;
-                        var createdOnValue = createdOn.GetValue(u) as DateTimeOffset?;
-                        _log.LogInformation(idValue);
-
-                        //new FindOneAndReplaceOptions<UserCollection, UserCollection>();
-
-                        //var ret = users.FindOneAndReplace(
-                        //    usr => usr.UserId == idValue && (!usr.CreatedOn.HasValue || usr.CreatedOn < createdOnValue),
-                        //    u,
-                        //    );
-                        //users.UP
-                        // 
-                        //new UpdateOptions { IsUpsert = true, }
-                    }
-
+                    users.InsertMany(userArrays);
+                    //    //var ids = userArrays.Select(e => e.UserId).ToArray();
+                    //    //var eee = users.AsQueryable().ToList();
+                    //    //var qe = users.AsQueryable()
+                    //    //    .Where(u => ids.Contains(u.UserId))
+                    //    //    .Select(u => new { u.UserId, u.CreatedOn });
+                    //    //var tqe = qe.ToString();
+                    //    //var exists = users.AsQueryable()
+                    //    //    .Where(u => ids.Contains(  u.UserId.ToString()))
+                    //    //    .Select(u => new { u.UserId, u.CreatedOn })
+                    //    //    .ToArray()
+                    //    //    ;
+                    //    ////var qqq = users.AsQueryable().Where(q=>q.UserId.ToString() == "641cd44eaa22983c3e4edb32");
+                    //    ////var tsq = qqq.ToString();
+                    //    //var matched = from u in userArrays
+                    //    //              select new
+                    //    //              {
+                    //    //                  User = u,
+                    //    //                  Match = exists.FirstOrDefault(i => i.UserId.ToString() == u.UserId.ToString()),
+                    //    //              };
+                    //    //var ma = matched.ToArray();
+                    //    //foreach (var u in userArrays)
+                    //    //{
+                    //    //    var idValue = idProperty.GetValue(u) as string;
+                    //    //    //var modifiedOnValue = modifiedOn.GetValue(u) as DateTimeOffset?;
+                    //    //    var createdOnValue = createdOn.GetValue(u) as DateTimeOffset?;
+                    //    //    _log.LogInformation(idValue);
+                    //    //    //new FindOneAndReplaceOptions<UserCollection, UserCollection>();
+                    //    //    //var ret = users.FindOneAndReplace(
+                    //    //    //    usr => usr.UserId == idValue && (!usr.CreatedOn.HasValue || usr.CreatedOn < createdOnValue),
+                    //    //    //    u,
+                    //    //    //    );
+                    //    //    //users.UP
+                    //    //    // 
+                    //    //    //new UpdateOptions { IsUpsert = true, }
+                    //    //}
                 }
 
                 //if (data.GetType().IsAssignableTo(collectionType))

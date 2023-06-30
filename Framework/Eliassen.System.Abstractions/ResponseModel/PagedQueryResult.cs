@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Eliassen.System.Linq.Search
+namespace Eliassen.System.ResponseModel
 {
     /// <inheritdoc/>
     public class PagedQueryResult<TModel> : QueryResult<TModel>, IPagedQueryResult<TModel>
@@ -36,10 +36,10 @@ namespace Eliassen.System.Linq.Search
         }
 
         /// <inheritdoc/>
-        public int CurrentPage { get; init; }
+        public int CurrentPage { get; }
         /// <inheritdoc/>
-        public int TotalPageCount { get; init; }
+        public int TotalPageCount { get; }
         /// <inheritdoc/>
-        public int TotalRowCount { get; init; }
+        public int TotalRowCount { get; }
     }
 }

@@ -2,6 +2,7 @@
 using Eliassen.System.Configuration;
 using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
+using Eliassen.System.ResponseModel;
 using Eliassen.System.Security.Cryptography;
 using Eliassen.System.Text.Json.Serialization;
 using Eliassen.System.Text.Templating;
@@ -31,6 +32,7 @@ namespace Eliassen.System
             services.TryAddSingleton(typeof(ISortBuilder<>), typeof(SortBuilder<>));
             services.TryAddSingleton(typeof(IExpressionTreeBuilder<>), typeof(ExpressionTreeBuilder<>));
             services.TryAddTransient<IPostBuildExpressionVisitor, StringComparisonReplacementExpressionVisitor>();
+            services.TryAddScoped<ICaptureResultMessage, CaptureResultMessage>();
             return services;
         }
 
@@ -75,11 +77,11 @@ namespace Eliassen.System
             where TService : class
         {
             services.TryAddSingleton(typeof(IAccessor<>), typeof(Accessor<>));
-#pragma warning disable CS8634 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match 'class' constraint.
-#pragma warning disable CS8621 // Nullability of reference types in return type doesn't match the target delegate (possibly because of nullability attributes).
-            services.TryAddTransient(sp => sp.GetRequiredService<IAccessor<TService>>().Value);
-#pragma warning restore CS8621 // Nullability of reference types in return type doesn't match the target delegate (possibly because of nullability attributes).
-#pragma warning restore CS8634 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match 'class' constraint.
+            //#pragma warning disable CS8634 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match 'class' constraint.
+            //#pragma warning disable CS8621 // Nullability of reference types in return type doesn't match the target delegate (possibly because of nullability attributes).
+            //            services.TryAddTransient(sp => sp.GetRequiredService<IAccessor<TService>>().Value);
+            //#pragma warning restore CS8621 // Nullability of reference types in return type doesn't match the target delegate (possibly because of nullability attributes).
+            //#pragma warning restore CS8634 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match 'class' constraint.
 
             return services;
         }

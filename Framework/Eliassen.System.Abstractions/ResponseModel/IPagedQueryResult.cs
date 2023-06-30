@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace Eliassen.System.Linq.Search
+namespace Eliassen.System.ResponseModel
 {
     public interface IPagedQueryResult : IQueryResult
     {
