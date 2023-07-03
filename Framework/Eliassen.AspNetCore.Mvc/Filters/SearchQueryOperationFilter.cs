@@ -36,6 +36,7 @@ public class SearchQueryOperationFilter : IOperationFilter
     {
         try
         {
+            using var scopedServiceProvider = _serviceProvider.CreateScope();
             //if (context.MethodInfo.ReturnType.IsAssignableTo(typeof(IPagedQueryResult)) )
             //{
             //    var requestType = new
@@ -47,8 +48,8 @@ public class SearchQueryOperationFilter : IOperationFilter
             if (context.MethodInfo.ReturnType.IsAssignableTo(typeof(IQueryable)) && context.MethodInfo.ReturnType.IsGenericType)
             {
                 var elementType = context.MethodInfo.ReturnType.GetGenericArguments()[0];
-                var treeBuilder = (IExpressionTreeBuilder)ActivatorUtilities.CreateInstance(_serviceProvider, typeof(ExpressionTreeBuilder<>).MakeGenericType(elementType));
-
+                var treeBuilder = (IExpressionTreeBuilder)ActivatorUtilities.CreateInstance(scopedServiceProvider.ServiceProvider, typeof(ExpressionTreeBuilder<>).MakeGenericType(elementType));
+                
                 var requestType = typeof(SearchQuery<>).MakeGenericType(elementType);
                 //var responseType = typeof(QueryResult<>).MakeGenericType(elementType);
                 var pagedResponseType = typeof(PagedQueryResult<>).MakeGenericType(elementType);

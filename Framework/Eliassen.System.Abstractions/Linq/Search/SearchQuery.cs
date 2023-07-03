@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Eliassen.System.Linq.Search
 {
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public record SearchQuery<TModel> : SearchQuery, ISearchQuery<TModel>
     {
     }
