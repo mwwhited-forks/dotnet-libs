@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using Eliassen.System.Text.Json;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Nucleus.Blog.Persistence.Collections
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         [JsonPropertyName("_id")]
+        [JsonConverter(typeof(BsonIdConverter))]
         public string? BlogId { get; set; }
 
         [BsonElement("title")]

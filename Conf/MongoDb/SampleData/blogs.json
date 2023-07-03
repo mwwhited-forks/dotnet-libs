@@ -1,6 +1,8 @@
 [
   {
-    "_id": { "$oid": "648386d72c1fe86e6b3636fa" },
+    "_id": {
+      "$oid": "648386d72c1fe86e6b3636fa"
+    },
     "title": "Bengals Ramp It Up For Veterans",
     "slug": "Bengals-Ramp-It-Up-For-Veterans",
     "tags": [

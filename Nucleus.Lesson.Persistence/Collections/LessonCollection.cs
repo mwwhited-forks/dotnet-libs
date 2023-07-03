@@ -1,6 +1,6 @@
-﻿using MongoDB.Bson;
+﻿using Eliassen.System.Text.Json;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using Newtonsoft.Json;
 using System;
 using System.Text.Json.Serialization;
 
@@ -12,6 +12,7 @@ namespace Nucleus.Lesson.Contracts.Collections
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         [JsonPropertyName("_id")]
+        [JsonConverter(typeof(BsonIdConverter))]
         public string? LessonId { get; set; }
 
         [BsonElement("title")]

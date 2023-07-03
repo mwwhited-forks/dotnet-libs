@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using Eliassen.System.Text.Json;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Text.Json.Serialization;
@@ -11,6 +12,7 @@ namespace Nucleus.Project.Persistence.Collections
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         [JsonPropertyName("_id")]
+        [JsonConverter(typeof(BsonIdConverter))]
         public string? ProjectId { get; set; }
 
         [BsonElement("title")]
