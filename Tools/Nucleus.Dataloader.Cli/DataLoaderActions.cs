@@ -4,5 +4,7 @@
     {
         Export,
         Import,
+        DropCollection,
+        DropCollectionAndImport,
     }
 }

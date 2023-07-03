@@ -252,6 +252,30 @@ namespace Nucleus.Dataloader.Cli
             }
         }
 
+
+        public async Task DropCollectionAsync(PropertyInfo collection, object instance, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var elementType = collection.PropertyType.GetGenericArguments()[0];
+                var setType = elementType.MakeArrayType();
+                var collectionName = collection.GetCustomAttributes<CollectionNameAttribute>().FirstOrDefault()?.CollectionName ?? elementType.Name;
+
+                _log.LogInformation($"Deleting: {{{nameof(collectionName)}}}", collectionName);
+
+                var data = collection.GetValue(instance);
+                var db = (IMongoDatabase)data.GetType().GetProperty("Database").GetValue(data);
+                await db.DropCollectionAsync(collectionName);
+
+                _log.LogInformation($"Deleted: {{{nameof(collectionName)}}}", collectionName);
+            }
+            catch (Exception ex)
+            {
+                _log.LogError($"{{{nameof(collection)}}}::{{{nameof(instance)}}} -> {{{nameof(ex.Message)}}}", collection, instance, ex.Message);
+                _log.LogDebug($"{{{nameof(collection)}}}::{{{nameof(instance)}}} -> {{{nameof(Exception)}}}", collection, instance, ex);
+            }
+        }
+
         public async Task StartAsync(CancellationToken cancellationToken)
         {
             var databases = from type in _databases.Types
@@ -270,6 +294,15 @@ namespace Nucleus.Dataloader.Cli
                     }
                     else if (_settings.Action == DataLoaderActions.Import)
                     {
+                        await ImportAsync(collection, db.database, cancellationToken);
+                    }
+                    else if (_settings.Action == DataLoaderActions.DropCollection)
+                    {
+                        await DropCollectionAsync(collection, db.database, cancellationToken);
+                    }
+                    else if (_settings.Action == DataLoaderActions.DropCollectionAndImport)
+                    {
+                        await DropCollectionAsync(collection, db.database, cancellationToken);
                         await ImportAsync(collection, db.database, cancellationToken);
                     }
                     else
