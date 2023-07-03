@@ -35,5 +35,6 @@ public class UserCollection
     public List<UserModuleCollection>? UserModules { get; set; }
 
     [BsonElement("createdOn")]
+    [JsonConverter(typeof(BsonDateConverter))]
     public DateTimeOffset? CreatedOn { get; set; }
 }

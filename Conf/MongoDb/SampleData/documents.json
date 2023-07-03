@@ -9,7 +9,9 @@
     "documentSize": 7906,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "Blog",
-    "createdOn": "2023-01-03T21:18:41.4434048-05:00"
+    "createdOn": {
+      "$date": "2023-01-04T02:18:41.443+00:00"
+    }
   },
   {
     "_id": {
@@ -21,7 +23,9 @@
     "documentSize": 159937,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "Vlog",
-    "createdOn": "2023-01-08T10:08:28.952896-05:00"
+    "createdOn": {
+      "$date": "2023-01-08T15:08:28.952+00:00"
+    }
   },
   {
     "_id": {
@@ -33,7 +37,9 @@
     "documentSize": 123584,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "Vlog-Preview",
-    "createdOn": "2023-01-08T10:26:32.2586752-05:00"
+    "createdOn": {
+      "$date": "2023-01-08T15:26:32.258+00:00"
+    }
   },
   {
     "_id": {
@@ -45,7 +51,9 @@
     "documentSize": 144810,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "VlogPreview",
-    "createdOn": "2023-01-08T10:48:17.883456-05:00"
+    "createdOn": {
+      "$date": "2023-01-08T15:48:17.883+00:00"
+    }
   },
   {
     "_id": {
@@ -57,7 +65,9 @@
     "documentSize": 357762,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "VlogPreview",
-    "createdOn": "2023-01-08T10:50:11.880256-05:00"
+    "createdOn": {
+      "$date": "2023-01-08T15:50:11.88+00:00"
+    }
   },
   {
     "_id": {
@@ -69,7 +79,9 @@
     "documentSize": 7091,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "VlogContent",
-    "createdOn": "2023-01-08T11:02:33.4327936-05:00"
+    "createdOn": {
+      "$date": "2023-01-08T16:02:33.432+00:00"
+    }
   },
   {
     "_id": {
@@ -81,7 +93,9 @@
     "documentSize": 113823,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-08T11:21:16.9258624-05:00"
+    "createdOn": {
+      "$date": "2023-01-08T16:21:16.925+00:00"
+    }
   },
   {
     "_id": {
@@ -93,7 +107,9 @@
     "documentSize": 166483,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-09T11:29:37.4084608-05:00"
+    "createdOn": {
+      "$date": "2023-01-09T16:29:37.408+00:00"
+    }
   },
   {
     "_id": {
@@ -105,7 +121,9 @@
     "documentSize": 89793,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-09T11:30:10.5890816-05:00"
+    "createdOn": {
+      "$date": "2023-01-09T16:30:10.589+00:00"
+    }
   },
   {
     "_id": {
@@ -117,7 +135,9 @@
     "documentSize": 89793,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-09T13:10:36.7868544-05:00"
+    "createdOn": {
+      "$date": "2023-01-09T18:10:36.786+00:00"
+    }
   },
   {
     "_id": {
@@ -129,7 +149,9 @@
     "documentSize": 26017,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectContent",
-    "createdOn": "2023-01-22T09:18:09.47808-05:00"
+    "createdOn": {
+      "$date": "2023-01-22T14:18:09.478+00:00"
+    }
   },
   {
     "_id": {
@@ -141,7 +163,9 @@
     "documentSize": 319396,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-22T10:13:03.5065856-05:00"
+    "createdOn": {
+      "$date": "2023-01-22T15:13:03.506+00:00"
+    }
   },
   {
     "_id": {
@@ -153,7 +177,9 @@
     "documentSize": 293120,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-22T10:13:29.7685376-05:00"
+    "createdOn": {
+      "$date": "2023-01-22T15:13:29.768+00:00"
+    }
   },
   {
     "_id": {
@@ -165,7 +191,9 @@
     "documentSize": 148480,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-22T10:13:38.0431104-05:00"
+    "createdOn": {
+      "$date": "2023-01-22T15:13:38.043+00:00"
+    }
   },
   {
     "_id": {
@@ -177,7 +205,9 @@
     "documentSize": 41454,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-22T10:14:47.2008448-05:00"
+    "createdOn": {
+      "$date": "2023-01-22T15:14:47.2+00:00"
+    }
   },
   {
     "_id": {
@@ -189,7 +219,9 @@
     "documentSize": 1183256,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-22T10:43:08.5820032-05:00"
+    "createdOn": {
+      "$date": "2023-01-22T15:43:08.582+00:00"
+    }
   },
   {
     "_id": {
@@ -201,7 +233,9 @@
     "documentSize": 10330,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-22T21:14:13.191168-05:00"
+    "createdOn": {
+      "$date": "2023-01-23T02:14:13.191+00:00"
+    }
   },
   {
     "_id": {
@@ -213,7 +247,9 @@
     "documentSize": 9821,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-22T21:15:22.250752-05:00"
+    "createdOn": {
+      "$date": "2023-01-23T02:15:22.25+00:00"
+    }
   },
   {
     "_id": {
@@ -225,7 +261,9 @@
     "documentSize": 29702,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-23T11:13:34.8141568-05:00"
+    "createdOn": {
+      "$date": "2023-01-23T16:13:34.814+00:00"
+    }
   },
   {
     "_id": {
@@ -237,6 +275,8 @@
     "documentSize": 33720,
     "documentRepository": "Abc.External.Azure.StorageAccount.Providers.BlobContainerProvider",
     "documentCategory": "ProjectPreview",
-    "createdOn": "2023-01-23T17:58:40.2453888-05:00"
+    "createdOn": {
+      "$date": "2023-01-23T22:58:40.245+00:00"
+    }
   }
 ]

@@ -10,7 +10,9 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00",
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
     "attendees": [],
     "teacher": "George Golferson",
     "duration": 10,
@@ -31,7 +33,9 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00",
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
     "attendees": [],
     "teacher": "Bobby Butterfingers",
     "duration": 10,
@@ -52,7 +56,9 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00",
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
     "attendees": [],
     "teacher": "John Smith",
     "duration": 10,
@@ -73,7 +79,9 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00",
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
     "attendees": [],
     "teacher": "Waterlogged Walter",
     "duration": 10,
@@ -94,7 +102,9 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00",
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
     "attendees": [],
     "teacher": "Never-Defeated Daryl",
     "duration": 10,
@@ -115,7 +125,9 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00",
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
     "attendees": [],
     "teacher": "Seasoned-Golfer Susan",
     "duration": 10,
@@ -136,7 +148,9 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00",
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
     "attendees": [],
     "teacher": "Albert Einstein",
     "duration": 10,
@@ -157,7 +171,9 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00",
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
     "attendees": [],
     "teacher": "Focused Freddy",
     "duration": 10,
@@ -178,7 +194,9 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00",
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
     "attendees": [],
     "teacher": "NotAScammer Steve",
     "duration": 10,

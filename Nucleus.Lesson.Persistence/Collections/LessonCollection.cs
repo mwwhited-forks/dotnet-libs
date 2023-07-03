@@ -31,6 +31,7 @@ namespace Nucleus.Lesson.Contracts.Collections
         public Boolean? Enabled { get; set; }
 
         [BsonElement("createdOn")]
+        [JsonConverter(typeof(BsonDateConverter))]
         public DateTimeOffset? CreatedOn { get; set; }
 
         [BsonElement("attendees")]
@@ -52,9 +53,11 @@ namespace Nucleus.Lesson.Contracts.Collections
         public string[]? Goals { get; set; }
 
         [BsonElement("startdatetime")]
+        [JsonConverter(typeof(BsonDateConverter))]
         public DateTimeOffset? StartDateTime { get; set; }
 
         [BsonElement("enddatetime")]
+        [JsonConverter(typeof(BsonDateConverter))]
         public DateTimeOffset? EndDateTime { get; set; }
     }
 }

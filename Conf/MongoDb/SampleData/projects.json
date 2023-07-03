@@ -11,7 +11,9 @@
     "content": "This is a highly effective, low cost site built using a mainstream CMS system; all media and content was created and managed by us.",
     "page": "",
     "enabled": true,
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   },
   {
     "_id": {
@@ -25,7 +27,9 @@
     "content": "This is a custom solution built from the ground up",
     "page": "",
     "enabled": true,
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   },
   {
     "_id": {
@@ -39,6 +43,8 @@
     "content": "I kept hearing about the Raspberry Pi and all of the wonderful things you can do with it. It was time for me to roll up my sleeves and dig in with my first real project.  I can honestly say that I seriously struggled to find all of the information and documentation out there that I needed put together in a way that I could easily take it and run with it.  Well after many hours of tinkering I decided to write my own guide in words that makes sense to how my mind works.",
     "page": "",
     "enabled": true,
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   }
 ]

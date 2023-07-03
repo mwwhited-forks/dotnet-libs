@@ -32,6 +32,7 @@ namespace Nucleus.Blog.Persistence.Collections
         public string? Author { get; set; }
 
         [BsonElement("createdOn")]
+        [JsonConverter(typeof(BsonDateConverter))]
         public DateTimeOffset CreatedOn { get; set; }
     }
 }

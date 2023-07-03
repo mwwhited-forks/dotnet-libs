@@ -14,7 +14,9 @@
     "content": "As part of Bengals.com\u0027s high school journalism program, this story is written by a member of the journalism club at Cincinnati\u0027s Aiken New Tech High School headed by Lakisha Zyyon and Susan McElroy.",
     "enabled": true,
     "author": "Allen Butler",
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   },
   {
     "_id": {
@@ -30,7 +32,9 @@
     "content": "Mixon rushed for 153 yards on 22 attempts (7.0 average) with four TDs, while also catching four passes for 58 yards and a TD. He led all AFC players in rushing yards in Week 9, and his 211 yards from scrimmage marked a career high. Mixon\u0027s four rushing TDs were the most by an NFL player in a single game this season and tied RB Corey Dillon (Dec. 4, 1997) for the Bengals single-game record. His five total TDs set a team record for a single game.",
     "enabled": true,
     "author": "Allen Butler",
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   },
   {
     "_id": {
@@ -46,7 +50,9 @@
     "content": "CINCINNATI -- In case it wasn\u0027t clear enough, Bengals running back Joe Mixon reminded everyone how those in Cincinnati feel about coin flips.",
     "enabled": true,
     "author": "Allen Butler",
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   },
   {
     "_id": {
@@ -62,7 +68,9 @@
     "content": "1-CINCINNATI -- In case it wasn\u0027t clear enough, Bengals running back Joe Mixon reminded everyone how those in Cincinnati feel about coin flips.",
     "enabled": true,
     "author": "Allen Butler",
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   },
   {
     "_id": {
@@ -78,7 +86,9 @@
     "content": "2-CINCINNATI -- In case it wasn\u0027t clear enough, Bengals running back Joe Mixon reminded everyone how those in Cincinnati feel about coin flips.",
     "enabled": true,
     "author": "Allen Butler",
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   },
   {
     "_id": {
@@ -94,7 +104,9 @@
     "content": "3-CINCINNATI -- In case it wasn\u0027t clear enough, Bengals running back Joe Mixon reminded everyone how those in Cincinnati feel about coin flips.",
     "enabled": true,
     "author": "Allen Butler",
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   },
   {
     "_id": {
@@ -110,7 +122,9 @@
     "content": "4-CINCINNATI -- In case it wasn\u0027t clear enough, Bengals running back Joe Mixon reminded everyone how those in Cincinnati feel about coin flips.",
     "enabled": true,
     "author": "Allen Butler",
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   },
   {
     "_id": {
@@ -126,7 +140,9 @@
     "content": "5-CINCINNATI -- In case it wasn\u0027t clear enough, Bengals running back Joe Mixon reminded everyone how those in Cincinnati feel about coin flips.",
     "enabled": true,
     "author": "Allen Butler",
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   },
   {
     "_id": {
@@ -142,7 +158,9 @@
     "content": "6-CINCINNATI -- In case it wasn\u0027t clear enough, Bengals running back Joe Mixon reminded everyone how those in Cincinnati feel about coin flips.",
     "enabled": true,
     "author": "Allen Butler",
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   },
   {
     "_id": {
@@ -158,6 +176,8 @@
     "content": "7-CINCINNATI -- In case it wasn\u0027t clear enough, Bengals running back Joe Mixon reminded everyone how those in Cincinnati feel about coin flips.",
     "enabled": true,
     "author": "Allen Butler",
-    "createdOn": "2017-09-20T14:43:50.4356493+02:00"
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    }
   }
 ]

@@ -32,6 +32,7 @@ namespace Nucleus.Project.Persistence.Collections
         [BsonElement("enabled")]
         public bool? Enabled { get; set; }
         [BsonElement("createdOn")]
+        [JsonConverter(typeof(BsonDateConverter))]
         public DateTimeOffset CreatedOn { get; set; }
     }
 }

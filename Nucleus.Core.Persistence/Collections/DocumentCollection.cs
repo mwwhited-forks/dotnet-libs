@@ -34,5 +34,6 @@ public class DocumentCollection
     public string? DocumentCategory { get; set; }
 
     [BsonElement("createdOn")]
+    [JsonConverter(typeof(BsonDateConverter))]
     public DateTimeOffset? CreatedOn { get; set; }
 }

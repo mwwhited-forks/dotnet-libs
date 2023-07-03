@@ -13,6 +13,11 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Linq;
 using MongoDB.Bson;
+using System.Linq.Expressions;
+using Nucleus.Blog.Persistence.Collections;
+using Amazon.Auth.AccessControlPolicy;
+using Eliassen.System.ResponseModel;
+using System.Collections;
 
 namespace Nucleus.Dataloader.Cli
 {
@@ -110,6 +115,8 @@ namespace Nucleus.Dataloader.Cli
                 var result = await _jsonSerializer.DeserializeAsync(fileStream, setType);
 
                 var data = collection.GetValue(instance);
+                if (data == null) throw new NotSupportedException($"{collection} has no value on {instance}");
+
                 var collectionType = typeof(IMongoCollection<>).MakeGenericType(elementType);
 
                 var idProperty = elementType.GetProperties().FirstOrDefault(e => e.GetCustomAttribute<BsonIdAttribute>() != null)
@@ -117,70 +124,126 @@ namespace Nucleus.Dataloader.Cli
                 var createdOn = elementType.GetProperty("CreatedOn", BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase)
                     ?? throw new NotSupportedException();
 
-                if (data is IMongoCollection<UserCollection> users && result is UserCollection[] userArrays)
+                var parameter = Expression.Parameter(elementType, "e");
+                var idSelector = Expression.Lambda(Expression.Property(parameter, idProperty), parameter);
+
+                var castMethod = typeof(Queryable).GetMethod(nameof(Queryable.Cast)).MakeGenericMethod(elementType);
+
+                var collectionQuerableParameterType = Type.MakeGenericSignatureType(typeof(IMongoCollection<>), Type.MakeGenericMethodParameter(0));
+                var collectionQueryableMethod = typeof(IMongoCollectionExtensions)
+                    .GetMethod(
+                        name: nameof(IMongoCollectionExtensions.AsQueryable),
+                        genericParameterCount: 1,
+                        bindingAttr: BindingFlags.Static | BindingFlags.Public,
+                        binder: null,
+                        types: new[] { collectionQuerableParameterType, typeof(AggregateOptions) },
+                        modifiers: null
+                        )
+                    ?.MakeGenericMethod(elementType) ??
+                    throw new NotSupportedException($"{nameof(IMongoCollectionExtensions.AsQueryable)} for {typeof(IMongoCollection<>).MakeGenericType(elementType)} not found")
+                    ;
+
+                var selectorExpressionType = typeof(Expression<>).MakeGenericType(
+                    Type.MakeGenericSignatureType(typeof(Func<,>),
+                        Type.MakeGenericMethodParameter(0),
+                        Type.MakeGenericMethodParameter(1))
+                    );
+                var queryableSelectorOpen = typeof(Queryable).GetMethod(nameof(Queryable.Select), 2, new[]
                 {
-                    users.InsertMany(userArrays);
-                    //    //var ids = userArrays.Select(e => e.UserId).ToArray();
-                    //    //var eee = users.AsQueryable().ToList();
-                    //    //var qe = users.AsQueryable()
-                    //    //    .Where(u => ids.Contains(u.UserId))
-                    //    //    .Select(u => new { u.UserId, u.CreatedOn });
-                    //    //var tqe = qe.ToString();
-                    //    //var exists = users.AsQueryable()
-                    //    //    .Where(u => ids.Contains(  u.UserId.ToString()))
-                    //    //    .Select(u => new { u.UserId, u.CreatedOn })
-                    //    //    .ToArray()
-                    //    //    ;
-                    //    ////var qqq = users.AsQueryable().Where(q=>q.UserId.ToString() == "641cd44eaa22983c3e4edb32");
-                    //    ////var tsq = qqq.ToString();
-                    //    //var matched = from u in userArrays
-                    //    //              select new
-                    //    //              {
-                    //    //                  User = u,
-                    //    //                  Match = exists.FirstOrDefault(i => i.UserId.ToString() == u.UserId.ToString()),
-                    //    //              };
-                    //    //var ma = matched.ToArray();
-                    //    //foreach (var u in userArrays)
-                    //    //{
-                    //    //    var idValue = idProperty.GetValue(u) as string;
-                    //    //    //var modifiedOnValue = modifiedOn.GetValue(u) as DateTimeOffset?;
-                    //    //    var createdOnValue = createdOn.GetValue(u) as DateTimeOffset?;
-                    //    //    _log.LogInformation(idValue);
-                    //    //    //new FindOneAndReplaceOptions<UserCollection, UserCollection>();
-                    //    //    //var ret = users.FindOneAndReplace(
-                    //    //    //    usr => usr.UserId == idValue && (!usr.CreatedOn.HasValue || usr.CreatedOn < createdOnValue),
-                    //    //    //    u,
-                    //    //    //    );
-                    //    //    //users.UP
-                    //    //    // 
-                    //    //    //new UpdateOptions { IsUpsert = true, }
-                    //    //}
+                    Type.MakeGenericSignatureType(typeof(IQueryable<>), Type.MakeGenericMethodParameter(0)),
+                    selectorExpressionType
+                });
+                var closedArrayQueryMethod = queryableSelectorOpen.MakeGenericMethod(elementType, idProperty.PropertyType);
+
+
+                var enumerableParameterType = Type.MakeGenericSignatureType(typeof(IEnumerable<>), Type.MakeGenericMethodParameter(0));
+                var toArrayMethod = typeof(Enumerable)
+                    .GetMethod(
+                        name: nameof(Enumerable.ToArray),
+                        genericParameterCount: 1,
+                        bindingAttr: BindingFlags.Static | BindingFlags.Public,
+                        binder: null,
+                        types: new[] { enumerableParameterType },
+                        modifiers: null
+                        );
+                var closedIdToArrayMethod = toArrayMethod.MakeGenericMethod(idProperty.PropertyType);
+                var closedElementToArrayMethod = toArrayMethod.MakeGenericMethod(elementType);
+
+                var openExceptMethod = typeof(Enumerable)
+                    .GetMethod(
+                        name: nameof(Enumerable.Except),
+                        genericParameterCount: 1,
+                        bindingAttr: BindingFlags.Static | BindingFlags.Public,
+                        binder: null,
+                        types: new[] { enumerableParameterType, enumerableParameterType },
+                        modifiers: null
+                        );
+                var closedExceptMethod = openExceptMethod.MakeGenericMethod(idProperty.PropertyType);
+
+                var keyLookupTypeFunc = Type.MakeGenericSignatureType(
+                    typeof(Func<,>),
+                    Type.MakeGenericMethodParameter(0),
+                    Type.MakeGenericMethodParameter(1)
+                    );
+                var expressionKeyLookupType = typeof(Expression<>).MakeGenericType(keyLookupTypeFunc);
+                var queryableParameterType0 = Type.MakeGenericSignatureType(typeof(IQueryable<>), Type.MakeGenericMethodParameter(0));
+                var queryableParameterType1 = Type.MakeGenericSignatureType(typeof(IQueryable<>), Type.MakeGenericMethodParameter(1));
+                var openExceptByMethod = typeof(Queryable)
+                    .GetMethod(
+                        name: nameof(Queryable.ExceptBy),
+                        genericParameterCount: 2,
+                        bindingAttr: BindingFlags.Static | BindingFlags.Public,
+                        binder: null,
+                        types: new[] { queryableParameterType0, queryableParameterType1, expressionKeyLookupType },
+                        modifiers: null
+                        );
+                var closedExceptByMethod = openExceptByMethod.MakeGenericMethod(elementType, idProperty.PropertyType);
+
+                var insertManyMethod = collectionType
+                    .GetMethod(
+                        name: "InsertMany",
+                        bindingAttr: BindingFlags.Instance | BindingFlags.Public,
+                        binder: null,
+                        types: new[] {
+                            typeof(IEnumerable<>).MakeGenericType(elementType),
+                            typeof(InsertManyOptions),
+                            typeof(CancellationToken),
+                            },
+                        modifiers: null
+                        );
+
+                if (data.GetType().IsAssignableTo(collectionType) && result is object[] array)
+                {
+                    var queryableArray = castMethod.Invoke(null, new object[] { array.AsQueryable() });
+
+                    var queryableCollection = collectionQueryableMethod.Invoke(null, new object[] { data, null });
+                    var collectionIdsQuery = closedArrayQueryMethod.Invoke(null, new object[] { queryableCollection, idSelector });
+                    var collectionIds = closedIdToArrayMethod.Invoke(null, new object[] { collectionIdsQuery });
+
+                    var missingElements = closedExceptByMethod.Invoke(null, new object[] { queryableArray, collectionIds, idSelector });
+                    var missingElementsArray = (Array)closedElementToArrayMethod.Invoke(null, new object[] { missingElements });
+
+                    if (missingElementsArray.Length == 0)
+                    {
+                        _log.LogInformation(
+                            $"Imported: no records into {{{nameof(collectionName)}}} from \"{{{nameof(sourceFile)}}}\"",
+                            collectionName,
+                            sourceFile
+                            );
+                    }
+                    else
+                    {
+                        insertManyMethod.Invoke(data, new object[] { missingElementsArray, null, CancellationToken.None });
+
+                        _log.LogInformation(
+                            $"Imported: #{{count}} into {{{nameof(collectionName)}}} from \"{{{nameof(sourceFile)}}}\"",
+                            missingElementsArray.Length,
+                            collectionName,
+                            sourceFile
+                            );
+                    }
                 }
 
-                //if (data.GetType().IsAssignableTo(collectionType))
-                //{
-                //    //     [BsonId]
-                //}
-
-                //IMongoCollection<UserCollection> user;
-                //string userId = "";
-                //DateTimeOffset createdOn = DateTimeOffset.Now;
-
-                //var updateDef = Builders<UserCollection>.Update;
-
-                //user.FindOneAndUpdate(u => u.UserId == userId && u.CreatedOn < createdOn, updateDef.);
-
-                //var arr = AsArray(data ?? throw new NotSupportedException(nameof(data)), elementType);
-                //TODO: do partial updates
-
-                //TODO: create partial/build update
-
-                //IMongoCollection<UserCollection> users;
-                ////users.Find()
-
-                _log.LogInformation($"Imported: {{{nameof(collectionName)}}} to \"{{{nameof(sourceFile)}}}\"", collectionName, sourceFile);
-
-                throw new NotSupportedException($"ImportAsync");
             }
             catch (Exception ex)
             {
