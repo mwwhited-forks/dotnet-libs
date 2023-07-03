@@ -18,6 +18,7 @@ namespace Eliassen.System.Text.Json
                     {
                         if (reader.TokenType == JsonTokenType.String && reader.TryGetDateTimeOffset(out var dt))
                         {
+                            reader.Read();
                             return dt;
                         }
                     }
