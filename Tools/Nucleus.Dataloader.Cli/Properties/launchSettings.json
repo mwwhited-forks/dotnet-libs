@@ -83,6 +83,14 @@
         "MongoDatabase__ConnectionString": "mongodb://localhost:27018",
         "MongoDatabase__DatabaseName": "nucleus2"
       }
+    },
+    "27018 (nucleus2) - 7": {
+      "commandName": "Project",
+      "commandLineArgs": "--SourcePath=$(SolutionDir)\\Conf\\MongoDb\\SampleData --Action=Export,Import,DropCollection",
+      "environmentVariables": {
+        "MongoDatabase__ConnectionString": "mongodb://localhost:27018",
+        "MongoDatabase__DatabaseName": "nucleus2"
+      }
     }
   }
 }

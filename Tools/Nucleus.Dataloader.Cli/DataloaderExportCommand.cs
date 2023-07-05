@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using System.Reflection;
 
 namespace Nucleus.Dataloader.Cli
 {
@@ -37,12 +38,18 @@ namespace Nucleus.Dataloader.Cli
             _log.LogInformation($"Exported: {{{nameof(collectionName)}}} to \"{{{nameof(targetFile)}}}\"", collectionName, targetFile);
         }
 
-        private Array AsArray(object input, Type type) =>
-            (Array)this.GetType()
-                .GetMethod(nameof(this.AsArray), 1, new[] {
-                    typeof(IMongoCollection<>).MakeGenericType(Type.MakeGenericMethodParameter(0))
-                })
-                .MakeGenericMethod(type)
+        private Array? AsArray(object input, Type type) =>
+            (Array?)this.GetType()
+                ?.GetMethod(
+                    name: nameof(AsArray),
+                    genericParameterCount: 1,
+                    bindingAttr: BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.IgnoreCase,
+                    binder: null,
+                    types: new[] {
+                        typeof(IMongoCollection<>).MakeGenericType(Type.MakeGenericMethodParameter(0))
+                    },
+                    modifiers: null)
+                ?.MakeGenericMethod(type)
                 .Invoke(this, new[] { input });
         private T[] AsArray<T>(IMongoCollection<T> collection) => collection.AsQueryable().ToArray();
     }
