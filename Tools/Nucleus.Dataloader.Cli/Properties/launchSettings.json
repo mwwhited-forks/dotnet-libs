@@ -12,6 +12,14 @@
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)\\Conf\\MongoDb\\SampleData --Action=Import"
     },
+    "27018 - DropCollection": {
+      "commandName": "Project",
+      "commandLineArgs": "--SourcePath=$(SolutionDir)\\Conf\\MongoDb\\SampleData --Action=DropCollection"
+    },
+    "27018 - DropCollectionAndImport": {
+      "commandName": "Project",
+      "commandLineArgs": "--SourcePath=$(SolutionDir)\\Conf\\MongoDb\\SampleData --Action=DropCollectionAndImport"
+    },
     "27018 (nucleus) - Export": {
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)\\Conf\\MongoDb\\SampleData",
@@ -23,6 +31,22 @@
     "27018 (nucleus) - Import": {
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)\\Conf\\MongoDb\\SampleData --Action=Import",
+      "environmentVariables": {
+        "MongoDatabase__ConnectionString": "mongodb://localhost:27018",
+        "MongoDatabase__DatabaseName": "nucleus"
+      }
+    },
+    "27018 (nucleus) - DropCollection": {
+      "commandName": "Project",
+      "commandLineArgs": "--SourcePath=$(SolutionDir)\\Conf\\MongoDb\\SampleData --Action=DropCollection",
+      "environmentVariables": {
+        "MongoDatabase__ConnectionString": "mongodb://localhost:27018",
+        "MongoDatabase__DatabaseName": "nucleus"
+      }
+    },
+    "27018 (nucleus) - DropCollectionAndImport": {
+      "commandName": "Project",
+      "commandLineArgs": "--SourcePath=$(SolutionDir)\\Conf\\MongoDb\\SampleData --Action=DropCollectionAndImport",
       "environmentVariables": {
         "MongoDatabase__ConnectionString": "mongodb://localhost:27018",
         "MongoDatabase__DatabaseName": "nucleus"
