@@ -2,9 +2,9 @@
 {
     public interface ISerializer
     {
-        string Serialize(object obj, Type type);
+        string Serialize(object? obj, Type type);
         string Serialize<T>(T obj);
-        Task SerializeAsync(object obj, Type type, Stream stream, CancellationToken cancellationToken = default);
+        Task SerializeAsync(object? obj, Type type, Stream stream, CancellationToken cancellationToken = default);
         Task SerializeAsync<T>(T obj, Stream stream, CancellationToken cancellationToken = default);
 
         T? Deserialize<T>(Stream stream);

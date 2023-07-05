@@ -26,7 +26,8 @@ public class BsonDateConverterTests
         this.TestContext.AddResult(result, fileName: "result.json");
 
         var document = JsonDocument.Parse(result);
-        var selected = document.RootElement.GetProperty("Nullable").GetProperty("$date").GetString();
+        var selected = document.RootElement.GetProperty("Nullable").GetProperty("$date").GetString()??
+            throw new NotSupportedException();
         this.TestContext.WriteLine(selected);
 
         var parsed = DateTimeOffset.Parse(selected);

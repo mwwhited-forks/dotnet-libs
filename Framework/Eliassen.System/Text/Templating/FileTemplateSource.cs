@@ -15,6 +15,7 @@ namespace Eliassen.System.Text.Templating
         private readonly IEnumerable<IFileType> _fileTypes;
         private readonly ILogger _logger;
 
+        /// <inheritdoc />
         public FileTemplateSource(
             IOptions<FileTemplatingSettings> settings,
             IEnumerable<IFileType> fileTypes,
