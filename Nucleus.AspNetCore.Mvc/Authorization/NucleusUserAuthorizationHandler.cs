@@ -4,45 +4,46 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Logging;
 using System.Threading.Tasks;
 
-namespace Nucleus.AspNetCore.Mvc.Authorization
+namespace Nucleus.AspNetCore.Mvc.Authorization;
+
+public class NucleusUserAuthorizationHandler : AuthorizationHandler<NucleusUserAuthorizationRequirement>
 {
-    public class NucleusUserAuthorizationHandler : AuthorizationHandler<NucleusUserAuthorizationRequirement>
+    private readonly ILogger _logger;
+
+    public NucleusUserAuthorizationHandler(
+        ILogger<NucleusUserAuthorizationHandler> logger
+        )
     {
-        private readonly ILogger _logger;
+        _logger = logger;
+    }
 
-        public NucleusUserAuthorizationHandler(
-            ILogger<NucleusUserAuthorizationHandler> logger
-            )
-        {
-            _logger = logger;
-        }
-
-        protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, NucleusUserAuthorizationRequirement requirement)
-        {
+    protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, NucleusUserAuthorizationRequirement requirement)
+    {
 #if DEBUG
-            IdentityModelEventSource.ShowPII = true;
+        IdentityModelEventSource.ShowPII = true;
 #endif
-            var user = context.User;
+        var user = context.User;
 
-            var userId = user.GetClaimValue(CommonClaims.UserId)?.value;
-            var userName = user.GetClaimValue(CommonClaims.ObjectId, CommonClaims.ObjectIdentifier)?.value;
+        var userId = user.GetClaimValue(CommonClaims.UserId)?.value;
+        var userName = user.GetClaimValue(CommonClaims.ObjectId, CommonClaims.ObjectIdentifier)?.value;
 
-            var isAuthorized =
-                !string.IsNullOrWhiteSpace(userId) &&
-                !string.IsNullOrWhiteSpace(userName)
-                //TODO: consider active check here
-                ;
+        var isAuthorized =
+            !string.IsNullOrWhiteSpace(userId) &&
+            !string.IsNullOrWhiteSpace(userName)
+            //TODO: consider active check here
+            ;
 
-            if (isAuthorized)
-            {
-                context.Succeed(requirement);
-            }
-            else
-            {
-                context.Fail(new AuthorizationFailureReason(this, $"User not found"));
-            }
-
-            return Task.CompletedTask;
+        if (isAuthorized)
+        {
+            _logger.LogInformation($"{{{nameof(userName)}}} is authorized ({{{nameof(userId)}}})", userName, userId);
+            context.Succeed(requirement);
         }
+        else
+        {
+            _logger.LogWarning($"{{{nameof(userName)}}} is not authorized ({{{nameof(userId)}}})", userName, userId);
+            context.Fail(new AuthorizationFailureReason(this, $"User not found"));
+        }
+
+        return Task.CompletedTask;
     }
 }

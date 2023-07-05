@@ -33,7 +33,7 @@ namespace Nucleus.Dataloader.Cli
 
             var targetFile = Path.Combine(_settings.SourcePath, $"{collectionName}.json");
             using var fileStream = File.Create(targetFile);
-            await _jsonSerializer.SerializeAsync(arr, fileStream);
+            await _jsonSerializer.SerializeAsync(arr, fileStream, cancellationToken);
 
             _log.LogInformation($"Exported: {{{nameof(collectionName)}}} to \"{{{nameof(targetFile)}}}\"", collectionName, targetFile);
         }
@@ -43,7 +43,7 @@ namespace Nucleus.Dataloader.Cli
                 ?.GetMethod(
                     name: nameof(AsArray),
                     genericParameterCount: 1,
-                    bindingAttr: BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.IgnoreCase,
+                    bindingAttr: BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.IgnoreCase,
                     binder: null,
                     types: new[] {
                         typeof(IMongoCollection<>).MakeGenericType(Type.MakeGenericMethodParameter(0))
@@ -51,6 +51,6 @@ namespace Nucleus.Dataloader.Cli
                     modifiers: null)
                 ?.MakeGenericMethod(type)
                 .Invoke(this, new[] { input });
-        private T[] AsArray<T>(IMongoCollection<T> collection) => collection.AsQueryable().ToArray();
+        private static T[] AsArray<T>(IMongoCollection<T> collection) => collection.AsQueryable().ToArray();
     }
 }

@@ -45,7 +45,7 @@ namespace Eliassen.System.Text.Templating
             return true;
         }
 
-        private async Task<IXPathNavigable> GetNavigatorAsync(object data)
+        private static async Task<IXPathNavigable> GetNavigatorAsync(object data)
         {
             if (data is IXPathNavigable navigable)
             {

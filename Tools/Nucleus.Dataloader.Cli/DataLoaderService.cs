@@ -29,13 +29,13 @@ namespace Nucleus.Dataloader.Cli
         public async Task StartAsync(CancellationToken cancellationToken)
         {
             var databases = from type in _databases.Types
-                            select (type: type, database: _serviceProvider.GetRequiredService(type));
+                            select (type, database: _serviceProvider.GetRequiredService(type));
             var dbs = databases.ToList();
 
-            foreach (var db in dbs)
+            foreach (var (type, database) in dbs)
             {
                 if (cancellationToken.IsCancellationRequested) return;
-                await _commands.ExecuteAsync(_settings.Action, db.type, db.database, cancellationToken);
+                await _commands.ExecuteAsync(_settings.Action, type, database, cancellationToken);
             }
         }
 

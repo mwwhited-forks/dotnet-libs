@@ -24,7 +24,7 @@ namespace Nucleus.Blog.Business.Managers
         {
             blogsFilter.PagingModel ??= PagingModel.Default;
             List<BlogModel> blogs = await _blogService.GetPagedAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, true);
-            PagedResult<BlogModel> result = new PagedResult<BlogModel>()
+            var result = new PagedResult<BlogModel>()
             {
                 CurrentPage = blogsFilter.PagingModel.CurrentPage,
                 PageSize = blogsFilter.PagingModel.PageSize,

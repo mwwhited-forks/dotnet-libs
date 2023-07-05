@@ -56,7 +56,7 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
             select builtExpression
         );
 
-    private IReadOnlyCollection<KeyValuePair<string, Expression<Func<TModel, object>>>> BuildExpressions() =>
+    private static IReadOnlyCollection<KeyValuePair<string, Expression<Func<TModel, object>>>> BuildExpressions() =>
         (
         from pi in typeof(TModel).GetProperties(ReflectionExtensions.PublicProperties)
         let exp = BuildExpression(pi)
@@ -446,9 +446,9 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         ).OrderBy(p => p.Priority).Select(o => (o.name, o.Order))
         .ToArray();
 
-    private BinaryExpression BuildBinaryExpression(Operators expressionOperator, Expression left, object right) =>
+    private static BinaryExpression BuildBinaryExpression(Operators expressionOperator, Expression left, object right) =>
         BuildBinaryExpression(expressionOperator, left, right as Expression ?? Expression.Constant(right));
-    private BinaryExpression BuildBinaryExpression(Operators expressionOperator, Expression left, Expression right)
+    private static BinaryExpression BuildBinaryExpression(Operators expressionOperator, Expression left, Expression right)
     {
         if (left.Type != right.Type)
         {
@@ -478,7 +478,7 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         select (property, expression)
         ).ToArray();
 
-    private Expression<Func<TModel, object>>? BuildExpression(PropertyInfo? prop)
+    private static Expression<Func<TModel, object>>? BuildExpression(PropertyInfo? prop)
     {
         if (prop == null) return null;
         var parameter = Expression.Parameter(typeof(TModel), "n");

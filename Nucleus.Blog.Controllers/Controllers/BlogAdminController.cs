@@ -13,7 +13,7 @@ namespace Nucleus.Blog.Controllers.Controllers
     [ApiController]
     public class BlogAdminController : ControllerBase
     {
-        private IBlogManager _blogManager { get; set; }
+        private readonly IBlogManager _blogManager;
 
         public BlogAdminController(IBlogManager blogManager)
         {

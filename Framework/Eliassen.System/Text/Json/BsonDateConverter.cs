@@ -2,41 +2,45 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Eliassen.System.Text.Json
-{
-    public class BsonDateConverter : JsonConverter<DateTimeOffset>
-    {
-        public override DateTimeOffset Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            var type = reader.TokenType;
+namespace Eliassen.System.Text.Json;
 
-            if (type == JsonTokenType.StartObject)
+/// <summary>
+/// System.Text.Json converter to support BsonDatetimeOffset
+/// </summary>
+public class BsonDateConverter : JsonConverter<DateTimeOffset>
+{
+    /// <inheritdoc/>
+    public override DateTimeOffset Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        var type = reader.TokenType;
+
+        if (type == JsonTokenType.StartObject)
+        {
+            if (reader.Read() && reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "$date")
             {
-                if (reader.Read() && reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "$date")
+                if (reader.Read())
                 {
-                    if (reader.Read())
+                    if (reader.TokenType == JsonTokenType.String && reader.TryGetDateTimeOffset(out var dt))
                     {
-                        if (reader.TokenType == JsonTokenType.String && reader.TryGetDateTimeOffset(out var dt))
-                        {
-                            reader.Read();
-                            return dt;
-                        }
+                        reader.Read();
+                        return dt;
                     }
                 }
             }
-            else if (type == JsonTokenType.String && reader.TryGetDateTimeOffset(out var dt))
-            {
-                return dt;
-            }
-
-            throw new NotSupportedException($"element of type {type} is not supported");
         }
-
-        public override void Write(Utf8JsonWriter writer, DateTimeOffset value, JsonSerializerOptions options)
+        else if (type == JsonTokenType.String && reader.TryGetDateTimeOffset(out var dt))
         {
-            writer.WriteStartObject();
-            writer.WriteString("$date", value);
-            writer.WriteEndObject();
+            return dt;
         }
+
+        throw new NotSupportedException($"element of type {type} is not supported");
+    }
+
+    /// <inheritdoc/>
+    public override void Write(Utf8JsonWriter writer, DateTimeOffset value, JsonSerializerOptions options)
+    {
+        writer.WriteStartObject();
+        writer.WriteString("$date", value);
+        writer.WriteEndObject();
     }
 }

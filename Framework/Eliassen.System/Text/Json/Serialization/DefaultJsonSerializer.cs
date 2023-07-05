@@ -1,22 +1,14 @@
-﻿using Eliassen.System.Text.Json.Serialization;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.PortableExecutable;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Nucleus.Dataloader.Cli
+namespace Eliassen.System.Text.Json.Serialization
 {
     public class DefaultJsonSerializer : IJsonSerializer
     {
-        public static JsonSerializerOptions DefaultOptions => new JsonSerializerOptions
+        public static JsonSerializerOptions DefaultOptions => new()
         {
             WriteIndented = true,
             PropertyNameCaseInsensitive = true,
@@ -27,7 +19,7 @@ namespace Nucleus.Dataloader.Cli
         public const string DefaultContentType = "text/json";
         public string ContentType => DefaultContentType;
 
-        private JsonSerializerOptions _options;
+        private readonly JsonSerializerOptions _options;
 
         public DefaultJsonSerializer(
             JsonSerializerOptions? options = null

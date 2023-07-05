@@ -40,7 +40,7 @@ namespace Nucleus.Dataloader.Cli
 
             using var fileStream = File.OpenRead(sourceFile);
 
-            var result = await _jsonSerializer.DeserializeAsync(fileStream, elementType.MakeArrayType());
+            var result = await _jsonSerializer.DeserializeAsync(fileStream, elementType.MakeArrayType(), cancellationToken);
 
             var collectionType = typeof(IMongoCollection<>).MakeGenericType(elementType);
 
@@ -52,7 +52,7 @@ namespace Nucleus.Dataloader.Cli
             var parameter = Expression.Parameter(elementType, "e");
             var idSelector = Expression.Lambda(Expression.Property(parameter, idProperty), parameter);
 
-            var castMethod = typeof(Queryable).GetMethod(nameof(Queryable.Cast)).MakeGenericMethod(elementType);
+            var castMethod = typeof(Queryable).GetMethod(nameof(Queryable.Cast))?.MakeGenericMethod(elementType);
 
             var collectionQuerableParameterType = Type.MakeGenericSignatureType(typeof(IMongoCollection<>), Type.MakeGenericMethodParameter(0));
             var collectionQueryableMethod = typeof(IMongoCollectionExtensions)
@@ -78,7 +78,7 @@ namespace Nucleus.Dataloader.Cli
                     Type.MakeGenericSignatureType(typeof(IQueryable<>), Type.MakeGenericMethodParameter(0)),
                     selectorExpressionType
                 });
-            var closedArrayQueryMethod = queryableSelectorOpen.MakeGenericMethod(elementType, idProperty.PropertyType);
+            var closedArrayQueryMethod = queryableSelectorOpen?.MakeGenericMethod(elementType, idProperty.PropertyType);
 
 
             var enumerableParameterType = Type.MakeGenericSignatureType(typeof(IEnumerable<>), Type.MakeGenericMethodParameter(0));
@@ -91,8 +91,8 @@ namespace Nucleus.Dataloader.Cli
                     types: new[] { enumerableParameterType },
                     modifiers: null
                     );
-            var closedIdToArrayMethod = toArrayMethod.MakeGenericMethod(idProperty.PropertyType);
-            var closedElementToArrayMethod = toArrayMethod.MakeGenericMethod(elementType);
+            var closedIdToArrayMethod = toArrayMethod?.MakeGenericMethod(idProperty.PropertyType);
+            var closedElementToArrayMethod = toArrayMethod?.MakeGenericMethod(elementType);
 
             var openExceptMethod = typeof(Enumerable)
                 .GetMethod(
@@ -103,7 +103,7 @@ namespace Nucleus.Dataloader.Cli
                     types: new[] { enumerableParameterType, enumerableParameterType },
                     modifiers: null
                     );
-            var closedExceptMethod = openExceptMethod.MakeGenericMethod(idProperty.PropertyType);
+            var closedExceptMethod = openExceptMethod?.MakeGenericMethod(idProperty.PropertyType);
 
             var keyLookupTypeFunc = Type.MakeGenericSignatureType(
                 typeof(Func<,>),
@@ -122,7 +122,7 @@ namespace Nucleus.Dataloader.Cli
                     types: new[] { queryableParameterType0, queryableParameterType1, expressionKeyLookupType },
                     modifiers: null
                     );
-            var closedExceptByMethod = openExceptByMethod.MakeGenericMethod(elementType, idProperty.PropertyType);
+            var closedExceptByMethod = openExceptByMethod?.MakeGenericMethod(elementType, idProperty.PropertyType);
 
             var insertManyMethod = collectionType
                 .GetMethod(
@@ -139,16 +139,16 @@ namespace Nucleus.Dataloader.Cli
 
             if (data.GetType().IsAssignableTo(collectionType) && result is object[] array)
             {
-                var queryableArray = castMethod.Invoke(null, new object[] { array.AsQueryable() });
+                var queryableArray = castMethod?.Invoke(null, new object[] { array.AsQueryable() });
 
-                var queryableCollection = collectionQueryableMethod.Invoke(null, new object[] { data, null });
-                var collectionIdsQuery = closedArrayQueryMethod.Invoke(null, new object[] { queryableCollection, idSelector });
-                var collectionIds = closedIdToArrayMethod.Invoke(null, new object[] { collectionIdsQuery });
+                var queryableCollection = collectionQueryableMethod.Invoke(null, new object?[] { data, null });
+                var collectionIdsQuery = closedArrayQueryMethod?.Invoke(null, new object?[] { queryableCollection, idSelector });
+                var collectionIds = closedIdToArrayMethod?.Invoke(null, new object?[] { collectionIdsQuery });
 
-                var missingElements = closedExceptByMethod.Invoke(null, new object[] { queryableArray, collectionIds, idSelector });
-                var missingElementsArray = (Array)closedElementToArrayMethod.Invoke(null, new object[] { missingElements });
+                var missingElements = closedExceptByMethod?.Invoke(null, new object?[] { queryableArray, collectionIds, idSelector });
+                var missingElementsArray = (Array?)closedElementToArrayMethod?.Invoke(null, new object?[] { missingElements });
 
-                if (missingElementsArray.Length == 0)
+                if (missingElementsArray?.Length == 0)
                 {
                     _log.LogInformation(
                         $"Imported: no records into {{{nameof(collectionName)}}} from \"{{{nameof(sourceFile)}}}\"",
@@ -158,11 +158,11 @@ namespace Nucleus.Dataloader.Cli
                 }
                 else
                 {
-                    insertManyMethod.Invoke(data, new object[] { missingElementsArray, null, CancellationToken.None });
+                    insertManyMethod?.Invoke(data, new object?[] { missingElementsArray, null, CancellationToken.None });
 
                     _log.LogInformation(
                         $"Imported: #{{count}} into {{{nameof(collectionName)}}} from \"{{{nameof(sourceFile)}}}\"",
-                        missingElementsArray.Length,
+                        missingElementsArray?.Length ?? 0,
                         collectionName,
                         sourceFile
                         );

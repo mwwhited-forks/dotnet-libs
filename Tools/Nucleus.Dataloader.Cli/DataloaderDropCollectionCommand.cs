@@ -18,11 +18,12 @@ namespace Nucleus.Dataloader.Cli
         public int Priority => 5;
 
         public async Task ExecuteAsync(string collectionName, Type elementType, object data, CancellationToken cancellationToken)
-        {            
+        {
             _log.LogInformation($"Deleting: {{{nameof(collectionName)}}}", collectionName);
 
-            var db = (IMongoDatabase)data.GetType().GetProperty("Database").GetValue(data);
-            await db.DropCollectionAsync(collectionName);
+            var db = (IMongoDatabase?)data.GetType().GetProperty("Database")?.GetValue(data);
+            if (db != null)
+                await db.DropCollectionAsync(collectionName, cancellationToken);
 
             _log.LogInformation($"Deleted: {{{nameof(collectionName)}}}", collectionName);
         }

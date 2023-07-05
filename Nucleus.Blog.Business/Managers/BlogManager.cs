@@ -27,9 +27,8 @@ namespace Nucleus.Blog.Business.Managers
         public async Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter)
         {
             blogsFilter.PagingModel ??= PagingModel.Default;
-            PagedResult<BlogModel> result = new PagedResult<BlogModel>();
-            List<BlogModel> blogs = await _blogService.GetPagedAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, false);
-            result = new PagedResult<BlogModel>()
+            var blogs = await _blogService.GetPagedAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, false);
+            var result = new PagedResult<BlogModel>()
             {
                 CurrentPage = blogsFilter.PagingModel.CurrentPage,
                 PageSize = blogsFilter.PagingModel.PageSize,
@@ -48,8 +47,8 @@ namespace Nucleus.Blog.Business.Managers
                     IsSuccess = false,
                     Message = "Missing Required Fields"
                 };
-            ResponseModel<BlogModel?> result = new ResponseModel<BlogModel?>() { IsSuccess = true };
-            if (String.IsNullOrEmpty(blog.BlogId))
+            var result = new ResponseModel<BlogModel?>() { IsSuccess = true };
+            if (string.IsNullOrEmpty(blog.BlogId))
             {
                 blog.CreatedOn = DateTimeOffset.Now;
                 result.Response = await _blogService.CreateAsync(blog);

@@ -10,7 +10,7 @@ namespace Eliassen.System.Configuration
     /// </summary>
     public static class CommandLine
     {
-        private static StringComparer Comparer = StringComparer.InvariantCultureIgnoreCase;
+        private readonly static StringComparer Comparer = StringComparer.InvariantCultureIgnoreCase;
 
         /// <summary>
         /// add additional configurable parameters

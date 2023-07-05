@@ -56,13 +56,13 @@ public class TemplateEngineService : IHostedService
             using var fileWriter = File.Open(outFile, FileMode.Create, FileAccess.Write, FileShare.Read);
 
             var result = await _engine.ApplyAsync(_settings.Template, data, fileWriter);
-            await fileWriter.FlushAsync();
+            await fileWriter.FlushAsync(cancellationToken);
             _log.LogInformation($"Written: {{{nameof(outFile)}}}", outFile);
         }
     }
 
-    private string? GetContent(string fileName) => File.Exists(fileName) ? File.ReadAllText(fileName) : null;
-    private FileTypes? GetFileType(FileTypes? fileTypes, string fileName) =>
+    private static string? GetContent(string fileName) => File.Exists(fileName) ? File.ReadAllText(fileName) : null;
+    private static FileTypes? GetFileType(FileTypes? fileTypes, string fileName) =>
        fileTypes ?? Path.GetExtension(fileName)?.ToLowerInvariant() switch
        {
            ".json" => FileTypes.Json,
@@ -70,7 +70,7 @@ public class TemplateEngineService : IHostedService
            _ => null
        };
 
-    private object? GetData(FileTypes type, string content) =>
+    private static object? GetData(FileTypes type, string content) =>
         type switch
         {
             FileTypes.Json => JsonDocument.Parse(content),

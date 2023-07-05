@@ -244,6 +244,55 @@ value is less greater or equal to provided
 #### NotEqualTo
 value not equal to
 
+## Class: System.Reflection.ReflectionExtensions
+Extensions for reflection and common patterns.
+### Fields
+
+#### PublicProperties
+flag combination to select public instance properties
+#### PublicStaticMethod
+flag combination to select public static methods
+#### PublicInstanceMethod
+flag combination to select public instance methods
+### Methods
+
+
+#### GetKeyValue(System.Object)
+lookup key values for provided entity
+    #####Parameters
+    **item:** 
+
+    ##### Return value
+    
+
+#### MakeSafeArray(System.Type,System.Array)
+safely create new array for a given element type.
+    #####Parameters
+    **type:** 
+
+    **inputs:** 
+
+    ##### Return value
+    
+
+#### MakeSafe(System.Type,System.Object)
+Make safe will try to convert input to target type as best as possible.
+    #####Parameters
+    **type:** 
+
+    **input:** 
+
+    ##### Return value
+    
+
+#### GetShortTypeName(System.Type)
+Type name with full namespace, name and assembly. version is not included
+    #####Parameters
+    **type:** 
+
+    ##### Return value
+    
+
 ## Class: System.Reflection.ResourceExtensions
 Set of extension methods for embedded resources
 ### Methods
@@ -338,6 +387,83 @@ Default hash of input value. Base64 encoded MD5 Hash
 
 
 #### GetHash(System.String)
+
+## Class: System.ServiceCollectionExtensions
+Suggested IOC configurations
+### Methods
+
+
+#### TryAllSystemExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+This will add all available extensions to the IOC container
+    #####Parameters
+    **services:** 
+
+    **config:** 
+
+    ##### Return value
+    
+
+#### TryAddSearchQueryExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Add support for shared SearchQuery Extensions
+    #####Parameters
+    **services:** 
+
+    ##### Return value
+    
+
+#### TrySecurityExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Add support for shared security extensions
+    #####Parameters
+    **services:** 
+
+    ##### Return value
+    
+
+#### TrySerializerExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Add support for shared Serializer
+    #####Parameters
+    **services:** 
+
+    ##### Return value
+    
+
+#### TryTemplatingExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+Add support for shared Templating
+    #####Parameters
+    **services:** 
+
+    **config:** 
+
+    ##### Return value
+    
+
+#### AddAccessor``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Register accessor type that is scoped to as AsyncLocal
+    #####Parameters
+    **services:** 
+
+    ##### Return value
+    
+
+#### AddConfiguration``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+Extend configuration options
+    #####Parameters
+    **services:** 
+
+    **config:** 
+
+    ##### Return value
+    
+
+#### GetSingletonInstance``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,``1@)
+Get singleton instance from IOC container
+    #####Parameters
+    **services:** 
+
+    **instance:** 
+
+    ##### Return value
+    
 
 ## Class: System.Text.Json.BsonIdConverter
 This type converter for System.Text.Json to support BSON ObjectID to JSON safe export/import

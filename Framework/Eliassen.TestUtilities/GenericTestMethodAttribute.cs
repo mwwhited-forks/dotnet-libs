@@ -64,13 +64,13 @@ namespace Eliassen.TestUtilities
                      string name => _wrap.MethodInfo.DeclaringType?.GetMethods()
                            .Where(mi => mi.IsGenericMethod)
                            .Where(mi => mi.Name == name)
-                           .Where(mi => !GenericParameterCount.HasValue || mi.GetGenericArguments().Count() == GenericParameterCount.Value)
+                           .Where(mi => !GenericParameterCount.HasValue || mi.GetGenericArguments().Length == GenericParameterCount.Value)
                            .Select(mi => mi.MakeGenericMethod(_wrap.Arguments?.Select((ta, i) => ta switch
                            {
                                Type t => t,
                                object v => v.GetType(),
                                _ => _wrap.ParameterTypes.Select(p => p.ParameterType).ElementAtOrDefault(i) ?? throw new NotSupportedException()
-                           }).Take(mi.GetGenericArguments().Count()).ToArray() ?? throw new NotSupportedException()))
+                           }).Take(mi.GetGenericArguments().Length).ToArray() ?? throw new NotSupportedException()))
                            .FirstOrDefault(),
                      _ => null
                  } ?? throw new NotSupportedException();

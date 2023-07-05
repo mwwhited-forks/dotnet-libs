@@ -34,7 +34,7 @@ namespace Nucleus.Core.Shared.Business.Managers
 
            string host = "https://nucleusaccnetapi.azurewebsites.net";
 
-           StringBuilder output = new StringBuilder();
+           var output = new StringBuilder();
 
             using (var xml = XmlWriter.Create(output, new XmlWriterSettings { Indent = true }))
             {

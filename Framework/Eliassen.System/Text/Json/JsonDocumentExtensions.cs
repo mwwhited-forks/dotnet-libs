@@ -24,12 +24,12 @@ public static class JsonDocumentExtensions
         var element = document.CreateElement(rootName);
         var children = GetChildren(document, "", json);
 
-        foreach (var child in children)
+        foreach (var (_, node) in children)
         {
-            if (child.node is XmlAttribute attribute)
+            if (node is XmlAttribute attribute)
                 element.Attributes.Append(attribute);
             else
-                element.AppendChild(child.node);
+                element.AppendChild(node);
         }
 
         return document;

@@ -111,16 +111,16 @@ public class SearchQueryOperationFilter : IOperationFilter
                             if (property.Key.Equals(nameof(ISearchQuery.Filter), StringComparison.InvariantCultureIgnoreCase))
                             {
                                 //TODO: ignore filter support for now.
-                                //var fitlerableProperties = ExpressionTreeBuilder.GetFilterablePropertyNames(elementType);
-                                //foreach (var filter in fitlerableProperties)
+                                //var filterableProperties = ExpressionTreeBuilder.GetFilterablePropertyNames(elementType);
+                                //foreach (var filter in filterableProperties)
                                 //{
                                 //    var localFilterSchema = getSchema(filter);
-                                //    foreach (var filtertype in filterSchema.Properties)
+                                //    foreach (var filterType in filterSchema.Properties)
                                 //    {
                                 //        parameters.Add(new OpenApiParameter()
                                 //        {
-                                //            Name = $"{property.Key}.{filter}.{filtertype.Key}",
-                                //            Schema = (filtertype.Key == "in") ? localFilterSchema.array : localFilterSchema.item,
+                                //            Name = $"{property.Key}.{filter}.{filterType.Key}",
+                                //            Schema = (filterType.Key == "in") ? localFilterSchema.array : localFilterSchema.item,
                                 //            In = ParameterLocation.Query,
                                 //        });
                                 //    }
@@ -168,10 +168,10 @@ public class SearchQueryOperationFilter : IOperationFilter
         }
     }
 
-    private OpenApiSchema GetSchema(SchemaRepository repository, OpenApiSchema schema) =>
-        repository.Schemas[schema.Reference.Id];
+    //private OpenApiSchema GetSchema(SchemaRepository repository, OpenApiSchema schema) =>
+    //    repository.Schemas[schema.Reference.Id];
 
-    private OpenApiSchema? UpdateRequestSchema(
+    private static OpenApiSchema? UpdateRequestSchema(
         Type elementType,
         SchemaRepository schemaRepository,
         OpenApiSchema requestSchema,
@@ -215,7 +215,7 @@ public class SearchQueryOperationFilter : IOperationFilter
         return schema;
     }
 
-    private void ApplyContent(
+    private static void ApplyContent(
         IDictionary<string, OpenApiMediaType> content,
         OpenApiReference reference,
         IEnumerable<string> contentTypes

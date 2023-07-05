@@ -7,7 +7,7 @@ namespace Nucleus.Core.Shared.Persistence.Services.ServiceHelpers
 {
     public class BsonContractResolver : DefaultContractResolver
     {
-        public static readonly BsonContractResolver Instance = new BsonContractResolver();
+        public static readonly BsonContractResolver Instance = new();
 
         public BsonContractResolver() =>
             NamingStrategy = new CamelCaseNamingStrategy();

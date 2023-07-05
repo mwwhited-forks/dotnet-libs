@@ -59,9 +59,9 @@ namespace Nucleus.Core.Business.Managers
             // Will make this more robust later through config, but for not we are capturing who owns this document 
             document.DocumentRepository = _config[ConfigKeys.Container.DefaultProvider];
 
-            BlobResponseDto response = await _documentProvider.UploadAsync(document, content);
+            var response = await _documentProvider.UploadAsync(document, content);
 
-            ResponseModel<DocumentModel?> result = new ResponseModel<DocumentModel?>();
+            var result = new ResponseModel<DocumentModel?>();
             if (response.Error == false)
             {
 
@@ -94,8 +94,8 @@ namespace Nucleus.Core.Business.Managers
                     IsSuccess = false,
                     Message = "Missing Required Fields"
                 };
-            DocumentsFilter filter = new DocumentsFilter();
-            DocumentFilterItem filterItem = new DocumentFilterItem
+            var filter = new DocumentsFilter();
+            var filterItem = new DocumentFilterItem
             {
                 DocumentId = id
             };

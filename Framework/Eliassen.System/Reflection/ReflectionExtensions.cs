@@ -140,6 +140,13 @@ public static class ReflectionExtensions
         return default;
     }
 
+    /// <summary>
+    /// Use best possible match for parsing to provided type
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="toParse"></param>
+    /// <param name="parsed"></param>
+    /// <returns></returns>
     public static bool TryParse(this Type? type, string? toParse, out object? parsed)
     {
         if (type == null || string.IsNullOrWhiteSpace(toParse))
@@ -215,18 +222,42 @@ public static class ReflectionExtensions
     public static string GetShortTypeName(this Type type) =>
         $"{type.FullName}, {type.Assembly.GetName().Name}";
 
+    /// <summary>
+    /// Get all attributes for type
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
     public static IEnumerable<Attribute> GetAttributes(this Type type) =>
         TypeDescriptor.GetAttributes(type).OfType<Attribute>();
 
+    /// <summary>
+    /// Get all attributes of selected style for reflected type
+    /// </summary>
+    /// <typeparam name="TAttribute"></typeparam>
+    /// <param name="type"></param>
+    /// <returns></returns>
     public static IEnumerable<TAttribute> GetAttributes<TAttribute>(this Type type) =>
         type.GetAttributes().OfType<TAttribute>();
 
+    /// <summary>
+    /// get property info where attribute matches
+    /// </summary>
+    /// <typeparam name="TAttribute"></typeparam>
+    /// <param name="type"></param>
+    /// <returns></returns>
     public static IEnumerable<PropertyDescriptor> GetPropertiesByAttribute<TAttribute>(this Type type)
         where TAttribute : Attribute =>
         from p in TypeDescriptor.GetProperties(type).OfType<PropertyDescriptor>()
         where p.Attributes.OfType<TAttribute>().Any()
         select p;
 
+    /// <summary>
+    /// get static method
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="methodName"></param>
+    /// <param name="parameterTypes"></param>
+    /// <returns></returns>
     public static MethodInfo? GetStaticMethod(this Type type, string methodName, params Type[] parameterTypes) =>
          type.GetMethod(name: methodName, bindingAttr: PublicStaticMethod, types: parameterTypes) switch
          {
@@ -234,6 +265,13 @@ public static class ReflectionExtensions
              _ => default
          };
 
+    /// <summary>
+    /// get instance method
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="methodName"></param>
+    /// <param name="parameterTypes"></param>
+    /// <returns></returns>
     public static MethodInfo? GetInstanceMethod(this Type type, string methodName, params Type[] parameterTypes) =>
          type.GetMethod(name: methodName, bindingAttr: PublicInstanceMethod, types: parameterTypes) switch
          {
@@ -241,6 +279,11 @@ public static class ReflectionExtensions
              _ => default
          };
 
+    /// <summary>
+    /// get parameters for method
+    /// </summary>
+    /// <param name="method"></param>
+    /// <returns></returns>
     public static IEnumerable<Type> GetParametersTypes(this MethodInfo method) =>
          method.GetParameters().Select(p => p.ParameterType);
 }
