@@ -1,10 +1,12 @@
 ﻿namespace Nucleus.Dataloader.Cli
 {
+    [Flags]
     public enum DataLoaderActions
     {
-        Export,
-        Import,
-        DropCollection,
-        DropCollectionAndImport,
+        Unknown = 0,
+        Export = 1,
+        Import = 2,
+        DropCollection = 4,
+        DropCollectionAndImport = DropCollection | Import,
     }
 }

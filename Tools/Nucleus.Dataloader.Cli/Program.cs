@@ -39,6 +39,12 @@ public class Program
                     .TryAddMongoDatabase<ICoreMongoDatabase>()
                     .TryAddMongoDatabase<IProjectMongoDatabase>()
                     ;
+
+                services.AddTransient<IDataloaderCommandFactory, DataloaderCommandFactory>();
+
+                services.AddTransient<IDataloaderCommand, DataloaderImportCommand>();
+                services.AddTransient<IDataloaderCommand, DataloaderExportCommand>();
+                services.AddTransient<IDataloaderCommand, DataloaderDropCollectionCommand>();
             })
             .StartAsync();
 }
