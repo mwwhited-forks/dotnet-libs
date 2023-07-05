@@ -74,7 +74,7 @@ public class SearchQueryOperationFilter : IOperationFilter
 
                 if (context.ApiDescription.HttpMethod == "POST")
                 {
-                    var schema = UpdateRequestSchema(elementType, context.SchemaRepository, requestSchema, treeBuilder);
+                    var schema = UpdateRequestSchema(context.SchemaRepository, requestSchema, treeBuilder);
 
                     ApplyContent(
                         (operation.RequestBody ??= new OpenApiRequestBody()).Content,
@@ -87,10 +87,10 @@ public class SearchQueryOperationFilter : IOperationFilter
                 }
                 else
                 {
-                    var request = UpdateRequestSchema(elementType, context.SchemaRepository, requestSchema, treeBuilder);
+                    var request = UpdateRequestSchema(context.SchemaRepository, requestSchema, treeBuilder);
 
                     context.SchemaRepository.TryLookupByType(typeof(FilterParameter), out var filterSchemaReference);
-                    var filterSchema = UpdateRequestSchema(elementType, context.SchemaRepository, filterSchemaReference, treeBuilder);
+                    var filterSchema = UpdateRequestSchema(context.SchemaRepository, filterSchemaReference, treeBuilder);
 
                     context.SchemaRepository.TryLookupByType(typeof(OrderDirections), out var orderSchema);
 
@@ -172,7 +172,6 @@ public class SearchQueryOperationFilter : IOperationFilter
     //    repository.Schemas[schema.Reference.Id];
 
     private static OpenApiSchema? UpdateRequestSchema(
-        Type elementType,
         SchemaRepository schemaRepository,
         OpenApiSchema requestSchema,
         IExpressionTreeBuilder treeBuilder

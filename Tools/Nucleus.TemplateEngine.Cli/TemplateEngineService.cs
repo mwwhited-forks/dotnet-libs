@@ -26,9 +26,11 @@ public class TemplateEngineService : IHostedService
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
+#pragma warning disable CA2208 // Instantiate argument exceptions correctly
         if (string.IsNullOrWhiteSpace(_settings.InputFile)) throw new ArgumentNullException(nameof(_settings.InputFile));
         if (string.IsNullOrWhiteSpace(_settings.Template)) throw new ArgumentNullException(nameof(_settings.Template));
         if (string.IsNullOrWhiteSpace(_settings.OutputFile)) throw new ArgumentNullException(nameof(_settings.OutputFile));
+#pragma warning restore CA2208 // Instantiate argument exceptions correctly
 
         var inputPath = Path.GetFullPath(Path.GetDirectoryName(_settings.InputFile) ?? ".");
         var inputFile = Path.GetFileName(_settings.InputFile);

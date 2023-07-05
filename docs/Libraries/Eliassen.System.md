@@ -285,10 +285,78 @@ Make safe will try to convert input to target type as best as possible.
     ##### Return value
     
 
+#### TryParse(System.Type,System.String,System.Object@)
+Use best possible match for parsing to provided type
+    #####Parameters
+    **type:** 
+
+    **toParse:** 
+
+    **parsed:** 
+
+    ##### Return value
+    
+
 #### GetShortTypeName(System.Type)
 Type name with full namespace, name and assembly. version is not included
     #####Parameters
     **type:** 
+
+    ##### Return value
+    
+
+#### GetAttributes(System.Type)
+Get all attributes for type
+    #####Parameters
+    **type:** 
+
+    ##### Return value
+    
+
+#### GetAttributes``1(System.Type)
+Get all attributes of selected style for reflected type
+    #####Parameters
+    **type:** 
+
+    ##### Return value
+    
+
+#### GetPropertiesByAttribute``1(System.Type)
+get property info where attribute matches
+    #####Parameters
+    **type:** 
+
+    ##### Return value
+    
+
+#### GetStaticMethod(System.Type,System.String,System.Type[])
+get static method
+    #####Parameters
+    **type:** 
+
+    **methodName:** 
+
+    **parameterTypes:** 
+
+    ##### Return value
+    
+
+#### GetInstanceMethod(System.Type,System.String,System.Type[])
+get instance method
+    #####Parameters
+    **type:** 
+
+    **methodName:** 
+
+    **parameterTypes:** 
+
+    ##### Return value
+    
+
+#### GetParametersTypes(System.Reflection.MethodInfo)
+get parameters for method
+    #####Parameters
+    **method:** 
 
     ##### Return value
     
@@ -465,6 +533,15 @@ Get singleton instance from IOC container
     ##### Return value
     
 
+## Class: System.Text.Json.BsonDateConverter
+System.Text.Json converter to support BsonDatetimeOffset
+### Methods
+
+
+#### Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+
+#### Write(System.Text.Json.Utf8JsonWriter,System.DateTimeOffset,System.Text.Json.JsonSerializerOptions)
+
 ## Class: System.Text.Json.BsonIdConverter
 This type converter for System.Text.Json to support BSON ObjectID to JSON safe export/import
 ### Methods
@@ -489,12 +566,62 @@ Convert System.Test.Json.JsonDocument to System.Xml.XmlDocument
     ##### Return value
     
 
+## Class: System.Text.Json.Serialization.DefaultJsonSerializer
+Default serializer for JSON
+### Fields
+
+#### DefaultContentType
+
+### Properties
+
+#### DefaultOptions
+
+#### ContentType
+
+### Methods
+
+
+####Constructor
+
+#### Serialize``1(``0)
+
+#### Serialize(System.Object,System.Type)
+
+#### SerializeAsync``1(``0,System.IO.Stream,System.Threading.CancellationToken)
+
+#### SerializeAsync(System.Object,System.Type,System.IO.Stream,System.Threading.CancellationToken)
+
+#### Deserialize``1(System.IO.Stream)
+
+#### Deserialize(System.IO.Stream,System.Type)
+
+#### DeserializeAsync``1(System.IO.Stream,System.Threading.CancellationToken)
+
+#### DeserializeAsync(System.IO.Stream,System.Type,System.Threading.CancellationToken)
+
+#### Deserialize``1(System.String)
+
+#### Deserialize(System.String,System.Type)
+
 ## Class: System.Text.Templating.FileTemplateSource
 Access template from file system
 ### Methods
 
 
+####Constructor
+
 #### Get(System.String)
+
+## Class: System.Text.Templating.FileTemplatingSettings
+Configuration settings for file templating engine
+### Properties
+
+#### TemplatePath
+template source path
+#### SandboxPath
+sandbox root path
+#### Priority
+template priority
 
 ## Class: System.Text.Templating.TemplateEngine
 Generate templating engine that will try to use best match for source and provider
