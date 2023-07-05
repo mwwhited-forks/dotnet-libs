@@ -30,6 +30,10 @@ namespace Eliassen.System.ResponseModel
         }
 
         private static ICaptureResultMessage? _default;
+
+        /// <summary>
+        /// Default instance for CaptureResultMessage
+        /// </summary>
         public static ICaptureResultMessage Default => _default ??= new CaptureResultMessage();
     }
 }

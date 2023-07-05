@@ -16,8 +16,17 @@ using System.Linq;
 
 namespace Eliassen.System
 {
+    /// <summary>
+    /// Suggested IOC configurations
+    /// </summary>
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// This will add all available extensions to the IOC container
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="config"></param>
+        /// <returns></returns>
         public static IServiceCollection TryAllSystemExtensions(this IServiceCollection services, IConfiguration config) =>
             services
             .TryAddSearchQueryExtensions()
@@ -26,6 +35,11 @@ namespace Eliassen.System
             .TrySerializerExtensions()
             ;
 
+        /// <summary>
+        /// Add support for shared SearchQuery Extensions
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection TryAddSearchQueryExtensions(this IServiceCollection services)
         {
             services.TryAddTransient(typeof(IQueryBuilder<>), typeof(QueryBuilder<>));
@@ -36,12 +50,22 @@ namespace Eliassen.System
             return services;
         }
 
+        /// <summary>
+        /// Add support for shared security extensions
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection TrySecurityExtensions(this IServiceCollection services)
         {
             services.TryAddTransient<IHash, Hash>();
             return services;
         }
 
+        /// <summary>
+        /// Add support for shared Serializer
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection TrySerializerExtensions(this IServiceCollection services)
         {
             services.TryAddSingleton<ISerializer>(sp => sp.GetRequiredService<IJsonSerializer>());
@@ -51,6 +75,12 @@ namespace Eliassen.System
             return services;
         }
 
+        /// <summary>
+        /// Add support for shared Templating
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="config"></param>
+        /// <returns></returns>
         public static IServiceCollection TryTemplatingExtensions(this IServiceCollection services, IConfiguration config)
         {
             services.TryAddTransient<ITemplateEngine, TemplateEngine>();
@@ -77,12 +107,6 @@ namespace Eliassen.System
             where TService : class
         {
             services.TryAddSingleton(typeof(IAccessor<>), typeof(Accessor<>));
-//#pragma warning disable CS8634 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match 'class' constraint.
-//#pragma warning disable CS8621 // Nullability of reference types in return type doesn't match the target delegate (possibly because of nullability attributes).
-//            services.TryAddTransient(sp => sp.GetRequiredService<IAccessor<TService>>().Value);
-//#pragma warning restore CS8621 // Nullability of reference types in return type doesn't match the target delegate (possibly because of nullability attributes).
-//#pragma warning restore CS8634 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match 'class' constraint.
-
             return services;
         }
 

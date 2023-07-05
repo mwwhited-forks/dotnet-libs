@@ -207,7 +207,21 @@ Expression visitor to replace string functions with the matching functions that 
 
 ####Constructor
 
+#### VisitBinary(System.Linq.Expressions.BinaryExpression)
+Replace `string == string` with `string.Equals(string, StringComparison)`
+    #####Parameters
+    **node:** 
+
+    ##### Return value
+    
+
 #### VisitMethodCall(System.Linq.Expressions.MethodCallExpression)
+Replace `string.Xyz(string)` with `string.Xyz(string, StringComparison)`
+    #####Parameters
+    **input:** 
+
+    ##### Return value
+    
 
 ## Class: System.Linq.Search.Operators
 Expression builder operator options
@@ -314,6 +328,37 @@ Get first matched on
     **principal:** 
 
     **claims:** 
+
+    ##### Return value
+    
+
+## Class: System.Security.Cryptography.Hash
+Default hash of input value. Base64 encoded MD5 Hash
+### Methods
+
+
+#### GetHash(System.String)
+
+## Class: System.Text.Json.BsonIdConverter
+This type converter for System.Text.Json to support BSON ObjectID to JSON safe export/import
+### Methods
+
+
+#### Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+
+#### Write(System.Text.Json.Utf8JsonWriter,System.String,System.Text.Json.JsonSerializerOptions)
+
+## Class: System.Text.Json.JsonDocumentExtensions
+shared extension methods for System.Text.Json
+### Methods
+
+
+#### ToXmlDocument(System.Text.Json.JsonElement,System.String)
+Convert System.Test.Json.JsonDocument to System.Xml.XmlDocument
+    #####Parameters
+    **json:** 
+
+    **rootName:** 
 
     ##### Return value
     
