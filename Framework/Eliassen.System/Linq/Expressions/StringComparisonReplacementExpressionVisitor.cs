@@ -2,6 +2,7 @@
 using Eliassen.System.Internal;
 using Microsoft.Extensions.Logging;
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -24,6 +25,33 @@ namespace Eliassen.System.Linq.Expressions
         {
             _logger = logger ?? new ConsoleLogger<StringComparisonReplacementExpressionVisitor>();
             _stringComparison = stringComparison;
+        }
+
+        protected override Expression VisitBinary(BinaryExpression node)
+        {
+            var declaringType = node.Method?.DeclaringType;
+            if (declaringType != typeof(string))
+                goto done;
+
+            if (!(node.Method?.IsSpecialName ?? false) || node.Method?.Name != "op_Equality")
+                goto done;
+
+            var typeArgs = new[]
+            {
+                typeof(string),
+                typeof(StringComparison),
+            };
+
+            var method = declaringType.GetMethod(nameof(String.Equals), typeArgs);
+            if (method == null)
+                goto done;
+
+            var replacement = Expression.Call(node.Left, method, node.Right, Expression.Constant(_stringComparison));
+
+            return replacement;
+
+        done:
+            return base.VisitBinary(node);
         }
 
         /// <inheritdoc/>
