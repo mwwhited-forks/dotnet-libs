@@ -8,8 +8,65 @@ IAccessor[T] is a type that allows for a instance to be bound to a async context
 #### Value
 accessible value
 
+## Class: System.ComponentModel.EndStateAttribute
+this attribute tags valid end states for enum based state machines
+
+## Class: System.ComponentModel.EnumValueAttribute
+output enum string as this value when serialized as json
+### Properties
+
+#### Name
+value to output in place of Enum.ToString() with Json Serializer
+### Methods
+
+
+####Constructor
+
+## Class: System.ComponentModel.Search.DefaultSortAttribute
+part of default sort for entity
+### Properties
+
+#### TargetName
+property name to use for mapping
+#### Priority
+sort column position priority
+#### Order
+direction to order this mapped column
+### Methods
+
+
+####Constructor
+
+####Constructor
+
 ## Class: System.ComponentModel.Search.FilterableAttribute
 Allow tagging entity classes to enumerate filterable fields/properties.
+### Properties
+
+#### TargetName
+column mapping override
+### Methods
+
+
+####Constructor
+
+####Constructor
+
+## Class: System.ComponentModel.Search.IgnoreStringComparisonReplacementAttribute
+exclude from string comparison replacement visitor
+
+## Class: System.ComponentModel.Search.ISearchQueryIntercept
+Provide entry point to commonly intercept and override search definitions. Example
+### Methods
+
+
+#### Intercept(Eliassen.System.Linq.Search.ISearchQuery)
+modify or pass though search query before processing.
+    #####Parameters
+    **searchQuery:** 
+
+    ##### Return value
+    
 
 ## Class: System.ComponentModel.Search.NotFilterableAttribute
 Explicitly exclude fields from filter selection.
@@ -39,6 +96,25 @@ Target name required only if this is used on the class
 ####Constructor
 
 ####Constructor
+
+## Class: System.ComponentModel.Search.SearchTermDefaultAttribute
+provide the ability to control how search terms are handled if not wilded carded
+### Properties
+
+#### Default
+rule to use for provided search term if not quoted
+### Methods
+
+
+####Constructor
+
+#### Intercept(Eliassen.System.Linq.Search.ISearchQuery)
+use the `Default` to control pattern for searches without provided wild cards
+    #####Parameters
+    **searchQuery:** 
+
+    ##### Return value
+    
 
 ## Class: System.Linq.Search.FilterParameter
 Filter parameter
