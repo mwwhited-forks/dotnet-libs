@@ -14,8 +14,20 @@ using System.Threading.Tasks;
 
 namespace Eliassen.TestUtilities
 {
-    public static class TextContextExtensions
+    /// <summary>
+    /// Extensions for TestContext 
+    /// </summary>
+    public static class TestContextExtensions
     {
+        /// <summary>
+        /// serialize an object to the test results for a given test run
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="value"></param>
+        /// <param name="caller"></param>
+        /// <param name="callerLine"></param>
+        /// <param name="callerFile"></param>
+        /// <returns></returns>
         public static TestContext? AddResult(
             this TestContext? context,
             object? value,
@@ -25,6 +37,9 @@ namespace Eliassen.TestUtilities
             ) =>
             context.AddResult(value, out var _, caller, callerLine, callerFile);
 
+        /// <summary>
+        /// serialize an object to the test results for a given test run
+        /// </summary>
         public static TestContext? AddResult(
             this TestContext? context,
             object? value,
@@ -35,6 +50,10 @@ namespace Eliassen.TestUtilities
             ) =>
             context.AddResult(value, "", out outFile, caller, callerLine, callerFile);
 
+
+        /// <summary>
+        /// serialize an object to the test results for a given test run
+        /// </summary>
         public static TestContext? AddResult(
             this TestContext? context,
             object? value,
@@ -45,6 +64,9 @@ namespace Eliassen.TestUtilities
             ) =>
             context.AddResult(value, fileName, out _, caller, callerLine, callerFile);
 
+        /// <summary>
+        /// serialize an object to the test results for a given test run
+        /// </summary>
         public static TestContext? AddResult(
             this TestContext? context,
             object? value,
@@ -140,7 +162,16 @@ namespace Eliassen.TestUtilities
             return context;
         }
 
-        public static TestContext AddResultFile(this TestContext context, string fileName, byte[] content) => context.AddResultFile(fileName, content, out var _);
+        /// <summary>
+        /// serialize an object to the test results for a given test run
+        /// </summary>
+        public static TestContext AddResultFile(this TestContext context, string fileName, byte[] content) => 
+            context.AddResultFile(fileName, content, out var _);
+
+
+        /// <summary>
+        /// serialize an object to the test results for a given test run
+        /// </summary>
         public static TestContext AddResultFile(this TestContext context, string fileName, byte[] content, out string outFile)
         {
             outFile = Path.Combine(context.TestRunResultsDirectory ?? ".", fileName);
@@ -152,9 +183,20 @@ namespace Eliassen.TestUtilities
             return context;
         }
 
+        /// <summary>
+        /// deserialize test data from embedded resources
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="type"></param>
+        /// <param name="target"></param>
+        /// <param name="serviceProvider"></param>
+        /// <returns></returns>
         public static object? GetTestData(this TestContext? context, Type type, string? target = null, IServiceProvider? serviceProvider = null) =>
             context.GetTestDataAsync(type, target, serviceProvider).GetAwaiter().GetResult();
 
+        /// <summary>
+        /// deserialize test data from embedded resources
+        /// </summary>
         public static async Task<object?> GetTestDataAsync(this TestContext? context, Type type, string? target = null, IServiceProvider? serviceProvider = null)
         {
             if (type == null) return null;
@@ -226,16 +268,32 @@ namespace Eliassen.TestUtilities
             return result;
         }
 
+        /// <summary>
+        /// deserialize test data from embedded resources
+        /// </summary>
         public static async Task<T?> GetTestDataAsync<T>(this TestContext context, string? target = null, IServiceProvider? serviceProvider = null) where T : class =>
             (T?)await context.GetTestDataAsync(typeof(T), target, serviceProvider);
 
+        /// <summary>
+        /// get simplified name for executing test
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public static string GetQualifiedTestName(this TestContext context) =>
             $"{context.FullyQualifiedTestClassName}+{context?.TestName}";
 
+        /// <summary>
+        /// get path for test results folder for the executing test
+        /// </summary>
         public static IEnumerable<string> GetTestRunResultFiles(this TestContext context) =>
             Directory.EnumerateDirectories(context.TestRunResultsDirectory ?? ".");
 
-
+        /// <summary>
+        /// get current type from test context
+        /// </summary>
+        /// <param name="testContext"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         public static Type ResolveTestType(this TestContext testContext)
         {
             return resolveType() ?? throw new InvalidOperationException($"Unable to resolve type class for {testContext.FullyQualifiedTestClassName}");
@@ -248,30 +306,6 @@ namespace Eliassen.TestUtilities
                             select type;
                 return query.FirstOrDefault();
             }
-        }
-
-        public static string[] GetResourcePrefixes(this TestContext? testContext)
-        {
-            var testClass = testContext?.ResolveTestType();
-            var assemblyName = testClass?.Assembly.GetName().Name;
-
-            return new[]
-            {
-                $"{testClass?.FullName}.{testContext?.TestName}",
-                $"{testClass?.FullName}.{testContext?.TestName}.data",
-
-                $"{testClass?.FullName}",
-                $"{testClass?.FullName}.data",
-
-                $"{testClass?.Namespace}",
-                $"{testClass?.Namespace}.data",
-
-                $"{assemblyName}.data",
-
-                $"{assemblyName}.dataLoading.config_base", //TODO: should probably do something smarter here
-                $"{assemblyName}.dataLoading.config_demoSet1",
-                $"{assemblyName}.dataLoading.transaction_demoSet1",
-            };
         }
     }
 }
