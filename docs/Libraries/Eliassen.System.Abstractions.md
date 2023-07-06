@@ -17,10 +17,6 @@ output enum string as this value when serialized as json
 
 #### Name
 value to output in place of Enum.ToString() with Json Serializer
-### Methods
-
-
-####Constructor
 
 ## Class: System.ComponentModel.Search.DefaultSortAttribute
 part of default sort for entity
@@ -32,12 +28,6 @@ property name to use for mapping
 sort column position priority
 #### Order
 direction to order this mapped column
-### Methods
-
-
-####Constructor
-
-####Constructor
 
 ## Class: System.ComponentModel.Search.FilterableAttribute
 Allow tagging entity classes to enumerate filterable fields/properties.
@@ -45,12 +35,6 @@ Allow tagging entity classes to enumerate filterable fields/properties.
 
 #### TargetName
 column mapping override
-### Methods
-
-
-####Constructor
-
-####Constructor
 
 ## Class: System.ComponentModel.Search.IgnoreStringComparisonReplacementAttribute
 exclude from string comparison replacement visitor
@@ -77,12 +61,6 @@ explicitly exclude properties from search
 
 #### TargetName
 Target name required only if this is used on the class
-### Methods
-
-
-####Constructor
-
-####Constructor
 
 ## Class: System.ComponentModel.Search.SearchableAttribute
 include field to be searchable for "SearchTerm"
@@ -90,12 +68,6 @@ include field to be searchable for "SearchTerm"
 
 #### TargetName
 Target name required only if this is used on the class
-### Methods
-
-
-####Constructor
-
-####Constructor
 
 ## Class: System.ComponentModel.Search.SearchTermDefaultAttribute
 provide the ability to control how search terms are handled if not wilded carded
@@ -105,8 +77,6 @@ provide the ability to control how search terms are handled if not wilded carded
 rule to use for provided search term if not quoted
 ### Methods
 
-
-####Constructor
 
 #### Intercept(Eliassen.System.Linq.Search.ISearchQuery)
 use the `Default` to control pattern for searches without provided wild cards
@@ -134,10 +104,6 @@ This allows for providing a set of values where the value from the queries data 
 `Less than`
 #### LessThanOrEqualTo
 `Less than or equal to`
-### Methods
-
-
-#### ToString
 
 ## Class: System.Linq.Search.OrderDirections
 Enumeration to control sort order
@@ -147,14 +113,6 @@ Enumeration to control sort order
 sort related items in ascending order
 #### Descending
 sort related items in descending order
-#### 
-
-#### 
-
-#### 
-
-#### 
-
 
 ## Class: System.ResponseModel.MessageLevels
 response message level

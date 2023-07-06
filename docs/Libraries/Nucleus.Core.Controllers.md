@@ -6,8 +6,6 @@ This controller is used for admin management of user accounts
 ### Methods
 
 
-####Constructor
-
 #### SaveUser(Nucleus.Core.Contracts.Models.UserAction)
 Save user profile
     #####Parameters

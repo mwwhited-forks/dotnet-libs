@@ -193,19 +193,11 @@ Rebuild dictionary to use a different IEqualityComparer{TKey}
 
 ## Class: System.Linq.Expressions.ExpressionExtensions
 Extensions for System.Linq.Expressions.Expression
-### Methods
-
-
-#### OrElse``1(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}}})
-
-#### AndAlso``1(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}}})
 
 ## Class: System.Linq.Expressions.StringComparisonReplacementExpressionVisitor
 Expression visitor to replace string functions with the matching functions that end with a StringComparison parameter
 ### Methods
 
-
-####Constructor
 
 #### VisitBinary(System.Linq.Expressions.BinaryExpression)
 Replace `string == string` with `string.Equals(string, StringComparison)`
@@ -451,10 +443,6 @@ Get first matched on
 
 ## Class: System.Security.Cryptography.Hash
 Default hash of input value. Base64 encoded MD5 Hash
-### Methods
-
-
-#### GetHash(System.String)
 
 ## Class: System.ServiceCollectionExtensions
 Suggested IOC configurations
@@ -535,21 +523,9 @@ Get singleton instance from IOC container
 
 ## Class: System.Text.Json.BsonDateConverter
 System.Text.Json converter to support BsonDatetimeOffset
-### Methods
-
-
-#### Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-
-#### Write(System.Text.Json.Utf8JsonWriter,System.DateTimeOffset,System.Text.Json.JsonSerializerOptions)
 
 ## Class: System.Text.Json.BsonIdConverter
 This type converter for System.Text.Json to support BSON ObjectID to JSON safe export/import
-### Methods
-
-
-#### Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-
-#### Write(System.Text.Json.Utf8JsonWriter,System.String,System.Text.Json.JsonSerializerOptions)
 
 ## Class: System.Text.Json.JsonDocumentExtensions
 shared extension methods for System.Text.Json
@@ -568,49 +544,9 @@ Convert System.Test.Json.JsonDocument to System.Xml.XmlDocument
 
 ## Class: System.Text.Json.Serialization.DefaultJsonSerializer
 Default serializer for JSON
-### Fields
-
-#### DefaultContentType
-
-### Properties
-
-#### DefaultOptions
-
-#### ContentType
-
-### Methods
-
-
-####Constructor
-
-#### Serialize``1(``0)
-
-#### Serialize(System.Object,System.Type)
-
-#### SerializeAsync``1(``0,System.IO.Stream,System.Threading.CancellationToken)
-
-#### SerializeAsync(System.Object,System.Type,System.IO.Stream,System.Threading.CancellationToken)
-
-#### Deserialize``1(System.IO.Stream)
-
-#### Deserialize(System.IO.Stream,System.Type)
-
-#### DeserializeAsync``1(System.IO.Stream,System.Threading.CancellationToken)
-
-#### DeserializeAsync(System.IO.Stream,System.Type,System.Threading.CancellationToken)
-
-#### Deserialize``1(System.String)
-
-#### Deserialize(System.String,System.Type)
 
 ## Class: System.Text.Templating.FileTemplateSource
 Access template from file system
-### Methods
-
-
-####Constructor
-
-#### Get(System.String)
 
 ## Class: System.Text.Templating.FileTemplatingSettings
 Configuration settings for file templating engine
@@ -625,15 +561,3 @@ template priority
 
 ## Class: System.Text.Templating.TemplateEngine
 Generate templating engine that will try to use best match for source and provider
-### Methods
-
-
-####Constructor
-
-#### ApplyAsync(System.String,System.Object,System.IO.Stream)
-
-#### ApplyAsync(Eliassen.System.Text.Templating.ITemplateContext,System.Object,System.IO.Stream)
-
-#### Get(System.String)
-
-#### GetAll(System.String)

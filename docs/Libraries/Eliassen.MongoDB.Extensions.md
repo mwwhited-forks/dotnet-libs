@@ -7,21 +7,9 @@ declarative attribute for labeling properties as MongoDB Collections
 
 #### CollectionName
 Name to use for MongoDB collection
-#### TypeId
-
-### Methods
-
-
-####Constructor
 
 ## Class: MongoDB.Extensions.DefaultMongoDatabaseSettings
 Default connection information for MongoDatabases, Duplicating this class with a different ConfigurationSectionAttribute value will allow for declaring secondary connection configurations
-### Properties
-
-#### ConnectionString
-
-#### DatabaseName
-
 
 ## Class: MongoDB.Extensions.IMongoDatabaseFactory
 provide a centralized means to created MongoDB instances

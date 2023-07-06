@@ -17,7 +17,7 @@
 		<xsl:text># </xsl:text>
 		<xsl:value-of select="name"/>
 		<xsl:text>&cr;</xsl:text>
-		<xsl:apply-templates select="//member[contains(@name,'T:')]"/>
+		<xsl:apply-templates select="//member[contains(@name,'T:') and not (descendant::inheritdoc)]"/>
 	</xsl:template>
 
 	<!-- Type template -->
@@ -40,11 +40,11 @@
 		<xsl:apply-templates />
 
 		<!-- Fields -->
-		<xsl:if test="//member[contains(@name,concat('F:',$FullMemberName))]">
+		<xsl:if test="//member[contains(@name,concat('F:',$FullMemberName)) and not (descendant::inheritdoc)]">
 			<xsl:text>&cr;### Fields</xsl:text>
 			<xsl:text>&cr;</xsl:text>
 
-			<xsl:for-each select="//member[contains(@name,concat('F:',$FullMemberName))]">
+			<xsl:for-each select="//member[contains(@name,concat('F:',$FullMemberName)) and not (descendant::inheritdoc)]">
 				<xsl:text>&cr;#### </xsl:text>
 				<xsl:value-of select="substring-after(@name, concat('F:',$FullMemberName,'.'))"/>
 				<xsl:text>&cr;</xsl:text>
@@ -53,11 +53,11 @@
 		</xsl:if>
 
 		<!-- Properties -->
-		<xsl:if test="//member[contains(@name,concat('P:',$FullMemberName))]">
+		<xsl:if test="//member[contains(@name,concat('P:',$FullMemberName)) and not (descendant::inheritdoc)]">
 			<xsl:text>&cr;### Properties</xsl:text>
 			<xsl:text>&cr;</xsl:text>
 
-			<xsl:for-each select="//member[contains(@name,concat('P:',$FullMemberName))]">
+			<xsl:for-each select="//member[contains(@name,concat('P:',$FullMemberName)) and not (descendant::inheritdoc)]">
 				<xsl:text>&cr;#### </xsl:text>
 				<xsl:value-of select="substring-after(@name, concat('P:',$FullMemberName,'.'))"/>
 				<xsl:text>&cr;</xsl:text>
@@ -66,11 +66,11 @@
 		</xsl:if>
 
 		<!-- Methods -->
-		<xsl:if test="//member[contains(@name,concat('M:',$FullMemberName))]">
+		<xsl:if test="//member[contains(@name,concat('M:',$FullMemberName)) and not (descendant::inheritdoc)]">
 			<xsl:text>&cr;### Methods</xsl:text>
 			<xsl:text>&cr;</xsl:text>
 
-			<xsl:for-each select="//member[contains(@name,concat('M:',$FullMemberName))]">
+			<xsl:for-each select="//member[contains(@name,concat('M:',$FullMemberName)) and not (descendant::inheritdoc)]">
 
 				<!-- If this is a constructor, display the type name (instead of "#ctor"), or display the method name -->
 				<xsl:choose>
