@@ -143,6 +143,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{26D6201D-8
 		docs\swagger.yaml = docs\swagger.yaml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{7796027A-C66D-46FD-867E-5751E7FADE50}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Libraries\Eliassen.AspNetCore.Mvc.md = docs\Libraries\Eliassen.AspNetCore.Mvc.md
+		docs\Libraries\Eliassen.MongoDB.Extensions.md = docs\Libraries\Eliassen.MongoDB.Extensions.md
+		docs\Libraries\Eliassen.System.Abstractions.md = docs\Libraries\Eliassen.System.Abstractions.md
+		docs\Libraries\Eliassen.System.md = docs\Libraries\Eliassen.System.md
+		docs\Libraries\Nucleus.Blog.Controllers.md = docs\Libraries\Nucleus.Blog.Controllers.md
+		docs\Libraries\Nucleus.Core.Controllers.md = docs\Libraries\Nucleus.Core.Controllers.md
+		docs\Libraries\Nucleus.Core.Shared.Controllers.md = docs\Libraries\Nucleus.Core.Shared.Controllers.md
+		docs\Libraries\Nucleus.Lesson.Controllers.md = docs\Libraries\Nucleus.Lesson.Controllers.md
+		docs\Libraries\Nucleus.Project.Controllers.md = docs\Libraries\Nucleus.Project.Controllers.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{E6BCF7BB-2130-43E9-960F-EBE6C79BDDD8}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Framework\CultureInfoMiddleware.md = docs\Framework\CultureInfoMiddleware.md
+		docs\Framework\CultureInfoMiddleware.pdf = docs\Framework\CultureInfoMiddleware.pdf
+		docs\Framework\SearchQueryMiddleware.md = docs\Framework\SearchQueryMiddleware.md
+		docs\Framework\SearchQueryMiddleware.pdf = docs\Framework\SearchQueryMiddleware.pdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{04470E53-0CD0-4AA0-BFE0-C28DDE5C34B3}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Framework\Design\DynamicSearchFilter.md = docs\Framework\Design\DynamicSearchFilter.md
+		docs\Framework\Design\DynamicSearchFilter.pdf = docs\Framework\Design\DynamicSearchFilter.pdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -331,6 +358,9 @@ Global
 		{A020AC66-3934-4529-B661-DDD79AE7A43B} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{FA9DEE5A-48BF-478D-ABBB-1300660FB786} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{26D6201D-81AD-4596-BEE5-DE42FC5EE58D} = {6BEF035F-ABDF-47D9-B230-B88FEE87B53B}
+		{7796027A-C66D-46FD-867E-5751E7FADE50} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
+		{E6BCF7BB-2130-43E9-960F-EBE6C79BDDD8} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
+		{04470E53-0CD0-4AA0-BFE0-C28DDE5C34B3} = {E6BCF7BB-2130-43E9-960F-EBE6C79BDDD8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

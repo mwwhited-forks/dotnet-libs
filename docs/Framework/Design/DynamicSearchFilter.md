@@ -9,7 +9,7 @@ development it was determined to create a common design pattern for all data que
 There was a preference to use existing off-the-shelf protocols and libraries as a means to provide
 this data querying functionality.  Before designing this feature existing protocols were reviewed 
 as such as OData and GraphQL.  Various limitations such as complexity in implementation and potential 
-exposure personally identifyable information it was determined an in-house solution was required.  
+exposure personally identifiable information it was determined an in-house solution was required.  
 
 ## Design Goals and Use Cases
 
@@ -19,7 +19,7 @@ exposure personally identifyable information it was determined an in-house solut
   * Part of the URI path may be used to select the named endpoint
   * Search term may be used to select rows from multiple columns within the database
   * Filter rules may be used to select rows based on a particular field within the dataset
-    * equal, not equal, wildcard (starts with, ends with, contains)
+    * equal, not equal, wild card (starts with, ends with, contains)
     * unbounded and bounded ranges
     * set value matching
 * Multiple field sorting with the ability to select direction and priority order
@@ -31,7 +31,7 @@ exposure personally identifyable information it was determined an in-house solut
 * Define Query Request Model
 * Define Paged Result Models
 * Define Patterns for Filter
-* Define Wildcard expressions
+* Define Wild card expressions
 * Define Patterns for Sort Order
 * Define Patterns for Paging Request
 * Extend ASP.Net Middleware to intercept and extends `IQueryable<>` returns from Controller/Actions
