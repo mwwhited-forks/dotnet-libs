@@ -80,6 +80,40 @@ sort related items in descending order
 #### 
 
 
+## Class: System.ResponseModel.MessageLevels
+response message level
+### Fields
+
+#### Trace
+extra detailed information
+#### Debug
+information to assist in troubleshooting
+#### Information
+extra information about process
+#### Warning
+notifications and assumptions about processing that did not effect output
+#### Error
+errors that caused the system to not complete your request as you may have expected
+#### Critical
+information about processing that failed
+#### None
+unknown value
+
+## Class: System.ResponseModel.ResultMessage
+additional details about response
+### Properties
+
+#### Level
+importance level related to response
+#### Message
+Simple English message about issue.
+#### MessageCode
+unique code that may be used to assist in translating issue
+#### Context
+Property or path related to this message
+#### MetaData
+additional properties related to response
+
 ## Class: System.Security.Cryptography.IHash
 Simplified hash generator
 ### Methods
@@ -92,3 +126,122 @@ cryptographic has for input value
 
     ##### Return value
     hash input
+
+## Class: System.Text.Json.Serialization.IJsonSerializer
+interface to identify shared JSON serialization process.
+
+## Class: System.Text.Xml.Serialization.IXmlSerializer
+interface to identify shared XML serialization process.
+
+## Class: Dataloader.Cli.ISerializer
+Interface to identify shared serialization process.
+### Properties
+
+#### ContentType
+Content type supported by this serializer
+### Methods
+
+
+#### Serialize(System.Object,System.Type)
+convert the object based on the type definition
+    #####Parameters
+    **obj:** object to serialize
+
+    **type:** template model to serialize
+
+    ##### Return value
+    
+
+#### Serialize``1(``0)
+convert the object based on the type definition
+    #####Parameters
+    **obj:** object to serialize
+
+    ##### Return value
+    
+
+#### SerializeAsync(System.Object,System.Type,System.IO.Stream,System.Threading.CancellationToken)
+convert the object based on the type definition
+    #####Parameters
+    **obj:** object to serialize
+
+    **type:** template model to serialize
+
+    **stream:** 
+
+    **cancellationToken:** 
+
+    ##### Return value
+    
+
+#### SerializeAsync``1(``0,System.IO.Stream,System.Threading.CancellationToken)
+convert the object based on the type definition
+    #####Parameters
+    **obj:** object to serialize
+
+    **stream:** 
+
+    **cancellationToken:** 
+
+    ##### Return value
+    
+
+#### Deserialize``1(System.IO.Stream)
+convert stream into object
+    #####Parameters
+    **stream:** 
+
+    ##### Return value
+    
+
+#### Deserialize(System.IO.Stream,System.Type)
+convert stream into object
+    #####Parameters
+    **stream:** 
+
+    **type:** template model to deserialize
+
+    ##### Return value
+    
+
+#### DeserializeAsync``1(System.IO.Stream,System.Threading.CancellationToken)
+convert stream into object
+    #####Parameters
+    **stream:** 
+
+    **stream:** 
+
+    **cancellationToken:** 
+
+    ##### Return value
+    
+
+#### DeserializeAsync(System.IO.Stream,System.Type,System.Threading.CancellationToken)
+convert stream into object
+    #####Parameters
+    **stream:** 
+
+    **type:** template model to deserialize
+
+    **cancellationToken:** 
+
+    ##### Return value
+    
+
+#### Deserialize``1(System.String)
+convert stream into object
+    #####Parameters
+    **input:** 
+
+    ##### Return value
+    
+
+#### Deserialize(System.String,System.Type)
+convert stream into object
+    #####Parameters
+    **input:** 
+
+    **type:** template model to deserialize
+
+    ##### Return value
+    

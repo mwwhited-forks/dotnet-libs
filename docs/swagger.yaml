@@ -1024,6 +1024,7 @@ components:
         - fatal
         - unknown
       type: string
+      description: response message level
     Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel:
       type: object
       properties:
@@ -1139,16 +1140,21 @@ components:
           $ref: '#/components/schemas/Eliassen.System.ResponseModel.MessageLevels'
         message:
           type: string
+          description: Simple English message about issue.
           nullable: true
         messageCode:
           type: string
+          description: unique code that may be used to assist in translating issue
           nullable: true
         context:
           type: string
+          description: Property or path related to this message
           nullable: true
         metaData:
+          description: additional properties related to response
           nullable: true
       additionalProperties: false
+      description: additional details about response
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
