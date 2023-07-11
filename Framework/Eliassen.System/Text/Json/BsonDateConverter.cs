@@ -55,7 +55,6 @@ public class BsonDateConverter : JsonConverter<DateTimeOffset>
                 {
                     dateTime = new DateTimeOffset(dateTime.Value.DateTime, TimeSpan.FromMinutes(reader.GetInt32()));
                 }
-                //if (reader.)
             }
             if (dateTime.HasValue)
                 return dateTime.Value;

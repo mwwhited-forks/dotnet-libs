@@ -19,11 +19,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startdatetime": [
-      "636415154304356493",
-      120
-    ],
-    "enddatetime": null
+    "startDateTime": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "endDateTime": null,
+    "notes": null
   },
   {
     "_id": {
@@ -45,11 +45,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startdatetime": [
-      "636415154304356493",
-      120
-    ],
-    "enddatetime": null
+    "startDateTime": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "endDateTime": null,
+    "notes": null
   },
   {
     "_id": {
@@ -71,11 +71,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-     "startdatetime": [
-      "636415154304356493",
-      120
-    ],
-    "enddatetime": null
+    "startDateTime": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "endDateTime": null,
+    "notes": null
   },
   {
     "_id": {
@@ -97,11 +97,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-     "startdatetime": [
-      "636415154304356493",
-      120
-    ],
-    "enddatetime": null
+    "startDateTime": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "endDateTime": null,
+    "notes": null
   },
   {
     "_id": {
@@ -123,11 +123,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-     "startdatetime": [
-      "636415154304356493",
-      120
-    ],
-    "enddatetime": null
+    "startDateTime": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "endDateTime": null,
+    "notes": null
   },
   {
     "_id": {
@@ -149,11 +149,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-     "startdatetime": [
-      "636415154304356493",
-      120
-    ],
-    "enddatetime": null
+    "startDateTime": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "endDateTime": null,
+    "notes": null
   },
   {
     "_id": {
@@ -175,11 +175,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-     "startdatetime": [
-      "636415154304356493",
-      120
-    ],
-    "enddatetime": null
+    "startDateTime": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "endDateTime": null,
+    "notes": null
   },
   {
     "_id": {
@@ -201,11 +201,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-     "startdatetime": [
-      "636415154304356493",
-      20
-    ],
-    "enddatetime": null
+    "startDateTime": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "endDateTime": null,
+    "notes": null
   },
   {
     "_id": {
@@ -227,11 +227,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-     "startdatetime": [
-      "636415154304356493",
-      20
-    ],
-    "enddatetime": null
+    "startDateTime": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "endDateTime": null,
+    "notes": null
   },
   {
     "_id": {
@@ -244,22 +244,24 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": [
-      "636415154304356493",
-      120
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "attendees": [
+      "Steve 1"
     ],
-    "attendees": [ "Steve 1" ],
     "teacher": "NotAScammer Steve",
     "duration": 10,
-    "tags": ["18 100% winrate"],
+    "tags": [
+      "18 100% winrate"
+    ],
     "price": 1.99,
     "goals": [],
-     "startdatetime": [
-      "636415154304356493",
-      20
-    ],
-    "enddatetime": null,
-	"notes": "How to always win no matter what happens"
+    "startDateTime": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "endDateTime": null,
+    "notes": "How to always win no matter what happens"
   },
   {
     "_id": {
@@ -272,21 +274,23 @@
     "preview": "",
     "content": "",
     "enabled": true,
-    "createdOn": [
-      "636415154304356493",
-      120
+    "createdOn": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "attendees": [
+      "Steve"
     ],
-    "attendees": ["Steve"],
     "teacher": "NotAScammer Steve",
     "duration": 10,
-    "tags": ["100% winrate"],
+    "tags": [
+      "100% winrate"
+    ],
     "price": 1.99,
     "goals": [],
-     "startdatetime": [
-      "636415154304356493",
-      20
-    ],
-    "enddatetime": null,
-	"notes": "How to always win no matter what happens 19"
+    "startDateTime": {
+      "$date": "2017-09-20T12:43:50.435+00:00"
+    },
+    "endDateTime": null,
+    "notes": "How to always win no matter what happens 19"
   }
 ]
