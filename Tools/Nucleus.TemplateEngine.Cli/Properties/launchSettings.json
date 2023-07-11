@@ -15,6 +15,10 @@
     "GenerateDocuments - *.xml": {
       "commandName": "Project",
       "commandLineArgs": "--input $(SolutionDir)Nucleus.Api\\bin\\Debug\\net6.0\\*.xml\r\n--output $(SolutionDir)docs\\Libraries\\[file].md\r\n--Template Documentation.md\r\n--file-template-path $(ProjectDir)$(OutputPath)"
+    },
+    "GenerateDocuments - *.trx": {
+      "commandName": "Project",
+      "commandLineArgs": "--input $(SolutionDir)TestResults\\*.trx\r\n--output $(SolutionDir)docs\\TestResults\\[file].md\r\n--Template TestResultsToMarkdown.md\r\n--file-template-path $(ProjectDir)$(OutputPath)\r\n--input-type XML"
     }
   }
 }
