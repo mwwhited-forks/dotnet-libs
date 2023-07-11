@@ -59,5 +59,8 @@ namespace Nucleus.Lesson.Contracts.Collections
         [BsonElement("enddatetime")]
         [JsonConverter(typeof(BsonDateConverter))]
         public DateTimeOffset? EndDateTime { get; set; }
+
+        [BsonElement("notes")]
+        public string? Notes { get; set; }
     }
 }

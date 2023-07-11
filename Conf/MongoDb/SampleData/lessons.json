@@ -19,8 +19,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startDateTime": null,
-    "endDateTime": null
+    "startdatetime": [
+      "636415154304356493",
+      120
+    ],
+    "enddatetime": null
   },
   {
     "_id": {
@@ -42,8 +45,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startDateTime": null,
-    "endDateTime": null
+    "startdatetime": [
+      "636415154304356493",
+      120
+    ],
+    "enddatetime": null
   },
   {
     "_id": {
@@ -65,8 +71,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startDateTime": null,
-    "endDateTime": null
+     "startdatetime": [
+      "636415154304356493",
+      120
+    ],
+    "enddatetime": null
   },
   {
     "_id": {
@@ -88,8 +97,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startDateTime": null,
-    "endDateTime": null
+     "startdatetime": [
+      "636415154304356493",
+      120
+    ],
+    "enddatetime": null
   },
   {
     "_id": {
@@ -111,8 +123,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startDateTime": null,
-    "endDateTime": null
+     "startdatetime": [
+      "636415154304356493",
+      120
+    ],
+    "enddatetime": null
   },
   {
     "_id": {
@@ -134,8 +149,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startDateTime": null,
-    "endDateTime": null
+     "startdatetime": [
+      "636415154304356493",
+      120
+    ],
+    "enddatetime": null
   },
   {
     "_id": {
@@ -157,8 +175,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startDateTime": null,
-    "endDateTime": null
+     "startdatetime": [
+      "636415154304356493",
+      120
+    ],
+    "enddatetime": null
   },
   {
     "_id": {
@@ -180,8 +201,11 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startDateTime": null,
-    "endDateTime": null
+     "startdatetime": [
+      "636415154304356493",
+      20
+    ],
+    "enddatetime": null
   },
   {
     "_id": {
@@ -196,6 +220,7 @@
     "enabled": true,
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
+      120
     },
     "attendees": [],
     "teacher": "NotAScammer Steve",
@@ -203,7 +228,66 @@
     "tags": [],
     "price": 1.99,
     "goals": [],
-    "startDateTime": null,
-    "endDateTime": null
+     "startdatetime": [
+      "636415154304356493",
+      20
+    ],
+    "enddatetime": null
+  },
+  {
+    "_id": {
+      "$oid": "647f5966e7abf8eb06238718"
+    },
+    "title": "18 How to always win no matter what happens. 100% winrate guaranteed!",
+    "slug": "allen@nodirection.com",
+    "mediaLink": "Allen",
+    "previewImage": "Butler",
+    "preview": "",
+    "content": "",
+    "enabled": true,
+    "createdOn": [
+      "636415154304356493",
+      120
+    ],
+    "attendees": [ "Steve 1" ],
+    "teacher": "NotAScammer Steve",
+    "duration": 10,
+    "tags": ["18 100% winrate"],
+    "price": 1.99,
+    "goals": [],
+     "startdatetime": [
+      "636415154304356493",
+      20
+    ],
+    "enddatetime": null,
+	"notes": "How to always win no matter what happens"
+  },
+  {
+    "_id": {
+      "$oid": "647f5966e7abf8eb06238719"
+    },
+    "title": " 19 How to always win no matter what happens. 100% winrate guaranteed!",
+    "slug": "allen@nodirection.com",
+    "mediaLink": "Allen",
+    "previewImage": "Butler",
+    "preview": "",
+    "content": "",
+    "enabled": true,
+    "createdOn": [
+      "636415154304356493",
+      120
+    ],
+    "attendees": ["Steve"],
+    "teacher": "NotAScammer Steve",
+    "duration": 10,
+    "tags": ["100% winrate"],
+    "price": 1.99,
+    "goals": [],
+     "startdatetime": [
+      "636415154304356493",
+      20
+    ],
+    "enddatetime": null,
+	"notes": "How to always win no matter what happens 19"
   }
 ]
