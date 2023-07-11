@@ -27,7 +27,7 @@ namespace Nucleus.Lesson.Contracts.Models
         public string? Teacher { get; set; }
         public int? Duration { get; set; }
 
-        public DateTimeOffset StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime { get; set; }
         public DateTimeOffset? EndDateTime { get; set; }
 
         public string[]? Tags { get; set; }

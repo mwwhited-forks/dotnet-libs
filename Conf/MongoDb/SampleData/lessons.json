@@ -220,7 +220,6 @@
     "enabled": true,
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
-      120
     },
     "attendees": [],
     "teacher": "NotAScammer Steve",

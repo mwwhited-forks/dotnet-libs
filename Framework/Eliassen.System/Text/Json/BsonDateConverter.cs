@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -31,6 +33,32 @@ public class BsonDateConverter : JsonConverter<DateTimeOffset>
         else if (type == JsonTokenType.String && reader.TryGetDateTimeOffset(out var dt))
         {
             return dt;
+        }
+        else if (type == JsonTokenType.StartArray)
+        {
+            DateTimeOffset? dateTime = null;
+            while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
+            {
+                if (reader.TokenType == JsonTokenType.String)
+                {
+                    var value = reader.GetString();
+                    if (DateTimeOffset.TryParse(value, out dt))
+                    {
+                        dateTime = dt;
+                    }
+                    else if (long.TryParse(value, out var ticks))
+                    {
+                        dateTime = new DateTime(ticks, DateTimeKind.Utc);
+                    }
+                }
+                else if (reader.TokenType == JsonTokenType.Number && dateTime.HasValue)
+                {
+                    dateTime = new DateTimeOffset(dateTime.Value.DateTime, TimeSpan.FromMinutes(reader.GetInt32()));
+                }
+                //if (reader.)
+            }
+            if (dateTime.HasValue)
+                return dateTime.Value;
         }
 
         throw new NotSupportedException($"element of type {type} is not supported");
