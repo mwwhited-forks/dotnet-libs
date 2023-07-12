@@ -1600,7 +1600,7 @@
           },
           "searchTerm": {
             "type": "string",
-            "description": "**Searched Properties:** Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals",
+            "description": "**Searched Properties:** Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals; Notes",
             "nullable": true
           },
           "filter": {
@@ -1608,7 +1608,7 @@
             "additionalProperties": {
               "$ref": "#/components/schemas/Eliassen.System.Linq.Search.FilterParameter"
             },
-            "description": "**Filterable Properties:** LessonId; Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals",
+            "description": "**Filterable Properties:** LessonId; Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals; Notes",
             "nullable": true
           },
           "orderBy": {
@@ -1616,7 +1616,7 @@
             "additionalProperties": {
               "$ref": "#/components/schemas/Eliassen.System.Linq.Search.OrderDirections"
             },
-            "description": "**Sortable Properties:** LessonId, Title, MediaLink, Preview, PreviewImage, Slug, Content, Enabled, CreatedOn, CreatedOnUnix, Attendees, Teacher, Duration, StartDateTime, EndDateTime, Tags, Price, Goals  **Default Order:** CreatedOn asc, Slug asc",
+            "description": "**Sortable Properties:** LessonId, Title, MediaLink, Preview, PreviewImage, Slug, Content, Enabled, CreatedOn, CreatedOnUnix, Attendees, Teacher, Duration, StartDateTime, EndDateTime, Tags, Price, Goals, Notes  **Default Order:** CreatedOn asc, Slug asc",
             "nullable": true
           }
         },
@@ -2431,7 +2431,8 @@
           },
           "startDateTime": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "endDateTime": {
             "type": "string",
@@ -2454,6 +2455,10 @@
             "items": {
               "type": "string"
             },
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
             "nullable": true
           }
         },

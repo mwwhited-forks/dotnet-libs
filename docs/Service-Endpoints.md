@@ -671,11 +671,12 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * attendees : string[]?
 * teacher : string?
 * duration : integer?
-* startDateTime : string
+* startDateTime : string?
 * endDateTime : string?
 * tags : string[]?
 * price : number
 * goals : string[]?
+* notes : string?
 
 ### Nucleus.Project.Contracts.Models.Filters.ProjectFilter
 
@@ -711,4 +712,4 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 
 ---
 
-Generated: 2023-06-30 15:24:08
+Generated: 2023-07-12 10:57:52

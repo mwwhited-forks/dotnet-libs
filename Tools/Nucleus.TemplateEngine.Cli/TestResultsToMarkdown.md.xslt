@@ -48,15 +48,46 @@
 	</xsl:template>
 	
 	<xsl:template match="tt:UnitTestResult">
-		<xsl:variable name="test-id" select="@testId" />
-		<xsl:variable name="unit-test" select="/tt:TestDefinitions/tt:UnitTest[@id = $test-id]" />
-		<xsl:variable name="unit-test-class" select="$unit-test/tt:TestMethod/@className" />
-		<xsl:variable name="unit-test-method" select="$unit-test/tt:TestMethod/@name" />
 		
-		<xsl:text>## Test: </xsl:text>
-		<xsl:value-of select="@testName"/>&cr;	
+		
+		<xsl:text>## Test: </xsl:text><xsl:value-of select="@testName"/>&cr;&cr;
+
+		<xsl:text>| Key          | Value                                |</xsl:text>&cr;
+		<xsl:text>| -------------| ------------------------------------ |</xsl:text>&cr;
+		<xsl:text>| ExecutionID  | </xsl:text><xsl:value-of select="@executionId"/><xsl:text> |</xsl:text>&cr;
+		<xsl:text>| TestID       | </xsl:text><xsl:value-of select="@testId"/><xsl:text> |</xsl:text>&cr;
+		<xsl:text>| Duration     | </xsl:text><xsl:value-of select="@duration"/><xsl:text> |</xsl:text>&cr;
+		<xsl:text>| Outcome      | </xsl:text><xsl:value-of select="@outcome"/><xsl:text> |</xsl:text>&cr;
+		
+		<xsl:variable name="test-id" select="@testId" />
+		<xsl:variable name="execution-id" select="@executionId" />
+		<xsl:variable name="unit-test" select="/tt:TestDefinitions/tt:UnitTest[@id = $test-id]" />
+		<xsl:variable name="unit-test-class" select="$unit-test" />
+		<xsl:variable name="unit-test-method" select="$unit-test/tt:TestMethod/@name" />
+
+		<xsl:text>### UnitTest: </xsl:text><xsl:value-of select="$unit-test"/>&cr;		
 		<xsl:text>### Class: </xsl:text><xsl:value-of select="$unit-test-class"/>&cr;
 		<xsl:text>### Method: </xsl:text><xsl:value-of select="$unit-test-method"/>&cr;
+		
+				
+     <!--
+	 testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b"
+     testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"
+     relativeResultsDirectory="3f78e8fa-e5db-4ccd-b96d-b25dfe2e1a3b"
+		-->
+		
+		<xsl:if test="tt:Output/tt:StdOut">
+			&cr;
+			<xsl:text>#### Standard Out</xsl:text>&cr;
+			<xsl:value-of select="tt:Output/tt:StdOut" disable-output-escaping="yes"/>
+		</xsl:if>
+		
+		<xsl:if test="tt:Output/tt:StdErr">
+			&cr;
+			<xsl:text>#### Standard Error</xsl:text>&cr;
+			<xsl:value-of select="tt:Output/tt:StdErr" disable-output-escaping="yes"/>
+		</xsl:if>
+		
 		<xsl:text>---</xsl:text>&cr;
 		<xsl:apply-templates mode="duplicate" select="$unit-test" />
 	&cr;

@@ -45,6 +45,11 @@
 				</Configuration>
 			</Logger>
 			<Logger friendlyName="trx" enabled="True">
+				<Configuration>
+					<!-- vvv comment the following line for time stamped results vvv -->
+					<LogFileName>LatestTestResults.trx</LogFileName>
+					<!-- ^^^ comment the above line for time stamped results ^^^ -->
+				</Configuration>
 			</Logger>
 		</Loggers>
 	</LoggerRunSettings>
