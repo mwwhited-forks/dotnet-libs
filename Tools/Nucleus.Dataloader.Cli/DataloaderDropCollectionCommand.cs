@@ -8,7 +8,7 @@ namespace Nucleus.Dataloader.Cli
         private readonly ILogger _log;
 
         public DataloaderDropCollectionCommand(
-            ILogger<DataloaderExportCommand> log
+            ILogger<DataloaderDropCollectionCommand> log
             )
         {
             _log = log;

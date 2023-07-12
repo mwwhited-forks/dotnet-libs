@@ -4,19 +4,19 @@
       "commandName": "Project",
       "commandLineArgs": "$(SolutionDir)Conf\\MongoDb"
     },
-    "27018 - Export": {
+    "27017 - Export": {
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)Conf\\MongoDb\\SampleData"
     },
-    "27018 - Import": {
+    "27017 - Import": {
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)Conf\\MongoDb\\SampleData --Action=Import"
     },
-    "27018 - DropCollection": {
+    "27017 - DropCollection": {
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)Conf\\MongoDb\\SampleData --Action=DropCollection"
     },
-    "27018 - DropCollectionAndImport": {
+    "27017 - DropCollectionAndImport": {
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)Conf\\MongoDb\\SampleData --Action=DropCollectionAndImport"
     },
