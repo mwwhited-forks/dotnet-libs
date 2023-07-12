@@ -19,7 +19,10 @@ namespace Eliassen.AspNetCore.Mvc.Filters
             _rights = rights;
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Ensure that current authenticated user matches as least one requested right
+        /// </summary>
+        /// <param name="context"></param>
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             bool? userAuthenticated = context.HttpContext.User.Identity?.IsAuthenticated;
@@ -28,7 +31,7 @@ namespace Eliassen.AspNetCore.Mvc.Filters
             if (userAuthenticated == null || userAuthenticated == false)
                 context.Result = new ForbidResult();
             else if (_rights.Any())
-                if (!Any(userRights))
+                if (!Any(userRights.Select(c => c.value)))
                     context.Result = new ForbidResult();
         }
 

@@ -7,20 +7,20 @@ namespace Eliassen.System.Linq.Expressions
 {
     /// <summary>
     /// Extensions for System.Linq.Expressions.Expression
-    /// <seealso cref="global::System.Linq.Expressions.Expression"/>
+    /// <seealso cref="Expression"/>
     /// </summary>
     public static class ExpressionExtensions
     {
 
 #pragma warning disable CS0419 // Ambiguous reference in cref attribute
-        /// <inheritdoc cref="global::System.Linq.Expressions.Expression.OrElse"/>
+        /// <inheritdoc cref="Expression.OrElse"/>
         public static Expression<Func<TModel, bool>>? OrElse<TModel>(
 #pragma warning restore CS0419 // Ambiguous reference in cref attribute
             this IEnumerable<Expression<Func<TModel, bool>>> ors
         ) => Chain(ors, ChainTypes.OrElse);
 
 #pragma warning disable CS0419 // Ambiguous reference in cref attribute
-        /// <inheritdoc cref="global::System.Linq.Expressions.Expression.AndAlso"/>
+        /// <inheritdoc cref="Expression.AndAlso"/>
 #pragma warning restore CS0419 // Ambiguous reference in cref attribute
         public static Expression<Func<TModel, bool>>? AndAlso<TModel>(
             this IEnumerable<Expression<Func<TModel, bool>>?> ands
@@ -55,7 +55,7 @@ namespace Eliassen.System.Linq.Expressions
             return lambda;
         }
 
-        public static IEnumerable<Attribute> GetAttributes(this Expression expression)
+        internal static IEnumerable<Attribute> GetAttributes(this Expression expression)
         {
             if (expression is MethodCallExpression methodCallExpression)
             {

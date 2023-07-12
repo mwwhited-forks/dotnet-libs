@@ -9,5 +9,7 @@ namespace Nucleus.Core.Contracts.Models
         public string? SortBy { get; set; }
         public string? SortDirection { get; set; }
         public bool ExcludePageCount { get; }
+
+        public static PagingModel Default => new PagingModel { CurrentPage = 1, PageSize = 10 };
     }
 }

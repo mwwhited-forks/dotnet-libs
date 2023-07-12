@@ -1,5 +1,6 @@
 ﻿using Eliassen.System.Accessors;
 using Eliassen.System.Linq.Search;
+using Eliassen.System.ResponseModel;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -8,6 +9,17 @@ using System.Linq;
 
 namespace Eliassen.AspNetCore.Mvc.Filters
 {
+    /// <summary>
+    /// Search Query Results filter is an extension for ASP.Net Core to enable a common
+    /// pattern to query data endpoints with from Controller Actions.  This detects 
+    /// actions that return IQueryable{TModel} and intercepts the web request to complete the 
+    /// query based on user requested inputs.
+    /// <see cref="SearchQuery{TModel}"/>
+    /// <see cref="IQueryBuilder{TModel}"/>
+    /// <see cref="IQueryable{TModel}"/>
+    /// <see cref="IQueryResult{TModel}"/>
+    /// <see cref="IPagedQueryResult{TModel}"/>
+    /// </summary>
     public class SearchQueryResultFilter : IResultFilter
     {
 
@@ -15,6 +27,7 @@ namespace Eliassen.AspNetCore.Mvc.Filters
         private readonly ILogger _logger;
         private readonly IServiceProvider _serviceProvider;
 
+        /// <inheritdoc/>
         public SearchQueryResultFilter(
             IAccessor<ISearchQuery> searchQuery,
             ILogger<SearchQueryResultFilter> logger,
@@ -26,10 +39,12 @@ namespace Eliassen.AspNetCore.Mvc.Filters
             _serviceProvider = serviceProvider;
         }
 
+        /// <inheritdoc/>
         public void OnResultExecuted(ResultExecutedContext context)
         {
         }
 
+        /// <inheritdoc/>
         public void OnResultExecuting(ResultExecutingContext context)
         {
             if (context.Result is Microsoft.AspNetCore.Mvc.ObjectResult objectResult &&

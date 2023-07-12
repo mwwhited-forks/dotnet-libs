@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Nucleus.Core.Contracts;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Persistence.Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

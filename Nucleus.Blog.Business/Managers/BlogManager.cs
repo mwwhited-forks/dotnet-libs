@@ -1,10 +1,11 @@
 ﻿using Nucleus.Blog.Contracts.Managers;
 using Nucleus.Blog.Contracts.Models;
 using Nucleus.Blog.Contracts.Models.Filters;
-using Nucleus.Blog.Contracts.Services;
+using Nucleus.Blog.Contracts.Persistence;
 using Nucleus.Core.Contracts.Models;
 using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 using System.Threading.Tasks;
 
 namespace Nucleus.Blog.Business.Managers
@@ -25,9 +26,9 @@ namespace Nucleus.Blog.Business.Managers
 #warning retire this
         public async Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter)
         {
-            PagedResult<BlogModel> result = new PagedResult<BlogModel>();
-            List<BlogModel> blogs = await _blogService.GetPagedAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, false);
-            result = new PagedResult<BlogModel>()
+            blogsFilter.PagingModel ??= PagingModel.Default;
+            var blogs = await _blogService.GetPagedAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, false);
+            var result = new PagedResult<BlogModel>()
             {
                 CurrentPage = blogsFilter.PagingModel.CurrentPage,
                 PageSize = blogsFilter.PagingModel.PageSize,
@@ -46,8 +47,8 @@ namespace Nucleus.Blog.Business.Managers
                     IsSuccess = false,
                     Message = "Missing Required Fields"
                 };
-            ResponseModel<BlogModel?> result = new ResponseModel<BlogModel?>() { IsSuccess = true };
-            if (String.IsNullOrEmpty(blog.BlogId))
+            var result = new ResponseModel<BlogModel?>() { IsSuccess = true };
+            if (string.IsNullOrEmpty(blog.BlogId))
             {
                 blog.CreatedOn = DateTimeOffset.Now;
                 result.Response = await _blogService.CreateAsync(blog);

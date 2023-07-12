@@ -9,8 +9,8 @@ namespace Eliassen.System.Tests.Linq.TestTargets
         [NotSearchable]
         public int Index { get; set; }
         [NotSortable]
-        public string Name { get; set; }
+        public string Name { get; set; } = default!;
         [NotFilterable]
-        public string Email { get; set; }
+        public string Email { get; set; } = default!;
     }
 }

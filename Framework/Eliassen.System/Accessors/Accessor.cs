@@ -2,10 +2,12 @@
 
 namespace Eliassen.System.Accessors
 {
+    /// <inheritdoc/>
     public class Accessor<T> : IAccessor<T>
     {
-        private readonly AsyncLocal<T> _local = new();
+        private readonly AsyncLocal<T?> _local = new();
 
+        /// <inheritdoc/>
         public T? Value
         {
             get => _local.Value;

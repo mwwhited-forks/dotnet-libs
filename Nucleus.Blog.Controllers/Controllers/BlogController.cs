@@ -20,7 +20,7 @@ namespace Nucleus.Blog.Controllers.Controllers
 
 #warning retire this
         [HttpPost("Blogs")]
-        [Obsolete]
+        [Obsolete("used api/blog/Query instead")]
         public async Task<IActionResult> GetAllBlogsPagedAsync(BlogsFilter filter) =>
             new JsonResult(await _publicBlogManager.GetBlogsPagedAsync(filter));
 

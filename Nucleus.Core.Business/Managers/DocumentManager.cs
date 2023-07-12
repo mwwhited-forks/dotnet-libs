@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Nucleus.Core.Contracts.Interfaces;
 using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.Filters;
 using Nucleus.Core.Contracts.Models.Keys;
+using Nucleus.Core.Contracts.Persistence;
 using Nucleus.Core.Contracts.Providers;
 using System;
 using System.Collections.Generic;
@@ -52,16 +52,16 @@ namespace Nucleus.Core.Business.Managers
                 };
 
             if (!string.IsNullOrEmpty(document.DocumentId))
-                await _documentProvider.DeleteAsync(document.DocumentKey);
+                await _documentProvider.DeleteAsync(document.DocumentId);
             else
                 document.DocumentKey = GetDocumentDirectory(document.DocumentCategory) + GenerateDocumentKey(document.DocumentName, 10);
 
             // Will make this more robust later through config, but for not we are capturing who owns this document 
             document.DocumentRepository = _config[ConfigKeys.Container.DefaultProvider];
 
-            BlobResponseDto response = await _documentProvider.UploadAsync(document, content);
+            var response = await _documentProvider.UploadAsync(document, content);
 
-            ResponseModel<DocumentModel?> result = new ResponseModel<DocumentModel?>();
+            var result = new ResponseModel<DocumentModel?>();
             if (response.Error == false)
             {
 
@@ -94,8 +94,8 @@ namespace Nucleus.Core.Business.Managers
                     IsSuccess = false,
                     Message = "Missing Required Fields"
                 };
-            DocumentsFilter filter = new DocumentsFilter();
-            DocumentFilterItem filterItem = new DocumentFilterItem
+            var filter = new DocumentsFilter();
+            var filterItem = new DocumentFilterItem
             {
                 DocumentId = id
             };
@@ -112,9 +112,10 @@ namespace Nucleus.Core.Business.Managers
                     IsSuccess = true
                 };
             }
-            await _documentProvider.DeleteAsync(document.DocumentKey);
+            if (document.DocumentKey != null)
+                await _documentProvider.DeleteAsync(document.DocumentKey);
             await _documentService.RemoveAsync(id);
-            return new ResponseModel<Boolean>()
+            return new ResponseModel<bool>()
             {
                 Response = true,
                 IsSuccess = true

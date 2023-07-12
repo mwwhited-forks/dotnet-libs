@@ -26,8 +26,8 @@ namespace Nucleus.Core.Controllers.Security
         {
             var claims = new List<Claim>();
 
-            var username = principal.GetClaimValue(CommonClaims.ObjectId, CommonClaims.ObjectIdentifier);
-            var userId = principal.GetClaimValue(CommonClaims.UserId);
+            var username = principal.GetClaimValue(CommonClaims.ObjectId, CommonClaims.ObjectIdentifier)?.value;
+            var userId = principal.GetClaimValue(CommonClaims.UserId)?.value;
             if (!string.IsNullOrWhiteSpace(username)  && string.IsNullOrWhiteSpace(userId))
             {
                 userId = await _manager.GetUserIdForUserNameAsync(username);

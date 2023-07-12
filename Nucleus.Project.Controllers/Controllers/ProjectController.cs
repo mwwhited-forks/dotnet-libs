@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Nucleus.Project.Contracts.Managers;
 using Nucleus.Project.Contracts.Models.Filters;
+using System;
 
 namespace Nucleus.Project.Controllers.Controllers
 {
@@ -17,6 +18,7 @@ namespace Nucleus.Project.Controllers.Controllers
 
 #warning retire this
         [HttpPost("Projects")]
+        [Obsolete]
         public async Task<IActionResult> GetAllBlogsPagedAsync(ProjectFilter filter) =>
             new JsonResult(await _publicProjectManager.GetProjectsPagedAsync(filter));
 

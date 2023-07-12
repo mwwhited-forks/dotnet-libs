@@ -47,7 +47,6 @@ REM dotnet tool uninstall Lightwell.FixSourceLinks.Cli
 
 reportgenerator "-reports:.\TestResults\**\coverage.cobertura.xml" "-targetDir:.\TestResults\Coverage\Reports" -reportTypes:HtmlSummary;Cobertura "-title:%TestProject% - (%USERNAME%)"
 
-
 start .\TestResults\Coverage\Reports\summary.html
 
 ECHO TEST_ERR=%TEST_ERR%

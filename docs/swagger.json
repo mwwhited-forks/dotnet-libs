@@ -116,17 +116,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel"
                 }
               }
             }
@@ -513,17 +513,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel"
                 }
               }
             }
@@ -666,6 +666,7 @@
             "description": "Success"
           }
         },
+        "deprecated": true,
         "x-permissions": {
           "anonymous": false
         }
@@ -954,17 +955,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.Module"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.Module"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.Module"
                 }
               }
             }
@@ -1115,7 +1116,9 @@
         "tags": [
           "UserManagement"
         ],
+        "summary": "Save user profile",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -1190,17 +1193,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.User"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.User"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.User"
                 }
               }
             }
@@ -1293,17 +1296,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.Module"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.Module"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module"
+                  "$ref": "#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.Module"
                 }
               }
             }
@@ -1322,7 +1325,9 @@
         "tags": [
           "UserManagement"
         ],
+        "summary": "Do not use for new development",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -1377,6 +1382,7 @@
         "tags": [
           "UserManagement"
         ],
+        "summary": "Do not use for new development",
         "responses": {
           "200": {
             "description": "Success",
@@ -1455,106 +1461,6 @@
         ],
         "type": "string",
         "description": "Enumeration to control sort order"
-      },
-      "Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel": {
-        "type": "object",
-        "properties": {
-          "rows": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.BlogModel"
-            },
-            "nullable": true
-          },
-          "currentPage": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalPageCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalRowCount": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.Module": {
-        "type": "object",
-        "properties": {
-          "rows": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models.Module"
-            },
-            "nullable": true
-          },
-          "currentPage": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalPageCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalRowCount": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Core.Contracts.Models.User": {
-        "type": "object",
-        "properties": {
-          "rows": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models.User"
-            },
-            "nullable": true
-          },
-          "currentPage": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalPageCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalRowCount": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Eliassen.System.Linq.Search.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel": {
-        "type": "object",
-        "properties": {
-          "rows": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel"
-            },
-            "nullable": true
-          },
-          "currentPage": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalPageCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalRowCount": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
       },
       "Eliassen.System.Linq.Search.SearchQuery-Nucleus.Blog.Contracts.Models.BlogModel": {
         "type": "object",
@@ -1715,6 +1621,192 @@
           }
         },
         "additionalProperties": false
+      },
+      "Eliassen.System.ResponseModel.MessageLevels": {
+        "enum": [
+          "trace",
+          "debug",
+          "info",
+          "warning",
+          "error",
+          "fatal",
+          "unknown"
+        ],
+        "type": "string",
+        "description": "response message level"
+      },
+      "Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Blog.Contracts.Models.BlogModel": {
+        "type": "object",
+        "properties": {
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nucleus.Blog.Contracts.Models.BlogModel"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Eliassen.System.ResponseModel.ResultMessage"
+            },
+            "nullable": true
+          },
+          "currentPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalPageCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalRowCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.Module": {
+        "type": "object",
+        "properties": {
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models.Module"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Eliassen.System.ResponseModel.ResultMessage"
+            },
+            "nullable": true
+          },
+          "currentPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalPageCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalRowCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Core.Contracts.Models.User": {
+        "type": "object",
+        "properties": {
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nucleus.Core.Contracts.Models.User"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Eliassen.System.ResponseModel.ResultMessage"
+            },
+            "nullable": true
+          },
+          "currentPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalPageCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalRowCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel": {
+        "type": "object",
+        "properties": {
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Eliassen.System.ResponseModel.ResultMessage"
+            },
+            "nullable": true
+          },
+          "currentPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalPageCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalRowCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Eliassen.System.ResponseModel.ResultMessage": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "$ref": "#/components/schemas/Eliassen.System.ResponseModel.MessageLevels"
+          },
+          "message": {
+            "type": "string",
+            "description": "Simple English message about issue.",
+            "nullable": true
+          },
+          "messageCode": {
+            "type": "string",
+            "description": "unique code that may be used to assist in translating issue",
+            "nullable": true
+          },
+          "context": {
+            "type": "string",
+            "description": "Property or path related to this message",
+            "nullable": true
+          },
+          "metaData": {
+            "description": "additional properties related to response",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "additional details about response"
       },
       "Microsoft.AspNetCore.Mvc.ProblemDetails": {
         "type": "object",
@@ -1958,6 +2050,14 @@
             "type": "integer",
             "format": "int32",
             "readOnly": true
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Eliassen.System.ResponseModel.ResultMessage"
+            },
+            "nullable": true,
+            "readOnly": true
           }
         },
         "additionalProperties": false
@@ -2014,6 +2114,14 @@
           "totalRowCount": {
             "type": "integer",
             "format": "int32",
+            "readOnly": true
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Eliassen.System.ResponseModel.ResultMessage"
+            },
+            "nullable": true,
             "readOnly": true
           }
         },
@@ -2294,7 +2402,8 @@
           },
           "createdOn": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "attendees": {
             "type": "array",

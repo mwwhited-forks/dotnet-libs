@@ -25,9 +25,9 @@ namespace Nucleus.Core.Controllers.Controllers
         public async Task<IActionResult> GetDocument(string id)
         {
             BlobDto? blob = await _documentManager.DownloadDocument(id);
-            if (blob == null)
+            if (blob == null || blob.Content == null)
                 return BadRequest();
-            return File(blob.Content, blob.ContentType, blob.Name);
+            return File(blob.Content, blob.ContentType ?? "application/octet-stream", blob.Name);
         }
 
         [Authorize]

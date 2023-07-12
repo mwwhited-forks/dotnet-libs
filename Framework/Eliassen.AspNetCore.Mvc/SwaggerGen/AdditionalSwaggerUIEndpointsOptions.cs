@@ -7,9 +7,14 @@ using System.Linq;
 
 namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 
+/// <summary>
+/// SwaggerUI Extension to enable grouping controller/actions by assembly
+/// </summary>
 public class AdditionalSwaggerUIEndpointsOptions : IConfigureOptions<SwaggerUIOptions>
 {
     private readonly IActionDescriptorCollectionProvider _provider;
+
+    /// <inheritdoc/>
     public AdditionalSwaggerUIEndpointsOptions(
         IActionDescriptorCollectionProvider provider
         )
@@ -17,6 +22,7 @@ public class AdditionalSwaggerUIEndpointsOptions : IConfigureOptions<SwaggerUIOp
         _provider = provider;
     }
 
+    /// <inheritdoc/>
     public void Configure(SwaggerUIOptions options)
     {
         options.SwaggerEndpoint("/swagger/all/swagger.json", "All");

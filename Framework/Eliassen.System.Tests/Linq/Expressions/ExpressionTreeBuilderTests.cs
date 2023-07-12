@@ -8,7 +8,7 @@ namespace Eliassen.System.Tests.Linq.Expressions
     [TestClass]
     public class ExpressionTreeBuilderTests
     {
-        public TestContext TestContext { get; set; }
+        public TestContext TestContext { get; set; } = default!;
 
         [TestMethod]
         [TestCategory(TestCategories.Unit)]

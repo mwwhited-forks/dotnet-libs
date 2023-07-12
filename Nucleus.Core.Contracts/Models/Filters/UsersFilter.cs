@@ -4,6 +4,6 @@
     public class UsersFilter
     {
         public UserFilterItem UserFilters { get; set; } = new();
-        public PagingModel PagingModel { get; init; } = new ();
+        public PagingModel PagingModel { get; init; } = new();
     }
 }

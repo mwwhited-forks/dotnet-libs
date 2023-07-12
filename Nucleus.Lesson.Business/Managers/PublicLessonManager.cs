@@ -2,7 +2,7 @@
 using Nucleus.Lesson.Contracts.Managers;
 using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
-using Nucleus.Lesson.Contracts.Services;
+using Nucleus.Lesson.Contracts.Persistence;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,6 +21,7 @@ namespace Nucleus.Lesson.Business.Managers
 #warning retire this
         public async Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter)
         {
+            lessonsFilter.PagingModel ??= PagingModel.Default;
             List<LessonModel> lessons = await _lessonService.GetPagedAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, true);
             PagedResult<LessonModel> result = new PagedResult<LessonModel>()
             {
