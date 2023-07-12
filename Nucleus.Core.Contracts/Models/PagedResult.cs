@@ -1,4 +1,4 @@
-﻿using Eliassen.System.Linq.Search;
+﻿using Eliassen.System.ResponseModel;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,11 +11,13 @@ namespace Nucleus.Core.Contracts.Models
         public List<T> Results { get; set; } = new List<T>();
 
         public IEnumerable<T> Rows => Results;
-        IReadOnlyList<T> IQueryResult<T>.Rows => Results;
+        IReadOnlyCollection<T> IQueryResult<T>.Rows => Results;
         IEnumerable IQueryResult.Rows => Rows;
 
-        public int TotalPageCount => this.PageCount;
-        public int TotalRowCount => Convert.ToInt32(this.RowCount);
+        public int TotalPageCount => PageCount;
+        public int TotalRowCount => Convert.ToInt32(RowCount);
+
+        public IReadOnlyCollection<ResultMessage>? Messages { get; }
     }
     public abstract class PagedResult
     {

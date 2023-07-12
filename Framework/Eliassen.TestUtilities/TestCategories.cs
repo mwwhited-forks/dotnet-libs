@@ -1,21 +1,32 @@
 ﻿namespace Eliassen.TestUtilities
 {
+    /// <summary>
+    /// Common test categories
+    /// </summary>
     public static class TestCategories
     {
-        public const string Unit = "Unit";
-        public const string Simulation = "Simulate";
-        public const string Integration = "Integration";
-        public const string DevLocal = "DevLocal";
+        /// <summary>
+        /// Unit tests are rerun-able, standalone tests for a single operation.  External resources should be 
+        /// mocked out so these are fast and may run within a pipeline.
+        /// </summary>
+        public const string Unit = nameof(Unit);
 
-        public static class Feature
-        {
-            public const string StartupRegistration = "StartupRegistration";
-            public const string Billing = "Billing";
-            public const string BlobStorage = "BlobStorage";
-            public const string MessageQueueing = "MessageQueueing";
-            public const string CommunicationCenter = "CommunicationCenter";
-            public const string TextGeneration = "TextGeneration";
-            public const string DocumentConversion = "DocumentConversion";
-        }
+        /// <summary>
+        /// Simulation tests are similar to integration tests by testing the majority of the software stack.
+        /// The difference being Simulations use mocked entry and persist layers so they may be executed within
+        /// a pipeline without requiring external resources. 
+        /// </summary>
+        public const string Simulation = nameof(Simulation);
+
+        /// <summary>
+        /// Integration tests should support the ability to run against deployed environments
+        /// including interacting with databases and web services
+        /// </summary>
+        public const string Integration = nameof(Integration);
+
+        /// <summary>
+        /// Test points for local development, not expected to be safe to return and may use persisted resources
+        /// </summary>
+        public const string DevLocal = nameof(DevLocal);
     }
 }

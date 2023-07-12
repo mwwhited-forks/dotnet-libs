@@ -9,6 +9,7 @@ namespace Eliassen.System.Linq.Expressions
         internal ParameterReplacerExpressionVisitor(ParameterExpression parameter) =>
             _parameter = parameter;
 
-        protected override Expression VisitParameter(ParameterExpression node) => _parameter;
+        protected override Expression VisitParameter(ParameterExpression node) =>
+            _parameter.Type == node.Type ? _parameter : node;
     }
 }

@@ -1,38 +1,24 @@
 using Eliassen.AspNetCore.Mvc;
+using Eliassen.MongoDB.Extensions;
+using Eliassen.System;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Nucleus.AspNetCore.Mvc;
 using Nucleus.Blog.Business;
-using Nucleus.Blog.Contracts.Collections.DbSettings;
 using Nucleus.Blog.Persistence;
 using Nucleus.Core.Business;
-using Nucleus.Core.Contracts.Models.DbSettings;
 using Nucleus.Core.Controllers;
 using Nucleus.Core.Persistence;
 using Nucleus.Core.Shared.Business;
-using Nucleus.Core.Shared.Persistence;
 using Nucleus.Lesson.Business;
-using Nucleus.Lesson.Contracts.Collections.DbSettings;
 using Nucleus.Lesson.Persistence;
 using Nucleus.Project.Business;
-using Nucleus.Project.Contracts.Collections.DbSettings;
+using Nucleus.Project.Persistence;
 using System.Reflection;
-using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Setup connection strings
-builder.Services.Configure<DocumentDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDatabase"));
-builder.Services.Configure<BlogDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDatabase"));
-builder.Services.Configure<LessonDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDatabase"));
-builder.Services.Configure<ProjectDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDatabase"));
-builder.Services.Configure<UserDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDatabase"));
-builder.Services.Configure<ModuleDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDatabase"));
+builder.Services.AddMongoServices(builder.Configuration);
+builder.Services.TryAllSystemExtensions(builder.Configuration);
 
 // Add additional assemblies here so we can keep our API Project clean and easily scalable
 builder.Services.AddControllers()
@@ -40,7 +26,8 @@ builder.Services.AddControllers()
     .AddApplicationPart(Assembly.Load("Nucleus.Lesson.Controllers"))
     .AddApplicationPart(Assembly.Load("Nucleus.Project.Controllers"))
     .AddApplicationPart(Assembly.Load("Nucleus.Core.Controllers"))
-    .AddApplicationPart(Assembly.Load("Nucleus.Core.Shared.Controllers"));
+    .AddApplicationPart(Assembly.Load("Nucleus.Core.Shared.Controllers"))
+    ;
 
 // Adding Module Registrations for IOC
 builder.Services
@@ -134,11 +121,8 @@ app.UseCors();
 app.UseAspNetCoreExtensionMiddleware();
 
 app.UseResponseCaching();
-
 app.UseAuthentication();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

@@ -1,6 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Eliassen.MongoDB.Extensions;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Nucleus.Lesson.Contracts.Services;
+using Nucleus.Lesson.Contracts.Persistence;
 using Nucleus.Lesson.Persistence.Services;
 
 namespace Nucleus.Lesson.Persistence
@@ -9,6 +10,8 @@ namespace Nucleus.Lesson.Persistence
     {
         public static IServiceCollection AddLessonPersistenceServices(this IServiceCollection services)
         {
+            services.TryAddMongoDatabase<ILessonMongoDatabase>();
+
             services.TryAddTransient<ILessonService, LessonService>();
             return services;
         }

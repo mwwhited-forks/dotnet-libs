@@ -1,7 +1,7 @@
-﻿using Nucleus.Core.Contracts.Interfaces;
-using Nucleus.Core.Contracts.Managers;
+﻿using Nucleus.Core.Contracts.Managers;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.Keys;
+using Nucleus.Core.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +31,7 @@ namespace Nucleus.Core.Business.Managers
 
         public IQueryable<Module> QueryModules() => _modules.Query();
 
-        public async Task<ResponseModel<User>> SaveUserAsync(UserAction user)
+        public async Task<ResponseModel<User>> SaveUserAsync(UserAction? user)
         {
 
             if (user == null || string.IsNullOrEmpty(user.FirstName) || string.IsNullOrEmpty(user.LastName) || string.IsNullOrEmpty(user.EmailAddress))

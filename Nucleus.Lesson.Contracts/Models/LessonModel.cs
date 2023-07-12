@@ -20,14 +20,14 @@ namespace Nucleus.Lesson.Contracts.Models
         public Boolean? Enabled { get; set; }
         [DefaultSort(priority: 0)]
 
-        public DateTimeOffset CreatedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get; set; }
         public long CreatedOnUnix { get; set; }
 
         public string[]? Attendees { get; set; }
         public string? Teacher { get; set; }
         public int? Duration { get; set; }
 
-        public DateTimeOffset StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime { get; set; }
         public DateTimeOffset? EndDateTime { get; set; }
 
         public string[]? Tags { get; set; }

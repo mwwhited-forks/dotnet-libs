@@ -1,6 +1,5 @@
 ﻿using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.Filters;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -18,6 +17,6 @@ namespace Nucleus.Core.Contracts.Managers
 
         Task<ResponseModel<DocumentModel?>> SaveDocument(DocumentModel document, Stream content);
 
-        Task<ResponseModel<Boolean>> RemoveDocument(string id);
+        Task<ResponseModel<bool>> RemoveDocument(string id);
     }
 }

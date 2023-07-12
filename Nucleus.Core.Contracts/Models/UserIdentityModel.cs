@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Nucleus.Core.Contracts.Models
+﻿namespace Nucleus.Core.Contracts.Models
 {
     public class UserIdentityModel
     {
-        public string? FirstName {  get; set; }
+        public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? EmailAddress { get; set; }
         public string? UserName { get; set; }

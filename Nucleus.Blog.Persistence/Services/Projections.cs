@@ -1,5 +1,5 @@
-﻿using Nucleus.Blog.Contracts.Collections;
-using Nucleus.Blog.Contracts.Models;
+﻿using Nucleus.Blog.Contracts.Models;
+using Nucleus.Blog.Persistence.Collections;
 using System;
 using System.Linq.Expressions;
 

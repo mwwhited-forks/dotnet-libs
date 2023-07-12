@@ -1,6 +1,7 @@
 ﻿using MongoDB.Driver;
-using Nucleus.Core.Contracts.Collections;
 using Nucleus.Core.Contracts.Models;
+using Nucleus.Core.Persistence.Collections;
+using Nucleus.Core.Persistence.Models;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
@@ -33,23 +34,6 @@ namespace Nucleus.Core.Persistence.Services
                 }).ToList()
             }).ToList(),
             CreatedOn = user.CreatedOn
-        };
-
-        public static Expression<Func<ModuleCollection, Module>> Modules => module => new Module()
-        {
-            ModuleId = module.ModuleId,
-            Roles = module.Roles == null ? null : module.Roles.Select(role => new Role()
-            {
-                Code = role.Code,
-                Name = role.Name,
-                Rights = role.Rights == null ? null : role.Rights.Select(right => new PermissionBase()
-                {
-                    Name = right.Name,
-                    Code = right.Code
-                }).ToList()
-            }).ToList(),
-            Name = module.Name,
-            Code = module.Code
         };
     }
 }

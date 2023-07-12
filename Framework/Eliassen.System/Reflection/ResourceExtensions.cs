@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace Eliassen.System.Reflection
 {
-    //TODO: Make this an interface library and extension methods.  
+    /// <summary>
+    /// Set of extension methods for embedded resources
+    /// </summary>
     public static class ResourceExtensions
     {
         /// <summary>
@@ -39,7 +41,7 @@ namespace Eliassen.System.Reflection
         /// <summary>
         /// Lookup resource stream based on filename relative the scope of Type
         /// </summary>
-        /// <param name="type"></param>
+        /// <param name="assembly"></param>
         /// <param name="resourceName"></param>
         /// <returns></returns>
         public static Stream? GetResourceStream(this Assembly assembly, string resourceName) =>

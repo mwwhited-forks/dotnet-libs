@@ -14,8 +14,8 @@ namespace Nucleus.External.Azure.StorageAccount.Providers
 {
     public class BlobContainerProvider : IDocumentProvider
     {
-        private string? _containerName { get; set; }
-        private BlobContainerClient _blobClient { get; set; }
+        private readonly string? _containerName;
+        private readonly BlobContainerClient _blobClient;
         private readonly ILogger<BlobContainerProvider> _logger;
 
         public BlobContainerProvider(

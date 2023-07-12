@@ -1,7 +1,7 @@
 ﻿using Nucleus.Blog.Contracts.Managers;
 using Nucleus.Blog.Contracts.Models;
 using Nucleus.Blog.Contracts.Models.Filters;
-using Nucleus.Blog.Contracts.Services;
+using Nucleus.Blog.Contracts.Persistence;
 using Nucleus.Core.Contracts.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +22,9 @@ namespace Nucleus.Blog.Business.Managers
 #warning retire this
         public async Task<PagedResult<BlogModel>> GetBlogsPagedAsync(BlogsFilter blogsFilter)
         {
+            blogsFilter.PagingModel ??= PagingModel.Default;
             List<BlogModel> blogs = await _blogService.GetPagedAsync(blogsFilter.PagingModel, blogsFilter.BlogFilters, true);
-            PagedResult<BlogModel> result = new PagedResult<BlogModel>()
+            var result = new PagedResult<BlogModel>()
             {
                 CurrentPage = blogsFilter.PagingModel.CurrentPage,
                 PageSize = blogsFilter.PagingModel.PageSize,

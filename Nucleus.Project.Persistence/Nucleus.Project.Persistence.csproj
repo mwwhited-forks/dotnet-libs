@@ -1,17 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.19.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MongoDB.Driver" Version="2.19.1" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Nucleus.Core.Shared.Persistence\Nucleus.Core.Shared.Persistence.csproj" />
-    <ProjectReference Include="..\Nucleus.Project.Contracts\Nucleus.Project.Contracts.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Framework\Eliassen.MongoDB.Extensions\Eliassen.MongoDB.Extensions.csproj" />
+		<ProjectReference Include="..\Nucleus.Core.Shared.Persistence\Nucleus.Core.Shared.Persistence.csproj" />
+		<ProjectReference Include="..\Nucleus.Project.Contracts\Nucleus.Project.Contracts.csproj" />
+	</ItemGroup>
 
 </Project>

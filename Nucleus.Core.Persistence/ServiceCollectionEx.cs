@@ -1,6 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Eliassen.MongoDB.Extensions;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Nucleus.Core.Contracts.Interfaces;
+using Nucleus.Core.Contracts.Persistence;
 using Nucleus.Core.Persistence.Services;
 
 namespace Nucleus.Core.Persistence
@@ -9,6 +10,8 @@ namespace Nucleus.Core.Persistence
     {
         public static IServiceCollection AddCorePersistenceServices(this IServiceCollection services)
         {
+            services.TryAddMongoDatabase<ICoreMongoDatabase>();
+
             services.TryAddTransient<IDocumentService, DocumentService>();
             services.TryAddTransient<IUserService, UserService>();
             services.TryAddTransient<IModuleService, ModuleServices>();

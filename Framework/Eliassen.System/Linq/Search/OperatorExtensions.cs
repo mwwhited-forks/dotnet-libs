@@ -4,11 +4,12 @@ using System;
 
 namespace Eliassen.System.Linq
 {
-    public static class OperatorExtensions
+    internal static class OperatorExtensions
     {
         public static FilterParameter AsFilter(this Operators expressionOperator, object? value) =>
             new FilterParameter().And(expressionOperator, value);
 
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
         public static FilterParameter And(this FilterParameter filter, Operators expressionOperator, object? value) =>
             expressionOperator switch
             {
@@ -24,5 +25,6 @@ namespace Eliassen.System.Linq
 
                 _ => throw new NotSupportedException($"{expressionOperator} is not supported"),
             };
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
     }
 }
