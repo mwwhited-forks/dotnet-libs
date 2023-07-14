@@ -52,7 +52,7 @@ namespace Nucleus.Lesson.Contracts.Collections
         [BsonElement("goals")]
         public string[]? Goals { get; set; }
 
-        [BsonElement("startdatetime")]
+        [BsonElement("startDatetime")]
         [JsonConverter(typeof(BsonDateConverter))]
         public DateTimeOffset? StartDateTime { get; set; }
 
