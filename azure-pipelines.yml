@@ -39,8 +39,7 @@ variables:
     value: 'Release'
 # import variable values from library group    
   - group: 'Azure.Environment.Nucleus.Acc.Net.Api'
-  - name: apiservice
-    value: $(${{parameters.targetEnvironment}}-ServerName)
+
   
 steps:
 - task: NuGetToolInstaller@1
