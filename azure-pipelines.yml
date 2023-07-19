@@ -89,16 +89,14 @@ steps:
 
 # TODO: taskto execute dataloader
 
-
-${{if eq(parameters.targetEnvironment, 'Dev')}}: 
-  - task: DotNetCoreCLI@2
-    condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true))
-    inputs:
-      command: 'run'
-      projects: 'Tools\Nucleus.Dataloader.Cli'
-      arguments: >
-        --SourcePath=.\Conf\MongoDb\SampleData 
-        --Action=DropCollectionAndImport
-      env: 
-        MongoDatabase__ConnectionString: $(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)
-        MongoDatabase__DatabaseName: $(${{parameters.targetEnvironment}}-MongoDatabase__DatabaseName)
+- task: DotNetCoreCLI@2
+  condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true), neq('${{ parameters.dataDeploymentType }}', 'None'))
+  inputs:
+    command: 'run'
+    projects: 'Tools\Nucleus.Dataloader.Cli'
+    arguments: >
+      --SourcePath=.\Conf\MongoDb\SampleData 
+      --Action=${{ parameters.dataDeploymentType }}
+    env: 
+      MongoDatabase__ConnectionString: $(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)
+      MongoDatabase__DatabaseName: $(${{parameters.targetEnvironment}}-MongoDatabase__DatabaseName)
