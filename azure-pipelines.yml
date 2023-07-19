@@ -87,7 +87,7 @@ steps:
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
 
 - task: DotNetCoreCLI@2
-  condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true), neq('${{ parameters.dataDeploymentType }}', 'None'))
+  condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true), ne('${{ parameters.dataDeploymentType }}', 'None'))
   inputs:
     command: 'run'
     projects: 'Tools\Nucleus.Dataloader.Cli'
