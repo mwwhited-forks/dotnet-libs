@@ -115,7 +115,7 @@ steps:
       --no-build 
       --no-restore 
       --nologo 
-      --SourcePath="$(Build.SourcesDirectory)/Conf/MongoDb/SampleData"
+      --SourcePath="$(Build.SourcesDirectory)\Conf\MongoDb\SampleData"
       --Action=${{ parameters.dataDeploymentType }}
       --ConnectionString="$(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)"
       --DatabaseName="$(${{parameters.targetEnvironment}}-MongoDatabase__DatabaseName)"
