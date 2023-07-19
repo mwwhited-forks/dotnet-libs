@@ -15,6 +15,14 @@ parameters:
     values:
     - Dev
     - Test
+  - name: dataDeploymentType
+    displayName: Data Deployment Type
+    type: string
+    default: Import
+    values:
+    - None
+    - Import
+    - DropCollectionAndImport
 
 trigger:
 - master
@@ -76,3 +84,5 @@ steps:
     appType: 'webApp'
     WebAppName: '$(apiservice)'
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
+
+# TODO: taskto execute dataloader
