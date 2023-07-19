@@ -32,10 +32,27 @@ namespace Nucleus.Dataloader.Cli
                             select (type, database: _serviceProvider.GetRequiredService(type));
             var dbs = databases.ToList();
 
+
+            var exceptions = new List<Exception>();
             foreach (var (type, database) in dbs)
             {
-                if (cancellationToken.IsCancellationRequested) return;
-                await _commands.ExecuteAsync(_settings.Action, type, database, cancellationToken);
+                try
+                {
+                    if (cancellationToken.IsCancellationRequested) return;
+                    await _commands.ExecuteAsync(_settings.Action, type, database, cancellationToken);
+                }
+                catch (AggregateException aex)
+                {
+                    exceptions.AddRange(aex.InnerExceptions);
+                }
+                catch (Exception ex)
+                {
+                    exceptions.Add(ex);
+                }
+            }
+            if (exceptions.Count > 0)
+            {
+               throw new AggregateException(exceptions);
             }
         }
 
