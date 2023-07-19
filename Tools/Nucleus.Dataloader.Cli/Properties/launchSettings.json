@@ -99,6 +99,14 @@
         "MongoDatabase__ConnectionString": "mongodb://localhost:27018",
         "MongoDatabase__DatabaseName": "nucleus2"
       }
+    },
+    "Deployed Dev - DropCollectionAndImport": {
+      "commandName": "Project",
+      "commandLineArgs": "--SourcePath=$(SolutionDir)Conf\\MongoDb\\SampleData --Action=DropCollectionAndImport --DatabaseName=nucleus-dev --ConnectionString=mongodb+srv://nucleusaccadmin:tC1WMGS2j83L6tN4@nucleusaccmongodb.jxd3hkq.mongodb.net/?retryWrites=true&w=majority",
+      "environmentVariables": {
+        "MongoDatabase__ConnectionString": "mongodb://localhost:27018",
+        "MongoDatabase__DatabaseName": "nucleus2"
+      }
     }
   }
 }
