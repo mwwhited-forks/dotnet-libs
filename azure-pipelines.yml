@@ -70,9 +70,9 @@ steps:
       --configuration $(buildConfiguration) 
       --no-build 
       --no-restore 
+      --nologo 
       --filter "TestCategory=Unit|TestCategory=Simulate" 
       --collect:"XPlat Code Coverage" 
-      --nologo 
       --settings "$(Build.SourcesDirectory)\.runsettings"
     publishTestResults: true
 
@@ -83,7 +83,7 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'AppDev Project Nucleus'
     appType: 'webApp'
-    WebAppName: '$(apiservice)'
+    WebAppName: '$(${{parameters.targetEnvironment}}-ServerName)'
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
 
 - task: DotNetCoreCLI@2
@@ -92,6 +92,10 @@ steps:
     command: 'run'
     projects: 'Tools\Nucleus.Dataloader.Cli'
     arguments: >
+      --configuration $(buildConfiguration) 
+      --no-build 
+      --no-restore 
+      --nologo 
       --SourcePath=.\Conf\MongoDb\SampleData 
       --Action=${{ parameters.dataDeploymentType }}
       --ConnectionString="$(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)"
