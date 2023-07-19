@@ -33,10 +33,11 @@ pool:
 variables:
   ${{if eq(parameters.targetEnvironment, 'Dev')}}: 
     - name: apiservice
-      value: 'nucleusaccnetdevapi'
+      value: 'nucleusaccnetdevapi'      
   ${{elseif eq(parameters.targetEnvironment, 'Test')}}: 
     - name: apiservice
       value: 'nucleusaccnetapi'
+
   - name: solution
     value: '**/*.sln'
   - name: buildPlatform
