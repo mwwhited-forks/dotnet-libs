@@ -43,24 +43,6 @@ variables:
 steps:
 - task: NuGetToolInstaller@1
 
-- task: CmdLine@2
-  inputs:
-    script: |
-      echo "Structure of work folder of this pipeline:"
-      tree $(Agent.WorkFolder)\1 /f
-      
-      echo "Build.ArtifactStagingDirectory:" 
-      
-      echo "$(Build.ArtifactStagingDirectory)"
-      
-      echo "Build.BinariesDirectory:" 
-      
-      echo "$(Build.BinariesDirectory)"
-      
-      echo "Build.SourcesDirectory:"
-      
-      echo "$(Build.SourcesDirectory)"
-
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
@@ -115,6 +97,7 @@ steps:
       --no-build 
       --no-restore 
       --nologo 
+      --
       --SourcePath="$(Build.SourcesDirectory)\Conf\MongoDb\SampleData"
       --Action=${{ parameters.dataDeploymentType }}
       --ConnectionString="$(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)"
