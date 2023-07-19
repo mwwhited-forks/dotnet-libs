@@ -86,8 +86,6 @@ steps:
     WebAppName: '$(apiservice)'
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
 
-# TODO: taskto execute dataloader
-
 - task: DotNetCoreCLI@2
   condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true), neq('${{ parameters.dataDeploymentType }}', 'None'))
   inputs:
@@ -96,6 +94,5 @@ steps:
     arguments: >
       --SourcePath=.\Conf\MongoDb\SampleData 
       --Action=${{ parameters.dataDeploymentType }}
-    env: 
-      MongoDatabase__ConnectionString: $(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)
-      MongoDatabase__DatabaseName: $(${{parameters.targetEnvironment}}-MongoDatabase__DatabaseName)
+      --ConnectionString="$(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)"
+      --DatabaseName="$(${{parameters.targetEnvironment}}-MongoDatabase__DatabaseName)"
