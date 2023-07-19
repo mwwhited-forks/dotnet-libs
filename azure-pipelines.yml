@@ -37,7 +37,6 @@ variables:
     value: 'Any CPU'
   - name: buildConfiguration
     value: 'Release'
-# import variable values from library group    
   - group: 'Azure.Environment.Nucleus.Acc.Net.Api'
 
   
