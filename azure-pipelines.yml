@@ -31,13 +31,6 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  ${{if eq(parameters.targetEnvironment, 'Dev')}}: 
-    - name: apiservice
-      value: 'nucleusaccnetdevapi'      
-  ${{elseif eq(parameters.targetEnvironment, 'Test')}}: 
-    - name: apiservice
-      value: 'nucleusaccnetapi'
-
   - name: solution
     value: '**/*.sln'
   - name: buildPlatform
@@ -46,6 +39,8 @@ variables:
     value: 'Release'
 # import variable values from library group    
   - group: 'Azure.Environment.Nucleus.Acc.Net.Api'
+  - name: apiservice
+    value: $(${{parameters.targetEnvironment}}-ServerName)
   
 steps:
 - task: NuGetToolInstaller@1
