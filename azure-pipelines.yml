@@ -37,7 +37,7 @@ variables:
     value: 'Any CPU'
   - name: buildConfiguration
     value: 'Release'
-  - group: 'Azure.Environment.Nucleus.Acc.Net.Api'
+  - group: Azure.Environment.Nucleus.Acc.Net.Api
 
   
 steps:
