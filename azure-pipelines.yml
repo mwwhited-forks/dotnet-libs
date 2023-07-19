@@ -32,12 +32,19 @@ pool:
 
 variables:
   ${{if eq(parameters.targetEnvironment, 'Dev')}}: 
-    apiservice: 'nucleusaccnetdevapi'
+    - name: apiservice
+      value: 'nucleusaccnetdevapi'
   ${{elseif eq(parameters.targetEnvironment, 'Test')}}: 
-    apiservice: 'nucleusaccnetapi'
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
+    - name: apiservice
+      value: 'nucleusaccnetapi'
+  - name: solution
+    value: '**/*.sln'
+  - name: buildPlatform
+    value: 'Any CPU'
+  - name: buildConfiguration
+    value: 'Release'
+# import variable values from library group    
+  - group: 'Azure.Environment.Nucleus.Acc.Net.Api'
   
 steps:
 - task: NuGetToolInstaller@1
@@ -86,3 +93,17 @@ steps:
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
 
 # TODO: taskto execute dataloader
+
+
+${{if eq(parameters.targetEnvironment, 'Dev')}}: 
+  - task: DotNetCoreCLI@2
+    condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true))
+    inputs:
+      command: 'run'
+      projects: 'Tools\Nucleus.Dataloader.Cli'
+      arguments: >
+        --SourcePath=.\Conf\MongoDb\SampleData 
+        --Action=DropCollectionAndImport
+      env: 
+        MongoDatabase__ConnectionString: $(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)
+        MongoDatabase__DatabaseName: $(${{parameters.targetEnvironment}}-MongoDatabase__DatabaseName)
