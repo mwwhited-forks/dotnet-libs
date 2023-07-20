@@ -909,19 +909,19 @@ components:
           description: '`true` will disable row/page counts and may decrease processing time without effecting paging functions'
         searchTerm:
           type: string
-          description: '**Searched Properties:** Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn; CreatedOnUnix'
+          description: '**Searched Properties:** Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn'
           nullable: true
         filter:
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-          description: '**Filterable Properties:** BlogId; Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn; CreatedOnUnix'
+          description: '**Filterable Properties:** BlogId; Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn'
           nullable: true
         orderBy:
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-          description: '**Sortable Properties:** BlogId, Title, Slug, Tags, Preview, Content, Enabled, Author, CreatedOn, CreatedOnUnix  **Default Order:** CreatedOn asc, Slug asc'
+          description: '**Sortable Properties:** BlogId, Title, Slug, Tags, Preview, Content, Enabled, Author, CreatedOn  **Default Order:** CreatedOn asc, Title asc'
           nullable: true
       additionalProperties: false
     Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.Module:
@@ -1207,9 +1207,6 @@ components:
         createdOn:
           type: string
           format: date-time
-        createdOnUnix:
-          type: integer
-          format: int64
       additionalProperties: false
     Nucleus.Blog.Contracts.Models.Filters.BlogsFilter:
       type: object
@@ -1682,9 +1679,6 @@ components:
         createdOn:
           type: string
           format: date-time
-        createdOnUnix:
-          type: integer
-          format: int64
       additionalProperties: false
   securitySchemes:
     oauth2:
