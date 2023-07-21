@@ -21,6 +21,7 @@ namespace Nucleus.Dataloader.Cli
 
         public async Task ExecuteAsync(DataLoaderActions action, Type type, object database, CancellationToken cancellationToken)
         {
+            var exceptions = new List<Exception>();
             foreach (var collection in type.GetProperties())
             {
                 try
@@ -45,7 +46,12 @@ namespace Nucleus.Dataloader.Cli
                 {
                     _log.LogError($"{{{nameof(collection)}}}::{{{nameof(database)}}} -> {{{nameof(ex.Message)}}}", collection, database, ex.Message);
                     _log.LogDebug($"{{{nameof(collection)}}}::{{{nameof(database)}}} -> {{{nameof(Exception)}}}", collection, database, ex);
+                    exceptions.Add(ex);
                 }
+            }
+            if (exceptions.Count > 0)
+            {
+                throw new AggregateException(exceptions);
             }
         }
 
