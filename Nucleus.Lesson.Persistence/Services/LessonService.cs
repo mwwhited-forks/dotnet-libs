@@ -151,14 +151,14 @@ namespace Nucleus.Lesson.Persistence.Services
             _db.Lessons.AsQueryable().Select(Projections.Lessons);
 
 
-        public void UpdateLesson(LessonModel lessonModel)
+        public void UpdateLesson(LessonModel lesson)
         {
-            UpdateAsync(lessonModel);
+            UpdateAsync(lesson);
         }
 
-        public void UpdateLessons(LessonModel[] lessonModels)
+        public void UpdateLessons(LessonModel[] lessons)
         {
-            foreach (var lessonModel in lessonModels)
+            foreach (var lessonModel in lessons)
             {
                 UpdateLesson(lessonModel);
             }
