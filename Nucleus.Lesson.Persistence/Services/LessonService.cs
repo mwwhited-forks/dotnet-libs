@@ -149,5 +149,20 @@ namespace Nucleus.Lesson.Persistence.Services
 
         public IQueryable<LessonModel> Query() =>
             _db.Lessons.AsQueryable().Select(Projections.Lessons);
+
+
+        public void UpdateLesson(LessonModel lessonModel)
+        {
+            UpdateAsync(lessonModel);
+        }
+
+        public void UpdateLessons(LessonModel[] lessonModels)
+        {
+            foreach (var lessonModel in lessonModels)
+            {
+                UpdateLesson(lessonModel);
+            }
+        }
+
     }
 }

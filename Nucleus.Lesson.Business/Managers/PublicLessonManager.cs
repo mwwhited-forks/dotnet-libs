@@ -43,5 +43,18 @@ namespace Nucleus.Lesson.Business.Managers
         public async Task<List<LessonModel>?> GetRecentLessons(int i) =>
             await _lessonService.GetRecentAsync(i, true);
         public IQueryable<LessonModel> QueryLessons() => _lessonService.Query();
+
+        public void UpdateLesson(LessonModel lessonModel)
+        {
+            _lessonService.UpdateAsync(lessonModel);
+        }
+
+        public void UpdateLessons(LessonModel[] lessonModels)
+        {
+            foreach (var lessonModel in lessonModels)
+            {
+                UpdateLesson(lessonModel);
+            }
+        }
     }
 }
