@@ -2405,6 +2405,10 @@
             "format": "date-time",
             "nullable": true
           },
+          "createdOnUnix": {
+            "type": "integer",
+            "format": "int64"
+          },
           "attendees": {
             "type": "array",
             "items": {
