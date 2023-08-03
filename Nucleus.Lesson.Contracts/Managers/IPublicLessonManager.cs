@@ -15,5 +15,7 @@ namespace Nucleus.Lesson.Contracts.Managers
         Task<LessonModel?> GetLessonSlug(string slug);
         Task<List<LessonModel>?> GetRecentLessons(int i);
         IQueryable<LessonModel> QueryLessons();
+        void UpdateLesson(LessonModel lesson);
+        void UpdateLessons(LessonModel[] lessons);
     }
 }

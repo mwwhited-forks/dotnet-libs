@@ -4,19 +4,19 @@
       "commandName": "Project",
       "commandLineArgs": "$(SolutionDir)Conf\\MongoDb"
     },
-    "27018 - Export": {
+    "27017 - Export": {
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)Conf\\MongoDb\\SampleData"
     },
-    "27018 - Import": {
+    "27017 - Import": {
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)Conf\\MongoDb\\SampleData --Action=Import"
     },
-    "27018 - DropCollection": {
+    "27017 - DropCollection": {
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)Conf\\MongoDb\\SampleData --Action=DropCollection"
     },
-    "27018 - DropCollectionAndImport": {
+    "27017 - DropCollectionAndImport": {
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)Conf\\MongoDb\\SampleData --Action=DropCollectionAndImport"
     },
@@ -87,6 +87,22 @@
     "27018 (nucleus2) - 7": {
       "commandName": "Project",
       "commandLineArgs": "--SourcePath=$(SolutionDir)Conf\\MongoDb\\SampleData --Action=Export,Import,DropCollection",
+      "environmentVariables": {
+        "MongoDatabase__ConnectionString": "mongodb://localhost:27018",
+        "MongoDatabase__DatabaseName": "nucleus2"
+      }
+    },
+    "Deployed Dev - Export": {
+      "commandName": "Project",
+      "commandLineArgs": "--SourcePath=$(SolutionDir)Conf\\MongoDb\\SampleData --Action=Export --DatabaseName=nucleus --ConnectionString=mongodb+srv://nucleusaccadmin:tC1WMGS2j83L6tN4@nucleusaccmongodb.jxd3hkq.mongodb.net/?retryWrites=true&w=majority",
+      "environmentVariables": {
+        "MongoDatabase__ConnectionString": "mongodb://localhost:27018",
+        "MongoDatabase__DatabaseName": "nucleus2"
+      }
+    },
+    "Deployed Dev - DropCollectionAndImport": {
+      "commandName": "Project",
+      "commandLineArgs": "--SourcePath=$(SolutionDir)Conf\\MongoDb\\SampleData --Action=DropCollectionAndImport --DatabaseName=nucleus-dev --ConnectionString=mongodb+srv://nucleusaccadmin:tC1WMGS2j83L6tN4@nucleusaccmongodb.jxd3hkq.mongodb.net/?retryWrites=true&w=majority",
       "environmentVariables": {
         "MongoDatabase__ConnectionString": "mongodb://localhost:27018",
         "MongoDatabase__DatabaseName": "nucleus2"

@@ -15,6 +15,14 @@ parameters:
     values:
     - Dev
     - Test
+  - name: dataDeploymentType
+    displayName: Data Deployment Type
+    type: string
+    default: Import
+    values:
+    - None
+    - Import
+    - DropCollectionAndImport
 
 trigger:
 - master
@@ -23,13 +31,14 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  ${{if eq(parameters.targetEnvironment, 'Dev')}}: 
-    apiservice: 'nucleusaccnetdevapi'
-  ${{elseif eq(parameters.targetEnvironment, 'Test')}}: 
-    apiservice: 'nucleusaccnetapi'
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
+  - name: solution
+    value: '**/*.sln'
+  - name: buildPlatform
+    value: 'Any CPU'
+  - name: buildConfiguration
+    value: 'Release'  
+  - group: Azure.Environment.Nucleus.Acc.Net.Api
+
   
 steps:
 - task: NuGetToolInstaller@1
@@ -61,9 +70,9 @@ steps:
       --configuration $(buildConfiguration) 
       --no-build 
       --no-restore 
+      --nologo 
       --filter "TestCategory=Unit|TestCategory=Simulate" 
       --collect:"XPlat Code Coverage" 
-      --nologo 
       --settings "$(Build.SourcesDirectory)\.runsettings"
     publishTestResults: true
 
@@ -74,5 +83,22 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'AppDev Project Nucleus'
     appType: 'webApp'
-    WebAppName: '$(apiservice)'
+    WebAppName: '$(${{parameters.targetEnvironment}}-ServerName)'
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
+
+- task: DotNetCoreCLI@2
+  condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true), ne('${{ parameters.dataDeploymentType }}', 'None'))
+  displayName: 'Deploying Data to ${{ parameters.targetEnvironment }}'
+  inputs:
+    command: 'run'
+    projects: 'Tools\Nucleus.Dataloader.Cli'
+    arguments: >
+      --configuration $(buildConfiguration) 
+      --no-build 
+      --no-restore 
+      --nologo 
+      --
+      --SourcePath="$(Build.SourcesDirectory)\Conf\MongoDb\SampleData"
+      --Action=${{ parameters.dataDeploymentType }}
+      --ConnectionString="$(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)"
+      --DatabaseName="$(${{parameters.targetEnvironment}}-MongoDatabase__DatabaseName)"
