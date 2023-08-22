@@ -9,6 +9,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 
@@ -35,7 +36,7 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
     {
         options.OperationFilter<ApplicationPermissionsApiFilter>();
 
-        var assemblyName = GetType().Assembly.GetName();
+        var assemblyName = Assembly.GetExecutingAssembly()?.GetName();
 
         options.DocInclusionPredicate((name, desc) => name == "all" || name == desc.GroupName);
         options.CustomSchemaIds(ResolveSchemaType); // https://wegotcode.com/microsoft/swagger-fix-for-dotnetcore/

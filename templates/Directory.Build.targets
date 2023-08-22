@@ -8,4 +8,4 @@
 		<MakeDir Directories="$(BaseOutputPath)" ContinueOnError="true" />
 	</Target>
 
-</Project>
+</Project>sa
