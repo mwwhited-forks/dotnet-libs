@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<Company>Eliassen Group</Company>
-		<Authors>$(USERNAME)@$(USERDNSDOMAIN)</Authors>
-		<Copyright>Eliassen Group, $([System.DateTime]::Now.ToString('yyyy'))</Copyright>
+		<Authors>Eliassen - AppDev</Authors>
+		<Copyright>Eliassen Group, 2023</Copyright>
 
 	</PropertyGroup>
 
