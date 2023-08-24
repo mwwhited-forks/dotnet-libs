@@ -22,6 +22,10 @@ public class TestTargetExtendedModel
         FName = $"{nameof(FName)}{1000 - index:0000}";
         LName = $"{nameof(LName)}{index:0000}";
         Email = $"{nameof(Email)}{index:0000}@domain.com";
+        May = (index % 3 == 0) ? "" : 
+              (index % 5 == 0) ? null :
+              (index % 7 == 0) ? "!" :
+              index.ToString();
 
         Date = BaseDate.AddMonths(index);
         if (index >= 0)
@@ -36,6 +40,8 @@ public class TestTargetExtendedModel
     public string LName { get; set; }
     [Searchable]
     public string Email { get; set; }
+    [Searchable]
+    public string? May { get; set; }
 
     [Searchable]
     public DateTime Date { get; set; }
