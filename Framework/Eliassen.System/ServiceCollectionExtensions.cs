@@ -45,7 +45,11 @@ public static class ServiceCollectionExtensions
         services.TryAddTransient(typeof(IQueryBuilder<>), typeof(QueryBuilder<>));
         services.TryAddTransient(typeof(ISortBuilder<>), typeof(SortBuilder<>));
         services.TryAddTransient(typeof(IExpressionTreeBuilder<>), typeof(ExpressionTreeBuilder<>));
-        services.TryAddTransient<IPostBuildExpressionVisitor, StringComparisonReplacementExpressionVisitor>();
+
+        services.AddTransient<IPostBuildExpressionVisitor, StringComparisonReplacementExpressionVisitor>();
+
+        //services.AddTransient<IPostBuildExpressionVisitor, InstanceNotNullExpressionVisitor>();
+
         services.TryAddScoped<ICaptureResultMessage, CaptureResultMessage>();
         return services;
     }

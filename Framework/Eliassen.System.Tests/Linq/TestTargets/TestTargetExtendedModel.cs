@@ -23,7 +23,7 @@ public class TestTargetExtendedModel
         LName = $"{nameof(LName)}{index:0000}";
         Email = $"{nameof(Email)}{index:0000}@domain.com";
         May = (index % 3 == 0) ? "" : 
-              //(index % 5 == 0) ? null : TODO: make null safe
+              (index % 5 == 0) ? null :
               (index % 7 == 0) ? "!" :
               index.ToString();
 
