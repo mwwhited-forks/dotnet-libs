@@ -8,7 +8,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Eliassen.System.Tests.Linq;
 
@@ -155,6 +157,27 @@ public class QueryableExtensionsTests
         Assert.IsNotNull(results);
 
         Assert.AreEqual(5, results.TotalRowCount);
+    }
+
+    [TestMethod]
+    public void BuildExpression()
+    {
+        var query = new[] {
+            new { Value = (string?)"" },
+            new { Value = (string?)null }
+        }.AsQueryable();
+        var values = query.Where(x => x.Value != null);
+        var exp = values.Expression;
+
+        var nullValue = Expression.Constant((string?)null);
+        var notNullValue = Expression.Constant((string?)"");
+
+        Expression check(Expression left) =>
+            Expression.NotEqual(left, Expression.Constant(null, left.Type));
+
+        var n1 = check(nullValue);
+        var n2 = check(notNullValue);
+
     }
 
     [DataTestMethod]
