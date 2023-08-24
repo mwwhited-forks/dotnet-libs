@@ -215,6 +215,8 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
                     };
                     if (method == null) throw new NotSupportedException("Method not defined");
 
+                    //  TODO: make null safe
+
                     if (isElementSet)
                     {
                         //Note: target is a set
