@@ -26,7 +26,7 @@ xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
   </TestSettings>-->
 
 		<xsl:apply-templates select="/tt:TestRun/tt:Results/tt:UnitTestResult">
-			<xsl:sort select="/tt:TestRun/tt:TestDefinitions/tt:UnitTest[@id=@testId]/tt:TestMethod/@className" />
+			<!--<xsl:sort select="/tt:TestRun/tt:TestDefinitions/tt:UnitTest[@id=@testId]/tt:TestMethod/@className" />-->
 			<xsl:sort select="@testName" />
 		</xsl:apply-templates>
 	</xsl:template>
