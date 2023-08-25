@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Eliassen.AspNetCore.Mvc
-  version: 1.0.0.0
+  version: 0.1.39.0
 paths:
   /api/Blog/Blogs:
     post:
