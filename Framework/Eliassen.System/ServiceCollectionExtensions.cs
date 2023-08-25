@@ -48,7 +48,7 @@ public static class ServiceCollectionExtensions
 
         services.AddTransient<IPostBuildExpressionVisitor, StringComparisonReplacementExpressionVisitor>();
 
-        //services.AddTransient<IPostBuildExpressionVisitor, InstanceNotNullExpressionVisitor>();
+        //services.AddTransient<IPostBuildExpressionVisitor, SkipInstanceMethodOnNullExpressionVisitor>();
 
         services.TryAddScoped<ICaptureResultMessage, CaptureResultMessage>();
         return services;

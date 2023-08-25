@@ -160,33 +160,12 @@ public class QueryableExtensionsTests
         Assert.AreEqual(5, results.TotalRowCount);
     }
 
-    [TestMethod]
-    public void BuildExpression()
-    {
-        var query = new[] {
-            new { Value = (string?)"" },
-            new { Value = (string?)null }
-        }.AsQueryable();
-        var values = query.Where(x => x.Value != null);
-        var exp = values.Expression;
-
-        var nullValue = Expression.Constant((string?)null);
-        var notNullValue = Expression.Constant((string?)"");
-
-        Expression check(Expression left) =>
-            Expression.NotEqual(left, Expression.Constant(null, left.Type));
-
-        var n1 = check(nullValue);
-        var n2 = check(notNullValue);
-
-    }
-
     [DataTestMethod]
     [TestCategory(TestCategories.Unit)]
-    //[DataRow(typeof(TestTargetModel), "Name3", 1, 1, 1, "3")]
-    //[DataRow(typeof(TestTargetModel), "Name3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38")]
-    //[DataRow(typeof(TestTargetModel), "*3", 10, 100, 10, "3,13,23,33,43,53,63,73,83,93")]
-    //[DataRow(typeof(TestTargetModel), "*e3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38")]
+    [DataRow(typeof(TestTargetModel), "Name3", 1, 1, 1, "3")]
+    [DataRow(typeof(TestTargetModel), "Name3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38")]
+    [DataRow(typeof(TestTargetModel), "*3", 10, 100, 10, "3,13,23,33,43,53,63,73,83,93")]
+    [DataRow(typeof(TestTargetModel), "*e3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38")]
     [DataRow(typeof(TestTargetExtendedModel), "FName0999 LName0001", 1, 1, 1, "1")]
     public void ExecuteByTest_SearchTerm(Type type, string searchTerm, int expectedTotalPages, int expectedTotalRows, int expectedRows, string expectedKeys)
     {
@@ -213,7 +192,7 @@ public class QueryableExtensionsTests
         this.TestContext.AddResult(query);
         var rawData = GetTestData<T>(0);
         this.TestContext.AddResult(rawData);
-        var queryResults = QueryBuilder.Execute(rawData, query, new InstanceNotNullExpressionVisitor());
+        var queryResults = QueryBuilder.Execute(rawData, query, new SkipInstanceMethodOnNullExpressionVisitor());
         this.TestContext.AddResult(queryResults);
         var results = queryResults as IPagedQueryResult<T>;
         Assert.IsNotNull(results);
