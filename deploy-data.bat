@@ -5,5 +5,5 @@ dotnet run ^
 -- ^
 --SourcePath=.\Conf\MongoDb\SampleData ^
 --Action=DropCollectionAndImport ^
---ConnectionString=mongodb://localhost:27018 ^
---DatabaseName=nucleus2
+--ConnectionString=mongodb://localhost:27017 ^
+--DatabaseName=nucleus

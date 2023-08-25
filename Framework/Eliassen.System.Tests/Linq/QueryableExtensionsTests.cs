@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Linq;
+using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
 using Eliassen.System.Reflection;
 using Eliassen.System.ResponseModel;
@@ -8,7 +9,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Eliassen.System.Tests.Linq;
 
@@ -82,6 +85,14 @@ public class QueryableExtensionsTests
     [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.FC), Operators.EqualTo, "ame1", 2, "-1,0")]
     [DataRow(typeof(TestTargetWithInnerArrayModel), nameof(TestTargetWithInnerArrayModel.Children), Operators.EqualTo, "*001", 10, "2,3,4,5,6,7,8,9,12,13")]
     [DataRow(typeof(TestTargetWithInnerListModel), nameof(TestTargetWithInnerListModel.Children), Operators.EqualTo, "*001", 10, "2,3,4,5,6,7,8,9,12,13")]
+    [DataRow(typeof(TestTargetModel), nameof(TestTargetModel.Name), Operators.EqualTo, "", 0, "")]
+    [DataRow(typeof(TestTargetModel), nameof(TestTargetModel.Name), Operators.NotEqualTo, "", 10, "0,1,2,3,4,5,6,7,8,9")]
+    [DataRow(typeof(TestTargetModel), nameof(TestTargetModel.Name), Operators.EqualTo, "*", 10, "0,1,2,3,4,5,6,7,8,9")]
+    //NOTE: Not supported !!! [DataRow(typeof(TestTargetModel), nameof(TestTargetModel.Name), Operators.NotEqualTo, "*", 10, )]
+    [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.May), Operators.EqualTo, "", 10, "0,3,6,9,12,15,18,21,24,27")]
+    [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.May), Operators.NotEqualTo, "", 10, "-1,1,2,4,5,7,8,10,11,13")]
+    [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.May), Operators.EqualTo, "!", 10, "-1,1,2,4,5,7,8,10,11,13")]
+    [DataRow(typeof(TestTargetExtendedModel), nameof(TestTargetExtendedModel.May), Operators.NotEqualTo, "!", 10, "-1,1,2,4,5,7,8,10,11,13")]
     public void ExecuteByTest_Filter(Type type, string propertyName, Operators expressionOperator, object filterValue, int expectedRows, string expectedKeys)
     {
         this.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
@@ -181,7 +192,7 @@ public class QueryableExtensionsTests
         this.TestContext.AddResult(query);
         var rawData = GetTestData<T>(0);
         this.TestContext.AddResult(rawData);
-        var queryResults = QueryBuilder.Execute(rawData, query);
+        var queryResults = QueryBuilder.Execute(rawData, query, new SkipInstanceMethodOnNullExpressionVisitor());
         this.TestContext.AddResult(queryResults);
         var results = queryResults as IPagedQueryResult<T>;
         Assert.IsNotNull(results);

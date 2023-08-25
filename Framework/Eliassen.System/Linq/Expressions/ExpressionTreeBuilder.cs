@@ -169,9 +169,9 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
 
         var isElementSet = IsElementSet(unwrapped.Type, out var unwrappedElementType);
 
-        if (queryParameter is string queryString) //TODO: should be "like"
+        if (queryParameter is string queryString && queryString.Length > 0) //TODO: should be "like"
         {
-            if (queryString[..1] == "!")
+            if ( queryString[..1] == "!")
             {
                 return BuildPredicate(scope, expression, Operators.NotEqualTo, queryString[1..], isSearchTerm);
             }
@@ -189,6 +189,8 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
                 }
                 else
                 {
+                    if (queryString == "*") return null; // if only wildcard then exclude the predicate
+
                     var (method, queryValue) = (queryString[..1], queryString[^1..]) switch
                     {
                         ("*", "*") => (
@@ -212,6 +214,8 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
                             )
                     };
                     if (method == null) throw new NotSupportedException("Method not defined");
+
+                    //  TODO: make null safe
 
                     if (isElementSet)
                     {

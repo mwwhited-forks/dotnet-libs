@@ -194,6 +194,19 @@ Rebuild dictionary to use a different IEqualityComparer{TKey}
 ## Class: System.Linq.Expressions.ExpressionExtensions
 Extensions for System.Linq.Expressions.Expression
 
+## Class: System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
+This visitor will modify expressions to add `x.Property != null` before instance method calls for query rewrite
+### Methods
+
+
+#### VisitMethodCall(System.Linq.Expressions.MethodCallExpression)
+If expression is an instance method then modify the expression to ensure a
+    #####Parameters
+    **node:** 
+
+    ##### Return value
+    
+
 ## Class: System.Linq.Expressions.StringComparisonReplacementExpressionVisitor
 Expression visitor to replace string functions with the matching functions that end with a StringComparison parameter
 ### Methods
