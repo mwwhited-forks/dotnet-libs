@@ -10,6 +10,13 @@
 	<PropertyGroup Condition="'$(LOCAL_NUGET)' != ''">
 		<PackageOutputPath>$(LOCAL_NUGET.Trim('\'))\</PackageOutputPath>
 	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(DOCUMENT_PATH)' != ''">
+		<DocumentPath>$(DOCUMENT_PATH.Trim('\'))\</DocumentPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(DOCUMENT_PATH)' == ''">
+		<DocumentPath>..\docs\</DocumentPath>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="GitVersion.MsBuild" Version="5.10.3">
