@@ -1,7 +1,6 @@
 
 REM @REM SET
 @echo off
-
 SETLOCAL
 
 SET TestProject=Nucleus.Acc.Net.Api.sln
@@ -45,11 +44,21 @@ REM dotnet tool install Lightwell.FixSourceLinks.Cli --add-source=Publish\Binary
 REM dotnet fix-sourcelink --include=.\TestResults\**\coverage.cobertura.xml --target=..\..
 REM dotnet tool uninstall Lightwell.FixSourceLinks.Cli
 
-reportgenerator "-reports:.\TestResults\**\coverage.cobertura.xml" "-targetDir:.\TestResults\Coverage\Reports" -reportTypes:HtmlSummary;Cobertura "-title:%TestProject% - (%USERNAME%)"
+dotnet dotnet-coverage merge ^
+coverage.*.xml ^
+--recursive ^
+--output .\TestResults\Cobertura.coverage ^
+--output-format cobertura
 
-REM dotnet dotnet-coverage merge coverage.*.xml --recursive --output .\TestResults\Cobertura.coverage  --output-format cobertura
+reportgenerator ^
+"-reports:.\TestResults\**\coverage.cobertura.xml" ^
+"-targetDir:.\TestResults\Coverage\Reports" ^
+-reportTypes:HtmlSummary;Cobertura ^
+"-title:%TestProject% - (%USERNAME%)"
 
 start .\TestResults\Coverage\Reports\summary.html
+start .\TestResults\Cobertura.coverage
+start .\TestResults\LatestTestResults.trx
 
 ECHO TEST_ERR=%TEST_ERR%
 IF "%TEST_ERR%"=="0" (
