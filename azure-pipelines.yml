@@ -66,7 +66,6 @@ steps:
 - task: NuGetAuthenticate@0
   displayName: 'NuGet Authenticate'
 
-
 - task: PowerShell@2
   displayName: Set Version Variables
   name: setVersionVar
@@ -77,6 +76,14 @@ steps:
             Write-Host "FullSemVerLower=$fullSemVerLower"
             Write-Host "##vso[build.updatebuildnumber]$fullSemVerLower"
             Write-Host "##vso[task.setvariable variable=FullSemVerLower;isOutput=true]$fullSemVerLower"  
+
+- task: PowerShell@2
+  displayName: Get Version Variables
+  name: setVersionVar
+  inputs:
+    targetType: 'inline'
+    script: |
+            Write-Host "FullSemVerLower=$(FullSemVerLower)" 
                         
 - task: DotNetCoreCLI@2
   displayName: 'Building ${{ parameters.targetEnvironment }}'
