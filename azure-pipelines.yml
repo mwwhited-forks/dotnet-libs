@@ -115,10 +115,10 @@ steps:
     custom: 'tool'
     arguments: 'restore'
     
-- displayName: Merge Test Results
+- script: dotnet tool dotnet-coverage merge coverage.*.xml --recursive --output .\Cobertura.coverage --output-format cobertura
+  displayName: Merge Test Coverage Results
   workingDirectory: '$(Agent.TempDirectory)\TestResults'
-  script: dotnet tool dotnet-coverage merge coverage.*.xml --recursive --output .\Cobertura.coverage --output-format cobertura
-
+  
 # https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-coverage
 # $(Agent.TempDirectory)/**/coverage.cobertura.xml
 # coverage.cobertura.xml
