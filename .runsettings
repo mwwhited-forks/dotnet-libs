@@ -30,7 +30,7 @@
 
 	<InProcDataCollectionRunSettings>
 		<InProcDataCollectors>
-			<InProcDataCollector assemblyQualifiedName="Coverlet.Collector.DataCollection.CoverletInProcDataCollector, coverlet.collector, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null"
+			<InProcDataCollector assemblyQualifiedName="Coverlet.Collector.DataCollection.CoverletInProcDataCollector, coverlet.collector"
 						   friendlyName="XPlat Code Coverage"
 						   enabled="True"
 						   codebase="coverlet.collector.dll" />
