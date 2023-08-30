@@ -79,7 +79,7 @@ steps:
 
 - task: PowerShell@2
   displayName: Get Version Variables
-  name: setVersionVar
+  name: getVersionVar
   inputs:
     targetType: 'inline'
     script: |
