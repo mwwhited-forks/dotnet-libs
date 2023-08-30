@@ -34,7 +34,8 @@
     <ProjectReference Include="..\Nucleus.Lesson.Persistence\Nucleus.Lesson.Persistence.csproj" />
   </ItemGroup>
 
-	<Target Name="BuildSwagger" AfterTargets="PostBuildEvent">
+	<Target Name="BuildSwagger">
+		<!--AfterTargets="PostBuildEvent"-->
 		<MakeDir Directories="$(DocumentPath)" Condition="!Exists('$(DocumentPath)')" ContinueOnError="true" />
 		<Exec Command="dotnet tool restore" ContinueOnError="true" />
 		<Exec Command="dotnet swagger tofile --output &quot;$(DocumentPath)swagger.json&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" ContinueOnError="true" />
