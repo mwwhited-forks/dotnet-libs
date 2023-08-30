@@ -120,11 +120,12 @@ steps:
   inputs:
     command: 'custom'
     custom: 'dotnet-coverage'
+    workingDirectory: '$(Agent.TempDirectory)\TestResults'
     arguments: >
       merge 
       coverage.*.xml 
       --recursive 
-      --output $(Agent.TempDirectory)\TestResults\Cobertura.coverage 
+      --output .\Cobertura.coverage 
       --output-format cobertura
     
 # - script: |
