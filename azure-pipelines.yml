@@ -122,7 +122,7 @@ steps:
     custom: 'tool'
     workingDirectory: '$(Agent.TempDirectory)\TestResults'
     arguments: >
-      dotnet-coverage merge 
+      run dotnet-coverage merge 
       coverage.*.xml 
       --recursive 
       --output .\Cobertura.coverage 
