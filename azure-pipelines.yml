@@ -68,18 +68,16 @@ steps:
 
 - task: PowerShell@2
   displayName: Set Version Variables
-  name: setVersionVar
   inputs:
     targetType: 'inline'
     script: |
             $fullSemVerLower = "$(fullSemVer)".ToLower()  
             Write-Host "FullSemVerLower=$fullSemVerLower"
             Write-Host "##vso[build.updatebuildnumber]$fullSemVerLower"
-            Write-Host "##vso[task.setvariable variable=FullSemVerLower;isOutput=true]$fullSemVerLower"  
+            Write-Host "##vso[task.setvariable variable=FullSemVerLower;issecret=false]$fullSemVerLower"  
 
 - task: PowerShell@2
   displayName: Get Version Variables
-  name: getVersionVar
   inputs:
     targetType: 'inline'
     script: |
