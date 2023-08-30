@@ -38,28 +38,43 @@ variables:
   - name: buildConfiguration
     value: 'Release'  
   - group: Azure.Environment.Nucleus.Acc.Net.Api
-
-  
+    
 steps:
+
+- checkout: self
+  clean: true
+  persistCredentials: true
+
 - task: NuGetToolInstaller@1
+
+- task: UseDotNet@2
+  displayName: 'Install .Net 6.0 SDK'
+  inputs:
+    packageType: 'sdk'
+    version: '6.0.x'       
+    
+- task: NuGetAuthenticate@0
+  displayName: 'NuGet Authenticate'
 
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
 
-- task: VSBuild@1
+- task: DotNetCoreCLI@2
   displayName: 'Building ${{ parameters.targetEnvironment }}'
   inputs:
-    solution: '$(solution)'
-    msbuildArgs: >
+    command: 'build'
+    projects: '$(solution)'
+    arguments: >
+      --configuration $(buildConfiguration) 
+      --nologo 
       /p:DeployOnBuild=true 
       /p:WebPublishMethod=Package 
       /p:PackageAsSingleFile=true 
       /p:SkipInvalidConfigurations=true 
       /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" 
       /p:DeployIisAppPath="Default Web Site"
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    publishTestResults: true
 
 - task: DotNetCoreCLI@2
   displayName: Run Unit Tests as $(buildConfiguration)
