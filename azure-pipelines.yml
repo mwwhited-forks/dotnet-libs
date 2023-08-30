@@ -54,7 +54,7 @@ steps:
 - task: gitversion/setup@0
   displayName: Install GitVersion
   inputs:
-    #versionSpec: '5.8.1'    
+    versionSpec: '5.12.x'    
     preferLatestVersion: true
 
 - task: gitversion/execute@0
@@ -65,7 +65,14 @@ steps:
     
 - task: NuGetAuthenticate@0
   displayName: 'NuGet Authenticate'
-
+                    
+- task: tagBuildOrRelease@0
+  displayName: 'Tag Build'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+  inputs:
+    type: 'Build'
+    tags: '$(BuildVersionTag)'
+    
 - task: DotNetCoreCLI@2
   displayName: 'Building ${{ parameters.targetEnvironment }}'
   inputs:
@@ -150,14 +157,7 @@ steps:
             Write-Host "##vso[task.setvariable variable=AssemblySemVer;isOutput=true]$(AssemblySemVer)"
             Write-Host "##vso[task.setvariable variable=AssemblySemFileVer;isOutput=true]$(AssemblySemFileVer)"
             Write-Host "##vso[task.setvariable variable=BuildVersionTag;isOutput=true]Core-v$(fullSemVer)"
-                  
-- task: tagBuildOrRelease@0
-  displayName: 'Tag Build'
-  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-  inputs:
-    type: 'Build'
-    tags: '$(BuildVersionTag)'
-    
+
 # https://dina-muscanell.com/blog/set-git-tags-with-azure-devops/
 # https://stackoverflow.com/questions/59226055/setting-git-tag-from-azure-devops-build-pipeline-on-complete
 # make sure the build service account is granted "Create Tag" and "Contribute" under repository security
