@@ -44,6 +44,7 @@ steps:
 - checkout: self
   clean: true
   persistCredentials: true
+  fetchDepth: 0
 
 - task: NuGetToolInstaller@1
 
@@ -56,9 +57,9 @@ steps:
 - task: NuGetAuthenticate@0
   displayName: 'NuGet Authenticate'
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
+# - task: NuGetCommand@2
+#   inputs:
+#     restoreSolution: '$(solution)'
 
 - task: DotNetCoreCLI@2
   displayName: 'Building ${{ parameters.targetEnvironment }}'
@@ -68,12 +69,12 @@ steps:
     arguments: >
       --configuration $(buildConfiguration) 
       --nologo 
-      /p:DeployOnBuild=true 
-      /p:WebPublishMethod=Package 
-      /p:PackageAsSingleFile=true 
-      /p:SkipInvalidConfigurations=true 
-      /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" 
-      /p:DeployIisAppPath="Default Web Site"
+      --property:DeployOnBuild=true 
+      --property:WebPublishMethod=Package 
+      --property:PackageAsSingleFile=true 
+      --property:SkipInvalidConfigurations=true 
+      --property:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" 
+      --property:DeployIisAppPath="Default Web Site"
     publishTestResults: true
 
 - task: DotNetCoreCLI@2
