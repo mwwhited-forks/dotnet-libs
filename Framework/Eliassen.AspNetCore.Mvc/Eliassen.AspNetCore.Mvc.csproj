@@ -10,16 +10,8 @@
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.3.1" />
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-
-		<!--
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
-		<PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.3.1" />
-		<PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.3.1" />
-		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.3.1" />
-		-->
-
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 	</ItemGroup>
 
 	<ItemGroup>
