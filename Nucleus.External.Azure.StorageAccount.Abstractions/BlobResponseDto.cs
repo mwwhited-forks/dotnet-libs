@@ -1,14 +1,8 @@
-﻿namespace Nucleus.Core.Contracts.Models
-{
-    public class BlobResponseDto
-    {
-        public string? Status { get; set; }
-        public bool Error { get; set; }
-        public BlobDto Blob { get; set; }
+﻿namespace Nucleus.External.Azure.StorageAccount;
 
-        public BlobResponseDto()
-        {
-            Blob = new BlobDto();
-        }
-    }
+public record BlobResponseDto
+{
+    public string? Status { get; set; }
+    public bool Error { get; set; }
+    public BlobDto Blob { get; set; } = new();
 }

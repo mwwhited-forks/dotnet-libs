@@ -14,6 +14,8 @@ using Nucleus.Lesson.Persistence;
 using Nucleus.Project.Business;
 using Nucleus.Project.Persistence;
 using System.Reflection;
+using Nucleus.External.Azure.StorageAccount;
+using Nucleus.External.Microsoft.B2C.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,9 +32,11 @@ builder.Services.AddControllers()
     ;
 
 // Add Shared Modules
-
+//Nucleus.External.Microsoft.B2C.ServiceCollectionEx.AddMicrosoftB2CServices()
+Nucleus.External.Microsoft.B2C.ServiceCollectionEx.AddMicrosoftB2CServices(builder.Services);
 builder.Services
-    .AddCorePersistenceServices()
+    //.AddMicrosoftB2CServices()
+    .AddAzureStorageAccountServices()
     ;
 
 // Adding Module Registrations for IOC

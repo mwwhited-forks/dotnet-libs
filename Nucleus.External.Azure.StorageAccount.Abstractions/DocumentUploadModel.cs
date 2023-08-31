@@ -1,7 +1,6 @@
-﻿namespace Nucleus.Core.Contracts.Models
+﻿namespace Nucleus.External.Azure.StorageAccount;
+
+public record DocumentUploadModel : DocumentModel
 {
-    public class DocumentUploadModel : DocumentModel
-    {
-        public byte[]? Data { get; set; }
-    }
+    public byte[]? Data { get; set; }
 }

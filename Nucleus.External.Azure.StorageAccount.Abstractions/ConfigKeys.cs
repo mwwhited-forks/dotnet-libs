@@ -1,4 +1,4 @@
-﻿namespace Nucleus.Core.Contracts.Models.Keys;
+﻿namespace Nucleus.External.Azure.StorageAccount;
 
 public static class ConfigKeys
 {
