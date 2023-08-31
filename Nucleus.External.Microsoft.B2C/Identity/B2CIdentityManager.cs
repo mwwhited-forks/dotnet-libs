@@ -1,144 +1,148 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Azure.Core;
+using Azure.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Graph;
-using Microsoft.Graph.Auth;
-using Microsoft.Identity.Client;
 
-namespace Nucleus.External.Microsoft.B2C.Identity
+namespace Nucleus.External.Microsoft.B2C.Identity;
+
+public class B2CIdentityManager : IIdentityManager
 {
-    public class B2CIdentityManager : IIdentityManager
+    private readonly ILogger<B2CIdentityManager> _log;
+    private readonly IConfiguration _config;
+    private GraphServiceClient _graphServiceClient { get; set; }
+
+    public B2CIdentityManager(
+        ILogger<B2CIdentityManager> log,
+        IConfiguration config)
     {
-        private readonly ILogger<B2CIdentityManager> _log;
-        private readonly IConfiguration _config;
-        private GraphServiceClient _graphServiceClient { get; set; }
+        _log = log;
+        _config = config;
+        _graphServiceClient = CreateGraphServiceClient();
+    }
 
-        public B2CIdentityManager(
-            ILogger<B2CIdentityManager> log,
-            IConfiguration config)
+    private GraphServiceClient CreateGraphServiceClient()
+    {
+        // Set up the Microsoft Graph service client with client credentials
+        GraphServiceClient graphClient = new GraphServiceClient(GetAuthProvider());
+        return graphClient;
+    }
+    private TokenCredential GetAuthProvider()
+    {
+        var config = new
         {
-            _log = log;
-            _config = config;
-            _graphServiceClient = CreateGraphServiceClient();
-        }
+            clientId = _config[ConfigKeys.Azure.ADB2C.ClientID],
+            tenantId = _config[ConfigKeys.Azure.ADB2C.Issuer],
+            clientSecret = _config[ConfigKeys.Azure.ADB2C.ClientSecret],
+        };
 
-        private GraphServiceClient CreateGraphServiceClient()
-        {
-            // Initialize the client credential auth provider
-            IConfidentialClientApplication confidentialClientApplication = ConfidentialClientApplicationBuilder
-                .Create(_config[ConfigKeys.Azure.ADB2C.ClientID])
-                .WithTenantId(_config[ConfigKeys.Azure.ADB2C.Issuer])
-                .WithClientSecret(_config[ConfigKeys.Azure.ADB2C.ClientSecret])
-                .Build();
-            ClientCredentialProvider authProvider = new ClientCredentialProvider(confidentialClientApplication);
+        var token = new ClientSecretCredential(config.tenantId, config.clientId, config.clientSecret);
 
-            // Set up the Microsoft Graph service client with client credentials
-            GraphServiceClient graphClient = new GraphServiceClient(authProvider);
-            return graphClient;
-        }
+        return token;
+    }
 
-        public async Task<List<UserIdentityModel>?> GetGraphUsersByEmail(string emailAddress)
-        {
-            var existingUsers = await _graphServiceClient.Users
-                    .Request()
-                    .Filter($"mail eq '{emailAddress}'")
-                    .Select(u => new
-                    {
-                        u.Id,
-                        u.Mail,
-                        u.GivenName,
-                        u.Surname,
-                        u.PasswordProfile.ForceChangePasswordNextSignIn
-                    })
-                    .GetAsync();
-            if (existingUsers != null && existingUsers.Count > 0)
-                return existingUsers.Select(r => new UserIdentityModel()
+    public async Task<List<UserIdentityModel>?> GetGraphUsersByEmail(string emailAddress)
+    {
+        var existingUsers = await _graphServiceClient.Users
+                .Request()
+                .Filter($"mail eq '{emailAddress}'")
+                .Select(u => new
                 {
-                    UserName = r.Id,
-                    FirstName = r.GivenName,
-                    LastName = r.Surname,
-                    EmailAddress = r.Mail,
-                    ForcePasswordChangeNextSignIn = r.PasswordProfile.ForceChangePasswordNextSignIn
-                }).ToList();
-            else
-                return null;
-        }
+                    u.Id,
+                    u.Mail,
+                    u.GivenName,
+                    u.Surname,
+                    u.PasswordProfile.ForceChangePasswordNextSignIn
+                })
+                .GetAsync();
+        if (existingUsers != null && existingUsers.Count > 0)
+            return existingUsers.Select(r => new UserIdentityModel()
+            {
+                UserName = r.Id,
+                FirstName = r.GivenName,
+                LastName = r.Surname,
+                EmailAddress = r.Mail,
+                ForcePasswordChangeNextSignIn = r.PasswordProfile.ForceChangePasswordNextSignIn
+            }).ToList();
+        else
+            return null;
+    }
 
-        public async Task<string> CreateIdentityUserAsync(string email, string firstName, string lastName)
+    public async Task<string> CreateIdentityUserAsync(string email, string firstName, string lastName)
+    {
+        try
         {
-            try
-            {
-                var tenant = _config[ConfigKeys.Azure.ADB2C.Domain];
-                var existingUsers = await _graphServiceClient.Users
-                    .Request()
-                    .Filter($"identities/any(c:c/issuerAssignedId eq '{email}' and c/issuer eq '{tenant}')")
-                    .Select(u => new
+            var tenant = _config[ConfigKeys.Azure.ADB2C.Domain];
+            var existingUsers = await _graphServiceClient.Users
+                .Request()
+                .Filter($"identities/any(c:c/issuerAssignedId eq '{email}' and c/issuer eq '{tenant}')")
+                .Select(u => new
+                {
+                    u.Id,
+                    u.Mail
+                })
+                .GetAsync();
+
+            if (existingUsers.Count > 0)
+                return existingUsers[0].Id;
+
+            var password = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+
+            var graphUser = await _graphServiceClient.Users
+                .Request()
+                .AddAsync(new global::Microsoft.Graph.User
+                {
+                    GivenName = firstName,
+                    Surname = lastName,
+                    DisplayName = $"{firstName} {lastName}",
+                    Mail = email,
+                    Identities = new List<ObjectIdentity>
                     {
-                        u.Id,
-                        u.Mail
-                    })
-                    .GetAsync();
-
-                if (existingUsers.Count > 0)
-                    return existingUsers[0].Id;
-
-                var password = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
-
-                var graphUser = await _graphServiceClient.Users
-                    .Request()
-                    .AddAsync(new global::Microsoft.Graph.User
+                            new ObjectIdentity()
+                            {
+                                SignInType = "emailAddress",
+                                Issuer = $"{_config[ConfigKeys.Azure.ADB2C.Tenant]}.onmicrosoft.com",
+                                IssuerAssignedId = email,
+                            }
+                    },
+                    PasswordProfile = new PasswordProfile()
                     {
-                        GivenName = firstName,
-                        Surname = lastName,
-                        DisplayName = $"{firstName} {lastName}",
-                        Mail = email,
-                        Identities = new List<ObjectIdentity>
-                        {
-                                new ObjectIdentity()
-                                {
-                                    SignInType = "emailAddress",
-                                    Issuer = $"{_config[ConfigKeys.Azure.ADB2C.Tenant]}.onmicrosoft.com",
-                                    IssuerAssignedId = email,
-                                }
-                        },
-                        PasswordProfile = new PasswordProfile()
-                        {
-                            Password = password,
-                            ForceChangePasswordNextSignIn = true
-                        },
-                        PasswordPolicies = "DisablePasswordExpiration",
-                    });
+                        Password = password,
+                        ForceChangePasswordNextSignIn = true
+                    },
+                    PasswordPolicies = "DisablePasswordExpiration",
+                });
 
-                return graphUser.Id;
-            }
-            catch (Exception ex)
-            {
-                _log.LogDebug($"{{{nameof(ex.Message)}}}: {{{nameof(ex.StackTrace)}}}", ex.Message, ex.StackTrace);
-                throw;
-            }
+            return graphUser.Id;
         }
-
-        public async Task<bool> RemoveIdentityUserAsync(string objectId)
+        catch (Exception ex)
         {
-            try
-            {
-                var existingUsers = await _graphServiceClient
-                    .DirectoryObjects
-                    .GetByIds(new[] { objectId })
-                    .Request()
-                    .PostAsync();
+            _log.LogDebug($"{{{nameof(ex.Message)}}}: {{{nameof(ex.StackTrace)}}}", ex.Message, ex.StackTrace);
+            throw;
+        }
+    }
 
-                if (existingUsers.Count > 0)
-                    await _graphServiceClient.Users[objectId]
-                                         .Request()
-                                         .DeleteAsync();
+    public async Task<bool> RemoveIdentityUserAsync(string objectId)
+    {
+        try
+        {
+            var existingUsers = await _graphServiceClient
+                .DirectoryObjects
+                .GetByIds(new[] { objectId })
+                .Request()
+                .PostAsync();
 
-                return true;
-            }
-            catch (Exception ex)
-            {
-                _log.LogDebug($"{{{nameof(ex.Message)}}}: {{{nameof(ex.StackTrace)}}}", ex.Message, ex.StackTrace);
-                return false;
-            }
+            if (existingUsers.Count > 0)
+                await _graphServiceClient.Users[objectId]
+                                     .Request()
+                                     .DeleteAsync();
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _log.LogDebug($"{{{nameof(ex.Message)}}}: {{{nameof(ex.StackTrace)}}}", ex.Message, ex.StackTrace);
+            return false;
         }
     }
 }
