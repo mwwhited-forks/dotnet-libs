@@ -128,7 +128,7 @@ steps:
   displayName: Merge Test Results
   inputs:
     command: 'custom'
-    custom: 'dotnet-coverage'
+    custom: 'coverage'
     workingDirectory: '$(TestResultsPath)'
     arguments: >
       merge 
