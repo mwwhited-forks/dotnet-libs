@@ -76,7 +76,7 @@ steps:
             Write-Host "##vso[build.updatebuildnumber]$fullSemVerLower"
             Write-Host "##vso[task.setvariable variable=FullSemVerLower;issecret=false]$fullSemVerLower"  
             Write-Host "##vso[task.setvariable variable=WebAppPackagePath;issecret=false]$(build.artifactStagingDirectory)\WebApp.zip"  
-            Write-Host "##vso[task.setvariable variable=TestResultsPath;issecret=false]$(Agent.TempDirectory)\TestResults"  
+            Write-Host "##vso[task.setvariable variable=TestResultsPath;issecret=false]$(Agent.TempDirectory)"  
             Write-Host "##vso[task.setvariable variable=TestDataPath;issecret=false]$(Build.SourcesDirectory)\Conf\MongoDb\SampleData"
                         
 - task: DotNetCoreCLI@2
@@ -114,8 +114,8 @@ steps:
       --filter "TestCategory=Unit|TestCategory=Simulate" 
       --collect:"XPlat Code Coverage" 
       --settings "$(Build.SourcesDirectory)\.runsettings"
-      --results-directory "$(TestResultsPath)"
-    publishTestResults: false
+    publishTestResults: true
+    # --results-directory "$(TestResultsPath)"
     
 - task: DotNetCoreCLI@2
   displayName: Coverage Tool Install
