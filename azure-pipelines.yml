@@ -128,16 +128,16 @@ steps:
   displayName: Merge Test Results
   inputs:
     command: 'custom'
-    custom: 'tool'
+    custom: 'dotnet-coverage'
     workingDirectory: '$(TestResultsPath)'
     arguments: >
-      dotnet-coverage merge 
+      merge 
       coverage.*.xml 
       --recursive 
       --output .\Cobertura.coverage 
       --output-format cobertura
     
-# - script: dotnet tool dotnet-coverage merge coverage.*.xml --recursive --output .\Cobertura.coverage --output-format cobertura
+# - script: dotnet dotnet-coverage merge coverage.*.xml --recursive --output .\Cobertura.coverage --output-format cobertura
 #   displayName: Merge Test Coverage Results
 #   workingDirectory: '$(Agent.TempDirectory)\TestResults'
  
