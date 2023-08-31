@@ -7,11 +7,12 @@
 
   <ItemGroup>
     <PackageReference Include="Azure.Storage.Blobs" Version="12.17.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Nucleus.Core.Contracts\Nucleus.Core.Contracts.csproj" />
+    <ProjectReference Include="..\Nucleus.External.Azure.StorageAccount.Abstractions\Nucleus.External.Azure.StorageAccount.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

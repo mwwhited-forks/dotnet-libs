@@ -3,15 +3,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Graph;
 using Microsoft.Graph.Auth;
 using Microsoft.Identity.Client;
-using Nucleus.Core.Contracts.Managers;
-using Nucleus.Core.Contracts.Models;
-using Nucleus.Core.Contracts.Models.Keys;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Nucleus.Core.Business.Managers.Identity
+namespace Nucleus.External.Microsoft.B2C.Identity
 {
     public class B2CIdentityManager : IIdentityManager
     {
@@ -92,7 +85,7 @@ namespace Nucleus.Core.Business.Managers.Identity
 
                 var graphUser = await _graphServiceClient.Users
                     .Request()
-                    .AddAsync(new Microsoft.Graph.User
+                    .AddAsync(new global::Microsoft.Graph.User
                     {
                         GivenName = firstName,
                         Surname = lastName,

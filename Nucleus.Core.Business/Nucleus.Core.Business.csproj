@@ -1,23 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
-    <PackageReference Include="Microsoft.Graph" Version="4.49.0" />
-    <PackageReference Include="Microsoft.Graph.Auth" Version="1.0.0-preview.7" />
-    <PackageReference Include="Microsoft.Identity.Client" Version="4.55.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Framework\Eliassen.System\Eliassen.System.csproj" />
-    <ProjectReference Include="..\Nucleus.AspNetCore.Mvc\Nucleus.AspNetCore.Mvc.csproj" />
-    <ProjectReference Include="..\Nucleus.Core.Contracts\Nucleus.Core.Contracts.csproj" />
-    <ProjectReference Include="..\Nucleus.External.Azure.StorageAccount\Nucleus.External.Azure.StorageAccount.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Framework\Eliassen.System\Eliassen.System.csproj" />
+		<ProjectReference Include="..\Nucleus.AspNetCore.Mvc\Nucleus.AspNetCore.Mvc.csproj" />
+		<ProjectReference Include="..\Nucleus.Core.Contracts\Nucleus.Core.Contracts.csproj" />
+		<ProjectReference Include="..\Nucleus.External.Azure.StorageAccount\Nucleus.External.Azure.StorageAccount.csproj" />
+		<ProjectReference Include="..\Nucleus.External.Microsoft.B2C.Abstractions\Nucleus.External.Microsoft.B2C.Abstractions.csproj" />
+	</ItemGroup>
 
 </Project>

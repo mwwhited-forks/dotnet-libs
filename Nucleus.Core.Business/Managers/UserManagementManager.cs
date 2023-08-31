@@ -2,8 +2,8 @@
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.Keys;
 using Nucleus.Core.Contracts.Persistence;
+using Nucleus.External.Microsoft.B2C.Identity;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 

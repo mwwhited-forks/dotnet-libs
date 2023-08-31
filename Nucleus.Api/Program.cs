@@ -29,6 +29,12 @@ builder.Services.AddControllers()
     .AddApplicationPart(Assembly.Load("Nucleus.Core.Shared.Controllers"))
     ;
 
+// Add Shared Modules
+
+builder.Services
+    .AddCorePersistenceServices()
+    ;
+
 // Adding Module Registrations for IOC
 builder.Services
     .AddCorePersistenceServices()
