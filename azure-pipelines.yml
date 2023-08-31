@@ -75,6 +75,9 @@ steps:
             Write-Host "FullSemVerLower=$fullSemVerLower"
             Write-Host "##vso[build.updatebuildnumber]$fullSemVerLower"
             Write-Host "##vso[task.setvariable variable=FullSemVerLower;issecret=false]$fullSemVerLower"  
+            Write-Host "##vso[task.setvariable variable=WebAppPackagePath;issecret=false]$(WebAppPackagePath)"  
+            Write-Host "##vso[task.setvariable variable=TestResultsPath;issecret=false]$(Agent.TempDirectory)\TestResults"  
+            Write-Host "##vso[task.setvariable variable=TestDataPath;issecret=false]$(Build.SourcesDirectory)\Conf\MongoDb\SampleData"
                         
 - task: DotNetCoreCLI@2
   displayName: 'Building $(buildConfiguration) for ${{ parameters.targetEnvironment }}'
@@ -88,7 +91,7 @@ steps:
       --property:WebPublishMethod=Package 
       --property:PackageAsSingleFile=true 
       --property:SkipInvalidConfigurations=true 
-      --property:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" 
+      --property:DesktopBuildPackageLocation="$(WebAppPackagePath)" 
       --property:DeployIisAppPath="Default Web Site"
       --property:Version=$(FullSemVerLower)
 
@@ -105,9 +108,9 @@ steps:
       --filter "TestCategory=Unit|TestCategory=Simulate" 
       --collect:"XPlat Code Coverage" 
       --settings "$(Build.SourcesDirectory)\.runsettings"
-      --results-directory "$(Agent.TempDirectory)\TestResults"
+      --results-directory "$(TestResultsPath)"
       --property:Version=$(FullSemVerLower)
-    publishTestResults: true
+      --logger trx 
     
 - task: DotNetCoreCLI@2
   displayName: DotNet Tool Restore
@@ -117,10 +120,11 @@ steps:
     arguments: 'restore'
     
 - task: DotNetCoreCLI@2
-  displayName: DotNet Tool Restore
+  displayName: Merge Test Results
   inputs:
     command: 'custom'
     custom: 'tool'
+    workingDirectory: '$(TestResultsPath)'
     arguments: >
       dotnet-coverage merge 
       coverage.*.xml 
@@ -131,47 +135,13 @@ steps:
 # - script: dotnet tool dotnet-coverage merge coverage.*.xml --recursive --output .\Cobertura.coverage --output-format cobertura
 #   displayName: Merge Test Coverage Results
 #   workingDirectory: '$(Agent.TempDirectory)\TestResults'
-  
-# https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-coverage
-# $(Agent.TempDirectory)/**/coverage.cobertura.xml
-# coverage.cobertura.xml
-# dotnet dotnet-coverage merge coverage.*.xml --recursive --output
-
-          
+ 
 - task: PublishCodeCoverageResults@1
-  displayName: 'Publish Code Coverage Reports'
+  displayName: 'Publish Coverage Reports'
   inputs:
     codeCoverageTool: 'cobertura'
-    summaryFileLocation: $(Agent.TempDirectory)\TestResults\Cobertura.coverage
+    summaryFileLocation: $(TestResultsPath)\Cobertura.coverage
     failIfCoverageEmpty: false 
-
-- task: AzureRmWebAppDeployment@4
-  condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true))
-  displayName: 'Deploying API to ${{ parameters.targetEnvironment }}'
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'AppDev Project Nucleus'
-    appType: 'webApp'
-    WebAppName: '$(${{parameters.targetEnvironment}}-ServerName)'
-    packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
-
-# This is an example step to do a data deployment as part of application deployment
-- task: DotNetCoreCLI@2
-  condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true), ne('${{ parameters.dataDeploymentType }}', 'None'))
-  displayName: 'Deploying Data to ${{ parameters.targetEnvironment }}'
-  inputs:
-    command: 'run'
-    projects: 'Tools\Nucleus.Dataloader.Cli'
-    arguments: >
-      --configuration $(buildConfiguration) 
-      --no-build 
-      --no-restore 
-      --nologo 
-      --
-      --SourcePath="$(Build.SourcesDirectory)\Conf\MongoDb\SampleData"
-      --Action=${{ parameters.dataDeploymentType }}
-      --ConnectionString="$(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)"
-      --DatabaseName="$(${{parameters.targetEnvironment}}-MongoDatabase__DatabaseName)"
 
 - task: tagBuildOrRelease@0
   displayName: 'Tag Build'
@@ -194,6 +164,35 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: Publish Artifact
   inputs:
-    PathtoPublish: '$(build.artifactStagingDirectory)\WebApp.zip'
+    PathtoPublish: '$(WebAppPackagePath)'
     ArtifactName: Web Application
+
+- task: AzureRmWebAppDeployment@4
+  condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true))
+  displayName: 'Deploying API to ${{ parameters.targetEnvironment }}'
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'AppDev Project Nucleus'
+    appType: 'webApp'
+    WebAppName: '$(${{parameters.targetEnvironment}}-ServerName)'
+    packageForLinux: '$(WebAppPackagePath)'
+
+# This is an example step to do a data deployment as part of application deployment
+- task: DotNetCoreCLI@2
+  condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true), ne('${{ parameters.dataDeploymentType }}', 'None'))
+  displayName: 'Deploying Data to ${{ parameters.targetEnvironment }}'
+  inputs:
+    command: 'run'
+    projects: 'Tools\Nucleus.Dataloader.Cli'
+    arguments: >
+      --configuration $(buildConfiguration) 
+      --no-build 
+      --no-restore 
+      --nologo 
+      --
+      --SourcePath="$(TestDataPath)"
+      --Action=${{ parameters.dataDeploymentType }}
+      --ConnectionString="$(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)"
+      --DatabaseName="$(${{parameters.targetEnvironment}}-MongoDatabase__DatabaseName)"
+
     

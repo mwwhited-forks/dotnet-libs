@@ -36,6 +36,7 @@ dotnet test "%TestProject%" ^
 --nologo ^
 --settings .runsettings ^
 --filter "%TestFilter%"
+--logger trx 
 
 SET TEST_ERR=%ERRORLEVEL%
 
