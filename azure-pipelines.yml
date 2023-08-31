@@ -75,7 +75,7 @@ steps:
             Write-Host "FullSemVerLower=$fullSemVerLower"
             Write-Host "##vso[build.updatebuildnumber]$fullSemVerLower"
             Write-Host "##vso[task.setvariable variable=FullSemVerLower;issecret=false]$fullSemVerLower"  
-            Write-Host "##vso[task.setvariable variable=WebAppPackagePath;issecret=false]$(WebAppPackagePath)"  
+            Write-Host "##vso[task.setvariable variable=WebAppPackagePath;issecret=false]$(build.artifactStagingDirectory)\WebApp.zip"  
             Write-Host "##vso[task.setvariable variable=TestResultsPath;issecret=false]$(Agent.TempDirectory)\TestResults"  
             Write-Host "##vso[task.setvariable variable=TestDataPath;issecret=false]$(Build.SourcesDirectory)\Conf\MongoDb\SampleData"
                         
@@ -94,6 +94,12 @@ steps:
       --property:DesktopBuildPackageLocation="$(WebAppPackagePath)" 
       --property:DeployIisAppPath="Default Web Site"
       --property:Version=$(FullSemVerLower)
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish Web Application Artifact
+  inputs:
+    PathtoPublish: '$(WebAppPackagePath)'
+    ArtifactName: Web Application
 
 - task: DotNetCoreCLI@2
   displayName: Run Unit Tests as $(buildConfiguration)
@@ -161,12 +167,6 @@ steps:
   displayName: 'Tag Code'
   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
 
-- task: PublishBuildArtifacts@1
-  displayName: Publish Artifact
-  inputs:
-    PathtoPublish: '$(WebAppPackagePath)'
-    ArtifactName: Web Application
-
 - task: AzureRmWebAppDeployment@4
   condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true))
   displayName: 'Deploying API to ${{ parameters.targetEnvironment }}'
@@ -194,5 +194,3 @@ steps:
       --Action=${{ parameters.dataDeploymentType }}
       --ConnectionString="$(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)"
       --DatabaseName="$(${{parameters.targetEnvironment}}-MongoDatabase__DatabaseName)"
-
-    
