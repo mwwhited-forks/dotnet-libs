@@ -118,11 +118,14 @@ steps:
     publishTestResults: false
     
 - task: DotNetCoreCLI@2
-  displayName: DotNet Tool Restore
+  displayName: Coverage Tool Install
   inputs:
     command: 'custom'
     custom: 'tool'
-    arguments: 'restore'
+    arguments: >
+      install 
+      dotnet-coverage 
+      --global      
     
 - task: DotNetCoreCLI@2
   displayName: Merge Test Results
@@ -137,7 +140,7 @@ steps:
       --output .\Cobertura.coverage 
       --output-format cobertura
     
-# - script: dotnet dotnet-coverage merge coverage.*.xml --recursive --output .\Cobertura.coverage --output-format cobertura
+# - script: dotnet coverage merge coverage.*.xml --recursive --output .\Cobertura.coverage --output-format cobertura
 #   displayName: Merge Test Coverage Results
 #   workingDirectory: '$(Agent.TempDirectory)\TestResults'
  
