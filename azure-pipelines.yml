@@ -105,9 +105,10 @@ steps:
       --filter "TestCategory=Unit|TestCategory=Simulate" 
       --collect:"XPlat Code Coverage" 
       --settings "$(Build.SourcesDirectory)\.runsettings"
+      --results-directory "$(Agent.TempDirectory)\TestResults"
       --property:Version=$(FullSemVerLower)
     publishTestResults: true
-
+    
 - task: DotNetCoreCLI@2
   displayName: DotNet Tool Restore
   inputs:
@@ -115,9 +116,21 @@ steps:
     custom: 'tool'
     arguments: 'restore'
     
-- script: dotnet tool dotnet-coverage merge coverage.*.xml --recursive --output .\Cobertura.coverage --output-format cobertura
-  displayName: Merge Test Coverage Results
-  workingDirectory: '$(Agent.TempDirectory)\TestResults'
+- task: DotNetCoreCLI@2
+  displayName: DotNet Tool Restore
+  inputs:
+    command: 'custom'
+    custom: 'tool'
+    arguments: >
+      dotnet-coverage merge 
+      coverage.*.xml 
+      --recursive 
+      --output .\Cobertura.coverage 
+      --output-format cobertura
+    
+# - script: dotnet tool dotnet-coverage merge coverage.*.xml --recursive --output .\Cobertura.coverage --output-format cobertura
+#   displayName: Merge Test Coverage Results
+#   workingDirectory: '$(Agent.TempDirectory)\TestResults'
   
 # https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-coverage
 # $(Agent.TempDirectory)/**/coverage.cobertura.xml
