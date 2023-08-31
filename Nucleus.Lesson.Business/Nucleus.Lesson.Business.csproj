@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Nucleus.Core.Contracts\Nucleus.Core.Contracts.csproj" />
     <ProjectReference Include="..\Nucleus.Lesson.Contracts\Nucleus.Lesson.Contracts.csproj" />
   </ItemGroup>
 

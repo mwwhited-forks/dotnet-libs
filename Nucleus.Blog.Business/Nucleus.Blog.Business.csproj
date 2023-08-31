@@ -6,9 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Nucleus.Core.Contracts\Nucleus.Core.Contracts.csproj" />
     <ProjectReference Include="..\Nucleus.Blog.Contracts\Nucleus.Blog.Contracts.csproj" />
-    <ProjectReference Include="..\Nucleus.Core.Shared.Contracts\Nucleus.Core.Shared.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

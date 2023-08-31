@@ -13,7 +13,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
-		<ProjectReference Include="..\Nucleus.Core.Business\Nucleus.Core.Business.csproj" />
 		<ProjectReference Include="..\Nucleus.Lesson.Contracts\Nucleus.Lesson.Contracts.csproj" />
 	</ItemGroup>
 
