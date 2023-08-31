@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RunSettings>
+	<!--https://learn.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2022-->
 	<RunConfiguration>
 		<MaxCpuCount>10</MaxCpuCount>
+		<!--<TestCaseFilter>(TestCategory=Unit) | (TestCategory=Simulate)</TestCaseFilter>-->
 	</RunConfiguration>
 
 	<!--Configurations for data collectors-->

@@ -115,7 +115,7 @@ steps:
       --collect:"XPlat Code Coverage" 
       --settings "$(Build.SourcesDirectory)\.runsettings"
       --results-directory "$(TestResultsPath)"
-      --logger trx 
+    publishTestResults: false
     
 - task: DotNetCoreCLI@2
   displayName: DotNet Tool Restore
