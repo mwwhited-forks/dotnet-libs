@@ -115,7 +115,6 @@ steps:
       --collect:"XPlat Code Coverage" 
       --settings "$(Build.SourcesDirectory)\.runsettings"
       --results-directory "$(TestResultsPath)"
-      --property:Version=$(FullSemVerLower)
       --logger trx 
     
 - task: DotNetCoreCLI@2
