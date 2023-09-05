@@ -8,7 +8,7 @@ public static class ServiceCollectionEx
 {
     public static IServiceCollection AddMicrosoftB2CServices(this IServiceCollection services)
     {
-        services.TryAddTransient<IIdentityManager, B2CIdentityManager>();
+        services.TryAddTransient<IIdentityManager, ManageGraphUser>();
         services.TryAddTransient<IManageGraphUser, ManageGraphUser>();
         services.TryAddTransient<IUserManagementProvider, UserManagementProvider>();
         return services;

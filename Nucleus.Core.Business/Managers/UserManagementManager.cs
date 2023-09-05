@@ -44,7 +44,7 @@ namespace Nucleus.Core.Business.Managers
             if (user.IdentityAction == UserActionsConst.IdentityActions.RetainIdentity && user.UserName == null)
             {
                 // Need to add/assign an account to this user
-                string newId = await _identityManager.CreateIdentityUserAsync(user.EmailAddress, user.FirstName, user.LastName);
+                var (newId, _) = await _identityManager.CreateIdentityUserAsync(user.EmailAddress, user.FirstName, user.LastName);
                 user.UserName = newId;
             }
 
@@ -76,8 +76,8 @@ namespace Nucleus.Core.Business.Managers
                 else
                 {
                     user.CreatedOn = DateTimeOffset.Now;
-                await _users.CreateAsync(user);
-                result.Response = await _users.GetByEmailAddressAsync(user.EmailAddress);
+                    await _users.CreateAsync(user);
+                    result.Response = await _users.GetByEmailAddressAsync(user.EmailAddress);
                 }
             }
             else
