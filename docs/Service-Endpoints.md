@@ -91,7 +91,7 @@ Rights:
 
 
 
-Response: #/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel
+Response: #/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.External.Azure.StorageAccount.DocumentModel
 
 ### /api/Lesson/Lessons
 
@@ -470,20 +470,6 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 
 * inputValue : string?
 
-### Nucleus.Core.Contracts.Models.DocumentModel
-
-
-#### Properties
-
-* documentId : string?
-* documentKey : string?
-* documentName : string?
-* documentType : string?
-* documentSize : integer?
-* documentRepository : string?
-* documentCategory : string?
-* createdOn : string?
-
 ### Nucleus.Core.Contracts.Models.Filters.UserFilterItem
 
 
@@ -564,15 +550,6 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * name : string?
 * code : string?
 
-### Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel
-
-
-#### Properties
-
-* isSuccess : boolean
-* message : string?
-* response : Nucleus.Core.Contracts.Models.DocumentModel
-
 ### Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User
 
 
@@ -581,6 +558,15 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * isSuccess : boolean
 * message : string?
 * response : Nucleus.Core.Contracts.Models.User
+
+### Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.External.Azure.StorageAccount.DocumentModel
+
+
+#### Properties
+
+* isSuccess : boolean
+* message : string?
+* response : Nucleus.External.Azure.StorageAccount.DocumentModel
 
 ### Nucleus.Core.Contracts.Models.ResponseModel-System.Boolean
 
@@ -637,6 +623,20 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 * name : string?
 * code : string?
 * roles : array?
+
+### Nucleus.External.Azure.StorageAccount.DocumentModel
+
+
+#### Properties
+
+* documentId : string?
+* documentKey : string?
+* documentName : string?
+* documentType : string?
+* documentSize : integer?
+* documentRepository : string?
+* documentCategory : string?
+* createdOn : string?
 
 ### Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter
 
@@ -712,4 +712,4 @@ Response: #/components/schemas/Nucleus.Core.Contracts.Models.PagedResult-Nucleus
 
 ---
 
-Generated: 2023-08-25 12:35:17
+Generated: 2023-09-06 15:37:34

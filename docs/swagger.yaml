@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Nucleus.Blog.Controllers
-  version: 0.1.41.10
+  version: 0.1.41.80
 paths:
   /api/Blog/Blogs:
     post:
@@ -219,13 +219,13 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.External.Azure.StorageAccount.DocumentModel'
             application/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.External.Azure.StorageAccount.DocumentModel'
             text/json:
               schema:
-                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel'
+                $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.External.Azure.StorageAccount.DocumentModel'
         '400':
           description: Bad Request
           content:
@@ -1226,36 +1226,6 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    Nucleus.Core.Contracts.Models.DocumentModel:
-      type: object
-      properties:
-        documentId:
-          type: string
-          nullable: true
-        documentKey:
-          type: string
-          nullable: true
-        documentName:
-          type: string
-          nullable: true
-        documentType:
-          type: string
-          nullable: true
-        documentSize:
-          type: integer
-          format: int64
-          nullable: true
-        documentRepository:
-          type: string
-          nullable: true
-        documentCategory:
-          type: string
-          nullable: true
-        createdOn:
-          type: string
-          format: date-time
-          nullable: true
-      additionalProperties: false
     Nucleus.Core.Contracts.Models.Filters.UserFilterItem:
       type: object
       properties:
@@ -1422,17 +1392,6 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.DocumentModel:
-      type: object
-      properties:
-        isSuccess:
-          type: boolean
-        message:
-          type: string
-          nullable: true
-        response:
-          $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.DocumentModel'
-      additionalProperties: false
     Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.Core.Contracts.Models.User:
       type: object
       properties:
@@ -1443,6 +1402,17 @@ components:
           nullable: true
         response:
           $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.User'
+      additionalProperties: false
+    Nucleus.Core.Contracts.Models.ResponseModel-Nucleus.External.Azure.StorageAccount.DocumentModel:
+      type: object
+      properties:
+        isSuccess:
+          type: boolean
+        message:
+          type: string
+          nullable: true
+        response:
+          $ref: '#/components/schemas/Nucleus.External.Azure.StorageAccount.DocumentModel'
       additionalProperties: false
     Nucleus.Core.Contracts.Models.ResponseModel-System.Boolean:
       type: object
@@ -1546,6 +1516,36 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Nucleus.Core.Contracts.Models.Role'
+          nullable: true
+      additionalProperties: false
+    Nucleus.External.Azure.StorageAccount.DocumentModel:
+      type: object
+      properties:
+        documentId:
+          type: string
+          nullable: true
+        documentKey:
+          type: string
+          nullable: true
+        documentName:
+          type: string
+          nullable: true
+        documentType:
+          type: string
+          nullable: true
+        documentSize:
+          type: integer
+          format: int64
+          nullable: true
+        documentRepository:
+          type: string
+          nullable: true
+        documentCategory:
+          type: string
+          nullable: true
+        createdOn:
+          type: string
+          format: date-time
           nullable: true
       additionalProperties: false
     Nucleus.Lesson.Contracts.Models.Filters.LessonsFilter:
