@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Linq;
+using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
 using Eliassen.System.Reflection;
 using Eliassen.System.ResponseModel;
@@ -159,27 +160,6 @@ public class QueryableExtensionsTests
         Assert.AreEqual(5, results.TotalRowCount);
     }
 
-    [TestMethod]
-    public void BuildExpression()
-    {
-        var query = new[] {
-            new { Value = (string?)"" },
-            new { Value = (string?)null }
-        }.AsQueryable();
-        var values = query.Where(x => x.Value != null);
-        var exp = values.Expression;
-
-        var nullValue = Expression.Constant((string?)null);
-        var notNullValue = Expression.Constant((string?)"");
-
-        Expression check(Expression left) =>
-            Expression.NotEqual(left, Expression.Constant(null, left.Type));
-
-        var n1 = check(nullValue);
-        var n2 = check(notNullValue);
-
-    }
-
     [DataTestMethod]
     [TestCategory(TestCategories.Unit)]
     [DataRow(typeof(TestTargetModel), "Name3", 1, 1, 1, "3")]
@@ -212,7 +192,7 @@ public class QueryableExtensionsTests
         this.TestContext.AddResult(query);
         var rawData = GetTestData<T>(0);
         this.TestContext.AddResult(rawData);
-        var queryResults = QueryBuilder.Execute(rawData, query);
+        var queryResults = QueryBuilder.Execute(rawData, query, new SkipInstanceMethodOnNullExpressionVisitor());
         this.TestContext.AddResult(queryResults);
         var results = queryResults as IPagedQueryResult<T>;
         Assert.IsNotNull(results);

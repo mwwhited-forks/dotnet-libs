@@ -13,6 +13,8 @@ namespace Nucleus.Core.Shared.Business.Managers
 {
     public class SiteMapManager : ISiteMapManager
     {
+        //TODO: this this a better way.
+
         private readonly IPublicBlogManager _publicBlogManager;
         private readonly IPublicLessonManager _publicLessonManager;
         private readonly IPublicProjectManager _publicProjectManager;

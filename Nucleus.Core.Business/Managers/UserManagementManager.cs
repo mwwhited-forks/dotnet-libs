@@ -2,8 +2,8 @@
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Contracts.Models.Keys;
 using Nucleus.Core.Contracts.Persistence;
+using Nucleus.External.Microsoft.B2C.Identity;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -44,7 +44,7 @@ namespace Nucleus.Core.Business.Managers
             if (user.IdentityAction == UserActionsConst.IdentityActions.RetainIdentity && user.UserName == null)
             {
                 // Need to add/assign an account to this user
-                string newId = await _identityManager.CreateIdentityUserAsync(user.EmailAddress, user.FirstName, user.LastName);
+                var (newId, _) = await _identityManager.CreateIdentityUserAsync(user.EmailAddress, user.FirstName, user.LastName);
                 user.UserName = newId;
             }
 
@@ -76,8 +76,8 @@ namespace Nucleus.Core.Business.Managers
                 else
                 {
                     user.CreatedOn = DateTimeOffset.Now;
-                await _users.CreateAsync(user);
-                result.Response = await _users.GetByEmailAddressAsync(user.EmailAddress);
+                    await _users.CreateAsync(user);
+                    result.Response = await _users.GetByEmailAddressAsync(user.EmailAddress);
                 }
             }
             else

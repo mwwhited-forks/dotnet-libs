@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -13,7 +13,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
-		<ProjectReference Include="..\Nucleus.Core.Business\Nucleus.Core.Business.csproj" />
 		<ProjectReference Include="..\Nucleus.Lesson.Contracts\Nucleus.Lesson.Contracts.csproj" />
 	</ItemGroup>
 

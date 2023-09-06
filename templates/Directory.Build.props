@@ -1,0 +1,37 @@
+<Project>
+
+	<PropertyGroup>
+		<Company>Eliassen Group</Company>
+		<Authors>Eliassen - AppDev</Authors>
+		<Copyright>Eliassen Group, 2023</Copyright>
+
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(LOCAL_NUGET)' != ''">
+		<PackageOutputPath>$(LOCAL_NUGET.Trim('\'))\</PackageOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="GitVersion.MsBuild" Version="5.10.3">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="**\*.md" />
+		<Content Include="**\*.plantuml" />
+		<Content Include="**\*.puml" />
+
+		<EmbeddedResource Include="**\*.txt" />
+		<EmbeddedResource Include="**\*.json" />
+		<EmbeddedResource Include="**\*.html" />
+		<EmbeddedResource Include="**\*.csv" />
+		<EmbeddedResource Include="**\*.sql" />
+		<EmbeddedResource Include="**\*.xml" />
+
+		<EmbeddedResource Remove="bin\**\*.*" />
+		<EmbeddedResource Remove="obj\**\*.*" />
+	</ItemGroup>
+
+</Project>

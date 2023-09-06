@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Linq.Expressions;
+using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq.Expressions;
@@ -11,6 +12,7 @@ public class StringComparisonReplacementExpressionVisitorTests
     public TestContext TestContext { get; set; } = null!;
 
     [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
     [DataRow("Hello", "hello", true)]
     [DataRow("Hello", "HELLO", true)]
     [DataRow("Hello", "HeLlO", true)]
@@ -26,6 +28,7 @@ public class StringComparisonReplacementExpressionVisitorTests
     }
 
     [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
     [DataRow("Hello", "hello", true)]
     [DataRow("Hello", "HELLO", true)]
     [DataRow("Hello", "HeLlO", true)]
@@ -41,6 +44,7 @@ public class StringComparisonReplacementExpressionVisitorTests
     }
 
     [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
     [DataRow("Hello", "el", true)]
     [DataRow("Hello", "EL", true)]
     [DataRow("Hello", "eL", true)]
@@ -56,6 +60,7 @@ public class StringComparisonReplacementExpressionVisitorTests
     }
 
     [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
     [DataRow("Hello", "He", true)]
     [DataRow("Hello", "HE", true)]
     [DataRow("Hello", "he", true)]
@@ -71,6 +76,7 @@ public class StringComparisonReplacementExpressionVisitorTests
     }
 
     [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
     [DataRow("Hello", "lO", true)]
     [DataRow("Hello", "Lo", true)]
     [DataRow("Hello", "LO", true)]

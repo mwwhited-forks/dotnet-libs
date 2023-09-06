@@ -1,16 +1,22 @@
 ﻿using Eliassen.System.Configuration;
 
-namespace Nucleus.Dataloader.Cli
+namespace Nucleus.Dataloader.Cli;
+
+[ConfigurationSection(SectionGroup)]
+public class DataLoaderSettings
 {
-    [ConfigurationSection(SectionGroup)]
-    public class DataLoaderSettings
+    public const string SectionGroup = "DataLoader";
+
+    [CommandParameter(Value = "source-path")]
+    public string SourcePath { get; set; } = @"./";
+    public string IncludePath { get; set; } = @"**/*.json";
+
+    public DataLoaderActions Action { get; set; } = DataLoaderActions.Export;
+
+    public override string ToString() => new
     {
-        public const string SectionGroup = "DataLoader";
-
-        [CommandParameter(Value = "source-path")]
-        public string SourcePath { get; set; } = @"./";
-        public string IncludePath { get; set; } = @"**/*.json";
-
-        public DataLoaderActions Action { get; set; } = DataLoaderActions.Export;
-    }
+        SourcePath,
+        IncludePath,
+        Action,
+    }.ToString() ?? "";
 }

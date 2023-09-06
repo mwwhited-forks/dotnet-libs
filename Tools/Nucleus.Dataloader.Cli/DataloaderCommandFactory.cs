@@ -1,5 +1,6 @@
 ﻿using Eliassen.MongoDB.Extensions;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using System.Reflection;
 
@@ -13,10 +14,16 @@ namespace Nucleus.Dataloader.Cli
         public DataloaderCommandFactory(
             ILogger<DataloaderCommandFactory> log,
             IEnumerable<IDataloaderCommand> commands
+
+            , IOptions<DataLoaderSettings> dataSettings
+            , IOptions<DefaultMongoDatabaseSettings> mongoSettings
             )
         {
             _log = log;
             _commands = commands;
+
+            log.LogInformation($"{nameof(DataLoaderSettings)}: {{{nameof(DataLoaderSettings)}}}", dataSettings.Value);
+            log.LogInformation($"{nameof(DefaultMongoDatabaseSettings)}: {{{nameof(DefaultMongoDatabaseSettings)}}}", mongoSettings.Value);
         }
 
         public async Task ExecuteAsync(DataLoaderActions action, Type type, object database, CancellationToken cancellationToken)

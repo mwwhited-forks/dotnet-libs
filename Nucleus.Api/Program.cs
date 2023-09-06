@@ -9,6 +9,8 @@ using Nucleus.Core.Business;
 using Nucleus.Core.Controllers;
 using Nucleus.Core.Persistence;
 using Nucleus.Core.Shared.Business;
+using Nucleus.External.Azure.StorageAccount;
+using Nucleus.External.Microsoft.B2C;
 using Nucleus.Lesson.Business;
 using Nucleus.Lesson.Persistence;
 using Nucleus.Project.Business;
@@ -17,8 +19,15 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddMongoServices(builder.Configuration);
-builder.Services.TryAllSystemExtensions(builder.Configuration);
+// Add Shared Modules
+builder.Services
+    .AddMongoServices(builder.Configuration)
+    .TryAllSystemExtensions(builder.Configuration)
+    .AddMicrosoftB2CServices()
+    .AddAzureStorageAccountServices()
+    .AddAspNetCoreExtensions()
+    .AddApplicationAspNetCoreServices()
+    ;
 
 // Add additional assemblies here so we can keep our API Project clean and easily scalable
 builder.Services.AddControllers()
@@ -44,8 +53,6 @@ builder.Services
     .AddLessonPersistenceServices()
     ;
 
-builder.Services.AddAspNetCoreExtensions();
-builder.Services.AddApplicationAspNetCoreServices();
 
 // B2C Configuration
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
