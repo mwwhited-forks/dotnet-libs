@@ -190,7 +190,6 @@ steps:
       --configuration $(buildConfiguration) 
       --no-build 
       --no-restore 
-      --nologo 
       --
       --SourcePath="$(TestDataPath)"
       --Action=${{ parameters.dataDeploymentType }}
