@@ -40,6 +40,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
 		Eliassen.Packages.slnproj = Eliassen.Packages.slnproj
+		generate-docs.bat = generate-docs.bat
 		GitVersion.yml = GitVersion.yml
 		global.json = global.json
 		MongoDbSetup.md = MongoDbSetup.md
@@ -176,13 +177,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microsoft", "Microsoft", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.External.Microsoft.B2C", "Nucleus.External.Microsoft.B2C\Nucleus.External.Microsoft.B2C.csproj", "{C8870C3E-BCD0-448E-B299-B2BEAB99ADD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleus.External.Microsoft.B2C.Abstractions", "Nucleus.External.Microsoft.B2C.Abstractions\Nucleus.External.Microsoft.B2C.Abstractions.csproj", "{03457C04-55D1-45C0-AF5D-B5D5C49B4657}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.External.Microsoft.B2C.Abstractions", "Nucleus.External.Microsoft.B2C.Abstractions\Nucleus.External.Microsoft.B2C.Abstractions.csproj", "{03457C04-55D1-45C0-AF5D-B5D5C49B4657}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleus.External.Microsoft.B2C.Tests", "Nucleus.External.Microsoft.B2C.Tests\Nucleus.External.Microsoft.B2C.Tests.csproj", "{526F2BCF-56F5-47F4-9585-705A542BB4FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.External.Microsoft.B2C.Tests", "Nucleus.External.Microsoft.B2C.Tests\Nucleus.External.Microsoft.B2C.Tests.csproj", "{526F2BCF-56F5-47F4-9585-705A542BB4FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleus.External.Azure.StorageAccount.Abstractions", "Nucleus.External.Azure.StorageAccount.Abstractions\Nucleus.External.Azure.StorageAccount.Abstractions.csproj", "{05ABA648-9629-4A22-98F5-FDA00F47515F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.External.Azure.StorageAccount.Abstractions", "Nucleus.External.Azure.StorageAccount.Abstractions\Nucleus.External.Azure.StorageAccount.Abstractions.csproj", "{05ABA648-9629-4A22-98F5-FDA00F47515F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleus.External.Azure.StorageAccount.Tests", "Nucleus.External.Azure.StorageAccount.Tests\Nucleus.External.Azure.StorageAccount.Tests.csproj", "{8AF65E33-00FE-4180-BFAF-C1027E6ED6D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.External.Azure.StorageAccount.Tests", "Nucleus.External.Azure.StorageAccount.Tests\Nucleus.External.Azure.StorageAccount.Tests.csproj", "{8AF65E33-00FE-4180-BFAF-C1027E6ED6D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
