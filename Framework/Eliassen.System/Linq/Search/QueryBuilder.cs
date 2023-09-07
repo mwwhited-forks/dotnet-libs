@@ -28,8 +28,16 @@ public abstract class QueryBuilder
     /// 
     /// <param name="query"></param>
     /// <param name="searchQuery"></param>
+    /// <param name="postBuildVisitors"></param>
+    /// <param name="logger"></param>
+    /// <param name="messages"></param>
     /// <returns></returns>
-    public static IQueryResult Execute(IQueryable query, ISearchQuery searchQuery)
+    public static IQueryResult Execute(
+        IQueryable query,
+        ISearchQuery searchQuery,
+        IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
+        ILogger<QueryBuilder>? logger = null,
+        ICaptureResultMessage? messages = null)
     {
         var queryType = Type.MakeGenericSignatureType(typeof(IQueryable<>), Type.MakeGenericMethodParameter(0)) ??
             throw new NotSupportedException($"{query.GetType()} is not supported");
@@ -37,7 +45,13 @@ public abstract class QueryBuilder
         var methodSignature = typeof(QueryBuilder).GetMethod(
             nameof(Execute),
             1,
-            new[] { queryType, typeof(ISearchQuery) }
+            new[] {
+                queryType,
+                typeof(ISearchQuery),
+                typeof(IEnumerable<IPostBuildExpressionVisitor>),
+                typeof(ILogger<QueryBuilder>),
+                typeof(ICaptureResultMessage)
+            }
             ) ??
             throw new NotSupportedException($"{query.GetType()} is not supported");
 
@@ -58,11 +72,36 @@ public abstract class QueryBuilder
     /// 
     /// <param name="query"></param>
     /// <param name="searchQuery"></param>
+    /// <param name="postBuildVisitors"></param>
+    /// <param name="logger"></param>
+    /// <param name="messages"></param>
     /// <returns></returns>
-    public static IQueryResult<TModel> Execute<TModel>(IQueryable<TModel> query, ISearchQuery searchQuery) =>
+    public static IQueryResult<TModel> Execute<TModel>(
+        IQueryable<TModel> query,
+        ISearchQuery searchQuery,
+        IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
+        ILogger<QueryBuilder>? logger = null,
+        ICaptureResultMessage? messages = null) =>
         new QueryBuilder<TModel>(
             new SortBuilder<TModel>(),
-            new ExpressionTreeBuilder<TModel>()
+            new ExpressionTreeBuilder<TModel>(),
+            postBuildVisitors,
+            logger,
+            messages
+            ).ExecuteBy(query, searchQuery);
+
+    /// <inheritdoc />
+    public static IQueryResult<TModel> Execute<TModel>(
+        IQueryable<TModel> query,
+        ISearchQuery searchQuery,
+        IPostBuildExpressionVisitor postBuildVisitor,
+        params IPostBuildExpressionVisitor[] postBuildVisitors) =>
+        new QueryBuilder<TModel>(
+            new SortBuilder<TModel>(),
+            new ExpressionTreeBuilder<TModel>(),
+            new[] { postBuildVisitor }.Concat(postBuildVisitors),
+            default,
+            default
             ).ExecuteBy(query, searchQuery);
 }
 /// <inheritdoc/>

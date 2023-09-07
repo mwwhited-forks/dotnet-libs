@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Nucleus.Core.Contracts.Models
+﻿namespace Nucleus.External.Azure.StorageAccount
 {
-    public class DocumentModel
+    public record DocumentModel
     {
         public string? DocumentId { get; set; }
 

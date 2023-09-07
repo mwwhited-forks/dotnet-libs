@@ -1,5 +1,7 @@
 ﻿using Eliassen.AspNetCore.Mvc.Filters;
+using Eliassen.System.ComponentModel;
 using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -7,8 +9,11 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 
@@ -19,15 +24,18 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
 {
     private readonly IActionDescriptorCollectionProvider _provider;
     private readonly ILogger _log;
+    private readonly IEnumerable<IVersionProvider> _versions;
 
     /// <inheritdoc/>
     public AdditionalSwaggerGenEndpointsOptions(
         IActionDescriptorCollectionProvider provider,
-        ILogger<AdditionalSwaggerGenEndpointsOptions> log
+        ILogger<AdditionalSwaggerGenEndpointsOptions> log,
+        IEnumerable<IVersionProvider> versions
         )
     {
         _provider = provider;
         _log = log;
+        _versions = versions;
     }
 
     /// <inheritdoc/>
@@ -35,15 +43,52 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
     {
         options.OperationFilter<ApplicationPermissionsApiFilter>();
 
-        var assemblyName = GetType().Assembly.GetName();
+        var controllerAssemblies = _provider.ActionDescriptors.Items.OfType<ControllerActionDescriptor>()
+            .Select(c => c.ControllerTypeInfo.Assembly)
+            .Distinct();
+
+        var composedVersions = (from v in _versions.Reverse()
+                                select new
+                                {
+                                    v.Title,
+                                    v.Description,
+                                    v.Version,
+                                    v.Assembly,
+                                }).Concat(from v in controllerAssemblies.Concat(new[]
+                                {
+                                    Assembly.GetEntryAssembly(),
+                                    Assembly.GetCallingAssembly(),
+                                    Assembly.GetExecutingAssembly(),
+                                })
+                                select new
+                                {
+                                    Title = (string?)null,
+                                    Description = (string?)null,
+                                    Version = (string?)null,
+                                    Assembly = v,
+                                });
+
+        var fileVersions = from i in composedVersions
+                           let a = i.Assembly
+                           let an = a?.GetName()
+                           let fvi = a == null ? null : FileVersionInfo.GetVersionInfo(a.Location)
+                           select new
+                           {
+                               Name = new[] { i.Title, fvi.ProductName, an?.Name }.FirstOrDefault(i => !string.IsNullOrWhiteSpace(i)),
+                               Version = new[] { i.Version, fvi.FileVersion, an.Version?.ToString() }.FirstOrDefault(i => !string.IsNullOrWhiteSpace(i)),
+                               Description = new[] { i.Description, fvi.Comments }.FirstOrDefault(i => !string.IsNullOrWhiteSpace(i)),
+                           };
+
+        var selected = fileVersions.FirstOrDefault(i => !string.IsNullOrWhiteSpace(i.Name));
 
         options.DocInclusionPredicate((name, desc) => name == "all" || name == desc.GroupName);
         options.CustomSchemaIds(ResolveSchemaType); // https://wegotcode.com/microsoft/swagger-fix-for-dotnetcore/
 
         options.SwaggerDoc("all", new OpenApiInfo
         {
-            Title = assemblyName.Name,
-            Version = assemblyName.Version?.ToString() ?? "v0.0.0.0",
+            Title = selected?.Name ?? "Unknown",
+            Version = selected?.Version ?? "v0.0.0.0",
+            Description = selected?.Description,
         });
 
         foreach (var group in _provider.ActionDescriptors.Items.OfType<ControllerActionDescriptor>()

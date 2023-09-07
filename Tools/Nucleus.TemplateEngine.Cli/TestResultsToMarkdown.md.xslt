@@ -25,7 +25,10 @@ xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
     <Deployment runDeploymentRoot="MWhited_LW-18560_2023-07-12_11_06_34" />
   </TestSettings>-->
 
-		<xsl:apply-templates select="/tt:TestRun/tt:Results/tt:UnitTestResult"/>
+		<xsl:apply-templates select="/tt:TestRun/tt:Results/tt:UnitTestResult">
+			<!--<xsl:sort select="/tt:TestRun/tt:TestDefinitions/tt:UnitTest[@id=@testId]/tt:TestMethod/@className" />-->
+			<xsl:sort select="@testName" />
+		</xsl:apply-templates>
 	</xsl:template>
 
 	<xsl:template match="tt:UnitTestResult">
