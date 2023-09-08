@@ -15,7 +15,6 @@ namespace Nucleus.Lesson.Contracts.Collections
         [JsonConverter(typeof(BsonIdConverter))]
         public string? LessonId { get; set; }
 
-        [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         [JsonPropertyName("lessonAdminId")]
         [JsonConverter(typeof(BsonIdConverter))]
