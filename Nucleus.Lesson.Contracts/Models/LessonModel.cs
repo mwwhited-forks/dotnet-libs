@@ -19,9 +19,9 @@ namespace Nucleus.Lesson.Contracts.Models
         [DefaultSort(priority: 0)]
         public DateTimeOffset? LessonDateTime { get; set; }
        
-        public string[]? Student { get; set; }
-        public string[]? Notes { get; set; }
-        public string[]? PaymentStatus { get; set; }
+        public string? Student { get; set; }
+        public string? Notes { get; set; }
+        public string? PaymentStatus { get; set; }
 
 
     }

@@ -34,6 +34,8 @@ namespace Nucleus.Lesson.Contracts.Models
         public double Price { get; set; }
 
         public string[]? Goals { get; set; }
+
+        public string? Repeat { get; set; }
     }
 
 }

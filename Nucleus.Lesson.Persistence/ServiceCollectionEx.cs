@@ -12,7 +12,7 @@ namespace Nucleus.Lesson.Persistence
         {
             services.TryAddMongoDatabase<ILessonMongoDatabase>();
 
-            services.TryAddTransient<ILessonService, LessonService>();
+            services.TryAddTransient<ILessonAdminService, LessonAdminService>();
             return services;
         }
     }

@@ -40,7 +40,7 @@ namespace Nucleus.Lesson.Business.Managers
 
         public async Task<ResponseModel<LessonModel?>> SaveLessonAsync(LessonModel lesson)
         {
-            if (lesson == null || string.IsNullOrEmpty(lesson.Title) || string.IsNullOrEmpty(lesson.Content) || string.IsNullOrEmpty(lesson.Slug))
+            if (lesson == null || lesson.LessonDateTime == null || string.IsNullOrEmpty(lesson.PaymentStatus))
                 return new ResponseModel<LessonModel?>()
                 {
                     IsSuccess = false,
@@ -49,13 +49,11 @@ namespace Nucleus.Lesson.Business.Managers
             ResponseModel<LessonModel?> result = new ResponseModel<LessonModel?>() { IsSuccess = true };
             if (String.IsNullOrEmpty(lesson.LessonId))
             {
-                lesson.CreatedOn = DateTimeOffset.Now;
                 result.Response = await _lessonService.CreateAsync(lesson);
                 return result;
             }
             else
             {
-                lesson.CreatedOn = DateTimeOffset.FromUnixTimeMilliseconds(lesson.CreatedOnUnix);
                 await _lessonService.UpdateAsync(lesson);
                 result.Response = lesson;
                 return result;

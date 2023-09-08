@@ -13,11 +13,11 @@ namespace Nucleus.Lesson.Controllers.Controllers
     [ApiController]
     public class LessonAdminController : ControllerBase
     {
-        private readonly ILessonManager _lessonManager;
+        private readonly ILessonAdminManager _lessonAdminManager;
 
-        public LessonAdminController(ILessonManager lessonManager)
+        public LessonAdminController(ILessonAdminManager lessonAdminManager)
         {
-            _lessonManager = lessonManager;
+            _lessonAdminManager = lessonAdminManager;
         }
 
 #warning retire this
@@ -25,17 +25,17 @@ namespace Nucleus.Lesson.Controllers.Controllers
         [HttpPost("Lessons")]
         [ApplicationRight(Rights.Lesson.Manager)]
         public async Task<IActionResult> GetAllLessonsPagedAsync(LessonsFilter filter) =>
-           new JsonResult(await _lessonManager.GetLessonsPagedAsync(filter));
+           new JsonResult(await _lessonAdminManager.GetLessonsPagedAsync(filter));
 
         [HttpGet("Lesson/{id}")]
         [ApplicationRight(Rights.Lesson.Manager)]
         public async Task<IActionResult> GetAsync(string id) =>
-            new JsonResult(await _lessonManager.GetLesson(id));
+            new JsonResult(await _lessonAdminManager.GetLesson(id));
 
         [HttpPost("Save")]
         [ApplicationRight(Rights.Lesson.Manager)]
         public async Task<IActionResult> SaveAsync(LessonAdminModel lesson) =>
-            new JsonResult(await _lessonManager.SaveLessonAsync(lesson));
+            new JsonResult(await _lessonAdminManager.SaveLessonAsync(lesson));
 
     }
 }

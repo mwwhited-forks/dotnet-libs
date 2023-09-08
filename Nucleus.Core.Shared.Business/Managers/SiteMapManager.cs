@@ -16,16 +16,19 @@ namespace Nucleus.Core.Shared.Business.Managers
         //TODO: this this a better way.
 
         private readonly IPublicBlogManager _publicBlogManager;
+        private readonly IPublicLessonAdminManager _publicLessonAdminManager;
         private readonly IPublicLessonManager _publicLessonManager;
         private readonly IPublicProjectManager _publicProjectManager;
 
         public SiteMapManager(
                   IPublicBlogManager publicBlogManager,
-                  IPublicLessonManager publicLessonManager, 
+                  IPublicLessonAdminManager publicLessonAdminManager, 
+                  IPublicLessonManager publicLessonManager,
                   IPublicProjectManager publicProjectManager
             ) 
         { 
             _publicBlogManager = publicBlogManager;
+            _publicLessonAdminManager = publicLessonAdminManager;
             _publicLessonManager = publicLessonManager;
             _publicProjectManager = publicProjectManager;
         }
@@ -60,17 +63,19 @@ namespace Nucleus.Core.Shared.Business.Managers
                     xml.WriteEndElement();
                 }
 
-                // Lessons
+                // LessonsAdmin
                 xml.WriteStartElement("url");
                 xml.WriteElementString("loc", host + "/lessons");
                 xml.WriteEndElement();
 
-                foreach (LessonModel lesson in await _publicLessonManager.GetLessons())
+                foreach (LessonAdminModel lesson in await _publicLessonAdminManager.GetLessons())
                 {
                     xml.WriteStartElement("url");
                     xml.WriteElementString("loc", host + "/lesson/" + lesson.Slug);
                     xml.WriteEndElement();
                 }
+
+                // TODO: Lessons -- slug?
 
                 // Projects
                 xml.WriteStartElement("url");
