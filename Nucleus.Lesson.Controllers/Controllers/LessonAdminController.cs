@@ -34,7 +34,7 @@ namespace Nucleus.Lesson.Controllers.Controllers
 
         [HttpPost("Save")]
         [ApplicationRight(Rights.Lesson.Manager)]
-        public async Task<IActionResult> SaveAsync(LessonModel lesson) =>
+        public async Task<IActionResult> SaveAsync(LessonAdminModel lesson) =>
             new JsonResult(await _lessonManager.SaveLessonAsync(lesson));
 
     }
