@@ -46,8 +46,8 @@ namespace Nucleus.Dataloader.Cli
 
             var idProperty = elementType.GetProperties().FirstOrDefault(e => e.GetCustomAttribute<BsonIdAttribute>() != null)
                 ?? throw new NotSupportedException();
-            var createdOn = elementType.GetProperty("CreatedOn", BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase)
-                ?? throw new NotSupportedException();
+            //var createdOn = elementType.GetProperty("CreatedOn", BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase)
+            //    ?? throw new NotSupportedException();
 
             var parameter = Expression.Parameter(elementType, "e");
             var idSelector = Expression.Lambda(Expression.Property(parameter, idProperty), parameter);
