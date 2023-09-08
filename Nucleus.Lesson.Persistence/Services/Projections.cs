@@ -17,11 +17,9 @@ namespace Nucleus.Lesson.Persistence.Services
             Enabled = item.Enabled,
             CreatedOn = item.CreatedOn,
             Teacher = item.Teacher,
-            Attendees = item.Attendees,
             Duration = item.Duration,
             Price = item.Price,
             Tags= item.Tags,
-            Notes = item.Notes,
             StartDateTime = item.StartDateTime,
             EndDateTime = item.EndDateTime
             

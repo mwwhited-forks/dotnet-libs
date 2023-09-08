@@ -13,7 +13,6 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "attendees": [],
     "teacher": "George Golferson",
     "duration": 15,
     "tags": [],
@@ -22,8 +21,7 @@
     "startDateTime": {
       "$date": "2017-09-20T10:40:50.435+00:00"
     },
-    "endDateTime": null,
-    "notes": null
+    "endDateTime": null
   },
   {
     "_id": {
@@ -39,7 +37,6 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "attendees": [],
     "teacher": "Bobby Butterfingers",
     "duration": 20,
     "tags": [],
@@ -48,8 +45,7 @@
     "startDateTime": {
       "$date": "2017-09-20T05:40:50.435+00:00"
     },
-    "endDateTime": null,
-    "notes": null
+    "endDateTime": null
   },
   {
     "_id": {
@@ -65,7 +61,6 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "attendees": [],
     "teacher": "John Smith",
     "duration": 25,
     "tags": [],
@@ -74,8 +69,7 @@
     "startDateTime": {
       "$date": "2016-09-20T01:43:50.435+00:00"
     },
-    "endDateTime": null,
-    "notes": null
+    "endDateTime": null
   },
   {
     "_id": {
@@ -91,7 +85,6 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "attendees": [],
     "teacher": "Waterlogged Walter",
     "duration": 45,
     "tags": [],
@@ -100,8 +93,7 @@
     "startDateTime": {
       "$date": "2017-07-20T11:43:50.435+00:00"
     },
-    "endDateTime": null,
-    "notes": null
+    "endDateTime": null
   },
   {
     "_id": {
@@ -117,7 +109,6 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "attendees": [],
     "teacher": "Never-Defeated Daryl",
     "duration": 50,
     "tags": [],
@@ -126,8 +117,7 @@
     "startDateTime": {
       "$date": "2017-09-18T07:43:50.435+00:00"
     },
-    "endDateTime": null,
-    "notes": null
+    "endDateTime": null
   },
   {
     "_id": {
@@ -143,7 +133,6 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "attendees": [],
     "teacher": "Seasoned-Golfer Susan",
     "duration": 55,
     "tags": [],
@@ -152,8 +141,7 @@
     "startDateTime": {
       "$date": "2015-09-20T11:49:50.435+00:00"
     },
-    "endDateTime": null,
-    "notes": null
+    "endDateTime": null
   },
   {
     "_id": {
@@ -169,7 +157,6 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "attendees": [],
     "teacher": "Albert Einstein",
     "duration": 65,
     "tags": [],
@@ -178,8 +165,7 @@
     "startDateTime": {
       "$date": "2023-09-20T12:43:50.435+00:00"
     },
-    "endDateTime": null,
-    "notes": null
+    "endDateTime": null
   },
   {
     "_id": {
@@ -195,7 +181,6 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "attendees": [],
     "teacher": "Focused Freddy",
     "duration": 110,
     "tags": [],
@@ -204,8 +189,7 @@
     "startDateTime": {
       "$date": "2022-09-20T12:43:50.435+00:00"
     },
-    "endDateTime": null,
-    "notes": null
+    "endDateTime": null
   },
   {
     "_id": {
@@ -221,7 +205,6 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "attendees": [],
     "teacher": "NotAScammer Steve",
     "duration": 10,
     "tags": [],
@@ -230,8 +213,7 @@
     "startDateTime": {
        "$date": "2017-04-13T10:10:50.435+00:00"
     },
-    "endDateTime": null,
-    "notes": null
+    "endDateTime": null
   },
   {
     "_id": {
@@ -247,9 +229,6 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "attendees": [
-      "Steve 1"
-    ],
     "teacher": "NotAScammer Steve",
     "duration": 100,
     "tags": [
@@ -260,8 +239,7 @@
     "startDateTime": {
        "$date": "2017-05-12T11:13:50.435+00:00"
     },
-    "endDateTime": null,
-    "notes": "How to always win no matter what happens"
+    "endDateTime": null
   },
   {
     "_id": {
@@ -277,9 +255,6 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "attendees": [
-      "Steve"
-    ],
     "teacher": "NotAScammer Steve",
     "duration": 15,
     "tags": [
@@ -290,7 +265,6 @@
     "startDateTime": {
       "$date": "2017-07-20T11:13:50.435+00:00"
     },
-    "endDateTime": null,
-    "notes": "How to always win no matter what happens 19"
+    "endDateTime": null
   }
 ]

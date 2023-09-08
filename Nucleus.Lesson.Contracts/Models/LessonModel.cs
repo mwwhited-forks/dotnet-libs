@@ -23,7 +23,6 @@ namespace Nucleus.Lesson.Contracts.Models
         public DateTimeOffset? CreatedOn { get; set; }
         public long CreatedOnUnix { get; set; }
 
-        public string[]? Attendees { get; set; }
         public string? Teacher { get; set; }
         public int? Duration { get; set; }
 
@@ -35,7 +34,6 @@ namespace Nucleus.Lesson.Contracts.Models
         public double Price { get; set; }
 
         public string[]? Goals { get; set; }
-        public string? Notes { get; set; }
     }
 
 }

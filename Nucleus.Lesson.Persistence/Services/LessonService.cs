@@ -35,7 +35,6 @@ namespace Nucleus.Lesson.Persistence.Services
                 Preview = item.Preview,
                 Title = item.Title,
                 Enabled = item.Enabled,
-                Attendees = item.Attendees,
                 Teacher = item.Teacher,
                 Duration = item.Duration,
                 Goals = item.Goals,
