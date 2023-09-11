@@ -37,8 +37,8 @@ namespace Nucleus.Lesson.Business.Managers
         public async Task<List<LessonModel>> GetLessons() =>
           await _lessonService.GetAsync();
 
-        public async Task<LessonModel?> GetLessonSlug(string slug) =>
-          await _lessonService.GetSlugAsync(slug, true);
+        //public async Task<LessonModel?> GetLessonSlug(string slug) =>
+          //await _lessonService.GetSlugAsync(slug, true);
 
         public async Task<List<LessonModel>?> GetRecentLessons(int i) =>
             await _lessonService.GetRecentAsync(i, true);

@@ -65,17 +65,28 @@ namespace Nucleus.Core.Shared.Business.Managers
 
                 // LessonsAdmin
                 xml.WriteStartElement("url");
-                xml.WriteElementString("loc", host + "/lessons");
+                xml.WriteElementString("loc", host + "/lessonAdmin");
                 xml.WriteEndElement();
 
                 foreach (LessonAdminModel lesson in await _publicLessonAdminManager.GetLessons())
                 {
                     xml.WriteStartElement("url");
-                    xml.WriteElementString("loc", host + "/lesson/" + lesson.Slug);
+                    xml.WriteElementString("loc", host + "/lessonAdmin/" + lesson.Slug);
                     xml.WriteEndElement();
                 }
 
                 // TODO: Lessons -- slug?
+                // Lessons
+                xml.WriteStartElement("url");
+                xml.WriteElementString("loc", host + "/lessons");
+                xml.WriteEndElement();
+
+                foreach (LessonModel lesson in await _publicLessonManager.GetLessons())
+                {
+                    xml.WriteStartElement("url");
+                    xml.WriteElementString("loc", host + "/singlelesson/" + lesson.Student);
+                    xml.WriteEndElement();
+                }
 
                 // Projects
                 xml.WriteStartElement("url");

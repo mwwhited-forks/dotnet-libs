@@ -24,9 +24,9 @@ namespace Nucleus.Lesson.Controllers.Controllers
         public async Task<IActionResult> GetAllLessons(LessonsFilter filter) =>
             new JsonResult(await _publicLessonManager.GetLessonsPagedAsync(filter));
 
-        [HttpGet("Slug/{id}")]
-        public async Task<IActionResult> GetLessonSlug(string id) =>
-            new JsonResult(await _publicLessonManager.GetLessonSlug(id));
+        //[HttpGet("Slug/{id}")]
+        //public async Task<IActionResult> GetLessonSlug(string id) =>
+        //    new JsonResult(await _publicLessonManager.GetLessonSlug(id));
 
         [HttpGet("RecentLessons/{id}")]
         public async Task<IActionResult> GetRecentLessons(int id) =>
