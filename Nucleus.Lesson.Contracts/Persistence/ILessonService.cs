@@ -20,7 +20,7 @@ namespace Nucleus.Lesson.Contracts.Persistence
 
         Task<List<LessonModel>> GetRecentAsync(int i, bool onlyActive);
 
-        Task<LessonModel?> GetSlugAsync(string slug, bool onlyActive);
+        //Task<LessonModel?> GetSlugAsync(string slug, bool onlyActive);
 
         Task<LessonModel?> GetAsync(string id);
 
