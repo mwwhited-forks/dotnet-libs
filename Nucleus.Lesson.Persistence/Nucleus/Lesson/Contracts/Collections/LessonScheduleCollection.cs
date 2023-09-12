@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Nucleus.Lesson.Contracts.Collections
 {
     [BsonIgnoreExtraElements]
-    public class LessonAdminCollection
+    public class LessonScheduleCollection
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -56,6 +56,8 @@ namespace Nucleus.Lesson.Contracts.Collections
         [BsonElement("enddatetime")]
         [JsonConverter(typeof(BsonDateConverter))]
         public DateTimeOffset? EndDateTime { get; set; }
-        public string Repeat { get; internal set; }
+
+        [BsonElement("repeat")]
+        public string? Repeat { get; internal set; }
     }
 }

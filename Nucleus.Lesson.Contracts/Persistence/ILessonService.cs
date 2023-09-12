@@ -30,5 +30,6 @@ namespace Nucleus.Lesson.Contracts.Persistence
 
         Task RemoveAsync(string id);
         IQueryable<LessonModel> Query();
+        Task<List<LessonModel?>> GetLessonsByLessonScheduleId(string lessonScheduleId);
     }
 }

@@ -9,7 +9,7 @@ namespace Nucleus.Lesson.Persistence.Services
         [CollectionName("lessons")]
         IMongoCollection<LessonCollection> Lessons { get; }
 
-        [CollectionName("lessonAdmin")]
-        IMongoCollection<LessonAdminCollection> LessonAdmin { get; }
+        [CollectionName("lessonSchedule")]
+        IMongoCollection<LessonScheduleCollection> LessonSchedule { get; }
     }
 }

@@ -22,6 +22,14 @@ namespace Nucleus.Lesson.Business.Managers
         public async Task<LessonModel?> GetLesson(string lessonId) =>
           await _lessonService.GetAsync(lessonId);
 
+        public async Task<List<LessonModel?>> GetLessonsByLessonScheduleId(string scheduleId) =>
+
+            await _lessonService.GetLessonsByLessonScheduleId(scheduleId);
+        
+
+
+
+
 #warning retire this
         public async Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter)
         {

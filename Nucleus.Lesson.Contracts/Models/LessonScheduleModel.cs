@@ -4,7 +4,7 @@ using System;
 namespace Nucleus.Lesson.Contracts.Models
 {
     [SearchTermDefault(SearchTermDefaults.Contains)]
-    public class LessonAdminModel
+    public class LessonScheduleModel
     {
         [NotSearchable]
         [IgnoreStringComparisonReplacement]

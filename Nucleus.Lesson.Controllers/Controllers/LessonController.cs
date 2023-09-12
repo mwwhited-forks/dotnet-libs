@@ -28,9 +28,14 @@ namespace Nucleus.Lesson.Controllers.Controllers
         //public async Task<IActionResult> GetLessonSlug(string id) =>
         //    new JsonResult(await _publicLessonManager.GetLessonSlug(id));
 
-        [HttpGet("RecentLessons/{id}")]
+        [HttpGet("Lessons/{id}")]
         public async Task<IActionResult> GetRecentLessons(int id) =>
             new JsonResult(await _publicLessonManager.GetRecentLessons(id));
+
+        [HttpGet("Lessons/getByLessonId/{id}")]
+        public async Task<IActionResult> GetLessonsByLessonScheduleId(string id) =>
+            new JsonResult(await _publicLessonManager.GetLessonsByLessonScheduleId(id));
+
         [HttpPost("Query")]
         public IQueryable<LessonModel> ListLessons() => _publicLessonManager.QueryLessons();
 

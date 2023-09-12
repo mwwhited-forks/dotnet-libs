@@ -16,19 +16,19 @@ namespace Nucleus.Core.Shared.Business.Managers
         //TODO: this this a better way.
 
         private readonly IPublicBlogManager _publicBlogManager;
-        private readonly IPublicLessonAdminManager _publicLessonAdminManager;
+        private readonly IPublicLessonScheduleManager _publicLessonScheduleManager;
         private readonly IPublicLessonManager _publicLessonManager;
         private readonly IPublicProjectManager _publicProjectManager;
 
         public SiteMapManager(
                   IPublicBlogManager publicBlogManager,
-                  IPublicLessonAdminManager publicLessonAdminManager, 
+                  IPublicLessonScheduleManager publicLessonScheduleManager, 
                   IPublicLessonManager publicLessonManager,
                   IPublicProjectManager publicProjectManager
             ) 
         { 
             _publicBlogManager = publicBlogManager;
-            _publicLessonAdminManager = publicLessonAdminManager;
+            _publicLessonScheduleManager = publicLessonScheduleManager;
             _publicLessonManager = publicLessonManager;
             _publicProjectManager = publicProjectManager;
         }
@@ -65,13 +65,13 @@ namespace Nucleus.Core.Shared.Business.Managers
 
                 // LessonsAdmin
                 xml.WriteStartElement("url");
-                xml.WriteElementString("loc", host + "/lessonAdmin");
+                xml.WriteElementString("loc", host + "/lessonSchedule");
                 xml.WriteEndElement();
 
-                foreach (LessonAdminModel lesson in await _publicLessonAdminManager.GetLessons())
+                foreach (LessonScheduleModel lesson in await _publicLessonScheduleManager.GetLessons())
                 {
                     xml.WriteStartElement("url");
-                    xml.WriteElementString("loc", host + "/lessonAdmin/" + lesson.Slug);
+                    xml.WriteElementString("loc", host + "/lessonSchedule/" + lesson.Slug);
                     xml.WriteEndElement();
                 }
 

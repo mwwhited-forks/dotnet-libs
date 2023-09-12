@@ -10,9 +10,9 @@ namespace Nucleus.Lesson.Business
         public static IServiceCollection AddLessonBusinessServices(this IServiceCollection services)
         {
             services.TryAddTransient<ILessonManager, LessonManager>();
-            services.TryAddTransient<ILessonAdminManager, LessonAdminManager>();
+            services.TryAddTransient<ILessonScheduleManager, LessonScheduleManager>();
             services.TryAddTransient<IPublicLessonManager, PublicLessonManager>();
-            services.TryAddTransient<IPublicLessonAdminManager, PublicLessonAdminManager>();
+            services.TryAddTransient<IPublicLessonScheduleManager, PublicLessonScheduleManager>();
             return services;
         }
     }

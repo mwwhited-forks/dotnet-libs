@@ -16,9 +16,9 @@ namespace Nucleus.Lesson.Contracts.Collections
         public string? LessonId { get; set; }
 
         [BsonRepresentation(BsonType.ObjectId)]
-        [JsonPropertyName("lessonAdminId")]
+        [JsonPropertyName("lessonScheduleId")]
         [JsonConverter(typeof(BsonIdConverter))]
-        public string? LessonAdminId { get; set; }
+        public string? LessonScheduleId { get; set; }
 
         [BsonElement("lessonDateTime")]
         [JsonConverter(typeof(BsonDateConverter))]

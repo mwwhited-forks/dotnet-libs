@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 
 namespace Nucleus.Lesson.Contracts.Managers
 {
-    public interface ILessonAdminManager
+    public interface ILessonScheduleManager
     {
-        Task<LessonAdminModel?> GetLesson(string lessonId);
+        Task<LessonScheduleModel?> GetLesson(string lessonId);
 
         #warning retire this
-        Task<PagedResult<LessonAdminModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter);
-
-        Task<ResponseModel<LessonAdminModel?>> SaveLessonAsync(LessonAdminModel lesson);
+        Task<PagedResult<LessonScheduleModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter);
+        Task<ResponseModel<LessonScheduleModel?>> SaveLessonAsync(LessonScheduleModel lesson);
     }
 }

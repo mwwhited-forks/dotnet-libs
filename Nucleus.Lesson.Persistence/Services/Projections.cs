@@ -11,14 +11,14 @@ namespace Nucleus.Lesson.Persistence.Services
         public static Expression<Func<Contracts.Collections.LessonCollection, LessonModel>> Lessons => item => new LessonModel()
         { 
             LessonId = item.LessonId,
-            LessonAdminId = item.LessonAdminId,
+            LessonScheduleId = item.LessonScheduleId,
             LessonDateTime = item.LessonDateTime,
             Student = item.Student,
             Notes = item.Notes,
             PaymentStatus = item.PaymentStatus
             
         };
-        public static Expression<Func<Contracts.Collections.LessonAdminCollection, LessonAdminModel>> LessonAdmin => item => new LessonAdminModel()
+        public static Expression<Func<Contracts.Collections.LessonScheduleCollection, LessonScheduleModel>> LessonSchedule => item => new LessonScheduleModel()
         {
             LessonId = item.LessonId,
             Content = item.Content,
@@ -32,7 +32,8 @@ namespace Nucleus.Lesson.Persistence.Services
             Price = item.Price,
             Tags = item.Tags,
             StartDateTime = item.StartDateTime,
-            EndDateTime = item.EndDateTime
+            EndDateTime = item.EndDateTime,
+            Repeat = item.Repeat
         };
     }
 }

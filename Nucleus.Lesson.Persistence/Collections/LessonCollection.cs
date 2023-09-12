@@ -21,16 +21,16 @@ namespace Nucleus.Lesson.Persistence.Collections
 
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        [JsonPropertyName("lessonAdminId")]
+        [JsonPropertyName("lessonScheduleId")]
         [JsonConverter(typeof(BsonIdConverter))]
-        public string? LessonAdminId { get; set; }
+        public string? LessonScheduleId { get; set; }
 
         [BsonElement("lessonDateTime")]
         [JsonConverter(typeof(BsonDateConverter))]
         public DateTimeOffset? LessonDateTime { get; set; }
 
-        [BsonElement("state")]
-        public string? State { get; set; }
+        [BsonElement("student")]
+        public string? Student { get; set; }
 
         [BsonElement("notes")]
         public string? Notes { get; set; }
