@@ -37,11 +37,13 @@ namespace Nucleus.Lesson.Business.Managers
         public async Task<List<LessonScheduleModel>> GetLessons() =>
           await _LessonScheduleService.GetAsync();
 
-        //public async Task<LessonScheduleModel?> GetLessonSlug(string slug) =>
-        //  await _LessonScheduleService.GetSlugAsync(slug, true);
-
-        public async Task<List<LessonScheduleModel>?> GetRecentLessons(int i) =>
+        public async Task<List<LessonScheduleModel>> GetRecentLessons(int i) =>
             await _LessonScheduleService.GetRecentAsync(i, true);
         public IQueryable<LessonScheduleModel> QueryLessons() => _LessonScheduleService.Query();
+
+        public Task<LessonScheduleModel?> GetLessonSlug(string slug)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

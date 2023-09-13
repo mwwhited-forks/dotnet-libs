@@ -24,15 +24,11 @@ namespace Nucleus.Lesson.Controllers.Controllers
         public async Task<IActionResult> GetAllLessons(LessonsFilter filter) =>
             new JsonResult(await _publicLessonManager.GetLessonsPagedAsync(filter));
 
-        //[HttpGet("Slug/{id}")]
-        //public async Task<IActionResult> GetLessonSlug(string id) =>
-        //    new JsonResult(await _publicLessonManager.GetLessonSlug(id));
-
         [HttpGet("Lessons/{id}")]
         public async Task<IActionResult> GetRecentLessons(int id) =>
             new JsonResult(await _publicLessonManager.GetRecentLessons(id));
 
-        [HttpGet("Lessons/getByLessonId/{id}")]
+        [HttpGet("Lessons/getByLessonScheduleId/{id}")]
         public async Task<IActionResult> GetLessonsByLessonScheduleId(string id) =>
             new JsonResult(await _publicLessonManager.GetLessonsByLessonScheduleId(id));
 

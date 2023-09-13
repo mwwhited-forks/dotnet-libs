@@ -114,9 +114,6 @@ namespace Nucleus.Lesson.Persistence.Services
                .Limit(i)
                .Project(_lessonProjection).ToListAsync();
 
-        //public async Task<LessonModel?> GetSlugAsync(string slug, bool onlyActive) =>
-        //    await _db.Lessons.Find(x => x.Slug == slug).Project(_lessonProjection).FirstOrDefaultAsync();
-
         public async Task<LessonModel?> GetAsync(string id) =>
             await _db.Lessons.Find(x => x.LessonId == id).Project(_lessonProjection).FirstOrDefaultAsync();
 
@@ -137,7 +134,7 @@ namespace Nucleus.Lesson.Persistence.Services
         public IQueryable<LessonModel> Query() =>
             _db.Lessons.AsQueryable().Select(Projections.Lessons);
 
-        public async Task<List<LessonModel>> GetLessonsByLessonScheduleId(string lessonScheduleId) =>
+        public async Task<List<LessonModel>?> GetLessonsByLessonScheduleId(string lessonScheduleId) =>
             await _db.Lessons.Find(x => x.LessonScheduleId == lessonScheduleId).Project(_lessonProjection).ToListAsync();
     }
 }

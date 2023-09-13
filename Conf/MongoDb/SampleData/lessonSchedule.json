@@ -21,7 +21,8 @@
     "startDateTime": {
       "$date": "2017-09-20T10:40:50.435+00:00"
     },
-    "endDateTime": null
+    "endDateTime": null,
+    "repeat": "weekly"
   },
   {
     "_id": {
@@ -45,7 +46,8 @@
     "startDateTime": {
       "$date": "2017-09-20T05:40:50.435+00:00"
     },
-    "endDateTime": null
+    "endDateTime": null,
+    "repeat": "weekly"
   },
   {
     "_id": {
@@ -69,7 +71,8 @@
     "startDateTime": {
       "$date": "2016-09-20T01:43:50.435+00:00"
     },
-    "endDateTime": null
+    "endDateTime": null,
+    "repeat": "daily"
   },
   {
     "_id": {
@@ -93,7 +96,8 @@
     "startDateTime": {
       "$date": "2017-07-20T11:43:50.435+00:00"
     },
-    "endDateTime": null
+    "endDateTime": null,
+    "repeat": "monthly"
   },
   {
     "_id": {
@@ -117,7 +121,8 @@
     "startDateTime": {
       "$date": "2017-09-18T07:43:50.435+00:00"
     },
-    "endDateTime": null
+    "endDateTime": null,
+    "repeat": "monthly"
   },
   {
     "_id": {
@@ -141,7 +146,8 @@
     "startDateTime": {
       "$date": "2015-09-20T11:49:50.435+00:00"
     },
-    "endDateTime": null
+    "endDateTime": null,
+    "repeat": "monthly"
   },
   {
     "_id": {
@@ -165,7 +171,8 @@
     "startDateTime": {
       "$date": "2023-09-20T12:43:50.435+00:00"
     },
-    "endDateTime": null
+    "endDateTime": null,
+    "repeat": "weekly"
   },
   {
     "_id": {
@@ -189,7 +196,8 @@
     "startDateTime": {
       "$date": "2022-09-20T12:43:50.435+00:00"
     },
-    "endDateTime": null
+    "endDateTime": null,
+    "repeat": "weekly"
   },
   {
     "_id": {
@@ -211,9 +219,10 @@
     "price": 1.99,
     "goals": [],
     "startDateTime": {
-       "$date": "2017-04-13T10:10:50.435+00:00"
+      "$date": "2017-04-13T10:10:50.435+00:00"
     },
-    "endDateTime": null
+    "endDateTime": null,
+    "repeat": "daily"
   },
   {
     "_id": {
@@ -237,9 +246,10 @@
     "price": 14.99,
     "goals": [],
     "startDateTime": {
-       "$date": "2017-05-12T11:13:50.435+00:00"
+      "$date": "2017-05-12T11:13:50.435+00:00"
     },
-    "endDateTime": null
+    "endDateTime": null,
+    "repeat": "daily"
   },
   {
     "_id": {
@@ -265,6 +275,7 @@
     "startDateTime": {
       "$date": "2017-07-20T11:13:50.435+00:00"
     },
-    "endDateTime": null
+    "endDateTime": null,
+    "repeat": "weekly"
   }
 ]

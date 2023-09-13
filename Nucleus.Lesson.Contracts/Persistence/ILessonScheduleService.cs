@@ -20,9 +20,6 @@ namespace Nucleus.Lesson.Contracts.Persistence
 
         Task<List<LessonScheduleModel>> GetRecentAsync(int i, bool onlyActive);
 
-        //TODO
-        //Task<LessonScheduleModel?> GetSlugAsync(string slug, bool onlyActive);
-
         Task<LessonScheduleModel?> GetAsync(string id);
 
         Task<LessonScheduleModel> CreateAsync(LessonScheduleModel newBlog);

@@ -58,6 +58,6 @@ namespace Nucleus.Lesson.Persistence.Collections
         public DateTimeOffset? EndDateTime { get; set; }
 
         [BsonElement("repeat")]
-        public string? Repeat { get; internal set; }
+        public string? Repeat { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace Nucleus.Lesson.Business.Managers
         public async Task<LessonModel?> GetLesson(string lessonId) =>
           await _lessonService.GetAsync(lessonId);
 
-        public async Task<List<LessonModel?>> GetLessonsByLessonScheduleId(string scheduleId) =>
+        public async Task<List<LessonModel>?> GetLessonsByLessonScheduleId(string scheduleId) =>
 
             await _lessonService.GetLessonsByLessonScheduleId(scheduleId);
         

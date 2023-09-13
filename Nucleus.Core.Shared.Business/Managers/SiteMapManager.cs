@@ -75,7 +75,6 @@ namespace Nucleus.Core.Shared.Business.Managers
                     xml.WriteEndElement();
                 }
 
-                // TODO: Lessons -- slug?
                 // Lessons
                 xml.WriteStartElement("url");
                 xml.WriteElementString("loc", host + "/lessons");

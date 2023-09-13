@@ -20,8 +20,6 @@ namespace Nucleus.Lesson.Contracts.Persistence
 
         Task<List<LessonModel>> GetRecentAsync(int i, bool onlyActive);
 
-        //Task<LessonModel?> GetSlugAsync(string slug, bool onlyActive);
-
         Task<LessonModel?> GetAsync(string id);
 
         Task<LessonModel> CreateAsync(LessonModel newBlog);
@@ -30,6 +28,6 @@ namespace Nucleus.Lesson.Contracts.Persistence
 
         Task RemoveAsync(string id);
         IQueryable<LessonModel> Query();
-        Task<List<LessonModel?>> GetLessonsByLessonScheduleId(string lessonScheduleId);
+        Task<List<LessonModel>?> GetLessonsByLessonScheduleId(string lessonScheduleId);
     }
 }

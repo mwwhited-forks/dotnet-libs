@@ -12,8 +12,8 @@ namespace Nucleus.Lesson.Contracts.Managers
 #warning retire this
         Task<PagedResult<LessonScheduleModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter);
         Task<List<LessonScheduleModel>> GetLessons();
-        //Task<LessonScheduleModel?> GetLessonSlug(string slug);
-        Task<List<LessonScheduleModel>?> GetRecentLessons(int i);
+        Task<LessonScheduleModel?> GetLessonSlug(string slug);
+        Task<List<LessonScheduleModel?>> GetRecentLessons(int i);
         IQueryable<LessonScheduleModel> QueryLessons();
     }
 }

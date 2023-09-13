@@ -136,8 +136,8 @@ namespace Nucleus.Lesson.Persistence.Services
                .Limit(i)
                .Project(_lessonProjection).ToListAsync();
 
-        //public async Task<LessonModel?> GetSlugAsync(string slug, bool onlyActive) =>
-        //    await _db.Lessons.Find(x => x.Slug == slug).Project(_lessonProjection).FirstOrDefaultAsync();
+        public async Task<LessonScheduleModel?> GetSlugAsync(string slug, bool onlyActive) =>
+            await _db.LessonSchedule.Find(x => x.Slug == slug).Project(_lessonProjection).FirstOrDefaultAsync();
 
         public async Task<LessonScheduleModel?> GetAsync(string id) =>
             await _db.LessonSchedule.Find(x => x.LessonId == id).Project(_lessonProjection).FirstOrDefaultAsync();

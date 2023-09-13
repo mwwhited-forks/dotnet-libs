@@ -38,6 +38,9 @@ namespace Nucleus.Lesson.Controllers.Controllers
         [HttpPost("Query")]
         public IQueryable<LessonScheduleModel> ListLessons() => _publicLessonScheduleManager.QueryLessons();
 
+        [HttpGet("Slug/{id}")]
+        public async Task<IActionResult> GetLessonSlug(string id) =>
+            new JsonResult(await _publicLessonScheduleManager.GetLessonSlug(id));
 
         [HttpPost("Save")]
         [ApplicationRight(Rights.Lesson.Manager)]
