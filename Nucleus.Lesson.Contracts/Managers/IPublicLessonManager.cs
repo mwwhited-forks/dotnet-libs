@@ -15,5 +15,7 @@ namespace Nucleus.Lesson.Contracts.Managers
         Task<List<LessonModel>?> GetLessonsByLessonScheduleId(string scheduleId);
         Task<List<LessonModel>?> GetRecentLessons(int i);
         IQueryable<LessonModel> QueryLessons();
+        void UpdateLesson(LessonModel lesson);
+        void UpdateLessons(LessonModel[] lessons);
     }
 }

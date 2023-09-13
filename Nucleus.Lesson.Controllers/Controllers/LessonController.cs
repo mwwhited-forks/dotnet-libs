@@ -35,5 +35,17 @@ namespace Nucleus.Lesson.Controllers.Controllers
         [HttpPost("Query")]
         public IQueryable<LessonModel> ListLessons() => _publicLessonManager.QueryLessons();
 
+        [HttpPost("UpdateLesson")]
+        public void UpdateLesson(LessonModel lesson)
+        {
+            _publicLessonManager.UpdateLesson(lesson);
+        }
+
+        [HttpPost("UpdateLessons")]
+        public void UpdateLessons(LessonModel[] lessons)
+        {
+            _publicLessonManager.UpdateLessons(lessons);
+        }
+
     }
 }
