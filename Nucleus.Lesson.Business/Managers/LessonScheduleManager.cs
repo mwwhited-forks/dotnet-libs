@@ -22,22 +22,6 @@ namespace Nucleus.Lesson.Business.Managers
         public async Task<LessonScheduleModel?> GetLesson(string lessonId) =>
           await _LessonScheduleService.GetAsync(lessonId);
 
-#warning retire this
-        public async Task<PagedResult<LessonScheduleModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter)
-        {
-            lessonsFilter.PagingModel ??= PagingModel.Default;
-            List<LessonScheduleModel> blogs = await _LessonScheduleService.GetPagedAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, false);
-            var result = new PagedResult<LessonScheduleModel>()
-            {
-                CurrentPage = lessonsFilter.PagingModel.CurrentPage,
-                PageSize = lessonsFilter.PagingModel.PageSize,
-                Results = blogs,
-                RowCount = await _LessonScheduleService.GetPagedCountAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, false),
-                PageCount = blogs.Count
-            };
-            return result;
-        }
-
         public async Task<ResponseModel<LessonScheduleModel?>> SaveLessonAsync(LessonScheduleModel lesson)
         {
             if (lesson == null || string.IsNullOrEmpty(lesson.Title) || string.IsNullOrEmpty(lesson.Teacher))

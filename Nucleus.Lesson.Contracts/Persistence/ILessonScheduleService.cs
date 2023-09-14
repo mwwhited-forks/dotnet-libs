@@ -9,9 +9,6 @@ namespace Nucleus.Lesson.Contracts.Persistence
 {
     public interface ILessonScheduleService
     {
-#warning retire this
-
-        Task<List<LessonScheduleModel>> GetPagedAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive);
 
 #warning retire this
         Task<long> GetPagedCountAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive);

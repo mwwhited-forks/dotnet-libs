@@ -1,11 +1,9 @@
 ﻿using MongoDB.Driver;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
-using Nucleus.Lesson.Contracts.Collections;
 using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
 using Nucleus.Lesson.Contracts.Persistence;
-using Nucleus.Lesson.Persistence.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,10 +28,6 @@ namespace Nucleus.Lesson.Persistence.Services
             _lessonProjection = Builders<LessonScheduleCollection>.Projection.Expression(item => new LessonScheduleModel()
             {
                 LessonId = item.LessonId,
-                //LessonScheduleid = item.LessonScheduleid,
-                //lessondatetime = item.lessondatetime,
-                //student = item.student,
-                //notes = item.notes
                 Title = item.Title,
                 Slug = item.Slug,
                 MediaLink = item.MediaLink,
@@ -79,50 +73,7 @@ namespace Nucleus.Lesson.Persistence.Services
 
             return filter;
         }
-#warning retire this
-        public async Task<List<LessonScheduleModel>> GetPagedAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive)
-        {
-            // TODO: Make an extension that does all of this pagination plumbing
-            string sortDefinition = $"{{ {pagingModel.SortBy}: 1 }}";
-            if (pagingModel.SortDirection == "descend")
-                sortDefinition = $"{{ {pagingModel.SortBy}: -1 }}";
 
-            var bob = await _db.LessonSchedule.Find(GetLessonsPredicateBuilder(onlyActive, filterItems))
-                .Skip((pagingModel.CurrentPage - 1) * pagingModel.PageSize)
-                .Limit(pagingModel.PageSize)
-                .Sort(sortDefinition)
-                .Project(_lessonProjection)
-                .ToListAsync();
-            var joe = new List<LessonScheduleModel>
-            {
-                new LessonScheduleModel
-                {
-                    Title = "Test",
-                    Teacher = "John Smith",
-                    Enabled = true
-                },
-                new LessonScheduleModel
-                {
-                    Title = "Test2",
-                    Teacher = "Tony Tonyton",
-                    Enabled = true
-                },
-                new LessonScheduleModel
-                {
-                    Title = "Test3",
-                    Teacher = "Joe Joeyson",
-                    Enabled = true
-                },
-                new LessonScheduleModel
-                {
-                    Title = "Test4",
-                    Teacher = "adele test",
-                    Enabled = true
-                },
-
-            };
-            return bob;
-        }
 #warning retire this
         public async Task<long> GetPagedCountAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive) =>
            await _db.LessonSchedule.Find(GetLessonsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();

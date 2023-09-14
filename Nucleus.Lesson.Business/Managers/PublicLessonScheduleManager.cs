@@ -18,22 +18,6 @@ namespace Nucleus.Lesson.Business.Managers
         {
             _LessonScheduleService = LessonService;
         }
-#warning retire this
-        public async Task<PagedResult<LessonScheduleModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter)
-        {
-            lessonsFilter.PagingModel ??= PagingModel.Default;
-            List<LessonScheduleModel> lessons = await _LessonScheduleService.GetPagedAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, true);
-            PagedResult<LessonScheduleModel> result = new PagedResult<LessonScheduleModel>()
-            {
-                CurrentPage = lessonsFilter.PagingModel.CurrentPage,
-                PageSize = lessonsFilter.PagingModel.PageSize,
-                Results = lessons,
-                RowCount = await _LessonScheduleService.GetPagedCountAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, true),
-                PageCount = lessons.Count
-            };
-            return result;
-        }
-
         public async Task<List<LessonScheduleModel>> GetLessons() =>
           await _LessonScheduleService.GetAsync();
 

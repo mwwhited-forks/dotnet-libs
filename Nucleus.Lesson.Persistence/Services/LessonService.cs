@@ -61,46 +61,7 @@ namespace Nucleus.Lesson.Persistence.Services
 
             return filter;
         }
-#warning retire this
-        public async Task<List<LessonModel>> GetPagedAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive)
-        {
-            // TODO: Make an extension that does all of this pagination plumbing
-            string sortDefinition = $"{{ {pagingModel.SortBy}: 1 }}";
-            if (pagingModel.SortDirection == "descend")
-                sortDefinition = $"{{ {pagingModel.SortBy}: -1 }}";
 
-            var bob = await _db.Lessons.Find(GetLessonsPredicateBuilder(onlyActive, filterItems))
-                .Skip((pagingModel.CurrentPage - 1) * pagingModel.PageSize)
-                .Limit(pagingModel.PageSize)
-                .Sort(sortDefinition)
-                .Project(_lessonProjection)
-                .ToListAsync();
-            var joe = new List<LessonModel>
-            {
-                new LessonModel
-                {
-                    Notes = "Test",
-                    Student = "John Smith"
-                },
-                new LessonModel
-                {
-                    Notes = "Test2",
-                    Student = "Tony Tonyton"
-                },
-                new LessonModel
-                {
-                    Notes = "Test3",
-                    Student = "Joe Joeyson"
-                },
-                new LessonModel
-                {
-                    Notes = "Test4",
-                    Student = "adele test"
-                },
-
-            };
-            return bob;
-        }
 #warning retire this
         public async Task<long> GetPagedCountAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive) =>
            await _db.Lessons.Find(GetLessonsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();

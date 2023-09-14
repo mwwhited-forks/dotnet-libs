@@ -9,8 +9,6 @@ namespace Nucleus.Lesson.Contracts.Managers
 {
     public interface IPublicLessonManager
     {
-#warning retire this
-        Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter);
         Task<List<LessonModel>> GetLessons();
         Task<List<LessonModel>?> GetLessonsByLessonScheduleId(string scheduleId);
         Task<List<LessonModel>?> GetRecentLessons(int i);

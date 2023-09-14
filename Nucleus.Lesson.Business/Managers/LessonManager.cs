@@ -25,26 +25,6 @@ namespace Nucleus.Lesson.Business.Managers
         public async Task<List<LessonModel>?> GetLessonsByLessonScheduleId(string scheduleId) =>
 
             await _lessonService.GetLessonsByLessonScheduleId(scheduleId);
-        
-
-
-
-
-#warning retire this
-        public async Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter)
-        {
-            lessonsFilter.PagingModel ??= PagingModel.Default;
-            List<LessonModel> blogs = await _lessonService.GetPagedAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, false);
-            var result = new PagedResult<LessonModel>()
-            {
-                CurrentPage = lessonsFilter.PagingModel.CurrentPage,
-                PageSize = lessonsFilter.PagingModel.PageSize,
-                Results = blogs,
-                RowCount = await _lessonService.GetPagedCountAsync(lessonsFilter.PagingModel, lessonsFilter.LessonFilters, false),
-                PageCount = blogs.Count
-            };
-            return result;
-        }
 
         public async Task<ResponseModel<LessonModel?>> SaveLessonAsync(LessonModel lesson)
         {

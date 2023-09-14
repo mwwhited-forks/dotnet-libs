@@ -10,10 +10,6 @@ namespace Nucleus.Lesson.Contracts.Managers
     {
         Task<LessonModel?> GetLesson(string lessonId);
         Task<List<LessonModel>?> GetLessonsByLessonScheduleId(string scheduleId);
-
-#warning retire this
-        Task<PagedResult<LessonModel>> GetLessonsPagedAsync(LessonsFilter lessonsFilter);
-
         Task<ResponseModel<LessonModel?>> SaveLessonAsync(LessonModel lesson);
     }
 }

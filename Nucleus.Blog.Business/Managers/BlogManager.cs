@@ -56,7 +56,6 @@ namespace Nucleus.Blog.Business.Managers
             }
             else
             {
-                //blog.CreatedOn = DateTimeOffset.FromUnixTimeMilliseconds(blog.CreatedOnUnix);
                 await _blogService.UpdateAsync(blog);
                 result.Response = blog;
                 return result;
