@@ -36,6 +36,7 @@ namespace Nucleus.Lesson.Contracts.Models
         public string[]? Goals { get; set; }
 
         public string? Repeat { get; set; }
+        public int? NumberOfLessons { get; set; }
     }
 
 }

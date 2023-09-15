@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static Nucleus.Core.Contracts.Rights;
 using LessonScheduleCollection = Nucleus.Lesson.Contracts.Collections.LessonScheduleCollection;
 
 namespace Nucleus.Lesson.Persistence.Services
@@ -37,7 +38,7 @@ namespace Nucleus.Lesson.Persistence.Services
                 Enabled = item.Enabled,
                 CreatedOn = item.CreatedOn,
                 Teacher = item.Teacher,
-                Duration    = item.Duration,
+                Duration = item.Duration,
                 Tags = item.Tags,
                 Price = item.Price,
                 Goals = item.Goals,
@@ -74,10 +75,6 @@ namespace Nucleus.Lesson.Persistence.Services
             return filter;
         }
 
-#warning retire this
-        public async Task<long> GetPagedCountAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive) =>
-           await _db.LessonSchedule.Find(GetLessonsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
-
         public async Task<List<LessonScheduleModel>> GetAsync() =>
             await _db.LessonSchedule.Find(_ => true).Project(_lessonProjection).ToListAsync();
 
@@ -107,7 +104,45 @@ namespace Nucleus.Lesson.Persistence.Services
         public async Task RemoveAsync(string id) =>
             await _db.LessonSchedule.DeleteOneAsync(x => x.LessonId == id);
 
-        public IQueryable<LessonScheduleModel> Query() =>
-            _db.LessonSchedule.AsQueryable().Select(Projections.LessonSchedule);
+        //public IQueryable<LessonScheduleModel> Query() =>
+            //_db.LessonSchedule.AsQueryable().Select(Projections.LessonSchedule);
+
+        public IQueryable<LessonScheduleModel> Query()
+        {
+            var query = from lessonSchedule in _db.LessonSchedule.AsQueryable()
+                        join lesson in _db.Lessons.AsQueryable() on lessonSchedule.LessonId equals lesson.LessonScheduleId into lessons
+                        select new
+                        {
+                            LessonSchedule = lessonSchedule,
+                            Lessons = lessons
+                        };
+
+            var result = query.Select(item => new LessonScheduleModel
+            {
+                LessonId = item.LessonSchedule.LessonId,
+                Title = item.LessonSchedule.Title,
+                Slug = item.LessonSchedule.Slug,
+                MediaLink = item.LessonSchedule.MediaLink,
+                PreviewImage = item.LessonSchedule.PreviewImage,
+                Preview = item.LessonSchedule.Preview,
+                Content = item.LessonSchedule.Content,
+                Enabled = item.LessonSchedule.Enabled,
+                CreatedOn = item.LessonSchedule.CreatedOn,
+                Teacher = item.LessonSchedule.Teacher,
+                Duration = item.LessonSchedule.Duration,
+                Tags = item.LessonSchedule.Tags,
+                Price = item.LessonSchedule.Price,
+                Goals = item.LessonSchedule.Goals,
+                StartDateTime = item.LessonSchedule.StartDateTime,
+                EndDateTime = item.LessonSchedule.EndDateTime,
+                Repeat = item.LessonSchedule.Repeat,
+                NumberOfLessons = item.Lessons.Count()
+            }); 
+
+            return result;
+
+        }
+
+
     }
 }

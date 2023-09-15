@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Nucleus.Core.Contracts;
 using Nucleus.Lesson.Contracts.Managers;
 using Nucleus.Lesson.Contracts.Models;
-using Nucleus.Lesson.Contracts.Models.Filters;
 
 namespace Nucleus.Lesson.Controllers.Controllers
 {

@@ -10,9 +10,6 @@ namespace Nucleus.Lesson.Contracts.Persistence
     public interface ILessonScheduleService
     {
 
-#warning retire this
-        Task<long> GetPagedCountAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive);
-
         Task<List<LessonScheduleModel>> GetAsync();
 
         Task<List<LessonScheduleModel>> GetRecentAsync(int i, bool onlyActive);

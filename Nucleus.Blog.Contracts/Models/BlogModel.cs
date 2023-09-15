@@ -20,6 +20,5 @@ namespace Nucleus.Blog.Contracts.Models
         public string? Author { get; set; }
         [DefaultSort(priority: 0)]
         public DateTimeOffset CreatedOn { get; set; }
-        //public long CreatedOnUnix { get; set; }
     }
 }
