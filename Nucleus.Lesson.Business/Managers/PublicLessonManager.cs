@@ -26,10 +26,6 @@ namespace Nucleus.Lesson.Business.Managers
         public async Task<List<LessonModel>?> GetRecentLessons(int i) =>
             await _lessonService.GetRecentAsync(i, true);
 
-        public async Task<List<LessonModel>?> GetLessonsByLessonScheduleId(string lessonScheduleId) =>
-            await _lessonService.GetLessonsByLessonScheduleId(lessonScheduleId);
-
-
         public IQueryable<LessonModel> QueryLessons() => _lessonService.Query();
 
         public void UpdateLesson(LessonModel lesson)

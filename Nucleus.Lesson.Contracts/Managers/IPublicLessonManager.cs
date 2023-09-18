@@ -10,7 +10,6 @@ namespace Nucleus.Lesson.Contracts.Managers
     public interface IPublicLessonManager
     {
         Task<List<LessonModel>> GetLessons();
-        Task<List<LessonModel>?> GetLessonsByLessonScheduleId(string scheduleId);
         Task<List<LessonModel>?> GetRecentLessons(int i);
         IQueryable<LessonModel> QueryLessons();
         void UpdateLesson(LessonModel lesson);

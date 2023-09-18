@@ -104,9 +104,6 @@ namespace Nucleus.Lesson.Persistence.Services
         public async Task RemoveAsync(string id) =>
             await _db.LessonSchedule.DeleteOneAsync(x => x.LessonId == id);
 
-        //public IQueryable<LessonScheduleModel> Query() =>
-            //_db.LessonSchedule.AsQueryable().Select(Projections.LessonSchedule);
-
         public IQueryable<LessonScheduleModel> Query()
         {
             var query = from lessonSchedule in _db.LessonSchedule.AsQueryable()

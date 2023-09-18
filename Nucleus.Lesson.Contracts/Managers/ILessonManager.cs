@@ -9,7 +9,6 @@ namespace Nucleus.Lesson.Contracts.Managers
     public interface ILessonManager
     {
         Task<LessonModel?> GetLesson(string lessonId);
-        Task<List<LessonModel>?> GetLessonsByLessonScheduleId(string scheduleId);
         Task<ResponseModel<LessonModel?>> SaveLessonAsync(LessonModel lesson);
     }
 }

@@ -22,10 +22,6 @@ namespace Nucleus.Lesson.Business.Managers
         public async Task<LessonModel?> GetLesson(string lessonId) =>
           await _lessonService.GetAsync(lessonId);
 
-        public async Task<List<LessonModel>?> GetLessonsByLessonScheduleId(string scheduleId) =>
-
-            await _lessonService.GetLessonsByLessonScheduleId(scheduleId);
-
         public async Task<ResponseModel<LessonModel?>> SaveLessonAsync(LessonModel lesson)
         {
             if (lesson == null || lesson.LessonDateTime == null || string.IsNullOrEmpty(lesson.PaymentStatus))
