@@ -4,8 +4,6 @@ using Nucleus.Blog.Contracts.Models.Filters;
 using Nucleus.Blog.Contracts.Persistence;
 using Nucleus.Core.Contracts.Models;
 using System;
-using System.Collections.Generic;
-using System.Reflection.Metadata;
 using System.Threading.Tasks;
 
 namespace Nucleus.Blog.Business.Managers
@@ -56,7 +54,6 @@ namespace Nucleus.Blog.Business.Managers
             }
             else
             {
-                //blog.CreatedOn = DateTimeOffset.FromUnixTimeMilliseconds(blog.CreatedOnUnix);
                 await _blogService.UpdateAsync(blog);
                 result.Response = blog;
                 return result;

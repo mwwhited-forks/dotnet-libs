@@ -18,19 +18,16 @@ namespace Nucleus.Lesson.Controllers.Controllers
             _publicLessonManager = publicLessonManager;
         }
 #warning retire this
-        [Obsolete]
+        //[Obsolete]
 
-        [HttpPost("Lessons")]
-        public async Task<IActionResult> GetAllLessons(LessonsFilter filter) =>
-            new JsonResult(await _publicLessonManager.GetLessonsPagedAsync(filter));
+        //[HttpPost("Lessons")]
+        //public async Task<IActionResult> GetAllLessons(LessonsFilter filter) =>
+            //new JsonResult(await _publicLessonManager.GetLessonsPagedAsync(filter));
 
-        [HttpGet("Slug/{id}")]
-        public async Task<IActionResult> GetLessonSlug(string id) =>
-            new JsonResult(await _publicLessonManager.GetLessonSlug(id));
-
-        [HttpGet("RecentLessons/{id}")]
+        [HttpGet("Lessons/{id}")]
         public async Task<IActionResult> GetRecentLessons(int id) =>
             new JsonResult(await _publicLessonManager.GetRecentLessons(id));
+
         [HttpPost("Query")]
         public IQueryable<LessonModel> ListLessons() => _publicLessonManager.QueryLessons();
 
