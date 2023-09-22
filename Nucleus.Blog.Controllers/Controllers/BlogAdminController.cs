@@ -37,5 +37,9 @@ namespace Nucleus.Blog.Controllers.Controllers
         public async Task<IActionResult> SaveAsync(BlogModel blog) =>
             new JsonResult(await _blogManager.SaveBlogAsync(blog));
 
+
+        [HttpPost("Query")]
+        public IQueryable<BlogModel> ListLessons() => _blogManager.QueryBlogs();
+
     }
 }
