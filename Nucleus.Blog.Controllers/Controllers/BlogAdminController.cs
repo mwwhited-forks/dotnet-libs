@@ -39,6 +39,7 @@ namespace Nucleus.Blog.Controllers.Controllers
 
 
         [HttpPost("Query")]
+        [ApplicationRight(Rights.Blog.Manager)]
         public IQueryable<BlogModel> ListLessons() => _blogManager.QueryBlogs();
 
     }
