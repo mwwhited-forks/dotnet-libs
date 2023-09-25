@@ -28,7 +28,7 @@ namespace Nucleus.Lesson.Business.Managers
                 return new ResponseModel<LessonScheduleModel?>()
                 {
                     IsSuccess = false,
-                    Message = "Missing Required Fields"
+                    Message = "Missing Required Fields. Title and Teacher cannot be null."
                 };
             ResponseModel<LessonScheduleModel?> result = new ResponseModel<LessonScheduleModel?>() { IsSuccess = true };
             if (String.IsNullOrEmpty(lesson.LessonId))
