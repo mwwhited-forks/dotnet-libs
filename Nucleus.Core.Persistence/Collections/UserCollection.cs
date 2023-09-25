@@ -1,7 +1,8 @@
-using Eliassen.MongoDB.Extensions;
+﻿
+using Eliassen.System.Text.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Nucleus.Core.Persistence.Collections;
 

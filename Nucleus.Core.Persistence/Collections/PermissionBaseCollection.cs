@@ -1,4 +1,4 @@
-namespace Nucleus.Core.Persistence.Collections;
+﻿namespace Nucleus.Core.Persistence.Collections;
 
 public class PermissionBaseCollection
 {

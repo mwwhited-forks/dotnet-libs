@@ -228,7 +228,7 @@
     "price": 1.99,
     "goals": [],
     "startDateTime": {
-       "$date": "2017-04-13T10:10:50.435+00:00"
+      "$date": "2017-04-13T10:10:50.435+00:00"
     },
     "endDateTime": null,
     "notes": null
@@ -258,7 +258,7 @@
     "price": 14.99,
     "goals": [],
     "startDateTime": {
-       "$date": "2017-05-12T11:13:50.435+00:00"
+      "$date": "2017-05-12T11:13:50.435+00:00"
     },
     "endDateTime": null,
     "notes": "How to always win no matter what happens"
