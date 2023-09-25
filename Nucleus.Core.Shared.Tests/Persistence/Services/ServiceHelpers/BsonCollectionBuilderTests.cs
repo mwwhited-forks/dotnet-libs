@@ -1,19 +1,30 @@
 ﻿using Eliassen.MongoDB.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson.Serialization.Conventions;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
+<<<<<<< HEAD
+=======
+using System;
+using static System.Net.Mime.MediaTypeNames;
+>>>>>>> 42f4ded (fixup id conventions for bson)
 
 namespace Nucleus.Core.Shared.Tests.Persistence.Services.ServiceHelpers
 {
     public class TargetModel
     {
         public string Name { get; set; }
+        public string TargetId { get; set; } = Guid.NewGuid().ToString();
     }
     public class TargetCollection
     {
         // [BsonElement("Name")]
         public string? Name { get; set; }
+
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string TargetId { get; set; } = Guid.NewGuid().ToString();
     }
 
 

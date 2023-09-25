@@ -48,9 +48,10 @@ namespace Eliassen.MongoDB.Extensions
                 );
 
             ConventionRegistry.Register("Camel case convention", new ConventionPack
-            {
-                new CamelCaseElementNameConvention()
-            }, t => true);
+        {
+            new CamelCaseElementNameConvention(),
+            new BsonObjectIdConvention(),
+        }, t => true);
 
         }
     }

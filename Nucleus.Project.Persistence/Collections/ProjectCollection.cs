@@ -1,18 +1,25 @@
+<<<<<<< HEAD
 ﻿using Eliassen.System.Text.Json;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Text.Json.Serialization;
+=======
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+>>>>>>> 42f4ded (fixup id conventions for bson)
 
 namespace Nucleus.Project.Persistence.Collections
 {
-    [BsonIgnoreExtraElements]
     public class ProjectCollection
     {
+<<<<<<< HEAD
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         [JsonPropertyName("_id")]
         [JsonConverter(typeof(BsonIdConverter))]
+=======
+>>>>>>> 42f4ded (fixup id conventions for bson)
         public string? ProjectId { get; set; }
         public string? Title { get; set; }
         public string? Slug { get; set; }
