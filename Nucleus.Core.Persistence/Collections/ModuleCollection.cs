@@ -16,10 +16,8 @@ public class ModuleCollection : PermissionBaseCollection
     [JsonConverter(typeof(BsonIdConverter))]
     public string? ModuleId { get; set; }
 
-    [BsonElement("roles")]
     public List<RoleCollection>? Roles { get; set; }
 
-    [BsonElement("createdOn")]
     [JsonConverter(typeof(BsonDateConverter))]
     public DateTimeOffset CreatedOn { get; set; }
 }

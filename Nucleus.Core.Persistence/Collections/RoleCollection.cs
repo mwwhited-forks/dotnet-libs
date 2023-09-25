@@ -5,6 +5,5 @@ namespace Nucleus.Core.Persistence.Collections;
 
 public class RoleCollection : PermissionBaseCollection
 {
-    [BsonElement("rights")]
     public List<PermissionBaseCollection>? Rights { get; set; }
 }
