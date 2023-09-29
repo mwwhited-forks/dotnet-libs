@@ -65,5 +65,13 @@ namespace Eliassen.System.Text.Json.Serialization
         /// <inheritdoc />
         public object? Deserialize(string input, Type type) =>
             JsonSerializer.Deserialize(input, type, _options);
+
+        /// <summary>
+        /// Use the configured property naming policy to change provided value
+        /// </summary>
+        /// <param name="propertyName"></param>
+        /// <returns></returns>
+        public string AsPropertyName(string propertyName) =>
+            (_options.PropertyNamingPolicy ?? JsonNamingPolicy.CamelCase).ConvertName(propertyName);
     }
 }

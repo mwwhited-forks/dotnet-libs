@@ -7,5 +7,6 @@ namespace Eliassen.System.Text.Json.Serialization
     /// </summary>
     public interface IJsonSerializer : ISerializer
     {
+        string AsPropertyName(string propertyName);
     }
 }
