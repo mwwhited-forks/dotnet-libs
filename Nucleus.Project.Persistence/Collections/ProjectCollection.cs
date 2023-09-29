@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Eliassen.MongoDB.Extensions;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Nucleus.Project.Persistence.Collections;
 
+[CollectionName("projects")]
 public class ProjectCollection
 {
     [Key]

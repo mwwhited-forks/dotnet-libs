@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Eliassen.MongoDB.Extensions;
+using System;
 
 namespace Nucleus.Lesson.Persistence.Collections
 {
+    [CollectionName("lessons")]
     public class LessonCollection
     {
         public string? LessonId { get; set; }

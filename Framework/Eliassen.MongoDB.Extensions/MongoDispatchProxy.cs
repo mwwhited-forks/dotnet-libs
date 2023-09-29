@@ -27,6 +27,7 @@ namespace Eliassen.MongoDB.Extensions
                 return ret;
             }
 
+            //TODO: need to simplify this name logic with that on the DataloaderCommandFactory
             var originalName = targetMethod.Name.StartsWith("get_") ? targetMethod.Name[4..] : targetMethod.Name;
 
             var name = targetMethod.DeclaringType?.GetProperty(originalName)
@@ -47,8 +48,7 @@ namespace Eliassen.MongoDB.Extensions
             if (string.IsNullOrWhiteSpace(name))
             {
                 name = originalName;
-                //TODO: simplify name
-                //_jsonSerializer.pr
+                _jsonSerializer.AsPropertyName(originalName);
             }
 
             var collectionType = targetMethod.ReturnType.GetGenericArguments()[0];

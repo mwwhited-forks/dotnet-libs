@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Eliassen.MongoDB.Extensions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Nucleus.Blog.Persistence.Collections;
 
+[CollectionName("blogs")]
 public class BlogCollection
 {
     [Key]
