@@ -1,8 +1,10 @@
+using Eliassen.MongoDB.Extensions;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Nucleus.Core.Persistence.Collections;
 
+[CollectionName("documents")]
 public class DocumentCollection
 {
     [Key]

@@ -1,9 +1,11 @@
+using Eliassen.MongoDB.Extensions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Nucleus.Core.Persistence.Collections;
 
+[CollectionName("modules")]
 public class ModuleCollection : PermissionBaseCollection
 {
     [Key]
