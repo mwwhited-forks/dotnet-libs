@@ -1,11 +1,11 @@
-﻿using Eliassen.System.Text.Json;
+﻿using Eliassen.MongoDB.Extensions;
 using System;
-using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 namespace Nucleus.Core.Persistence.Collections;
 
 [CollectionName("documents")]
-public class DocumentCollectiong
+public class DocumentCollection
 {
     [Key]
     public string? DocumentId { get; set; }
