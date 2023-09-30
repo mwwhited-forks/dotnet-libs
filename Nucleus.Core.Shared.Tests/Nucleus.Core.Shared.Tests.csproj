@@ -29,5 +29,11 @@
 		<ProjectReference Include="..\Nucleus.Core.Shared.Controllers\Nucleus.Core.Shared.Controllers.csproj" />
 		<ProjectReference Include="..\Nucleus.Core.Shared.Persistence\Nucleus.Core.Shared.Persistence.csproj" />
 	</ItemGroup>
-	
+
+	<ItemGroup>
+		<EmbeddedResource Include="..\Eliassen.EntityFrameworkCore.EmbeddedResources.Tests\Data\**\*.json">
+			<Link>Data\%(RecursiveDir)%(Filename)%(Extension)</Link>
+		</EmbeddedResource>
+	</ItemGroup>
+
 </Project>
