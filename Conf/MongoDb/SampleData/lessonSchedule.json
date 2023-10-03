@@ -13,7 +13,54 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "teacher": "George Golferson",
+    "teacher": {
+      "_id": {
+        "$oid": "646cf816fe22b3a795d90a93"
+      },
+      "userName": "1dfa5e87-5899-4198-aae7-ea4364fe2c70",
+      "emailAddress": "davidMcIlroy@eliassen.com",
+      "firstName": "David",
+      "lastName": "McIlroy",
+      "active": true,
+      "userModules": [
+        {
+          "name": "Tee Times",
+          "code": "module_teetimes",
+          "roles": [
+            {
+              "name": "Tee Times Admin",
+              "code": "role_teetimes",
+              "rights": [
+                {
+                  "name": "Tee Times Manager",
+                  "code": "right_teetimes_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons",
+          "code": "module_lessons",
+          "roles": [
+            {
+              "name": "Lessons",
+              "code": "role_lessons",
+              "rights": [
+                {
+                  "name": "Lessons - Read",
+                  "code": "right_lessons_read"
+                },
+                {
+                  "name": "Lessons - Write",
+                  "code": "right_lessons_write"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "duration": 15,
     "tags": [],
     "price": 1.91,
@@ -38,7 +85,54 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "teacher": "Bobby Butterfingers",
+    "teacher": {
+      "_id": {
+        "$oid": "646cf816fe22b3a795d90a93"
+      },
+      "userName": "1dfa5e87-5899-4198-aae7-ea4364fe2c70",
+      "emailAddress": "davidMcIlroy@eliassen.com",
+      "firstName": "David",
+      "lastName": "McIlroy",
+      "active": true,
+      "userModules": [
+        {
+          "name": "Tee Times",
+          "code": "module_teetimes",
+          "roles": [
+            {
+              "name": "Tee Times Admin",
+              "code": "role_teetimes",
+              "rights": [
+                {
+                  "name": "Tee Times Manager",
+                  "code": "right_teetimes_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons",
+          "code": "module_lessons",
+          "roles": [
+            {
+              "name": "Lessons",
+              "code": "role_lessons",
+              "rights": [
+                {
+                  "name": "Lessons - Read",
+                  "code": "right_lessons_read"
+                },
+                {
+                  "name": "Lessons - Write",
+                  "code": "right_lessons_write"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "duration": 20,
     "tags": [],
     "price": 1.93,
@@ -63,7 +157,54 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "teacher": "John Smith",
+    "teacher": {
+      "_id": {
+        "$oid": "646cf816fe22b3a795d90a93"
+      },
+      "userName": "1dfa5e87-5899-4198-aae7-ea4364fe2c70",
+      "emailAddress": "davidMcIlroy@eliassen.com",
+      "firstName": "David",
+      "lastName": "McIlroy",
+      "active": true,
+      "userModules": [
+        {
+          "name": "Tee Times",
+          "code": "module_teetimes",
+          "roles": [
+            {
+              "name": "Tee Times Admin",
+              "code": "role_teetimes",
+              "rights": [
+                {
+                  "name": "Tee Times Manager",
+                  "code": "right_teetimes_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons",
+          "code": "module_lessons",
+          "roles": [
+            {
+              "name": "Lessons",
+              "code": "role_lessons",
+              "rights": [
+                {
+                  "name": "Lessons - Read",
+                  "code": "right_lessons_read"
+                },
+                {
+                  "name": "Lessons - Write",
+                  "code": "right_lessons_write"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "duration": 25,
     "tags": [],
     "price": 1.78,
@@ -88,7 +229,34 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "teacher": "Waterlogged Walter",
+    "teacher": {
+      "_id": {
+        "$oid": "646cf775fe22b3a795d90a91"
+      },
+      "userName": "dbfb72fa-14c5-4f6e-af53-4d61e9d78ba7",
+      "emailAddress": "adamshort@eliassen.com",
+      "firstName": "Adam",
+      "lastName": "Short",
+      "active": true,
+      "userModules": [
+        {
+          "roles": [
+            {
+              "rights": [
+                {
+                  "name": "Tee Times Manager",
+                  "code": "right_teetimes_admin"
+                }
+              ],
+              "name": "Tee Times Admin",
+              "code": "role_teetimes"
+            }
+          ],
+          "name": "Tee Times",
+          "code": "module_teetimes"
+        }
+      ]
+    },
     "duration": 45,
     "tags": [],
     "price": 1.66,
@@ -113,7 +281,86 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "teacher": "Never-Defeated Daryl",
+    "teacher": {
+      "_id": {
+        "$oid": "646cf5c1fe22b3a795d90a8f"
+      },
+      "userName": "24642cfc-f9f3-45cd-a155-8328b790ebbc",
+      "emailAddress": "chipduffer@eliassen.com",
+      "firstName": "Chip",
+      "lastName": "Duffer",
+      "active": true,
+      "userModules": [
+        {
+          "name": "Blog",
+          "code": "module_blog",
+          "roles": [
+            {
+              "name": "Blog Admin",
+              "code": "role_blog",
+              "rights": [
+                {
+                  "name": "Blog Manager",
+                  "code": "right_blog_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons Vlog",
+          "code": "module_vlog",
+          "roles": [
+            {
+              "name": "Lesson Vlog Admin",
+              "code": "role_vlog",
+              "rights": [
+                {
+                  "name": "Lesson Vlog Manager",
+                  "code": "right_vlog_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tee Times",
+          "code": "module_teetimes",
+          "roles": [
+            {
+              "name": "Tee Times Admin",
+              "code": "role_teetimes",
+              "rights": [
+                {
+                  "name": "Tee Times Manager",
+                  "code": "right_teetimes_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons",
+          "code": "module_lessons",
+          "roles": [
+            {
+              "name": "Lessons",
+              "code": "role_lessons",
+              "rights": [
+                {
+                  "name": "Lessons - Read",
+                  "code": "right_lessons_read"
+                },
+                {
+                  "name": "Lessons - Write",
+                  "code": "right_lessons_write"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "duration": 50,
     "tags": [],
     "price": 1.44,
@@ -138,7 +385,86 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "teacher": "Seasoned-Golfer Susan",
+    "teacher": {
+      "_id": {
+        "$oid": "646cf5c1fe22b3a795d90a8f"
+      },
+      "userName": "24642cfc-f9f3-45cd-a155-8328b790ebbc",
+      "emailAddress": "chipduffer@eliassen.com",
+      "firstName": "Chip",
+      "lastName": "Duffer",
+      "active": true,
+      "userModules": [
+        {
+          "name": "Blog",
+          "code": "module_blog",
+          "roles": [
+            {
+              "name": "Blog Admin",
+              "code": "role_blog",
+              "rights": [
+                {
+                  "name": "Blog Manager",
+                  "code": "right_blog_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons Vlog",
+          "code": "module_vlog",
+          "roles": [
+            {
+              "name": "Lesson Vlog Admin",
+              "code": "role_vlog",
+              "rights": [
+                {
+                  "name": "Lesson Vlog Manager",
+                  "code": "right_vlog_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tee Times",
+          "code": "module_teetimes",
+          "roles": [
+            {
+              "name": "Tee Times Admin",
+              "code": "role_teetimes",
+              "rights": [
+                {
+                  "name": "Tee Times Manager",
+                  "code": "right_teetimes_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons",
+          "code": "module_lessons",
+          "roles": [
+            {
+              "name": "Lessons",
+              "code": "role_lessons",
+              "rights": [
+                {
+                  "name": "Lessons - Read",
+                  "code": "right_lessons_read"
+                },
+                {
+                  "name": "Lessons - Write",
+                  "code": "right_lessons_write"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "duration": 55,
     "tags": [],
     "price": 1.01,
@@ -163,7 +489,86 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "teacher": "Albert Einstein",
+    "teacher": {
+      "_id": {
+        "$oid": "646cf5c1fe22b3a795d90a8f"
+      },
+      "userName": "24642cfc-f9f3-45cd-a155-8328b790ebbc",
+      "emailAddress": "chipduffer@eliassen.com",
+      "firstName": "Chip",
+      "lastName": "Duffer",
+      "active": true,
+      "userModules": [
+        {
+          "name": "Blog",
+          "code": "module_blog",
+          "roles": [
+            {
+              "name": "Blog Admin",
+              "code": "role_blog",
+              "rights": [
+                {
+                  "name": "Blog Manager",
+                  "code": "right_blog_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons Vlog",
+          "code": "module_vlog",
+          "roles": [
+            {
+              "name": "Lesson Vlog Admin",
+              "code": "role_vlog",
+              "rights": [
+                {
+                  "name": "Lesson Vlog Manager",
+                  "code": "right_vlog_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tee Times",
+          "code": "module_teetimes",
+          "roles": [
+            {
+              "name": "Tee Times Admin",
+              "code": "role_teetimes",
+              "rights": [
+                {
+                  "name": "Tee Times Manager",
+                  "code": "right_teetimes_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons",
+          "code": "module_lessons",
+          "roles": [
+            {
+              "name": "Lessons",
+              "code": "role_lessons",
+              "rights": [
+                {
+                  "name": "Lessons - Read",
+                  "code": "right_lessons_read"
+                },
+                {
+                  "name": "Lessons - Write",
+                  "code": "right_lessons_write"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "duration": 65,
     "tags": [],
     "price": 5.99,
@@ -188,7 +593,34 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "teacher": "Focused Freddy",
+    "teacher": {
+      "_id": {
+        "$oid": "646cf775fe22b3a795d90a91"
+      },
+      "userName": "dbfb72fa-14c5-4f6e-af53-4d61e9d78ba7",
+      "emailAddress": "adamshort@eliassen.com",
+      "firstName": "Adam",
+      "lastName": "Short",
+      "active": true,
+      "userModules": [
+        {
+          "roles": [
+            {
+              "rights": [
+                {
+                  "name": "Tee Times Manager",
+                  "code": "right_teetimes_admin"
+                }
+              ],
+              "name": "Tee Times Admin",
+              "code": "role_teetimes"
+            }
+          ],
+          "name": "Tee Times",
+          "code": "module_teetimes"
+        }
+      ]
+    },
     "duration": 110,
     "tags": [],
     "price": 1.99,
@@ -213,7 +645,86 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "teacher": "NotAScammer Steve",
+    "teacher": {
+      "_id": {
+        "$oid": "646cf5c1fe22b3a795d90a8f"
+      },
+      "userName": "24642cfc-f9f3-45cd-a155-8328b790ebbc",
+      "emailAddress": "chipduffer@eliassen.com",
+      "firstName": "Chip",
+      "lastName": "Duffer",
+      "active": true,
+      "userModules": [
+        {
+          "name": "Blog",
+          "code": "module_blog",
+          "roles": [
+            {
+              "name": "Blog Admin",
+              "code": "role_blog",
+              "rights": [
+                {
+                  "name": "Blog Manager",
+                  "code": "right_blog_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons Vlog",
+          "code": "module_vlog",
+          "roles": [
+            {
+              "name": "Lesson Vlog Admin",
+              "code": "role_vlog",
+              "rights": [
+                {
+                  "name": "Lesson Vlog Manager",
+                  "code": "right_vlog_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tee Times",
+          "code": "module_teetimes",
+          "roles": [
+            {
+              "name": "Tee Times Admin",
+              "code": "role_teetimes",
+              "rights": [
+                {
+                  "name": "Tee Times Manager",
+                  "code": "right_teetimes_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons",
+          "code": "module_lessons",
+          "roles": [
+            {
+              "name": "Lessons",
+              "code": "role_lessons",
+              "rights": [
+                {
+                  "name": "Lessons - Read",
+                  "code": "right_lessons_read"
+                },
+                {
+                  "name": "Lessons - Write",
+                  "code": "right_lessons_write"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "duration": 10,
     "tags": [],
     "price": 1.99,
@@ -238,7 +749,86 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "teacher": "NotAScammer Steve",
+    "teacher": {
+      "_id": {
+        "$oid": "646cf5c1fe22b3a795d90a8f"
+      },
+      "userName": "24642cfc-f9f3-45cd-a155-8328b790ebbc",
+      "emailAddress": "chipduffer@eliassen.com",
+      "firstName": "Chip",
+      "lastName": "Duffer",
+      "active": true,
+      "userModules": [
+        {
+          "name": "Blog",
+          "code": "module_blog",
+          "roles": [
+            {
+              "name": "Blog Admin",
+              "code": "role_blog",
+              "rights": [
+                {
+                  "name": "Blog Manager",
+                  "code": "right_blog_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons Vlog",
+          "code": "module_vlog",
+          "roles": [
+            {
+              "name": "Lesson Vlog Admin",
+              "code": "role_vlog",
+              "rights": [
+                {
+                  "name": "Lesson Vlog Manager",
+                  "code": "right_vlog_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tee Times",
+          "code": "module_teetimes",
+          "roles": [
+            {
+              "name": "Tee Times Admin",
+              "code": "role_teetimes",
+              "rights": [
+                {
+                  "name": "Tee Times Manager",
+                  "code": "right_teetimes_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons",
+          "code": "module_lessons",
+          "roles": [
+            {
+              "name": "Lessons",
+              "code": "role_lessons",
+              "rights": [
+                {
+                  "name": "Lessons - Read",
+                  "code": "right_lessons_read"
+                },
+                {
+                  "name": "Lessons - Write",
+                  "code": "right_lessons_write"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "duration": 100,
     "tags": [
       "18 100% winrate"
@@ -265,7 +855,86 @@
     "createdOn": {
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
-    "teacher": "NotAScammer Steve",
+    "teacher": {
+      "_id": {
+        "$oid": "646cf5c1fe22b3a795d90a8f"
+      },
+      "userName": "24642cfc-f9f3-45cd-a155-8328b790ebbc",
+      "emailAddress": "chipduffer@eliassen.com",
+      "firstName": "Chip",
+      "lastName": "Duffer",
+      "active": true,
+      "userModules": [
+        {
+          "name": "Blog",
+          "code": "module_blog",
+          "roles": [
+            {
+              "name": "Blog Admin",
+              "code": "role_blog",
+              "rights": [
+                {
+                  "name": "Blog Manager",
+                  "code": "right_blog_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons Vlog",
+          "code": "module_vlog",
+          "roles": [
+            {
+              "name": "Lesson Vlog Admin",
+              "code": "role_vlog",
+              "rights": [
+                {
+                  "name": "Lesson Vlog Manager",
+                  "code": "right_vlog_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tee Times",
+          "code": "module_teetimes",
+          "roles": [
+            {
+              "name": "Tee Times Admin",
+              "code": "role_teetimes",
+              "rights": [
+                {
+                  "name": "Tee Times Manager",
+                  "code": "right_teetimes_admin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lessons",
+          "code": "module_lessons",
+          "roles": [
+            {
+              "name": "Lessons",
+              "code": "role_lessons",
+              "rights": [
+                {
+                  "name": "Lessons - Read",
+                  "code": "right_lessons_read"
+                },
+                {
+                  "name": "Lessons - Write",
+                  "code": "right_lessons_write"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "duration": 15,
     "tags": [
       "100% winrate"

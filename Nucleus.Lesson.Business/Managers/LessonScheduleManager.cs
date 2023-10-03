@@ -24,11 +24,11 @@ namespace Nucleus.Lesson.Business.Managers
 
         public async Task<ResponseModel<LessonScheduleModel?>> SaveLessonAsync(LessonScheduleModel lesson)
         {
-            if (lesson == null || string.IsNullOrEmpty(lesson.Title) || string.IsNullOrEmpty(lesson.Teacher))
+            if (lesson == null)
                 return new ResponseModel<LessonScheduleModel?>()
                 {
                     IsSuccess = false,
-                    Message = "Missing Required Fields. Title and Teacher cannot be null."
+                    Message = "Missing Required Fields. Lesson cannot be null."
                 };
             ResponseModel<LessonScheduleModel?> result = new ResponseModel<LessonScheduleModel?>() { IsSuccess = true };
             if (String.IsNullOrEmpty(lesson.LessonId))

@@ -1,6 +1,7 @@
 ﻿using Eliassen.System.Text.Json;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using Nucleus.Core.Contracts.Models;
 using System;
 using System.Text.Json.Serialization;
 
@@ -35,7 +36,7 @@ namespace Nucleus.Lesson.Persistence.Collections
         public DateTimeOffset? CreatedOn { get; set; }
 
         [BsonElement("teacher")]
-        public string? Teacher { get; set; }
+        public User? Teacher { get; set; }
 
         [BsonElement("duration")]
         public int? Duration { get; set; }
