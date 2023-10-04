@@ -24,7 +24,7 @@ namespace Nucleus.Lesson.Contracts.Models
         public DateTimeOffset? CreatedOn { get; set; }
         public long CreatedOnUnix { get; set; }
 
-        public User? Teacher { get; set; }
+        public TeacherModel? Teacher { get; set; }
         public int? Duration { get; set; }
 
         public DateTimeOffset? StartDateTime { get; set; }

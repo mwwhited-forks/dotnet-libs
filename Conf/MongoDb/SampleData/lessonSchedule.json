@@ -14,52 +14,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "_id": {
-        "$oid": "646cf816fe22b3a795d90a93"
-      },
-      "userName": "1dfa5e87-5899-4198-aae7-ea4364fe2c70",
-      "emailAddress": "davidMcIlroy@eliassen.com",
-      "firstName": "David",
-      "lastName": "McIlroy",
-      "active": true,
-      "userModules": [
-        {
-          "name": "Tee Times",
-          "code": "module_teetimes",
-          "roles": [
-            {
-              "name": "Tee Times Admin",
-              "code": "role_teetimes",
-              "rights": [
-                {
-                  "name": "Tee Times Manager",
-                  "code": "right_teetimes_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons",
-          "code": "module_lessons",
-          "roles": [
-            {
-              "name": "Lessons",
-              "code": "role_lessons",
-              "rights": [
-                {
-                  "name": "Lessons - Read",
-                  "code": "right_lessons_read"
-                },
-                {
-                  "name": "Lessons - Write",
-                  "code": "right_lessons_write"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "userId": "646cf816fe22b3a795d90a93",
+      "fullName": "David McIlroy",
+      "emailAddress": "davidMcIlroy@eliassen.com"
     },
     "duration": 15,
     "tags": [],
@@ -86,52 +43,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "_id": {
-        "$oid": "646cf816fe22b3a795d90a93"
-      },
-      "userName": "1dfa5e87-5899-4198-aae7-ea4364fe2c70",
-      "emailAddress": "davidMcIlroy@eliassen.com",
-      "firstName": "David",
-      "lastName": "McIlroy",
-      "active": true,
-      "userModules": [
-        {
-          "name": "Tee Times",
-          "code": "module_teetimes",
-          "roles": [
-            {
-              "name": "Tee Times Admin",
-              "code": "role_teetimes",
-              "rights": [
-                {
-                  "name": "Tee Times Manager",
-                  "code": "right_teetimes_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons",
-          "code": "module_lessons",
-          "roles": [
-            {
-              "name": "Lessons",
-              "code": "role_lessons",
-              "rights": [
-                {
-                  "name": "Lessons - Read",
-                  "code": "right_lessons_read"
-                },
-                {
-                  "name": "Lessons - Write",
-                  "code": "right_lessons_write"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "userId": "646cf816fe22b3a795d90a93",
+      "fullName": "David McIlroy",
+      "emailAddress": "davidMcIlroy@eliassen.com"
     },
     "duration": 20,
     "tags": [],
@@ -158,52 +72,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "_id": {
-        "$oid": "646cf816fe22b3a795d90a93"
-      },
-      "userName": "1dfa5e87-5899-4198-aae7-ea4364fe2c70",
-      "emailAddress": "davidMcIlroy@eliassen.com",
-      "firstName": "David",
-      "lastName": "McIlroy",
-      "active": true,
-      "userModules": [
-        {
-          "name": "Tee Times",
-          "code": "module_teetimes",
-          "roles": [
-            {
-              "name": "Tee Times Admin",
-              "code": "role_teetimes",
-              "rights": [
-                {
-                  "name": "Tee Times Manager",
-                  "code": "right_teetimes_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons",
-          "code": "module_lessons",
-          "roles": [
-            {
-              "name": "Lessons",
-              "code": "role_lessons",
-              "rights": [
-                {
-                  "name": "Lessons - Read",
-                  "code": "right_lessons_read"
-                },
-                {
-                  "name": "Lessons - Write",
-                  "code": "right_lessons_write"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "userId": "646cf816fe22b3a795d90a93",
+      "fullName": "David McIlroy",
+      "emailAddress": "davidMcIlroy@eliassen.com"
     },
     "duration": 25,
     "tags": [],
@@ -230,32 +101,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "_id": {
-        "$oid": "646cf775fe22b3a795d90a91"
-      },
-      "userName": "dbfb72fa-14c5-4f6e-af53-4d61e9d78ba7",
-      "emailAddress": "adamshort@eliassen.com",
-      "firstName": "Adam",
-      "lastName": "Short",
-      "active": true,
-      "userModules": [
-        {
-          "roles": [
-            {
-              "rights": [
-                {
-                  "name": "Tee Times Manager",
-                  "code": "right_teetimes_admin"
-                }
-              ],
-              "name": "Tee Times Admin",
-              "code": "role_teetimes"
-            }
-          ],
-          "name": "Tee Times",
-          "code": "module_teetimes"
-        }
-      ]
+      "userId": "646cf816fe22b3a795d90a93",
+      "fullName": "David McIlroy",
+      "emailAddress": "davidMcIlroy@eliassen.com"
     },
     "duration": 45,
     "tags": [],
@@ -282,84 +130,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "_id": {
-        "$oid": "646cf5c1fe22b3a795d90a8f"
-      },
-      "userName": "24642cfc-f9f3-45cd-a155-8328b790ebbc",
-      "emailAddress": "chipduffer@eliassen.com",
-      "firstName": "Chip",
-      "lastName": "Duffer",
-      "active": true,
-      "userModules": [
-        {
-          "name": "Blog",
-          "code": "module_blog",
-          "roles": [
-            {
-              "name": "Blog Admin",
-              "code": "role_blog",
-              "rights": [
-                {
-                  "name": "Blog Manager",
-                  "code": "right_blog_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons Vlog",
-          "code": "module_vlog",
-          "roles": [
-            {
-              "name": "Lesson Vlog Admin",
-              "code": "role_vlog",
-              "rights": [
-                {
-                  "name": "Lesson Vlog Manager",
-                  "code": "right_vlog_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Tee Times",
-          "code": "module_teetimes",
-          "roles": [
-            {
-              "name": "Tee Times Admin",
-              "code": "role_teetimes",
-              "rights": [
-                {
-                  "name": "Tee Times Manager",
-                  "code": "right_teetimes_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons",
-          "code": "module_lessons",
-          "roles": [
-            {
-              "name": "Lessons",
-              "code": "role_lessons",
-              "rights": [
-                {
-                  "name": "Lessons - Read",
-                  "code": "right_lessons_read"
-                },
-                {
-                  "name": "Lessons - Write",
-                  "code": "right_lessons_write"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "userId": "646cf816fe22b3a795d90a93",
+      "fullName": "David McIlroy",
+      "emailAddress": "davidMcIlroy@eliassen.com"
     },
     "duration": 50,
     "tags": [],
@@ -386,84 +159,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "_id": {
-        "$oid": "646cf5c1fe22b3a795d90a8f"
-      },
-      "userName": "24642cfc-f9f3-45cd-a155-8328b790ebbc",
-      "emailAddress": "chipduffer@eliassen.com",
-      "firstName": "Chip",
-      "lastName": "Duffer",
-      "active": true,
-      "userModules": [
-        {
-          "name": "Blog",
-          "code": "module_blog",
-          "roles": [
-            {
-              "name": "Blog Admin",
-              "code": "role_blog",
-              "rights": [
-                {
-                  "name": "Blog Manager",
-                  "code": "right_blog_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons Vlog",
-          "code": "module_vlog",
-          "roles": [
-            {
-              "name": "Lesson Vlog Admin",
-              "code": "role_vlog",
-              "rights": [
-                {
-                  "name": "Lesson Vlog Manager",
-                  "code": "right_vlog_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Tee Times",
-          "code": "module_teetimes",
-          "roles": [
-            {
-              "name": "Tee Times Admin",
-              "code": "role_teetimes",
-              "rights": [
-                {
-                  "name": "Tee Times Manager",
-                  "code": "right_teetimes_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons",
-          "code": "module_lessons",
-          "roles": [
-            {
-              "name": "Lessons",
-              "code": "role_lessons",
-              "rights": [
-                {
-                  "name": "Lessons - Read",
-                  "code": "right_lessons_read"
-                },
-                {
-                  "name": "Lessons - Write",
-                  "code": "right_lessons_write"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "userId": "646cf816fe22b3a795d90a93",
+      "fullName": "David McIlroy",
+      "emailAddress": "davidMcIlroy@eliassen.com"
     },
     "duration": 55,
     "tags": [],
@@ -490,84 +188,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "_id": {
-        "$oid": "646cf5c1fe22b3a795d90a8f"
-      },
-      "userName": "24642cfc-f9f3-45cd-a155-8328b790ebbc",
-      "emailAddress": "chipduffer@eliassen.com",
-      "firstName": "Chip",
-      "lastName": "Duffer",
-      "active": true,
-      "userModules": [
-        {
-          "name": "Blog",
-          "code": "module_blog",
-          "roles": [
-            {
-              "name": "Blog Admin",
-              "code": "role_blog",
-              "rights": [
-                {
-                  "name": "Blog Manager",
-                  "code": "right_blog_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons Vlog",
-          "code": "module_vlog",
-          "roles": [
-            {
-              "name": "Lesson Vlog Admin",
-              "code": "role_vlog",
-              "rights": [
-                {
-                  "name": "Lesson Vlog Manager",
-                  "code": "right_vlog_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Tee Times",
-          "code": "module_teetimes",
-          "roles": [
-            {
-              "name": "Tee Times Admin",
-              "code": "role_teetimes",
-              "rights": [
-                {
-                  "name": "Tee Times Manager",
-                  "code": "right_teetimes_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons",
-          "code": "module_lessons",
-          "roles": [
-            {
-              "name": "Lessons",
-              "code": "role_lessons",
-              "rights": [
-                {
-                  "name": "Lessons - Read",
-                  "code": "right_lessons_read"
-                },
-                {
-                  "name": "Lessons - Write",
-                  "code": "right_lessons_write"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "userId": "646cf816fe22b3a795d90a93",
+      "fullName": "David McIlroy",
+      "emailAddress": "davidMcIlroy@eliassen.com"
     },
     "duration": 65,
     "tags": [],
@@ -594,32 +217,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "_id": {
-        "$oid": "646cf775fe22b3a795d90a91"
-      },
-      "userName": "dbfb72fa-14c5-4f6e-af53-4d61e9d78ba7",
-      "emailAddress": "adamshort@eliassen.com",
-      "firstName": "Adam",
-      "lastName": "Short",
-      "active": true,
-      "userModules": [
-        {
-          "roles": [
-            {
-              "rights": [
-                {
-                  "name": "Tee Times Manager",
-                  "code": "right_teetimes_admin"
-                }
-              ],
-              "name": "Tee Times Admin",
-              "code": "role_teetimes"
-            }
-          ],
-          "name": "Tee Times",
-          "code": "module_teetimes"
-        }
-      ]
+      "userId": "646cf816fe22b3a795d90a93",
+      "fullName": "David McIlroy",
+      "emailAddress": "davidMcIlroy@eliassen.com"
     },
     "duration": 110,
     "tags": [],
@@ -646,84 +246,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "_id": {
-        "$oid": "646cf5c1fe22b3a795d90a8f"
-      },
-      "userName": "24642cfc-f9f3-45cd-a155-8328b790ebbc",
-      "emailAddress": "chipduffer@eliassen.com",
-      "firstName": "Chip",
-      "lastName": "Duffer",
-      "active": true,
-      "userModules": [
-        {
-          "name": "Blog",
-          "code": "module_blog",
-          "roles": [
-            {
-              "name": "Blog Admin",
-              "code": "role_blog",
-              "rights": [
-                {
-                  "name": "Blog Manager",
-                  "code": "right_blog_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons Vlog",
-          "code": "module_vlog",
-          "roles": [
-            {
-              "name": "Lesson Vlog Admin",
-              "code": "role_vlog",
-              "rights": [
-                {
-                  "name": "Lesson Vlog Manager",
-                  "code": "right_vlog_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Tee Times",
-          "code": "module_teetimes",
-          "roles": [
-            {
-              "name": "Tee Times Admin",
-              "code": "role_teetimes",
-              "rights": [
-                {
-                  "name": "Tee Times Manager",
-                  "code": "right_teetimes_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons",
-          "code": "module_lessons",
-          "roles": [
-            {
-              "name": "Lessons",
-              "code": "role_lessons",
-              "rights": [
-                {
-                  "name": "Lessons - Read",
-                  "code": "right_lessons_read"
-                },
-                {
-                  "name": "Lessons - Write",
-                  "code": "right_lessons_write"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "userId": "646cf816fe22b3a795d90a93",
+      "fullName": "David McIlroy",
+      "emailAddress": "davidMcIlroy@eliassen.com"
     },
     "duration": 10,
     "tags": [],
@@ -750,84 +275,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "_id": {
-        "$oid": "646cf5c1fe22b3a795d90a8f"
-      },
-      "userName": "24642cfc-f9f3-45cd-a155-8328b790ebbc",
-      "emailAddress": "chipduffer@eliassen.com",
-      "firstName": "Chip",
-      "lastName": "Duffer",
-      "active": true,
-      "userModules": [
-        {
-          "name": "Blog",
-          "code": "module_blog",
-          "roles": [
-            {
-              "name": "Blog Admin",
-              "code": "role_blog",
-              "rights": [
-                {
-                  "name": "Blog Manager",
-                  "code": "right_blog_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons Vlog",
-          "code": "module_vlog",
-          "roles": [
-            {
-              "name": "Lesson Vlog Admin",
-              "code": "role_vlog",
-              "rights": [
-                {
-                  "name": "Lesson Vlog Manager",
-                  "code": "right_vlog_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Tee Times",
-          "code": "module_teetimes",
-          "roles": [
-            {
-              "name": "Tee Times Admin",
-              "code": "role_teetimes",
-              "rights": [
-                {
-                  "name": "Tee Times Manager",
-                  "code": "right_teetimes_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons",
-          "code": "module_lessons",
-          "roles": [
-            {
-              "name": "Lessons",
-              "code": "role_lessons",
-              "rights": [
-                {
-                  "name": "Lessons - Read",
-                  "code": "right_lessons_read"
-                },
-                {
-                  "name": "Lessons - Write",
-                  "code": "right_lessons_write"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "userId": "646cf816fe22b3a795d90a93",
+      "fullName": "David McIlroy",
+      "emailAddress": "davidMcIlroy@eliassen.com"
     },
     "duration": 100,
     "tags": [
@@ -856,84 +306,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "_id": {
-        "$oid": "646cf5c1fe22b3a795d90a8f"
-      },
-      "userName": "24642cfc-f9f3-45cd-a155-8328b790ebbc",
-      "emailAddress": "chipduffer@eliassen.com",
-      "firstName": "Chip",
-      "lastName": "Duffer",
-      "active": true,
-      "userModules": [
-        {
-          "name": "Blog",
-          "code": "module_blog",
-          "roles": [
-            {
-              "name": "Blog Admin",
-              "code": "role_blog",
-              "rights": [
-                {
-                  "name": "Blog Manager",
-                  "code": "right_blog_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons Vlog",
-          "code": "module_vlog",
-          "roles": [
-            {
-              "name": "Lesson Vlog Admin",
-              "code": "role_vlog",
-              "rights": [
-                {
-                  "name": "Lesson Vlog Manager",
-                  "code": "right_vlog_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Tee Times",
-          "code": "module_teetimes",
-          "roles": [
-            {
-              "name": "Tee Times Admin",
-              "code": "role_teetimes",
-              "rights": [
-                {
-                  "name": "Tee Times Manager",
-                  "code": "right_teetimes_admin"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lessons",
-          "code": "module_lessons",
-          "roles": [
-            {
-              "name": "Lessons",
-              "code": "role_lessons",
-              "rights": [
-                {
-                  "name": "Lessons - Read",
-                  "code": "right_lessons_read"
-                },
-                {
-                  "name": "Lessons - Write",
-                  "code": "right_lessons_write"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "userId": "646cf816fe22b3a795d90a93",
+      "fullName": "David McIlroy",
+      "emailAddress": "davidMcIlroy@eliassen.com"
     },
     "duration": 15,
     "tags": [

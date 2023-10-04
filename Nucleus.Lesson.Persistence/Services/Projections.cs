@@ -1,4 +1,5 @@
-﻿using Nucleus.Lesson.Contracts.Collections;
+﻿using Eliassen.System.Text.Templating;
+using Nucleus.Lesson.Contracts.Collections;
 using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Persistence.Collections;
 using System;
@@ -9,14 +10,14 @@ namespace Nucleus.Lesson.Persistence.Services
     public static class Projections
     {
         public static Expression<Func<Contracts.Collections.LessonCollection, LessonModel>> Lessons => item => new LessonModel()
-        { 
+        {
             LessonId = item.LessonId,
             LessonScheduleId = item.LessonScheduleId,
             LessonDateTime = item.LessonDateTime,
             Student = item.Student,
             Notes = item.Notes,
             PaymentStatus = item.PaymentStatus
-            
+
         };
         public static Expression<Func<Contracts.Collections.LessonScheduleCollection, LessonScheduleModel>> LessonSchedule => item => new LessonScheduleModel()
         {
@@ -34,6 +35,12 @@ namespace Nucleus.Lesson.Persistence.Services
             StartDateTime = item.StartDateTime,
             EndDateTime = item.EndDateTime,
             Repeat = item.Repeat
+        };
+        public static Expression<Func<Contracts.Collections.TeacherCollection, TeacherModel>> Teacher => item => new TeacherModel()
+        {
+            UserId = item.UserId,
+            FullName = item.FullName,
+            EmailAddress = item.EmailAddress
         };
     }
 }
