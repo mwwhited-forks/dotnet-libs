@@ -39,6 +39,7 @@ public class TestTargetExtendedModel
     }
 
     [Key]
+    [DefaultSort]
     public int Index { get; set; }
     [Searchable]
     public string FName { get; set; }
@@ -49,7 +50,7 @@ public class TestTargetExtendedModel
     [Searchable]
     public string? May { get; set; }
 
-    [Searchable]
+    //TODO: nullable array values can not be included in searchable
     public string[]? Modules { get; set; }
 
 
