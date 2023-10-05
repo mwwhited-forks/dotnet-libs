@@ -137,6 +137,11 @@ public class QueryableExtensionsTests
                 { propertyName, expressionOperator.AsFilter(filterValue ) }
             }
         };
+
+        //Note: round trip through the serializer to ensure this works correctly
+        var queryJson = JsonSerializer.Serialize(query);
+        query = JsonSerializer.Deserialize<SearchQuery>(queryJson);
+
         this.TestContext.AddResult(query);
         var rawData = GetTestData<T>(typeof(T) == typeof(TestTargetExtendedModel) ? -1 : 0);
         this.TestContext.AddResult(rawData);
