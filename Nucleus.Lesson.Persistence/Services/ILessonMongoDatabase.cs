@@ -1,6 +1,6 @@
 ﻿using Eliassen.MongoDB.Extensions;
 using MongoDB.Driver;
-using Nucleus.Lesson.Contracts.Collections;
+using Nucleus.Lesson.Persistence.Collections;
 
 namespace Nucleus.Lesson.Persistence.Services
 {
@@ -8,5 +8,8 @@ namespace Nucleus.Lesson.Persistence.Services
     {
         [CollectionName("lessons")]
         IMongoCollection<LessonCollection> Lessons { get; }
+
+        [CollectionName("lessonSchedule")]
+        IMongoCollection<LessonScheduleCollection> LessonSchedule { get; }
     }
 }

@@ -1,10 +1,10 @@
 ﻿using MongoDB.Driver;
 using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
-using Nucleus.Lesson.Contracts.Collections;
 using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
 using Nucleus.Lesson.Contracts.Persistence;
+using Nucleus.Lesson.Persistence.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,19 +28,10 @@ namespace Nucleus.Lesson.Persistence.Services
             _lessonProjection = Builders<LessonCollection>.Projection.Expression(item => new LessonModel()
             {
                 LessonId = item.LessonId,
-                Content = item.Content,
-                Slug = item.Slug,
-                MediaLink = item.MediaLink,
-                PreviewImage = item.PreviewImage,
-                Preview = item.Preview,
-                Title = item.Title,
-                Enabled = item.Enabled,
-                Attendees = item.Attendees,
-                Teacher = item.Teacher,
-                Duration = item.Duration,
-                Goals = item.Goals,
-                Price = item.Price,
-                Tags = item.Tags,
+                LessonScheduleId = item.LessonScheduleId,
+                LessonDateTime = item.LessonDateTime,
+                Student = item.Student,
+                Notes = item.Notes
             });
         }
 
@@ -70,50 +61,7 @@ namespace Nucleus.Lesson.Persistence.Services
 
             return filter;
         }
-#warning retire this
-        public async Task<List<LessonModel>> GetPagedAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive)
-        {
-            // TODO: Make an extension that does all of this pagination plumbing
-            string sortDefinition = $"{{ {pagingModel.SortBy}: 1 }}";
-            if (pagingModel.SortDirection == "descend")
-                sortDefinition = $"{{ {pagingModel.SortBy}: -1 }}";
 
-            var bob = await _db.Lessons.Find(GetLessonsPredicateBuilder(onlyActive, filterItems))
-                .Skip((pagingModel.CurrentPage - 1) * pagingModel.PageSize)
-                .Limit(pagingModel.PageSize)
-                .Sort(sortDefinition)
-                .Project(_lessonProjection)
-                .ToListAsync();
-            var joe = new List<LessonModel>
-            {
-                new LessonModel
-                {
-                    Title = "Test",
-                    Teacher = "John Smith",
-                    Enabled = true
-                },
-                new LessonModel
-                {
-                    Title = "Test2",
-                    Teacher = "Tony Tonyton",
-                    Enabled = true
-                },
-                new LessonModel
-                {
-                    Title = "Test3",
-                    Teacher = "Joe Joeyson",
-                    Enabled = true
-                },
-                new LessonModel
-                {
-                    Title = "Test4",
-                    Teacher = "adele test",
-                    Enabled = true
-                },
-
-            };
-            return bob;
-        }
 #warning retire this
         public async Task<long> GetPagedCountAsync(PagingModel pagingModel, LessonsFilterItem? filterItems, bool onlyActive) =>
            await _db.Lessons.Find(GetLessonsPredicateBuilder(onlyActive, filterItems)).CountDocumentsAsync();
@@ -126,9 +74,6 @@ namespace Nucleus.Lesson.Persistence.Services
                .Sort("{ \"createdOn\": -1}")
                .Limit(i)
                .Project(_lessonProjection).ToListAsync();
-
-        public async Task<LessonModel?> GetSlugAsync(string slug, bool onlyActive) =>
-            await _db.Lessons.Find(x => x.Slug == slug).Project(_lessonProjection).FirstOrDefaultAsync();
 
         public async Task<LessonModel?> GetAsync(string id) =>
             await _db.Lessons.Find(x => x.LessonId == id).Project(_lessonProjection).FirstOrDefaultAsync();
@@ -149,5 +94,23 @@ namespace Nucleus.Lesson.Persistence.Services
 
         public IQueryable<LessonModel> Query() =>
             _db.Lessons.AsQueryable().Select(Projections.Lessons);
+
+
+        public void UpdateLesson(LessonModel lesson)
+        {
+            UpdateAsync(lesson);
+        }
+
+        public void UpdateLessons(LessonModel[] lessons)
+        {
+            foreach (var lessonModel in lessons)
+            {
+                UpdateLesson(lessonModel);
+            }
+        }
+
+
+        public async Task<List<LessonModel>?> GetLessonsByLessonScheduleId(string lessonScheduleId) =>
+            await _db.Lessons.Find(x => x.LessonScheduleId == lessonScheduleId).Project(_lessonProjection).ToListAsync();
     }
 }
