@@ -1,15 +1,13 @@
 ﻿using MongoDB.Driver;
-using Nucleus.Core.Contracts.Models;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
 using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
 using Nucleus.Lesson.Contracts.Persistence;
+using Nucleus.Lesson.Persistence.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static Nucleus.Core.Contracts.Rights;
-using LessonScheduleCollection = Nucleus.Lesson.Contracts.Collections.LessonScheduleCollection;
 
 namespace Nucleus.Lesson.Persistence.Services
 {

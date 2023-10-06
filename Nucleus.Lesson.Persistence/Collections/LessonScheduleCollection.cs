@@ -16,7 +16,7 @@ namespace Nucleus.Lesson.Persistence.Collections
         public string? LessonId { get; set; }
 
         [BsonElement("title")]
-        public string? Title {  get; set; }
+        public string? Title { get; set; }
         [BsonElement("slug")]
         public string? Slug { get; set; }
         [BsonElement("mediaLink")]
