@@ -10,6 +10,16 @@ namespace Nucleus.Lesson.Persistence.Services
         public static Expression<Func<LessonCollection, LessonModel>> Lessons => item => new LessonModel()
         { 
             LessonId = item.LessonId,
+            LessonScheduleId = item.LessonScheduleId,
+            LessonDateTime = item.LessonDateTime,
+            Student = item.Student,
+            Notes = item.Notes,
+            PaymentStatus = item.PaymentStatus
+            
+        };
+        public static Expression<Func<LessonScheduleCollection, LessonScheduleModel>> LessonSchedule => item => new LessonScheduleModel()
+        {
+            LessonId = item.LessonId,
             Content = item.Content,
             Preview = item.Preview,
             Slug = item.Slug,
@@ -17,14 +27,12 @@ namespace Nucleus.Lesson.Persistence.Services
             Enabled = item.Enabled,
             CreatedOn = item.CreatedOn,
             Teacher = item.Teacher,
-            Attendees = item.Attendees,
             Duration = item.Duration,
             Price = item.Price,
-            Tags= item.Tags,
-            Notes = item.Notes,
+            Tags = item.Tags,
             StartDateTime = item.StartDateTime,
-            EndDateTime = item.EndDateTime
-            
+            EndDateTime = item.EndDateTime,
+            Repeat = item.Repeat
         };
     }
 }

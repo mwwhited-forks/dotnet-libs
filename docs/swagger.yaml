@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Nucleus.Blog.Controllers
-  version: 0.1.43.4
+  version: 0.1.41.80
 paths:
   /api/Blog/Blogs:
     post:
@@ -321,6 +321,52 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Eliassen.System.ResponseModel.PagedQueryResult-Nucleus.Lesson.Contracts.Models.LessonModel'
+      x-permissions:
+        anonymous: true
+  /api/Lesson/UpdateLesson:
+    post:
+      tags:
+        - Lesson
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel'
+      responses:
+        '200':
+          description: Success
+      x-permissions:
+        anonymous: true
+  /api/Lesson/UpdateLessons:
+    post:
+      tags:
+        - Lesson
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel'
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel'
+          application/*+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Nucleus.Lesson.Contracts.Models.LessonModel'
+      responses:
+        '200':
+          description: Success
       x-permissions:
         anonymous: true
   /api/LessonAdmin/Lessons:
@@ -909,55 +955,19 @@ components:
           description: '`true` will disable row/page counts and may decrease processing time without effecting paging functions'
         searchTerm:
           type: string
-          description: '**Searched Properties:** Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn; CreatedOnUnix'
+          description: '**Searched Properties:** Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn'
           nullable: true
         filter:
-          properties:
-            blogId:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            title:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            slug:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            tags:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            preview:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            content:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            enabled:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            author:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            createdOn:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            createdOnUnix:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-          description: '**Filterable Properties:** BlogId; Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn; CreatedOnUnix'
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
+          description: '**Filterable Properties:** BlogId; Title; Slug; Tags; Preview; Content; Enabled; Author; CreatedOn'
           nullable: true
         orderBy:
-          properties:
-            blogId:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            title:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            slug:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            tags:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            preview:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            content:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            enabled:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            author:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            createdOn:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            createdOnUnix:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-          description: '**Sortable Properties:** BlogId, Title, Slug, Tags, Preview, Content, Enabled, Author, CreatedOn, CreatedOnUnix  **Default Order:** CreatedOn asc, Slug asc'
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
+          description: '**Sortable Properties:** BlogId, Title, Slug, Tags, Preview, Content, Enabled, Author, CreatedOn  **Default Order:** CreatedOn asc, Title asc'
           nullable: true
       additionalProperties: false
     Eliassen.System.Linq.Search.SearchQuery-Nucleus.Core.Contracts.Models.Module:
@@ -978,27 +988,15 @@ components:
           description: '**Searched Properties:** ModuleId; Roles; Name; Code'
           nullable: true
         filter:
-          properties:
-            moduleId:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            roles:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            name:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            code:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
           description: '**Filterable Properties:** ModuleId; Roles; Name; Code'
           nullable: true
         orderBy:
-          properties:
-            moduleId:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            roles:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            name:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            code:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
           description: '**Sortable Properties:** ModuleId, Roles, Name, Code  **Default Order:** Name asc'
           nullable: true
       additionalProperties: false
@@ -1020,55 +1018,15 @@ components:
           description: '**Searched Properties:** FirstNameLastName; LastNameFirstName; EmailAddress; FirstName; LastName'
           nullable: true
         filter:
-          properties:
-            firstNameLastName:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            lastNameFirstName:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            userId:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            userName:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            emailAddress:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            firstName:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            lastName:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            active:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            userModules:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            createdOn:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            module:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            userStatus:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
           description: '**Filterable Properties:** FirstNameLastName; LastNameFirstName; UserId; UserName; EmailAddress; FirstName; LastName; Active; UserModules; CreatedOn; Module; UserStatus'
           nullable: true
         orderBy:
-          properties:
-            firstNameLastName:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            lastNameFirstName:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            userId:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            userName:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            emailAddress:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            firstName:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            lastName:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            active:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            userModules:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            createdOn:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
           description: '**Sortable Properties:** FirstNameLastName, LastNameFirstName, UserId, UserName, EmailAddress, FirstName, LastName, Active, UserModules, CreatedOn  **Default Order:** LastName asc, FirstName asc, EmailAddress asc'
           nullable: true
       additionalProperties: false
@@ -1090,87 +1048,15 @@ components:
           description: '**Searched Properties:** Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals; Notes'
           nullable: true
         filter:
-          properties:
-            lessonId:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            title:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            mediaLink:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            preview:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            previewImage:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            slug:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            content:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            enabled:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            createdOn:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            createdOnUnix:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            attendees:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            teacher:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            duration:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            startDateTime:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            endDateTime:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            tags:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            price:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            goals:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
-            notes:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Eliassen.System.Linq.Search.FilterParameter'
           description: '**Filterable Properties:** LessonId; Title; MediaLink; Preview; PreviewImage; Slug; Content; Enabled; CreatedOn; CreatedOnUnix; Attendees; Teacher; Duration; StartDateTime; EndDateTime; Tags; Price; Goals; Notes'
           nullable: true
         orderBy:
-          properties:
-            lessonId:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            title:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            mediaLink:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            preview:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            previewImage:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            slug:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            content:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            enabled:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            createdOn:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            createdOnUnix:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            attendees:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            teacher:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            duration:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            startDateTime:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            endDateTime:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            tags:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            price:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            goals:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
-            notes:
-              $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Eliassen.System.Linq.Search.OrderDirections'
           description: '**Sortable Properties:** LessonId, Title, MediaLink, Preview, PreviewImage, Slug, Content, Enabled, CreatedOn, CreatedOnUnix, Attendees, Teacher, Duration, StartDateTime, EndDateTime, Tags, Price, Goals, Notes  **Default Order:** CreatedOn asc, Slug asc'
           nullable: true
       additionalProperties: false
@@ -1367,9 +1253,6 @@ components:
         createdOn:
           type: string
           format: date-time
-        createdOnUnix:
-          type: integer
-          format: int64
       additionalProperties: false
     Nucleus.Blog.Contracts.Models.Filters.BlogsFilter:
       type: object
@@ -1842,9 +1725,6 @@ components:
         createdOn:
           type: string
           format: date-time
-        createdOnUnix:
-          type: integer
-          format: int64
       additionalProperties: false
   securitySchemes:
     oauth2:

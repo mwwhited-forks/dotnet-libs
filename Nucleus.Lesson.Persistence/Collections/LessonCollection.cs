@@ -1,29 +1,37 @@
-﻿using Eliassen.MongoDB.Extensions;
+﻿using Eliassen.System.Text.Json;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
+using System.Text.Json.Serialization;
 
 namespace Nucleus.Lesson.Persistence.Collections
 {
-    [CollectionName("lessons")]
+    [BsonIgnoreExtraElements]
     public class LessonCollection
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        [JsonPropertyName("_id")]
+        [JsonConverter(typeof(BsonIdConverter))]
         public string? LessonId { get; set; }
 
-        public string? Title { get; set; }
-        public string? Slug { get; set; }
-        public string? MediaLink { get; set; }
-        public string? PreviewImage { get; set; }
-        public string? Preview { get; set; }
-        public string? Content { get; set; }
-        public bool? Enabled { get; set; }
-        public DateTimeOffset? CreatedOn { get; set; }
-        public string[]? Attendees { get; set; }
-        public string? Teacher { get; set; }
-        public int? Duration { get; set; }
-        public string[]? Tags { get; set; }
-        public double Price { get; set; }
-        public string[]? Goals { get; set; }
-        public DateTimeOffset? StartDateTime { get; set; }
-        public DateTimeOffset? EndDateTime { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        [JsonPropertyName("lessonScheduleId")]
+        [JsonConverter(typeof(BsonIdConverter))]
+        public string? LessonScheduleId { get; set; }
+
+        [BsonElement("lessonDateTime")]
+        [JsonConverter(typeof(BsonDateConverter))]
+        public DateTimeOffset? LessonDateTime { get; set; }
+
+        [BsonElement("student")]
+        public string? Student { get; set; }
+
+        [BsonElement("notes")]
         public string? Notes { get; set; }
+
+        [BsonElement("paymentStatus")]
+        public string? PaymentStatus { get; set; }
+
     }
 }

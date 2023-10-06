@@ -7,11 +7,11 @@ namespace Nucleus.Blog.Contracts.Models
     [SearchTermDefault(SearchTermDefaults.Contains)]
     public class BlogModel
     {
-        [NotSearchable]
         [IgnoreStringComparisonReplacement]
+        [NotSearchable]
         public string? BlogId { get; set; }
-        public string? Title { get; set; }
         [DefaultSort(priority: 1)]
+        public string? Title { get; set; }
         public string? Slug { get; set; }
         public List<string?>? Tags { get; set; }
         public string? Preview { get; set; }
@@ -20,6 +20,5 @@ namespace Nucleus.Blog.Contracts.Models
         public string? Author { get; set; }
         [DefaultSort(priority: 0)]
         public DateTimeOffset CreatedOn { get; set; }
-        public long CreatedOnUnix { get; set; }
     }
 }
