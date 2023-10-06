@@ -1,5 +1,4 @@
-﻿using Nucleus.Lesson.Contracts.Collections;
-using Nucleus.Lesson.Contracts.Models;
+﻿using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Persistence.Collections;
 using System;
 using System.Linq.Expressions;
@@ -8,7 +7,7 @@ namespace Nucleus.Lesson.Persistence.Services
 {
     public static class Projections
     {
-        public static Expression<Func<Contracts.Collections.LessonCollection, LessonModel>> Lessons => item => new LessonModel()
+        public static Expression<Func<LessonCollection, LessonModel>> Lessons => item => new LessonModel()
         { 
             LessonId = item.LessonId,
             LessonScheduleId = item.LessonScheduleId,
@@ -18,7 +17,7 @@ namespace Nucleus.Lesson.Persistence.Services
             PaymentStatus = item.PaymentStatus
             
         };
-        public static Expression<Func<Contracts.Collections.LessonScheduleCollection, LessonScheduleModel>> LessonSchedule => item => new LessonScheduleModel()
+        public static Expression<Func<LessonScheduleCollection, LessonScheduleModel>> LessonSchedule => item => new LessonScheduleModel()
         {
             LessonId = item.LessonId,
             Content = item.Content,
