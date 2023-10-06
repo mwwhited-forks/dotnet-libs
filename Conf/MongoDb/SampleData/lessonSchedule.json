@@ -43,9 +43,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "userId": "646cf816fe22b3a795d90a93",
-      "fullName": "David McIlroy",
-      "emailAddress": "davidMcIlroy@eliassen.com"
+      "userId": "646cf7cbfe22b3a795d90a92",
+      "fullName": "Jimmie Fowler",
+      "emailAddress": "JimmieFowler@eliassen.com"
     },
     "duration": 20,
     "tags": [],
@@ -72,9 +72,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "userId": "646cf816fe22b3a795d90a93",
-      "fullName": "David McIlroy",
-      "emailAddress": "davidMcIlroy@eliassen.com"
+      "userId": "646cf7cbfe22b3a795d90a92",
+      "fullName": "Jimmie Fowler",
+      "emailAddress": "JimmyFowler@eliassen.com"
     },
     "duration": 25,
     "tags": [],
@@ -101,9 +101,9 @@
       "$date": "2017-09-20T12:43:50.435+00:00"
     },
     "teacher": {
-      "userId": "646cf816fe22b3a795d90a93",
-      "fullName": "David McIlroy",
-      "emailAddress": "davidMcIlroy@eliassen.com"
+      "userId": "646cf7cbfe22b3a795d90a92",
+      "fullName": "Jimmy Fowler",
+      "emailAddress": "JimmyFowler@eliassen.com"
     },
     "duration": 45,
     "tags": [],
