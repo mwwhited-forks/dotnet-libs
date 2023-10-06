@@ -14,6 +14,6 @@ namespace Nucleus.Project.Contracts.Models
         public string? Page { get; set; }
         public Boolean? Enabled { get; set; }
         public DateTimeOffset CreatedOn { get; set; }
-        public long CreatedOnUnix { get; set; }
+        //public long CreatedOnUnix { get; set; }
     }
 }

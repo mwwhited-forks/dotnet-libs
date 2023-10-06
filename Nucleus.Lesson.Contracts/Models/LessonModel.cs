@@ -1,5 +1,9 @@
 ﻿using Eliassen.System.ComponentModel.Search;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Nucleus.Lesson.Contracts.Models
 {
@@ -9,33 +13,15 @@ namespace Nucleus.Lesson.Contracts.Models
         [NotSearchable]
         [IgnoreStringComparisonReplacement]
         public string? LessonId { get; set; }
-        public string? Title { get; set; }
-        public string? MediaLink { get; set; }
-        public string? Preview { get; set; }
-        public string? PreviewImage { get; set; }
-        [DefaultSort(priority: 1)]
 
-        public string? Slug { get; set; }
-        public string? Content { get; set; }
-        public Boolean? Enabled { get; set; }
+        public string? LessonScheduleId { get; set; }
+
         [DefaultSort(priority: 0)]
-
-        public DateTimeOffset? CreatedOn { get; set; }
-        public long CreatedOnUnix { get; set; }
-
-        public string[]? Attendees { get; set; }
-        public string? Teacher { get; set; }
-        public int? Duration { get; set; }
-
-        public DateTimeOffset? StartDateTime { get; set; }
-        public DateTimeOffset? EndDateTime { get; set; }
-
-        public string[]? Tags { get; set; }
-
-        public double Price { get; set; }
-
-        public string[]? Goals { get; set; }
+        public DateTimeOffset? LessonDateTime { get; set; }
+       
+        public string? Student { get; set; }
         public string? Notes { get; set; }
-    }
+        public string? PaymentStatus { get; set; }
 
+    }
 }

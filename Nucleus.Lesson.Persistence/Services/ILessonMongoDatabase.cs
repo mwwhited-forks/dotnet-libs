@@ -8,5 +8,8 @@ namespace Nucleus.Lesson.Persistence.Services
     {
         [CollectionName("lessons")]
         IMongoCollection<LessonCollection> Lessons { get; }
+
+        [CollectionName("lessonSchedule")]
+        IMongoCollection<LessonScheduleCollection> LessonSchedule { get; }
     }
 }
