@@ -1,4 +1,5 @@
-﻿using Nucleus.Lesson.Contracts.Models;
+﻿using Nucleus.Lesson.Contracts.Collections;
+using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Persistence.Collections;
 using System;
 using System.Linq.Expressions;

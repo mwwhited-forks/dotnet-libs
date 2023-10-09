@@ -500,10 +500,7 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
     private object? SimplifyValue(object? value) =>
         value switch
         {
-<<<<<<< HEAD
-=======
             //TODO: consider this being a type converter on FilterParameter instead
->>>>>>> master
             FilterParameter filter => SimplifyValue(filter.EqualTo),
             JsonElement element when element.ValueKind == JsonValueKind.String => element.GetString(),
             JsonElement element when element.ValueKind == JsonValueKind.Number => element.GetDouble(),
@@ -530,10 +527,7 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
 
         if (value.EqualTo != null)
         {
-<<<<<<< HEAD
-=======
             //TODO: we should have logic to enumerate the requested type instead of just assuming the type based on the json type.
->>>>>>> master
             var simple = SimplifyValue(value);
             if (simple != null)
             {
