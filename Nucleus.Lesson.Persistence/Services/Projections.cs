@@ -19,7 +19,7 @@ namespace Nucleus.Lesson.Persistence.Services
         };
         public static Expression<Func<LessonScheduleCollection, LessonScheduleModel>> LessonSchedule => item => new LessonScheduleModel()
         {
-            LessonId = item.LessonId,
+            LessonScheduleId = item.LessonScheduleId,
             Content = item.Content,
             Preview = item.Preview,
             Slug = item.Slug,
