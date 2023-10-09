@@ -55,10 +55,8 @@ public class DataloaderImportCommand : IDataloaderCommand
 
         var idProperty =
             elementType.GetProperties().FirstOrDefault(e => e.GetCustomAttribute<BsonIdAttribute>() != null)
-            ??elementType.GetProperties().FirstOrDefault(e => e.GetCustomAttribute<KeyAttribute>() != null)
-            ?? elementType.GetProperties().FirstOrDefault(e =>string.Equals( e.Name,idConvention,StringComparison.InvariantCultureIgnoreCase))
-            ?? throw new NotSupportedException();
-        var createdOn = elementType.GetProperty("CreatedOn", BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase)
+            ?? elementType.GetProperties().FirstOrDefault(e => e.GetCustomAttribute<KeyAttribute>() != null)
+            ?? elementType.GetProperties().FirstOrDefault(e => string.Equals(e.Name, idConvention, StringComparison.InvariantCultureIgnoreCase))
             ?? throw new NotSupportedException();
 
         var parameter = Expression.Parameter(elementType, "e");
