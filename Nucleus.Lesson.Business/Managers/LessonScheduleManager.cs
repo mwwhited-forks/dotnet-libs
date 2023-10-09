@@ -24,7 +24,7 @@ namespace Nucleus.Lesson.Business.Managers
 
         public async Task<ResponseModel<LessonScheduleModel?>> SaveLessonAsync(LessonScheduleModel lesson)
         {
-            if (lesson == null || string.IsNullOrEmpty(lesson.Title) || string.IsNullOrEmpty(lesson.Teacher))
+            if (lesson == null || string.IsNullOrEmpty(lesson.Teacher))
                 return new ResponseModel<LessonScheduleModel?>()
                 {
                     IsSuccess = false,
