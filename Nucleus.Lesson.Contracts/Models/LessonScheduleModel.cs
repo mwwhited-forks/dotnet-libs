@@ -8,7 +8,7 @@ namespace Nucleus.Lesson.Contracts.Models
     {
         [NotSearchable]
         [IgnoreStringComparisonReplacement]
-        public string? LessonId { get; set; }
+        public string? LessonScheduleId { get; set; }
         public string? Title { get; set; }
         public string? MediaLink { get; set; }
         public string? Preview { get; set; }

@@ -26,7 +26,7 @@ namespace Nucleus.Lesson.Persistence.Services
             _lessonCollectionBuilder = new BsonCollectionBuilder<LessonScheduleModel, LessonScheduleCollection>();
             _lessonProjection = Builders<LessonScheduleCollection>.Projection.Expression(item => new LessonScheduleModel()
             {
-                LessonId = item.LessonId,
+                LessonScheduleId = item.LessonScheduleId,
                 Title = item.Title,
                 Slug = item.Slug,
                 MediaLink = item.MediaLink,
@@ -86,26 +86,26 @@ namespace Nucleus.Lesson.Persistence.Services
             await _db.LessonSchedule.Find(x => x.Slug == slug).Project(_lessonProjection).FirstOrDefaultAsync();
 
         public async Task<LessonScheduleModel?> GetAsync(string id) =>
-            await _db.LessonSchedule.Find(x => x.LessonId == id).Project(_lessonProjection).FirstOrDefaultAsync();
+            await _db.LessonSchedule.Find(x => x.LessonScheduleId == id).Project(_lessonProjection).FirstOrDefaultAsync();
 
         public async Task<LessonScheduleModel> CreateAsync(LessonScheduleModel newLesson)
         {
             LessonScheduleCollection lesson = _lessonCollectionBuilder.BuildCollection(newLesson);
             await _db.LessonSchedule.InsertOneAsync(lesson);
-            newLesson.LessonId = lesson.LessonId;
+            newLesson.LessonScheduleId = lesson.LessonScheduleId;
             return newLesson;
         }
 
         public async Task UpdateAsync(LessonScheduleModel updatedLesson) =>
-            await _db.LessonSchedule.ReplaceOneAsync(x => x.LessonId == updatedLesson.LessonId, _lessonCollectionBuilder.BuildCollection(updatedLesson));
+            await _db.LessonSchedule.ReplaceOneAsync(x => x.LessonScheduleId == updatedLesson.LessonScheduleId, _lessonCollectionBuilder.BuildCollection(updatedLesson));
 
         public async Task RemoveAsync(string id) =>
-            await _db.LessonSchedule.DeleteOneAsync(x => x.LessonId == id);
+            await _db.LessonSchedule.DeleteOneAsync(x => x.LessonScheduleId == id);
 
         public IQueryable<LessonScheduleModel> Query()
         {
             var query = from lessonSchedule in _db.LessonSchedule.AsQueryable()
-                        join lesson in _db.Lessons.AsQueryable() on lessonSchedule.LessonId equals lesson.LessonScheduleId into lessons
+                        join lesson in _db.Lessons.AsQueryable() on lessonSchedule.LessonScheduleId equals lesson.LessonScheduleId into lessons
                         select new
                         {
                             LessonSchedule = lessonSchedule,
@@ -114,7 +114,7 @@ namespace Nucleus.Lesson.Persistence.Services
 
             var result = query.Select(item => new LessonScheduleModel
             {
-                LessonId = item.LessonSchedule.LessonId,
+                LessonScheduleId = item.LessonSchedule.LessonScheduleId,
                 Title = item.LessonSchedule.Title,
                 Slug = item.LessonSchedule.Slug,
                 MediaLink = item.LessonSchedule.MediaLink,

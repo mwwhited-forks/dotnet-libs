@@ -31,7 +31,7 @@ namespace Nucleus.Lesson.Business.Managers
                     Message = "Missing Required Fields"
                 };
             ResponseModel<LessonScheduleModel?> result = new ResponseModel<LessonScheduleModel?>() { IsSuccess = true };
-            if (String.IsNullOrEmpty(lesson.LessonId))
+            if (String.IsNullOrEmpty(lesson.LessonScheduleId))
             {
                 result.Response = await _LessonScheduleService.CreateAsync(lesson);
                 return result;
