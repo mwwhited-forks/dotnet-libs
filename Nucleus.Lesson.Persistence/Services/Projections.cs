@@ -27,7 +27,7 @@ namespace Nucleus.Lesson.Persistence.Services
             Title = item.Title,
             Enabled = item.Enabled,
             CreatedOn = item.CreatedOn,
-            Teacher =new TeacherModel
+            Teacher = new TeacherModel
             {
                 EmailAddress = item.Teacher.EmailAddress,
                 FullName = item.Teacher.FullName,
