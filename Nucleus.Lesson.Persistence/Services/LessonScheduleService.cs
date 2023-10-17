@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using Nucleus.Core.Shared.Persistence.Services.ServiceHelpers;
+using Nucleus.Lesson.Contracts.Collections;
 using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Contracts.Models.Filters;
 using Nucleus.Lesson.Contracts.Persistence;
@@ -29,7 +30,12 @@ namespace Nucleus.Lesson.Persistence.Services
                 LessonScheduleId = item.LessonScheduleId,
                 Enabled = item.Enabled,
                 CreatedOn = item.CreatedOn,
-                Teacher = item.Teacher,
+                Teacher = new TeacherModel
+                {
+                    EmailAddress = item.Teacher.EmailAddress,
+                    FullName = item.Teacher.FullName,
+                    UserId = item.Teacher.UserId,
+                },
                 Duration = item.Duration,
                 Tags = item.Tags,
                 Price = item.Price,
@@ -111,7 +117,12 @@ namespace Nucleus.Lesson.Persistence.Services
                 LessonScheduleId = item.LessonSchedule.LessonScheduleId,
                 Enabled = item.LessonSchedule.Enabled,
                 CreatedOn = item.LessonSchedule.CreatedOn,
-                Teacher = item.LessonSchedule.Teacher,
+                Teacher = new TeacherModel
+                {
+                    UserId = item.LessonSchedule.Teacher.UserId,
+                    FullName = item.LessonSchedule.Teacher.FullName,
+                    EmailAddress = item.LessonSchedule.Teacher.EmailAddress,
+                },
                 Duration = item.LessonSchedule.Duration,
                 Tags = item.LessonSchedule.Tags,
                 Price = item.LessonSchedule.Price,
@@ -120,7 +131,7 @@ namespace Nucleus.Lesson.Persistence.Services
                 EndDateTime = item.LessonSchedule.EndDateTime,
                 Repeat = item.LessonSchedule.Repeat,
                 NumberOfLessons = item.Lessons.Count()
-            }); 
+            });
 
             return result;
 

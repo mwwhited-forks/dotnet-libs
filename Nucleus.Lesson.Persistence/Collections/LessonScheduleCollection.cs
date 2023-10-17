@@ -1,8 +1,10 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
+using Nucleus.Lesson.Contracts.Models;
+using Nucleus.Lesson.Persistence.Collections;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Nucleus.Lesson.Persistence.Collections
+namespace Nucleus.Lesson.Contracts.Collections
 {
     [BsonIgnoreExtraElements]
     public class LessonScheduleCollection
@@ -17,7 +19,7 @@ namespace Nucleus.Lesson.Persistence.Collections
         public string? Content { get; set; }
         public Boolean? Enabled { get; set; }
         public DateTimeOffset? CreatedOn { get; set; }
-        public string? Teacher { get; set; }
+        public TeacherModel? Teacher { get; set; }
         public int? Duration { get; set; }
         public string[]? Tags { get; set; }
         public double Price { get; set; }
