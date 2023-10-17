@@ -8,7 +8,7 @@ namespace Nucleus.Lesson.Contracts.Models
     {
         [NotSearchable]
         [IgnoreStringComparisonReplacement]
-        public string? LessonId { get; set; }
+        public string? LessonScheduleId { get; set; }
         public Boolean? Enabled { get; set; }
         [DefaultSort(priority: 0)]
 
