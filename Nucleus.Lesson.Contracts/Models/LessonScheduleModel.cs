@@ -9,13 +9,12 @@ namespace Nucleus.Lesson.Contracts.Models
         [NotSearchable]
         [IgnoreStringComparisonReplacement]
         public string? LessonScheduleId { get; set; }
-        public Boolean? Enabled { get; set; }
+        public bool? Enabled { get; set; }
         [DefaultSort(priority: 0)]
 
         public DateTimeOffset? CreatedOn { get; set; }
-        public long CreatedOnUnix { get; set; }
 
-        public string? Teacher { get; set; }
+        public TeacherModel? Teacher { get; set; }
         public int? Duration { get; set; }
 
         public DateTimeOffset? StartDateTime { get; set; }

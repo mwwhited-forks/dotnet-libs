@@ -1,4 +1,5 @@
-﻿using Nucleus.Lesson.Contracts.Models;
+﻿using Nucleus.Lesson.Contracts.Collections;
+using Nucleus.Lesson.Contracts.Models;
 using Nucleus.Lesson.Persistence.Collections;
 using System;
 using System.Linq.Expressions;
@@ -22,7 +23,12 @@ namespace Nucleus.Lesson.Persistence.Services
             LessonScheduleId = item.LessonScheduleId,
             Enabled = item.Enabled,
             CreatedOn = item.CreatedOn,
-            Teacher = item.Teacher,
+            Teacher = new TeacherModel
+            {
+                EmailAddress = item.Teacher.EmailAddress,
+                FullName = item.Teacher.FullName,
+                UserId = item.Teacher.UserId,
+            },
             Duration = item.Duration,
             Price = item.Price,
             Tags = item.Tags,
