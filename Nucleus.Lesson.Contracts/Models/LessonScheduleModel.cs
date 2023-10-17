@@ -9,14 +9,6 @@ namespace Nucleus.Lesson.Contracts.Models
         [NotSearchable]
         [IgnoreStringComparisonReplacement]
         public string? LessonScheduleId { get; set; }
-        public string? Title { get; set; }
-        public string? MediaLink { get; set; }
-        public string? Preview { get; set; }
-        public string? PreviewImage { get; set; }
-        [DefaultSort(priority: 1)]
-
-        public string? Slug { get; set; }
-        public string? Content { get; set; }
         public bool? Enabled { get; set; }
         [DefaultSort(priority: 0)]
 

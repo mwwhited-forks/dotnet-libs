@@ -22,7 +22,7 @@ namespace Nucleus.Lesson.Business.Managers
 
         public async Task<ResponseModel<LessonScheduleModel?>> SaveLessonAsync(LessonScheduleModel lesson)
         {
-            if (lesson == null)
+            if (lesson == null || string.IsNullOrEmpty(lesson.Teacher))
                 return new ResponseModel<LessonScheduleModel?>()
                 {
                     IsSuccess = false,
