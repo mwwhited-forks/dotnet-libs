@@ -1,66 +1,22 @@
-﻿using Eliassen.System.Text.Json;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
-using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations;
 
-namespace Nucleus.Lesson.Contracts.Collections
+namespace Nucleus.Lesson.Persistence.Collections
 {
     [BsonIgnoreExtraElements]
     public class LessonCollection
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        [JsonPropertyName("_id")]
-        [JsonConverter(typeof(BsonIdConverter))]
+        [Key]
         public string? LessonId { get; set; }
 
-        [BsonElement("title")]
-        public string? Title {  get; set; }
-        [BsonElement("slug")]
-        public string? Slug { get; set; }
-        [BsonElement("mediaLink")]
-        public string? MediaLink { get; set; }
-        [BsonElement("previewImage")]
-        public string? PreviewImage { get; set; }
-        [BsonElement("preview")]
-        public string? Preview { get; set; }
-        [BsonElement("content")]
-        public string? Content { get; set; }
-        [BsonElement("enabled")]
-        public Boolean? Enabled { get; set; }
-
-        [BsonElement("createdOn")]
-        [JsonConverter(typeof(BsonDateConverter))]
-        public DateTimeOffset? CreatedOn { get; set; }
-
-        [BsonElement("attendees")]
-        public string[]? Attendees { get; set; }
-
-        [BsonElement("teacher")]
-        public string? Teacher { get; set; }
-
-        [BsonElement("duration")]
-        public int? Duration { get; set; }
-
-        [BsonElement("tags")]
-        public string[]? Tags { get; set; }
-
-        [BsonElement("price")]
-        public double Price { get; set; }
-
-        [BsonElement("goals")]
-        public string[]? Goals { get; set; }
-
-        [BsonElement("startDatetime")]
-        [JsonConverter(typeof(BsonDateConverter))]
-        public DateTimeOffset? StartDateTime { get; set; }
-
-        [BsonElement("enddatetime")]
-        [JsonConverter(typeof(BsonDateConverter))]
-        public DateTimeOffset? EndDateTime { get; set; }
-
-        [BsonElement("notes")]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string? LessonScheduleId { get; set; }
+        public DateTimeOffset? LessonDateTime { get; set; }
+        public string? Student { get; set; }
         public string? Notes { get; set; }
+        public string? PaymentStatus { get; set; }
+
     }
 }

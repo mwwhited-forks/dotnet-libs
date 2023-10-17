@@ -16,16 +16,19 @@ namespace Nucleus.Core.Shared.Business.Managers
         //TODO: this this a better way.
 
         private readonly IPublicBlogManager _publicBlogManager;
+        private readonly IPublicLessonScheduleManager _publicLessonScheduleManager;
         private readonly IPublicLessonManager _publicLessonManager;
         private readonly IPublicProjectManager _publicProjectManager;
 
         public SiteMapManager(
                   IPublicBlogManager publicBlogManager,
-                  IPublicLessonManager publicLessonManager, 
+                  IPublicLessonScheduleManager publicLessonScheduleManager, 
+                  IPublicLessonManager publicLessonManager,
                   IPublicProjectManager publicProjectManager
             ) 
         { 
             _publicBlogManager = publicBlogManager;
+            _publicLessonScheduleManager = publicLessonScheduleManager;
             _publicLessonManager = publicLessonManager;
             _publicProjectManager = publicProjectManager;
         }
@@ -60,6 +63,18 @@ namespace Nucleus.Core.Shared.Business.Managers
                     xml.WriteEndElement();
                 }
 
+                // LessonsAdmin
+                xml.WriteStartElement("url");
+                xml.WriteElementString("loc", host + "/lessonSchedule");
+                xml.WriteEndElement();
+
+                foreach (LessonScheduleModel lesson in await _publicLessonScheduleManager.GetLessons())
+                {
+                    xml.WriteStartElement("url");
+                    xml.WriteElementString("loc", host + "/lessonSchedule/" + lesson.Slug);
+                    xml.WriteEndElement();
+                }
+
                 // Lessons
                 xml.WriteStartElement("url");
                 xml.WriteElementString("loc", host + "/lessons");
@@ -68,7 +83,7 @@ namespace Nucleus.Core.Shared.Business.Managers
                 foreach (LessonModel lesson in await _publicLessonManager.GetLessons())
                 {
                     xml.WriteStartElement("url");
-                    xml.WriteElementString("loc", host + "/lesson/" + lesson.Slug);
+                    xml.WriteElementString("loc", host + "/singlelesson/" + lesson.Student);
                     xml.WriteEndElement();
                 }
 

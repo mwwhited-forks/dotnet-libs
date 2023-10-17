@@ -42,7 +42,7 @@ namespace Nucleus.Blog.Business.Managers
                 return result;
             }
             else
-            {                
+            {
                 await _blogService.UpdateAsync(blog);
                 result.Response = blog;
                 return result;
