@@ -1,4 +1,5 @@
 ﻿using Eliassen.MongoDB.Extensions;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Nucleus.Blog.Persistence.Collections;
 
 [CollectionName("blogs")]
+[BsonIgnoreExtraElements]
 public class BlogCollection
 {
     [Key]
