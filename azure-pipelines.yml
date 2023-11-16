@@ -3,27 +3,6 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-parameters:
-  - name: doDeployment
-    displayName: Deploy To Environment 
-    default: true
-    type: boolean
-  - name: targetEnvironment
-    displayName: Target Environment 
-    type: string
-    default: Test
-    values:
-    - Dev
-    - Test
-  - name: dataDeploymentType
-    displayName: Data Deployment Type
-    type: string
-    default: Import
-    values:
-    - None
-    - Import
-    - DropCollectionAndImport
-
 trigger:
 - master
 
@@ -37,7 +16,6 @@ variables:
     value: 'Any CPU'
   - name: buildConfiguration
     value: 'Release'  
-  - group: Azure.Environment.Nucleus.Acc.Net.Api
     
 steps:
 - checkout: self
@@ -72,7 +50,7 @@ steps:
     targetType: 'inline'
     script: |
             $fullSemVerLower = "$(fullSemVer)".ToLower()  
-            $fullSemVerLowerTag = "core-$(fullSemVer)".ToLower()  
+            $fullSemVerLowerTag = "libs-$(fullSemVer)".ToLower()  
             Write-Host "FullSemVerLower=$fullSemVerLower"
             Write-Host "FullSemVerLowerTag=$fullSemVerLowerTag"
             Write-Host "##vso[build.updatebuildnumber]$fullSemVerLower"
@@ -81,29 +59,29 @@ steps:
             Write-Host "##vso[task.setvariable variable=WebAppPackagePath;issecret=false]$(build.artifactStagingDirectory)\WebApp.zip"  
             Write-Host "##vso[task.setvariable variable=TestResultsPath;issecret=false]$(Agent.TempDirectory)"  
             Write-Host "##vso[task.setvariable variable=TestDataPath;issecret=false]$(Build.SourcesDirectory)\Conf\MongoDb\SampleData"
-                        
+
 - task: DotNetCoreCLI@2
-  displayName: 'Building $(buildConfiguration) for ${{ parameters.targetEnvironment }}'
+  displayName: Dotnet Restore for API Services and Azure Functions
   inputs:
-    command: 'build'
-    projects: '$(solution)'
+    command: restore
+    projects: $(solution)
+    arguments: >
+      --configuration $(buildConfiguration)
+      --nologo 
+    feedsToUse: 'select'
+    vstsFeed: '5f757354-fbf9-4fe2-9464-d0b4a3d8aabd/68967c6e-0e04-43b3-90ed-0933cbac5a61'
+
+- task: DotNetCoreCLI@2
+  displayName: Dotnet Build for API Services, Azure Functions and Data Projects
+  inputs:
+    command: build
+    projects: $(solution)
     arguments: >
       --configuration $(buildConfiguration) 
+      --property:Version==$(FullSemVer) 
       --nologo 
-      --property:DeployOnBuild=true 
-      --property:WebPublishMethod=Package 
-      --property:PackageAsSingleFile=true 
-      --property:SkipInvalidConfigurations=true 
-      --property:DesktopBuildPackageLocation="$(WebAppPackagePath)" 
-      --property:DeployIisAppPath="Default Web Site"
-      --property:Version=$(FullSemVerLower)
-
-- task: PublishBuildArtifacts@1
-  displayName: Publish Web Application Artifact
-  inputs:
-    PathtoPublish: '$(WebAppPackagePath)'
-    ArtifactName: Web Application
-
+      --no-restore
+      
 - task: DotNetCoreCLI@2
   displayName: Run Unit Tests as $(buildConfiguration)
   inputs:
@@ -142,11 +120,7 @@ steps:
       --recursive 
       --output .\Cobertura.coverage 
       --output-format cobertura
-    
-# - script: dotnet coverage merge coverage.*.xml --recursive --output .\Cobertura.coverage --output-format cobertura
-#   displayName: Merge Test Coverage Results
-#   workingDirectory: '$(Agent.TempDirectory)\TestResults'
- 
+     
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish Coverage Reports'
   inputs:
@@ -154,6 +128,36 @@ steps:
     summaryFileLocation: $(TestResultsPath)\Cobertura.coverage
     failIfCoverageEmpty: false 
 
+
+- task: DotNetCoreCLI@2
+  displayName: Package to Staging directory
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+  inputs:
+    command: custom
+    custom: 'pack'
+    projects: $(solution)
+    arguments: '-c $(buildConfiguration) --no-build --no-restore -o $(Build.ArtifactStagingDirectory)/Packages /p:Version=$(FullSemVer)'
+    verbosityRestore: Minimal
+    verbosityPack: Minimal
+    feedsToUse: select
+    vstsFeed: personalnugetfeed
+    nuGetFeedType: internal
+    includeNuGetOrg: true
+
+- script: |
+        dotnet nuget push --skip-duplicate --source $(nugetRepository) --api-key az $(Build.ArtifactStagingDirectory)\Packages\*.nupkg
+  displayName: 'NuGet Push Packages'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) 
+
+- task: PublishSymbols@2
+  displayName: 'Publish Symbols'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+  inputs:
+    SearchPattern: '**/bin/**/*.pdb'
+    IndexSources: false
+    SymbolServerType: 'TeamServices'
+    TreatNotIndexedAsWarning: true
+    
 - task: tagBuildOrRelease@0
   displayName: 'Tag Build'
   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
@@ -172,29 +176,4 @@ steps:
   displayName: 'Tag Code'
   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
 
-# - task: AzureRmWebAppDeployment@4
-#   condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true), ne(variables['Build.Reason'], 'PullRequest'))
-#   displayName: 'Deploying API to ${{ parameters.targetEnvironment }}'
-#   inputs:
-#     ConnectionType: 'AzureRM'
-#     azureSubscription: 'AppDev Project Nucleus'
-#     appType: 'webApp'
-#     WebAppName: '$(${{parameters.targetEnvironment}}-ServerName)'
-#     packageForLinux: '$(WebAppPackagePath)'
-
-# # This is an example step to do a data deployment as part of application deployment
-# - task: DotNetCoreCLI@2
-#   condition: and(succeeded(), eq('${{ parameters.doDeployment }}', true), ne('${{ parameters.dataDeploymentType }}', 'None'), ne(variables['Build.Reason'], 'PullRequest'))
-#   displayName: 'Deploying Data to ${{ parameters.targetEnvironment }}'
-#   inputs:
-#     command: 'run'
-#     projects: 'Tools\Nucleus.Dataloader.Cli'
-#     arguments: >
-#       --configuration $(buildConfiguration) 
-#       --no-build 
-#       --no-restore 
-#       --
-#       --SourcePath="$(TestDataPath)"
-#       --Action=${{ parameters.dataDeploymentType }}
-#       --ConnectionString="$(${{parameters.targetEnvironment}}-MongoDatabase__ConnectionString)"
-#       --DatabaseName="$(${{parameters.targetEnvironment}}-MongoDatabase__DatabaseName)"
+#TODO: add push to artifact store/nuget 
