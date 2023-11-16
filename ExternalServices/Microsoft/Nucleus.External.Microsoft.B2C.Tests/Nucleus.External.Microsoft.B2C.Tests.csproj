@@ -21,8 +21,8 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Nucleus.External.Microsoft.B2C\Nucleus.External.Microsoft.B2C.csproj" />
-		<ProjectReference Include="..\Framework\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
-		<ProjectReference Include="..\Framework\Eliassen.System\Eliassen.System.csproj" />
+		<ProjectReference Include="..\..\..\Framework\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
+		<ProjectReference Include="..\..\..\Framework\Eliassen.System\Eliassen.System.csproj" />
 	</ItemGroup>
 
 </Project>

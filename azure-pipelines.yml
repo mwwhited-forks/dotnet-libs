@@ -59,16 +59,28 @@ steps:
             Write-Host "##vso[task.setvariable variable=WebAppPackagePath;issecret=false]$(build.artifactStagingDirectory)\WebApp.zip"  
             Write-Host "##vso[task.setvariable variable=TestResultsPath;issecret=false]$(Agent.TempDirectory)"  
             Write-Host "##vso[task.setvariable variable=TestDataPath;issecret=false]$(Build.SourcesDirectory)\Conf\MongoDb\SampleData"
-                        
+
 - task: DotNetCoreCLI@2
-  displayName: 'Building $(buildConfiguration) for ${{ parameters.targetEnvironment }}'
+  displayName: Dotnet Restore for API Services and Azure Functions
   inputs:
-    command: 'build'
-    projects: '$(solution)'
+    command: restore
+    projects: $(solution)
+    arguments: >
+      --configuration $(buildConfiguration)
+      --nologo 
+    feedsToUse: 'select'
+    vstsFeed: '5f757354-fbf9-4fe2-9464-d0b4a3d8aabd/68967c6e-0e04-43b3-90ed-0933cbac5a61'
+
+- task: DotNetCoreCLI@2
+  displayName: Dotnet Build for API Services, Azure Functions and Data Projects
+  inputs:
+    command: build
+    projects: $(solution)
     arguments: >
       --configuration $(buildConfiguration) 
+      --property:Version==$(FullSemVer) 
       --nologo 
-      --property:Version=$(FullSemVerLower)
+      --no-restore
       
 - task: DotNetCoreCLI@2
   displayName: Run Unit Tests as $(buildConfiguration)
@@ -116,6 +128,36 @@ steps:
     summaryFileLocation: $(TestResultsPath)\Cobertura.coverage
     failIfCoverageEmpty: false 
 
+
+- task: DotNetCoreCLI@2
+  displayName: Package to Staging directory
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+  inputs:
+    command: custom
+    custom: 'pack'
+    projects: $(solution)
+    arguments: '-c $(buildConfiguration) --no-build --no-restore -o $(Build.ArtifactStagingDirectory)/Packages /p:Version=$(FullSemVer)'
+    verbosityRestore: Minimal
+    verbosityPack: Minimal
+    feedsToUse: select
+    vstsFeed: personalnugetfeed
+    nuGetFeedType: internal
+    includeNuGetOrg: true
+
+- script: |
+        dotnet nuget push --skip-duplicate --source $(nugetRepository) --api-key az $(Build.ArtifactStagingDirectory)\Packages\*.nupkg
+  displayName: 'NuGet Push Packages'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) 
+
+- task: PublishSymbols@2
+  displayName: 'Publish Symbols'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+  inputs:
+    SearchPattern: '**/bin/**/*.pdb'
+    IndexSources: false
+    SymbolServerType: 'TeamServices'
+    TreatNotIndexedAsWarning: true
+    
 - task: tagBuildOrRelease@0
   displayName: 'Tag Build'
   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))

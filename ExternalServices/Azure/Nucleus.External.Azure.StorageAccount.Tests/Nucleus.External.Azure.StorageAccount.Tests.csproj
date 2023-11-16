@@ -21,7 +21,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Nucleus.External.Azure.StorageAccount\Nucleus.External.Azure.StorageAccount.csproj" />
-		<ProjectReference Include="..\Framework\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
+		<ProjectReference Include="..\..\..\Framework\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
 	</ItemGroup>
 
 </Project>

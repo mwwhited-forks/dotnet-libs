@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		generate-docs.bat = generate-docs.bat
 		GitVersion.yml = GitVersion.yml
 		global.json = global.json
+		Nuget.config = Nuget.config
 		package.bat = package.bat
 		ProjectSetup.md = ProjectSetup.md
 		readme.md = readme.md
