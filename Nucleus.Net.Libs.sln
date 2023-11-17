@@ -81,17 +81,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{04470E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microsoft", "Microsoft", "{71129CCF-1669-468F-A0B3-7A306149C3F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.External.Azure.StorageAccount", "ExternalServices\Azure\Nucleus.External.Azure.StorageAccount\Nucleus.External.Azure.StorageAccount.csproj", "{8D340410-3940-463E-8AB2-AF1D6D2EB00E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Azure.StorageAccount", "ExternalServices\Azure\Eliassen.Azure.StorageAccount\Eliassen.Azure.StorageAccount.csproj", "{8D340410-3940-463E-8AB2-AF1D6D2EB00E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.External.Azure.StorageAccount.Abstractions", "ExternalServices\Azure\Nucleus.External.Azure.StorageAccount.Abstractions\Nucleus.External.Azure.StorageAccount.Abstractions.csproj", "{2601AF85-9165-454E-ABBE-D6F5E4DDDF77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Azure.StorageAccount.Abstractions", "ExternalServices\Azure\Eliassen.Azure.StorageAccount.Abstractions\Eliassen.Azure.StorageAccount.Abstractions.csproj", "{2601AF85-9165-454E-ABBE-D6F5E4DDDF77}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.External.Azure.StorageAccount.Tests", "ExternalServices\Azure\Nucleus.External.Azure.StorageAccount.Tests\Nucleus.External.Azure.StorageAccount.Tests.csproj", "{F2C6CB94-4569-4530-88CE-D7A1152E8E67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Azure.StorageAccount.Tests", "ExternalServices\Azure\Eliassen.Azure.StorageAccount.Tests\Eliassen.Azure.StorageAccount.Tests.csproj", "{F2C6CB94-4569-4530-88CE-D7A1152E8E67}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.External.Microsoft.B2C", "ExternalServices\Microsoft\Nucleus.External.Microsoft.B2C\Nucleus.External.Microsoft.B2C.csproj", "{EC1D3BA6-B2C5-47EB-8B44-FB63E23BD09B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Microsoft.B2C", "ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Eliassen.Microsoft.B2C.csproj", "{EC1D3BA6-B2C5-47EB-8B44-FB63E23BD09B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.External.Microsoft.B2C.Abstractions", "ExternalServices\Microsoft\Nucleus.External.Microsoft.B2C.Abstractions\Nucleus.External.Microsoft.B2C.Abstractions.csproj", "{D98B7A9B-DCAD-4109-AE3A-2A7BB8AD162B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Microsoft.B2C.Abstractions", "ExternalServices\Microsoft\Eliassen.Microsoft.B2C.Abstractions\Eliassen.Microsoft.B2C.Abstractions.csproj", "{D98B7A9B-DCAD-4109-AE3A-2A7BB8AD162B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nucleus.External.Microsoft.B2C.Tests", "ExternalServices\Microsoft\Nucleus.External.Microsoft.B2C.Tests\Nucleus.External.Microsoft.B2C.Tests.csproj", "{8A9FC5D5-D6D9-4672-8108-E428F43204E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Microsoft.B2C.Tests", "ExternalServices\Microsoft\Eliassen.Microsoft.B2C.Tests\Eliassen.Microsoft.B2C.Tests.csproj", "{8A9FC5D5-D6D9-4672-8108-E428F43204E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
