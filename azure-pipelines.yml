@@ -16,6 +16,8 @@ variables:
     value: 'Any CPU'
   - name: buildConfiguration
     value: 'Release'  
+  - name: nugetRepository
+    value: 'https://pkgs.dev.azure.com/lightwellinc-clouddev/Lightwell-Nucleus/_packaging/Eliassen.Nucleus.Net.Libs/nuget/v3/index.json'
     
 steps:
 - checkout: self
