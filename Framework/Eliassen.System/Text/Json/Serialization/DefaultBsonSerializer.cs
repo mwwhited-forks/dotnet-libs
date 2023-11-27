@@ -8,9 +8,9 @@ namespace Eliassen.System.Text.Json.Serialization;
 public class DefaultBsonSerializer : DefaultJsonSerializer, IBsonSerializer
 {
     /// <inheritdoc />
-    public const string DefaultContentType = "application/json";
+    public new const string DefaultContentType = "application/json";
     /// <inheritdoc />
-    public string ContentType => DefaultContentType;
+    public new string ContentType => DefaultContentType;
 
     /// <inheritdoc />
     public DefaultBsonSerializer(

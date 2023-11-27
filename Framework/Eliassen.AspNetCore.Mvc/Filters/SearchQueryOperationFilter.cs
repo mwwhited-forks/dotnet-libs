@@ -167,8 +167,8 @@ public class SearchQueryOperationFilter : IOperationFilter
         }
         catch (Exception ex)
         {
-            _logger.LogError($"Error: {nameof(Exception)}", ex.Message);
-            _logger.LogDebug($"Error: {nameof(Exception)}", ex);
+            _logger.LogError($"Error: {{{nameof(Exception)}}}", ex.Message);
+            _logger.LogDebug($"Error: {{{nameof(Exception)}}}", ex);
             throw;
         }
     }

@@ -34,7 +34,7 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
             try
             {
                 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language
-                var fromHeader = (string)context.Request.Headers["Accept-Language"];
+                var fromHeader = (string?)context.Request.Headers["Accept-Language"];
                 if (!string.IsNullOrWhiteSpace(fromHeader))
                 {
                     var language = fromHeader.Split(',').Select(GetCultureInfo).FirstOrDefault();

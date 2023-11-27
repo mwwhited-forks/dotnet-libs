@@ -62,7 +62,6 @@
         /// </summary>
         /// <typeparam name="T">template model to deserialize</typeparam>
         /// <param name="stream"></param>
-        /// <param name="stream"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         ValueTask<T?> DeserializeAsync<T>(Stream stream, CancellationToken cancellationToken = default);
