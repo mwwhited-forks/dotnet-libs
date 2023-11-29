@@ -82,6 +82,8 @@ public class ManageGraphUserIntegrationTests
 
         var result = await manageGraphUser.GetGraphUsersByEmail(emailAddress);
 
+        if (result == null) throw new ApplicationException($"{nameof(manageGraphUser.GetGraphUsersByEmail)} should return a value");
+
         foreach(var item in result)
         {
             this.TestContext.WriteLine($"item: {item.FirstName} {item.LastName} ({item.UserName})");

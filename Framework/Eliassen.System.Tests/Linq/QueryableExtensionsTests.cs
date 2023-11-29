@@ -132,7 +132,7 @@ public class QueryableExtensionsTests
     }
 
 
-    private void ExecuteByTestFilter<T>(string propertyName, Operators expressionOperator, object filterValue, int expectedRows, string expectedKeys)
+    private void ExecuteByTestFilter<T>(string propertyName, Operators expressionOperator, object? filterValue, int expectedRows, string expectedKeys)
     {
         var query = new SearchQuery
         {
