@@ -1,11 +1,8 @@
-﻿using Nucleus.Dataloader.Cli;
+﻿namespace Eliassen.System.Text.Xml.Serialization;
 
-namespace Eliassen.System.Text.Xml.Serialization
+/// <summary>
+/// interface to identify shared XML serialization process.
+/// </summary>
+public interface IXmlSerializer : ISerializer
 {
-    /// <summary>
-    /// interface to identify shared XML serialization process.
-    /// </summary>
-    public interface IXmlSerializer : ISerializer
-    {
-    }
 }
