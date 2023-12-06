@@ -2,6 +2,6 @@
 
 public interface IMessageSenderContext
 {
-    string MessageId { get; }
+    string MessageId { get; set; }
     Dictionary<string, object> Headers { get; }
 }

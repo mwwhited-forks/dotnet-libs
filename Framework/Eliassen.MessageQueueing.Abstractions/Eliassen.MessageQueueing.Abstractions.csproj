@@ -12,6 +12,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Content Remove="docs\MessageQueueing-old.md" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<InternalsVisibleTo Include="Eliassen.MessageQueueing" />
 		<InternalsVisibleTo Include="Eliassen.MessageQueueing.Tests" />
 	</ItemGroup>

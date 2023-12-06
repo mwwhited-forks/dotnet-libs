@@ -1,19 +1,23 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Eliassen.System.Accessors;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Diagnostics;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Security.Claims;
 
 namespace Eliassen.MessageQueueing.Services;
 
 public class MessageSenderContextFactory : IMessageSenderContextFactory
 {
     private readonly IServiceProvider _serviceProvider;
+    private readonly IAccessor<ClaimsPrincipal> _user;
 
     public MessageSenderContextFactory(
-        IServiceProvider serviceProvider
+        IServiceProvider serviceProvider,
+        IAccessor<ClaimsPrincipal> user
         )
     {
         _serviceProvider = serviceProvider;
+        _user = user;
     }
 
     public virtual IMessageSenderContext Create(Type targetQueueType, Type messageType, string messageId)
@@ -24,25 +28,23 @@ public class MessageSenderContextFactory : IMessageSenderContextFactory
 
         var stackFrame = new StackFrame(2);
 
+        var callerMethod = stackFrame.GetMethod();
+        var lineNumber = stackFrame.GetFileLineNumber();
+        var callerPath = stackFrame.GetFileName();
+
         context.Headers.Add("X-TargetType", targetQueueType);
         context.Headers.Add("X-MessageType", messageType);
 
-        context.Headers.Add("X-CallerMemberName", caller ?? "UNKNOWN CALLER");
+        context.Headers.Add("X-CallerMemberName", callerMethod?.ToString() ?? "UNKNOWN CALLER");
         context.Headers.Add("X-CallerLineNumber", lineNumber);
         context.Headers.Add("X-CallerFilePath", callerPath ?? "UNKNOWN CALLER PATH");
 
+        context.Headers.Add("X-UserName", (_user.Value ?? ClaimsPrincipal.Current)?.Identity?.Name ?? Environment.UserName);
+        context.Headers.Add("X-MachineName", Environment.MachineName);
 
-
-        //            { "X-CallerMemberName", caller ?? "UNKNOWN CALLER"},
-        //            { "X-CallerLineNumber", lineNumber},
-        //            { "X-CallerFilePath", callerPath ?? "UNKNOWN CALLER PATH"},
-
-        //            { "X-UserName",  _user.Value?.Username ?? Environment.UserName},
-        //            { "X-MachineName", Environment.MachineName},
-
-        //            { "X-SentAt",  _date.Now()},
-        //            { "X-MessageId", messageId},
-
+        context.Headers.Add("X-SentAt", DateTimeOffset.UtcNow);
+        context.Headers.Add("X-MessageId", messageId);
+        context.Headers.Add("X-RequestId", Guid.NewGuid());
 
         return context;
     }

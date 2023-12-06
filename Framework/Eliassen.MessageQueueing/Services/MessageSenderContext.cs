@@ -4,6 +4,6 @@ namespace Eliassen.MessageQueueing.Services;
 
 public class MessageSenderContext : IMessageSenderContext
 {
-    public string MessageId { get; internal set; } = null!;
+    public string MessageId { get; set; } = null!;
     public Dictionary<string, object> Headers { get; } = new();
 }

@@ -10,8 +10,8 @@ public class MessageSender<TQueueTarget> : IMessageSender<TQueueTarget>
     private readonly IMessageSenderResolver _resolver;
 
     public MessageSender(
-        IMessageSenderContextFactory context, 
-        IMessageSenderProviderFactory provider, 
+        IMessageSenderContextFactory context,
+        IMessageSenderProviderFactory provider,
         IMessageSenderResolver resolver
         )
     {
@@ -30,8 +30,8 @@ public class MessageSender<TQueueTarget> : IMessageSender<TQueueTarget>
         var context = _context.Create(targetType, messageType, messageId);
         var provider = _provider.Create(targetType, messageType);
 
-        await provider.SendAsync(message, context);
+        context.MessageId = await provider.SendAsync(message, context);
 
-        return messageId;
+        return context.MessageId;
     }
 }
