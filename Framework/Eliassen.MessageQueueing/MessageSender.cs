@@ -27,7 +27,8 @@ public class MessageSender<TQueueTarget> : IMessageSender<TQueueTarget>
         var messageType = message.GetType();
 
         messageId = _resolver.MessageId(targetType, messageType, messageId);
-        var context = _context.Create(targetType, messageType, messageId);
+        var config = _resolver.Configuration(targetType, messageType);
+        var context = _context.Create(targetType, messageType, messageId, config);
         var provider = _provider.Create(targetType, messageType);
 
         context.MessageId = await provider.SendAsync(message, context);

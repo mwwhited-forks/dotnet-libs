@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Linq;
 
 namespace Eliassen.MessageQueueing.Services;
 
@@ -20,6 +21,7 @@ public class MessageSenderProviderFactory : IMessageSenderProviderFactory
     public virtual IMessageSenderProvider Create(Type targetQueueType, Type messageType)
     {
         var providerKey = _resolver.Provider(targetQueueType, messageType);
+
         var provider = _serviceProvider.GetKeyedService<IMessageSenderProvider>(providerKey);
 
         if (provider == null)

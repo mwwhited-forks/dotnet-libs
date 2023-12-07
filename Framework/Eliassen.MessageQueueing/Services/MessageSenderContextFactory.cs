@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Accessors;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Diagnostics;
@@ -13,14 +14,15 @@ public class MessageSenderContextFactory : IMessageSenderContextFactory
 
     public MessageSenderContextFactory(
         IServiceProvider serviceProvider,
-        IAccessor<ClaimsPrincipal> user
+        IAccessor<ClaimsPrincipal> user,
+        IConfiguration config
         )
     {
         _serviceProvider = serviceProvider;
         _user = user;
     }
 
-    public virtual IMessageSenderContext Create(Type targetQueueType, Type messageType, string messageId)
+    public virtual IMessageSenderContext Create(Type targetQueueType, Type messageType, string messageId, IConfigurationSection configuration)
     {
         var context = ActivatorUtilities.CreateInstance<MessageSenderContext>(_serviceProvider);
 

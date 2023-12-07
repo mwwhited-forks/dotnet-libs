@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Eliassen.Azure.StorageAccount;
+namespace Eliassen.Azure.StorageAccount.BlobStorage;
 
 public class BlobContainerProvider : IDocumentProvider
 {
