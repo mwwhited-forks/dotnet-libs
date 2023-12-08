@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Eliassen.Azure.StorageAccount;
+namespace Eliassen.Azure.StorageAccount.BlobStorage;
 
 public record BlobDto
 {

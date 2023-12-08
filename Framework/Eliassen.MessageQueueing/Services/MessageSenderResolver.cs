@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -35,6 +36,7 @@ public class MessageSenderResolver : IMessageSenderResolver
         var configs = from key in keys
                       let config = _configuration.GetSection(key)
                       where config != null
+                      where config.GetChildren().Any()
                       select config;
 
         return configs.FirstOrDefault() ??

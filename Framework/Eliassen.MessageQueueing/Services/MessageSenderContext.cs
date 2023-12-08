@@ -7,5 +7,5 @@ public class MessageSenderContext : IMessageSenderContext
 {
     public string MessageId { get; set; } = null!;
     public Dictionary<string, object> Headers { get; } = new();
-    public IConfigurationSection Config { get; } = null!;
+    public IConfigurationSection Config { get; set; } = null!;
 }

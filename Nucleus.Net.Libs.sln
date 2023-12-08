@@ -93,11 +93,22 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Microsoft.B2C.Abst
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Microsoft.B2C.Tests", "ExternalServices\Microsoft\Eliassen.Microsoft.B2C.Tests\Eliassen.Microsoft.B2C.Tests.csproj", "{8A9FC5D5-D6D9-4672-8108-E428F43204E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MessageQueueing.Abstractions", "Framework\Eliassen.MessageQueueing.Abstractions\Eliassen.MessageQueueing.Abstractions.csproj", "{D9858C57-4C3A-4BC7-B67C-308CF796604C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MessageQueueing.Abstractions", "Framework\Eliassen.MessageQueueing.Abstractions\Eliassen.MessageQueueing.Abstractions.csproj", "{D9858C57-4C3A-4BC7-B67C-308CF796604C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MessageQueueing", "Framework\Eliassen.MessageQueueing\Eliassen.MessageQueueing.csproj", "{181628CE-AEE2-4BB4-A216-C9DEFE7F38B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MessageQueueing", "Framework\Eliassen.MessageQueueing\Eliassen.MessageQueueing.csproj", "{181628CE-AEE2-4BB4-A216-C9DEFE7F38B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MessageQueueing.Tests", "Framework\Eliassen.MessageQueueing.Tests\Eliassen.MessageQueueing.Tests.csproj", "{8EC38070-DD6A-4644-81FC-39121AF28CDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MessageQueueing.Tests", "Framework\Eliassen.MessageQueueing.Tests\Eliassen.MessageQueueing.Tests.csproj", "{8EC38070-DD6A-4644-81FC-39121AF28CDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{B3B21062-BE2B-4DC6-BF6F-D94AF7096A9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.WebApi", "Examples\Eliassen.WebApi\Eliassen.WebApi.csproj", "{68D54F16-3884-4562-BD6C-E8277921B0F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9C7C28F7-9DAA-4602-B2EE-B6777CBCC1B2}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\installcredprovider.ps1 = Scripts\installcredprovider.ps1
+		Scripts\SetupAzurite.bat = Scripts\SetupAzurite.bat
+		Scripts\StartAzurite.bat = Scripts\StartAzurite.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -173,6 +184,10 @@ Global
 		{8EC38070-DD6A-4644-81FC-39121AF28CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EC38070-DD6A-4644-81FC-39121AF28CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EC38070-DD6A-4644-81FC-39121AF28CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68D54F16-3884-4562-BD6C-E8277921B0F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68D54F16-3884-4562-BD6C-E8277921B0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68D54F16-3884-4562-BD6C-E8277921B0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68D54F16-3884-4562-BD6C-E8277921B0F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -203,6 +218,8 @@ Global
 		{D9858C57-4C3A-4BC7-B67C-308CF796604C} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{181628CE-AEE2-4BB4-A216-C9DEFE7F38B4} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{8EC38070-DD6A-4644-81FC-39121AF28CDC} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
+		{68D54F16-3884-4562-BD6C-E8277921B0F5} = {B3B21062-BE2B-4DC6-BF6F-D94AF7096A9E}
+		{9C7C28F7-9DAA-4602-B2EE-B6777CBCC1B2} = {6BEF035F-ABDF-47D9-B230-B88FEE87B53B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

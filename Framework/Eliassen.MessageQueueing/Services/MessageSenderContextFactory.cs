@@ -10,11 +10,11 @@ namespace Eliassen.MessageQueueing.Services;
 public class MessageSenderContextFactory : IMessageSenderContextFactory
 {
     private readonly IServiceProvider _serviceProvider;
-    private readonly IAccessor<ClaimsPrincipal> _user;
+    private readonly ClaimsPrincipal? _user;
 
     public MessageSenderContextFactory(
         IServiceProvider serviceProvider,
-        IAccessor<ClaimsPrincipal> user,
+        ClaimsPrincipal? user,
         IConfiguration config
         )
     {
@@ -27,6 +27,7 @@ public class MessageSenderContextFactory : IMessageSenderContextFactory
         var context = ActivatorUtilities.CreateInstance<MessageSenderContext>(_serviceProvider);
 
         context.MessageId = messageId;
+        context.Config = configuration;
 
         var stackFrame = new StackFrame(2);
 
@@ -41,7 +42,7 @@ public class MessageSenderContextFactory : IMessageSenderContextFactory
         context.Headers.Add("X-CallerLineNumber", lineNumber);
         context.Headers.Add("X-CallerFilePath", callerPath ?? "UNKNOWN CALLER PATH");
 
-        context.Headers.Add("X-UserName", (_user.Value ?? ClaimsPrincipal.Current)?.Identity?.Name ?? Environment.UserName);
+        context.Headers.Add("X-UserName", (_user ?? ClaimsPrincipal.Current)?.Identity?.Name ?? Environment.UserName);
         context.Headers.Add("X-MachineName", Environment.MachineName);
 
         context.Headers.Add("X-SentAt", DateTimeOffset.UtcNow);

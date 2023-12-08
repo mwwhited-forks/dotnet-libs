@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Reflection;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
@@ -136,11 +137,38 @@ namespace Eliassen.TestUtilities
                 AddResultFile(context, file, Encoding.UTF8.GetBytes(string.Join(Environment.NewLine, lines)), out outFile);
                 context.WriteLine($"{file}: Attached");
             }
+            else if (value is IEnumerable<KeyValuePair<string, string?>> items)
+            {
+                return AddResult(
+                    context,
+                    from item in items
+                        //where !string.IsNullOrWhiteSpace(item.Value)
+                    select string.Join(",", $"\"{item.Key}\"", $"\"{item.Value}\""),
+                     string.IsNullOrWhiteSpace(fileName) ? "Key Value Pair" : fileName,
+                    out outFile,
+                    caller,
+                    callerLine,
+                    callerFile
+                    );
+            }
             else if (value is string content)
             {
                 var file = changeExtension(composedFileName, ".txt");
                 AddResultFile(context, file, Encoding.UTF8.GetBytes(content), out outFile);
                 context.WriteLine($"{file}: Attached");
+            }
+            else if (value is IConfiguration config)
+            {
+                return AddResult(
+                    context,
+                    config.AsEnumerable(),
+                     string.IsNullOrWhiteSpace(fileName) ? "Configuration" : fileName,
+                    out outFile,
+                    caller,
+                    callerLine,
+                    callerFile
+                    );
+
             }
             else if (value != null)
             {
@@ -165,7 +193,7 @@ namespace Eliassen.TestUtilities
         /// <summary>
         /// serialize an object to the test results for a given test run
         /// </summary>
-        public static TestContext AddResultFile(this TestContext context, string fileName, byte[] content) => 
+        public static TestContext AddResultFile(this TestContext context, string fileName, byte[] content) =>
             context.AddResultFile(fileName, content, out var _);
 
 

@@ -31,7 +31,9 @@ public class MessageSender<TQueueTarget> : IMessageSender<TQueueTarget>
         var context = _context.Create(targetType, messageType, messageId, config);
         var provider = _provider.Create(targetType, messageType);
 
-        context.MessageId = await provider.SendAsync(message, context);
+        var correlationId = await provider.SendAsync(message, context);
+        if (!string.IsNullOrWhiteSpace(correlationId))
+            context.MessageId = correlationId;
 
         return context.MessageId;
     }

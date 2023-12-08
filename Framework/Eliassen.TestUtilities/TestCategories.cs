@@ -16,7 +16,7 @@
         /// The difference being Simulations use mocked entry and persist layers so they may be executed within
         /// a pipeline without requiring external resources. 
         /// </summary>
-        public const string Simulation = nameof(Simulation);
+        public const string Simulate = nameof(Simulate);
 
         /// <summary>
         /// Integration tests should support the ability to run against deployed environments

@@ -3,17 +3,15 @@ using Eliassen.MessageQueueing.Services;
 using Eliassen.System.Text;
 using Eliassen.System.Text.Json.Serialization;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Eliassen.Azure.StorageAccount.MessageQueueing;
 
-public class AzureStorageQueueMessageSender : IMessageSenderProvider
+public class AzureStorageQueueMessageSenderProvider : IMessageSenderProvider
 {
     private readonly ISerializer _serializer;
 
-    public AzureStorageQueueMessageSender(
+    public AzureStorageQueueMessageSenderProvider(
         IJsonSerializer serializer
         )
     {
@@ -21,7 +19,7 @@ public class AzureStorageQueueMessageSender : IMessageSenderProvider
     }
 
 
-    public async Task<string> SendAsync(object message, IMessageSenderContext context)
+    public async Task<string?> SendAsync(object message, IMessageSenderContext context)
     {
         var client = new QueueClient(
             context.Config["ConnectionString"] ?? throw new ApplicationException($"Configuration \"{context.Config.Path}:ConnectionString\" is missing"),

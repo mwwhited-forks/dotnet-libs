@@ -12,7 +12,7 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services"></param>
     /// <returns></returns>
-    public static IServiceCollection AddMessageQueueingExtensions(this IServiceCollection services)
+    public static IServiceCollection TryAddMessageQueueingExtensions(this IServiceCollection services)
     {
         services.TryAddTransient(typeof(IMessageSender<>), typeof(MessageSender<>));
 
