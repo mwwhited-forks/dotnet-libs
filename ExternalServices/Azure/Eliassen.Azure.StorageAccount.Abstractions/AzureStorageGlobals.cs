@@ -2,5 +2,5 @@
 
 public class AzureStorageGlobals
 {
-    public const string ProviderKey = "azure-storage-queue";
+    public const string MessageProviderKey = "azure-storage-queue";
 }

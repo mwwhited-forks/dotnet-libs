@@ -31,7 +31,7 @@ public class TestMessageSenderProvider : IMessageSenderProvider
         _logger.LogInformation($"{nameof(SendAsync)}({{{nameof(message)}}}, {{{nameof(context)}}})", message, context);
         _context.AddResult(message, fileName: nameof(message));
         //TODO: json serializer doesn't support Dictionary<string, object>
-        //_context.AddResult(context, fileName: nameof(context)); 
+        _context.AddResult(context, fileName: nameof(context)); 
         return Task.FromResult((string?)null);
     }
 }
