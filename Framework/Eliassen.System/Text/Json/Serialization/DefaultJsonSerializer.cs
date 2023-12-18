@@ -52,7 +52,7 @@ public class DefaultJsonSerializer : IJsonSerializer
     public virtual string Serialize<T>(T obj) => Serialize(obj, typeof(T));
     /// <inheritdoc />
     public virtual string Serialize(object? obj, Type type) =>
-        JsonSerializer.Serialize(obj, type, _options);
+        JsonSerializer.Serialize(obj, (type == typeof(object) ? obj?.GetType() : null) ?? type, _options);
 
     /// <inheritdoc />
     public virtual Task SerializeAsync<T>(T obj, Stream stream, CancellationToken cancellationToken = default) =>

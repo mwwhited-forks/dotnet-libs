@@ -47,6 +47,36 @@ public class MessageSenderTests
 
     [TestMethod]
     [TestCategory(TestCategories.Simulate)]
+    [ExpectedException(typeof(ApplicationException))]
+    public async Task SendAsyncTest_Error()
+    {
+        var configBuilder = new ConfigurationBuilder();
+
+        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
+        {
+            {"MessageQueue:MessageSenderTests:Provider", typeof(TestExceptionMessageSenderProvider).AssemblyQualifiedName },
+        });
+
+        var config = configBuilder.Build();
+
+        var service = GetServiceProvider(TestContext, config);
+
+        // ---------------
+
+        var sender = service.GetRequiredService<IMessageSender<MessageSenderTests>>();
+        var correlationId = await sender.SendAsync(new
+        {
+            hello = "world",
+        });
+
+        this.TestContext.Write($"correlationId: {correlationId}");
+
+        Assert.Fail("you should not get here!");
+    }
+
+
+    [TestMethod]
+    [TestCategory(TestCategories.Simulate)]
     public async Task SendAsyncTest_ByKeyed()
     {
         var configBuilder = new ConfigurationBuilder();
