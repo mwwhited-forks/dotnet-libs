@@ -3,6 +3,8 @@ using System.IO;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
+using Microsoft.Extensions.Configuration;
 
 namespace Eliassen.System.Text.Json.Serialization;
 
@@ -16,9 +18,20 @@ public class DefaultJsonSerializer : IJsonSerializer
     {
         WriteIndented = true,
         PropertyNameCaseInsensitive = true,
+
+        IncludeFields = false,
         IgnoreReadOnlyFields = true,
-        IgnoreReadOnlyProperties = true,
+        IgnoreReadOnlyProperties = false, //Note: this being false enables anonymous serialization;  
+
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+
+        Converters =
+        {
+            new DictionaryStringObjectJsonConverter(),
+            new ConfigurationJsonConverter<IConfiguration>(),
+            new ConfigurationJsonConverter<IConfigurationSection>(),
+        },
     };
     /// <inheritdoc />
     public const string DefaultContentType = "text/json";
@@ -66,11 +79,11 @@ public class DefaultJsonSerializer : IJsonSerializer
     public virtual object? Deserialize(string input, Type type) =>
         JsonSerializer.Deserialize(input, type, _options);
 
-        /// <summary>
-        /// Use the configured property naming policy to change provided value
-        /// </summary>
-        /// <param name="propertyName"></param>
-        /// <returns></returns>
-        public string AsPropertyName(string propertyName) =>
-            (_options.PropertyNamingPolicy ?? JsonNamingPolicy.CamelCase).ConvertName(propertyName);
+    /// <summary>
+    /// Use the configured property naming policy to change provided value
+    /// </summary>
+    /// <param name="propertyName"></param>
+    /// <returns></returns>
+    public string AsPropertyName(string propertyName) =>
+        (_options.PropertyNamingPolicy ?? JsonNamingPolicy.CamelCase).ConvertName(propertyName);
 }

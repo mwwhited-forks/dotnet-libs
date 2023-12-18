@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Reflection;
+using Eliassen.System.Text.Json.Serialization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -173,12 +174,16 @@ namespace Eliassen.TestUtilities
             else if (value != null)
             {
                 var file = changeExtension(composedFileName, ".json");
-                var json = JsonSerializer.Serialize(value, options: new JsonSerializerOptions
-                {
-                    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull | JsonIgnoreCondition.WhenWritingDefault,
-                    WriteIndented = true,
 
-                });
+                var serializeOptions = DefaultJsonSerializer.DefaultOptions;
+                serializeOptions.DefaultIgnoreCondition |= 
+                    JsonIgnoreCondition.WhenWritingNull |
+                    JsonIgnoreCondition.WhenWritingDefault
+                    ;
+                serializeOptions.WriteIndented = true;
+                var serialize = new DefaultJsonSerializer(serializeOptions);
+
+                var json = serialize.Serialize(value);
                 AddResultFile(context, file, Encoding.UTF8.GetBytes(json), out outFile);
                 context.WriteLine($"{file}: Attached");
             }
