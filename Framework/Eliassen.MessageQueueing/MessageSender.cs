@@ -56,7 +56,7 @@ public class MessageSender<TChannel> : IMessageSender<TChannel>
             lineNumber,
             callerPath
             );
-        var provider = _provider.Create(targetType, messageType);
+        var provider = _provider.Sender(targetType, messageType);
 
         _logger.LogInformation("Sending: \"{message}\" [{orgMessageId} -> {messageId}] to \"{targetType}\" from \"{caller}::{method}\"",
             message,

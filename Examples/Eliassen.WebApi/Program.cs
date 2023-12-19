@@ -7,6 +7,7 @@ using Eliassen.Azure.StorageAccount;
 using Microsoft.Extensions.DependencyInjection;
 using System.Security.Claims;
 using System.Security.Principal;
+using Eliassen.WebApi.Workers;
 
 namespace Eliassen.WebApi;
 
@@ -32,6 +33,9 @@ public class Program
             .AddConsole()
             .SetMinimumLevel(LogLevel.Debug)
         );
+
+        services.AddHostedService<QueueWorker>();
+
 
         //services.AddAccessor<ClaimsPrincipal>();
         //services.AddTransient(sp =>

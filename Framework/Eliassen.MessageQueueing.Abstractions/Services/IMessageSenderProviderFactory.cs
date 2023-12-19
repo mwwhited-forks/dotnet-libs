@@ -2,5 +2,5 @@
 
 public interface IMessageSenderProviderFactory
 {
-    IMessageSenderProvider Create(Type channelType, Type messageType);
+    IMessageSenderProvider Sender(Type channelType, Type messageType);
 }

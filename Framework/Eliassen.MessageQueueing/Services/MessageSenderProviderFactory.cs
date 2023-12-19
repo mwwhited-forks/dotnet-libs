@@ -17,7 +17,7 @@ public class MessageSenderProviderFactory : IMessageSenderProviderFactory
         _resolver = resolver;
     }
 
-    public virtual IMessageSenderProvider Create(Type channelType, Type messageType)
+    public virtual IMessageSenderProvider Sender(Type channelType, Type messageType)
     {
         var providerKey = _resolver.Provider(channelType, messageType);
 
@@ -29,6 +29,23 @@ public class MessageSenderProviderFactory : IMessageSenderProviderFactory
                 throw new ApplicationException($"Unable to resolve type for {providerKey}");
 
             provider = (IMessageSenderProvider)ActivatorUtilities.CreateInstance(_serviceProvider, providerType);
+        }
+
+        return provider;
+    }
+
+    public virtual IMessageReceiverProvider Receiver(Type channelType, Type messageType)
+    {
+        var providerKey = _resolver.Provider(channelType, messageType);
+
+        var provider = _serviceProvider.GetKeyedService<IMessageReceiverProvider>(providerKey);
+
+        if (provider == null)
+        {
+            var providerType = Type.GetType(providerKey, true) ??
+                throw new ApplicationException($"Unable to resolve type for {providerKey}");
+
+            provider = (IMessageReceiverProvider)ActivatorUtilities.CreateInstance(_serviceProvider, providerType);
         }
 
         return provider;
