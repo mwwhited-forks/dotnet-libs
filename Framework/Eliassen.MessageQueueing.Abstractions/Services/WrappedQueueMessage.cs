@@ -1,5 +1,4 @@
 ﻿using Eliassen.MessageQueueing.Services;
-using System.Collections.Generic;
 
 namespace Eliassen.Azure.StorageAccount.MessageQueueing;
 

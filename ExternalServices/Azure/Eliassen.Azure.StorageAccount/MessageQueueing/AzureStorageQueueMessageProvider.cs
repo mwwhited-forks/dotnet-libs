@@ -55,24 +55,29 @@ public class AzureStorageQueueMessageProvider : IMessageSenderProvider, IMessage
         var client = _client.Create(config);
         var newCancellationToken = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken).Token;
 
-        //while (!newCancellationToken.IsCancellationRequested)
-        //{
-        var message = await client.ReceiveMessageAsync(null, newCancellationToken);
-
-        _logger.LogInformation($"Received: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
-
-        using var stream = message.Value.Body.ToStream();
-        var serialized = _serializer.Deserialize(stream, typeof(WrappedQueueMessage));
-
-        if (serialized != null)
+        while (!newCancellationToken.IsCancellationRequested)
         {
-            _logger.LogInformation($"Handle: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
-            await handlerAsync(serialized);
-            _logger.LogInformation($"Handled: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
-        }
+            var message = await client.ReceiveMessageAsync(null, newCancellationToken);
 
-        _logger.LogInformation($"Dequeue: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
-        await client.DeleteMessageAsync(message.Value.MessageId, message.Value.PopReceipt, newCancellationToken);
-        // }
+            if (message?.Value == null)
+            {
+                return;
+            }
+
+            _logger.LogInformation($"Received: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
+
+            using var stream = message.Value.Body.ToStream();
+            var serialized = _serializer.Deserialize(stream, typeof(WrappedQueueMessage));
+
+            if (serialized != null)
+            {
+                _logger.LogInformation($"Handle: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
+                await handlerAsync(serialized);
+                _logger.LogInformation($"Handled: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
+            }
+
+            _logger.LogInformation($"Dequeue: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
+            await client.DeleteMessageAsync(message.Value.MessageId, message.Value.PopReceipt, newCancellationToken);
+        }
     }
 }
