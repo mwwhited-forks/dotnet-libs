@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Eliassen.MessageQueueing;
 
-public class MessageSender<TQueueTarget> : IMessageSender<TQueueTarget>
+public class MessageSender<TChannel> : IMessageSender<TChannel>
 {
-    private readonly IMessageSenderContextFactory _context;
+    private readonly IMessageContextFactory _context;
     private readonly IMessageSenderProviderFactory _provider;
-    private readonly IMessageSenderResolver _resolver;
+    private readonly IMessagePropertyResolver _resolver;
     private readonly ILogger _logger;
 
     public MessageSender(
-        IMessageSenderContextFactory context,
+        IMessageContextFactory context,
         IMessageSenderProviderFactory provider,
-        IMessageSenderResolver resolver,
-        ILogger<TQueueTarget> logger
+        IMessagePropertyResolver resolver,
+        ILogger<TChannel> logger
         )
     {
         _context = context;
@@ -28,11 +28,11 @@ public class MessageSender<TQueueTarget> : IMessageSender<TQueueTarget>
 
     public async Task<string> SendAsync(
         object message,
-        string? messageId = default
+        string? correlationId = default
         )
     {
         //TODO: add useful logging
-        var targetType = typeof(TQueueTarget);
+        var targetType = typeof(TChannel);
         var messageType = message.GetType();
 
         var stackFrame = new StackFrame(5 /* this is based on the depth of the async/await state machine.  5 will get to the original caller  */, true);
@@ -41,16 +41,27 @@ public class MessageSender<TQueueTarget> : IMessageSender<TQueueTarget>
         var lineNumber = stackFrame.GetFileLineNumber();
         var callerPath = stackFrame.GetFileName();
 
-        var orgMessageId = messageId;
-        messageId = _resolver.MessageId(targetType, messageType, messageId);
+        var originMessageId = correlationId;
+        correlationId = _resolver.MessageId(targetType, messageType, correlationId);
+        var requestId = _resolver.GenerateId(targetType, messageType);
         var config = _resolver.Configuration(targetType, messageType);
-        var context = _context.Create(targetType, messageType, messageId, config, callerMethod, lineNumber, callerPath);
+        var context = _context.Create(
+            targetType,
+            messageType,
+            originMessageId,
+            correlationId,
+            requestId,
+            config,
+            callerMethod,
+            lineNumber,
+            callerPath
+            );
         var provider = _provider.Create(targetType, messageType);
 
         _logger.LogInformation("Sending: \"{message}\" [{orgMessageId} -> {messageId}] to \"{targetType}\" from \"{caller}::{method}\"",
             message,
-            orgMessageId,
-            messageId,
+            originMessageId,
+            correlationId,
             targetType,
             callerMethod?.DeclaringType,
             callerMethod
@@ -58,32 +69,32 @@ public class MessageSender<TQueueTarget> : IMessageSender<TQueueTarget>
 
         try
         {
-            var correlationId = await provider.SendAsync(message, context);
+            var sentId = await provider.SendAsync(message, context);
 
-            _logger.LogInformation("Sent: [{orgMessageId} -> {messageId}] => ({correlationId})",
-                orgMessageId,
-                messageId,
-                correlationId
+            _logger.LogInformation("Sent: [{orgMessageId} -> {messageId}] => ({sentId})",
+                originMessageId,
+                correlationId,
+                sentId
                 );
-            if (!string.IsNullOrWhiteSpace(correlationId))
-                context.MessageId = correlationId;
+
+            context.SentId = sentId;
         }
         catch (Exception ex)
         {
             _logger.LogError("Error: \"{message}\" [{orgMessageId} -> {messageId}]",
                 ex.Message,
-                orgMessageId,
-                messageId
+                originMessageId,
+                correlationId
                 );
 
             _logger.LogDebug("Exception: {trace}\r\n [{orgMessageId} -> {messageId}]",
                 ex.ToString(),
-                orgMessageId,
-                messageId
+                originMessageId,
+                correlationId
                 );
 
             throw;
         }
-        return context.MessageId;
+        return context.SentId ?? context.CorrelationId ?? originMessageId ?? requestId;
     }
 }

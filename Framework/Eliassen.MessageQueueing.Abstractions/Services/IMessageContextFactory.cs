@@ -3,12 +3,14 @@ using System.Reflection;
 
 namespace Eliassen.MessageQueueing.Services;
 
-public interface IMessageSenderContextFactory
+public interface IMessageContextFactory
 {
-    IMessageSenderContext Create(
-        Type targetQueueType, 
+    IMessageContext Create(
+        Type channelType,
         Type messageType,
-        string messageId,
+        string? originMessageId,
+        string correlationId,
+        string requestId,
         IConfigurationSection configuration,
         /*[CallerMemberName]*/ MethodBase? caller     /* = default */,
         /*[CallerLineNumber]*/ int callerLine     /* = default */,

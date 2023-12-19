@@ -19,7 +19,7 @@ public class AzureStorageQueueMessageSenderProvider : IMessageSenderProvider
     }
 
 
-    public async Task<string?> SendAsync(object message, IMessageSenderContext context)
+    public async Task<string?> SendAsync(object message, IMessageContext context)
     {
         var client = new QueueClient(
             context.Config["ConnectionString"] ?? throw new ApplicationException($"Configuration \"{context.Config.Path}:ConnectionString\" is missing"),
@@ -32,7 +32,7 @@ public class AzureStorageQueueMessageSenderProvider : IMessageSenderProvider
         var wrapped = new
         {
             ContentType = $"application/json; Class={message.GetType().FullName}",
-            CorrelationId = context.MessageId,
+            CorrelationId = context.CorrelationId,
             Payload = message,
             Properties = context.Headers,
         };

@@ -2,5 +2,5 @@
 
 public interface IMessageSenderProvider
 {
-    Task<string?> SendAsync(object message, IMessageSenderContext context);
+    Task<string?> SendAsync(object message, IMessageContext context);
 }

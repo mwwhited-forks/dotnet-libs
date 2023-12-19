@@ -22,7 +22,7 @@ public class TestMessageSenderProvider : IMessageSenderProvider
         _logger = logger;
     }
 
-    public Task<string?> SendAsync(object message, IMessageSenderContext context)
+    public Task<string?> SendAsync(object message, IMessageContext context)
     {
         _logger.LogInformation($"{nameof(SendAsync)}({{{nameof(message)}}}, {{{nameof(context)}}})", message, context);
         _context.AddResult(message, fileName: nameof(message));

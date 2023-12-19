@@ -15,11 +15,13 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddMessageQueueingExtensions(this IServiceCollection services)
     {
         services.TryAddTransient(typeof(IMessageSender<>), typeof(MessageSender<>));
+        services.TryAddTransient<IMessageSender, MessageSender<object>>();
 
-        services.TryAddTransient<IMessageSenderContext, MessageSenderContext>();
-        services.TryAddTransient<IMessageSenderContextFactory, MessageSenderContextFactory>();
+        services.TryAddTransient<IMessageContext, MessageContext>();
+
+        services.TryAddTransient<IMessageContextFactory, MessageContextFactory>();
         services.TryAddTransient<IMessageSenderProviderFactory, MessageSenderProviderFactory>();
-        services.TryAddTransient<IMessageSenderResolver, MessageSenderResolver>();
+        services.TryAddTransient<IMessagePropertyResolver, MessagePropertyResolver>();
 
         return services;
     }

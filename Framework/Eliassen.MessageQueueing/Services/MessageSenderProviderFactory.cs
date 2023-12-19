@@ -6,20 +6,20 @@ namespace Eliassen.MessageQueueing.Services;
 public class MessageSenderProviderFactory : IMessageSenderProviderFactory
 {
     private readonly IServiceProvider _serviceProvider;
-    private readonly IMessageSenderResolver _resolver;
+    private readonly IMessagePropertyResolver _resolver;
 
     public MessageSenderProviderFactory(
         IServiceProvider serviceProvider,
-        IMessageSenderResolver resolver
+        IMessagePropertyResolver resolver
         )
     {
         _serviceProvider = serviceProvider;
         _resolver = resolver;
     }
 
-    public virtual IMessageSenderProvider Create(Type targetQueueType, Type messageType)
+    public virtual IMessageSenderProvider Create(Type channelType, Type messageType)
     {
-        var providerKey = _resolver.Provider(targetQueueType, messageType);
+        var providerKey = _resolver.Provider(channelType, messageType);
 
         var provider = _serviceProvider.GetKeyedService<IMessageSenderProvider>(providerKey);
 
