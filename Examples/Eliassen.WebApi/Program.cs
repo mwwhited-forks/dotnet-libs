@@ -1,12 +1,10 @@
 
 using Eliassen.AspNetCore.Mvc;
+using Eliassen.Azure.StorageAccount;
 using Eliassen.MessageQueueing;
+using Eliassen.MessageQueueing.Hosting;
 using Eliassen.System;
 using Eliassen.WebApi.Provider;
-using Eliassen.Azure.StorageAccount;
-using Microsoft.Extensions.DependencyInjection;
-using System.Security.Claims;
-using System.Security.Principal;
 using Eliassen.WebApi.Workers;
 
 namespace Eliassen.WebApi;
@@ -18,28 +16,27 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         var services = builder.Services;
+
         // Add example application services 
 
+        services.AddTransient<IExampleMessageProvider, ExampleMessageProvider>();
+        services.AddTransient<IMessageHandler, ExampleMessageProvider>();
 
         // Add internal services
         services
             .TryAddMessageQueueingExtensions()
+            .TryAddMessageQueueingHosting()
             .TryAllSystemExtensions(builder.Configuration)
             .AddAspNetCoreExtensions()
             .AddAzureStorageAccountServices()
             ;
 
+        // Add services to the container.
+
         services.AddLogging(builder => builder
             .AddConsole()
             .SetMinimumLevel(LogLevel.Debug)
         );
-
-        services.AddHostedService<QueueWorker>();
-
-        services.AddTransient<IExampleMessageProvider, ExampleMessageProvider>();
-        services.AddTransient<IMessageHandler, ExampleMessageProvider>();
-
-        // Add services to the container.
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

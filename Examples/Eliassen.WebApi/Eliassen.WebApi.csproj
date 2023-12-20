@@ -15,6 +15,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Handlers\" />
+	  <Folder Include="Workers\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -22,6 +23,7 @@
 	  <ProjectReference Include="..\..\ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Eliassen.Microsoft.B2C.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.Handlebars.Extensions\Eliassen.Handlebars.Extensions.csproj" />
+	  <ProjectReference Include="..\..\Framework\Eliassen.MessageQueueing.Hosting\Eliassen.MessageQueueing.Hosting.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.MessageQueueing\Eliassen.MessageQueueing.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.System\Eliassen.System.csproj" />
 	</ItemGroup>

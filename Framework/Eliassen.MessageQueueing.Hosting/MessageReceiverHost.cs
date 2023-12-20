@@ -1,13 +1,15 @@
-﻿
-using Eliassen.MessageQueueing;
-using Eliassen.MessageQueueing.Services;
-using Microsoft.Graph.Models;
-using Microsoft.Identity.Client;
+﻿using Eliassen.MessageQueueing.Services;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Eliassen.WebApi.Workers;
 
-public class QueueWorker : IHostedService, IDisposable
+public class MessageReceiverHost : IHostedService, IDisposable
 {
     private readonly ILogger _logger;
     private readonly IMessageReceiverProviderFactory _factory;
@@ -15,8 +17,8 @@ public class QueueWorker : IHostedService, IDisposable
     private readonly List<Task> _tasks = new();
     private readonly CancellationTokenSource _tokenSource = new();
 
-    public QueueWorker(
-        ILogger<QueueWorker> logger,
+    public MessageReceiverHost(
+        ILogger<MessageReceiverHost> logger,
         IMessageReceiverProviderFactory factory
         )
     {
