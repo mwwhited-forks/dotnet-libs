@@ -22,12 +22,11 @@ public static class ServiceCollectionEx
 
     public static IServiceCollection TryAddAzureStorageQueueServices(this IServiceCollection services)
     {
-        services.TryAddTransient<IMessageSenderProvider, AzureStorageQueueMessageProvider>();
+        services.AddTransient<IMessageSenderProvider, AzureStorageQueueMessageProvider>();
         services.TryAddKeyedTransient<IMessageSenderProvider, AzureStorageQueueMessageProvider>(AzureStorageGlobals.MessageProviderKey);
 
-        services.TryAddTransient<IMessageReceiverProvider, AzureStorageQueueMessageProvider>();
+        services.AddTransient<IMessageReceiverProvider, AzureStorageQueueMessageProvider>();
         services.TryAddKeyedTransient<IMessageReceiverProvider, AzureStorageQueueMessageProvider>(AzureStorageGlobals.MessageProviderKey);
-
 
         services.TryAddTransient<IQueueClientFactory, QueueClientFactory>();
 

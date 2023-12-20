@@ -1,4 +1,5 @@
-﻿using Eliassen.MessageQueueing.Services;
+﻿using Eliassen.Azure.StorageAccount.MessageQueueing;
+using Eliassen.MessageQueueing.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -24,6 +25,12 @@ public static class ServiceCollectionExtensions
         services.TryAddTransient<IMessagePropertyResolver, MessagePropertyResolver>();
         services.TryAddTransient<IMessageHandlerProvider, MessageHandlerProvider>();
         services.TryAddTransient<IMessageReceiverProviderFactory, MessageReceiverProviderFactory>();
+
+        services.AddTransient<IMessageSenderProvider, InProcessMessageProvider>();
+        services.TryAddKeyedTransient<IMessageSenderProvider, InProcessMessageProvider>(InProcessMessageProvider.MessageProviderKey);
+
+        services.AddTransient<IMessageReceiverProvider, InProcessMessageProvider>();
+        services.TryAddKeyedTransient<IMessageReceiverProvider, InProcessMessageProvider>(InProcessMessageProvider.MessageProviderKey);
 
         return services;
     }

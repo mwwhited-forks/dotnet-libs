@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -103,9 +104,7 @@ public class AzureStorageQueueMessageSenderProviderTests
             {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
 
 
-            //{$"MessageQueue:Default:Provider", typeof(AzureStorageQueueMessageProvider).AssemblyQualifiedName },
-            //{$"MessageQueue:Default:Config:ConnectionString", "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1" },
-            //{$"MessageQueue:Default:Config:QueueName", "default-queue" },
+            {$"MessageQueue:Default:Provider", InProcessMessageProvider.MessageProviderKey },
 
         });
 
@@ -126,7 +125,7 @@ public class AzureStorageQueueMessageSenderProviderTests
 
 
         var sender = service.GetRequiredService<IMessageSender<AzureStorageQueueMessageSenderProviderTests>>();
-        //var sender2 = service.GetRequiredService<IMessageSender>();
+        var sender2 = service.GetRequiredService<IMessageSender>();
 
         var factory = service.GetRequiredService<IMessageReceiverProviderFactory>();
         var providers = factory.Create().ToArray();
@@ -149,7 +148,7 @@ public class AzureStorageQueueMessageSenderProviderTests
                     object message = y % 2 == 0 ? new TestQueueMessage() : new { Hello = "There" };
                     Console.WriteLine($"----------: Send {DateTimeOffset.Now} :---------- [{message}]");
                     var id = await sender.SendAsync(message);
-                    //var id2 = await sender2.SendAsync(message);
+                    var id2 = await sender2.SendAsync(message);
                     Console.WriteLine($"----------: Sent {DateTimeOffset.Now} :---------- [{id}]"); ///{id2}
                 }
 
