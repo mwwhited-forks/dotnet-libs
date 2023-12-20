@@ -25,7 +25,7 @@ public class TestMessageHandlerWithProviderAndMessage : IMessageHandler<AzureSto
     public Task HandleAsync(TestQueueMessage message, IMessageContext context)
     {
         _logger.LogInformation("HandleAsync: {message}", message);
-        _testContext.AddResult(message, fileName: "TestMessageHandlerWithProviderAndMessage-Message");
+        _testContext.AddResult(message, fileName: $"TestMessageHandlerWithProviderAndMessage-Message-{context.Config.Path}");
         return Task.CompletedTask;
     }
 

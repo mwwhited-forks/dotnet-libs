@@ -24,7 +24,7 @@ public class TestMessageHandler : IMessageHandler
     public Task HandleAsync(object message, IMessageContext context)
     {
         _logger.LogInformation("HandleAsync: {message}", message);
-        _testContext.AddResult(message, fileName: "TestMessageHandler-Message");
+        _testContext.AddResult(message, fileName: $"TestMessageHandler-Message-{context.Config.Path}");
         return Task.CompletedTask;
     }
 }

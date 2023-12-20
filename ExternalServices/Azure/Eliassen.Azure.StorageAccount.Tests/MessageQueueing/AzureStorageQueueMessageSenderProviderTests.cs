@@ -89,46 +89,6 @@ public class AzureStorageQueueMessageSenderProviderTests
         this.TestContext.Write($"correlationId: {correlationId}");
     }
 
-    //[TestMethod]
-    //[TestCategory(TestCategories.DevLocal)]
-    //public async Task WatchQueueTest()
-    //{
-    //    var configBuilder = new ConfigurationBuilder();
-
-    //    configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
-    //    {
-    //        {$"MessageQueue:{QueueConfig}:Provider", AzureStorageGlobals.MessageProviderKey },
-
-    //        {$"MessageQueue:{QueueConfig}:Config:ConnectionString", "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1" },
-    //        {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
-
-    //    });
-
-    //    var config = configBuilder.Build();
-
-    //    var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
-    //    {
-    //        services.AddAzureStorageAccountServices();
-    //    });
-
-    //    // ---------------
-
-    //    var configurationSection = config.GetSection($"MessageQueue:{QueueConfig}:Config");
-
-    //    var sender = service.GetKeyedService<IMessageReceiverProvider>(AzureStorageGlobals.MessageProviderKey);
-
-    //    sender.Config(configurationSection);
-    //    sender.ChannelType(typeof(AzureStorageQueueMessageSenderProviderTests));
-    //    sender.Handlers(new IMessageHandler[]
-    //    {
-    //        ActivatorUtilities.CreateInstance<TestMessageHandler>(service),
-    //        ActivatorUtilities.CreateInstance<TestMessageHandlerWithProvider>(service),
-    //        ActivatorUtilities.CreateInstance<TestMessageHandlerWithProviderAndMessage>(service),
-    //    });
-
-    //    await sender.RunAsync(CancellationToken.None);
-    //}
-
     [TestMethod]
     [TestCategory(TestCategories.DevLocal)]
     public async Task FindProviderTests()
@@ -141,6 +101,11 @@ public class AzureStorageQueueMessageSenderProviderTests
 
             {$"MessageQueue:{QueueConfig}:Config:ConnectionString", "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1" },
             {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
+
+
+            //{$"MessageQueue:Default:Provider", typeof(AzureStorageQueueMessageProvider).AssemblyQualifiedName },
+            //{$"MessageQueue:Default:Config:ConnectionString", "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1" },
+            //{$"MessageQueue:Default:Config:QueueName", "default-queue" },
 
         });
 
@@ -161,6 +126,8 @@ public class AzureStorageQueueMessageSenderProviderTests
 
 
         var sender = service.GetRequiredService<IMessageSender<AzureStorageQueueMessageSenderProviderTests>>();
+        //var sender2 = service.GetRequiredService<IMessageSender>();
+
         var factory = service.GetRequiredService<IMessageReceiverProviderFactory>();
         var providers = factory.Create().ToArray();
 
@@ -182,7 +149,8 @@ public class AzureStorageQueueMessageSenderProviderTests
                     object message = y % 2 == 0 ? new TestQueueMessage() : new { Hello = "There" };
                     Console.WriteLine($"----------: Send {DateTimeOffset.Now} :---------- [{message}]");
                     var id = await sender.SendAsync(message);
-                    Console.WriteLine($"----------: Sent {DateTimeOffset.Now} :---------- [{id}]");
+                    //var id2 = await sender2.SendAsync(message);
+                    Console.WriteLine($"----------: Sent {DateTimeOffset.Now} :---------- [{id}]"); ///{id2}
                 }
 
                 Console.WriteLine($"----------: Waiting {DateTimeOffset.Now} :---------- ");
