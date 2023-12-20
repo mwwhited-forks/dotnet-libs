@@ -36,18 +36,6 @@ public class Program
 
         services.AddHostedService<QueueWorker>();
 
-
-        //services.AddAccessor<ClaimsPrincipal>();
-        //services.AddTransient(sp =>
-        //{
-        //    var principalAccessor = sp.GetRequiredService<IAccessor<ClaimsPrincipal>>();
-
-        //    var principal = principalAccessor.Value ??= new ClaimsPrincipal();
-        //    principal.AddIdentity(new ClaimsIdentity(new GenericIdentity("test-user")));
-
-        //    return principal;
-        //});
-
         services.AddTransient<IExampleMessageProvider, ExampleMessageProvider>();
         services.AddTransient<IMessageHandler, ExampleMessageProvider>();
 

@@ -47,12 +47,13 @@ public class MessagePropertyResolver : IMessagePropertyResolver
         return (selected, simpleTargetName, simpleMessageName, selected?.Path);
     }
 
-    public virtual (IConfigurationSection? providerKey, string simpleTargetName, string simpleMessageName, string? configPath) ConfigurationSafe(Type channelType, Type messageType)
+    public (IConfigurationSection? configurationSection, string simpleTargetName, string simpleMessageName, string? configPath) ConfigurationSafe(Type channelType, Type messageType)
     {
         var (config, simpleTargetName, simpleMessageName, configPath) = RootConfiguration(channelType, messageType);
         var selected = config?.GetSection("Config") ?? config;
         return (selected, simpleTargetName, simpleMessageName, selected?.Path);
     }
+
     public virtual IConfigurationSection Configuration(Type channelType, Type messageType)
     {
         var (config, simpleTargetName, simpleMessageName, _) = ConfigurationSafe(channelType, messageType);
@@ -80,4 +81,5 @@ public class MessagePropertyResolver : IMessagePropertyResolver
             throw new ApplicationException($"No provider found for \"MessageQueue:{simpleTargetName}:{simpleMessageName}:Provider\"");
         return providerKey;
     }
+
 }

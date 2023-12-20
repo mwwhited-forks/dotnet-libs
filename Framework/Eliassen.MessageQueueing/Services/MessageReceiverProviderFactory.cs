@@ -42,17 +42,18 @@ public class MessageReceiverProviderFactory : IMessageReceiverProviderFactory
                                 let messageType = handlerInterface.GenericTypeArguments.ElementAtOrDefault(1) ?? typeof(object)
 
                                 let provider = _resolver.ProviderSafe(channelType, messageType)
+                                let config = _resolver.ConfigurationSafe(channelType, messageType)
 
                                 group new
                                 {
                                     handler,
                                     handlerInterface,
                                     provider,
+                                    config,
                                 } by new
                                 {
                                     provider.providerKey,
-                                    //provider.simpleTargetName,
-                                    //provider.simpleMessageName,
+                                    provider.configPath,
                                     channelType,
                                 };
 
@@ -67,11 +68,15 @@ public class MessageReceiverProviderFactory : IMessageReceiverProviderFactory
 
             var receiver = Receiver(item.Key.providerKey);
 
-            var config = _resolver.Configuration(item.Key.channelType, typeof(object)); // item.Key.messageType);
+            var config = item.First().config.configurationSection;
 
-            receiver.Handlers(handlers);
-            receiver.ChannelType(item.Key.channelType);
-            receiver.Config(config);
+            var handler = _serviceProvider.GetRequiredService<IMessageHandlerProvider>()
+                .SetHandlers(handlers)
+                .SetChannelType(item.Key.channelType)
+                .SetConfig(config)
+                ;
+
+            receiver.SetHandlerProvider(handler);
 
             yield return receiver;
         }

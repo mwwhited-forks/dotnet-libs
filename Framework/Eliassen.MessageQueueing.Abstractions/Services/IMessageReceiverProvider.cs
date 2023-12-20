@@ -1,13 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
-
-namespace Eliassen.MessageQueueing.Services;
+﻿namespace Eliassen.MessageQueueing.Services;
 
 public interface IMessageReceiverProvider
 {
-
-    void Handlers(IEnumerable<IMessageHandler> handlers);
-    void Config(IConfigurationSection config);
-    void ChannelType(Type channelType);
+    public IMessageReceiverProvider SetHandlerProvider(IMessageHandlerProvider handlerProvider);
 
     Task RunAsync(
         CancellationToken cancellationToken = default

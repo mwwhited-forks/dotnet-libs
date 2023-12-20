@@ -161,7 +161,6 @@ public class AzureStorageQueueMessageSenderProviderTests
 
 
         var sender = service.GetRequiredService<IMessageSender<AzureStorageQueueMessageSenderProviderTests>>();
-
         var factory = service.GetRequiredService<IMessageReceiverProviderFactory>();
         var providers = factory.Create().ToArray();
 

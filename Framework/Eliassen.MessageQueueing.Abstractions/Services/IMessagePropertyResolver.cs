@@ -10,6 +10,6 @@ public interface IMessagePropertyResolver
     string MessageId(Type channelType, Type messageType, string? messageId);
     string GenerateId(Type channelType, Type messageType);
 
-    (IConfigurationSection? providerKey, string simpleTargetName, string simpleMessageName, string? configPath) ConfigurationSafe(Type channelType, Type messageType);
+    (IConfigurationSection? configurationSection, string simpleTargetName, string simpleMessageName, string? configPath) ConfigurationSafe(Type channelType, Type messageType);
     IConfigurationSection Configuration(Type channelType, Type messageType);
 }

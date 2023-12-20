@@ -1,7 +1,5 @@
 ﻿using Eliassen.MessageQueueing;
 using Eliassen.MessageQueueing.Services;
-using System.Diagnostics.Eventing.Reader;
-using System.Runtime.CompilerServices;
 
 namespace Eliassen.WebApi.Provider
 {
@@ -33,7 +31,8 @@ namespace Eliassen.WebApi.Provider
 
         public Task HandleAsync(object message, IMessageContext context)
         {
-            throw new NotImplementedException();
+            _logger.LogInformation("Received: {message} [{correlationId}]", message, context.CorrelationId);
+            return Task.CompletedTask;
         }
     }
 }
