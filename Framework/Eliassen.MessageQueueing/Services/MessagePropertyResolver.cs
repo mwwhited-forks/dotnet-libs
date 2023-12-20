@@ -24,7 +24,7 @@ public class MessagePropertyResolver : IMessagePropertyResolver
         messageType.GetCustomAttribute<MessageQueueAttribute>()?.SimpleName ?? messageType.Name
         );
 
-    private (IConfigurationSection? config, string simpleTargetName, string simpleMessageName) RootConfiguration(Type channelType, Type messageType)
+    private (IConfigurationSection? config, string simpleTargetName, string simpleMessageName, string? configPath) RootConfiguration(Type channelType, Type messageType)
     {
         var (simpleTargetName, simpleMessageName) = GetSimpleNames(channelType, messageType);
 
@@ -42,17 +42,20 @@ public class MessagePropertyResolver : IMessagePropertyResolver
                       where config.GetChildren().Any()
                       select config;
 
-        return (configs.FirstOrDefault(), simpleTargetName, simpleMessageName);
+        var selected = configs.FirstOrDefault();
+
+        return (selected, simpleTargetName, simpleMessageName, selected?.Path);
     }
 
-    public virtual (IConfigurationSection? providerKey, string simpleTargetName, string simpleMessageName) ConfigurationSafe(Type channelType, Type messageType)
+    public virtual (IConfigurationSection? providerKey, string simpleTargetName, string simpleMessageName, string? configPath) ConfigurationSafe(Type channelType, Type messageType)
     {
-        var (config, simpleTargetName, simpleMessageName) = RootConfiguration(channelType, messageType);
-        return (config?.GetSection("Config") ?? config, simpleTargetName, simpleMessageName);
+        var (config, simpleTargetName, simpleMessageName, configPath) = RootConfiguration(channelType, messageType);
+        var selected = config?.GetSection("Config") ?? config;
+        return (selected, simpleTargetName, simpleMessageName, selected?.Path);
     }
     public virtual IConfigurationSection Configuration(Type channelType, Type messageType)
     {
-        var (config, simpleTargetName, simpleMessageName) = ConfigurationSafe(channelType, messageType);
+        var (config, simpleTargetName, simpleMessageName, _) = ConfigurationSafe(channelType, messageType);
         if (config == null)
             throw new ApplicationException($"No configuration found for \"MessageQueue:{simpleTargetName}:{simpleMessageName}\"");
         return config;
@@ -64,15 +67,15 @@ public class MessagePropertyResolver : IMessagePropertyResolver
     public virtual string GenerateId(Type channelType, Type messageType) =>
         Guid.NewGuid().ToString();
 
-    public virtual (string? providerKey, string simpleTargetName, string simpleMessageName) ProviderSafe(Type channelType, Type messageType)
+    public virtual (string? providerKey, string simpleTargetName, string simpleMessageName, string? configPath) ProviderSafe(Type channelType, Type messageType)
     {
-        var (config, simpleTargetName, simpleMessageName) = RootConfiguration(channelType, messageType);
+        var (config, simpleTargetName, simpleMessageName, configPath) = RootConfiguration(channelType, messageType);
         var providerKey = config?["Provider"];
-        return (providerKey, simpleTargetName, simpleMessageName);
+        return (providerKey, simpleTargetName, simpleMessageName, configPath);
     }
     public virtual string Provider(Type channelType, Type messageType)
     {
-        var (providerKey, simpleTargetName, simpleMessageName) = ProviderSafe(channelType, messageType);
+        var (providerKey, simpleTargetName, simpleMessageName, _) = ProviderSafe(channelType, messageType);
         if (providerKey == null)
             throw new ApplicationException($"No provider found for \"MessageQueue:{simpleTargetName}:{simpleMessageName}:Provider\"");
         return providerKey;

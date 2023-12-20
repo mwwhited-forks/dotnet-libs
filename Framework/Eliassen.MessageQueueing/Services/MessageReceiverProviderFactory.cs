@@ -50,23 +50,24 @@ public class MessageReceiverProviderFactory : IMessageReceiverProviderFactory
                                     provider,
                                 } by new
                                 {
-                                    provider,
+                                    provider.providerKey,
+                                    //provider.simpleTargetName,
+                                    //provider.simpleMessageName,
                                     channelType,
-                                    messageType,
                                 };
 
         foreach (var item in handlersByChannel)
         {
             var handlers = item.Select(i => i.handler).ToList();
-            if (item.Key.provider.providerKey == null)
+            if (item.Key.providerKey == null)
             {
                 _logger.LogWarning($"No provider configured for handlers {{{nameof(handlers)}}}", handlers);
                 continue;
             }
 
-            var receiver = Receiver(item.Key.provider.providerKey);
+            var receiver = Receiver(item.Key.providerKey);
 
-            var config = _resolver.Configuration(item.Key.channelType, item.Key.messageType);
+            var config = _resolver.Configuration(item.Key.channelType, typeof(object)); // item.Key.messageType);
 
             receiver.Handlers(handlers);
             receiver.ChannelType(item.Key.channelType);

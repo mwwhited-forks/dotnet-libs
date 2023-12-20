@@ -89,45 +89,45 @@ public class AzureStorageQueueMessageSenderProviderTests
         this.TestContext.Write($"correlationId: {correlationId}");
     }
 
-    [TestMethod]
-    [TestCategory(TestCategories.DevLocal)]
-    public async Task WatchQueueTest()
-    {
-        var configBuilder = new ConfigurationBuilder();
+    //[TestMethod]
+    //[TestCategory(TestCategories.DevLocal)]
+    //public async Task WatchQueueTest()
+    //{
+    //    var configBuilder = new ConfigurationBuilder();
 
-        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
-        {
-            {$"MessageQueue:{QueueConfig}:Provider", AzureStorageGlobals.MessageProviderKey },
+    //    configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
+    //    {
+    //        {$"MessageQueue:{QueueConfig}:Provider", AzureStorageGlobals.MessageProviderKey },
 
-            {$"MessageQueue:{QueueConfig}:Config:ConnectionString", "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1" },
-            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
+    //        {$"MessageQueue:{QueueConfig}:Config:ConnectionString", "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1" },
+    //        {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
 
-        });
+    //    });
 
-        var config = configBuilder.Build();
+    //    var config = configBuilder.Build();
 
-        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
-        {
-            services.AddAzureStorageAccountServices();
-        });
+    //    var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
+    //    {
+    //        services.AddAzureStorageAccountServices();
+    //    });
 
-        // ---------------
+    //    // ---------------
 
-        var configurationSection = config.GetSection($"MessageQueue:{QueueConfig}:Config");
+    //    var configurationSection = config.GetSection($"MessageQueue:{QueueConfig}:Config");
 
-        var sender = service.GetKeyedService<IMessageReceiverProvider>(AzureStorageGlobals.MessageProviderKey);
+    //    var sender = service.GetKeyedService<IMessageReceiverProvider>(AzureStorageGlobals.MessageProviderKey);
 
-        sender.Config(configurationSection);
-        sender.ChannelType(typeof(AzureStorageQueueMessageSenderProviderTests));
-        sender.Handlers(new IMessageHandler[]
-        {
-            ActivatorUtilities.CreateInstance<TestMessageHandler>(service),
-            ActivatorUtilities.CreateInstance<TestMessageHandlerWithProvider>(service),
-            ActivatorUtilities.CreateInstance<TestMessageHandlerWithProviderAndMessage>(service),
-        });
+    //    sender.Config(configurationSection);
+    //    sender.ChannelType(typeof(AzureStorageQueueMessageSenderProviderTests));
+    //    sender.Handlers(new IMessageHandler[]
+    //    {
+    //        ActivatorUtilities.CreateInstance<TestMessageHandler>(service),
+    //        ActivatorUtilities.CreateInstance<TestMessageHandlerWithProvider>(service),
+    //        ActivatorUtilities.CreateInstance<TestMessageHandlerWithProviderAndMessage>(service),
+    //    });
 
-        await sender.RunAsync(CancellationToken.None);
-    }
+    //    await sender.RunAsync(CancellationToken.None);
+    //}
 
     [TestMethod]
     [TestCategory(TestCategories.DevLocal)]

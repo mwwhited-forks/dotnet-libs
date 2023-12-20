@@ -91,11 +91,20 @@ public class AzureStorageQueueMessageProvider : IMessageSenderProvider, IMessage
             {
                 var context = _context.Create(_channelType ?? throw new ApplicationException("No channel type"), deserialized, _config);
 
+                var payloadType = deserialized.PayloadType == null ? null : Type.GetType(deserialized.PayloadType);
+                object payload = deserialized.Payload;
+                if (payloadType != null)
+                {
+                    var convert = _serializer.Serialize(payload, payload.GetType());
+                    payload = _serializer.Deserialize(convert, payloadType) ?? payload;
+                }
+
                 _logger.LogInformation($"Handle: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
 
                 foreach (var handler in _handlers)
                 {
-                    await handler.HandleAsync(deserialized.Payload, context);
+
+                    await handler.HandleAsync(payload, context);
                 }
 
                 _logger.LogInformation($"Handled: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
