@@ -14,11 +14,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Handlers\" />
-	  <Folder Include="Workers\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\..\ExternalServices\Azure\Eliassen.Azure.StorageAccount\Eliassen.Azure.StorageAccount.csproj" />
 	  <ProjectReference Include="..\..\ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Eliassen.Microsoft.B2C.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
