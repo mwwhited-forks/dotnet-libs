@@ -16,4 +16,5 @@ public interface IMessageContextFactory
         /*[CallerLineNumber]*/ int callerLine     /* = default */,
         /*[CallerFilePath]  */ string? callerFile /* = default */
         );
+    IMessageContext Create(Type channelType, IQueueMessage message, IConfigurationSection configuration);
 }

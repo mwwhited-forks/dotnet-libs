@@ -25,8 +25,4 @@
 		<ProjectReference Include="..\..\..\Framework\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="TestItems\" />
-	</ItemGroup>
-
 </Project>

@@ -2,11 +2,14 @@
 
 namespace Eliassen.MessageQueueing;
 
-public interface IMessageHandler<TQueueSource>
+public interface IMessageHandler
 {
     Task HandleAsync(object message, IMessageContext context);
 }
-public interface IMessageHandler<TQueueSource, TMessage> : IMessageHandler<TQueueSource>
+public interface IMessageHandler<TChannel> : IMessageHandler
+{
+}
+public interface IMessageHandler<TChannel, TMessage> : IMessageHandler<TChannel>
 {
     new Task HandleAsync(TMessage message, IMessageContext context);
 }

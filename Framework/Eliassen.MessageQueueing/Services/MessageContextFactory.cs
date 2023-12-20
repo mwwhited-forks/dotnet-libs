@@ -56,4 +56,19 @@ public class MessageContextFactory : IMessageContextFactory
 
         return context;
     }
+
+    public IMessageContext Create(Type channelType, IQueueMessage message, IConfigurationSection configuration)
+    {
+        var context = ActivatorUtilities.CreateInstance<MessageContext>(_serviceProvider);
+
+        context.ChannelType = channelType.AssemblyQualifiedName;
+        context.Config = configuration;
+
+        foreach (var item in message.Properties)
+        {
+            context[item.Key] = item.Value;
+        }
+
+        return context;
+    }
 }

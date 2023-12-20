@@ -49,7 +49,7 @@ public class Program
         //});
 
         services.AddTransient<IExampleMessageProvider, ExampleMessageProvider>();
-        services.AddTransient<IMessageHandler<ExampleMessageProvider>, ExampleMessageProvider>();
+        services.AddTransient<IMessageHandler, ExampleMessageProvider>();
 
         // Add services to the container.
 

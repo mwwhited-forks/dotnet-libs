@@ -4,9 +4,12 @@ namespace Eliassen.MessageQueueing.Services;
 
 public interface IMessageReceiverProvider
 {
-    Task WatchQueue(
-        IConfigurationSection config,
-        Func<object, Task> handler,
+
+    void Handlers(IEnumerable<IMessageHandler> handlers);
+    void Config(IConfigurationSection config);
+    void ChannelType(Type channelType);
+
+    Task RunAsync(
         CancellationToken cancellationToken = default
         );
 }

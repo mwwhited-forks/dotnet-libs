@@ -23,6 +23,8 @@ public static class ServiceCollectionExtensions
         services.TryAddTransient<IMessageSenderProviderFactory, MessageSenderProviderFactory>();
         services.TryAddTransient<IMessagePropertyResolver, MessagePropertyResolver>();
 
+        services.TryAddTransient<IMessageReceiverProviderFactory, MessageReceiverProviderFactory>();
+
         return services;
     }
 }

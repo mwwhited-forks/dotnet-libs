@@ -24,7 +24,7 @@ public class MessagePropertyResolver : IMessagePropertyResolver
         messageType.GetCustomAttribute<MessageQueueAttribute>()?.SimpleName ?? messageType.Name
         );
 
-    private IConfigurationSection RootConfiguration(Type channelType, Type messageType)
+    private (IConfigurationSection? config, string simpleTargetName, string simpleMessageName) RootConfiguration(Type channelType, Type messageType)
     {
         var (simpleTargetName, simpleMessageName) = GetSimpleNames(channelType, messageType);
 
@@ -42,14 +42,20 @@ public class MessagePropertyResolver : IMessagePropertyResolver
                       where config.GetChildren().Any()
                       select config;
 
-        return configs.FirstOrDefault() ??
-            throw new ApplicationException($"No configuration found for \"MessageQueue:{simpleTargetName}:{simpleMessageName}\"");
+        return (configs.FirstOrDefault(), simpleTargetName, simpleMessageName);
     }
 
+    public virtual (IConfigurationSection? providerKey, string simpleTargetName, string simpleMessageName) ConfigurationSafe(Type channelType, Type messageType)
+    {
+        var (config, simpleTargetName, simpleMessageName) = RootConfiguration(channelType, messageType);
+        return (config?.GetSection("Config") ?? config, simpleTargetName, simpleMessageName);
+    }
     public virtual IConfigurationSection Configuration(Type channelType, Type messageType)
     {
-        var config = RootConfiguration(channelType, messageType);
-        return config.GetSection("Config") ?? config;
+        var (config, simpleTargetName, simpleMessageName) = ConfigurationSafe(channelType, messageType);
+        if (config == null)
+            throw new ApplicationException($"No configuration found for \"MessageQueue:{simpleTargetName}:{simpleMessageName}\"");
+        return config;
     }
 
     public virtual string MessageId(Type channelType, Type messageType, string? messageId) =>
@@ -58,12 +64,17 @@ public class MessagePropertyResolver : IMessagePropertyResolver
     public virtual string GenerateId(Type channelType, Type messageType) =>
         Guid.NewGuid().ToString();
 
+    public virtual (string? providerKey, string simpleTargetName, string simpleMessageName) ProviderSafe(Type channelType, Type messageType)
+    {
+        var (config, simpleTargetName, simpleMessageName) = RootConfiguration(channelType, messageType);
+        var providerKey = config?["Provider"];
+        return (providerKey, simpleTargetName, simpleMessageName);
+    }
     public virtual string Provider(Type channelType, Type messageType)
     {
-        var config = RootConfiguration(channelType, messageType);
-        var providerKey = config["Provider"]
-            ?? throw new ArgumentNullException($"Provider for \"{config.Path}:Provider\" is not configured");
-
+        var (providerKey, simpleTargetName, simpleMessageName) = ProviderSafe(channelType, messageType);
+        if (providerKey == null)
+            throw new ApplicationException($"No provider found for \"MessageQueue:{simpleTargetName}:{simpleMessageName}:Provider\"");
         return providerKey;
     }
 }
