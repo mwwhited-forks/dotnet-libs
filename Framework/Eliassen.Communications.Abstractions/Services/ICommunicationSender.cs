@@ -1,6 +1,6 @@
 ﻿namespace Eliassen.Communications.Services;
 
-public interface IMessageSender<TMessageType>
+public interface ICommunicationSender<TMessageType>
 {
     Task<string> SendAsync(TMessageType message);
 }

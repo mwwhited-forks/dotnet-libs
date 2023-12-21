@@ -9,11 +9,11 @@ namespace Eliassen.Communications.MessageQueueing
 {
     public class EmailMessageHandler : IMessageQueueHandler<EmailMessageModel, EmailMessageModel>
     {
-        private readonly IMessageSender<EmailMessageModel> _email;
+        private readonly ICommunicationSender<EmailMessageModel> _email;
         private readonly ILogger _logger;
 
         public EmailMessageHandler(
-            IMessageSender<EmailMessageModel> email,
+            ICommunicationSender<EmailMessageModel> email,
             ILogger<EmailMessageHandler> logger
             )
         {

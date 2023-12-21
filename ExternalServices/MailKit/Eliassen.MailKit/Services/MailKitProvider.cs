@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Eliassen.MailKit.Services;
 
-public class MailKitProvider : IMessageSender<EmailMessageModel>
+public class MailKitProvider : ICommunicationSender<EmailMessageModel>
 {
     private readonly IMimeMessageFactory _email;
     private readonly ISmtpClientFactory _smtp;

@@ -10,11 +10,11 @@ namespace Eliassen.WebApi.Controllers;
 [Route("api/[controller]")]
 public class CommunicationsController : ControllerBase
 {
-    private readonly IMessageSender<EmailMessageModel> _email;
+    private readonly ICommunicationSender<EmailMessageModel> _email;
     private readonly IMessageQueueSender<EmailMessageModel> _queue;
 
     public CommunicationsController(
-        IMessageSender<EmailMessageModel> email,
+        ICommunicationSender<EmailMessageModel> email,
         IMessageQueueSender<EmailMessageModel> queue
         )
     {

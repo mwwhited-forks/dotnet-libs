@@ -14,7 +14,7 @@ public static class ServiceCollectionExtensions
         string configurationSection = nameof(MailKitSmtpClientOptions)
         )
     {
-        services.TryAddTransient<IMessageSender<EmailMessageModel>, MailKitProvider>();
+        services.TryAddTransient<ICommunicationSender<EmailMessageModel>, MailKitProvider>();
 
         services.TryAddTransient<ISmtpClientFactory, SmtpClientFactory>();
         services.TryAddTransient<IMimeMessageFactory, MimeMessageFactory>();
