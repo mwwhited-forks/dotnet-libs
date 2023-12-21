@@ -7,6 +7,7 @@ using Eliassen.MailKit;
 using Eliassen.MessageQueueing;
 using Eliassen.MessageQueueing.Hosting;
 using Eliassen.Microsoft.B2C;
+using Eliassen.MongoDB.Extensions;
 using Eliassen.System;
 using Eliassen.WebApi.Provider;
 
@@ -27,7 +28,8 @@ public class Program
 
         // Add internal services
         services
-            .TryAllSystemExtensions(builder.Configuration)
+            .TryAddSystemExtensions(builder.Configuration)
+            .TryAddMongoServices(builder.Configuration)
 
             .TryAddMessageQueueingServices()
                 .TryAddMessageQueueingHosting()
@@ -37,7 +39,7 @@ public class Program
                 .TryAddCommunicationQueueServices()
                 .TryAddMailKitExtensions(builder.Configuration)
 
-            .AddMicrosoftB2CServices()
+            .AddMicrosoftB2CServices() //TODO: rename this to identity management
 
             .TryAddAspNetCoreExtensions(requireApplicationUserId: false)
                 .TryAddJwtBearerServices(builder.Configuration)

@@ -50,7 +50,7 @@ Common libraries to enable MongoDB Support
 ### Methods
 
 
-#### AddMongoServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+#### TryAddMongoServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
 Enable common infrastructure.
     #####Parameters
     **services:** 

@@ -110,7 +110,7 @@ public class MessageSenderTests
 
         var serviceCollection = new ServiceCollection()
             .TryAddMessageQueueingServices()
-            .TryAllSystemExtensions(config)
+            .TryAddSystemExtensions(config)
             ;
 
         serviceCollection.AddLogging(builder => builder

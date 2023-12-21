@@ -126,6 +126,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Communications.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Communications.MessageQueueing", "Framework\Eliassen.Communications.MessageQueueing\Eliassen.Communications.MessageQueueing.csproj", "{4E28E35D-36C9-44F2-A676-2F318997E09A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{0D029514-4C08-465F-8842-D3E59E9F5099}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.TemplateEngine.Cli", "Tools\Eliassen.TemplateEngine.Cli\Eliassen.TemplateEngine.Cli.csproj", "{52E2A264-82B8-4A68-8EB1-FBF5C3A61761}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -232,6 +236,10 @@ Global
 		{4E28E35D-36C9-44F2-A676-2F318997E09A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E28E35D-36C9-44F2-A676-2F318997E09A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E28E35D-36C9-44F2-A676-2F318997E09A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E2A264-82B8-4A68-8EB1-FBF5C3A61761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E2A264-82B8-4A68-8EB1-FBF5C3A61761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E2A264-82B8-4A68-8EB1-FBF5C3A61761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E2A264-82B8-4A68-8EB1-FBF5C3A61761}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -272,6 +280,7 @@ Global
 		{8CDF7D35-979C-43AD-9CC1-0BF30EAB7963} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{E7A11D0C-A892-415B-BAF2-9EAFCFA12221} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{4E28E35D-36C9-44F2-A676-2F318997E09A} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
+		{52E2A264-82B8-4A68-8EB1-FBF5C3A61761} = {0D029514-4C08-465F-8842-D3E59E9F5099}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

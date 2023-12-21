@@ -462,7 +462,7 @@ Suggested IOC configurations
 ### Methods
 
 
-#### TryAllSystemExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+#### TryAddSystemExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
 This will add all available extensions to the IOC container
     #####Parameters
     **services:** 
@@ -534,7 +534,7 @@ Get singleton instance from IOC container
     ##### Return value
     
 
-## Class: System.Text.Json.BsonDateConverter
+## Class: System.Text.Json.BsonDateTimeOffsetConverter
 System.Text.Json converter to support BsonDatetimeOffset
 
 ## Class: System.Text.Json.BsonIdConverter
@@ -554,6 +554,9 @@ Convert System.Test.Json.JsonDocument to System.Xml.XmlDocument
 
     ##### Return value
     
+
+## Class: System.Text.Json.Serialization.DefaultBsonSerializer
+Default serializer for JSON
 
 ## Class: System.Text.Json.Serialization.DefaultJsonSerializer
 Default serializer for JSON

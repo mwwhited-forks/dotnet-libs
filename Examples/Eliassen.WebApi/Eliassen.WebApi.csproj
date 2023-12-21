@@ -19,13 +19,21 @@
 	  <ProjectReference Include="..\..\ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Eliassen.Microsoft.B2C.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.AspNetCore.JwtAuthentication\Eliassen.AspNetCore.JwtAuthentication.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
-	  <ProjectReference Include="..\..\Framework\Eliassen.Communications.Abstractions\Eliassen.Communications.Abstractions.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.Communications.MessageQueueing\Eliassen.Communications.MessageQueueing.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.Communications\Eliassen.Communications.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.Handlebars.Extensions\Eliassen.Handlebars.Extensions.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.MessageQueueing.Hosting\Eliassen.MessageQueueing.Hosting.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.MessageQueueing\Eliassen.MessageQueueing.csproj" />
+	  <ProjectReference Include="..\..\Framework\Eliassen.MongoDB.Extensions\Eliassen.MongoDB.Extensions.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.System\Eliassen.System.csproj" />
 	</ItemGroup>
+
+	<Target Name="BuildSwagger">
+		<!--AfterTargets="PostBuildEvent"-->
+		<MakeDir Directories="$(DocumentPath)" Condition="!Exists('$(DocumentPath)')" ContinueOnError="true" />
+		<Exec Command="dotnet tool restore" ContinueOnError="true" />
+		<Exec Command="dotnet swagger tofile --output &quot;$(DocumentPath)swagger.json&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" ContinueOnError="true" />
+		<Exec Command="dotnet swagger tofile --yaml --output &quot;$(DocumentPath)swagger.yaml&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" ContinueOnError="true" />
+	</Target>
 
 </Project>

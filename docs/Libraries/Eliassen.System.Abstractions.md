@@ -161,13 +161,7 @@ cryptographic has for input value
     ##### Return value
     hash input
 
-## Class: System.Text.Json.Serialization.IJsonSerializer
-interface to identify shared JSON serialization process.
-
-## Class: System.Text.Xml.Serialization.IXmlSerializer
-interface to identify shared XML serialization process.
-
-## Class: Dataloader.Cli.ISerializer
+## Class: System.Text.ISerializer
 Interface to identify shared serialization process.
 ### Properties
 
@@ -243,8 +237,6 @@ convert stream into object
     #####Parameters
     **stream:** 
 
-    **stream:** 
-
     **cancellationToken:** 
 
     ##### Return value
@@ -279,3 +271,12 @@ convert stream into object
 
     ##### Return value
     
+
+## Class: System.Text.Json.Serialization.IBsonSerializer
+interface to identify shared BSON serialization process.
+
+## Class: System.Text.Json.Serialization.IJsonSerializer
+interface to identify shared JSON serialization process.
+
+## Class: System.Text.Xml.Serialization.IXmlSerializer
+interface to identify shared XML serialization process.

@@ -27,7 +27,7 @@ public static class ServiceCollectionExtensions
     /// <param name="services"></param>
     /// <param name="config"></param>
     /// <returns></returns>
-    public static IServiceCollection TryAllSystemExtensions(this IServiceCollection services, IConfiguration config) =>
+    public static IServiceCollection TryAddSystemExtensions(this IServiceCollection services, IConfiguration config) =>
         services
         .TryAddSearchQueryExtensions()
         .TrySecurityExtensions()

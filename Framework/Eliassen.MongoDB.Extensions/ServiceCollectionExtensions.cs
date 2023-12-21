@@ -16,7 +16,7 @@ namespace Eliassen.MongoDB.Extensions
         /// <param name="services"></param>
         /// <param name="config"></param>
         /// <returns></returns>
-        public static IServiceCollection AddMongoServices(this IServiceCollection services, IConfiguration config)
+        public static IServiceCollection TryAddMongoServices(this IServiceCollection services, IConfiguration config)
         {
             services.AddConfiguration<DefaultMongoDatabaseSettings>(config);
             services.TryAddSingleton<IMongoDatabaseFactory, MongoDatabaseFactory>();
