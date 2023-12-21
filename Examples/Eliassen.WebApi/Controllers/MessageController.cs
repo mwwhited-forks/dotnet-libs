@@ -19,6 +19,7 @@ namespace Eliassen.WebApi.Controllers
         }
 
         [HttpPost("public")]
+        [AllowAnonymous]
         public async Task<string> TestMessage([FromBody] ExampleMessageModel model, string? correlationId = default) =>
             await _provider.PostAsync(model, correlationId);
 

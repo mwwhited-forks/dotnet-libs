@@ -1,15 +1,19 @@
-﻿using Eliassen.AspNetCore.Mvc.Filters;
+﻿using Eliassen.AspNetCore.JwtAuthentication.Authorization;
+using Eliassen.AspNetCore.Mvc.Filters;
 using Eliassen.AspNetCore.Mvc.SwaggerGen;
 using Eliassen.System;
 using Eliassen.System.Linq.Search;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
+using System;
 using System.Globalization;
 using System.Security.Claims;
 
@@ -22,8 +26,16 @@ public static class ServiceCollectionExtensions
     /// Add IOC configurations to support all ASP.Net Core extensions provided by this library.
     /// </summary>
     /// <param name="services"></param>
+    /// <param name="requireAuthenticatedByDefault"></param>
+    /// <param name="requireApplicationUserId"></param>
+    /// <param name="authorizationPolicyBuilder"></param>
     /// <returns></returns>
-    public static IServiceCollection TryAddAspNetCoreExtensions(this IServiceCollection services)
+    public static IServiceCollection TryAddAspNetCoreExtensions(
+        this IServiceCollection services,
+        bool requireAuthenticatedByDefault = UserAuthorizationRequirement.RequireAuthenticatedByDefault,
+        bool requireApplicationUserId = UserAuthorizationRequirement.RequireApplicationUserIdDefault,
+        Action<AuthorizationPolicyBuilder>? authorizationPolicyBuilder = null
+        )
     {
         services.TryAddCommonOpenApiExtensions();
         services.TryAddAspNetCoreSearchQuery();
@@ -40,8 +52,45 @@ public static class ServiceCollectionExtensions
 
         services.AddSwaggerGen();
 
+        if (requireAuthenticatedByDefault)
+        {
+            services.AddRequireAuthenticatedUser(requireApplicationUserId, authorizationPolicyBuilder);
+        }
+
         return services;
     }
+
+    public static IServiceCollection AddRequireAuthenticatedUser(
+        this IServiceCollection services,
+        bool requireApplicationUserId = UserAuthorizationRequirement.RequireApplicationUserIdDefault,
+        Action<AuthorizationPolicyBuilder>? authorizationPolicyBuilder = null
+        )
+    {
+        // Adding in the magic sauce that connects B2C Bearer tokens to our internal users
+        services.AddSingleton<IAuthorizationHandler, UserAuthorizationHandler>();
+
+        //Policy builder
+
+        var policyBuilder = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .AddRequirements(new UserAuthorizationRequirement(requireApplicationUserId));
+        authorizationPolicyBuilder?.Invoke(policyBuilder);
+
+        var authorizationPolicy = policyBuilder.Build();
+
+        services.AddAuthorization(options =>
+        {
+            options.DefaultPolicy = authorizationPolicy;
+        });
+
+        services.AddControllers(options =>
+        {
+            options.Filters.Add(new AuthorizeFilter(authorizationPolicy));
+        });
+
+        return services;
+    }
+
 
     /// <summary>
     /// Enable extensions for Swagger/OpenAPI (included in AddAspNetCoreExtensions)

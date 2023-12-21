@@ -1,5 +1,8 @@
-﻿using Eliassen.AspNetCore.SwaggerGen.B2C;
+﻿using Eliassen.AspNetCore.JwtAuthentication.Authorization;
+using Eliassen.AspNetCore.SwaggerGen.B2C;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -23,17 +26,19 @@ public static class ServiceCollectionExtensions
         ;
 
     public static IServiceCollection TryAddJwtBearerAuthentication(
-        this IServiceCollection services,
-        IConfiguration configuration,
-        string defaultScheme = JwtBearerDefaults.AuthenticationScheme,
-        string configurationSection = nameof(JwtBearerOptions)
-        )
+         this IServiceCollection services,
+         IConfiguration configuration,
+         string defaultScheme = JwtBearerDefaults.AuthenticationScheme,
+         string configurationSection = nameof(JwtBearerOptions)
+         )
     {
-        services.AddAuthentication(defaultScheme).AddJwtBearer();
         services.Configure<JwtBearerOptions>(options => configuration.Bind(configurationSection, options));
+        services
+            .AddAuthentication(defaultScheme)
+            .AddJwtBearer(options => configuration.Bind(configurationSection, options));
+
         return services;
     }
-
     public static IServiceCollection TryAddJwtBearerSwaggerGen(
         this IServiceCollection services,
         IConfiguration configuration,

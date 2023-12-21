@@ -1,9 +1,9 @@
 using Eliassen.AspNetCore.JwtAuthentication;
 using Eliassen.AspNetCore.Mvc;
-using Eliassen.AspNetCore.SwaggerGen.B2C;
 using Eliassen.Azure.StorageAccount;
 using Eliassen.MessageQueueing;
 using Eliassen.MessageQueueing.Hosting;
+using Eliassen.Microsoft.B2C;
 using Eliassen.System;
 using Eliassen.WebApi.Provider;
 
@@ -29,7 +29,9 @@ public class Program
             .TryAllSystemExtensions(builder.Configuration)
             .TryAddAzureStorageAccountServices()
 
-            .TryAddAspNetCoreExtensions()
+            .AddMicrosoftB2CServices()
+
+            .TryAddAspNetCoreExtensions(requireApplicationUserId: false)
             .TryAddJwtBearerServices(builder.Configuration)
             ;
 
@@ -47,8 +49,6 @@ public class Program
 
         var app = builder.Build();
 
-        app.UseAspNetCoreExtensionMiddleware();
-
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
@@ -57,6 +57,10 @@ public class Program
         }
 
         app.UseHttpsRedirection();
+
+        app.UseAspNetCoreExtensionMiddleware();
+
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapControllers();
