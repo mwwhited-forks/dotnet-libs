@@ -114,6 +114,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MessageQueueing.Ho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.AspNetCore.JwtAuthentication", "Framework\Eliassen.AspNetCore.JwtAuthentication\Eliassen.AspNetCore.JwtAuthentication.csproj", "{4B4A7D0F-9FC5-4B47-AFC9-07A3D6C51BE5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MailKit", "MailKit", "{8348F5A5-13B0-46FD-93A1-11978029E0ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MailKit", "ExternalServices\MailKit\Eliassen.MailKit\Eliassen.MailKit.csproj", "{86B24926-0CDB-4F3A-98FF-2D315D806530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Communications.Abstractions", "Framework\Eliassen.Communications.Abstractions\Eliassen.Communications.Abstractions.csproj", "{A8CFB453-5167-44C6-9DDE-AD99B933E590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Communications", "Framework\Eliassen.Communications\Eliassen.Communications.csproj", "{8CDF7D35-979C-43AD-9CC1-0BF30EAB7963}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Communications.Tests", "Framework\Eliassen.Communications.Tests\Eliassen.Communications.Tests.csproj", "{E7A11D0C-A892-415B-BAF2-9EAFCFA12221}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -200,6 +210,22 @@ Global
 		{4B4A7D0F-9FC5-4B47-AFC9-07A3D6C51BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B4A7D0F-9FC5-4B47-AFC9-07A3D6C51BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B4A7D0F-9FC5-4B47-AFC9-07A3D6C51BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86B24926-0CDB-4F3A-98FF-2D315D806530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86B24926-0CDB-4F3A-98FF-2D315D806530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86B24926-0CDB-4F3A-98FF-2D315D806530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86B24926-0CDB-4F3A-98FF-2D315D806530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8CFB453-5167-44C6-9DDE-AD99B933E590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8CFB453-5167-44C6-9DDE-AD99B933E590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8CFB453-5167-44C6-9DDE-AD99B933E590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8CFB453-5167-44C6-9DDE-AD99B933E590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CDF7D35-979C-43AD-9CC1-0BF30EAB7963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CDF7D35-979C-43AD-9CC1-0BF30EAB7963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CDF7D35-979C-43AD-9CC1-0BF30EAB7963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CDF7D35-979C-43AD-9CC1-0BF30EAB7963}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7A11D0C-A892-415B-BAF2-9EAFCFA12221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7A11D0C-A892-415B-BAF2-9EAFCFA12221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7A11D0C-A892-415B-BAF2-9EAFCFA12221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7A11D0C-A892-415B-BAF2-9EAFCFA12221}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -234,6 +260,11 @@ Global
 		{9C7C28F7-9DAA-4602-B2EE-B6777CBCC1B2} = {6BEF035F-ABDF-47D9-B230-B88FEE87B53B}
 		{DDEB401D-7CB2-4D57-AD81-3A88FBE24E5B} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{4B4A7D0F-9FC5-4B47-AFC9-07A3D6C51BE5} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
+		{8348F5A5-13B0-46FD-93A1-11978029E0ED} = {23338E7F-E943-4D99-B58C-CFBB7F2F53B2}
+		{86B24926-0CDB-4F3A-98FF-2D315D806530} = {8348F5A5-13B0-46FD-93A1-11978029E0ED}
+		{A8CFB453-5167-44C6-9DDE-AD99B933E590} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
+		{8CDF7D35-979C-43AD-9CC1-0BF30EAB7963} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
+		{E7A11D0C-A892-415B-BAF2-9EAFCFA12221} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}
