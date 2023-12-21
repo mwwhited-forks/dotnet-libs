@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Azure.StorageAccount.Tests.TestItems;
 
-public class TestMessageHandlerWithProvider : IMessageHandler<AzureStorageQueueMessageSenderProviderTests>
+public class TestMessageHandlerWithProvider : IMessageQueueHandler<AzureStorageQueueMessageSenderProviderTests>
 {
     private readonly ILogger _logger;
     private readonly TestContext _testContext;

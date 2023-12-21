@@ -8,13 +8,13 @@ namespace Eliassen.MessageQueueing.Services;
 
 public class MessageReceiverProviderFactory : IMessageReceiverProviderFactory
 {
-    private readonly IEnumerable<IMessageHandler> _handlers;
+    private readonly IEnumerable<IMessageQueueHandler> _handlers;
     private readonly IMessagePropertyResolver _resolver;
     private readonly IServiceProvider _serviceProvider;
     private readonly ILogger _logger;
 
     public MessageReceiverProviderFactory(
-        IEnumerable<IMessageHandler> handlers,
+        IEnumerable<IMessageQueueHandler> handlers,
         IMessagePropertyResolver resolver,
         IServiceProvider serviceProvider,
         ILogger<MessageReceiverProviderFactory> logger
@@ -32,7 +32,7 @@ public class MessageReceiverProviderFactory : IMessageReceiverProviderFactory
 
                                 let handlerType = handler.GetType()
                                 let handlerInterfaces = from @interface in handlerType.GetInterfaces()
-                                                        where typeof(IMessageHandler).IsAssignableFrom(@interface)
+                                                        where typeof(IMessageQueueHandler).IsAssignableFrom(@interface)
                                                         orderby @interface.GenericTypeArguments.Length descending
                                                         select @interface
                                 let handlerInterface = handlerInterfaces.FirstOrDefault()

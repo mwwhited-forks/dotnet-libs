@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eliassen.MessageQueueing;
 
-public class MessageSender<TChannel> : IMessageSender<TChannel>
+public class MessageSender<TChannel> : IMessageQueueSender<TChannel>
 {
     private readonly IMessageContextFactory _context;
     private readonly IMessageSenderProviderFactory _provider;

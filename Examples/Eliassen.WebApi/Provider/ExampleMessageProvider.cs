@@ -7,13 +7,13 @@ namespace Eliassen.WebApi.Provider
     {
         Task<string> PostAsync(object message, string? correlationId);
     }
-    public class ExampleMessageProvider : IExampleMessageProvider, IMessageHandler<ExampleMessageProvider>
+    public class ExampleMessageProvider : IExampleMessageProvider, IMessageQueueHandler<ExampleMessageProvider>
     {
-        private readonly IMessageSender _sender;
+        private readonly IMessageQueueSender _sender;
         private readonly ILogger _logger;
 
         public ExampleMessageProvider(
-            IMessageSender<ExampleMessageProvider> sender,
+            IMessageQueueSender<ExampleMessageProvider> sender,
             ILogger<ExampleMessageProvider> logger
             )
         {

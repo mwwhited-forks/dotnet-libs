@@ -1,6 +1,8 @@
 using Eliassen.AspNetCore.JwtAuthentication;
 using Eliassen.AspNetCore.Mvc;
 using Eliassen.Azure.StorageAccount;
+using Eliassen.Communications;
+using Eliassen.MailKit;
 using Eliassen.MessageQueueing;
 using Eliassen.MessageQueueing.Hosting;
 using Eliassen.Microsoft.B2C;
@@ -20,19 +22,23 @@ public class Program
         // Add example application services 
 
         services.AddTransient<IExampleMessageProvider, ExampleMessageProvider>();
-        services.AddTransient<IMessageHandler, ExampleMessageProvider>();
+        services.AddTransient<IMessageQueueHandler, ExampleMessageProvider>();
 
         // Add internal services
         services
-            .TryAddMessageQueueingExtensions()
-            .TryAddMessageQueueingHosting()
             .TryAllSystemExtensions(builder.Configuration)
-            .TryAddAzureStorageAccountServices()
+
+            .TryAddMessageQueueingServices()
+                .TryAddMessageQueueingHosting()
+                .TryAddAzureStorageServices()
+
+            .TryAddCommunicationsServices()
+                .TryAddMailKitExtensions(builder.Configuration)
 
             .AddMicrosoftB2CServices()
 
             .TryAddAspNetCoreExtensions(requireApplicationUserId: false)
-            .TryAddJwtBearerServices(builder.Configuration)
+                .TryAddJwtBearerServices(builder.Configuration)
             ;
 
         // Add services to the container.

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Azure.StorageAccount.Tests.TestItems;
 
-public class TestMessageHandler : IMessageHandler
+public class TestMessageHandler : IMessageQueueHandler
 {
     private readonly ILogger _logger;
     private readonly TestContext _testContext;

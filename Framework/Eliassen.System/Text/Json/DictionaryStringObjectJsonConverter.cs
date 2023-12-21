@@ -12,7 +12,9 @@ public class DictionaryStringObjectJsonConverter : JsonConverter<Dictionary<stri
     public override bool CanConvert(Type typeToConvert)
     {
         return typeToConvert == typeof(Dictionary<string, object>)
-               || typeToConvert == typeof(Dictionary<string, object?>);
+               || typeToConvert == typeof(Dictionary<string, object?>) 
+               || typeToConvert == typeof(IDictionary<string, object>)
+               || typeToConvert == typeof(IDictionary<string, object?>);
     }
 
     public override Dictionary<string, object?> Read(

@@ -13,10 +13,10 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services"></param>
     /// <returns></returns>
-    public static IServiceCollection TryAddMessageQueueingExtensions(this IServiceCollection services)
+    public static IServiceCollection TryAddMessageQueueingServices(this IServiceCollection services)
     {
-        services.TryAddTransient(typeof(IMessageSender<>), typeof(MessageSender<>));
-        services.TryAddTransient<IMessageSender, MessageSender<object>>();
+        services.TryAddTransient(typeof(IMessageQueueSender<>), typeof(MessageSender<>));
+        services.TryAddTransient<IMessageQueueSender, MessageSender<object>>();
 
         services.TryAddTransient<IMessageContext, MessageContext>();
 

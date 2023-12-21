@@ -20,8 +20,4 @@
 		<InternalsVisibleTo Include="Eliassen.Communications.Tests" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Channels\" />
-	</ItemGroup>
-
 </Project>

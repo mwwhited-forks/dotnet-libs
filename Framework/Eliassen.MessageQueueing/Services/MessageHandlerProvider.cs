@@ -17,7 +17,7 @@ public class MessageHandlerProvider : IMessageHandlerProvider
 
     private Type? _channelType;
     private IConfigurationSection? _config;
-    private readonly ConcurrentBag<IMessageHandler> _handlers = new ();
+    private readonly ConcurrentBag<IMessageQueueHandler> _handlers = new ();
 
     public IConfigurationSection Config => _config;
 
@@ -32,7 +32,7 @@ public class MessageHandlerProvider : IMessageHandlerProvider
         _logger = logger;
     }
 
-    public IMessageHandlerProvider SetHandlers(IEnumerable<IMessageHandler> handlers)
+    public IMessageHandlerProvider SetHandlers(IEnumerable<IMessageQueueHandler> handlers)
     {
         foreach (var handler in handlers)
             _handlers.Add(handler);

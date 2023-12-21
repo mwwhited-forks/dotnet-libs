@@ -43,12 +43,12 @@ public class AzureStorageQueueMessageSenderProviderTests
 
         var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
         {
-            services.TryAddAzureStorageAccountServices();
+            services.TryAddAzureStorageServices();
         });
 
         // ---------------
 
-        var sender = service.GetRequiredService<IMessageSender<AzureStorageQueueMessageSenderProviderTests>>();
+        var sender = service.GetRequiredService<IMessageQueueSender<AzureStorageQueueMessageSenderProviderTests>>();
         var correlationId = await sender.SendAsync(new
         {
             hello = "world",
@@ -76,12 +76,12 @@ public class AzureStorageQueueMessageSenderProviderTests
 
         var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
         {
-            services.TryAddAzureStorageAccountServices();
+            services.TryAddAzureStorageServices();
         });
 
         // ---------------
 
-        var sender = service.GetRequiredService<IMessageSender<AzureStorageQueueMessageSenderProviderTests>>();
+        var sender = service.GetRequiredService<IMessageQueueSender<AzureStorageQueueMessageSenderProviderTests>>();
         var correlationId = await sender.SendAsync(new
         {
             hello = "world",
@@ -112,11 +112,11 @@ public class AzureStorageQueueMessageSenderProviderTests
 
         var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
         {
-            services.TryAddAzureStorageAccountServices();
+            services.TryAddAzureStorageServices();
 
-            services.AddTransient<IMessageHandler, TestMessageHandler>();
-            services.AddTransient<IMessageHandler, TestMessageHandlerWithProvider>();
-            services.AddTransient<IMessageHandler, TestMessageHandlerWithProviderAndMessage>();
+            services.AddTransient<IMessageQueueHandler, TestMessageHandler>();
+            services.AddTransient<IMessageQueueHandler, TestMessageHandlerWithProvider>();
+            services.AddTransient<IMessageQueueHandler, TestMessageHandlerWithProviderAndMessage>();
         });
 
         // ---------------
@@ -124,8 +124,8 @@ public class AzureStorageQueueMessageSenderProviderTests
         var configurationSection = config.GetSection($"MessageQueue:{QueueConfig}:Config");
 
 
-        var sender = service.GetRequiredService<IMessageSender<AzureStorageQueueMessageSenderProviderTests>>();
-        var sender2 = service.GetRequiredService<IMessageSender>();
+        var sender = service.GetRequiredService<IMessageQueueSender<AzureStorageQueueMessageSenderProviderTests>>();
+        var sender2 = service.GetRequiredService<IMessageQueueSender>();
 
         var factory = service.GetRequiredService<IMessageReceiverProviderFactory>();
         var providers = factory.Create().ToArray();

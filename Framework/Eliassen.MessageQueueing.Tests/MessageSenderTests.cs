@@ -36,7 +36,7 @@ public class MessageSenderTests
 
         // ---------------
 
-        var sender = service.GetRequiredService<IMessageSender<MessageSenderTests>>();
+        var sender = service.GetRequiredService<IMessageQueueSender<MessageSenderTests>>();
         var correlationId = await sender.SendAsync(new
         {
             hello = "world",
@@ -63,7 +63,7 @@ public class MessageSenderTests
 
         // ---------------
 
-        var sender = service.GetRequiredService<IMessageSender<MessageSenderTests>>();
+        var sender = service.GetRequiredService<IMessageQueueSender<MessageSenderTests>>();
         var correlationId = await sender.SendAsync(new
         {
             hello = "world",
@@ -95,7 +95,7 @@ public class MessageSenderTests
 
         // ---------------
 
-        var sender = service.GetRequiredService<IMessageSender<MessageSenderTests>>();
+        var sender = service.GetRequiredService<IMessageQueueSender<MessageSenderTests>>();
         var correlationId = await sender.SendAsync(new
         {
             hello = "world",
@@ -109,7 +109,7 @@ public class MessageSenderTests
         testContext.AddResult(config);
 
         var serviceCollection = new ServiceCollection()
-            .TryAddMessageQueueingExtensions()
+            .TryAddMessageQueueingServices()
             .TryAllSystemExtensions(config)
             ;
 

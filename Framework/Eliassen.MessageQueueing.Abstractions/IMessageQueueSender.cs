@@ -1,11 +1,11 @@
 ﻿namespace Eliassen.MessageQueueing;
 
 
-public interface IMessageSender
+public interface IMessageQueueSender
 {
     Task<string> SendAsync(object message, string? messageId = default);
 }
 
-public interface IMessageSender<TChannel> : IMessageSender
+public interface IMessageQueueSender<TChannel> : IMessageQueueSender
 {
 }
