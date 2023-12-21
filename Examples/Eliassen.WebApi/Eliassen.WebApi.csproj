@@ -20,6 +20,7 @@
 	  <ProjectReference Include="..\..\Framework\Eliassen.AspNetCore.JwtAuthentication\Eliassen.AspNetCore.JwtAuthentication.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.Communications.Abstractions\Eliassen.Communications.Abstractions.csproj" />
+	  <ProjectReference Include="..\..\Framework\Eliassen.Communications.MessageQueueing\Eliassen.Communications.MessageQueueing.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.Communications\Eliassen.Communications.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.Handlebars.Extensions\Eliassen.Handlebars.Extensions.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.MessageQueueing.Hosting\Eliassen.MessageQueueing.Hosting.csproj" />

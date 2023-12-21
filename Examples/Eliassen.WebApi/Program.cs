@@ -2,6 +2,7 @@ using Eliassen.AspNetCore.JwtAuthentication;
 using Eliassen.AspNetCore.Mvc;
 using Eliassen.Azure.StorageAccount;
 using Eliassen.Communications;
+using Eliassen.Communications.MessageQueueing;
 using Eliassen.MailKit;
 using Eliassen.MessageQueueing;
 using Eliassen.MessageQueueing.Hosting;
@@ -33,6 +34,7 @@ public class Program
                 .TryAddAzureStorageServices()
 
             .TryAddCommunicationsServices()
+                .TryAddCommunicationQueueServices()
                 .TryAddMailKitExtensions(builder.Configuration)
 
             .AddMicrosoftB2CServices()
