@@ -1,11 +1,11 @@
-
+using Eliassen.AspNetCore.JwtAuthentication;
 using Eliassen.AspNetCore.Mvc;
+using Eliassen.AspNetCore.SwaggerGen.B2C;
 using Eliassen.Azure.StorageAccount;
 using Eliassen.MessageQueueing;
 using Eliassen.MessageQueueing.Hosting;
 using Eliassen.System;
 using Eliassen.WebApi.Provider;
-using Eliassen.WebApi.Workers;
 
 namespace Eliassen.WebApi;
 
@@ -27,8 +27,10 @@ public class Program
             .TryAddMessageQueueingExtensions()
             .TryAddMessageQueueingHosting()
             .TryAllSystemExtensions(builder.Configuration)
-            .AddAspNetCoreExtensions()
-            .AddAzureStorageAccountServices()
+            .TryAddAzureStorageAccountServices()
+
+            .TryAddAspNetCoreExtensions()
+            .TryAddJwtBearerServices(builder.Configuration)
             ;
 
         // Add services to the container.
@@ -55,9 +57,7 @@ public class Program
         }
 
         app.UseHttpsRedirection();
-
         app.UseAuthorization();
-
 
         app.MapControllers();
 

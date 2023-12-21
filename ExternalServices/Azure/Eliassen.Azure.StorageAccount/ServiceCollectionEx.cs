@@ -8,7 +8,7 @@ namespace Eliassen.Azure.StorageAccount;
 
 public static class ServiceCollectionEx
 {
-    public static IServiceCollection AddAzureStorageAccountServices(this IServiceCollection services) =>
+    public static IServiceCollection TryAddAzureStorageAccountServices(this IServiceCollection services) =>
         services
             .TryAddAzureStorageBlobServices()
             .TryAddAzureStorageQueueServices()

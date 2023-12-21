@@ -23,7 +23,7 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services"></param>
     /// <returns></returns>
-    public static IServiceCollection AddAspNetCoreExtensions(this IServiceCollection services)
+    public static IServiceCollection TryAddAspNetCoreExtensions(this IServiceCollection services)
     {
         services.TryAddCommonOpenApiExtensions();
         services.TryAddAspNetCoreSearchQuery();
