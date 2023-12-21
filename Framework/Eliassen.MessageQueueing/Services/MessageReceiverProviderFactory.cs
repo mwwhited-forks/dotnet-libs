@@ -70,6 +70,18 @@ public class MessageReceiverProviderFactory : IMessageReceiverProviderFactory
 
             var config = item.First().config.configurationSection;
 
+            var disableReceiverValue = config?["DisableReceiver"];
+            var disableReceiver =
+                string.Equals("TRUE", disableReceiverValue, StringComparison.InvariantCultureIgnoreCase) ||
+                string.Equals("1", disableReceiverValue, StringComparison.InvariantCultureIgnoreCase)
+                ;
+
+            if (disableReceiver)
+            {
+                _logger.LogWarning($"Provider disabled for handlers {{{nameof(handlers)}}}", handlers);
+                continue;
+            }
+
             var handler = _serviceProvider.GetRequiredService<IMessageHandlerProvider>()
                 .SetHandlers(handlers)
                 .SetChannelType(item.Key.channelType)
