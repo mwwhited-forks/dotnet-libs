@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System;
+using System.Collections.Generic;
 
 
 namespace Eliassen.AspNetCore.SwaggerGen.B2C;
