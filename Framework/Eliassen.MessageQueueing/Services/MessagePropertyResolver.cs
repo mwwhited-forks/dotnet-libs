@@ -7,23 +7,16 @@ namespace Eliassen.MessageQueueing.Services;
 /// <summary>
 /// Utility class for resolving properties related to message queue handling.
 /// </summary>
-public class MessagePropertyResolver : IMessagePropertyResolver
+/// <remarks>
+/// Initializes a new instance of the <see cref="MessagePropertyResolver"/> class with the specified configuration.
+/// </remarks>
+/// <param name="configuration">The configuration used for resolving message queue properties.</param>
+public class MessagePropertyResolver(IConfiguration configuration) : IMessagePropertyResolver
 {
     private const string ConfigRootKey = "MessageQueue";
     private const string Default = nameof(Default);
 
-    private readonly IConfiguration _configuration;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MessagePropertyResolver"/> class with the specified configuration.
-    /// </summary>
-    /// <param name="configuration">The configuration used for resolving message queue properties.</param>
-    public MessagePropertyResolver(IConfiguration configuration)
-    {
-        _configuration = configuration;
-    }
-
-    private (string target, string message) GetSimpleNames(Type channelType, Type messageType) =>
+    private static (string target, string message) GetSimpleNames(Type channelType, Type messageType) =>
         (
             channelType == typeof(object) ? Default :
                 channelType.GetCustomAttribute<MessageQueueAttribute>()?.SimpleName ?? channelType.Name,
@@ -43,7 +36,7 @@ public class MessagePropertyResolver : IMessagePropertyResolver
         };
 
         var configs = from key in keys
-                      let config = _configuration.GetSection(key)
+                      let config = configuration.GetSection(key)
                       where config != null
                       where config.GetChildren().Any()
                       select config;

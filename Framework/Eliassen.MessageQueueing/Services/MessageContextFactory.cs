@@ -9,24 +9,16 @@ namespace Eliassen.MessageQueueing.Services;
 /// <summary>
 /// Factory for creating instances of <see cref="IMessageContext"/>.
 /// </summary>
-public class MessageContextFactory : IMessageContextFactory
+/// <remarks>
+/// Initializes a new instance of the <see cref="MessageContextFactory"/> class.
+/// </remarks>
+/// <param name="serviceProvider">The service provider for creating instances.</param>
+/// <param name="user">The claims principal representing the user associated with the message context.</param>
+public class MessageContextFactory(
+    IServiceProvider serviceProvider,
+    ClaimsPrincipal? user
+        ) : IMessageContextFactory
 {
-    private readonly IServiceProvider _serviceProvider;
-    private readonly ClaimsPrincipal? _user;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MessageContextFactory"/> class.
-    /// </summary>
-    /// <param name="serviceProvider">The service provider for creating instances.</param>
-    /// <param name="user">The claims principal representing the user associated with the message context.</param>
-    public MessageContextFactory(
-        IServiceProvider serviceProvider,
-        ClaimsPrincipal? user
-        )
-    {
-        _serviceProvider = serviceProvider;
-        _user = user;
-    }
 
     /// <summary>
     /// Creates a new instance of <see cref="IMessageContext"/> with the specified parameters.
@@ -53,9 +45,9 @@ public class MessageContextFactory : IMessageContextFactory
         string? callerFile
         )
     {
-        var context = ActivatorUtilities.CreateInstance<MessageContext>(_serviceProvider);
+        var context = ActivatorUtilities.CreateInstance<MessageContext>(serviceProvider);
 
-        var userName = (_user ?? ClaimsPrincipal.Current)?.Identity?.Name ?? Environment.UserName;
+        var userName = (user ?? ClaimsPrincipal.Current)?.Identity?.Name ?? Environment.UserName;
 
         context.OriginMessageId = originMessageId;
         context.CorrelationId = correlationId;
@@ -87,7 +79,7 @@ public class MessageContextFactory : IMessageContextFactory
     /// <returns>A new instance of <see cref="IMessageContext"/>.</returns>
     public IMessageContext Create(Type channelType, IQueueMessage message, IConfigurationSection configuration)
     {
-        var context = ActivatorUtilities.CreateInstance<MessageContext>(_serviceProvider);
+        var context = ActivatorUtilities.CreateInstance<MessageContext>(serviceProvider);
 
         context.ChannelType = channelType.AssemblyQualifiedName;
         context.Config = configuration;

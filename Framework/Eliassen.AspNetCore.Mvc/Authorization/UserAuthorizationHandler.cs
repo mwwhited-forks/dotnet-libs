@@ -18,10 +18,7 @@ public class UserAuthorizationHandler : AuthorizationHandler<UserAuthorizationRe
     /// Initializes a new instance of the <see cref="UserAuthorizationHandler"/> class.
     /// </summary>
     /// <param name="logger">The logger.</param>
-    public UserAuthorizationHandler(ILogger<UserAuthorizationHandler> logger)
-    {
-        _logger = logger;
-    }
+    public UserAuthorizationHandler(ILogger<UserAuthorizationHandler> logger) => _logger = logger;
 
     /// <summary>
     /// Handles the user authorization requirement asynchronously.

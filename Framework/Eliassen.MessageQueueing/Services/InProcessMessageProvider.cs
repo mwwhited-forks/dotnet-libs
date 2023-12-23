@@ -11,10 +11,18 @@ namespace Eliassen.Azure.StorageAccount.MessageQueueing;
 /// <summary>
 /// Represents an in-process message provider that implements both <see cref="IMessageSenderProvider"/> and <see cref="IMessageReceiverProvider"/>.
 /// </summary>
-public class InProcessMessageProvider : IMessageSenderProvider, IMessageReceiverProvider
+/// <remarks>
+/// Initializes a new instance of the <see cref="InProcessMessageProvider"/> class.
+/// </remarks>
+/// <param name="serializer">The JSON serializer.</param>
+/// <param name="logger">The logger.</param>
+public class InProcessMessageProvider(
+    IJsonSerializer serializer,
+    ILogger<InProcessMessageProvider> logger
+    ) : IMessageSenderProvider, IMessageReceiverProvider
 {
-    private readonly ISerializer _serializer;
-    private readonly ILogger _logger;
+    private readonly ISerializer _serializer = serializer;
+    private readonly ILogger _logger = logger;
 
     private IMessageHandlerProvider? _handlerProvider;
     private static readonly ConcurrentQueue<WrappedQueueMessage> _queue = new();
@@ -23,20 +31,6 @@ public class InProcessMessageProvider : IMessageSenderProvider, IMessageReceiver
     /// Gets the key associated with the in-process message provider.
     /// </summary>
     public const string MessageProviderKey = "in-process";
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="InProcessMessageProvider"/> class.
-    /// </summary>
-    /// <param name="serializer">The JSON serializer.</param>
-    /// <param name="logger">The logger.</param>
-    public InProcessMessageProvider(
-        IJsonSerializer serializer,
-        ILogger<InProcessMessageProvider> logger
-    )
-    {
-        _serializer = serializer;
-        _logger = logger;
-    }
 
     /// <inheritdoc/>
     public Task<string?> SendAsync(object message, IMessageContext context)
@@ -76,7 +70,7 @@ public class InProcessMessageProvider : IMessageSenderProvider, IMessageReceiver
             if (!_queue.TryDequeue(out var wrapped))
             {
                 _logger.LogInformation("Nothing received, waiting...");
-                await Task.Delay(1000);  // TODO: this should be configurable
+                await Task.Delay(1000, cancellationToken);  // TODO: this should be configurable
                 continue;
             }
 

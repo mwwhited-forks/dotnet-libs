@@ -10,7 +10,6 @@ using System.Linq;
 
 namespace Eliassen.System.Linq.Search;
 
-/// <inheritdoc/>
 public abstract class QueryBuilder
 {
     /// <summary>
@@ -90,7 +89,6 @@ public abstract class QueryBuilder
             messages
             ).ExecuteBy(query, searchQuery);
 
-    /// <inheritdoc />
     public static IQueryResult<TModel> Execute<TModel>(
         IQueryable<TModel> query,
         ISearchQuery searchQuery,
@@ -104,32 +102,18 @@ public abstract class QueryBuilder
             default
             ).ExecuteBy(query, searchQuery);
 }
-/// <inheritdoc/>
-public class QueryBuilder<TModel> : QueryBuilder, IQueryBuilder<TModel>
+public class QueryBuilder<TModel>(
+    ISortBuilder<TModel> sortBuilder,
+    IExpressionTreeBuilder<TModel> expressionBuilder,
+    IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
+    ILogger<QueryBuilder>? logger = null,
+    ICaptureResultMessage? messages = null
+        ) : QueryBuilder, IQueryBuilder<TModel>
 {
-    private readonly ISortBuilder<TModel> _sortBuilder;
-    private readonly IExpressionTreeBuilder<TModel> _expressionBuilder;
-    private readonly IEnumerable<IPostBuildExpressionVisitor> _postBuildVisitors;
-    private readonly ILogger _logger;
-    private readonly ICaptureResultMessage _messages;
+    private readonly IEnumerable<IPostBuildExpressionVisitor> _postBuildVisitors = postBuildVisitors ?? Enumerable.Empty<IPostBuildExpressionVisitor>();
+    private readonly ILogger _logger = logger ?? new ConsoleLogger<QueryBuilder>();
+    private readonly ICaptureResultMessage _messages = messages ?? CaptureResultMessage.Default;
 
-    /// <inheritdoc/>
-    public QueryBuilder(
-        ISortBuilder<TModel> sortBuilder,
-        IExpressionTreeBuilder<TModel> expressionBuilder,
-        IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
-        ILogger<QueryBuilder>? logger = null,
-        ICaptureResultMessage? messages = null
-        )
-    {
-        _sortBuilder = sortBuilder;
-        _expressionBuilder = expressionBuilder;
-        _postBuildVisitors = postBuildVisitors ?? Enumerable.Empty<IPostBuildExpressionVisitor>();
-        _logger = logger ?? new ConsoleLogger<QueryBuilder>();
-        _messages = messages ?? CaptureResultMessage.Default;
-    }
-
-    /// <inheritdoc/>
     public IQueryResult<TModel> ExecuteBy(
         IQueryable<TModel> query,
         ISearchQuery searchQuery
@@ -151,7 +135,6 @@ public class QueryBuilder<TModel> : QueryBuilder, IQueryBuilder<TModel>
         }
     }
 
-    /// <inheritdoc/>
     public IQueryResult ExecuteBy(IQueryable query, ISearchQuery searchQuery) =>
         ExecuteBy((query as IQueryable<TModel>) ?? throw new NotSupportedException(), searchQuery);
 
@@ -204,12 +187,12 @@ public class QueryBuilder<TModel> : QueryBuilder, IQueryBuilder<TModel>
         return sorted;
     }
 
-    private IPagedQueryResult<TModel> PageBy(
+    private PagedQueryResult<TModel> PageBy(
         IOrderedQueryable<TModel> query,
         IPageQuery? pager
         )
     {
-        if (query == null) throw new ArgumentNullException(nameof(query));
+        ArgumentNullException.ThrowIfNull(query, nameof(query));
 
         var pageLength = (pager?.PageSize ?? 0) <= 0 ? DefaultPageSize : pager?.PageSize ?? DefaultPageSize;
         var page = (pager?.CurrentPage ?? 0) < 0 ? 0 : pager?.CurrentPage ?? 0;
@@ -246,10 +229,11 @@ public class QueryBuilder<TModel> : QueryBuilder, IQueryBuilder<TModel>
         bool isSearchTerm
         )
     {
-        if (query == null) throw new ArgumentNullException(nameof(query));
+
+        ArgumentNullException.ThrowIfNull(query, nameof(query)); 
         if (!string.IsNullOrWhiteSpace(search?.SearchTerm))
         {
-            var searchTermExpression = _expressionBuilder.BuildExpression(search.SearchTerm, stringComparison, isSearchTerm);
+            var searchTermExpression = expressionBuilder.BuildExpression(search.SearchTerm, stringComparison, isSearchTerm);
             if (searchTermExpression != null)
                 return query.Where(searchTermExpression);
         }
@@ -262,12 +246,12 @@ public class QueryBuilder<TModel> : QueryBuilder, IQueryBuilder<TModel>
         StringComparison stringComparison
         )
     {
-        if (query == null) throw new ArgumentNullException(nameof(query));
+        ArgumentNullException.ThrowIfNull(query, nameof(query));
         if (filter?.Filter != null)
         {
             foreach (var item in filter.Filter)
             {
-                var filterExpression = _expressionBuilder.GetPredicateExpression(item.Key, item.Value, stringComparison, false);
+                var filterExpression = expressionBuilder.GetPredicateExpression(item.Key, item.Value, stringComparison, false);
                 if (filterExpression != null)
                 {
                     query = query.Where(filterExpression);
@@ -294,9 +278,10 @@ public class QueryBuilder<TModel> : QueryBuilder, IQueryBuilder<TModel>
         StringComparison keyStringComparer
         )
     {
-        if (query == null) throw new ArgumentNullException(nameof(query));
 
-        query = sortBy != null ? _sortBuilder.SortBy(query, sortBy, _expressionBuilder, keyStringComparer) : query;
+        ArgumentNullException.ThrowIfNull(query, nameof(query)); 
+
+        query = sortBy != null ? sortBuilder.SortBy(query, sortBy, expressionBuilder, keyStringComparer) : query;
         if (query is IOrderedQueryable<TModel> sorted)
             return sorted;
         return query.OrderBy(_ => 0);

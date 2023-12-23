@@ -4,27 +4,19 @@ using Microsoft.Extensions.Logging;
 
 namespace Eliassen.MailKit.Services;
 
-public class MailKitProvider : ICommunicationSender<EmailMessageModel>
+public class MailKitProvider(
+    IMimeMessageFactory email,
+    ISmtpClientFactory smtp,
+    ILogger<MailKitProvider> log
+        ) : ICommunicationSender<EmailMessageModel>
 {
-    private readonly IMimeMessageFactory _email;
-    private readonly ISmtpClientFactory _smtp;
-    private readonly ILogger _log;
-
-    public MailKitProvider(
-        IMimeMessageFactory email,
-        ISmtpClientFactory smtp,
-        ILogger<MailKitProvider> log
-        )
-    {
-        _email = email;
-        _smtp = smtp;
-        _log = log;
-    }
+    private readonly IMimeMessageFactory _email = email;
+    private readonly ILogger _log = log;
 
     public async Task<string> SendAsync(EmailMessageModel message)
     {
         var email = _email.Create(message);
-        using var client = await _smtp.Create();
+        using var client = await smtp.Create();
 
         var reference = await client.SendAsync(email);
         await client.DisconnectAsync(true);

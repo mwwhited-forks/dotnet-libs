@@ -11,11 +11,21 @@ namespace Eliassen.MessageQueueing.Services;
 /// <summary>
 /// Provides handling of queue messages by coordinating multiple <see cref="IMessageQueueHandler"/> instances.
 /// </summary>
-public class MessageHandlerProvider : IMessageHandlerProvider
+/// <remarks>
+/// Initializes a new instance of the <see cref="MessageHandlerProvider"/> class.
+/// </remarks>
+/// <param name="serializer">The JSON serializer.</param>
+/// <param name="context">The factory for creating instances of <see cref="IMessageContext"/>.</param>
+/// <param name="logger">The logger for logging messages.</param>
+public class MessageHandlerProvider(
+    IJsonSerializer serializer,
+    IMessageContextFactory context,
+    ILogger<MessageHandlerProvider> logger
+        ) : IMessageHandlerProvider
 {
-    private readonly ISerializer _serializer;
-    private readonly IMessageContextFactory _context;
-    private readonly ILogger _logger;
+    private readonly ISerializer _serializer = serializer;
+    private readonly IMessageContextFactory _context = context;
+    private readonly ILogger _logger = logger;
 
     private Type? _channelType;
     private IConfigurationSection _config = null!;
@@ -25,23 +35,6 @@ public class MessageHandlerProvider : IMessageHandlerProvider
     /// Gets the configuration section associated with the message handler.
     /// </summary>
     public IConfigurationSection Config => _config ?? throw new ApplicationException($"Missing Configuration");
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MessageHandlerProvider"/> class.
-    /// </summary>
-    /// <param name="serializer">The JSON serializer.</param>
-    /// <param name="context">The factory for creating instances of <see cref="IMessageContext"/>.</param>
-    /// <param name="logger">The logger for logging messages.</param>
-    public MessageHandlerProvider(
-        IJsonSerializer serializer,
-        IMessageContextFactory context,
-        ILogger<MessageHandlerProvider> logger
-        )
-    {
-        _serializer = serializer;
-        _context = context;
-        _logger = logger;
-    }
 
     /// <summary>
     /// Sets the collection of <see cref="IMessageQueueHandler"/> instances that will handle the messages.

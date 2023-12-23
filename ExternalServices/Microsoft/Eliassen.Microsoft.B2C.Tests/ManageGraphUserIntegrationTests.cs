@@ -16,7 +16,7 @@ public class ManageGraphUserIntegrationTests
 {
     public TestContext TestContext { get; set; } = null!;
 
-    private IConfiguration GetConfiguration(IServiceCollection services) =>
+    private static IConfiguration GetConfiguration(IServiceCollection services) =>
         new ConfigurationBuilder()
             .AddInMemoryCollection(
                         (ConfigKeys.Azure.ADB2C.ClientID, "6721294c-f956-4290-9629-6455b92fbcf2"),
@@ -26,7 +26,7 @@ public class ManageGraphUserIntegrationTests
                 )
             .Build();
 
-    private IServiceProvider GetIntegrationServiceProvider()
+    private static ServiceProvider GetIntegrationServiceProvider()
     {
         var services = new ServiceCollection()
             .AddLogging(logging => logging.AddConsole())
@@ -80,9 +80,8 @@ public class ManageGraphUserIntegrationTests
         // Test
         var manageGraphUser = serviceProvider.GetRequiredService<IIdentityManager>();
 
-        var result = await manageGraphUser.GetGraphUsersByEmail(emailAddress);
-
-        if (result == null) throw new ApplicationException($"{nameof(manageGraphUser.GetGraphUsersByEmail)} should return a value");
+        var result = await manageGraphUser.GetGraphUsersByEmail(emailAddress)
+            ?? throw new ApplicationException($"{nameof(manageGraphUser.GetGraphUsersByEmail)} should return a value");
 
         foreach (var item in result)
         {

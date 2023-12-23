@@ -7,7 +7,7 @@ namespace Eliassen.Azure.StorageAccount.MessageQueueing;
 public class QueueClientFactory : IQueueClientFactory
 {
     public QueueClient Create(IConfigurationSection config) =>
-         new QueueClient(
+         new(
             config["ConnectionString"] ?? throw new ApplicationException($"Configuration \"{config.Path}:ConnectionString\" is missing"),
             config["QueueName"] ?? throw new ApplicationException($"Configuration \"{config.Path}:QueueName\" is missing"),
             new QueueClientOptions

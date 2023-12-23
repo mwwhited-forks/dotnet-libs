@@ -9,24 +9,17 @@ namespace Eliassen.Communications.MessageQueueing;
 /// <summary>
 /// Represents a message handler for handling and sending email messages.
 /// </summary>
-public class EmailMessageHandler : IMessageQueueHandler<EmailMessageModel, EmailMessageModel>
+/// <remarks>
+/// Initializes a new instance of the <see cref="EmailMessageHandler"/> class.
+/// </remarks>
+/// <param name="email">The communication sender for email messages.</param>
+/// <param name="logger">The logger.</param>
+public class EmailMessageHandler(
+    ICommunicationSender<EmailMessageModel> email,
+    ILogger<EmailMessageHandler> logger
+    ) : IMessageQueueHandler<EmailMessageModel, EmailMessageModel>
 {
-    private readonly ICommunicationSender<EmailMessageModel> _email;
-    private readonly ILogger _logger;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EmailMessageHandler"/> class.
-    /// </summary>
-    /// <param name="email">The communication sender for email messages.</param>
-    /// <param name="logger">The logger.</param>
-    public EmailMessageHandler(
-        ICommunicationSender<EmailMessageModel> email,
-        ILogger<EmailMessageHandler> logger
-    )
-    {
-        _email = email;
-        _logger = logger;
-    }
+    private readonly ILogger _logger = logger;
 
     /// <summary>
     /// Handles the specified email message asynchronously.
@@ -38,7 +31,7 @@ public class EmailMessageHandler : IMessageQueueHandler<EmailMessageModel, Email
     {
         message.ReferenceId ??= context.CorrelationId;
         _logger.LogInformation("Sending {subject} for {from} [{id}]", message.Subject, message.FromAddress, message.ReferenceId);
-        return _email.SendAsync(message);
+        return email.SendAsync(message);
     }
 
     /// <summary>

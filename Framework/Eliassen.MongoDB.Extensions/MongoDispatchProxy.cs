@@ -1,6 +1,7 @@
 ﻿using Eliassen.System.Text.Json.Serialization;
 using MongoDB.Driver;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -20,7 +21,7 @@ namespace Eliassen.MongoDB.Extensions
 
         protected override object? Invoke(MethodInfo? targetMethod, object?[]? args)
         {
-            if (targetMethod == null) throw new ArgumentNullException(nameof(targetMethod));
+            ArgumentNullException.ThrowIfNull(targetMethod, nameof(targetMethod));
 
             if (_collections.TryGetValue(targetMethod, out var ret))
             {

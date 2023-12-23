@@ -10,30 +10,24 @@ namespace Eliassen.Microsoft.B2C.Identity;
 /// <summary>
 /// Implementation of <see cref="IManageGraphUser"/> and <see cref="IIdentityManager"/> for managing users in Microsoft Graph.
 /// </summary>
-public class ManageGraphUser : IManageGraphUser, IIdentityManager
+/// <remarks>
+/// Initializes a new instance of the <see cref="ManageGraphUser"/> class.
+/// </remarks>
+/// <param name="log">The logger.</param>
+/// <param name="config">The configuration.</param>
+public class ManageGraphUser(
+    ILogger<ManageGraphUser> log,
+    IConfiguration config
+        ) : IManageGraphUser, IIdentityManager
 {
-    private readonly ILogger _log;
-    private readonly IConfiguration _config;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ManageGraphUser"/> class.
-    /// </summary>
-    /// <param name="log">The logger.</param>
-    /// <param name="config">The configuration.</param>
-    public ManageGraphUser(
-        ILogger<ManageGraphUser> log,
-        IConfiguration config
-        )
-    {
-        _log = log;
-        _config = config;
-    }
+    private readonly ILogger _log = log;
+    private readonly IConfiguration _config = config;
 
     /// <summary>
     /// Gets the authentication provider for Microsoft Graph.
     /// </summary>
     /// <returns>The authentication provider.</returns>
-    private TokenCredential GetAuthProvider()
+    private ClientSecretCredential GetAuthProvider()
     {
         var config = new
         {

@@ -8,24 +8,17 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Azure.StorageAccount.MessageQueueing;
 
-public class AzureStorageQueueMessageProvider : IMessageSenderProvider, IMessageReceiverProvider
+public class AzureStorageQueueMessageProvider(
+    IJsonSerializer serializer,
+    IQueueClientFactory client,
+    ILogger<AzureStorageQueueMessageProvider> logger
+        ) : IMessageSenderProvider, IMessageReceiverProvider
 {
-    private readonly ISerializer _serializer;
-    private readonly IQueueClientFactory _client;
-    private readonly ILogger _logger;
+    private readonly ISerializer _serializer = serializer;
+    private readonly IQueueClientFactory _client = client;
+    private readonly ILogger _logger = logger;
 
     private IMessageHandlerProvider? _handlerProvider;
-
-    public AzureStorageQueueMessageProvider(
-        IJsonSerializer serializer,
-        IQueueClientFactory client,
-        ILogger<AzureStorageQueueMessageProvider> logger
-        )
-    {
-        _serializer = serializer;
-        _client = client;
-        _logger = logger;
-    }
 
     public async Task<string?> SendAsync(object message, IMessageContext context)
     {
@@ -66,7 +59,7 @@ public class AzureStorageQueueMessageProvider : IMessageSenderProvider, IMessage
             if (message?.Value == null)
             {
                 _logger.LogInformation($"Nothing Received waiting");
-                await Task.Delay(1000);  //TODO: this should be configurable
+                await Task.Delay(1000, cancellationToken);  //TODO: this should be configurable
                 continue;
             }
 

@@ -15,23 +15,17 @@ using System.Text.Json;
 namespace Eliassen.System.Linq.Expressions;
 
 /// <inheritdoc/>
-public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
+/// <inheritdoc/>
+public class ExpressionTreeBuilder<TModel>(
+    ILogger<ExpressionTreeBuilder<TModel>>? logger = null,
+    ICaptureResultMessage? messages = null
+        ) : IExpressionTreeBuilder<TModel>
 {
     private const string PropertyMap = nameof(PropertyMap);
     private const string PredicateMap = nameof(PredicateMap);
 
-    private readonly ILogger _logger;
-    private readonly ICaptureResultMessage _messages;
-
-    /// <inheritdoc/>
-    public ExpressionTreeBuilder(
-        ILogger<ExpressionTreeBuilder<TModel>>? logger = null,
-        ICaptureResultMessage? messages = null
-        )
-    {
-        _logger = logger ?? new ConsoleLogger<ExpressionTreeBuilder<TModel>>();
-        _messages = messages ?? CaptureResultMessage.Default;
-    }
+    private readonly ILogger _logger = logger ?? new ConsoleLogger<ExpressionTreeBuilder<TModel>>();
+    private readonly ICaptureResultMessage _messages = messages ?? CaptureResultMessage.Default;
 
     /// <inheritdoc/>
     public Expression<Func<TModel, bool>>? GetPredicateExpression(
@@ -57,7 +51,7 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
             select builtExpression
         );
 
-    private static IReadOnlyCollection<KeyValuePair<string, Expression<Func<TModel, object>>>> BuildExpressions() =>
+    private static KeyValuePair<string, Expression<Func<TModel, object>>>[] BuildExpressions() =>
         (
         from pi in typeof(TModel).GetProperties(ReflectionExtensions.PublicProperties)
         let exp = BuildExpression(pi)
@@ -111,8 +105,8 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
             return BuildPredicate(scope, expression, search, isSearchTerm);
 
         Expression unwrapped = expression.Body;
-        if ((expression.Body.NodeType == ExpressionType.Convert) ||
-            (expression.Body.NodeType == ExpressionType.ConvertChecked))
+        if (expression.Body.NodeType is ExpressionType.Convert or
+            ExpressionType.ConvertChecked)
         {
             if (expression.Body is UnaryExpression unary)
             {
@@ -475,7 +469,7 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         return result;
     }
 
-    private IReadOnlyCollection<(string property, Expression<Func<TModel, object>> expression)> GetSearchableExpressions(StringComparison stringComparison) =>
+    private (string property, Expression<Func<TModel, object>> expression)[] GetSearchableExpressions(StringComparison stringComparison) =>
         (
         from property in GetSearchablePropertyNames()
         let expression = TryGetPropertyExpression(property, out var exp, stringComparison) ? exp : null
@@ -497,14 +491,14 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         return exp;
     }
 
-    private object? SimplifyValue(object? value) =>
+    private static object? SimplifyValue(object? value) =>
         value switch
         {
             //TODO: consider this being a type converter on FilterParameter instead
-            FilterParameter filter => SimplifyValue(filter.EqualTo),
+            FilterParameter filter => ExpressionTreeBuilder<TModel>.SimplifyValue(filter.EqualTo),
             JsonElement element when element.ValueKind == JsonValueKind.String => element.GetString(),
             JsonElement element when element.ValueKind == JsonValueKind.Number => element.GetDouble(),
-            JsonElement element when element.ValueKind == JsonValueKind.Array => element.EnumerateArray().Select(i => SimplifyValue(i)).ToArray(),
+            JsonElement element when element.ValueKind == JsonValueKind.Array => element.EnumerateArray().Select(i => ExpressionTreeBuilder<TModel>.SimplifyValue(i)).ToArray(),
             _ => value,
         };
 
@@ -528,7 +522,7 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         if (value.EqualTo != null)
         {
             //TODO: we should have logic to enumerate the requested type instead of just assuming the type based on the json type.
-            var simple = SimplifyValue(value);
+            var simple = ExpressionTreeBuilder<TModel>.SimplifyValue(value);
             if (simple != null)
             {
                 expression = modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(object))

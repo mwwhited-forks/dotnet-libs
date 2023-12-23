@@ -11,7 +11,11 @@ namespace Eliassen.System.Text.Json.Serialization;
 /// <summary>
 /// Default serializer for JSON.
 /// </summary>
-public class DefaultJsonSerializer : IJsonSerializer
+/// <remarks>
+/// Initializes a new instance of the <see cref="DefaultJsonSerializer"/> class.
+/// </remarks>
+/// <param name="options">Optional JSON serializer options.</param>
+public class DefaultJsonSerializer(JsonSerializerOptions? options = null) : IJsonSerializer
 {
     /// <summary>
     /// Gets the default JSON serializer options.
@@ -47,16 +51,7 @@ public class DefaultJsonSerializer : IJsonSerializer
     /// <summary>
     /// The JSON serializer options.
     /// </summary>
-    protected readonly JsonSerializerOptions _options;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="DefaultJsonSerializer"/> class.
-    /// </summary>
-    /// <param name="options">Optional JSON serializer options.</param>
-    public DefaultJsonSerializer(JsonSerializerOptions? options = null)
-    {
-        _options = options ?? DefaultOptions;
-    }
+    protected readonly JsonSerializerOptions _options = options ?? DefaultOptions;
 
     /// <inheritdoc/>
     public virtual string Serialize<T>(T obj) => Serialize(obj, typeof(T));

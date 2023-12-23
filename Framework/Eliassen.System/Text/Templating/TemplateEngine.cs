@@ -10,23 +10,14 @@ namespace Eliassen.System.Text.Templating
     /// <summary>
     /// Generate templating engine that will try to use best match for source and provider
     /// </summary>
-    public class TemplateEngine : ITemplateEngine
+    /// <inheritdoc/>
+    public class TemplateEngine(
+        IEnumerable<ITemplateSource> sources,
+        IEnumerable<ITemplateProvider> providers,
+        ILogger<TemplateEngine> logger
+            ) : ITemplateEngine
     {
-        private readonly IEnumerable<ITemplateSource> _sources;
-        private readonly IEnumerable<ITemplateProvider> _providers;
-        private readonly ILogger _logger;
-
-        /// <inheritdoc/>
-        public TemplateEngine(
-            IEnumerable<ITemplateSource> sources,
-            IEnumerable<ITemplateProvider> providers,
-            ILogger<TemplateEngine> logger
-            )
-        {
-            _sources = sources;
-            _providers = providers;
-            _logger = logger;
-        }
+        private readonly ILogger _logger = logger;
 
         /// <inheritdoc/>
         public async Task<ITemplateContext?> ApplyAsync(string templateName, object data, Stream target)
@@ -39,7 +30,7 @@ namespace Eliassen.System.Text.Templating
 
             var templates =
                 from context in GetAll(templateName)
-                from provider in _providers
+                from provider in providers
                 where provider.CanApply(context)
                 select (context, provider);
 
@@ -69,7 +60,7 @@ namespace Eliassen.System.Text.Templating
         /// <inheritdoc/>
         public async Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target)
         {
-            var provider = _providers.FirstOrDefault(p => p.CanApply(context));
+            var provider = providers.FirstOrDefault(p => p.CanApply(context));
             if (provider == null) return false;
             return await provider.ApplyAsync(context, data, target);
         }
@@ -80,7 +71,7 @@ namespace Eliassen.System.Text.Templating
 
         /// <inheritdoc/>
         public IEnumerable<ITemplateContext> GetAll(string templateName) =>
-            from source in _sources
+            from source in sources
             from context in source.Get(templateName)
             orderby context.Priority
             select context;

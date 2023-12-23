@@ -10,32 +10,23 @@ namespace Eliassen.MessageQueueing;
 /// Represents a message sender for a specific communication channel (<typeparamref name="TChannel"/>).
 /// </summary>
 /// <typeparam name="TChannel">The type representing the communication channel.</typeparam>
-public class MessageSender<TChannel> : IMessageQueueSender<TChannel>
+/// <remarks>
+/// Initializes a new instance of the <see cref="MessageSender{TChannel}"/> class.
+/// </remarks>
+/// <param name="context">The message context factory.</param>
+/// <param name="provider">The message sender provider factory.</param>
+/// <param name="resolver">The message property resolver.</param>
+/// <param name="logger">The logger.</param>
+public class MessageSender<TChannel>(
+    IMessageContextFactory context,
+    IMessageSenderProviderFactory provider,
+    IMessagePropertyResolver resolver,
+    ILogger<TChannel> logger
+    ) : IMessageQueueSender<TChannel>
 {
-    private readonly IMessageContextFactory _context;
-    private readonly IMessageSenderProviderFactory _provider;
-    private readonly IMessagePropertyResolver _resolver;
-    private readonly ILogger _logger;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MessageSender{TChannel}"/> class.
-    /// </summary>
-    /// <param name="context">The message context factory.</param>
-    /// <param name="provider">The message sender provider factory.</param>
-    /// <param name="resolver">The message property resolver.</param>
-    /// <param name="logger">The logger.</param>
-    public MessageSender(
-        IMessageContextFactory context,
-        IMessageSenderProviderFactory provider,
-        IMessagePropertyResolver resolver,
-        ILogger<TChannel> logger
-    )
-    {
-        _context = context;
-        _provider = provider;
-        _resolver = resolver;
-        _logger = logger;
-    }
+    private readonly IMessageContextFactory _context = context;
+    private readonly IMessageSenderProviderFactory _provider = provider;
+    private readonly ILogger _logger = logger;
 
     /// <summary>
     /// Sends a message asynchronously to the specified communication channel.
@@ -60,9 +51,9 @@ public class MessageSender<TChannel> : IMessageQueueSender<TChannel>
         var callerPath = stackFrame.GetFileName();
 
         var originMessageId = correlationId;
-        correlationId = _resolver.MessageId(targetType, messageType, correlationId);
-        var requestId = _resolver.GenerateId(targetType, messageType);
-        var config = _resolver.Configuration(targetType, messageType);
+        correlationId = resolver.MessageId(targetType, messageType, correlationId);
+        var requestId = resolver.GenerateId(targetType, messageType);
+        var config = resolver.Configuration(targetType, messageType);
         var context = _context.Create(
             targetType,
             messageType,

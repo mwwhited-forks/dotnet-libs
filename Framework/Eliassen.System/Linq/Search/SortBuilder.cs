@@ -8,20 +8,14 @@ using System.Linq;
 namespace Eliassen.System.Linq.Search;
 
 /// <inheritdoc/>
-public class SortBuilder<TModel> : ISortBuilder<TModel>
+/// <inheritdoc/>
+public class SortBuilder<TModel>(
+    ILogger<SortBuilder<TModel>>? logger = null,
+    ICaptureResultMessage? messages = null
+        ) : ISortBuilder<TModel>
 {
-    private readonly ILogger _logger;
-    private readonly ICaptureResultMessage _messages;
-
-    /// <inheritdoc/>
-    public SortBuilder(
-        ILogger<SortBuilder<TModel>>? logger = null,
-        ICaptureResultMessage? messages = null
-        )
-    {
-        _logger = logger ?? new ConsoleLogger<SortBuilder<TModel>>();
-        _messages = messages ?? CaptureResultMessage.Default;
-    }
+    private readonly ILogger _logger = logger ?? new ConsoleLogger<SortBuilder<TModel>>();
+    private readonly ICaptureResultMessage _messages = messages ?? CaptureResultMessage.Default;
 
     /// <inheritdoc/>
     public IOrderedQueryable<TModel> SortBy(

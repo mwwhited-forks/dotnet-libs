@@ -4,24 +4,16 @@ using MimeKit;
 
 namespace Eliassen.MailKit.Services;
 
-public class MimeMessageFactory : IMimeMessageFactory
+public class MimeMessageFactory(
+    IOptions<MailKitSmtpClientOptions> config) : IMimeMessageFactory
 {
-    private readonly IOptions<MailKitSmtpClientOptions> _config;
-
-    public MimeMessageFactory(
-        IOptions<MailKitSmtpClientOptions> config)
-    {
-        _config = config;
-    }
-
-
     public MimeMessage Create(EmailMessageModel message)
     {
         var email = new MimeMessage
         {
             From =
             {
-                InternetAddress.Parse(message.FromAddress ?? _config.Value.DefaultFromEmailAddress),
+                InternetAddress.Parse(message.FromAddress ?? config.Value.DefaultFromEmailAddress),
             }
         };
 

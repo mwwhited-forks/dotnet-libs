@@ -85,10 +85,8 @@ public static class ServiceCollectionExtensions
 
         var authorizationPolicy = policyBuilder.Build();
 
-        services.AddAuthorization(options =>
-        {
-            options.DefaultPolicy = authorizationPolicy;
-        });
+        services.AddAuthorizationBuilder()
+            .SetDefaultPolicy(authorizationPolicy);
 
         services.AddControllers(options =>
         {

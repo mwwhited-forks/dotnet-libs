@@ -12,7 +12,7 @@ namespace Eliassen.System.Reflection;
 public static class EnumExtensions
 {
     private static string? First(params string?[] values) =>
-        (values ?? Array.Empty<string?>()).FirstOrDefault(v => !string.IsNullOrWhiteSpace(v));
+        (values ?? []).FirstOrDefault(v => !string.IsNullOrWhiteSpace(v));
 
     /// <summary>
     /// Converts an enumeration value to its associated string representation.
@@ -44,7 +44,7 @@ public static class EnumExtensions
         else if (Enum.TryParse<TEnum>(input?.Replace('|', ','), out var parsed)) return parsed;
 
         var enumModel = AsModels<TEnum>();
-        var enumValues = input?.Split('|', ',') ?? Array.Empty<string>();
+        var enumValues = input?.Split('|', ',') ?? [];
 
         var map = from m in enumModel
                   from v in enumValues

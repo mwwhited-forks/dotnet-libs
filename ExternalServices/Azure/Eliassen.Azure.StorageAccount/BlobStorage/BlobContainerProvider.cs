@@ -15,7 +15,7 @@ public class BlobContainerProvider(
         ) : IDocumentProvider
 {
     private readonly string? _containerName = config[ConfigKeys.Container.DefaultContainerName];
-    private readonly BlobContainerClient _blobClient = new BlobContainerClient(config[ConfigKeys.Container.DefaultConnectionString], config[ConfigKeys.Container.DefaultContainerName]);
+    private readonly BlobContainerClient _blobClient = new(config[ConfigKeys.Container.DefaultConnectionString], config[ConfigKeys.Container.DefaultContainerName]);
     private readonly ILogger<BlobContainerProvider> _logger = logger;
 
     public async Task<List<BlobDto>> ListAsync()
@@ -45,7 +45,7 @@ public class BlobContainerProvider(
 
     public async Task<BlobResponseDto> UploadAsync(DocumentModel document, Stream content)
     {
-        BlobResponseDto response = new BlobResponseDto();
+        BlobResponseDto response = new();
 
         //await container.CreateAsync();
         try

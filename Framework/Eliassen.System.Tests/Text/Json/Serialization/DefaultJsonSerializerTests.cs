@@ -76,7 +76,7 @@ public class DefaultJsonSerializerTests
     }
 
 
-    private (string serialized, T result) InOut<T>(IJsonSerializer serializer, T input)
+    private static (string serialized, T result) InOut<T>(IJsonSerializer serializer, T input)
     {
         var serialized = serializer.Serialize(input);
         var result = serializer.Deserialize<T>(serialized);

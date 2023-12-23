@@ -29,7 +29,7 @@ public class ConfigureOAuthSwaggerGenOptions : IConfigureOptions<SwaggerGenOptio
     /// Gets the OAuth2 scopes.
     /// </summary>
     /// <returns>The OAuth2 scopes.</returns>
-    private IDictionary<string, string> GetScopes()
+    private Dictionary<string, string> GetScopes()
     {
         var scopes = new Dictionary<string, string>();
 
