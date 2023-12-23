@@ -19,7 +19,7 @@ public class MessageHandlerProvider : IMessageHandlerProvider
 
     private Type? _channelType;
     private IConfigurationSection _config = null!;
-    private readonly ConcurrentBag<IMessageQueueHandler> _handlers = new();
+    private readonly ConcurrentBag<IMessageQueueHandler> _handlers = [];
 
     /// <summary>
     /// Gets the configuration section associated with the message handler.

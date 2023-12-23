@@ -74,7 +74,7 @@ public class ManageGraphUser : IManageGraphUser, IIdentityManager
             LastName = r.Surname,
             EmailAddress = r.Mail,
             ForcePasswordChangeNextSignIn = r.PasswordProfile?.ForceChangePasswordNextSignIn ?? false
-        })?.ToList() ?? new List<UserIdentityModel>();
+        })?.ToList() ?? [];
     }
 
     /// <inheritdoc/>
@@ -114,15 +114,15 @@ public class ManageGraphUser : IManageGraphUser, IIdentityManager
                 Surname = lastName,
                 DisplayName = $"{firstName} {lastName}",
                 Mail = email,
-                Identities = new List<ObjectIdentity>
-                {
+                Identities =
+                [
                     new ObjectIdentity()
                     {
                         SignInType = "emailAddress",
                         Issuer = $"{_config[ConfigKeys.Azure.ADB2C.Tenant]}.onmicrosoft.com",
                         IssuerAssignedId = email,
                     }
-                },
+                ],
                 PasswordProfile = new PasswordProfile()
                 {
                     Password = password,
@@ -159,7 +159,7 @@ public class ManageGraphUser : IManageGraphUser, IIdentityManager
             var existingUsers = await graphClient.DirectoryObjects.GetByIds.PostAsync(
                 new global::Microsoft.Graph.DirectoryObjects.GetByIds.GetByIdsPostRequestBody
                 {
-                    Ids = new() { userId },
+                    Ids = [userId],
                 });
 
             if (existingUsers?.Value?.Count > 0)

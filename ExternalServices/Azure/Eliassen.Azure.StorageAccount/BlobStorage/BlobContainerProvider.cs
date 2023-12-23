@@ -22,7 +22,7 @@ public class BlobContainerProvider(
     {
 
         // Create a new list object for 
-        List<BlobDto> files = new List<BlobDto>();
+        List<BlobDto> files = [];
 
         await foreach (BlobItem file in _blobClient.GetBlobsAsync())
         {

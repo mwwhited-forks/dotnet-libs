@@ -39,10 +39,10 @@ namespace Eliassen.System.Linq.Search
         public string? SearchTerm { get; set; }
 
         /// <inheritdoc cref="IFilterQuery.Filter"/>
-        public Dictionary<string, FilterParameter> Filter { get; init; } = new();
+        public Dictionary<string, FilterParameter> Filter { get; init; } = [];
 
         /// <inheritdoc cref="ISortQuery.OrderBy"/>
-        public Dictionary<string, OrderDirections> OrderBy { get; init; } = new();
+        public Dictionary<string, OrderDirections> OrderBy { get; init; } = [];
 
         IDictionary<string, FilterParameter> IFilterQuery.Filter => Filter;
         IDictionary<string, OrderDirections> ISortQuery.OrderBy => OrderBy;
@@ -56,11 +56,11 @@ namespace Eliassen.System.Linq.Search
             sb.AppendLine($"{nameof(ExcludePageCount)}: {ExcludePageCount}");
             sb.AppendLine($"{nameof(SearchTerm)}: {SearchTerm ?? "(null)"}");
 
-            foreach (var item in Filter ?? new Dictionary<string, FilterParameter>())
+            foreach (var item in Filter ?? [])
             {
                 sb.AppendLine($"\tF:{item.Key}: {item.Value}");
             }
-            foreach (var item in OrderBy ?? new Dictionary<string, OrderDirections>())
+            foreach (var item in OrderBy ?? [])
             {
                 sb.AppendLine($"\tS:{item.Key}: {item.Value}");
             }

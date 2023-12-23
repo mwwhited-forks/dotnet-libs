@@ -16,7 +16,7 @@ namespace Eliassen.MongoDB.Extensions
         private IMongoSettings _settings = null!;
         private IJsonSerializer _jsonSerializer = null!;
 
-        private readonly Dictionary<MethodInfo, object> _collections = new();
+        private readonly Dictionary<MethodInfo, object> _collections = [];
 
         protected override object? Invoke(MethodInfo? targetMethod, object?[]? args)
         {

@@ -19,7 +19,7 @@ public class QueryableExtensionsTests
 {
     public TestContext? TestContext { get; set; }
 
-    private readonly static Dictionary<Type, ConstructorInfo> _cache = new();
+    private readonly static Dictionary<Type, ConstructorInfo> _cache = [];
     private static ConstructorInfo Constructor<T>()
     {
         if (_cache.TryGetValue(typeof(T), out var constructor)) return constructor;

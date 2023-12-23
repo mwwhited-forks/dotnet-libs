@@ -18,17 +18,17 @@ public class EmailMessageModel
     /// <summary>
     /// Gets or sets the list of recipient email addresses.
     /// </summary>
-    public List<string> ToAddresses { get; set; } = new();
+    public List<string> ToAddresses { get; set; } = [];
 
     /// <summary>
     /// Gets or sets the list of carbon copy (CC) email addresses.
     /// </summary>
-    public List<string> CcAddresses { get; set; } = new();
+    public List<string> CcAddresses { get; set; } = [];
 
     /// <summary>
     /// Gets or sets the list of blind carbon copy (BCC) email addresses.
     /// </summary>
-    public List<string> BccAddresses { get; set; } = new();
+    public List<string> BccAddresses { get; set; } = [];
 
     /// <summary>
     /// Gets or sets the subject of the email message.
@@ -48,10 +48,10 @@ public class EmailMessageModel
     /// <summary>
     /// Gets or sets the headers of the email message.
     /// </summary>
-    public Dictionary<string, string> Headers { get; set; } = new();
+    public Dictionary<string, string> Headers { get; set; } = [];
 
     /// <summary>
     /// Gets or sets the list of attachment references in the email message.
     /// </summary>
-    public List<AttachmentReferenceModel> Attachments { get; set; } = new();
+    public List<AttachmentReferenceModel> Attachments { get; set; } = [];
 }

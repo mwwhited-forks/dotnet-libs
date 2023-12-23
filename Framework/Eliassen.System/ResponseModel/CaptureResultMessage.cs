@@ -6,7 +6,7 @@ namespace Eliassen.System.ResponseModel
     /// <inheritdoc/>
     public class CaptureResultMessage : ICaptureResultMessage
     {
-        private readonly ConcurrentBag<ResultMessage> _stack = new();
+        private readonly ConcurrentBag<ResultMessage> _stack = [];
 
         /// <inheritdoc/>
         public void Publish(params ResultMessage[] resultMessages)

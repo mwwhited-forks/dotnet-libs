@@ -17,7 +17,7 @@ public class MessageReceiverHost : IHostedService, IDisposable
     private readonly ILogger _logger;
     private readonly IMessageReceiverProviderFactory _factory;
 
-    private readonly List<Task> _tasks = new();
+    private readonly List<Task> _tasks = [];
     private readonly CancellationTokenSource _tokenSource = new();
 
     /// <summary>
