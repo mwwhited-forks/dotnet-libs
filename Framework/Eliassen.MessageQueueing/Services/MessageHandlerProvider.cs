@@ -16,10 +16,10 @@ public class MessageHandlerProvider : IMessageHandlerProvider
     private readonly ILogger _logger;
 
     private Type? _channelType;
-    private IConfigurationSection? _config;
-    private readonly ConcurrentBag<IMessageQueueHandler> _handlers = new ();
+    private IConfigurationSection _config = null!;
+    private readonly ConcurrentBag<IMessageQueueHandler> _handlers = new();
 
-    public IConfigurationSection Config => _config;
+    public IConfigurationSection Config => _config ?? throw new ApplicationException($"Missing Configuration");
 
     public MessageHandlerProvider(
         IJsonSerializer serializer,
@@ -45,7 +45,7 @@ public class MessageHandlerProvider : IMessageHandlerProvider
     }
     public IMessageHandlerProvider SetConfig(IConfigurationSection config)
     {
-        _config = config;
+        _config = config ?? throw new ApplicationException($"Missing Configuration");
         return this;
     }
 

@@ -62,6 +62,24 @@ explicitly exclude properties from search
 #### TargetName
 Target name required only if this is used on the class
 
+## Class: System.ComponentModel.Search.NotSortableAttribute
+Specifies that a property or class should not be sortable.
+### Properties
+
+#### TargetName
+Gets the name of the target property that should not be sortable.
+### Methods
+
+
+####Constructor
+Initializes a new instance of the class.
+    #####Parameters
+    **targetName:** The name of the target property that should not be sortable.
+
+
+####Constructor
+Initializes a new instance of the class.
+
 ## Class: System.ComponentModel.Search.SearchableAttribute
 include field to be searchable for "SearchTerm"
 ### Properties
@@ -85,6 +103,19 @@ use the `Default` to control pattern for searches without provided wild cards
 
     ##### Return value
     
+
+## Class: System.ComponentModel.Search.SearchTermDefaults
+Specifies default search term options for comparison.
+### Fields
+
+#### EqualTo
+Represents an equal comparison for search terms.
+#### Contains
+Represents a contains comparison for search terms.
+#### StartsWith
+Represents a starts-with comparison for search terms.
+#### EndsWith
+Represents an ends-with comparison for search terms.
 
 ## Class: System.Linq.Search.FilterParameter
 Filter parameter

@@ -85,7 +85,7 @@ public class MessageReceiverProviderFactory : IMessageReceiverProviderFactory
             var handler = _serviceProvider.GetRequiredService<IMessageHandlerProvider>()
                 .SetHandlers(handlers)
                 .SetChannelType(item.Key.channelType)
-                .SetConfig(config)
+                .SetConfig(config ?? throw new ApplicationException($"Missing Configuration"))
                 ;
 
             receiver.SetHandlerProvider(handler);

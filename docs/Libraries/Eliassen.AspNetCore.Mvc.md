@@ -43,6 +43,19 @@ Ensure that current authenticated user matches as least one requested right
     **context:** 
 
 
+## Class: AspNetCore.Mvc.Filters.FormFileOperationFilter
+Implementation of for handling file upload in Swagger UI.
+### Methods
+
+
+#### Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)
+Applies the file upload operation filter to modify the Swagger UI documentation.
+    #####Parameters
+    **operation:** The OpenApiOperation representing the Swagger operation.
+
+    **context:** The OperationFilterContext providing information about the operation.
+
+
 ## Class: AspNetCore.Mvc.Filters.SearchQueryOperationFilter
 Search Query Operation filter extends Swagger/OpenAPI to provide details on IQueryable{T} endpoints.
 
@@ -91,3 +104,23 @@ Register additional IOperationFilters
 
 ## Class: AspNetCore.Mvc.SwaggerGen.ApiNamespaceControllerModelConvention
 SwaggerGen extension to configure controller group as the related assembly name
+
+## Class: AspNetCore.JwtAuthentication.Authorization.UserAuthorizationRequirement
+Represents an authorization requirement for user-specific authorization.
+### Fields
+
+#### RequireApplicationUserIdDefault
+The default value indicating whether the application user ID is required for authorization.
+#### RequireAuthenticatedByDefault
+The default value indicating whether authentication is required for authorization.
+### Properties
+
+#### RequireApplicationUserId
+Gets a value indicating whether the application user ID is required for authorization.
+### Methods
+
+
+####Constructor
+Initializes a new instance of the class.
+    #####Parameters
+    **requireApplicationUserId:** Specifies whether the application user ID is required for authorization.
