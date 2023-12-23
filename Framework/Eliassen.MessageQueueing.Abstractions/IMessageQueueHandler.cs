@@ -11,6 +11,6 @@ public interface IMessageQueueHandler<TChannel> : IMessageQueueHandler
 }
 public interface IMessageQueueHandler<TChannel, TMessage> : IMessageQueueHandler<TChannel>
 {
-    new Task HandleAsync(TMessage message, IMessageContext context);
+    Task HandleAsync(TMessage message, IMessageContext context);
 }
 

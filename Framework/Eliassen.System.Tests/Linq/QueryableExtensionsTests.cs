@@ -9,9 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Reflection;
-using System.Reflection.Metadata.Ecma335;
 using System.Text.Json;
 
 namespace Eliassen.System.Tests.Linq;
@@ -25,14 +23,14 @@ public class QueryableExtensionsTests
     private static ConstructorInfo Constructor<T>()
     {
         if (_cache.TryGetValue(typeof(T), out var constructor)) return constructor;
-        _cache.Add(typeof(T), typeof(T).GetConstructor(new[] { typeof(int) })
+        _cache.Add(typeof(T), typeof(T).GetConstructor([typeof(int)])
             ?? throw new NotSupportedException($"No Constructor(int) found")
             );
         if (_cache.TryGetValue(typeof(T), out constructor)) return constructor;
         throw new NotSupportedException($"No Constructor(int) found");
     }
 
-    private static T Factory<T>(int index) => (T)Constructor<T>().Invoke(new object?[] { index });
+    private static T Factory<T>(int index) => (T)Constructor<T>().Invoke([index]);
 
     private static IQueryable<T> GetTestData<T>(int seed) =>
         Enumerable.Range(seed, QueryBuilder.DefaultPageSize * 100)
@@ -41,7 +39,7 @@ public class QueryableExtensionsTests
 
     private static IQueryable GetTestData(Type type, int seed) =>
         (typeof(QueryableExtensionsTests)
-        .GetMethod(nameof(GetTestData), 1, new[] { typeof(int) })
+        .GetMethod(nameof(GetTestData), 1, [typeof(int)])
         ?.Invoke(null, null) as IQueryable)
         ?? throw new NotSupportedException($"No GetTestData<> Found");
 

@@ -12,7 +12,7 @@ public class ConfigurationJsonConverter<IConfig> : JsonConverter<IConfig>
 {
     public override IConfig? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        var dict = JsonSerializer.Deserialize<Dictionary<string, string>>(ref reader, options);
+        var dict = JsonSerializer.Deserialize<Dictionary<string, string?>>(ref reader, options);
 
         var builder = new ConfigurationBuilder();
         builder.AddInMemoryCollection(dict);

@@ -66,7 +66,6 @@ public class DefaultJsonSerializerTests
         });
         var config = configBuilder.Build();
         IConfigurationSection input = config.GetSection("Configuration");
-        IConfigurationRoot r = null;
 
         var values = InOut(serializer, input);
 

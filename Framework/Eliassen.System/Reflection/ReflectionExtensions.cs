@@ -181,7 +181,7 @@ public static class ReflectionExtensions
         }
 
         var parseMethod = type
-            .GetMethod(name: "Parse", bindingAttr: PublicStaticMethod, binder: null, new[] { typeof(string) }, modifiers: null)
+            .GetMethod(name: "Parse", bindingAttr: PublicStaticMethod, binder: null, [typeof(string)], modifiers: null)
             ;
 
         if (parseMethod != null)

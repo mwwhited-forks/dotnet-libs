@@ -44,13 +44,13 @@ public class ManageGraphUser : IManageGraphUser, IIdentityManager
         // Query existing users by email, iff it already exists, return that id.
         var existingUsers = await graphClient.Users.GetAsync(user =>
         {
-            user.QueryParameters.Select = new[] {
+            user.QueryParameters.Select = [
                 nameof(User.Id),
                 nameof(User.Mail),
                 nameof(User.GivenName),
                 nameof(User.Surname),
                 "PasswordProfile.ForceChangePasswordNextSignIn",
-            };
+            ];
             user.QueryParameters.Top = 1;
             user.QueryParameters.Filter = $"mail eq '{email}'";
         });
@@ -78,7 +78,7 @@ public class ManageGraphUser : IManageGraphUser, IIdentityManager
             // Query existing users by email, iff it already exists, return that id.
             var existingUsers = await graphClient.Users.GetAsync(user =>
             {
-                user.QueryParameters.Select = new[] { "Id", "Mail" };
+                user.QueryParameters.Select = ["Id", "Mail"];
                 user.QueryParameters.Top = 1;
                 user.QueryParameters.Filter = $"mail eq '{email}'";
             });

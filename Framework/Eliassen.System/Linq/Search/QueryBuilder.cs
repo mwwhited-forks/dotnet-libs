@@ -45,13 +45,13 @@ public abstract class QueryBuilder
         var methodSignature = typeof(QueryBuilder).GetMethod(
             nameof(Execute),
             1,
-            new[] {
+            [
                 queryType,
                 typeof(ISearchQuery),
                 typeof(IEnumerable<IPostBuildExpressionVisitor>),
                 typeof(ILogger<QueryBuilder>),
                 typeof(ICaptureResultMessage)
-            }
+            ]
             ) ??
             throw new NotSupportedException($"{query.GetType()} is not supported");
 

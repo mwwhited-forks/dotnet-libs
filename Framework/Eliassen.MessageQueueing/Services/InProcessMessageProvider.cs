@@ -2,6 +2,7 @@
 using Eliassen.System.Text;
 using Eliassen.System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
@@ -54,6 +55,11 @@ public class InProcessMessageProvider : IMessageSenderProvider, IMessageReceiver
         )
     {
         var newCancellationToken = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken).Token;
+
+        if (_handlerProvider == null)
+        {
+            throw new ApplicationException($"{nameof(IMessageHandlerProvider)} is not provided");
+        }
 
         while (!newCancellationToken.IsCancellationRequested)
         {   

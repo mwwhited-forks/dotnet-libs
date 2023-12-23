@@ -55,11 +55,11 @@ namespace Eliassen.MongoDB.Extensions
             var collection = _database.GetType()
                 ?.GetMethod(nameof(IMongoDatabase.GetCollection))
                 ?.MakeGenericMethod(collectionType)
-                ?.Invoke(_database, new object?[]
-                {
+                ?.Invoke(_database,
+                [
                     name,
                     null
-                })
+                ])
                 ?? throw new NotSupportedException();
 
             if (_collections.TryGetValue(targetMethod, out ret))
