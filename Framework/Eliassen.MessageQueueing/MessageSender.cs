@@ -39,8 +39,6 @@ public class MessageSender<TChannel>(
         string? correlationId = default
     )
     {
-        // TODO: Add useful logging
-
         var targetType = typeof(TChannel);
         var messageType = message.GetType();
 

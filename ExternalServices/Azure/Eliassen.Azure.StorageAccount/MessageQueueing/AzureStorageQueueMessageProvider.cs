@@ -59,7 +59,7 @@ public class AzureStorageQueueMessageProvider(
             if (message?.Value == null)
             {
                 _logger.LogInformation($"Nothing Received waiting");
-                await Task.Delay(1000, cancellationToken);  //TODO: this should be configurable
+                await Task.Delay(1000);  //TODO: this should be configurable
                 continue;
             }
 
