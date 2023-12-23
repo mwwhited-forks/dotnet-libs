@@ -10,6 +10,7 @@ namespace Eliassen.System.Text.Json;
 /// </summary>
 public class BsonDateTimeOffsetConverter : JsonConverter<object>
 {
+    /// <inheritdoc/>
     public override bool CanConvert(Type typeToConvert) =>
         new[] {
             typeof(DateTimeOffset),

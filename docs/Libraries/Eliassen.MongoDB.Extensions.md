@@ -1,6 +1,17 @@
 ﻿# Eliassen.MongoDB.Extensions
 
 
+## Class: MongoDB.Extensions.BsonObjectIdConvention
+Represents a convention for configuring BSON serialization of object IDs.
+### Methods
+
+
+#### Apply(MongoDB.Bson.Serialization.BsonMemberMap)
+Applies a modification to the member map.
+    #####Parameters
+    **memberMap:** The member map.
+
+
 ## Class: MongoDB.Extensions.CollectionNameAttribute
 declarative attribute for labeling properties as MongoDB Collections
 ### Properties

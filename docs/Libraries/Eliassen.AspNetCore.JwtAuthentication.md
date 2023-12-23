@@ -48,6 +48,33 @@ Tries to add SwaggerGen services for OAuth2 to the specified .
     ##### Return value
     The modified .
 
+## Class: AspNetCore.SwaggerGen.B2C.ConfigureOAuthSwaggerGenOptions
+Configures SwaggerGen options for OAuth2 authentication.
+### Methods
+
+
+####Constructor
+Initializes a new instance of the class.
+    #####Parameters
+    **config:** The OAuth2 Swagger options.
+
+
+#### GetScopes
+Gets the OAuth2 scopes.
+    ##### Return value
+    The OAuth2 scopes.
+
+## Class: AspNetCore.SwaggerGen.B2C.ConfigureOAuthSwaggerUIOptions
+Configures SwaggerUI options for OAuth authentication.
+### Methods
+
+
+####Constructor
+Initializes a new instance of the class.
+    #####Parameters
+    **jwtBearer:** The JwtBearer options.
+
+
 ## Class: AspNetCore.SwaggerGen.B2C.OAuth2SwaggerOptions
 Represents the options for configuring OAuth2 in Swagger.
 ### Properties

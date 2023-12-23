@@ -8,17 +8,27 @@ using System.Collections.Generic;
 
 namespace Eliassen.AspNetCore.SwaggerGen.B2C;
 
+
+/// <summary>
+/// Configures SwaggerGen options for OAuth2 authentication.
+/// </summary>
 public class ConfigureOAuthSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
 {
     private readonly IOptions<OAuth2SwaggerOptions> _config;
 
-    public ConfigureOAuthSwaggerGenOptions(
-        IOptions<OAuth2SwaggerOptions> config
-        )
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ConfigureOAuthSwaggerGenOptions"/> class.
+    /// </summary>
+    /// <param name="config">The OAuth2 Swagger options.</param>
+    public ConfigureOAuthSwaggerGenOptions(IOptions<OAuth2SwaggerOptions> config)
     {
-        _config = config;
+        _config = config ?? throw new ArgumentNullException(nameof(config));
     }
-    // https://lightwellnucleusdev.onmicrosoft.com/user.read/read
+
+    /// <summary>
+    /// Gets the OAuth2 scopes.
+    /// </summary>
+    /// <returns>The OAuth2 scopes.</returns>
     private IDictionary<string, string> GetScopes()
     {
         var scopes = new Dictionary<string, string>();
@@ -31,6 +41,7 @@ public class ConfigureOAuthSwaggerGenOptions : IConfigureOptions<SwaggerGenOptio
         return scopes;
     }
 
+    /// <inheritdoc/>
     public void Configure(SwaggerGenOptions options)
     {
         options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
@@ -49,15 +60,16 @@ public class ConfigureOAuthSwaggerGenOptions : IConfigureOptions<SwaggerGenOptio
                 },
             }
         });
+
         options.AddSecurityRequirement(new OpenApiSecurityRequirement
+        {
             {
+                new OpenApiSecurityScheme
                 {
-                    new OpenApiSecurityScheme
-                    {
-                         Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "oauth2" }
-                    },
-                    Array.Empty<string>()
+                    Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "oauth2" }
                 },
-            });
+                Array.Empty<string>()
+            },
+        });
     }
 }

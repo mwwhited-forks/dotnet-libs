@@ -19,6 +19,33 @@ entry point or defining configurable parameters
     ##### Return value
     
 
+## Class: System.Extensions.Configuration.ConfigurationBuilderExtensions
+Extension methods for adding in-memory collections to the .
+### Methods
+
+
+#### AddInMemoryCollection(Microsoft.Extensions.Configuration.IConfigurationBuilder,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}})
+Adds an in-memory collection to the using the specified initial data.
+    #####Parameters
+    **configurationBuilder:** The to add the in-memory collection to.
+
+    **initialData:** The initial data to populate the in-memory collection.
+
+    ##### Return value
+    The modified .
+
+#### AddInMemoryCollection(Microsoft.Extensions.Configuration.IConfigurationBuilder,System.ValueTuple{System.String,System.String},System.ValueTuple{System.String,System.String}[])
+Adds an in-memory collection to the using the specified initial data.
+    #####Parameters
+    **configurationBuilder:** The to add the in-memory collection to.
+
+    **item:** The first item of the in-memory collection.
+
+    **initialData:** Additional initial data to populate the in-memory collection.
+
+    ##### Return value
+    The modified .
+
 ## Class: System.IO.StreamJsonDeserializeExtensions
 Set of extension method to centralize deserialize of stream using System.Text.Json
 ### Methods
@@ -539,6 +566,12 @@ System.Text.Json converter to support BsonDatetimeOffset
 
 ## Class: System.Text.Json.BsonIdConverter
 This type converter for System.Text.Json to support BSON ObjectID to JSON safe export/import
+
+## Class: System.Text.Json.BsonTypeInfoResolver
+Resolves JSON type information for BSON serialization.
+
+## Class: System.Text.Json.ConfigurationJsonConverter`1
+JsonConverter for serializing and deserializing IConfiguration instances.The type of IConfiguration.
 
 ## Class: System.Text.Json.JsonDocumentExtensions
 shared extension methods for System.Text.Json

@@ -6,8 +6,12 @@ using System.Text.Json.Serialization.Metadata;
 
 namespace Eliassen.System.Text.Json;
 
+/// <summary>
+/// Resolves JSON type information for BSON serialization.
+/// </summary>
 public class BsonTypeInfoResolver : DefaultJsonTypeInfoResolver
 {
+    /// <inheritdoc/>
     public override JsonTypeInfo GetTypeInfo(Type type, JsonSerializerOptions options)
     {
         var info = base.GetTypeInfo(type, options);

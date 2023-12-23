@@ -117,6 +117,34 @@ Represents a starts-with comparison for search terms.
 #### EndsWith
 Represents an ends-with comparison for search terms.
 
+## Class: System.Configuration.CommandParameterAttribute
+Specifies that a property represents a command parameter.
+### Properties
+
+#### Short
+Gets or sets the short representation of the command parameter.
+#### Value
+Gets or sets the value of the command parameter.
+#### TypeId
+Gets a unique identifier for this attribute.
+
+## Class: System.Configuration.ConfigurationSectionAttribute
+Specifies the configuration section associated with a class.
+### Properties
+
+#### ConfigurationSection
+Gets the configuration section name.
+#### TypeId
+Gets a unique identifier for this attribute.
+### Methods
+
+
+####Constructor
+Initializes a new instance of the class.
+    #####Parameters
+    **configurationSection:** The configuration section name.
+
+
 ## Class: System.Linq.Search.FilterParameter
 Filter parameter
 ### Properties
@@ -144,6 +172,72 @@ Enumeration to control sort order
 sort related items in ascending order
 #### Descending
 sort related items in descending order
+
+## Class: System.Reflection.EnumExtensions
+Provides extension methods for working with enumerations.
+### Methods
+
+
+#### AsString``1(``0)
+Converts an enumeration value to its associated string representation.
+    #####Parameters
+    **input:** The enumeration value.
+
+    ##### Return value
+    The string representation of the enumeration value.
+
+#### ToEnum``1(System.Int32)
+Converts an integer value to an enumeration value.
+    #####Parameters
+    **input:** The integer value.
+
+    ##### Return value
+    The corresponding enumeration value.
+
+#### ToEnum``1(System.String)
+Converts a string to an enumeration value.
+    #####Parameters
+    **input:** The string representation of the enumeration value.
+
+    ##### Return value
+    The corresponding enumeration value.
+
+#### AsModel``1(``0)
+Gets the enumeration model for a specific enumeration value.
+    #####Parameters
+    **enum:** The enumeration value.
+
+    ##### Return value
+    The enumeration model.
+
+#### AsModels``1
+Gets a collection of enumeration models for all values of a specific enumeration type.
+    ##### Return value
+    A collection of enumeration models.
+
+## Class: System.ResponseModel.ICaptureResultMessage
+Represents an interface for capturing and publishing result messages.
+### Methods
+
+
+#### Publish(Eliassen.System.ResponseModel.ResultMessage[])
+Publishes the specified result messages.
+    #####Parameters
+    **resultMessage:** The result messages to publish.
+
+
+#### Peek
+Peeks at the captured result messages without removing them.
+    ##### Return value
+    An IReadOnlyCollection of result messages.
+
+#### Clear
+Clears the captured result messages.
+
+#### Capture
+Captures and returns the result messages, removing them from the capture.
+    ##### Return value
+    An IReadOnlyCollection of captured result messages.
 
 ## Class: System.ResponseModel.MessageLevels
 response message level
@@ -178,6 +272,23 @@ unique code that may be used to assist in translating issue
 Property or path related to this message
 #### MetaData
 additional properties related to response
+
+## Class: System.Security.Claims.CommonClaims
+Contains constants for common claims used in authentication.
+### Fields
+
+#### UserId
+Represents the claim for user ID.
+#### Culture
+Represents the claim for user culture.
+#### ExtendedProperties
+Represents the claim for extended properties.
+#### ApplicationRight
+Represents the claim for application rights.
+#### ObjectId
+Represents the claim for object ID.
+#### ObjectIdentifier
+Represents the claim for object identifier.
 
 ## Class: System.Security.Cryptography.IHash
 Simplified hash generator
