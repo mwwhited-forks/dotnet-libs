@@ -63,6 +63,7 @@ coverage.*.xml ^
 --output .\TestResults\Cobertura.coverage ^
 --output-format cobertura
 
+REM TODO: fix this https://github.com/danielpalme/ReportGenerator/wiki/Integration
 reportgenerator "-reports:.\TestResults\**\coverage.*.xml" "-targetDir:.\TestResults\Coverage\Reports" -reportTypes:HtmlSummary;Cobertura;MarkdownSummary "-title:%TestProject% - (%Configuration%)"
 
 IF '%DO_NOT_START%'=='' (

@@ -5,7 +5,8 @@ dotnet tool restore
 ECHO "Build Web Project"
 dotnet build ^
 Nucleus.Net.Libs.sln ^
---configuration Release
+--configuration Release ^
+--output  .\publish\libs
 
 CALL test.bat --no-start
 
@@ -26,7 +27,7 @@ dotnet run ^
 --input .\docs\swagger.json ^
 --output .\docs\Service-Endpoints.md ^
 --Template Service-Endpoints ^
---file-template-path .\Tools\Eliassen.TemplateEngine.Cli\bin\Release\net8.0
+--file-template-path .\docs\templates
 
 ECHO "Generate - Library Docs"
 
@@ -37,7 +38,7 @@ dotnet run ^
 --input .\Examples\Eliassen.WebApi\bin\Release\net8.0\*.xml ^
 --output .\docs\Libraries\[file].md ^
 --Template Documentation.md ^
---file-template-path .\Tools\Eliassen.TemplateEngine.Cli\bin\Release\net8.0
+--file-template-path .\docs\templates
 
 ECHO "Generate - Test Result"
 dotnet run ^
@@ -47,6 +48,6 @@ dotnet run ^
 --input .\TestResults\*.trx ^
 --output .\docs\Tests\[file].md ^
 --Template TestResultsToMarkdown.md ^
---file-template-path .\Tools\Eliassen.TemplateEngine.Cli\bin\Release\net8.0 ^
+--file-template-path .\docs\templates ^
 --input-type XML
 
