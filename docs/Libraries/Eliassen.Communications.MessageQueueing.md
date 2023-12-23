@@ -33,3 +33,16 @@ Handles the specified message asynchronously.
 
     ##### Return value
     A task representing the asynchronous operation.
+
+## Class: Communications.MessageQueueing.ServiceCollectionExtensions
+Extension methods for configuring communication queue services.
+### Methods
+
+
+#### TryAddCommunicationQueueServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Tries to add communication queue services to the specified service collection.
+    #####Parameters
+    **services:** The service collection to which communication queue services should be added.
+
+    ##### Return value
+    The modified service collection.

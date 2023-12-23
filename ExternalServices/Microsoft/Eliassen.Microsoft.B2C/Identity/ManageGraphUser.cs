@@ -7,11 +7,19 @@ using Microsoft.Graph.Models;
 
 namespace Eliassen.Microsoft.B2C.Identity;
 
+/// <summary>
+/// Implementation of <see cref="IManageGraphUser"/> and <see cref="IIdentityManager"/> for managing users in Microsoft Graph.
+/// </summary>
 public class ManageGraphUser : IManageGraphUser, IIdentityManager
 {
     private readonly ILogger _log;
     private readonly IConfiguration _config;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ManageGraphUser"/> class.
+    /// </summary>
+    /// <param name="log">The logger.</param>
+    /// <param name="config">The configuration.</param>
     public ManageGraphUser(
         ILogger<ManageGraphUser> log,
         IConfiguration config
@@ -21,6 +29,10 @@ public class ManageGraphUser : IManageGraphUser, IIdentityManager
         _config = config;
     }
 
+    /// <summary>
+    /// Gets the authentication provider for Microsoft Graph.
+    /// </summary>
+    /// <returns>The authentication provider.</returns>
     private TokenCredential GetAuthProvider()
     {
         var config = new
@@ -35,7 +47,7 @@ public class ManageGraphUser : IManageGraphUser, IIdentityManager
         return token;
     }
 
-
+    /// <inheritdoc/>
     public async Task<List<UserIdentityModel>?> GetGraphUsersByEmail(string email)
     {
         // Set up the Microsoft Graph service client with client credentials
@@ -65,9 +77,11 @@ public class ManageGraphUser : IManageGraphUser, IIdentityManager
         })?.ToList() ?? new List<UserIdentityModel>();
     }
 
+    /// <inheritdoc/>
     public Task<(string objectId, string? password)> CreateIdentityUserAsync(string email, string firstName, string lastName) =>
         CreateGraphUserAsync(email, firstName, lastName);
 
+    /// <inheritdoc/>
     public async Task<(string objectId, string? password)> CreateGraphUserAsync(string email, string firstName, string lastName)
     {
         try
@@ -131,7 +145,10 @@ public class ManageGraphUser : IManageGraphUser, IIdentityManager
         }
     }
 
+    /// <inheritdoc/>
     public Task<bool> RemoveIdentityUserAsync(string objectId) => RemoveGraphUserAsync(objectId);
+
+    /// <inheritdoc/>
     public async Task<bool> RemoveGraphUserAsync(string userId)
     {
         try
@@ -165,5 +182,4 @@ public class ManageGraphUser : IManageGraphUser, IIdentityManager
             return false;
         }
     }
-
 }

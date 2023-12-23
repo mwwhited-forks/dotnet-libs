@@ -5,16 +5,21 @@ using System.Text.Json.Serialization;
 
 namespace Eliassen.System.Text.Json;
 
+/// <summary>
+/// Custom JSON converter for dictionaries with string keys and object values.
+/// </summary>
 public class DictionaryStringObjectJsonConverter : JsonConverter<Dictionary<string, object?>>
 {
-    // https://josef.codes/custom-dictionary-string-object-jsonconverter-for-system-text-json/
+    // Reference: https://josef.codes/custom-dictionary-string-object-jsonconverter-for-system-text-json/
 
+    /// <inheritdoc/>
     public override bool CanConvert(Type typeToConvert)
     {
         return typeToConvert == typeof(Dictionary<string, object>)
                || typeToConvert == typeof(Dictionary<string, object?>);
     }
 
+    /// <inheritdoc/>
     public override Dictionary<string, object?> Read(
         ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
@@ -51,12 +56,13 @@ public class DictionaryStringObjectJsonConverter : JsonConverter<Dictionary<stri
         return dictionary;
     }
 
+    /// <inheritdoc/>
     public override void Write(
         Utf8JsonWriter writer, Dictionary<string, object?> value, JsonSerializerOptions options)
     {
-        // We don't need any custom serialization logic for writing the json.
+        // We don't need any custom serialization logic for writing the JSON.
         // Ideally, this method should not be called at all. It's only called if you
-        // supply JsonSerializerOptions that contains this JsonConverter in it's Converters list.
+        // supply JsonSerializerOptions that contains this JsonConverter in its Converters list.
         // Don't do that, you will lose performance because of the cast needed below.
         // Cast to avoid infinite loop: https://github.com/dotnet/docs/issues/19268
         JsonSerializer.Serialize(writer, (IDictionary<string, object?>)value, options);

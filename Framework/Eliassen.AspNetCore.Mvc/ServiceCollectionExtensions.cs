@@ -18,24 +18,25 @@ using System.Globalization;
 using System.Security.Claims;
 
 namespace Eliassen.AspNetCore.Mvc;
-
-/// <inheritdoc/>
+/// <summary>
+/// Extension methods for configuring ASP.Net Core extensions and related services.
+/// </summary>
 public static class ServiceCollectionExtensions
 {
     /// <summary>
-    /// Add IOC configurations to support all ASP.Net Core extensions provided by this library.
+    /// Adds IOC configurations to support all ASP.Net Core extensions provided by this library.
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="requireAuthenticatedByDefault"></param>
-    /// <param name="requireApplicationUserId"></param>
-    /// <param name="authorizationPolicyBuilder"></param>
-    /// <returns></returns>
+    /// <param name="services">The service collection to which ASP.Net Core extensions should be added.</param>
+    /// <param name="requireAuthenticatedByDefault">Indicates whether authentication is required by default.</param>
+    /// <param name="requireApplicationUserId">Indicates whether the application user ID is required.</param>
+    /// <param name="authorizationPolicyBuilder">Action to configure the authorization policy builder.</param>
+    /// <returns>The modified service collection.</returns>
     public static IServiceCollection TryAddAspNetCoreExtensions(
         this IServiceCollection services,
         bool requireAuthenticatedByDefault = UserAuthorizationRequirement.RequireAuthenticatedByDefault,
         bool requireApplicationUserId = UserAuthorizationRequirement.RequireApplicationUserIdDefault,
         Action<AuthorizationPolicyBuilder>? authorizationPolicyBuilder = null
-        )
+    )
     {
         services.TryAddCommonOpenApiExtensions();
         services.TryAddAspNetCoreSearchQuery();
@@ -60,17 +61,23 @@ public static class ServiceCollectionExtensions
         return services;
     }
 
+    /// <summary>
+    /// Adds authentication requirements to the service collection.
+    /// </summary>
+    /// <param name="services">The service collection to which authentication requirements should be added.</param>
+    /// <param name="requireApplicationUserId">Indicates whether the application user ID is required.</param>
+    /// <param name="authorizationPolicyBuilder">Action to configure the authorization policy builder.</param>
+    /// <returns>The modified service collection.</returns>
     public static IServiceCollection AddRequireAuthenticatedUser(
         this IServiceCollection services,
         bool requireApplicationUserId = UserAuthorizationRequirement.RequireApplicationUserIdDefault,
         Action<AuthorizationPolicyBuilder>? authorizationPolicyBuilder = null
-        )
+    )
     {
-        // Adding in the magic sauce that connects B2C Bearer tokens to our internal users
+        // Adding the UserAuthorizationHandler that connects B2C Bearer tokens to internal users
         services.AddSingleton<IAuthorizationHandler, UserAuthorizationHandler>();
 
-        //Policy builder
-
+        // Policy builder
         var policyBuilder = new AuthorizationPolicyBuilder()
                 .RequireAuthenticatedUser()
                 .AddRequirements(new UserAuthorizationRequirement(requireApplicationUserId));
@@ -91,12 +98,11 @@ public static class ServiceCollectionExtensions
         return services;
     }
 
-
     /// <summary>
-    /// Enable extensions for Swagger/OpenAPI (included in AddAspNetCoreExtensions)
+    /// Enables extensions for Swagger/OpenAPI (included in AddAspNetCoreExtensions).
     /// </summary>
-    /// <param name="services"></param>
-    /// <returns></returns>
+    /// <param name="services">The service collection to which Swagger/OpenAPI extensions should be added.</param>
+    /// <returns>The modified service collection.</returns>
     public static IServiceCollection TryAddCommonOpenApiExtensions(this IServiceCollection services)
     {
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<FormFileOperationFilter>>();
@@ -110,10 +116,10 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
-    /// Enable extensions for shared Search Query extensions (included in AddAspNetCoreExtensions)
+    /// Enables extensions for shared Search Query extensions (included in AddAspNetCoreExtensions).
     /// </summary>
-    /// <param name="services"></param>
-    /// <returns></returns>
+    /// <param name="services">The service collection to which Search Query extensions should be added.</param>
+    /// <returns>The modified service collection.</returns>
     public static IServiceCollection TryAddAspNetCoreSearchQuery(this IServiceCollection services)
     {
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<SearchQueryOperationFilter>>();

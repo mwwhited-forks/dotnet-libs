@@ -6,35 +6,48 @@ using System.Threading.Tasks;
 
 namespace Eliassen.AspNetCore.JwtAuthentication.Authorization;
 
+
+/// <summary>
+/// Handles user authorization based on specified requirements.
+/// </summary>
 public class UserAuthorizationHandler : AuthorizationHandler<UserAuthorizationRequirement>
 {
     private readonly ILogger _logger;
 
-    public UserAuthorizationHandler(
-        ILogger<UserAuthorizationHandler> logger
-        )
+    /// <summary>
+    /// Initializes a new instance of the <see cref="UserAuthorizationHandler"/> class.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    public UserAuthorizationHandler(ILogger<UserAuthorizationHandler> logger)
     {
         _logger = logger;
     }
 
+    /// <summary>
+    /// Handles the user authorization requirement asynchronously.
+    /// </summary>
+    /// <param name="context">The authorization context.</param>
+    /// <param name="requirement">The user authorization requirement.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
     protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, UserAuthorizationRequirement requirement)
     {
-#if DEBUG
+#if DEBUG //TODO: consider adding the ability to enable this with an environment variable so it can be used outside of local development
         IdentityModelEventSource.ShowPII = true;
 #endif
         var user = context.User;
 
-        //these should be provided by the authentication provider
+        // These should be provided by the authentication provider
         var userName = user.GetClaimValue(CommonClaims.ObjectId, CommonClaims.ObjectIdentifier)?.value;
 
-        // is the application has extended the user id claim than this should be provided as well
+        // If the application has extended the user id claim, it should be provided as well
         var userId = user.GetClaimValue(CommonClaims.UserId)?.value;
 
         var isAuthorized = !string.IsNullOrWhiteSpace(userName);
 
         if (isAuthorized && requirement.RequireApplicationUserId)
-            isAuthorized &= !string.IsNullOrWhiteSpace(userId)
-            ;
+        {
+            isAuthorized &= !string.IsNullOrWhiteSpace(userId);
+        }
 
         if (isAuthorized)
         {

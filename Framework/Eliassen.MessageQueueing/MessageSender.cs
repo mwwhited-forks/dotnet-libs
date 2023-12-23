@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Eliassen.MessageQueueing;
 
+/// <summary>
+/// Represents a message sender for a specific communication channel (<typeparamref name="TChannel"/>).
+/// </summary>
+/// <typeparam name="TChannel">The type representing the communication channel.</typeparam>
 public class MessageSender<TChannel> : IMessageQueueSender<TChannel>
 {
     private readonly IMessageContextFactory _context;
@@ -13,12 +17,19 @@ public class MessageSender<TChannel> : IMessageQueueSender<TChannel>
     private readonly IMessagePropertyResolver _resolver;
     private readonly ILogger _logger;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MessageSender{TChannel}"/> class.
+    /// </summary>
+    /// <param name="context">The message context factory.</param>
+    /// <param name="provider">The message sender provider factory.</param>
+    /// <param name="resolver">The message property resolver.</param>
+    /// <param name="logger">The logger.</param>
     public MessageSender(
         IMessageContextFactory context,
         IMessageSenderProviderFactory provider,
         IMessagePropertyResolver resolver,
         ILogger<TChannel> logger
-        )
+    )
     {
         _context = context;
         _provider = provider;
@@ -26,12 +37,19 @@ public class MessageSender<TChannel> : IMessageQueueSender<TChannel>
         _logger = logger;
     }
 
+    /// <summary>
+    /// Sends a message asynchronously to the specified communication channel.
+    /// </summary>
+    /// <param name="message">The message to be sent.</param>
+    /// <param name="correlationId">The correlation ID associated with the message (optional).</param>
+    /// <returns>The ID of the sent message.</returns>
     public async Task<string> SendAsync(
         object message,
         string? correlationId = default
-        )
+    )
     {
-        //TODO: add useful logging
+        // TODO: Add useful logging
+
         var targetType = typeof(TChannel);
         var messageType = message.GetType();
 
@@ -55,7 +73,7 @@ public class MessageSender<TChannel> : IMessageQueueSender<TChannel>
             callerMethod,
             lineNumber,
             callerPath
-            );
+        );
         var provider = _provider.Sender(targetType, messageType);
 
         _logger.LogInformation("Sending: \"{message}\" [{orgMessageId} -> {messageId}] to \"{targetType}\" from \"{caller}::{method}\"",
@@ -65,7 +83,7 @@ public class MessageSender<TChannel> : IMessageQueueSender<TChannel>
             targetType,
             callerMethod?.DeclaringType,
             callerMethod
-            );
+        );
 
         try
         {
@@ -75,7 +93,7 @@ public class MessageSender<TChannel> : IMessageQueueSender<TChannel>
                 originMessageId,
                 correlationId,
                 sentId
-                );
+            );
 
             context.SentId = sentId;
         }
@@ -85,13 +103,13 @@ public class MessageSender<TChannel> : IMessageQueueSender<TChannel>
                 ex.Message,
                 originMessageId,
                 correlationId
-                );
+            );
 
             _logger.LogDebug("Exception: {trace}\r\n [{orgMessageId} -> {messageId}]",
                 ex.ToString(),
                 originMessageId,
                 correlationId
-                );
+            );
 
             throw;
         }

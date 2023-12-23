@@ -4,7 +4,9 @@ using System.Linq;
 using System.Reflection;
 
 namespace Eliassen.MessageQueueing.Services;
-
+/// <summary>
+/// Utility class for resolving properties related to message queue handling.
+/// </summary>
 public class MessagePropertyResolver : IMessagePropertyResolver
 {
     private const string ConfigRootKey = "MessageQueue";
@@ -12,6 +14,10 @@ public class MessagePropertyResolver : IMessagePropertyResolver
 
     private readonly IConfiguration _configuration;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MessagePropertyResolver"/> class with the specified configuration.
+    /// </summary>
+    /// <param name="configuration">The configuration used for resolving message queue properties.</param>
     public MessagePropertyResolver(IConfiguration configuration)
     {
         _configuration = configuration;
@@ -19,9 +25,9 @@ public class MessagePropertyResolver : IMessagePropertyResolver
 
     private (string target, string message) GetSimpleNames(Type channelType, Type messageType) =>
         (
-        channelType == typeof(object) ? Default :
-            channelType.GetCustomAttribute<MessageQueueAttribute>()?.SimpleName ?? channelType.Name,
-        messageType.GetCustomAttribute<MessageQueueAttribute>()?.SimpleName ?? messageType.Name
+            channelType == typeof(object) ? Default :
+                channelType.GetCustomAttribute<MessageQueueAttribute>()?.SimpleName ?? channelType.Name,
+            messageType.GetCustomAttribute<MessageQueueAttribute>()?.SimpleName ?? messageType.Name
         );
 
     private (IConfigurationSection? config, string simpleTargetName, string simpleMessageName, string? configPath) RootConfiguration(Type channelType, Type messageType)
@@ -47,6 +53,7 @@ public class MessagePropertyResolver : IMessagePropertyResolver
         return (selected, simpleTargetName, simpleMessageName, selected?.Path);
     }
 
+    /// <inheritdoc/>
     public (IConfigurationSection? configurationSection, string simpleTargetName, string simpleMessageName, string? configPath) ConfigurationSafe(Type channelType, Type messageType)
     {
         var (config, simpleTargetName, simpleMessageName, configPath) = RootConfiguration(channelType, messageType);
@@ -54,6 +61,7 @@ public class MessagePropertyResolver : IMessagePropertyResolver
         return (selected, simpleTargetName, simpleMessageName, selected?.Path);
     }
 
+    /// <inheritdoc/>
     public virtual IConfigurationSection Configuration(Type channelType, Type messageType)
     {
         var (config, simpleTargetName, simpleMessageName, _) = ConfigurationSafe(channelType, messageType);
@@ -62,18 +70,23 @@ public class MessagePropertyResolver : IMessagePropertyResolver
         return config;
     }
 
+    /// <inheritdoc/>
     public virtual string MessageId(Type channelType, Type messageType, string? messageId) =>
         string.IsNullOrWhiteSpace(messageId) ? GenerateId(channelType, messageType) : messageId;
 
+    /// <inheritdoc/>
     public virtual string GenerateId(Type channelType, Type messageType) =>
         Guid.NewGuid().ToString();
 
+    /// <inheritdoc/>
     public virtual (string? providerKey, string simpleTargetName, string simpleMessageName, string? configPath) ProviderSafe(Type channelType, Type messageType)
     {
         var (config, simpleTargetName, simpleMessageName, configPath) = RootConfiguration(channelType, messageType);
         var providerKey = config?["Provider"];
         return (providerKey, simpleTargetName, simpleMessageName, configPath);
     }
+
+    /// <inheritdoc/>
     public virtual string Provider(Type channelType, Type messageType)
     {
         var (providerKey, simpleTargetName, simpleMessageName, _) = ProviderSafe(channelType, messageType);
@@ -81,5 +94,4 @@ public class MessagePropertyResolver : IMessagePropertyResolver
             throw new ApplicationException($"No provider found for \"MessageQueue:{simpleTargetName}:{simpleMessageName}:Provider\"");
         return providerKey;
     }
-
 }

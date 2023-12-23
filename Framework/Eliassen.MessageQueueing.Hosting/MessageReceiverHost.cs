@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Eliassen.WebApi.Workers;
 
+/// <summary>
+/// Hosted service responsible for starting and stopping message receivers based on the configured providers.
+/// </summary>
 public class MessageReceiverHost : IHostedService, IDisposable
 {
     private readonly ILogger _logger;
@@ -17,15 +20,23 @@ public class MessageReceiverHost : IHostedService, IDisposable
     private readonly List<Task> _tasks = new();
     private readonly CancellationTokenSource _tokenSource = new();
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MessageReceiverHost"/> class.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="factory">The message receiver provider factory.</param>
     public MessageReceiverHost(
         ILogger<MessageReceiverHost> logger,
         IMessageReceiverProviderFactory factory
-        )
+    )
     {
         _logger = logger;
         _factory = factory;
     }
 
+    /// <summary>
+    /// Disposes of the resources used by the <see cref="MessageReceiverHost"/>.
+    /// </summary>
     public void Dispose()
     {
         _logger.LogInformation("Request Dispose");
@@ -33,6 +44,11 @@ public class MessageReceiverHost : IHostedService, IDisposable
         _logger.LogInformation("Complete Dispose");
     }
 
+    /// <summary>
+    /// Starts the message receiver host.
+    /// </summary>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>A task representing the start operation.</returns>
     public Task StartAsync(CancellationToken cancellationToken)
     {
         if (_tasks.Count > 0)
@@ -73,11 +89,16 @@ public class MessageReceiverHost : IHostedService, IDisposable
                 _logger.LogDebug($"Error: {{{nameof(provider)}}}: {{{nameof(Exception)}}}", provider, ex.ToString());
 
                 _logger.LogInformation($"Waiting for restart: {{{nameof(provider)}}}", provider);
-                await Task.Delay(10000); //TODO: this should be configurable
+                await Task.Delay(10000); // TODO: this should be configurable
             }
         }
     }
 
+    /// <summary>
+    /// Stops the message receiver host.
+    /// </summary>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>A task representing the stop operation.</returns>
     public async Task StopAsync(CancellationToken cancellationToken)
     {
         _logger.LogInformation("Request Stop");

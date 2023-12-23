@@ -20,7 +20,13 @@ declarative attribute for labeling properties as MongoDB Collections
 Name to use for MongoDB collection
 
 ## Class: MongoDB.Extensions.DefaultMongoDatabaseSettings
-Default connection information for MongoDatabases, Duplicating this class with a different ConfigurationSectionAttribute value will allow for declaring secondary connection configurations
+Default connection information for MongoDB databases. Duplicating this class with a different value will allow for declaring secondary connection configurations.
+### Properties
+
+#### ConnectionString
+Gets or sets the connection string for the MongoDB database.
+#### DatabaseName
+Gets or sets the name of the MongoDB database.
 
 ## Class: MongoDB.Extensions.IMongoDatabaseFactory
 provide a centralized means to created MongoDB instances

@@ -87,6 +87,53 @@ end point requires at least one of these permissions
     **rights:** end point requires at least one of these permissions
 
 
+## Class: AspNetCore.Mvc.ServiceCollectionExtensions
+Extension methods for configuring ASP.Net Core extensions and related services.
+### Methods
+
+
+#### TryAddAspNetCoreExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Boolean,System.Boolean,System.Action{Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder})
+Adds IOC configurations to support all ASP.Net Core extensions provided by this library.
+    #####Parameters
+    **services:** The service collection to which ASP.Net Core extensions should be added.
+
+    **requireAuthenticatedByDefault:** Indicates whether authentication is required by default.
+
+    **requireApplicationUserId:** Indicates whether the application user ID is required.
+
+    **authorizationPolicyBuilder:** Action to configure the authorization policy builder.
+
+    ##### Return value
+    The modified service collection.
+
+#### AddRequireAuthenticatedUser(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Boolean,System.Action{Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder})
+Adds authentication requirements to the service collection.
+    #####Parameters
+    **services:** The service collection to which authentication requirements should be added.
+
+    **requireApplicationUserId:** Indicates whether the application user ID is required.
+
+    **authorizationPolicyBuilder:** Action to configure the authorization policy builder.
+
+    ##### Return value
+    The modified service collection.
+
+#### TryAddCommonOpenApiExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Enables extensions for Swagger/OpenAPI (included in AddAspNetCoreExtensions).
+    #####Parameters
+    **services:** The service collection to which Swagger/OpenAPI extensions should be added.
+
+    ##### Return value
+    The modified service collection.
+
+#### TryAddAspNetCoreSearchQuery(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Enables extensions for shared Search Query extensions (included in AddAspNetCoreExtensions).
+    #####Parameters
+    **services:** The service collection to which Search Query extensions should be added.
+
+    ##### Return value
+    The modified service collection.
+
 ## Class: AspNetCore.Mvc.SwaggerGen.AdditionalSwaggerGenEndpointsOptions
 SwaggerGen extensions to enable presenting permissions, application versions and XMLDocs
 
@@ -104,6 +151,27 @@ Register additional IOperationFilters
 
 ## Class: AspNetCore.Mvc.SwaggerGen.ApiNamespaceControllerModelConvention
 SwaggerGen extension to configure controller group as the related assembly name
+
+## Class: AspNetCore.JwtAuthentication.Authorization.UserAuthorizationHandler
+Handles user authorization based on specified requirements.
+### Methods
+
+
+####Constructor
+Initializes a new instance of the class.
+    #####Parameters
+    **logger:** The logger.
+
+
+#### HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Eliassen.AspNetCore.JwtAuthentication.Authorization.UserAuthorizationRequirement)
+Handles the user authorization requirement asynchronously.
+    #####Parameters
+    **context:** The authorization context.
+
+    **requirement:** The user authorization requirement.
+
+    ##### Return value
+    A task representing the asynchronous operation.
 
 ## Class: AspNetCore.JwtAuthentication.Authorization.UserAuthorizationRequirement
 Represents an authorization requirement for user-specific authorization.

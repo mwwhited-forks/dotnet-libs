@@ -1,19 +1,29 @@
-﻿using System;
+﻿namespace Eliassen.System.ComponentModel.Search;
 
-namespace Eliassen.System.ComponentModel.Search
+/// <summary>
+/// Specifies that a property or class should be explicitly excluded from filter selection.
+/// </summary>
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
+public class NotFilterableAttribute : Attribute
 {
     /// <summary>
-    /// Explicitly exclude fields from filter selection. 
+    /// Initializes a new instance of the <see cref="NotFilterableAttribute"/> class with a target name.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
-    public class NotFilterableAttribute : Attribute
+    /// <param name="targetName">The target name to be excluded from filter selection.</param>
+    public NotFilterableAttribute(string targetName)
     {
-        public NotFilterableAttribute(string targetName)
-        {
-            TargetName = targetName;
-        }
-        public NotFilterableAttribute() { }
-
-        public string? TargetName { get; }
+        TargetName = targetName;
     }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="NotFilterableAttribute"/> class without a target name.
+    /// </summary>
+    public NotFilterableAttribute()
+    {
+    }
+
+    /// <summary>
+    /// Gets the target name to be excluded from filter selection.
+    /// </summary>
+    public string? TargetName { get; }
 }

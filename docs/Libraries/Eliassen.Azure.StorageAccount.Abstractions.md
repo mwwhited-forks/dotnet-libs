@@ -70,3 +70,67 @@ Contains keys related to storage container directories configuration.
 Represents the base key for container directories configuration.
 #### Misc
 Represents the key for the miscellaneous directory within the storage container.
+
+## Class: Azure.StorageAccount.BlobStorage.DocumentModel
+Represents a document with associated metadata.
+### Properties
+
+#### DocumentId
+Gets or sets the unique identifier of the document.
+#### DocumentKey
+Gets or sets the key associated with the document.
+#### DocumentName
+Gets or sets the name of the document.
+#### DocumentType
+Gets or sets the type of the document.
+#### DocumentSize
+Gets or sets the size of the document in bytes.
+#### DocumentRepository
+Gets or sets the repository where the document is stored.
+#### DocumentCategory
+Gets or sets the category of the document.
+#### CreatedOn
+Gets or sets the date and time when the document was created.
+
+## Class: Azure.StorageAccount.BlobStorage.DocumentUploadModel
+Represents a document upload model, extending the with additional data.
+### Properties
+
+#### Data
+Gets or sets the binary data of the document.
+
+## Class: Azure.StorageAccount.BlobStorage.IDocumentProvider
+Provides functionality for managing documents, including listing, uploading, downloading, and deleting.
+### Methods
+
+
+#### ListAsync
+Retrieves a list of BlobDto representing the available documents.
+    ##### Return value
+    A task that represents the asynchronous operation, containing the list of BlobDto.
+
+#### UploadAsync(Eliassen.Azure.StorageAccount.BlobStorage.DocumentModel,System.IO.Stream)
+Uploads a document with the specified metadata and content.
+    #####Parameters
+    **document:** The metadata of the document to upload.
+
+    **content:** The content stream of the document.
+
+    ##### Return value
+    A task that represents the asynchronous operation, containing the BlobResponseDto for the uploaded document.
+
+#### DownloadAsync(System.String)
+Downloads the document with the specified filename.
+    #####Parameters
+    **blobFilename:** The filename of the document to download.
+
+    ##### Return value
+    A task that represents the asynchronous operation, containing the BlobDto for the downloaded document. Returns null if the document with the specified filename is not found.
+
+#### DeleteAsync(System.String)
+Deletes the document with the specified filename.
+    #####Parameters
+    **blobFilename:** The filename of the document to delete.
+
+    ##### Return value
+    A task that represents the asynchronous operation, containing the BlobResponseDto for the deletion result.

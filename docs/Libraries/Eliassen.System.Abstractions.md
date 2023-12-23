@@ -18,6 +18,19 @@ output enum string as this value when serialized as json
 #### Name
 value to output in place of Enum.ToString() with Json Serializer
 
+## Class: System.ComponentModel.IVersionProvider
+Provides information about the version of an assembly.
+### Properties
+
+#### Title
+Gets the title of the assembly.
+#### Version
+Gets the version of the assembly.
+#### Description
+Gets the description of the assembly.
+#### Assembly
+Gets the associated with the version information.
+
 ## Class: System.ComponentModel.Search.DefaultSortAttribute
 part of default sort for entity
 ### Properties
@@ -53,7 +66,22 @@ modify or pass though search query before processing.
     
 
 ## Class: System.ComponentModel.Search.NotFilterableAttribute
-Explicitly exclude fields from filter selection.
+Specifies that a property or class should be explicitly excluded from filter selection.
+### Properties
+
+#### TargetName
+Gets the target name to be excluded from filter selection.
+### Methods
+
+
+####Constructor
+Initializes a new instance of the class with a target name.
+    #####Parameters
+    **targetName:** The target name to be excluded from filter selection.
+
+
+####Constructor
+Initializes a new instance of the class without a target name.
 
 ## Class: System.ComponentModel.Search.NotSearchableAttribute
 explicitly exclude properties from search
@@ -258,6 +286,53 @@ information about processing that failed
 #### None
 unknown value
 
+## Class: System.ResponseModel.ModelResult`1
+Represents a result containing a single model.The type of the model.
+### Properties
+
+#### Data
+Gets the model data.
+#### Eliassen#System#ResponseModel#IModelResult#Data
+Gets the model data as an object.
+#### Messages
+Gets or sets the collection of result messages.
+### Methods
+
+
+####Constructor
+Initializes a new instance of the class with the specified data.
+    #####Parameters
+    **data:** The model data.
+
+
+## Class: System.ResponseModel.QueryResult`1
+Represents the result of a query operation, containing a collection of items and optional result messages.The type of items in the result.
+### Properties
+
+#### Rows
+Gets the collection of items in the result.
+#### Eliassen#System#ResponseModel#IQueryResult#Rows
+Gets the collection of items in the result as a non-generic enumerable.
+#### Messages
+Gets or sets the collection of result messages associated with the query result.
+### Methods
+
+
+####Constructor
+Initializes a new instance of the class.
+    #####Parameters
+    **items:** The collection of items in the result.
+
+
+####Constructor
+Initializes a new instance of the class by wrapping another .
+    #####Parameters
+    **toWrap:** The query result to wrap.
+
+
+####Constructor
+Initializes a new instance of the class with an empty collection of items.
+
 ## Class: System.ResponseModel.ResultMessage
 additional details about response
 ### Properties
@@ -419,6 +494,126 @@ interface to identify shared BSON serialization process.
 
 ## Class: System.Text.Json.Serialization.IJsonSerializer
 interface to identify shared JSON serialization process.
+
+## Class: System.Text.Json.Serialization.JsonStringEnumConverterEx`1
+A custom JSON converter for serializing and deserializing enums as strings or numbers.The enum type to convert.
+### Methods
+
+
+#### Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+Reads the JSON representation of the enum value and converts it to the specified enum type.
+    #####Parameters
+    **reader:** The JSON reader.
+
+    **typeToConvert:** The type of the object to convert.
+
+    **options:** The serializer options.
+
+    ##### Return value
+    The deserialized enum value.
+
+#### Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+Writes the JSON representation of the enum value.
+    #####Parameters
+    **writer:** The JSON writer.
+
+    **value:** The enum value to serialize.
+
+    **options:** The serializer options.
+
+
+## Class: System.Text.Templating.ITemplateContext
+Represents the context for a template, including information about the template and target content types, source, and priority.
+### Properties
+
+#### TemplateName
+Gets the name of the template.
+#### TemplateContentType
+Gets the content type of the template.
+#### TemplateFileExtension
+Gets the file extension of the template.
+#### TemplateSource
+Gets the source of the template.
+#### TemplateReference
+Gets the reference identifier for the template.
+#### OpenTemplate
+Gets the function that opens the template as a stream.
+#### TargetContentType
+Gets the content type of the target.
+#### TargetFileExtension
+Gets the file extension of the target.
+#### Priority
+Gets the priority of the template, used to determine the order of template application.
+
+## Class: System.Text.Templating.ITemplateEngine
+Represents a template engine for generating content based on templates.
+### Methods
+
+
+#### Get(System.String)
+Gets the template context for the specified template name.
+    #####Parameters
+    **templateName:** The name of the template.
+
+    ##### Return value
+    The template context for the specified template name or null if not found.
+
+#### GetAll(System.String)
+Gets all template contexts associated with the specified template name.
+    #####Parameters
+    **templateName:** The name of the template.
+
+    ##### Return value
+    An enumeration of all template contexts associated with the specified template name.
+
+#### ApplyAsync(System.String,System.Object,System.IO.Stream)
+Applies the specified data to the template identified by its name and writes the result to the target stream asynchronously.
+    #####Parameters
+    **templateName:** The name of the template.
+
+    **data:** The data to apply to the template.
+
+    **target:** The stream where the result will be written.
+
+    ##### Return value
+    A task representing the asynchronous operation, containing the template context for the applied template or null if not found.
+
+#### ApplyAsync(Eliassen.System.Text.Templating.ITemplateContext,System.Object,System.IO.Stream)
+Applies the specified data to the given template context and writes the result to the target stream asynchronously.
+    #####Parameters
+    **context:** The template context to apply.
+
+    **data:** The data to apply to the template.
+
+    **target:** The stream where the result will be written.
+
+    ##### Return value
+    A task representing the asynchronous operation, indicating whether the application was successful.
+
+## Class: System.Text.Templating.ITemplateProvider
+Represents a template provider that can apply templates based on a specified context.
+### Methods
+
+
+#### CanApply(Eliassen.System.Text.Templating.ITemplateContext)
+Determines whether the template provider can apply a template based on the provided context.
+    #####Parameters
+    **context:** The template context.
+
+    ##### Return value
+    true if the template provider can apply the template; otherwise, false.
+
+#### ApplyAsync(Eliassen.System.Text.Templating.ITemplateContext,System.Object,System.IO.Stream)
+Applies the template associated with the specified context, using the provided data, and writes the result to the target stream asynchronously.
+    #####Parameters
+    **context:** The template context.
+
+    **data:** The data to apply to the template.
+
+    **target:** The stream where the result will be written.
+
+    ##### Return value
+    A task representing the asynchronous operation, indicating whether the application was successful.
 
 ## Class: System.Text.Xml.Serialization.IXmlSerializer
 interface to identify shared XML serialization process.

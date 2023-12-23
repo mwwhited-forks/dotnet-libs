@@ -573,6 +573,9 @@ Resolves JSON type information for BSON serialization.
 ## Class: System.Text.Json.ConfigurationJsonConverter`1
 JsonConverter for serializing and deserializing IConfiguration instances.The type of IConfiguration.
 
+## Class: System.Text.Json.DictionaryStringObjectJsonConverter
+Custom JSON converter for dictionaries with string keys and object values.
+
 ## Class: System.Text.Json.JsonDocumentExtensions
 shared extension methods for System.Text.Json
 ### Methods
@@ -592,17 +595,33 @@ Convert System.Test.Json.JsonDocument to System.Xml.XmlDocument
 Default serializer for JSON
 
 ## Class: System.Text.Json.Serialization.DefaultJsonSerializer
-Default serializer for JSON
+Default serializer for JSON.
+### Fields
+
+#### DefaultContentType
+Gets the default content type for JSON.
+#### _options
+The JSON serializer options.
+### Properties
+
+#### DefaultOptions
+Gets the default JSON serializer options.
 ### Methods
 
 
-#### AsPropertyName(System.String)
-Use the configured property naming policy to change provided value
+####Constructor
+Initializes a new instance of the class.
     #####Parameters
-    **propertyName:** 
+    **options:** Optional JSON serializer options.
+
+
+#### AsPropertyName(System.String)
+Use the configured property naming policy to change the provided value.
+    #####Parameters
+    **propertyName:** The property name to convert.
 
     ##### Return value
-    
+    The converted property name.
 
 ## Class: System.Text.Templating.FileTemplateSource
 Access template from file system
