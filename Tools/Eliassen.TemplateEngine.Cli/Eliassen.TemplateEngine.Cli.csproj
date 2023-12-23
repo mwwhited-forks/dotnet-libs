@@ -31,9 +31,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="TestResultsToMarkdown.md.xslt">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
 	  <None Update="Documentation.md.xslt">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
