@@ -1,10 +1,23 @@
-﻿namespace Eliassen.System.Linq.Search
-{
-    public interface IPageQuery
-    {
-        int CurrentPage { get; }
-        int PageSize { get; }
+﻿namespace Eliassen.System.Linq.Search;
 
-        bool ExcludePageCount { get; }
-    }
+/// <summary>
+/// Represents a page query for paginating results.
+/// </summary>
+public interface IPageQuery
+{
+    /// <summary>
+    /// Gets the current page number.
+    /// </summary>
+    int CurrentPage { get; }
+
+    /// <summary>
+    /// Gets the size of each page.
+    /// </summary>
+    int PageSize { get; }
+
+    /// <summary>
+    /// Gets a value indicating whether to exclude the total page count from the result.
+    /// </summary>
+    bool ExcludePageCount { get; }
 }
+

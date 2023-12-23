@@ -71,7 +71,8 @@ public class AzureStorageQueueMessageProvider : IMessageSenderProvider, IMessage
             }
 
             using var stream = message.Value.Body.ToStream();
-            var deserialized = _serializer.Deserialize<WrappedQueueMessage>(stream);
+            var deserialized = _serializer.Deserialize<WrappedQueueMessage>(stream)
+                ?? throw new NotSupportedException($"No payload found");
 
             await _handlerProvider.HandleAsync(deserialized, message.Value.MessageId);
 

@@ -18,6 +18,9 @@ output enum string as this value when serialized as json
 #### Name
 value to output in place of Enum.ToString() with Json Serializer
 
+## Class: System.ComponentModel.ExcludeFromUniqueAttribute
+Attribute used to exclude an enum or enum field from being considered for uniqueness checks.
+
 ## Class: System.ComponentModel.IVersionProvider
 Provides information about the version of an assembly.
 ### Properties
@@ -173,6 +176,111 @@ Initializes a new instance of the class.
     **configurationSection:** The configuration section name.
 
 
+## Class: System.Linq.Expressions.IExpressionTreeBuilder
+Represents a builder for constructing expression trees used in querying and filtering.
+### Methods
+
+
+#### GetSearchablePropertyNames
+Gets the names of properties that can be used for searching.
+    ##### Return value
+    The collection of searchable property names.
+
+#### GetSortablePropertyNames
+Gets the names of properties that can be used for sorting.
+    ##### Return value
+    The collection of sortable property names.
+
+#### GetFilterablePropertyNames
+Gets the names of properties that can be used for filtering.
+    ##### Return value
+    The collection of filterable property names.
+
+#### DefaultSortOrder
+Gets the default sort order defined by the expression tree builder.
+    ##### Return value
+    The collection of default sort order information.
+
+#### 
+Gets the predicate expression based on the provided filter parameters.
+    #####Parameters
+    **name:** The name of the property to filter on.
+
+    **value:** The filter parameter value.
+
+    **stringComparison:** The string comparison option for string-based filtering.
+
+    **isSearchTerm:** A flag indicating whether the filter is a search term.
+
+    ##### Return value
+    The predicate expression based on the filter parameters.
+
+#### 
+Builds the expression tree based on the provided query parameter.
+    #####Parameters
+    **queryParameter:** The query parameter used for building the expression tree.
+
+    **stringComparison:** The string comparison option for string-based filtering.
+
+    **isSearchTerm:** A flag indicating whether the query parameter is a search term.
+
+    ##### Return value
+    The expression tree representing the filtering condition.
+
+#### 
+Gets a dictionary of property names and their corresponding expression trees.
+    ##### Return value
+    The dictionary of property names and expression trees.
+
+## Class: System.Linq.Expressions.IExpressionTreeBuilder`1
+Represents a typed builder for constructing expression trees used in querying and filtering.The type of the model for which expression trees are built.
+### Methods
+
+
+#### GetPredicateExpression(System.String,Eliassen.System.Linq.Search.FilterParameter,System.StringComparison,System.Boolean)
+Gets the predicate expression based on the provided filter parameters.
+    #####Parameters
+    **name:** The name of the property to filter on.
+
+    **value:** The filter parameter value.
+
+    **stringComparison:** The string comparison option for string-based filtering.
+
+    **isSearchTerm:** A flag indicating whether the filter is a search term.
+
+    ##### Return value
+    The predicate expression based on the filter parameters.
+
+#### BuildExpression(System.Object,System.StringComparison,System.Boolean)
+Builds the expression tree based on the provided query parameter.
+    #####Parameters
+    **queryParameter:** The query parameter used for building the expression tree.
+
+    **stringComparison:** The string comparison option for string-based filtering.
+
+    **isSearchTerm:** A flag indicating whether the query parameter is a search term.
+
+    ##### Return value
+    The expression tree representing the filtering condition.
+
+#### PropertyExpressions
+Gets a dictionary of property names and their corresponding expression trees.
+    ##### Return value
+    The dictionary of property names and expression trees.
+
+## Class: System.Linq.Expressions.IPostBuildExpressionVisitor
+Represents an interface for a visitor that processes an expression tree after it has been built.
+### Methods
+
+
+#### Visit(System.Linq.Expressions.Expression)
+Visits the provided expression node after the expression tree has been built.
+    #####Parameters
+    **node:** The expression node to visit.
+
+    ##### Return value
+    The modified expression node.
+
 ## Class: System.Linq.Search.FilterParameter
 Filter parameter
 ### Properties
@@ -191,6 +299,103 @@ This allows for providing a set of values where the value from the queries data 
 `Less than`
 #### LessThanOrEqualTo
 `Less than or equal to`
+
+## Class: System.Linq.Search.IFilterQuery
+Represents a query with filtering options.
+### Properties
+
+#### Filter
+Gets the collection of filter parameters.
+
+## Class: System.Linq.Search.IPageQuery
+Represents a page query for paginating results.
+### Properties
+
+#### CurrentPage
+Gets the current page number.
+#### PageSize
+Gets the size of each page.
+#### ExcludePageCount
+Gets a value indicating whether to exclude the total page count from the result.
+
+## Class: System.Linq.Search.IQueryBuilder
+Represents a query builder for executing queries with search parameters.
+### Methods
+
+
+#### ExecuteBy(System.Linq.IQueryable,Eliassen.System.Linq.Search.ISearchQuery)
+Executes a query using the specified and .
+    #####Parameters
+    **query:** The queryable data source.
+
+    **searchQuery:** The search parameters for filtering and sorting the data.
+
+    ##### Return value
+    An containing the result of the executed query.
+
+#### 
+Executes a typed query using the specified and .
+    #####Parameters
+    **query:** The typed queryable data source.
+
+    **searchQuery:** The search parameters for filtering and sorting the data.
+
+    ##### Return value
+    An containing the result of the executed query.
+
+## Class: System.Linq.Search.IQueryBuilder`1
+Represents a typed query builder for executing queries with search parameters.The type of the model in the query.
+### Methods
+
+
+#### ExecuteBy(System.Linq.IQueryable{`0},Eliassen.System.Linq.Search.ISearchQuery)
+Executes a typed query using the specified and .
+    #####Parameters
+    **query:** The typed queryable data source.
+
+    **searchQuery:** The search parameters for filtering and sorting the data.
+
+    ##### Return value
+    An containing the result of the executed query.
+
+## Class: System.Linq.Search.ISearchQuery
+Represents a query object that combines page, sort, search term, and filter criteria for searching data.
+
+## Class: System.Linq.Search.ISearchQuery`1
+Represents a generic query object that combines page, sort, search term, and filter criteria for searching data of type .The type of the model.
+
+## Class: System.Linq.Search.ISearchTermQuery
+Represents a query object that includes a search term for filtering data.
+### Properties
+
+#### SearchTerm
+Gets the search term used for filtering data.
+
+## Class: System.Linq.Search.ISortBuilder`1
+Represents an interface for building sorting expressions and applying sorting to a query.The type of the model.
+### Methods
+
+
+#### SortBy(System.Linq.IQueryable{`0},Eliassen.System.Linq.Search.ISortQuery,Eliassen.System.Linq.Expressions.IExpressionTreeBuilder{`0},System.StringComparison)
+Sorts the specified query based on the provided sort criteria.
+    #####Parameters
+    **query:** The query to be sorted.
+
+    **searchRequest:** The sort criteria specified in the search request.
+
+    **treeBuilder:** The expression tree builder for the model.
+
+    **stringComparison:** The string comparison method used for sorting.
+
+    ##### Return value
+    An representing the sorted query.
+
+## Class: System.Linq.Search.ISortQuery
+Represents an interface for specifying sorting criteria in a query.
+### Properties
+
+#### OrderBy
+Gets a dictionary containing sorting information, where the key is the column name and the value is the sort direction.
 
 ## Class: System.Linq.Search.OrderDirections
 Enumeration to control sort order
@@ -243,6 +448,48 @@ Gets a collection of enumeration models for all values of a specific enumeration
     ##### Return value
     A collection of enumeration models.
 
+## Class: System.Reflection.IEnumModel
+Represents a generic interface for providing information about an enumeration value.
+### Properties
+
+#### Code
+Gets the code associated with the enumeration value.
+#### Description
+Gets the description associated with the enumeration value.
+#### Id
+Gets the numerical identifier of the enumeration value.
+#### IsEndState
+Gets a value indicating whether the enumeration value is an end state.
+#### IsExcludeFromUnique
+Gets a value indicating whether the enumeration value is excluded from uniqueness checks.
+#### Name
+Gets the name of the enumeration value.
+#### Order
+Gets the order of the enumeration value.
+#### Value
+Gets the underlying value of the enumeration.
+#### PossibleNames
+Gets a collection of possible names for the enumeration value.
+#### 
+Gets the strongly-typed value of the enumeration.
+
+## Class: System.Reflection.IEnumModel`1
+Represents a generic interface for providing information about an enumeration value of type .The enumeration type.
+### Properties
+
+#### Value
+Gets the strongly-typed value of the enumeration.
+
+## Class: System.Reflection.IResolveType
+Represents an interface for resolving a .
+### Methods
+
+
+#### ResolveType
+Resolves and returns the associated .
+    ##### Return value
+    The resolved .
+
 ## Class: System.ResponseModel.ICaptureResultMessage
 Represents an interface for capturing and publishing result messages.
 ### Methods
@@ -266,6 +513,61 @@ Clears the captured result messages.
 Captures and returns the result messages, removing them from the capture.
     ##### Return value
     An IReadOnlyCollection of captured result messages.
+
+## Class: System.ResponseModel.IModelResult
+Represents a generic interface for a result containing model data and messages.
+### Properties
+
+#### Data
+Gets the data associated with the result.
+#### Messages
+Gets a collection of messages associated with the result.
+#### 
+Gets the strongly-typed data associated with the result.
+
+## Class: System.ResponseModel.IModelResult`1
+Represents a generic interface for a result containing model data of type and messages.The type of the model data.
+### Properties
+
+#### Data
+Gets the strongly-typed data associated with the result.
+
+## Class: System.ResponseModel.IPagedQueryResult
+Represents a generic interface for a paged query result containing model data and additional paging information.
+### Properties
+
+#### CurrentPage
+Gets the current page number.
+#### TotalPageCount
+Gets the total number of pages.
+#### TotalRowCount
+Gets the total number of rows across all pages.
+
+## Class: System.ResponseModel.IPagedQueryResult`1
+Represents a generic interface for a paged query result containing model data of type and additional paging information.The type of the model data.
+
+## Class: System.ResponseModel.IQueryResult
+Represents a generic interface for a query result containing rows of data.
+### Properties
+
+#### Rows
+Gets the collection of rows in the query result.
+#### 
+Gets the collection of rows in the query result, typed as .
+
+## Class: System.ResponseModel.IQueryResult`1
+Represents a generic interface for a query result containing model data of type .The type of the model data.
+### Properties
+
+#### Rows
+Gets the collection of rows in the query result, typed as .
+
+## Class: System.ResponseModel.IResult
+Represents a result, which may include a collection of messages.
+### Properties
+
+#### Messages
+Gets a collection of result messages.
 
 ## Class: System.ResponseModel.MessageLevels
 response message level
@@ -493,7 +795,17 @@ convert stream into object
 interface to identify shared BSON serialization process.
 
 ## Class: System.Text.Json.Serialization.IJsonSerializer
-interface to identify shared JSON serialization process.
+Represents an interface to identify a shared JSON serialization process.
+### Methods
+
+
+#### AsPropertyName(System.String)
+Converts the provided property name according to the configured property naming policy.
+    #####Parameters
+    **propertyName:** The original property name.
+
+    ##### Return value
+    The converted property name.
 
 ## Class: System.Text.Json.Serialization.JsonStringEnumConverterEx`1
 A custom JSON converter for serializing and deserializing enums as strings or numbers.The enum type to convert.
@@ -521,6 +833,26 @@ Writes the JSON representation of the enum value.
 
     **options:** The serializer options.
 
+
+## Class: System.Text.Templating.IFileType
+This interface allows objects that implement it to provide information about a specific file type, including its extension, content type, and whether it is considered a template type.
+### Properties
+
+#### Extension
+Gets the file extension.
+#### ContentType
+Gets the content type of the file.
+#### IsTemplateType
+Gets a value indicating whether the file type is considered a template type.
+#### 
+Gets a collection of file types.
+
+## Class: System.Text.Templating.IFileTypeProvider
+Provides a collection of file types.
+### Properties
+
+#### Types
+Gets a collection of file types.
 
 ## Class: System.Text.Templating.ITemplateContext
 Represents the context for a template, including information about the template and target content types, source, and priority.
@@ -614,6 +946,19 @@ Applies the template associated with the specified context, using the provided d
 
     ##### Return value
     A task representing the asynchronous operation, indicating whether the application was successful.
+
+## Class: System.Text.Templating.ITemplateSource
+Represents a source of templates that can be used by a template engine.
+### Methods
+
+
+#### Get(System.String)
+Gets the template contexts associated with the specified template name.
+    #####Parameters
+    **templateName:** The name of the template to retrieve.
+
+    ##### Return value
+    An enumerable collection of template contexts.
 
 ## Class: System.Text.Xml.Serialization.IXmlSerializer
 interface to identify shared XML serialization process.

@@ -51,7 +51,7 @@ public class InProcessMessageProvider : IMessageSenderProvider, IMessageReceiver
         };
         _queue.Enqueue(wrapped);
 
-        return Task.FromResult(wrapped.CorrelationId);
+        return Task.FromResult<string?>(wrapped.CorrelationId);
     }
 
     /// <inheritdoc/>
