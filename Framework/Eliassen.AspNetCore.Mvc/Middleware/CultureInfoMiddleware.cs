@@ -12,17 +12,10 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
     /// Custom middleware to enable detection of language/culture from HTTP 
     /// request header as well as assignment for response header
     /// </summary>
-    public class CultureInfoMiddleware
-    {
-        private readonly RequestDelegate _next;
-
-        /// <inheritdoc />
-        public CultureInfoMiddleware(
-            RequestDelegate next
+    public class CultureInfoMiddleware(
+        RequestDelegate next
             )
-        {
-            _next = next;
-        }
+    {
 
         /// <inheritdoc />
         public async Task Invoke(
@@ -58,7 +51,7 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
 
                 }, cultureInfo);
 
-                await _next.Invoke(context);
+                await next.Invoke(context);
             }
             catch (Exception ex)
             {

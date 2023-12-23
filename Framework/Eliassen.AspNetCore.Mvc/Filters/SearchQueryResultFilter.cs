@@ -20,24 +20,13 @@ namespace Eliassen.AspNetCore.Mvc.Filters
     /// <see cref="IQueryResult{TModel}"/>
     /// <see cref="IPagedQueryResult{TModel}"/>
     /// </summary>
-    public class SearchQueryResultFilter : IResultFilter
+    public class SearchQueryResultFilter(
+        IAccessor<ISearchQuery> searchQuery,
+        ILogger<SearchQueryResultFilter> logger,
+        IServiceProvider serviceProvider
+            ) : IResultFilter
     {
-
-        private readonly IAccessor<ISearchQuery> _searchQuery;
-        private readonly ILogger _logger;
-        private readonly IServiceProvider _serviceProvider;
-
-        /// <inheritdoc/>
-        public SearchQueryResultFilter(
-            IAccessor<ISearchQuery> searchQuery,
-            ILogger<SearchQueryResultFilter> logger,
-            IServiceProvider serviceProvider
-            )
-        {
-            _searchQuery = searchQuery;
-            _logger = logger;
-            _serviceProvider = serviceProvider;
-        }
+        private readonly ILogger _logger = logger;
 
         /// <inheritdoc/>
         public void OnResultExecuted(ResultExecutedContext context)
@@ -54,10 +43,10 @@ namespace Eliassen.AspNetCore.Mvc.Filters
 
                 _logger.LogInformation($"Base Query: {{{nameof(query)}}} ({{{nameof(query.ElementType)}}})", query.ToString(), elementType);
 
-                if (elementType != null && _searchQuery.Value != null)
+                if (elementType != null && searchQuery.Value != null)
                 {
-                    var queryBuilder = (IQueryBuilder)_serviceProvider.GetRequiredService(typeof(IQueryBuilder<>).MakeGenericType(elementType));
-                    objectResult.Value = queryBuilder.ExecuteBy(query, _searchQuery.Value);
+                    var queryBuilder = (IQueryBuilder)serviceProvider.GetRequiredService(typeof(IQueryBuilder<>).MakeGenericType(elementType));
+                    objectResult.Value = queryBuilder.ExecuteBy(query, searchQuery.Value);
                 }
                 else
                 {

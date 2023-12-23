@@ -3,11 +3,17 @@
 
 ## Class: Microsoft.B2C.Identity.ManageGraphUser
 Implementation of and for managing users in Microsoft Graph.
+Initializes a new instance of the class.
+    **log:** The logger.
+
+    **config:** The configuration.
+
 ### Methods
 
 
 ####Constructor
 Initializes a new instance of the class.
+Implementation of and for managing users in Microsoft Graph.
     #####Parameters
     **log:** The logger.
 
@@ -21,11 +27,15 @@ Gets the authentication provider for Microsoft Graph.
 
 ## Class: Microsoft.B2C.Identity.UserManagementProvider
 Represents a provider for user management operations.
+Initializes a new instance of the class.
+    **user:** The user manager for managing graph users.
+
 ### Methods
 
 
 ####Constructor
 Initializes a new instance of the class.
+Represents a provider for user management operations.
     #####Parameters
     **user:** The user manager for managing graph users.
 

@@ -220,6 +220,24 @@ Rebuild dictionary to use a different IEqualityComparer{TKey}
 
 ## Class: System.Linq.Expressions.ExpressionExtensions
 Extensions for System.Linq.Expressions.Expression
+### Methods
+
+
+#### OrElse``1(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}}})
+Build an or'd expression chain
+    #####Parameters
+    **ors:** 
+
+    ##### Return value
+    
+
+#### AndAlso``1(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}}})
+Build an and'd expression chain
+    #####Parameters
+    **ands:** 
+
+    ##### Return value
+    
 
 ## Class: System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
 This visitor will modify expressions to add `x.Property != null` before instance method calls for query rewrite
@@ -238,6 +256,9 @@ If expression is an instance method then modify the expression to ensure a
 Expression visitor to replace string functions with the matching functions that end with a StringComparison parameter
 ### Methods
 
+
+####Constructor
+Expression visitor to replace string functions with the matching functions that end with a StringComparison parameter
 
 #### VisitBinary(System.Linq.Expressions.BinaryExpression)
 Replace `string == string` with `string.Equals(string, StringComparison)`
@@ -275,6 +296,112 @@ value is greater than provided
 value is less greater or equal to provided
 #### NotEqualTo
 value not equal to
+
+## Class: System.Linq.Search.QueryBuilder
+Provides a base class for building and executing queries based on search, filter, sort, and page criteria.
+### Fields
+
+#### DefaultPageSize
+Default page size when not defined on request
+### Methods
+
+
+#### Execute(System.Linq.IQueryable,Eliassen.System.Linq.Search.ISearchQuery,System.Collections.Generic.IEnumerable{Eliassen.System.Linq.Expressions.IPostBuildExpressionVisitor},Microsoft.Extensions.Logging.ILogger{Eliassen.System.Linq.Search.QueryBuilder},Eliassen.System.ResponseModel.ICaptureResultMessage)
+Composes and executes a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
+    #####Parameters
+    **query:** The queryable data source.
+
+    **searchQuery:** The search query parameters.
+
+    **postBuildVisitors:** Optional post-build expression visitors.
+
+    **logger:** Optional logger for logging messages.
+
+    **messages:** Optional message capture for result messages.
+
+    ##### Return value
+    The result of the query execution.
+
+#### Execute``1(System.Linq.IQueryable{``0},Eliassen.System.Linq.Search.ISearchQuery,System.Collections.Generic.IEnumerable{Eliassen.System.Linq.Expressions.IPostBuildExpressionVisitor},Microsoft.Extensions.Logging.ILogger{Eliassen.System.Linq.Search.QueryBuilder},Eliassen.System.ResponseModel.ICaptureResultMessage)
+Composes and executes a typed query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
+    #####Parameters
+    **query:** The typed queryable data source.
+
+    **searchQuery:** The search query parameters.
+
+    **postBuildVisitors:** Optional post-build expression visitors.
+
+    **logger:** Optional logger for logging messages.
+
+    **messages:** Optional message capture for result messages.
+
+    ##### Return value
+    The result of the typed query execution.
+
+#### Execute``1(System.Linq.IQueryable{``0},Eliassen.System.Linq.Search.ISearchQuery,Eliassen.System.Linq.Expressions.IPostBuildExpressionVisitor,Eliassen.System.Linq.Expressions.IPostBuildExpressionVisitor[])
+Composes and executes a typed query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
+    #####Parameters
+    **query:** The typed queryable data source.
+
+    **searchQuery:** The search query parameters.
+
+    **postBuildVisitor:** A single post-build expression visitor.
+
+    **postBuildVisitors:** Additional post-build expression visitors.
+
+    ##### Return value
+    The result of the typed query execution.
+
+####Constructor
+Provides a typed implementation for building and executing queries based on search, filter, sort, and page criteria.
+
+#### 
+Composes and executes a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
+    #####Parameters
+    **query:** The queryable data source.
+
+    **searchQuery:** The search query parameters.
+
+    ##### Return value
+    The result of the query execution.
+
+#### 
+Composes and executes a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
+    #####Parameters
+    **query:** The queryable data source.
+
+    **searchQuery:** The search query parameters.
+
+    ##### Return value
+    The result of the query execution.
+
+## Class: System.Linq.Search.QueryBuilder`1
+Provides a typed implementation for building and executing queries based on search, filter, sort, and page criteria.The type of the model in the query.
+### Methods
+
+
+####Constructor
+Provides a typed implementation for building and executing queries based on search, filter, sort, and page criteria.
+
+#### ExecuteBy(System.Linq.IQueryable{`0},Eliassen.System.Linq.Search.ISearchQuery)
+Composes and executes a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
+    #####Parameters
+    **query:** The queryable data source.
+
+    **searchQuery:** The search query parameters.
+
+    ##### Return value
+    The result of the query execution.
+
+#### ExecuteBy(System.Linq.IQueryable,Eliassen.System.Linq.Search.ISearchQuery)
+Composes and executes a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
+    #####Parameters
+    **query:** The queryable data source.
+
+    **searchQuery:** The search query parameters.
+
+    ##### Return value
+    The result of the query execution.
 
 ## Class: System.Reflection.ReflectionExtensions
 Extensions for reflection and common patterns.
@@ -592,10 +719,26 @@ Convert System.Test.Json.JsonDocument to System.Xml.XmlDocument
     
 
 ## Class: System.Text.Json.Serialization.DefaultBsonSerializer
-Default serializer for JSON
+Default serializer for BSON (Binary JSON).
+### Fields
+
+#### DefaultContentType
+The default content type for BSON.
+### Properties
+
+#### ContentType
+Gets the content type for BSON, which is "application/json".
+### Methods
+
+
+####Constructor
+Initializes a new instance of the class.
 
 ## Class: System.Text.Json.Serialization.DefaultJsonSerializer
 Default serializer for JSON.
+Initializes a new instance of the class.
+    **options:** Optional JSON serializer options.
+
 ### Fields
 
 #### DefaultContentType
@@ -611,6 +754,7 @@ Gets the default JSON serializer options.
 
 ####Constructor
 Initializes a new instance of the class.
+Default serializer for JSON.
     #####Parameters
     **options:** Optional JSON serializer options.
 
@@ -625,6 +769,11 @@ Use the configured property naming policy to change the provided value.
 
 ## Class: System.Text.Templating.FileTemplateSource
 Access template from file system
+### Methods
+
+
+####Constructor
+Access template from file system
 
 ## Class: System.Text.Templating.FileTemplatingSettings
 Configuration settings for file templating engine
@@ -636,6 +785,3 @@ template source path
 sandbox root path
 #### Priority
 template priority
-
-## Class: System.Text.Templating.TemplateEngine
-Generate templating engine that will try to use best match for source and provider

@@ -10,15 +10,13 @@ namespace Eliassen.AspNetCore.JwtAuthentication.Authorization;
 /// <summary>
 /// Handles user authorization based on specified requirements.
 /// </summary>
-public class UserAuthorizationHandler : AuthorizationHandler<UserAuthorizationRequirement>
+/// <remarks>
+/// Initializes a new instance of the <see cref="UserAuthorizationHandler"/> class.
+/// </remarks>
+/// <param name="logger">The logger.</param>
+public class UserAuthorizationHandler(ILogger<UserAuthorizationHandler> logger) : AuthorizationHandler<UserAuthorizationRequirement>
 {
-    private readonly ILogger _logger;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="UserAuthorizationHandler"/> class.
-    /// </summary>
-    /// <param name="logger">The logger.</param>
-    public UserAuthorizationHandler(ILogger<UserAuthorizationHandler> logger) => _logger = logger;
+    private readonly ILogger _logger = logger;
 
     /// <summary>
     /// Handles the user authorization requirement asynchronously.

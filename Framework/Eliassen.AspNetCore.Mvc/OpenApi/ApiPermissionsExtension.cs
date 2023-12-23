@@ -9,27 +9,20 @@ namespace Eliassen.AspNetCore.Mvc.OpenApi;
 /// <summary>
 /// Declare permissions required for application endpoint
 /// </summary>
-public class ApiPermissionsExtension : IOpenApiExtension
+/// <param name="allowAnonymous">End point allows unauthenticated requests</param>
+/// <param name="rights">end point requires at least one of these permissions</param>
+public class ApiPermissionsExtension(bool allowAnonymous, IEnumerable<string> rights) : IOpenApiExtension
 {
-    /// <summary>
-    /// </summary>
-    /// <param name="allowAnonymous">End point allows unauthenticated requests</param>
-    /// <param name="rights">end point requires at least one of these permissions</param>
-    public ApiPermissionsExtension(bool allowAnonymous, IEnumerable<string> rights)
-    {
-        AllowAnonymous = allowAnonymous;
-        Rights = rights.Distinct().ToList().AsReadOnly();
-    }
 
     /// <summary>
     /// End point allows unauthenticated requests
     /// </summary>
-    public bool AllowAnonymous { get; }
+    public bool AllowAnonymous { get; } = allowAnonymous;
 
     /// <summary>
     /// end point requires at least one of these permissions
     /// </summary>
-    public IReadOnlyCollection<string> Rights { get; }
+    public IReadOnlyCollection<string> Rights { get; } = rights.Distinct().ToList().AsReadOnly();
 
     /// <inheritdoc />
     public void Write(IOpenApiWriter writer, OpenApiSpecVersion specVersion)

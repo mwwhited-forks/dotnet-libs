@@ -7,22 +7,14 @@ using System.Xml.Linq;
 
 namespace Nucleus.TemplateEngine.Cli;
 
-public class TemplateEngineService : IHostedService
+public class TemplateEngineService(
+    ILogger<TemplateEngineService> log,
+    IOptions<TemplateEngineSettings> settings,
+    ITemplateEngine engine
+        ) : IHostedService
 {
-    private readonly ILogger _log;
-    private readonly TemplateEngineSettings _settings;
-    private readonly ITemplateEngine _engine;
-
-    public TemplateEngineService(
-        ILogger<TemplateEngineService> log,
-        IOptions<TemplateEngineSettings> settings,
-        ITemplateEngine engine
-        )
-    {
-        _log = log;
-        _settings = settings.Value;
-        _engine = engine;
-    }
+    private readonly ILogger _log = log;
+    private readonly TemplateEngineSettings _settings = settings.Value;
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
@@ -57,7 +49,7 @@ public class TemplateEngineService : IHostedService
             if (dir != null && !Directory.Exists(dir)) Directory.CreateDirectory(dir);
             using var fileWriter = File.Open(outFile, FileMode.Create, FileAccess.Write, FileShare.Read);
 
-            var result = await _engine.ApplyAsync(_settings.Template, data, fileWriter);
+            var result = await engine.ApplyAsync(_settings.Template, data, fileWriter);
             await fileWriter.FlushAsync(cancellationToken);
             _log.LogInformation($"Written: {{{nameof(outFile)}}}", outFile);
         }

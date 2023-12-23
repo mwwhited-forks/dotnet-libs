@@ -6,8 +6,6 @@ namespace Eliassen.MessageQueueing.Tests.TestItems;
 
 public class TestExceptionMessageSenderProvider : IMessageSenderProvider
 {
-    public async Task<string?> SendAsync(object message, IMessageContext context)
-    {
-        throw new ApplicationException();
-    }
+    public Task<string?> SendAsync(object message, IMessageContext context) =>
+        Task.FromException<string?>(new NotImplementedException());
 }

@@ -1,14 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>false</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 
-  <ItemGroup>
-    <Content Remove="readme.md" />
-  </ItemGroup>
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Remove="readme.md" />
+	</ItemGroup>
 
 
 	<ItemGroup>
@@ -19,7 +23,7 @@
 
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Eliassen.System\Eliassen.System.csproj" />
+		<ProjectReference Include="..\Eliassen.System\Eliassen.System.csproj" />
 	</ItemGroup>
 
 

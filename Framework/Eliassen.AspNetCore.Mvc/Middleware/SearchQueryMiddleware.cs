@@ -16,23 +16,14 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
     /// <summary>
     /// ASP.Net MVC Middlware to enable IQueryable{T} responses from  Controller Actions
     /// </summary>
-    public class SearchQueryMiddleware
-    {
-        private readonly RequestDelegate _next;
-        private readonly ILogger _log;
-        private readonly IAccessor<ISearchQuery> _searchQuery;
-
-        /// <inheritdoc />
-        public SearchQueryMiddleware(
-            RequestDelegate next,
-            ILogger<SearchQueryMiddleware> log,
-            IAccessor<ISearchQuery> searchQuery
+    /// <inheritdoc />
+    public class SearchQueryMiddleware(
+        RequestDelegate next,
+        ILogger<SearchQueryMiddleware> log,
+        IAccessor<ISearchQuery> searchQuery
             )
-        {
-            _next = next;
-            _log = log;
-            _searchQuery = searchQuery;
-        }
+    {
+        private readonly ILogger _log = log;
 
         private enum RequestType
         {
@@ -145,9 +136,9 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
                     {
                         _log.LogInformation($"Invoking: {{{nameof(searchModel)}}}", searchModel);
                     }
-                    _searchQuery.Value = searchModel;
+                    searchQuery.Value = searchModel;
                 }
-                await _next(context);
+                await next(context);
             }
             catch (Exception ex)
             {

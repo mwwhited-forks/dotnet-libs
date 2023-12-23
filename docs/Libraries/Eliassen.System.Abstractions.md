@@ -11,13 +11,6 @@ accessible value
 ## Class: System.ComponentModel.EndStateAttribute
 this attribute tags valid end states for enum based state machines
 
-## Class: System.ComponentModel.EnumValueAttribute
-output enum string as this value when serialized as json
-### Properties
-
-#### Name
-value to output in place of Enum.ToString() with Json Serializer
-
 ## Class: System.ComponentModel.ExcludeFromUniqueAttribute
 Attribute used to exclude an enum or enum field from being considered for uniqueness checks.
 
@@ -118,23 +111,6 @@ include field to be searchable for "SearchTerm"
 #### TargetName
 Target name required only if this is used on the class
 
-## Class: System.ComponentModel.Search.SearchTermDefaultAttribute
-provide the ability to control how search terms are handled if not wilded carded
-### Properties
-
-#### Default
-rule to use for provided search term if not quoted
-### Methods
-
-
-#### Intercept(Eliassen.System.Linq.Search.ISearchQuery)
-use the `Default` to control pattern for searches without provided wild cards
-    #####Parameters
-    **searchQuery:** 
-
-    ##### Return value
-    
-
 ## Class: System.ComponentModel.Search.SearchTermDefaults
 Specifies default search term options for comparison.
 ### Fields
@@ -161,6 +137,9 @@ Gets a unique identifier for this attribute.
 
 ## Class: System.Configuration.ConfigurationSectionAttribute
 Specifies the configuration section associated with a class.
+Initializes a new instance of the class.
+    **configurationSection:** The configuration section name.
+
 ### Properties
 
 #### ConfigurationSection
@@ -172,6 +151,7 @@ Gets a unique identifier for this attribute.
 
 ####Constructor
 Initializes a new instance of the class.
+Specifies the configuration section associated with a class.
     #####Parameters
     **configurationSection:** The configuration section name.
 

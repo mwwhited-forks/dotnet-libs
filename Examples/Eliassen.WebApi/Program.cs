@@ -13,8 +13,15 @@ using Eliassen.WebApi.Provider;
 
 namespace Eliassen.WebApi;
 
+/// <summary>
+/// primary entry point
+/// </summary>
 public class Program
 {
+
+    /// <summary>
+    /// primary entry point
+    /// </summary>
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);

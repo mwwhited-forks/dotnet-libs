@@ -64,6 +64,9 @@ Represents a generic interface for sending messages of type to a message queue.T
 
 ## Class: MessageQueueing.MessageQueueAttribute
 Attribute used to mark a class as a message queue handler and provide configuration options.
+Initializes a new instance of the class with the specified simple name.
+    **simpleName:** The simple name used for named targeting in the configuration value.
+
 ### Properties
 
 #### SimpleName
@@ -75,6 +78,7 @@ Gets a unique identifier for this attribute.
 
 ####Constructor
 Initializes a new instance of the class with the specified simple name.
+Attribute used to mark a class as a message queue handler and provide configuration options.
     #####Parameters
     **simpleName:** The simple name used for named targeting in the configuration value.
 

@@ -12,12 +12,22 @@ namespace Eliassen.System.Linq.Expressions
     public static class ExpressionExtensions
     {
 
-        /// <inheritdoc cref="Expression.OrElse"/>
+        /// <summary>
+        /// Build an or'd expression chain
+        /// </summary>
+        /// <typeparam name="TModel"></typeparam>
+        /// <param name="ors"></param>
+        /// <returns></returns>
         public static Expression<Func<TModel, bool>>? OrElse<TModel>(
             this IEnumerable<Expression<Func<TModel, bool>>> ors
         ) => Chain(ors, ChainTypes.OrElse);
 
-        /// <inheritdoc cref="Expression.AndAlso"/>
+        /// <summary>
+        /// Build an and'd expression chain
+        /// </summary>
+        /// <typeparam name="TModel"></typeparam>
+        /// <param name="ands"></param>
+        /// <returns></returns>
         public static Expression<Func<TModel, bool>>? AndAlso<TModel>(
             this IEnumerable<Expression<Func<TModel, bool>>?> ands
         ) => Chain(ands, ChainTypes.AndAlso);

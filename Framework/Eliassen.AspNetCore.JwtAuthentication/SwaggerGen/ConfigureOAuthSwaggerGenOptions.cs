@@ -12,18 +12,13 @@ namespace Eliassen.AspNetCore.SwaggerGen.B2C;
 /// <summary>
 /// Configures SwaggerGen options for OAuth2 authentication.
 /// </summary>
-public class ConfigureOAuthSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
+/// <remarks>
+/// Initializes a new instance of the <see cref="ConfigureOAuthSwaggerGenOptions"/> class.
+/// </remarks>
+/// <param name="config">The OAuth2 Swagger options.</param>
+public class ConfigureOAuthSwaggerGenOptions(IOptions<OAuth2SwaggerOptions> config) : IConfigureOptions<SwaggerGenOptions>
 {
-    private readonly IOptions<OAuth2SwaggerOptions> _config;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ConfigureOAuthSwaggerGenOptions"/> class.
-    /// </summary>
-    /// <param name="config">The OAuth2 Swagger options.</param>
-    public ConfigureOAuthSwaggerGenOptions(IOptions<OAuth2SwaggerOptions> config)
-    {
-        _config = config ?? throw new ArgumentNullException(nameof(config));
-    }
+    private readonly IOptions<OAuth2SwaggerOptions> _config = config ?? throw new ArgumentNullException(nameof(config));
 
     /// <summary>
     /// Gets the OAuth2 scopes.

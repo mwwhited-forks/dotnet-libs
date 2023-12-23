@@ -19,34 +19,25 @@ namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 /// <summary>
 /// SwaggerGen extensions to enable presenting permissions, application versions and XMLDocs
 /// </summary>
-public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGenOptions>
+/// <inheritdoc/>
+public class AdditionalSwaggerGenEndpointsOptions(
+    IActionDescriptorCollectionProvider provider,
+    ILogger<AdditionalSwaggerGenEndpointsOptions> log,
+    IEnumerable<IVersionProvider> versions
+        ) : IConfigureOptions<SwaggerGenOptions>
 {
-    private readonly IActionDescriptorCollectionProvider _provider;
-    private readonly ILogger _log;
-    private readonly IEnumerable<IVersionProvider> _versions;
-
-    /// <inheritdoc/>
-    public AdditionalSwaggerGenEndpointsOptions(
-        IActionDescriptorCollectionProvider provider,
-        ILogger<AdditionalSwaggerGenEndpointsOptions> log,
-        IEnumerable<IVersionProvider> versions
-        )
-    {
-        _provider = provider;
-        _log = log;
-        _versions = versions;
-    }
+    private readonly ILogger _log = log;
 
     /// <inheritdoc/>
     public void Configure(SwaggerGenOptions options)
     {
         options.OperationFilter<ApplicationPermissionsApiFilter>();
 
-        var controllerAssemblies = _provider.ActionDescriptors.Items.OfType<ControllerActionDescriptor>()
+        var controllerAssemblies = provider.ActionDescriptors.Items.OfType<ControllerActionDescriptor>()
             .Select(c => c.ControllerTypeInfo.Assembly)
             .Distinct();
 
-        var composedVersions = (from v in _versions.Reverse()
+        var composedVersions = (from v in versions.Reverse()
                                 select new
                                 {
                                     v.Title,
@@ -90,7 +81,7 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
             Description = selected?.Description,
         });
 
-        foreach (var group in _provider.ActionDescriptors.Items.OfType<ControllerActionDescriptor>()
+        foreach (var group in provider.ActionDescriptors.Items.OfType<ControllerActionDescriptor>()
             .Select(c => c.ControllerTypeInfo.Assembly)
             .Distinct())
         {

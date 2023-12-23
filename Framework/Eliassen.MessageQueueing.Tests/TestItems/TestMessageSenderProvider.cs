@@ -6,21 +6,15 @@ using System.Threading.Tasks;
 
 namespace Eliassen.MessageQueueing.Tests.TestItems;
 
-public class TestMessageSenderProvider : IMessageSenderProvider
+public class TestMessageSenderProvider(
+    TestContext context,
+    ILogger<TestMessageSenderProvider> logger
+        ) : IMessageSenderProvider
 {
     public const string ProviderName = "test-provider";
 
-    private readonly TestContext _context;
-    private readonly ILogger _logger;
-
-    public TestMessageSenderProvider(
-        TestContext context,
-        ILogger<TestMessageSenderProvider> logger
-        )
-    {
-        _context = context;
-        _logger = logger;
-    }
+    private readonly TestContext _context = context;
+    private readonly ILogger _logger = logger;
 
     public Task<string?> SendAsync(object message, IMessageContext context)
     {

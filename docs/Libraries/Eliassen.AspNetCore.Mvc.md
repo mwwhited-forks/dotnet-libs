@@ -37,6 +37,9 @@ Authorization filter to compared application rights for user to rights required 
 ### Methods
 
 
+####Constructor
+Authorization filter to compared application rights for user to rights required by endpoint
+
 #### OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)
 Ensure that current authenticated user matches as least one requested right
     #####Parameters
@@ -56,20 +59,28 @@ Applies the file upload operation filter to modify the Swagger UI documentation.
     **context:** The OperationFilterContext providing information about the operation.
 
 
-## Class: AspNetCore.Mvc.Filters.SearchQueryOperationFilter
-Search Query Operation filter extends Swagger/OpenAPI to provide details on IQueryable{T} endpoints.
-
 ## Class: AspNetCore.Mvc.Filters.SearchQueryResultFilter
+Search Query Results filter is an extension for ASP.Net Core to enable a common pattern to query data endpoints with from Controller Actions. This detects actions that return IQueryable{TModel} and intercepts the web request to complete the query based on user requested inputs.
+### Methods
+
+
+####Constructor
 Search Query Results filter is an extension for ASP.Net Core to enable a common pattern to query data endpoints with from Controller Actions. This detects actions that return IQueryable{TModel} and intercepts the web request to complete the query based on user requested inputs.
 
 ## Class: AspNetCore.Mvc.Middleware.CultureInfoMiddleware
 Custom middleware to enable detection of language/culture from HTTP request header as well as assignment for response header
+### Methods
 
-## Class: AspNetCore.Mvc.Middleware.SearchQueryMiddleware
-ASP.Net MVC Middlware to enable IQueryable{T} responses from Controller Actions
+
+####Constructor
+Custom middleware to enable detection of language/culture from HTTP request header as well as assignment for response header
 
 ## Class: AspNetCore.Mvc.OpenApi.ApiPermissionsExtension
 Declare permissions required for application endpoint
+    **allowAnonymous:** End point allows unauthenticated requests
+
+    **rights:** end point requires at least one of these permissions
+
 ### Properties
 
 #### AllowAnonymous
@@ -80,7 +91,7 @@ end point requires at least one of these permissions
 
 
 ####Constructor
-
+Declare permissions required for application endpoint
     #####Parameters
     **allowAnonymous:** End point allows unauthenticated requests
 
@@ -134,10 +145,12 @@ Enables extensions for shared Search Query extensions (included in AddAspNetCore
     ##### Return value
     The modified service collection.
 
-## Class: AspNetCore.Mvc.SwaggerGen.AdditionalSwaggerGenEndpointsOptions
-SwaggerGen extensions to enable presenting permissions, application versions and XMLDocs
-
 ## Class: AspNetCore.Mvc.SwaggerGen.AdditionalSwaggerUIEndpointsOptions
+SwaggerUI Extension to enable grouping controller/actions by assembly
+### Methods
+
+
+####Constructor
 SwaggerUI Extension to enable grouping controller/actions by assembly
 
 ## Class: AspNetCore.Mvc.SwaggerGen.AddMvcFilterOptions`1
@@ -154,11 +167,15 @@ SwaggerGen extension to configure controller group as the related assembly name
 
 ## Class: AspNetCore.JwtAuthentication.Authorization.UserAuthorizationHandler
 Handles user authorization based on specified requirements.
+Initializes a new instance of the class.
+    **logger:** The logger.
+
 ### Methods
 
 
 ####Constructor
 Initializes a new instance of the class.
+Handles user authorization based on specified requirements.
     #####Parameters
     **logger:** The logger.
 

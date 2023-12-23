@@ -3,11 +3,21 @@
 
 ## Class: MessageQueueing.MessageSender`1
 Represents a message sender for a specific communication channel ().The type representing the communication channel.
+Initializes a new instance of the class.
+    **context:** The message context factory.
+
+    **provider:** The message sender provider factory.
+
+    **resolver:** The message property resolver.
+
+    **logger:** The logger.
+
 ### Methods
 
 
 ####Constructor
 Initializes a new instance of the class.
+Represents a message sender for a specific communication channel ().
     #####Parameters
     **context:** The message context factory.
 
@@ -61,6 +71,7 @@ Gets or sets the configuration section associated with the message context.
 
 ####Constructor
 Initializes a new instance of the class.
+Factory for creating instances of .
     #####Parameters
     **serviceProvider:** The service provider for creating instances.
 
@@ -105,11 +116,17 @@ Creates a new instance of with the specified parameters from a queue message.
 
 ## Class: MessageQueueing.Services.MessageContextFactory
 Factory for creating instances of .
+Initializes a new instance of the class.
+    **serviceProvider:** The service provider for creating instances.
+
+    **user:** The claims principal representing the user associated with the message context.
+
 ### Methods
 
 
 ####Constructor
 Initializes a new instance of the class.
+Factory for creating instances of .
     #####Parameters
     **serviceProvider:** The service provider for creating instances.
 
@@ -154,6 +171,13 @@ Creates a new instance of with the specified parameters from a queue message.
 
 ## Class: MessageQueueing.Services.MessageHandlerProvider
 Provides handling of queue messages by coordinating multiple instances.
+Initializes a new instance of the class.
+    **serializer:** The JSON serializer.
+
+    **context:** The factory for creating instances of .
+
+    **logger:** The logger for logging messages.
+
 ### Properties
 
 #### Config
@@ -163,6 +187,7 @@ Gets the configuration section associated with the message handler.
 
 ####Constructor
 Initializes a new instance of the class.
+Provides handling of queue messages by coordinating multiple instances.
     #####Parameters
     **serializer:** The JSON serializer.
 
@@ -207,22 +232,36 @@ Handles the specified queue message by invoking each registered message handler.
 
 ## Class: MessageQueueing.Services.MessagePropertyResolver
 Utility class for resolving properties related to message queue handling.
+Initializes a new instance of the class with the specified configuration.
+    **configuration:** The configuration used for resolving message queue properties.
+
 ### Methods
 
 
 ####Constructor
 Initializes a new instance of the class with the specified configuration.
+Utility class for resolving properties related to message queue handling.
     #####Parameters
     **configuration:** The configuration used for resolving message queue properties.
 
 
 ## Class: MessageQueueing.Services.MessageReceiverProviderFactory
 Factory for creating instances of based on configured message handlers.
+Initializes a new instance of the class.
+    **handlers:** The collection of message queue handlers.
+
+    **resolver:** The message property resolver.
+
+    **serviceProvider:** The service provider.
+
+    **logger:** The logger.
+
 ### Methods
 
 
 ####Constructor
 Initializes a new instance of the class.
+Factory for creating instances of based on configured message handlers.
     #####Parameters
     **handlers:** The collection of message queue handlers.
 
@@ -240,11 +279,17 @@ Creates instances of based on configured message handlers.
 
 ## Class: MessageQueueing.Services.MessageSenderProviderFactory
 Factory for creating instances of based on channel and message types.
+Initializes a new instance of the class.
+    **serviceProvider:** The service provider used for resolving services.
+
+    **resolver:** The message property resolver.
+
 ### Methods
 
 
 ####Constructor
 Initializes a new instance of the class.
+Factory for creating instances of based on channel and message types.
     #####Parameters
     **serviceProvider:** The service provider used for resolving services.
 
@@ -263,6 +308,11 @@ Creates an instance of based on channel and message types.
 
 ## Class: Azure.StorageAccount.MessageQueueing.InProcessMessageProvider
 Represents an in-process message provider that implements both and .
+Initializes a new instance of the class.
+    **serializer:** The JSON serializer.
+
+    **logger:** The logger.
+
 ### Fields
 
 #### MessageProviderKey
@@ -272,6 +322,7 @@ Gets the key associated with the in-process message provider.
 
 ####Constructor
 Initializes a new instance of the class.
+Represents an in-process message provider that implements both and .
     #####Parameters
     **serializer:** The JSON serializer.
 

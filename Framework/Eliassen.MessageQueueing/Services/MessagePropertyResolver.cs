@@ -49,7 +49,7 @@ public class MessagePropertyResolver(IConfiguration configuration) : IMessagePro
     /// <inheritdoc/>
     public (IConfigurationSection? configurationSection, string simpleTargetName, string simpleMessageName, string? configPath) ConfigurationSafe(Type channelType, Type messageType)
     {
-        var (config, simpleTargetName, simpleMessageName, configPath) = RootConfiguration(channelType, messageType);
+        var (config, simpleTargetName, simpleMessageName, _) = RootConfiguration(channelType, messageType);
         var selected = config?.GetSection("Config") ?? config;
         return (selected, simpleTargetName, simpleMessageName, selected?.Path);
     }

@@ -10,6 +10,9 @@ using System.Linq;
 
 namespace Eliassen.System.Linq.Search;
 
+/// <summary>
+/// Provides a base class for building and executing queries based on search, filter, sort, and page criteria.
+/// </summary>
 public abstract class QueryBuilder
 {
     /// <summary>
@@ -18,19 +21,18 @@ public abstract class QueryBuilder
     public const int DefaultPageSize = 10;
 
     /// <summary>
-    /// this method will compose and execute a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery
+    /// Composes and executes a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
+    /// </summary>
     /// <seealso cref="ISearchTermQuery"/>
     /// <seealso cref="IFilterQuery"/>
     /// <seealso cref="ISortQuery"/>
     /// <seealso cref="IPageQuery"/>
-    /// </summary>
-    /// 
-    /// <param name="query"></param>
-    /// <param name="searchQuery"></param>
-    /// <param name="postBuildVisitors"></param>
-    /// <param name="logger"></param>
-    /// <param name="messages"></param>
-    /// <returns></returns>
+    /// <param name="query">The queryable data source.</param>
+    /// <param name="searchQuery">The search query parameters.</param>
+    /// <param name="postBuildVisitors">Optional post-build expression visitors.</param>
+    /// <param name="logger">Optional logger for logging messages.</param>
+    /// <param name="messages">Optional message capture for result messages.</param>
+    /// <returns>The result of the query execution.</returns>
     public static IQueryResult Execute(
         IQueryable query,
         ISearchQuery searchQuery,
@@ -62,19 +64,19 @@ public abstract class QueryBuilder
     }
 
     /// <summary>
-    /// this method will compose and execute a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery
+    /// Composes and executes a typed query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
+    /// </summary>
     /// <seealso cref="ISearchTermQuery"/>
     /// <seealso cref="IFilterQuery"/>
     /// <seealso cref="ISortQuery"/>
     /// <seealso cref="IPageQuery"/>
-    /// </summary>
-    /// 
-    /// <param name="query"></param>
-    /// <param name="searchQuery"></param>
-    /// <param name="postBuildVisitors"></param>
-    /// <param name="logger"></param>
-    /// <param name="messages"></param>
-    /// <returns></returns>
+    /// <typeparam name="TModel">The type of the model in the query.</typeparam>
+    /// <param name="query">The typed queryable data source.</param>
+    /// <param name="searchQuery">The search query parameters.</param>
+    /// <param name="postBuildVisitors">Optional post-build expression visitors.</param>
+    /// <param name="logger">Optional logger for logging messages.</param>
+    /// <param name="messages">Optional message capture for result messages.</param>
+    /// <returns>The result of the typed query execution.</returns>
     public static IQueryResult<TModel> Execute<TModel>(
         IQueryable<TModel> query,
         ISearchQuery searchQuery,
@@ -89,6 +91,19 @@ public abstract class QueryBuilder
             messages
             ).ExecuteBy(query, searchQuery);
 
+    /// <summary>
+    /// Composes and executes a typed query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
+    /// </summary>
+    /// <seealso cref="ISearchTermQuery"/>
+    /// <seealso cref="IFilterQuery"/>
+    /// <seealso cref="ISortQuery"/>
+    /// <seealso cref="IPageQuery"/>
+    /// <typeparam name="TModel">The type of the model in the query.</typeparam>
+    /// <param name="query">The typed queryable data source.</param>
+    /// <param name="searchQuery">The search query parameters.</param>
+    /// <param name="postBuildVisitor">A single post-build expression visitor.</param>
+    /// <param name="postBuildVisitors">Additional post-build expression visitors.</param>
+    /// <returns>The result of the typed query execution.</returns>
     public static IQueryResult<TModel> Execute<TModel>(
         IQueryable<TModel> query,
         ISearchQuery searchQuery,
@@ -102,6 +117,11 @@ public abstract class QueryBuilder
             default
             ).ExecuteBy(query, searchQuery);
 }
+
+/// <summary>
+/// Provides a typed implementation for building and executing queries based on search, filter, sort, and page criteria.
+/// </summary>
+/// <typeparam name="TModel">The type of the model in the query.</typeparam>
 public class QueryBuilder<TModel>(
     ISortBuilder<TModel> sortBuilder,
     IExpressionTreeBuilder<TModel> expressionBuilder,
@@ -114,6 +134,16 @@ public class QueryBuilder<TModel>(
     private readonly ILogger _logger = logger ?? new ConsoleLogger<QueryBuilder>();
     private readonly ICaptureResultMessage _messages = messages ?? CaptureResultMessage.Default;
 
+    /// <summary>
+    /// Composes and executes a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
+    /// </summary>
+    /// <seealso cref="ISearchTermQuery"/>
+    /// <seealso cref="IFilterQuery"/>
+    /// <seealso cref="ISortQuery"/>
+    /// <seealso cref="IPageQuery"/>
+    /// <param name="query">The queryable data source.</param>
+    /// <param name="searchQuery">The search query parameters.</param>
+    /// <returns>The result of the query execution.</returns>
     public IQueryResult<TModel> ExecuteBy(
         IQueryable<TModel> query,
         ISearchQuery searchQuery
@@ -135,6 +165,16 @@ public class QueryBuilder<TModel>(
         }
     }
 
+    /// <summary>
+    /// Composes and executes a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
+    /// </summary>
+    /// <seealso cref="ISearchTermQuery"/>
+    /// <seealso cref="IFilterQuery"/>
+    /// <seealso cref="ISortQuery"/>
+    /// <seealso cref="IPageQuery"/>
+    /// <param name="query">The queryable data source.</param>
+    /// <param name="searchQuery">The search query parameters.</param>
+    /// <returns>The result of the query execution.</returns>
     public IQueryResult ExecuteBy(IQueryable query, ISearchQuery searchQuery) =>
         ExecuteBy((query as IQueryable<TModel>) ?? throw new NotSupportedException(), searchQuery);
 

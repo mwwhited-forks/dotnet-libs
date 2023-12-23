@@ -16,7 +16,7 @@ public class ManageGraphUserIntegrationTests
 {
     public TestContext TestContext { get; set; } = null!;
 
-    private static IConfiguration GetConfiguration(IServiceCollection services) =>
+    private static IConfiguration GetConfiguration() =>
         new ConfigurationBuilder()
             .AddInMemoryCollection(
                         (ConfigKeys.Azure.ADB2C.ClientID, "6721294c-f956-4290-9629-6455b92fbcf2"),
@@ -34,7 +34,7 @@ public class ManageGraphUserIntegrationTests
             .AddSingleton<IIdentityManager, ManageGraphUser>()
             ;
 
-        services.Replace(ServiceDescriptor.Transient(_ => GetConfiguration(services)));
+        services.Replace(ServiceDescriptor.Transient(_ => GetConfiguration()));
 
         return services.BuildServiceProvider();
     }

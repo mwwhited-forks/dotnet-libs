@@ -3,11 +3,17 @@
 
 ## Class: Communications.MessageQueueing.EmailMessageHandler
 Represents a message handler for handling and sending email messages.
+Initializes a new instance of the class.
+    **email:** The communication sender for email messages.
+
+    **logger:** The logger.
+
 ### Methods
 
 
 ####Constructor
 Initializes a new instance of the class.
+Represents a message handler for handling and sending email messages.
     #####Parameters
     **email:** The communication sender for email messages.
 

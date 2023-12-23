@@ -12,27 +12,19 @@ namespace Eliassen.WebApi.Workers;
 /// <summary>
 /// Hosted service responsible for starting and stopping message receivers based on the configured providers.
 /// </summary>
-public class MessageReceiverHost : IHostedService, IDisposable
+/// <remarks>
+/// Initializes a new instance of the <see cref="MessageReceiverHost"/> class.
+/// </remarks>
+/// <param name="logger">The logger.</param>
+/// <param name="factory">The message receiver provider factory.</param>
+public class MessageReceiverHost(
+    ILogger<MessageReceiverHost> logger,
+    IMessageReceiverProviderFactory factory
+    ) : IHostedService, IDisposable
 {
-    private readonly ILogger _logger;
-    private readonly IMessageReceiverProviderFactory _factory;
-
+    private readonly ILogger _logger = logger;
     private readonly List<Task> _tasks = [];
     private readonly CancellationTokenSource _tokenSource = new();
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MessageReceiverHost"/> class.
-    /// </summary>
-    /// <param name="logger">The logger.</param>
-    /// <param name="factory">The message receiver provider factory.</param>
-    public MessageReceiverHost(
-        ILogger<MessageReceiverHost> logger,
-        IMessageReceiverProviderFactory factory
-    )
-    {
-        _logger = logger;
-        _factory = factory;
-    }
 
     /// <summary>
     /// Disposes of the resources used by the <see cref="MessageReceiverHost"/>.
@@ -58,7 +50,7 @@ public class MessageReceiverHost : IHostedService, IDisposable
 
         _logger.LogInformation("Request Start");
 
-        var providers = _factory.Create().ToArray();
+        var providers = factory.Create().ToArray();
 
         var token = _tokenSource.Token;
 

@@ -7,6 +7,11 @@
 		<InvariantGlobalization>true</InvariantGlobalization>
 
 		<IsPackable>false</IsPackable>
+
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		
 	</PropertyGroup>
 
 	<ItemGroup>
