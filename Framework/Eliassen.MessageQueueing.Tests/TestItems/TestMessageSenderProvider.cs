@@ -26,7 +26,7 @@ public class TestMessageSenderProvider : IMessageSenderProvider
     {
         _logger.LogInformation($"{nameof(SendAsync)}({{{nameof(message)}}}, {{{nameof(context)}}})", message, context);
         _context.AddResult(message, fileName: nameof(message));
-        _context.AddResult(context, fileName: nameof(context)); 
+        _context.AddResult(context, fileName: nameof(context));
         return Task.FromResult((string?)null);
     }
 }

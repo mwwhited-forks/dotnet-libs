@@ -12,6 +12,6 @@ public class AddMvcFilterOptions<TFilter> : IConfigureOptions<MvcOptions>
     where TFilter : IFilterMetadata
 {
     /// <inheritdoc />
-    public void Configure(MvcOptions options) => 
+    public void Configure(MvcOptions options) =>
         options.Filters.Add(typeof(TFilter));
 }

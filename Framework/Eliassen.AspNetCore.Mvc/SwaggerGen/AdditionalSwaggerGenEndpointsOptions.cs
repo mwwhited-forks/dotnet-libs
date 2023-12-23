@@ -1,7 +1,6 @@
 ﻿using Eliassen.AspNetCore.Mvc.Filters;
 using Eliassen.System.ComponentModel;
 using Microsoft.AspNetCore.Mvc.Controllers;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -60,13 +59,13 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
                                     Assembly.GetCallingAssembly(),
                                     Assembly.GetExecutingAssembly(),
                                 })
-                                select new
-                                {
-                                    Title = (string?)null,
-                                    Description = (string?)null,
-                                    Version = (string?)null,
-                                    Assembly = v,
-                                });
+                                          select new
+                                          {
+                                              Title = (string?)null,
+                                              Description = (string?)null,
+                                              Version = (string?)null,
+                                              Assembly = v,
+                                          });
 
         var fileVersions = from i in composedVersions
                            let a = i.Assembly

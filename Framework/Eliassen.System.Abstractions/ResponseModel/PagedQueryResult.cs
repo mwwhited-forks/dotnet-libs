@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Eliassen.System.ResponseModel
+﻿namespace Eliassen.System.ResponseModel
 {
     /// <inheritdoc/>
     public class PagedQueryResult<TModel> : QueryResult<TModel>, IPagedQueryResult<TModel>

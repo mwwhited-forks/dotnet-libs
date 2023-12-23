@@ -14,7 +14,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddMessageQueueingHosting(this IServiceCollection services)
     {
         //Note: this is the service host to enable the inbound message handlers
-        services.AddHostedService<MessageReceiverHost>(); 
+        services.AddHostedService<MessageReceiverHost>();
         return services;
     }
 }

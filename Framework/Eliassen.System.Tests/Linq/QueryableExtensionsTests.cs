@@ -208,7 +208,7 @@ public class QueryableExtensionsTests
                 expectedRows,
                 expectedKeys
             });*/
-        
+
         //TODO This test fails because the TestTargetExtendedModel.Modules property is [Searchable]
         //There was an original TODO statement here of 'TODO: nullable array values can not be included in searchable'
         //This has been commented out so that NDM-54 can be completed but this test must be restored to working order.

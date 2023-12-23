@@ -25,7 +25,7 @@ public class ApplicationPermissionsApiFilter : IOperationFilter
         var applicationRights =
             context.MethodInfo.GetCustomAttributes<ApplicationRightAttribute>()
             .Concat(
-            context.MethodInfo.DeclaringType?.GetCustomAttributes<ApplicationRightAttribute>() ?? 
+            context.MethodInfo.DeclaringType?.GetCustomAttributes<ApplicationRightAttribute>() ??
                 Enumerable.Empty<ApplicationRightAttribute>()
             ).SelectMany(a => a.Rights);
 

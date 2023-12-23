@@ -18,12 +18,12 @@ public class DefaultJsonSerializerTests
         var serializer = new DefaultJsonSerializer();
 
         var input = new { Hello = "world" };
-        var values = InOut(serializer, input);
+        var (serialized, result) = InOut(serializer, input);
 
-        TestContext.AddResult(values.serialized);
-        TestContext.AddResult(values.result);
+        TestContext.AddResult(serialized);
+        TestContext.AddResult(result);
 
-        Assert.AreEqual(input, values.result);
+        Assert.AreEqual(input, result);
     }
 
     [TestMethod]
@@ -43,14 +43,14 @@ public class DefaultJsonSerializerTests
             },
         };
 
-        var values = InOut(serializer, input);
+        var (serialized, result) = InOut(serializer, input);
 
-        TestContext.AddResult(values.serialized);
-        TestContext.AddResult(values.result);
+        TestContext.AddResult(serialized);
+        TestContext.AddResult(result);
 
-        Assert.AreEqual(input.Hello, values.result.Hello);
+        Assert.AreEqual(input.Hello, result.Hello);
 
-        Assert.AreEqual(input.Dict["one"], values.result.Dict["one"]);
+        Assert.AreEqual(input.Dict["one"], result.Dict["one"]);
     }
 
     [TestMethod]
@@ -67,12 +67,12 @@ public class DefaultJsonSerializerTests
         var config = configBuilder.Build();
         IConfigurationSection input = config.GetSection("Configuration");
 
-        var values = InOut(serializer, input);
+        var (serialized, result) = InOut(serializer, input);
 
-        TestContext.AddResult(values.serialized);
-        TestContext.AddResult(values.result);
+        TestContext.AddResult(serialized);
+        TestContext.AddResult(result);
 
-        Assert.AreEqual(input["Property"], values.result["Property"]);
+        Assert.AreEqual(input["Property"], result["Property"]);
     }
 
 

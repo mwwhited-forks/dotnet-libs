@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace Eliassen.MessageQueueing.Services;
+
 /// <summary>
 /// Represents the context associated with a message, including metadata and headers.
 /// </summary>

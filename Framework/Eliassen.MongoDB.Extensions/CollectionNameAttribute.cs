@@ -14,7 +14,7 @@ namespace Eliassen.MongoDB.Extensions
         public string CollectionName { get; }
 
         /// <inheritdoc/>
-        public CollectionNameAttribute (
+        public CollectionNameAttribute(
             string collectionName)
         {
             CollectionName = collectionName;

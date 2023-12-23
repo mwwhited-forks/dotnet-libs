@@ -35,7 +35,7 @@ public class AzureStorageQueueMessageProvider : IMessageSenderProvider, IMessage
         {
             ContentType = "application/json;",
             PayloadType = message.GetType().AssemblyQualifiedName,
-            CorrelationId = context.CorrelationId,
+            CorrelationId = context.CorrelationId ?? "",
             Payload = message,
             Properties = context.Headers,
         };

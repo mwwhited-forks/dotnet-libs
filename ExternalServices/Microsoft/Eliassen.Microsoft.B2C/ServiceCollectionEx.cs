@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Eliassen.Microsoft.B2C.Identity;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Eliassen.Microsoft.B2C.Identity;
 
 namespace Eliassen.Microsoft.B2C;
 

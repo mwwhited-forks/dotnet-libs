@@ -1,11 +1,11 @@
-﻿using Eliassen.System.Extensions.Configuration;
+﻿using Eliassen.Microsoft.B2C.Identity;
+using Eliassen.System.Extensions.Configuration;
 using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Eliassen.Microsoft.B2C.Identity;
 using System;
 using System.Threading.Tasks;
 
@@ -84,7 +84,7 @@ public class ManageGraphUserIntegrationTests
 
         if (result == null) throw new ApplicationException($"{nameof(manageGraphUser.GetGraphUsersByEmail)} should return a value");
 
-        foreach(var item in result)
+        foreach (var item in result)
         {
             this.TestContext.WriteLine($"item: {item.FirstName} {item.LastName} ({item.UserName})");
         }
@@ -93,7 +93,7 @@ public class ManageGraphUserIntegrationTests
         this.TestContext.WriteLine($"result: {result}");
 
         // Assert
-        foreach(var customer in result.ToArray())
+        foreach (var customer in result.ToArray())
             Assert.AreNotEqual(Guid.Empty.ToString(), customer.EmailAddress);
 
         // Verify

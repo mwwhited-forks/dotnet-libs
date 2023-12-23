@@ -1,5 +1,4 @@
-﻿using Eliassen.MessageQueueing.Services;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -81,14 +80,14 @@ public class MessageReceiverProviderFactory : IMessageReceiverProviderFactory
                 continue;
             }
 
-var receiver = Receiver(item.Key.providerKey);
+            var receiver = Receiver(item.Key.providerKey);
 
-var config = item.First().config.configurationSection;
+            var config = item.First().config.configurationSection;
 
-var disableReceiverValue = config?["DisableReceiver"];
-var disableReceiver =
-    string.Equals("TRUE", disableReceiverValue, StringComparison.InvariantCultureIgnoreCase) ||
-    string.Equals("1", disableReceiverValue, StringComparison.InvariantCultureIgnoreCase);
+            var disableReceiverValue = config?["DisableReceiver"];
+            var disableReceiver =
+                string.Equals("TRUE", disableReceiverValue, StringComparison.InvariantCultureIgnoreCase) ||
+                string.Equals("1", disableReceiverValue, StringComparison.InvariantCultureIgnoreCase);
 
             if (disableReceiver)
             {
@@ -101,24 +100,24 @@ var disableReceiver =
                 .SetChannelType(item.Key.channelType)
                 .SetConfig(config ?? throw new ApplicationException($"Missing Configuration"));
 
-receiver.SetHandlerProvider(handler);
+            receiver.SetHandlerProvider(handler);
 
-yield return receiver;
+            yield return receiver;
         }
     }
 
     private IMessageReceiverProvider Receiver(string providerKey)
-{
-    var provider = _serviceProvider.GetKeyedService<IMessageReceiverProvider>(providerKey);
-
-    if (provider == null)
     {
-        var providerType = Type.GetType(providerKey, true) ??
-            throw new ApplicationException($"Unable to resolve type for {providerKey}");
+        var provider = _serviceProvider.GetKeyedService<IMessageReceiverProvider>(providerKey);
 
-        provider = (IMessageReceiverProvider)ActivatorUtilities.CreateInstance(_serviceProvider, providerType);
+        if (provider == null)
+        {
+            var providerType = Type.GetType(providerKey, true) ??
+                throw new ApplicationException($"Unable to resolve type for {providerKey}");
+
+            provider = (IMessageReceiverProvider)ActivatorUtilities.CreateInstance(_serviceProvider, providerType);
+        }
+
+        return provider;
     }
-
-    return provider;
-}
 }

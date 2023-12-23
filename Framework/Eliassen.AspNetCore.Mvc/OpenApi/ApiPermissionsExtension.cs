@@ -1,6 +1,6 @@
-﻿using Microsoft.OpenApi.Interfaces;
+﻿using Microsoft.OpenApi;
+using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Writers;
-using Microsoft.OpenApi;
 using System.Collections.Generic;
 using System.Linq;
 

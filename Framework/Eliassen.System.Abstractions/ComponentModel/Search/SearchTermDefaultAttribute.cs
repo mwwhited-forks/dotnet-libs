@@ -5,19 +5,14 @@ namespace Eliassen.System.ComponentModel.Search
     /// <summary>
     /// provide the ability to control how search terms are handled if not wilded carded
     /// </summary>
+    /// <inheritdoc/>
     [AttributeUsage(AttributeTargets.Class)]
-    public class SearchTermDefaultAttribute : Attribute, ISearchQueryIntercept
+    public class SearchTermDefaultAttribute(SearchTermDefaults @default) : Attribute, ISearchQueryIntercept
     {
         /// <summary>
         /// rule to use for provided search term if not quoted
         /// </summary>
-        public SearchTermDefaults Default { get; }
-
-        /// <inheritdoc/>
-        public SearchTermDefaultAttribute(SearchTermDefaults @default)
-        {
-            Default = @default;
-        }
+        public SearchTermDefaults Default { get; } = @default;
 
         /// <summary>
         /// use the `Default` to control pattern for searches without provided wild cards

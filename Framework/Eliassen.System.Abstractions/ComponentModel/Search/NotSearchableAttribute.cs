@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Eliassen.System.ComponentModel.Search
+﻿namespace Eliassen.System.ComponentModel.Search
 {
     /// <summary>
     /// explicitly exclude properties from search

@@ -176,7 +176,7 @@ namespace Eliassen.TestUtilities
                 var file = changeExtension(composedFileName, ".json");
 
                 var serializeOptions = DefaultJsonSerializer.DefaultOptions;
-                serializeOptions.DefaultIgnoreCondition |= 
+                serializeOptions.DefaultIgnoreCondition |=
                     JsonIgnoreCondition.WhenWritingNull |
                     JsonIgnoreCondition.WhenWritingDefault
                     ;

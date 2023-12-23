@@ -9,21 +9,14 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Azure.StorageAccount.BlobStorage;
 
-public class BlobContainerProvider : IDocumentProvider
+public class BlobContainerProvider(
+    IConfiguration config,
+    ILogger<BlobContainerProvider> logger
+        ) : IDocumentProvider
 {
-    private readonly string? _containerName;
-    private readonly BlobContainerClient _blobClient;
-    private readonly ILogger<BlobContainerProvider> _logger;
-
-    public BlobContainerProvider(
-        IConfiguration config,
-        ILogger<BlobContainerProvider> logger
-        )
-    {
-        _containerName = config[ConfigKeys.Container.DefaultContainerName];
-        _blobClient = new BlobContainerClient(config[ConfigKeys.Container.DefaultConnectionString], config[ConfigKeys.Container.DefaultContainerName]);
-        _logger = logger;
-    }
+    private readonly string? _containerName = config[ConfigKeys.Container.DefaultContainerName];
+    private readonly BlobContainerClient _blobClient = new BlobContainerClient(config[ConfigKeys.Container.DefaultConnectionString], config[ConfigKeys.Container.DefaultContainerName]);
+    private readonly ILogger<BlobContainerProvider> _logger = logger;
 
     public async Task<List<BlobDto>> ListAsync()
     {

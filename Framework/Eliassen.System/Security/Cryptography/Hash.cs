@@ -10,7 +10,7 @@ namespace Eliassen.System.Security.Cryptography
     public class Hash : IHash
     {
         /// <inheritdoc/>
-        public string GetHash(string value)=>
+        public string GetHash(string value) =>
             Convert.ToBase64String(MD5.HashData(Encoding.UTF8.GetBytes(value)));
     }
 }

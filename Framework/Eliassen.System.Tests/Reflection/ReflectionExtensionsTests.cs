@@ -13,7 +13,7 @@ namespace Eliassen.System.Tests.Reflection
         {
             new object?[]{typeof(string), "Hello World", "Hello World" },
             [typeof(string), 1, "1"],
-            [typeof(byte[]), Convert.ToBase64String(new byte[] { 65, 66, 67 }), new byte[] {65,66,67 }],
+            [typeof(byte[]), Convert.ToBase64String("ABC"u8.ToArray()), "ABC"u8.ToArray()],
 
             [typeof(Guid), "18AACB9C-2989-4322-A490-C7167BEA0DB4", new Guid("18AACB9C-2989-4322-A490-C7167BEA0DB4")],
             [typeof(Guid?), "18AACB9C-2989-4322-A490-C7167BEA0DB4", new Guid("18AACB9C-2989-4322-A490-C7167BEA0DB4")],

@@ -1,7 +1,6 @@
 ﻿using Eliassen.Handlebars.Extensions.Templating;
 using Eliassen.System.Text.Templating;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Eliassen.Handlebars.Extensions
 {
