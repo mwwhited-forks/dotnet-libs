@@ -8,79 +8,93 @@ Extension methods for configuring JWT Bearer authentication and SwaggerGen servi
 
 #### TryAddJwtBearerServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String,System.String)
 Tries to add JWT Bearer authentication and SwaggerGen services to the specified .
-    #####Parameters
-    **services:** The to add the services to.
 
-    **configuration:** The configuration.
+##### Parameters
+* *services:* The to add the services to.
+* *configuration:* The configuration.
+* *defaultScheme:* The default authentication scheme.
+* *jwtBearerConfigurationSection:* The configuration section for JwtBearer options.
+* *oAuth2SwaggerConfigurationSection:* The configuration section for OAuth2Swagger options.
 
-    **defaultScheme:** The default authentication scheme.
 
-    **jwtBearerConfigurationSection:** The configuration section for JwtBearer options.
 
-    **oAuth2SwaggerConfigurationSection:** The configuration section for OAuth2Swagger options.
 
-    ##### Return value
-    The modified .
+##### Return value
+The modified .
+
+
 
 #### TryAddJwtBearerAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)
 Tries to add JWT Bearer authentication services to the specified .
-    #####Parameters
-    **services:** The to add the services to.
 
-    **configuration:** The configuration.
+##### Parameters
+* *services:* The to add the services to.
+* *configuration:* The configuration.
+* *defaultScheme:* The default authentication scheme.
+* *configurationSection:* The configuration section for JwtBearer options.
 
-    **defaultScheme:** The default authentication scheme.
 
-    **configurationSection:** The configuration section for JwtBearer options.
 
-    ##### Return value
-    The modified .
+
+##### Return value
+The modified .
+
+
 
 #### TryAddJwtBearerSwaggerGen(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
 Tries to add SwaggerGen services for OAuth2 to the specified .
-    #####Parameters
-    **services:** The to add the services to.
 
-    **configuration:** The configuration.
+##### Parameters
+* *services:* The to add the services to.
+* *configuration:* The configuration.
+* *configurationSection:* The configuration section for OAuth2Swagger options.
 
-    **configurationSection:** The configuration section for OAuth2Swagger options.
 
-    ##### Return value
-    The modified .
+
+
+##### Return value
+The modified .
+
+
 
 ## Class: AspNetCore.SwaggerGen.B2C.ConfigureOAuthSwaggerGenOptions
 Configures SwaggerGen options for OAuth2 authentication.
 Initializes a new instance of the class.
-    **config:** The OAuth2 Swagger options.
-
 ### Methods
 
 
-####Constructor
+#### Constructor
 Initializes a new instance of the class.
 Configures SwaggerGen options for OAuth2 authentication.
-    #####Parameters
-    **config:** The OAuth2 Swagger options.
+
+##### Parameters
+* *config:* The OAuth2 Swagger options.
+
+
 
 
 #### GetScopes
 Gets the OAuth2 scopes.
-    ##### Return value
-    The OAuth2 scopes.
+
+##### Return value
+The OAuth2 scopes.
+
+
 
 ## Class: AspNetCore.SwaggerGen.B2C.ConfigureOAuthSwaggerUIOptions
 Configures SwaggerUI options for OAuth authentication.
 Initializes a new instance of the class.
-    **jwtBearer:** The JwtBearer options.
-
 ### Methods
 
 
-####Constructor
+#### Constructor
 Initializes a new instance of the class.
 Configures SwaggerUI options for OAuth authentication.
-    #####Parameters
-    **jwtBearer:** The JwtBearer options.
+
+##### Parameters
+* *jwtBearer:* The JwtBearer options.
+
+
 
 
 ## Class: AspNetCore.SwaggerGen.B2C.OAuth2SwaggerOptions

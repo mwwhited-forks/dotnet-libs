@@ -106,31 +106,50 @@ Provides functionality for managing documents, including listing, uploading, dow
 
 #### ListAsync
 Retrieves a list of BlobDto representing the available documents.
-    ##### Return value
-    A task that represents the asynchronous operation, containing the list of BlobDto.
+
+##### Return value
+A task that represents the asynchronous operation, containing the list of BlobDto.
+
+
 
 #### UploadAsync(Eliassen.Azure.StorageAccount.BlobStorage.DocumentModel,System.IO.Stream)
 Uploads a document with the specified metadata and content.
-    #####Parameters
-    **document:** The metadata of the document to upload.
 
-    **content:** The content stream of the document.
+##### Parameters
+* *document:* The metadata of the document to upload.
+* *content:* The content stream of the document.
 
-    ##### Return value
-    A task that represents the asynchronous operation, containing the BlobResponseDto for the uploaded document.
+
+
+
+##### Return value
+A task that represents the asynchronous operation, containing the BlobResponseDto for the uploaded document.
+
+
 
 #### DownloadAsync(System.String)
 Downloads the document with the specified filename.
-    #####Parameters
-    **blobFilename:** The filename of the document to download.
 
-    ##### Return value
-    A task that represents the asynchronous operation, containing the BlobDto for the downloaded document. Returns null if the document with the specified filename is not found.
+##### Parameters
+* *blobFilename:* The filename of the document to download.
+
+
+
+
+##### Return value
+A task that represents the asynchronous operation, containing the BlobDto for the downloaded document. Returns null if the document with the specified filename is not found.
+
+
 
 #### DeleteAsync(System.String)
 Deletes the document with the specified filename.
-    #####Parameters
-    **blobFilename:** The filename of the document to delete.
 
-    ##### Return value
-    A task that represents the asynchronous operation, containing the BlobResponseDto for the deletion result.
+##### Parameters
+* *blobFilename:* The filename of the document to delete.
+
+
+
+
+##### Return value
+A task that represents the asynchronous operation, containing the BlobResponseDto for the deletion result.
+

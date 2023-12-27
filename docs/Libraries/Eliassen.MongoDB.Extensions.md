@@ -8,8 +8,11 @@ Represents a convention for configuring BSON serialization of object IDs.
 
 #### Apply(MongoDB.Bson.Serialization.BsonMemberMap)
 Applies a modification to the member map.
-    #####Parameters
-    **memberMap:** The member map.
+
+##### Parameters
+* *memberMap:* The member map.
+
+
 
 
 ## Class: MongoDB.Extensions.DefaultMongoDatabaseSettings
@@ -28,13 +31,19 @@ provide a centralized means to created MongoDB instances
 
 #### Create``1
 factory method to create a instance.
-    ##### Return value
-    
+
+##### Return value
+
+
+
 
 #### Create``2
 factory method to create a MongoDB Database abstraction.
-    ##### Return value
-    
+
+##### Return value
+
+
+
 
 ## Class: MongoDB.Extensions.IMongoDatabaseRegistration
 Internal registry for MongoDatabase connections.
@@ -55,27 +64,34 @@ Name of database to map for MongoDB
 ## Class: MongoDB.Extensions.MongoDatabaseFactory
 Factory for creating MongoDB database instances.
 Initializes a new instance of the class.
-    **serviceProvider:** The service provider for obtaining dependencies.
-
 ### Methods
 
 
-####Constructor
+#### Constructor
 Initializes a new instance of the class.
 Factory for creating MongoDB database instances.
-    #####Parameters
-    **serviceProvider:** The service provider for obtaining dependencies.
+
+##### Parameters
+* *serviceProvider:* The service provider for obtaining dependencies.
+
+
 
 
 #### Create``1
 Creates a MongoDB database instance based on the provided settings.
-    ##### Return value
-    The MongoDB database instance.
+
+##### Return value
+The MongoDB database instance.
+
+
 
 #### Create``2
 Creates a proxied MongoDB database instance based on the provided settings.
-    ##### Return value
-    The proxied MongoDB database instance.
+
+##### Return value
+The proxied MongoDB database instance.
+
+
 
 #### #cctor
 Static constructor to register serializers and conventions.
@@ -90,26 +106,42 @@ Common libraries to enable MongoDB Support
 
 #### TryAddMongoServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
 Enable common infrastructure.
-    #####Parameters
-    **services:** 
 
-    **config:** 
+##### Parameters
+* *services:* 
+* *config:* 
 
-    ##### Return value
-    
+
+
+
+##### Return value
+
+
+
 
 #### TryAddMongoDatabase``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)
 register MongoDatabase instance with custom configuration options
-    #####Parameters
-    **services:** 
 
-    ##### Return value
-    
+##### Parameters
+* *services:* 
+
+
+
+
+##### Return value
+
+
+
 
 #### TryAddMongoDatabase``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)
 register MongoDatabase instance that will use the configuration options
-    #####Parameters
-    **services:** 
 
-    ##### Return value
-    
+##### Parameters
+* *services:* 
+
+
+
+
+##### Return value
+
+

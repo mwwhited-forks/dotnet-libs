@@ -55,11 +55,17 @@ Provide entry point to commonly intercept and override search definitions. Examp
 
 #### Intercept(Eliassen.System.Linq.Search.ISearchQuery)
 modify or pass though search query before processing.
-    #####Parameters
-    **searchQuery:** 
 
-    ##### Return value
-    
+##### Parameters
+* *searchQuery:* 
+
+
+
+
+##### Return value
+
+
+
 
 ## Class: System.ComponentModel.Search.NotFilterableAttribute
 Specifies that a property or class should be explicitly excluded from filter selection.
@@ -70,13 +76,16 @@ Gets the target name to be excluded from filter selection.
 ### Methods
 
 
-####Constructor
+#### Constructor
 Initializes a new instance of the class with a target name.
-    #####Parameters
-    **targetName:** The target name to be excluded from filter selection.
+
+##### Parameters
+* *targetName:* The target name to be excluded from filter selection.
 
 
-####Constructor
+
+
+#### Constructor
 Initializes a new instance of the class without a target name.
 
 ## Class: System.ComponentModel.Search.NotSearchableAttribute
@@ -95,13 +104,16 @@ Gets the name of the target property that should not be sortable.
 ### Methods
 
 
-####Constructor
+#### Constructor
 Initializes a new instance of the class.
-    #####Parameters
-    **targetName:** The name of the target property that should not be sortable.
+
+##### Parameters
+* *targetName:* The name of the target property that should not be sortable.
 
 
-####Constructor
+
+
+#### Constructor
 Initializes a new instance of the class.
 
 ## Class: System.ComponentModel.Search.SearchableAttribute
@@ -138,8 +150,6 @@ Gets a unique identifier for this attribute.
 ## Class: System.Configuration.ConfigurationSectionAttribute
 Specifies the configuration section associated with a class.
 Initializes a new instance of the class.
-    **configurationSection:** The configuration section name.
-
 ### Properties
 
 #### ConfigurationSection
@@ -149,11 +159,14 @@ Gets a unique identifier for this attribute.
 ### Methods
 
 
-####Constructor
+#### Constructor
 Initializes a new instance of the class.
 Specifies the configuration section associated with a class.
-    #####Parameters
-    **configurationSection:** The configuration section name.
+
+##### Parameters
+* *configurationSection:* The configuration section name.
+
+
 
 
 ## Class: System.Linq.Expressions.IExpressionTreeBuilder
@@ -163,54 +176,76 @@ Represents a builder for constructing expression trees used in querying and filt
 
 #### GetSearchablePropertyNames
 Gets the names of properties that can be used for searching.
-    ##### Return value
-    The collection of searchable property names.
+
+##### Return value
+The collection of searchable property names.
+
+
 
 #### GetSortablePropertyNames
 Gets the names of properties that can be used for sorting.
-    ##### Return value
-    The collection of sortable property names.
+
+##### Return value
+The collection of sortable property names.
+
+
 
 #### GetFilterablePropertyNames
 Gets the names of properties that can be used for filtering.
-    ##### Return value
-    The collection of filterable property names.
+
+##### Return value
+The collection of filterable property names.
+
+
 
 #### DefaultSortOrder
 Gets the default sort order defined by the expression tree builder.
-    ##### Return value
-    The collection of default sort order information.
+
+##### Return value
+The collection of default sort order information.
+
+
 
 #### 
 Gets the predicate expression based on the provided filter parameters.
-    #####Parameters
-    **name:** The name of the property to filter on.
 
-    **value:** The filter parameter value.
+##### Parameters
+* *name:* The name of the property to filter on.
+* *value:* The filter parameter value.
+* *stringComparison:* The string comparison option for string-based filtering.
+* *isSearchTerm:* A flag indicating whether the filter is a search term.
 
-    **stringComparison:** The string comparison option for string-based filtering.
 
-    **isSearchTerm:** A flag indicating whether the filter is a search term.
 
-    ##### Return value
-    The predicate expression based on the filter parameters.
+
+##### Return value
+The predicate expression based on the filter parameters.
+
+
 
 #### 
 Builds the expression tree based on the provided query parameter.
-    #####Parameters
-    **queryParameter:** The query parameter used for building the expression tree.
 
-    **stringComparison:** The string comparison option for string-based filtering.
+##### Parameters
+* *queryParameter:* The query parameter used for building the expression tree.
+* *stringComparison:* The string comparison option for string-based filtering.
+* *isSearchTerm:* A flag indicating whether the query parameter is a search term.
 
-    **isSearchTerm:** A flag indicating whether the query parameter is a search term.
 
-    ##### Return value
-    The expression tree representing the filtering condition.
+
+
+##### Return value
+The expression tree representing the filtering condition.
+
+
 
 #### 
 Gets a dictionary of property names and their corresponding expression trees.
-    ##### Return value
-    The dictionary of property names and expression trees.
+
+##### Return value
+The dictionary of property names and expression trees.
+
+
 
 ## Class: System.Linq.Expressions.IExpressionTreeBuilder`1
 Represents a typed builder for constructing expression trees used in querying and filtering.The type of the model for which expression trees are built.
@@ -219,34 +254,44 @@ Represents a typed builder for constructing expression trees used in querying an
 
 #### GetPredicateExpression(System.String,Eliassen.System.Linq.Search.FilterParameter,System.StringComparison,System.Boolean)
 Gets the predicate expression based on the provided filter parameters.
-    #####Parameters
-    **name:** The name of the property to filter on.
 
-    **value:** The filter parameter value.
+##### Parameters
+* *name:* The name of the property to filter on.
+* *value:* The filter parameter value.
+* *stringComparison:* The string comparison option for string-based filtering.
+* *isSearchTerm:* A flag indicating whether the filter is a search term.
 
-    **stringComparison:** The string comparison option for string-based filtering.
 
-    **isSearchTerm:** A flag indicating whether the filter is a search term.
 
-    ##### Return value
-    The predicate expression based on the filter parameters.
+
+##### Return value
+The predicate expression based on the filter parameters.
+
+
 
 #### BuildExpression(System.Object,System.StringComparison,System.Boolean)
 Builds the expression tree based on the provided query parameter.
-    #####Parameters
-    **queryParameter:** The query parameter used for building the expression tree.
 
-    **stringComparison:** The string comparison option for string-based filtering.
+##### Parameters
+* *queryParameter:* The query parameter used for building the expression tree.
+* *stringComparison:* The string comparison option for string-based filtering.
+* *isSearchTerm:* A flag indicating whether the query parameter is a search term.
 
-    **isSearchTerm:** A flag indicating whether the query parameter is a search term.
 
-    ##### Return value
-    The expression tree representing the filtering condition.
+
+
+##### Return value
+The expression tree representing the filtering condition.
+
+
 
 #### PropertyExpressions
 Gets a dictionary of property names and their corresponding expression trees.
-    ##### Return value
-    The dictionary of property names and expression trees.
+
+##### Return value
+The dictionary of property names and expression trees.
+
+
 
 ## Class: System.Linq.Expressions.IPostBuildExpressionVisitor
 Represents an interface for a visitor that processes an expression tree after it has been built.
@@ -255,11 +300,17 @@ Represents an interface for a visitor that processes an expression tree after it
 
 #### Visit(System.Linq.Expressions.Expression)
 Visits the provided expression node after the expression tree has been built.
-    #####Parameters
-    **node:** The expression node to visit.
 
-    ##### Return value
-    The modified expression node.
+##### Parameters
+* *node:* The expression node to visit.
+
+
+
+
+##### Return value
+The modified expression node.
+
+
 
 ## Class: System.Linq.Search.FilterParameter
 Filter parameter
@@ -305,23 +356,33 @@ Represents a query builder for executing queries with search parameters.
 
 #### ExecuteBy(System.Linq.IQueryable,Eliassen.System.Linq.Search.ISearchQuery)
 Executes a query using the specified and .
-    #####Parameters
-    **query:** The queryable data source.
 
-    **searchQuery:** The search parameters for filtering and sorting the data.
+##### Parameters
+* *query:* The queryable data source.
+* *searchQuery:* The search parameters for filtering and sorting the data.
 
-    ##### Return value
-    An containing the result of the executed query.
+
+
+
+##### Return value
+An containing the result of the executed query.
+
+
 
 #### 
 Executes a typed query using the specified and .
-    #####Parameters
-    **query:** The typed queryable data source.
 
-    **searchQuery:** The search parameters for filtering and sorting the data.
+##### Parameters
+* *query:* The typed queryable data source.
+* *searchQuery:* The search parameters for filtering and sorting the data.
 
-    ##### Return value
-    An containing the result of the executed query.
+
+
+
+##### Return value
+An containing the result of the executed query.
+
+
 
 ## Class: System.Linq.Search.IQueryBuilder`1
 Represents a typed query builder for executing queries with search parameters.The type of the model in the query.
@@ -330,13 +391,18 @@ Represents a typed query builder for executing queries with search parameters.Th
 
 #### ExecuteBy(System.Linq.IQueryable{`0},Eliassen.System.Linq.Search.ISearchQuery)
 Executes a typed query using the specified and .
-    #####Parameters
-    **query:** The typed queryable data source.
 
-    **searchQuery:** The search parameters for filtering and sorting the data.
+##### Parameters
+* *query:* The typed queryable data source.
+* *searchQuery:* The search parameters for filtering and sorting the data.
 
-    ##### Return value
-    An containing the result of the executed query.
+
+
+
+##### Return value
+An containing the result of the executed query.
+
+
 
 ## Class: System.Linq.Search.ISearchQuery
 Represents a query object that combines page, sort, search term, and filter criteria for searching data.
@@ -358,17 +424,20 @@ Represents an interface for building sorting expressions and applying sorting to
 
 #### SortBy(System.Linq.IQueryable{`0},Eliassen.System.Linq.Search.ISortQuery,Eliassen.System.Linq.Expressions.IExpressionTreeBuilder{`0},System.StringComparison)
 Sorts the specified query based on the provided sort criteria.
-    #####Parameters
-    **query:** The query to be sorted.
 
-    **searchRequest:** The sort criteria specified in the search request.
+##### Parameters
+* *query:* The query to be sorted.
+* *searchRequest:* The sort criteria specified in the search request.
+* *treeBuilder:* The expression tree builder for the model.
+* *stringComparison:* The string comparison method used for sorting.
 
-    **treeBuilder:** The expression tree builder for the model.
 
-    **stringComparison:** The string comparison method used for sorting.
 
-    ##### Return value
-    An representing the sorted query.
+
+##### Return value
+An representing the sorted query.
+
+
 
 ## Class: System.Linq.Search.ISortQuery
 Represents an interface for specifying sorting criteria in a query.
@@ -393,40 +462,67 @@ Provides extension methods for working with enumerations.
 
 #### AsString``1(``0)
 Converts an enumeration value to its associated string representation.
-    #####Parameters
-    **input:** The enumeration value.
 
-    ##### Return value
-    The string representation of the enumeration value.
+##### Parameters
+* *input:* The enumeration value.
+
+
+
+
+##### Return value
+The string representation of the enumeration value.
+
+
 
 #### ToEnum``1(System.Int32)
 Converts an integer value to an enumeration value.
-    #####Parameters
-    **input:** The integer value.
 
-    ##### Return value
-    The corresponding enumeration value.
+##### Parameters
+* *input:* The integer value.
+
+
+
+
+##### Return value
+The corresponding enumeration value.
+
+
 
 #### ToEnum``1(System.String)
 Converts a string to an enumeration value.
-    #####Parameters
-    **input:** The string representation of the enumeration value.
 
-    ##### Return value
-    The corresponding enumeration value.
+##### Parameters
+* *input:* The string representation of the enumeration value.
+
+
+
+
+##### Return value
+The corresponding enumeration value.
+
+
 
 #### AsModel``1(``0)
 Gets the enumeration model for a specific enumeration value.
-    #####Parameters
-    **enum:** The enumeration value.
 
-    ##### Return value
-    The enumeration model.
+##### Parameters
+* *enum:* The enumeration value.
+
+
+
+
+##### Return value
+The enumeration model.
+
+
 
 #### AsModels``1
 Gets a collection of enumeration models for all values of a specific enumeration type.
-    ##### Return value
-    A collection of enumeration models.
+
+##### Return value
+A collection of enumeration models.
+
+
 
 ## Class: System.Reflection.IEnumModel
 Represents a generic interface for providing information about an enumeration value.
@@ -467,8 +563,11 @@ Represents an interface for resolving a .
 
 #### ResolveType
 Resolves and returns the associated .
-    ##### Return value
-    The resolved .
+
+##### Return value
+The resolved .
+
+
 
 ## Class: System.ResponseModel.ICaptureResultMessage
 Represents an interface for capturing and publishing result messages.
@@ -477,22 +576,31 @@ Represents an interface for capturing and publishing result messages.
 
 #### Publish(Eliassen.System.ResponseModel.ResultMessage[])
 Publishes the specified result messages.
-    #####Parameters
-    **resultMessage:** The result messages to publish.
+
+##### Parameters
+* *resultMessage:* The result messages to publish.
+
+
 
 
 #### Peek
 Peeks at the captured result messages without removing them.
-    ##### Return value
-    An IReadOnlyCollection of result messages.
+
+##### Return value
+An IReadOnlyCollection of result messages.
+
+
 
 #### Clear
 Clears the captured result messages.
 
 #### Capture
 Captures and returns the result messages, removing them from the capture.
-    ##### Return value
-    An IReadOnlyCollection of captured result messages.
+
+##### Return value
+An IReadOnlyCollection of captured result messages.
+
+
 
 ## Class: System.ResponseModel.IModelResult
 Represents a generic interface for a result containing model data and messages.
@@ -581,10 +689,13 @@ Gets or sets the collection of result messages.
 ### Methods
 
 
-####Constructor
+#### Constructor
 Initializes a new instance of the class with the specified data.
-    #####Parameters
-    **data:** The model data.
+
+##### Parameters
+* *data:* The model data.
+
+
 
 
 ## Class: System.ResponseModel.QueryResult`1
@@ -600,19 +711,25 @@ Gets or sets the collection of result messages associated with the query result.
 ### Methods
 
 
-####Constructor
+#### Constructor
 Initializes a new instance of the class.
-    #####Parameters
-    **items:** The collection of items in the result.
+
+##### Parameters
+* *items:* The collection of items in the result.
 
 
-####Constructor
+
+
+#### Constructor
 Initializes a new instance of the class by wrapping another .
-    #####Parameters
-    **toWrap:** The query result to wrap.
+
+##### Parameters
+* *toWrap:* The query result to wrap.
 
 
-####Constructor
+
+
+#### Constructor
 Initializes a new instance of the class with an empty collection of items.
 
 ## Class: System.ResponseModel.ResultMessage
@@ -654,11 +771,17 @@ Simplified hash generator
 
 #### GetHash(System.String)
 cryptographic has for input value
-    #####Parameters
-    **value:** value to hash
 
-    ##### Return value
-    hash input
+##### Parameters
+* *value:* value to hash
+
+
+
+
+##### Return value
+hash input
+
+
 
 ## Class: System.Text.ISerializer
 Interface to identify shared serialization process.
@@ -671,105 +794,154 @@ Content type supported by this serializer
 
 #### Serialize(System.Object,System.Type)
 convert the object based on the type definition
-    #####Parameters
-    **obj:** object to serialize
 
-    **type:** template model to serialize
+##### Parameters
+* *obj:* object to serialize
+* *type:* template model to serialize
 
-    ##### Return value
-    
+
+
+
+##### Return value
+
+
+
 
 #### Serialize``1(``0)
 convert the object based on the type definition
-    #####Parameters
-    **obj:** object to serialize
 
-    ##### Return value
-    
+##### Parameters
+* *obj:* object to serialize
+
+
+
+
+##### Return value
+
+
+
 
 #### SerializeAsync(System.Object,System.Type,System.IO.Stream,System.Threading.CancellationToken)
 convert the object based on the type definition
-    #####Parameters
-    **obj:** object to serialize
 
-    **type:** template model to serialize
+##### Parameters
+* *obj:* object to serialize
+* *type:* template model to serialize
+* *stream:* 
+* *cancellationToken:* 
 
-    **stream:** 
 
-    **cancellationToken:** 
 
-    ##### Return value
-    
+
+##### Return value
+
+
+
 
 #### SerializeAsync``1(``0,System.IO.Stream,System.Threading.CancellationToken)
 convert the object based on the type definition
-    #####Parameters
-    **obj:** object to serialize
 
-    **stream:** 
+##### Parameters
+* *obj:* object to serialize
+* *stream:* 
+* *cancellationToken:* 
 
-    **cancellationToken:** 
 
-    ##### Return value
-    
+
+
+##### Return value
+
+
+
 
 #### Deserialize``1(System.IO.Stream)
 convert stream into object
-    #####Parameters
-    **stream:** 
 
-    ##### Return value
-    
+##### Parameters
+* *stream:* 
+
+
+
+
+##### Return value
+
+
+
 
 #### Deserialize(System.IO.Stream,System.Type)
 convert stream into object
-    #####Parameters
-    **stream:** 
 
-    **type:** template model to deserialize
+##### Parameters
+* *stream:* 
+* *type:* template model to deserialize
 
-    ##### Return value
-    
+
+
+
+##### Return value
+
+
+
 
 #### DeserializeAsync``1(System.IO.Stream,System.Threading.CancellationToken)
 convert stream into object
-    #####Parameters
-    **stream:** 
 
-    **cancellationToken:** 
+##### Parameters
+* *stream:* 
+* *cancellationToken:* 
 
-    ##### Return value
-    
+
+
+
+##### Return value
+
+
+
 
 #### DeserializeAsync(System.IO.Stream,System.Type,System.Threading.CancellationToken)
 convert stream into object
-    #####Parameters
-    **stream:** 
 
-    **type:** template model to deserialize
+##### Parameters
+* *stream:* 
+* *type:* template model to deserialize
+* *cancellationToken:* 
 
-    **cancellationToken:** 
 
-    ##### Return value
-    
+
+
+##### Return value
+
+
+
 
 #### Deserialize``1(System.String)
 convert stream into object
-    #####Parameters
-    **input:** 
 
-    ##### Return value
-    
+##### Parameters
+* *input:* 
+
+
+
+
+##### Return value
+
+
+
 
 #### Deserialize(System.String,System.Type)
 convert stream into object
-    #####Parameters
-    **input:** 
 
-    **type:** template model to deserialize
+##### Parameters
+* *input:* 
+* *type:* template model to deserialize
 
-    ##### Return value
-    
+
+
+
+##### Return value
+
+
+
 
 ## Class: System.Text.Json.Serialization.IBsonSerializer
 interface to identify shared BSON serialization process.
@@ -781,11 +953,17 @@ Represents an interface to identify a shared JSON serialization process.
 
 #### AsPropertyName(System.String)
 Converts the provided property name according to the configured property naming policy.
-    #####Parameters
-    **propertyName:** The original property name.
 
-    ##### Return value
-    The converted property name.
+##### Parameters
+* *propertyName:* The original property name.
+
+
+
+
+##### Return value
+The converted property name.
+
+
 
 ## Class: System.Text.Json.Serialization.JsonStringEnumConverterEx`1
 A custom JSON converter for serializing and deserializing enums as strings or numbers.The enum type to convert.
@@ -794,24 +972,29 @@ A custom JSON converter for serializing and deserializing enums as strings or nu
 
 #### Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
 Reads the JSON representation of the enum value and converts it to the specified enum type.
-    #####Parameters
-    **reader:** The JSON reader.
 
-    **typeToConvert:** The type of the object to convert.
+##### Parameters
+* *reader:* The JSON reader.
+* *typeToConvert:* The type of the object to convert.
+* *options:* The serializer options.
 
-    **options:** The serializer options.
 
-    ##### Return value
-    The deserialized enum value.
+
+
+##### Return value
+The deserialized enum value.
+
+
 
 #### Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
 Writes the JSON representation of the enum value.
-    #####Parameters
-    **writer:** The JSON writer.
 
-    **value:** The enum value to serialize.
+##### Parameters
+* *writer:* The JSON writer.
+* *value:* The enum value to serialize.
+* *options:* The serializer options.
 
-    **options:** The serializer options.
+
 
 
 ## Class: System.Text.Templating.IFileType
@@ -864,43 +1047,63 @@ Represents a template engine for generating content based on templates.
 
 #### Get(System.String)
 Gets the template context for the specified template name.
-    #####Parameters
-    **templateName:** The name of the template.
 
-    ##### Return value
-    The template context for the specified template name or null if not found.
+##### Parameters
+* *templateName:* The name of the template.
+
+
+
+
+##### Return value
+The template context for the specified template name or null if not found.
+
+
 
 #### GetAll(System.String)
 Gets all template contexts associated with the specified template name.
-    #####Parameters
-    **templateName:** The name of the template.
 
-    ##### Return value
-    An enumeration of all template contexts associated with the specified template name.
+##### Parameters
+* *templateName:* The name of the template.
+
+
+
+
+##### Return value
+An enumeration of all template contexts associated with the specified template name.
+
+
 
 #### ApplyAsync(System.String,System.Object,System.IO.Stream)
 Applies the specified data to the template identified by its name and writes the result to the target stream asynchronously.
-    #####Parameters
-    **templateName:** The name of the template.
 
-    **data:** The data to apply to the template.
+##### Parameters
+* *templateName:* The name of the template.
+* *data:* The data to apply to the template.
+* *target:* The stream where the result will be written.
 
-    **target:** The stream where the result will be written.
 
-    ##### Return value
-    A task representing the asynchronous operation, containing the template context for the applied template or null if not found.
+
+
+##### Return value
+A task representing the asynchronous operation, containing the template context for the applied template or null if not found.
+
+
 
 #### ApplyAsync(Eliassen.System.Text.Templating.ITemplateContext,System.Object,System.IO.Stream)
 Applies the specified data to the given template context and writes the result to the target stream asynchronously.
-    #####Parameters
-    **context:** The template context to apply.
 
-    **data:** The data to apply to the template.
+##### Parameters
+* *context:* The template context to apply.
+* *data:* The data to apply to the template.
+* *target:* The stream where the result will be written.
 
-    **target:** The stream where the result will be written.
 
-    ##### Return value
-    A task representing the asynchronous operation, indicating whether the application was successful.
+
+
+##### Return value
+A task representing the asynchronous operation, indicating whether the application was successful.
+
+
 
 ## Class: System.Text.Templating.ITemplateProvider
 Represents a template provider that can apply templates based on a specified context.
@@ -909,23 +1112,33 @@ Represents a template provider that can apply templates based on a specified con
 
 #### CanApply(Eliassen.System.Text.Templating.ITemplateContext)
 Determines whether the template provider can apply a template based on the provided context.
-    #####Parameters
-    **context:** The template context.
 
-    ##### Return value
-    true if the template provider can apply the template; otherwise, false.
+##### Parameters
+* *context:* The template context.
+
+
+
+
+##### Return value
+true if the template provider can apply the template; otherwise, false.
+
+
 
 #### ApplyAsync(Eliassen.System.Text.Templating.ITemplateContext,System.Object,System.IO.Stream)
 Applies the template associated with the specified context, using the provided data, and writes the result to the target stream asynchronously.
-    #####Parameters
-    **context:** The template context.
 
-    **data:** The data to apply to the template.
+##### Parameters
+* *context:* The template context.
+* *data:* The data to apply to the template.
+* *target:* The stream where the result will be written.
 
-    **target:** The stream where the result will be written.
 
-    ##### Return value
-    A task representing the asynchronous operation, indicating whether the application was successful.
+
+
+##### Return value
+A task representing the asynchronous operation, indicating whether the application was successful.
+
+
 
 ## Class: System.Text.Templating.ITemplateSource
 Represents a source of templates that can be used by a template engine.
@@ -934,11 +1147,17 @@ Represents a source of templates that can be used by a template engine.
 
 #### Get(System.String)
 Gets the template contexts associated with the specified template name.
-    #####Parameters
-    **templateName:** The name of the template to retrieve.
 
-    ##### Return value
-    An enumerable collection of template contexts.
+##### Parameters
+* *templateName:* The name of the template to retrieve.
+
+
+
+
+##### Return value
+An enumerable collection of template contexts.
+
+
 
 ## Class: System.Text.Xml.Serialization.IXmlSerializer
 interface to identify shared XML serialization process.

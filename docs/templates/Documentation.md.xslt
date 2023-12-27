@@ -75,7 +75,7 @@
 				<!-- If this is a constructor, display the type name (instead of "#ctor"), or display the method name -->
 				<xsl:choose>
 					<xsl:when test="contains(@name, '#ctor')">
-						<xsl:text>&cr;&cr;####Constructor</xsl:text>
+						<xsl:text>&cr;&cr;#### Constructor</xsl:text>
 						<!-- xsl:value-of select="$MemberName"/ -->
 						<!-- xsl:value-of select="substring-after(@name, '#ctor')"/-->
 					</xsl:when>
@@ -94,24 +94,28 @@
 				</xsl:if>
 
 				<xsl:if test="count(param)!=0">
-					<xsl:text>&cr;&tab;#####Parameters</xsl:text>
+					<xsl:text>&cr;&cr;##### Parameters&cr;</xsl:text>
 					<xsl:apply-templates select="param"/>
+					<xsl:text>&cr;&cr;</xsl:text>
 				</xsl:if>
 
 				<xsl:if test="count(returns)!=0">
-					<xsl:text>&cr;&tab;##### Return value</xsl:text>
+					<xsl:text>&cr;&cr;##### Return value&cr;</xsl:text>
 					<xsl:apply-templates select="returns"/>
+					<xsl:text>&cr;&cr;</xsl:text>
 				</xsl:if>
 
 				<xsl:if test="count(exception)!=0">
-					<xsl:text>&cr;&tab;##### Exceptions</xsl:text>
+					<xsl:text>&cr;&cr;##### Exceptions&cr;</xsl:text>
 					<xsl:apply-templates select="exception"/>
+					<xsl:text>&cr;&cr;</xsl:text>
 				</xsl:if>
 
 				<xsl:if test="count(example)!=0">
-					<xsl:text>&cr;&tab;##### Example</xsl:text>
-					<xsl:text>&cr;&tab;</xsl:text>
+					<xsl:text>&cr;&cr;##### Example&cr;</xsl:text>
+					<xsl:text>&cr;</xsl:text>
 					<xsl:apply-templates select="example" />
+					<xsl:text>&cr;&cr;</xsl:text>
 				</xsl:if>
 
 			</xsl:for-each>
@@ -141,7 +145,7 @@
 	</xsl:template>
 
 	<xsl:template match="exception">
-		<xsl:text>&cr;&tab;**</xsl:text><xsl:value-of select="substring-after(@cref,'T:')"/>:** <xsl:value-of select="normalize-space()" /><xsl:text>&cr;</xsl:text>
+		<xsl:text>&cr;* *</xsl:text><xsl:value-of select="substring-after(@cref,'T:')"/>:* <xsl:value-of select="normalize-space()" /><xsl:text>&cr;</xsl:text>
 	</xsl:template>
 
 	<xsl:template match="include">
@@ -153,7 +157,13 @@
 	</xsl:template>
 
 	<xsl:template match="param">
-		<xsl:text>&cr;&tab;**</xsl:text><xsl:value-of select="@name"/>:** <xsl:value-of select="normalize-space()" /><xsl:text>&cr;</xsl:text>
+		<xsl:if test="not(starts-with(../@name, 'T:'))">
+			<xsl:text>* *</xsl:text>
+			<xsl:value-of select="@name"/>
+			<xsl:text>:* </xsl:text>
+			<xsl:value-of select="normalize-space()" />
+			<xsl:text>&cr;</xsl:text>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="paramref">
@@ -163,20 +173,21 @@
 	</xsl:template>
 
 	<xsl:template match="permission">
-		<xsl:text>&cr;**Permission:** *</xsl:text><xsl:value-of select="@cref" />* &cr;<xsl:value-of select="normalize-space()" />
+		<xsl:text>*Permission:* *</xsl:text><xsl:value-of select="@cref" />* &cr;<xsl:value-of select="normalize-space()" />
 	</xsl:template>
 
 	<xsl:template match="returns">
-		<xsl:text>&cr;&tab;</xsl:text>
 		<xsl:value-of select="normalize-space()" />
 	</xsl:template>
 
 	<xsl:template match="see">
-		<xsl:text>&cr;&tab;*See: </xsl:text><xsl:value-of select="@cref" />*
+		<xsl:text> *See: </xsl:text>
+		<xsl:value-of select="@cref" />
+		<xsl:text>*</xsl:text>
 	</xsl:template>
 
 	<xsl:template match="seealso">
-		<xsl:text>&cr;&tab;*See also: </xsl:text>
+		<xsl:text>*See also:* </xsl:text>
 		<xsl:value-of select="@cref" />
 	</xsl:template>
 

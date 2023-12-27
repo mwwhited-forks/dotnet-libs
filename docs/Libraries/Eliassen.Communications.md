@@ -8,8 +8,13 @@ Extension methods for configuring communication services in .
 
 #### TryAddCommunicationsServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
 Tries to add communication-related services to the specified .
-    #####Parameters
-    **services:** The to add the services to.
 
-    ##### Return value
-    The modified .
+##### Parameters
+* *services:* The to add the services to.
+
+
+
+
+##### Return value
+The modified .
+

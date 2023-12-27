@@ -8,11 +8,17 @@ This is a set of extension configurations for ASP.Net Core
 
 #### UseAspNetCoreExtensionMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)
 Add custom middleware to ASP.Net to support these extensions
-    #####Parameters
-    **builder:** 
 
-    ##### Return value
-    
+##### Parameters
+* *builder:* 
+
+
+
+
+##### Return value
+
+
+
 
 ## Class: AspNetCore.Mvc.Filters.ApplicationPermissionsApiFilter
 operation filter to extend swagger to include application rights
@@ -26,10 +32,13 @@ list of required rights
 ### Methods
 
 
-####Constructor
+#### Constructor
 Declare required rights for endpoint
-    #####Parameters
-    **rights:** 
+
+##### Parameters
+* *rights:* 
+
+
 
 
 ## Class: AspNetCore.Mvc.Filters.ApplicationRightRequirementFilter
@@ -37,13 +46,16 @@ Authorization filter to compared application rights for user to rights required 
 ### Methods
 
 
-####Constructor
+#### Constructor
 Authorization filter to compared application rights for user to rights required by endpoint
 
 #### OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)
 Ensure that current authenticated user matches as least one requested right
-    #####Parameters
-    **context:** 
+
+##### Parameters
+* *context:* 
+
+
 
 
 ## Class: AspNetCore.Mvc.Filters.FormFileOperationFilter
@@ -53,10 +65,12 @@ Implementation of for handling file upload in Swagger UI.
 
 #### Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)
 Applies the file upload operation filter to modify the Swagger UI documentation.
-    #####Parameters
-    **operation:** The OpenApiOperation representing the Swagger operation.
 
-    **context:** The OperationFilterContext providing information about the operation.
+##### Parameters
+* *operation:* The OpenApiOperation representing the Swagger operation.
+* *context:* The OperationFilterContext providing information about the operation.
+
+
 
 
 ## Class: AspNetCore.Mvc.Filters.SearchQueryResultFilter
@@ -64,7 +78,7 @@ Search Query Results filter is an extension for ASP.Net Core to enable a common 
 ### Methods
 
 
-####Constructor
+#### Constructor
 Search Query Results filter is an extension for ASP.Net Core to enable a common pattern to query data endpoints with from Controller Actions. This detects actions that return IQueryable{TModel} and intercepts the web request to complete the query based on user requested inputs.
 
 ## Class: AspNetCore.Mvc.Middleware.CultureInfoMiddleware
@@ -72,15 +86,11 @@ Custom middleware to enable detection of language/culture from HTTP request head
 ### Methods
 
 
-####Constructor
+#### Constructor
 Custom middleware to enable detection of language/culture from HTTP request header as well as assignment for response header
 
 ## Class: AspNetCore.Mvc.OpenApi.ApiPermissionsExtension
 Declare permissions required for application endpoint
-    **allowAnonymous:** End point allows unauthenticated requests
-
-    **rights:** end point requires at least one of these permissions
-
 ### Properties
 
 #### AllowAnonymous
@@ -90,12 +100,14 @@ end point requires at least one of these permissions
 ### Methods
 
 
-####Constructor
+#### Constructor
 Declare permissions required for application endpoint
-    #####Parameters
-    **allowAnonymous:** End point allows unauthenticated requests
 
-    **rights:** end point requires at least one of these permissions
+##### Parameters
+* *allowAnonymous:* End point allows unauthenticated requests
+* *rights:* end point requires at least one of these permissions
+
+
 
 
 ## Class: AspNetCore.Mvc.ServiceCollectionExtensions
@@ -105,52 +117,71 @@ Extension methods for configuring ASP.Net Core extensions and related services.
 
 #### TryAddAspNetCoreExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Boolean,System.Boolean,System.Action{Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder})
 Adds IOC configurations to support all ASP.Net Core extensions provided by this library.
-    #####Parameters
-    **services:** The service collection to which ASP.Net Core extensions should be added.
 
-    **requireAuthenticatedByDefault:** Indicates whether authentication is required by default.
+##### Parameters
+* *services:* The service collection to which ASP.Net Core extensions should be added.
+* *requireAuthenticatedByDefault:* Indicates whether authentication is required by default.
+* *requireApplicationUserId:* Indicates whether the application user ID is required.
+* *authorizationPolicyBuilder:* Action to configure the authorization policy builder.
 
-    **requireApplicationUserId:** Indicates whether the application user ID is required.
 
-    **authorizationPolicyBuilder:** Action to configure the authorization policy builder.
 
-    ##### Return value
-    The modified service collection.
+
+##### Return value
+The modified service collection.
+
+
 
 #### AddRequireAuthenticatedUser(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Boolean,System.Action{Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder})
 Adds authentication requirements to the service collection.
-    #####Parameters
-    **services:** The service collection to which authentication requirements should be added.
 
-    **requireApplicationUserId:** Indicates whether the application user ID is required.
+##### Parameters
+* *services:* The service collection to which authentication requirements should be added.
+* *requireApplicationUserId:* Indicates whether the application user ID is required.
+* *authorizationPolicyBuilder:* Action to configure the authorization policy builder.
 
-    **authorizationPolicyBuilder:** Action to configure the authorization policy builder.
 
-    ##### Return value
-    The modified service collection.
+
+
+##### Return value
+The modified service collection.
+
+
 
 #### TryAddCommonOpenApiExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
 Enables extensions for Swagger/OpenAPI (included in AddAspNetCoreExtensions).
-    #####Parameters
-    **services:** The service collection to which Swagger/OpenAPI extensions should be added.
 
-    ##### Return value
-    The modified service collection.
+##### Parameters
+* *services:* The service collection to which Swagger/OpenAPI extensions should be added.
+
+
+
+
+##### Return value
+The modified service collection.
+
+
 
 #### TryAddAspNetCoreSearchQuery(Microsoft.Extensions.DependencyInjection.IServiceCollection)
 Enables extensions for shared Search Query extensions (included in AddAspNetCoreExtensions).
-    #####Parameters
-    **services:** The service collection to which Search Query extensions should be added.
 
-    ##### Return value
-    The modified service collection.
+##### Parameters
+* *services:* The service collection to which Search Query extensions should be added.
+
+
+
+
+##### Return value
+The modified service collection.
+
+
 
 ## Class: AspNetCore.Mvc.SwaggerGen.AdditionalSwaggerUIEndpointsOptions
 SwaggerUI Extension to enable grouping controller/actions by assembly
 ### Methods
 
 
-####Constructor
+#### Constructor
 SwaggerUI Extension to enable grouping controller/actions by assembly
 
 ## Class: AspNetCore.Mvc.SwaggerGen.AddMvcFilterOptions`1
@@ -168,27 +199,33 @@ SwaggerGen extension to configure controller group as the related assembly name
 ## Class: AspNetCore.JwtAuthentication.Authorization.UserAuthorizationHandler
 Handles user authorization based on specified requirements.
 Initializes a new instance of the class.
-    **logger:** The logger.
-
 ### Methods
 
 
-####Constructor
+#### Constructor
 Initializes a new instance of the class.
 Handles user authorization based on specified requirements.
-    #####Parameters
-    **logger:** The logger.
+
+##### Parameters
+* *logger:* The logger.
+
+
 
 
 #### HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Eliassen.AspNetCore.JwtAuthentication.Authorization.UserAuthorizationRequirement)
 Handles the user authorization requirement asynchronously.
-    #####Parameters
-    **context:** The authorization context.
 
-    **requirement:** The user authorization requirement.
+##### Parameters
+* *context:* The authorization context.
+* *requirement:* The user authorization requirement.
 
-    ##### Return value
-    A task representing the asynchronous operation.
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
 
 ## Class: AspNetCore.JwtAuthentication.Authorization.UserAuthorizationRequirement
 Represents an authorization requirement for user-specific authorization.
@@ -205,7 +242,10 @@ Gets a value indicating whether the application user ID is required for authoriz
 ### Methods
 
 
-####Constructor
+#### Constructor
 Initializes a new instance of the class.
-    #####Parameters
-    **requireApplicationUserId:** Specifies whether the application user ID is required for authorization.
+
+##### Parameters
+* *requireApplicationUserId:* Specifies whether the application user ID is required for authorization.
+
+

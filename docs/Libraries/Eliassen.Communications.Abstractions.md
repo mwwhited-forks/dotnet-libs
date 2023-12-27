@@ -57,8 +57,13 @@ Represents an interface for sending communication messages of a specified type.T
 
 #### SendAsync(`0)
 Asynchronously sends the specified communication message.
-    #####Parameters
-    **message:** The communication message to send.
 
-    ##### Return value
-    A task representing the asynchronous operation. The result is the unique identifier associated with the sent message.
+##### Parameters
+* *message:* The communication message to send.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. The result is the unique identifier associated with the sent message.
+
