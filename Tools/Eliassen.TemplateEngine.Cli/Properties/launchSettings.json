@@ -2,7 +2,7 @@
   "profiles": {
     "Generate - Service Endpoints Markdown": {
       "commandName": "Project",
-      "commandLineArgs": "--input $(SolutionDir)docs\\swagger.json\r\n--output $(SolutionDir)docs\\Service-Endpoints.md\r\n--Template Service-Endpoints\r\n--file-template-path $(SolutionDir)\\docs\\templates "
+      "commandLineArgs": "--input $(SolutionDir)\\docs\\swagger.json\r\n--output $(SolutionDir)\\docs\\Service-Endpoints.md\r\n--Template Service-Endpoints\r\n--file-template-path $(SolutionDir)\\docs\\templates "
     },
     "Generate - XmlDocs to Markdown": {
       "commandName": "Project",

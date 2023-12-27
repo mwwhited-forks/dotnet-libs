@@ -15,7 +15,7 @@
 		<DocumentPath>$(DOCUMENT_PATH.Trim('\'))\</DocumentPath>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(DOCUMENT_PATH)' == ''">
-		<DocumentPath>..\docs\</DocumentPath>
+		<DocumentPath>..\..\docs\</DocumentPath>
 	</PropertyGroup>
 
 	<ItemGroup  Condition=" '$(Configuration)' == 'Debug' ">

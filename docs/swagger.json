@@ -1,0 +1,446 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Eliassen.WebApi",
+    "version": "0.1.58.45"
+  },
+  "paths": {
+    "/api/Communications/public": {
+      "post": {
+        "tags": [
+          "Communications"
+        ],
+        "summary": "Sends an email publicly without requiring authentication.",
+        "requestBody": {
+          "description": "The email message model.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.Communications.Models.EmailMessageModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.Communications.Models.EmailMessageModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.Communications.Models.EmailMessageModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": true
+        }
+      }
+    },
+    "/api/Communications/queued": {
+      "post": {
+        "tags": [
+          "Communications"
+        ],
+        "summary": "Enqueues an email message to be processed asynchronously.",
+        "requestBody": {
+          "description": "The email message model.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.Communications.Models.EmailMessageModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.Communications.Models.EmailMessageModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.Communications.Models.EmailMessageModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": true
+        }
+      }
+    },
+    "/api/Communications/private": {
+      "post": {
+        "tags": [
+          "Communications"
+        ],
+        "summary": "Sends an email with authorization, requiring the caller to be authenticated.",
+        "requestBody": {
+          "description": "The email message model.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.Communications.Models.EmailMessageModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.Communications.Models.EmailMessageModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.Communications.Models.EmailMessageModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": false
+        }
+      }
+    },
+    "/api/MessageQueueing/public": {
+      "post": {
+        "tags": [
+          "MessageQueueing"
+        ],
+        "summary": "Sends a message to the queue publicly without requiring authentication.",
+        "parameters": [
+          {
+            "name": "correlationId",
+            "in": "query",
+            "description": "Optional correlation ID for tracking purposes.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The example message model.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.ExampleMessageModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.ExampleMessageModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.ExampleMessageModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": true
+        }
+      }
+    },
+    "/api/MessageQueueing/private": {
+      "post": {
+        "tags": [
+          "MessageQueueing"
+        ],
+        "summary": "Sends a message to the queue with authorization, requiring the caller to be authenticated.",
+        "parameters": [
+          {
+            "name": "correlationId",
+            "in": "query",
+            "description": "Optional correlation ID for tracking purposes.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The example message model.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.ExampleMessageModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.ExampleMessageModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.ExampleMessageModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": false
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Eliassen.Communications.Models.AttachmentReferenceModel": {
+        "type": "object",
+        "properties": {
+          "containerName": {
+            "type": "string",
+            "description": "Gets the name of the container where the attachment is stored.",
+            "nullable": true
+          },
+          "documentKey": {
+            "type": "string",
+            "description": "Gets the key or identifier of the document associated with the attachment.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a model for referencing attachments."
+      },
+      "Eliassen.Communications.Models.EmailMessageModel": {
+        "type": "object",
+        "properties": {
+          "referenceId": {
+            "type": "string",
+            "description": "Gets or sets the reference ID of the email message.",
+            "nullable": true
+          },
+          "fromAddress": {
+            "type": "string",
+            "description": "Gets or sets the sender's email address.",
+            "nullable": true
+          },
+          "toAddresses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Gets or sets the list of recipient email addresses.",
+            "nullable": true
+          },
+          "ccAddresses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Gets or sets the list of carbon copy (CC) email addresses.",
+            "nullable": true
+          },
+          "bccAddresses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Gets or sets the list of blind carbon copy (BCC) email addresses.",
+            "nullable": true
+          },
+          "subject": {
+            "type": "string",
+            "description": "Gets or sets the subject of the email message.",
+            "nullable": true
+          },
+          "textContent": {
+            "type": "string",
+            "description": "Gets or sets the plain text content of the email message.",
+            "nullable": true
+          },
+          "htmlContent": {
+            "type": "string",
+            "description": "Gets or sets the HTML content of the email message.",
+            "nullable": true
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Gets or sets the headers of the email message.",
+            "nullable": true
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Eliassen.Communications.Models.AttachmentReferenceModel"
+            },
+            "description": "Gets or sets the list of attachment references in the email message.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an email message model."
+      },
+      "Eliassen.WebApi.Models.ExampleMessageModel": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "Gets or sets the input string. Default value is \"Default Value\".",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/System.Text.Json.Nodes.JsonNode"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an example message model."
+      },
+      "System.Text.Json.Nodes.JsonNode": {
+        "type": "object",
+        "properties": {
+          "options": {
+            "$ref": "#/components/schemas/System.Text.Json.Nodes.JsonNodeOptions"
+          },
+          "parent": {
+            "$ref": "#/components/schemas/System.Text.Json.Nodes.JsonNode"
+          },
+          "root": {
+            "$ref": "#/components/schemas/System.Text.Json.Nodes.JsonNode"
+          }
+        },
+        "additionalProperties": false
+      },
+      "System.Text.Json.Nodes.JsonNodeOptions": {
+        "type": "object",
+        "properties": {
+          "propertyNameCaseInsensitive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "description": "oauth2 authentication",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://lightwellnucleusdev.b2clogin.com/lightwellnucleusdev.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_NucAcc_Signin",
+            "tokenUrl": "https://lightwellnucleusdev.b2clogin.com/lightwellnucleusdev.onmicrosoft.com/oauth2/v2.0/token?p=B2C_1_NucAcc_Signin",
+            "scopes": {
+              "https://lightwellnucleusdev.onmicrosoft.com/user.read/read": "UserReadApiClaim"
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2": [ ]
+    }
+  ]
+}

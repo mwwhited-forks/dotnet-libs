@@ -1,4 +1,6 @@
-# Swagger Description
+# Swagger Description - {{this.info.title}}
+
+*Version*: {{this.info.version}}
 
 ## Endpoints
 {{#each this.paths}}
@@ -6,14 +8,26 @@
 ### {{@key}}
 
 {{#each this}}
-HTTP Method: {{@key}}
-Anonymous:   {{@value.x-permissions.anonymous}}
+
+{{@value.summary}}
+
+HTTP Method: *{{@key}}* \
+Anonymous:   *{{@value.x-permissions.anonymous}}*
+
 {{#if @value.x-permissions.right}}
 Rights:{{#each @value.x-permissions.right}}
 * {{@value}}
 {{/each}}{{/if}}
+
 {{#if @value.requestBody.content.[application/json].schema.[$ref]}}
-Request:     {{@value.requestBody.content.[application/json].schema.[$ref]}}{{/if}}
+Request:     *{{@value.requestBody.content.[application/json].schema.[$ref]}}*
+
+{{#if @value.requestBody.description}}
+{{@value.requestBody.description}}
+{{/if}}
+
+{{/if}}
+
 {{#if @value.responses.[200].content.[application/json].schema.[$ref]}}{{set 'reference' @value.responses.[200].content.[application/json].schema.[$ref]}}{{set 'reference-key' (str-replace (get 'reference') '#/components/schemas/')}}{{set 'schema' (lookup ../../components.schemas (get 'reference-key'))}}
 {{#with (lookup ../../components.schemas (get 'reference-key')) as |schema|}}Response: {{#if schema.[title]}}{{schema.[title]}}{{else}}{{get 'reference'}}{{/if}}{{/with}}
 {{/if}}
@@ -31,10 +45,16 @@ Request:     {{@value.requestBody.content.[application/json].schema.[$ref]}}{{/i
 {{/if}}{{#if this.properties}}
 
 #### Properties
-{{#each this.properties}}{{set 'property-reference-key' (str-replace @value.$ref '#/components/schemas/')}}
-* {{@key}} : {{#if @value.items.type}}{{@value.items.type}}[]{{else if @value.$ref}}{{get 'property-reference-key'}}{{else if @value.type}}{{@value.type}}{{else}}object{{/if}}{{#if @value.nullable}}?{{/if}}{{/each}}{{/if}}
+| Name | Type | other |
+|------|------|-------|{{#each this.properties}}{{set 'property-reference-key' (str-replace @value.$ref '#/components/schemas/')}}
+| {{@key}} | {{#if @value.items.type}}{{@value.items.type}}[]{{else if @value.$ref}}{{get 'property-reference-key'}}{{else if @value.type}}{{@value.type}}{{else}}object{{/if}}{{#if @value.nullable}}?{{/if}} | {{@value.description}} | {{/each}}
+{{/if}}
+
 {{/each}}
 
+{{
+!--
 ---
-
-Generated: {{date_now 'yyyy-MM-dd HH:mm:ss'}}
+Generated: {{date_now 'yyyy-MM-dd HH:mm:ss'
+}}
+--}}
