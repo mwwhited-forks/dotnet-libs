@@ -15,6 +15,18 @@ Applies a modification to the member map.
 
 
 
+## Class: MongoDB.Extensions.CollectionNameAttribute
+declarative attribute for labeling properties as MongoDB Collections
+### Properties
+
+#### CollectionName
+Name to use for MongoDB collection
+### Methods
+
+
+#### Constructor
+declarative attribute for labeling properties as MongoDB Collections
+
 ## Class: MongoDB.Extensions.DefaultMongoDatabaseSettings
 Default connection information for MongoDB databases. Duplicating this class with a different value will allow for declaring secondary connection configurations.
 ### Properties

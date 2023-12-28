@@ -123,6 +123,32 @@ include field to be searchable for "SearchTerm"
 #### TargetName
 Target name required only if this is used on the class
 
+## Class: System.ComponentModel.Search.SearchTermDefaultAttribute
+provide the ability to control how search terms are handled if not wilded carded
+### Properties
+
+#### Default
+rule to use for provided search term if not quoted
+### Methods
+
+
+#### Constructor
+provide the ability to control how search terms are handled if not wilded carded
+
+#### Intercept(Eliassen.System.Linq.Search.ISearchQuery)
+use the `Default` to control pattern for searches without provided wild cards
+
+##### Parameters
+* *searchQuery:* 
+
+
+
+
+##### Return value
+
+
+
+
 ## Class: System.ComponentModel.Search.SearchTermDefaults
 Specifies default search term options for comparison.
 ### Fields
@@ -1107,6 +1133,10 @@ A task representing the asynchronous operation, indicating whether the applicati
 
 ## Class: System.Text.Templating.ITemplateProvider
 Represents a template provider that can apply templates based on a specified context.
+### Properties
+
+#### SupportedContentTypes
+Gets the collection of supported content types by the template provider.
 ### Methods
 
 

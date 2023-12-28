@@ -1,6 +1,13 @@
 ﻿# Eliassen.System
 
 
+## Class: System.Accessors.Accessor`1
+Represents an accessor for a value of type .The type of the value to be accessed.
+### Properties
+
+#### Value
+Gets or sets the value associated with this accessor.
+
 ## Class: System.Configuration.CommandLine
 builder pattern for command parameter arguments
 ### Methods
@@ -542,6 +549,41 @@ The result of the query execution.
 
 
 
+## Class: System.Net.Mime.ContentTypesExtensions
+Provides constants representing various content types.
+### Fields
+
+#### Text.HandlebarsTemplate
+Represents the content type for Handlebars templates.
+#### Text.Calendar
+Represents the content type for calendar data.
+#### Text.Html
+Represents the content type for HTML.
+#### Text.Markdown
+Represents the content type for Markdown.
+#### Application.XSLT
+Represents the content type for XSLT (XML Stylesheet Language Transformations).
+
+## Class: System.Net.Mime.ContentTypesExtensions.Text
+Represents text-based content types.
+### Fields
+
+#### HandlebarsTemplate
+Represents the content type for Handlebars templates.
+#### Calendar
+Represents the content type for calendar data.
+#### Html
+Represents the content type for HTML.
+#### Markdown
+Represents the content type for Markdown.
+
+## Class: System.Net.Mime.ContentTypesExtensions.Application
+Represents application-based content types.
+### Fields
+
+#### XSLT
+Represents the content type for XSLT (XML Stylesheet Language Transformations).
+
 ## Class: System.Reflection.ReflectionExtensions
 Extensions for reflection and common patterns.
 ### Fields
@@ -972,6 +1014,49 @@ Get singleton instance from IOC container
 
 ## Class: System.Text.Json.BsonDateTimeOffsetConverter
 System.Text.Json converter to support BsonDatetimeOffset
+### Methods
+
+
+#### CanConvert(System.Type)
+Determines whether this converter can convert the specified type.
+
+##### Parameters
+* *typeToConvert:* The type to check for conversion support.
+
+
+
+
+##### Return value
+true if the converter can convert the specified type; otherwise, false.
+
+
+
+#### Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+Reads the JSON representation of the object.
+
+##### Parameters
+* *reader:* The reader to read from.
+* *typeToConvert:* The type of the object to convert.
+* *options:* The serializer options to use during conversion.
+
+
+
+
+##### Return value
+The deserialized object value.
+
+
+
+#### Write(System.Text.Json.Utf8JsonWriter,System.Object,System.Text.Json.JsonSerializerOptions)
+Writes the JSON representation of the object.
+
+##### Parameters
+* *writer:* The writer to write to.
+* *value:* The value to convert.
+* *options:* The serializer options to use during conversion.
+
+
+
 
 ## Class: System.Text.Json.BsonIdConverter
 This type converter for System.Text.Json to support BSON ObjectID to JSON safe export/import
@@ -1079,3 +1164,60 @@ template source path
 sandbox root path
 #### Priority
 template priority
+
+## Class: System.Text.Templating.FileType
+Represents a file type, providing information about the file extension, content type, and whether it is a template type.
+### Properties
+
+#### Extension
+Gets or sets the file extension associated with the file type.
+#### ContentType
+Gets or sets the content type associated with the file type.
+#### IsTemplateType
+Gets or sets a value indicating whether the file type is a template type.
+
+## Class: System.Text.Templating.TemplateEngine
+Generate templating engine that will try to use best match for source and provider
+### Methods
+
+
+#### Constructor
+Generate templating engine that will try to use best match for source and provider
+
+## Class: System.Text.Templating.XsltTemplateProvider
+Provides template processing using XSLT (eXtensible Stylesheet Language Transformations).
+### Properties
+
+#### SupportedContentTypes
+Gets the collection of supported content types by the template provider. application/xslt+xml
+### Methods
+
+
+#### CanApply(Eliassen.System.Text.Templating.ITemplateContext)
+Determines whether this template provider can apply template processing to the given context.
+
+##### Parameters
+* *context:* The template context.
+
+
+
+
+##### Return value
+true if the template processing can be applied; otherwise, false.
+
+
+
+#### ApplyAsync(Eliassen.System.Text.Templating.ITemplateContext,System.Object,System.IO.Stream)
+Applies the XSLT template associated with the specified context, using the provided data, and writes the result to the target stream asynchronously.
+
+##### Parameters
+* *context:* The template context.
+* *data:* The data to apply to the template.
+* *target:* The stream where the result will be written.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation, indicating whether the application was successful.
+

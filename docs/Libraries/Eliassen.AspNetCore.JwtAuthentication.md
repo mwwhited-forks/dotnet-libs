@@ -81,6 +81,15 @@ The OAuth2 scopes.
 
 
 
+#### Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)
+Configures SwaggerGen options for OAuth2 authentication.
+
+##### Parameters
+* *options:* The SwaggerGen options to configure.
+
+
+
+
 ## Class: AspNetCore.SwaggerGen.B2C.ConfigureOAuthSwaggerUIOptions
 Configures SwaggerUI options for OAuth authentication.
 Initializes a new instance of the class.
@@ -93,6 +102,15 @@ Configures SwaggerUI options for OAuth authentication.
 
 ##### Parameters
 * *jwtBearer:* The JwtBearer options.
+
+
+
+
+#### Configure(Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIOptions)
+Configures SwaggerUI options for OAuth authentication.
+
+##### Parameters
+* *options:* The SwaggerUI options to configure.
 
 
 

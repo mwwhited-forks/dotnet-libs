@@ -23,6 +23,10 @@ The modified with added Handlebars template services.
 ## Class: Handlebars.Extensions.Templating.HandlebarsTemplateProvider
 Provides Handlebars template processing functionality.
 Initializes a new instance of the class.
+### Properties
+
+#### SupportedContentTypes
+Gets the collection of supported content types by the template provider. text/x-handlebars-template
 ### Methods
 
 
