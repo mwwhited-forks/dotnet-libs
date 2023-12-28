@@ -14,6 +14,10 @@ public class AdditionalSwaggerUIEndpointsOptions(
     IActionDescriptorCollectionProvider provider
         ) : IConfigureOptions<SwaggerUIOptions>
 {
+    /// <summary>
+    /// Configures SwaggerUI options to enable grouping of controller/actions by assembly.
+    /// </summary>
+    /// <param name="options">The SwaggerUI options to be configured.</param>
     public void Configure(SwaggerUIOptions options)
     {
         options.SwaggerEndpoint("/swagger/all/swagger.json", "All");

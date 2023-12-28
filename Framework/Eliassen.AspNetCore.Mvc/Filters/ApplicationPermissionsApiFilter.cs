@@ -12,6 +12,11 @@ namespace Eliassen.AspNetCore.Mvc.Filters;
 /// </summary>
 public class ApplicationPermissionsApiFilter : IOperationFilter
 {
+    /// <summary>
+    /// Applies the operation filter to include application rights in Swagger documentation.
+    /// </summary>
+    /// <param name="operation">The OpenApiOperation to be modified.</param>
+    /// <param name="context">The OperationFilterContext providing information about the operation.</param>
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
         var allowAnonymous =

@@ -25,8 +25,10 @@ public class AdditionalSwaggerGenEndpointsOptions(
     IEnumerable<IVersionProvider> versions
         ) : IConfigureOptions<SwaggerGenOptions>
 {
-    private readonly ILogger _log = log;
-
+    /// <summary>
+    /// Configures SwaggerGen options with additional features such as presenting permissions, application versions, and XMLDocs.
+    /// </summary>
+    /// <param name="options">The SwaggerGen options to be configured.</param>
     public void Configure(SwaggerGenOptions options)
     {
         options.OperationFilter<ApplicationPermissionsApiFilter>();
@@ -96,12 +98,12 @@ public class AdditionalSwaggerGenEndpointsOptions(
         {
             try
             {
-                _log.LogWarning($"Loading comments from \"{{{nameof(file)}}}\"", Path.GetFileName(file));
+                log.LogWarning($"Loading comments from \"{{{nameof(file)}}}\"", Path.GetFileName(file));
                 options.IncludeXmlComments(file);
             }
             catch (Exception e)
             {
-                _log.LogWarning($"{{{nameof(file)}}}: {{{nameof(e.Message)}}}", Path.GetFileName(file), e.Message);
+                log.LogWarning($"{{{nameof(file)}}}: {{{nameof(e.Message)}}}", Path.GetFileName(file), e.Message);
             }
         }
     }

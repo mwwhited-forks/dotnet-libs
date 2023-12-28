@@ -5,9 +5,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
 
-
 namespace Eliassen.AspNetCore.SwaggerGen.B2C;
-
 
 /// <summary>
 /// Configures SwaggerGen options for OAuth2 authentication.
@@ -16,10 +14,10 @@ namespace Eliassen.AspNetCore.SwaggerGen.B2C;
 /// Initializes a new instance of the <see cref="ConfigureOAuthSwaggerGenOptions"/> class.
 /// </remarks>
 /// <param name="config">The OAuth2 Swagger options.</param>
-public class ConfigureOAuthSwaggerGenOptions(IOptions<OAuth2SwaggerOptions> config) : IConfigureOptions<SwaggerGenOptions>
+public class ConfigureOAuthSwaggerGenOptions(
+    IOptions<OAuth2SwaggerOptions> config
+    ) : IConfigureOptions<SwaggerGenOptions>
 {
-    private readonly IOptions<OAuth2SwaggerOptions> _config = config ?? throw new ArgumentNullException(nameof(config));
-
     /// <summary>
     /// Gets the OAuth2 scopes.
     /// </summary>
@@ -28,14 +26,19 @@ public class ConfigureOAuthSwaggerGenOptions(IOptions<OAuth2SwaggerOptions> conf
     {
         var scopes = new Dictionary<string, string>();
 
-        if (!string.IsNullOrWhiteSpace(_config.Value.UserReadApiClaim))
+        if (!string.IsNullOrWhiteSpace(config.Value.UserReadApiClaim))
         {
-            scopes.Add(_config.Value.UserReadApiClaim, nameof(_config.Value.UserReadApiClaim));
+            scopes.Add(config.Value.UserReadApiClaim, nameof(config.Value.UserReadApiClaim));
         }
 
         return scopes;
     }
 
+
+    /// <summary>
+    /// Configures SwaggerGen options for OAuth2 authentication.
+    /// </summary>
+    /// <param name="options">The SwaggerGen options to configure.</param>
     public void Configure(SwaggerGenOptions options)
     {
         options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
@@ -49,8 +52,8 @@ public class ConfigureOAuthSwaggerGenOptions(IOptions<OAuth2SwaggerOptions> conf
                 Implicit = new OpenApiOAuthFlow()
                 {
                     Scopes = GetScopes(),
-                    AuthorizationUrl = new Uri(_config.Value.AuthorizationUrl ?? throw new ApplicationException($"{nameof(_config.Value.AuthorizationUrl)} is not configured")),
-                    TokenUrl = new Uri(_config.Value.TokenUrl ?? throw new ApplicationException($"{nameof(_config.Value.TokenUrl)} is not configured")),
+                    AuthorizationUrl = new Uri(config.Value.AuthorizationUrl ?? throw new ApplicationException($"{nameof(config.Value.AuthorizationUrl)} is not configured")),
+                    TokenUrl = new Uri(config.Value.TokenUrl ?? throw new ApplicationException($"{nameof(config.Value.TokenUrl)} is not configured")),
                 },
             }
         });

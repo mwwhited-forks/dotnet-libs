@@ -10,6 +10,11 @@ namespace Eliassen.System.Text.Json;
 /// </summary>
 public class BsonDateTimeOffsetConverter : JsonConverter<object>
 {
+    /// <summary>
+    /// Determines whether this converter can convert the specified type.
+    /// </summary>
+    /// <param name="typeToConvert">The type to check for conversion support.</param>
+    /// <returns><c>true</c> if the converter can convert the specified type; otherwise, <c>false</c>.</returns>
     public override bool CanConvert(Type typeToConvert) =>
         new[] {
             typeof(DateTimeOffset),
@@ -18,6 +23,13 @@ public class BsonDateTimeOffsetConverter : JsonConverter<object>
             typeof(DateTime?),
         }.Contains(typeToConvert);
 
+    /// <summary>
+    /// Reads the JSON representation of the object.
+    /// </summary>
+    /// <param name="reader">The reader to read from.</param>
+    /// <param name="typeToConvert">The type of the object to convert.</param>
+    /// <param name="options">The serializer options to use during conversion.</param>
+    /// <returns>The deserialized object value.</returns>
     public override object Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         var type = reader.TokenType;
@@ -69,6 +81,12 @@ public class BsonDateTimeOffsetConverter : JsonConverter<object>
         throw new NotSupportedException($"element of type {type} is not supported");
     }
 
+    /// <summary>
+    /// Writes the JSON representation of the object.
+    /// </summary>
+    /// <param name="writer">The writer to write to.</param>
+    /// <param name="value">The value to convert.</param>
+    /// <param name="options">The serializer options to use during conversion.</param>
     public override void Write(Utf8JsonWriter writer, object value, JsonSerializerOptions options)
     {
         writer.WriteStartObject();
