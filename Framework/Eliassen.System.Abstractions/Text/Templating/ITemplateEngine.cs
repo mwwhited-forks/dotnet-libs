@@ -35,4 +35,7 @@ public interface ITemplateEngine
     /// <param name="target">The stream where the result will be written.</param>
     /// <returns>A task representing the asynchronous operation, indicating whether the application was successful.</returns>
     Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target);
+
+    Task<string> ApplyAsync(string templateName, object data);
+    Task<string> ApplyAsync(ITemplateContext context, object data);
 }

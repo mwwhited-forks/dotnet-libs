@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Eliassen.System.Text.Templating;
@@ -60,6 +61,22 @@ public class TemplateEngine(
         var provider = providers.FirstOrDefault(p => p.CanApply(context));
         if (provider == null) return false;
         return await provider.ApplyAsync(context, data, target);
+    }
+
+    public virtual async Task<string?> ApplyAsync(string templateName, object data)
+    {
+        using var ms = new MemoryStream();
+        var context = await ApplyAsync(templateName, data, ms);
+        if (context == null) return null;
+        return Encoding.UTF8.GetString(ms.ToArray());
+    }
+
+    public virtual async Task<string?> ApplyAsync(ITemplateContext context, object data)
+    {
+        using var ms = new MemoryStream();
+        if (!await ApplyAsync(context, data, ms))
+            return null;
+        return Encoding.UTF8.GetString(ms.ToArray());
     }
 
     public virtual ITemplateContext? Get(string templateName) =>
