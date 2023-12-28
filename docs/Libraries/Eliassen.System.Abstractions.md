@@ -37,6 +37,22 @@ property name to use for mapping
 sort column position priority
 #### Order
 direction to order this mapped column
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the class.
+
+##### Parameters
+* *targetName:* The property name to use for mapping.
+* *priority:* The sort column position priority.
+* *order:* The direction to order this mapped column.
+
+
+
+
+#### Constructor
+Initializes a new instance of the class.
 
 ## Class: System.ComponentModel.Search.FilterableAttribute
 Allow tagging entity classes to enumerate filterable fields/properties.
@@ -44,6 +60,14 @@ Allow tagging entity classes to enumerate filterable fields/properties.
 
 #### TargetName
 column mapping override
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the class.
+
+#### Constructor
+Initializes a new instance of the class.
 
 ## Class: System.ComponentModel.Search.IgnoreStringComparisonReplacementAttribute
 exclude from string comparison replacement visitor
@@ -480,6 +504,57 @@ Enumeration to control sort order
 sort related items in ascending order
 #### Descending
 sort related items in descending order
+#### 
+Represents the ascending order direction.
+#### 
+Represents a short form of the ascending order direction.
+#### 
+Represents the descending order direction.
+#### 
+Represents a short form of the descending order direction.
+
+## Class: System.Linq.Search.OrderDirectionsConstants
+Provides constants for order directions.
+### Fields
+
+#### Ascending
+Represents the ascending order direction.
+#### AscendingShort
+Represents a short form of the ascending order direction.
+#### Descending
+Represents the descending order direction.
+#### DescendingShort
+Represents a short form of the descending order direction.
+
+## Class: System.Linq.Search.SearchQuery`1
+Represents a search query with filtering and sorting options for a specific model.The type of the model.
+
+## Class: System.Linq.Search.SearchQuery
+Represents a generic search query with filtering and sorting options.
+### Properties
+
+#### CurrentPage
+Gets or sets the current page number.
+#### PageSize
+Gets or sets the page size.
+#### ExcludePageCount
+Gets or sets a value indicating whether to exclude page count from the result.
+#### SearchTerm
+Gets or sets the search term.
+#### Filter
+Gets or initializes the filters for the query.
+#### OrderBy
+Gets or initializes the sorting options for the query.
+### Methods
+
+
+#### ToString
+Generates a string representation of the search query.
+
+##### Return value
+A string representation of the search query.
+
+
 
 ## Class: System.Reflection.EnumExtensions
 Provides extension methods for working with enumerations.
@@ -723,6 +798,43 @@ Initializes a new instance of the class with the specified data.
 
 
 
+
+## Class: System.ResponseModel.PagedQueryResult`1
+Represents the result of a paged query, including information about the current page, total page count, total row count, and a collection of items.The type of the items in the result.
+### Properties
+
+#### CurrentPage
+Gets the total number of pages.
+#### TotalPageCount
+Gets the total number of pages.
+#### TotalRowCount
+Gets the total number of rows.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the class.
+
+##### Parameters
+* *currentPage:* The current page number.
+* *totalPageCount:* The total number of pages.
+* *totalRowCount:* The total number of rows.
+* *items:* The collection of items in the result.
+
+
+
+
+#### Constructor
+Initializes a new instance of the class by wrapping an existing instance.
+
+##### Parameters
+* *toWrap:* The instance to wrap.
+
+
+
+
+#### Constructor
+Gets the total number of pages.
 
 ## Class: System.ResponseModel.QueryResult`1
 Represents the result of a query operation, containing a collection of items and optional result messages.The type of items in the result.
@@ -1128,6 +1240,36 @@ Applies the specified data to the given template context and writes the result t
 
 ##### Return value
 A task representing the asynchronous operation, indicating whether the application was successful.
+
+
+
+#### ApplyAsync(System.String,System.Object)
+Applies the specified data to the template identified by its name and returns the result as a string asynchronously.
+
+##### Parameters
+* *templateName:* The name of the template.
+* *data:* The data to apply to the template.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation, containing the result as a string or null if not found.
+
+
+
+#### ApplyAsync(Eliassen.System.Text.Templating.ITemplateContext,System.Object)
+Applies the specified data to the given template context and returns the result as a string asynchronously.
+
+##### Parameters
+* *context:* The template context to apply.
+* *data:* The data to apply to the template.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation, containing the result as a string or null if not found.
 
 
 

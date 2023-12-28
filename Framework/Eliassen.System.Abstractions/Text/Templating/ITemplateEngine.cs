@@ -1,4 +1,5 @@
 ﻿namespace Eliassen.System.Text.Templating;
+
 /// <summary>
 /// Represents a template engine for generating content based on templates.
 /// </summary>
@@ -36,6 +37,19 @@ public interface ITemplateEngine
     /// <returns>A task representing the asynchronous operation, indicating whether the application was successful.</returns>
     Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target);
 
-    Task<string> ApplyAsync(string templateName, object data);
-    Task<string> ApplyAsync(ITemplateContext context, object data);
+    /// <summary>
+    /// Applies the specified data to the template identified by its name and returns the result as a string asynchronously.
+    /// </summary>
+    /// <param name="templateName">The name of the template.</param>
+    /// <param name="data">The data to apply to the template.</param>
+    /// <returns>A task representing the asynchronous operation, containing the result as a string or <c>null</c> if not found.</returns>
+    Task<string?> ApplyAsync(string templateName, object data);
+
+    /// <summary>
+    /// Applies the specified data to the given template context and returns the result as a string asynchronously.
+    /// </summary>
+    /// <param name="context">The template context to apply.</param>
+    /// <param name="data">The data to apply to the template.</param>
+    /// <returns>A task representing the asynchronous operation, containing the result as a string or <c>null</c> if not found.</returns>
+    Task<string?> ApplyAsync(ITemplateContext context, object data);
 }

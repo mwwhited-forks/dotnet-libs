@@ -340,6 +340,94 @@ Build an and'd expression chain
 
 
 
+## Class: System.Linq.Expressions.ExpressionTreeBuilder`1
+Provides functionality for building and managing expression trees dynamically in the context of filtering data.The type of the data model.
+### Methods
+
+
+#### Constructor
+Provides functionality for building and managing expression trees dynamically in the context of filtering data.
+
+##### Parameters
+* *logger:* Optional logger for logging messages.
+* *messages:* Optional result message capturer.
+
+
+
+
+#### GetPredicateExpression(System.String,Eliassen.System.Linq.Search.FilterParameter,System.StringComparison,System.Boolean)
+Gets the predicate expression based on the provided parameters.
+
+##### Parameters
+* *name:* The name of the property.
+* *value:* The filter parameter value.
+* *stringComparison:* The string comparison method.
+* *isSearchTerm:* Flag indicating if the value is a search term.
+
+
+
+
+##### Return value
+The predicate expression or null if not found.
+
+
+
+#### BuildExpression(System.Object,System.StringComparison,System.Boolean)
+Builds an expression by combining multiple predicate expressions using OR logic.
+
+##### Parameters
+* *queryParameter:* The query parameter for filtering.
+* *stringComparison:* The string comparison method.
+* *isSearchTerm:* Flag indicating if the value is a search term.
+
+
+
+
+##### Return value
+The combined predicate expression or null if not applicable.
+
+
+
+#### PropertyExpressions
+Builds the expressions for the properties in the data model.
+
+##### Return value
+The dictionary containing property names and their corresponding expressions.
+
+
+
+#### GetSearchablePropertyNames
+Gets the searchable property names in the data model.
+
+##### Return value
+The collection of searchable property names.
+
+
+
+#### GetSortablePropertyNames
+Gets the sortable property names in the data model.
+
+##### Return value
+The collection of sortable property names.
+
+
+
+#### GetFilterablePropertyNames
+Gets the filterable property names in the data model.
+
+##### Return value
+The collection of filterable property names.
+
+
+
+#### DefaultSortOrder
+Returns the default sort order based on attributes.
+
+##### Return value
+The default sort order as a collection of column names and directions.
+
+
+
 ## Class: System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
 This visitor will modify expressions to add `x.Property != null` before instance method calls for query rewrite
 ### Methods
@@ -1377,6 +1465,39 @@ Gets or sets the content type associated with the file type.
 #### IsTemplateType
 Gets or sets a value indicating whether the file type is a template type.
 
+## Class: System.Text.Templating.TemplateContext
+Represents the context of a template, providing information about the template and its processing.
+### Properties
+
+#### TemplateName
+Gets or sets the name of the template.
+#### TemplateContentType
+Gets or sets the content type of the template.
+#### TemplateFileExtension
+Gets or sets the file extension of the template.
+#### TemplateSource
+Gets or sets the source of the template.
+#### TemplateReference
+Gets or sets the reference identifier of the template.
+#### OpenTemplate
+Gets or sets the function to open the template as a stream.
+#### TargetContentType
+Gets or sets the content type of the target.
+#### TargetFileExtension
+Gets or sets the file extension of the target.
+#### Priority
+Gets or sets the priority of the template.
+### Methods
+
+
+#### ToString
+Returns a string representation of the template context.
+
+##### Return value
+A string representation of the template context.
+
+
+
 ## Class: System.Text.Templating.TemplateEngine
 Generate templating engine that will try to use best match for source and provider
 ### Methods
@@ -1384,6 +1505,104 @@ Generate templating engine that will try to use best match for source and provid
 
 #### Constructor
 Generate templating engine that will try to use best match for source and provider
+
+##### Parameters
+* *sources:* An enumerable collection of template sources.
+* *providers:* An enumerable collection of template providers.
+* *logger:* The logger for capturing log messages.
+
+
+
+
+#### ApplyAsync(System.String,System.Object,System.IO.Stream)
+Applies the template asynchronously to the provided data and writes the result to the target stream.
+
+##### Parameters
+* *templateName:* The name of the template to apply.
+* *data:* The data to apply to the template.
+* *target:* The stream to write the result to.
+
+
+
+
+##### Return value
+The applied template context or null if no matching template is found.
+
+
+
+#### ApplyAsync(Eliassen.System.Text.Templating.ITemplateContext,System.Object,System.IO.Stream)
+Applies the template asynchronously to the provided data and writes the result to the target stream.
+
+##### Parameters
+* *context:* The template context to apply.
+* *data:* The data to apply to the template.
+* *target:* The stream to write the result to.
+
+
+
+
+##### Return value
+true if the template is applied successfully; otherwise, false.
+
+
+
+#### ApplyAsync(System.String,System.Object)
+Applies the template asynchronously to the provided data and returns the result as a string.
+
+##### Parameters
+* *templateName:* The name of the template to apply.
+* *data:* The data to apply to the template.
+
+
+
+
+##### Return value
+The applied template as a string or null if no matching template is found.
+
+
+
+#### ApplyAsync(Eliassen.System.Text.Templating.ITemplateContext,System.Object)
+Applies the template asynchronously to the provided data and returns the result as a string.
+
+##### Parameters
+* *context:* The template context to apply.
+* *data:* The data to apply to the template.
+
+
+
+
+##### Return value
+The applied template as a string or null if the template cannot be applied.
+
+
+
+#### Get(System.String)
+Gets the template context with the specified name.
+
+##### Parameters
+* *templateName:* The name of the template to retrieve.
+
+
+
+
+##### Return value
+The template context or null if no matching template is found.
+
+
+
+#### GetAll(System.String)
+Gets all template contexts with the specified name.
+
+##### Parameters
+* *templateName:* The name of the template to retrieve.
+
+
+
+
+##### Return value
+An enumerable collection of template contexts.
+
+
 
 ## Class: System.Text.Templating.XsltTemplateProvider
 Provides template processing using XSLT (eXtensible Stylesheet Language Transformations).

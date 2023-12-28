@@ -14,6 +14,12 @@ using System.Text.Json;
 
 namespace Eliassen.System.Linq.Expressions;
 
+/// <summary>
+/// Provides functionality for building and managing expression trees dynamically in the context of filtering data.
+/// </summary>
+/// <typeparam name="TModel">The type of the data model.</typeparam>
+/// <param name="logger">Optional logger for logging messages.</param>
+/// <param name="messages">Optional result message capturer.</param>
 public class ExpressionTreeBuilder<TModel>(
     ILogger<ExpressionTreeBuilder<TModel>>? logger = null,
     ICaptureResultMessage? messages = null
@@ -25,6 +31,14 @@ public class ExpressionTreeBuilder<TModel>(
     private readonly ILogger _logger = logger ?? new ConsoleLogger<ExpressionTreeBuilder<TModel>>();
     private readonly ICaptureResultMessage _messages = messages ?? CaptureResultMessage.Default;
 
+    /// <summary>
+    /// Gets the predicate expression based on the provided parameters.
+    /// </summary>
+    /// <param name="name">The name of the property.</param>
+    /// <param name="value">The filter parameter value.</param>
+    /// <param name="stringComparison">The string comparison method.</param>
+    /// <param name="isSearchTerm">Flag indicating if the value is a search term.</param>
+    /// <returns>The predicate expression or null if not found.</returns>
     public Expression<Func<TModel, bool>>? GetPredicateExpression(
         string name,
         FilterParameter value,
@@ -33,6 +47,13 @@ public class ExpressionTreeBuilder<TModel>(
         ) =>
         TryGetPredicateExpression(name, value, out var expression, stringComparison, isSearchTerm) ? expression : null;
 
+    /// <summary>
+    /// Builds an expression by combining multiple predicate expressions using OR logic.
+    /// </summary>
+    /// <param name="queryParameter">The query parameter for filtering.</param>
+    /// <param name="stringComparison">The string comparison method.</param>
+    /// <param name="isSearchTerm">Flag indicating if the value is a search term.</param>
+    /// <returns>The combined predicate expression or null if not applicable.</returns>
     public Expression<Func<TModel, bool>>? BuildExpression(object? queryParameter, StringComparison stringComparison, bool isSearchTerm) =>
         ExpressionExtensions.OrElse(
             from searchExpression in GetSearchableExpressions(stringComparison)
@@ -328,9 +349,17 @@ public class ExpressionTreeBuilder<TModel>(
         return false;
     }
 
+    /// <summary>
+    /// Builds the expressions for the properties in the data model.
+    /// </summary>
+    /// <returns>The dictionary containing property names and their corresponding expressions.</returns>
     public IReadOnlyDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions() =>
         new Dictionary<string, Expression<Func<TModel, object>>>(BuildExpressions(), StringComparer.InvariantCultureIgnoreCase);
 
+    /// <summary>
+    /// Gets the searchable property names in the data model.
+    /// </summary>
+    /// <returns>The collection of searchable property names.</returns>
     public IReadOnlyCollection<string> GetSearchablePropertyNames()
     {
         var modelType = typeof(TModel);
@@ -363,6 +392,10 @@ public class ExpressionTreeBuilder<TModel>(
         return results;
     }
 
+    /// <summary>
+    /// Gets the sortable property names in the data model.
+    /// </summary>
+    /// <returns>The collection of sortable property names.</returns>
     public IReadOnlyCollection<string> GetSortablePropertyNames()
     {
         var modelType = typeof(TModel);
@@ -389,6 +422,10 @@ public class ExpressionTreeBuilder<TModel>(
         return results;
     }
 
+    /// <summary>
+    /// Gets the filterable property names in the data model.
+    /// </summary>
+    /// <returns>The collection of filterable property names.</returns>
     public IReadOnlyCollection<string> GetFilterablePropertyNames()
     {
         var modelType = typeof(TModel);
@@ -423,6 +460,10 @@ public class ExpressionTreeBuilder<TModel>(
         return results;
     }
 
+    /// <summary>
+    /// Returns the default sort order based on attributes.
+    /// </summary>
+    /// <returns>The default sort order as a collection of column names and directions.</returns>
     public IReadOnlyCollection<(string column, OrderDirections direction)> DefaultSortOrder() =>
         (
             from attribute in typeof(TModel).GetCustomAttributes<DefaultSortAttribute>()

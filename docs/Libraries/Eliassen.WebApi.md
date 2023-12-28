@@ -121,16 +121,48 @@ primary entry point
 
 ## Class: WebApi.Provider.ExampleMessageProvider
 Implementation of and for handling and sending example messages.
+Initializes a new instance of the class.
 ### Methods
 
 
 #### Constructor
 Initializes a new instance of the class.
+Implementation of and for handling and sending example messages.
 
 ##### Parameters
 * *sender:* The message queue sender for sending messages.
 * *logger:* The logger for logging messages.
 
+
+
+
+#### PostAsync(System.Object,System.String)
+Posts an example message asynchronously.
+
+##### Parameters
+* *message:* The message to be sent.
+* *correlationId:* The optional correlation ID.
+
+
+
+
+##### Return value
+The message ID.
+
+
+
+#### HandleAsync(System.Object,Eliassen.MessageQueueing.Services.IMessageContext)
+Handles an example message asynchronously.
+
+##### Parameters
+* *message:* The received message.
+* *context:* The message context.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
 
 
 

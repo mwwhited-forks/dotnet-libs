@@ -7,35 +7,38 @@ namespace Eliassen.WebApi.Provider;
 /// Implementation of <see cref="IExampleMessageProvider"/> and <see cref="IMessageQueueHandler{TMessage}"/>
 /// for handling and sending example messages.
 /// </summary>
-public class ExampleMessageProvider : IExampleMessageProvider, IMessageQueueHandler<ExampleMessageProvider>
+/// <remarks>
+/// Initializes a new instance of the <see cref="ExampleMessageProvider"/> class.
+/// </remarks>
+/// <param name="sender">The message queue sender for sending messages.</param>
+/// <param name="logger">The logger for logging messages.</param>
+public class ExampleMessageProvider(
+    IMessageQueueSender<ExampleMessageProvider> sender,
+    ILogger<ExampleMessageProvider> logger) : IExampleMessageProvider, IMessageQueueHandler<ExampleMessageProvider>
 {
-    private readonly IMessageQueueSender<ExampleMessageProvider> _sender;
-    private readonly ILogger<ExampleMessageProvider> _logger;
-
     /// <summary>
-    /// Initializes a new instance of the <see cref="ExampleMessageProvider"/> class.
+    /// Posts an example message asynchronously.
     /// </summary>
-    /// <param name="sender">The message queue sender for sending messages.</param>
-    /// <param name="logger">The logger for logging messages.</param>
-    public ExampleMessageProvider(
-        IMessageQueueSender<ExampleMessageProvider> sender,
-        ILogger<ExampleMessageProvider> logger)
-    {
-        _sender = sender ?? throw new ArgumentNullException(nameof(sender));
-        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-    }
-
+    /// <param name="message">The message to be sent.</param>
+    /// <param name="correlationId">The optional correlation ID.</param>
+    /// <returns>The message ID.</returns>
     public async Task<string> PostAsync(object message, string? correlationId)
     {
-        _logger.LogInformation("Send: {message} [{correlationId}]", message, correlationId);
-        var messageId = await _sender.SendAsync(message, correlationId);
-        _logger.LogInformation("Sent: {message} [{correlationId}]-[{messageId}]", message, correlationId, messageId);
+        logger.LogInformation("Send: {message} [{correlationId}]", message, correlationId);
+        var messageId = await sender.SendAsync(message, correlationId);
+        logger.LogInformation("Sent: {message} [{correlationId}]-[{messageId}]", message, correlationId, messageId);
         return messageId;
     }
 
+    /// <summary>
+    /// Handles an example message asynchronously.
+    /// </summary>
+    /// <param name="message">The received message.</param>
+    /// <param name="context">The message context.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
     public Task HandleAsync(object message, IMessageContext context)
     {
-        _logger.LogInformation("Received: {message} [{correlationId}]", message, context.CorrelationId);
+        logger.LogInformation("Received: {message} [{correlationId}]", message, context.CorrelationId);
         return Task.CompletedTask;
     }
 }

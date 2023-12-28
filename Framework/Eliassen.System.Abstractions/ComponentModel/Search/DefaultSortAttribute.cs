@@ -8,6 +8,12 @@ namespace Eliassen.System.ComponentModel.Search;
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
 public class DefaultSortAttribute : Attribute
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DefaultSortAttribute"/> class.
+    /// </summary>
+    /// <param name="targetName">The property name to use for mapping.</param>
+    /// <param name="priority">The sort column position priority.</param>
+    /// <param name="order">The direction to order this mapped column.</param>
     public DefaultSortAttribute(
         string? targetName = default,
         int priority = default,
@@ -18,6 +24,10 @@ public class DefaultSortAttribute : Attribute
         Priority = priority;
         Order = order;
     }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DefaultSortAttribute"/> class.
+    /// </summary>
     public DefaultSortAttribute() { }
 
     /// <summary>
