@@ -12,12 +12,24 @@ public class DictionaryStringObjectJsonConverter : JsonConverter<Dictionary<stri
 {
     // Reference: https://josef.codes/custom-dictionary-string-object-jsonconverter-for-system-text-json/
 
+    /// <summary>
+    /// Determines whether this converter can convert the specified type.
+    /// </summary>
+    /// <param name="typeToConvert">The type to convert.</param>
+    /// <returns>true if the converter can convert the specified type; otherwise, false.</returns>
     public override bool CanConvert(Type typeToConvert)
     {
         return typeToConvert == typeof(Dictionary<string, object>)
                || typeToConvert == typeof(Dictionary<string, object?>);
     }
 
+    /// <summary>
+    /// Reads the JSON representation of a <see cref="Dictionary{TKey, TValue}"/> with string keys and object values.
+    /// </summary>
+    /// <param name="reader">The reader to read from.</param>
+    /// <param name="typeToConvert">The type to convert.</param>
+    /// <param name="options">The serializer options.</param>
+    /// <returns>The converted dictionary.</returns>
     public override Dictionary<string, object?> Read(
         ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
@@ -54,6 +66,12 @@ public class DictionaryStringObjectJsonConverter : JsonConverter<Dictionary<stri
         return dictionary;
     }
 
+    /// <summary>
+    /// Writes the JSON representation of a <see cref="Dictionary{TKey, TValue}"/> with string keys and object values.
+    /// </summary>
+    /// <param name="writer">The writer to write to.</param>
+    /// <param name="value">The dictionary to write.</param>
+    /// <param name="options">The serializer options.</param>
     public override void Write(
         Utf8JsonWriter writer, Dictionary<string, object?> value, JsonSerializerOptions options)
     {

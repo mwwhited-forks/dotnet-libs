@@ -549,6 +549,38 @@ The result of the query execution.
 
 
 
+## Class: System.Linq.Search.SortBuilder`1
+Builder class for sorting IQueryable instances based on a provided sort query.The type of the model being sorted.
+### Methods
+
+
+#### Constructor
+Builder class for sorting IQueryable instances based on a provided sort query.
+
+##### Parameters
+* *logger:* The logger used for logging sorting-related messages. If not provided, a default console logger will be used.
+* *messages:* The result message capturer for publishing sorting-related messages.
+
+
+
+
+#### SortBy(System.Linq.IQueryable{`0},Eliassen.System.Linq.Search.ISortQuery,Eliassen.System.Linq.Expressions.IExpressionTreeBuilder{`0},System.StringComparison)
+Sorts an IQueryable instance based on the provided sort query.
+
+##### Parameters
+* *query:* The IQueryable instance to be sorted.
+* *searchRequest:* The sort query parameters.
+* *treeBuilder:* The expression tree builder for building property expressions.
+* *stringComparison:* The string comparison type to use when sorting string values.
+
+
+
+
+##### Return value
+An IOrderedQueryable instance representing the sorted result.
+
+
+
 ## Class: System.Net.Mime.ContentTypesExtensions
 Provides constants representing various content types.
 ### Fields
@@ -839,6 +871,38 @@ Lookup resource content based on filename relative the scope of context
 
 
 
+## Class: System.ResponseModel.CaptureResultMessage
+Implementation of for capturing and publishing result messages.
+### Properties
+
+#### Default
+Default instance for CaptureResultMessage
+### Methods
+
+
+#### Publish(Eliassen.System.ResponseModel.ResultMessage[])
+Publishes result messages to the capture stack.
+
+##### Parameters
+* *resultMessages:* The result messages to be published.
+
+
+
+
+#### Peek
+Peeks at the current contents of the capture stack without clearing it.
+
+##### Return value
+The current result messages in the capture stack.
+
+
+
+#### Clear
+Gets the default instance of .
+
+#### Capture
+Gets the default instance of .
+
 ## Class: System.Security.Claims.ClaimsPrincipalExtensions
 Extensions to manage on
 ### Methods
@@ -890,6 +954,22 @@ Get first matched on
 
 ## Class: System.Security.Cryptography.Hash
 Default hash of input value. Base64 encoded MD5 Hash
+### Methods
+
+
+#### GetHash(System.String)
+Computes the default hash of the input value using MD5.
+
+##### Parameters
+* *value:* The input value to be hashed.
+
+
+
+
+##### Return value
+The Base64 encoded MD5 hash of the input value.
+
+
 
 ## Class: System.ServiceCollectionExtensions
 Suggested IOC configurations
@@ -1063,12 +1143,101 @@ This type converter for System.Text.Json to support BSON ObjectID to JSON safe e
 
 ## Class: System.Text.Json.BsonTypeInfoResolver
 Resolves JSON type information for BSON serialization.
+### Methods
+
+
+#### GetTypeInfo(System.Type,System.Text.Json.JsonSerializerOptions)
+Gets the JSON type information for the specified type during BSON serialization.
+
+##### Parameters
+* *type:* The type for which to get JSON type information.
+* *options:* The used for serialization.
+
+
+
+
+##### Return value
+The JSON type information for the specified type.
+
+
 
 ## Class: System.Text.Json.ConfigurationJsonConverter`1
 JsonConverter for serializing and deserializing IConfiguration instances.The type of IConfiguration.
+### Methods
+
+
+#### Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+Reads the JSON representation of an IConfiguration instance and converts it.
+
+##### Parameters
+* *reader:* The reader to read from.
+* *typeToConvert:* The type to convert.
+* *options:* The serializer options.
+
+
+
+
+##### Return value
+The converted IConfiguration instance.
+
+
+
+#### Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+Writes the JSON representation of an IConfiguration instance.
+
+##### Parameters
+* *writer:* The writer to write to.
+* *value:* The IConfiguration instance to write.
+* *options:* The serializer options.
+
+
+
 
 ## Class: System.Text.Json.DictionaryStringObjectJsonConverter
 Custom JSON converter for dictionaries with string keys and object values.
+### Methods
+
+
+#### CanConvert(System.Type)
+Determines whether this converter can convert the specified type.
+
+##### Parameters
+* *typeToConvert:* The type to convert.
+
+
+
+
+##### Return value
+true if the converter can convert the specified type; otherwise, false.
+
+
+
+#### Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+Reads the JSON representation of a with string keys and object values.
+
+##### Parameters
+* *reader:* The reader to read from.
+* *typeToConvert:* The type to convert.
+* *options:* The serializer options.
+
+
+
+
+##### Return value
+The converted dictionary.
+
+
+
+#### Write(System.Text.Json.Utf8JsonWriter,System.Collections.Generic.Dictionary{System.String,System.Object},System.Text.Json.JsonSerializerOptions)
+Writes the JSON representation of a with string keys and object values.
+
+##### Parameters
+* *writer:* The writer to write to.
+* *value:* The dictionary to write.
+* *options:* The serializer options.
+
+
+
 
 ## Class: System.Text.Json.JsonDocumentExtensions
 shared extension methods for System.Text.Json
@@ -1119,6 +1288,8 @@ The JSON serializer options.
 
 #### DefaultOptions
 Gets the default JSON serializer options.
+#### ContentType
+Gets the content type for JSON.
 ### Methods
 
 
@@ -1131,6 +1302,36 @@ Default serializer for JSON.
 
 
 
+
+#### Serialize``1(``0)
+Serializes an object to a JSON string.
+
+#### Serialize(System.Object,System.Type)
+Serializes an object of a given type to a JSON string.
+
+#### SerializeAsync``1(``0,System.IO.Stream,System.Threading.CancellationToken)
+Asynchronously serializes an object to a JSON string.
+
+#### SerializeAsync(System.Object,System.Type,System.IO.Stream,System.Threading.CancellationToken)
+Asynchronously serializes an object of a given type to a JSON string.
+
+#### Deserialize``1(System.IO.Stream)
+Deserializes a JSON stream to an object of type T.
+
+#### Deserialize(System.IO.Stream,System.Type)
+Deserializes a JSON stream to an object of a given type.
+
+#### DeserializeAsync``1(System.IO.Stream,System.Threading.CancellationToken)
+Asynchronously deserializes a JSON stream to an object of type T.
+
+#### DeserializeAsync(System.IO.Stream,System.Type,System.Threading.CancellationToken)
+Asynchronously deserializes a JSON stream to an object of a given type.
+
+#### Deserialize``1(System.String)
+Deserializes a JSON string to an object of type T.
+
+#### Deserialize(System.String,System.Type)
+Deserializes a JSON string to an object of a given type.
 
 #### AsPropertyName(System.String)
 Use the configured property naming policy to change the provided value.

@@ -26,6 +26,80 @@ The authentication provider.
 
 
 
+#### GetGraphUsersByEmail(System.String)
+Retrieves a list of user identity models based on the provided email address.
+
+##### Parameters
+* *email:* The email address to query users by.
+
+
+
+
+##### Return value
+A list of user identity models matching the specified email address, or null if no matches are found.
+
+
+
+#### CreateIdentityUserAsync(System.String,System.String,System.String)
+Creates a new identity user asynchronously with the specified email, first name, and last name.
+
+##### Parameters
+* *email:* The email address for the new user.
+* *firstName:* The first name for the new user.
+* *lastName:* The last name for the new user.
+
+
+
+
+##### Return value
+A tuple containing the object ID and password of the created user, or null if the user already exists.
+
+
+
+#### CreateGraphUserAsync(System.String,System.String,System.String)
+Creates a new user asynchronously with the specified email, first name, and last name in Microsoft Graph.
+
+##### Parameters
+* *email:* The email address for the new user.
+* *firstName:* The first name for the new user.
+* *lastName:* The last name for the new user.
+
+
+
+
+##### Return value
+A tuple containing the object ID and password of the created user, or null if the user already exists.
+
+
+
+#### RemoveIdentityUserAsync(System.String)
+Removes an identity user asynchronously based on the specified object ID.
+
+##### Parameters
+* *objectId:* The object ID of the user to be removed.
+
+
+
+
+##### Return value
+True if the user is successfully removed, false otherwise.
+
+
+
+#### RemoveGraphUserAsync(System.String)
+Removes a user asynchronously based on the specified object ID in Microsoft Graph.
+
+##### Parameters
+* *userId:* The object ID of the user to be removed.
+
+
+
+
+##### Return value
+True if the user is successfully removed, false otherwise.
+
+
+
 ## Class: Microsoft.B2C.Identity.UserManagementProvider
 Represents a provider for user management operations.
 Initializes a new instance of the class.

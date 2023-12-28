@@ -40,6 +40,11 @@ public class ManageGraphUser(
         return token;
     }
 
+    /// <summary>
+    /// Retrieves a list of user identity models based on the provided email address.
+    /// </summary>
+    /// <param name="email">The email address to query users by.</param>
+    /// <returns>A list of user identity models matching the specified email address, or null if no matches are found.</returns>
     public async Task<List<UserIdentityModel>?> GetGraphUsersByEmail(string email)
     {
         // Set up the Microsoft Graph service client with client credentials
@@ -69,9 +74,23 @@ public class ManageGraphUser(
         })?.ToList() ?? [];
     }
 
+    /// <summary>
+    /// Creates a new identity user asynchronously with the specified email, first name, and last name.
+    /// </summary>
+    /// <param name="email">The email address for the new user.</param>
+    /// <param name="firstName">The first name for the new user.</param>
+    /// <param name="lastName">The last name for the new user.</param>
+    /// <returns>A tuple containing the object ID and password of the created user, or null if the user already exists.</returns>
     public Task<(string objectId, string? password)> CreateIdentityUserAsync(string email, string firstName, string lastName) =>
         CreateGraphUserAsync(email, firstName, lastName);
 
+    /// <summary>
+    /// Creates a new user asynchronously with the specified email, first name, and last name in Microsoft Graph.
+    /// </summary>
+    /// <param name="email">The email address for the new user.</param>
+    /// <param name="firstName">The first name for the new user.</param>
+    /// <param name="lastName">The last name for the new user.</param>
+    /// <returns>A tuple containing the object ID and password of the created user, or null if the user already exists.</returns>
     public async Task<(string objectId, string? password)> CreateGraphUserAsync(string email, string firstName, string lastName)
     {
         try
@@ -135,8 +154,18 @@ public class ManageGraphUser(
         }
     }
 
+    /// <summary>
+    /// Removes an identity user asynchronously based on the specified object ID.
+    /// </summary>
+    /// <param name="objectId">The object ID of the user to be removed.</param>
+    /// <returns>True if the user is successfully removed, false otherwise.</returns>
     public Task<bool> RemoveIdentityUserAsync(string objectId) => RemoveGraphUserAsync(objectId);
 
+    /// <summary>
+    /// Removes a user asynchronously based on the specified object ID in Microsoft Graph.
+    /// </summary>
+    /// <param name="userId">The object ID of the user to be removed.</param>
+    /// <returns>True if the user is successfully removed, false otherwise.</returns>
     public async Task<bool> RemoveGraphUserAsync(string userId)
     {
         try
