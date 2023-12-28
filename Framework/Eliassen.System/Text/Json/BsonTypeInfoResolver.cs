@@ -11,7 +11,6 @@ namespace Eliassen.System.Text.Json;
 /// </summary>
 public class BsonTypeInfoResolver : DefaultJsonTypeInfoResolver
 {
-    /// <inheritdoc/>
     public override JsonTypeInfo GetTypeInfo(Type type, JsonSerializerOptions options)
     {
         var info = base.GetTypeInfo(type, options);

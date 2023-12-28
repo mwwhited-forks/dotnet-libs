@@ -3,7 +3,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Eliassen.MessageQueueing.Hosting;
 
-/// <inheritdoc/>
 public static class ServiceCollectionExtensions
 {
     /// <summary>

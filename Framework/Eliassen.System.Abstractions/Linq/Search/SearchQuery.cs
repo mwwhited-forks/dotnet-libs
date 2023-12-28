@@ -2,12 +2,10 @@
 
 namespace Eliassen.System.Linq.Search
 {
-    /// <inheritdoc />
     public record SearchQuery<TModel> : SearchQuery, ISearchQuery<TModel>
     {
     }
 
-    /// <inheritdoc/>
     public record SearchQuery : ISearchQuery
     {
         internal static class Messages
@@ -28,26 +26,16 @@ namespace Eliassen.System.Linq.Search
             public const string ForceSortDefaultCode = "SORT_DEFAULT_FORCED";
         }
 
-        /// <inheritdoc cref="IPageQuery.CurrentPage"/>
         public int CurrentPage { get; set; }
-        /// <inheritdoc cref="IPageQuery.PageSize"/>
         public int PageSize { get; set; }
-        /// <inheritdoc cref="IPageQuery.ExcludePageCount"/>
         public bool ExcludePageCount { get; set; }
-
-        /// <inheritdoc cref="ISearchTermQuery.SearchTerm"/>
         public string? SearchTerm { get; set; }
-
-        /// <inheritdoc cref="IFilterQuery.Filter"/>
         public Dictionary<string, FilterParameter> Filter { get; init; } = [];
-
-        /// <inheritdoc cref="ISortQuery.OrderBy"/>
         public Dictionary<string, OrderDirections> OrderBy { get; init; } = [];
 
         IDictionary<string, FilterParameter> IFilterQuery.Filter => Filter;
         IDictionary<string, OrderDirections> ISortQuery.OrderBy => OrderBy;
 
-        /// <inheritdoc />
         public override string ToString()
         {
             var sb = new StringBuilder();

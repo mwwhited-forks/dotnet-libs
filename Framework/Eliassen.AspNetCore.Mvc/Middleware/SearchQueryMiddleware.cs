@@ -16,7 +16,6 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
     /// <summary>
     /// ASP.Net MVC Middlware to enable IQueryable{T} responses from  Controller Actions
     /// </summary>
-    /// <inheritdoc />
     public class SearchQueryMiddleware(
         RequestDelegate next,
         ILogger<SearchQueryMiddleware> log,
@@ -120,7 +119,6 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
             return (true, default);
         }
 
-        /// <inheritdoc />
         public async Task InvokeAsync(HttpContext context)
         {
             try

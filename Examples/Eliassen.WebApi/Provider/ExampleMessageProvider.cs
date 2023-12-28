@@ -25,7 +25,6 @@ public class ExampleMessageProvider : IExampleMessageProvider, IMessageQueueHand
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    /// <inheritdoc/>
     public async Task<string> PostAsync(object message, string? correlationId)
     {
         _logger.LogInformation("Send: {message} [{correlationId}]", message, correlationId);
@@ -34,7 +33,6 @@ public class ExampleMessageProvider : IExampleMessageProvider, IMessageQueueHand
         return messageId;
     }
 
-    /// <inheritdoc/>
     public Task HandleAsync(object message, IMessageContext context)
     {
         _logger.LogInformation("Received: {message} [{correlationId}]", message, context.CorrelationId);

@@ -28,12 +28,10 @@ namespace Eliassen.AspNetCore.Mvc.Filters
     {
         private readonly ILogger _logger = logger;
 
-        /// <inheritdoc/>
         public void OnResultExecuted(ResultExecutedContext context)
         {
         }
 
-        /// <inheritdoc/>
         public void OnResultExecuting(ResultExecutingContext context)
         {
             if (context.Result is Microsoft.AspNetCore.Mvc.ObjectResult objectResult &&

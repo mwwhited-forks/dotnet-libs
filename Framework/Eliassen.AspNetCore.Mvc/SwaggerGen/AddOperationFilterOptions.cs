@@ -11,6 +11,5 @@ namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 public class AddOperationFilterOptions<T> : IConfigureOptions<SwaggerGenOptions>
     where T : IOperationFilter
 {
-    /// <inheritdoc />
     public void Configure(SwaggerGenOptions options) => options.OperationFilter<T>();
 }

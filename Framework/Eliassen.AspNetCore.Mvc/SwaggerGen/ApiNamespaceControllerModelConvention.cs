@@ -7,8 +7,6 @@ namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 /// </summary>
 public class ApiNamespaceControllerModelConvention : IControllerModelConvention
 {
-
-    /// <inheritdoc/>
     public void Apply(ControllerModel controller)
     {
         controller.ApiExplorer.GroupName = controller.ControllerType.Assembly.GetName().Name;

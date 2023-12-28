@@ -10,7 +10,6 @@ namespace Eliassen.System.Text.Json;
 /// </summary>
 public class BsonDateTimeOffsetConverter : JsonConverter<object>
 {
-    /// <inheritdoc/>
     public override bool CanConvert(Type typeToConvert) =>
         new[] {
             typeof(DateTimeOffset),
@@ -19,7 +18,6 @@ public class BsonDateTimeOffsetConverter : JsonConverter<object>
             typeof(DateTime?),
         }.Contains(typeToConvert);
 
-    /// <inheritdoc/>
     public override object Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         var type = reader.TokenType;
@@ -71,7 +69,6 @@ public class BsonDateTimeOffsetConverter : JsonConverter<object>
         throw new NotSupportedException($"element of type {type} is not supported");
     }
 
-    /// <inheritdoc/>
     public override void Write(Utf8JsonWriter writer, object value, JsonSerializerOptions options)
     {
         writer.WriteStartObject();

@@ -12,7 +12,6 @@ namespace Eliassen.AspNetCore.Mvc.Filters;
 /// </summary>
 public class ApplicationPermissionsApiFilter : IOperationFilter
 {
-    /// <inheritdoc />
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
         var allowAnonymous =

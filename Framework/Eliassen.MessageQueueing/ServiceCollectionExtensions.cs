@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Eliassen.MessageQueueing;
 
-/// <inheritdoc/>
 public static class ServiceCollectionExtensions
 {
     /// <summary>

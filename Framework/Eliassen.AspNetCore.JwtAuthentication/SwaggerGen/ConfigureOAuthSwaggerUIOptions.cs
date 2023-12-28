@@ -18,7 +18,6 @@ public class ConfigureOAuthSwaggerUIOptions(IOptions<JwtBearerOptions> jwtBearer
 {
     private readonly IOptions<JwtBearerOptions> _jwtBearer = jwtBearer ?? throw new ArgumentNullException(nameof(jwtBearer));
 
-    /// <inheritdoc/>
     public void Configure(SwaggerUIOptions options)
     {
         options.OAuthClientId(_jwtBearer.Value.Audience);

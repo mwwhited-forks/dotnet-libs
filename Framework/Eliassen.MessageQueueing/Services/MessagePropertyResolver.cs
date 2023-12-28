@@ -46,7 +46,6 @@ public class MessagePropertyResolver(IConfiguration configuration) : IMessagePro
         return (selected, simpleTargetName, simpleMessageName, selected?.Path);
     }
 
-    /// <inheritdoc/>
     public (IConfigurationSection? configurationSection, string simpleTargetName, string simpleMessageName, string? configPath) ConfigurationSafe(Type channelType, Type messageType)
     {
         var (config, simpleTargetName, simpleMessageName, _) = RootConfiguration(channelType, messageType);
@@ -54,7 +53,6 @@ public class MessagePropertyResolver(IConfiguration configuration) : IMessagePro
         return (selected, simpleTargetName, simpleMessageName, selected?.Path);
     }
 
-    /// <inheritdoc/>
     public virtual IConfigurationSection Configuration(Type channelType, Type messageType)
     {
         var (config, simpleTargetName, simpleMessageName, _) = ConfigurationSafe(channelType, messageType);
@@ -63,15 +61,12 @@ public class MessagePropertyResolver(IConfiguration configuration) : IMessagePro
         return config;
     }
 
-    /// <inheritdoc/>
     public virtual string MessageId(Type channelType, Type messageType, string? messageId) =>
         string.IsNullOrWhiteSpace(messageId) ? GenerateId(channelType, messageType) : messageId;
 
-    /// <inheritdoc/>
     public virtual string GenerateId(Type channelType, Type messageType) =>
         Guid.NewGuid().ToString();
 
-    /// <inheritdoc/>
     public virtual (string? providerKey, string simpleTargetName, string simpleMessageName, string? configPath) ProviderSafe(Type channelType, Type messageType)
     {
         var (config, simpleTargetName, simpleMessageName, configPath) = RootConfiguration(channelType, messageType);
@@ -79,7 +74,6 @@ public class MessagePropertyResolver(IConfiguration configuration) : IMessagePro
         return (providerKey, simpleTargetName, simpleMessageName, configPath);
     }
 
-    /// <inheritdoc/>
     public virtual string Provider(Type channelType, Type messageType)
     {
         var (providerKey, simpleTargetName, simpleMessageName, _) = ProviderSafe(channelType, messageType);

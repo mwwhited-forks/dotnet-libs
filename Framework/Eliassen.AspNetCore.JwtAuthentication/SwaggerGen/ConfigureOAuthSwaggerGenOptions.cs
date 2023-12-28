@@ -36,7 +36,6 @@ public class ConfigureOAuthSwaggerGenOptions(IOptions<OAuth2SwaggerOptions> conf
         return scopes;
     }
 
-    /// <inheritdoc/>
     public void Configure(SwaggerGenOptions options)
     {
         options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme

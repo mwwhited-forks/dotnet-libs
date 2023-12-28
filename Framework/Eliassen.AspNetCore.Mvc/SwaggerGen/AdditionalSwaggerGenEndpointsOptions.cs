@@ -19,7 +19,6 @@ namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 /// <summary>
 /// SwaggerGen extensions to enable presenting permissions, application versions and XMLDocs
 /// </summary>
-/// <inheritdoc/>
 public class AdditionalSwaggerGenEndpointsOptions(
     IActionDescriptorCollectionProvider provider,
     ILogger<AdditionalSwaggerGenEndpointsOptions> log,
@@ -28,7 +27,6 @@ public class AdditionalSwaggerGenEndpointsOptions(
 {
     private readonly ILogger _log = log;
 
-    /// <inheritdoc/>
     public void Configure(SwaggerGenOptions options)
     {
         options.OperationFilter<ApplicationPermissionsApiFilter>();

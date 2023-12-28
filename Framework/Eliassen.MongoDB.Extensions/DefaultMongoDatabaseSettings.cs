@@ -19,7 +19,6 @@ public class DefaultMongoDatabaseSettings : IMongoSettings
     /// </summary>
     public string DatabaseName { get; set; } = null!;
 
-    /// <inheritdoc/>
     public override string ToString() => new
     {
         ConnectionString,

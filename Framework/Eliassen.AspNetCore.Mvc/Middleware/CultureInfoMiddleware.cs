@@ -17,7 +17,6 @@ namespace Eliassen.AspNetCore.Mvc.Middleware
             )
     {
 
-        /// <inheritdoc />
         public async Task Invoke(
             HttpContext context,
             ILogger<CultureInfoMiddleware> logger,

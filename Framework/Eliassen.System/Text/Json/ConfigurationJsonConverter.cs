@@ -14,7 +14,6 @@ namespace Eliassen.System.Text.Json;
 public class ConfigurationJsonConverter<IConfig> : JsonConverter<IConfig>
     where IConfig : IConfiguration
 {
-    /// <inheritdoc/>
     public override IConfig? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         var dict = JsonSerializer.Deserialize<Dictionary<string, string?>>(ref reader, options);
@@ -32,7 +31,6 @@ public class ConfigurationJsonConverter<IConfig> : JsonConverter<IConfig>
         throw new NotSupportedException($"could not convert {config.GetType()} to {typeToConvert}");
     }
 
-    /// <inheritdoc/>
     public override void Write(Utf8JsonWriter writer, IConfig value, JsonSerializerOptions options)
     {
         var dict = value.AsEnumerable()

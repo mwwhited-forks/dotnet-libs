@@ -7,8 +7,6 @@ using System.Linq;
 
 namespace Eliassen.System.Linq.Search;
 
-/// <inheritdoc/>
-/// <inheritdoc/>
 public class SortBuilder<TModel>(
     ILogger<SortBuilder<TModel>>? logger = null,
     ICaptureResultMessage? messages = null
@@ -17,7 +15,6 @@ public class SortBuilder<TModel>(
     private readonly ILogger _logger = logger ?? new ConsoleLogger<SortBuilder<TModel>>();
     private readonly ICaptureResultMessage _messages = messages ?? CaptureResultMessage.Default;
 
-    /// <inheritdoc/>
     public IOrderedQueryable<TModel> SortBy(
         IQueryable<TModel> query,
         ISortQuery searchRequest,

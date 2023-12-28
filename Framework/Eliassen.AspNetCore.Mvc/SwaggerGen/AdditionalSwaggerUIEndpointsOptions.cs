@@ -14,8 +14,6 @@ public class AdditionalSwaggerUIEndpointsOptions(
     IActionDescriptorCollectionProvider provider
         ) : IConfigureOptions<SwaggerUIOptions>
 {
-
-    /// <inheritdoc/>
     public void Configure(SwaggerUIOptions options)
     {
         options.SwaggerEndpoint("/swagger/all/swagger.json", "All");

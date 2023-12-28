@@ -1,40 +1,25 @@
 ﻿using System;
 using System.IO;
 
-namespace Eliassen.System.Text.Templating
+namespace Eliassen.System.Text.Templating;
+
+public record TemplateContext : ITemplateContext
 {
-    /// <inheritdoc/>
-    public record TemplateContext : ITemplateContext
-    {
-        /// <inheritdoc/>
-        public string TemplateName { get; set; } = null!;
-        /// <inheritdoc/>
-        public string TemplateContentType { get; set; } = null!;
-        /// <inheritdoc/>
-        public string TemplateFileExtension { get; set; } = null!;
-        /// <inheritdoc/>
-        public ITemplateSource TemplateSource { get; set; } = null!;
+    public string TemplateName { get; set; } = null!;
+    public string TemplateContentType { get; set; } = null!;
+    public string TemplateFileExtension { get; set; } = null!;
+    public ITemplateSource TemplateSource { get; set; } = null!;
 
-        /// <inheritdoc/>
-        public string TemplateReference { get; set; } = null!;
-        /// <inheritdoc/>
-        public Func<ITemplateContext, Stream> OpenTemplate { get; set; } = null!;
-
-        /// <inheritdoc/>
-        public string TargetContentType { get; set; } = null!;
-        /// <inheritdoc/>
-        public string TargetFileExtension { get; set; } = null!;
-
-        /// <inheritdoc/>
-        public int Priority { get; set; }
-
-        /// <inheritdoc/>
-        public override string ToString() =>
-            string.Join("",
-                TemplateName,
-                TargetFileExtension == TemplateFileExtension ? null : TargetFileExtension,
-                TemplateFileExtension,
-                $" ({TemplateContentType} -> {TargetContentType})"
-                );
-    }
+    public string TemplateReference { get; set; } = null!;
+    public Func<ITemplateContext, Stream> OpenTemplate { get; set; } = null!;
+    public string TargetContentType { get; set; } = null!;
+    public string TargetFileExtension { get; set; } = null!;
+    public int Priority { get; set; }
+    public override string ToString() =>
+        string.Join("",
+            TemplateName,
+            TargetFileExtension == TemplateFileExtension ? null : TargetFileExtension,
+            TemplateFileExtension,
+            $" ({TemplateContentType} -> {TargetContentType})"
+            );
 }

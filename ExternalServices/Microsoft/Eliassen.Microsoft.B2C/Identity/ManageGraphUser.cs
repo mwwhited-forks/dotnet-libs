@@ -1,5 +1,4 @@
-﻿using Azure.Core;
-using Azure.Identity;
+﻿using Azure.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Graph;
@@ -41,7 +40,6 @@ public class ManageGraphUser(
         return token;
     }
 
-    /// <inheritdoc/>
     public async Task<List<UserIdentityModel>?> GetGraphUsersByEmail(string email)
     {
         // Set up the Microsoft Graph service client with client credentials
@@ -71,11 +69,9 @@ public class ManageGraphUser(
         })?.ToList() ?? [];
     }
 
-    /// <inheritdoc/>
     public Task<(string objectId, string? password)> CreateIdentityUserAsync(string email, string firstName, string lastName) =>
         CreateGraphUserAsync(email, firstName, lastName);
 
-    /// <inheritdoc/>
     public async Task<(string objectId, string? password)> CreateGraphUserAsync(string email, string firstName, string lastName)
     {
         try
@@ -139,10 +135,8 @@ public class ManageGraphUser(
         }
     }
 
-    /// <inheritdoc/>
     public Task<bool> RemoveIdentityUserAsync(string objectId) => RemoveGraphUserAsync(objectId);
 
-    /// <inheritdoc/>
     public async Task<bool> RemoveGraphUserAsync(string userId)
     {
         try

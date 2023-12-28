@@ -17,7 +17,6 @@ namespace Eliassen.AspNetCore.Mvc.Filters;
 /// <summary>
 /// Search Query Operation filter extends Swagger/OpenAPI to provide details on IQueryable{T} endpoints.
 /// </summary>
-/// <inheritdoc/>
 public class SearchQueryOperationFilter(
      ILogger<SearchQueryOperationFilter> logger,
      IServiceProvider serviceProvider,
@@ -26,7 +25,6 @@ public class SearchQueryOperationFilter(
 {
     private readonly ILogger _logger = logger;
 
-    /// <inheritdoc/>
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
         try

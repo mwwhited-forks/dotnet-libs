@@ -12,14 +12,12 @@ public class DictionaryStringObjectJsonConverter : JsonConverter<Dictionary<stri
 {
     // Reference: https://josef.codes/custom-dictionary-string-object-jsonconverter-for-system-text-json/
 
-    /// <inheritdoc/>
     public override bool CanConvert(Type typeToConvert)
     {
         return typeToConvert == typeof(Dictionary<string, object>)
                || typeToConvert == typeof(Dictionary<string, object?>);
     }
 
-    /// <inheritdoc/>
     public override Dictionary<string, object?> Read(
         ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
@@ -56,7 +54,6 @@ public class DictionaryStringObjectJsonConverter : JsonConverter<Dictionary<stri
         return dictionary;
     }
 
-    /// <inheritdoc/>
     public override void Write(
         Utf8JsonWriter writer, Dictionary<string, object?> value, JsonSerializerOptions options)
     {

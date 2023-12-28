@@ -2,6 +2,7 @@
 using Eliassen.System.Configuration;
 using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
+using Eliassen.System.Net.Mime;
 using Eliassen.System.ResponseModel;
 using Eliassen.System.Security.Cryptography;
 using Eliassen.System.Text;
@@ -95,6 +96,7 @@ public static class ServiceCollectionExtensions
 
         services.AddTransient<ITemplateProvider, XsltTemplateProvider>();
 
+        //TODO: change these content types to .\Framework\Eliassen.System\Net\Mime\ContentTypes.cs
         services.AddTransient<IFileType>(_ => new FileType { Extension = ".md", ContentType = "text/markdown", IsTemplateType = false });
         services.AddTransient<IFileType>(_ => new FileType { Extension = ".yaml", ContentType = "text/yaml", IsTemplateType = false });
 
@@ -103,7 +105,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IFileType>(_ => new FileType { Extension = ".json", ContentType = DefaultJsonSerializer.DefaultContentType, IsTemplateType = false });
         services.AddTransient<IFileType>(_ => new FileType { Extension = ".xml", ContentType = DefaultXmlSerializer.DefaultContentType, IsTemplateType = false });
 
-        services.AddTransient<IFileType>(_ => new FileType { Extension = ".xslt", ContentType = XsltTemplateProvider.ContentType, IsTemplateType = true });
+        services.AddTransient<IFileType>(_ => new FileType { Extension = ".xslt", ContentType = ContentTypesExtensions.Application.XSLT, IsTemplateType = true });
 
         return services;
     }

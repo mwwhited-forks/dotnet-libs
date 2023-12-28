@@ -8,7 +8,6 @@ namespace Eliassen.System.ComponentModel.Search;
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
 public class DefaultSortAttribute : Attribute
 {
-    /// <inheritdoc/>
     public DefaultSortAttribute(
         string? targetName = default,
         int priority = default,
@@ -19,7 +18,6 @@ public class DefaultSortAttribute : Attribute
         Priority = priority;
         Order = order;
     }
-    /// <inheritdoc/>
     public DefaultSortAttribute() { }
 
     /// <summary>

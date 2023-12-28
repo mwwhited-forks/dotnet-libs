@@ -14,8 +14,6 @@ using System.Text.Json;
 
 namespace Eliassen.System.Linq.Expressions;
 
-/// <inheritdoc/>
-/// <inheritdoc/>
 public class ExpressionTreeBuilder<TModel>(
     ILogger<ExpressionTreeBuilder<TModel>>? logger = null,
     ICaptureResultMessage? messages = null
@@ -27,7 +25,6 @@ public class ExpressionTreeBuilder<TModel>(
     private readonly ILogger _logger = logger ?? new ConsoleLogger<ExpressionTreeBuilder<TModel>>();
     private readonly ICaptureResultMessage _messages = messages ?? CaptureResultMessage.Default;
 
-    /// <inheritdoc/>
     public Expression<Func<TModel, bool>>? GetPredicateExpression(
         string name,
         FilterParameter value,
@@ -36,7 +33,6 @@ public class ExpressionTreeBuilder<TModel>(
         ) =>
         TryGetPredicateExpression(name, value, out var expression, stringComparison, isSearchTerm) ? expression : null;
 
-    /// <inheritdoc/>
     public Expression<Func<TModel, bool>>? BuildExpression(object? queryParameter, StringComparison stringComparison, bool isSearchTerm) =>
         ExpressionExtensions.OrElse(
             from searchExpression in GetSearchableExpressions(stringComparison)
@@ -332,11 +328,9 @@ public class ExpressionTreeBuilder<TModel>(
         return false;
     }
 
-    /// <inheritdoc/>
     public IReadOnlyDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions() =>
         new Dictionary<string, Expression<Func<TModel, object>>>(BuildExpressions(), StringComparer.InvariantCultureIgnoreCase);
 
-    /// <inheritdoc/>
     public IReadOnlyCollection<string> GetSearchablePropertyNames()
     {
         var modelType = typeof(TModel);
@@ -369,7 +363,6 @@ public class ExpressionTreeBuilder<TModel>(
         return results;
     }
 
-    /// <inheritdoc/>
     public IReadOnlyCollection<string> GetSortablePropertyNames()
     {
         var modelType = typeof(TModel);
@@ -396,7 +389,6 @@ public class ExpressionTreeBuilder<TModel>(
         return results;
     }
 
-    /// <inheritdoc/>
     public IReadOnlyCollection<string> GetFilterablePropertyNames()
     {
         var modelType = typeof(TModel);
@@ -431,7 +423,6 @@ public class ExpressionTreeBuilder<TModel>(
         return results;
     }
 
-    /// <inheritdoc/>
     public IReadOnlyCollection<(string column, OrderDirections direction)> DefaultSortOrder() =>
         (
             from attribute in typeof(TModel).GetCustomAttributes<DefaultSortAttribute>()

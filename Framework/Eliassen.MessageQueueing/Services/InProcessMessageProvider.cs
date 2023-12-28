@@ -32,7 +32,6 @@ public class InProcessMessageProvider(
     /// </summary>
     public const string MessageProviderKey = "in-process";
 
-    /// <inheritdoc/>
     public Task<string?> SendAsync(object message, IMessageContext context)
     {
         var wrapped = new WrappedQueueMessage
@@ -48,14 +47,12 @@ public class InProcessMessageProvider(
         return Task.FromResult<string?>(wrapped.CorrelationId);
     }
 
-    /// <inheritdoc/>
     public IMessageReceiverProvider SetHandlerProvider(IMessageHandlerProvider handlerProvider)
     {
         _handlerProvider = handlerProvider;
         return this;
     }
 
-    /// <inheritdoc/>
     public async Task RunAsync(CancellationToken cancellationToken = default)
     {
         var newCancellationToken = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken).Token;

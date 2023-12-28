@@ -1,4 +1,5 @@
-﻿using Eliassen.System.Security.Cryptography;
+﻿using Eliassen.System.Net.Mime;
+using Eliassen.System.Security.Cryptography;
 using Eliassen.System.Text.Templating;
 using HandlebarsDotNet;
 using HandlebarsDotNet.Extension.Json;
@@ -22,7 +23,19 @@ namespace Eliassen.Handlebars.Extensions.Templating;
 /// <param name="log">The logger instance.</param>
 public class HandlebarsTemplateProvider(IHash hash, IEnumerable<IHelpersRegistry> helpersRegistry, ILogger<HandlebarsTemplateProvider> log) : ITemplateProvider
 {
+    //TODO: change the way the content types are registered
+
     private readonly ILogger _log = log;
+
+    /// <summary>
+    /// Gets the collection of supported content types by the template provider.
+    /// 
+    /// text/x-handlebars-template
+    /// </summary>
+    public IReadOnlyCollection<string> SupportedContentTypes { get; } = new[]
+    {
+         ContentTypesExtensions.Text.HandlebarsTemplate
+    };
 
     /// <summary>
     /// Determines whether this template provider can apply template processing to the given context.
@@ -30,7 +43,7 @@ public class HandlebarsTemplateProvider(IHash hash, IEnumerable<IHelpersRegistry
     /// <param name="context">The template context.</param>
     /// <returns><c>true</c> if the template processing can be applied; otherwise, <c>false</c>.</returns>
     public bool CanApply(ITemplateContext context) =>
-        string.Equals(context.TemplateContentType, "text/x-handlebars-template", StringComparison.InvariantCultureIgnoreCase);
+        SupportedContentTypes.Any(type=> string.Equals(context.TemplateContentType, type, StringComparison.InvariantCultureIgnoreCase));
 
     /// <summary>
     /// Asynchronously applies Handlebars template processing to the specified context, data, and target stream.

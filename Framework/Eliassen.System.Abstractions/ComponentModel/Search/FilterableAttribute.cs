@@ -6,12 +6,10 @@
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
 public class FilterableAttribute : Attribute
 {
-    /// <inheritdoc/>
     public FilterableAttribute(string targetName)
     {
         TargetName = targetName;
     }
-    /// <inheritdoc/>
     public FilterableAttribute() { }
 
     /// <summary>
