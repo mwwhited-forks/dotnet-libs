@@ -8,22 +8,18 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace Eliassen.Azure.StorageAccount.MessageQueueing;
+
 /// <summary>
 /// Represents an in-process message provider that implements both <see cref="IMessageSenderProvider"/> and <see cref="IMessageReceiverProvider"/>.
 /// </summary>
 /// <remarks>
 /// Initializes a new instance of the <see cref="InProcessMessageProvider"/> class.
 /// </remarks>
-/// <param name="serializer">The JSON serializer.</param>
 /// <param name="logger">The logger.</param>
 public class InProcessMessageProvider(
-    IJsonSerializer serializer,
     ILogger<InProcessMessageProvider> logger
     ) : IMessageSenderProvider, IMessageReceiverProvider
 {
-    private readonly ISerializer _serializer = serializer;
-    private readonly ILogger _logger = logger;
-
     private IMessageHandlerProvider? _handlerProvider;
     private static readonly ConcurrentQueue<WrappedQueueMessage> _queue = new();
 
@@ -32,6 +28,12 @@ public class InProcessMessageProvider(
     /// </summary>
     public const string MessageProviderKey = "in-process";
 
+    /// <summary>
+    /// Sends a message asynchronously.
+    /// </summary>
+    /// <param name="message">The message to send.</param>
+    /// <param name="context">The message context.</param>
+    /// <returns>A task representing the asynchronous operation and returning the correlation ID.</returns>
     public Task<string?> SendAsync(object message, IMessageContext context)
     {
         var wrapped = new WrappedQueueMessage
@@ -47,12 +49,22 @@ public class InProcessMessageProvider(
         return Task.FromResult<string?>(wrapped.CorrelationId);
     }
 
+    /// <summary>
+    /// Sets the message handler provider.
+    /// </summary>
+    /// <param name="handlerProvider">The message handler provider.</param>
+    /// <returns>The current instance of the message receiver provider.</returns>
     public IMessageReceiverProvider SetHandlerProvider(IMessageHandlerProvider handlerProvider)
     {
         _handlerProvider = handlerProvider;
         return this;
     }
 
+    /// <summary>
+    /// Runs the in-process message provider asynchronously.
+    /// </summary>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
     public async Task RunAsync(CancellationToken cancellationToken = default)
     {
         var newCancellationToken = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken).Token;
@@ -66,14 +78,14 @@ public class InProcessMessageProvider(
         {
             if (!_queue.TryDequeue(out var wrapped))
             {
-                _logger.LogInformation("Nothing received, waiting...");
+                logger.LogInformation("Nothing received, waiting...");
                 await Task.Delay(1000);  // TODO: this should be configurable
                 continue;
             }
 
             await _handlerProvider.HandleAsync(wrapped, wrapped.CorrelationId);
 
-            _logger.LogInformation($"Dequeue: {{CorrelationId}}", wrapped.CorrelationId);
+            logger.LogInformation($"Dequeue: {{CorrelationId}}", wrapped.CorrelationId);
         }
     }
 }

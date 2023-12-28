@@ -21,6 +21,8 @@ declarative attribute for labeling properties as MongoDB Collections
 
 #### CollectionName
 Name to use for MongoDB collection
+#### TypeId
+Gets the type identifier for the attribute.
 ### Methods
 
 
@@ -35,6 +37,16 @@ Default connection information for MongoDB databases. Duplicating this class wit
 Gets or sets the connection string for the MongoDB database.
 #### DatabaseName
 Gets or sets the name of the MongoDB database.
+### Methods
+
+
+#### ToString
+Returns a string that represents the current object.
+
+##### Return value
+A string that represents the current object.
+
+
 
 ## Class: MongoDB.Extensions.IMongoDatabaseFactory
 provide a centralized means to created MongoDB instances
@@ -107,6 +119,17 @@ The proxied MongoDB database instance.
 
 #### #cctor
 Static constructor to register serializers and conventions.
+
+## Class: MongoDB.Extensions.MongoDatabaseRegistration
+Represents a registration of types for MongoDB databases.
+### Fields
+
+#### InternalTypes
+Gets the internal set of types registered for MongoDB databases.
+### Properties
+
+#### Types
+Gets the read-only collection of types registered for MongoDB databases.
 
 ## Class: MongoDB.Extensions.MongoDispatchProxy
 This proxy allow for dynamic creation of wrapper classes to expose MongoDatabase instances

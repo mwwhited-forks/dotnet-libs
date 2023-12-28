@@ -47,3 +47,22 @@ Stops the message receiver host.
 ##### Return value
 A task representing the stop operation.
 
+
+
+## Class: MessageQueueing.Hosting.ServiceCollectionExtensions
+Provides extension methods for configuring IoC (Inversion of Control) services to support all Message Queueing within this library.
+### Methods
+
+
+#### TryAddMessageQueueingHosting(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Add IOC configurations to support all Message Queueing within this library.
+
+##### Parameters
+* *services:* 
+
+
+
+
+##### Return value
+
+

@@ -93,6 +93,16 @@ Search Query Operation filter extends Swagger/OpenAPI to provide details on IQue
 #### Constructor
 Search Query Operation filter extends Swagger/OpenAPI to provide details on IQueryable{T} endpoints.
 
+#### Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)
+Applies the Search Query Operation filter to Swagger/OpenAPI.
+
+##### Parameters
+* *operation:* The OpenApiOperation to apply the filter to.
+* *context:* The OperationFilterContext containing information about the operation.
+
+
+
+
 ## Class: AspNetCore.Mvc.Filters.SearchQueryResultFilter
 Search Query Results filter is an extension for ASP.Net Core to enable a common pattern to query data endpoints with from Controller Actions. This detects actions that return IQueryable{TModel} and intercepts the web request to complete the query based on user requested inputs.
 ### Methods
@@ -100,6 +110,24 @@ Search Query Results filter is an extension for ASP.Net Core to enable a common 
 
 #### Constructor
 Search Query Results filter is an extension for ASP.Net Core to enable a common pattern to query data endpoints with from Controller Actions. This detects actions that return IQueryable{TModel} and intercepts the web request to complete the query based on user requested inputs.
+
+#### OnResultExecuted(Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext)
+Called after the action result executes.
+
+##### Parameters
+* *context:* The .
+
+
+
+
+#### OnResultExecuting(Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext)
+Called before the action result executes.
+
+##### Parameters
+* *context:* The .
+
+
+
 
 ## Class: AspNetCore.Mvc.Middleware.CultureInfoMiddleware
 Custom middleware to enable detection of language/culture from HTTP request header as well as assignment for response header
@@ -109,6 +137,28 @@ Custom middleware to enable detection of language/culture from HTTP request head
 #### Constructor
 Custom middleware to enable detection of language/culture from HTTP request header as well as assignment for response header
 
+##### Parameters
+* *next:* The next middleware in the pipeline.
+
+
+
+
+#### Invoke(Microsoft.AspNetCore.Http.HttpContext,Microsoft.Extensions.Logging.ILogger{Eliassen.AspNetCore.Mvc.Middleware.CultureInfoMiddleware},Eliassen.System.Accessors.IAccessor{System.Globalization.CultureInfo})
+Invokes the middleware to process the request and response.
+
+##### Parameters
+* *context:* The HTTP context.
+* *logger:* The logger.
+* *cultureInfo:* The accessor for .
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
 ## Class: AspNetCore.Mvc.Middleware.SearchQueryMiddleware
 ASP.Net MVC Middlware to enable IQueryable{T} responses from Controller Actions
 ### Methods
@@ -116,6 +166,28 @@ ASP.Net MVC Middlware to enable IQueryable{T} responses from Controller Actions
 
 #### Constructor
 ASP.Net MVC Middlware to enable IQueryable{T} responses from Controller Actions
+
+##### Parameters
+* *next:* The next middleware in the pipeline.
+* *log:* The logger for logging information.
+* *searchQuery:* The accessor for the search query.
+
+
+
+
+#### InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+Invokes the middleware to handle the request.
+
+##### Parameters
+* *context:* The HTTP context.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
 
 ## Class: AspNetCore.Mvc.OpenApi.ApiPermissionsExtension
 Declare permissions required for application endpoint

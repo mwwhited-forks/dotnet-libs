@@ -35,6 +35,25 @@ The ID of the sent message.
 
 
 
+## Class: MessageQueueing.ServiceCollectionExtensions
+Provides extension methods for configuring IoC (Inversion of Control) services to support all Message Queueing within this library.
+### Methods
+
+
+#### TryAddMessageQueueingServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Add IOC configurations to support all Message Queueing within this library.
+
+##### Parameters
+* *services:* 
+
+
+
+
+##### Return value
+
+
+
+
 ## Class: MessageQueueing.Services.MessageContext
 Represents the context associated with a message, including metadata and headers.
 ### Properties
@@ -265,6 +284,112 @@ Utility class for resolving properties related to message queue handling.
 
 
 
+#### RootConfiguration(System.Type,System.Type)
+Gets the root configuration section along with simple target and message names.
+
+##### Parameters
+* *channelType:* The type of the message queue channel.
+* *messageType:* The type of the message.
+
+
+
+
+##### Return value
+A tuple containing the root configuration section, simple target name, simple message name, and the configuration path.
+
+
+
+#### ConfigurationSafe(System.Type,System.Type)
+Retrieves the safe configuration section along with simple target and message names.
+
+##### Parameters
+* *channelType:* The type of the message queue channel.
+* *messageType:* The type of the message.
+
+
+
+
+##### Return value
+A tuple containing the safe configuration section, simple target name, simple message name, and the configuration path.
+
+
+
+#### Configuration(System.Type,System.Type)
+Retrieves the configuration section along with simple target and message names.
+
+##### Parameters
+* *channelType:* The type of the message queue channel.
+* *messageType:* The type of the message.
+
+
+
+
+##### Return value
+The configuration section.
+
+
+
+#### MessageId(System.Type,System.Type,System.String)
+Resolves the message ID, generating a new one if not provided.
+
+##### Parameters
+* *channelType:* The type of the message queue channel.
+* *messageType:* The type of the message.
+* *messageId:* The provided message ID.
+
+
+
+
+##### Return value
+The resolved message ID.
+
+
+
+#### GenerateId(System.Type,System.Type)
+Generates a new message ID.
+
+##### Parameters
+* *channelType:* The type of the message queue channel.
+* *messageType:* The type of the message.
+
+
+
+
+##### Return value
+The generated message ID.
+
+
+
+#### ProviderSafe(System.Type,System.Type)
+Retrieves the safe provider information along with simple target and message names.
+
+##### Parameters
+* *channelType:* The type of the message queue channel.
+* *messageType:* The type of the message.
+
+
+
+
+##### Return value
+A tuple containing the provider key, simple target name, simple message name, and the configuration path.
+
+
+
+#### Provider(System.Type,System.Type)
+Retrieves the provider key along with simple target and message names.
+
+##### Parameters
+* *channelType:* The type of the message queue channel.
+* *messageType:* The type of the message.
+
+
+
+
+##### Return value
+The provider key.
+
+
+
 ## Class: MessageQueueing.Services.MessageReceiverProviderFactory
 Factory for creating instances of based on configured message handlers.
 Initializes a new instance of the class.
@@ -339,7 +464,49 @@ Initializes a new instance of the class.
 Represents an in-process message provider that implements both and .
 
 ##### Parameters
-* *serializer:* The JSON serializer.
 * *logger:* The logger.
 
+
+
+
+#### SendAsync(System.Object,Eliassen.MessageQueueing.Services.IMessageContext)
+Sends a message asynchronously.
+
+##### Parameters
+* *message:* The message to send.
+* *context:* The message context.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation and returning the correlation ID.
+
+
+
+#### SetHandlerProvider(Eliassen.MessageQueueing.Services.IMessageHandlerProvider)
+Sets the message handler provider.
+
+##### Parameters
+* *handlerProvider:* The message handler provider.
+
+
+
+
+##### Return value
+The current instance of the message receiver provider.
+
+
+
+#### RunAsync(System.Threading.CancellationToken)
+Runs the in-process message provider asynchronously.
+
+##### Parameters
+* *cancellationToken:* The cancellation token.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
 

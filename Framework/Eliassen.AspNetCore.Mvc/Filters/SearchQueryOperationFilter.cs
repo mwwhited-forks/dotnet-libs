@@ -25,6 +25,11 @@ public class SearchQueryOperationFilter(
 {
     private readonly ILogger _logger = logger;
 
+    /// <summary>
+    /// Applies the Search Query Operation filter to Swagger/OpenAPI.
+    /// </summary>
+    /// <param name="operation">The OpenApiOperation to apply the filter to.</param>
+    /// <param name="context">The OperationFilterContext containing information about the operation.</param>
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
         try

@@ -5,6 +5,10 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Eliassen.MessageQueueing;
 
+/// <summary>
+/// Provides extension methods for configuring IoC (Inversion of Control) services
+/// to support all Message Queueing within this library.
+/// </summary>
 public static class ServiceCollectionExtensions
 {
     /// <summary>
