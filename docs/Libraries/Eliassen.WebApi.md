@@ -3,11 +3,13 @@
 
 ## Class: WebApi.Controllers.CommunicationsController
 Controller for handling communication-related operations, such as sending emails and messages to a queue.
+Initializes a new instance of the class.
 ### Methods
 
 
 #### Constructor
 Initializes a new instance of the class.
+Controller for handling communication-related operations, such as sending emails and messages to a queue.
 
 ##### Parameters
 * *email:* The email communication sender.
@@ -60,11 +62,13 @@ A task representing the asynchronous operation and containing a string result.
 
 ## Class: WebApi.Controllers.MessageQueueingController
 Controller for handling message queueing operations.
+Initializes a new instance of the class.
 ### Methods
 
 
 #### Constructor
 Initializes a new instance of the class.
+Controller for handling message queueing operations.
 
 ##### Parameters
 * *provider:* The example message provider.
@@ -99,6 +103,46 @@ Sends a message to the queue with authorization, requiring the caller to be auth
 
 ##### Return value
 A task representing the asynchronous operation and containing a string result.
+
+
+
+## Class: WebApi.Controllers.TextTemplateController
+Controller for handling text template operations.
+            Initializes a new instance of the  *See: T:Eliassen.WebApi.Controllers.TextTemplateController* class.
+            
+### Methods
+
+
+#### Constructor
+Controller for handling text template operations.
+
+##### Parameters
+* *engine:* The template engine for processing text templates.
+* *fileTypes:* The collection of file types supported by the controller.
+
+
+
+
+#### SupportedTemplates
+Gets the list of supported template file types.
+
+##### Return value
+An enumeration of supported file types.
+
+
+
+#### Apply(System.String,System.Text.Json.Nodes.JsonNode)
+Applies a text template with the specified name and data.
+
+##### Parameters
+* *templateName:* The name of the text template to apply.
+* *data:* The JSON data used for template processing.
+
+
+
+
+##### Return value
+An action result containing the processed template content as a downloadable file.
 
 
 

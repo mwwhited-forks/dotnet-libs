@@ -3,9 +3,21 @@ using Microsoft.Extensions.Options;
 
 namespace Eliassen.MailKit.Services;
 
+/// <summary>
+/// Implementation of <see cref="ISmtpClientFactory"/> for creating instances of the SmtpClient class.
+/// </summary>
+/// <remark>
+/// Initializes a new instance of the <see cref="SmtpClientFactory"/> class.
+/// </remark>
+/// <param name="config">The configuration options for the MailKit SMTP client.</param>
 public class SmtpClientFactory(
-    IOptions<MailKitSmtpClientOptions> config) : ISmtpClientFactory
+    IOptions<MailKitSmtpClientOptions> config
+    ) : ISmtpClientFactory
 {
+    /// <summary>
+    /// Creates a new instance of the SmtpClient class and configures it based on the provided options.
+    /// </summary>
+    /// <returns>An asynchronous task that represents the creation of the SmtpClient instance.</returns>
     public async Task<SmtpClient> Create()
     {
         var client = new SmtpClient();

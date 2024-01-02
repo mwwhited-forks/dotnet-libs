@@ -4,9 +4,21 @@ using MimeKit;
 
 namespace Eliassen.MailKit.Services;
 
+/// <summary>
+/// Implementation of <see cref="IMimeMessageFactory"/> for creating MimeMessage instances for email messages.
+/// </summary>
+/// <remark>
+/// Initializes a new instance of the <see cref="MimeMessageFactory"/> class.
+/// </remark>
+/// <param name="config">The configuration options for the MailKit SMTP client.</param>
 public class MimeMessageFactory(
     IOptions<MailKitSmtpClientOptions> config) : IMimeMessageFactory
 {
+    /// <summary>
+    /// Creates a MimeMessage instance from the specified <see cref="EmailMessageModel"/>.
+    /// </summary>
+    /// <param name="message">The email message model containing information for creating the MimeMessage.</param>
+    /// <returns>A MimeMessage instance representing the email message.</returns>
     public MimeMessage Create(EmailMessageModel message)
     {
         var email = new MimeMessage

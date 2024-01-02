@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Eliassen.WebApi",
-    "version": "0.1.58.53"
+    "version": "0.1.58.54"
   },
   "paths": {
     "/api/Communications/public": {
@@ -289,6 +289,94 @@
           "anonymous": false
         }
       }
+    },
+    "/api/TextTemplate/SupportedTemplates": {
+      "post": {
+        "tags": [
+          "TextTemplate"
+        ],
+        "summary": "Gets the list of supported template file types.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Eliassen.System.Text.Templating.FileType"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Eliassen.System.Text.Templating.FileType"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Eliassen.System.Text.Templating.FileType"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": true
+        }
+      }
+    },
+    "/api/TextTemplate/Apply": {
+      "post": {
+        "tags": [
+          "TextTemplate"
+        ],
+        "summary": "Applies a text template with the specified name and data.",
+        "parameters": [
+          {
+            "name": "templateName",
+            "in": "query",
+            "description": "The name of the text template to apply.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The JSON data used for template processing.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/System.Text.Json.Nodes.JsonNode"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/System.Text.Json.Nodes.JsonNode"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/System.Text.Json.Nodes.JsonNode"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "x-permissions": {
+          "anonymous": true
+        }
+      }
     }
   },
   "components": {
@@ -381,6 +469,27 @@
         },
         "additionalProperties": false,
         "description": "Represents an email message model."
+      },
+      "Eliassen.System.Text.Templating.FileType": {
+        "type": "object",
+        "properties": {
+          "extension": {
+            "type": "string",
+            "description": "Gets or sets the file extension associated with the file type.",
+            "nullable": true
+          },
+          "contentType": {
+            "type": "string",
+            "description": "Gets or sets the content type associated with the file type.",
+            "nullable": true
+          },
+          "isTemplateType": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether the file type is a template type."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a file type, providing information about the file extension, content type, and whether it is a template type."
       },
       "Eliassen.WebApi.Models.ExampleMessageModel": {
         "type": "object",

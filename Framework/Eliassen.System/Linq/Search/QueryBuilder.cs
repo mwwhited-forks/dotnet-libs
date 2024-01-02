@@ -219,7 +219,7 @@ public class QueryBuilder<TModel>(
             foreach (var visitor in _postBuildVisitors)
             {
                 _logger.LogDebug($"Visited by: {{{nameof(visitor)}}}", visitor);
-                toVisit = visitor.Visit(toVisit);
+                toVisit = visitor.Visit(toVisit) ?? toVisit;
             }
             sorted = (IOrderedQueryable<TModel>)query.Provider.CreateQuery<TModel>(toVisit);
         }
@@ -270,7 +270,7 @@ public class QueryBuilder<TModel>(
         )
     {
 
-        ArgumentNullException.ThrowIfNull(query, nameof(query)); 
+        ArgumentNullException.ThrowIfNull(query, nameof(query));
         if (!string.IsNullOrWhiteSpace(search?.SearchTerm))
         {
             var searchTermExpression = expressionBuilder.BuildExpression(search.SearchTerm, stringComparison, isSearchTerm);
@@ -319,7 +319,7 @@ public class QueryBuilder<TModel>(
         )
     {
 
-        ArgumentNullException.ThrowIfNull(query, nameof(query)); 
+        ArgumentNullException.ThrowIfNull(query, nameof(query));
 
         query = sortBy != null ? sortBuilder.SortBy(query, sortBy, expressionBuilder, keyStringComparer) : query;
         if (query is IOrderedQueryable<TModel> sorted)

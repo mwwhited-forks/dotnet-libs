@@ -121,5 +121,10 @@ public static class EnumExtensions
     /// <typeparam name="TEnum">The enumeration type.</typeparam>
     /// <returns>A collection of enumeration models.</returns>
     public static IReadOnlyCollection<IEnumModel> AsModels<TEnum>() where TEnum : struct, Enum =>
-       Enum.GetValues(typeof(TEnum)).Cast<TEnum>().Select(AsModel).Where(e => e != null).ToArray();
+       Enum.GetValues(typeof(TEnum))
+           .Cast<TEnum>()
+           .Select(AsModel)
+           .Where(e => e != null)
+           .Cast<IEnumModel>()
+           .ToArray();
 }

@@ -9,6 +9,14 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Azure.StorageAccount.BlobStorage;
 
+/// <summary>
+/// Implementation of <see cref="IDocumentProvider"/> for handling blob containers in Azure Storage.
+/// </summary>
+/// <remark>
+/// Initializes a new instance of the <see cref="BlobContainerProvider"/> class.
+/// </remark>
+/// <param name="config">The configuration.</param>
+/// <param name="logger">The logger.</param>
 public class BlobContainerProvider(
     IConfiguration config,
     ILogger<BlobContainerProvider> logger
@@ -18,6 +26,10 @@ public class BlobContainerProvider(
     private readonly BlobContainerClient _blobClient = new(config[ConfigKeys.Container.DefaultConnectionString], config[ConfigKeys.Container.DefaultContainerName]);
     private readonly ILogger<BlobContainerProvider> _logger = logger;
 
+    /// <summary>
+    /// Lists all blobs in the container.
+    /// </summary>
+    /// <returns>A list of <see cref="BlobDto"/> representing the blobs in the container.</returns>
     public async Task<List<BlobDto>> ListAsync()
     {
 
@@ -43,6 +55,12 @@ public class BlobContainerProvider(
         return files;
     }
 
+    /// <summary>
+    /// Uploads a blob to the container.
+    /// </summary>
+    /// <param name="document">The document model.</param>
+    /// <param name="content">The content stream.</param>
+    /// <returns>A <see cref="BlobResponseDto"/> representing the result of the upload operation.</returns>
     public async Task<BlobResponseDto> UploadAsync(DocumentModel document, Stream content)
     {
         BlobResponseDto response = new();
@@ -86,6 +104,11 @@ public class BlobContainerProvider(
         return response;
     }
 
+    /// <summary>
+    /// Downloads a blob from the container.
+    /// </summary>
+    /// <param name="blobFilename">The name of the blob.</param>
+    /// <returns>A <see cref="BlobDto"/> representing the downloaded blob or <c>null</c> if the blob does not exist.</returns>
     public async Task<BlobDto?> DownloadAsync(string blobFilename)
     {
         try
@@ -121,6 +144,11 @@ public class BlobContainerProvider(
         return null;
     }
 
+    /// <summary>
+    /// Deletes a blob from the container.
+    /// </summary>
+    /// <param name="blobFilename">The name of the blob.</param>
+    /// <returns>A <see cref="BlobResponseDto"/> representing the result of the delete operation.</returns>
     public async Task<BlobResponseDto> DeleteAsync(string blobFilename)
     {
         BlobClient file = _blobClient.GetBlobClient(blobFilename);

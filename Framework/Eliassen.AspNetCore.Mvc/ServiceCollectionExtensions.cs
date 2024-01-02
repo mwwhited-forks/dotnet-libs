@@ -18,6 +18,7 @@ using System.Globalization;
 using System.Security.Claims;
 
 namespace Eliassen.AspNetCore.Mvc;
+
 /// <summary>
 /// Extension methods for configuring ASP.Net Core extensions and related services.
 /// </summary>
@@ -45,7 +46,11 @@ public static class ServiceCollectionExtensions
 
         services.AddHttpContextAccessor();
         services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
-        services.TryAddTransient(sp => sp.GetRequiredService<IHttpContextAccessor>().HttpContext?.User ?? ClaimsPrincipal.Current);
+        services.TryAddTransient(sp => 
+            sp.GetRequiredService<IHttpContextAccessor>().HttpContext?.User ?? 
+            ClaimsPrincipal.Current ?? 
+            new ClaimsPrincipal(new ClaimsIdentity())
+            );
 
         services.AddSwaggerGen();
 

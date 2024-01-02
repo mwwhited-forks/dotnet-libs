@@ -8,11 +8,11 @@ namespace Eliassen.System.Tests.Text.Json
     public class TargetModel
     {
         public string TargetId { get; set; } = Guid.NewGuid().ToString();
-        public DateTimeOffset DTO { get; set; } = DateTimeOffset.Now;
-        public DateTime DT { get; set; } = DateTime.Now;
+        public DateTimeOffset DateTimeOffset { get; set; } = DateTimeOffset.Now;
+        public DateTime DateTime { get; set; } = DateTime.Now;
 
-        public DateTimeOffset? DTON { get; set; } = DateTimeOffset.Now;
-        public DateTime? DTN { get; set; } = DateTime.Now;
+        public DateTimeOffset? DateTimeOffsetNullable { get; set; } = DateTimeOffset.Now;
+        public DateTime? DateTimeNullable { get; set; } = DateTime.Now;
     }
 
     [TestClass]
@@ -23,9 +23,7 @@ namespace Eliassen.System.Tests.Text.Json
         [TestMethod]
         public void Test()
         {
-            var model = new TargetModel
-            {
-            };
+            TargetModel model = new();
 
             var options = new JsonSerializerOptions
             {

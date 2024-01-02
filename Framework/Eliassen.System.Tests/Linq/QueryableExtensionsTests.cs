@@ -142,7 +142,7 @@ public class QueryableExtensionsTests
 
         //Note: round trip through the serializer to ensure this works correctly
         var queryJson = JsonSerializer.Serialize(query, Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer.DefaultOptions);
-        query = JsonSerializer.Deserialize<SearchQuery>(queryJson, Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer.DefaultOptions);
+        query = JsonSerializer.Deserialize<SearchQuery>(queryJson, Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer.DefaultOptions) ?? query;
 
         this.TestContext.AddResult(query);
         var rawData = GetTestData<T>(typeof(T) == typeof(TestTargetExtendedModel) ? -1 : 0);

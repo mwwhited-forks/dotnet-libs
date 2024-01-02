@@ -4,24 +4,20 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Eliassen.WebApi.Controllers;
+
 /// <summary>
 /// Controller for handling message queueing operations.
 /// </summary>
+/// <remarks>
+/// Initializes a new instance of the <see cref="MessageQueueingController"/> class.
+/// </remarks>
+/// <param name="provider">The example message provider.</param>
 [ApiController]
 [Route("api/[controller]")]
-public class MessageQueueingController : ControllerBase
+public class MessageQueueingController(
+    IExampleMessageProvider provider
+    ) : ControllerBase
 {
-    private readonly IExampleMessageProvider provider;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MessageQueueingController"/> class.
-    /// </summary>
-    /// <param name="provider">The example message provider.</param>
-    public MessageQueueingController(IExampleMessageProvider provider)
-    {
-        this.provider = provider ?? throw new ArgumentNullException(nameof(provider));
-    }
-
     /// <summary>
     /// Sends a message to the queue publicly without requiring authentication.
     /// </summary>

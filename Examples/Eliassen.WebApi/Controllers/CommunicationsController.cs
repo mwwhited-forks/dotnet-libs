@@ -9,26 +9,18 @@ namespace Eliassen.WebApi.Controllers;
 /// <summary>
 /// Controller for handling communication-related operations, such as sending emails and messages to a queue.
 /// </summary>
+/// <remarks>
+/// Initializes a new instance of the <see cref="CommunicationsController"/> class.
+/// </remarks>
+/// <param name="email">The email communication sender.</param>
+/// <param name="queue">The message queue sender.</param>
 [ApiController]
 [Route("api/[controller]")]
-public class CommunicationsController : ControllerBase
+public class CommunicationsController(
+    ICommunicationSender<EmailMessageModel> email,
+    IMessageQueueSender<EmailMessageModel> queue
+    ) : ControllerBase
 {
-    private readonly ICommunicationSender<EmailMessageModel> email;
-    private readonly IMessageQueueSender<EmailMessageModel> queue;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="CommunicationsController"/> class.
-    /// </summary>
-    /// <param name="email">The email communication sender.</param>
-    /// <param name="queue">The message queue sender.</param>
-    public CommunicationsController(
-        ICommunicationSender<EmailMessageModel> email,
-        IMessageQueueSender<EmailMessageModel> queue)
-    {
-        this.email = email ?? throw new ArgumentNullException(nameof(email));
-        this.queue = queue ?? throw new ArgumentNullException(nameof(queue));
-    }
-
     /// <summary>
     /// Sends an email publicly without requiring authentication.
     /// </summary>

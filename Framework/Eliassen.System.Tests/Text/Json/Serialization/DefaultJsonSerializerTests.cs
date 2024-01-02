@@ -48,9 +48,9 @@ public class DefaultJsonSerializerTests
         TestContext.AddResult(serialized);
         TestContext.AddResult(result);
 
-        Assert.AreEqual(input.Hello, result.Hello);
+        Assert.AreEqual(input.Hello, result?.Hello);
 
-        Assert.AreEqual(input.Dict["one"], result.Dict["one"]);
+        Assert.AreEqual(input.Dict["one"], result?.Dict["one"]);
     }
 
     [TestMethod]
@@ -72,11 +72,11 @@ public class DefaultJsonSerializerTests
         TestContext.AddResult(serialized);
         TestContext.AddResult(result);
 
-        Assert.AreEqual(input["Property"], result["Property"]);
+        Assert.AreEqual(input["Property"], result?["Property"]);
     }
 
 
-    private static (string serialized, T result) InOut<T>(IJsonSerializer serializer, T input)
+    private static (string serialized, T? result) InOut<T>(IJsonSerializer serializer, T input)
     {
         var serialized = serializer.Serialize(input);
         var result = serializer.Deserialize<T>(serialized);

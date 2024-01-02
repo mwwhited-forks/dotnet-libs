@@ -1,5 +1,4 @@
 ﻿using Eliassen.MessageQueueing.Services;
-using Eliassen.System.Text;
 using Eliassen.System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
 using System;
@@ -8,21 +7,32 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Azure.StorageAccount.MessageQueueing;
 
+/// <summary>
+/// Provides functionality for sending and receiving messages using Azure Storage Queues.
+/// </summary>
+/// <remark>
+/// Initializes a new instance of the <see cref="AzureStorageQueueMessageProvider"/> class.
+/// </remark>
+/// <param name="serializer">The JSON serializer for message serialization and deserialization.</param>
+/// <param name="clientFactory">The factory for creating Azure Storage Queue clients.</param>
+/// <param name="logger">The logger for logging messages.</param>
 public class AzureStorageQueueMessageProvider(
     IJsonSerializer serializer,
-    IQueueClientFactory client,
+    IQueueClientFactory clientFactory,
     ILogger<AzureStorageQueueMessageProvider> logger
         ) : IMessageSenderProvider, IMessageReceiverProvider
 {
-    private readonly ISerializer _serializer = serializer;
-    private readonly IQueueClientFactory _client = client;
-    private readonly ILogger _logger = logger;
-
     private IMessageHandlerProvider? _handlerProvider;
 
+    /// <summary>
+    /// Sends a message asynchronously to an Azure Storage Queue.
+    /// </summary>
+    /// <param name="message">The message to be sent.</param>
+    /// <param name="context">The message context containing additional information.</param>
+    /// <returns>The message ID if the send operation is successful; otherwise, <c>null</c>.</returns>
     public async Task<string?> SendAsync(object message, IMessageContext context)
     {
-        var client = _client.Create(context.Config);
+        var client = clientFactory.Create(context.Config);
 
         var wrapped = new WrappedQueueMessage
         {
@@ -33,23 +43,33 @@ public class AzureStorageQueueMessageProvider(
             Properties = context.Headers,
         };
 
-        var serialized = _serializer.Serialize(wrapped);
+        var serialized = serializer.Serialize(wrapped);
         var result = await client.SendMessageAsync(serialized);
 
         return result.Value.MessageId;
     }
 
+    /// <summary>
+    /// Sets the message handler provider for processing received messages.
+    /// </summary>
+    /// <param name="handlerProvider">The message handler provider.</param>
+    /// <returns>The current instance of <see cref="AzureStorageQueueMessageProvider"/>.</returns>
     public IMessageReceiverProvider SetHandlerProvider(IMessageHandlerProvider handlerProvider)
     {
         _handlerProvider = handlerProvider;
         return this;
     }
 
+    /// <summary>
+    /// Runs the message receiver asynchronously, continuously listening for incoming messages.
+    /// </summary>
+    /// <param name="cancellationToken">The cancellation token to stop the receiver.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
     public async Task RunAsync(
         CancellationToken cancellationToken = default
         )
     {
-        var client = _client.Create(_handlerProvider?.Config ?? throw new ApplicationException("No configuration"));
+        var client = clientFactory.Create(_handlerProvider?.Config ?? throw new ApplicationException("No configuration"));
         var newCancellationToken = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken).Token;
 
         while (!newCancellationToken.IsCancellationRequested)
@@ -58,18 +78,18 @@ public class AzureStorageQueueMessageProvider(
 
             if (message?.Value == null)
             {
-                _logger.LogInformation($"Nothing Received waiting");
+                logger.LogInformation($"Nothing Received waiting");
                 await Task.Delay(1000);  //TODO: this should be configurable
                 continue;
             }
 
             using var stream = message.Value.Body.ToStream();
-            var deserialized = _serializer.Deserialize<WrappedQueueMessage>(stream)
+            var deserialized = serializer.Deserialize<WrappedQueueMessage>(stream)
                 ?? throw new NotSupportedException($"No payload found");
 
             await _handlerProvider.HandleAsync(deserialized, message.Value.MessageId);
 
-            _logger.LogInformation($"Dequeue: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
+            logger.LogInformation($"Dequeue: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
             var response = await client.DeleteMessageAsync(message.Value.MessageId, message.Value.PopReceipt, newCancellationToken);
         }
     }

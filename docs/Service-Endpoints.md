@@ -1,6 +1,6 @@
 # Swagger Description - Eliassen.WebApi
 
-*Version*: 0.1.58.52
+*Version*: 0.1.58.54
 
 ## Endpoints
 
@@ -84,6 +84,34 @@ The example message model.
 
 
 
+### /api/TextTemplate/SupportedTemplates
+
+
+Gets the list of supported template file types.
+
+HTTP Method: *post* \
+Anonymous:   *True*
+
+
+
+
+
+### /api/TextTemplate/Apply
+
+
+Applies a text template with the specified name and data.
+
+HTTP Method: *post* \
+Anonymous:   *True*
+
+
+
+Request:     *#/components/schemas/System.Text.Json.Nodes.JsonNode*
+
+The JSON data used for template processing.
+
+
+
 ## Models
 
 ### Eliassen.Communications.Models.AttachmentReferenceModel
@@ -112,6 +140,17 @@ The example message model.
 | htmlContent | string? | Gets or sets the HTML content of the email message. | 
 | headers | object? | Gets or sets the headers of the email message. | 
 | attachments | array? | Gets or sets the list of attachment references in the email message. | 
+
+
+### Eliassen.System.Text.Templating.FileType
+
+
+#### Properties
+| Name | Type | other |
+|------|------|-------|
+| extension | string? | Gets or sets the file extension associated with the file type. | 
+| contentType | string? | Gets or sets the content type associated with the file type. | 
+| isTemplateType | boolean | Gets or sets a value indicating whether the file type is a template type. | 
 
 
 ### Eliassen.WebApi.Models.ExampleMessageModel
