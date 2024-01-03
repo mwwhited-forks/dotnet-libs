@@ -19,7 +19,11 @@ public class FileTemplateSource(
     private readonly IEnumerable<IFileType> _fileTypes = fileTypes;
     private readonly ILogger _logger = logger;
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Look up templates from a file system.
+    /// </summary>
+    /// <param name="templateName"></param>
+    /// <returns></returns>
     public IEnumerable<ITemplateContext> Get(string templateName)
     {
         var sandbox = string.IsNullOrWhiteSpace(_settings.SandboxPath) ? null : Path.GetFullPath(_settings.SandboxPath + "/");

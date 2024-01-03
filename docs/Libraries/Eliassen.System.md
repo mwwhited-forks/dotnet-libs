@@ -1443,6 +1443,20 @@ Access template from file system
 #### Constructor
 Access template from file system
 
+#### Get(System.String)
+Look up templates from a file system.
+
+##### Parameters
+* *templateName:* 
+
+
+
+
+##### Return value
+
+
+
+
 ## Class: System.Text.Templating.FileTemplatingSettings
 Configuration settings for file templating engine
 ### Properties
