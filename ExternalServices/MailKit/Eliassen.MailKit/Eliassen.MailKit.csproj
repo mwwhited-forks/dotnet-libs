@@ -8,16 +8,20 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Remove="Readme.MailKit.md" />
+		<Content Remove="Readme.MailKit.md" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="MailKit " Version="4.3.0" />
-		
+
 		<PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Eliassen.MailKit.Tests" />
 	</ItemGroup>
 
 	<ItemGroup>

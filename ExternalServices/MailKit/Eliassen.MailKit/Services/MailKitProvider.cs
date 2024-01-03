@@ -29,7 +29,7 @@ public class MailKitProvider(
     public async Task<string> SendAsync(EmailMessageModel message)
     {
         var model = email.Create(message);
-        using var client = await smtp.Create();
+        using var client = await smtp.CreateAsync();
 
         var reference = await client.SendAsync(model);
         await client.DisconnectAsync(true);
