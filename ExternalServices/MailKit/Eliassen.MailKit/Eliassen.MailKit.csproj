@@ -8,6 +8,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Content Remove="Readme.MailKit.md" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="MailKit " Version="4.3.0" />
 		
 		<PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />

@@ -59,10 +59,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{26D6201D-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{7796027A-C66D-46FD-867E-5751E7FADE50}"
 	ProjectSection(SolutionItems) = preProject
+		docs\Libraries\Eliassen.AspNetCore.JwtAuthentication.md = docs\Libraries\Eliassen.AspNetCore.JwtAuthentication.md
 		docs\Libraries\Eliassen.AspNetCore.Mvc.md = docs\Libraries\Eliassen.AspNetCore.Mvc.md
+		docs\Libraries\Eliassen.Azure.StorageAccount.Abstractions.md = docs\Libraries\Eliassen.Azure.StorageAccount.Abstractions.md
+		docs\Libraries\Eliassen.Azure.StorageAccount.md = docs\Libraries\Eliassen.Azure.StorageAccount.md
+		docs\Libraries\Eliassen.Communications.Abstractions.md = docs\Libraries\Eliassen.Communications.Abstractions.md
+		docs\Libraries\Eliassen.Communications.md = docs\Libraries\Eliassen.Communications.md
+		docs\Libraries\Eliassen.Communications.MessageQueueing.md = docs\Libraries\Eliassen.Communications.MessageQueueing.md
+		docs\Libraries\Eliassen.Handlebars.Extensions.md = docs\Libraries\Eliassen.Handlebars.Extensions.md
+		docs\Libraries\Eliassen.MailKit.md = docs\Libraries\Eliassen.MailKit.md
+		docs\Libraries\Eliassen.MessageQueueing.Abstractions.md = docs\Libraries\Eliassen.MessageQueueing.Abstractions.md
+		docs\Libraries\Eliassen.MessageQueueing.Hosting.md = docs\Libraries\Eliassen.MessageQueueing.Hosting.md
+		docs\Libraries\Eliassen.MessageQueueing.md = docs\Libraries\Eliassen.MessageQueueing.md
+		docs\Libraries\Eliassen.Microsoft.B2C.Abstractions.md = docs\Libraries\Eliassen.Microsoft.B2C.Abstractions.md
+		docs\Libraries\Eliassen.Microsoft.B2C.md = docs\Libraries\Eliassen.Microsoft.B2C.md
 		docs\Libraries\Eliassen.MongoDB.Extensions.md = docs\Libraries\Eliassen.MongoDB.Extensions.md
 		docs\Libraries\Eliassen.System.Abstractions.md = docs\Libraries\Eliassen.System.Abstractions.md
 		docs\Libraries\Eliassen.System.md = docs\Libraries\Eliassen.System.md
+		docs\Libraries\Eliassen.WebApi.md = docs\Libraries\Eliassen.WebApi.md
+		docs\Libraries\Nucleus.External.Azure.StorageAccount.Abstractions.md = docs\Libraries\Nucleus.External.Azure.StorageAccount.Abstractions.md
+		docs\Libraries\Nucleus.External.Microsoft.B2C.Abstractions.md = docs\Libraries\Nucleus.External.Microsoft.B2C.Abstractions.md
+		docs\Libraries\Nucleus.External.Microsoft.B2C.md = docs\Libraries\Nucleus.External.Microsoft.B2C.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{E6BCF7BB-2130-43E9-960F-EBE6C79BDDD8}"
@@ -71,6 +88,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{
 		docs\Framework\CultureInfoMiddleware.pdf = docs\Framework\CultureInfoMiddleware.pdf
 		docs\Framework\SearchQueryMiddleware.md = docs\Framework\SearchQueryMiddleware.md
 		docs\Framework\SearchQueryMiddleware.pdf = docs\Framework\SearchQueryMiddleware.pdf
+		docs\Framework\TextTemplating.md = docs\Framework\TextTemplating.md
+		docs\Framework\TextTemplating.pdf = docs\Framework\TextTemplating.pdf
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{04470E53-0CD0-4AA0-BFE0-C28DDE5C34B3}"
@@ -108,6 +127,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9C7C
 		Scripts\installcredprovider.ps1 = Scripts\installcredprovider.ps1
 		Scripts\SetupAzurite.bat = Scripts\SetupAzurite.bat
 		Scripts\StartAzurite.bat = Scripts\StartAzurite.bat
+		Scripts\StartSmtp4Dev.bat = Scripts\StartSmtp4Dev.bat
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MessageQueueing.Hosting", "Framework\Eliassen.MessageQueueing.Hosting\Eliassen.MessageQueueing.Hosting.csproj", "{DDEB401D-7CB2-4D57-AD81-3A88FBE24E5B}"
