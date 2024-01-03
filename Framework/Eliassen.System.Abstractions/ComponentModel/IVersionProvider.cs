@@ -1,14 +1,29 @@
 ﻿using System.Reflection;
 
-namespace Eliassen.System.ComponentModel
+namespace Eliassen.System.ComponentModel;
+
+/// <summary>
+/// Provides information about the version of an assembly.
+/// </summary>
+public interface IVersionProvider
 {
-    public interface IVersionProvider
-    {
-        string? Title { get; }
-        string? Version { get; }
+    /// <summary>
+    /// Gets the title of the assembly.
+    /// </summary>
+    string? Title { get; }
 
-        string? Description { get; }
+    /// <summary>
+    /// Gets the version of the assembly.
+    /// </summary>
+    string? Version { get; }
 
-        Assembly? Assembly { get; }
-    }
+    /// <summary>
+    /// Gets the description of the assembly.
+    /// </summary>
+    string? Description { get; }
+
+    /// <summary>
+    /// Gets the <see cref="Assembly"/> associated with the version information.
+    /// </summary>
+    Assembly? Assembly { get; }
 }

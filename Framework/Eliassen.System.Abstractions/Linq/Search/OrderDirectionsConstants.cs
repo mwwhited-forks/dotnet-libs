@@ -1,15 +1,27 @@
-﻿namespace Eliassen.System.Linq.Search
+﻿namespace Eliassen.System.Linq.Search;
+
+/// <summary>
+/// Provides constants for order directions.
+/// </summary>
+public static class OrderDirectionsConstants
 {
-    /// <inheritdoc/>
-    public static class OrderDirectionsConstants
-    {
-        /// <inheritdoc/>
-        public const string Ascending = nameof(OrderDirections.Ascending);
-        /// <inheritdoc/>
-        public const string AscendingShort = "asc";
-        /// <inheritdoc/>
-        public const string Descending = nameof(OrderDirections.Descending);
-        /// <inheritdoc/>
-        public const string DescendingShort = "desc";
-    }
+    /// <summary>
+    /// Represents the ascending order direction.
+    /// </summary>
+    public const string Ascending = nameof(OrderDirections.Ascending);
+
+    /// <summary>
+    /// Represents a short form of the ascending order direction.
+    /// </summary>
+    public const string AscendingShort = "asc";
+
+    /// <summary>
+    /// Represents the descending order direction.
+    /// </summary>
+    public const string Descending = nameof(OrderDirections.Descending);
+
+    /// <summary>
+    /// Represents a short form of the descending order direction.
+    /// </summary>
+    public const string DescendingShort = "desc";
 }

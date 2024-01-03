@@ -16,7 +16,7 @@ namespace Eliassen.AspNetCore.Mvc.Filters
         /// Declare required rights for endpoint
         /// </summary>
         /// <param name="rights"></param>
-        public ApplicationRightAttribute(params string[] rights) : 
+        public ApplicationRightAttribute(params string[] rights) :
             base(typeof(ApplicationRightRequirementFilter))
         {
             Rights = rights;

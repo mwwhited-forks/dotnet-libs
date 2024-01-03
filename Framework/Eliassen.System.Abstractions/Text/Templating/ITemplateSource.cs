@@ -1,20 +1,15 @@
-﻿namespace Eliassen.System.Text.Templating
+﻿namespace Eliassen.System.Text.Templating;
+
+/// <summary>
+/// Represents a source of templates that can be used by a template engine.
+/// </summary>
+public interface ITemplateSource
 {
-    public interface ITemplateSource
-    {
-        IEnumerable<ITemplateContext> Get(string templateName);
-    }
-
-
-    public interface IFileType
-    {
-        string Extension { get; }
-        string ContentType { get; }
-        bool IsTemplateType { get; }
-    }
-
-    public interface IFileTypeProvider
-    {
-        IReadOnlyCollection<IFileType> Types { get; }
-    }
+    /// <summary>
+    /// Gets the template contexts associated with the specified template name.
+    /// </summary>
+    /// <param name="templateName">The name of the template to retrieve.</param>
+    /// <returns>An enumerable collection of template contexts.</returns>
+    IEnumerable<ITemplateContext> Get(string templateName);
 }
+

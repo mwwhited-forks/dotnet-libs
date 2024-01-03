@@ -1,6 +1,7 @@
 ﻿using Eliassen.System.Text.Json.Serialization;
 using MongoDB.Driver;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -16,11 +17,11 @@ namespace Eliassen.MongoDB.Extensions
         private IMongoSettings _settings = null!;
         private IJsonSerializer _jsonSerializer = null!;
 
-        private readonly Dictionary<MethodInfo, object> _collections = new();
+        private readonly Dictionary<MethodInfo, object> _collections = [];
 
         protected override object? Invoke(MethodInfo? targetMethod, object?[]? args)
         {
-            if (targetMethod == null) throw new ArgumentNullException(nameof(targetMethod));
+            ArgumentNullException.ThrowIfNull(targetMethod, nameof(targetMethod));
 
             if (_collections.TryGetValue(targetMethod, out var ret))
             {
@@ -55,11 +56,11 @@ namespace Eliassen.MongoDB.Extensions
             var collection = _database.GetType()
                 ?.GetMethod(nameof(IMongoDatabase.GetCollection))
                 ?.MakeGenericMethod(collectionType)
-                ?.Invoke(_database, new object?[]
-                {
+                ?.Invoke(_database,
+                [
                     name,
                     null
-                })
+                ])
                 ?? throw new NotSupportedException();
 
             if (_collections.TryGetValue(targetMethod, out ret))

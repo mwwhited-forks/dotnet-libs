@@ -14,26 +14,31 @@ using System.Text.Json;
 
 namespace Eliassen.System.Linq.Expressions;
 
-/// <inheritdoc/>
-public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
+/// <summary>
+/// Provides functionality for building and managing expression trees dynamically in the context of filtering data.
+/// </summary>
+/// <typeparam name="TModel">The type of the data model.</typeparam>
+/// <param name="logger">Optional logger for logging messages.</param>
+/// <param name="messages">Optional result message capturer.</param>
+public class ExpressionTreeBuilder<TModel>(
+    ILogger<ExpressionTreeBuilder<TModel>>? logger = null,
+    ICaptureResultMessage? messages = null
+        ) : IExpressionTreeBuilder<TModel>
 {
     private const string PropertyMap = nameof(PropertyMap);
     private const string PredicateMap = nameof(PredicateMap);
 
-    private readonly ILogger _logger;
-    private readonly ICaptureResultMessage _messages;
+    private readonly ILogger _logger = logger ?? new ConsoleLogger<ExpressionTreeBuilder<TModel>>();
+    private readonly ICaptureResultMessage _messages = messages ?? CaptureResultMessage.Default;
 
-    /// <inheritdoc/>
-    public ExpressionTreeBuilder(
-        ILogger<ExpressionTreeBuilder<TModel>>? logger = null,
-        ICaptureResultMessage? messages = null
-        )
-    {
-        _logger = logger ?? new ConsoleLogger<ExpressionTreeBuilder<TModel>>();
-        _messages = messages ?? CaptureResultMessage.Default;
-    }
-
-    /// <inheritdoc/>
+    /// <summary>
+    /// Gets the predicate expression based on the provided parameters.
+    /// </summary>
+    /// <param name="name">The name of the property.</param>
+    /// <param name="value">The filter parameter value.</param>
+    /// <param name="stringComparison">The string comparison method.</param>
+    /// <param name="isSearchTerm">Flag indicating if the value is a search term.</param>
+    /// <returns>The predicate expression or null if not found.</returns>
     public Expression<Func<TModel, bool>>? GetPredicateExpression(
         string name,
         FilterParameter value,
@@ -42,7 +47,13 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         ) =>
         TryGetPredicateExpression(name, value, out var expression, stringComparison, isSearchTerm) ? expression : null;
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// Builds an expression by combining multiple predicate expressions using OR logic.
+    /// </summary>
+    /// <param name="queryParameter">The query parameter for filtering.</param>
+    /// <param name="stringComparison">The string comparison method.</param>
+    /// <param name="isSearchTerm">Flag indicating if the value is a search term.</param>
+    /// <returns>The combined predicate expression or null if not applicable.</returns>
     public Expression<Func<TModel, bool>>? BuildExpression(object? queryParameter, StringComparison stringComparison, bool isSearchTerm) =>
         ExpressionExtensions.OrElse(
             from searchExpression in GetSearchableExpressions(stringComparison)
@@ -57,7 +68,7 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
             select builtExpression
         );
 
-    private static IReadOnlyCollection<KeyValuePair<string, Expression<Func<TModel, object>>>> BuildExpressions() =>
+    private static KeyValuePair<string, Expression<Func<TModel, object>>>[] BuildExpressions() =>
         (
         from pi in typeof(TModel).GetProperties(ReflectionExtensions.PublicProperties)
         let exp = BuildExpression(pi)
@@ -111,8 +122,8 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
             return BuildPredicate(scope, expression, search, isSearchTerm);
 
         Expression unwrapped = expression.Body;
-        if ((expression.Body.NodeType == ExpressionType.Convert) ||
-            (expression.Body.NodeType == ExpressionType.ConvertChecked))
+        if (expression.Body.NodeType is ExpressionType.Convert or
+            ExpressionType.ConvertChecked)
         {
             if (expression.Body is UnaryExpression unary)
             {
@@ -338,11 +349,17 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         return false;
     }
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// Builds the expressions for the properties in the data model.
+    /// </summary>
+    /// <returns>The dictionary containing property names and their corresponding expressions.</returns>
     public IReadOnlyDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions() =>
         new Dictionary<string, Expression<Func<TModel, object>>>(BuildExpressions(), StringComparer.InvariantCultureIgnoreCase);
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// Gets the searchable property names in the data model.
+    /// </summary>
+    /// <returns>The collection of searchable property names.</returns>
     public IReadOnlyCollection<string> GetSearchablePropertyNames()
     {
         var modelType = typeof(TModel);
@@ -375,7 +392,10 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         return results;
     }
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// Gets the sortable property names in the data model.
+    /// </summary>
+    /// <returns>The collection of sortable property names.</returns>
     public IReadOnlyCollection<string> GetSortablePropertyNames()
     {
         var modelType = typeof(TModel);
@@ -402,7 +422,10 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         return results;
     }
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// Gets the filterable property names in the data model.
+    /// </summary>
+    /// <returns>The collection of filterable property names.</returns>
     public IReadOnlyCollection<string> GetFilterablePropertyNames()
     {
         var modelType = typeof(TModel);
@@ -437,7 +460,10 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         return results;
     }
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// Returns the default sort order based on attributes.
+    /// </summary>
+    /// <returns>The default sort order as a collection of column names and directions.</returns>
     public IReadOnlyCollection<(string column, OrderDirections direction)> DefaultSortOrder() =>
         (
             from attribute in typeof(TModel).GetCustomAttributes<DefaultSortAttribute>()
@@ -475,7 +501,7 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         return result;
     }
 
-    private IReadOnlyCollection<(string property, Expression<Func<TModel, object>> expression)> GetSearchableExpressions(StringComparison stringComparison) =>
+    private (string property, Expression<Func<TModel, object>> expression)[] GetSearchableExpressions(StringComparison stringComparison) =>
         (
         from property in GetSearchablePropertyNames()
         let expression = TryGetPropertyExpression(property, out var exp, stringComparison) ? exp : null
@@ -497,14 +523,14 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         return exp;
     }
 
-    private object? SimplifyValue(object? value) =>
+    private static object? SimplifyValue(object? value) =>
         value switch
         {
             //TODO: consider this being a type converter on FilterParameter instead
-            FilterParameter filter => SimplifyValue(filter.EqualTo),
+            FilterParameter filter => ExpressionTreeBuilder<TModel>.SimplifyValue(filter.EqualTo),
             JsonElement element when element.ValueKind == JsonValueKind.String => element.GetString(),
             JsonElement element when element.ValueKind == JsonValueKind.Number => element.GetDouble(),
-            JsonElement element when element.ValueKind == JsonValueKind.Array => element.EnumerateArray().Select(i => SimplifyValue(i)).ToArray(),
+            JsonElement element when element.ValueKind == JsonValueKind.Array => element.EnumerateArray().Select(i => ExpressionTreeBuilder<TModel>.SimplifyValue(i)).ToArray(),
             _ => value,
         };
 
@@ -528,7 +554,7 @@ public class ExpressionTreeBuilder<TModel> : IExpressionTreeBuilder<TModel>
         if (value.EqualTo != null)
         {
             //TODO: we should have logic to enumerate the requested type instead of just assuming the type based on the json type.
-            var simple = SimplifyValue(value);
+            var simple = ExpressionTreeBuilder<TModel>.SimplifyValue(value);
             if (simple != null)
             {
                 expression = modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(object))

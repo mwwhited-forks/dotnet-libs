@@ -43,7 +43,7 @@ steps:
     useConfigFile: true
     configFilePath: 'GitVersion.yml'
     
-- task: NuGetAuthenticate@0
+- task: NuGetAuthenticate@1
   displayName: 'NuGet Authenticate'
 
 - task: PowerShell@2

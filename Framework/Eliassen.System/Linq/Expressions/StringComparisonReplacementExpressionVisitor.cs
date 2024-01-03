@@ -11,20 +11,12 @@ namespace Eliassen.System.Linq.Expressions;
 /// Expression visitor to replace string functions with the matching 
 /// functions that end with a StringComparison parameter
 /// </summary>
-public class StringComparisonReplacementExpressionVisitor : ExpressionVisitor, IPostBuildExpressionVisitor
+public class StringComparisonReplacementExpressionVisitor(
+    ILogger<StringComparisonReplacementExpressionVisitor>? logger = null,
+    StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
+        ) : ExpressionVisitor, IPostBuildExpressionVisitor
 {
-    private readonly StringComparison _stringComparison;
-    private readonly ILogger _logger;
-
-    /// <inheritdoc/>
-    public StringComparisonReplacementExpressionVisitor(
-        ILogger<StringComparisonReplacementExpressionVisitor>? logger = null,
-        StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase
-        )
-    {
-        _logger = logger ?? new ConsoleLogger<StringComparisonReplacementExpressionVisitor>();
-        _stringComparison = stringComparison;
-    }
+    private readonly ILogger _logger = logger ?? new ConsoleLogger<StringComparisonReplacementExpressionVisitor>();
 
     /// <summary>
     /// Replace `string == string` with `string.Equals(string, StringComparison)`
@@ -50,7 +42,7 @@ public class StringComparisonReplacementExpressionVisitor : ExpressionVisitor, I
         if (method == null)
             goto done;
 
-        var replacement = Expression.Call(node.Left, method, node.Right, Expression.Constant(_stringComparison));
+        var replacement = Expression.Call(node.Left, method, node.Right, Expression.Constant(stringComparison));
 
         return replacement;
 
@@ -84,7 +76,7 @@ public class StringComparisonReplacementExpressionVisitor : ExpressionVisitor, I
 
         if (input.Object?.GetAttributes().OfType<IgnoreStringComparisonReplacementAttribute>().Any() ?? false) goto done;
 
-        var args = input.Arguments.Concat(new[] { Expression.Constant(_stringComparison) });
+        var args = input.Arguments.Concat(new[] { Expression.Constant(stringComparison) });
         var replacement = Expression.Call(input.Object, method, args);
 
         _logger.LogDebug($"Replace: {{{nameof(input)}}} with {{{nameof(replacement)}}}", input, replacement);

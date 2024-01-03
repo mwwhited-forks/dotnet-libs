@@ -1,7 +1,13 @@
-﻿namespace Eliassen.System.Reflection
+﻿namespace Eliassen.System.Reflection;
+
+/// <summary>
+/// Represents an interface for resolving a <see cref="Type"/>.
+/// </summary>
+public interface IResolveType
 {
-    public interface IResolveType
-    {
-        Type ResolveType();
-    }
+    /// <summary>
+    /// Resolves and returns the associated <see cref="Type"/>.
+    /// </summary>
+    /// <returns>The resolved <see cref="Type"/>.</returns>
+    Type ResolveType();
 }

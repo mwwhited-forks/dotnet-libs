@@ -1,11 +1,11 @@
-﻿using Eliassen.System.Extensions.Configuration;
+﻿using Eliassen.Microsoft.B2C.Identity;
+using Eliassen.System.Extensions.Configuration;
 using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Eliassen.Microsoft.B2C.Identity;
 using System;
 using System.Threading.Tasks;
 
@@ -16,7 +16,7 @@ public class ManageGraphUserIntegrationTests
 {
     public TestContext TestContext { get; set; } = null!;
 
-    private IConfiguration GetConfiguration(IServiceCollection services) =>
+    private static IConfiguration GetConfiguration() =>
         new ConfigurationBuilder()
             .AddInMemoryCollection(
                         (ConfigKeys.Azure.ADB2C.ClientID, "6721294c-f956-4290-9629-6455b92fbcf2"),
@@ -26,7 +26,7 @@ public class ManageGraphUserIntegrationTests
                 )
             .Build();
 
-    private IServiceProvider GetIntegrationServiceProvider()
+    private static ServiceProvider GetIntegrationServiceProvider()
     {
         var services = new ServiceCollection()
             .AddLogging(logging => logging.AddConsole())
@@ -34,7 +34,7 @@ public class ManageGraphUserIntegrationTests
             .AddSingleton<IIdentityManager, ManageGraphUser>()
             ;
 
-        services.Replace(ServiceDescriptor.Transient(_ => GetConfiguration(services)));
+        services.Replace(ServiceDescriptor.Transient(_ => GetConfiguration()));
 
         return services.BuildServiceProvider();
     }
@@ -80,11 +80,10 @@ public class ManageGraphUserIntegrationTests
         // Test
         var manageGraphUser = serviceProvider.GetRequiredService<IIdentityManager>();
 
-        var result = await manageGraphUser.GetGraphUsersByEmail(emailAddress);
+        var result = await manageGraphUser.GetGraphUsersByEmail(emailAddress)
+            ?? throw new ApplicationException($"{nameof(manageGraphUser.GetGraphUsersByEmail)} should return a value");
 
-        if (result == null) throw new ApplicationException($"{nameof(manageGraphUser.GetGraphUsersByEmail)} should return a value");
-
-        foreach(var item in result)
+        foreach (var item in result)
         {
             this.TestContext.WriteLine($"item: {item.FirstName} {item.LastName} ({item.UserName})");
         }
@@ -93,7 +92,7 @@ public class ManageGraphUserIntegrationTests
         this.TestContext.WriteLine($"result: {result}");
 
         // Assert
-        foreach(var customer in result.ToArray())
+        foreach (var customer in result.ToArray())
             Assert.AreNotEqual(Guid.Empty.ToString(), customer.EmailAddress);
 
         // Verify

@@ -3,9 +3,7 @@ using Eliassen.System.Reflection;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -111,7 +109,7 @@ EnumModel { Id = 32, Name = test name, Code = test short, Description = test dis
 
             [global::System.ComponentModel.DataAnnotations.Display(
                 Description = "test display",
-                Name ="test name",
+                Name = "test name",
                 ShortName = "test short"
                 )]
             WithDisplay = 32,

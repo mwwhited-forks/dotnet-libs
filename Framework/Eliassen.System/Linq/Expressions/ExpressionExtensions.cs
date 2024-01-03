@@ -12,16 +12,22 @@ namespace Eliassen.System.Linq.Expressions
     public static class ExpressionExtensions
     {
 
-#pragma warning disable CS0419 // Ambiguous reference in cref attribute
-        /// <inheritdoc cref="Expression.OrElse"/>
+        /// <summary>
+        /// Build an or'd expression chain
+        /// </summary>
+        /// <typeparam name="TModel"></typeparam>
+        /// <param name="ors"></param>
+        /// <returns></returns>
         public static Expression<Func<TModel, bool>>? OrElse<TModel>(
-#pragma warning restore CS0419 // Ambiguous reference in cref attribute
             this IEnumerable<Expression<Func<TModel, bool>>> ors
         ) => Chain(ors, ChainTypes.OrElse);
 
-#pragma warning disable CS0419 // Ambiguous reference in cref attribute
-        /// <inheritdoc cref="Expression.AndAlso"/>
-#pragma warning restore CS0419 // Ambiguous reference in cref attribute
+        /// <summary>
+        /// Build an and'd expression chain
+        /// </summary>
+        /// <typeparam name="TModel"></typeparam>
+        /// <param name="ands"></param>
+        /// <returns></returns>
         public static Expression<Func<TModel, bool>>? AndAlso<TModel>(
             this IEnumerable<Expression<Func<TModel, bool>>?> ands
         ) => Chain(ands, ChainTypes.AndAlso);

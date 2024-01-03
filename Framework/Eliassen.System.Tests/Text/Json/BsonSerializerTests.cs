@@ -1,25 +1,18 @@
 ﻿using Eliassen.System.Text.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Text.Json.Serialization.Metadata;
-using System.Threading.Tasks;
 
 namespace Eliassen.System.Tests.Text.Json
 {
     public class TargetModel
     {
         public string TargetId { get; set; } = Guid.NewGuid().ToString();
-        public DateTimeOffset DTO { get; set; } = DateTimeOffset.Now;
-        public DateTime DT { get; set; } = DateTime.Now;
+        public DateTimeOffset DateTimeOffset { get; set; } = DateTimeOffset.Now;
+        public DateTime DateTime { get; set; } = DateTime.Now;
 
-        public DateTimeOffset? DTON { get; set; } = DateTimeOffset.Now;
-        public DateTime? DTN { get; set; } = DateTime.Now;
+        public DateTimeOffset? DateTimeOffsetNullable { get; set; } = DateTimeOffset.Now;
+        public DateTime? DateTimeNullable { get; set; } = DateTime.Now;
     }
 
     [TestClass]
@@ -30,9 +23,7 @@ namespace Eliassen.System.Tests.Text.Json
         [TestMethod]
         public void Test()
         {
-            var model = new TargetModel
-            {
-            };
+            TargetModel model = new();
 
             var options = new JsonSerializerOptions
             {
@@ -43,5 +34,5 @@ namespace Eliassen.System.Tests.Text.Json
 
             this.TestContext.WriteLine(json);
         }
-    }   
+    }
 }

@@ -7,23 +7,28 @@ using System.Linq;
 
 namespace Eliassen.System.Linq.Search;
 
-/// <inheritdoc/>
-public class SortBuilder<TModel> : ISortBuilder<TModel>
+/// <summary>
+/// Builder class for sorting IQueryable instances based on a provided sort query.
+/// </summary>
+/// <typeparam name="TModel">The type of the model being sorted.</typeparam>
+/// <param name="logger">The logger used for logging sorting-related messages. If not provided, a default console logger will be used.</param>
+/// <param name="messages">The result message capturer for publishing sorting-related messages.</param>
+public class SortBuilder<TModel>(
+    ILogger<SortBuilder<TModel>>? logger = null,
+    ICaptureResultMessage? messages = null
+        ) : ISortBuilder<TModel>
 {
-    private readonly ILogger _logger;
-    private readonly ICaptureResultMessage _messages;
+    private readonly ILogger _logger = logger ?? new ConsoleLogger<SortBuilder<TModel>>();
+    private readonly ICaptureResultMessage _messages = messages ?? CaptureResultMessage.Default;
 
-    /// <inheritdoc/>
-    public SortBuilder(
-        ILogger<SortBuilder<TModel>>? logger = null,
-        ICaptureResultMessage? messages = null
-        )
-    {
-        _logger = logger ?? new ConsoleLogger<SortBuilder<TModel>>();
-        _messages = messages ?? CaptureResultMessage.Default;
-    }
-
-    /// <inheritdoc/>
+    /// <summary>
+    /// Sorts an IQueryable instance based on the provided sort query.
+    /// </summary>
+    /// <param name="query">The IQueryable instance to be sorted.</param>
+    /// <param name="searchRequest">The sort query parameters.</param>
+    /// <param name="treeBuilder">The expression tree builder for building property expressions.</param>
+    /// <param name="stringComparison">The string comparison type to use when sorting string values.</param>
+    /// <returns>An IOrderedQueryable instance representing the sorted result.</returns>
     public IOrderedQueryable<TModel> SortBy(
         IQueryable<TModel> query,
         ISortQuery searchRequest,

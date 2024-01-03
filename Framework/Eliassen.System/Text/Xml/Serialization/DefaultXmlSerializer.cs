@@ -83,7 +83,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     {
         throw new NotImplementedException();
     }
-    
+
     /// <inheritdoc />
     public Task SerializeAsync<T>(T obj, Stream stream, CancellationToken cancellationToken = default)
     {

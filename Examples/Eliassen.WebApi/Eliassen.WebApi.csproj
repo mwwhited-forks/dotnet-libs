@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<InvariantGlobalization>true</InvariantGlobalization>
+
+		<IsPackable>false</IsPackable>
+
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\ExternalServices\Azure\Eliassen.Azure.StorageAccount\Eliassen.Azure.StorageAccount.csproj" />
+	  <ProjectReference Include="..\..\ExternalServices\MailKit\Eliassen.MailKit\Eliassen.MailKit.csproj" />
+	  <ProjectReference Include="..\..\ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Eliassen.Microsoft.B2C.csproj" />
+	  <ProjectReference Include="..\..\Framework\Eliassen.AspNetCore.JwtAuthentication\Eliassen.AspNetCore.JwtAuthentication.csproj" />
+	  <ProjectReference Include="..\..\Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
+	  <ProjectReference Include="..\..\Framework\Eliassen.Communications.MessageQueueing\Eliassen.Communications.MessageQueueing.csproj" />
+	  <ProjectReference Include="..\..\Framework\Eliassen.Communications\Eliassen.Communications.csproj" />
+	  <ProjectReference Include="..\..\Framework\Eliassen.Handlebars.Extensions\Eliassen.Handlebars.Extensions.csproj" />
+	  <ProjectReference Include="..\..\Framework\Eliassen.MessageQueueing.Hosting\Eliassen.MessageQueueing.Hosting.csproj" />
+	  <ProjectReference Include="..\..\Framework\Eliassen.MessageQueueing\Eliassen.MessageQueueing.csproj" />
+	  <ProjectReference Include="..\..\Framework\Eliassen.MongoDB.Extensions\Eliassen.MongoDB.Extensions.csproj" />
+	  <ProjectReference Include="..\..\Framework\Eliassen.System\Eliassen.System.csproj" />
+	</ItemGroup>
+
+	<Target Name="BuildSwagger" AfterTargets="PostBuildEvent">
+		<!--AfterTargets="PostBuildEvent"-->
+		<MakeDir Directories="$(DocumentPath)" Condition="!Exists('$(DocumentPath)')" ContinueOnError="true" />
+		<Exec Command="dotnet tool restore" ContinueOnError="true" />
+		<Exec Command="dotnet swagger tofile --output &quot;$(DocumentPath)swagger.json&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" ContinueOnError="true" />
+		<Exec Command="dotnet swagger tofile --yaml --output &quot;$(DocumentPath)swagger.yaml&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" ContinueOnError="true" />
+	</Target>
+
+</Project>

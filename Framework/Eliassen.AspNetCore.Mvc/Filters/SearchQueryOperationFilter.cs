@@ -11,37 +11,30 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json;
 
 namespace Eliassen.AspNetCore.Mvc.Filters;
 
 /// <summary>
 /// Search Query Operation filter extends Swagger/OpenAPI to provide details on IQueryable{T} endpoints.
 /// </summary>
-public class SearchQueryOperationFilter : IOperationFilter
+public class SearchQueryOperationFilter(
+     ILogger<SearchQueryOperationFilter> logger,
+     IServiceProvider serviceProvider,
+     IJsonSerializer json
+        ) : IOperationFilter
 {
-    private readonly ILogger _logger;
-    private readonly IServiceProvider _serviceProvider;
-    private readonly IJsonSerializer _json;
+    private readonly ILogger _logger = logger;
 
-    /// <inheritdoc/>
-    public SearchQueryOperationFilter(
-         ILogger<SearchQueryOperationFilter> logger,
-         IServiceProvider serviceProvider,
-         IJsonSerializer json
-        )
-    {
-        _logger = logger;
-        _serviceProvider = serviceProvider;
-        _json = json;
-    }
-
-    /// <inheritdoc/>
+    /// <summary>
+    /// Applies the Search Query Operation filter to Swagger/OpenAPI.
+    /// </summary>
+    /// <param name="operation">The OpenApiOperation to apply the filter to.</param>
+    /// <param name="context">The OperationFilterContext containing information about the operation.</param>
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
         try
         {
-            using var scopedServiceProvider = _serviceProvider.CreateScope();
+            using var scopedServiceProvider = serviceProvider.CreateScope();
             //if (context.MethodInfo.ReturnType.IsAssignableTo(typeof(IPagedQueryResult)) )
             //{
             //    var requestType = new
@@ -210,7 +203,7 @@ public class SearchQueryOperationFilter : IOperationFilter
 
             foreach (var propertyName in treeBuilder.GetFilterablePropertyNames())
             {
-                filter.Properties.Add(_json.AsPropertyName(propertyName), filterSchema);
+                filter.Properties.Add(json.AsPropertyName(propertyName), filterSchema);
             }
         }
 
@@ -233,7 +226,7 @@ public class SearchQueryOperationFilter : IOperationFilter
 
             foreach (var propertyName in treeBuilder.GetSortablePropertyNames())
             {
-                orderBy.Properties.Add(_json.AsPropertyName(propertyName), orderBySchema);
+                orderBy.Properties.Add(json.AsPropertyName(propertyName), orderBySchema);
             }
         }
 

@@ -1,23 +1,26 @@
-﻿using System.Text.Json;
-
-namespace Eliassen.System.Text.Json.Serialization;
+﻿namespace Eliassen.System.Text.Json.Serialization;
 
 /// <summary>
-/// Default serializer for JSON
+/// Default serializer for BSON (Binary JSON).
 /// </summary>
 public class DefaultBsonSerializer : DefaultJsonSerializer, IBsonSerializer
 {
-    /// <inheritdoc />
+    /// <summary>
+    /// The default content type for BSON.
+    /// </summary>
     public new const string DefaultContentType = "application/json";
-    /// <inheritdoc />
+
+    /// <summary>
+    /// Gets the content type for BSON, which is "application/json".
+    /// </summary>
     public new string ContentType => DefaultContentType;
 
-    /// <inheritdoc />
-    public DefaultBsonSerializer(
-        JsonSerializerOptions? options = null
-        )
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DefaultBsonSerializer"/> class.
+    /// </summary>
+    public DefaultBsonSerializer()
     {
+        // Set the type information resolver to a new instance of BsonTypeInfoResolver.
         _options.TypeInfoResolver = new BsonTypeInfoResolver();
     }
-
 }

@@ -6,12 +6,17 @@
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
 public class FilterableAttribute : Attribute
 {
-    /// <inheritdoc/>
+    /// <summary>
+    /// Initializes a new instance of the <see cref="FilterableAttribute"/> class.
+    /// </summary>
     public FilterableAttribute(string targetName)
     {
         TargetName = targetName;
     }
-    /// <inheritdoc/>
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="FilterableAttribute"/> class.
+    /// </summary>
     public FilterableAttribute() { }
 
     /// <summary>

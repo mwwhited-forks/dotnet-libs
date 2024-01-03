@@ -27,7 +27,7 @@ namespace Eliassen.System.Security.Claims
             from t in claims
             join c in principal.GetAllClaims() on t equals c.Type
             where !string.IsNullOrWhiteSpace(c.Value)
-            select (t,c.Value);
+            select (t, c.Value);
 
         /// <summary>
         /// Get first matched <seealso cref="Claim"/> on <seealso cref="ClaimsPrincipal"/> 

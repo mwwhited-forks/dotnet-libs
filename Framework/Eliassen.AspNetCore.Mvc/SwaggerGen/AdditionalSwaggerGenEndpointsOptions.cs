@@ -1,7 +1,6 @@
 ﻿using Eliassen.AspNetCore.Mvc.Filters;
 using Eliassen.System.ComponentModel;
 using Microsoft.AspNetCore.Mvc.Controllers;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -20,34 +19,25 @@ namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 /// <summary>
 /// SwaggerGen extensions to enable presenting permissions, application versions and XMLDocs
 /// </summary>
-public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGenOptions>
+public class AdditionalSwaggerGenEndpointsOptions(
+    IActionDescriptorCollectionProvider provider,
+    ILogger<AdditionalSwaggerGenEndpointsOptions> log,
+    IEnumerable<IVersionProvider> versions
+        ) : IConfigureOptions<SwaggerGenOptions>
 {
-    private readonly IActionDescriptorCollectionProvider _provider;
-    private readonly ILogger _log;
-    private readonly IEnumerable<IVersionProvider> _versions;
-
-    /// <inheritdoc/>
-    public AdditionalSwaggerGenEndpointsOptions(
-        IActionDescriptorCollectionProvider provider,
-        ILogger<AdditionalSwaggerGenEndpointsOptions> log,
-        IEnumerable<IVersionProvider> versions
-        )
-    {
-        _provider = provider;
-        _log = log;
-        _versions = versions;
-    }
-
-    /// <inheritdoc/>
+    /// <summary>
+    /// Configures SwaggerGen options with additional features such as presenting permissions, application versions, and XMLDocs.
+    /// </summary>
+    /// <param name="options">The SwaggerGen options to be configured.</param>
     public void Configure(SwaggerGenOptions options)
     {
         options.OperationFilter<ApplicationPermissionsApiFilter>();
 
-        var controllerAssemblies = _provider.ActionDescriptors.Items.OfType<ControllerActionDescriptor>()
+        var controllerAssemblies = provider.ActionDescriptors.Items.OfType<ControllerActionDescriptor>()
             .Select(c => c.ControllerTypeInfo.Assembly)
             .Distinct();
 
-        var composedVersions = (from v in _versions.Reverse()
+        var composedVersions = (from v in versions.Reverse()
                                 select new
                                 {
                                     v.Title,
@@ -60,13 +50,13 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
                                     Assembly.GetCallingAssembly(),
                                     Assembly.GetExecutingAssembly(),
                                 })
-                                select new
-                                {
-                                    Title = (string?)null,
-                                    Description = (string?)null,
-                                    Version = (string?)null,
-                                    Assembly = v,
-                                });
+                                          select new
+                                          {
+                                              Title = (string?)null,
+                                              Description = (string?)null,
+                                              Version = (string?)null,
+                                              Assembly = v,
+                                          });
 
         var fileVersions = from i in composedVersions
                            let a = i.Assembly
@@ -91,7 +81,7 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
             Description = selected?.Description,
         });
 
-        foreach (var group in _provider.ActionDescriptors.Items.OfType<ControllerActionDescriptor>()
+        foreach (var group in provider.ActionDescriptors.Items.OfType<ControllerActionDescriptor>()
             .Select(c => c.ControllerTypeInfo.Assembly)
             .Distinct())
         {
@@ -108,12 +98,12 @@ public class AdditionalSwaggerGenEndpointsOptions : IConfigureOptions<SwaggerGen
         {
             try
             {
-                _log.LogWarning($"Loading comments from \"{{{nameof(file)}}}\"", Path.GetFileName(file));
+                log.LogWarning($"Loading comments from \"{{{nameof(file)}}}\"", Path.GetFileName(file));
                 options.IncludeXmlComments(file);
             }
             catch (Exception e)
             {
-                _log.LogWarning($"{{{nameof(file)}}}: {{{nameof(e.Message)}}}", Path.GetFileName(file), e.Message);
+                log.LogWarning($"{{{nameof(file)}}}: {{{nameof(e.Message)}}}", Path.GetFileName(file), e.Message);
             }
         }
     }

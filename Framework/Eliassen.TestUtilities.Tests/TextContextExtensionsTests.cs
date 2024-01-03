@@ -250,7 +250,7 @@ namespace Eliassen.TestUtilities.Tests
 
             // Test
 
-            var context = TestContext.AddResultFile(fileName, content, out  var outFile);
+            var context = TestContext.AddResultFile(fileName, content, out var outFile);
             TestContext?.WriteLine(outFile);
 
             // Assert

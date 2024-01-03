@@ -9,15 +9,9 @@ namespace Eliassen.AspNetCore.Mvc.Filters
     /// <summary>
     /// Authorization filter to compared application rights for user to rights required by endpoint
     /// </summary>
-    public class ApplicationRightRequirementFilter : IAuthorizationFilter
+    public class ApplicationRightRequirementFilter(string[] rights) : IAuthorizationFilter
     {
-        private readonly IReadOnlyList<string> _rights;
-
-        /// <inheritdoc/>
-        public ApplicationRightRequirementFilter(string[] rights)
-        {
-            _rights = rights;
-        }
+        private readonly IReadOnlyList<string> _rights = rights;
 
         /// <summary>
         /// Ensure that current authenticated user matches as least one requested right
@@ -28,7 +22,7 @@ namespace Eliassen.AspNetCore.Mvc.Filters
             bool? userAuthenticated = context.HttpContext.User.Identity?.IsAuthenticated;
             var userRights = context.HttpContext.User.GetClaimValues(CommonClaims.ApplicationRight);
 
-            if (userAuthenticated == null || userAuthenticated == false)
+            if (userAuthenticated is null or false)
                 context.Result = new ForbidResult();
             else if (_rights.Any())
                 if (!Any(userRights.Select(c => c.value)))

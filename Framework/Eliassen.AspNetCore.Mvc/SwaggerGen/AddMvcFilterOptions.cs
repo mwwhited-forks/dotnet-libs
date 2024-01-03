@@ -11,7 +11,10 @@ namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 public class AddMvcFilterOptions<TFilter> : IConfigureOptions<MvcOptions>
     where TFilter : IFilterMetadata
 {
-    /// <inheritdoc />
-    public void Configure(MvcOptions options) => 
+    /// <summary>
+    /// Configures MVC options to add the specified filter.
+    /// </summary>
+    /// <param name="options">The MVC options to be configured.</param>
+    public void Configure(MvcOptions options) =>
         options.Filters.Add(typeof(TFilter));
 }

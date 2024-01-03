@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Eliassen.MongoDB.Extensions
+namespace Eliassen.MongoDB.Extensions;
+
+/// <summary>
+/// Represents a registration of types for MongoDB databases.
+/// </summary>
+public class MongoDatabaseRegistration : IMongoDatabaseRegistration
 {
-    /// <inheritdoc/>
-    public class MongoDatabaseRegistration : IMongoDatabaseRegistration
-    {
-        internal HashSet<Type> InternalTypes = new();
-        /// <inheritdoc/>
-        public IReadOnlyCollection<Type> Types => InternalTypes;
-    }
+    /// <summary>
+    /// Gets the internal set of types registered for MongoDB databases.
+    /// </summary>
+    internal HashSet<Type> InternalTypes = [];
+
+    /// <summary>
+    /// Gets the read-only collection of types registered for MongoDB databases.
+    /// </summary>
+    public IReadOnlyCollection<Type> Types => InternalTypes;
 }
