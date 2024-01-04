@@ -15,7 +15,7 @@ public class MailKitSmtpClientOptions
     /// <summary>
     /// Gets or sets the port number for the SMTP server.
     /// </summary>
-    public int Port { get; set; }
+    public int Port { get; set; } = 25;
 
     /// <summary>
     /// Gets or sets the secure socket options for the SMTP connection.
@@ -42,4 +42,3 @@ public class MailKitSmtpClientOptions
     /// </summary>
     public string? DefaultFromEmailAddress { get; set; }
 }
-

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Eliassen.WebApi.Workers;
+namespace Eliassen.MessageQueueing.Hosting;
 
 /// <summary>
 /// Hosted service responsible for starting and stopping message receivers based on the configured providers.
@@ -22,7 +22,6 @@ public class MessageReceiverHost(
     IMessageReceiverProviderFactory factory
     ) : IHostedService, IDisposable
 {
-    private readonly ILogger _logger = logger;
     private readonly List<Task> _tasks = [];
     private readonly CancellationTokenSource _tokenSource = new();
 
@@ -31,9 +30,9 @@ public class MessageReceiverHost(
     /// </summary>
     public void Dispose()
     {
-        _logger.LogInformation("Request Dispose");
+        logger.LogInformation("Request Dispose");
         _tokenSource.Cancel();
-        _logger.LogInformation("Complete Dispose");
+        logger.LogInformation("Complete Dispose");
     }
 
     /// <summary>
@@ -48,7 +47,7 @@ public class MessageReceiverHost(
             throw new InvalidOperationException($"Already started!");
         }
 
-        _logger.LogInformation("Request Start");
+        logger.LogInformation("Request Start");
 
         var providers = factory.Create().ToArray();
 
@@ -59,7 +58,7 @@ public class MessageReceiverHost(
             _tasks.Add(Task.Run(() => StartProvider(provider, token), cancellationToken));
         }
 
-        _logger.LogInformation("Completed Start");
+        logger.LogInformation("Completed Start");
 
         return Task.CompletedTask;
     }
@@ -70,17 +69,17 @@ public class MessageReceiverHost(
         {
             try
             {
-                _logger.LogInformation($"Starting: {{{nameof(provider)}}}", provider);
+                logger.LogInformation($"Starting: {{{nameof(provider)}}}", provider);
                 var task = provider.RunAsync(token);
-                _logger.LogInformation($"Started: {{{nameof(provider)}}}", provider);
+                logger.LogInformation($"Started: {{{nameof(provider)}}}", provider);
                 await task;
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Exception: {{{nameof(provider)}}}: {{{nameof(Exception)}}}", provider, ex.Message);
-                _logger.LogDebug($"Error: {{{nameof(provider)}}}: {{{nameof(Exception)}}}", provider, ex.ToString());
+                logger.LogError($"Exception: {{{nameof(provider)}}}: {{{nameof(Exception)}}}", provider, ex.Message);
+                logger.LogDebug($"Error: {{{nameof(provider)}}}: {{{nameof(Exception)}}}", provider, ex.ToString());
 
-                _logger.LogInformation($"Waiting for restart: {{{nameof(provider)}}}", provider);
+                logger.LogInformation($"Waiting for restart: {{{nameof(provider)}}}", provider);
                 await Task.Delay(10000); // TODO: this should be configurable
             }
         }
@@ -93,12 +92,12 @@ public class MessageReceiverHost(
     /// <returns>A task representing the stop operation.</returns>
     public async Task StopAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Request Stop");
+        logger.LogInformation("Request Stop");
 
         await _tokenSource.CancelAsync();
         await Task.WhenAll(_tasks);
         _tasks.Clear();
 
-        _logger.LogInformation("Completed Stop");
+        logger.LogInformation("Completed Stop");
     }
 }

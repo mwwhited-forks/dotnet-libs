@@ -4,6 +4,7 @@ using Eliassen.Azure.StorageAccount;
 using Eliassen.Communications;
 using Eliassen.Communications.MessageQueueing;
 using Eliassen.MailKit;
+using Eliassen.MailKit.Hosting;
 using Eliassen.MessageQueueing;
 using Eliassen.MessageQueueing.Hosting;
 using Eliassen.Microsoft.B2C;
@@ -45,6 +46,7 @@ public class Program
             .TryAddCommunicationsServices()
                 .TryAddCommunicationQueueServices()
                 .TryAddMailKitExtensions(builder.Configuration)
+                    .TryAddMailKitHosting()
 
             .AddMicrosoftB2CServices() //TODO: rename this to identity management
 

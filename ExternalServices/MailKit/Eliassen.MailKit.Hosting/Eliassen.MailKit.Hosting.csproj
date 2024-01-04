@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>false</ImplicitUsings>
@@ -9,9 +10,9 @@
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 
 	</PropertyGroup>
-	
+
 	<ItemGroup>
-		<InternalsVisibleTo Include="Eliassen.MessageQueueing.Tests" />
+		<InternalsVisibleTo Include="Eliassen.MailKit.Tests" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -21,10 +22,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Eliassen.MessageQueueing.Abstractions\Eliassen.MessageQueueing.Abstractions.csproj" />
-		<ProjectReference Include="..\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj" />
-		<ProjectReference Include="..\Eliassen.System\Eliassen.System.csproj" />
+	  <ProjectReference Include="..\..\..\Framework\Eliassen.MessageQueueing.Abstractions\Eliassen.MessageQueueing.Abstractions.csproj" />
+	  <ProjectReference Include="..\Eliassen.MailKit\Eliassen.MailKit.csproj" />
 	</ItemGroup>
-
 
 </Project>

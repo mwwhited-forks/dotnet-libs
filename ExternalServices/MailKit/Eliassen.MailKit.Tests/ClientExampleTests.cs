@@ -122,7 +122,7 @@ public class ClientExampleTests
 
         foreach (var @namespace in namespaces)
         {
-            this.TestContext.WriteLine($"Namespace: {@namespace.Group}: \"{@namespace.Namespace.Path}\"");
+            this.TestContext.WriteLine($"Namespace: {@namespace.Group}: \"{@namespace.Namespace.Path}\" [{@namespace.Namespace.DirectorySeparator}]");
 
             foreach(var folder in await client.GetFoldersAsync(@namespace.Namespace))
             {
@@ -141,24 +141,5 @@ HTML:    {item.HtmlBody}
                 }
             }
         }
-
-        //var folders = await client.PersonalNamespaces
-
-        //var result = await client.SendAsync(new MimeMessage
-        //{
-        //    From = {
-        //        InternetAddress.Parse("fake@email.com"),
-        //    },
-        //    To = {
-        //        InternetAddress.Parse("to-fake@email.com"),
-        //    },
-
-        //    Body = new BodyBuilder()
-        //    {
-        //        TextBody = "Hello World! " + Guid.NewGuid(),
-        //    }.ToMessageBody(),
-        //});
-
-        //this.TestContext.WriteLine($"Sent: {result}");
     }
 }

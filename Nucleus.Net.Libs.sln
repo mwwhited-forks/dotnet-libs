@@ -160,6 +160,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MailKit.Tests", "ExternalServices\MailKit\Eliassen.MailKit.Tests\Eliassen.MailKit.Tests.csproj", "{4CDE950E-73E6-445F-9B78-E4AE0550D45F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MailKit.Hosting", "ExternalServices\MailKit\Eliassen.MailKit.Hosting\Eliassen.MailKit.Hosting.csproj", "{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -274,6 +276,10 @@ Global
 		{4CDE950E-73E6-445F-9B78-E4AE0550D45F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CDE950E-73E6-445F-9B78-E4AE0550D45F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CDE950E-73E6-445F-9B78-E4AE0550D45F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -317,6 +323,7 @@ Global
 		{52E2A264-82B8-4A68-8EB1-FBF5C3A61761} = {0D029514-4C08-465F-8842-D3E59E9F5099}
 		{6768313F-1A76-42A3-A260-1E8D50EA8A39} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
 		{4CDE950E-73E6-445F-9B78-E4AE0550D45F} = {8348F5A5-13B0-46FD-93A1-11978029E0ED}
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485} = {8348F5A5-13B0-46FD-93A1-11978029E0ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

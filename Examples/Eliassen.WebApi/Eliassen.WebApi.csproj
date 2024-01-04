@@ -20,6 +20,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\ExternalServices\Azure\Eliassen.Azure.StorageAccount\Eliassen.Azure.StorageAccount.csproj" />
+	  <ProjectReference Include="..\..\ExternalServices\MailKit\Eliassen.MailKit.Hosting\Eliassen.MailKit.Hosting.csproj" />
 	  <ProjectReference Include="..\..\ExternalServices\MailKit\Eliassen.MailKit\Eliassen.MailKit.csproj" />
 	  <ProjectReference Include="..\..\ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Eliassen.Microsoft.B2C.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.AspNetCore.JwtAuthentication\Eliassen.AspNetCore.JwtAuthentication.csproj" />
