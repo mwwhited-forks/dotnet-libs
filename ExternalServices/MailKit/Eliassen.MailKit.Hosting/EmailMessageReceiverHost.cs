@@ -23,6 +23,7 @@ namespace Eliassen.MailKit.Hosting;
 /// <param name="logger">The logger.</param>
 /// <param name="queue">The queue.</param>
 /// <param name="imapClientFactory">The client factory.</param>
+/// <param name="config">imap config.</param>
 /// <param name="messageFactory">The message factory.</param>
 public class EmailMessageReceiverHost(
     ILogger<EmailMessageReceiverHost> logger,
@@ -32,7 +33,6 @@ public class EmailMessageReceiverHost(
     IMimeMessageFactory messageFactory
     ) : IHostedService, IDisposable
 {
-    private readonly ILogger _logger = logger;
     private readonly List<Task> _tasks = [];
     private readonly CancellationTokenSource _tokenSource = new();
 
@@ -41,9 +41,9 @@ public class EmailMessageReceiverHost(
     /// </summary>
     public void Dispose()
     {
-        _logger.LogInformation("Request Dispose");
+        logger.LogInformation("Request Dispose");
         _tokenSource.Cancel();
-        _logger.LogInformation("Complete Dispose");
+        logger.LogInformation("Complete Dispose");
     }
 
     /// <summary>
@@ -149,12 +149,12 @@ folder.Expunge ();
     /// <returns>A task representing the stop operation.</returns>
     public async Task StopAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Request Stop");
+        logger.LogInformation("Request Stop");
 
         await _tokenSource.CancelAsync();
         await Task.WhenAll(_tasks);
         _tasks.Clear();
 
-        _logger.LogInformation("Completed Stop");
+        logger.LogInformation("Completed Stop");
     }
 }
