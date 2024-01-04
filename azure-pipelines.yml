@@ -11,7 +11,7 @@ parameters:
     values:
     - Release
     - Debug
-- 
+
 trigger:
 - master
 
