@@ -92,7 +92,7 @@ steps:
     projects: $(solution)
     arguments: >
       --configuration ${{parameters.buildConfiguration}} 
-      --property:Version=$(FullSemVer) 
+      --property:Version=$(FullSemVerLower)
       --nologo 
       --no-restore
       
@@ -155,7 +155,7 @@ steps:
       --no-build 
       --no-restore 
       --output $(Build.ArtifactStagingDirectory)/Packages 
-      --property:Version=$(FullSemVer) 
+      --property:Version=$(FullSemVerLower)
     verbosityRestore: Minimal
     verbosityPack: Minimal
     feedsToUse: select
