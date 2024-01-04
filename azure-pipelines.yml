@@ -3,6 +3,15 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
+parameters:
+  - name: buildConfiguration
+    displayName: Build Configuration Type
+    type: string
+    default: Release
+    values:
+    - Release
+    - Debug
+- 
 trigger:
 - master
 
@@ -14,8 +23,6 @@ variables:
     value: '**/*.sln'
   - name: buildPlatform
     value: 'Any CPU'
-  - name: buildConfiguration
-    value: 'Release'  
   - name: nugetRepository
     value: 'https://pkgs.dev.azure.com/lightwellinc-clouddev/Lightwell-Nucleus/_packaging/Eliassen.Nucleus.Net.Libs/nuget/v3/index.json'
     
@@ -68,7 +75,7 @@ steps:
     command: restore
     projects: $(solution)
     arguments: >
-      --configuration $(buildConfiguration)
+      --configuration ${{parameters.buildConfiguration}}
       --nologo 
     feedsToUse: 'select'
     vstsFeed: '5f757354-fbf9-4fe2-9464-d0b4a3d8aabd/68967c6e-0e04-43b3-90ed-0933cbac5a61'
@@ -79,18 +86,18 @@ steps:
     command: build
     projects: $(solution)
     arguments: >
-      --configuration $(buildConfiguration) 
-      --property:Version==$(FullSemVer) 
+      --configuration ${{parameters.buildConfiguration}} 
+      --property:Version=$(FullSemVer) 
       --nologo 
       --no-restore
       
 - task: DotNetCoreCLI@2
-  displayName: Run Unit Tests as $(buildConfiguration)
+  displayName: Run Unit Tests as ${{parameters.buildConfiguration}}
   inputs:
     command: 'test'
     projects: '$(solution)'
     arguments: >
-      --configuration $(buildConfiguration) 
+      --configuration ${{parameters.buildConfiguration}} 
       --no-build 
       --no-restore 
       --nologo 
@@ -138,7 +145,12 @@ steps:
     command: custom
     custom: 'pack'
     projects: $(solution)
-    arguments: '-c $(buildConfiguration) --no-build --no-restore -o $(Build.ArtifactStagingDirectory)/Packages /p:Version=$(FullSemVer)'
+    arguments: >
+      --configuration ${{parameters.buildConfiguration}} 
+      --no-build 
+      --no-restore 
+      --output $(Build.ArtifactStagingDirectory)/Packages 
+      --property:Version=$(FullSemVer) 
     verbosityRestore: Minimal
     verbosityPack: Minimal
     feedsToUse: select
@@ -165,7 +177,9 @@ steps:
   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
   inputs:
     type: 'Build'
-    tags: '$(FullSemVerLowerTag)'
+    tags: |
+        $(FullSemVerLowerTag)
+        ${{parameters.buildConfiguration}} 
     
 # https://dina-muscanell.com/blog/set-git-tags-with-azure-devops/
 # https://stackoverflow.com/questions/59226055/setting-git-tag-from-azure-devops-build-pipeline-on-complete
