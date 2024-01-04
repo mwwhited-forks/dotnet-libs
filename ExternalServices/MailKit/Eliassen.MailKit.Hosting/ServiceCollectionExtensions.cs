@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Eliassen.MailKit.Hosting;
 
@@ -16,7 +17,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddMailKitHosting(this IServiceCollection services)
     {
         //Note: this is the service host to enable the inbound message handlers
-        services.AddHostedService<EmailMessageReceiverHost>();
+        var skip = bool.TryParse(Environment.GetEnvironmentVariable("SWAGGER_ONLY"), out var ret) ? ret : false;
+        if (!skip)
+        {
+            services.AddHostedService<EmailMessageReceiverHost>();
+        }
         return services;
     }
 }

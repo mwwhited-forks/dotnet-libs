@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Eliassen.MessageQueueing.Hosting;
 
@@ -16,7 +17,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddMessageQueueingHosting(this IServiceCollection services)
     {
         //Note: this is the service host to enable the inbound message handlers
-        services.AddHostedService<MessageReceiverHost>();
+        var skip = bool.TryParse(Environment.GetEnvironmentVariable("SWAGGER_ONLY"), out var ret) ? ret : false;
+        if (!skip)
+        {
+            services.AddHostedService<MessageReceiverHost>();
+        }
         return services;
     }
 }

@@ -1,4 +1,8 @@
 
+SETLOCAL EnableDelayedExpansion
+
+SET SolutionDir=%~dp0
+
 ECHO "restore current .net tools"
 dotnet tool restore
 
@@ -10,7 +14,8 @@ Nucleus.Net.Libs.sln ^
 
 CALL test.bat --no-start
 
-dotnet msbuild /T:BuildSwagger Eliassen.WebApi
+dotnet msbuild /T:BuildSwagger .\Examples\Eliassen.WebApi
+dotnet build Nucleus.Net.Libs.sln /T:GetDocumentation
 
 ECHO "Copy Code Coverage Results"
 COPY .\TestResults\Cobertura.coverage .\docs\Tests\Cobertura.coverage
@@ -51,3 +56,4 @@ dotnet run ^
 --file-template-path .\docs\templates ^
 --input-type XML
 
+ENDLOCAL
