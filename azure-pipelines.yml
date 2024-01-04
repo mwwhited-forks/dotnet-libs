@@ -57,17 +57,22 @@ steps:
   displayName: Set Version Variables
   inputs:
     targetType: 'inline'
-    script: |
-            $fullSemVerLower = "$(fullSemVer)".ToLower()  
-            $fullSemVerLowerTag = "libs-$(fullSemVer)".ToLower()  
+    script: |    
+            $fullSemVerLower = "$(fullSemVer)".ToLower() 
+            if ("${{parameters.buildConfiguration}}" -eq "Debug") {
+                # 0.1.58-dev-ndm-366-QueueingInfrastructureUpdates.10 => 0.1.58-debug-dev-ndm-366-QueueingInfrastructureUpdates.10
+                $majorParts = $fullSemVerLower.Split(".")
+                $minorParts = $majorParts[2].Split("-", 2)
+                $majorParts[2] = $minorParts[0] + "-debug-" + $minorParts[1]
+                $fullSemVerLower = [System.String]::Join(".", $majorParts)
+            }
+            $fullSemVerLowerTag = ("libs-"+$fullSemVerLower).ToLower()  
             Write-Host "FullSemVerLower=$fullSemVerLower"
             Write-Host "FullSemVerLowerTag=$fullSemVerLowerTag"
             Write-Host "##vso[build.updatebuildnumber]$fullSemVerLower"
             Write-Host "##vso[task.setvariable variable=FullSemVerLower;issecret=false]$fullSemVerLower" 
             Write-Host "##vso[task.setvariable variable=FullSemVerLowerTag;issecret=false]$fullSemVerLowerTag"  
-            Write-Host "##vso[task.setvariable variable=WebAppPackagePath;issecret=false]$(build.artifactStagingDirectory)\WebApp.zip"  
             Write-Host "##vso[task.setvariable variable=TestResultsPath;issecret=false]$(Agent.TempDirectory)"  
-            Write-Host "##vso[task.setvariable variable=TestDataPath;issecret=false]$(Build.SourcesDirectory)\Conf\MongoDb\SampleData"
 
 - task: DotNetCoreCLI@2
   displayName: Dotnet Restore for API Services and Azure Functions
