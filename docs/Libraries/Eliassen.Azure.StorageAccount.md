@@ -2,14 +2,18 @@
 
 
 ## Class: Azure.StorageAccount.BlobStorage.BlobContainerProvider
-Implementation of for handling blob containers in Azure Storage.
-            Initializes a new instance of the  *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider* class.
-            
+Implementation of 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.IDocumentProvider*for handling blob containers in Azure Storage. 
+Initializes a new instance of the 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider*class. 
+
 ### Methods
 
 
 #### Constructor
-Implementation of for handling blob containers in Azure Storage.
+Implementation of 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.IDocumentProvider*for handling blob containers in Azure Storage. 
+
 
 ##### Parameters
 * *config:* The configuration.
@@ -19,7 +23,8 @@ Implementation of for handling blob containers in Azure Storage.
 
 
 #### ListAsync
-Lists all blobs in the container.
+Lists all blobs in the container. 
+
 
 ##### Return value
 A list of representing the blobs in the container.
@@ -27,7 +32,8 @@ A list of representing the blobs in the container.
 
 
 #### UploadAsync(Eliassen.Azure.StorageAccount.BlobStorage.DocumentModel,System.IO.Stream)
-Uploads a blob to the container.
+Uploads a blob to the container. 
+
 
 ##### Parameters
 * *document:* The document model.
@@ -42,7 +48,8 @@ A representing the result of the upload operation.
 
 
 #### DownloadAsync(System.String)
-Downloads a blob from the container.
+Downloads a blob from the container. 
+
 
 ##### Parameters
 * *blobFilename:* The name of the blob.
@@ -56,7 +63,8 @@ A representing the downloaded blob or null if the blob does not exist.
 
 
 #### DeleteAsync(System.String)
-Deletes a blob from the container.
+Deletes a blob from the container. 
+
 
 ##### Parameters
 * *blobFilename:* The name of the blob.
@@ -70,14 +78,16 @@ A representing the result of the delete operation.
 
 
 ## Class: Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider
-Provides functionality for sending and receiving messages using Azure Storage Queues.
-            Initializes a new instance of the  *See: T:Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider* class.
-            
+Provides functionality for sending and receiving messages using Azure Storage Queues. 
+Initializes a new instance of the 
+ *See: T:Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider*class. 
+
 ### Methods
 
 
 #### Constructor
-Provides functionality for sending and receiving messages using Azure Storage Queues.
+Provides functionality for sending and receiving messages using Azure Storage Queues. 
+
 
 ##### Parameters
 * *serializer:* The JSON serializer for message serialization and deserialization.
@@ -88,7 +98,8 @@ Provides functionality for sending and receiving messages using Azure Storage Qu
 
 
 #### SendAsync(System.Object,Eliassen.MessageQueueing.Services.IMessageContext)
-Sends a message asynchronously to an Azure Storage Queue.
+Sends a message asynchronously to an Azure Storage Queue. 
+
 
 ##### Parameters
 * *message:* The message to be sent.
@@ -103,7 +114,8 @@ The message ID if the send operation is successful; otherwise, null.
 
 
 #### SetHandlerProvider(Eliassen.MessageQueueing.Services.IMessageHandlerProvider)
-Sets the message handler provider for processing received messages.
+Sets the message handler provider for processing received messages. 
+
 
 ##### Parameters
 * *handlerProvider:* The message handler provider.
@@ -117,7 +129,8 @@ The current instance of .
 
 
 #### RunAsync(System.Threading.CancellationToken)
-Runs the message receiver asynchronously, continuously listening for incoming messages.
+Runs the message receiver asynchronously, continuously listening for incoming messages. 
+
 
 ##### Parameters
 * *cancellationToken:* The cancellation token to stop the receiver.
@@ -131,12 +144,16 @@ A task representing the asynchronous operation.
 
 
 ## Class: Azure.StorageAccount.MessageQueueing.IQueueClientFactory
-Factory for creating instances of for Azure Storage Queues.
+Factory for creating instances of 
+ *See: T:Azure.Storage.Queues.QueueClient*for Azure Storage Queues. 
+
 ### Methods
 
 
 #### Create(Microsoft.Extensions.Configuration.IConfigurationSection)
-Creates a new instance of based on the provided configuration section.
+Creates a new instance of 
+ *See: T:Azure.Storage.Queues.QueueClient*based on the provided configuration section. 
+
 
 ##### Parameters
 * *config:* The configuration section containing connection string and queue name.
@@ -157,12 +174,16 @@ A new instance of for the specified Azure Storage Queue.
 
 
 ## Class: Azure.StorageAccount.MessageQueueing.QueueClientFactory
-Factory for creating instances of for Azure Storage Queues.
+Factory for creating instances of 
+ *See: T:Azure.Storage.Queues.QueueClient*for Azure Storage Queues. 
+
 ### Methods
 
 
 #### Create(Microsoft.Extensions.Configuration.IConfigurationSection)
-Creates a new instance of based on the provided configuration section.
+Creates a new instance of 
+ *See: T:Azure.Storage.Queues.QueueClient*based on the provided configuration section. 
+
 
 ##### Parameters
 * *config:* The configuration section containing connection string and queue name.
@@ -183,12 +204,16 @@ A new instance of for the specified Azure Storage Queue.
 
 
 ## Class: Azure.StorageAccount.ServiceCollectionEx
-Provides extension methods for configuring Azure Storage services in the .
+Provides extension methods for configuring Azure Storage services in the 
+ *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
+
 ### Methods
 
 
 #### TryAddAzureStorageServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-Tries to add Azure Storage services including blob and queue services to the specified .
+Tries to add Azure Storage services including blob and queue services to the specified 
+ *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
+
 
 ##### Parameters
 * *services:* The to add services to.
@@ -202,7 +227,9 @@ The modified .
 
 
 #### TryAddAzureStorageBlobServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-Tries to add Azure Storage blob services to the specified .
+Tries to add Azure Storage blob services to the specified 
+ *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
+
 
 ##### Parameters
 * *services:* The to add services to.
@@ -216,7 +243,9 @@ The modified .
 
 
 #### TryAddAzureStorageQueueServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-Tries to add Azure Storage queue services to the specified .
+Tries to add Azure Storage queue services to the specified 
+ *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
+
 
 ##### Parameters
 * *services:* The to add services to.

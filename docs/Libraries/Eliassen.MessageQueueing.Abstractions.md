@@ -2,12 +2,14 @@
 
 
 ## Class: MessageQueueing.IMessageQueueHandler
-Represents a generic interface for handling messages from a message queue.
+Represents a generic interface for handling messages from a message queue. 
+
 ### Methods
 
 
 #### HandleAsync(System.Object,Eliassen.MessageQueueing.Services.IMessageContext)
-Handles the specified message asynchronously.
+Handles the specified message asynchronously. 
+
 
 ##### Parameters
 * *message:* The message to handle.
@@ -22,7 +24,8 @@ A task that represents the asynchronous handling of the message.
 
 
 #### 
-Handles the specified message asynchronously.
+Handles the specified message asynchronously. 
+
 
 ##### Parameters
 * *message:* The message to handle.
@@ -37,15 +40,24 @@ A task that represents the asynchronous handling of the message.
 
 
 ## Class: MessageQueueing.IMessageQueueHandler`1
-Represents a generic interface for handling messages of type from a message queue.The type of channel for the messages.
+Represents a generic interface for handling messages of type 
+from a message queue. 
+The type of channel for the messages. 
+
 
 ## Class: MessageQueueing.IMessageQueueHandler`2
-Represents a generic interface for handling messages of type from a message queue associated with a specific channel of type .The type of channel for the messages.The type of messages to handle.
+Represents a generic interface for handling messages of type 
+from a message queue associated with a specific channel of type 
+. 
+The type of channel for the messages. 
+The type of messages to handle. 
+
 ### Methods
 
 
 #### HandleAsync(`1,Eliassen.MessageQueueing.Services.IMessageContext)
-Handles the specified message asynchronously.
+Handles the specified message asynchronously. 
+
 
 ##### Parameters
 * *message:* The message to handle.
@@ -60,12 +72,14 @@ A task that represents the asynchronous handling of the message.
 
 
 ## Class: MessageQueueing.IMessageQueueSender
-Represents a generic interface for sending messages to a message queue.
+Represents a generic interface for sending messages to a message queue. 
+
 ### Methods
 
 
 #### SendAsync(System.Object,System.String)
-Sends the specified message asynchronously.
+Sends the specified message asynchronously. 
+
 
 ##### Parameters
 * *message:* The message to send.
@@ -80,10 +94,14 @@ A task that represents the asynchronous sending of the message.
 
 
 ## Class: MessageQueueing.IMessageQueueSender`1
-Represents a generic interface for sending messages of type to a message queue.The type of channel for the messages.
+Represents a generic interface for sending messages of type 
+to a message queue. 
+The type of channel for the messages. 
+
 
 ## Class: MessageQueueing.MessageQueueAttribute
-Attribute used to mark a class as a message queue handler and provide configuration options.
+Attribute used to mark a class as a message queue handler and provide configuration options. 
+
 Initializes a new instance of the class with the specified simple name.
 ### Properties
 
@@ -96,7 +114,8 @@ Gets a unique identifier for this attribute.
 
 #### Constructor
 Initializes a new instance of the class with the specified simple name.
-Attribute used to mark a class as a message queue handler and provide configuration options.
+Attribute used to mark a class as a message queue handler and provide configuration options. 
+
 
 ##### Parameters
 * *simpleName:* The simple name used for named targeting in the configuration value.
@@ -105,7 +124,8 @@ Attribute used to mark a class as a message queue handler and provide configurat
 
 
 ## Class: MessageQueueing.Services.IMessageContext
-Represents the context of a message being processed in a message queue.
+Represents the context of a message being processed in a message queue. 
+
 ### Properties
 
 #### OriginMessageId
@@ -136,7 +156,9 @@ Gets the configuration section associated with the message context.
 
 
 #### 
-Creates a new instance of with the specified parameters.
+Creates a new instance of 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageContext*with the specified parameters. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -158,7 +180,9 @@ A new instance of .
 
 
 #### 
-Creates a new instance of for the given channel and message.
+Creates a new instance of 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageContext*for the given channel and message. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -174,12 +198,16 @@ A new instance of .
 
 
 ## Class: MessageQueueing.Services.IMessageContextFactory
-Factory for creating instances of .
+Factory for creating instances of 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageContext*. 
+
 ### Methods
 
 
 #### Create(System.Type,System.Type,System.String,System.String,System.String,Microsoft.Extensions.Configuration.IConfigurationSection,System.Reflection.MethodBase,System.Int32,System.String)
-Creates a new instance of with the specified parameters.
+Creates a new instance of 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageContext*with the specified parameters. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -201,7 +229,9 @@ A new instance of .
 
 
 #### Create(System.Type,Eliassen.MessageQueueing.Services.IQueueMessage,Microsoft.Extensions.Configuration.IConfigurationSection)
-Creates a new instance of for the given channel and message.
+Creates a new instance of 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageContext*for the given channel and message. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -217,7 +247,8 @@ A new instance of .
 
 
 ## Class: MessageQueueing.Services.IMessageHandlerProvider
-Provides a mechanism for handling queue messages.
+Provides a mechanism for handling queue messages. 
+
 ### Properties
 
 #### Config
@@ -226,7 +257,8 @@ Gets the configuration section associated with the message handler provider.
 
 
 #### HandleAsync(Eliassen.MessageQueueing.Services.IQueueMessage,System.String)
-Handles the specified queue message with the given message identifier.
+Handles the specified queue message with the given message identifier. 
+
 
 ##### Parameters
 * *message:* The queue message to handle.
@@ -241,7 +273,8 @@ A task representing the asynchronous operation.
 
 
 #### SetHandlers(System.Collections.Generic.IEnumerable{Eliassen.MessageQueueing.IMessageQueueHandler})
-Sets the collection of message queue handlers for the provider.
+Sets the collection of message queue handlers for the provider. 
+
 
 ##### Parameters
 * *handlers:* The collection of message queue handlers.
@@ -255,7 +288,8 @@ The updated message handler provider.
 
 
 #### SetChannelType(System.Type)
-Sets the type of the message channel for the provider.
+Sets the type of the message channel for the provider. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -269,7 +303,8 @@ The updated message handler provider.
 
 
 #### SetConfig(Microsoft.Extensions.Configuration.IConfigurationSection)
-Sets the configuration section for the provider.
+Sets the configuration section for the provider. 
+
 
 ##### Parameters
 * *config:* The configuration section.
@@ -283,12 +318,14 @@ The updated message handler provider.
 
 
 ## Class: MessageQueueing.Services.IMessagePropertyResolver
-Resolves properties related to message handling, such as provider, message ID, and configuration.
+Resolves properties related to message handling, such as provider, message ID, and configuration. 
+
 ### Methods
 
 
 #### ProviderSafe(System.Type,System.Type)
-Retrieves provider information for the specified message channel and message types.
+Retrieves provider information for the specified message channel and message types. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -303,7 +340,8 @@ A tuple containing provider key, simple target name, simple message name, and co
 
 
 #### Provider(System.Type,System.Type)
-Retrieves the provider key for the specified message channel and message types.
+Retrieves the provider key for the specified message channel and message types. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -318,7 +356,8 @@ The provider key.
 
 
 #### MessageId(System.Type,System.Type,System.String)
-Retrieves the message ID for the specified message channel, message type, and optional original message ID.
+Retrieves the message ID for the specified message channel, message type, and optional original message ID. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -334,7 +373,8 @@ The resolved message ID.
 
 
 #### GenerateId(System.Type,System.Type)
-Generates a unique ID for the specified message channel and message types.
+Generates a unique ID for the specified message channel and message types. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -349,7 +389,8 @@ The generated unique ID.
 
 
 #### ConfigurationSafe(System.Type,System.Type)
-Retrieves configuration information for the specified message channel and message types.
+Retrieves configuration information for the specified message channel and message types. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -364,7 +405,8 @@ A tuple containing the configuration section, simple target name, simple message
 
 
 #### Configuration(System.Type,System.Type)
-Retrieves the configuration section for the specified message channel and message types.
+Retrieves the configuration section for the specified message channel and message types. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -379,12 +421,14 @@ The configuration section.
 
 
 ## Class: MessageQueueing.Services.IMessageReceiverProvider
-Provides functionality for receiving messages from a message queue.
+Provides functionality for receiving messages from a message queue. 
+
 ### Methods
 
 
 #### SetHandlerProvider(Eliassen.MessageQueueing.Services.IMessageHandlerProvider)
-Sets the handler provider for processing received messages.
+Sets the handler provider for processing received messages. 
+
 
 ##### Parameters
 * *handlerProvider:* The message handler provider.
@@ -398,7 +442,8 @@ The current instance of the message receiver provider.
 
 
 #### RunAsync(System.Threading.CancellationToken)
-Runs the message receiver asynchronously.
+Runs the message receiver asynchronously. 
+
 
 ##### Parameters
 * *cancellationToken:* The cancellation token to observe for cancellation requests.
@@ -412,7 +457,8 @@ A task representing the asynchronous operation.
 
 
 #### 
-Creates a collection of message receiver providers.
+Creates a collection of message receiver providers. 
+
 
 ##### Return value
 An enumerable collection of message receiver providers.
@@ -420,12 +466,15 @@ An enumerable collection of message receiver providers.
 
 
 ## Class: MessageQueueing.Services.IMessageReceiverProviderFactory
-Factory for creating instances of .
+Factory for creating instances of 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageReceiverProvider*. 
+
 ### Methods
 
 
 #### Create
-Creates a collection of message receiver providers.
+Creates a collection of message receiver providers. 
+
 
 ##### Return value
 An enumerable collection of message receiver providers.
@@ -433,12 +482,14 @@ An enumerable collection of message receiver providers.
 
 
 ## Class: MessageQueueing.Services.IMessageSenderProvider
-Represents a provider for sending messages to a message queue.
+Represents a provider for sending messages to a message queue. 
+
 ### Methods
 
 
 #### SendAsync(System.Object,Eliassen.MessageQueueing.Services.IMessageContext)
-Sends a message asynchronously to the message queue.
+Sends a message asynchronously to the message queue. 
+
 
 ##### Parameters
 * *message:* The message to send.
@@ -453,7 +504,9 @@ A task representing the asynchronous operation. The task result is the unique id
 
 
 #### 
-Creates an instance of for the specified channel and message types.
+Creates an instance of 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageSenderProvider*for the specified channel and message types. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -468,12 +521,16 @@ An instance of .
 
 
 ## Class: MessageQueueing.Services.IMessageSenderProviderFactory
-Represents a factory for creating instances of .
+Represents a factory for creating instances of 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageSenderProvider*. 
+
 ### Methods
 
 
 #### Sender(System.Type,System.Type)
-Creates an instance of for the specified channel and message types.
+Creates an instance of 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageSenderProvider*for the specified channel and message types. 
+
 
 ##### Parameters
 * *channelType:* The type of the message channel.
@@ -488,7 +545,8 @@ An instance of .
 
 
 ## Class: MessageQueueing.Services.IQueueMessage
-Represents a message within a message queue.
+Represents a message within a message queue. 
+
 ### Properties
 
 #### ContentType
@@ -503,7 +561,8 @@ Gets the type of the payload object.
 Gets the properties associated with the message.
 
 ## Class: Azure.StorageAccount.MessageQueueing.WrappedQueueMessage
-Represents a wrapped queue message.
+Represents a wrapped queue message. 
+
 ### Properties
 
 #### ContentType

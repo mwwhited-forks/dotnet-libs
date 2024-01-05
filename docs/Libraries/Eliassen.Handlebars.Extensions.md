@@ -2,12 +2,16 @@
 
 
 ## Class: Handlebars.Extensions.ServiceCollectionExtensions
-Provides extension methods for configuring services related to Handlebars templates in the .
+Provides extension methods for configuring services related to Handlebars templates in the 
+ *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
+
 ### Methods
 
 
 #### TryAddHandlebarServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-Adds services related to Handlebars templates to the specified .
+Adds services related to Handlebars templates to the specified 
+ *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
+
 
 ##### Parameters
 * *services:* The to add the services to.
@@ -21,7 +25,8 @@ The modified with added Handlebars template services.
 
 
 ## Class: Handlebars.Extensions.Templating.HandlebarsTemplateProvider
-Provides Handlebars template processing functionality.
+Provides Handlebars template processing functionality. 
+
 Initializes a new instance of the class.
 ### Properties
 
@@ -32,7 +37,8 @@ Gets the collection of supported content types by the template provider. text/x-
 
 #### Constructor
 Initializes a new instance of the class.
-Provides Handlebars template processing functionality.
+Provides Handlebars template processing functionality. 
+
 
 ##### Parameters
 * *hash:* The hash provider.
@@ -43,7 +49,8 @@ Provides Handlebars template processing functionality.
 
 
 #### CanApply(Eliassen.System.Text.Templating.ITemplateContext)
-Determines whether this template provider can apply template processing to the given context.
+Determines whether this template provider can apply template processing to the given context. 
+
 
 ##### Parameters
 * *context:* The template context.
@@ -57,7 +64,8 @@ true if the template processing can be applied; otherwise, false.
 
 
 #### ApplyAsync(Eliassen.System.Text.Templating.ITemplateContext,System.Object,System.IO.Stream)
-Asynchronously applies Handlebars template processing to the specified context, data, and target stream.
+Asynchronously applies Handlebars template processing to the specified context, data, and target stream. 
+
 
 ##### Parameters
 * *context:* The template context.

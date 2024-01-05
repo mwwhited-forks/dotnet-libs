@@ -83,21 +83,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 		docs\Libraries\Eliassen.System.Abstractions.md = docs\Libraries\Eliassen.System.Abstractions.md
 		docs\Libraries\Eliassen.System.md = docs\Libraries\Eliassen.System.md
 		docs\Libraries\Eliassen.WebApi.md = docs\Libraries\Eliassen.WebApi.md
-		docs\Libraries\Nucleus.External.Azure.StorageAccount.Abstractions.md = docs\Libraries\Nucleus.External.Azure.StorageAccount.Abstractions.md
-		docs\Libraries\Nucleus.External.Microsoft.B2C.Abstractions.md = docs\Libraries\Nucleus.External.Microsoft.B2C.Abstractions.md
-		docs\Libraries\Nucleus.External.Microsoft.B2C.md = docs\Libraries\Nucleus.External.Microsoft.B2C.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{E6BCF7BB-2130-43E9-960F-EBE6C79BDDD8}"
 	ProjectSection(SolutionItems) = preProject
 		docs\Framework\CultureInfoMiddleware.md = docs\Framework\CultureInfoMiddleware.md
-		docs\Framework\CultureInfoMiddleware.pdf = docs\Framework\CultureInfoMiddleware.pdf
 		docs\Framework\MajorFunctionality.md = docs\Framework\MajorFunctionality.md
-		docs\Framework\MajorFunctionality.pdf = docs\Framework\MajorFunctionality.pdf
+		docs\Framework\MongoDbExtensions.md = docs\Framework\MongoDbExtensions.md
 		docs\Framework\SearchQueryMiddleware.md = docs\Framework\SearchQueryMiddleware.md
-		docs\Framework\SearchQueryMiddleware.pdf = docs\Framework\SearchQueryMiddleware.pdf
 		docs\Framework\TextTemplating.md = docs\Framework\TextTemplating.md
-		docs\Framework\TextTemplating.pdf = docs\Framework\TextTemplating.pdf
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{04470E53-0CD0-4AA0-BFE0-C28DDE5C34B3}"
@@ -170,6 +164,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{
 		docs\templates\Documentation.md.xslt = docs\templates\Documentation.md.xslt
 		docs\templates\DuplicateXml.xml.xslt = docs\templates\DuplicateXml.xml.xslt
 		docs\templates\Service-Endpoints.md.hbs = docs\templates\Service-Endpoints.md.hbs
+		docs\templates\SoftwareBillOfMaterials.md.xslt = docs\templates\SoftwareBillOfMaterials.md.xslt
 		docs\templates\TestResultsToMarkdown.md.xslt = docs\templates\TestResultsToMarkdown.md.xslt
 	EndProjectSection
 EndProject
@@ -192,6 +187,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.RabbitMQ", "ExternalServices\RabbitMQ\Eliassen.RabbitMQ\Eliassen.RabbitMQ.csproj", "{CD2D80EC-9759-4579-9041-CA0D0A3BFECB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.RabbitMQ.Tests", "ExternalServices\RabbitMQ\Eliassen.RabbitMQ.Tests\Eliassen.RabbitMQ.Tests.csproj", "{37092C41-C418-4C6A-B375-3D0FA6DF42A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sbom", "sbom", "{2082898F-D921-42A0-AAF7-248B81EA6F77}"
+	ProjectSection(SolutionItems) = preProject
+		docs\sbom\BillOfMaterials.md = docs\sbom\BillOfMaterials.md
+		docs\sbom\bom.xml = docs\sbom\bom.xml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -372,6 +373,7 @@ Global
 		{92FD4EEB-1BF5-4105-B55F-DB70DFB2C35E} = {23338E7F-E943-4D99-B58C-CFBB7F2F53B2}
 		{CD2D80EC-9759-4579-9041-CA0D0A3BFECB} = {92FD4EEB-1BF5-4105-B55F-DB70DFB2C35E}
 		{37092C41-C418-4C6A-B375-3D0FA6DF42A7} = {92FD4EEB-1BF5-4105-B55F-DB70DFB2C35E}
+		{2082898F-D921-42A0-AAF7-248B81EA6F77} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

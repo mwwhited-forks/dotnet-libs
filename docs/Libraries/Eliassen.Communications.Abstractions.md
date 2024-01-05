@@ -2,7 +2,8 @@
 
 
 ## Class: Communications.Models.AttachmentReferenceModel
-Represents a model for referencing attachments.
+Represents a model for referencing attachments. 
+
 ### Properties
 
 #### ContainerName
@@ -11,7 +12,8 @@ Gets the name of the container where the attachment is stored.
 Gets the key or identifier of the document associated with the attachment.
 
 ## Class: Communications.Models.EmailMessageModel
-Represents an email message model.
+Represents an email message model. 
+
 ### Properties
 
 #### ReferenceId
@@ -36,7 +38,8 @@ Gets or sets the headers of the email message.
 Gets or sets the list of attachment references in the email message.
 
 ## Class: Communications.Models.SmsMessageModel
-Represents a model for SMS messages.
+Represents a model for SMS messages. 
+
 ### Properties
 
 #### From
@@ -51,12 +54,15 @@ Gets or sets the body or content of the SMS message.
 Gets or sets the headers associated with the SMS message.
 
 ## Class: Communications.Services.ICommunicationSender`1
-Represents an interface for sending communication messages of a specified type.The type of the communication message.
+Represents an interface for sending communication messages of a specified type. 
+[NIT-12](https://eliassenps.atlassian.net/browse/NIT-12)[NDM-368](https://eliassenps.atlassian.net/browse/NDM-368)[NDM-366](https://eliassenps.atlassian.net/browse/NDM-366)The type of the communication message. 
+
 ### Methods
 
 
 #### SendAsync(`0)
-Asynchronously sends the specified communication message.
+Asynchronously sends the specified communication message. 
+
 
 ##### Parameters
 * *message:* The communication message to send.

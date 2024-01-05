@@ -1,14 +1,390 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<coverage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" line-rate="0.48719165085388993" branch-rate="0.44413012729844414" complexity="886" version="1.9" timestamp="0" lines-covered="1027" lines-valid="2108" branches-covered="314" branches-valid="707">
+<coverage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" line-rate="0.48719165085388993" branch-rate="0.4425531914893617" complexity="885" version="1.9" timestamp="0" lines-covered="1027" lines-valid="2108" branches-covered="312" branches-valid="705">
   <sources>
-    <source>c:\Repos\Nucleus\Net.Libs\Framework\</source>
     <source>c:\Repos\Nucleus\Net.Libs\</source>
+    <source>c:\Repos\Nucleus\Net.Libs\Framework\</source>
     <source>C:\</source>
   </sources>
   <packages>
-    <package line-rate="0.5957108816521048" branch-rate="0.5368620037807184" complexity="622" name="Eliassen.System">
+    <package line-rate="0" branch-rate="0" complexity="30" name="Eliassen.Microsoft.B2C">
       <classes>
-        <class line-rate="0.925" branch-rate="0" complexity="13" name="Eliassen.System.ServiceCollectionExtensions" filename="Eliassen.System\ServiceCollectionExtensions.cs">
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Microsoft.B2C.ServiceCollectionEx" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\ServiceCollectionEx.cs">
+          <methods>
+            <method line-rate="0" branch-rate="1" complexity="1" name="AddMicrosoftB2CServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+              <lines>
+                <line number="19" hits="0" branch="False" />
+                <line number="20" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
+                <line number="22" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="1" complexity="4" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
+          <methods>
+            <method line-rate="0" branch-rate="1" complexity="1" name="GetAuthProvider" signature="()">
+              <lines>
+                <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="40" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="CreateIdentityUserAsync" signature="(System.String,System.String,System.String)">
+              <lines>
+                <line number="85" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="RemoveIdentityUserAsync" signature="(System.String)">
+              <lines>
+                <line number="162" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name=".ctor" signature="(Microsoft.Extensions.Logging.ILogger`1&lt;Eliassen.Microsoft.B2C.Identity.ManageGraphUser&gt;,Microsoft.Extensions.Configuration.IConfiguration)">
+              <lines>
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="40" hits="0" branch="False" />
+            <line number="85" hits="0" branch="False" />
+            <line number="162" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser/&lt;&gt;c" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="2" name="&lt;GetGraphUsersByEmail&gt;b__4_0" signature="(Microsoft.Graph.Models.User)">
+              <lines>
+                <line number="67" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="61" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="68" hits="0" branch="False" />
+                <line number="69" hits="0" branch="False" />
+                <line number="70" hits="0" branch="False" />
+                <line number="71" hits="0" branch="False" />
+                <line number="72" hits="0" branch="False" />
+                <line number="73" hits="0" branch="False" />
+                <line number="74" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="67" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="61" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="68" hits="0" branch="False" />
+            <line number="69" hits="0" branch="False" />
+            <line number="70" hits="0" branch="False" />
+            <line number="71" hits="0" branch="False" />
+            <line number="72" hits="0" branch="False" />
+            <line number="73" hits="0" branch="False" />
+            <line number="74" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser/&lt;&gt;c__DisplayClass4_0" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
+          <methods>
+            <method line-rate="0" branch-rate="1" complexity="1" name="&lt;GetGraphUsersByEmail&gt;b__1" signature="(Microsoft.Kiota.Abstractions.RequestConfiguration`1&lt;Microsoft.Graph.Users.UsersRequestBuilder/UsersRequestBuilderGetQueryParameters&gt;)">
+              <lines>
+                <line number="56" hits="0" branch="False" />
+                <line number="57" hits="0" branch="False" />
+                <line number="58" hits="0" branch="False" />
+                <line number="59" hits="0" branch="False" />
+                <line number="60" hits="0" branch="False" />
+                <line number="61" hits="0" branch="False" />
+                <line number="62" hits="0" branch="False" />
+                <line number="63" hits="0" branch="False" />
+                <line number="64" hits="0" branch="False" />
+                <line number="65" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="56" hits="0" branch="False" />
+            <line number="57" hits="0" branch="False" />
+            <line number="58" hits="0" branch="False" />
+            <line number="59" hits="0" branch="False" />
+            <line number="60" hits="0" branch="False" />
+            <line number="61" hits="0" branch="False" />
+            <line number="62" hits="0" branch="False" />
+            <line number="63" hits="0" branch="False" />
+            <line number="64" hits="0" branch="False" />
+            <line number="65" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser/&lt;&gt;c__DisplayClass6_0" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
+          <methods>
+            <method line-rate="0" branch-rate="1" complexity="1" name="&lt;CreateGraphUserAsync&gt;b__0" signature="(Microsoft.Kiota.Abstractions.RequestConfiguration`1&lt;Microsoft.Graph.Users.UsersRequestBuilder/UsersRequestBuilderGetQueryParameters&gt;)">
+              <lines>
+                <line number="104" hits="0" branch="False" />
+                <line number="105" hits="0" branch="False" />
+                <line number="106" hits="0" branch="False" />
+                <line number="107" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="104" hits="0" branch="False" />
+            <line number="105" hits="0" branch="False" />
+            <line number="106" hits="0" branch="False" />
+            <line number="107" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="12" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser/&lt;CreateGraphUserAsync&gt;d__6" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="12" name="MoveNext" signature="()">
+              <lines>
+                <line number="99" hits="0" branch="False" />
+                <line number="102" hits="0" branch="False" />
+                <line number="103" hits="0" branch="False" />
+                <line number="109" hits="0" branch="True" condition-coverage="0% (0/6)">
+                  <conditions>
+                    <condition number="208" type="jump" coverage="0%" />
+                    <condition number="220" type="jump" coverage="0%" />
+                    <condition number="232" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="111" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="250" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="113" hits="0" branch="False" />
+                <line number="114" hits="0" branch="False" />
+                <line number="117" hits="0" branch="False" />
+                <line number="119" hits="0" branch="False" />
+                <line number="120" hits="0" branch="False" />
+                <line number="121" hits="0" branch="False" />
+                <line number="122" hits="0" branch="False" />
+                <line number="123" hits="0" branch="False" />
+                <line number="124" hits="0" branch="False" />
+                <line number="125" hits="0" branch="False" />
+                <line number="126" hits="0" branch="False" />
+                <line number="127" hits="0" branch="False" />
+                <line number="128" hits="0" branch="False" />
+                <line number="129" hits="0" branch="False" />
+                <line number="130" hits="0" branch="False" />
+                <line number="131" hits="0" branch="False" />
+                <line number="132" hits="0" branch="False" />
+                <line number="133" hits="0" branch="False" />
+                <line number="134" hits="0" branch="False" />
+                <line number="135" hits="0" branch="False" />
+                <line number="136" hits="0" branch="False" />
+                <line number="137" hits="0" branch="False" />
+                <line number="138" hits="0" branch="False" />
+                <line number="139" hits="0" branch="False" />
+                <line number="140" hits="0" branch="False" />
+                <line number="141" hits="0" branch="False" />
+                <line number="143" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="684" type="jump" coverage="0%" />
+                    <condition number="693" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="144" hits="0" branch="False" />
+                <line number="146" hits="0" branch="False" />
+                <line number="147" hits="0" branch="False" />
+                <line number="149" hits="0" branch="False" />
+                <line number="151" hits="0" branch="False" />
+                <line number="152" hits="0" branch="False" />
+                <line number="153" hits="0" branch="False" />
+                <line number="155" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="99" hits="0" branch="False" />
+            <line number="102" hits="0" branch="False" />
+            <line number="103" hits="0" branch="False" />
+            <line number="109" hits="0" branch="True" condition-coverage="0% (0/6)">
+              <conditions>
+                <condition number="208" type="jump" coverage="0%" />
+                <condition number="220" type="jump" coverage="0%" />
+                <condition number="232" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="111" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="250" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="113" hits="0" branch="False" />
+            <line number="114" hits="0" branch="False" />
+            <line number="117" hits="0" branch="False" />
+            <line number="119" hits="0" branch="False" />
+            <line number="120" hits="0" branch="False" />
+            <line number="121" hits="0" branch="False" />
+            <line number="122" hits="0" branch="False" />
+            <line number="123" hits="0" branch="False" />
+            <line number="124" hits="0" branch="False" />
+            <line number="125" hits="0" branch="False" />
+            <line number="126" hits="0" branch="False" />
+            <line number="127" hits="0" branch="False" />
+            <line number="128" hits="0" branch="False" />
+            <line number="129" hits="0" branch="False" />
+            <line number="130" hits="0" branch="False" />
+            <line number="131" hits="0" branch="False" />
+            <line number="132" hits="0" branch="False" />
+            <line number="133" hits="0" branch="False" />
+            <line number="134" hits="0" branch="False" />
+            <line number="135" hits="0" branch="False" />
+            <line number="136" hits="0" branch="False" />
+            <line number="137" hits="0" branch="False" />
+            <line number="138" hits="0" branch="False" />
+            <line number="139" hits="0" branch="False" />
+            <line number="140" hits="0" branch="False" />
+            <line number="141" hits="0" branch="False" />
+            <line number="143" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="684" type="jump" coverage="0%" />
+                <condition number="693" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="144" hits="0" branch="False" />
+            <line number="146" hits="0" branch="False" />
+            <line number="147" hits="0" branch="False" />
+            <line number="149" hits="0" branch="False" />
+            <line number="151" hits="0" branch="False" />
+            <line number="152" hits="0" branch="False" />
+            <line number="153" hits="0" branch="False" />
+            <line number="155" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser/&lt;GetGraphUsersByEmail&gt;d__4" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
+          <methods>
+            <method line-rate="0" branch-rate="1" complexity="1" name="MoveNext" signature="()">
+              <lines>
+                <line number="51" hits="0" branch="False" />
+                <line number="54" hits="0" branch="False" />
+                <line number="55" hits="0" branch="False" />
+                <line number="75" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="51" hits="0" branch="False" />
+            <line number="54" hits="0" branch="False" />
+            <line number="55" hits="0" branch="False" />
+            <line number="75" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="6" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser/&lt;RemoveGraphUserAsync&gt;d__8" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="6" name="MoveNext" signature="()">
+              <lines>
+                <line number="174" hits="0" branch="False" />
+                <line number="176" hits="0" branch="False" />
+                <line number="177" hits="0" branch="False" />
+                <line number="178" hits="0" branch="False" />
+                <line number="179" hits="0" branch="False" />
+                <line number="180" hits="0" branch="False" />
+                <line number="182" hits="0" branch="True" condition-coverage="0% (0/6)">
+                  <conditions>
+                    <condition number="198" type="jump" coverage="0%" />
+                    <condition number="210" type="jump" coverage="0%" />
+                    <condition number="259" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="184" hits="0" branch="False" />
+                <line number="185" hits="0" branch="False" />
+                <line number="186" hits="0" branch="False" />
+                <line number="190" hits="0" branch="False" />
+                <line number="193" hits="0" branch="False" />
+                <line number="195" hits="0" branch="False" />
+                <line number="197" hits="0" branch="False" />
+                <line number="198" hits="0" branch="False" />
+                <line number="199" hits="0" branch="False" />
+                <line number="201" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="174" hits="0" branch="False" />
+            <line number="176" hits="0" branch="False" />
+            <line number="177" hits="0" branch="False" />
+            <line number="178" hits="0" branch="False" />
+            <line number="179" hits="0" branch="False" />
+            <line number="180" hits="0" branch="False" />
+            <line number="182" hits="0" branch="True" condition-coverage="0% (0/6)">
+              <conditions>
+                <condition number="198" type="jump" coverage="0%" />
+                <condition number="210" type="jump" coverage="0%" />
+                <condition number="259" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="184" hits="0" branch="False" />
+            <line number="185" hits="0" branch="False" />
+            <line number="186" hits="0" branch="False" />
+            <line number="190" hits="0" branch="False" />
+            <line number="193" hits="0" branch="False" />
+            <line number="195" hits="0" branch="False" />
+            <line number="197" hits="0" branch="False" />
+            <line number="198" hits="0" branch="False" />
+            <line number="199" hits="0" branch="False" />
+            <line number="201" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.Microsoft.B2C.Identity.UserManagementProvider/&lt;CreateAccountAsync&gt;d__2" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\UserManagementProvider.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
+              <lines>
+                <line number="20" hits="0" branch="False" />
+                <line number="21" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="169" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="169" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package line-rate="0.5957108816521048" branch-rate="0.5351043643263758" complexity="621" name="Eliassen.System">
+      <classes>
+        <class line-rate="0.925" branch-rate="0" complexity="13" name="Eliassen.System.ServiceCollectionExtensions" filename="Framework\Eliassen.System\ServiceCollectionExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="TryAddSystemExtensions" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
               <lines>
@@ -138,7 +514,7 @@
             <line number="160" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="12" name="Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer" filename="Eliassen.System\Text\Xml\Serialization\DefaultXmlSerializer.cs">
+        <class line-rate="0" branch-rate="1" complexity="12" name="Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer" filename="Framework\Eliassen.System\Text\Xml\Serialization\DefaultXmlSerializer.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="get_ContentType" signature="()">
               <lines>
@@ -216,7 +592,7 @@
             <line number="90" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="5" name="Eliassen.System.Text.Templating.FileTemplateSource" filename="Eliassen.System\Text\Templating\FileTemplateSource.cs">
+        <class line-rate="0" branch-rate="0" complexity="5" name="Eliassen.System.Text.Templating.FileTemplateSource" filename="Framework\Eliassen.System\Text\Templating\FileTemplateSource.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="4" name="Get" signature="(System.String)">
               <lines>
@@ -336,7 +712,7 @@
             <line number="75" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Text.Templating.FileType" filename="Eliassen.System\Text\Templating\FileType.cs">
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Text.Templating.FileType" filename="Framework\Eliassen.System\Text\Templating\FileType.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name=".ctor" signature="(Eliassen.System.Text.Templating.FileType)">
               <lines>
@@ -348,7 +724,7 @@
             <line number="6" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="3" name="Eliassen.System.Text.Templating.TemplateContext" filename="Eliassen.System\Text\Templating\TemplateContext.cs">
+        <class line-rate="0" branch-rate="0" complexity="3" name="Eliassen.System.Text.Templating.TemplateContext" filename="Framework\Eliassen.System\Text\Templating\TemplateContext.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="2" name="ToString" signature="()">
               <lines>
@@ -384,7 +760,7 @@
             <line number="66" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="3" name="Eliassen.System.Text.Templating.TemplateEngine" filename="Eliassen.System\Text\Templating\TemplateEngine.cs">
+        <class line-rate="0" branch-rate="1" complexity="3" name="Eliassen.System.Text.Templating.TemplateEngine" filename="Framework\Eliassen.System\Text\Templating\TemplateEngine.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="Get" signature="(System.String)">
               <lines>
@@ -414,7 +790,7 @@
             <line number="126" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="2" name="Eliassen.System.Text.Templating.TemplateEngine/&lt;&gt;c" filename="Eliassen.System\Text\Templating\TemplateEngine.cs">
+        <class line-rate="0" branch-rate="1" complexity="2" name="Eliassen.System.Text.Templating.TemplateEngine/&lt;&gt;c" filename="Framework\Eliassen.System\Text\Templating\TemplateEngine.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="&lt;ApplyAsync&gt;b__4_2" signature="(&lt;&gt;f__AnonymousType19`2&lt;Eliassen.System.Text.Templating.ITemplateContext,Eliassen.System.Text.Templating.ITemplateProvider&gt;)">
               <lines>
@@ -432,7 +808,7 @@
             <line number="42" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Text.Templating.TemplateEngine/&lt;&gt;c__DisplayClass5_0" filename="Eliassen.System\Text\Templating\TemplateEngine.cs">
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Text.Templating.TemplateEngine/&lt;&gt;c__DisplayClass5_0" filename="Framework\Eliassen.System\Text\Templating\TemplateEngine.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="&lt;ApplyAsync&gt;b__0" signature="(Eliassen.System.Text.Templating.ITemplateProvider)">
               <lines>
@@ -444,7 +820,7 @@
             <line number="76" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="8" name="Eliassen.System.Text.Templating.TemplateEngine/&lt;ApplyAsync&gt;d__4" filename="Eliassen.System\Text\Templating\TemplateEngine.cs">
+        <class line-rate="0" branch-rate="0" complexity="8" name="Eliassen.System.Text.Templating.TemplateEngine/&lt;ApplyAsync&gt;d__4" filename="Framework\Eliassen.System\Text\Templating\TemplateEngine.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="8" name="MoveNext" signature="()">
               <lines>
@@ -520,7 +896,7 @@
             <line number="65" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.System.Text.Templating.TemplateEngine/&lt;ApplyAsync&gt;d__5" filename="Eliassen.System\Text\Templating\TemplateEngine.cs">
+        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.System.Text.Templating.TemplateEngine/&lt;ApplyAsync&gt;d__5" filename="Framework\Eliassen.System\Text\Templating\TemplateEngine.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
               <lines>
@@ -544,7 +920,7 @@
             <line number="79" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.System.Text.Templating.TemplateEngine/&lt;ApplyAsync&gt;d__6" filename="Eliassen.System\Text\Templating\TemplateEngine.cs">
+        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.System.Text.Templating.TemplateEngine/&lt;ApplyAsync&gt;d__6" filename="Framework\Eliassen.System\Text\Templating\TemplateEngine.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
               <lines>
@@ -572,7 +948,7 @@
             <line number="93" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.System.Text.Templating.TemplateEngine/&lt;ApplyAsync&gt;d__7" filename="Eliassen.System\Text\Templating\TemplateEngine.cs">
+        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.System.Text.Templating.TemplateEngine/&lt;ApplyAsync&gt;d__7" filename="Framework\Eliassen.System\Text\Templating\TemplateEngine.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
               <lines>
@@ -600,7 +976,7 @@
             <line number="107" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="2" name="Eliassen.System.Text.Templating.XsltTemplateProvider" filename="Eliassen.System\Text\Templating\XsltTemplateProvider.cs">
+        <class line-rate="0" branch-rate="1" complexity="2" name="Eliassen.System.Text.Templating.XsltTemplateProvider" filename="Framework\Eliassen.System\Text\Templating\XsltTemplateProvider.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="CanApply" signature="(Eliassen.System.Text.Templating.ITemplateContext)">
               <lines>
@@ -624,7 +1000,7 @@
             <line number="38" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Text.Templating.XsltTemplateProvider/&lt;ApplyAsync&gt;d__4" filename="Eliassen.System\Text\Templating\XsltTemplateProvider.cs">
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Text.Templating.XsltTemplateProvider/&lt;ApplyAsync&gt;d__4" filename="Framework\Eliassen.System\Text\Templating\XsltTemplateProvider.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="MoveNext" signature="()">
               <lines>
@@ -672,7 +1048,7 @@
             <line number="71" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="16" name="Eliassen.System.Text.Templating.XsltTemplateProvider/&lt;GetNavigatorAsync&gt;d__5" filename="Eliassen.System\Text\Templating\XsltTemplateProvider.cs">
+        <class line-rate="0" branch-rate="0" complexity="16" name="Eliassen.System.Text.Templating.XsltTemplateProvider/&lt;GetNavigatorAsync&gt;d__5" filename="Framework\Eliassen.System\Text\Templating\XsltTemplateProvider.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="16" name="MoveNext" signature="()">
               <lines>
@@ -788,7 +1164,7 @@
             <line number="107" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.4864864864864865" branch-rate="0" complexity="25" name="Eliassen.System.Text.Json.BsonDateTimeOffsetConverter" filename="Eliassen.System\Text\Json\BsonDateTimeOffsetConverter.cs">
+        <class line-rate="0.4864864864864865" branch-rate="0" complexity="25" name="Eliassen.System.Text.Json.BsonDateTimeOffsetConverter" filename="Framework\Eliassen.System\Text\Json\BsonDateTimeOffsetConverter.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="CanConvert" signature="(System.Type)">
               <lines>
@@ -958,7 +1334,7 @@
             <line number="107" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.9285714285714286" branch-rate="1" complexity="3" name="Eliassen.System.Text.Json.BsonIdConverter" filename="Eliassen.System\Text\Json\BsonIdConverter.cs">
+        <class line-rate="0.9285714285714286" branch-rate="1" complexity="3" name="Eliassen.System.Text.Json.BsonIdConverter" filename="Framework\Eliassen.System\Text\Json\BsonIdConverter.cs">
           <methods>
             <method line-rate="0.9" branch-rate="1" complexity="2" name="Read" signature="(System.Text.Json.Utf8JsonReader&amp;,System.Type,System.Text.Json.JsonSerializerOptions)">
               <lines>
@@ -1008,7 +1384,7 @@
             <line number="43" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="16" name="Eliassen.System.Text.Json.BsonTypeInfoResolver" filename="Eliassen.System\Text\Json\BsonTypeInfoResolver.cs">
+        <class line-rate="0" branch-rate="0" complexity="16" name="Eliassen.System.Text.Json.BsonTypeInfoResolver" filename="Framework\Eliassen.System\Text\Json\BsonTypeInfoResolver.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="16" name="GetTypeInfo" signature="(System.Type,System.Text.Json.JsonSerializerOptions)">
               <lines>
@@ -1126,7 +1502,7 @@
             <line number="57" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.8571428571428571" branch-rate="1" complexity="7" name="Eliassen.System.Text.Json.ConfigurationJsonConverter`1" filename="Eliassen.System\Text\Json\ConfigurationJsonConverter.cs">
+        <class line-rate="0.8571428571428571" branch-rate="1" complexity="7" name="Eliassen.System.Text.Json.ConfigurationJsonConverter`1" filename="Framework\Eliassen.System\Text\Json\ConfigurationJsonConverter.cs">
           <methods>
             <method line-rate="0.7777777777777778" branch-rate="1" complexity="1" name="Read" signature="(System.Text.Json.Utf8JsonReader&amp;,System.Type,System.Text.Json.JsonSerializerOptions)">
               <lines>
@@ -1180,7 +1556,7 @@
             <line number="53" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.5588235294117647" branch-rate="0.5" complexity="9" name="Eliassen.System.Text.Json.DictionaryStringObjectJsonConverter" filename="Eliassen.System\Text\Json\DictionaryStringObjectJsonConverter.cs">
+        <class line-rate="0.5588235294117647" branch-rate="0.5" complexity="9" name="Eliassen.System.Text.Json.DictionaryStringObjectJsonConverter" filename="Framework\Eliassen.System\Text\Json\DictionaryStringObjectJsonConverter.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="2" name="CanConvert" signature="(System.Type)">
               <lines>
@@ -1296,7 +1672,7 @@
             <line number="118" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="6" name="Eliassen.System.Text.Json.JsonDocumentExtensions" filename="Eliassen.System\Text\Json\JsonDocumentExtensions.cs">
+        <class line-rate="0" branch-rate="0" complexity="6" name="Eliassen.System.Text.Json.JsonDocumentExtensions" filename="Framework\Eliassen.System\Text\Json\JsonDocumentExtensions.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="6" name="ToXmlDocument" signature="(System.Text.Json.JsonElement,System.String)">
               <lines>
@@ -1350,7 +1726,7 @@
             <line number="35" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="25" name="Eliassen.System.Text.Json.JsonDocumentExtensions/&lt;GetChildren&gt;d__1" filename="Eliassen.System\Text\Json\JsonDocumentExtensions.cs">
+        <class line-rate="0" branch-rate="0" complexity="25" name="Eliassen.System.Text.Json.JsonDocumentExtensions/&lt;GetChildren&gt;d__1" filename="Framework\Eliassen.System\Text\Json\JsonDocumentExtensions.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="25" name="MoveNext" signature="()">
               <lines>
@@ -1484,7 +1860,7 @@
             <line number="112" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="2" name="Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer" filename="Eliassen.System\Text\Json\Serialization\DefaultBsonSerializer.cs">
+        <class line-rate="0" branch-rate="1" complexity="2" name="Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer" filename="Framework\Eliassen.System\Text\Json\Serialization\DefaultBsonSerializer.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="get_ContentType" signature="()">
               <lines>
@@ -1506,7 +1882,7 @@
             <line number="25" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.8275862068965517" branch-rate="0.5" complexity="13" name="Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer" filename="Eliassen.System\Text\Json\Serialization\DefaultJsonSerializer.cs">
+        <class line-rate="0.8275862068965517" branch-rate="0" complexity="12" name="Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer" filename="Framework\Eliassen.System\Text\Json\Serialization\DefaultJsonSerializer.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="get_DefaultOptions" signature="()">
               <lines>
@@ -1580,13 +1956,9 @@
                 </line>
               </lines>
             </method>
-            <method line-rate="1" branch-rate="1" complexity="2" name=".ctor" signature="(System.Text.Json.JsonSerializerOptions)">
+            <method line-rate="1" branch-rate="1" complexity="1" name=".ctor" signature="(System.Text.Json.JsonSerializerOptions)">
               <lines>
-                <line number="56" hits="1" branch="True" condition-coverage="100% (2/2)">
-                  <conditions>
-                    <condition number="3" type="jump" coverage="100%" />
-                  </conditions>
-                </line>
+                <line number="56" hits="1" branch="True" />
               </lines>
             </method>
           </methods>
@@ -1611,11 +1983,7 @@
             <line number="40" hits="1" branch="False" />
             <line number="41" hits="1" branch="False" />
             <line number="51" hits="0" branch="False" />
-            <line number="56" hits="1" branch="True" condition-coverage="100% (2/2)">
-              <conditions>
-                <condition number="3" type="jump" coverage="100%" />
-              </conditions>
-            </line>
+            <line number="56" hits="1" branch="True" />
             <line number="61" hits="1" branch="False" />
             <line number="67" hits="1" branch="True" />
             <line number="73" hits="0" branch="False" />
@@ -1630,7 +1998,7 @@
             </line>
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer/&lt;DeserializeAsync&gt;d__13`1" filename="Eliassen.System\Text\Json\Serialization\DefaultJsonSerializer.cs">
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer/&lt;DeserializeAsync&gt;d__13`1" filename="Framework\Eliassen.System\Text\Json\Serialization\DefaultJsonSerializer.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="MoveNext" signature="()">
               <lines>
@@ -1642,7 +2010,7 @@
             <line number="96" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer/&lt;DeserializeAsync&gt;d__14" filename="Eliassen.System\Text\Json\Serialization\DefaultJsonSerializer.cs">
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer/&lt;DeserializeAsync&gt;d__14" filename="Framework\Eliassen.System\Text\Json\Serialization\DefaultJsonSerializer.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="MoveNext" signature="()">
               <lines>
@@ -1654,7 +2022,7 @@
             <line number="102" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer/&lt;SerializeAsync&gt;d__10" filename="Eliassen.System\Text\Json\Serialization\DefaultJsonSerializer.cs">
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer/&lt;SerializeAsync&gt;d__10" filename="Framework\Eliassen.System\Text\Json\Serialization\DefaultJsonSerializer.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="MoveNext" signature="()">
               <lines>
@@ -1666,7 +2034,7 @@
             <line number="79" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="1" branch-rate="1" complexity="1" name="Eliassen.System.Security.Cryptography.Hash" filename="Eliassen.System\Security\Cryptography\Hash.cs">
+        <class line-rate="1" branch-rate="1" complexity="1" name="Eliassen.System.Security.Cryptography.Hash" filename="Framework\Eliassen.System\Security\Cryptography\Hash.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="GetHash" signature="(System.String)">
               <lines>
@@ -1678,7 +2046,7 @@
             <line number="18" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="8" name="Eliassen.System.Security.Claims.ClaimsPrincipalExtensions" filename="Eliassen.System\Security\Claims\ClaimsPrincipalExtensions.cs">
+        <class line-rate="0" branch-rate="0" complexity="8" name="Eliassen.System.Security.Claims.ClaimsPrincipalExtensions" filename="Framework\Eliassen.System\Security\Claims\ClaimsPrincipalExtensions.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="6" name="GetAllClaims" signature="(System.Security.Claims.ClaimsPrincipal)">
               <lines>
@@ -1720,7 +2088,7 @@
             <line number="39" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.8" branch-rate="1" complexity="8" name="Eliassen.System.ResponseModel.CaptureResultMessage" filename="Eliassen.System\ResponseModel\CaptureResultMessage.cs">
+        <class line-rate="0.8" branch-rate="1" complexity="8" name="Eliassen.System.ResponseModel.CaptureResultMessage" filename="Framework\Eliassen.System\ResponseModel\CaptureResultMessage.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="2" name="Publish" signature="(Eliassen.System.ResponseModel.ResultMessage[])">
               <lines>
@@ -1786,7 +2154,7 @@
             </line>
           </lines>
         </class>
-        <class line-rate="0.8217821782178217" branch-rate="0.9166666666666666" complexity="53" name="Eliassen.System.Reflection.ReflectionExtensions" filename="Eliassen.System\Reflection\ReflectionExtensions.cs">
+        <class line-rate="0.8217821782178217" branch-rate="0.9166666666666666" complexity="53" name="Eliassen.System.Reflection.ReflectionExtensions" filename="Framework\Eliassen.System\Reflection\ReflectionExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="GetKeyValue" signature="(System.Object)">
               <lines>
@@ -2196,7 +2564,7 @@
             <line number="288" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.5263157894736842" branch-rate="0" complexity="5" name="Eliassen.System.Reflection.ResourceExtensions" filename="Eliassen.System\Reflection\ResourceExtensions.cs">
+        <class line-rate="0.5263157894736842" branch-rate="0" complexity="5" name="Eliassen.System.Reflection.ResourceExtensions" filename="Framework\Eliassen.System\Reflection\ResourceExtensions.cs">
           <methods>
             <method line-rate="0.625" branch-rate="1" complexity="1" name="GetResourceStream" signature="(System.Object,System.String)">
               <lines>
@@ -2264,7 +2632,7 @@
             <line number="80" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="1" branch-rate="1" complexity="2" name="Eliassen.System.Reflection.ResourceExtensions/&lt;GetResourceAsStringAsync&gt;d__3" filename="Eliassen.System\Reflection\ResourceExtensions.cs">
+        <class line-rate="1" branch-rate="1" complexity="2" name="Eliassen.System.Reflection.ResourceExtensions/&lt;GetResourceAsStringAsync&gt;d__3" filename="Framework\Eliassen.System\Reflection\ResourceExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="2" name="MoveNext" signature="()">
               <lines>
@@ -2294,7 +2662,7 @@
             <line number="65" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="12" name="Eliassen.System.Linq.AsyncEnumerableExtensions/&lt;AsAsyncEnumerable&gt;d__2`1" filename="Eliassen.System\Linq\AsyncEnumerableExtensions.cs">
+        <class line-rate="0" branch-rate="0" complexity="12" name="Eliassen.System.Linq.AsyncEnumerableExtensions/&lt;AsAsyncEnumerable&gt;d__2`1" filename="Framework\Eliassen.System\Linq\AsyncEnumerableExtensions.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="12" name="MoveNext" signature="()">
               <lines>
@@ -2356,7 +2724,7 @@
             </line>
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="18" name="Eliassen.System.Linq.AsyncEnumerableExtensions/&lt;AsAsyncEnumerable&gt;d__3`1" filename="Eliassen.System\Linq\AsyncEnumerableExtensions.cs">
+        <class line-rate="0" branch-rate="0" complexity="18" name="Eliassen.System.Linq.AsyncEnumerableExtensions/&lt;AsAsyncEnumerable&gt;d__3`1" filename="Framework\Eliassen.System\Linq\AsyncEnumerableExtensions.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="18" name="MoveNext" signature="()">
               <lines>
@@ -2450,7 +2818,7 @@
             </line>
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="4" name="Eliassen.System.Linq.AsyncEnumerableExtensions/&lt;AsEnumerableAsync&gt;d__1`1" filename="Eliassen.System\Linq\AsyncEnumerableExtensions.cs">
+        <class line-rate="0" branch-rate="0" complexity="4" name="Eliassen.System.Linq.AsyncEnumerableExtensions/&lt;AsEnumerableAsync&gt;d__1`1" filename="Framework\Eliassen.System\Linq\AsyncEnumerableExtensions.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="4" name="MoveNext" signature="()">
               <lines>
@@ -2488,7 +2856,7 @@
             <line number="56" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.System.Linq.AsyncEnumerableExtensions/&lt;ToListAsync&gt;d__0`1" filename="Eliassen.System\Linq\AsyncEnumerableExtensions.cs">
+        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.System.Linq.AsyncEnumerableExtensions/&lt;ToListAsync&gt;d__0`1" filename="Framework\Eliassen.System\Linq\AsyncEnumerableExtensions.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
               <lines>
@@ -2516,7 +2884,7 @@
             <line number="35" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="1" branch-rate="1" complexity="2" name="Eliassen.System.Linq.DictionaryExtensions" filename="Eliassen.System\Linq\DictionaryExtensions.cs">
+        <class line-rate="1" branch-rate="1" complexity="2" name="Eliassen.System.Linq.DictionaryExtensions" filename="Framework\Eliassen.System\Linq\DictionaryExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="TryGetValue" signature="(System.Collections.Generic.IDictionary`2&lt;TKey,TValue&gt;,TKey,TValue&amp;,System.Collections.Generic.IEqualityComparer`1&lt;TKey&gt;)">
               <lines>
@@ -2534,7 +2902,7 @@
             <line number="42" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.9333333333333333" branch-rate="1" complexity="2" name="Eliassen.System.Linq.OperatorExtensions" filename="Eliassen.System\Linq\Search\OperatorExtensions.cs">
+        <class line-rate="0.9333333333333333" branch-rate="1" complexity="2" name="Eliassen.System.Linq.OperatorExtensions" filename="Framework\Eliassen.System\Linq\Search\OperatorExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="AsFilter" signature="(Eliassen.System.Linq.Search.Operators,System.Object)">
               <lines>
@@ -2578,7 +2946,7 @@
             <line number="27" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.21212121212121213" branch-rate="0" complexity="8" name="Eliassen.System.Linq.Search.QueryBuilder" filename="Eliassen.System\Linq\Search\QueryBuilder.cs">
+        <class line-rate="0.21212121212121213" branch-rate="0" complexity="8" name="Eliassen.System.Linq.Search.QueryBuilder" filename="Framework\Eliassen.System\Linq\Search\QueryBuilder.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="6" name="Execute" signature="(System.Linq.IQueryable,Eliassen.System.Linq.Search.ISearchQuery,System.Collections.Generic.IEnumerable`1&lt;Eliassen.System.Linq.Expressions.IPostBuildExpressionVisitor&gt;,Microsoft.Extensions.Logging.ILogger`1&lt;Eliassen.System.Linq.Search.QueryBuilder&gt;,Eliassen.System.ResponseModel.ICaptureResultMessage)">
               <lines>
@@ -2686,7 +3054,7 @@
             <line number="118" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.8631578947368421" branch-rate="0.7" complexity="23" name="Eliassen.System.Linq.Search.QueryBuilder`1" filename="Eliassen.System\Linq\Search\QueryBuilder.cs">
+        <class line-rate="0.8631578947368421" branch-rate="0.7" complexity="23" name="Eliassen.System.Linq.Search.QueryBuilder`1" filename="Framework\Eliassen.System\Linq\Search\QueryBuilder.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="2" name="ExecuteBy" signature="(System.Linq.IQueryable`1&lt;TModel&gt;,Eliassen.System.Linq.Search.ISearchQuery)">
               <lines>
@@ -2994,7 +3362,7 @@
             <line number="327" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.7638888888888888" branch-rate="1" complexity="36" name="Eliassen.System.Linq.Search.SortBuilder`1" filename="Eliassen.System\Linq\Search\SortBuilder.cs">
+        <class line-rate="0.7638888888888888" branch-rate="1" complexity="36" name="Eliassen.System.Linq.Search.SortBuilder`1" filename="Framework\Eliassen.System\Linq\Search\SortBuilder.cs">
           <methods>
             <method line-rate="0.7571428571428571" branch-rate="1" complexity="32" name="SortBy" signature="(System.Linq.IQueryable`1&lt;TModel&gt;,Eliassen.System.Linq.Search.ISortQuery,Eliassen.System.Linq.Expressions.IExpressionTreeBuilder`1&lt;TModel&gt;,System.StringComparison)">
               <lines>
@@ -3254,7 +3622,7 @@
             <line number="126" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.8" branch-rate="1" complexity="8" name="Eliassen.System.Linq.Expressions.ExpressionExtensions" filename="Eliassen.System\Linq\Expressions\ExpressionExtensions.cs">
+        <class line-rate="0.8" branch-rate="1" complexity="8" name="Eliassen.System.Linq.Expressions.ExpressionExtensions" filename="Framework\Eliassen.System\Linq\Expressions\ExpressionExtensions.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="OrElse" signature="(System.Collections.Generic.IEnumerable`1&lt;System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;TModel,System.Boolean&gt;&gt;&gt;)">
               <lines>
@@ -3330,7 +3698,7 @@
             <line number="61" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.2777777777777778" branch-rate="0" complexity="12" name="Eliassen.System.Linq.Expressions.ExpressionExtensions/&lt;GetAttributes&gt;d__3" filename="Eliassen.System\Linq\Expressions\ExpressionExtensions.cs">
+        <class line-rate="0.2777777777777778" branch-rate="0" complexity="12" name="Eliassen.System.Linq.Expressions.ExpressionExtensions/&lt;GetAttributes&gt;d__3" filename="Framework\Eliassen.System\Linq\Expressions\ExpressionExtensions.cs">
           <methods>
             <method line-rate="0.2777777777777778" branch-rate="0" complexity="12" name="MoveNext" signature="()">
               <lines>
@@ -3424,7 +3792,7 @@
             <line number="103" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.8375796178343949" branch-rate="0.8941176470588236" complexity="173" name="Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1" filename="Eliassen.System\Linq\Expressions\ExpressionTreeBuilder.cs">
+        <class line-rate="0.8375796178343949" branch-rate="0.8941176470588236" complexity="173" name="Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1" filename="Framework\Eliassen.System\Linq\Expressions\ExpressionTreeBuilder.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="2" name="GetPredicateExpression" signature="(System.String,Eliassen.System.Linq.Search.FilterParameter,System.StringComparison,System.Boolean)">
               <lines>
@@ -4644,7 +5012,7 @@
             <line number="606" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="1" branch-rate="1" complexity="1" name="Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1/&lt;GetPredicates&gt;d__8" filename="Eliassen.System\Linq\Expressions\ExpressionTreeBuilder.cs">
+        <class line-rate="1" branch-rate="1" complexity="1" name="Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1/&lt;GetPredicates&gt;d__8" filename="Framework\Eliassen.System\Linq\Expressions\ExpressionTreeBuilder.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="MoveNext" signature="()">
               <lines>
@@ -4672,7 +5040,7 @@
             <line number="103" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="1" branch-rate="1" complexity="3" name="Eliassen.System.Linq.Expressions.ParameterReplacerExpressionVisitor" filename="Eliassen.System\Linq\Expressions\ParameterReplacerExpressionVisitor.cs">
+        <class line-rate="1" branch-rate="1" complexity="3" name="Eliassen.System.Linq.Expressions.ParameterReplacerExpressionVisitor" filename="Framework\Eliassen.System\Linq\Expressions\ParameterReplacerExpressionVisitor.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="2" name="VisitParameter" signature="(System.Linq.Expressions.ParameterExpression)">
               <lines>
@@ -4700,7 +5068,7 @@
             </line>
           </lines>
         </class>
-        <class line-rate="0.8333333333333334" branch-rate="1" complexity="1" name="Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor" filename="Eliassen.System\Linq\Expressions\SkipInstanceMethodOnNullExpressionVisitor.cs">
+        <class line-rate="0.8333333333333334" branch-rate="1" complexity="1" name="Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor" filename="Framework\Eliassen.System\Linq\Expressions\SkipInstanceMethodOnNullExpressionVisitor.cs">
           <methods>
             <method line-rate="0.8333333333333334" branch-rate="1" complexity="1" name="VisitMethodCall" signature="(System.Linq.Expressions.MethodCallExpression)">
               <lines>
@@ -4722,7 +5090,7 @@
             <line number="23" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.9411764705882353" branch-rate="1" complexity="5" name="Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor" filename="Eliassen.System\Linq\Expressions\StringComparisonReplacementExpressionVisitor.cs">
+        <class line-rate="0.9411764705882353" branch-rate="1" complexity="5" name="Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor" filename="Framework\Eliassen.System\Linq\Expressions\StringComparisonReplacementExpressionVisitor.cs">
           <methods>
             <method line-rate="0.9230769230769231" branch-rate="1" complexity="1" name="VisitBinary" signature="(System.Linq.Expressions.BinaryExpression)">
               <lines>
@@ -4824,7 +5192,7 @@
             <line number="87" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.5" branch-rate="0.5" complexity="4" name="Eliassen.System.IO.StreamJsonDeserializeExtensions" filename="Eliassen.System\IO\StreamJsonDeserializeExtensions.cs">
+        <class line-rate="0.5" branch-rate="0.5" complexity="4" name="Eliassen.System.IO.StreamJsonDeserializeExtensions" filename="Framework\Eliassen.System\IO\StreamJsonDeserializeExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="2" name="AsJson" signature="(System.IO.Stream,System.Text.Json.JsonSerializerOptions)">
               <lines>
@@ -4874,7 +5242,7 @@
             <line number="67" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="1" branch-rate="1" complexity="2" name="Eliassen.System.IO.StreamJsonDeserializeExtensions/&lt;AsJsonAsync&gt;d__0`1" filename="Eliassen.System\IO\StreamJsonDeserializeExtensions.cs">
+        <class line-rate="1" branch-rate="1" complexity="2" name="Eliassen.System.IO.StreamJsonDeserializeExtensions/&lt;AsJsonAsync&gt;d__0`1" filename="Framework\Eliassen.System\IO\StreamJsonDeserializeExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="2" name="MoveNext" signature="()">
               <lines>
@@ -4902,7 +5270,7 @@
             <line number="25" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.System.IO.StreamJsonDeserializeExtensions/&lt;AsJsonAsync&gt;d__2" filename="Eliassen.System\IO\StreamJsonDeserializeExtensions.cs">
+        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.System.IO.StreamJsonDeserializeExtensions/&lt;AsJsonAsync&gt;d__2" filename="Framework\Eliassen.System\IO\StreamJsonDeserializeExtensions.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
               <lines>
@@ -4930,7 +5298,7 @@
             <line number="53" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.4" branch-rate="0" complexity="6" name="Eliassen.System.IO.StreamXmlDeserializeExtensions" filename="Eliassen.System\IO\StreamXmlDeserializeExtensions.cs">
+        <class line-rate="0.4" branch-rate="0" complexity="6" name="Eliassen.System.IO.StreamXmlDeserializeExtensions" filename="Framework\Eliassen.System\IO\StreamXmlDeserializeExtensions.cs">
           <methods>
             <method line-rate="0.8" branch-rate="1" complexity="1" name="AsXmlAsync" signature="(System.IO.Stream,System.Type[])">
               <lines>
@@ -5008,7 +5376,7 @@
             <line number="67" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.7142857142857143" branch-rate="1" complexity="4" name="Eliassen.System.Internal.ConsoleLogger`1" filename="Eliassen.System\Internal\ConsoleLogger.cs">
+        <class line-rate="0.7142857142857143" branch-rate="1" complexity="4" name="Eliassen.System.Internal.ConsoleLogger`1" filename="Framework\Eliassen.System\Internal\ConsoleLogger.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="BeginScope" signature="(TState)">
               <lines>
@@ -5048,7 +5416,7 @@
             <line number="27" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Internal.ConsoleLogger`1/Scope`1" filename="Eliassen.System\Internal\ConsoleLogger.cs">
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.Internal.ConsoleLogger`1/Scope`1" filename="Framework\Eliassen.System\Internal\ConsoleLogger.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="Dispose" signature="()">
               <lines>
@@ -5060,7 +5428,7 @@
             <line number="10" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="2" name="Eliassen.System.Extensions.Configuration.ConfigurationBuilderExtensions" filename="Eliassen.System\Extensions\Configuration\ConfigurationBuilderExtensions.cs">
+        <class line-rate="0" branch-rate="1" complexity="2" name="Eliassen.System.Extensions.Configuration.ConfigurationBuilderExtensions" filename="Framework\Eliassen.System\Extensions\Configuration\ConfigurationBuilderExtensions.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="AddInMemoryCollection" signature="(Microsoft.Extensions.Configuration.IConfigurationBuilder,System.Collections.Generic.IEnumerable`1&lt;System.ValueTuple`2&lt;System.String,System.String&gt;&gt;)">
               <lines>
@@ -5090,7 +5458,7 @@
             <line number="41" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="0" complexity="29" name="Eliassen.System.Configuration.CommandLine" filename="Eliassen.System\Configuration\CommandLine.cs">
+        <class line-rate="0" branch-rate="0" complexity="29" name="Eliassen.System.Configuration.CommandLine" filename="Framework\Eliassen.System\Configuration\CommandLine.cs">
           <methods>
             <method line-rate="0" branch-rate="0" complexity="6" name="AddParameters" signature="(System.Collections.Generic.IDictionary`2&lt;System.String,System.String&gt;)">
               <lines>
@@ -5206,7 +5574,7 @@
             <line number="50" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="1" branch-rate="1" complexity="3" name="Eliassen.System.Accessors.Accessor`1" filename="Eliassen.System\Accessors\Accessor.cs">
+        <class line-rate="1" branch-rate="1" complexity="3" name="Eliassen.System.Accessors.Accessor`1" filename="Framework\Eliassen.System\Accessors\Accessor.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="get_Value" signature="()">
               <lines>
@@ -5234,7 +5602,7 @@
     </package>
     <package line-rate="0.8562091503267973" branch-rate="0.8" complexity="45" name="Eliassen.TestUtilities">
       <classes>
-        <class line-rate="0.84375" branch-rate="0.6666666666666666" complexity="25" name="Eliassen.TestUtilities.TestContextExtensions" filename="Eliassen.TestUtilities\TestContextExtensions.cs">
+        <class line-rate="0.84375" branch-rate="0.6666666666666666" complexity="25" name="Eliassen.TestUtilities.TestContextExtensions" filename="Framework\Eliassen.TestUtilities\TestContextExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="AddResult" signature="(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.Object,System.String,System.Int32,System.String)">
               <lines>
@@ -5552,7 +5920,7 @@
             </line>
           </lines>
         </class>
-        <class line-rate="0.6" branch-rate="1" complexity="5" name="Eliassen.TestUtilities.TestContextExtensions/&lt;&gt;c" filename="Eliassen.TestUtilities\TestContextExtensions.cs">
+        <class line-rate="0.6" branch-rate="1" complexity="5" name="Eliassen.TestUtilities.TestContextExtensions/&lt;&gt;c" filename="Framework\Eliassen.TestUtilities\TestContextExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="&lt;GetTestDataAsync&gt;b__7_0" signature="(System.Reflection.Assembly)">
               <lines>
@@ -5588,7 +5956,7 @@
             <line number="339" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.TestUtilities.TestContextExtensions/&lt;&gt;c__DisplayClass11_0" filename="Eliassen.TestUtilities\TestContextExtensions.cs">
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.TestUtilities.TestContextExtensions/&lt;&gt;c__DisplayClass11_0" filename="Framework\Eliassen.TestUtilities\TestContextExtensions.cs">
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="&lt;ResolveTestType&gt;g__resolveType|0" signature="()">
               <lines>
@@ -5604,7 +5972,7 @@
             <line number="340" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.8571428571428571" branch-rate="1" complexity="3" name="Eliassen.TestUtilities.TestContextExtensions/&lt;&gt;c__DisplayClass7_0" filename="Eliassen.TestUtilities\TestContextExtensions.cs">
+        <class line-rate="0.8571428571428571" branch-rate="1" complexity="3" name="Eliassen.TestUtilities.TestContextExtensions/&lt;&gt;c__DisplayClass7_0" filename="Framework\Eliassen.TestUtilities\TestContextExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="&lt;GetTestDataAsync&gt;b__2" signature="(System.Type)">
               <lines>
@@ -5640,7 +6008,7 @@
             <line number="284" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.8333333333333334" branch-rate="1" complexity="2" name="Eliassen.TestUtilities.TestContextExtensions/&lt;&gt;c__DisplayClass7_0/&lt;&lt;GetTestDataAsync&gt;g__getValueAsync|4&gt;d" filename="Eliassen.TestUtilities\TestContextExtensions.cs">
+        <class line-rate="0.8333333333333334" branch-rate="1" complexity="2" name="Eliassen.TestUtilities.TestContextExtensions/&lt;&gt;c__DisplayClass7_0/&lt;&lt;GetTestDataAsync&gt;g__getValueAsync|4&gt;d" filename="Framework\Eliassen.TestUtilities\TestContextExtensions.cs">
           <methods>
             <method line-rate="0.8333333333333334" branch-rate="1" complexity="2" name="MoveNext" signature="()">
               <lines>
@@ -5670,7 +6038,7 @@
             <line number="274" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="1" branch-rate="1" complexity="8" name="Eliassen.TestUtilities.TestContextExtensions/&lt;GetTestDataAsync&gt;d__7" filename="Eliassen.TestUtilities\TestContextExtensions.cs">
+        <class line-rate="1" branch-rate="1" complexity="8" name="Eliassen.TestUtilities.TestContextExtensions/&lt;GetTestDataAsync&gt;d__7" filename="Framework\Eliassen.TestUtilities\TestContextExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="8" name="MoveNext" signature="()">
               <lines>
@@ -5782,7 +6150,7 @@
             <line number="302" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="1" branch-rate="1" complexity="1" name="Eliassen.TestUtilities.TestContextExtensions/&lt;GetTestDataAsync&gt;d__8`1" filename="Eliassen.TestUtilities\TestContextExtensions.cs">
+        <class line-rate="1" branch-rate="1" complexity="1" name="Eliassen.TestUtilities.TestContextExtensions/&lt;GetTestDataAsync&gt;d__8`1" filename="Framework\Eliassen.TestUtilities\TestContextExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="MoveNext" signature="()">
               <lines>
@@ -6108,378 +6476,18 @@
         </class>
       </classes>
     </package>
-    <package line-rate="0" branch-rate="0" complexity="30" name="Eliassen.Microsoft.B2C">
+    <package line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Communications">
       <classes>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Microsoft.B2C.ServiceCollectionEx" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\ServiceCollectionEx.cs">
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Communications.ServiceCollectionExtensions" filename="Eliassen.Communications\ServiceCollectionExtensions.cs">
           <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name="AddMicrosoftB2CServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <method line-rate="0" branch-rate="1" complexity="1" name="TryAddCommunicationsServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
               <lines>
-                <line number="19" hits="0" branch="False" />
-                <line number="20" hits="0" branch="False" />
-                <line number="21" hits="0" branch="False" />
-                <line number="22" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="19" hits="0" branch="False" />
-            <line number="20" hits="0" branch="False" />
-            <line number="21" hits="0" branch="False" />
-            <line number="22" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="1" complexity="4" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
-          <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name="GetAuthProvider" signature="()">
-              <lines>
-                <line number="31" hits="0" branch="False" />
-                <line number="32" hits="0" branch="False" />
-                <line number="33" hits="0" branch="False" />
-                <line number="34" hits="0" branch="False" />
-                <line number="35" hits="0" branch="False" />
-                <line number="36" hits="0" branch="False" />
-                <line number="38" hits="0" branch="False" />
-                <line number="40" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method line-rate="0" branch-rate="1" complexity="1" name="CreateIdentityUserAsync" signature="(System.String,System.String,System.String)">
-              <lines>
-                <line number="85" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method line-rate="0" branch-rate="1" complexity="1" name="RemoveIdentityUserAsync" signature="(System.String)">
-              <lines>
-                <line number="162" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method line-rate="0" branch-rate="1" complexity="1" name=".ctor" signature="(Microsoft.Extensions.Logging.ILogger`1&lt;Eliassen.Microsoft.B2C.Identity.ManageGraphUser&gt;,Microsoft.Extensions.Configuration.IConfiguration)">
-              <lines>
-                <line number="22" hits="0" branch="False" />
-                <line number="23" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="22" hits="0" branch="False" />
-            <line number="23" hits="0" branch="False" />
-            <line number="31" hits="0" branch="False" />
-            <line number="32" hits="0" branch="False" />
-            <line number="33" hits="0" branch="False" />
-            <line number="34" hits="0" branch="False" />
-            <line number="35" hits="0" branch="False" />
-            <line number="36" hits="0" branch="False" />
-            <line number="38" hits="0" branch="False" />
-            <line number="40" hits="0" branch="False" />
-            <line number="85" hits="0" branch="False" />
-            <line number="162" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser/&lt;&gt;c" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="2" name="&lt;GetGraphUsersByEmail&gt;b__4_0" signature="(Microsoft.Graph.Models.User)">
-              <lines>
-                <line number="67" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="61" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="68" hits="0" branch="False" />
-                <line number="69" hits="0" branch="False" />
-                <line number="70" hits="0" branch="False" />
-                <line number="71" hits="0" branch="False" />
-                <line number="72" hits="0" branch="False" />
-                <line number="73" hits="0" branch="False" />
-                <line number="74" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="67" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="61" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="68" hits="0" branch="False" />
-            <line number="69" hits="0" branch="False" />
-            <line number="70" hits="0" branch="False" />
-            <line number="71" hits="0" branch="False" />
-            <line number="72" hits="0" branch="False" />
-            <line number="73" hits="0" branch="False" />
-            <line number="74" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser/&lt;&gt;c__DisplayClass4_0" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
-          <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name="&lt;GetGraphUsersByEmail&gt;b__1" signature="(Microsoft.Kiota.Abstractions.RequestConfiguration`1&lt;Microsoft.Graph.Users.UsersRequestBuilder/UsersRequestBuilderGetQueryParameters&gt;)">
-              <lines>
-                <line number="56" hits="0" branch="False" />
-                <line number="57" hits="0" branch="False" />
-                <line number="58" hits="0" branch="False" />
-                <line number="59" hits="0" branch="False" />
-                <line number="60" hits="0" branch="False" />
-                <line number="61" hits="0" branch="False" />
-                <line number="62" hits="0" branch="False" />
-                <line number="63" hits="0" branch="False" />
-                <line number="64" hits="0" branch="False" />
-                <line number="65" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="56" hits="0" branch="False" />
-            <line number="57" hits="0" branch="False" />
-            <line number="58" hits="0" branch="False" />
-            <line number="59" hits="0" branch="False" />
-            <line number="60" hits="0" branch="False" />
-            <line number="61" hits="0" branch="False" />
-            <line number="62" hits="0" branch="False" />
-            <line number="63" hits="0" branch="False" />
-            <line number="64" hits="0" branch="False" />
-            <line number="65" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser/&lt;&gt;c__DisplayClass6_0" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
-          <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name="&lt;CreateGraphUserAsync&gt;b__0" signature="(Microsoft.Kiota.Abstractions.RequestConfiguration`1&lt;Microsoft.Graph.Users.UsersRequestBuilder/UsersRequestBuilderGetQueryParameters&gt;)">
-              <lines>
-                <line number="104" hits="0" branch="False" />
-                <line number="105" hits="0" branch="False" />
-                <line number="106" hits="0" branch="False" />
-                <line number="107" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="104" hits="0" branch="False" />
-            <line number="105" hits="0" branch="False" />
-            <line number="106" hits="0" branch="False" />
-            <line number="107" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="12" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser/&lt;CreateGraphUserAsync&gt;d__6" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="12" name="MoveNext" signature="()">
-              <lines>
-                <line number="99" hits="0" branch="False" />
-                <line number="102" hits="0" branch="False" />
-                <line number="103" hits="0" branch="False" />
-                <line number="109" hits="0" branch="True" condition-coverage="0% (0/6)">
-                  <conditions>
-                    <condition number="208" type="jump" coverage="0%" />
-                    <condition number="220" type="jump" coverage="0%" />
-                    <condition number="232" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="111" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="250" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="113" hits="0" branch="False" />
-                <line number="114" hits="0" branch="False" />
-                <line number="117" hits="0" branch="False" />
-                <line number="119" hits="0" branch="False" />
-                <line number="120" hits="0" branch="False" />
-                <line number="121" hits="0" branch="False" />
-                <line number="122" hits="0" branch="False" />
-                <line number="123" hits="0" branch="False" />
-                <line number="124" hits="0" branch="False" />
-                <line number="125" hits="0" branch="False" />
-                <line number="126" hits="0" branch="False" />
-                <line number="127" hits="0" branch="False" />
-                <line number="128" hits="0" branch="False" />
-                <line number="129" hits="0" branch="False" />
-                <line number="130" hits="0" branch="False" />
-                <line number="131" hits="0" branch="False" />
-                <line number="132" hits="0" branch="False" />
-                <line number="133" hits="0" branch="False" />
-                <line number="134" hits="0" branch="False" />
-                <line number="135" hits="0" branch="False" />
-                <line number="136" hits="0" branch="False" />
-                <line number="137" hits="0" branch="False" />
-                <line number="138" hits="0" branch="False" />
-                <line number="139" hits="0" branch="False" />
-                <line number="140" hits="0" branch="False" />
-                <line number="141" hits="0" branch="False" />
-                <line number="143" hits="0" branch="True" condition-coverage="0% (0/4)">
-                  <conditions>
-                    <condition number="684" type="jump" coverage="0%" />
-                    <condition number="693" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="144" hits="0" branch="False" />
-                <line number="146" hits="0" branch="False" />
-                <line number="147" hits="0" branch="False" />
-                <line number="149" hits="0" branch="False" />
-                <line number="151" hits="0" branch="False" />
-                <line number="152" hits="0" branch="False" />
-                <line number="153" hits="0" branch="False" />
-                <line number="155" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="99" hits="0" branch="False" />
-            <line number="102" hits="0" branch="False" />
-            <line number="103" hits="0" branch="False" />
-            <line number="109" hits="0" branch="True" condition-coverage="0% (0/6)">
-              <conditions>
-                <condition number="208" type="jump" coverage="0%" />
-                <condition number="220" type="jump" coverage="0%" />
-                <condition number="232" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="111" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="250" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="113" hits="0" branch="False" />
-            <line number="114" hits="0" branch="False" />
-            <line number="117" hits="0" branch="False" />
-            <line number="119" hits="0" branch="False" />
-            <line number="120" hits="0" branch="False" />
-            <line number="121" hits="0" branch="False" />
-            <line number="122" hits="0" branch="False" />
-            <line number="123" hits="0" branch="False" />
-            <line number="124" hits="0" branch="False" />
-            <line number="125" hits="0" branch="False" />
-            <line number="126" hits="0" branch="False" />
-            <line number="127" hits="0" branch="False" />
-            <line number="128" hits="0" branch="False" />
-            <line number="129" hits="0" branch="False" />
-            <line number="130" hits="0" branch="False" />
-            <line number="131" hits="0" branch="False" />
-            <line number="132" hits="0" branch="False" />
-            <line number="133" hits="0" branch="False" />
-            <line number="134" hits="0" branch="False" />
-            <line number="135" hits="0" branch="False" />
-            <line number="136" hits="0" branch="False" />
-            <line number="137" hits="0" branch="False" />
-            <line number="138" hits="0" branch="False" />
-            <line number="139" hits="0" branch="False" />
-            <line number="140" hits="0" branch="False" />
-            <line number="141" hits="0" branch="False" />
-            <line number="143" hits="0" branch="True" condition-coverage="0% (0/4)">
-              <conditions>
-                <condition number="684" type="jump" coverage="0%" />
-                <condition number="693" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="144" hits="0" branch="False" />
-            <line number="146" hits="0" branch="False" />
-            <line number="147" hits="0" branch="False" />
-            <line number="149" hits="0" branch="False" />
-            <line number="151" hits="0" branch="False" />
-            <line number="152" hits="0" branch="False" />
-            <line number="153" hits="0" branch="False" />
-            <line number="155" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser/&lt;GetGraphUsersByEmail&gt;d__4" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
-          <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name="MoveNext" signature="()">
-              <lines>
-                <line number="51" hits="0" branch="False" />
-                <line number="54" hits="0" branch="False" />
-                <line number="55" hits="0" branch="False" />
-                <line number="75" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="51" hits="0" branch="False" />
-            <line number="54" hits="0" branch="False" />
-            <line number="55" hits="0" branch="False" />
-            <line number="75" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="6" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser/&lt;RemoveGraphUserAsync&gt;d__8" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="6" name="MoveNext" signature="()">
-              <lines>
-                <line number="174" hits="0" branch="False" />
-                <line number="176" hits="0" branch="False" />
-                <line number="177" hits="0" branch="False" />
-                <line number="178" hits="0" branch="False" />
-                <line number="179" hits="0" branch="False" />
-                <line number="180" hits="0" branch="False" />
-                <line number="182" hits="0" branch="True" condition-coverage="0% (0/6)">
-                  <conditions>
-                    <condition number="198" type="jump" coverage="0%" />
-                    <condition number="210" type="jump" coverage="0%" />
-                    <condition number="259" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="184" hits="0" branch="False" />
-                <line number="185" hits="0" branch="False" />
-                <line number="186" hits="0" branch="False" />
-                <line number="190" hits="0" branch="False" />
-                <line number="193" hits="0" branch="False" />
-                <line number="195" hits="0" branch="False" />
-                <line number="197" hits="0" branch="False" />
-                <line number="198" hits="0" branch="False" />
-                <line number="199" hits="0" branch="False" />
-                <line number="201" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="174" hits="0" branch="False" />
-            <line number="176" hits="0" branch="False" />
-            <line number="177" hits="0" branch="False" />
-            <line number="178" hits="0" branch="False" />
-            <line number="179" hits="0" branch="False" />
-            <line number="180" hits="0" branch="False" />
-            <line number="182" hits="0" branch="True" condition-coverage="0% (0/6)">
-              <conditions>
-                <condition number="198" type="jump" coverage="0%" />
-                <condition number="210" type="jump" coverage="0%" />
-                <condition number="259" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="184" hits="0" branch="False" />
-            <line number="185" hits="0" branch="False" />
-            <line number="186" hits="0" branch="False" />
-            <line number="190" hits="0" branch="False" />
-            <line number="193" hits="0" branch="False" />
-            <line number="195" hits="0" branch="False" />
-            <line number="197" hits="0" branch="False" />
-            <line number="198" hits="0" branch="False" />
-            <line number="199" hits="0" branch="False" />
-            <line number="201" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.Microsoft.B2C.Identity.UserManagementProvider/&lt;CreateAccountAsync&gt;d__2" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\UserManagementProvider.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
-              <lines>
-                <line number="20" hits="0" branch="False" />
-                <line number="21" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="169" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="22" hits="0" branch="False" />
-                <line number="23" hits="0" branch="False" />
-                <line number="24" hits="0" branch="False" />
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="20" hits="0" branch="False" />
-            <line number="21" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="169" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="22" hits="0" branch="False" />
-            <line number="23" hits="0" branch="False" />
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
           </lines>
         </class>
       </classes>
@@ -7556,418 +7564,6 @@
         </class>
       </classes>
     </package>
-    <package line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Communications">
-      <classes>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Communications.ServiceCollectionExtensions" filename="Eliassen.Communications\ServiceCollectionExtensions.cs">
-          <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name="TryAddCommunicationsServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-              <lines>
-                <line number="17" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="17" hits="0" branch="False" />
-          </lines>
-        </class>
-      </classes>
-    </package>
-    <package line-rate="0" branch-rate="0" complexity="29" name="Eliassen.Azure.StorageAccount">
-      <classes>
-        <class line-rate="0" branch-rate="1" complexity="3" name="Eliassen.Azure.StorageAccount.ServiceCollectionEx" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\ServiceCollectionEx.cs">
-          <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name="TryAddAzureStorageServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-              <lines>
-                <line number="20" hits="0" branch="False" />
-                <line number="21" hits="0" branch="False" />
-                <line number="22" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method line-rate="0" branch-rate="1" complexity="1" name="TryAddAzureStorageBlobServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-              <lines>
-                <line number="32" hits="0" branch="False" />
-                <line number="33" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method line-rate="0" branch-rate="1" complexity="1" name="TryAddAzureStorageQueueServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-              <lines>
-                <line number="43" hits="0" branch="False" />
-                <line number="44" hits="0" branch="False" />
-                <line number="46" hits="0" branch="False" />
-                <line number="47" hits="0" branch="False" />
-                <line number="49" hits="0" branch="False" />
-                <line number="51" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="20" hits="0" branch="False" />
-            <line number="21" hits="0" branch="False" />
-            <line number="22" hits="0" branch="False" />
-            <line number="32" hits="0" branch="False" />
-            <line number="33" hits="0" branch="False" />
-            <line number="43" hits="0" branch="False" />
-            <line number="44" hits="0" branch="False" />
-            <line number="46" hits="0" branch="False" />
-            <line number="47" hits="0" branch="False" />
-            <line number="49" hits="0" branch="False" />
-            <line number="51" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\MessageQueueing\AzureStorageQueueMessageProvider.cs">
-          <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name="SetHandlerProvider" signature="(Eliassen.MessageQueueing.Services.IMessageHandlerProvider)">
-              <lines>
-                <line number="59" hits="0" branch="False" />
-                <line number="60" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="59" hits="0" branch="False" />
-            <line number="60" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="12" name="Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider/&lt;RunAsync&gt;d__7" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\MessageQueueing\AzureStorageQueueMessageProvider.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="12" name="MoveNext" signature="()">
-              <lines>
-                <line number="72" hits="0" branch="True" condition-coverage="0% (0/4)">
-                  <conditions>
-                    <condition number="50" type="jump" coverage="0%" />
-                    <condition number="62" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="73" hits="0" branch="False" />
-                <line number="75" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="807" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="77" hits="0" branch="False" />
-                <line number="79" hits="0" branch="True" condition-coverage="0% (0/4)">
-                  <conditions>
-                    <condition number="252" type="jump" coverage="0%" />
-                    <condition number="263" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="81" hits="0" branch="False" />
-                <line number="82" hits="0" branch="False" />
-                <line number="83" hits="0" branch="False" />
-                <line number="86" hits="0" branch="False" />
-                <line number="87" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="446" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="88" hits="0" branch="False" />
-                <line number="90" hits="0" branch="False" />
-                <line number="92" hits="0" branch="False" />
-                <line number="93" hits="0" branch="False" />
-                <line number="94" hits="0" branch="False" />
-                <line number="95" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="72" hits="0" branch="True" condition-coverage="0% (0/4)">
-              <conditions>
-                <condition number="50" type="jump" coverage="0%" />
-                <condition number="62" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="73" hits="0" branch="False" />
-            <line number="75" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="807" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="77" hits="0" branch="False" />
-            <line number="79" hits="0" branch="True" condition-coverage="0% (0/4)">
-              <conditions>
-                <condition number="252" type="jump" coverage="0%" />
-                <condition number="263" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="81" hits="0" branch="False" />
-            <line number="82" hits="0" branch="False" />
-            <line number="83" hits="0" branch="False" />
-            <line number="86" hits="0" branch="False" />
-            <line number="87" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="446" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="88" hits="0" branch="False" />
-            <line number="90" hits="0" branch="False" />
-            <line number="92" hits="0" branch="False" />
-            <line number="93" hits="0" branch="False" />
-            <line number="94" hits="0" branch="False" />
-            <line number="95" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider/&lt;SendAsync&gt;d__5" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\MessageQueueing\AzureStorageQueueMessageProvider.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
-              <lines>
-                <line number="35" hits="0" branch="False" />
-                <line number="37" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="93" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="38" hits="0" branch="False" />
-                <line number="39" hits="0" branch="False" />
-                <line number="40" hits="0" branch="False" />
-                <line number="41" hits="0" branch="False" />
-                <line number="42" hits="0" branch="False" />
-                <line number="43" hits="0" branch="False" />
-                <line number="44" hits="0" branch="False" />
-                <line number="46" hits="0" branch="False" />
-                <line number="47" hits="0" branch="False" />
-                <line number="49" hits="0" branch="False" />
-                <line number="50" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="35" hits="0" branch="False" />
-            <line number="37" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="93" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="38" hits="0" branch="False" />
-            <line number="39" hits="0" branch="False" />
-            <line number="40" hits="0" branch="False" />
-            <line number="41" hits="0" branch="False" />
-            <line number="42" hits="0" branch="False" />
-            <line number="43" hits="0" branch="False" />
-            <line number="44" hits="0" branch="False" />
-            <line number="46" hits="0" branch="False" />
-            <line number="47" hits="0" branch="False" />
-            <line number="49" hits="0" branch="False" />
-            <line number="50" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="4" name="Eliassen.Azure.StorageAccount.MessageQueueing.QueueClientFactory" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\MessageQueueing\QueueClientFactory.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="4" name="Create" signature="(Microsoft.Extensions.Configuration.IConfigurationSection)">
-              <lines>
-                <line number="21" hits="0" branch="True" condition-coverage="0% (0/4)">
-                  <conditions>
-                    <condition number="12" type="jump" coverage="0%" />
-                    <condition number="54" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="22" hits="0" branch="False" />
-                <line number="23" hits="0" branch="False" />
-                <line number="24" hits="0" branch="False" />
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-                <line number="27" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="21" hits="0" branch="True" condition-coverage="0% (0/4)">
-              <conditions>
-                <condition number="12" type="jump" coverage="0%" />
-                <condition number="54" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="22" hits="0" branch="False" />
-            <line number="23" hits="0" branch="False" />
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\BlobStorage\BlobContainerProvider.cs">
-          <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name=".ctor" signature="(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger`1&lt;Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider&gt;)">
-              <lines>
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-                <line number="27" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider/&lt;DeleteAsync&gt;d__7" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\BlobStorage\BlobContainerProvider.cs">
-          <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name="MoveNext" signature="()">
-              <lines>
-                <line number="154" hits="0" branch="False" />
-                <line number="158" hits="0" branch="False" />
-                <line number="159" hits="0" branch="False" />
-                <line number="161" hits="0" branch="False" />
-                <line number="164" hits="0" branch="False" />
-                <line number="165" hits="0" branch="False" />
-                <line number="169" hits="0" branch="False" />
-                <line number="171" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="154" hits="0" branch="False" />
-            <line number="158" hits="0" branch="False" />
-            <line number="159" hits="0" branch="False" />
-            <line number="161" hits="0" branch="False" />
-            <line number="164" hits="0" branch="False" />
-            <line number="165" hits="0" branch="False" />
-            <line number="169" hits="0" branch="False" />
-            <line number="171" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider/&lt;DownloadAsync&gt;d__6" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\BlobStorage\BlobContainerProvider.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
-              <lines>
-                <line number="117" hits="0" branch="False" />
-                <line number="120" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="171" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="122" hits="0" branch="False" />
-                <line number="123" hits="0" branch="False" />
-                <line number="126" hits="0" branch="False" />
-                <line number="129" hits="0" branch="False" />
-                <line number="130" hits="0" branch="False" />
-                <line number="133" hits="0" branch="False" />
-                <line number="135" hits="0" branch="False" />
-                <line number="137" hits="0" branch="False" />
-                <line number="140" hits="0" branch="False" />
-                <line number="141" hits="0" branch="False" />
-                <line number="144" hits="0" branch="False" />
-                <line number="145" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="117" hits="0" branch="False" />
-            <line number="120" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="171" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="122" hits="0" branch="False" />
-            <line number="123" hits="0" branch="False" />
-            <line number="126" hits="0" branch="False" />
-            <line number="129" hits="0" branch="False" />
-            <line number="130" hits="0" branch="False" />
-            <line number="133" hits="0" branch="False" />
-            <line number="135" hits="0" branch="False" />
-            <line number="137" hits="0" branch="False" />
-            <line number="140" hits="0" branch="False" />
-            <line number="141" hits="0" branch="False" />
-            <line number="144" hits="0" branch="False" />
-            <line number="145" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider/&lt;ListAsync&gt;d__4" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\BlobStorage\BlobContainerProvider.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
-              <lines>
-                <line number="37" hits="0" branch="False" />
-                <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="306" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="42" hits="0" branch="False" />
-                <line number="43" hits="0" branch="False" />
-                <line number="44" hits="0" branch="False" />
-                <line number="46" hits="0" branch="False" />
-                <line number="47" hits="0" branch="False" />
-                <line number="48" hits="0" branch="False" />
-                <line number="49" hits="0" branch="False" />
-                <line number="50" hits="0" branch="False" />
-                <line number="51" hits="0" branch="False" />
-                <line number="55" hits="0" branch="False" />
-                <line number="56" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="37" hits="0" branch="False" />
-            <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="306" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="42" hits="0" branch="False" />
-            <line number="43" hits="0" branch="False" />
-            <line number="44" hits="0" branch="False" />
-            <line number="46" hits="0" branch="False" />
-            <line number="47" hits="0" branch="False" />
-            <line number="48" hits="0" branch="False" />
-            <line number="49" hits="0" branch="False" />
-            <line number="50" hits="0" branch="False" />
-            <line number="51" hits="0" branch="False" />
-            <line number="55" hits="0" branch="False" />
-            <line number="56" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider/&lt;UploadAsync&gt;d__5" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\BlobStorage\BlobContainerProvider.cs">
-          <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name="MoveNext" signature="()">
-              <lines>
-                <line number="66" hits="0" branch="False" />
-                <line number="72" hits="0" branch="False" />
-                <line number="74" hits="0" branch="False" />
-                <line number="77" hits="0" branch="False" />
-                <line number="78" hits="0" branch="False" />
-                <line number="79" hits="0" branch="False" />
-                <line number="80" hits="0" branch="False" />
-                <line number="82" hits="0" branch="False" />
-                <line number="85" hits="0" branch="False" />
-                <line number="87" hits="0" branch="False" />
-                <line number="88" hits="0" branch="False" />
-                <line number="89" hits="0" branch="False" />
-                <line number="90" hits="0" branch="False" />
-                <line number="93" hits="0" branch="False" />
-                <line number="97" hits="0" branch="False" />
-                <line number="98" hits="0" branch="False" />
-                <line number="99" hits="0" branch="False" />
-                <line number="100" hits="0" branch="False" />
-                <line number="104" hits="0" branch="False" />
-                <line number="105" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="66" hits="0" branch="False" />
-            <line number="72" hits="0" branch="False" />
-            <line number="74" hits="0" branch="False" />
-            <line number="77" hits="0" branch="False" />
-            <line number="78" hits="0" branch="False" />
-            <line number="79" hits="0" branch="False" />
-            <line number="80" hits="0" branch="False" />
-            <line number="82" hits="0" branch="False" />
-            <line number="85" hits="0" branch="False" />
-            <line number="87" hits="0" branch="False" />
-            <line number="88" hits="0" branch="False" />
-            <line number="89" hits="0" branch="False" />
-            <line number="90" hits="0" branch="False" />
-            <line number="93" hits="0" branch="False" />
-            <line number="97" hits="0" branch="False" />
-            <line number="98" hits="0" branch="False" />
-            <line number="99" hits="0" branch="False" />
-            <line number="100" hits="0" branch="False" />
-            <line number="104" hits="0" branch="False" />
-            <line number="105" hits="0" branch="False" />
-          </lines>
-        </class>
-      </classes>
-    </package>
     <package line-rate="0" branch-rate="0" complexity="11" name="Eliassen.MessageQueueing.Tests">
       <classes>
         <class line-rate="0" branch-rate="1" complexity="1" name="AutoGeneratedProgram" filename="Users\MWhited\.nuget\packages\microsoft.net.test.sdk\17.8.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.cs">
@@ -8448,6 +8044,402 @@
             <line number="63" hits="0" branch="False" />
             <line number="65" hits="0" branch="False" />
             <line number="67" hits="0" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package line-rate="0" branch-rate="0" complexity="29" name="Eliassen.Azure.StorageAccount">
+      <classes>
+        <class line-rate="0" branch-rate="1" complexity="3" name="Eliassen.Azure.StorageAccount.ServiceCollectionEx" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\ServiceCollectionEx.cs">
+          <methods>
+            <method line-rate="0" branch-rate="1" complexity="1" name="TryAddAzureStorageServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+              <lines>
+                <line number="20" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
+                <line number="22" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="TryAddAzureStorageBlobServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+              <lines>
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="TryAddAzureStorageQueueServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+              <lines>
+                <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="49" hits="0" branch="False" />
+                <line number="51" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="49" hits="0" branch="False" />
+            <line number="51" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\MessageQueueing\AzureStorageQueueMessageProvider.cs">
+          <methods>
+            <method line-rate="0" branch-rate="1" complexity="1" name="SetHandlerProvider" signature="(Eliassen.MessageQueueing.Services.IMessageHandlerProvider)">
+              <lines>
+                <line number="59" hits="0" branch="False" />
+                <line number="60" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="59" hits="0" branch="False" />
+            <line number="60" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="12" name="Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider/&lt;RunAsync&gt;d__7" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\MessageQueueing\AzureStorageQueueMessageProvider.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="12" name="MoveNext" signature="()">
+              <lines>
+                <line number="72" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="50" type="jump" coverage="0%" />
+                    <condition number="62" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="73" hits="0" branch="False" />
+                <line number="75" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="807" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="77" hits="0" branch="False" />
+                <line number="79" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="252" type="jump" coverage="0%" />
+                    <condition number="263" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="81" hits="0" branch="False" />
+                <line number="82" hits="0" branch="False" />
+                <line number="83" hits="0" branch="False" />
+                <line number="86" hits="0" branch="False" />
+                <line number="87" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="446" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="88" hits="0" branch="False" />
+                <line number="90" hits="0" branch="False" />
+                <line number="92" hits="0" branch="False" />
+                <line number="93" hits="0" branch="False" />
+                <line number="94" hits="0" branch="False" />
+                <line number="95" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="72" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="50" type="jump" coverage="0%" />
+                <condition number="62" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="73" hits="0" branch="False" />
+            <line number="75" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="807" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="77" hits="0" branch="False" />
+            <line number="79" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="252" type="jump" coverage="0%" />
+                <condition number="263" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="81" hits="0" branch="False" />
+            <line number="82" hits="0" branch="False" />
+            <line number="83" hits="0" branch="False" />
+            <line number="86" hits="0" branch="False" />
+            <line number="87" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="446" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="88" hits="0" branch="False" />
+            <line number="90" hits="0" branch="False" />
+            <line number="92" hits="0" branch="False" />
+            <line number="93" hits="0" branch="False" />
+            <line number="94" hits="0" branch="False" />
+            <line number="95" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider/&lt;SendAsync&gt;d__5" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\MessageQueueing\AzureStorageQueueMessageProvider.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
+              <lines>
+                <line number="35" hits="0" branch="False" />
+                <line number="37" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="93" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="40" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="49" hits="0" branch="False" />
+                <line number="50" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="35" hits="0" branch="False" />
+            <line number="37" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="93" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="40" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="49" hits="0" branch="False" />
+            <line number="50" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="4" name="Eliassen.Azure.StorageAccount.MessageQueueing.QueueClientFactory" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\MessageQueueing\QueueClientFactory.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="4" name="Create" signature="(Microsoft.Extensions.Configuration.IConfigurationSection)">
+              <lines>
+                <line number="21" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="12" type="jump" coverage="0%" />
+                    <condition number="54" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="21" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="12" type="jump" coverage="0%" />
+                <condition number="54" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\BlobStorage\BlobContainerProvider.cs">
+          <methods>
+            <method line-rate="0" branch-rate="1" complexity="1" name=".ctor" signature="(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger`1&lt;Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider&gt;)">
+              <lines>
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider/&lt;DeleteAsync&gt;d__7" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\BlobStorage\BlobContainerProvider.cs">
+          <methods>
+            <method line-rate="0" branch-rate="1" complexity="1" name="MoveNext" signature="()">
+              <lines>
+                <line number="154" hits="0" branch="False" />
+                <line number="158" hits="0" branch="False" />
+                <line number="159" hits="0" branch="False" />
+                <line number="161" hits="0" branch="False" />
+                <line number="164" hits="0" branch="False" />
+                <line number="165" hits="0" branch="False" />
+                <line number="169" hits="0" branch="False" />
+                <line number="171" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="154" hits="0" branch="False" />
+            <line number="158" hits="0" branch="False" />
+            <line number="159" hits="0" branch="False" />
+            <line number="161" hits="0" branch="False" />
+            <line number="164" hits="0" branch="False" />
+            <line number="165" hits="0" branch="False" />
+            <line number="169" hits="0" branch="False" />
+            <line number="171" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider/&lt;DownloadAsync&gt;d__6" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\BlobStorage\BlobContainerProvider.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
+              <lines>
+                <line number="117" hits="0" branch="False" />
+                <line number="120" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="171" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="122" hits="0" branch="False" />
+                <line number="123" hits="0" branch="False" />
+                <line number="126" hits="0" branch="False" />
+                <line number="129" hits="0" branch="False" />
+                <line number="130" hits="0" branch="False" />
+                <line number="133" hits="0" branch="False" />
+                <line number="135" hits="0" branch="False" />
+                <line number="137" hits="0" branch="False" />
+                <line number="140" hits="0" branch="False" />
+                <line number="141" hits="0" branch="False" />
+                <line number="144" hits="0" branch="False" />
+                <line number="145" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="117" hits="0" branch="False" />
+            <line number="120" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="171" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="122" hits="0" branch="False" />
+            <line number="123" hits="0" branch="False" />
+            <line number="126" hits="0" branch="False" />
+            <line number="129" hits="0" branch="False" />
+            <line number="130" hits="0" branch="False" />
+            <line number="133" hits="0" branch="False" />
+            <line number="135" hits="0" branch="False" />
+            <line number="137" hits="0" branch="False" />
+            <line number="140" hits="0" branch="False" />
+            <line number="141" hits="0" branch="False" />
+            <line number="144" hits="0" branch="False" />
+            <line number="145" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider/&lt;ListAsync&gt;d__4" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\BlobStorage\BlobContainerProvider.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
+              <lines>
+                <line number="37" hits="0" branch="False" />
+                <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="306" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="48" hits="0" branch="False" />
+                <line number="49" hits="0" branch="False" />
+                <line number="50" hits="0" branch="False" />
+                <line number="51" hits="0" branch="False" />
+                <line number="55" hits="0" branch="False" />
+                <line number="56" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="37" hits="0" branch="False" />
+            <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="306" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="48" hits="0" branch="False" />
+            <line number="49" hits="0" branch="False" />
+            <line number="50" hits="0" branch="False" />
+            <line number="51" hits="0" branch="False" />
+            <line number="55" hits="0" branch="False" />
+            <line number="56" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider/&lt;UploadAsync&gt;d__5" filename="ExternalServices\Azure\Eliassen.Azure.StorageAccount\BlobStorage\BlobContainerProvider.cs">
+          <methods>
+            <method line-rate="0" branch-rate="1" complexity="1" name="MoveNext" signature="()">
+              <lines>
+                <line number="66" hits="0" branch="False" />
+                <line number="72" hits="0" branch="False" />
+                <line number="74" hits="0" branch="False" />
+                <line number="77" hits="0" branch="False" />
+                <line number="78" hits="0" branch="False" />
+                <line number="79" hits="0" branch="False" />
+                <line number="80" hits="0" branch="False" />
+                <line number="82" hits="0" branch="False" />
+                <line number="85" hits="0" branch="False" />
+                <line number="87" hits="0" branch="False" />
+                <line number="88" hits="0" branch="False" />
+                <line number="89" hits="0" branch="False" />
+                <line number="90" hits="0" branch="False" />
+                <line number="93" hits="0" branch="False" />
+                <line number="97" hits="0" branch="False" />
+                <line number="98" hits="0" branch="False" />
+                <line number="99" hits="0" branch="False" />
+                <line number="100" hits="0" branch="False" />
+                <line number="104" hits="0" branch="False" />
+                <line number="105" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="66" hits="0" branch="False" />
+            <line number="72" hits="0" branch="False" />
+            <line number="74" hits="0" branch="False" />
+            <line number="77" hits="0" branch="False" />
+            <line number="78" hits="0" branch="False" />
+            <line number="79" hits="0" branch="False" />
+            <line number="80" hits="0" branch="False" />
+            <line number="82" hits="0" branch="False" />
+            <line number="85" hits="0" branch="False" />
+            <line number="87" hits="0" branch="False" />
+            <line number="88" hits="0" branch="False" />
+            <line number="89" hits="0" branch="False" />
+            <line number="90" hits="0" branch="False" />
+            <line number="93" hits="0" branch="False" />
+            <line number="97" hits="0" branch="False" />
+            <line number="98" hits="0" branch="False" />
+            <line number="99" hits="0" branch="False" />
+            <line number="100" hits="0" branch="False" />
+            <line number="104" hits="0" branch="False" />
+            <line number="105" hits="0" branch="False" />
           </lines>
         </class>
       </classes>
