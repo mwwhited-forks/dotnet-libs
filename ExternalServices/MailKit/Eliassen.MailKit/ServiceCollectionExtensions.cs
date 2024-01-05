@@ -17,19 +17,24 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The service collection to which MailKit services will be added.</param>
     /// <param name="configuration">The configuration.</param>
-    /// <param name="configurationSection">The configuration section name for MailKit options.</param>
+    /// <param name="smtpConfigurationSection">The configuration section name for MailKit SMTP options.</param>
+    /// <param name="imapConfigurationSection">The configuration section name for MailKit IMAP options.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddMailKitExtensions(this IServiceCollection services,
         IConfiguration configuration,
-        string configurationSection = nameof(MailKitSmtpClientOptions)
+        string smtpConfigurationSection = nameof(MailKitSmtpClientOptions),
+        string imapConfigurationSection = nameof(MailKitImapClientOptions)
         )
     {
         services.TryAddTransient<ICommunicationSender<EmailMessageModel>, MailKitProvider>();
 
-        services.TryAddTransient<ISmtpClientFactory, SmtpClientFactory>();
         services.TryAddTransient<IMimeMessageFactory, MimeMessageFactory>();
 
-        services.Configure<MailKitSmtpClientOptions>(options => configuration.Bind(configurationSection, options));
+        services.TryAddTransient<ISmtpClientFactory, SmtpClientFactory>();
+        services.Configure<MailKitSmtpClientOptions>(options => configuration.Bind(smtpConfigurationSection, options));
+
+        services.TryAddTransient<IImapClientFactory, ImapClientFactory>();
+        services.Configure<MailKitImapClientOptions>(options => configuration.Bind(imapConfigurationSection, options));
 
         return services;
     }

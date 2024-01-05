@@ -8,7 +8,7 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0070436
+  * Duration: 00:00:00.0033858
   * Outcome: Passed
 
 
@@ -20,14 +20,14 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0021791
+  * Duration: 00:00:00.0023266
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-C:\Repos\Nucleus\Nucleus.Net.Libs\TestResults\Deploy_MWhited 20240103T095611[1]\In\DESKTOP-3FN5V33\test-file.txt
+c:\Repos\Nucleus\Nucleus.Net.Libs\TestResults\Deploy_MWhited 20240104T184038\In\DESKTOP-3FN5V33\test-file.txt
 
 ## Test Name: AddResultTest_Json
 
@@ -37,14 +37,14 @@ C:\Repos\Nucleus\Nucleus.Net.Libs\TestResults\Deploy_MWhited 20240103T095611[1]\
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0417833
+  * Duration: 00:00:00.0170482
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-JObject-TextContextExtensionsTests_AddResultTest_Json(190)-638398725717935913.json: Attached
+JObject-TextContextExtensionsTests_AddResultTest_Json(190)-638399904388519214.json: Attached
 
 ## Test Name: AddResultTest_Lines
 
@@ -54,14 +54,14 @@ JObject-TextContextExtensionsTests_AddResultTest_Json(190)-638398725717935913.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0025094
+  * Duration: 00:00:00.0041072
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String[]-TextContextExtensionsTests_AddResultTest_Lines(70)-638398725718275790.txt: Attached
+String[]-TextContextExtensionsTests_AddResultTest_Lines(70)-638399904387927568.txt: Attached
 
 ## Test Name: AddResultTest_Object
 
@@ -71,14 +71,14 @@ String[]-TextContextExtensionsTests_AddResultTest_Lines(70)-638398725718275790.t
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0065227
+  * Duration: 00:00:00.3275497
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestData-TextContextExtensionsTests_AddResultTest_Object(30)-638398725718311605.json: Attached
+TestData-TextContextExtensionsTests_AddResultTest_Object(30)-638399904386933618.json: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameAndChangeExtension
 
@@ -88,14 +88,14 @@ TestData-TextContextExtensionsTests_AddResultTest_Object(30)-638398725718311605.
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0030382
+  * Duration: 00:00:00.0036370
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndChangeExtension(130)-638398725718387559.html: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndChangeExtension(130)-638399904388103212.html: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameAndExtension
 
@@ -105,14 +105,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndChan
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0026049
+  * Duration: 00:00:00.0039311
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndExtension(110)-638398725718428662.txt: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndExtension(110)-638399904388048661.txt: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameNoExtension
 
@@ -122,14 +122,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndExte
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0024197
+  * Duration: 00:00:00.0049912
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameNoExtension(90)-638398725718464204.json: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameNoExtension(90)-638399904387980754.json: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameRemoveExtension
 
@@ -139,14 +139,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameNoExten
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0042077
+  * Duration: 00:00:00.0077944
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameRemoveExtension(150)-638398725718553054: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameRemoveExtension(150)-638399904388154036: Attached
 
 ## Test Name: AddResultTest_Stream
 
@@ -156,14 +156,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameRemoveE
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0082200
+  * Duration: 00:00:00.0183709
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-MemoryStream-TextContextExtensionsTests_AddResultTest_Stream(170)-638398725718944735.bin: Attached
+MemoryStream-TextContextExtensionsTests_AddResultTest_Stream(170)-638399904388299768.bin: Attached
 
 ## Test Name: AddResultTest_String
 
@@ -173,14 +173,14 @@ MemoryStream-TextContextExtensionsTests_AddResultTest_Stream(170)-63839872571894
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0097163
+  * Duration: 00:00:00.0051129
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-TextContextExtensionsTests_AddResultTest_String(50)-638398725719035720.txt: Attached
+String-TextContextExtensionsTests_AddResultTest_String(50)-638399904387844298.txt: Attached
 
 ## Test Name: AddResultTest_ValueOutFile
 
@@ -190,15 +190,15 @@ String-TextContextExtensionsTests_AddResultTest_String(50)-638398725719035720.tx
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0027494
+  * Duration: 00:00:00.0053781
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638398725719142362.json: Attached
-C:\Repos\Nucleus\Nucleus.Net.Libs\TestResults\Deploy_MWhited 20240103T095611[1]\In\DESKTOP-3FN5V33\TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638398725719142362.json
+TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638399904389404653.json: Attached
+c:\Repos\Nucleus\Nucleus.Net.Libs\TestResults\Deploy_MWhited 20240104T184038\In\DESKTOP-3FN5V33\TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638399904389404653.json
 
 ## Test Name: AsModelsTest
 
@@ -208,7 +208,7 @@ C:\Repos\Nucleus\Nucleus.Net.Libs\TestResults\Deploy_MWhited 20240103T095611[1]\
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0079411
+  * Duration: 00:00:00.0172201
   * Outcome: Passed
 
 
@@ -240,7 +240,7 @@ EnumModel { Id = 32767, Name = All, Code = ALL, Description = , Order = 0, Value
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0080184
+  * Duration: 00:00:00.0074098
   * Outcome: Passed
 
 
@@ -255,77 +255,6 @@ EnumModel { Id = 8, Name = WithMemberName, Code = name2, Description = , Order =
 EnumModel { Id = 16, Name = WithDescription, Code = WITHDESCRIPTION, Description = test description, Order = 0, Value = WithDescription, IsEndState = False, IsExcludeFromUnique = False, PossibleNames = System.String[], Value = WithDescription }
 EnumModel { Id = 32, Name = test name, Code = test short, Description = test display, Order = 0, Value = WithDisplay, IsEndState = False, IsExcludeFromUnique = False, PossibleNames = System.String[], Value = WithDisplay }
 
-## Test Name: CreateGraphUserAsyncTest_Integration_DoesNotExists
-
-* Name: CreateGraphUserAsyncTest_Integration_DoesNotExists
-* Test Class: Eliassen.Microsoft.B2C.Tests.ManageGraphUserIntegrationTests
-  * Method: CreateGraphUserAsyncTest_Integration_DoesNotExists
-* Categories
-  * DevLocal
-* Details: 
-  * Duration: 00:00:02.7244219
-  * Outcome: Passed
-
-
-### Standard Out
-
-info: Eliassen.Microsoft.B2C.Identity.ManageGraphUser[0]
-      Creating: mwwhited.2787c4e4-0c03-4d7c-9fac-c097218bee9c@gmail.com
-info: Eliassen.Microsoft.B2C.Identity.ManageGraphUser[0]
-      Created: mwwhited.2787c4e4-0c03-4d7c-9fac-c097218bee9c@gmail.com
-
-
-
-TestContext Messages:
-emailAddress: mwwhited.2787c4e4-0c03-4d7c-9fac-c097218bee9c@gmail.com
-result: (fe958154-8136-406c-b30e-19e8139113e2, xMUpYyIS80GDndiPDXhORQ==)
-
-## Test Name: CreateGraphUserAsyncTest_Integration_Exists
-
-* Name: CreateGraphUserAsyncTest_Integration_Exists
-* Test Class: Eliassen.Microsoft.B2C.Tests.ManageGraphUserIntegrationTests
-  * Method: CreateGraphUserAsyncTest_Integration_Exists
-* Categories
-  * DevLocal
-* Details: 
-  * Duration: 00:00:00.5511459
-  * Outcome: Passed
-
-
-### Standard Out
-
-info: Eliassen.Microsoft.B2C.Identity.ManageGraphUser[0]
-      Exists: mwwhited@gmail.com
-
-
-
-TestContext Messages:
-emailAddress: mwwhited@gmail.com
-result: (6ecd1f39-d4ea-435b-9690-06f82274ba04, )
-
-## Test Name: CreateIdentityUserAsyncTest_Integration_Exists
-
-* Name: CreateIdentityUserAsyncTest_Integration_Exists
-* Test Class: Eliassen.Microsoft.B2C.Tests.ManageGraphUserIntegrationTests
-  * Method: CreateIdentityUserAsyncTest_Integration_Exists
-* Categories
-  * DevLocal
-* Details: 
-  * Duration: 00:00:00.5268427
-  * Outcome: Passed
-
-
-### Standard Out
-
-info: Eliassen.Microsoft.B2C.Identity.ManageGraphUser[0]
-      Exists: mwwhited@gmail.com
-
-
-
-TestContext Messages:
-emailAddress: mwwhited@gmail.com
-result: (6ecd1f39-d4ea-435b-9690-06f82274ba04, )
-
 ## Test Name: DefaultPageSizeTest
 
 * Name: DefaultPageSizeTest
@@ -334,7 +263,7 @@ result: (6ecd1f39-d4ea-435b-9690-06f82274ba04, )
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0026986
+  * Duration: 00:00:00.0006275
   * Outcome: Passed
 
 
@@ -346,15 +275,15 @@ result: (6ecd1f39-d4ea-435b-9690-06f82274ba04, )
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0120424
+  * Duration: 00:00:00.0168317
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-input-BsonIdConverterTests_DeserializeTest(40)-638398725767822532.json: Attached
-result-BsonIdConverterTests_DeserializeTest(42)-638398725767902184.json: Attached
+input-BsonIdConverterTests_DeserializeTest(40)-638399904377468699.json: Attached
+result-BsonIdConverterTests_DeserializeTest(42)-638399904377592415.json: Attached
 
 ## Test Name: DeserializeTest ({"_id":{"$oid":"Hello World"}},Hello World)
 
@@ -364,15 +293,15 @@ result-BsonIdConverterTests_DeserializeTest(42)-638398725767902184.json: Attache
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0065364
+  * Duration: 00:00:00.0088968
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-input-BsonIdConverterTests_DeserializeTest(40)-638398725767965048.json: Attached
-result-BsonIdConverterTests_DeserializeTest(42)-638398725767992602.json: Attached
+input-BsonIdConverterTests_DeserializeTest(40)-638399904377358974.json: Attached
+result-BsonIdConverterTests_DeserializeTest(42)-638399904377407259.json: Attached
 
 ## Test Name: DeserializeTest_Nullable ({"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}},2023-07-05T14:16:32.2015217-04:00)
 
@@ -382,15 +311,15 @@ result-BsonIdConverterTests_DeserializeTest(42)-638398725767992602.json: Attache
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0164144
+  * Duration: 00:00:00.0178706
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-input-BsonDateConverterTests_DeserializeTest_Nullable(65)-638398725767189916.json: Attached
-result-BsonDateConverterTests_DeserializeTest_Nullable(67)-638398725767294402.json: Attached
+input-BsonDateConverterTests_DeserializeTest_Nullable(65)-638399904376801541.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Nullable(67)-638399904376894297.json: Attached
 
 ## Test Name: DeserializeTest_Nullable ({"Nullable":null,"Value":{"$date":"2023-07-05T14:17:05.2315812-04:00"}},)
 
@@ -400,15 +329,15 @@ result-BsonDateConverterTests_DeserializeTest_Nullable(67)-638398725767294402.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0052320
+  * Duration: 00:00:00.0066013
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-input-BsonDateConverterTests_DeserializeTest_Nullable(65)-638398725767369328.json: Attached
-result-BsonDateConverterTests_DeserializeTest_Nullable(67)-638398725767388846.json: Attached
+input-BsonDateConverterTests_DeserializeTest_Nullable(65)-638399904376999506.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Nullable(67)-638399904377029386.json: Attached
 
 ## Test Name: DeserializeTest_Value ({"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}},0001-01-01T00:00:00+00:00)
 
@@ -418,15 +347,15 @@ result-BsonDateConverterTests_DeserializeTest_Nullable(67)-638398725767388846.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0048862
+  * Duration: 00:00:00.0066606
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-input-BsonDateConverterTests_DeserializeTest_Value(79)-638398725767439534.json: Attached
-result-BsonDateConverterTests_DeserializeTest_Value(81)-638398725767458654.json: Attached
+input-BsonDateConverterTests_DeserializeTest_Value(79)-638399904377089474.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Value(81)-638399904377117783.json: Attached
 
 ## Test Name: DeserializeTest_Value ({"Nullable":null,"Value":{"$date":"2023-07-05T14:17:05.2315812-04:00"}},2023-07-05T14:17:05.2315812-04:00)
 
@@ -436,15 +365,15 @@ result-BsonDateConverterTests_DeserializeTest_Value(81)-638398725767458654.json:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0058986
+  * Duration: 00:00:00.0067112
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-input-BsonDateConverterTests_DeserializeTest_Value(79)-638398725767501960.json: Attached
-result-BsonDateConverterTests_DeserializeTest_Value(81)-638398725767526398.json: Attached
+input-BsonDateConverterTests_DeserializeTest_Value(79)-638399904377178146.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Value(81)-638399904377205262.json: Attached
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,Date,GreaterThan,3/1/2020,10,3,4,5,6,7,8,9,10,11,12)
 
@@ -454,7 +383,7 @@ result-BsonDateConverterTests_DeserializeTest_Value(81)-638398725767526398.json:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.2867819
+  * Duration: 00:00:00.4484929
   * Outcome: Passed
 
 
@@ -475,9 +404,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725726483514.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725726509076.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725729230917.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904393439809.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904393484569.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904397771105.json: Attached
 resultKeys: 3,4,5,6,7,8,9,10,11,12
 
 ### Standard Error
@@ -493,7 +422,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expres
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.3085053
+  * Duration: 00:00:00.3366134
   * Outcome: Passed
 
 
@@ -514,9 +443,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725729357440.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725729381606.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725732247576.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904397932969.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904397965189.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904401172655.json: Attached
 resultKeys: 2,3,4,5,6,7,8,9,10,11
 
 ### Standard Error
@@ -532,7 +461,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expres
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1278551
+  * Duration: 00:00:00.1813319
   * Outcome: Passed
 
 
@@ -553,9 +482,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725734684616.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725734704429.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725735915750.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904403539502.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904403573266.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904405255551.json: Attached
 resultKeys: -1,0,1
 
 ### Standard Error
@@ -571,7 +500,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expres
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1876250
+  * Duration: 00:00:00.2081698
   * Outcome: Passed
 
 
@@ -592,9 +521,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725735966727.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725736045758.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725737761304.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904405354205.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904405387083.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904407323069.json: Attached
 resultKeys: -1,0,1,2
 
 ### Standard Error
@@ -610,7 +539,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expres
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1976107
+  * Duration: 00:00:00.1811474
   * Outcome: Passed
 
 
@@ -631,9 +560,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725737852104.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725737916743.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725739765464.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904407470653.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904407508959.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904409172988.json: Attached
 resultKeys: -1,0,1
 
 ### Standard Error
@@ -649,7 +578,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expres
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.2256941
+  * Duration: 00:00:00.2246534
   * Outcome: Passed
 
 
@@ -670,9 +599,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725732453658.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725732521294.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725734626854.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904401309022.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904401350716.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904403460773.json: Attached
 resultKeys: -1,0,1
 
 ### Standard Error
@@ -688,7 +617,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expres
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1771842
+  * Duration: 00:00:00.1491938
   * Outcome: Passed
 
 
@@ -709,9 +638,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725743663111.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725743689388.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725745361561.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904412706372.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904412729905.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904414101887.json: Attached
 resultKeys: -1,0,1,2
 
 ### Standard Error
@@ -727,7 +656,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expres
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1537147
+  * Duration: 00:00:00.1770432
   * Outcome: Passed
 
 
@@ -748,9 +677,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725739835740.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725739952827.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725741304787.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904409272919.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904409312431.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904410944252.json: Attached
 resultKeys: 0,1
 
 ### Standard Error
@@ -766,7 +695,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expres
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.2293575
+  * Duration: 00:00:00.1677653
   * Outcome: Passed
 
 
@@ -787,9 +716,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725741373543.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725741399056.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725743591161.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904411035406.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904411069926.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904412631874.json: Attached
 resultKeys: 0,1
 
 ### Standard Error
@@ -805,7 +734,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expres
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1711059
+  * Duration: 00:00:00.1697039
   * Outcome: Passed
 
 
@@ -826,9 +755,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725745437420.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725745461609.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725747086658.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904414204996.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904414237630.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904415823558.json: Attached
 resultKeys: -1,0
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,May,EqualTo,,10,0,3,6,9,12,15,18,21,24,27)
@@ -839,7 +768,7 @@ resultKeys: -1,0
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.2321514
+  * Duration: 00:00:00.1621974
   * Outcome: Passed
 
 
@@ -860,9 +789,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725748533932.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725748559982.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725750780495.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904417164245.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904417192563.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904418712157.json: Attached
 resultKeys: 0,3,6,9,12,15,18,21,24,27
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,May,EqualTo,!,10,-1,1,2,4,5,7,8,10,11,13)
@@ -873,7 +802,7 @@ resultKeys: 0,3,6,9,12,15,18,21,24,27
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1768178
+  * Duration: 00:00:00.2150745
   * Outcome: Passed
 
 
@@ -894,9 +823,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725753010623.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725753027999.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725754697438.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904421131285.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904421173508.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904423196876.json: Attached
 resultKeys: -1,1,2,4,5,7,8,10,11,13
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,May,NotEqualTo,,10,-1,1,2,4,5,7,8,10,11,13)
@@ -907,7 +836,7 @@ resultKeys: -1,1,2,4,5,7,8,10,11,13
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.2151593
+  * Duration: 00:00:00.2327107
   * Outcome: Passed
 
 
@@ -928,9 +857,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725750873233.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725750898630.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725752950880.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904418798691.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904418825744.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904421035468.json: Attached
 resultKeys: -1,1,2,4,5,7,8,10,11,13
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,May,NotEqualTo,!,10,-1,1,2,4,5,7,8,10,11,13)
@@ -941,7 +870,7 @@ resultKeys: -1,1,2,4,5,7,8,10,11,13
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1796246
+  * Duration: 00:00:00.1937546
   * Outcome: Passed
 
 
@@ -962,9 +891,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725754779826.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725754799904.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725756516366.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904423276376.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904423303753.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904425130797.json: Attached
 resultKeys: -1,1,2,4,5,7,8,10,11,13
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,index,EqualTo,!1,10,0,2,3,4,5,6,7,8,9,10)
@@ -975,7 +904,7 @@ resultKeys: -1,1,2,4,5,7,8,10,11,13
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0213732
+  * Duration: 00:00:00.0455273
   * Outcome: Passed
 
 
@@ -994,9 +923,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725720873081.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725720896442.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725721006445.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904385143341.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904385208183.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904385444887.json: Attached
 resultKeys: 0,2,3,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -1014,7 +943,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.2469577
+  * Duration: 00:00:00.2547497
   * Outcome: Passed
 
 
@@ -1033,9 +962,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725719345198.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725719494150.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725720529549.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904383123154.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904383299145.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904384722171.json: Attached
 resultKeys: 0,2,3,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -1053,7 +982,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0297292
+  * Duration: 00:00:00.0418739
   * Outcome: Passed
 
 
@@ -1072,9 +1001,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725721302285.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725721326202.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725721534192.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904386025515.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904386070551.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904386256373.json: Attached
 resultKeys: 0,2,3,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -1092,7 +1021,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0233143
+  * Duration: 00:00:00.0426211
   * Outcome: Passed
 
 
@@ -1111,9 +1040,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725721067482.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725721138080.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725721248546.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904385607682.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904385680688.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904385910583.json: Attached
 resultKeys: 0,2,3,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -1131,7 +1060,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0337113
+  * Duration: 00:00:00.0309261
   * Outcome: Passed
 
 
@@ -1150,87 +1079,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725724711234.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725724810348.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725724912324.json: Attached
-resultKeys: 0
-
-### Standard Error
-
-Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
-	0 parsed to 0 (System.Int32)
-Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
-	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
-
-## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,Index,EqualTo,0,1,0)
-
-* Name: ExecuteByTest_Filter
-* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
-  * Method: ExecuteByTest_Filter
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0181418
-  * Outcome: Passed
-
-
-### Standard Out
-
-Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
-	Build query for CurrentPage: 0
-PageSize: 0
-ExcludePageCount: False
-SearchTerm: (null)
-	F:Index: EqualTo: 0
-
-Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
-	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index == 0)).OrderBy(_ => 0).Skip(0).Take(10)
-
-
-
-TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725724453441.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725724482358.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725724565020.json: Attached
-resultKeys: 0
-
-### Standard Error
-
-Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
-	0 parsed to 0 (System.Int32)
-Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
-	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
-
-## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,Index,EqualTo,0,1,0)
-
-* Name: ExecuteByTest_Filter
-* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
-  * Method: ExecuteByTest_Filter
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0175166
-  * Outcome: Passed
-
-
-### Standard Out
-
-Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
-	Build query for CurrentPage: 0
-PageSize: 0
-ExcludePageCount: False
-SearchTerm: (null)
-	F:Index: EqualTo: 0
-
-Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
-	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index == 0)).OrderBy(_ => 0).Skip(0).Take(10)
-
-
-
-TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725724274997.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725724299879.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725724395662.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904389795727.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904389830430.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904389982955.json: Attached
 resultKeys: 0
 
 ### Standard Error
@@ -1248,7 +1099,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0365592
+  * Duration: 00:00:00.0348466
   * Outcome: Passed
 
 
@@ -1267,9 +1118,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725721610364.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725721649193.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725721888170.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904386466412.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904386513911.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904386693125.json: Attached
 resultKeys: 1
 
 ### Standard Error
@@ -1287,7 +1138,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0203649
+  * Duration: 00:00:00.0431009
   * Outcome: Passed
 
 
@@ -1306,9 +1157,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725723664024.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725723689080.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725723797782.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904388736944.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904388787999.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904389042469.json: Attached
 resultKeys: 996,997,998,999
 
 ### Standard Error
@@ -1326,7 +1177,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0415637
+  * Duration: 00:00:00.0328323
   * Outcome: Passed
 
 
@@ -1345,9 +1196,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725723866586.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725723899149.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725724060638.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904389180500.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904389223608.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904389386123.json: Attached
 resultKeys: 995,996,997,998,999
 
 ### Standard Error
@@ -1365,7 +1216,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0336648
+  * Duration: 00:00:00.0339495
   * Outcome: Passed
 
 
@@ -1384,9 +1235,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725722491808.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725722516036.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725722652040.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904387408839.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904387447889.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904387657720.json: Attached
 resultKeys: 1,2,3
 
 ### Standard Error
@@ -1402,7 +1253,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0320789
+  * Duration: 00:00:00.0340271
   * Outcome: Passed
 
 
@@ -1421,48 +1272,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725722835753.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725722873790.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725723049194.json: Attached
-resultKeys: 0,1,2,3,4
-
-### Standard Error
-
-Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
-	5 parsed to 5 (System.Int32)
-Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
-	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
-
-## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,Index,LessThan,5,5,0,1,2,3,4)
-
-* Name: ExecuteByTest_Filter
-* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
-  * Method: ExecuteByTest_Filter
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0271343
-  * Outcome: Passed
-
-
-### Standard Out
-
-Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
-	Build query for CurrentPage: 0
-PageSize: 0
-ExcludePageCount: False
-SearchTerm: (null)
-	F:Index: LessThan: 5
-
-Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
-	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index < 5)).OrderBy(_ => 0).Skip(0).Take(10)
-
-
-
-TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725723143844.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725723175312.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725723346101.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904388071982.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904388109708.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904388291624.json: Attached
 resultKeys: 0,1,2,3,4
 
 ### Standard Error
@@ -1480,7 +1292,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0236321
+  * Duration: 00:00:00.0308105
   * Outcome: Passed
 
 
@@ -1499,9 +1311,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725723432401.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725723459327.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725723573035.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904388416219.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904388455619.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904388619637.json: Attached
 resultKeys: 0,1,2,3,4,5
 
 ### Standard Error
@@ -1519,7 +1331,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0223753
+  * Duration: 00:00:00.0616532
   * Outcome: Passed
 
 
@@ -1538,9 +1350,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725726270925.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725726300236.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725726403866.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904392833560.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904392864691.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904393260687.json: Attached
 resultKeys: 0,2,3,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -1558,7 +1370,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0217289
+  * Duration: 00:00:00.0211323
   * Outcome: Passed
 
 
@@ -1577,9 +1389,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725747907031.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725747930796.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725748064669.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904416575726.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904416597992.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904416706823.json: Attached
 resultKeys:
 
 ### Standard Error
@@ -1595,7 +1407,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0207567
+  * Duration: 00:00:00.0163917
   * Outcome: Passed
 
 
@@ -1614,9 +1426,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725748328158.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725748350963.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725748461361.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904417001261.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904417028520.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904417110487.json: Attached
 resultKeys: 0,1,2,3,4,5,6,7,8,9
 
 ### Standard Error
@@ -1641,7 +1453,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0194255
+  * Duration: 00:00:00.0282912
   * Outcome: Passed
 
 
@@ -1660,9 +1472,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725724983098.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725725014302.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725725120320.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904390473993.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904390507097.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904390680829.json: Attached
 resultKeys: 103,203,303,403,503,603,703,803,903
 
 ### Standard Error
@@ -1678,7 +1490,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0176864
+  * Duration: 00:00:00.0394905
   * Outcome: Passed
 
 
@@ -1697,9 +1509,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725725168430.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725725193464.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725725290478.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904390759431.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904390805929.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904391047265.json: Attached
 resultKeys: 2,20,21,22,23,24,25,26,27,28
 
 ### Standard Error
@@ -1715,7 +1527,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0177586
+  * Duration: 00:00:00.0351478
   * Outcome: Passed
 
 
@@ -1734,9 +1546,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725725343441.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725725365130.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725725456020.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904391161831.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904391246914.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904391425608.json: Attached
 resultKeys: 1,10,11,12,13,14,15,16,17,18
 
 ### Standard Error
@@ -1752,7 +1564,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0179208
+  * Duration: 00:00:00.0288843
   * Outcome: Passed
 
 
@@ -1771,9 +1583,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725721975264.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725721997065.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725722105085.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904386796802.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904386837128.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904387014578.json: Attached
 resultKeys: 3
 
 ### Standard Error
@@ -1789,7 +1601,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0333677
+  * Duration: 00:00:00.0307635
   * Outcome: Passed
 
 
@@ -1808,9 +1620,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725722162033.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725722187966.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725722333096.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904387092162.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904387132469.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904387317009.json: Attached
 resultKeys: 1,2,3
 
 ### Standard Error
@@ -1826,7 +1638,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0196483
+  * Duration: 00:00:00.0207715
   * Outcome: Passed
 
 
@@ -1845,9 +1657,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725748128472.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725748163123.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725748268135.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904416794729.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904416824422.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904416945151.json: Attached
 resultKeys: 0,1,2,3,4,5,6,7,8,9
 
 ### Standard Error
@@ -1863,7 +1675,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0255408
+  * Duration: 00:00:00.0423773
   * Outcome: Passed
 
 
@@ -1882,9 +1694,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725725520939.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725725545562.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725725701549.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904391583079.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904391632183.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904391845911.json: Attached
 resultKeys: 0,1,2,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -1900,7 +1712,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0212962
+  * Duration: 00:00:00.0368104
   * Outcome: Passed
 
 
@@ -1919,9 +1731,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725725782801.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725725808589.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725725907944.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904391935665.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904392005719.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904392212256.json: Attached
 resultKeys: 0,1,3,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -1937,7 +1749,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0252788
+  * Duration: 00:00:00.0512267
   * Outcome: Passed
 
 
@@ -1956,9 +1768,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725726008119.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725726038931.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725726194921.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904392380023.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904392421403.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904392608994.json: Attached
 resultKeys: 0,2,3,4,5,6,7,8,9,20
 
 ### Standard Error
@@ -1974,7 +1786,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0338196
+  * Duration: 00:00:00.0342213
   * Outcome: Passed
 
 
@@ -1993,9 +1805,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725747153167.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725747173777.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725747410495.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904415897241.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904415929569.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904416151751.json: Attached
 resultKeys: 2,3,4,5,6,7,8,9,12,13
 
 ### Standard Error
@@ -2011,7 +1823,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0423777
+  * Duration: 00:00:00.0341615
   * Outcome: Passed
 
 
@@ -2030,9 +1842,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725747484504.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725747528335.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725747806200.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904416238797.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904416268826.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904416499165.json: Attached
 resultKeys: 2,3,4,5,6,7,8,9,12,13
 
 ### Standard Error
@@ -2048,7 +1860,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0256356
+  * Duration: 00:00:00.0264844
   * Outcome: Passed
 
 
@@ -2067,9 +1879,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725756824562.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725756858875.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725757011653.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904425299825.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904425327409.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904425487833.json: Attached
 resultKeys: 3
 
 ### Standard Error
@@ -2085,7 +1897,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.3642679
+  * Duration: 00:00:00.4302343
   * Outcome: Passed
 
 
@@ -2106,9 +1918,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638398725757085622.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638398725757117179.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638398725760612178.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(147)-638399904425598856.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(149)-638399904425633091.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(151)-638399904429803725.json: Attached
 resultKeys: 3,4,5,6,7,8,9,10,11,12
 
 ## Test Name: ExecuteByTest_Filter_Range_Bounds
@@ -2119,7 +1931,7 @@ resultKeys: 3,4,5,6,7,8,9,10,11,12
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0860389
+  * Duration: 00:00:00.1598395
   * Outcome: Passed
 
 
@@ -2141,8 +1953,8 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(179)-638398725760739367.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(181)-638398725761431108.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(179)-638399904429902164.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(181)-638399904431401531.json: Attached
 
 ### Standard Error
 
@@ -2159,7 +1971,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expres
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0240901
+  * Duration: 00:00:00.0363265
   * Outcome: Passed
 
 
@@ -2177,9 +1989,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(252)-638398725761679117.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(254)-638398725761715371.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(256)-638398725761854818.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(252)-638399904431574320.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(254)-638399904431649089.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(256)-638399904431845910.json: Attached
 resultKeys: 0,1,2,3,4,5,6,7,8,9
 
 ### Standard Error
@@ -2201,7 +2013,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0199292
+  * Duration: 00:00:00.0293165
   * Outcome: Passed
 
 
@@ -2219,9 +2031,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(252)-638398725762452361.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(254)-638398725762476860.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(256)-638398725762597083.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(252)-638399904431963389.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(254)-638399904432025298.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(256)-638399904432177177.json: Attached
 resultKeys: 0
 
 ### Standard Error
@@ -2243,7 +2055,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0209598
+  * Duration: 00:00:00.0320811
   * Outcome: Passed
 
 
@@ -2261,9 +2073,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(252)-638398725762225035.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(254)-638398725762263286.json: Attached
-QueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(256)-638398725762360307.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(252)-638399904432589640.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(254)-638399904432634927.json: Attached
+QueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(256)-638399904432809456.json: Attached
 
 ### Standard Error
 
@@ -2284,7 +2096,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0260414
+  * Duration: 00:00:00.0240047
   * Outcome: Passed
 
 
@@ -2302,9 +2114,9 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(252)-638398725761935241.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(254)-638398725761984942.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(256)-638398725762144145.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(252)-638399904432282777.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(254)-638399904432334747.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(256)-638399904432476955.json: Attached
 resultKeys: 1
 
 ### Standard Error
@@ -2326,7 +2138,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001806
+  * Duration: 00:00:00.0001355
   * Outcome: Passed
 
 
@@ -2338,7 +2150,7 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0104840
+  * Duration: 00:00:00.0172446
   * Outcome: Passed
 
 
@@ -2357,8 +2169,8 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(296)-638398725763341039.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(298)-638398725763407485.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(296)-638399904433695881.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(298)-638399904433822349.json: Attached
 
 ### Standard Error
 
@@ -2377,7 +2189,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0165650
+  * Duration: 00:00:00.0194766
   * Outcome: Passed
 
 
@@ -2396,8 +2208,8 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(296)-638398725763157617.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(298)-638398725763296391.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(296)-638399904433300546.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(298)-638399904433414987.json: Attached
 
 ### Standard Error
 
@@ -2416,7 +2228,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0147433
+  * Duration: 00:00:00.0336782
   * Outcome: Passed
 
 
@@ -2435,8 +2247,8 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(296)-638398725762997574.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(298)-638398725763093314.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(296)-638399904432941605.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(298)-638399904433161492.json: Attached
 
 ### Standard Error
 
@@ -2455,7 +2267,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0221686
+  * Duration: 00:00:00.0154469
   * Outcome: Passed
 
 
@@ -2474,8 +2286,8 @@ Eliassen.System.Internal.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilde
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(296)-638398725762757673.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(298)-638398725762909550.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(296)-638399904433518165.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(298)-638399904433627181.json: Attached
 
 ### Standard Error
 
@@ -2486,1431 +2298,6 @@ ExcludePageCount: False
 SearchTerm: (null)
 	S:NAME: Descending
 
-## Test Name: FindProviderTests
-
-* Name: FindProviderTests
-* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests
-  * Method: FindProviderTests
-* Categories
-  * DevLocal
-* Details: 
-  * Duration: 00:00:11.4592312
-  * Outcome: Passed
-
-
-### Standard Out
-
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Nothing received, waiting...
-----------: Waiting 1/3/2024 9:56:12 AM -05:00 :---------- 
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 5d6de9eb-9aa8-465f-bba2-facccd0e4e31
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { hello = world }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 5d6de9eb-9aa8-465f-bba2-facccd0e4e31
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 5d6de9eb-9aa8-465f-bba2-facccd0e4e31
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 195c5c87-b0fb-4f94-af52-072088de10a4
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { hello = world }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 195c5c87-b0fb-4f94-af52-072088de10a4
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 195c5c87-b0fb-4f94-af52-072088de10a4
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Nothing Received waiting
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Nothing received, waiting...
-----------: Send 1/3/2024 9:56:13 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 84f99c95-2331-475a-9236-fbc8abc3fa96] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 84f99c95-2331-475a-9236-fbc8abc3fa96] => (4d677927-4e8f-43fe-9115-e1246d8e2c49)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> f3728b27-3415-4235-ab8b-9d1d51c4b70f] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> f3728b27-3415-4235-ab8b-9d1d51c4b70f] => (f3728b27-3415-4235-ab8b-9d1d51c4b70f)
-----------: Sent 1/3/2024 9:56:13 AM -05:00 :---------- [4d677927-4e8f-43fe-9115-e1246d8e2c49]
-----------: Waiting 1/3/2024 9:56:13 AM -05:00 :---------- 
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 4d677927-4e8f-43fe-9115-e1246d8e2c49
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 4d677927-4e8f-43fe-9115-e1246d8e2c49
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 4d677927-4e8f-43fe-9115-e1246d8e2c49
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Nothing Received waiting
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: f3728b27-3415-4235-ab8b-9d1d51c4b70f
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: f3728b27-3415-4235-ab8b-9d1d51c4b70f
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: f3728b27-3415-4235-ab8b-9d1d51c4b70f
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Nothing received, waiting...
-----------: Send 1/3/2024 9:56:14 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 61da5533-6eca-4ccf-bf0d-1ad763caf1db] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 61da5533-6eca-4ccf-bf0d-1ad763caf1db] => (3ad810bf-dbcc-4298-9018-e107e51b3793)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> e8c28d65-4582-4daf-bd48-18f7b0b9cd46] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> e8c28d65-4582-4daf-bd48-18f7b0b9cd46] => (e8c28d65-4582-4daf-bd48-18f7b0b9cd46)
-----------: Sent 1/3/2024 9:56:14 AM -05:00 :---------- [3ad810bf-dbcc-4298-9018-e107e51b3793]
-----------: Send 1/3/2024 9:56:14 AM -05:00 :---------- [{ Hello = There }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 7627a36e-62cd-4b79-9ad5-f8bc833f0b2b] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 7627a36e-62cd-4b79-9ad5-f8bc833f0b2b] => (c695d286-e1a6-498d-bb65-f3bd5ac239ed)
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> 594a2297-697c-4df1-87c0-cc3dbdfd6b70] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 594a2297-697c-4df1-87c0-cc3dbdfd6b70] => (594a2297-697c-4df1-87c0-cc3dbdfd6b70)
-----------: Sent 1/3/2024 9:56:14 AM -05:00 :---------- [c695d286-e1a6-498d-bb65-f3bd5ac239ed]
-----------: Waiting 1/3/2024 9:56:14 AM -05:00 :---------- 
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 3ad810bf-dbcc-4298-9018-e107e51b3793
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 3ad810bf-dbcc-4298-9018-e107e51b3793
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 3ad810bf-dbcc-4298-9018-e107e51b3793
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: c695d286-e1a6-498d-bb65-f3bd5ac239ed
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: c695d286-e1a6-498d-bb65-f3bd5ac239ed
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: c695d286-e1a6-498d-bb65-f3bd5ac239ed
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Nothing Received waiting
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: e8c28d65-4582-4daf-bd48-18f7b0b9cd46
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: e8c28d65-4582-4daf-bd48-18f7b0b9cd46
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: e8c28d65-4582-4daf-bd48-18f7b0b9cd46
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 594a2297-697c-4df1-87c0-cc3dbdfd6b70
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 594a2297-697c-4df1-87c0-cc3dbdfd6b70
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 594a2297-697c-4df1-87c0-cc3dbdfd6b70
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Nothing received, waiting...
-----------: Send 1/3/2024 9:56:15 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 6af6e5e5-a9bd-4b5c-96d5-915cb56907c9] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 6af6e5e5-a9bd-4b5c-96d5-915cb56907c9] => (3457ca26-a089-4a82-9732-253bbd88797e)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 3e50689d-a162-46f1-aa0c-995d243e3825] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 3e50689d-a162-46f1-aa0c-995d243e3825] => (3e50689d-a162-46f1-aa0c-995d243e3825)
-----------: Sent 1/3/2024 9:56:15 AM -05:00 :---------- [3457ca26-a089-4a82-9732-253bbd88797e]
-----------: Send 1/3/2024 9:56:15 AM -05:00 :---------- [{ Hello = There }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 8ee279fb-a280-49a7-8576-cc4371c2b981] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 8ee279fb-a280-49a7-8576-cc4371c2b981] => (b8b37613-209b-4d2a-849f-cf3e23e71862)
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> 8f99276e-c717-440f-8d6b-b12582be3155] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 8f99276e-c717-440f-8d6b-b12582be3155] => (8f99276e-c717-440f-8d6b-b12582be3155)
-----------: Sent 1/3/2024 9:56:15 AM -05:00 :---------- [b8b37613-209b-4d2a-849f-cf3e23e71862]
-----------: Send 1/3/2024 9:56:15 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> b83cdac7-0b04-44f4-b81e-4f750e1171ad] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> b83cdac7-0b04-44f4-b81e-4f750e1171ad] => (f1f2bb2f-d7cf-4fb5-b7da-3bf04e325e37)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 891f41e5-b696-47a8-83ac-3c9ea9199029] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 891f41e5-b696-47a8-83ac-3c9ea9199029] => (891f41e5-b696-47a8-83ac-3c9ea9199029)
-----------: Sent 1/3/2024 9:56:15 AM -05:00 :---------- [f1f2bb2f-d7cf-4fb5-b7da-3bf04e325e37]
-----------: Waiting 1/3/2024 9:56:15 AM -05:00 :---------- 
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 3457ca26-a089-4a82-9732-253bbd88797e
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 3457ca26-a089-4a82-9732-253bbd88797e
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 3457ca26-a089-4a82-9732-253bbd88797e
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: b8b37613-209b-4d2a-849f-cf3e23e71862
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: b8b37613-209b-4d2a-849f-cf3e23e71862
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: b8b37613-209b-4d2a-849f-cf3e23e71862
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: f1f2bb2f-d7cf-4fb5-b7da-3bf04e325e37
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: f1f2bb2f-d7cf-4fb5-b7da-3bf04e325e37
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: f1f2bb2f-d7cf-4fb5-b7da-3bf04e325e37
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Nothing Received waiting
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 3e50689d-a162-46f1-aa0c-995d243e3825
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 3e50689d-a162-46f1-aa0c-995d243e3825
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 3e50689d-a162-46f1-aa0c-995d243e3825
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 8f99276e-c717-440f-8d6b-b12582be3155
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 8f99276e-c717-440f-8d6b-b12582be3155
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 8f99276e-c717-440f-8d6b-b12582be3155
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 891f41e5-b696-47a8-83ac-3c9ea9199029
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 891f41e5-b696-47a8-83ac-3c9ea9199029
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 891f41e5-b696-47a8-83ac-3c9ea9199029
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Nothing received, waiting...
-----------: Send 1/3/2024 9:56:16 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 5f1ae15f-cc9b-4a65-aa45-101b180e8414] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 5f1ae15f-cc9b-4a65-aa45-101b180e8414] => (3f3a9ca1-bc1a-4027-844b-579e84e5184c)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 3e01d80b-f5d8-43ea-9551-a9300250b8e0] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 3e01d80b-f5d8-43ea-9551-a9300250b8e0] => (3e01d80b-f5d8-43ea-9551-a9300250b8e0)
-----------: Sent 1/3/2024 9:56:16 AM -05:00 :---------- [3f3a9ca1-bc1a-4027-844b-579e84e5184c]
-----------: Send 1/3/2024 9:56:16 AM -05:00 :---------- [{ Hello = There }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 9d010152-d482-41ad-80fd-25cbd418253c] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 9d010152-d482-41ad-80fd-25cbd418253c] => (fc656182-06b3-4ee9-ab8e-8a36760b6ee7)
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> 29d7cab6-62e5-4ff4-80ea-234e3461fdb3] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 29d7cab6-62e5-4ff4-80ea-234e3461fdb3] => (29d7cab6-62e5-4ff4-80ea-234e3461fdb3)
-----------: Sent 1/3/2024 9:56:16 AM -05:00 :---------- [fc656182-06b3-4ee9-ab8e-8a36760b6ee7]
-----------: Send 1/3/2024 9:56:16 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> f375726f-4e49-4eb0-8616-95dd4383f98c] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> f375726f-4e49-4eb0-8616-95dd4383f98c] => (c120c680-705c-4398-a180-77ebe8db398d)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 2ace09c1-834f-45bb-9808-ede34fbc6fcb] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 2ace09c1-834f-45bb-9808-ede34fbc6fcb] => (2ace09c1-834f-45bb-9808-ede34fbc6fcb)
-----------: Sent 1/3/2024 9:56:16 AM -05:00 :---------- [c120c680-705c-4398-a180-77ebe8db398d]
-----------: Send 1/3/2024 9:56:16 AM -05:00 :---------- [{ Hello = There }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> c24052c8-07f5-4232-b9b1-8ebbfbabb2ea] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> c24052c8-07f5-4232-b9b1-8ebbfbabb2ea] => (2c766722-335c-4506-8e76-7ae4ecb06d4b)
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> edbc923a-2e6b-4fa9-9e82-b4c37c45ea8c] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> edbc923a-2e6b-4fa9-9e82-b4c37c45ea8c] => (edbc923a-2e6b-4fa9-9e82-b4c37c45ea8c)
-----------: Sent 1/3/2024 9:56:16 AM -05:00 :---------- [2c766722-335c-4506-8e76-7ae4ecb06d4b]
-----------: Waiting 1/3/2024 9:56:16 AM -05:00 :---------- 
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 3f3a9ca1-bc1a-4027-844b-579e84e5184c
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 3f3a9ca1-bc1a-4027-844b-579e84e5184c
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 3f3a9ca1-bc1a-4027-844b-579e84e5184c
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: fc656182-06b3-4ee9-ab8e-8a36760b6ee7
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: fc656182-06b3-4ee9-ab8e-8a36760b6ee7
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: fc656182-06b3-4ee9-ab8e-8a36760b6ee7
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: c120c680-705c-4398-a180-77ebe8db398d
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: c120c680-705c-4398-a180-77ebe8db398d
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: c120c680-705c-4398-a180-77ebe8db398d
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 2c766722-335c-4506-8e76-7ae4ecb06d4b
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 2c766722-335c-4506-8e76-7ae4ecb06d4b
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 2c766722-335c-4506-8e76-7ae4ecb06d4b
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Nothing Received waiting
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 3e01d80b-f5d8-43ea-9551-a9300250b8e0
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 3e01d80b-f5d8-43ea-9551-a9300250b8e0
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 3e01d80b-f5d8-43ea-9551-a9300250b8e0
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 29d7cab6-62e5-4ff4-80ea-234e3461fdb3
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 29d7cab6-62e5-4ff4-80ea-234e3461fdb3
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 29d7cab6-62e5-4ff4-80ea-234e3461fdb3
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 2ace09c1-834f-45bb-9808-ede34fbc6fcb
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 2ace09c1-834f-45bb-9808-ede34fbc6fcb
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 2ace09c1-834f-45bb-9808-ede34fbc6fcb
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: edbc923a-2e6b-4fa9-9e82-b4c37c45ea8c
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: edbc923a-2e6b-4fa9-9e82-b4c37c45ea8c
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: edbc923a-2e6b-4fa9-9e82-b4c37c45ea8c
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Nothing received, waiting...
-----------: Send 1/3/2024 9:56:17 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 4872f77b-a63a-4533-84ce-38fa984011ea] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 4872f77b-a63a-4533-84ce-38fa984011ea] => (3bab1d7b-e5fd-4fe2-964e-3b368c2b9fc5)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 54c50365-9e63-46bb-9ce2-735a1dffb335] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 54c50365-9e63-46bb-9ce2-735a1dffb335] => (54c50365-9e63-46bb-9ce2-735a1dffb335)
-----------: Sent 1/3/2024 9:56:17 AM -05:00 :---------- [3bab1d7b-e5fd-4fe2-964e-3b368c2b9fc5]
-----------: Send 1/3/2024 9:56:17 AM -05:00 :---------- [{ Hello = There }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 7b6c8fa0-b549-468d-a021-202e8b185022] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 7b6c8fa0-b549-468d-a021-202e8b185022] => (dfbbd980-e40b-4fce-82d2-c17f8c599b10)
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> 65a48bdd-90c5-4891-8f89-b16c27cca376] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 65a48bdd-90c5-4891-8f89-b16c27cca376] => (65a48bdd-90c5-4891-8f89-b16c27cca376)
-----------: Sent 1/3/2024 9:56:17 AM -05:00 :---------- [dfbbd980-e40b-4fce-82d2-c17f8c599b10]
-----------: Send 1/3/2024 9:56:17 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 245a66ad-0ecd-42f1-9480-f4e47c7f6b69] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 245a66ad-0ecd-42f1-9480-f4e47c7f6b69] => (f78ea185-b7fc-4cf4-9ac6-cbf00fe279bc)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 65cffed0-e1f6-4844-a386-0d3ccddf6e60] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 65cffed0-e1f6-4844-a386-0d3ccddf6e60] => (65cffed0-e1f6-4844-a386-0d3ccddf6e60)
-----------: Sent 1/3/2024 9:56:17 AM -05:00 :---------- [f78ea185-b7fc-4cf4-9ac6-cbf00fe279bc]
-----------: Send 1/3/2024 9:56:17 AM -05:00 :---------- [{ Hello = There }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> de633cd5-8575-4504-bfad-d1c08b447d20] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> de633cd5-8575-4504-bfad-d1c08b447d20] => (a05762a6-0adc-440c-bc96-a61730ac5d23)
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> 3b00cdaa-3584-444c-ad56-1665ab09464d] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 3b00cdaa-3584-444c-ad56-1665ab09464d] => (3b00cdaa-3584-444c-ad56-1665ab09464d)
-----------: Sent 1/3/2024 9:56:17 AM -05:00 :---------- [a05762a6-0adc-440c-bc96-a61730ac5d23]
-----------: Send 1/3/2024 9:56:17 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 42acb7a5-1f89-42d8-9cfc-0aca664269c1] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 42acb7a5-1f89-42d8-9cfc-0aca664269c1] => (60f22c4f-1ff4-4787-89d2-06ad64a01a81)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 88f609da-eb19-4334-9294-f2c2600d658b] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 88f609da-eb19-4334-9294-f2c2600d658b] => (88f609da-eb19-4334-9294-f2c2600d658b)
-----------: Sent 1/3/2024 9:56:17 AM -05:00 :---------- [60f22c4f-1ff4-4787-89d2-06ad64a01a81]
-----------: Waiting 1/3/2024 9:56:17 AM -05:00 :---------- 
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 3bab1d7b-e5fd-4fe2-964e-3b368c2b9fc5
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 3bab1d7b-e5fd-4fe2-964e-3b368c2b9fc5
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 3bab1d7b-e5fd-4fe2-964e-3b368c2b9fc5
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: dfbbd980-e40b-4fce-82d2-c17f8c599b10
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: dfbbd980-e40b-4fce-82d2-c17f8c599b10
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: dfbbd980-e40b-4fce-82d2-c17f8c599b10
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: f78ea185-b7fc-4cf4-9ac6-cbf00fe279bc
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: f78ea185-b7fc-4cf4-9ac6-cbf00fe279bc
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: f78ea185-b7fc-4cf4-9ac6-cbf00fe279bc
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: a05762a6-0adc-440c-bc96-a61730ac5d23
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: a05762a6-0adc-440c-bc96-a61730ac5d23
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: a05762a6-0adc-440c-bc96-a61730ac5d23
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 60f22c4f-1ff4-4787-89d2-06ad64a01a81
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 60f22c4f-1ff4-4787-89d2-06ad64a01a81
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 60f22c4f-1ff4-4787-89d2-06ad64a01a81
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Nothing Received waiting
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 54c50365-9e63-46bb-9ce2-735a1dffb335
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 54c50365-9e63-46bb-9ce2-735a1dffb335
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 54c50365-9e63-46bb-9ce2-735a1dffb335
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 65a48bdd-90c5-4891-8f89-b16c27cca376
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 65a48bdd-90c5-4891-8f89-b16c27cca376
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 65a48bdd-90c5-4891-8f89-b16c27cca376
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 65cffed0-e1f6-4844-a386-0d3ccddf6e60
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 65cffed0-e1f6-4844-a386-0d3ccddf6e60
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 65cffed0-e1f6-4844-a386-0d3ccddf6e60
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 3b00cdaa-3584-444c-ad56-1665ab09464d
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 3b00cdaa-3584-444c-ad56-1665ab09464d
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 3b00cdaa-3584-444c-ad56-1665ab09464d
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 88f609da-eb19-4334-9294-f2c2600d658b
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 88f609da-eb19-4334-9294-f2c2600d658b
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 88f609da-eb19-4334-9294-f2c2600d658b
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Nothing received, waiting...
-----------: Send 1/3/2024 9:56:18 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 359f118e-f44f-4840-ac66-7b31da3cb20e] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 359f118e-f44f-4840-ac66-7b31da3cb20e] => (183be56d-0037-4a83-b088-8408909d0608)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> eacb78df-2eae-4f47-924a-e69bd743362f] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> eacb78df-2eae-4f47-924a-e69bd743362f] => (eacb78df-2eae-4f47-924a-e69bd743362f)
-----------: Sent 1/3/2024 9:56:18 AM -05:00 :---------- [183be56d-0037-4a83-b088-8408909d0608]
-----------: Send 1/3/2024 9:56:18 AM -05:00 :---------- [{ Hello = There }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 17cb6cce-9386-41a1-a6ad-15203534904c] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 17cb6cce-9386-41a1-a6ad-15203534904c] => (898d024b-d4c5-4503-bdc2-284e54a28a2e)
-----------: Sent 1/3/2024 9:56:18 AM -05:00 :---------- [898d024b-d4c5-4503-bdc2-284e54a28a2e]
-----------: Send 1/3/2024 9:56:18 AM -05:00 :---------- [TestQueueMessage { }]
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> 375cf78f-ec6a-47c6-a336-11ddb8454454] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 375cf78f-ec6a-47c6-a336-11ddb8454454] => (375cf78f-ec6a-47c6-a336-11ddb8454454)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> c0974f71-a7f1-4840-91b3-bf42233beea1] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> c0974f71-a7f1-4840-91b3-bf42233beea1] => (ba0654f3-6c61-4bc1-b7a2-c6cc9b946c9a)
-----------: Sent 1/3/2024 9:56:18 AM -05:00 :---------- [ba0654f3-6c61-4bc1-b7a2-c6cc9b946c9a]
-----------: Send 1/3/2024 9:56:18 AM -05:00 :---------- [{ Hello = There }]
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> d8af19e1-dcf5-4d3e-b617-f0b6ff920a3f] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> d8af19e1-dcf5-4d3e-b617-f0b6ff920a3f] => (d8af19e1-dcf5-4d3e-b617-f0b6ff920a3f)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> a7a39d36-8d24-4136-9102-5f6e07747345] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> a7a39d36-8d24-4136-9102-5f6e07747345] => (d9582c19-803c-4515-8c80-c6ff1134f0be)
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> 331a17da-d09a-4d0e-9f93-c623be9b6973] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 331a17da-d09a-4d0e-9f93-c623be9b6973] => (331a17da-d09a-4d0e-9f93-c623be9b6973)
-----------: Sent 1/3/2024 9:56:18 AM -05:00 :---------- [d9582c19-803c-4515-8c80-c6ff1134f0be]
-----------: Send 1/3/2024 9:56:18 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 1321c791-9b80-499f-94b3-6bbc82877648] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 1321c791-9b80-499f-94b3-6bbc82877648] => (a846a0f5-9a47-455e-b06c-30f92072bfb9)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 5ad165d0-3759-4285-a289-990fd90c2236] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 5ad165d0-3759-4285-a289-990fd90c2236] => (5ad165d0-3759-4285-a289-990fd90c2236)
-----------: Sent 1/3/2024 9:56:18 AM -05:00 :---------- [a846a0f5-9a47-455e-b06c-30f92072bfb9]
-----------: Send 1/3/2024 9:56:18 AM -05:00 :---------- [{ Hello = There }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 5119205b-919a-425f-afbf-a42eb2fce576] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 5119205b-919a-425f-afbf-a42eb2fce576] => (a1c751b0-08a1-445e-8eb3-7158f35315f8)
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> b9e5d02d-2013-4904-8d37-df2784a466dd] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> b9e5d02d-2013-4904-8d37-df2784a466dd] => (b9e5d02d-2013-4904-8d37-df2784a466dd)
-----------: Sent 1/3/2024 9:56:18 AM -05:00 :---------- [a1c751b0-08a1-445e-8eb3-7158f35315f8]
-----------: Waiting 1/3/2024 9:56:18 AM -05:00 :---------- 
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 183be56d-0037-4a83-b088-8408909d0608
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 183be56d-0037-4a83-b088-8408909d0608
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 183be56d-0037-4a83-b088-8408909d0608
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 898d024b-d4c5-4503-bdc2-284e54a28a2e
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 898d024b-d4c5-4503-bdc2-284e54a28a2e
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 898d024b-d4c5-4503-bdc2-284e54a28a2e
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: ba0654f3-6c61-4bc1-b7a2-c6cc9b946c9a
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: ba0654f3-6c61-4bc1-b7a2-c6cc9b946c9a
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: ba0654f3-6c61-4bc1-b7a2-c6cc9b946c9a
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: d9582c19-803c-4515-8c80-c6ff1134f0be
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: d9582c19-803c-4515-8c80-c6ff1134f0be
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: d9582c19-803c-4515-8c80-c6ff1134f0be
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: a846a0f5-9a47-455e-b06c-30f92072bfb9
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: a846a0f5-9a47-455e-b06c-30f92072bfb9
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: a846a0f5-9a47-455e-b06c-30f92072bfb9
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: a1c751b0-08a1-445e-8eb3-7158f35315f8
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: a1c751b0-08a1-445e-8eb3-7158f35315f8
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: a1c751b0-08a1-445e-8eb3-7158f35315f8
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Nothing Received waiting
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: eacb78df-2eae-4f47-924a-e69bd743362f
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: eacb78df-2eae-4f47-924a-e69bd743362f
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: eacb78df-2eae-4f47-924a-e69bd743362f
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 375cf78f-ec6a-47c6-a336-11ddb8454454
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 375cf78f-ec6a-47c6-a336-11ddb8454454
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 375cf78f-ec6a-47c6-a336-11ddb8454454
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: d8af19e1-dcf5-4d3e-b617-f0b6ff920a3f
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: d8af19e1-dcf5-4d3e-b617-f0b6ff920a3f
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: d8af19e1-dcf5-4d3e-b617-f0b6ff920a3f
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 331a17da-d09a-4d0e-9f93-c623be9b6973
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 331a17da-d09a-4d0e-9f93-c623be9b6973
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 331a17da-d09a-4d0e-9f93-c623be9b6973
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 5ad165d0-3759-4285-a289-990fd90c2236
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 5ad165d0-3759-4285-a289-990fd90c2236
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 5ad165d0-3759-4285-a289-990fd90c2236
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: b9e5d02d-2013-4904-8d37-df2784a466dd
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: b9e5d02d-2013-4904-8d37-df2784a466dd
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: b9e5d02d-2013-4904-8d37-df2784a466dd
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Nothing received, waiting...
-----------: Send 1/3/2024 9:56:19 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 12ce562f-5acc-44bb-a293-94f4db10d08f] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 12ce562f-5acc-44bb-a293-94f4db10d08f] => (97005bfe-9a6f-420a-8922-dc1be2e6630f)
-----------: Sent 1/3/2024 9:56:19 AM -05:00 :---------- [97005bfe-9a6f-420a-8922-dc1be2e6630f]
-----------: Send 1/3/2024 9:56:19 AM -05:00 :---------- [{ Hello = There }]
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 1731a89e-a824-41e3-a0f4-dae201b925d3] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 1731a89e-a824-41e3-a0f4-dae201b925d3] => (1731a89e-a824-41e3-a0f4-dae201b925d3)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 8899a3bd-b4f4-4ef2-a2a9-6808e63052c0] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 8899a3bd-b4f4-4ef2-a2a9-6808e63052c0] => (ddd02cbd-81c4-4853-a9ec-f56f925c85f3)
-----------: Sent 1/3/2024 9:56:19 AM -05:00 :---------- [ddd02cbd-81c4-4853-a9ec-f56f925c85f3]
-----------: Send 1/3/2024 9:56:19 AM -05:00 :---------- [TestQueueMessage { }]
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> ebb3d782-37ea-4290-bb7e-6f29c84ac033] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> ebb3d782-37ea-4290-bb7e-6f29c84ac033] => (ebb3d782-37ea-4290-bb7e-6f29c84ac033)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 7e5a7d32-2f78-43cf-835a-7e179db80ea3] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 7e5a7d32-2f78-43cf-835a-7e179db80ea3] => (5a747b24-4089-47dd-854c-97835ff01a60)
-----------: Sent 1/3/2024 9:56:19 AM -05:00 :---------- [5a747b24-4089-47dd-854c-97835ff01a60]
-----------: Send 1/3/2024 9:56:19 AM -05:00 :---------- [{ Hello = There }]
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 4deb960f-0ff2-4980-9eb9-e11ce8881fca] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 4deb960f-0ff2-4980-9eb9-e11ce8881fca] => (4deb960f-0ff2-4980-9eb9-e11ce8881fca)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 64560465-d61e-46b0-aaf5-957ae20b9e8e] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 64560465-d61e-46b0-aaf5-957ae20b9e8e] => (7bd3f8e4-f49a-4894-ad03-b2b64e7e780e)
-----------: Sent 1/3/2024 9:56:19 AM -05:00 :---------- [7bd3f8e4-f49a-4894-ad03-b2b64e7e780e]
-----------: Send 1/3/2024 9:56:19 AM -05:00 :---------- [TestQueueMessage { }]
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> a8104a8d-4e0b-4cc2-a7f3-727c676b4af7] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> a8104a8d-4e0b-4cc2-a7f3-727c676b4af7] => (a8104a8d-4e0b-4cc2-a7f3-727c676b4af7)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 38c53070-1706-4c31-aa05-fbfbf4639f95] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 38c53070-1706-4c31-aa05-fbfbf4639f95] => (f1b68e9d-1993-45ab-bd0c-cbb251794db3)
-----------: Sent 1/3/2024 9:56:19 AM -05:00 :---------- [f1b68e9d-1993-45ab-bd0c-cbb251794db3]
-----------: Send 1/3/2024 9:56:19 AM -05:00 :---------- [{ Hello = There }]
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 28b4fa89-0c38-4951-8d30-1e3e32d446b5] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 28b4fa89-0c38-4951-8d30-1e3e32d446b5] => (28b4fa89-0c38-4951-8d30-1e3e32d446b5)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 2ab24ae2-8629-4507-88a2-170c1a9e05d6] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 2ab24ae2-8629-4507-88a2-170c1a9e05d6] => (d37e82ab-e97a-4711-a3d7-41c03131cb78)
-----------: Sent 1/3/2024 9:56:19 AM -05:00 :---------- [d37e82ab-e97a-4711-a3d7-41c03131cb78]
-----------: Send 1/3/2024 9:56:19 AM -05:00 :---------- [TestQueueMessage { }]
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> df5d99d5-b9fd-4081-8044-c38a15ca4229] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> df5d99d5-b9fd-4081-8044-c38a15ca4229] => (df5d99d5-b9fd-4081-8044-c38a15ca4229)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> e3f6b831-7f24-4bc6-9841-a37ea45c1046] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> e3f6b831-7f24-4bc6-9841-a37ea45c1046] => (af2ec26b-9c7a-4497-adc0-bb653764757a)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 76774182-5639-46b1-8aca-e475a92a8d3a] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 76774182-5639-46b1-8aca-e475a92a8d3a] => (76774182-5639-46b1-8aca-e475a92a8d3a)
-----------: Sent 1/3/2024 9:56:19 AM -05:00 :---------- [af2ec26b-9c7a-4497-adc0-bb653764757a]
-----------: Waiting 1/3/2024 9:56:19 AM -05:00 :---------- 
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 97005bfe-9a6f-420a-8922-dc1be2e6630f
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 97005bfe-9a6f-420a-8922-dc1be2e6630f
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 97005bfe-9a6f-420a-8922-dc1be2e6630f
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: ddd02cbd-81c4-4853-a9ec-f56f925c85f3
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: ddd02cbd-81c4-4853-a9ec-f56f925c85f3
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: ddd02cbd-81c4-4853-a9ec-f56f925c85f3
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 5a747b24-4089-47dd-854c-97835ff01a60
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 5a747b24-4089-47dd-854c-97835ff01a60
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 5a747b24-4089-47dd-854c-97835ff01a60
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 7bd3f8e4-f49a-4894-ad03-b2b64e7e780e
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 7bd3f8e4-f49a-4894-ad03-b2b64e7e780e
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 7bd3f8e4-f49a-4894-ad03-b2b64e7e780e
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: f1b68e9d-1993-45ab-bd0c-cbb251794db3
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: f1b68e9d-1993-45ab-bd0c-cbb251794db3
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: f1b68e9d-1993-45ab-bd0c-cbb251794db3
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: d37e82ab-e97a-4711-a3d7-41c03131cb78
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: d37e82ab-e97a-4711-a3d7-41c03131cb78
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: d37e82ab-e97a-4711-a3d7-41c03131cb78
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: af2ec26b-9c7a-4497-adc0-bb653764757a
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: af2ec26b-9c7a-4497-adc0-bb653764757a
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: af2ec26b-9c7a-4497-adc0-bb653764757a
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Nothing Received waiting
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 1731a89e-a824-41e3-a0f4-dae201b925d3
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 1731a89e-a824-41e3-a0f4-dae201b925d3
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 1731a89e-a824-41e3-a0f4-dae201b925d3
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: ebb3d782-37ea-4290-bb7e-6f29c84ac033
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: ebb3d782-37ea-4290-bb7e-6f29c84ac033
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: ebb3d782-37ea-4290-bb7e-6f29c84ac033
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 4deb960f-0ff2-4980-9eb9-e11ce8881fca
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 4deb960f-0ff2-4980-9eb9-e11ce8881fca
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 4deb960f-0ff2-4980-9eb9-e11ce8881fca
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: a8104a8d-4e0b-4cc2-a7f3-727c676b4af7
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: a8104a8d-4e0b-4cc2-a7f3-727c676b4af7
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: a8104a8d-4e0b-4cc2-a7f3-727c676b4af7
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 28b4fa89-0c38-4951-8d30-1e3e32d446b5
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 28b4fa89-0c38-4951-8d30-1e3e32d446b5
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 28b4fa89-0c38-4951-8d30-1e3e32d446b5
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: df5d99d5-b9fd-4081-8044-c38a15ca4229
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: df5d99d5-b9fd-4081-8044-c38a15ca4229
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: df5d99d5-b9fd-4081-8044-c38a15ca4229
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 76774182-5639-46b1-8aca-e475a92a8d3a
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 76774182-5639-46b1-8aca-e475a92a8d3a
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 76774182-5639-46b1-8aca-e475a92a8d3a
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Nothing received, waiting...
-----------: Send 1/3/2024 9:56:20 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 340a2215-3cb8-480b-9f89-7d26c56e3698] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 340a2215-3cb8-480b-9f89-7d26c56e3698] => (6c3153ab-cf4a-4d36-987e-34dbe29467f4)
-----------: Sent 1/3/2024 9:56:20 AM -05:00 :---------- [6c3153ab-cf4a-4d36-987e-34dbe29467f4]
-----------: Send 1/3/2024 9:56:20 AM -05:00 :---------- [{ Hello = There }]
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 47a88a51-dba4-4b44-aa0b-19af3883693a] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 47a88a51-dba4-4b44-aa0b-19af3883693a] => (47a88a51-dba4-4b44-aa0b-19af3883693a)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> cf1810a1-c9a9-4fe1-b797-23581fad5e3d] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> cf1810a1-c9a9-4fe1-b797-23581fad5e3d] => (7aa087da-86aa-4fd9-a51f-39ee69357cf9)
-----------: Sent 1/3/2024 9:56:20 AM -05:00 :---------- [7aa087da-86aa-4fd9-a51f-39ee69357cf9]
-----------: Send 1/3/2024 9:56:20 AM -05:00 :---------- [TestQueueMessage { }]
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> ef76ed64-6816-45f8-b66c-5cb328fe5ccd] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> ef76ed64-6816-45f8-b66c-5cb328fe5ccd] => (ef76ed64-6816-45f8-b66c-5cb328fe5ccd)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 3745c4c4-b0c2-4453-b923-e6db02628bee] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 3745c4c4-b0c2-4453-b923-e6db02628bee] => (01f44af9-491f-46bf-91a9-bfefc41dcc40)
-----------: Sent 1/3/2024 9:56:20 AM -05:00 :---------- [01f44af9-491f-46bf-91a9-bfefc41dcc40]
-----------: Send 1/3/2024 9:56:20 AM -05:00 :---------- [{ Hello = There }]
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 620bfb35-92c6-4c0c-84b3-c256ffb75b66] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 620bfb35-92c6-4c0c-84b3-c256ffb75b66] => (620bfb35-92c6-4c0c-84b3-c256ffb75b66)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> da21b707-1fe5-4d16-82ec-cf5f32b85854] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> da21b707-1fe5-4d16-82ec-cf5f32b85854] => (05c95979-8d5c-48d1-a0fb-e9ba8c0b7f5b)
-----------: Sent 1/3/2024 9:56:20 AM -05:00 :---------- [05c95979-8d5c-48d1-a0fb-e9ba8c0b7f5b]
-----------: Send 1/3/2024 9:56:20 AM -05:00 :---------- [TestQueueMessage { }]
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> 37827b37-8bcd-4a25-bf69-b3b3f6dc2bd0] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 37827b37-8bcd-4a25-bf69-b3b3f6dc2bd0] => (37827b37-8bcd-4a25-bf69-b3b3f6dc2bd0)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> e623a639-b351-438b-b43e-189bf15f6a2b] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> e623a639-b351-438b-b43e-189bf15f6a2b] => (6c446c58-92ec-4fdc-b250-f314be9a4fe3)
-----------: Sent 1/3/2024 9:56:20 AM -05:00 :---------- [6c446c58-92ec-4fdc-b250-f314be9a4fe3]
-----------: Send 1/3/2024 9:56:20 AM -05:00 :---------- [{ Hello = There }]
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 53a01981-1241-4dbb-942c-2502c46431c7] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 53a01981-1241-4dbb-942c-2502c46431c7] => (53a01981-1241-4dbb-942c-2502c46431c7)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> c882e862-3bdc-43b5-aade-b5d16e9ec36a] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> c882e862-3bdc-43b5-aade-b5d16e9ec36a] => (c23aa47c-d767-4e6f-9a2e-83e424fe7353)
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> b2381f55-7e86-4f37-a460-9da68c93cf09] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> b2381f55-7e86-4f37-a460-9da68c93cf09] => (b2381f55-7e86-4f37-a460-9da68c93cf09)
-----------: Sent 1/3/2024 9:56:20 AM -05:00 :---------- [c23aa47c-d767-4e6f-9a2e-83e424fe7353]
-----------: Send 1/3/2024 9:56:20 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 4ad9d6d8-662d-42c2-b4d8-db544292fa53] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 4ad9d6d8-662d-42c2-b4d8-db544292fa53] => (a1b65582-91a9-48b3-812a-3d561352830e)
-----------: Sent 1/3/2024 9:56:20 AM -05:00 :---------- [a1b65582-91a9-48b3-812a-3d561352830e]
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 4a48f66b-55fe-478a-bc1f-bb97d621a535] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 4a48f66b-55fe-478a-bc1f-bb97d621a535] => (4a48f66b-55fe-478a-bc1f-bb97d621a535)
-----------: Send 1/3/2024 9:56:20 AM -05:00 :---------- [{ Hello = There }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 805c55ac-6e17-4a5b-95e1-d3f4a59aa245] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 805c55ac-6e17-4a5b-95e1-d3f4a59aa245] => (42b855b3-dc1f-45e0-82dc-1edbbd350682)
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> 03c8a1dd-4274-4233-a7ef-86d4c8fdf57f] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 03c8a1dd-4274-4233-a7ef-86d4c8fdf57f] => (03c8a1dd-4274-4233-a7ef-86d4c8fdf57f)
-----------: Sent 1/3/2024 9:56:20 AM -05:00 :---------- [42b855b3-dc1f-45e0-82dc-1edbbd350682]
-----------: Waiting 1/3/2024 9:56:20 AM -05:00 :---------- 
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 6c3153ab-cf4a-4d36-987e-34dbe29467f4
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 6c3153ab-cf4a-4d36-987e-34dbe29467f4
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 6c3153ab-cf4a-4d36-987e-34dbe29467f4
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 7aa087da-86aa-4fd9-a51f-39ee69357cf9
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 7aa087da-86aa-4fd9-a51f-39ee69357cf9
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 7aa087da-86aa-4fd9-a51f-39ee69357cf9
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 01f44af9-491f-46bf-91a9-bfefc41dcc40
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 01f44af9-491f-46bf-91a9-bfefc41dcc40
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 01f44af9-491f-46bf-91a9-bfefc41dcc40
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 05c95979-8d5c-48d1-a0fb-e9ba8c0b7f5b
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 05c95979-8d5c-48d1-a0fb-e9ba8c0b7f5b
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 05c95979-8d5c-48d1-a0fb-e9ba8c0b7f5b
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 6c446c58-92ec-4fdc-b250-f314be9a4fe3
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 6c446c58-92ec-4fdc-b250-f314be9a4fe3
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 6c446c58-92ec-4fdc-b250-f314be9a4fe3
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: c23aa47c-d767-4e6f-9a2e-83e424fe7353
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: c23aa47c-d767-4e6f-9a2e-83e424fe7353
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: c23aa47c-d767-4e6f-9a2e-83e424fe7353
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: a1b65582-91a9-48b3-812a-3d561352830e
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: a1b65582-91a9-48b3-812a-3d561352830e
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: a1b65582-91a9-48b3-812a-3d561352830e
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 42b855b3-dc1f-45e0-82dc-1edbbd350682
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 42b855b3-dc1f-45e0-82dc-1edbbd350682
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 42b855b3-dc1f-45e0-82dc-1edbbd350682
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Nothing Received waiting
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 47a88a51-dba4-4b44-aa0b-19af3883693a
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 47a88a51-dba4-4b44-aa0b-19af3883693a
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 47a88a51-dba4-4b44-aa0b-19af3883693a
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: ef76ed64-6816-45f8-b66c-5cb328fe5ccd
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: ef76ed64-6816-45f8-b66c-5cb328fe5ccd
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: ef76ed64-6816-45f8-b66c-5cb328fe5ccd
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 620bfb35-92c6-4c0c-84b3-c256ffb75b66
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 620bfb35-92c6-4c0c-84b3-c256ffb75b66
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 620bfb35-92c6-4c0c-84b3-c256ffb75b66
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 37827b37-8bcd-4a25-bf69-b3b3f6dc2bd0
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 37827b37-8bcd-4a25-bf69-b3b3f6dc2bd0
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 37827b37-8bcd-4a25-bf69-b3b3f6dc2bd0
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 53a01981-1241-4dbb-942c-2502c46431c7
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 53a01981-1241-4dbb-942c-2502c46431c7
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 53a01981-1241-4dbb-942c-2502c46431c7
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: b2381f55-7e86-4f37-a460-9da68c93cf09
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: b2381f55-7e86-4f37-a460-9da68c93cf09
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: b2381f55-7e86-4f37-a460-9da68c93cf09
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 4a48f66b-55fe-478a-bc1f-bb97d621a535
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 4a48f66b-55fe-478a-bc1f-bb97d621a535
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 4a48f66b-55fe-478a-bc1f-bb97d621a535
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 03c8a1dd-4274-4233-a7ef-86d4c8fdf57f
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 03c8a1dd-4274-4233-a7ef-86d4c8fdf57f
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 03c8a1dd-4274-4233-a7ef-86d4c8fdf57f
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Nothing received, waiting...
-----------: Send 1/3/2024 9:56:21 AM -05:00 :---------- [TestQueueMessage { }]
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 52102294-9933-43e7-996a-6fe97e4ebbe8] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 52102294-9933-43e7-996a-6fe97e4ebbe8] => (30051587-2c12-4540-818b-3ff508988a29)
-----------: Sent 1/3/2024 9:56:21 AM -05:00 :---------- [30051587-2c12-4540-818b-3ff508988a29]
-----------: Send 1/3/2024 9:56:21 AM -05:00 :---------- [{ Hello = There }]
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> ced5ef93-e68a-48cd-8c55-a1a75b357674] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> ced5ef93-e68a-48cd-8c55-a1a75b357674] => (ced5ef93-e68a-48cd-8c55-a1a75b357674)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 044f4654-51e8-4d01-a7e7-2c59cb8e2d72] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 044f4654-51e8-4d01-a7e7-2c59cb8e2d72] => (5ee690e1-dd4b-45a0-8d98-ab8c3c203995)
-----------: Sent 1/3/2024 9:56:21 AM -05:00 :---------- [5ee690e1-dd4b-45a0-8d98-ab8c3c203995]
-----------: Send 1/3/2024 9:56:21 AM -05:00 :---------- [TestQueueMessage { }]
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> d04adb95-287e-4b66-83c6-e3c3da085ee1] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> d04adb95-287e-4b66-83c6-e3c3da085ee1] => (d04adb95-287e-4b66-83c6-e3c3da085ee1)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 4e8f804d-d7fc-45ce-89f0-cf27ba44d705] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 4e8f804d-d7fc-45ce-89f0-cf27ba44d705] => (1b9821b7-3f4a-40ab-aec3-f56294d3ba8b)
-----------: Sent 1/3/2024 9:56:21 AM -05:00 :---------- [1b9821b7-3f4a-40ab-aec3-f56294d3ba8b]
-----------: Send 1/3/2024 9:56:21 AM -05:00 :---------- [{ Hello = There }]
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 0b56a160-bf94-47d7-b968-28d826792035] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 0b56a160-bf94-47d7-b968-28d826792035] => (0b56a160-bf94-47d7-b968-28d826792035)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 4817e9e2-9c71-402d-9bc1-42ca972c7e72] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 4817e9e2-9c71-402d-9bc1-42ca972c7e72] => (f5719c2c-d6eb-474a-8d6d-ca53cd8ee612)
-----------: Sent 1/3/2024 9:56:21 AM -05:00 :---------- [f5719c2c-d6eb-474a-8d6d-ca53cd8ee612]
-----------: Send 1/3/2024 9:56:21 AM -05:00 :---------- [TestQueueMessage { }]
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> b088300e-9342-455a-8e89-bffd78f372b1] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> b088300e-9342-455a-8e89-bffd78f372b1] => (b088300e-9342-455a-8e89-bffd78f372b1)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> 2f0f0601-f152-442b-834d-88090412d861] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 2f0f0601-f152-442b-834d-88090412d861] => (3605fab3-8f59-45a7-8421-3d0e272eb5a0)
-----------: Sent 1/3/2024 9:56:21 AM -05:00 :---------- [3605fab3-8f59-45a7-8421-3d0e272eb5a0]
-----------: Send 1/3/2024 9:56:21 AM -05:00 :---------- [{ Hello = There }]
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> b90b5a0e-c04e-4773-8d2e-25787b63d8da] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> b90b5a0e-c04e-4773-8d2e-25787b63d8da] => (b90b5a0e-c04e-4773-8d2e-25787b63d8da)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> 3ddfe1dd-5abb-45c7-9e3e-6de7f4c9ad80] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 3ddfe1dd-5abb-45c7-9e3e-6de7f4c9ad80] => (30095b5e-8b2a-4f26-914f-47b8afab492f)
-----------: Sent 1/3/2024 9:56:21 AM -05:00 :---------- [30095b5e-8b2a-4f26-914f-47b8afab492f]
-----------: Send 1/3/2024 9:56:21 AM -05:00 :---------- [TestQueueMessage { }]
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> 61b866db-7e7e-43f8-86eb-bfcf99f4b4bc] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 61b866db-7e7e-43f8-86eb-bfcf99f4b4bc] => (61b866db-7e7e-43f8-86eb-bfcf99f4b4bc)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> d9acd945-2c7d-4597-93d8-c9841301a313] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> d9acd945-2c7d-4597-93d8-c9841301a313] => (6aa4caa1-d371-4f2b-9b44-2f097ada74c3)
-----------: Sent 1/3/2024 9:56:21 AM -05:00 :---------- [6aa4caa1-d371-4f2b-9b44-2f097ada74c3]
-----------: Send 1/3/2024 9:56:21 AM -05:00 :---------- [{ Hello = There }]
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> 6a63261e-5f4a-4d34-b238-d74b1774aff6] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> 6a63261e-5f4a-4d34-b238-d74b1774aff6] => (6a63261e-5f4a-4d34-b238-d74b1774aff6)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ Hello = There }" [(null) -> c08be8ac-1184-4f1a-aab2-1f81f646352a] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> c08be8ac-1184-4f1a-aab2-1f81f646352a] => (8856a81a-4b99-4289-9b68-1ddd7a854e1a)
-----------: Sent 1/3/2024 9:56:21 AM -05:00 :---------- [8856a81a-4b99-4289-9b68-1ddd7a854e1a]
-----------: Send 1/3/2024 9:56:21 AM -05:00 :---------- [TestQueueMessage { }]
-info: object[0]
-      Sending: "{ Hello = There }" [(null) -> f9c5bb04-afaf-49a7-b16d-9c847c228214] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> f9c5bb04-afaf-49a7-b16d-9c847c228214] => (f9c5bb04-afaf-49a7-b16d-9c847c228214)
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "TestQueueMessage { }" [(null) -> a70029f6-629b-4636-b1eb-1ea64cf00980] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> a70029f6-629b-4636-b1eb-1ea64cf00980] => (536bb669-e97a-4c1c-b72c-da12ea67387b)
-info: object[0]
-      Sending: "TestQueueMessage { }" [(null) -> ca62cd5a-08e3-49c8-a30f-dc0b90cb34fc] to "System.Object" from "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[TResult,TStateMachine]::Void MoveNext(System.Threading.Thread)"
-info: object[0]
-      Sent: [(null) -> ca62cd5a-08e3-49c8-a30f-dc0b90cb34fc] => (ca62cd5a-08e3-49c8-a30f-dc0b90cb34fc)
-----------: Sent 1/3/2024 9:56:21 AM -05:00 :---------- [536bb669-e97a-4c1c-b72c-da12ea67387b]
-----------: Waiting 1/3/2024 9:56:21 AM -05:00 :---------- 
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 30051587-2c12-4540-818b-3ff508988a29
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 30051587-2c12-4540-818b-3ff508988a29
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 30051587-2c12-4540-818b-3ff508988a29
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 5ee690e1-dd4b-45a0-8d98-ab8c3c203995
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 5ee690e1-dd4b-45a0-8d98-ab8c3c203995
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 5ee690e1-dd4b-45a0-8d98-ab8c3c203995
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 1b9821b7-3f4a-40ab-aec3-f56294d3ba8b
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 1b9821b7-3f4a-40ab-aec3-f56294d3ba8b
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 1b9821b7-3f4a-40ab-aec3-f56294d3ba8b
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: f5719c2c-d6eb-474a-8d6d-ca53cd8ee612
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: f5719c2c-d6eb-474a-8d6d-ca53cd8ee612
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: f5719c2c-d6eb-474a-8d6d-ca53cd8ee612
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 3605fab3-8f59-45a7-8421-3d0e272eb5a0
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 3605fab3-8f59-45a7-8421-3d0e272eb5a0
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 3605fab3-8f59-45a7-8421-3d0e272eb5a0
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 30095b5e-8b2a-4f26-914f-47b8afab492f
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 30095b5e-8b2a-4f26-914f-47b8afab492f
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 30095b5e-8b2a-4f26-914f-47b8afab492f
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 6aa4caa1-d371-4f2b-9b44-2f097ada74c3
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 6aa4caa1-d371-4f2b-9b44-2f097ada74c3
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 6aa4caa1-d371-4f2b-9b44-2f097ada74c3
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 8856a81a-4b99-4289-9b68-1ddd7a854e1a
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 8856a81a-4b99-4289-9b68-1ddd7a854e1a
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 8856a81a-4b99-4289-9b68-1ddd7a854e1a
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 536bb669-e97a-4c1c-b72c-da12ea67387b
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProviderAndMessage[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandlerWithProvider[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 536bb669-e97a-4c1c-b72c-da12ea67387b
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Dequeue: 536bb669-e97a-4c1c-b72c-da12ea67387b
-info: Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider[0]
-      Nothing Received waiting
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: ced5ef93-e68a-48cd-8c55-a1a75b357674
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: ced5ef93-e68a-48cd-8c55-a1a75b357674
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: ced5ef93-e68a-48cd-8c55-a1a75b357674
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: d04adb95-287e-4b66-83c6-e3c3da085ee1
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: d04adb95-287e-4b66-83c6-e3c3da085ee1
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: d04adb95-287e-4b66-83c6-e3c3da085ee1
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 0b56a160-bf94-47d7-b968-28d826792035
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 0b56a160-bf94-47d7-b968-28d826792035
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 0b56a160-bf94-47d7-b968-28d826792035
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: b088300e-9342-455a-8e89-bffd78f372b1
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: b088300e-9342-455a-8e89-bffd78f372b1
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: b088300e-9342-455a-8e89-bffd78f372b1
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: b90b5a0e-c04e-4773-8d2e-25787b63d8da
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: b90b5a0e-c04e-4773-8d2e-25787b63d8da
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: b90b5a0e-c04e-4773-8d2e-25787b63d8da
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 61b866db-7e7e-43f8-86eb-bfcf99f4b4bc
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 61b866db-7e7e-43f8-86eb-bfcf99f4b4bc
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 61b866db-7e7e-43f8-86eb-bfcf99f4b4bc
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: 6a63261e-5f4a-4d34-b238-d74b1774aff6
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: 6a63261e-5f4a-4d34-b238-d74b1774aff6
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: 6a63261e-5f4a-4d34-b238-d74b1774aff6
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: f9c5bb04-afaf-49a7-b16d-9c847c228214
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: { Hello = There }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: f9c5bb04-afaf-49a7-b16d-9c847c228214
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: f9c5bb04-afaf-49a7-b16d-9c847c228214
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: ca62cd5a-08e3-49c8-a30f-dc0b90cb34fc
-info: Eliassen.Azure.StorageAccount.Tests.TestItems.TestMessageHandler[0]
-      HandleAsync: TestQueueMessage { }
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: ca62cd5a-08e3-49c8-a30f-dc0b90cb34fc
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Dequeue: ca62cd5a-08e3-49c8-a30f-dc0b90cb34fc
-info: Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider[0]
-      Nothing received, waiting...
-
-
-
-TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(109)-638398725718969849.txt: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725723795361.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725723980120.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725734196372.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725734233093.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725740819950.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725744602269.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725744685558.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725744854936.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725750949058.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725750969068.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725755207104.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725755234741.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725755303072.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725755390135.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725755413384.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725761093274.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725761135889.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725761174221.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725765655283.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725765717251.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725765863102.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725766079197.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725766122753.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725766214693.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725771308224.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725771343283.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725771381300.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725771403628.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725776527816.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725776553741.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725776626948.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725776726462.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725776748937.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725776823658.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725776892922.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725776918396.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725781473028.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725781498215.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725781521461.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725781539175.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725781557607.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725787138800.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725787165459.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725787243596.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725787311925.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725787335048.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725787394492.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725787470577.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725787494170.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725787559932.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725791663119.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725791692736.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725791733709.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725791769427.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725791831927.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725791859946.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725797785473.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725797805484.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725797868480.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725797997714.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725798023402.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725798086362.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725798154152.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725798203835.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725798270993.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725798321321.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725798337902.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725801938931.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725801963373.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725801980463.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725801998112.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725802017267.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725802032672.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725802048551.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725808491566.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725808510805.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725808566717.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725808668857.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725808693148.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725808743992.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725808806536.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725808830073.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725808886620.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725808938859.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725808959950.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725809023778.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725812065919.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725812087195.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725812108959.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725812129850.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725812154438.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725812199523.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725812219092.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725812239586.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725819247219.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725819264730.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725819326478.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725819387197.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725819409300.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725819462672.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725819523115.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725819541750.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725819599288.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725819661624.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725819683762.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725819744450.json: Attached
-TestMessageHandlerWithProviderAndMessage-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProviderAndMessage_HandleAsync(21)-638398725819811539.json: Attached
-TestMessageHandlerWithProvider-Message-MessageQueue_test-config_Config-TestMessageHandlerWithProvider_HandleAsync(21)-638398725819836559.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725822334079.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725822357698.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725822379493.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725822399033.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725822418118.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725822434537.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725822453213.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725822468897.json: Attached
-TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_HandleAsync(20)-638398725822485941.json: Attached
-
 ## Test Name: GetFilterablePropertyNamesTest_TestTarget2Model
 
 * Name: GetFilterablePropertyNamesTest_TestTarget2Model
@@ -3919,7 +2306,7 @@ TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_Handle
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0042311
+  * Duration: 00:00:00.0016677
   * Outcome: Passed
 
 
@@ -3931,7 +2318,7 @@ TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_Handle
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0008641
+  * Duration: 00:00:00.0007201
   * Outcome: Passed
 
 
@@ -3943,28 +2330,9 @@ TestMessageHandler-Message-MessageQueue_Default_Config-TestMessageHandler_Handle
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005695
+  * Duration: 00:00:00.0041811
   * Outcome: Passed
 
-
-## Test Name: GetGraphUsersByEmailTest_Integration_Exists
-
-* Name: GetGraphUsersByEmailTest_Integration_Exists
-* Test Class: Eliassen.Microsoft.B2C.Tests.ManageGraphUserIntegrationTests
-  * Method: GetGraphUsersByEmailTest_Integration_Exists
-* Categories
-  * DevLocal
-* Details: 
-  * Duration: 00:00:00.6197330
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-item: Matthew Whited (6ecd1f39-d4ea-435b-9690-06f82274ba04)
-emailAddress: mwwhited@gmail.com
-result: System.Collections.Generic.List`1[Eliassen.Microsoft.B2C.Identity.UserIdentityModel]
 
 ## Test Name: GetHash (hello world,XrY7u+Ae7tCTyyK7j1rNww==)
 
@@ -3974,7 +2342,7 @@ result: System.Collections.Generic.List`1[Eliassen.Microsoft.B2C.Identity.UserId
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005839
+  * Duration: 00:00:00.0005950
   * Outcome: Passed
 
 
@@ -3991,7 +2359,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0056191
+  * Duration: 00:00:00.0061306
   * Outcome: Passed
 
 
@@ -4008,7 +2376,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0033603
+  * Duration: 00:00:00.0053135
   * Outcome: Passed
 
 
@@ -4020,7 +2388,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0106988
+  * Duration: 00:00:00.0084470
   * Outcome: Passed
 
 
@@ -4032,7 +2400,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0010038
+  * Duration: 00:00:00.0009625
   * Outcome: Passed
 
 
@@ -4044,7 +2412,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006988
+  * Duration: 00:00:00.0007563
   * Outcome: Passed
 
 
@@ -4056,7 +2424,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002364
+  * Duration: 00:00:00.0001917
   * Outcome: Passed
 
 
@@ -4068,7 +2436,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0262390
+  * Duration: 00:00:00.0846281
   * Outcome: Passed
 
 
@@ -4080,7 +2448,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0048483
+  * Duration: 00:00:00.0090746
   * Outcome: Passed
 
 
@@ -4092,7 +2460,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002009
+  * Duration: 00:00:00.0004105
   * Outcome: Passed
 
 
@@ -4104,7 +2472,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003634
+  * Duration: 00:00:00.0001677
   * Outcome: Passed
 
 
@@ -4116,7 +2484,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002111
+  * Duration: 00:00:00.0003843
   * Outcome: Passed
 
 
@@ -4128,7 +2496,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0022400
+  * Duration: 00:00:00.0011269
   * Outcome: Passed
 
 
@@ -4140,7 +2508,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005642
+  * Duration: 00:00:00.0004960
   * Outcome: Passed
 
 
@@ -4152,7 +2520,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002334
+  * Duration: 00:00:00.0031511
   * Outcome: Passed
 
 
@@ -4164,7 +2532,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005077
+  * Duration: 00:00:00.0021508
   * Outcome: Passed
 
 
@@ -4176,7 +2544,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006429
+  * Duration: 00:00:00.0004443
   * Outcome: Passed
 
 
@@ -4188,7 +2556,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0024407
+  * Duration: 00:00:00.0006546
   * Outcome: Passed
 
 
@@ -4200,7 +2568,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0016057
+  * Duration: 00:00:00.0003471
   * Outcome: Passed
 
 
@@ -4212,7 +2580,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002923
+  * Duration: 00:00:00.0024134
   * Outcome: Passed
 
 
@@ -4224,7 +2592,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.2140861
+  * Duration: 00:00:00.2991456
   * Outcome: Passed
 
 
@@ -4236,7 +2604,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0060516
+  * Duration: 00:00:00.0122969
   * Outcome: Passed
 
 
@@ -4248,7 +2616,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0044491
+  * Duration: 00:00:00.0192800
   * Outcome: Passed
 
 
@@ -4260,7 +2628,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0044081
+  * Duration: 00:00:00.0120476
   * Outcome: Passed
 
 
@@ -4272,7 +2640,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0021615
+  * Duration: 00:00:00.0001952
   * Outcome: Passed
 
 
@@ -4284,19 +2652,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002767
-  * Outcome: Passed
-
-
-## Test Name: MakeSafeArrayTest (System.String,System.Object[],System.String[])
-
-* Name: MakeSafeArrayTest
-* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
-  * Method: MakeSafeArrayTest
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0011324
+  * Duration: 00:00:00.0003365
   * Outcome: Passed
 
 
@@ -4308,7 +2664,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000212
+  * Duration: 00:00:00.0000372
   * Outcome: Passed
 
 
@@ -4320,19 +2676,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000121
-  * Outcome: Passed
-
-
-## Test Name: MakeSafeTest (System.AttributeTargets,Enum,Enum)
-
-* Name: MakeSafeTest
-* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
-  * Method: MakeSafeTest
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0000167
+  * Duration: 00:00:00.0000235
   * Outcome: Passed
 
 
@@ -4344,7 +2688,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0043650
+  * Duration: 00:00:00.0041524
   * Outcome: Passed
 
 
@@ -4356,7 +2700,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002342
+  * Duration: 00:00:00.0033589
   * Outcome: Passed
 
 
@@ -4368,7 +2712,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000464
+  * Duration: 00:00:00.0001602
   * Outcome: Passed
 
 
@@ -4380,7 +2724,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000155
+  * Duration: 00:00:00.0002886
   * Outcome: Passed
 
 
@@ -4392,7 +2736,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001836
+  * Duration: 00:00:00.0000933
   * Outcome: Passed
 
 
@@ -4404,55 +2748,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000172
-  * Outcome: Passed
-
-
-## Test Name: MakeSafeTest (System.Decimal,1,1)
-
-* Name: MakeSafeTest
-* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
-  * Method: MakeSafeTest
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0000099
-  * Outcome: Passed
-
-
-## Test Name: MakeSafeTest (System.Decimal,1,1)
-
-* Name: MakeSafeTest
-* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
-  * Method: MakeSafeTest
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0000160
-  * Outcome: Passed
-
-
-## Test Name: MakeSafeTest (System.Decimal,1,1)
-
-* Name: MakeSafeTest
-* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
-  * Method: MakeSafeTest
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0000136
-  * Outcome: Passed
-
-
-## Test Name: MakeSafeTest (System.Decimal,1,1)
-
-* Name: MakeSafeTest
-* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
-  * Method: MakeSafeTest
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0003183
+  * Duration: 00:00:00.0018387
   * Outcome: Passed
 
 
@@ -4464,7 +2760,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002364
+  * Duration: 00:00:00.0002537
   * Outcome: Passed
 
 
@@ -4476,7 +2772,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0025967
+  * Duration: 00:00:00.0026183
   * Outcome: Passed
 
 
@@ -4488,7 +2784,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0030176
+  * Duration: 00:00:00.0011257
   * Outcome: Passed
 
 
@@ -4500,7 +2796,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000792
+  * Duration: 00:00:00.0000857
   * Outcome: Passed
 
 
@@ -4512,7 +2808,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002911
+  * Duration: 00:00:00.0005057
   * Outcome: Passed
 
 
@@ -4524,7 +2820,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000701
+  * Duration: 00:00:00.0001387
   * Outcome: Passed
 
 
@@ -4536,7 +2832,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000242
+  * Duration: 00:00:00.0000400
   * Outcome: Passed
 
 
@@ -4548,7 +2844,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0008226
+  * Duration: 00:00:00.0012288
   * Outcome: Passed
 
 
@@ -4560,7 +2856,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000025
+  * Duration: 00:00:00.0000033
   * Outcome: Passed
 
 
@@ -4572,7 +2868,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0007302
+  * Duration: 00:00:00.0002244
   * Outcome: Passed
 
 
@@ -4584,7 +2880,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000333
+  * Duration: 00:00:00.0002429
   * Outcome: Passed
 
 
@@ -4596,7 +2892,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000918
+  * Duration: 00:00:00.0001465
   * Outcome: Passed
 
 
@@ -4608,7 +2904,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003780
+  * Duration: 00:00:00.0004711
   * Outcome: Passed
 
 
@@ -4620,7 +2916,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002063
+  * Duration: 00:00:00.0001760
   * Outcome: Passed
 
 
@@ -4632,7 +2928,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001605
+  * Duration: 00:00:00.0002477
   * Outcome: Passed
 
 
@@ -4644,7 +2940,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001177
+  * Duration: 00:00:00.0002039
   * Outcome: Passed
 
 
@@ -4656,7 +2952,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001532
+  * Duration: 00:00:00.0003456
   * Outcome: Passed
 
 
@@ -4668,7 +2964,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000884
+  * Duration: 00:00:00.0001723
   * Outcome: Passed
 
 
@@ -4680,7 +2976,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0047516
+  * Duration: 00:00:00.0004446
   * Outcome: Passed
 
 
@@ -4692,7 +2988,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002902
+  * Duration: 00:00:00.0013335
   * Outcome: Passed
 
 
@@ -4704,43 +3000,9 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006980
+  * Duration: 00:00:00.0010023
   * Outcome: Passed
 
-
-## Test Name: RemoveGraphUserAsyncTest_Integration
-
-* Name: RemoveGraphUserAsyncTest_Integration
-* Test Class: Eliassen.Microsoft.B2C.Tests.ManageGraphUserIntegrationTests
-  * Method: RemoveGraphUserAsyncTest_Integration
-* Categories
-  * DevLocal
-* Details: 
-  * Duration: 00:00:00.5970358
-  * Outcome: Passed
-
-
-### Standard Out
-
-info: Eliassen.Microsoft.B2C.Identity.ManageGraphUser[0]
-      Does not exist: 581c2f51-bda2-4ca2-9bab-6fedd1470fc1
-
-## Test Name: RemoveIdentityUserAsyncTest_Integration
-
-* Name: RemoveIdentityUserAsyncTest_Integration
-* Test Class: Eliassen.Microsoft.B2C.Tests.ManageGraphUserIntegrationTests
-  * Method: RemoveIdentityUserAsyncTest_Integration
-* Categories
-  * DevLocal
-* Details: 
-  * Duration: 00:00:00.6139972
-  * Outcome: Passed
-
-
-### Standard Out
-
-info: Eliassen.Microsoft.B2C.Identity.ManageGraphUser[0]
-      Does not exist: 581c2f51-bda2-4ca2-9bab-6fedd1470fc1
 
 ## Test Name: SendAsyncTest_ByFullType
 
@@ -4750,51 +3012,26 @@ info: Eliassen.Microsoft.B2C.Identity.ManageGraphUser[0]
 * Categories
   * Simulate
 * Details: 
-  * Duration: 00:00:00.2286265
+  * Duration: 00:00:00.3406628
   * Outcome: Passed
 
 
 ### Standard Out
 
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sending: "{ hello = world }" [(null) -> 5e58ce63-4cd6-4f49-846e-25bc228cba13] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "Eliassen.MessageQueueing.Tests.MessageSenderTests::System.Threading.Tasks.Task SendAsyncTest_ByFullType()"
+      Sending: "{ hello = world }" [(null) -> b1193eb3-4561-4f84-94f8-faad1728283d] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
 info: Eliassen.MessageQueueing.Tests.TestItems.TestMessageSenderProvider[0]
       SendAsync({ hello = world }, Eliassen.MessageQueueing.Services.MessageContext)
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sent: [(null) -> 5e58ce63-4cd6-4f49-846e-25bc228cba13] => ((null))
+      Sent: [(null) -> b1193eb3-4561-4f84-94f8-faad1728283d] => ((null))
 
 
 
 TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(109)-638398725717945747.txt: Attached
-message-TestMessageSenderProvider_SendAsync(22)-638398725719228795.json: Attached
-context-TestMessageSenderProvider_SendAsync(23)-638398725719539450.json: Attached
-correlationId: 5e58ce63-4cd6-4f49-846e-25bc228cba13
-
-## Test Name: SendAsyncTest_ByFullType
-
-* Name: SendAsyncTest_ByFullType
-* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests
-  * Method: SendAsyncTest_ByFullType
-* Categories
-  * DevLocal
-* Details: 
-  * Duration: 00:00:00.0273347
-  * Outcome: Passed
-
-
-### Standard Out
-
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ hello = world }" [(null) -> a8f3dd9b-314f-4691-8ed7-d5b38b80e7ed] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests::System.Threading.Tasks.Task SendAsyncTest_ByFullType()"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> a8f3dd9b-314f-4691-8ed7-d5b38b80e7ed] => (d3fd9f73-d502-488e-bfad-e07f1b047f36)
-
-
-
-TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(109)-638398725832792407.txt: Attached
-correlationId: d3fd9f73-d502-488e-bfad-e07f1b047f36
+Configuration-MessageSenderTests_GetServiceProvider(109)-638399904466707677.txt: Attached
+message-TestMessageSenderProvider_SendAsync(22)-638399904467534255.json: Attached
+context-TestMessageSenderProvider_SendAsync(23)-638399904467737840.json: Attached
+correlationId: b1193eb3-4561-4f84-94f8-faad1728283d
 
 ## Test Name: SendAsyncTest_ByKeyed
 
@@ -4804,51 +3041,30 @@ correlationId: d3fd9f73-d502-488e-bfad-e07f1b047f36
 * Categories
   * Simulate
 * Details: 
-  * Duration: 00:00:00.0337975
+  * Duration: 00:00:00.0141043
   * Outcome: Passed
 
 
 ### Standard Out
 
+: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
+      Exception: System.ApplicationException: Error in the application.
+         at Eliassen.MessageQueueing.MessageSender`1.SendAsync(Object message, String correlationId) in c:\Repos\Nucleus\Nucleus.Net.Libs\Framework\Eliassen.MessageQueueing\MessageSender.cs:line 79
+       [(null) -> 360585c3-672d-4239-add3-a3c4b0d53a6e]
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sending: "{ hello = world }" [(null) -> d11ef533-8553-44f0-ac71-ee8988b63733] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "Eliassen.MessageQueueing.Tests.MessageSenderTests::System.Threading.Tasks.Task SendAsyncTest_ByKeyed()"
+      Sending: "{ hello = world }" [(null) -> 30013e49-b64f-486f-89b2-7ccb397eedee] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
 info: Eliassen.MessageQueueing.Tests.TestItems.TestMessageSenderProvider[0]
       SendAsync({ hello = world }, Eliassen.MessageQueueing.Services.MessageContext)
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sent: [(null) -> d11ef533-8553-44f0-ac71-ee8988b63733] => ((null))
+      Sent: [(null) -> 30013e49-b64f-486f-89b2-7ccb397eedee] => ((null))
 
 
 
 TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(109)-638398725720012490.txt: Attached
-message-TestMessageSenderProvider_SendAsync(22)-638398725720231759.json: Attached
-context-TestMessageSenderProvider_SendAsync(23)-638398725720278052.json: Attached
-correlationId: d11ef533-8553-44f0-ac71-ee8988b63733
-
-## Test Name: SendAsyncTest_ByKeyed
-
-* Name: SendAsyncTest_ByKeyed
-* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests
-  * Method: SendAsyncTest_ByKeyed
-* Categories
-  * DevLocal
-* Details: 
-  * Duration: 00:00:00.0102922
-  * Outcome: Passed
-
-
-### Standard Out
-
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sending: "{ hello = world }" [(null) -> 73b09cd3-757b-4b65-8285-889e0025aea6] to "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests" from "Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests::System.Threading.Tasks.Task SendAsyncTest_ByKeyed()"
-info: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMessageSenderProviderTests[0]
-      Sent: [(null) -> 73b09cd3-757b-4b65-8285-889e0025aea6] => (6a659c42-f581-48e5-a055-e063389804e9)
-
-
-
-TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(109)-638398725833089437.txt: Attached
-correlationId: 6a659c42-f581-48e5-a055-e063389804e9
+Configuration-MessageSenderTests_GetServiceProvider(109)-638399904468174420.txt: Attached
+message-TestMessageSenderProvider_SendAsync(22)-638399904468231692.json: Attached
+context-TestMessageSenderProvider_SendAsync(23)-638399904468254534.json: Attached
+correlationId: 30013e49-b64f-486f-89b2-7ccb397eedee
 
 ## Test Name: SendAsyncTest_Error
 
@@ -4858,25 +3074,21 @@ correlationId: 6a659c42-f581-48e5-a055-e063389804e9
 * Categories
   * Simulate
 * Details: 
-  * Duration: 00:00:00.0083507
+  * Duration: 00:00:00.0085335
   * Outcome: Passed
 
 
 ### Standard Out
 
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sending: "{ hello = world }" [(null) -> 3f7c67cb-fa71-43df-85d6-73685e337e40] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "Eliassen.MessageQueueing.Tests.MessageSenderTests::System.Threading.Tasks.Task SendAsyncTest_Error()"
+      Sending: "{ hello = world }" [(null) -> 360585c3-672d-4239-add3-a3c4b0d53a6e] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
 fail: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Error: "Error in the application." [(null) -> 3f7c67cb-fa71-43df-85d6-73685e337e40]
-dbug: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Exception: System.ApplicationException: Error in the application.
-         at Eliassen.MessageQueueing.MessageSender`1.SendAsync(Object message, String correlationId) in C:\Repos\Nucleus\Nucleus.Net.Libs\Framework\Eliassen.MessageQueueing\MessageSender.cs:line 79
-       [(null) -> 3f7c67cb-fa71-43df-85d6-73685e337e40]
+      Error: "Error in the application." [(null) -> 360585c3-672d-4239-add3-a3c4b0d53a6e]
 
 
 
 TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(109)-638398725720366584.txt: Attached
+Configuration-MessageSenderTests_GetServiceProvider(109)-638399904468072877.txt: Attached
 
 ## Test Name: SerializeTest
 
@@ -4886,14 +3098,14 @@ Configuration-MessageSenderTests_GetServiceProvider(109)-638398725720366584.txt:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0025520
+  * Duration: 00:00:00.0070206
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-result-BsonIdConverterTests_SerializeTest(25)-638398725768045124.json: Attached
+result-BsonIdConverterTests_SerializeTest(25)-638399904377291876.json: Attached
 Hello World
 
 ## Test Name: SerializeTest_Anonymous
@@ -4904,15 +3116,15 @@ Hello World
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0132800
+  * Duration: 00:00:00.0227608
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-DefaultJsonSerializerTests_SerializeTest_Anonymous(23)-638398725768206825.txt: Attached
-__f__AnonymousType0_1-DefaultJsonSerializerTests_SerializeTest_Anonymous(24)-638398725768237260.json: Attached
+String-DefaultJsonSerializerTests_SerializeTest_Anonymous(23)-638399904378421663.txt: Attached
+__f__AnonymousType0_1-DefaultJsonSerializerTests_SerializeTest_Anonymous(24)-638399904378503216.json: Attached
 
 ## Test Name: SerializeTest_AnonymousWithStringObjectDictionary
 
@@ -4922,15 +3134,15 @@ __f__AnonymousType0_1-DefaultJsonSerializerTests_SerializeTest_Anonymous(24)-638
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0169872
+  * Duration: 00:00:00.0507631
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(48)-638398725768386365.txt: Attached
-__f__AnonymousType1_2-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(49)-638398725768418019.json: Attached
+String-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(48)-638399904378798953.txt: Attached
+__f__AnonymousType1_2-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(49)-638399904378845100.json: Attached
 
 ## Test Name: SerializeTest_IConfigurationSection
 
@@ -4940,15 +3152,15 @@ __f__AnonymousType1_2-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStri
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0185186
+  * Duration: 00:00:00.0250669
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(72)-638398725768615569.txt: Attached
-Configuration-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(73)-638398725768636114.txt: Attached
+String-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(72)-638399904379250326.txt: Attached
+Configuration-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(73)-638399904379295120.txt: Attached
 
 ## Test Name: SerializeTest_Nullable
 
@@ -4958,15 +3170,15 @@ Configuration-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(73)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0041515
+  * Duration: 00:00:00.1753871
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-result-BsonDateConverterTests_SerializeTest_Nullable(26)-638398725767586835.json: Attached
-2024-01-03T09:56:16.7584772-05:00
+result-BsonDateConverterTests_SerializeTest_Nullable(26)-638399904376272192.json: Attached
+2024-01-04T18:40:37.5702956-05:00
 
 ## Test Name: SerializeTest_Value
 
@@ -4976,46 +3188,15 @@ result-BsonDateConverterTests_SerializeTest_Nullable(26)-638398725767586835.json
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0124553
+  * Duration: 00:00:00.0053444
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-result-BsonDateConverterTests_SerializeTest_Value(48)-638398725767675554.json: Attached
-2024-01-03T09:56:16.767482-05:00
-
-## Test Name: Test
-
-* Name: Test
-* Test Class: Eliassen.System.Tests.Text.Json.BsonSerializerTests
-  * Method: Test
-* Details: 
-  * Duration: 00:00:00.0036596
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-{
-  "_id": {
-    "$oid": "f5ece968-18d2-4235-8659-ebe64f3c203f"
-  },
-  "DateTimeOffset": {
-    "$date": "2024-01-03T09:56:16.8091423-05:00"
-  },
-  "DateTime": {
-    "$date": "2024-01-03T09:56:16.8091469-05:00"
-  },
-  "DateTimeOffsetNullable": {
-    "$date": "2024-01-03T09:56:16.8091479-05:00"
-  },
-  "DateTimeNullable": {
-    "$date": "2024-01-03T09:56:16.8091486-05:00"
-  }
-}
+result-BsonDateConverterTests_SerializeTest_Value(48)-638399904376678557.json: Attached
+2024-01-04T18:40:37.6676126-05:00
 
 ## Test Name: ToEnumTest (-1,-1)
 
@@ -5025,7 +3206,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000253
+  * Duration: 00:00:00.0000415
   * Outcome: Passed
 
 
@@ -5037,7 +3218,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000239
+  * Duration: 00:00:00.0029317
   * Outcome: Passed
 
 
@@ -5049,7 +3230,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0070901
+  * Duration: 00:00:00.0000425
   * Outcome: Passed
 
 
@@ -5061,7 +3242,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000300
+  * Duration: 00:00:00.0000227
   * Outcome: Passed
 
 
@@ -5073,7 +3254,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000320
+  * Duration: 00:00:00.0000265
   * Outcome: Passed
 
 
@@ -5085,7 +3266,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000277
+  * Duration: 00:00:00.0000264
   * Outcome: Passed
 
 
@@ -5097,7 +3278,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000240
+  * Duration: 00:00:00.0000187
   * Outcome: Passed
 
 
@@ -5109,7 +3290,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002529
+  * Duration: 00:00:00.0002823
   * Outcome: Passed
 
 
@@ -5121,7 +3302,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0044561
+  * Duration: 00:00:00.0017091
   * Outcome: Passed
 
 
@@ -5133,7 +3314,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003135
+  * Duration: 00:00:00.0003113
   * Outcome: Passed
 
 
@@ -5145,7 +3326,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0013822
+  * Duration: 00:00:00.0029641
   * Outcome: Passed
 
 
@@ -5157,7 +3338,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004647
+  * Duration: 00:00:00.0002254
   * Outcome: Passed
 
 
@@ -5169,7 +3350,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002239
+  * Duration: 00:00:00.0002610
   * Outcome: Passed
 
 
@@ -5181,7 +3362,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003260
+  * Duration: 00:00:00.0004170
   * Outcome: Passed
 
 
@@ -5193,7 +3374,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004258
+  * Duration: 00:00:00.0003454
   * Outcome: Passed
 
 
@@ -5205,7 +3386,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000817
+  * Duration: 00:00:00.0073087
   * Outcome: Passed
 
 
@@ -5217,7 +3398,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002672
+  * Duration: 00:00:00.0000209
   * Outcome: Passed
 
 
@@ -5229,7 +3410,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000363
+  * Duration: 00:00:00.0000161
   * Outcome: Passed
 
 
@@ -5241,7 +3422,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0007156
+  * Duration: 00:00:00.0000443
   * Outcome: Passed
 
 
@@ -5253,7 +3434,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000388
+  * Duration: 00:00:00.0000210
   * Outcome: Passed
 
 
@@ -5265,7 +3446,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000201
+  * Duration: 00:00:00.0000476
   * Outcome: Passed
 
 
@@ -5277,7 +3458,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000213
+  * Duration: 00:00:00.0000424
   * Outcome: Passed
 
 
@@ -5289,7 +3470,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000096
+  * Duration: 00:00:00.0000115
   * Outcome: Passed
 
 
@@ -5301,7 +3482,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000120
+  * Duration: 00:00:00.0000458
   * Outcome: Passed
 
 
@@ -5313,7 +3494,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000505
+  * Duration: 00:00:00.0000990
   * Outcome: Passed
 
 
@@ -5325,7 +3506,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000141
+  * Duration: 00:00:00.0000159
   * Outcome: Passed
 
 
@@ -5337,7 +3518,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000459
+  * Duration: 00:00:00.0001232
   * Outcome: Passed
 
 
@@ -5349,7 +3530,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006580
+  * Duration: 00:00:00.0010992
   * Outcome: Passed
 
 
@@ -5361,7 +3542,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001612
+  * Duration: 00:00:00.0002101
   * Outcome: Passed
 
 
@@ -5373,7 +3554,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000111
+  * Duration: 00:00:00.0000177
   * Outcome: Passed
 
 
@@ -5385,7 +3566,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000540
+  * Duration: 00:00:00.0000926
   * Outcome: Passed
 
 
@@ -5397,7 +3578,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000056
+  * Duration: 00:00:00.0000201
   * Outcome: Passed
 
 
@@ -5409,7 +3590,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000483
+  * Duration: 00:00:00.0001215
   * Outcome: Passed
 
 
@@ -5421,7 +3602,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000063
+  * Duration: 00:00:00.0000188
   * Outcome: Passed
 
 
@@ -5433,7 +3614,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000439
+  * Duration: 00:00:00.0000937
   * Outcome: Passed
 
 
@@ -5445,7 +3626,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003965
+  * Duration: 00:00:00.0004520
   * Outcome: Passed
 
 
@@ -5457,7 +3638,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000661
+  * Duration: 00:00:00.0001309
   * Outcome: Passed
 
 
@@ -5469,7 +3650,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000098
+  * Duration: 00:00:00.0000224
   * Outcome: Passed
 
 
@@ -5481,7 +3662,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000426
+  * Duration: 00:00:00.0000809
   * Outcome: Passed
 
 
@@ -5493,7 +3674,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0023239
+  * Duration: 00:00:00.0019666
   * Outcome: Passed
 
 
@@ -5516,7 +3697,7 @@ visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0071854
+  * Duration: 00:00:00.0010863
   * Outcome: Passed
 
 
@@ -5539,7 +3720,7 @@ visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0037560
+  * Duration: 00:00:00.0013129
   * Outcome: Passed
 
 
@@ -5562,7 +3743,7 @@ visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0013101
+  * Duration: 00:00:00.0006750
   * Outcome: Passed
 
 
@@ -5585,7 +3766,7 @@ visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006259
+  * Duration: 00:00:00.0016237
   * Outcome: Passed
 
 
@@ -5608,7 +3789,7 @@ visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006784
+  * Duration: 00:00:00.0012907
   * Outcome: Passed
 
 
@@ -5631,7 +3812,7 @@ visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0025853
+  * Duration: 00:00:00.0005695
   * Outcome: Passed
 
 
@@ -5654,7 +3835,7 @@ visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0010682
+  * Duration: 00:00:00.0029691
   * Outcome: Passed
 
 
@@ -5672,7 +3853,7 @@ visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringCompar
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0015679
+  * Duration: 00:00:00.0009910
   * Outcome: Passed
 
 
@@ -5690,7 +3871,7 @@ visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringCompar
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005919
+  * Duration: 00:00:00.0014650
   * Outcome: Passed
 
 
@@ -5708,7 +3889,7 @@ visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringCompar
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012128
+  * Duration: 00:00:00.0015921
   * Outcome: Passed
 
 
@@ -5727,7 +3908,7 @@ result: False
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0011549
+  * Duration: 00:00:00.0014468
   * Outcome: Passed
 
 
@@ -5746,7 +3927,7 @@ result: False
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0007285
+  * Duration: 00:00:00.0016769
   * Outcome: Passed
 
 
@@ -5765,7 +3946,7 @@ result: False
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0019391
+  * Duration: 00:00:00.0023113
   * Outcome: Passed
 
 
@@ -5784,7 +3965,7 @@ result: False
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0014740
+  * Duration: 00:00:00.0066814
   * Outcome: Passed
 
 
@@ -5807,7 +3988,7 @@ visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringCompar
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005699
+  * Duration: 00:00:00.0037169
   * Outcome: Passed
 
 
@@ -5826,7 +4007,7 @@ result: True
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004447
+  * Duration: 00:00:00.0006453
   * Outcome: Passed
 
 
@@ -5849,7 +4030,7 @@ visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringCompar
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0011091
+  * Duration: 00:00:00.0011672
   * Outcome: Passed
 
 
@@ -5872,7 +4053,7 @@ visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringCompar
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004530
+  * Duration: 00:00:00.0006362
   * Outcome: Passed
 
 
@@ -5895,7 +4076,7 @@ visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringCo
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0019009
+  * Duration: 00:00:00.0019406
   * Outcome: Passed
 
 
@@ -5918,7 +4099,7 @@ visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringCo
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006932
+  * Duration: 00:00:00.0011119
   * Outcome: Passed
 
 

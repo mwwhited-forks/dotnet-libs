@@ -6,19 +6,57 @@ Extensions for adding MailKit services to the .
 ### Methods
 
 
-#### TryAddMailKitExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
+#### TryAddMailKitExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)
 Tries to add MailKit extensions to the .
 
 ##### Parameters
 * *services:* The service collection to which MailKit services will be added.
 * *configuration:* The configuration.
-* *configurationSection:* The configuration section name for MailKit options.
+* *smtpConfigurationSection:* The configuration section name for MailKit SMTP options.
+* *imapConfigurationSection:* The configuration section name for MailKit IMAP options.
 
 
 
 
 ##### Return value
 The modified .
+
+
+
+## Class: MailKit.Services.IImapClientFactory
+Represents a factory for creating instances of .
+### Methods
+
+
+#### CreateAsync
+Creates a new instance of .
+
+##### Return value
+A task that represents the asynchronous operation and contains the created .
+
+
+
+## Class: MailKit.Services.ImapClientFactory
+Implementation of for creating instances of the ImapClient class.
+            Initializes a new instance of the  *See: T:Eliassen.MailKit.Services.ImapClientFactory* class.
+            
+### Methods
+
+
+#### Constructor
+Implementation of for creating instances of the ImapClient class.
+
+##### Parameters
+* *config:* The configuration options for the MailKit Imap client.
+
+
+
+
+#### CreateAsync
+Creates a new instance of the ImapClient class and configures it based on the provided options.
+
+##### Return value
+An asynchronous task that represents the creation of the ImapClient instance.
 
 
 
@@ -46,13 +84,30 @@ Represents a factory for creating instances of .
 ### Methods
 
 
-#### Create
+#### CreateAsync
 Creates a new instance of .
 
 ##### Return value
 A task that represents the asynchronous operation and contains the created .
 
 
+
+## Class: MailKit.Services.MailKitImapClientOptions
+Represents options for configuring a MailKit IMAP client.
+### Properties
+
+#### Host
+Gets or sets the host address of the IMAP server.
+#### Port
+Gets or sets the port number for the IMAP server.
+#### SecureSocketOption
+Gets or sets the secure socket options for the IMAP connection.
+#### Uri
+Gets or sets the URI of the IMAP server.
+#### Password
+Gets or sets the password used for authentication with the IMAP server.
+#### UserName
+Gets or sets the username used for authentication with the IMAP server.
 
 ## Class: MailKit.Services.MailKitProvider
 Implementation of for sending email messages using MailKit.
@@ -151,7 +206,7 @@ Implementation of for creating instances of the SmtpClient class.
 
 
 
-#### Create
+#### CreateAsync
 Creates a new instance of the SmtpClient class and configures it based on the provided options.
 
 ##### Return value

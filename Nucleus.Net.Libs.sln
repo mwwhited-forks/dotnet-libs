@@ -86,6 +86,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{
 	ProjectSection(SolutionItems) = preProject
 		docs\Framework\CultureInfoMiddleware.md = docs\Framework\CultureInfoMiddleware.md
 		docs\Framework\CultureInfoMiddleware.pdf = docs\Framework\CultureInfoMiddleware.pdf
+		docs\Framework\MajorFunctionality.md = docs\Framework\MajorFunctionality.md
+		docs\Framework\MajorFunctionality.pdf = docs\Framework\MajorFunctionality.pdf
 		docs\Framework\SearchQueryMiddleware.md = docs\Framework\SearchQueryMiddleware.md
 		docs\Framework\SearchQueryMiddleware.pdf = docs\Framework\SearchQueryMiddleware.pdf
 		docs\Framework\TextTemplating.md = docs\Framework\TextTemplating.md
@@ -158,7 +160,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{
 		docs\templates\TestResultsToMarkdown.md.xslt = docs\templates\TestResultsToMarkdown.md.xslt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MailKit.Tests", "ExternalServices\MailKit\Eliassen.MailKit.Tests\Eliassen.MailKit.Tests.csproj", "{4CDE950E-73E6-445F-9B78-E4AE0550D45F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MailKit.Tests", "ExternalServices\MailKit\Eliassen.MailKit.Tests\Eliassen.MailKit.Tests.csproj", "{4CDE950E-73E6-445F-9B78-E4AE0550D45F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MailKit.Hosting", "ExternalServices\MailKit\Eliassen.MailKit.Hosting\Eliassen.MailKit.Hosting.csproj", "{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.FixSourceLinks.Cli", "Tools\Eliassen.FixSourceLinks.Cli\Eliassen.FixSourceLinks.Cli.csproj", "{C1CA926A-1605-40C7-8399-EA966E1DE00D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D43EC245-FAB0-4B78-8FEB-6250EA598063}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Tests\Cobertura.coverage = docs\Tests\Cobertura.coverage
+		docs\Tests\LatestTestResults.md = docs\Tests\LatestTestResults.md
+		docs\Tests\LatestTestResults.trx = docs\Tests\LatestTestResults.trx
+		docs\Tests\Summary.md = docs\Tests\Summary.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -274,6 +288,14 @@ Global
 		{4CDE950E-73E6-445F-9B78-E4AE0550D45F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CDE950E-73E6-445F-9B78-E4AE0550D45F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CDE950E-73E6-445F-9B78-E4AE0550D45F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1CA926A-1605-40C7-8399-EA966E1DE00D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1CA926A-1605-40C7-8399-EA966E1DE00D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1CA926A-1605-40C7-8399-EA966E1DE00D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1CA926A-1605-40C7-8399-EA966E1DE00D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -317,6 +339,9 @@ Global
 		{52E2A264-82B8-4A68-8EB1-FBF5C3A61761} = {0D029514-4C08-465F-8842-D3E59E9F5099}
 		{6768313F-1A76-42A3-A260-1E8D50EA8A39} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
 		{4CDE950E-73E6-445F-9B78-E4AE0550D45F} = {8348F5A5-13B0-46FD-93A1-11978029E0ED}
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485} = {8348F5A5-13B0-46FD-93A1-11978029E0ED}
+		{C1CA926A-1605-40C7-8399-EA966E1DE00D} = {0D029514-4C08-465F-8842-D3E59E9F5099}
+		{D43EC245-FAB0-4B78-8FEB-6250EA598063} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

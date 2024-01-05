@@ -1,7 +1,7 @@
-﻿# Eliassen.MessageQueueing.Hosting
+﻿# Eliassen.MailKit.Hosting
 
 
-## Class: MessageQueueing.Hosting.MessageReceiverHost
+## Class: MailKit.Hosting.EmailMessageReceiverHost
 Hosted service responsible for starting and stopping message receivers based on the configured providers.
 Initializes a new instance of the class.
 ### Methods
@@ -13,7 +13,10 @@ Hosted service responsible for starting and stopping message receivers based on 
 
 ##### Parameters
 * *logger:* The logger.
-* *factory:* The message receiver provider factory.
+* *queue:* The queue.
+* *imapClientFactory:* The client factory.
+* *config:* imap config.
+* *messageFactory:* The message factory.
 
 
 
@@ -49,13 +52,13 @@ A task representing the stop operation.
 
 
 
-## Class: MessageQueueing.Hosting.ServiceCollectionExtensions
+## Class: MailKit.Hosting.ServiceCollectionExtensions
 Provides extension methods for configuring IoC (Inversion of Control) services to support all Message Queueing within this library.
 ### Methods
 
 
-#### TryAddMessageQueueingHosting(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-Add IOC configurations to support all Message Queueing within this library.
+#### TryAddMailKitHosting(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Add IOC configurations to support all Mailkit Hosting within this library.
 
 ##### Parameters
 * *services:* 

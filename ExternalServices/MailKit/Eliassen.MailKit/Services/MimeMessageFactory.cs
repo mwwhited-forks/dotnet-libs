@@ -64,4 +64,31 @@ public class MimeMessageFactory(
 
         return email;
     }
+
+    public ReceivedEmailMessageModel ToReceived(MimeMessage message, string server, string path)
+    {
+        var received = new ReceivedEmailMessageModel
+        {
+            FromAddress = string.Join(';', message.From.Cast<InternetAddress>()),
+            Subject = message.Subject,
+            TextContent = message.TextBody,
+            HtmlContent = message.HtmlBody,
+            ReferenceId = message.MessageId,
+
+            Server = server,
+            Path = path,
+        };
+        received.ToAddresses.AddRange(message.To.Cast<InternetAddress>().Select(a => a.ToString()));
+        received.CcAddresses.AddRange(message.Cc.Cast<InternetAddress>().Select(a => a.ToString()));
+        received.BccAddresses.AddRange(message.Bcc.Cast<InternetAddress>().Select(a => a.ToString()));
+
+        //TODO: might need to group these
+        foreach (var header in message.Headers)
+        {
+            received.Headers.Add(header.Field, header.Value);
+        }
+
+        return received;
+    }
+
 }

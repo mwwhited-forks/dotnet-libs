@@ -14,4 +14,5 @@ public interface IMimeMessageFactory
     /// <param name="message">The email message model.</param>
     /// <returns>A <see cref="MimeMessage"/> instance.</returns>
     MimeMessage Create(EmailMessageModel message);
+    ReceivedEmailMessageModel ToReceived(MimeMessage message, string server, string path);
 }

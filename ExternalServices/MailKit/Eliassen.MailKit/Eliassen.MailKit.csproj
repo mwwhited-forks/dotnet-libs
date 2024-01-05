@@ -28,4 +28,5 @@
 		<ProjectReference Include="..\..\..\Framework\Eliassen.Communications.Abstractions\Eliassen.Communications.Abstractions.csproj" />
 	</ItemGroup>
 
+
 </Project>
