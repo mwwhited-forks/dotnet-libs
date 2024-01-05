@@ -55,16 +55,15 @@ dotnet test "%TestProject%" ^
 
 SET TEST_ERR=%ERRORLEVEL%
 
-REM the code coverage report tool below does not support source linked files
-ECHO "Run Fix-SourceLink"
-dotnet run ^
---project Tools\Eliassen.FixSourceLinks.Cli ^
---configuration Release ^
--- ^
---include=.\TestResults\**\coverage.*;.\TestResults\**\Cobertura.* ^
---target=.\
-
-REM .\\TestResults\\**\\coverage.*;.\\TestResults\\**\\Cobertura.*
+REM Note: this section is not required as long as UseSourceLink=false in the .runsettings
+REM REM the code coverage report tool below does not support source linked files
+REM ECHO "Run Fix-SourceLink"
+REM dotnet run ^
+REM --project Tools\Eliassen.FixSourceLinks.Cli ^
+REM --configuration Release ^
+REM -- ^
+REM --include=.\TestResults\**\coverage.*;.\TestResults\**\Cobertura.* ^
+REM --target=.\
 
 ECHO "Run dotnet-coverage merge"
 dotnet dotnet-coverage merge ^
@@ -85,12 +84,14 @@ reportgenerator "-reports:.\TestResults\**\coverage.*.xml" "-targetDir:.\TestRes
 IF '%DO_NOT_START%'=='' (
 START .\TestResults\Coverage\Reports\summary.html
 START .\TestResults\Cobertura.coverage
-START %LATEST_TEST_RESULTS_TRX%
+REM START %LATEST_TEST_RESULTS_TRX%
 )
 
 ECHO TEST_ERR=%TEST_ERR%
 IF "%TEST_ERR%"=="0" (
 	ECHO "No Errors :)"
 )
+EXIT /B %TEST_ERR%
+:EOF
 ENDLOCAL
 

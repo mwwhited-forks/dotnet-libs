@@ -5,12 +5,13 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<PackageReadmeFile>Readme.MailKit.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Remove="Readme.MailKit.md" />
+		<None Include="Readme.MailKit.md" Pack="true" PackagePath="\"/>
 	</ItemGroup>
-
+	
 	<ItemGroup>
 		<PackageReference Include="MailKit " Version="4.3.0" />
 

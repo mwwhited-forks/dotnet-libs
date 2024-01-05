@@ -8,12 +8,12 @@
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 
+		<PackageReadmeFile>Readme.Handlebars.Extensions.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Remove="Readme.Handlebars.Extensions.md" />
+		<None Include="Readme.Handlebars.Extensions.md" Pack="true" PackagePath="\"/>
 	</ItemGroup>
-
 
 	<ItemGroup>
 		<PackageReference Include="Handlebars.Net" Version="2.1.4" />
