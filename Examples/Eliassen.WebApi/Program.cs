@@ -9,6 +9,7 @@ using Eliassen.MessageQueueing;
 using Eliassen.MessageQueueing.Hosting;
 using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB.Extensions;
+using Eliassen.RabbitMQ;
 using Eliassen.System;
 using Eliassen.WebApi.Provider;
 
@@ -42,6 +43,7 @@ public class Program
             .TryAddMessageQueueingServices()
                 .TryAddMessageQueueingHosting()
                 .TryAddAzureStorageServices()
+                .TryAddRabbitMQServices()
 
             .TryAddCommunicationsServices()
                 .TryAddCommunicationQueueServices()
