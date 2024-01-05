@@ -1,20 +1,20 @@
 # Summary - Nucleus.Net.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 1/5/2024 - 11:18:49 AM |
-| Coverage date: | 1/5/2024 - 11:18:30 AM - 1/5/2024 - 11:18:44 AM |
-| Parser: | MultiReport (14x Cobertura) |
-| Assemblies: | 8 |
-| Classes: | 64 |
-| Files: | 63 |
-| **Line coverage:** | 50.2% (1027 of 2045) |
+| Generated on: | 1/5/2024 - 1:40:53 PM |
+| Coverage date: | 1/5/2024 - 1:40:30 PM - 1/5/2024 - 1:40:46 PM |
+| Parser: | MultiReport (16x Cobertura) |
+| Assemblies: | 9 |
+| Classes: | 67 |
+| Files: | 66 |
+| **Line coverage:** | 48.7% (1027 of 2108) |
 | Covered lines: | 1027 |
-| Uncovered lines: | 1018 |
-| Coverable lines: | 2045 |
-| Total lines: | 5903 |
-| **Branch coverage:** | 48.9% (560 of 1143) |
+| Uncovered lines: | 1081 |
+| Coverable lines: | 2108 |
+| Total lines: | 6098 |
+| **Branch coverage:** | 48.4% (560 of 1157) |
 | Covered branches: | 560 |
-| Total branches: | 1143 |
+| Total branches: | 1157 |
 | **Method coverage:** | [Feature is only available for sponsors](https://reportgenerator.io/pro) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|
@@ -51,6 +51,10 @@
 |Eliassen.Microsoft.B2C.Identity.ManageGraphUser|0|95|95|202|0%|0|20|0%|
 |Eliassen.Microsoft.B2C.Identity.UserManagementProvider|0|7|7|27|0%|0|2|0%|
 |Eliassen.Microsoft.B2C.ServiceCollectionEx|0|4|4|24|0%|0|0||
+|**Eliassen.RabbitMQ**|**0**|**63**|**63**|**195**|**0%**|**0**|**14**|**0%**|
+|Eliassen.RabbitMQ.MessageQueueing.QueueClientFactory|0|9|9|35|0%|0|2|0%|
+|Eliassen.RabbitMQ.MessageQueueing.RabbitMQQueueMessageProvider|0|46|46|120|0%|0|12|0%|
+|Eliassen.RabbitMQ.ServiceCollectionEx|0|8|8|40|0%|0|0||
 |**Eliassen.System**|**750**|**509**|**1259**|**3975**|**59.5%**|**449**|**837**|**53.6%**|
 |Eliassen.System.Accessors.Accessor`1|3|0|3|21|100%|0|0||
 |Eliassen.System.Configuration.CommandLine|0|20|20|53|0%|0|28|0%|

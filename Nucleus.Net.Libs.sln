@@ -135,6 +135,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9C7C
 		Scripts\installcredprovider.ps1 = Scripts\installcredprovider.ps1
 		Scripts\SetupAzurite.bat = Scripts\SetupAzurite.bat
 		Scripts\StartAzurite.bat = Scripts\StartAzurite.bat
+		Scripts\StartRabbitMQ.bat = Scripts\StartRabbitMQ.bat
 		Scripts\StartSmtp4Dev.bat = Scripts\StartSmtp4Dev.bat
 	EndProjectSection
 EndProject
@@ -179,6 +180,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D43EC245
 		docs\Tests\LatestTestResults.trx = docs\Tests\LatestTestResults.trx
 		docs\Tests\Summary.md = docs\Tests\Summary.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{92FD4EEB-1BF5-4105-B55F-DB70DFB2C35E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.RabbitMQ", "ExternalServices\RabbitMQ\Eliassen.RabbitMQ\Eliassen.RabbitMQ.csproj", "{CD2D80EC-9759-4579-9041-CA0D0A3BFECB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.RabbitMQ.Tests", "ExternalServices\RabbitMQ\Eliassen.RabbitMQ.Tests\Eliassen.RabbitMQ.Tests.csproj", "{37092C41-C418-4C6A-B375-3D0FA6DF42A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -302,6 +309,14 @@ Global
 		{C1CA926A-1605-40C7-8399-EA966E1DE00D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1CA926A-1605-40C7-8399-EA966E1DE00D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1CA926A-1605-40C7-8399-EA966E1DE00D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2D80EC-9759-4579-9041-CA0D0A3BFECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2D80EC-9759-4579-9041-CA0D0A3BFECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2D80EC-9759-4579-9041-CA0D0A3BFECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2D80EC-9759-4579-9041-CA0D0A3BFECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37092C41-C418-4C6A-B375-3D0FA6DF42A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37092C41-C418-4C6A-B375-3D0FA6DF42A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37092C41-C418-4C6A-B375-3D0FA6DF42A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37092C41-C418-4C6A-B375-3D0FA6DF42A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -348,6 +363,9 @@ Global
 		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485} = {8348F5A5-13B0-46FD-93A1-11978029E0ED}
 		{C1CA926A-1605-40C7-8399-EA966E1DE00D} = {0D029514-4C08-465F-8842-D3E59E9F5099}
 		{D43EC245-FAB0-4B78-8FEB-6250EA598063} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
+		{92FD4EEB-1BF5-4105-B55F-DB70DFB2C35E} = {23338E7F-E943-4D99-B58C-CFBB7F2F53B2}
+		{CD2D80EC-9759-4579-9041-CA0D0A3BFECB} = {92FD4EEB-1BF5-4105-B55F-DB70DFB2C35E}
+		{37092C41-C418-4C6A-B375-3D0FA6DF42A7} = {92FD4EEB-1BF5-4105-B55F-DB70DFB2C35E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}
