@@ -20,6 +20,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\ExternalServices\Azure\Eliassen.Azure.StorageAccount\Eliassen.Azure.StorageAccount.csproj" />
+	  <ProjectReference Include="..\..\ExternalServices\MailKit\Eliassen.MailKit.Hosting\Eliassen.MailKit.Hosting.csproj" />
 	  <ProjectReference Include="..\..\ExternalServices\MailKit\Eliassen.MailKit\Eliassen.MailKit.csproj" />
 	  <ProjectReference Include="..\..\ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Eliassen.Microsoft.B2C.csproj" />
 	  <ProjectReference Include="..\..\Framework\Eliassen.AspNetCore.JwtAuthentication\Eliassen.AspNetCore.JwtAuthentication.csproj" />
@@ -34,11 +35,10 @@
 	</ItemGroup>
 
 	<Target Name="BuildSwagger" AfterTargets="PostBuildEvent">
-		<!--AfterTargets="PostBuildEvent"-->
 		<MakeDir Directories="$(DocumentPath)" Condition="!Exists('$(DocumentPath)')" ContinueOnError="true" />
 		<Exec Command="dotnet tool restore" ContinueOnError="true" />
-		<Exec Command="dotnet swagger tofile --output &quot;$(DocumentPath)swagger.json&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" ContinueOnError="true" />
-		<Exec Command="dotnet swagger tofile --yaml --output &quot;$(DocumentPath)swagger.yaml&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" ContinueOnError="true" />
+		<Exec Command="dotnet swagger tofile --output &quot;$(DocumentPath)swagger.json&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" ContinueOnError="true" EnvironmentVariables="SWAGGER_ONLY=TRUE" />
+		<Exec Command="dotnet swagger tofile --yaml --output &quot;$(DocumentPath)swagger.yaml&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; all" ContinueOnError="true" EnvironmentVariables="SWAGGER_ONLY=TRUE" />
 	</Target>
-
+	
 </Project>

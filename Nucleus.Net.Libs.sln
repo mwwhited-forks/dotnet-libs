@@ -59,18 +59,39 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{26D6201D-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{7796027A-C66D-46FD-867E-5751E7FADE50}"
 	ProjectSection(SolutionItems) = preProject
+		docs\Libraries\Eliassen.AspNetCore.JwtAuthentication.md = docs\Libraries\Eliassen.AspNetCore.JwtAuthentication.md
 		docs\Libraries\Eliassen.AspNetCore.Mvc.md = docs\Libraries\Eliassen.AspNetCore.Mvc.md
+		docs\Libraries\Eliassen.Azure.StorageAccount.Abstractions.md = docs\Libraries\Eliassen.Azure.StorageAccount.Abstractions.md
+		docs\Libraries\Eliassen.Azure.StorageAccount.md = docs\Libraries\Eliassen.Azure.StorageAccount.md
+		docs\Libraries\Eliassen.Communications.Abstractions.md = docs\Libraries\Eliassen.Communications.Abstractions.md
+		docs\Libraries\Eliassen.Communications.md = docs\Libraries\Eliassen.Communications.md
+		docs\Libraries\Eliassen.Communications.MessageQueueing.md = docs\Libraries\Eliassen.Communications.MessageQueueing.md
+		docs\Libraries\Eliassen.Handlebars.Extensions.md = docs\Libraries\Eliassen.Handlebars.Extensions.md
+		docs\Libraries\Eliassen.MailKit.md = docs\Libraries\Eliassen.MailKit.md
+		docs\Libraries\Eliassen.MessageQueueing.Abstractions.md = docs\Libraries\Eliassen.MessageQueueing.Abstractions.md
+		docs\Libraries\Eliassen.MessageQueueing.Hosting.md = docs\Libraries\Eliassen.MessageQueueing.Hosting.md
+		docs\Libraries\Eliassen.MessageQueueing.md = docs\Libraries\Eliassen.MessageQueueing.md
+		docs\Libraries\Eliassen.Microsoft.B2C.Abstractions.md = docs\Libraries\Eliassen.Microsoft.B2C.Abstractions.md
+		docs\Libraries\Eliassen.Microsoft.B2C.md = docs\Libraries\Eliassen.Microsoft.B2C.md
 		docs\Libraries\Eliassen.MongoDB.Extensions.md = docs\Libraries\Eliassen.MongoDB.Extensions.md
 		docs\Libraries\Eliassen.System.Abstractions.md = docs\Libraries\Eliassen.System.Abstractions.md
 		docs\Libraries\Eliassen.System.md = docs\Libraries\Eliassen.System.md
+		docs\Libraries\Eliassen.WebApi.md = docs\Libraries\Eliassen.WebApi.md
+		docs\Libraries\Nucleus.External.Azure.StorageAccount.Abstractions.md = docs\Libraries\Nucleus.External.Azure.StorageAccount.Abstractions.md
+		docs\Libraries\Nucleus.External.Microsoft.B2C.Abstractions.md = docs\Libraries\Nucleus.External.Microsoft.B2C.Abstractions.md
+		docs\Libraries\Nucleus.External.Microsoft.B2C.md = docs\Libraries\Nucleus.External.Microsoft.B2C.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{E6BCF7BB-2130-43E9-960F-EBE6C79BDDD8}"
 	ProjectSection(SolutionItems) = preProject
 		docs\Framework\CultureInfoMiddleware.md = docs\Framework\CultureInfoMiddleware.md
 		docs\Framework\CultureInfoMiddleware.pdf = docs\Framework\CultureInfoMiddleware.pdf
+		docs\Framework\MajorFunctionality.md = docs\Framework\MajorFunctionality.md
+		docs\Framework\MajorFunctionality.pdf = docs\Framework\MajorFunctionality.pdf
 		docs\Framework\SearchQueryMiddleware.md = docs\Framework\SearchQueryMiddleware.md
 		docs\Framework\SearchQueryMiddleware.pdf = docs\Framework\SearchQueryMiddleware.pdf
+		docs\Framework\TextTemplating.md = docs\Framework\TextTemplating.md
+		docs\Framework\TextTemplating.pdf = docs\Framework\TextTemplating.pdf
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{04470E53-0CD0-4AA0-BFE0-C28DDE5C34B3}"
@@ -108,6 +129,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9C7C
 		Scripts\installcredprovider.ps1 = Scripts\installcredprovider.ps1
 		Scripts\SetupAzurite.bat = Scripts\SetupAzurite.bat
 		Scripts\StartAzurite.bat = Scripts\StartAzurite.bat
+		Scripts\StartSmtp4Dev.bat = Scripts\StartSmtp4Dev.bat
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MessageQueueing.Hosting", "Framework\Eliassen.MessageQueueing.Hosting\Eliassen.MessageQueueing.Hosting.csproj", "{DDEB401D-7CB2-4D57-AD81-3A88FBE24E5B}"
@@ -136,6 +158,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{
 		docs\templates\DuplicateXml.xml.xslt = docs\templates\DuplicateXml.xml.xslt
 		docs\templates\Service-Endpoints.md.hbs = docs\templates\Service-Endpoints.md.hbs
 		docs\templates\TestResultsToMarkdown.md.xslt = docs\templates\TestResultsToMarkdown.md.xslt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MailKit.Tests", "ExternalServices\MailKit\Eliassen.MailKit.Tests\Eliassen.MailKit.Tests.csproj", "{4CDE950E-73E6-445F-9B78-E4AE0550D45F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MailKit.Hosting", "ExternalServices\MailKit\Eliassen.MailKit.Hosting\Eliassen.MailKit.Hosting.csproj", "{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.FixSourceLinks.Cli", "Tools\Eliassen.FixSourceLinks.Cli\Eliassen.FixSourceLinks.Cli.csproj", "{C1CA926A-1605-40C7-8399-EA966E1DE00D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D43EC245-FAB0-4B78-8FEB-6250EA598063}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Tests\Cobertura.coverage = docs\Tests\Cobertura.coverage
+		docs\Tests\LatestTestResults.md = docs\Tests\LatestTestResults.md
+		docs\Tests\LatestTestResults.trx = docs\Tests\LatestTestResults.trx
+		docs\Tests\Summary.md = docs\Tests\Summary.md
 	EndProjectSection
 EndProject
 Global
@@ -248,6 +284,18 @@ Global
 		{52E2A264-82B8-4A68-8EB1-FBF5C3A61761}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52E2A264-82B8-4A68-8EB1-FBF5C3A61761}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52E2A264-82B8-4A68-8EB1-FBF5C3A61761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CDE950E-73E6-445F-9B78-E4AE0550D45F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CDE950E-73E6-445F-9B78-E4AE0550D45F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CDE950E-73E6-445F-9B78-E4AE0550D45F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CDE950E-73E6-445F-9B78-E4AE0550D45F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1CA926A-1605-40C7-8399-EA966E1DE00D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1CA926A-1605-40C7-8399-EA966E1DE00D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1CA926A-1605-40C7-8399-EA966E1DE00D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1CA926A-1605-40C7-8399-EA966E1DE00D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -290,6 +338,10 @@ Global
 		{4E28E35D-36C9-44F2-A676-2F318997E09A} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{52E2A264-82B8-4A68-8EB1-FBF5C3A61761} = {0D029514-4C08-465F-8842-D3E59E9F5099}
 		{6768313F-1A76-42A3-A260-1E8D50EA8A39} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
+		{4CDE950E-73E6-445F-9B78-E4AE0550D45F} = {8348F5A5-13B0-46FD-93A1-11978029E0ED}
+		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485} = {8348F5A5-13B0-46FD-93A1-11978029E0ED}
+		{C1CA926A-1605-40C7-8399-EA966E1DE00D} = {0D029514-4C08-465F-8842-D3E59E9F5099}
+		{D43EC245-FAB0-4B78-8FEB-6250EA598063} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

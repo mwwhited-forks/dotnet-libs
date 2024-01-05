@@ -1,7 +1,7 @@
 ﻿# Eliassen.MessageQueueing.Hosting
 
 
-## Class: WebApi.Workers.MessageReceiverHost
+## Class: MessageQueueing.Hosting.MessageReceiverHost
 Hosted service responsible for starting and stopping message receivers based on the configured providers.
 Initializes a new instance of the class.
 ### Methods

@@ -11,7 +11,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Remove="readme.md" />
+		<Content Remove="Readme.Handlebars.Extensions.md" />
 	</ItemGroup>
 
 

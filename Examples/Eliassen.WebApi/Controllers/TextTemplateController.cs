@@ -5,7 +5,6 @@ using System.Text.Json.Nodes;
 
 namespace Eliassen.WebApi.Controllers;
 
-
 /// <summary>
 /// Controller for handling text template operations.
 /// </summary>
@@ -60,7 +59,7 @@ public class TextTemplateController(
     public async Task<IActionResult> Apply(string templateName, [FromBody] JsonNode? data = default)
     {
         var ms = new MemoryStream();
-        var context = await engine.ApplyAsync(templateName, data, ms);
+        var context = await engine.ApplyAsync(templateName, data ?? new JsonObject(), ms);
         if (context == null)
             return NotFound();
 

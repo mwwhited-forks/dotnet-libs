@@ -10,12 +10,16 @@
 	<PropertyGroup Condition="'$(LOCAL_NUGET)' != ''">
 		<PackageOutputPath>$(LOCAL_NUGET.Trim('\'))\</PackageOutputPath>
 	</PropertyGroup>
-	
+
 	<PropertyGroup Condition="'$(DOCUMENT_PATH)' != ''">
 		<DocumentPath>$(DOCUMENT_PATH.Trim('\'))\</DocumentPath>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(DOCUMENT_PATH)' == ''">
-		<DocumentPath>..\..\docs\</DocumentPath>
+		<DocumentPath>$(SolutionDir)docs\</DocumentPath>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(CodeDocumentPath)' == ''">
+		<CodeDocumentPath>$(DocumentPath)code\</CodeDocumentPath>
 	</PropertyGroup>
 
 	<ItemGroup  Condition=" '$(Configuration)' == 'Debug' ">
@@ -26,19 +30,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="**\*.md" />
-		<Content Include="**\*.plantuml" />
-		<Content Include="**\*.puml" />
+		<CodeDocumentation Include="**\*.md" />
+		<CodeDocumentation Include="**\*.plantuml" />
+		<CodeDocumentation Include="**\*.puml" />
+		<CodeDocumentation Remove="bin\**\*.*" />
+		<CodeDocumentation Remove="obj\**\*.*" />
 
-		<EmbeddedResource Include="**\*.txt" />
-		<EmbeddedResource Include="**\*.json" />
-		<EmbeddedResource Include="**\*.html" />
-		<EmbeddedResource Include="**\*.csv" />
-		<EmbeddedResource Include="**\*.sql" />
-		<EmbeddedResource Include="**\*.xml" />
+		<Examples Include="**\*.txt" />
+		<Examples Include="**\*.json" />
+		<Examples Include="**\*.html" />
+		<Examples Include="**\*.csv" />
+		<Examples Include="**\*.sql" />
+		<Examples Include="**\*.xml" />
+		<Examples Remove="bin\**\*.*" />
+		<Examples Remove="obj\**\*.*" />
 
-		<EmbeddedResource Remove="bin\**\*.*" />
-		<EmbeddedResource Remove="obj\**\*.*" />
+		<Content Include="@(CodeDocumentation)" />
+		<EmbeddedResource Include="@(Examples)" />
+
 	</ItemGroup>
 
 </Project>
