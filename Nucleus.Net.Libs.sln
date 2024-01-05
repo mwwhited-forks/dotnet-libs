@@ -134,9 +134,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9C7C
 	ProjectSection(SolutionItems) = preProject
 		Scripts\installcredprovider.ps1 = Scripts\installcredprovider.ps1
 		Scripts\SetupAzurite.bat = Scripts\SetupAzurite.bat
+		Scripts\StartAllDocker.bat = Scripts\StartAllDocker.bat
 		Scripts\StartAzurite.bat = Scripts\StartAzurite.bat
+		Scripts\StartAzuriteDocker.bat = Scripts\StartAzuriteDocker.bat
+		Scripts\StartMongoDbDocker.bat = Scripts\StartMongoDbDocker.bat
 		Scripts\StartRabbitMQ.bat = Scripts\StartRabbitMQ.bat
 		Scripts\StartSmtp4Dev.bat = Scripts\StartSmtp4Dev.bat
+		Scripts\StartSmtp4DevDocker.bat = Scripts\StartSmtp4DevDocker.bat
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MessageQueueing.Hosting", "Framework\Eliassen.MessageQueueing.Hosting\Eliassen.MessageQueueing.Hosting.csproj", "{DDEB401D-7CB2-4D57-AD81-3A88FBE24E5B}"
