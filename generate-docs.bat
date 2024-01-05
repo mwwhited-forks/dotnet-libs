@@ -10,23 +10,10 @@ ECHO PublishPath %PublishPath%
 ECHO "restore current .net tools"
 dotnet tool restore
 
-ECHO "Build Web Project"
-RMDIR "%PublishPath%" /S/Q
-MKDIR "%PublishPath%"
-dotnet build ^
-Nucleus.Net.Libs.sln ^
---configuration Release ^
---output %PublishPath%
+CALL build.bat
 SET TEST_ERR=%ERRORLEVEL%
 IF NOT "%TEST_ERR%"=="0" (
 	ECHO "Build Failed! %TEST_ERR%"
-	GOTO :skiptoend
-)
-
-CALL test.bat --no-start
-SET TEST_ERR=%ERRORLEVEL%
-IF NOT "%TEST_ERR%"=="0" (
-	ECHO "Tests Failed! %TEST_ERR%"
 	GOTO :skiptoend
 )
 
@@ -58,6 +45,14 @@ dotnet run ^
 --Template Documentation.md ^
 --file-template-path .\docs\templates
 DEL .\docs\Libraries\Microsoft*.* /Q
+
+ECHO "Generate - Test Docs"
+CALL test.bat --no-start
+SET TEST_ERR=%ERRORLEVEL%
+IF NOT "%TEST_ERR%"=="0" (
+	ECHO "Tests Failed! %TEST_ERR%"
+	GOTO :skiptoend
+)
 
 RMDIR .\docs\Tests /S/Q
 MKDIR .\docs\Tests

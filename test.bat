@@ -55,6 +55,7 @@ dotnet test "%TestProject%" ^
 
 SET TEST_ERR=%ERRORLEVEL%
 
+REM Note: this section is not required as long as UseSourceLink=false in the .runsettings
 REM REM the code coverage report tool below does not support source linked files
 REM ECHO "Run Fix-SourceLink"
 REM dotnet run ^

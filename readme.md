@@ -6,7 +6,10 @@ This project contains shared libraries and examples on how to use those librarie
 
 ## Useful Scripts
 
-* [build.bat](.\build.bat) - build all of the assemblies into (.\Publich\)
+* [build.bat](.\build.bat) - build solution into [.\publish\libs](.\Publish\libs)
+* [generate-docs.bat](.\generate-docs.bat) - update generated documentation into [.\docs](.\docs)
+* [package.bat](.\package.bat) - build nuget packages into [.\publish\packages](.\publish\packages)
+* [test.bat](.\test.bat) - execute unit tests and output results into [.\TestResults](.\TestResults)
 
 ## Additional Documentation
 
