@@ -132,6 +132,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.WebApi", "Examples
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9C7C28F7-9DAA-4602-B2EE-B6777CBCC1B2}"
 	ProjectSection(SolutionItems) = preProject
+		Scripts\DeleteAllDocker.bat = Scripts\DeleteAllDocker.bat
 		Scripts\installcredprovider.ps1 = Scripts\installcredprovider.ps1
 		Scripts\SetupAzurite.bat = Scripts\SetupAzurite.bat
 		Scripts\StartAllDocker.bat = Scripts\StartAllDocker.bat
@@ -141,6 +142,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9C7C
 		Scripts\StartRabbitMQ.bat = Scripts\StartRabbitMQ.bat
 		Scripts\StartSmtp4Dev.bat = Scripts\StartSmtp4Dev.bat
 		Scripts\StartSmtp4DevDocker.bat = Scripts\StartSmtp4DevDocker.bat
+		Scripts\StopAllDocker.bat = Scripts\StopAllDocker.bat
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MessageQueueing.Hosting", "Framework\Eliassen.MessageQueueing.Hosting\Eliassen.MessageQueueing.Hosting.csproj", "{DDEB401D-7CB2-4D57-AD81-3A88FBE24E5B}"
@@ -187,9 +189,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D43EC245
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{92FD4EEB-1BF5-4105-B55F-DB70DFB2C35E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.RabbitMQ", "ExternalServices\RabbitMQ\Eliassen.RabbitMQ\Eliassen.RabbitMQ.csproj", "{CD2D80EC-9759-4579-9041-CA0D0A3BFECB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.RabbitMQ", "ExternalServices\RabbitMQ\Eliassen.RabbitMQ\Eliassen.RabbitMQ.csproj", "{CD2D80EC-9759-4579-9041-CA0D0A3BFECB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.RabbitMQ.Tests", "ExternalServices\RabbitMQ\Eliassen.RabbitMQ.Tests\Eliassen.RabbitMQ.Tests.csproj", "{37092C41-C418-4C6A-B375-3D0FA6DF42A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.RabbitMQ.Tests", "ExternalServices\RabbitMQ\Eliassen.RabbitMQ.Tests\Eliassen.RabbitMQ.Tests.csproj", "{37092C41-C418-4C6A-B375-3D0FA6DF42A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
