@@ -11,15 +11,27 @@ ECHO "restore current .net tools"
 dotnet tool restore
 
 ECHO "Build Web Project"
+RMDIR "%PublishPath%" /S/Q
+MKDIR "%PublishPath%"
 dotnet build ^
 Nucleus.Net.Libs.sln ^
 --configuration Release ^
 --output %PublishPath%
+SET TEST_ERR=%ERRORLEVEL%
+IF NOT "%TEST_ERR%"=="0" (
+	ECHO "Build Failed! %TEST_ERR%"
+	GOTO :skiptoend
+)
 
 CALL test.bat --no-start
+SET TEST_ERR=%ERRORLEVEL%
+IF NOT "%TEST_ERR%"=="0" (
+	ECHO "Tests Failed! %TEST_ERR%"
+	GOTO :skiptoend
+)
 
+ECHO "Generate - swagger docs"
 dotnet msbuild /T:BuildSwagger .\Examples\Eliassen.WebApi
-dotnet build Nucleus.Net.Libs.sln /T:GetDocumentation
 
 ECHO "Generate Service-Endpoints"
 dotnet run ^
@@ -30,6 +42,10 @@ dotnet run ^
 --output .\docs\Service-Endpoints.md ^
 --Template Service-Endpoints ^
 --file-template-path .\docs\templates
+
+ECHO "Generate - Library code docs"
+RMDIR .\docs\code /S/Q
+dotnet build Nucleus.Net.Libs.sln /T:GetDocumentation
 
 ECHO "Generate - Library Docs"
 RMDIR .\docs\Libraries /S/Q
@@ -44,6 +60,7 @@ dotnet run ^
 DEL .\docs\Libraries\Microsoft*.* /Q
 
 RMDIR .\docs\Tests /S/Q
+MKDIR .\docs\Tests
 ECHO "Copy Code Coverage Results"
 COPY .\TestResults\Cobertura.coverage .\docs\Tests\Cobertura.coverage /Y
 ECHO "Copy Code Test Results"
@@ -62,4 +79,11 @@ dotnet run ^
 --file-template-path .\docs\templates ^
 --input-type XML
 
+ECHO TEST_ERR=%TEST_ERR%
+:skiptoend
+IF "%TEST_ERR%"=="0" (
+	ECHO "No Errors :)"
+)
+EXIT /B %TEST_ERR%
+:EOF
 ENDLOCAL

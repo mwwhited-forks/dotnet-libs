@@ -14,16 +14,19 @@
 			<DataCollector friendlyName="XPlat code coverage">
 				<Configuration>
 					<!--Obsolete,GeneratedCodeAttribute,-->
+					<!--https://github.com/coverlet-coverage/coverlet/blob/master/src/coverlet.collector/DataCollection/CoverletSettings.cs-->
 					<ExcludeByAttribute>ExcludeFromCodeCoverageAttribute</ExcludeByAttribute>
 
-					<Exclude>[coverlet.*.tests?]*,[*]Coverlet.Core*,[*.Contracts?]*,[*.Entities?]*,[*.Abstractions?]*</Exclude>
+					<Exclude>[coverlet.*.tests?]*,[*]Coverlet.Core*,[*.Abstractions?]*</Exclude>
 
 					<Format>cobertura</Format>
 					
 					<SingleHit>false</SingleHit>
-					<UseSourceLink>true</UseSourceLink>
+					<UseSourceLink>false</UseSourceLink>
 					<IncludeTestAssembly>false</IncludeTestAssembly>
 					<SkipAutoProps>true</SkipAutoProps>
+					
+					<ExcludeAssembliesWithoutSources>true</ExcludeAssembliesWithoutSources>
 
 				</Configuration>
 			</DataCollector>
@@ -63,6 +66,13 @@
 		<DeleteDeploymentDirectoryAfterTestRunIsComplete>false</DeleteDeploymentDirectoryAfterTestRunIsComplete>
 		<DeploymentEnabled>true</DeploymentEnabled>
 		<DeployTestSourceDependencies>true</DeployTestSourceDependencies>
+		
+		<!--
+		<Parallelize>
+			<Workers>8</Workers>
+			<Scope>MethodLevel</Scope>
+		</Parallelize>
+		-->
 
 	</MSTest>
 

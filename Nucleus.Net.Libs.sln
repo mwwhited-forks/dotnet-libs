@@ -56,6 +56,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.System.Abstractions", "Framework\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj", "{FA9DEE5A-48BF-478D-ABBB-1300660FB786}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{26D6201D-81AD-4596-BEE5-DE42FC5EE58D}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Notes.md = docs\Notes.md
+		docs\Service-Endpoints.md = docs\Service-Endpoints.md
+		docs\swagger.json = docs\swagger.json
+		docs\swagger.yaml = docs\swagger.yaml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{7796027A-C66D-46FD-867E-5751E7FADE50}"
 	ProjectSection(SolutionItems) = preProject
@@ -162,9 +168,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MailKit.Tests", "ExternalServices\MailKit\Eliassen.MailKit.Tests\Eliassen.MailKit.Tests.csproj", "{4CDE950E-73E6-445F-9B78-E4AE0550D45F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MailKit.Hosting", "ExternalServices\MailKit\Eliassen.MailKit.Hosting\Eliassen.MailKit.Hosting.csproj", "{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MailKit.Hosting", "ExternalServices\MailKit\Eliassen.MailKit.Hosting\Eliassen.MailKit.Hosting.csproj", "{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.FixSourceLinks.Cli", "Tools\Eliassen.FixSourceLinks.Cli\Eliassen.FixSourceLinks.Cli.csproj", "{C1CA926A-1605-40C7-8399-EA966E1DE00D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.FixSourceLinks.Cli", "Tools\Eliassen.FixSourceLinks.Cli\Eliassen.FixSourceLinks.Cli.csproj", "{C1CA926A-1605-40C7-8399-EA966E1DE00D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D43EC245-FAB0-4B78-8FEB-6250EA598063}"
 	ProjectSection(SolutionItems) = preProject

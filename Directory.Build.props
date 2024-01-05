@@ -17,12 +17,12 @@
 	<PropertyGroup Condition="'$(DOCUMENT_PATH)' == ''">
 		<DocumentPath>$(SolutionDir)docs\</DocumentPath>
 	</PropertyGroup>
-	
+
 	<PropertyGroup Condition="'$(CodeDocumentPath)' == ''">
 		<CodeDocumentPath>$(DocumentPath)code\</CodeDocumentPath>
 	</PropertyGroup>
 
-	<ItemGroup  Condition=" '$(Configuration)' == 'Debug' ">
+	<ItemGroup>
 		<PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
