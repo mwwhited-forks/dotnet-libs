@@ -6,7 +6,6 @@ using MailKit.Search;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using MimeKit;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -53,6 +52,10 @@ public class EmailMessageReceiverHost(
     /// <returns>A task representing the start operation.</returns>
     public async Task StartAsync(CancellationToken cancellationToken)
     {
+#if !DEBUG
+throw new NotSupportedException();
+#endif
+
         var client = await imapClientFactory.CreateAsync();
 
         await client.NoOpAsync();
@@ -76,7 +79,7 @@ public class EmailMessageReceiverHost(
         //        Exclude = true,
         //    },
         //    Items = MessageSummaryItems.UniqueId | MessageSummaryItems.BodyStructure | MessageSummaryItems.Flags,
-             
+
         //});
 
         foreach (var itemId in fetched)
