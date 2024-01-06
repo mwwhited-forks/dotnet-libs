@@ -30,9 +30,9 @@ public class ManageGraphUser(
     {
         var config = new
         {
-            clientId = _config[ConfigKeys.Azure.ADB2C.ClientID],
-            tenantId = _config[ConfigKeys.Azure.ADB2C.Issuer],
-            clientSecret = _config[ConfigKeys.Azure.ADB2C.ClientSecret],
+            clientId = _config[ConfigKeys.Azure.AdB2C.ClientID],
+            tenantId = _config[ConfigKeys.Azure.AdB2C.Issuer],
+            clientSecret = _config[ConfigKeys.Azure.AdB2C.ClientSecret],
         };
 
         var token = new ClientSecretCredential(config.tenantId, config.clientId, config.clientSecret);
@@ -128,7 +128,7 @@ public class ManageGraphUser(
                     new ObjectIdentity()
                     {
                         SignInType = "emailAddress",
-                        Issuer = $"{_config[ConfigKeys.Azure.ADB2C.Tenant]}.onmicrosoft.com",
+                        Issuer = $"{_config[ConfigKeys.Azure.AdB2C.Tenant]}.onmicrosoft.com",
                         IssuerAssignedId = email,
                     }
                 ],
@@ -173,7 +173,7 @@ public class ManageGraphUser(
             // Set up the Microsoft Graph service client with client credentials
             var graphClient = new GraphServiceClient(GetAuthProvider());
 
-            var existingUsers = await graphClient.DirectoryObjects.GetByIds.PostAsync(
+            var existingUsers = await graphClient.DirectoryObjects.GetByIds.PostAsGetByIdsPostResponseAsync(
                 new global::Microsoft.Graph.DirectoryObjects.GetByIds.GetByIdsPostRequestBody
                 {
                     Ids = [userId],

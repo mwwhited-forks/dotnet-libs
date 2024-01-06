@@ -13,7 +13,7 @@ public static class ConfigKeys
         /// <summary>
         /// Contains keys related to Azure Active Directory B2C configuration.
         /// </summary>
-        public static class ADB2C
+        public static class AdB2C
         {
             /// <summary>
             /// Represents the key for the Azure AD B2C client ID configuration.

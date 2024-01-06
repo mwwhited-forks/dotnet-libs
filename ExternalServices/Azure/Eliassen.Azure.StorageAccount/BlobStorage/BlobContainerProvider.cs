@@ -92,10 +92,10 @@ public class BlobContainerProvider(
         // If we get an unexpected error, we catch it here and return the error message
         catch (RequestFailedException ex)
         {
-#warning should not return stack trace in response
             // Log error to console and create a new response we can return to the requesting method
-            _logger.LogError($"Unhandled Exception. ID: {{{nameof(ex.StackTrace)}}} - Message: {{{nameof(ex.Message)}}}", ex.StackTrace, ex.Message);
-            response.Status = $"Unexpected error: {ex.StackTrace}. Check log with StackTrace ID.";
+            _logger.LogError($"Unhandled Exception. Message: {{{nameof(ex.Message)}}}", ex.Message);
+            _logger.LogDebug($"Unhandled Exception. ID: {{{nameof(ex.StackTrace)}}} - Message: {{{nameof(ex.Message)}}}", ex.StackTrace, ex.Message);
+            response.Status = $"Unexpected error: {ex.Message}. Check log with StackTrace ID.";
             response.Error = true;
             return response;
         }

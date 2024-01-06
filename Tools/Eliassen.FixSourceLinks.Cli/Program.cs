@@ -85,7 +85,7 @@ internal class Program
                         if (item.attribute != null && item.resultPath != null)
                         {
                             changes = true;
-                            Console.WriteLine($"\tValue: \"{item.attribute?.Value}\" to  \"{item.resultPath}\"");
+                            Console.WriteLine($"\tValue: \"{item.attribute.Value}\" to  \"{item.resultPath}\"");
                             item.attribute.Value = item.resultPath;
                         }
                         else
