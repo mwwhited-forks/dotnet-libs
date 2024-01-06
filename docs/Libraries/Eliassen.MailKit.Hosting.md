@@ -28,6 +28,17 @@ Disposes of the resources used by the
  *See: T:Eliassen.MailKit.Hosting.EmailMessageReceiverHost*. 
 
 
+#### Dispose(System.Boolean)
+Disposes of the resources used by the 
+ *See: T:Eliassen.MailKit.Hosting.EmailMessageReceiverHost*. 
+
+
+##### Parameters
+* *disposing:* 
+
+
+
+
 #### StartAsync(System.Threading.CancellationToken)
 Starts the message receiver host. 
 

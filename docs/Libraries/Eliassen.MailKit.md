@@ -98,6 +98,25 @@ A instance.
 
 
 
+#### ToReceived(MimeKit.MimeMessage,System.String,System.String)
+Creates a 
+ *See: T:Eliassen.Communications.Models.ReceivedEmailMessageModel*from the specified 
+ *See: T:MimeKit.MimeMessage*. and inbound metadata such as host and mailbox path. 
+
+
+##### Parameters
+* *message:* 
+* *server:* 
+* *path:* 
+
+
+
+
+##### Return value
+
+
+
+
 ## Class: MailKit.Services.ISmtpClientFactory
 Represents a factory for creating instances of 
  *See: T:MailKit.Net.Smtp.SmtpClient*. 
@@ -223,6 +242,25 @@ Creates a MimeMessage instance from the specified
 
 ##### Return value
 A MimeMessage instance representing the email message.
+
+
+
+#### ToReceived(MimeKit.MimeMessage,System.String,System.String)
+Creates a 
+ *See: T:Eliassen.Communications.Models.ReceivedEmailMessageModel*from the specified 
+ *See: T:MimeKit.MimeMessage*. and inbound metadata such as host and mailbox path. 
+
+
+##### Parameters
+* *message:* 
+* *server:* 
+* *path:* 
+
+
+
+
+##### Return value
+
 
 
 

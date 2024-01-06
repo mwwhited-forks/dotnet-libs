@@ -25,6 +25,17 @@ Disposes of the resources used by the
  *See: T:Eliassen.MessageQueueing.Hosting.MessageReceiverHost*. 
 
 
+#### Dispose(System.Boolean)
+Disposes of the resources used by the 
+ *See: T:Eliassen.MessageQueueing.Hosting.MessageReceiverHost*. 
+
+
+##### Parameters
+* *disposing:* 
+
+
+
+
 #### StartAsync(System.Threading.CancellationToken)
 Starts the message receiver host. 
 

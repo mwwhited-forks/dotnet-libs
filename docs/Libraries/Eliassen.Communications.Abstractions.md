@@ -37,6 +37,16 @@ Gets or sets the headers of the email message.
 #### Attachments
 Gets or sets the list of attachment references in the email message.
 
+## Class: Communications.Models.ReceivedEmailMessageModel
+This model represents inbound email messages 
+
+### Properties
+
+#### Server
+this is the host reference for the inbound message
+#### Path
+what inbox path is the message received on
+
 ## Class: Communications.Models.SmsMessageModel
 Represents a model for SMS messages. 
 
