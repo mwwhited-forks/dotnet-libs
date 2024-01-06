@@ -2,6 +2,7 @@
 using System.Linq.Expressions;
 
 namespace Eliassen.System.Linq.Expressions;
+
 /// <summary>
 /// Represents a builder for constructing expression trees used in querying and filtering.
 /// </summary>

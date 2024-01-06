@@ -65,6 +65,14 @@ public class MimeMessageFactory(
         return email;
     }
 
+    /// <summary>
+    /// Creates a <see cref="ReceivedEmailMessageModel"/> from the specified <see cref="MimeMessage"/>.
+    /// and inbound metadata such as host and mailbox path.
+    /// </summary>
+    /// <param name="message"></param>
+    /// <param name="server"></param>
+    /// <param name="path"></param>
+    /// <returns></returns>
     public ReceivedEmailMessageModel ToReceived(MimeMessage message, string server, string path)
     {
         var received = new ReceivedEmailMessageModel

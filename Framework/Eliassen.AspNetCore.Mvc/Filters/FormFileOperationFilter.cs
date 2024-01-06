@@ -6,7 +6,6 @@ using System.Linq;
 
 namespace Eliassen.AspNetCore.Mvc.Filters;
 
-
 /// <summary>
 /// Implementation of <see cref="IOperationFilter"/> for handling file upload in Swagger UI.
 /// </summary>

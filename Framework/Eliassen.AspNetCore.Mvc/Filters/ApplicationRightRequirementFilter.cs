@@ -4,37 +4,36 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Eliassen.AspNetCore.Mvc.Filters
+namespace Eliassen.AspNetCore.Mvc.Filters;
+
+/// <summary>
+/// Authorization filter to compared application rights for user to rights required by endpoint
+/// </summary>
+public class ApplicationRightRequirementFilter(string[] rights) : IAuthorizationFilter
 {
+    private readonly IReadOnlyList<string> _rights = rights;
+
     /// <summary>
-    /// Authorization filter to compared application rights for user to rights required by endpoint
+    /// Ensure that current authenticated user matches as least one requested right
     /// </summary>
-    public class ApplicationRightRequirementFilter(string[] rights) : IAuthorizationFilter
+    /// <param name="context"></param>
+    public void OnAuthorization(AuthorizationFilterContext context)
     {
-        private readonly IReadOnlyList<string> _rights = rights;
+        bool? userAuthenticated = context.HttpContext.User.Identity?.IsAuthenticated;
+        var userRights = context.HttpContext.User.GetClaimValues(CommonClaims.ApplicationRight);
 
-        /// <summary>
-        /// Ensure that current authenticated user matches as least one requested right
-        /// </summary>
-        /// <param name="context"></param>
-        public void OnAuthorization(AuthorizationFilterContext context)
-        {
-            bool? userAuthenticated = context.HttpContext.User.Identity?.IsAuthenticated;
-            var userRights = context.HttpContext.User.GetClaimValues(CommonClaims.ApplicationRight);
-
-            if (userAuthenticated is null or false)
+        if (userAuthenticated is null or false)
+            context.Result = new ForbidResult();
+        else if (_rights.Any())
+            if (!Any(userRights.Select(c => c.value)))
                 context.Result = new ForbidResult();
-            else if (_rights.Any())
-                if (!Any(userRights.Select(c => c.value)))
-                    context.Result = new ForbidResult();
-        }
+    }
 
-        internal bool Any(IEnumerable<string> items)
-        {
-            foreach (var item in items)
-                if (_rights.Contains(item))
-                    return true;
-            return false;
-        }
+    internal bool Any(IEnumerable<string> items)
+    {
+        foreach (var item in items)
+            if (_rights.Contains(item))
+                return true;
+        return false;
     }
 }

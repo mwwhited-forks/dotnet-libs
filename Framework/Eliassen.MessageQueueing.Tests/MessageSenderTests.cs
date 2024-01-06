@@ -14,6 +14,7 @@ using System.Security.Principal;
 using System.Threading.Tasks;
 
 namespace Eliassen.MessageQueueing.Tests;
+
 [TestClass]
 public class MessageSenderTests
 {

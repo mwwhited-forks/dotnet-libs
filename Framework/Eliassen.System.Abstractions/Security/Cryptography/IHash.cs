@@ -1,15 +1,14 @@
-﻿namespace Eliassen.System.Security.Cryptography
+﻿namespace Eliassen.System.Security.Cryptography;
+
+/// <summary>
+/// Simplified hash generator
+/// </summary>
+public interface IHash
 {
     /// <summary>
-    /// Simplified hash generator
+    /// cryptographic has for input value
     /// </summary>
-    public interface IHash
-    {
-        /// <summary>
-        /// cryptographic has for input value
-        /// </summary>
-        /// <param name="value">value to hash</param>
-        /// <returns>hash input</returns>
-        string GetHash(string value);
-    }
+    /// <param name="value">value to hash</param>
+    /// <returns>hash input</returns>
+    string GetHash(string value);
 }

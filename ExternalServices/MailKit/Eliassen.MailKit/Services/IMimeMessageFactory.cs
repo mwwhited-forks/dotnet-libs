@@ -14,5 +14,14 @@ public interface IMimeMessageFactory
     /// <param name="message">The email message model.</param>
     /// <returns>A <see cref="MimeMessage"/> instance.</returns>
     MimeMessage Create(EmailMessageModel message);
+
+    /// <summary>
+    /// Creates a <see cref="ReceivedEmailMessageModel"/> from the specified <see cref="MimeMessage"/>.
+    /// and inbound metadata such as host and mailbox path.
+    /// </summary>
+    /// <param name="message"></param>
+    /// <param name="server"></param>
+    /// <param name="path"></param>
+    /// <returns></returns>
     ReceivedEmailMessageModel ToReceived(MimeMessage message, string server, string path);
 }
