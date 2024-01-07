@@ -195,8 +195,56 @@ public class QueryableExtensionsTests
     [DataRow(typeof(TestTargetExtendedModel), "FName0999 LName0001", 1, 1, 1, "1")]
     public void ExecuteByTest_SearchTerm(Type type, string searchTerm, int expectedTotalPages, int expectedTotalRows, int expectedRows, string expectedKeys)
     {
+        /*
+(
+	(
+		(
+			(
+				(
+					(
+						(
+							(
+								(
+									(n.FName + " ")
+									 + n.LName
+								) != null
+							) AndAlso (
+								(n.FName + " ")
+								 + n.LName
+							).Equals("FName0999 LName0001")
+						) OrElse (
+							(
+								(
+									(n.LName + " ")
+									 + n.FName
+								) != null
+							) AndAlso (
+								(n.LName + " ")
+								 + n.FName
+							).Equals("FName0999 LName0001")
+						)
+					) OrElse (
+						(n.FName != null) 
+						AndAlso n.FName.Equals("FName0999 LName0001")
+					)
+				) OrElse (
+					(n.LName != null)
+					 AndAlso n.LName.Equals("FName0999 LName0001")
+				)
+			) OrElse (
+				(n.Email != null)
+				 AndAlso n.Email.Equals("FName0999 LName0001")
+			)
+		) OrElse (
+			(n.May != null)
+			 AndAlso n.May.Equals("FName0999 LName0001")
+		)
+        --- > this next line is the problem
+	) OrElse n.Modules.Any(child => ((child != null) AndAlso child.Equals("FName0999 LName0001"))))).OrderBy(n => Convert(n.Index, Object))
+        */
+
 #warning fix this unit test
-        /*this.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
+        this.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
             .Where(mi => mi.IsGenericMethod)
             .Where(mi => mi.Name == nameof(ExecuteByTestSearchTerm))
             .Select(mi => mi.MakeGenericMethod(type))
@@ -208,9 +256,9 @@ public class QueryableExtensionsTests
                 expectedTotalRows,
                 expectedRows,
                 expectedKeys
-            });*/
+            });
 
-        //TODO This test fails because the TestTargetExtendedModel.Modules property is [Searchable]
+        //TODO: This test fails because the TestTargetExtendedModel.Modules property is [Searchable]
         //There was an original TODO statement here of 'TODO: nullable array values can not be included in searchable'
         //This has been commented out so that NDM-54 can be completed but this test must be restored to working order.
     }

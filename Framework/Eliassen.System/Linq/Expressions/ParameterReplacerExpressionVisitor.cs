@@ -1,15 +1,14 @@
 ﻿using System.Linq.Expressions;
 
-namespace Eliassen.System.Linq.Expressions
+namespace Eliassen.System.Linq.Expressions;
+
+internal class ParameterReplacerExpressionVisitor : ExpressionVisitor
 {
-    internal class ParameterReplacerExpressionVisitor : ExpressionVisitor
-    {
-        private readonly ParameterExpression _parameter;
+    private readonly ParameterExpression _parameter;
 
-        internal ParameterReplacerExpressionVisitor(ParameterExpression parameter) =>
-            _parameter = parameter;
+    internal ParameterReplacerExpressionVisitor(ParameterExpression parameter) =>
+        _parameter = parameter;
 
-        protected override Expression VisitParameter(ParameterExpression node) =>
-            _parameter.Type == node.Type ? _parameter : node;
-    }
+    protected override Expression VisitParameter(ParameterExpression node) =>
+        _parameter.Type == node.Type ? _parameter : node;
 }
