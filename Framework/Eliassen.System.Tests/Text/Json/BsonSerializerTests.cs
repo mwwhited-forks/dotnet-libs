@@ -1,38 +1,28 @@
 ﻿using Eliassen.System.Text.Json;
+using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Text.Json;
 
-namespace Eliassen.System.Tests.Text.Json
+namespace Eliassen.System.Tests.Text.Json;
+
+[TestClass]
+public class BsonSerializerTests
 {
-    public class TargetModel
+    public TestContext TestContext { get; set; } = null!;
+
+    private static JsonSerializerOptions GetOptions() => new()
     {
-        public string TargetId { get; set; } = Guid.NewGuid().ToString();
-        public DateTimeOffset DateTimeOffset { get; set; } = DateTimeOffset.Now;
-        public DateTime DateTime { get; set; } = DateTime.Now;
+        TypeInfoResolver = new BsonTypeInfoResolver(),
+        WriteIndented = true,
+    };
 
-        public DateTimeOffset? DateTimeOffsetNullable { get; set; } = DateTimeOffset.Now;
-        public DateTime? DateTimeNullable { get; set; } = DateTime.Now;
-    }
-
-    [TestClass]
-    public class BsonSerializerTests
+    [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
+    public void Test()
     {
-        public TestContext TestContext { get; set; } = null!;
+        var model = new TargetModel();
+        var json = JsonSerializer.Serialize(model, model.GetType(), GetOptions());
 
-        [TestMethod]
-        public void Test()
-        {
-            TargetModel model = new();
-
-            var options = new JsonSerializerOptions
-            {
-                TypeInfoResolver = new BsonTypeInfoResolver(),
-                WriteIndented = true,
-            };
-            var json = JsonSerializer.Serialize(model, model.GetType(), options);
-
-            this.TestContext.WriteLine(json);
-        }
+        this.TestContext.WriteLine(json);
     }
 }

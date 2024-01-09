@@ -68,7 +68,7 @@ public class SortBuilder<TModel>(
                 );
         }
 
-        if (!matchedKeys.Any() && treeBuilder.DefaultSortOrder().Any())
+        if (!matchedKeys.Any() && treeBuilder.DefaultSortOrder().Count != 0)
         {
             orderBys = treeBuilder.DefaultSortOrder()
               .ToDictionary(k => k.column, v => v.direction, stringComparer);

@@ -2,12 +2,14 @@
 
 
 ## Class: MongoDB.Extensions.BsonObjectIdConvention
-Represents a convention for configuring BSON serialization of object IDs.
+Represents a convention for configuring BSON serialization of object IDs. 
+
 ### Methods
 
 
 #### Apply(MongoDB.Bson.Serialization.BsonMemberMap)
-Applies a modification to the member map.
+Applies a modification to the member map. 
+
 
 ##### Parameters
 * *memberMap:* The member map.
@@ -16,7 +18,8 @@ Applies a modification to the member map.
 
 
 ## Class: MongoDB.Extensions.CollectionNameAttribute
-declarative attribute for labeling properties as MongoDB Collections
+declarative attribute for labeling properties as MongoDB Collections 
+
 ### Properties
 
 #### CollectionName
@@ -27,10 +30,12 @@ Gets the type identifier for the attribute.
 
 
 #### Constructor
-declarative attribute for labeling properties as MongoDB Collections
+declarative attribute for labeling properties as MongoDB Collections 
+
 
 ## Class: MongoDB.Extensions.DefaultMongoDatabaseSettings
-Default connection information for MongoDB databases. Duplicating this class with a different value will allow for declaring secondary connection configurations.
+Default connection information for MongoDB databases. Duplicating this class with a different value will allow for declaring secondary connection configurations. 
+
 ### Properties
 
 #### ConnectionString
@@ -41,7 +46,8 @@ Gets or sets the name of the MongoDB database.
 
 
 #### ToString
-Returns a string that represents the current object.
+Returns a string that represents the current object. 
+
 
 ##### Return value
 A string that represents the current object.
@@ -49,12 +55,15 @@ A string that represents the current object.
 
 
 ## Class: MongoDB.Extensions.IMongoDatabaseFactory
-provide a centralized means to created MongoDB instances
+provide a centralized means to created MongoDB instances 
+
 ### Methods
 
 
 #### Create``1
-factory method to create a instance.
+factory method to create a 
+ *See: T:MongoDB.Driver.IMongoDatabase*instance. 
+
 
 ##### Return value
 
@@ -62,7 +71,8 @@ factory method to create a instance.
 
 
 #### Create``2
-factory method to create a MongoDB Database abstraction.
+factory method to create a MongoDB Database abstraction. 
+
 
 ##### Return value
 
@@ -70,14 +80,16 @@ factory method to create a MongoDB Database abstraction.
 
 
 ## Class: MongoDB.Extensions.IMongoDatabaseRegistration
-Internal registry for MongoDatabase connections.
+Internal registry for MongoDatabase connections. 
+
 ### Properties
 
 #### Types
 List of registered interfaces for MongoDatabase instances.
 
 ## Class: MongoDB.Extensions.IMongoSettings
-Common pattern for declaring MongoDB Settings
+Common pattern for declaring MongoDB Settings 
+
 ### Properties
 
 #### ConnectionString
@@ -86,14 +98,16 @@ MongoDB Connection String
 Name of database to map for MongoDB
 
 ## Class: MongoDB.Extensions.MongoDatabaseFactory
-Factory for creating MongoDB database instances.
+Factory for creating MongoDB database instances. 
+
 Initializes a new instance of the class.
 ### Methods
 
 
 #### Constructor
 Initializes a new instance of the class.
-Factory for creating MongoDB database instances.
+Factory for creating MongoDB database instances. 
+
 
 ##### Parameters
 * *serviceProvider:* The service provider for obtaining dependencies.
@@ -102,7 +116,8 @@ Factory for creating MongoDB database instances.
 
 
 #### Create``1
-Creates a MongoDB database instance based on the provided settings.
+Creates a MongoDB database instance based on the provided settings. 
+
 
 ##### Return value
 The MongoDB database instance.
@@ -110,7 +125,8 @@ The MongoDB database instance.
 
 
 #### Create``2
-Creates a proxied MongoDB database instance based on the provided settings.
+Creates a proxied MongoDB database instance based on the provided settings. 
+
 
 ##### Return value
 The proxied MongoDB database instance.
@@ -118,10 +134,12 @@ The proxied MongoDB database instance.
 
 
 #### #cctor
-Static constructor to register serializers and conventions.
+Static constructor to register serializers and conventions. 
+
 
 ## Class: MongoDB.Extensions.MongoDatabaseRegistration
-Represents a registration of types for MongoDB databases.
+Represents a registration of types for MongoDB databases. 
+
 ### Fields
 
 #### InternalTypes
@@ -132,15 +150,18 @@ Gets the internal set of types registered for MongoDB databases.
 Gets the read-only collection of types registered for MongoDB databases.
 
 ## Class: MongoDB.Extensions.MongoDispatchProxy
-This proxy allow for dynamic creation of wrapper classes to expose MongoDatabase instances
+This proxy allow for dynamic creation of wrapper classes to expose MongoDatabase instances 
+
 
 ## Class: MongoDB.Extensions.ServiceCollectionExtensions
-Common libraries to enable MongoDB Support
+Common libraries to enable MongoDB Support 
+
 ### Methods
 
 
 #### TryAddMongoServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
-Enable common infrastructure.
+Enable common infrastructure. 
+
 
 ##### Parameters
 * *services:* 
@@ -155,7 +176,8 @@ Enable common infrastructure.
 
 
 #### TryAddMongoDatabase``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-register MongoDatabase instance with custom configuration options
+register MongoDatabase instance with custom configuration options 
+
 
 ##### Parameters
 * *services:* 
@@ -169,7 +191,9 @@ register MongoDatabase instance with custom configuration options
 
 
 #### TryAddMongoDatabase``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-register MongoDatabase instance that will use the configuration options
+register MongoDatabase instance that will use the 
+ *See: T:Eliassen.MongoDB.Extensions.DefaultMongoDatabaseSettings*configuration options 
+
 
 ##### Parameters
 * *services:* 

@@ -2,7 +2,8 @@
 
 
 ## Class: TestUtilities.TestCategories
-Common test categories
+Common test categories 
+
 ### Fields
 
 #### Unit
@@ -15,12 +16,14 @@ Integration tests should support the ability to run against deployed environment
 Test points for local development, not expected to be safe to return and may use persisted resources
 
 ## Class: TestUtilities.TestContextExtensions
-Extensions for TestContext
+Extensions for TestContext 
+
 ### Methods
 
 
 #### AddResult(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.Object,System.String,System.Int32,System.String)
-serialize an object to the test results for a given test run
+serialize an object to the test results for a given test run 
+
 
 ##### Parameters
 * *context:* 
@@ -38,22 +41,28 @@ serialize an object to the test results for a given test run
 
 
 #### AddResult(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.Object,System.String@,System.String,System.Int32,System.String)
-serialize an object to the test results for a given test run
+serialize an object to the test results for a given test run 
+
 
 #### AddResult(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.Object,System.String,System.String,System.Int32,System.String)
-serialize an object to the test results for a given test run
+serialize an object to the test results for a given test run 
+
 
 #### AddResult(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.Object,System.String,System.String@,System.String,System.Int32,System.String)
-serialize an object to the test results for a given test run
+serialize an object to the test results for a given test run 
+
 
 #### AddResultFile(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.String,System.Byte[])
-serialize an object to the test results for a given test run
+serialize an object to the test results for a given test run 
+
 
 #### AddResultFile(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.String,System.Byte[],System.String@)
-serialize an object to the test results for a given test run
+serialize an object to the test results for a given test run 
+
 
 #### GetTestData(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.Type,System.String,System.IServiceProvider)
-deserialize test data from embedded resources
+deserialize test data from embedded resources 
+
 
 ##### Parameters
 * *context:* 
@@ -70,13 +79,16 @@ deserialize test data from embedded resources
 
 
 #### GetTestDataAsync(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.Type,System.String,System.IServiceProvider)
-deserialize test data from embedded resources
+deserialize test data from embedded resources 
+
 
 #### GetTestDataAsync``1(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.String,System.IServiceProvider)
-deserialize test data from embedded resources
+deserialize test data from embedded resources 
+
 
 #### GetQualifiedTestName(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext)
-get simplified name for executing test
+get simplified name for executing test 
+
 
 ##### Parameters
 * *context:* 
@@ -90,10 +102,12 @@ get simplified name for executing test
 
 
 #### GetTestRunResultFiles(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext)
-get path for test results folder for the executing test
+get path for test results folder for the executing test 
+
 
 #### ResolveTestType(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext)
-get current type from test context
+get current type from test context 
+
 
 ##### Parameters
 * *testContext:* 

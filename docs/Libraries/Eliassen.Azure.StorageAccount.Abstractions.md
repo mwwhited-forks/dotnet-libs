@@ -2,14 +2,16 @@
 
 
 ## Class: Azure.StorageAccount.AzureStorageGlobals
-Contains global constants related to Azure Storage.
+Contains global constants related to Azure Storage. 
+
 ### Fields
 
 #### MessageProviderKey
 The key associated with the Azure Storage message provider.
 
 ## Class: Azure.StorageAccount.BlobStorage.BlobDto
-Represents a Data Transfer Object (DTO) for handling blob-related information.
+Represents a Data Transfer Object (DTO) for handling blob-related information. 
+
 ### Properties
 
 #### Uri
@@ -22,7 +24,8 @@ Gets or sets the content type of the blob.
 Gets or sets the content stream of the blob.
 
 ## Class: Azure.StorageAccount.BlobStorage.BlobResponseDto
-Represents a Data Transfer Object (DTO) for a blob response.
+Represents a Data Transfer Object (DTO) for a blob response. 
+
 ### Properties
 
 #### Status
@@ -33,7 +36,8 @@ Gets or sets a value indicating whether an error occurred in the blob response.
 Gets or sets the blob information associated with the response.
 
 ## Class: Azure.StorageAccount.BlobStorage.ConfigKeys
-Contains constant keys for configuration settings.
+Contains constant keys for configuration settings. 
+
 ### Fields
 
 #### Container.DefaultProvider
@@ -48,7 +52,8 @@ Represents the base key for container directories configuration.
 Represents the key for the miscellaneous directory within the storage container.
 
 ## Class: Azure.StorageAccount.BlobStorage.ConfigKeys.Container
-Contains keys related to storage container configuration.
+Contains keys related to storage container configuration. 
+
 ### Fields
 
 #### DefaultProvider
@@ -63,7 +68,8 @@ Represents the base key for container directories configuration.
 Represents the key for the miscellaneous directory within the storage container.
 
 ## Class: Azure.StorageAccount.BlobStorage.ConfigKeys.Container.Directories
-Contains keys related to storage container directories configuration.
+Contains keys related to storage container directories configuration. 
+
 ### Fields
 
 #### _Base
@@ -72,7 +78,8 @@ Represents the base key for container directories configuration.
 Represents the key for the miscellaneous directory within the storage container.
 
 ## Class: Azure.StorageAccount.BlobStorage.DocumentModel
-Represents a document with associated metadata.
+Represents a document with associated metadata. 
+
 ### Properties
 
 #### DocumentId
@@ -93,19 +100,23 @@ Gets or sets the category of the document.
 Gets or sets the date and time when the document was created.
 
 ## Class: Azure.StorageAccount.BlobStorage.DocumentUploadModel
-Represents a document upload model, extending the with additional data.
+Represents a document upload model, extending the 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.DocumentModel*with additional data. 
+
 ### Properties
 
 #### Data
 Gets or sets the binary data of the document.
 
 ## Class: Azure.StorageAccount.BlobStorage.IDocumentProvider
-Provides functionality for managing documents, including listing, uploading, downloading, and deleting.
+Provides functionality for managing documents, including listing, uploading, downloading, and deleting. 
+
 ### Methods
 
 
 #### ListAsync
-Retrieves a list of BlobDto representing the available documents.
+Retrieves a list of BlobDto representing the available documents. 
+
 
 ##### Return value
 A task that represents the asynchronous operation, containing the list of BlobDto.
@@ -113,7 +124,8 @@ A task that represents the asynchronous operation, containing the list of BlobDt
 
 
 #### UploadAsync(Eliassen.Azure.StorageAccount.BlobStorage.DocumentModel,System.IO.Stream)
-Uploads a document with the specified metadata and content.
+Uploads a document with the specified metadata and content. 
+
 
 ##### Parameters
 * *document:* The metadata of the document to upload.
@@ -128,7 +140,8 @@ A task that represents the asynchronous operation, containing the BlobResponseDt
 
 
 #### DownloadAsync(System.String)
-Downloads the document with the specified filename.
+Downloads the document with the specified filename. 
+
 
 ##### Parameters
 * *blobFilename:* The filename of the document to download.
@@ -142,7 +155,8 @@ A task that represents the asynchronous operation, containing the BlobDto for th
 
 
 #### DeleteAsync(System.String)
-Deletes the document with the specified filename.
+Deletes the document with the specified filename. 
+
 
 ##### Parameters
 * *blobFilename:* The filename of the document to delete.

@@ -25,15 +25,44 @@ public class MessageReceiverHost(
     private readonly List<Task> _tasks = [];
     private readonly CancellationTokenSource _tokenSource = new();
 
+    private bool _disposed = false;
+
     /// <summary>
     /// Disposes of the resources used by the <see cref="MessageReceiverHost"/>.
     /// </summary>
     public void Dispose()
     {
-        logger.LogInformation("Request Dispose");
-        _tokenSource.Cancel();
-        logger.LogInformation("Complete Dispose");
+        // Dispose of unmanaged resources.
+        Dispose(true);
+        // Suppress finalization.
+        GC.SuppressFinalize(this);
     }
+
+    /// <summary>
+    /// Disposes of the resources used by the <see cref="MessageReceiverHost"/>.
+    /// </summary>
+    /// <param name="disposing"></param>
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed)
+        {
+            return;
+        }
+
+        if (disposing)
+        {
+            // note: dispose managed state (managed objects).
+            logger.LogInformation("Request Dispose");
+            _tokenSource.Cancel();
+            logger.LogInformation("Complete Dispose");
+        }
+
+        // note: free unmanaged resources (unmanaged objects) and override a finalizer below.
+        // note: set large fields to null.
+
+        _disposed = true;
+    }
+
 
     /// <summary>
     /// Starts the message receiver host.

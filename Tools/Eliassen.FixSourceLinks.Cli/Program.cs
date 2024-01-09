@@ -23,8 +23,8 @@ internal class Program
 
         var matcher = new Matcher(StringComparison.OrdinalIgnoreCase);
 
-        matcher.AddIncludePatterns(config["include"]?.Split(';') ?? Array.Empty<string>());
-        matcher.AddExcludePatterns(config["exclude"]?.Split(';') ?? Array.Empty<string>());
+        matcher.AddIncludePatterns(config["include"]?.Split(';') ?? []);
+        matcher.AddExcludePatterns(config["exclude"]?.Split(';') ?? []);
 
         var search = Path.GetFullPath(config["search"] ?? Environment.CurrentDirectory);
         var target = Path.GetFullPath(config["target"] ?? search);
@@ -85,7 +85,7 @@ internal class Program
                         if (item.attribute != null && item.resultPath != null)
                         {
                             changes = true;
-                            Console.WriteLine($"\tValue: \"{item.attribute?.Value}\" to  \"{item.resultPath}\"");
+                            Console.WriteLine($"\tValue: \"{item.attribute.Value}\" to  \"{item.resultPath}\"");
                             item.attribute.Value = item.resultPath;
                         }
                         else

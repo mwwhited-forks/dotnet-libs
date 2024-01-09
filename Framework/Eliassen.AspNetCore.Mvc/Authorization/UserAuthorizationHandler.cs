@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Eliassen.AspNetCore.JwtAuthentication.Authorization;
 
-
 /// <summary>
 /// Handles user authorization based on specified requirements.
 /// </summary>

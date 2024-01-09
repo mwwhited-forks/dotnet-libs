@@ -1,7 +1,6 @@
-﻿namespace Eliassen.System.Tests.Reflection.TestTargets
+﻿namespace Eliassen.System.Tests.Reflection.TestTargets;
+
+public class TestModel
 {
-    public class TestModel
-    {
-        public string Property { get; set; } = null!;
-    }
+    public string Property { get; set; } = null!;
 }

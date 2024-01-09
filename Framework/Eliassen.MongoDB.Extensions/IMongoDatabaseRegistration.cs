@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Eliassen.MongoDB.Extensions
+namespace Eliassen.MongoDB.Extensions;
+
+/// <summary>
+/// Internal registry for MongoDatabase connections.  
+/// </summary>
+public interface IMongoDatabaseRegistration
 {
     /// <summary>
-    /// Internal registry for MongoDatabase connections.  
+    /// List of registered interfaces for MongoDatabase instances.
     /// </summary>
-    public interface IMongoDatabaseRegistration
-    {
-        /// <summary>
-        /// List of registered interfaces for MongoDatabase instances.
-        /// </summary>
-        IReadOnlyCollection<Type> Types { get; }
-    }
+    IReadOnlyCollection<Type> Types { get; }
 }

@@ -10,6 +10,14 @@ ECHO PublishPath %PublishPath%
 ECHO "restore current .net tools"
 dotnet tool restore
 
+echo "Git fetch"
+git fetch --prune
+FOR /F "tokens=* USEBACKQ" %%g IN (`dotnet gitversion /output json /showvariable FullSemVer`) DO (SET BUILD_VERSION=%%g)
+if "%BUILD_VERSION%"=="" GOTO error
+ECHO Building Version=  "%BUILD_VERSION%"
+
+REM GOTO :sbom
+
 CALL build.bat
 SET TEST_ERR=%ERRORLEVEL%
 IF NOT "%TEST_ERR%"=="0" (
@@ -71,6 +79,38 @@ dotnet run ^
 --input .\TestResults\Coverage\Reports\*.trx ^
 --output .\docs\Tests\[file].md ^
 --Template TestResultsToMarkdown.md ^
+--file-template-path .\docs\templates ^
+--input-type XML
+
+:sbom
+ECHO "Generate - Software Bill of Materials (bom.xml)"
+RMDIR .\docs\sbom /S/Q
+REM https://github.com/CycloneDX/cyclonedx-dotnet
+dotnet CycloneDX ^
+--output .\docs\sbom ^
+--set-version %BUILD_VERSION% ^
+--set-name Eliassen.Net.Libs ^
+--exclude-test-projects ^
+--disable-package-restore ^
+--exclude-dev ^
+Nucleus.Net.Libs.sln
+SET TEST_ERR=%ERRORLEVEL%
+IF NOT "%TEST_ERR%"=="0" (
+	ECHO "SBOM Failed! %TEST_ERR%"
+	GOTO :skiptoend
+)
+
+REM --include-project-references ^
+REM --enable-github-licenses ^
+
+ECHO "Generate - Software Bill of Materials (report)"
+dotnet run ^
+--project Tools\Eliassen.TemplateEngine.Cli ^
+--configuration Release ^
+-- ^
+--input .\docs\sbom\bom.xml ^
+--output .\docs\sbom\BillOfMaterials.md ^
+--Template SoftwareBillOfMaterials.md ^
 --file-template-path .\docs\templates ^
 --input-type XML
 

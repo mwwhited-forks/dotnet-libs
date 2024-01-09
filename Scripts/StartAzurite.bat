@@ -1,4 +1,6 @@
 
+@ECHO OFF
+
 SET PATH=%PATH%;%ProgramFiles%\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\Azure Storage Emulator\
 SET PATH=%PATH%;%ProgramFiles%\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\Microsoft\Azure Storage Emulator\
 

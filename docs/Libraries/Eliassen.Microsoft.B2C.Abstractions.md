@@ -2,7 +2,8 @@
 
 
 ## Class: Microsoft.B2C.Identity.ConfigKeys
-Contains constant keys for Azure-related configuration settings.
+Contains constant keys for Azure-related configuration settings. 
+
 ### Fields
 
 #### Azure.ADB2C.ClientID
@@ -17,7 +18,8 @@ Represents the key for the Azure AD B2C tenant configuration.
 Represents the key for the Azure AD B2C domain configuration.
 
 ## Class: Microsoft.B2C.Identity.ConfigKeys.Azure
-Contains keys related to Azure configuration.
+Contains keys related to Azure configuration. 
+
 ### Fields
 
 #### ADB2C.ClientID
@@ -32,7 +34,8 @@ Represents the key for the Azure AD B2C tenant configuration.
 Represents the key for the Azure AD B2C domain configuration.
 
 ## Class: Microsoft.B2C.Identity.ConfigKeys.Azure.ADB2C
-Contains keys related to Azure Active Directory B2C configuration.
+Contains keys related to Azure Active Directory B2C configuration. 
+
 ### Fields
 
 #### ClientID
@@ -47,12 +50,14 @@ Represents the key for the Azure AD B2C tenant configuration.
 Represents the key for the Azure AD B2C domain configuration.
 
 ## Class: Microsoft.B2C.Identity.IIdentityManager
-Represents an identity manager for managing user identities.
+Represents an identity manager for managing user identities. 
+
 ### Methods
 
 
 #### GetGraphUsersByEmail(System.String)
-Retrieves a list of user identity models based on the specified email address.
+Retrieves a list of user identity models based on the specified email address. 
+
 
 ##### Parameters
 * *emailAddress:* The email address to search for.
@@ -66,7 +71,8 @@ A task that represents the asynchronous operation. The task result contains the 
 
 
 #### CreateIdentityUserAsync(System.String,System.String,System.String)
-Creates a new identity user asynchronously with the specified details.
+Creates a new identity user asynchronously with the specified details. 
+
 
 ##### Parameters
 * *email:* The email address of the user.
@@ -82,7 +88,8 @@ A task that represents the asynchronous operation. The task result contains the 
 
 
 #### RemoveIdentityUserAsync(System.String)
-Removes an identity user asynchronously based on the specified object ID.
+Removes an identity user asynchronously based on the specified object ID. 
+
 
 ##### Parameters
 * *objectId:* The object ID of the user to remove.
@@ -96,12 +103,14 @@ A task that represents the asynchronous operation. The task result is true if th
 
 
 ## Class: Microsoft.B2C.Identity.IManageGraphUser
-Represents a service for managing users in the Microsoft Graph.
+Represents a service for managing users in the Microsoft Graph. 
+
 ### Methods
 
 
 #### CreateGraphUserAsync(System.String,System.String,System.String)
-Creates a new user in the Microsoft Graph asynchronously with the specified details.
+Creates a new user in the Microsoft Graph asynchronously with the specified details. 
+
 
 ##### Parameters
 * *email:* The email address of the user.
@@ -117,7 +126,8 @@ A task that represents the asynchronous operation. The task result contains the 
 
 
 #### RemoveGraphUserAsync(System.String)
-Removes a user from the Microsoft Graph asynchronously based on the specified user ID.
+Removes a user from the Microsoft Graph asynchronously based on the specified user ID. 
+
 
 ##### Parameters
 * *userId:* The user ID of the user to remove.
@@ -131,12 +141,14 @@ A task that represents the asynchronous operation. The task result is true if th
 
 
 ## Class: Microsoft.B2C.Identity.IUserManagementProvider
-Provides methods for managing user accounts.
+Provides methods for managing user accounts. 
+
 ### Methods
 
 
 #### CreateAccountAsync(Eliassen.Microsoft.B2C.Identity.UserCreateModel)
-Creates a user account asynchronously based on the provided model.
+Creates a user account asynchronously based on the provided model. 
+
 
 ##### Parameters
 * *model:* The model containing user account information.
@@ -150,7 +162,8 @@ A task representing the asynchronous operation, containing the created user mode
 
 
 ## Class: Microsoft.B2C.Identity.UserCreatedModel
-Represents the model for a user created as a result of account creation.
+Represents the model for a user created as a result of account creation. 
+
 ### Properties
 
 #### Username
@@ -159,7 +172,8 @@ Gets or sets the username associated with the created user.
 Gets or sets the password associated with the created user.
 
 ## Class: Microsoft.B2C.Identity.UserCreateModel
-Represents a model for creating a user in Microsoft B2C Identity.
+Represents a model for creating a user in Microsoft B2C Identity. 
+
 ### Properties
 
 #### FirstName
@@ -170,7 +184,8 @@ Gets or sets the last name of the user.
 Gets or sets the email address of the user.
 
 ## Class: Microsoft.B2C.Identity.UserIdentityModel
-Represents a model for user identity information.
+Represents a model for user identity information. 
+
 ### Properties
 
 #### FirstName

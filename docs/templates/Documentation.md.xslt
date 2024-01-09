@@ -124,7 +124,7 @@
 
 	<xsl:template match="summary">
 		<xsl:text>&cr;</xsl:text>
-		<xsl:value-of select="normalize-space()" />
+		<xsl:apply-templates select="node()" />
 	</xsl:template>
 
 	<xsl:template match="remarks">
@@ -180,15 +180,26 @@
 		<xsl:value-of select="normalize-space()" />
 	</xsl:template>
 
-	<xsl:template match="see">
-		<xsl:text> *See: </xsl:text>
-		<xsl:value-of select="@cref" />
-		<xsl:text>*</xsl:text>
+	<xsl:template match="text()">
+		<xsl:value-of select="normalize-space()" />
+		<xsl:text> &cr;</xsl:text>
 	</xsl:template>
 
-	<xsl:template match="seealso">
-		<xsl:text>*See also:* </xsl:text>
-		<xsl:value-of select="@cref" />
+	<xsl:template match="see|seealso">
+		<xsl:choose>
+			<xsl:when test="@href">
+				<xsl:text>[</xsl:text>
+				<xsl:value-of select="text()" />
+				<xsl:text>](</xsl:text>
+				<xsl:value-of select="@href" />
+				<xsl:text>)</xsl:text>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:text> *See: </xsl:text>
+				<xsl:value-of select="@cref" />
+				<xsl:text>*</xsl:text>				
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 </xsl:stylesheet>

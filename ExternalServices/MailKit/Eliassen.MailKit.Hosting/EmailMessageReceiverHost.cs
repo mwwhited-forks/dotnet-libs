@@ -35,15 +35,44 @@ public class EmailMessageReceiverHost(
     private readonly List<Task> _tasks = [];
     private readonly CancellationTokenSource _tokenSource = new();
 
+    private bool _disposed = false;
+
     /// <summary>
     /// Disposes of the resources used by the <see cref="EmailMessageReceiverHost"/>.
     /// </summary>
     public void Dispose()
     {
-        logger.LogInformation("Request Dispose");
-        _tokenSource.Cancel();
-        logger.LogInformation("Complete Dispose");
+        // Dispose of unmanaged resources.
+        Dispose(true);
+        // Suppress finalization.
+        GC.SuppressFinalize(this);
     }
+
+    /// <summary>
+    /// Disposes of the resources used by the <see cref="EmailMessageReceiverHost"/>.
+    /// </summary>
+    /// <param name="disposing"></param>
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed)
+        {
+            return;
+        }
+
+        if (disposing)
+        {
+            // note: dispose managed state (managed objects).
+            logger.LogInformation("Request Dispose");
+            _tokenSource.Cancel();
+            logger.LogInformation("Complete Dispose");
+        }
+
+        // note: free unmanaged resources (unmanaged objects) and override a finalizer below.
+        // note: set large fields to null.
+
+        _disposed = true;
+    }
+
 
     /// <summary>
     /// Starts the message receiver host.
@@ -58,7 +87,7 @@ throw new NotSupportedException();
 
         var client = await imapClientFactory.CreateAsync();
 
-        await client.NoOpAsync();
+        await client.NoOpAsync(cancellationToken);
 
         var folder = client.Inbox;
 
@@ -66,9 +95,7 @@ throw new NotSupportedException();
 
         // https://github.com/jstedfast/MailKit?tab=readme-ov-file#searching-an-imap-folder
 
-        var fetched = await folder.SearchAsync(
-            SearchQuery.NotDeleted.And(SearchQuery.NotSeen)
-            );
+        var fetched = await folder.SearchAsync(SearchQuery.NotDeleted.And(SearchQuery.NotSeen), cancellationToken);
 
         //var fetched = await folder.FetchAsync(0, -1, new FetchRequest
         //{
@@ -94,7 +121,7 @@ throw new NotSupportedException();
 
             await queue.SendAsync(received, received.ReferenceId);
 
-            var storedResult = await folder.StoreAsync(itemId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Seen) { Silent = true });
+            var storedResult = await folder.StoreAsync(itemId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Seen) { Silent = true }, cancellationToken);
 
             /*
 folder.Store (uid, new StoreFlagsRequest (StoreAction.Add, MessageFlags.Deleted) { Silent = true });

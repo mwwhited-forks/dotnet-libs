@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Eliassen.System.Text.Json.Serialization;
+
 /// <summary>
 /// A custom JSON converter for serializing and deserializing enums as strings or numbers.
 /// </summary>
