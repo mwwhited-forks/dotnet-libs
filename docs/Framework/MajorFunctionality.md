@@ -169,3 +169,5 @@ not needed as long as UseSourceLinks is not enabled in .runsettings for MSTest
 ### websocket/signalr/socket.io
 
 ## Role management/claims composition
+
+## Bulk user management
