@@ -127,6 +127,7 @@ not needed as long as UseSourceLinks is not enabled in .runsettings for MSTest
 * https://github.com/topics/blob-storage
 * upload/download support
 * restore support for transforming documents 
+  * example, markdown to html, html to pdf
 * add support to create/read zip files
 
 ### Resource Translation
@@ -162,3 +163,9 @@ not needed as long as UseSourceLinks is not enabled in .runsettings for MSTest
 
 * create services to submit/check status of work items
 * [Initiative: Issue Reporting / Feedback Integration](https://eliassenps.atlassian.net/browse/NIT-13)
+
+### Chat Bots
+
+### websocket/signalr/socket.io
+
+## Role management/claims composition

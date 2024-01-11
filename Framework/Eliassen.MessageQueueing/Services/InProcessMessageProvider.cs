@@ -79,7 +79,7 @@ public class InProcessMessageProvider(
             if (!_queue.TryDequeue(out var wrapped))
             {
                 logger.LogInformation("Nothing received, waiting...");
-                await Task.Delay(1000);  // TODO: this should be configurable
+                await Task.Delay(1000, cancellationToken);  // TODO: this should be configurable
                 continue;
             }
 

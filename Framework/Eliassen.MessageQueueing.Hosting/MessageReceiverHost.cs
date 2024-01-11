@@ -109,7 +109,7 @@ public class MessageReceiverHost(
                 logger.LogDebug($"Error: {{{nameof(provider)}}}: {{{nameof(Exception)}}}", provider, ex.ToString());
 
                 logger.LogInformation($"Waiting for restart: {{{nameof(provider)}}}", provider);
-                await Task.Delay(10000); // TODO: this should be configurable
+                await Task.Delay(10000, token); // TODO: this should be configurable
             }
         }
     }
