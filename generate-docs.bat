@@ -7,6 +7,10 @@ ECHO SolutionDir %SolutionDir%
 SET PublishPath=%SolutionDir%publish\libs\
 ECHO PublishPath %PublishPath%
 
+SET TARGET_SOLUTION=Nucleus.Net.Libs.sln
+SET TARGET_SOLUTION_NAME=Nucleus.Libs
+SET TARGET_WEB_PROJECT=.\Examples\Eliassen.WebApi
+
 ECHO "restore current .net tools"
 dotnet tool restore
 
@@ -26,13 +30,10 @@ IF NOT "%TEST_ERR%"=="0" (
 )
 
 ECHO "Generate - swagger docs"
-dotnet msbuild /T:BuildSwagger .\Examples\Eliassen.WebApi
+dotnet msbuild /T:BuildSwagger %TARGET_WEB_PROJECT%
 
 ECHO "Generate Service-Endpoints"
-dotnet run ^
---project Tools\Eliassen.TemplateEngine.Cli ^
---configuration Release ^
--- ^
+dotnet templateengine ^
 --input .\docs\swagger.json ^
 --output .\docs\Service-Endpoints.md ^
 --Template Service-Endpoints ^
@@ -40,14 +41,11 @@ dotnet run ^
 
 ECHO "Generate - Library code docs"
 RMDIR .\docs\code /S/Q
-dotnet build Nucleus.Net.Libs.sln /T:GetDocumentation
+dotnet build /T:GetDocumentation
 
 ECHO "Generate - Library Docs"
 RMDIR .\docs\Libraries /S/Q
-dotnet run ^
---project Tools\Eliassen.TemplateEngine.Cli ^
---configuration Release ^
--- ^
+dotnet templateengine ^
 --input %PublishPath%*.xml ^
 --output .\docs\Libraries\[file].md ^
 --Template Documentation.md ^
@@ -72,10 +70,7 @@ ECHO "Copy Code Coverage Report"
 COPY .\TestResults\Coverage\Reports\Summary.md .\docs\Tests\Summary.md /Y
 
 ECHO "Generate - Test Result"
-dotnet run ^
---project Tools\Eliassen.TemplateEngine.Cli ^
---configuration Release ^
--- ^
+dotnet templateengine ^
 --input .\TestResults\Coverage\Reports\*.trx ^
 --output .\docs\Tests\[file].md ^
 --Template TestResultsToMarkdown.md ^
@@ -89,11 +84,11 @@ REM https://github.com/CycloneDX/cyclonedx-dotnet
 dotnet CycloneDX ^
 --output .\docs\sbom ^
 --set-version %BUILD_VERSION% ^
---set-name Eliassen.Net.Libs ^
+--set-name %TARGET_SOLUTION_NAME% ^
 --exclude-test-projects ^
 --disable-package-restore ^
 --exclude-dev ^
-Nucleus.Net.Libs.sln
+%TARGET_SOLUTION%
 SET TEST_ERR=%ERRORLEVEL%
 IF NOT "%TEST_ERR%"=="0" (
 	ECHO "SBOM Failed! %TEST_ERR%"
@@ -104,10 +99,7 @@ REM --include-project-references ^
 REM --enable-github-licenses ^
 
 ECHO "Generate - Software Bill of Materials (report)"
-dotnet run ^
---project Tools\Eliassen.TemplateEngine.Cli ^
---configuration Release ^
--- ^
+dotnet templateengine ^
 --input .\docs\sbom\bom.xml ^
 --output .\docs\sbom\BillOfMaterials.md ^
 --Template SoftwareBillOfMaterials.md ^

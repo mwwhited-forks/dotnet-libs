@@ -31,7 +31,7 @@ public class TestTargetExtendedModel
               (index % 7 == 0) ? "!" :
               index.ToString();
 
-        Modules = index > 0 ? Enumerable.Range(0, index).Select(i => "Module-" + i).ToArray() : null;
+        Modules = index > 0 ? Enumerable.Range(0, index).Select(i => "Module-" + i).ToArray() : [];
 
         Date = BaseDate.AddMonths(index);
         if (index >= 0)

@@ -2,6 +2,8 @@
 
 ## Summary
 
+[Dynamic Search Concept and Design](./Design/DynamicSearchFilter.md)
+
 This enables for a common means to query anything using the `IQueryable<T>` model.  General features provided 
 by this engine are a common reusable pattern for writing queries that support searching, filtering, sorting 
 and paging.  This may be used directly in .Net or transparently as part of ASP.Net Core MVC Actions.

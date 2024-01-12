@@ -1,8 +1,7 @@
-﻿namespace Eliassen.System.Linq.Expressions
+﻿namespace Eliassen.System.Linq.Expressions;
+
+internal enum ChainTypes
 {
-    internal enum ChainTypes
-    {
-        AndAlso,
-        OrElse,
-    }
+    AndAlso,
+    OrElse,
 }

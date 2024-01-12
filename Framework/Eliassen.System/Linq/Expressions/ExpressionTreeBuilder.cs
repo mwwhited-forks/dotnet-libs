@@ -147,6 +147,11 @@ public class ExpressionTreeBuilder<TModel>(
 
         if (expressionOperator == Operators.InSet)
         {
+            if (isSearchTerm)
+            {
+
+            }
+
             if (queryParameterType.IsArray) //TODO: should support IEnumerable<> as well
             {
                 var elementType = queryParameterType.GetElementType();

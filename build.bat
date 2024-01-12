@@ -13,7 +13,6 @@ ECHO "Build Web Project"
 RMDIR "%PublishPath%" /S/Q
 MKDIR "%PublishPath%"
 dotnet build ^
-Nucleus.Net.Libs.sln ^
 --configuration Release ^
 --output %PublishPath%
 SET TEST_ERR=%ERRORLEVEL%
