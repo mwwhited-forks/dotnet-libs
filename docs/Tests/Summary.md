@@ -1,26 +1,26 @@
 # Summary - Nucleus.Net.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 1/6/2024 - 4:06:40 PM |
-| Coverage date: | 1/6/2024 - 4:06:21 PM - 1/6/2024 - 4:06:35 PM |
+| Generated on: | 1/24/2024 - 4:37:15 PM |
+| Coverage date: | 1/24/2024 - 4:36:53 PM - 1/24/2024 - 4:37:09 PM |
 | Parser: | MultiReport (16x Cobertura) |
 | Assemblies: | 9 |
 | Classes: | 67 |
 | Files: | 66 |
-| **Line coverage:** | 48.7% (1027 of 2108) |
-| Covered lines: | 1027 |
-| Uncovered lines: | 1081 |
-| Coverable lines: | 2108 |
-| Total lines: | 6106 |
-| **Branch coverage:** | 48.4% (560 of 1157) |
-| Covered branches: | 560 |
+| **Line coverage:** | 50.5% (1066 of 2110) |
+| Covered lines: | 1066 |
+| Uncovered lines: | 1044 |
+| Coverable lines: | 2110 |
+| Total lines: | 6101 |
+| **Branch coverage:** | 50.3% (582 of 1157) |
+| Covered branches: | 582 |
 | Total branches: | 1157 |
 | **Method coverage:** | [Feature is only available for sponsors](https://reportgenerator.io/pro) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|
-|**Eliassen.Azure.StorageAccount**|**0**|**107**|**107**|**349**|**0%**|**0**|**22**|**0%**|
-|Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider|0|58|58|172|0%|0|4|0%|
+|**Eliassen.Azure.StorageAccount**|**0**|**108**|**108**|**349**|**0%**|**0**|**22**|**0%**|
+|Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider|0|59|59|172|0%|0|4|0%|
 |Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider|0|31|31|96|0%|0|14|0%|
 |Eliassen.Azure.StorageAccount.MessageQueueing.QueueClientFactory|0|7|7|28|0%|0|4|0%|
 |Eliassen.Azure.StorageAccount.ServiceCollectionEx|0|11|11|53|0%|0|0||
@@ -55,28 +55,28 @@
 |Eliassen.RabbitMQ.MessageQueueing.QueueClientFactory|0|9|9|35|0%|0|2|0%|
 |Eliassen.RabbitMQ.MessageQueueing.RabbitMQQueueMessageProvider|0|46|46|120|0%|0|12|0%|
 |Eliassen.RabbitMQ.ServiceCollectionEx|0|8|8|40|0%|0|0||
-|**Eliassen.System**|**750**|**509**|**1259**|**3975**|**59.5%**|**449**|**837**|**53.6%**|
+|**Eliassen.System**|**789**|**471**|**1260**|**3970**|**62.6%**|**471**|**837**|**56.2%**|
 |Eliassen.System.Accessors.Accessor`1|3|0|3|21|100%|0|0||
-|Eliassen.System.Configuration.CommandLine|0|20|20|53|0%|0|28|0%|
+|Eliassen.System.Configuration.CommandLine|0|20|20|52|0%|0|28|0%|
 |Eliassen.System.Extensions.Configuration.ConfigurationBuilderExtensions|0|8|8|42|0%|0|0||
-|Eliassen.System.Internal.ConsoleLogger`1|5|3|8|29|62.5%|2|2|100%|
-|Eliassen.System.IO.StreamJsonDeserializeExtensions|10|10|20|69|50%|4|8|50%|
-|Eliassen.System.IO.StreamXmlDeserializeExtensions|8|12|20|70|40%|2|8|25%|
-|Eliassen.System.Linq.AsyncEnumerableExtensions|0|25|25|109|0%|0|36|0%|
+|Eliassen.System.Internal.ConsoleLogger`1|5|3|8|28|62.5%|2|2|100%|
+|Eliassen.System.IO.StreamJsonDeserializeExtensions|10|10|20|68|50%|4|8|50%|
+|Eliassen.System.IO.StreamXmlDeserializeExtensions|8|12|20|69|40%|2|8|25%|
+|Eliassen.System.Linq.AsyncEnumerableExtensions|0|25|25|108|0%|0|36|0%|
 |Eliassen.System.Linq.DictionaryExtensions|2|0|2|43|100%|0|0||
-|Eliassen.System.Linq.Expressions.ExpressionExtensions|21|17|38|105|55.2%|14|34|41.1%|
-|Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1|272|51|323|608|84.2%|197|246|80%|
-|Eliassen.System.Linq.Expressions.ParameterReplacerExpressionVisitor|3|0|3|15|100%|2|2|100%|
-|Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor|5|1|6|25|83.3%|2|4|50%|
+|Eliassen.System.Linq.Expressions.ExpressionExtensions|23|15|38|104|60.5%|16|34|47%|
+|Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1|293|31|324|613|90.4%|209|246|84.9%|
+|Eliassen.System.Linq.Expressions.ParameterReplacerExpressionVisitor|3|0|3|14|100%|2|2|100%|
+|Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor|6|0|6|25|100%|4|4|100%|
 |Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor|32|2|34|89|94.1%|17|30|56.6%|
-|Eliassen.System.Linq.OperatorExtensions|14|1|15|30|93.3%|7|8|87.5%|
-|Eliassen.System.Linq.Search.QueryBuilder|7|26|33|329|21.2%|0|6|0%|
-|Eliassen.System.Linq.Search.QueryBuilder`1|82|13|95|329|86.3%|37|62|59.6%|
+|Eliassen.System.Linq.OperatorExtensions|14|1|15|29|93.3%|7|8|87.5%|
+|Eliassen.System.Linq.Search.QueryBuilder|14|19|33|329|42.4%|0|6|0%|
+|Eliassen.System.Linq.Search.QueryBuilder`1|90|5|95|329|94.7%|43|62|69.3%|
 |Eliassen.System.Linq.Search.SortBuilder`1|55|17|72|128|76.3%|41|48|85.4%|
 |Eliassen.System.Reflection.ReflectionExtensions|83|18|101|289|82.1%|62|84|73.8%|
-|Eliassen.System.Reflection.ResourceExtensions|16|9|25|82|64%|13|22|59%|
+|Eliassen.System.Reflection.ResourceExtensions|16|9|25|81|64%|13|22|59%|
 |Eliassen.System.ResponseModel.CaptureResultMessage|8|2|10|50|80%|4|4|100%|
-|Eliassen.System.Security.Claims.ClaimsPrincipalExtensions|0|6|6|41|0%|0|6|0%|
+|Eliassen.System.Security.Claims.ClaimsPrincipalExtensions|0|6|6|40|0%|0|6|0%|
 |Eliassen.System.Security.Cryptography.Hash|1|0|1|19|100%|0|0||
 |Eliassen.System.ServiceCollectionExtensions|37|3|40|162|92.5%|2|10|20%|
 |Eliassen.System.Text.Json.BsonDateTimeOffsetConverter|18|19|37|108|48.6%|8|40|20%|

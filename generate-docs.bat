@@ -33,7 +33,10 @@ ECHO "Generate - swagger docs"
 dotnet msbuild /T:BuildSwagger %TARGET_WEB_PROJECT%
 
 ECHO "Generate Service-Endpoints"
-dotnet templateengine ^
+REM dotnet templateengine ^
+dotnet run ^
+--project Tools\Eliassen.TemplateEngine.Cli ^
+--configuration Release ^
 --input .\docs\swagger.json ^
 --output .\docs\Service-Endpoints.md ^
 --Template Service-Endpoints ^
@@ -45,7 +48,9 @@ dotnet build /T:GetDocumentation
 
 ECHO "Generate - Library Docs"
 RMDIR .\docs\Libraries /S/Q
-dotnet templateengine ^
+dotnet run ^
+--project Tools\Eliassen.TemplateEngine.Cli ^
+--configuration Release ^
 --input %PublishPath%*.xml ^
 --output .\docs\Libraries\[file].md ^
 --Template Documentation.md ^
@@ -70,7 +75,9 @@ ECHO "Copy Code Coverage Report"
 COPY .\TestResults\Coverage\Reports\Summary.md .\docs\Tests\Summary.md /Y
 
 ECHO "Generate - Test Result"
-dotnet templateengine ^
+dotnet run ^
+--project Tools\Eliassen.TemplateEngine.Cli ^
+--configuration Release ^
 --input .\TestResults\Coverage\Reports\*.trx ^
 --output .\docs\Tests\[file].md ^
 --Template TestResultsToMarkdown.md ^
@@ -88,7 +95,8 @@ dotnet CycloneDX ^
 --exclude-test-projects ^
 --disable-package-restore ^
 --exclude-dev ^
-%TARGET_SOLUTION%
+.\sbom.csproj
+REM %TARGET_SOLUTION%
 SET TEST_ERR=%ERRORLEVEL%
 IF NOT "%TEST_ERR%"=="0" (
 	ECHO "SBOM Failed! %TEST_ERR%"
@@ -99,7 +107,9 @@ REM --include-project-references ^
 REM --enable-github-licenses ^
 
 ECHO "Generate - Software Bill of Materials (report)"
-dotnet templateengine ^
+dotnet run ^
+--project Tools\Eliassen.TemplateEngine.Cli ^
+--configuration Release ^
 --input .\docs\sbom\bom.xml ^
 --output .\docs\sbom\BillOfMaterials.md ^
 --Template SoftwareBillOfMaterials.md ^
