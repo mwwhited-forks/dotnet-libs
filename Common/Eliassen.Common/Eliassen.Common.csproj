@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>false</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="..\..\Framework\**\ReadMe.*.md" Pack="true">
+			<Link>%(Filename)%(Extension)</Link>
+			<PackagePath>\%(Filename)%(Extension)</PackagePath>
+		</Content>
+		<Content Remove="..\..\Framework\**\*.AspnetCore.*\*.md" />
+		<Content Remove="..\..\Framework\**\*.Hosting\*.md" />
+		<Content Remove="..\..\Framework\**\*.Tests\*.md" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="..\..\Framework\**\Eliassen.*.csproj" />
+		<ProjectReference Remove="..\..\Framework\**\Eliassen.*.Tests.csproj" />
+		<ProjectReference Remove="..\..\Framework\**\Eliassen.*.Abstractions.csproj" />
+		<ProjectReference Remove="..\..\Framework\**\Eliassen.TestUtilities.csproj" />
+
+		<ProjectReference Remove="..\..\Framework\**\Eliassen.AspNetCore.*.csproj" />
+		<ProjectReference Remove="..\..\Framework\**\Eliassen.*.Hosting.csproj" />
+	</ItemGroup>
+
+</Project>

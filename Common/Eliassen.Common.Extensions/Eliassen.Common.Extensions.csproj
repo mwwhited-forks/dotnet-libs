@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>false</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="..\..\ExternalServices\**\ReadMe.*.md" Pack="true">
+			<Link>%(Filename)%(Extension)</Link>
+			<PackagePath>\%(Filename)%(Extension)</PackagePath>
+		</Content>
+		<Content Remove="..\..\ExternalServices\**\*.Hosting\*.md" />
+		<Content Remove="..\..\ExternalServices\**\*.Tests\*.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\ExternalServices\**\*.csproj" />
+
+		<ProjectReference Remove="..\..\ExternalServices\**\*.Tests.csproj" />
+		<ProjectReference Remove="..\..\ExternalServices\**\*.Abstractions.csproj" />
+		<ProjectReference Remove="..\..\ExternalServices\**\*.Hosting.csproj" />
+	</ItemGroup>
+
+
+</Project>

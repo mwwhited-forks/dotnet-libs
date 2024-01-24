@@ -8,8 +8,12 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-
+		<PackageReadmeFile>Readme.MailKit.md</PackageReadmeFile>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="Readme.MailKit.Hosting.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="Eliassen.MailKit.Tests" />
