@@ -85,7 +85,7 @@ public record FilterParameter
     //[JsonPropertyName("isnull")]
     //public bool OrNull { get; set; }
 
-    /// <inheritdoc />
+    
     public override string ToString()
     {
         var sb = new StringBuilder();

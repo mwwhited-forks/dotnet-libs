@@ -9,7 +9,6 @@ internal static class OperatorExtensions
     public static FilterParameter AsFilter(this Operators expressionOperator, object? value) =>
         new FilterParameter().And(expressionOperator, value);
 
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
     public static FilterParameter And(this FilterParameter filter, Operators expressionOperator, object? value) =>
         expressionOperator switch
         {
@@ -21,9 +20,8 @@ internal static class OperatorExtensions
             Operators.GreaterThan => filter with { GreaterThan = value },
             Operators.GreaterThanOrEqualTo => filter with { GreaterThanOrEqualTo = value },
 
-            Operators.InSet => filter with { InSet = (object[])typeof(object).MakeSafeArray((Array)value) },
+            Operators.InSet => filter with { InSet = (object[]?)typeof(object).MakeSafeArray((Array?)value) },
 
             _ => throw new NotSupportedException($"{expressionOperator} is not supported"),
         };
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 }

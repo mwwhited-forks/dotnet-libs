@@ -99,8 +99,7 @@ public static class ReflectionExtensions
         {
             var enumName = Enum.GetName(type, enumInt);
             var enumValue = MakeSafe(type, enumName);
-            if (enumValue != null) return enumValue;
-            return default;
+            return enumValue ?? default;
         }
         else if (input.GetType().IsValueType && type == typeof(string))
             return input.ToString();

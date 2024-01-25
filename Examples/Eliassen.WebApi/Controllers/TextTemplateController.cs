@@ -39,7 +39,6 @@ public class TextTemplateController(
     //[AllowAnonymous]
     //public IQueryable<TextTemplateModel> Query() => provider.Query();
 
-
     // /// <summary>
     // /// Saves a text template.
     // /// </summary>
@@ -60,10 +59,9 @@ public class TextTemplateController(
     {
         var ms = new MemoryStream();
         var context = await engine.ApplyAsync(templateName, data ?? new JsonObject(), ms);
-        if (context == null)
-            return NotFound();
-
-        return new FileContentResult(ms.ToArray(), context.TargetContentType)
+        return context == null
+            ? NotFound()
+            : new FileContentResult(ms.ToArray(), context.TargetContentType)
         {
             FileDownloadName = $"{context.TemplateName}-{DateTimeOffset.Now:yyyyMMddHHmmss}{context.TargetFileExtension}"
         };

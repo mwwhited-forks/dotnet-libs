@@ -40,10 +40,7 @@ public class RabbitMQQueueMessageSenderProviderTests
 
         var config = configBuilder.Build();
 
-        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
-        {
-            services.TryAddRabbitMQServices();
-        });
+        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services => services.TryAddRabbitMQServices());
 
         // ---------------
 
@@ -73,10 +70,7 @@ public class RabbitMQQueueMessageSenderProviderTests
 
         var config = configBuilder.Build();
 
-        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
-        {
-            services.TryAddRabbitMQServices();
-        });
+        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services => services.TryAddRabbitMQServices());
 
         // ---------------
 
@@ -102,7 +96,6 @@ public class RabbitMQQueueMessageSenderProviderTests
             {$"MessageQueue:{QueueConfig}:Config:HostName", "localhost" },
             {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
 
-
             {$"MessageQueue:Default:Provider", InProcessMessageProvider.MessageProviderKey },
 
         });
@@ -121,7 +114,6 @@ public class RabbitMQQueueMessageSenderProviderTests
         // ---------------
 
         var configurationSection = config.GetSection($"MessageQueue:{QueueConfig}:Config");
-
 
         var sender = service.GetRequiredService<IMessageQueueSender<RabbitMQQueueMessageSenderProviderTests>>();
         var sender2 = service.GetRequiredService<IMessageQueueSender>();

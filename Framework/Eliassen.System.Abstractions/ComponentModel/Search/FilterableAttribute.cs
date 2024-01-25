@@ -9,10 +9,7 @@ public class FilterableAttribute : Attribute
     /// <summary>
     /// Initializes a new instance of the <see cref="FilterableAttribute"/> class.
     /// </summary>
-    public FilterableAttribute(string targetName)
-    {
-        TargetName = targetName;
-    }
+    public FilterableAttribute(string targetName) => TargetName = targetName;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FilterableAttribute"/> class.

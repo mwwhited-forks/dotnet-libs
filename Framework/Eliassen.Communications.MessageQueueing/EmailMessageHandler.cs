@@ -40,12 +40,5 @@ public class EmailMessageHandler(
     /// <param name="message">The message to handle.</param>
     /// <param name="context">The message context.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
-    public Task HandleAsync(object message, IMessageContext context)
-    {
-        if (message is EmailMessageModel messageModel)
-        {
-            return HandleAsync(messageModel, context);
-        }
-        return Task.CompletedTask;
-    }
+    public Task HandleAsync(object message, IMessageContext context) => message is EmailMessageModel messageModel ? HandleAsync(messageModel, context) : Task.CompletedTask;
 }

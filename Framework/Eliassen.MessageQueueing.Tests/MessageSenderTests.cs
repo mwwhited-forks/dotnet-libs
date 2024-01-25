@@ -76,7 +76,6 @@ public class MessageSenderTests
         Assert.Fail("you should not get here!");
     }
 
-
     [TestMethod]
     [TestCategory(TestCategories.Simulate)]
     public async Task SendAsyncTest_ByKeyed()
@@ -90,10 +89,7 @@ public class MessageSenderTests
 
         var config = configBuilder.Build();
 
-        var service = GetServiceProvider(TestContext, config, services =>
-        {
-            services.AddKeyedTransient<IMessageSenderProvider, TestMessageSenderProvider>(TestMessageSenderProvider.ProviderName);
-        });
+        var service = GetServiceProvider(TestContext, config, services => services.AddKeyedTransient<IMessageSenderProvider, TestMessageSenderProvider>(TestMessageSenderProvider.ProviderName));
 
         // ---------------
 

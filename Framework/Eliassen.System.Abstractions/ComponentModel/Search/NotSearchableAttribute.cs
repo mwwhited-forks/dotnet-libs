@@ -6,12 +6,15 @@
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
 public class NotSearchableAttribute : Attribute
 {
-    /// <inheritdoc />
-    public NotSearchableAttribute(string targetName)
-    {
-        TargetName = targetName;
-    }
-    /// <inheritdoc />
+    /// <summary>
+    /// explicitly exclude properties from search
+    /// </summary>
+    /// <param name="targetName">virtual property to target</param>
+    public NotSearchableAttribute(string targetName) => TargetName = targetName;
+
+    /// <summary>
+    /// explicitly exclude properties from search
+    /// </summary>
     public NotSearchableAttribute() { }
 
     /// <summary>

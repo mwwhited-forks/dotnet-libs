@@ -111,7 +111,6 @@ public class ReflectionExtensionsTests
         [typeof(AttributeTargets), AttributeTargets.Enum.ToString(), true, AttributeTargets.Enum],
     };
 
-
     [DataTestMethod]
     [TestCategory(TestCategories.Unit)]
     [DynamicData(nameof(TryParseTestData), DynamicDataSourceType.Method)]
@@ -126,8 +125,5 @@ public class ReflectionExtensionsTests
     [TestCategory(TestCategories.Unit)]
     [DataRow(typeof(string), "System.String, System.Private.CoreLib")]
     [DataRow(typeof(ReflectionExtensionsTests), "Eliassen.System.Tests.Reflection.ReflectionExtensionsTests, Eliassen.System.Tests")]
-    public void GetShortTypeNameTests(Type type, string expected)
-    {
-        Assert.AreEqual(type.GetShortTypeName(), expected);
-    }
+    public void GetShortTypeNameTests(Type type, string expected) => Assert.AreEqual(type.GetShortTypeName(), expected);
 }

@@ -9,7 +9,7 @@ namespace Eliassen.System.Text.Json;
 /// </summary>
 public class BsonIdConverter : JsonConverter<string>
 {
-    /// <inheritdoc />
+    
     public override string? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         var type = reader.TokenType;
@@ -34,7 +34,7 @@ public class BsonIdConverter : JsonConverter<string>
         throw new NotSupportedException($"element of type {type} is not supported");
     }
 
-    /// <inheritdoc />
+    
     public override void Write(Utf8JsonWriter writer, string value, JsonSerializerOptions options)
     {
         writer.WriteStartObject();

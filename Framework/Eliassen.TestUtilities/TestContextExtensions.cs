@@ -52,7 +52,6 @@ public static class TestContextExtensions
         ) =>
         context.AddResult(value, "", out outFile, caller, callerLine, callerFile);
 
-
     /// <summary>
     /// serialize an object to the test results for a given test run
     /// </summary>
@@ -200,7 +199,6 @@ public static class TestContextExtensions
     /// </summary>
     public static TestContext AddResultFile(this TestContext context, string fileName, byte[] content) =>
         context.AddResultFile(fileName, content, out var _);
-
 
     /// <summary>
     /// serialize an object to the test results for a given test run

@@ -13,13 +13,10 @@ public class Program
 {
     private static async Task Main(string[] args) =>
         await Host.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration((context, config) =>
-            {
-                config.AddCommandLine(args,
+            .ConfigureAppConfiguration((context, config) => config.AddCommandLine(args,
                     CommandLine.BuildParameters<TemplateEngineSettings>()
                                .AddParameters<FileTemplatingSettings>()
-                    );
-            })
+                    ))
             .ConfigureServices((context, services) =>
             {
                 services.AddConfiguration<TemplateEngineSettings>(context.Configuration);

@@ -223,8 +223,8 @@ public class TextContextExtensionsTests
     public void AddResultFileTest_FileContent()
     {
         // Stage
-        string fileName = "test-file.txt";
-        byte[] content = Encoding.UTF8.GetBytes("Hello World!");
+        var fileName = "test-file.txt";
+        var content = Encoding.UTF8.GetBytes("Hello World!");
 
         // Mock
 
@@ -243,8 +243,8 @@ public class TextContextExtensionsTests
     public void AddResultFileTest_FileContentOutFile()
     {
         // Stage
-        string fileName = "test-file.txt";
-        byte[] content = Encoding.UTF8.GetBytes("Hello World!");
+        var fileName = "test-file.txt";
+        var content = Encoding.UTF8.GetBytes("Hello World!");
 
         // Mock
 

@@ -111,10 +111,7 @@ public static class JsonDocumentExtensions
 
     }
 
-
-
     //private XmlElement  
-
 
     //private static IEnumerable<XmlNode> Gather(XmlDocument document, string name, JsonElement json)
     //{
@@ -143,7 +140,6 @@ public static class JsonDocumentExtensions
     //                //}
 
     //               // yield return element;
-
 
     //                //var children = Gather(document, "", json);
 

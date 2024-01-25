@@ -10,10 +10,7 @@ public class NotFilterableAttribute : Attribute
     /// Initializes a new instance of the <see cref="NotFilterableAttribute"/> class with a target name.
     /// </summary>
     /// <param name="targetName">The target name to be excluded from filter selection.</param>
-    public NotFilterableAttribute(string targetName)
-    {
-        TargetName = targetName;
-    }
+    public NotFilterableAttribute(string targetName) => TargetName = targetName;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="NotFilterableAttribute"/> class without a target name.

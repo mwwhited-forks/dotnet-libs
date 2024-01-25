@@ -14,10 +14,9 @@ public class SkipInstanceMethodOnNullExpressionVisitor : ExpressionVisitor, IPos
     /// <returns></returns>
     protected override Expression VisitMethodCall(MethodCallExpression node)
     {
-        if (node.Object == null || node.Method.IsStatic)
-            return base.VisitMethodCall(node);
-
-        return Expression.AndAlso(
+        return node.Object == null || node.Method.IsStatic
+            ? base.VisitMethodCall(node)
+            : Expression.AndAlso(
             Expression.NotEqual(node.Object, Expression.Constant(null, node.Object.Type)),
             node
             );

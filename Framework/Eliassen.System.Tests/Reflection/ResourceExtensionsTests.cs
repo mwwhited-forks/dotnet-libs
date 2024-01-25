@@ -38,7 +38,6 @@ public class ResourceExtensionsTests
         Assert.IsNull(result);
     }
 
-
     [TestMethod, TestCategory(TestCategories.Unit)]
     public async Task GetResourceFromJsonAsyncTest()
     {
@@ -59,7 +58,6 @@ public class ResourceExtensionsTests
         var result = await this.GetResourceStream("SampleResource.xml").AsXmlAsync<TestModel>();
         Assert.AreEqual("Hello World!", result?.Property);
     }
-
 
     [TestMethod, TestCategory(TestCategories.Unit)]
     public void GetResourceFromJsonTest()

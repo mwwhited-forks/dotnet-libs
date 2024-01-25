@@ -121,7 +121,7 @@ public class ExpressionTreeBuilder<TModel>(
         if (queryParameter is FilterParameter search)
             return BuildPredicate(scope, expression, search, isSearchTerm);
 
-        Expression unwrapped = expression.Body;
+        var unwrapped = expression.Body;
         if (expression.Body.NodeType is ExpressionType.Convert or
             ExpressionType.ConvertChecked)
         {
@@ -539,7 +539,6 @@ public class ExpressionTreeBuilder<TModel>(
             _ => value,
         };
 
-
     private bool TryGetPredicateExpression(
         string name,
         FilterParameter value,
@@ -581,8 +580,8 @@ public class ExpressionTreeBuilder<TModel>(
         string name,
         StringComparison stringComparison
         ) =>
-        (TryGetPropertyExpression(name, out var expression, stringComparison) ?
-            expression : null);
+        TryGetPropertyExpression(name, out var expression, stringComparison) ?
+            expression : null;
 
     private bool TryGetPropertyExpression(
         string name,

@@ -50,11 +50,8 @@ public class TestTargetExtendedModel
     [Searchable]
     public string? May { get; set; }
 
-
-
     [Searchable]
     public string[]? Modules { get; set; }
-
 
     [Searchable]
     public DateTime Date { get; set; }
@@ -70,7 +67,6 @@ public class TestTargetExtendedModel
             _ => null
         };
 
-#pragma warning disable CS8604 // Possible null reference argument.
     public static Expression<Func<TestTargetExtendedModel, bool>>? PredicateMap(string key, object value) =>
         key switch
         {
@@ -79,6 +75,5 @@ public class TestTargetExtendedModel
             FC => e => e.FName.Contains(value.ToString()),
             _ => null
         };
-#pragma warning restore CS8604 // Possible null reference argument.
 
 }

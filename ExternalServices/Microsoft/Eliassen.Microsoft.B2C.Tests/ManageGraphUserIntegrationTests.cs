@@ -47,7 +47,6 @@ public class ManageGraphUserIntegrationTests
         var serviceProvider = GetIntegrationServiceProvider();
         var emailAddress = $"mwwhited@gmail.com";
 
-
         // Mock
 
         // Test
@@ -125,7 +124,6 @@ public class ManageGraphUserIntegrationTests
         // Verify
     }
 
-
     [TestMethod]
     [TestCategory(TestCategories.DevLocal)]
     public async Task CreateIdentityUserAsyncTest_Integration_Exists()
@@ -133,7 +131,6 @@ public class ManageGraphUserIntegrationTests
         // Stage
         var serviceProvider = GetIntegrationServiceProvider();
         var emailAddress = $"mwwhited@gmail.com";
-
 
         // Mock
 
@@ -165,7 +162,7 @@ public class ManageGraphUserIntegrationTests
 
         // Test
         var manageGraphUser = serviceProvider.GetRequiredService<IManageGraphUser>();
-        string userId = "581c2f51-bda2-4ca2-9bab-6fedd1470fc1";
+        var userId = "581c2f51-bda2-4ca2-9bab-6fedd1470fc1";
 
         var result = await manageGraphUser.RemoveGraphUserAsync(userId);
 
@@ -186,7 +183,7 @@ public class ManageGraphUserIntegrationTests
 
         // Test
         var manageGraphUser = serviceProvider.GetRequiredService<IIdentityManager>();
-        string userId = "581c2f51-bda2-4ca2-9bab-6fedd1470fc1";
+        var userId = "581c2f51-bda2-4ca2-9bab-6fedd1470fc1";
 
         var result = await manageGraphUser.RemoveIdentityUserAsync(userId);
 

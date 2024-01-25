@@ -10,10 +10,7 @@ public class NotSortableAttribute : Attribute
     /// Initializes a new instance of the <see cref="NotSortableAttribute"/> class.
     /// </summary>
     /// <param name="targetName">The name of the target property that should not be sortable.</param>
-    public NotSortableAttribute(string targetName)
-    {
-        TargetName = targetName;
-    }
+    public NotSortableAttribute(string targetName) => TargetName = targetName;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="NotSortableAttribute"/> class.

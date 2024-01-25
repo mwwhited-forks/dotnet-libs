@@ -322,8 +322,6 @@ public class QueryBuilder<TModel>(
         ArgumentNullException.ThrowIfNull(query, nameof(query));
 
         query = sortBy != null ? sortBuilder.SortBy(query, sortBy, expressionBuilder, keyStringComparer) : query;
-        if (query is IOrderedQueryable<TModel> sorted)
-            return sorted;
-        return query.OrderBy(_ => 0);
+        return query is IOrderedQueryable<TModel> sorted ? sorted : query.OrderBy(_ => 0);
     }
 }

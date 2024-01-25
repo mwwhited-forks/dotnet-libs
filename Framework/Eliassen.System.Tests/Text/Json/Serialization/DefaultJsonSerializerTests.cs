@@ -65,7 +65,7 @@ public class DefaultJsonSerializerTests
             {"Configuration:Property", "test-value" },
         });
         var config = configBuilder.Build();
-        IConfigurationSection input = config.GetSection("Configuration");
+        var input = config.GetSection("Configuration");
 
         var (serialized, result) = InOut(serializer, input);
 
@@ -74,7 +74,6 @@ public class DefaultJsonSerializerTests
 
         Assert.AreEqual(input["Property"], result?["Property"]);
     }
-
 
     private static (string serialized, T? result) InOut<T>(DefaultJsonSerializer serializer, T input)
     {

@@ -7,13 +7,8 @@
 public class SearchableAttribute : Attribute
 {
 
-    /// <inheritdoc />
-    public SearchableAttribute(string targetName)
-    {
-        TargetName = targetName;
-    }
+    public SearchableAttribute(string targetName) => TargetName = targetName;
 
-    /// <inheritdoc />
     public SearchableAttribute() { }
 
     /// <summary>

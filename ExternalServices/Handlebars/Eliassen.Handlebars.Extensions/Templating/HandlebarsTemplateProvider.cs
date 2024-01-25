@@ -58,7 +58,6 @@ public class HandlebarsTemplateProvider(IHash hash, IEnumerable<IHelpersRegistry
         var handlebar = HandlebarsDotNet.Handlebars.Create();
         handlebar.Configuration.UseJson();
 
-
         foreach (var helpersRegistry in helpersRegistry ?? Enumerable.Empty<IHelpersRegistry>())
         {
             foreach (var helper in helpersRegistry.GetBlockHelpers())
@@ -84,10 +83,7 @@ public class HandlebarsTemplateProvider(IHash hash, IEnumerable<IHelpersRegistry
                 output.WriteSafeString(DateTimeOffset.Now.ToString(format));
             }
         });
-        handlebar.RegisterHelper("guid_new", (output, context, arguments) =>
-        {
-            output.WriteSafeString(Guid.NewGuid());
-        });
+        handlebar.RegisterHelper("guid_new", (output, context, arguments) => output.WriteSafeString(Guid.NewGuid()));
         handlebar.RegisterHelper("hash", (output, context, arguments) =>
         {
             var arg = arguments[0];

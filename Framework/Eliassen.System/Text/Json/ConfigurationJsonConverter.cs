@@ -33,7 +33,7 @@ public class ConfigurationJsonConverter<IConfig> : JsonConverter<IConfig>
         if (typeToConvert.IsInstanceOfType(config))
             return (IConfig)config;
         else if (typeToConvert == typeof(IConfigurationSection))
-            return (IConfig?)(config.GetChildren().FirstOrDefault());
+            return (IConfig?)config.GetChildren().FirstOrDefault();
 
         throw new NotSupportedException($"could not convert {config.GetType()} to {typeToConvert}");
     }

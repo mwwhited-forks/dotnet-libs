@@ -90,10 +90,7 @@ public static class ServiceCollectionExtensions
         services.AddAuthorizationBuilder()
             .SetDefaultPolicy(authorizationPolicy);
 
-        services.AddControllers(options =>
-        {
-            options.Filters.Add(new AuthorizeFilter(authorizationPolicy));
-        });
+        services.AddControllers(options => options.Filters.Add(new AuthorizeFilter(authorizationPolicy)));
 
         return services;
     }
@@ -108,10 +105,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<FormFileOperationFilter>>();
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
         services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
-        services.AddControllers(opt =>
-        {
-            opt.Conventions.Add(new ApiNamespaceControllerModelConvention());
-        });
+        services.AddControllers(opt => opt.Conventions.Add(new ApiNamespaceControllerModelConvention()));
         return services;
     }
 

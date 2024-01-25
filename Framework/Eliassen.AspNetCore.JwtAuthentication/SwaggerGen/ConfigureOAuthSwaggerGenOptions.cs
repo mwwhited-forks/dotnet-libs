@@ -34,7 +34,6 @@ public class ConfigureOAuthSwaggerGenOptions(
         return scopes;
     }
 
-
     /// <summary>
     /// Configures SwaggerGen options for OAuth2 authentication.
     /// </summary>

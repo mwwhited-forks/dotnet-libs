@@ -10,7 +10,7 @@ public class TestTargetWithInnerArrayModel
         Index = index;
         Name = $"{nameof(Name)}{index}";
         Email = $"{nameof(Email)}{index:000}@domain.com";
-        Children = Enumerable.Range((index / 100) % 10, index % 10).Select(i => $"Child{i:000}").ToArray();
+        Children = Enumerable.Range(index / 100 % 10, index % 10).Select(i => $"Child{i:000}").ToArray();
     }
 
     [Key]
