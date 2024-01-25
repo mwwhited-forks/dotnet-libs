@@ -104,3 +104,177 @@ Get singleton instance from IOC container
 ##### Return value
 
 
+
+
+## Class: System.Configuration.CommandLine
+builder pattern for command parameter arguments 
+
+### Methods
+
+
+#### AddParameters``1(System.Collections.Generic.IDictionary{System.String,System.String})
+add additional configurable parameters 
+
+
+##### Parameters
+* *items:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### BuildParameters``1
+entry point or defining configurable parameters 
+
+
+##### Return value
+
+
+
+
+## Class: System.IO.StreamJsonDeserializeExtensions
+Set of extension method to centralize deserialize of stream using System.Text.Json 
+
+### Methods
+
+
+#### AsJsonAsync``1(System.IO.Stream,System.Text.Json.JsonSerializerOptions)
+Convert JSON Stream to .Net Object 
+
+
+##### Parameters
+* *stream:* 
+* *options:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### AsJson``1(System.IO.Stream,System.Text.Json.JsonSerializerOptions)
+Convert JSON Stream to .Net Object 
+
+
+##### Parameters
+* *stream:* 
+* *options:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### AsJsonAsync(System.IO.Stream,System.Type,System.Text.Json.JsonSerializerOptions)
+Convert JSON Stream to .Net Object 
+
+
+##### Parameters
+* *stream:* 
+* *type:* 
+* *options:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### AsJson(System.IO.Stream,System.Type,System.Text.Json.JsonSerializerOptions)
+Convert JSON Stream to .Net Object 
+
+
+##### Parameters
+* *stream:* 
+* *type:* 
+* *options:* 
+
+
+
+
+##### Return value
+
+
+
+
+## Class: System.IO.StreamXmlDeserializeExtensions
+Set of extension method to centralize deserialize of stream using System.Xml 
+
+### Methods
+
+
+#### AsXmlAsync``1(System.IO.Stream,System.Type[])
+Convert XML Stream to .Net Object 
+
+
+##### Parameters
+* *stream:* 
+* *extraTypes:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### AsXml``1(System.IO.Stream,System.Type[])
+Convert XML Stream to .Net Object 
+
+
+##### Parameters
+* *stream:* 
+* *extraTypes:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### AsXmlAsync(System.IO.Stream,System.Type,System.Type[])
+Convert XML Stream to .Net Object 
+
+
+##### Parameters
+* *stream:* 
+* *type:* 
+* *extraTypes:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### AsXml(System.IO.Stream,System.Type,System.Type[])
+Convert XML Stream to .Net Object 
+
+
+##### Parameters
+* *stream:* 
+* *type:* 
+* *extraTypes:* 
+
+
+
+
+##### Return value
+
+

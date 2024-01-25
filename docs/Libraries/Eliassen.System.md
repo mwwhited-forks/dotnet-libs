@@ -1,180 +1,6 @@
 ﻿# Eliassen.System
 
 
-## Class: System.Configuration.CommandLine
-builder pattern for command parameter arguments 
-
-### Methods
-
-
-#### AddParameters``1(System.Collections.Generic.IDictionary{System.String,System.String})
-add additional configurable parameters 
-
-
-##### Parameters
-* *items:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### BuildParameters``1
-entry point or defining configurable parameters 
-
-
-##### Return value
-
-
-
-
-## Class: System.IO.StreamJsonDeserializeExtensions
-Set of extension method to centralize deserialize of stream using System.Text.Json 
-
-### Methods
-
-
-#### AsJsonAsync``1(System.IO.Stream,System.Text.Json.JsonSerializerOptions)
-Convert JSON Stream to .Net Object 
-
-
-##### Parameters
-* *stream:* 
-* *options:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### AsJson``1(System.IO.Stream,System.Text.Json.JsonSerializerOptions)
-Convert JSON Stream to .Net Object 
-
-
-##### Parameters
-* *stream:* 
-* *options:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### AsJsonAsync(System.IO.Stream,System.Type,System.Text.Json.JsonSerializerOptions)
-Convert JSON Stream to .Net Object 
-
-
-##### Parameters
-* *stream:* 
-* *type:* 
-* *options:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### AsJson(System.IO.Stream,System.Type,System.Text.Json.JsonSerializerOptions)
-Convert JSON Stream to .Net Object 
-
-
-##### Parameters
-* *stream:* 
-* *type:* 
-* *options:* 
-
-
-
-
-##### Return value
-
-
-
-
-## Class: System.IO.StreamXmlDeserializeExtensions
-Set of extension method to centralize deserialize of stream using System.Xml 
-
-### Methods
-
-
-#### AsXmlAsync``1(System.IO.Stream,System.Type[])
-Convert XML Stream to .Net Object 
-
-
-##### Parameters
-* *stream:* 
-* *extraTypes:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### AsXml``1(System.IO.Stream,System.Type[])
-Convert XML Stream to .Net Object 
-
-
-##### Parameters
-* *stream:* 
-* *extraTypes:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### AsXmlAsync(System.IO.Stream,System.Type,System.Type[])
-Convert XML Stream to .Net Object 
-
-
-##### Parameters
-* *stream:* 
-* *type:* 
-* *extraTypes:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### AsXml(System.IO.Stream,System.Type,System.Type[])
-Convert XML Stream to .Net Object 
-
-
-##### Parameters
-* *stream:* 
-* *type:* 
-* *extraTypes:* 
-
-
-
-
-##### Return value
-
-
-
-
 ## Class: System.Linq.AsyncEnumerableExtensions
 Extensions to add async support to existing IEnumerable{T} 
 
@@ -1153,6 +979,44 @@ Writes the JSON representation of the object.
 ## Class: System.Text.Json.BsonIdConverter
 This type converter for System.Text.Json to support BSON ObjectID to JSON safe export/import 
 
+### Methods
+
+
+#### Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+read value from Bson and if object id is bson object id convert it to string 
+
+
+##### Parameters
+* *reader:* 
+* *typeToConvert:* 
+* *options:* 
+
+
+
+
+##### Return value
+
+
+
+
+##### Exceptions
+
+* *System.NotSupportedException:* 
+
+
+
+
+#### Write(System.Text.Json.Utf8JsonWriter,System.String,System.Text.Json.JsonSerializerOptions)
+write object id to Bson object 
+
+
+##### Parameters
+* *writer:* 
+* *value:* 
+* *options:* 
+
+
+
 
 ## Class: System.Text.Json.BsonTypeInfoResolver
 Resolves JSON type information for BSON serialization. 
@@ -1616,3 +1480,7 @@ Applies the XSLT template associated with the specified context, using the provi
 ##### Return value
 A task representing the asynchronous operation, indicating whether the application was successful.
 
+
+
+## Class: System.Text.Xml.Serialization.DefaultXmlSerializer
+Default XmlSerializer, 

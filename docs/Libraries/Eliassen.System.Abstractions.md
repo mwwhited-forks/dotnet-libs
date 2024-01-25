@@ -13,6 +13,20 @@ accessible value
 this attribute tags valid end states for enum based state machines 
 
 
+## Class: System.ComponentModel.EnumValueAttribute
+output enum string as this value when serialized as json 
+
+### Properties
+
+#### Name
+value to output in place of Enum.ToString() with Json Serializer
+### Methods
+
+
+#### Constructor
+output enum string as this value when serialized as json 
+
+
 ## Class: System.ComponentModel.ExcludeFromUniqueAttribute
 Attribute used to exclude an enum or enum field from being considered for uniqueness checks. 
 
@@ -141,6 +155,22 @@ explicitly exclude properties from search
 
 #### TargetName
 Target name required only if this is used on the class
+### Methods
+
+
+#### Constructor
+explicitly exclude properties from search 
+
+
+##### Parameters
+* *targetName:* virtual property to target
+
+
+
+
+#### Constructor
+explicitly exclude properties from search 
+
 
 ## Class: System.ComponentModel.Search.NotSortableAttribute
 Specifies that a property or class should not be sortable. 
@@ -432,6 +462,17 @@ This allows for providing a set of values where the value from the queries data 
 `Less than`
 #### LessThanOrEqualTo
 `Less than or equal to`
+### Methods
+
+
+#### ToString
+convert FilterParameter to string 
+
+
+##### Return value
+
+
+
 
 ## Class: System.Linq.Search.IFilterQuery
 Represents a query with filtering options. 

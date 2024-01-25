@@ -237,6 +237,17 @@ Declare permissions required for application endpoint
 
 
 
+#### Write(Microsoft.OpenApi.Writers.IOpenApiWriter,Microsoft.OpenApi.OpenApiSpecVersion)
+generate a property to provide the required permissions 
+
+
+##### Parameters
+* *writer:* 
+* *specVersion:* 
+
+
+
+
 ## Class: AspNetCore.Mvc.ServiceCollectionExtensions
 Extension methods for configuring ASP.Net Core extensions and related services. 
 
@@ -382,6 +393,18 @@ Configures SwaggerGen options to add the specified operation filter.
 
 ## Class: AspNetCore.Mvc.SwaggerGen.AddSchemaFilterOptions`1
 Register additional IOperationFilters 
+
+### Methods
+
+
+#### Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)
+Register additional IOperationFilters 
+
+
+##### Parameters
+* *options:* 
+
+
 
 
 ## Class: AspNetCore.Mvc.SwaggerGen.ApiNamespaceControllerModelConvention
