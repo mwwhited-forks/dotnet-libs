@@ -637,6 +637,44 @@ A string representation of the search query.
 
 
 
+## Class: System.Net.Mime.ContentTypesExtensions
+Provides constants representing various content types. 
+
+### Fields
+
+#### Text.HandlebarsTemplate
+Represents the content type for Handlebars templates.
+#### Text.Calendar
+Represents the content type for calendar data.
+#### Text.Html
+Represents the content type for HTML.
+#### Text.Markdown
+Represents the content type for Markdown.
+#### Application.XSLT
+Represents the content type for XSLT (XML Stylesheet Language Transformations).
+
+## Class: System.Net.Mime.ContentTypesExtensions.Text
+Represents text-based content types. 
+
+### Fields
+
+#### HandlebarsTemplate
+Represents the content type for Handlebars templates.
+#### Calendar
+Represents the content type for calendar data.
+#### Html
+Represents the content type for HTML.
+#### Markdown
+Represents the content type for Markdown.
+
+## Class: System.Net.Mime.ContentTypesExtensions.Application
+Represents application-based content types. 
+
+### Fields
+
+#### XSLT
+Represents the content type for XSLT (XML Stylesheet Language Transformations).
+
 ## Class: System.Reflection.EnumExtensions
 Provides extension methods for working with enumerations. 
 
@@ -1021,6 +1059,63 @@ Property or path related to this message
 #### MetaData
 additional properties related to response
 
+## Class: System.Security.Claims.ClaimsPrincipalExtensions
+Extensions to manage 
+ *See: T:System.Security.Claims.Claim*on 
+ *See: T:System.Security.Claims.ClaimsPrincipal*
+### Methods
+
+
+#### GetAllClaims(System.Security.Claims.ClaimsPrincipal)
+Iterate all 
+ *See: T:System.Security.Claims.Claim*for provided 
+ *See: T:System.Security.Claims.ClaimsPrincipal*
+
+##### Parameters
+* *principal:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### GetClaimValues(System.Security.Claims.ClaimsPrincipal,System.String[])
+Get for matched 
+ *See: T:System.Security.Claims.Claim*on 
+ *See: T:System.Security.Claims.ClaimsPrincipal*
+
+##### Parameters
+* *principal:* 
+* *claims:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### GetClaimValue(System.Security.Claims.ClaimsPrincipal,System.String[])
+Get first matched 
+ *See: T:System.Security.Claims.Claim*on 
+ *See: T:System.Security.Claims.ClaimsPrincipal*
+
+##### Parameters
+* *principal:* 
+* *claims:* 
+
+
+
+
+##### Return value
+
+
+
+
 ## Class: System.Security.Claims.CommonClaims
 Contains constants for common claims used in authentication. 
 
@@ -1291,6 +1386,18 @@ Writes the JSON representation of the enum value.
 
 
 
+
+## Class: System.Text.Templating.FileType
+Represents a file type, providing information about the file extension, content type, and whether it is a template type. 
+
+### Properties
+
+#### Extension
+Gets or sets the file extension associated with the file type.
+#### ContentType
+Gets or sets the content type associated with the file type.
+#### IsTemplateType
+Gets or sets a value indicating whether the file type is a template type.
 
 ## Class: System.Text.Templating.IFileType
 This interface allows objects that implement it to provide information about a specific file type, including its extension, content type, and whether it is considered a template type. 

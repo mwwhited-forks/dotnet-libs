@@ -1,16 +1,6 @@
 ﻿# Eliassen.System
 
 
-## Class: System.Accessors.Accessor`1
-Represents an accessor for a value of type 
-. 
-The type of the value to be accessed. 
-
-### Properties
-
-#### Value
-Gets or sets the value associated with this accessor.
-
 ## Class: System.Configuration.CommandLine
 builder pattern for command parameter arguments 
 
@@ -38,48 +28,6 @@ entry point or defining configurable parameters
 
 ##### Return value
 
-
-
-
-## Class: System.Extensions.Configuration.ConfigurationBuilderExtensions
-Extension methods for adding in-memory collections to the 
- *See: T:Microsoft.Extensions.Configuration.IConfigurationBuilder*. 
-
-### Methods
-
-
-#### AddInMemoryCollection(Microsoft.Extensions.Configuration.IConfigurationBuilder,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}})
-Adds an in-memory collection to the 
- *See: T:Microsoft.Extensions.Configuration.IConfigurationBuilder*using the specified initial data. 
-
-
-##### Parameters
-* *configurationBuilder:* The to add the in-memory collection to.
-* *initialData:* The initial data to populate the in-memory collection.
-
-
-
-
-##### Return value
-The modified .
-
-
-
-#### AddInMemoryCollection(Microsoft.Extensions.Configuration.IConfigurationBuilder,System.ValueTuple{System.String,System.String},System.ValueTuple{System.String,System.String}[])
-Adds an in-memory collection to the 
- *See: T:Microsoft.Extensions.Configuration.IConfigurationBuilder*using the specified initial data. 
-
-
-##### Parameters
-* *configurationBuilder:* The to add the in-memory collection to.
-* *item:* The first item of the in-memory collection.
-* *initialData:* Additional initial data to populate the in-memory collection.
-
-
-
-
-##### Return value
-The modified .
 
 
 
@@ -735,44 +683,6 @@ An IOrderedQueryable instance representing the sorted result.
 
 
 
-## Class: System.Net.Mime.ContentTypesExtensions
-Provides constants representing various content types. 
-
-### Fields
-
-#### Text.HandlebarsTemplate
-Represents the content type for Handlebars templates.
-#### Text.Calendar
-Represents the content type for calendar data.
-#### Text.Html
-Represents the content type for HTML.
-#### Text.Markdown
-Represents the content type for Markdown.
-#### Application.XSLT
-Represents the content type for XSLT (XML Stylesheet Language Transformations).
-
-## Class: System.Net.Mime.ContentTypesExtensions.Text
-Represents text-based content types. 
-
-### Fields
-
-#### HandlebarsTemplate
-Represents the content type for Handlebars templates.
-#### Calendar
-Represents the content type for calendar data.
-#### Html
-Represents the content type for HTML.
-#### Markdown
-Represents the content type for Markdown.
-
-## Class: System.Net.Mime.ContentTypesExtensions.Application
-Represents application-based content types. 
-
-### Fields
-
-#### XSLT
-Represents the content type for XSLT (XML Stylesheet Language Transformations).
-
 ## Class: System.Reflection.ReflectionExtensions
 Extensions for reflection and common patterns. 
 
@@ -1086,63 +996,6 @@ Gets the default instance of
  *See: T:Eliassen.System.ResponseModel.ICaptureResultMessage*. 
 
 
-## Class: System.Security.Claims.ClaimsPrincipalExtensions
-Extensions to manage 
- *See: T:System.Security.Claims.Claim*on 
- *See: T:System.Security.Claims.ClaimsPrincipal*
-### Methods
-
-
-#### GetAllClaims(System.Security.Claims.ClaimsPrincipal)
-Iterate all 
- *See: T:System.Security.Claims.Claim*for provided 
- *See: T:System.Security.Claims.ClaimsPrincipal*
-
-##### Parameters
-* *principal:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### GetClaimValues(System.Security.Claims.ClaimsPrincipal,System.String[])
-Get for matched 
- *See: T:System.Security.Claims.Claim*on 
- *See: T:System.Security.Claims.ClaimsPrincipal*
-
-##### Parameters
-* *principal:* 
-* *claims:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### GetClaimValue(System.Security.Claims.ClaimsPrincipal,System.String[])
-Get first matched 
- *See: T:System.Security.Claims.Claim*on 
- *See: T:System.Security.Claims.ClaimsPrincipal*
-
-##### Parameters
-* *principal:* 
-* *claims:* 
-
-
-
-
-##### Return value
-
-
-
-
 ## Class: System.Security.Cryptography.Hash
 Default hash of input value. Base64 encoded MD5 Hash 
 
@@ -1238,53 +1091,6 @@ Add support for shared Templating
 ##### Parameters
 * *services:* 
 * *config:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### AddAccessor``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-Register accessor type that is scoped to as AsyncLocal 
-
-
-##### Parameters
-* *services:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### AddConfiguration``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
-Extend configuration options 
-
-
-##### Parameters
-* *services:* 
-* *config:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### GetSingletonInstance``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,``1@)
-Get singleton instance from IOC container 
-
-
-##### Parameters
-* *services:* 
-* *instance:* 
 
 
 
@@ -1620,18 +1426,6 @@ template source path
 sandbox root path
 #### Priority
 template priority
-
-## Class: System.Text.Templating.FileType
-Represents a file type, providing information about the file extension, content type, and whether it is a template type. 
-
-### Properties
-
-#### Extension
-Gets or sets the file extension associated with the file type.
-#### ContentType
-Gets or sets the content type associated with the file type.
-#### IsTemplateType
-Gets or sets a value indicating whether the file type is a template type.
 
 ## Class: System.Text.Templating.TemplateContext
 Represents the context of a template, providing information about the template and its processing. 
