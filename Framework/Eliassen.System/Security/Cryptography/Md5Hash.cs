@@ -7,7 +7,7 @@ namespace Eliassen.System.Security.Cryptography;
 /// <summary>
 /// Default hash of input value.  Base64 encoded MD5 Hash
 /// </summary>
-public class Hash : IHash
+public class Md5Hash : IHash
 {
     /// <summary>
     /// Computes the default hash of the input value using MD5.

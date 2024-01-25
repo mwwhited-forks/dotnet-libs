@@ -1,7 +1,7 @@
 ﻿# Eliassen.System
 
 
-## Class: System.Security.Cryptography.Hash
+## Class: System.Security.Cryptography.Md5Hash
 Default hash of input value. Base64 encoded MD5 Hash 
 
 ### Methods
@@ -22,19 +22,63 @@ The Base64 encoded MD5 hash of the input value.
 
 
 
+## Class: System.Security.Cryptography.Sha256Hash
+Default hash of input value. Base64 encoded SHA256 Hash 
+
+### Methods
+
+
+#### GetHash(System.String)
+Computes the default hash of the input value using SHA256. 
+
+
+##### Parameters
+* *value:* The input value to be hashed.
+
+
+
+
+##### Return value
+The Base64 encoded SHA256 hash of the input value.
+
+
+
+## Class: System.Security.Cryptography.Sha512Hash
+Default hash of input value. Base64 encoded SHA512 Hash 
+
+### Methods
+
+
+#### GetHash(System.String)
+Computes the default hash of the input value using SHA512. 
+
+
+##### Parameters
+* *value:* The input value to be hashed.
+
+
+
+
+##### Return value
+The Base64 encoded SHA512 hash of the input value.
+
+
+
 ## Class: System.ServiceCollectionExtensions
 Suggested IOC configurations 
 
 ### Methods
 
 
-#### TryAddSystemExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+#### TryAddSystemExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Eliassen.System.Security.Cryptography.HashTypes,Eliassen.System.Text.SerializerTypes)
 This will add all available extensions to the IOC container 
 
 
 ##### Parameters
 * *services:* 
 * *config:* 
+* *defaultHashType:* 
+* *defaultSerializerType:* 
 
 
 
@@ -59,12 +103,13 @@ Add support for shared SearchQuery Extensions
 
 
 
-#### TrySecurityExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+#### TrySecurityExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Eliassen.System.Security.Cryptography.HashTypes)
 Add support for shared security extensions 
 
 
 ##### Parameters
 * *services:* 
+* *defaultHashType:* 
 
 
 
@@ -74,12 +119,13 @@ Add support for shared security extensions
 
 
 
-#### TrySerializerExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+#### TrySerializerExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Eliassen.System.Text.SerializerTypes)
 Add support for shared Serializer 
 
 
 ##### Parameters
 * *services:* 
+* *defaultSerializerType:* 
 
 
 

@@ -1,20 +1,20 @@
 # Summary - Nucleus.Net.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 1/25/2024 - 4:05:44 PM |
-| Coverage date: | 1/25/2024 - 4:05:08 PM - 1/25/2024 - 4:05:33 PM |
+| Generated on: | 1/25/2024 - 5:13:08 PM |
+| Coverage date: | 1/25/2024 - 5:12:44 PM - 1/25/2024 - 5:13:03 PM |
 | Parser: | MultiReport (16x Cobertura) |
 | Assemblies: | 11 |
-| Classes: | 65 |
-| Files: | 64 |
-| **Line coverage:** | 50.7% (1054 of 2078) |
-| Covered lines: | 1054 |
-| Uncovered lines: | 1024 |
-| Coverable lines: | 2078 |
-| Total lines: | 5954 |
-| **Branch coverage:** | 50.3% (578 of 1147) |
+| Classes: | 67 |
+| Files: | 66 |
+| **Line coverage:** | 51.2% (1081 of 2111) |
+| Covered lines: | 1081 |
+| Uncovered lines: | 1030 |
+| Coverable lines: | 2111 |
+| Total lines: | 6045 |
+| **Branch coverage:** | 49.3% (578 of 1171) |
 | Covered branches: | 578 |
-| Total branches: | 1147 |
+| Total branches: | 1171 |
 | **Method coverage:** | [Feature is only available for sponsors](https://reportgenerator.io/pro) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|
@@ -66,9 +66,11 @@
 |Eliassen.RabbitMQ.MessageQueueing.QueueClientFactory|0|9|9|35|0%|0|2|0%|
 |Eliassen.RabbitMQ.MessageQueueing.RabbitMQQueueMessageProvider|0|46|46|118|0%|0|12|0%|
 |Eliassen.RabbitMQ.ServiceCollectionEx|0|8|8|40|0%|0|0||
-|**Eliassen.System**|**116**|**259**|**375**|**1322**|**30.9%**|**43**|**189**|**22.7%**|
-|Eliassen.System.Security.Cryptography.Hash|1|0|1|19|100%|0|0||
-|Eliassen.System.ServiceCollectionExtensions|30|0|30|109|100%|0|0||
+|**Eliassen.System**|**143**|**265**|**408**|**1413**|**35%**|**43**|**213**|**20.1%**|
+|Eliassen.System.Security.Cryptography.Md5Hash|1|0|1|19|100%|0|0||
+|Eliassen.System.Security.Cryptography.Sha256Hash|1|0|1|19|100%|0|0||
+|Eliassen.System.Security.Cryptography.Sha512Hash|1|0|1|19|100%|0|0||
+|Eliassen.System.ServiceCollectionExtensions|55|6|61|162|90.1%|0|24|0%|
 |Eliassen.System.Text.Json.BsonDateTimeOffsetConverter|18|19|37|108|48.6%|8|40|20%|
 |Eliassen.System.Text.Json.BsonIdConverter|13|1|14|56|92.8%|8|14|57.1%|
 |Eliassen.System.Text.Json.BsonTypeInfoResolver|0|25|25|59|0%|0|16|0%|
