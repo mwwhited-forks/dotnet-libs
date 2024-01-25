@@ -18,9 +18,7 @@ public class DefaultBsonSerializer : DefaultJsonSerializer, IBsonSerializer
     /// <summary>
     /// Initializes a new instance of the <see cref="DefaultBsonSerializer"/> class.
     /// </summary>
-    public DefaultBsonSerializer()
-    {
+    public DefaultBsonSerializer() =>
         // Set the type information resolver to a new instance of BsonTypeInfoResolver.
         _options.TypeInfoResolver = new BsonTypeInfoResolver();
-    }
 }

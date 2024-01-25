@@ -65,7 +65,7 @@ The modified .
 
 
 
-## Class: AspNetCore.SwaggerGen.B2C.ConfigureOAuthSwaggerGenOptions
+## Class: AspNetCore.JwtAuthentication.SwaggerGen.ConfigureOAuthSwaggerGenOptions
 Configures SwaggerGen options for OAuth2 authentication. 
 
 Initializes a new instance of the class.
@@ -102,7 +102,7 @@ Configures SwaggerGen options for OAuth2 authentication.
 
 
 
-## Class: AspNetCore.SwaggerGen.B2C.ConfigureOAuthSwaggerUIOptions
+## Class: AspNetCore.JwtAuthentication.SwaggerGen.ConfigureOAuthSwaggerUIOptions
 Configures SwaggerUI options for OAuth authentication. 
 
 Initializes a new instance of the class.
@@ -130,7 +130,7 @@ Configures SwaggerUI options for OAuth authentication.
 
 
 
-## Class: AspNetCore.SwaggerGen.B2C.OAuth2SwaggerOptions
+## Class: AspNetCore.JwtAuthentication.SwaggerGen.OAuth2SwaggerOptions
 Represents the options for configuring OAuth2 in Swagger. 
 
 ### Properties

@@ -11,7 +11,7 @@ public class TestTargetWithInnerListModel
         Index = index;
         Name = $"{nameof(Name)}{index}";
         Email = $"{nameof(Email)}{index:000}@domain.com";
-        Children = Enumerable.Range((index / 100) % 10, index % 10).Select(i => $"Child{i:000}").ToList();
+        Children = Enumerable.Range(index / 100 % 10, index % 10).Select(i => $"Child{i:000}").ToList();
     }
 
     [Key]

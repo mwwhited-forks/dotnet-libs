@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace Eliassen.AspNetCore.JwtAuthentication.Authorization;
+namespace Eliassen.AspNetCore.Mvc.Authorization;
 
 /// <summary>
 /// Represents an authorization requirement for user-specific authorization.
@@ -21,10 +21,7 @@ public record UserAuthorizationRequirement : IAuthorizationRequirement
     /// Initializes a new instance of the <see cref="UserAuthorizationRequirement"/> class.
     /// </summary>
     /// <param name="requireApplicationUserId">Specifies whether the application user ID is required for authorization.</param>
-    public UserAuthorizationRequirement(bool requireApplicationUserId = RequireApplicationUserIdDefault)
-    {
-        RequireApplicationUserId = requireApplicationUserId;
-    }
+    public UserAuthorizationRequirement(bool requireApplicationUserId = RequireApplicationUserIdDefault) => RequireApplicationUserId = requireApplicationUserId;
 
     /// <summary>
     /// Gets a value indicating whether the application user ID is required for authorization.

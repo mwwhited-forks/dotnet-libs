@@ -1,5 +1,4 @@
-﻿using Eliassen.System.Accessors;
-using Eliassen.System.Configuration;
+﻿using Eliassen.Extensions;
 using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
 using Eliassen.System.Net.Mime;
@@ -12,8 +11,6 @@ using Eliassen.System.Text.Xml.Serialization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System.ComponentModel;
-using System.Linq;
 
 namespace Eliassen.System;
 
@@ -27,13 +24,20 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services"></param>
     /// <param name="config"></param>
+    /// <param name="defaultHashType"></param>
+    /// <param name="defaultSerializerType"></param>
     /// <returns></returns>
-    public static IServiceCollection TryAddSystemExtensions(this IServiceCollection services, IConfiguration config) =>
+    public static IServiceCollection TryAddSystemExtensions(
+        this IServiceCollection services,
+        IConfiguration config,
+        HashTypes defaultHashType = HashTypes.Md5,
+        SerializerTypes defaultSerializerType = SerializerTypes.Json
+        ) =>
         services
         .TryAddSearchQueryExtensions()
-        .TrySecurityExtensions()
+        .TrySecurityExtensions(defaultHashType)
         .TryTemplatingExtensions(config)
-        .TrySerializerExtensions()
+        .TrySerializerExtensions(defaultSerializerType)
         ;
 
     /// <summary>
@@ -59,10 +63,23 @@ public static class ServiceCollectionExtensions
     /// Add support for shared security extensions
     /// </summary>
     /// <param name="services"></param>
+    /// <param name="defaultHashType"></param>
     /// <returns></returns>
-    public static IServiceCollection TrySecurityExtensions(this IServiceCollection services)
+    public static IServiceCollection TrySecurityExtensions(
+        this IServiceCollection services,
+        HashTypes defaultHashType = HashTypes.Md5
+        )
     {
-        services.TryAddTransient<IHash, Hash>();
+        services.TryAddSingleton(sp => sp.GetRequiredKeyedService<IHash>(defaultHashType));
+
+        services.TryAddKeyedSingleton<IHash, Md5Hash>(nameof(HashTypes.Md5).ToUpper());
+        services.TryAddKeyedSingleton<IHash, Sha256Hash>(nameof(HashTypes.Sha256).ToUpper());
+        services.TryAddKeyedSingleton<IHash, Sha512Hash>(nameof(HashTypes.Sha512).ToUpper());
+
+        services.TryAddKeyedSingleton(HashTypes.Md5, (sp, key) => sp.GetRequiredKeyedService<IHash>(key?.ToString()?.ToUpper()));
+        services.TryAddKeyedSingleton(HashTypes.Sha256, (sp, key) => sp.GetRequiredKeyedService<IHash>(key?.ToString()?.ToUpper()));
+        services.TryAddKeyedSingleton(HashTypes.Sha512, (sp, key) => sp.GetRequiredKeyedService<IHash>(key?.ToString()?.ToUpper()));
+
         return services;
     }
 
@@ -70,13 +87,46 @@ public static class ServiceCollectionExtensions
     /// Add support for shared Serializer
     /// </summary>
     /// <param name="services"></param>
+    /// <param name="defaultSerializerType"></param>
     /// <returns></returns>
-    public static IServiceCollection TrySerializerExtensions(this IServiceCollection services)
+    public static IServiceCollection TrySerializerExtensions(
+        this IServiceCollection services,
+        SerializerTypes defaultSerializerType = SerializerTypes.Json
+        )
     {
-        services.TryAddSingleton<ISerializer>(sp => sp.GetRequiredService<IJsonSerializer>());
+        services.TryAddSingleton(sp => sp.GetRequiredKeyedService<ISerializer>(defaultSerializerType));
+
+        services.TryAddKeyedSingleton(
+            SerializerTypes.Json,
+            (sp, key) => sp.GetRequiredKeyedService<ISerializer>(key?.ToString()?.ToUpper())
+            );
+        services.TryAddKeyedSingleton(
+            SerializerTypes.Bson,
+            (sp, key) => sp.GetRequiredKeyedService<ISerializer>(key?.ToString()?.ToUpper())
+            );
+        services.TryAddKeyedSingleton(
+            SerializerTypes.Xml,
+            (sp, key) => sp.GetRequiredKeyedService<ISerializer>(key?.ToString()?.ToUpper())
+            );
+
         services.TryAddSingleton<IJsonSerializer, DefaultJsonSerializer>();
+        services.TryAddKeyedSingleton<ISerializer>(
+            nameof(SerializerTypes.Json).ToUpper(),
+            (sp, key) => sp.GetRequiredService<IJsonSerializer>()
+            );
+
         services.TryAddSingleton<IBsonSerializer, DefaultBsonSerializer>();
-        //TODO: services.TryAddSingleton<IXmlSerializer, DefaultXmlSerializer>();
+        services.TryAddKeyedSingleton<ISerializer>(
+            nameof(SerializerTypes.Bson).ToUpper(),
+            (sp, key) => sp.GetRequiredService<IBsonSerializer>()
+            );
+
+        services.TryAddSingleton<IXmlSerializer, DefaultXmlSerializer>();
+        services.TryAddKeyedSingleton<ISerializer>(
+            nameof(SerializerTypes.Xml).ToUpper(),
+            (sp, key) => sp.GetRequiredService<IXmlSerializer>()
+            );
+
         services.TryAddSingleton(_ => DefaultJsonSerializer.DefaultOptions);
         return services;
     }
@@ -107,56 +157,6 @@ public static class ServiceCollectionExtensions
 
         services.AddTransient<IFileType>(_ => new FileType { Extension = ".xslt", ContentType = ContentTypesExtensions.Application.XSLT, IsTemplateType = true });
 
-        return services;
-    }
-
-    /// <summary>
-    /// Register accessor type that is scoped to as AsyncLocal
-    /// </summary>
-    /// <typeparam name="TService"></typeparam>
-    /// <param name="services"></param>
-    /// <returns></returns>
-    public static IServiceCollection AddAccessor<TService>(this IServiceCollection services)
-        where TService : class
-    {
-        services.TryAddSingleton(typeof(IAccessor<>), typeof(Accessor<>));
-        return services;
-    }
-
-    /// <summary>
-    /// Extend configuration options
-    /// </summary>
-    /// <typeparam name="TConfig"></typeparam>
-    /// <param name="services"></param>
-    /// <param name="config"></param>
-    /// <returns></returns>
-    public static IServiceCollection AddConfiguration<TConfig>(
-        this IServiceCollection services,
-        IConfiguration config
-        )
-        where TConfig : class
-    {
-        var section = TypeDescriptor.GetAttributes(typeof(TConfig))
-            .OfType<ConfigurationSectionAttribute>()
-            .FirstOrDefault()?.ConfigurationSection ?? typeof(TConfig).Name;
-        services.Configure<TConfig>(config.GetSection(section));
-        return services;
-    }
-
-    /// <summary>
-    /// Get singleton instance from IOC container
-    /// </summary>
-    /// <typeparam name="TService"></typeparam>
-    /// <typeparam name="TInstance"></typeparam>
-    /// <param name="services"></param>
-    /// <param name="instance"></param>
-    /// <returns></returns>
-    public static IServiceCollection GetSingletonInstance<TService, TInstance>(this IServiceCollection services, out TInstance instance)
-        where TService : class
-        where TInstance : class, TService, new()
-    {
-        instance = (services.FirstOrDefault(i => i.ServiceType == typeof(TService))?.ImplementationInstance as TInstance) ?? new TInstance();
-        services.Replace(ServiceDescriptor.Singleton<TService>(instance));
         return services;
     }
 }

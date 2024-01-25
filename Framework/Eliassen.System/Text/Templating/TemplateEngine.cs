@@ -74,8 +74,7 @@ public class TemplateEngine(
     public virtual async Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target)
     {
         var provider = providers.FirstOrDefault(p => p.CanApply(context));
-        if (provider == null) return false;
-        return await provider.ApplyAsync(context, data, target);
+        return provider != null && await provider.ApplyAsync(context, data, target);
     }
 
     /// <summary>
@@ -88,8 +87,7 @@ public class TemplateEngine(
     {
         using var ms = new MemoryStream();
         var context = await ApplyAsync(templateName, data, ms);
-        if (context == null) return null;
-        return Encoding.UTF8.GetString(ms.ToArray());
+        return context == null ? null : Encoding.UTF8.GetString(ms.ToArray());
     }
 
     /// <summary>
@@ -101,9 +99,7 @@ public class TemplateEngine(
     public virtual async Task<string?> ApplyAsync(ITemplateContext context, object data)
     {
         using var ms = new MemoryStream();
-        if (!await ApplyAsync(context, data, ms))
-            return null;
-        return Encoding.UTF8.GetString(ms.ToArray());
+        return !await ApplyAsync(context, data, ms) ? null : Encoding.UTF8.GetString(ms.ToArray());
     }
 
     /// <summary>

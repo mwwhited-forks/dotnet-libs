@@ -1,4 +1,4 @@
-﻿using Eliassen.AspNetCore.SwaggerGen.B2C;
+﻿using Eliassen.AspNetCore.JwtAuthentication.SwaggerGen;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

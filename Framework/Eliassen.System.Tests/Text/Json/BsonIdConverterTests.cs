@@ -10,7 +10,6 @@ public class BsonIdConverterTests
 {
     public TestContext TestContext { get; set; } = null!;
 
-
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
     public void SerializeTest()

@@ -1,7 +1,6 @@
-﻿using Eliassen.System.Linq;
+﻿using Eliassen.Extensions.Reflection;
 using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
-using Eliassen.System.Reflection;
 using Eliassen.System.ResponseModel;
 using Eliassen.System.Tests.Linq.TestTargets;
 using Eliassen.TestUtilities;
@@ -26,8 +25,7 @@ public class QueryableExtensionsTests
         _cache.Add(typeof(T), typeof(T).GetConstructor([typeof(int)])
             ?? throw new NotSupportedException($"No Constructor(int) found")
             );
-        if (_cache.TryGetValue(typeof(T), out constructor)) return constructor;
-        throw new NotSupportedException($"No Constructor(int) found");
+        return _cache.TryGetValue(typeof(T), out constructor) ? constructor : throw new NotSupportedException($"No Constructor(int) found");
     }
 
     private static T Factory<T>(int index) => (T)Constructor<T>().Invoke([index]);
@@ -45,10 +43,7 @@ public class QueryableExtensionsTests
 
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
-    public void DefaultPageSizeTest()
-    {
-        Assert.AreEqual(10, QueryBuilder.DefaultPageSize);
-    }
+    public void DefaultPageSizeTest() => Assert.AreEqual(10, QueryBuilder.DefaultPageSize);
 
     [DataTestMethod]
     [TestCategory(TestCategories.Unit)]

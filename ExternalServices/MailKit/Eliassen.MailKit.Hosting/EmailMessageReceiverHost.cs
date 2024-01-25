@@ -73,7 +73,6 @@ public class EmailMessageReceiverHost(
         _disposed = true;
     }
 
-
     /// <summary>
     /// Starts the message receiver host.
     /// </summary>
@@ -82,7 +81,7 @@ public class EmailMessageReceiverHost(
     public async Task StartAsync(CancellationToken cancellationToken)
     {
 #if !DEBUG
-throw new NotSupportedException();
+throw new NotSupportedException("this is still in development and is not currently supported");
 #endif
 
         var client = await imapClientFactory.CreateAsync();

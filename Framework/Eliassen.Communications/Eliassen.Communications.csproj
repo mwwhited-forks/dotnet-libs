@@ -5,27 +5,33 @@
 		<ImplicitUsings>false</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<PackageReadmeFile>Readme.Communications.md</PackageReadmeFile>
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <CodeDocumentation Remove="Readme.Communications.md" />
+	</ItemGroup>
+	
 	<ItemGroup>
 		<InternalsVisibleTo Include="Eliassen.Communications.Tests" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<ProjectReference Include="..\Eliassen.Communications.Abstractions\Eliassen.Communications.Abstractions.csproj" />
-		<ProjectReference Include="..\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj" />
+		<ProjectReference Include="..\Eliassen.Extensions\Eliassen.Extensions.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Services\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Content Update="Readme.Communications.Abstractions.md">
+	    <PackagePath>\docs</PackagePath>
+	    <Pack>true</Pack>
+	  </Content>
+	</ItemGroup>
 
 </Project>

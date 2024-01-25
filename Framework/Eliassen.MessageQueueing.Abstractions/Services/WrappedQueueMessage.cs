@@ -1,6 +1,4 @@
-﻿using Eliassen.MessageQueueing.Services;
-
-namespace Eliassen.Azure.StorageAccount.MessageQueueing;
+﻿namespace Eliassen.MessageQueueing.Services;
 
 /// <summary>
 /// Represents a wrapped queue message.

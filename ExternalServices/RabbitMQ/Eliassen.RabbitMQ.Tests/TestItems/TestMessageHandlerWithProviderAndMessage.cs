@@ -22,10 +22,5 @@ public class TestMessageHandlerWithProviderAndMessage(
         return Task.CompletedTask;
     }
 
-    public Task HandleAsync(object message, IMessageContext context)
-    {
-        if (message is TestQueueMessage received)
-            return HandleAsync(received, context);
-        return Task.CompletedTask;
-    }
+    public Task HandleAsync(object message, IMessageContext context) => message is TestQueueMessage received ? HandleAsync(received, context) : Task.CompletedTask;
 }

@@ -73,15 +73,13 @@ public class DictionaryStringObjectJsonConverter : JsonConverter<Dictionary<stri
     /// <param name="value">The dictionary to write.</param>
     /// <param name="options">The serializer options.</param>
     public override void Write(
-        Utf8JsonWriter writer, Dictionary<string, object?> value, JsonSerializerOptions options)
-    {
+        Utf8JsonWriter writer, Dictionary<string, object?> value, JsonSerializerOptions options) =>
         // We don't need any custom serialization logic for writing the JSON.
         // Ideally, this method should not be called at all. It's only called if you
         // supply JsonSerializerOptions that contains this JsonConverter in its Converters list.
         // Don't do that, you will lose performance because of the cast needed below.
         // Cast to avoid infinite loop: https://github.com/dotnet/docs/issues/19268
         JsonSerializer.Serialize(writer, (IDictionary<string, object?>)value, options);
-    }
 
     private object? ExtractValue(ref Utf8JsonReader reader, JsonSerializerOptions options)
     {

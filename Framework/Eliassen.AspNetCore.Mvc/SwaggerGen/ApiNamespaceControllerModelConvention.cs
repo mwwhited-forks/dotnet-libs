@@ -11,8 +11,5 @@ public class ApiNamespaceControllerModelConvention : IControllerModelConvention
     /// Applies the convention to the specified controller model.
     /// </summary>
     /// <param name="controller">The controller model to apply the convention to.</param>
-    public void Apply(ControllerModel controller)
-    {
-        controller.ApiExplorer.GroupName = controller.ControllerType.Assembly.GetName().Name;
-    }
+    public void Apply(ControllerModel controller) => controller.ApiExplorer.GroupName = controller.ControllerType.Assembly.GetName().Name;
 }

@@ -1,6 +1,7 @@
-﻿using Eliassen.AspNetCore.JwtAuthentication.Authorization;
+﻿using Eliassen.AspNetCore.Mvc.Authorization;
 using Eliassen.AspNetCore.Mvc.Filters;
 using Eliassen.AspNetCore.Mvc.SwaggerGen;
+using Eliassen.Extensions;
 using Eliassen.System;
 using Eliassen.System.Linq.Search;
 using Microsoft.AspNetCore.Authorization;
@@ -46,9 +47,9 @@ public static class ServiceCollectionExtensions
 
         services.AddHttpContextAccessor();
         services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
-        services.TryAddTransient(sp => 
-            sp.GetRequiredService<IHttpContextAccessor>().HttpContext?.User ?? 
-            ClaimsPrincipal.Current ?? 
+        services.TryAddTransient(sp =>
+            sp.GetRequiredService<IHttpContextAccessor>().HttpContext?.User ??
+            ClaimsPrincipal.Current ??
             new ClaimsPrincipal(new ClaimsIdentity())
             );
 
@@ -89,10 +90,7 @@ public static class ServiceCollectionExtensions
         services.AddAuthorizationBuilder()
             .SetDefaultPolicy(authorizationPolicy);
 
-        services.AddControllers(options =>
-        {
-            options.Filters.Add(new AuthorizeFilter(authorizationPolicy));
-        });
+        services.AddControllers(options => options.Filters.Add(new AuthorizeFilter(authorizationPolicy)));
 
         return services;
     }
@@ -107,10 +105,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<FormFileOperationFilter>>();
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
         services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
-        services.AddControllers(opt =>
-        {
-            opt.Conventions.Add(new ApiNamespaceControllerModelConvention());
-        });
+        services.AddControllers(opt => opt.Conventions.Add(new ApiNamespaceControllerModelConvention()));
         return services;
     }
 

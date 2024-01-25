@@ -19,20 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\ExternalServices\Azure\Eliassen.Azure.StorageAccount\Eliassen.Azure.StorageAccount.csproj" />
-	  <ProjectReference Include="..\..\ExternalServices\MailKit\Eliassen.MailKit.Hosting\Eliassen.MailKit.Hosting.csproj" />
-	  <ProjectReference Include="..\..\ExternalServices\MailKit\Eliassen.MailKit\Eliassen.MailKit.csproj" />
-	  <ProjectReference Include="..\..\ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Eliassen.Microsoft.B2C.csproj" />
-	  <ProjectReference Include="..\..\ExternalServices\RabbitMQ\Eliassen.RabbitMQ\Eliassen.RabbitMQ.csproj" />
-	  <ProjectReference Include="..\..\Framework\Eliassen.AspNetCore.JwtAuthentication\Eliassen.AspNetCore.JwtAuthentication.csproj" />
-	  <ProjectReference Include="..\..\Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
-	  <ProjectReference Include="..\..\Framework\Eliassen.Communications.MessageQueueing\Eliassen.Communications.MessageQueueing.csproj" />
-	  <ProjectReference Include="..\..\Framework\Eliassen.Communications\Eliassen.Communications.csproj" />
-	  <ProjectReference Include="..\..\Framework\Eliassen.Handlebars.Extensions\Eliassen.Handlebars.Extensions.csproj" />
-	  <ProjectReference Include="..\..\Framework\Eliassen.MessageQueueing.Hosting\Eliassen.MessageQueueing.Hosting.csproj" />
-	  <ProjectReference Include="..\..\Framework\Eliassen.MessageQueueing\Eliassen.MessageQueueing.csproj" />
-	  <ProjectReference Include="..\..\Framework\Eliassen.MongoDB.Extensions\Eliassen.MongoDB.Extensions.csproj" />
-	  <ProjectReference Include="..\..\Framework\Eliassen.System\Eliassen.System.csproj" />
+	  <ProjectReference Include="..\..\Common\Eliassen.Common.Complete\Eliassen.Common.Complete.csproj" />
 	</ItemGroup>
 
 	<Target Name="BuildSwagger" AfterTargets="PostBuildEvent">

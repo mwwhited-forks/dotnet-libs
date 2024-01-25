@@ -113,11 +113,10 @@ public class SearchQueryMiddleware(
 
         await modelBinder.BindModelAsync(modelBindingContext);
 
-        if (modelBindingContext.Result.IsModelSet &&
-            modelBindingContext.Result.Model is T model)
-            return (true, model);
-
-        return (true, default);
+        return modelBindingContext.Result.IsModelSet &&
+            modelBindingContext.Result.Model is T model
+            ? ((bool isSearch, T? model))(true, model)
+            : ((bool isSearch, T? model))(true, default);
     }
 
     /// <summary>

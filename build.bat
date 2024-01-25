@@ -14,7 +14,8 @@ RMDIR "%PublishPath%" /S/Q
 MKDIR "%PublishPath%"
 dotnet build ^
 --configuration Release ^
---output %PublishPath%
+--output %PublishPath% ^
+ /bl:logfile=.\docs\build\solution.binlog
 SET TEST_ERR=%ERRORLEVEL%
 
 IF NOT "%TEST_ERR%"=="0" (

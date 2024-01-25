@@ -8,15 +8,6 @@ namespace Eliassen.System.Linq.Search;
 /// </summary>
 public record FilterParameter
 {
-    internal static class Messages
-    {
-        public const string ParsedInput = $"Input was parsed to patch expected type";
-        public const string ParsedInputCode = "INPUT_PARSED_TO_TYPE";
-
-        public const string UnableToMapFilter = $"Input was parsed to patch expected type";
-        public const string UnableToMapFilterCode = "INPUT_PARSED_TO_TYPE";
-    }
-
     /// <summary>
     /// `Equal To`: pass in the value to match for a given property  
     /// 
@@ -85,7 +76,10 @@ public record FilterParameter
     //[JsonPropertyName("isnull")]
     //public bool OrNull { get; set; }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// convert FilterParameter to string
+    /// </summary>
+    /// <returns></returns>
     public override string ToString()
     {
         var sb = new StringBuilder();

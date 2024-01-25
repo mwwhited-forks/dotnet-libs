@@ -13,6 +13,20 @@ accessible value
 this attribute tags valid end states for enum based state machines 
 
 
+## Class: System.ComponentModel.EnumValueAttribute
+output enum string as this value when serialized as json 
+
+### Properties
+
+#### Name
+value to output in place of Enum.ToString() with Json Serializer
+### Methods
+
+
+#### Constructor
+output enum string as this value when serialized as json 
+
+
 ## Class: System.ComponentModel.ExcludeFromUniqueAttribute
 Attribute used to exclude an enum or enum field from being considered for uniqueness checks. 
 
@@ -141,6 +155,22 @@ explicitly exclude properties from search
 
 #### TargetName
 Target name required only if this is used on the class
+### Methods
+
+
+#### Constructor
+explicitly exclude properties from search 
+
+
+##### Parameters
+* *targetName:* virtual property to target
+
+
+
+
+#### Constructor
+explicitly exclude properties from search 
+
 
 ## Class: System.ComponentModel.Search.NotSortableAttribute
 Specifies that a property or class should not be sortable. 
@@ -175,6 +205,22 @@ include field to be searchable for "SearchTerm"
 
 #### TargetName
 Target name required only if this is used on the class
+### Methods
+
+
+#### Constructor
+mark a virtual property as searchable 
+
+
+##### Parameters
+* *targetName:* 
+
+
+
+
+#### Constructor
+mark a property as searchable 
+
 
 ## Class: System.ComponentModel.Search.SearchTermDefaultAttribute
 provide the ability to control how search terms are handled if not wilded carded 
@@ -432,6 +478,17 @@ This allows for providing a set of values where the value from the queries data 
 `Less than`
 #### LessThanOrEqualTo
 `Less than or equal to`
+### Methods
+
+
+#### ToString
+convert FilterParameter to string 
+
+
+##### Return value
+
+
+
 
 ## Class: System.Linq.Search.IFilterQuery
 Represents a query with filtering options. 
@@ -637,6 +694,44 @@ A string representation of the search query.
 
 
 
+## Class: System.Net.Mime.ContentTypesExtensions
+Provides constants representing various content types. 
+
+### Fields
+
+#### Text.HandlebarsTemplate
+Represents the content type for Handlebars templates.
+#### Text.Calendar
+Represents the content type for calendar data.
+#### Text.Html
+Represents the content type for HTML.
+#### Text.Markdown
+Represents the content type for Markdown.
+#### Application.XSLT
+Represents the content type for XSLT (XML Stylesheet Language Transformations).
+
+## Class: System.Net.Mime.ContentTypesExtensions.Text
+Represents text-based content types. 
+
+### Fields
+
+#### HandlebarsTemplate
+Represents the content type for Handlebars templates.
+#### Calendar
+Represents the content type for calendar data.
+#### Html
+Represents the content type for HTML.
+#### Markdown
+Represents the content type for Markdown.
+
+## Class: System.Net.Mime.ContentTypesExtensions.Application
+Represents application-based content types. 
+
+### Fields
+
+#### XSLT
+Represents the content type for XSLT (XML Stylesheet Language Transformations).
+
 ## Class: System.Reflection.EnumExtensions
 Provides extension methods for working with enumerations. 
 
@@ -763,6 +858,46 @@ Resolves and returns the associated
 ##### Return value
 The resolved .
 
+
+
+## Class: System.ResponseModel.CaptureResultMessage
+Implementation of 
+ *See: T:Eliassen.System.ResponseModel.ICaptureResultMessage*for capturing and publishing result messages. 
+
+### Properties
+
+#### Default
+Default instance for CaptureResultMessage
+### Methods
+
+
+#### Publish(Eliassen.System.ResponseModel.ResultMessage[])
+Publishes result messages to the capture stack. 
+
+
+##### Parameters
+* *resultMessages:* The result messages to be published.
+
+
+
+
+#### Peek
+Peeks at the current contents of the capture stack without clearing it. 
+
+
+##### Return value
+The current result messages in the capture stack.
+
+
+
+#### Clear
+Gets the default instance of 
+ *See: T:Eliassen.System.ResponseModel.ICaptureResultMessage*. 
+
+
+#### Capture
+Gets the default instance of 
+ *See: T:Eliassen.System.ResponseModel.ICaptureResultMessage*. 
 
 
 ## Class: System.ResponseModel.ICaptureResultMessage
@@ -1020,6 +1155,63 @@ unique code that may be used to assist in translating issue
 Property or path related to this message
 #### MetaData
 additional properties related to response
+
+## Class: System.Security.Claims.ClaimsPrincipalExtensions
+Extensions to manage 
+ *See: T:System.Security.Claims.Claim*on 
+ *See: T:System.Security.Claims.ClaimsPrincipal*
+### Methods
+
+
+#### GetAllClaims(System.Security.Claims.ClaimsPrincipal)
+Iterate all 
+ *See: T:System.Security.Claims.Claim*for provided 
+ *See: T:System.Security.Claims.ClaimsPrincipal*
+
+##### Parameters
+* *principal:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### GetClaimValues(System.Security.Claims.ClaimsPrincipal,System.String[])
+Get for matched 
+ *See: T:System.Security.Claims.Claim*on 
+ *See: T:System.Security.Claims.ClaimsPrincipal*
+
+##### Parameters
+* *principal:* 
+* *claims:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### GetClaimValue(System.Security.Claims.ClaimsPrincipal,System.String[])
+Get first matched 
+ *See: T:System.Security.Claims.Claim*on 
+ *See: T:System.Security.Claims.ClaimsPrincipal*
+
+##### Parameters
+* *principal:* 
+* *claims:* 
+
+
+
+
+##### Return value
+
+
+
 
 ## Class: System.Security.Claims.CommonClaims
 Contains constants for common claims used in authentication. 
@@ -1291,6 +1483,18 @@ Writes the JSON representation of the enum value.
 
 
 
+
+## Class: System.Text.Templating.FileType
+Represents a file type, providing information about the file extension, content type, and whether it is a template type. 
+
+### Properties
+
+#### Extension
+Gets or sets the file extension associated with the file type.
+#### ContentType
+Gets or sets the content type associated with the file type.
+#### IsTemplateType
+Gets or sets a value indicating whether the file type is a template type.
 
 ## Class: System.Text.Templating.IFileType
 This interface allows objects that implement it to provide information about a specific file type, including its extension, content type, and whether it is considered a template type. 

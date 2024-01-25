@@ -1,5 +1,4 @@
-﻿using Eliassen.Azure.StorageAccount.MessageQueueing;
-using Eliassen.MessageQueueing.Services;
+﻿using Eliassen.MessageQueueing.Services;
 using Eliassen.System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
@@ -8,7 +7,6 @@ using System;
 using System.IO;
 using System.Text;
 using System.Threading;
-using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Eliassen.RabbitMQ.MessageQueueing;

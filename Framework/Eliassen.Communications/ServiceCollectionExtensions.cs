@@ -12,8 +12,5 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
-    public static IServiceCollection TryAddCommunicationsServices(this IServiceCollection services)
-    {
-        return services;
-    }
+    public static IServiceCollection TryAddCommunicationsServices(this IServiceCollection services) => services;
 }

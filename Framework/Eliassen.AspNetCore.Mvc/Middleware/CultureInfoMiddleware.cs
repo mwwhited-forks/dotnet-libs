@@ -73,8 +73,7 @@ public class CultureInfoMiddleware(
         try
         {
             var culture = cultureInfo.Split(';').FirstOrDefault();
-            if (culture == null) return null;
-            return CultureInfo.GetCultureInfo(culture);
+            return culture == null ? null : CultureInfo.GetCultureInfo(culture);
         }
         catch (CultureNotFoundException)
         {

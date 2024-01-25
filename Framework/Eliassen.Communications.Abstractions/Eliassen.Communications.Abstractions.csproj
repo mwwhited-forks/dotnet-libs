@@ -6,9 +6,9 @@
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_").Replace(".Abstractions", ""))</RootNamespace>
+		<PackageReadmeFile>Readme.Communications.Abstractions.md</PackageReadmeFile>
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-
 	</PropertyGroup>
 
 	<ItemGroup>

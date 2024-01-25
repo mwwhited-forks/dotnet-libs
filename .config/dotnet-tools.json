@@ -15,7 +15,7 @@
       ]
     },
     "dotnet-coverage": {
-      "version": "17.8.4",
+      "version": "17.10.1",
       "commands": [
         "dotnet-coverage"
       ]
@@ -33,9 +33,15 @@
       ]
     },
     "cyclonedx": {
-      "version": "3.0.4",
+      "version": "3.0.5",
       "commands": [
         "dotnet-CycloneDX"
+      ]
+    },
+    "dotnet-format": {
+      "version": "5.1.250801",
+      "commands": [
+        "dotnet-format"
       ]
     }
   }

@@ -42,8 +42,5 @@ public class JsonStringEnumConverterEx<TEnum> : JsonConverter<TEnum> where TEnum
     /// <param name="writer">The JSON writer.</param>
     /// <param name="value">The enum value to serialize.</param>
     /// <param name="options">The serializer options.</param>
-    public override void Write(Utf8JsonWriter writer, TEnum value, JsonSerializerOptions options)
-    {
-        writer.WriteStringValue(EnumExtensions.AsString<TEnum>(value));
-    }
+    public override void Write(Utf8JsonWriter writer, TEnum value, JsonSerializerOptions options) => writer.WriteStringValue(EnumExtensions.AsString<TEnum>(value));
 }

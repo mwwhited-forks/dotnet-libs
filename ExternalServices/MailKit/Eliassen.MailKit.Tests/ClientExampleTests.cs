@@ -124,7 +124,7 @@ public class ClientExampleTests
         {
             this.TestContext.WriteLine($"Namespace: {@namespace.Group}: \"{@namespace.Namespace.Path}\" [{@namespace.Namespace.DirectorySeparator}]");
 
-            foreach(var folder in await client.GetFoldersAsync(@namespace.Namespace))
+            foreach (var folder in await client.GetFoldersAsync(@namespace.Namespace))
             {
                 this.TestContext.WriteLine($"Folder: {folder.Name} ({folder.Id})");
                 await folder.OpenAsync(FolderAccess.ReadOnly);
@@ -132,7 +132,7 @@ public class ClientExampleTests
                 foreach (var item in folder)
                 {
                     this.TestContext.WriteLine($@"Message> 
-From:    {string.Join(';',item.From.Cast<InternetAddress>())} 
+From:    {string.Join(';', item.From.Cast<InternetAddress>())} 
 To:      {string.Join(';', item.To.Cast<InternetAddress>())}
 Subject: {item.Subject}
 Text:    {item.TextBody}

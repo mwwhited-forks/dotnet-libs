@@ -11,7 +11,6 @@ public class BsonDateConverterTests
 {
     public TestContext TestContext { get; set; } = null!;
 
-
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
     public void SerializeTest_Nullable()

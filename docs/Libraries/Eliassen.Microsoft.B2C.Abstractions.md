@@ -6,15 +6,15 @@ Contains constant keys for Azure-related configuration settings.
 
 ### Fields
 
-#### Azure.ADB2C.ClientID
+#### Azure.AdB2C.ClientID
 Represents the key for the Azure AD B2C client ID configuration.
-#### Azure.ADB2C.Issuer
+#### Azure.AdB2C.Issuer
 Represents the key for the Azure AD B2C issuer configuration.
-#### Azure.ADB2C.ClientSecret
+#### Azure.AdB2C.ClientSecret
 Represents the key for the Azure AD B2C client secret configuration.
-#### Azure.ADB2C.Tenant
+#### Azure.AdB2C.Tenant
 Represents the key for the Azure AD B2C tenant configuration.
-#### Azure.ADB2C.Domain
+#### Azure.AdB2C.Domain
 Represents the key for the Azure AD B2C domain configuration.
 
 ## Class: Microsoft.B2C.Identity.ConfigKeys.Azure
@@ -22,18 +22,18 @@ Contains keys related to Azure configuration.
 
 ### Fields
 
-#### ADB2C.ClientID
+#### AdB2C.ClientID
 Represents the key for the Azure AD B2C client ID configuration.
-#### ADB2C.Issuer
+#### AdB2C.Issuer
 Represents the key for the Azure AD B2C issuer configuration.
-#### ADB2C.ClientSecret
+#### AdB2C.ClientSecret
 Represents the key for the Azure AD B2C client secret configuration.
-#### ADB2C.Tenant
+#### AdB2C.Tenant
 Represents the key for the Azure AD B2C tenant configuration.
-#### ADB2C.Domain
+#### AdB2C.Domain
 Represents the key for the Azure AD B2C domain configuration.
 
-## Class: Microsoft.B2C.Identity.ConfigKeys.Azure.ADB2C
+## Class: Microsoft.B2C.Identity.ConfigKeys.Azure.AdB2C
 Contains keys related to Azure Active Directory B2C configuration. 
 
 ### Fields

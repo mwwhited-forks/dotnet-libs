@@ -5,7 +5,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
 
-namespace Eliassen.AspNetCore.SwaggerGen.B2C;
+namespace Eliassen.AspNetCore.JwtAuthentication.SwaggerGen;
 
 /// <summary>
 /// Configures SwaggerGen options for OAuth2 authentication.
@@ -33,7 +33,6 @@ public class ConfigureOAuthSwaggerGenOptions(
 
         return scopes;
     }
-
 
     /// <summary>
     /// Configures SwaggerGen options for OAuth2 authentication.

@@ -20,6 +20,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\Eliassen.Extensions\Eliassen.Extensions.csproj" />
 		<ProjectReference Include="..\Eliassen.MessageQueueing\Eliassen.MessageQueueing.csproj" />
 		<ProjectReference Include="..\Eliassen.System\Eliassen.System.csproj" />
 		<ProjectReference Include="..\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />

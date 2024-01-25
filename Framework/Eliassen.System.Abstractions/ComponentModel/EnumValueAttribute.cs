@@ -3,7 +3,7 @@
 /// <summary>
 /// output enum string as this value when serialized as json
 /// </summary>
-/// <inheritdoc />
+
 [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
 public sealed class EnumValueAttribute(string name) : Attribute
 {

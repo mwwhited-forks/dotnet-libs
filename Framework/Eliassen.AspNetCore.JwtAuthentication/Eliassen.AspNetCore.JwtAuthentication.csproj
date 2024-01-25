@@ -5,6 +5,7 @@
 		<ImplicitUsings>false</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<PackageReadmeFile>ReadMe.AspNetCore.JwtAuthentication.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>

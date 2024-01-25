@@ -1,4 +1,4 @@
-﻿namespace Eliassen.AspNetCore.SwaggerGen.B2C;
+﻿namespace Eliassen.AspNetCore.JwtAuthentication.SwaggerGen;
 
 /// <summary>
 /// Represents the options for configuring OAuth2 in Swagger.

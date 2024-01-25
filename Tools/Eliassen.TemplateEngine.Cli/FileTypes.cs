@@ -1,4 +1,4 @@
-﻿namespace Nucleus.TemplateEngine.Cli;
+﻿namespace Eliassen.TemplateEngine.Cli;
 
 public enum FileTypes
 {

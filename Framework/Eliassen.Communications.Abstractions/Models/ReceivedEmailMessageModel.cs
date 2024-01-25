@@ -3,7 +3,7 @@
 /// <summary>
 /// This model represents inbound email messages
 /// </summary>
-public class ReceivedEmailMessageModel: EmailMessageModel
+public class ReceivedEmailMessageModel : EmailMessageModel
 {
     /// <summary>
     /// this is the host reference for the inbound message

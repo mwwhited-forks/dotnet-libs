@@ -36,10 +36,10 @@ public class BlobContainerProvider(
         // Create a new list object for 
         List<BlobDto> files = [];
 
-        await foreach (BlobItem file in _blobClient.GetBlobsAsync())
+        await foreach (var file in _blobClient.GetBlobsAsync())
         {
             // Add each file retrieved from the storage container to the files list by creating a BlobDto object
-            string uri = _blobClient.Uri.ToString();
+            var uri = _blobClient.Uri.ToString();
             var name = file.Name;
             var fullUri = $"{uri}/{name}";
 
@@ -69,7 +69,7 @@ public class BlobContainerProvider(
         try
         {
             // Get a reference to the blob just uploaded from the API in a container from configuration settings
-            BlobClient client = _blobClient.GetBlobClient(document.DocumentKey);
+            var client = _blobClient.GetBlobClient(document.DocumentKey);
 
             await client.UploadAsync(content);
 
@@ -114,20 +114,20 @@ public class BlobContainerProvider(
         try
         {
             // Get a reference to the blob uploaded earlier from the API in the container from configuration settings
-            BlobClient file = _blobClient.GetBlobClient(blobFilename);
+            var file = _blobClient.GetBlobClient(blobFilename);
 
             // Check if the file exists in the container
             if (await file.ExistsAsync())
             {
                 var data = await file.OpenReadAsync();
-                Stream blobContent = data;
+                var blobContent = data;
 
                 // Download the file details async
                 var content = await file.DownloadContentAsync();
 
                 // Add data to variables in order to return a BlobDto
-                string name = blobFilename;
-                string contentType = content.Value.Details.ContentType;
+                var name = blobFilename;
+                var contentType = content.Value.Details.ContentType;
 
                 // Create new BlobDto with blob data from variables
                 return new BlobDto { Content = blobContent, Name = name, ContentType = contentType };
@@ -151,7 +151,7 @@ public class BlobContainerProvider(
     /// <returns>A <see cref="BlobResponseDto"/> representing the result of the delete operation.</returns>
     public async Task<BlobResponseDto> DeleteAsync(string blobFilename)
     {
-        BlobClient file = _blobClient.GetBlobClient(blobFilename);
+        var file = _blobClient.GetBlobClient(blobFilename);
         try
         {
             // Delete the file

@@ -24,4 +24,3 @@ public interface IQueryResult<TModel> : IQueryResult
     /// </summary>
     new IReadOnlyCollection<TModel> Rows { get; }
 }
-

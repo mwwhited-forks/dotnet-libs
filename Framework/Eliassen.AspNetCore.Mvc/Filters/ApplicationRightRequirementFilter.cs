@@ -19,7 +19,7 @@ public class ApplicationRightRequirementFilter(string[] rights) : IAuthorization
     /// <param name="context"></param>
     public void OnAuthorization(AuthorizationFilterContext context)
     {
-        bool? userAuthenticated = context.HttpContext.User.Identity?.IsAuthenticated;
+        var userAuthenticated = context.HttpContext.User.Identity?.IsAuthenticated;
         var userRights = context.HttpContext.User.GetClaimValues(CommonClaims.ApplicationRight);
 
         if (userAuthenticated is null or false)

@@ -8,7 +8,7 @@ namespace Eliassen.FixSourceLinks.Cli;
 
 internal class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
         var services = new ServiceCollection()
             .AddSingleton<IConfiguration>(_ => new ConfigurationBuilder()

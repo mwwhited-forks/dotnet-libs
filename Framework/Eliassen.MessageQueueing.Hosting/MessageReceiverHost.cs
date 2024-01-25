@@ -63,7 +63,6 @@ public class MessageReceiverHost(
         _disposed = true;
     }
 
-
     /// <summary>
     /// Starts the message receiver host.
     /// </summary>

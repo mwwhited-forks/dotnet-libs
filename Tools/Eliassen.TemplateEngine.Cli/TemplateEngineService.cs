@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 using System.Text.Json;
 using System.Xml.Linq;
 
-namespace Nucleus.TemplateEngine.Cli;
+namespace Eliassen.TemplateEngine.Cli;
 
 public class TemplateEngineService(
     ILogger<TemplateEngineService> log,

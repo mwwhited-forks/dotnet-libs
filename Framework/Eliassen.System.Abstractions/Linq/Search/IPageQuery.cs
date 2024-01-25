@@ -20,4 +20,3 @@ public interface IPageQuery
     /// </summary>
     bool ExcludePageCount { get; }
 }
-

@@ -87,7 +87,7 @@ public class MessageHandlerProvider(
                 );
 
             var payloadType = message.PayloadType == null ? null : Type.GetType(message.PayloadType);
-            object payload = message.Payload;
+            var payload = message.Payload;
             if (payloadType != null)
             {
                 var convert = _serializer.Serialize(payload, payload.GetType());

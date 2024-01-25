@@ -4,25 +4,23 @@
 		<Company>Eliassen Group</Company>
 		<Authors>$(USERNAME)@$(USERDNSDOMAIN)</Authors>
 		<Copyright>Eliassen Group, $([System.DateTime]::Now.ToString('yyyy'))</Copyright>
-
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(LOCAL_NUGET)' != ''">
 		<PackageOutputPath>$(LOCAL_NUGET.Trim('\'))\</PackageOutputPath>
 	</PropertyGroup>
-
 	<PropertyGroup Condition="'$(DOCUMENT_PATH)' != ''">
 		<DocumentPath>$(DOCUMENT_PATH.Trim('\'))\</DocumentPath>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(DOCUMENT_PATH)' == ''">
 		<DocumentPath>$(SolutionDir)docs\</DocumentPath>
 	</PropertyGroup>
-
 	<PropertyGroup Condition="'$(CodeDocumentPath)' == ''">
 		<CodeDocumentPath>$(DocumentPath)code\</CodeDocumentPath>
 	</PropertyGroup>
 
 	<ItemGroup>
+		<!-- GitVersion will automatically calculate and maintain the version of projects within your solution -->
 		<PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -30,12 +28,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<!-- This added additional documentation to your build output -->
 		<CodeDocumentation Include="**\*.md" />
 		<CodeDocumentation Include="**\*.plantuml" />
 		<CodeDocumentation Include="**\*.puml" />
 		<CodeDocumentation Remove="bin\**\*.*" />
 		<CodeDocumentation Remove="obj\**\*.*" />
 
+		<!-- these items will be automatically included as embedded resources in your assembly. -->
 		<Examples Include="**\*.txt" />
 		<Examples Include="**\*.json" />
 		<Examples Include="**\*.html" />
@@ -45,9 +45,13 @@
 		<Examples Remove="bin\**\*.*" />
 		<Examples Remove="obj\**\*.*" />
 
-		<Content Include="@(CodeDocumentation)" />
+		<Content Include="@(CodeDocumentation)" Pack="true" PackagePath="\docs" />
 		<EmbeddedResource Include="@(Examples)" />
-
+	</ItemGroup>
+	
+	<ItemGroup Condition="'$(PackageReadmeFile)'!='' and Exists('$(PackageReadmeFile)')">
+		<None Remove="$(PackageReadmeFile)" />
+		<None Include="$(PackageReadmeFile)" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 
 </Project>
