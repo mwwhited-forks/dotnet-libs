@@ -13,7 +13,7 @@ namespace Eliassen.Extensions;
 /// Suggested IOC configurations
 /// </summary>
 public static class ServiceCollectionExtensions
-{ 
+{
     /// <summary>
     /// Register accessor type that is scoped to as AsyncLocal
     /// </summary>

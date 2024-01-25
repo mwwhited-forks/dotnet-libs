@@ -62,8 +62,8 @@ public class TextTemplateController(
         return context == null
             ? NotFound()
             : new FileContentResult(ms.ToArray(), context.TargetContentType)
-        {
-            FileDownloadName = $"{context.TemplateName}-{DateTimeOffset.Now:yyyyMMddHHmmss}{context.TargetFileExtension}"
-        };
+            {
+                FileDownloadName = $"{context.TemplateName}-{DateTimeOffset.Now:yyyyMMddHHmmss}{context.TargetFileExtension}"
+            };
     }
 }

@@ -4,10 +4,10 @@
 /// Represents a template provider that can apply templates based on a specified context.
 /// </summary>
 public interface ITemplateProvider
-{   
+{
     /// <summary>
-     /// Gets the collection of supported content types by the template provider.
-     /// </summary>
+    /// Gets the collection of supported content types by the template provider.
+    /// </summary>
     IReadOnlyCollection<string> SupportedContentTypes { get; }
 
     /// <summary>

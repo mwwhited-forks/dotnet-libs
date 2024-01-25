@@ -9,10 +9,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="Readme.MailKit.md" Pack="true" PackagePath="\"/>
-	</ItemGroup>
-	
-	<ItemGroup>
 		<PackageReference Include="MailKit " Version="4.3.0" />
 
 		<PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
@@ -28,6 +24,5 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\Framework\Eliassen.Communications.Abstractions\Eliassen.Communications.Abstractions.csproj" />
 	</ItemGroup>
-
 
 </Project>

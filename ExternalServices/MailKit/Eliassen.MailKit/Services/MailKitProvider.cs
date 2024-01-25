@@ -35,7 +35,7 @@ public class MailKitProvider(
         await client.DisconnectAsync(true);
 
         log.LogInformation(
-            $@"Sent email ""{{{nameof(message.Subject)}}}"" to ""{{{nameof(message.ToAddresses)}}}"" [{{{nameof(reference)}}}]", 
+            $@"Sent email ""{{{nameof(message.Subject)}}}"" to ""{{{nameof(message.ToAddresses)}}}"" [{{{nameof(reference)}}}]",
             message.Subject,
             message.ToAddresses,
             reference

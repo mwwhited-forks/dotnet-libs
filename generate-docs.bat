@@ -22,6 +22,10 @@ ECHO Building Version=  "%BUILD_VERSION%"
 
 REM GOTO :sbom
 
+dotnet format ^
+--verbosity detailed ^
+--report %PublishPath%..\reports\format.json
+
 CALL build.bat
 SET TEST_ERR=%ERRORLEVEL%
 IF NOT "%TEST_ERR%"=="0" (

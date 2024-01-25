@@ -37,6 +37,12 @@
       "commands": [
         "dotnet-CycloneDX"
       ]
+    },
+    "dotnet-format": {
+      "version": "5.1.250801",
+      "commands": [
+        "dotnet-format"
+      ]
     }
   }
 }

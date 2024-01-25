@@ -21,12 +21,12 @@
 	</Target>
 
 	<!-- Ensure the PackageReadmeFile is included with the projects to be packaged for nuget -->
-	<Target Name="CheckReadMe" Condition="'$(IsPackable)'=='true' and '$(PackageReadmeFile)'==''" AfterTargets="Build">
-		<Warning Text="No PackageReadmeFile included for &quot;$(MSBuildProjectName)&quot;" 
+	<Target Name="CheckReadMe" Condition="'$(IsPackable)'=='true' and '$(PackageReadmeFile)'==''" BeforeTargets="Build">
+		<Warning Text="No PackageReadmeFile included for &quot;$(MSBuildProjectName)&quot;"
 				 Code="ELIPK001" />
 	</Target>
-	<Target Name="CheckReadMeExists" Condition="'$(PackageReadmeFile)'!='' and !Exists('$(PackageReadmeFile)')" AfterTargets="Build">
-		<Error Text="&quot;$(PackageReadmeFile)&quot; missing from &quot;$(MSBuildProjectName)&quot; - $([System.IO.File]::Exists('$(PackageReadmeFile)'))" 
+	<Target Name="CheckReadMeExists" Condition="'$(PackageReadmeFile)'!='' and !Exists('$(PackageReadmeFile)')" BeforeTargets="Build">
+		<Error Text="&quot;$(PackageReadmeFile)&quot; missing from &quot;$(MSBuildProjectName)&quot;"
 			   Code="ELIPK002" />
 	</Target>
 
