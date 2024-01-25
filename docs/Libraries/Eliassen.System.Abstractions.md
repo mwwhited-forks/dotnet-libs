@@ -205,6 +205,22 @@ include field to be searchable for "SearchTerm"
 
 #### TargetName
 Target name required only if this is used on the class
+### Methods
+
+
+#### Constructor
+mark a virtual property as searchable 
+
+
+##### Parameters
+* *targetName:* 
+
+
+
+
+#### Constructor
+mark a property as searchable 
+
 
 ## Class: System.ComponentModel.Search.SearchTermDefaultAttribute
 provide the ability to control how search terms are handled if not wilded carded 
@@ -842,6 +858,46 @@ Resolves and returns the associated
 ##### Return value
 The resolved .
 
+
+
+## Class: System.ResponseModel.CaptureResultMessage
+Implementation of 
+ *See: T:Eliassen.System.ResponseModel.ICaptureResultMessage*for capturing and publishing result messages. 
+
+### Properties
+
+#### Default
+Default instance for CaptureResultMessage
+### Methods
+
+
+#### Publish(Eliassen.System.ResponseModel.ResultMessage[])
+Publishes result messages to the capture stack. 
+
+
+##### Parameters
+* *resultMessages:* The result messages to be published.
+
+
+
+
+#### Peek
+Peeks at the current contents of the capture stack without clearing it. 
+
+
+##### Return value
+The current result messages in the capture stack.
+
+
+
+#### Clear
+Gets the default instance of 
+ *See: T:Eliassen.System.ResponseModel.ICaptureResultMessage*. 
+
+
+#### Capture
+Gets the default instance of 
+ *See: T:Eliassen.System.ResponseModel.ICaptureResultMessage*. 
 
 
 ## Class: System.ResponseModel.ICaptureResultMessage

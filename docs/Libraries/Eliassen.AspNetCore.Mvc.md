@@ -22,6 +22,67 @@ Add custom middleware to ASP.Net to support these extensions
 
 
 
+## Class: AspNetCore.Mvc.Authorization.UserAuthorizationHandler
+Handles user authorization based on specified requirements. 
+
+Initializes a new instance of the class.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the class.
+Handles user authorization based on specified requirements. 
+
+
+##### Parameters
+* *logger:* The logger.
+
+
+
+
+#### HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Eliassen.AspNetCore.Mvc.Authorization.UserAuthorizationRequirement)
+Handles the user authorization requirement asynchronously. 
+
+
+##### Parameters
+* *context:* The authorization context.
+* *requirement:* The user authorization requirement.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
+## Class: AspNetCore.Mvc.Authorization.UserAuthorizationRequirement
+Represents an authorization requirement for user-specific authorization. 
+
+### Fields
+
+#### RequireApplicationUserIdDefault
+The default value indicating whether the application user ID is required for authorization.
+#### RequireAuthenticatedByDefault
+The default value indicating whether authentication is required for authorization.
+### Properties
+
+#### RequireApplicationUserId
+Gets a value indicating whether the application user ID is required for authorization.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.AspNetCore.Mvc.Authorization.UserAuthorizationRequirement*class. 
+
+
+##### Parameters
+* *requireApplicationUserId:* Specifies whether the application user ID is required for authorization.
+
+
+
+
 ## Class: AspNetCore.Mvc.Filters.ApplicationPermissionsApiFilter
 operation filter to extend swagger to include application rights 
 
@@ -419,66 +480,5 @@ Applies the convention to the specified controller model.
 
 ##### Parameters
 * *controller:* The controller model to apply the convention to.
-
-
-
-
-## Class: AspNetCore.JwtAuthentication.Authorization.UserAuthorizationHandler
-Handles user authorization based on specified requirements. 
-
-Initializes a new instance of the class.
-### Methods
-
-
-#### Constructor
-Initializes a new instance of the class.
-Handles user authorization based on specified requirements. 
-
-
-##### Parameters
-* *logger:* The logger.
-
-
-
-
-#### HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Eliassen.AspNetCore.JwtAuthentication.Authorization.UserAuthorizationRequirement)
-Handles the user authorization requirement asynchronously. 
-
-
-##### Parameters
-* *context:* The authorization context.
-* *requirement:* The user authorization requirement.
-
-
-
-
-##### Return value
-A task representing the asynchronous operation.
-
-
-
-## Class: AspNetCore.JwtAuthentication.Authorization.UserAuthorizationRequirement
-Represents an authorization requirement for user-specific authorization. 
-
-### Fields
-
-#### RequireApplicationUserIdDefault
-The default value indicating whether the application user ID is required for authorization.
-#### RequireAuthenticatedByDefault
-The default value indicating whether authentication is required for authorization.
-### Properties
-
-#### RequireApplicationUserId
-Gets a value indicating whether the application user ID is required for authorization.
-### Methods
-
-
-#### Constructor
-Initializes a new instance of the 
- *See: T:Eliassen.AspNetCore.JwtAuthentication.Authorization.UserAuthorizationRequirement*class. 
-
-
-##### Parameters
-* *requireApplicationUserId:* Specifies whether the application user ID is required for authorization.
 
 

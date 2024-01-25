@@ -10,4 +10,3 @@ public interface IResult
     /// </summary>
     IReadOnlyCollection<ResultMessage>? Messages { get; }
 }
-

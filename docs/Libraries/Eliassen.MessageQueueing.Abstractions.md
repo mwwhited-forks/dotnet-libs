@@ -560,7 +560,7 @@ Gets the type of the payload object.
 #### Properties
 Gets the properties associated with the message.
 
-## Class: Azure.StorageAccount.MessageQueueing.WrappedQueueMessage
+## Class: MessageQueueing.Services.WrappedQueueMessage
 Represents a wrapped queue message. 
 
 ### Properties

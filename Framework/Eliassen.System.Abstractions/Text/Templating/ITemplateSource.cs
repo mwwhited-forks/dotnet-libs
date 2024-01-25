@@ -12,4 +12,3 @@ public interface ITemplateSource
     /// <returns>An enumerable collection of template contexts.</returns>
     IEnumerable<ITemplateContext> Get(string templateName);
 }
-

@@ -1,4 +1,4 @@
-using Eliassen.AspNetCore.JwtAuthentication;
+﻿using Eliassen.AspNetCore.JwtAuthentication;
 using Eliassen.AspNetCore.Mvc;
 using Eliassen.Azure.StorageAccount;
 using Eliassen.Communications;

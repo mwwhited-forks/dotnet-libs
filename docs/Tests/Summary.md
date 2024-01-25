@@ -1,20 +1,20 @@
 # Summary - Nucleus.Net.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 1/25/2024 - 2:05:47 PM |
-| Coverage date: | 1/25/2024 - 2:05:23 PM - 1/25/2024 - 2:05:41 PM |
+| Generated on: | 1/25/2024 - 4:05:44 PM |
+| Coverage date: | 1/25/2024 - 4:05:08 PM - 1/25/2024 - 4:05:33 PM |
 | Parser: | MultiReport (16x Cobertura) |
-| Assemblies: | 10 |
-| Classes: | 66 |
-| Files: | 65 |
-| **Line coverage:** | 50.8% (1062 of 2088) |
-| Covered lines: | 1062 |
-| Uncovered lines: | 1026 |
-| Coverable lines: | 2088 |
-| Total lines: | 6012 |
-| **Branch coverage:** | 50.5% (582 of 1151) |
-| Covered branches: | 582 |
-| Total branches: | 1151 |
+| Assemblies: | 11 |
+| Classes: | 65 |
+| Files: | 64 |
+| **Line coverage:** | 50.7% (1054 of 2078) |
+| Covered lines: | 1054 |
+| Uncovered lines: | 1024 |
+| Coverable lines: | 2078 |
+| Total lines: | 5954 |
+| **Branch coverage:** | 50.3% (578 of 1147) |
+| Covered branches: | 578 |
+| Total branches: | 1147 |
 | **Method coverage:** | [Feature is only available for sponsors](https://reportgenerator.io/pro) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|
@@ -26,23 +26,27 @@
 |Eliassen.Azure.StorageAccount.ServiceCollectionEx|0|11|11|53|0%|0|0||
 |**Eliassen.Communications**|**0**|**1**|**1**|**16**|**0%**|**0**|**0**|****|
 |Eliassen.Communications.ServiceCollectionExtensions|0|1|1|16|0%|0|0||
-|**Eliassen.Extensions**|**28**|**53**|**81**|**319**|**34.5%**|**8**|**54**|**14.8%**|
+|**Eliassen.Extensions**|**129**|**104**|**233**|**841**|**55.3%**|**83**|**196**|**42.3%**|
 |Eliassen.Extensions.Accessors.Accessor`1|3|0|3|22|100%|0|0||
+|Eliassen.Extensions.Configuration.CommandLine|0|20|20|53|0%|0|28|0%|
 |Eliassen.Extensions.Configuration.ConfigurationBuilderExtensions|0|8|8|42|0%|0|0||
+|Eliassen.Extensions.IO.StreamJsonDeserializeExtensions|10|10|20|68|50%|4|8|50%|
+|Eliassen.Extensions.IO.StreamXmlDeserializeExtensions|8|12|20|69|40%|2|8|25%|
+|Eliassen.Extensions.Linq.AsyncEnumerableExtensions|0|25|25|108|0%|0|36|0%|
+|Eliassen.Extensions.Linq.DictionaryExtensions|2|0|2|43|100%|0|0||
+|Eliassen.Extensions.Reflection.ReflectionExtensions|83|17|100|288|83%|62|84|73.8%|
+|Eliassen.Extensions.Reflection.ResourceExtensions|16|9|25|82|64%|13|22|59%|
 |Eliassen.Extensions.ServiceCollectionExtensions|7|3|10|66|70%|2|10|20%|
-|Eliassen.System.Configuration.CommandLine|0|20|20|52|0%|0|28|0%|
-|Eliassen.System.IO.StreamJsonDeserializeExtensions|10|10|20|68|50%|4|8|50%|
-|Eliassen.System.IO.StreamXmlDeserializeExtensions|8|12|20|69|40%|2|8|25%|
 |**Eliassen.MailKit**|**0**|**76**|**76**|**271**|**0%**|**0**|**30**|**0%**|
 |Eliassen.MailKit.ServiceCollectionExtensions|0|7|7|41|0%|0|0||
 |Eliassen.MailKit.Services.ImapClientFactory|0|8|8|41|0%|0|6|0%|
 |Eliassen.MailKit.Services.MailKitProvider|0|12|12|46|0%|0|2|0%|
 |Eliassen.MailKit.Services.MimeMessageFactory|0|41|41|102|0%|0|16|0%|
 |Eliassen.MailKit.Services.SmtpClientFactory|0|8|8|41|0%|0|6|0%|
-|**Eliassen.MessageQueueing**|**144**|**119**|**263**|**845**|**54.7%**|**37**|**112**|**33%**|
-|Eliassen.Azure.StorageAccount.MessageQueueing.InProcessMessageProvider|0|25|25|91|0%|0|8|0%|
+|**Eliassen.MessageQueueing**|**144**|**119**|**263**|**841**|**54.7%**|**37**|**112**|**33%**|
 |Eliassen.MessageQueueing.MessageSender`1|55|0|55|107|100%|5|8|62.5%|
-|Eliassen.MessageQueueing.ServiceCollectionExtensions|13|0|13|40|100%|0|0||
+|Eliassen.MessageQueueing.ServiceCollectionExtensions|13|0|13|39|100%|0|0||
+|Eliassen.MessageQueueing.Services.InProcessMessageProvider|0|25|25|88|0%|0|8|0%|
 |Eliassen.MessageQueueing.Services.MessageContext|21|1|22|117|95.4%|3|4|75%|
 |Eliassen.MessageQueueing.Services.MessageContextFactory|16|6|22|94|72.7%|11|22|50%|
 |Eliassen.MessageQueueing.Services.MessageHandlerProvider|0|31|31|112|0%|0|20|0%|
@@ -58,26 +62,11 @@
 |Eliassen.Microsoft.B2C.Identity.ManageGraphUser|0|95|95|202|0%|0|20|0%|
 |Eliassen.Microsoft.B2C.Identity.UserManagementProvider|0|7|7|27|0%|0|2|0%|
 |Eliassen.Microsoft.B2C.ServiceCollectionEx|0|4|4|24|0%|0|0||
-|**Eliassen.RabbitMQ**|**0**|**63**|**63**|**195**|**0%**|**0**|**14**|**0%**|
+|**Eliassen.RabbitMQ**|**0**|**63**|**63**|**193**|**0%**|**0**|**14**|**0%**|
 |Eliassen.RabbitMQ.MessageQueueing.QueueClientFactory|0|9|9|35|0%|0|2|0%|
-|Eliassen.RabbitMQ.MessageQueueing.RabbitMQQueueMessageProvider|0|46|46|120|0%|0|12|0%|
+|Eliassen.RabbitMQ.MessageQueueing.RabbitMQQueueMessageProvider|0|46|46|118|0%|0|12|0%|
 |Eliassen.RabbitMQ.ServiceCollectionEx|0|8|8|40|0%|0|0||
-|**Eliassen.System**|**759**|**404**|**1163**|**3572**|**65.2%**|**463**|**777**|**59.5%**|
-|Eliassen.System.Internal.ConsoleLogger`1|5|3|8|28|62.5%|2|2|100%|
-|Eliassen.System.Linq.AsyncEnumerableExtensions|0|25|25|108|0%|0|36|0%|
-|Eliassen.System.Linq.DictionaryExtensions|2|0|2|43|100%|0|0||
-|Eliassen.System.Linq.Expressions.ExpressionExtensions|23|15|38|104|60.5%|16|34|47%|
-|Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1|293|31|324|612|90.4%|209|246|84.9%|
-|Eliassen.System.Linq.Expressions.ParameterReplacerExpressionVisitor|3|0|3|14|100%|2|2|100%|
-|Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor|6|0|6|24|100%|4|4|100%|
-|Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor|32|2|34|89|94.1%|17|30|56.6%|
-|Eliassen.System.Linq.OperatorExtensions|14|1|15|27|93.3%|7|8|87.5%|
-|Eliassen.System.Linq.Search.QueryBuilder|14|19|33|327|42.4%|0|6|0%|
-|Eliassen.System.Linq.Search.QueryBuilder`1|89|4|93|327|95.6%|43|62|69.3%|
-|Eliassen.System.Linq.Search.SortBuilder`1|55|17|72|128|76.3%|41|48|85.4%|
-|Eliassen.System.Reflection.ReflectionExtensions|83|17|100|288|83%|62|84|73.8%|
-|Eliassen.System.Reflection.ResourceExtensions|16|9|25|81|64%|13|22|59%|
-|Eliassen.System.ResponseModel.CaptureResultMessage|8|2|10|50|80%|4|4|100%|
+|**Eliassen.System**|**116**|**259**|**375**|**1322**|**30.9%**|**43**|**189**|**22.7%**|
 |Eliassen.System.Security.Cryptography.Hash|1|0|1|19|100%|0|0||
 |Eliassen.System.ServiceCollectionExtensions|30|0|30|109|100%|0|0||
 |Eliassen.System.Text.Json.BsonDateTimeOffsetConverter|18|19|37|108|48.6%|8|40|20%|
@@ -93,5 +82,16 @@
 |Eliassen.System.Text.Templating.TemplateEngine|0|41|41|123|0%|0|14|0%|
 |Eliassen.System.Text.Templating.XsltTemplateProvider|0|45|45|108|0%|0|16|0%|
 |Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer|0|12|12|70|0%|0|0||
+|**Eliassen.System.Linq**|**534**|**92**|**626**|**1675**|**85.3%**|**341**|**442**|**77.1%**|
+|Eliassen.System.Linq.ConsoleLogger`1|5|3|8|28|62.5%|2|2|100%|
+|Eliassen.System.Linq.Expressions.ExpressionExtensions|23|15|38|104|60.5%|16|34|47%|
+|Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1|293|31|324|611|90.4%|209|246|84.9%|
+|Eliassen.System.Linq.Expressions.ParameterReplacerExpressionVisitor|3|0|3|14|100%|2|2|100%|
+|Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor|6|0|6|24|100%|4|4|100%|
+|Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor|32|2|34|88|94.1%|17|30|56.6%|
+|Eliassen.System.Linq.Search.OperatorExtensions|14|1|15|26|93.3%|7|8|87.5%|
+|Eliassen.System.Linq.Search.QueryBuilder|14|19|33|326|42.4%|0|6|0%|
+|Eliassen.System.Linq.Search.QueryBuilder`1|89|4|93|326|95.6%|43|62|69.3%|
+|Eliassen.System.Linq.Search.SortBuilder`1|55|17|72|128|76.3%|41|48|85.4%|
 |**Eliassen.TestUtilities**|**131**|**22**|**153**|**341**|**85.6%**|**74**|**116**|**63.7%**|
 |Eliassen.TestUtilities.TestContextExtensions|131|22|153|341|85.6%|74|116|63.7%|

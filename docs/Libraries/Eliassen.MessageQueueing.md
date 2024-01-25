@@ -62,6 +62,78 @@ Add IOC configurations to support all Message Queueing within this library.
 
 
 
+## Class: MessageQueueing.Services.InProcessMessageProvider
+Represents an in-process message provider that implements both 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageSenderProvider*and 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageReceiverProvider*. 
+
+Initializes a new instance of the class.
+### Fields
+
+#### MessageProviderKey
+Gets the key associated with the in-process message provider.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the class.
+Represents an in-process message provider that implements both 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageSenderProvider*and 
+ *See: T:Eliassen.MessageQueueing.Services.IMessageReceiverProvider*. 
+
+
+##### Parameters
+* *logger:* The logger.
+
+
+
+
+#### SendAsync(System.Object,Eliassen.MessageQueueing.Services.IMessageContext)
+Sends a message asynchronously. 
+
+
+##### Parameters
+* *message:* The message to send.
+* *context:* The message context.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation and returning the correlation ID.
+
+
+
+#### SetHandlerProvider(Eliassen.MessageQueueing.Services.IMessageHandlerProvider)
+Sets the message handler provider. 
+
+
+##### Parameters
+* *handlerProvider:* The message handler provider.
+
+
+
+
+##### Return value
+The current instance of the message receiver provider.
+
+
+
+#### RunAsync(System.Threading.CancellationToken)
+Runs the in-process message provider asynchronously. 
+
+
+##### Parameters
+* *cancellationToken:* The cancellation token.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
 ## Class: MessageQueueing.Services.MessageContext
 Represents the context associated with a message, including metadata and headers. 
 
@@ -499,76 +571,4 @@ Creates an instance of
 
 ##### Return value
 An instance of .
-
-
-
-## Class: Azure.StorageAccount.MessageQueueing.InProcessMessageProvider
-Represents an in-process message provider that implements both 
- *See: T:Eliassen.MessageQueueing.Services.IMessageSenderProvider*and 
- *See: T:Eliassen.MessageQueueing.Services.IMessageReceiverProvider*. 
-
-Initializes a new instance of the class.
-### Fields
-
-#### MessageProviderKey
-Gets the key associated with the in-process message provider.
-### Methods
-
-
-#### Constructor
-Initializes a new instance of the class.
-Represents an in-process message provider that implements both 
- *See: T:Eliassen.MessageQueueing.Services.IMessageSenderProvider*and 
- *See: T:Eliassen.MessageQueueing.Services.IMessageReceiverProvider*. 
-
-
-##### Parameters
-* *logger:* The logger.
-
-
-
-
-#### SendAsync(System.Object,Eliassen.MessageQueueing.Services.IMessageContext)
-Sends a message asynchronously. 
-
-
-##### Parameters
-* *message:* The message to send.
-* *context:* The message context.
-
-
-
-
-##### Return value
-A task representing the asynchronous operation and returning the correlation ID.
-
-
-
-#### SetHandlerProvider(Eliassen.MessageQueueing.Services.IMessageHandlerProvider)
-Sets the message handler provider. 
-
-
-##### Parameters
-* *handlerProvider:* The message handler provider.
-
-
-
-
-##### Return value
-The current instance of the message receiver provider.
-
-
-
-#### RunAsync(System.Threading.CancellationToken)
-Runs the in-process message provider asynchronously. 
-
-
-##### Parameters
-* *cancellationToken:* The cancellation token.
-
-
-
-
-##### Return value
-A task representing the asynchronous operation.
 
