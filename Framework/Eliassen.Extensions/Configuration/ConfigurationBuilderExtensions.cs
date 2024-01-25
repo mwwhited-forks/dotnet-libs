@@ -1,9 +1,9 @@
-﻿using Eliassen.System.Extensions.Configuration;
+﻿using Eliassen.Extensions.Configuration;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Eliassen.System.Extensions.Configuration;
+namespace Eliassen.Extensions.Configuration;
 
 /// <summary>
 /// Extension methods for adding in-memory collections to the <see cref="IConfigurationBuilder"/>.

@@ -1,4 +1,5 @@
-﻿using Eliassen.MessageQueueing.Services;
+﻿using Eliassen.Extensions;
+using Eliassen.MessageQueueing.Services;
 using Eliassen.MessageQueueing.Tests.TestItems;
 using Eliassen.System;
 using Eliassen.System.Accessors;
