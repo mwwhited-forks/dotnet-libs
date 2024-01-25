@@ -1,13 +1,13 @@
 ﻿using Eliassen.Extensions;
+using Eliassen.Extensions.Configuration;
 using Eliassen.Handlebars.Extensions;
 using Eliassen.System;
-using Eliassen.System.Configuration;
 using Eliassen.System.Text.Templating;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Nucleus.TemplateEngine.Cli;
+namespace Eliassen.TemplateEngine.Cli;
 
 public class Program
 {

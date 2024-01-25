@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Eliassen.System.IO;
+namespace Eliassen.Extensions.IO;
 
 /// <summary>
 /// Set of extension method to centralize deserialize of stream using System.Xml

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Eliassen.System.Reflection;
+using System;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Eliassen.System.Reflection;
+namespace Eliassen.Extensions.Reflection;
 
 /// <summary>
 /// Set of extension methods for embedded resources

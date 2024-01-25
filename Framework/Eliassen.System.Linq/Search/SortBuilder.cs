@@ -1,4 +1,4 @@
-﻿using Eliassen.System.Internal;
+﻿using Eliassen.Extensions.Linq;
 using Eliassen.System.Linq.Expressions;
 using Eliassen.System.ResponseModel;
 using Microsoft.Extensions.Logging;

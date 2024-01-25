@@ -1,5 +1,4 @@
-﻿using Eliassen.Azure.StorageAccount.MessageQueueing;
-using Eliassen.MessageQueueing;
+﻿using Eliassen.MessageQueueing;
 using Eliassen.MessageQueueing.Services;
 using Eliassen.MessageQueueing.Tests;
 using Eliassen.RabbitMQ.MessageQueueing;

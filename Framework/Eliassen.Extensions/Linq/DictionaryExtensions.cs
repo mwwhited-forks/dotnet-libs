@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Eliassen.System.Linq;
+namespace Eliassen.Extensions.Linq;
 
 /// <summary>
 /// Reusable extensions for Generic Dictionaries

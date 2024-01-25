@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
-namespace Eliassen.AspNetCore.SwaggerGen.B2C;
+namespace Eliassen.AspNetCore.JwtAuthentication.SwaggerGen;
 
 /// <summary>
 /// Configures SwaggerUI options for OAuth authentication.

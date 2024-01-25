@@ -7,7 +7,10 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 
+		<PackageReadmeFile>Readme.TestUtilities.md</PackageReadmeFile>
+
 	</PropertyGroup>
+
 	<ItemGroup>
 		<InternalsVisibleTo Include="Eliassen.TestUtilities.Tests" />
 	</ItemGroup>

@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Eliassen.System.Linq;
+namespace Eliassen.Extensions.Linq;
 
 /// <summary>
 /// Extensions to add async support to existing IEnumerable{T}

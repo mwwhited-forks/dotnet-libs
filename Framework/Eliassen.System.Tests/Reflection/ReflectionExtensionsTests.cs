@@ -1,4 +1,4 @@
-﻿using Eliassen.System.Reflection;
+﻿using Eliassen.Extensions.Reflection;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;

@@ -5,9 +5,14 @@
 		<ImplicitUsings>false</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<PackageReadmeFile>Readme.Communications.md</PackageReadmeFile>
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <CodeDocumentation Remove="Readme.Communications.md" />
+	</ItemGroup>
 	
 	<ItemGroup>
 		<InternalsVisibleTo Include="Eliassen.Communications.Tests" />
@@ -20,6 +25,13 @@
 
 	<ItemGroup>
 	  <Folder Include="Services\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="Readme.Communications.Abstractions.md">
+	    <PackagePath>\docs</PackagePath>
+	    <Pack>true</Pack>
+	  </Content>
 	</ItemGroup>
 
 </Project>

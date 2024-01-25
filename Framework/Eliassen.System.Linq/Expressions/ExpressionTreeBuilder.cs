@@ -1,7 +1,7 @@
-﻿using Eliassen.System.ComponentModel.Search;
+﻿using Eliassen.Extensions.Reflection;
+using Eliassen.System.ComponentModel.Search;
 using Eliassen.System.Internal;
 using Eliassen.System.Linq.Search;
-using Eliassen.System.Reflection;
 using Eliassen.System.ResponseModel;
 using Microsoft.Extensions.Logging;
 using System;
@@ -270,8 +270,8 @@ public class ExpressionTreeBuilder<TModel>(
             {
                 _messages.Publish(new ResultMessage
                 {
-                    Message = FilterParameter.Messages.ParsedInput,
-                    MessageCode = FilterParameter.Messages.ParsedInputCode,
+                    Message = FilterParameterMessages.ParsedInput,
+                    MessageCode = FilterParameterMessages.ParsedInputCode,
                     Context = scope,
                     MetaData = new
                     {
@@ -306,8 +306,8 @@ public class ExpressionTreeBuilder<TModel>(
             {
                 _messages.Publish(new ResultMessage
                 {
-                    Message = FilterParameter.Messages.UnableToMapFilter,
-                    MessageCode = FilterParameter.Messages.UnableToMapFilterCode,
+                    Message = FilterParameterMessages.UnableToMapFilter,
+                    MessageCode = FilterParameterMessages.UnableToMapFilterCode,
                     Context = scope,
                     MetaData = new
                     {

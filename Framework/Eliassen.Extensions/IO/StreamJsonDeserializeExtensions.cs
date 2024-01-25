@@ -3,7 +3,7 @@ using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Eliassen.System.IO;
+namespace Eliassen.Extensions.IO;
 
 /// <summary>
 /// Set of extension method to centralize deserialize of stream using System.Text.Json

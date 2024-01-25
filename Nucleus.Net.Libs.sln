@@ -225,7 +225,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Handlebars.Extensi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MongoDB.Extensions", "ExternalServices\MongoDb\Eliassen.MongoDB.Extensions\Eliassen.MongoDB.Extensions.csproj", "{66FE9641-EC09-4999-967A-FD1FCAB3914A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Extensions", "Framework\Eliassen.Extensions\Eliassen.Extensions.csproj", "{3A72FF53-8039-4D51-9A57-78C47CD3DB5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Extensions", "Framework\Eliassen.Extensions\Eliassen.Extensions.csproj", "{3A72FF53-8039-4D51-9A57-78C47CD3DB5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.System.Linq", "Framework\Eliassen.System.Linq\Eliassen.System.Linq.csproj", "{F92E44A5-1E28-4D0F-A1D0-73F244263564}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -389,6 +391,10 @@ Global
 		{3A72FF53-8039-4D51-9A57-78C47CD3DB5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A72FF53-8039-4D51-9A57-78C47CD3DB5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A72FF53-8039-4D51-9A57-78C47CD3DB5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F92E44A5-1E28-4D0F-A1D0-73F244263564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92E44A5-1E28-4D0F-A1D0-73F244263564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92E44A5-1E28-4D0F-A1D0-73F244263564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92E44A5-1E28-4D0F-A1D0-73F244263564}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -449,6 +455,7 @@ Global
 		{A5D9D579-1763-409E-9198-65ECFE02B6F2} = {667F54FE-8F90-46F6-87CF-694714720046}
 		{66FE9641-EC09-4999-967A-FD1FCAB3914A} = {38ABE200-4B86-40B7-A7FE-08671791ACFE}
 		{3A72FF53-8039-4D51-9A57-78C47CD3DB5F} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
+		{F92E44A5-1E28-4D0F-A1D0-73F244263564} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Logging;
 using System.Threading.Tasks;
 
-namespace Eliassen.AspNetCore.JwtAuthentication.Authorization;
+namespace Eliassen.AspNetCore.Mvc.Authorization;
 
 /// <summary>
 /// Handles user authorization based on specified requirements.

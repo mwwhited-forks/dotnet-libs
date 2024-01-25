@@ -1,5 +1,5 @@
-﻿using Eliassen.System.IO;
-using Eliassen.System.Reflection;
+﻿using Eliassen.Extensions.IO;
+using Eliassen.Extensions.Reflection;
 using Eliassen.System.Tests.Reflection.TestTargets;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

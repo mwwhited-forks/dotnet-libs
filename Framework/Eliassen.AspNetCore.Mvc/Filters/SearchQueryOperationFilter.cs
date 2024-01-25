@@ -1,4 +1,4 @@
-﻿using Eliassen.System.Linq;
+﻿using Eliassen.Extensions.Linq;
 using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
 using Eliassen.System.Reflection;

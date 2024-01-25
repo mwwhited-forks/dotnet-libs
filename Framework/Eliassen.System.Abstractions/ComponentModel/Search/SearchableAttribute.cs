@@ -6,9 +6,15 @@
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
 public class SearchableAttribute : Attribute
 {
-
+    /// <summary>
+    /// mark a virtual property as searchable
+    /// </summary>
+    /// <param name="targetName"></param>
     public SearchableAttribute(string targetName) => TargetName = targetName;
 
+    /// <summary>
+    /// mark a property as searchable
+    /// </summary>
     public SearchableAttribute() { }
 
     /// <summary>

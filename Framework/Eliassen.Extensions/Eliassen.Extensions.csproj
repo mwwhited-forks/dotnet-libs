@@ -21,8 +21,4 @@
 	  <ProjectReference Include="..\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Security\Claims\" />
-	</ItemGroup>
-
 </Project>

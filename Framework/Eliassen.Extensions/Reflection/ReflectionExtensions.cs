@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 
-namespace Eliassen.System.Reflection;
+namespace Eliassen.Extensions.Reflection;
 
 /// <summary>
 /// Extensions for reflection and common patterns.
@@ -82,7 +82,7 @@ public static class ReflectionExtensions
             return input;
         else if (input is string inputString)
         {
-            if (TryParse(type, inputString, out var parsed) && parsed != null)
+            if (type.TryParse(inputString, out var parsed) && parsed != null)
             {
                 return parsed;
             }
@@ -98,13 +98,13 @@ public static class ReflectionExtensions
         else if (type.IsEnum && input is int enumInt)
         {
             var enumName = Enum.GetName(type, enumInt);
-            var enumValue = MakeSafe(type, enumName);
+            var enumValue = type.MakeSafe(enumName);
             return enumValue ?? default;
         }
         else if (input.GetType().IsValueType && type == typeof(string))
             return input.ToString();
         else if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>))
-            return MakeSafe(type.GetGenericArguments()[0], input);
+            return type.GetGenericArguments()[0].MakeSafe(input);
 
         try
         {
@@ -114,7 +114,7 @@ public static class ReflectionExtensions
             }
             else if (input is JsonElement json)
             {
-                return JsonSerializer.Deserialize(json, type);
+                return json.Deserialize(type);
             }
             else
             {
@@ -202,7 +202,7 @@ public static class ReflectionExtensions
 
         if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>))
         {
-            if (TryParse(type.GetGenericArguments()[0], toParse, out var value))
+            if (type.GetGenericArguments()[0].TryParse(toParse, out var value))
             {
                 parsed = value;
                 return true;

@@ -1,8 +1,7 @@
-﻿using Eliassen.System.Linq.Search;
-using Eliassen.System.Reflection;
+﻿using Eliassen.Extensions.Reflection;
 using System;
 
-namespace Eliassen.System.Linq;
+namespace Eliassen.System.Linq.Search;
 
 internal static class OperatorExtensions
 {

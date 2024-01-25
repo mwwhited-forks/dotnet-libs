@@ -1,7 +1,7 @@
 ﻿using Eliassen.System.Configuration;
 using System.ComponentModel.DataAnnotations;
 
-namespace Nucleus.TemplateEngine.Cli;
+namespace Eliassen.TemplateEngine.Cli;
 
 [ConfigurationSection("TemplateEngine")]
 public class TemplateEngineSettings

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Eliassen.System.Configuration;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace Eliassen.System.Configuration;
+namespace Eliassen.Extensions.Configuration;
 
 /// <summary>
 /// builder pattern for command parameter arguments

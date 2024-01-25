@@ -1,7 +1,7 @@
 <Project>
 
 	<!-- 
-	when `dotnet clear` is not clean enough... 
+	when `dotnet clean` is not clean enough... 
 	`dotnet clean /T:DeepClean` ensures all of the build and intermediate files are removed 
 	-->
 	<Target Name="DeepClean">
@@ -23,11 +23,13 @@
 	<!-- Ensure the PackageReadmeFile is included with the projects to be packaged for nuget -->
 	<Target Name="CheckReadMe" Condition="'$(IsPackable)'=='true' and '$(PackageReadmeFile)'==''" BeforeTargets="Build">
 		<Warning Text="No PackageReadmeFile included for &quot;$(MSBuildProjectName)&quot;"
-				 Code="ELIPK001" />
+				 Code="ELIPK001" 
+				 File="$(MSBuildProjectName).csproj" />
 	</Target>
 	<Target Name="CheckReadMeExists" Condition="'$(PackageReadmeFile)'!='' and !Exists('$(PackageReadmeFile)')" BeforeTargets="Build">
 		<Error Text="&quot;$(PackageReadmeFile)&quot; missing from &quot;$(MSBuildProjectName)&quot;"
-			   Code="ELIPK002" />
+			   Code="ELIPK002"
+			   File="$(MSBuildProjectName).csproj" />
 	</Target>
 
 </Project>

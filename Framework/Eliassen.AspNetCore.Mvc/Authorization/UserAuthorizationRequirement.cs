@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace Eliassen.AspNetCore.JwtAuthentication.Authorization;
+namespace Eliassen.AspNetCore.Mvc.Authorization;
 
 /// <summary>
 /// Represents an authorization requirement for user-specific authorization.

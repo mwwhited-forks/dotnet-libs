@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
 
-namespace Eliassen.System.Internal;
+namespace Eliassen.System.Linq;
 
 internal class ConsoleLogger<T> : ILogger<T>
 {

@@ -1,5 +1,4 @@
-﻿using Eliassen.Azure.StorageAccount.MessageQueueing;
-using Eliassen.MessageQueueing.Services;
+﻿using Eliassen.MessageQueueing.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 

@@ -12,10 +12,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="Readme.MailKit.Hosting.md" Pack="true" PackagePath="\"/>
-	</ItemGroup>
-
-	<ItemGroup>
 		<InternalsVisibleTo Include="Eliassen.MailKit.Tests" />
 	</ItemGroup>
 

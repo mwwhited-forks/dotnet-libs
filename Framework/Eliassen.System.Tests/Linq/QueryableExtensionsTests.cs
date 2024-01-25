@@ -1,7 +1,6 @@
-﻿using Eliassen.System.Linq;
+﻿using Eliassen.Extensions.Reflection;
 using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
-using Eliassen.System.Reflection;
 using Eliassen.System.ResponseModel;
 using Eliassen.System.Tests.Linq.TestTargets;
 using Eliassen.TestUtilities;
