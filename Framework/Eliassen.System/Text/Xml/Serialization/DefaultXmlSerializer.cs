@@ -6,8 +6,11 @@ using System.Xml.Serialization;
 
 namespace Eliassen.System.Text.Xml.Serialization;
 
-//TODO: finish this serializer
+#warning TODO: finish this serializer
 
+/// <summary>
+/// Default XmlSerializer, 
+/// </summary>
 public class DefaultXmlSerializer : IXmlSerializer
 {
     //public static JsonSerializerOptions DefaultOptions => new JsonSerializerOptions

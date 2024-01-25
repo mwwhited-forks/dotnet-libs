@@ -24,7 +24,11 @@ public class ApiPermissionsExtension(bool allowAnonymous, IEnumerable<string> ri
     /// </summary>
     public IReadOnlyCollection<string> Rights { get; } = rights.Distinct().ToList().AsReadOnly();
 
-    
+    /// <summary>
+    /// generate a property to provide the required permissions
+    /// </summary>
+    /// <param name="writer"></param>
+    /// <param name="specVersion"></param>
     public void Write(IOpenApiWriter writer, OpenApiSpecVersion specVersion)
     {
         writer.WriteStartObject();

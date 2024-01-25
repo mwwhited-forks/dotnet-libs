@@ -11,6 +11,9 @@ namespace Eliassen.AspNetCore.Mvc.SwaggerGen;
 public class AddSchemaFilterOptions<T> : IConfigureOptions<SwaggerGenOptions>
     where T : ISchemaFilter
 {
-    
+    /// <summary>
+    /// Register additional IOperationFilters
+    /// </summary>
+    /// <param name="options"></param>
     public void Configure(SwaggerGenOptions options) => options.SchemaFilter<T>();
 }

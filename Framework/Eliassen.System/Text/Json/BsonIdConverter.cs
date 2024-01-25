@@ -9,7 +9,14 @@ namespace Eliassen.System.Text.Json;
 /// </summary>
 public class BsonIdConverter : JsonConverter<string>
 {
-    
+    /// <summary>
+    /// read value from Bson and if object id is bson object id convert it to string
+    /// </summary>
+    /// <param name="reader"></param>
+    /// <param name="typeToConvert"></param>
+    /// <param name="options"></param>
+    /// <returns></returns>
+    /// <exception cref="NotSupportedException"></exception>
     public override string? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         var type = reader.TokenType;
@@ -34,7 +41,12 @@ public class BsonIdConverter : JsonConverter<string>
         throw new NotSupportedException($"element of type {type} is not supported");
     }
 
-    
+    /// <summary>
+    /// write object id to Bson object
+    /// </summary>
+    /// <param name="writer"></param>
+    /// <param name="value"></param>
+    /// <param name="options"></param>
     public override void Write(Utf8JsonWriter writer, string value, JsonSerializerOptions options)
     {
         writer.WriteStartObject();

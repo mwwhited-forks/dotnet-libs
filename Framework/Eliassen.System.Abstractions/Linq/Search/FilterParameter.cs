@@ -85,7 +85,10 @@ public record FilterParameter
     //[JsonPropertyName("isnull")]
     //public bool OrNull { get; set; }
 
-    
+    /// <summary>
+    /// convert FilterParameter to string
+    /// </summary>
+    /// <returns></returns>
     public override string ToString()
     {
         var sb = new StringBuilder();
