@@ -1,6 +1,5 @@
 ﻿using Eliassen.Extensions.Reflection;
 using Eliassen.System.ComponentModel.Search;
-using Eliassen.System.Internal;
 using Eliassen.System.Linq.Search;
 using Eliassen.System.ResponseModel;
 using Microsoft.Extensions.Logging;

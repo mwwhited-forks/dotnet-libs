@@ -1,5 +1,4 @@
 ﻿using Eliassen.System.ComponentModel.Search;
-using Eliassen.System.Internal;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;

@@ -1,6 +1,4 @@
-﻿using Eliassen.System.Text;
-using Eliassen.System.Text.Json.Serialization;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Concurrent;
 using System.Threading;
