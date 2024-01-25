@@ -1,8 +1,8 @@
 # Summary - Nucleus.Net.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 1/24/2024 - 4:37:15 PM |
-| Coverage date: | 1/24/2024 - 4:36:53 PM - 1/24/2024 - 4:37:09 PM |
+| Generated on: | 1/24/2024 - 11:33:43 PM |
+| Coverage date: | 1/24/2024 - 11:33:16 PM - 1/24/2024 - 11:33:35 PM |
 | Parser: | MultiReport (16x Cobertura) |
 | Assemblies: | 9 |
 | Classes: | 67 |

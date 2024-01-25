@@ -8,7 +8,6 @@
 		<MakeDir Directories="$(BaseOutputPath)" ContinueOnError="true" />
 	</Target>
 
-
 	<Target Name="GetDocumentation" Condition="'@(CodeDocumentation)' != ''">
 		<!--AfterTargets="PostBuildEvent"-->
 		<Message Text="===== Get Documentation: $(Configuration) - &quot;$(MSBuildProjectName)&quot;"  Importance="high"/>

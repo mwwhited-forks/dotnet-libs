@@ -4,7 +4,7 @@
 		<Company>Eliassen Group</Company>
 		<Authors>$(USERNAME)@$(USERDNSDOMAIN)</Authors>
 		<Copyright>Eliassen Group, $([System.DateTime]::Now.ToString('yyyy'))</Copyright>
-
+		
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(LOCAL_NUGET)' != ''">
@@ -21,7 +21,7 @@
 	<PropertyGroup Condition="'$(CodeDocumentPath)' == ''">
 		<CodeDocumentPath>$(DocumentPath)code\</CodeDocumentPath>
 	</PropertyGroup>
-
+	
 	<ItemGroup>
 		<PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
 			<PrivateAssets>all</PrivateAssets>

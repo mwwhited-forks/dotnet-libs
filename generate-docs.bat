@@ -95,8 +95,8 @@ dotnet CycloneDX ^
 --exclude-test-projects ^
 --disable-package-restore ^
 --exclude-dev ^
-.\sbom.csproj
-REM %TARGET_SOLUTION%
+%TARGET_SOLUTION%
+REM .\sbom.csproj
 SET TEST_ERR=%ERRORLEVEL%
 IF NOT "%TEST_ERR%"=="0" (
 	ECHO "SBOM Failed! %TEST_ERR%"
