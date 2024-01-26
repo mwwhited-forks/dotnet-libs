@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		generate-docs.bat = generate-docs.bat
 		GitVersion.yml = GitVersion.yml
 		global.json = global.json
+		LICENSE = LICENSE
 		Nuget.config = Nuget.config
 		package.bat = package.bat
 		ProjectSetup.md = ProjectSetup.md
@@ -227,7 +228,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MongoDB.Extensions
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Extensions", "Framework\Eliassen.Extensions\Eliassen.Extensions.csproj", "{3A72FF53-8039-4D51-9A57-78C47CD3DB5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.System.Linq", "Framework\Eliassen.System.Linq\Eliassen.System.Linq.csproj", "{F92E44A5-1E28-4D0F-A1D0-73F244263564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.System.Linq", "Framework\Eliassen.System.Linq\Eliassen.System.Linq.csproj", "{F92E44A5-1E28-4D0F-A1D0-73F244263564}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
