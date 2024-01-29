@@ -14,11 +14,10 @@ docker run ^
 --publish 10000:10000 ^
 --publish 10001:10001 ^
 --publish 10002:10002 ^
---volume %cd%/azurite-workspace/:/workspace/ ^
+--volume %cd%/azurite-scripts/:/opt/azurite/scripts/ ^
 --network=dev-net ^
 mcr.microsoft.com/azure-storage/azurite ^
 azurite ^
---location /workspace ^
 --blobPort 10000 ^
 --blobHost 0.0.0.0 ^
 --queuePort 10001 ^
@@ -30,6 +29,11 @@ azurite ^
 --disableProductStyleUrl
 
 REM --volume %cd%/azurite-workspace/:/workspace/ ^
+
+REM --location /workspace ^
 REM --debug /workspace/debug.log ^
 
 docker start azurite 
+
+TIMEOUT /T 600 
+CALL SetupAzurite.bat
