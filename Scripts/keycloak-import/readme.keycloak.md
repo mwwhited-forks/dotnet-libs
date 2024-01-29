@@ -16,6 +16,14 @@ adele     | Adele123!        | application admin
 docker exec -it keycloak /bin/bash
 ```
 
+## Export
+
+```bash
+/opt/keycloak/bin/kc.sh export --dir /opt/keycloak/data/import --users realm_file --realm local-dev
+```
+
+
+
 ## Backup
 
 ```bash

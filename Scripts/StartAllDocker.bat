@@ -3,11 +3,11 @@
 
 ECHO "starting"
 
-CALL StartRabbitMQ.bat
-CALL StartAzuriteDocker.bat
-CALL StartSmtp4DevDocker.bat
-CALL StartMongoDbDocker.bat
-CALL StartKeycloak.bat
+CALL StartRabbitMQ.bat %1
+CALL StartAzuriteDocker.bat %1
+CALL StartSmtp4DevDocker.bat %1
+CALL StartMongoDbDocker.bat %1
+CALL StartKeycloak.bat %1
 
 PAUSE
 
