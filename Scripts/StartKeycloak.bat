@@ -3,8 +3,9 @@ docker run ^
 --publish 8081:8080 ^
 --env KEYCLOAK_ADMIN=admin ^
 --env KEYCLOAK_ADMIN_PASSWORD=admin ^
---volume %cd%/keycloak-data/:/tmp/keycloak-data/ ^
+--env KEYCLOAK_IMPORT=./local-data/local-dev-realm.json ^
+--volume %cd%/keycloak-data/:/opt/keycloak/local-data/ ^
 quay.io/keycloak/keycloak:latest ^
-start-dev
+start-dev --import-realm
 
 docker start keycloak 
