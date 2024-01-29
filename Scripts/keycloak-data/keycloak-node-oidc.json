@@ -1,0 +1,12 @@
+{
+  "realm": "local-dev",
+  "auth-server-url": "http://keycloak.local/",
+  "ssl-required": "external",
+  "resource": "node-express",
+  "verify-token-audience": true,
+  "credentials": {
+    "secret": "NjBwVd75kF8gI4MNvSwTsO8sb9d2phI1"
+  },
+  "confidential-port": 0,
+  "policy-enforcer": {}
+}
