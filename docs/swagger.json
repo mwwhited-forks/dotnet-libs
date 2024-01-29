@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Eliassen.WebApi",
-    "version": "0.1.65.8"
+    "version": "0.1.65.9"
   },
   "paths": {
     "/api/Communications/public": {
@@ -377,6 +377,47 @@
           "anonymous": true
         }
       }
+    },
+    "/api/User/claims": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Eliassen.WebApi.Models.ClaimModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Eliassen.WebApi.Models.ClaimModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Eliassen.WebApi.Models.ClaimModel"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": false
+        }
+      }
     }
   },
   "components": {
@@ -490,6 +531,44 @@
         },
         "additionalProperties": false,
         "description": "Represents a file type, providing information about the file extension, content type, and whether it is a template type."
+      },
+      "Eliassen.WebApi.Models.ClaimModel": {
+        "type": "object",
+        "properties": {
+          "issuer": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "valueType": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "originalIssuer": {
+            "type": "string",
+            "nullable": true
+          },
+          "subjectName": {
+            "type": "string",
+            "nullable": true
+          },
+          "subjectLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "subjectAuthenticationType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "Eliassen.WebApi.Models.ExampleMessageModel": {
         "type": "object",
