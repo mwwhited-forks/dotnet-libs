@@ -1,4 +1,5 @@
 ﻿using Eliassen.AspNetCore.JwtAuthentication;
+using Eliassen.AspNetCore.JwtAuthentication.SwaggerGen;
 using Eliassen.AspNetCore.Mvc;
 using Eliassen.Azure.StorageAccount;
 using Eliassen.Communications;
@@ -12,6 +13,7 @@ using Eliassen.MongoDB.Extensions;
 using Eliassen.RabbitMQ;
 using Eliassen.System;
 using Eliassen.WebApi.Provider;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Eliassen.WebApi;
 
@@ -35,25 +37,31 @@ public class Program
         services.AddTransient<IExampleMessageProvider, ExampleMessageProvider>();
         services.AddTransient<IMessageQueueHandler, ExampleMessageProvider>();
 
+        var authSuffix = "-kc";
+        //var authSuffix = "-b2c";
+
         // Add internal services
         services
             .TryAddSystemExtensions(builder.Configuration)
             .TryAddMongoServices(builder.Configuration)
 
             .TryAddMessageQueueingServices()
-                .TryAddMessageQueueingHosting()
+                //.TryAddMessageQueueingHosting()
                 .TryAddAzureStorageServices()
                 .TryAddRabbitMQServices()
 
             .TryAddCommunicationsServices()
                 .TryAddCommunicationQueueServices()
                 .TryAddMailKitExtensions(builder.Configuration)
-                    .TryAddMailKitHosting()
+                   //.TryAddMailKitHosting()
 
             .AddMicrosoftB2CServices() //TODO: rename this to identity management
 
             .TryAddAspNetCoreExtensions(requireApplicationUserId: false)
-                .TryAddJwtBearerServices(builder.Configuration)
+                .TryAddJwtBearerServices(builder.Configuration, 
+                    jwtBearerConfigurationSection: nameof(JwtBearerOptions) + authSuffix,
+                    oAuth2SwaggerConfigurationSection: nameof(OAuth2SwaggerOptions) + authSuffix
+                    )
             ;
 
         // Add services to the container.

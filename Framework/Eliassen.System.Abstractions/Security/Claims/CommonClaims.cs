@@ -34,4 +34,9 @@ public static class CommonClaims
     /// Represents the claim for object identifier.
     /// </summary>
     public const string ObjectIdentifier = "http://schemas.microsoft.com/identity/claims/objectidentifier";
+
+    /// <summary>
+    /// Represents the claim for name identifier.
+    /// </summary>
+    public const string NameIdentifier = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
 }

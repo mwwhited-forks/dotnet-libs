@@ -70,9 +70,12 @@ cd /opt/keycloak/bin
 
 * [JWT.IO](http://localhost:8081/realms/local-dev/protocol/openid-connect/auth?response_type=token&client_id=dotnet-webapi&redirect_uri=https%3A%2F%2Fjwt.io%2F)
 * [JWT.MS](http://localhost:8081/realms/local-dev/protocol/openid-connect/auth?response_type=token&client_id=dotnet-webapi&redirect_uri=https%3A%2F%2Fjwt.ms%2F)
+* [Logout](http://localhost:8081/realms/local-dev/protocol/openid-connect/logout?client_id=dotnet-webapi)
 
 ## Notes and references
 
+* https://stackoverflow.com/questions/53550321/keycloak-gatekeeper-aud-claim-and-client-id-do-not-match
+  * you need to remove the audience resolve in Client Scopes -> roles -> Mappers 
 * https://simonscholz.github.io/tutorials/keycloak-realm-export-import
 * https://github.com/bitnami/charts/tree/main/bitnami/keycloak
 * https://docs.bitnami.com/kubernetes/apps/keycloak/get-started/configure-authentication/
