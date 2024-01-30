@@ -1,5 +1,5 @@
 ﻿using Azure.Identity;
-using Eliassen.Identity.Identity;
+using Eliassen.Identity;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.Graph;

@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Identity.Identity;
+﻿namespace Eliassen.Identity;
 
 /// <summary>
 /// Represents a model for creating a user in Microsoft B2C Identity.

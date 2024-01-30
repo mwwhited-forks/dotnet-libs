@@ -1,4 +1,4 @@
-﻿using Eliassen.Identity.Identity;
+﻿using Eliassen.Identity;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 

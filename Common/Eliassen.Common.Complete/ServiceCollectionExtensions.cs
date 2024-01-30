@@ -1,8 +1,8 @@
 ﻿using Eliassen.AspNetCore.JwtAuthentication;
 using Eliassen.AspNetCore.Mvc;
-using Eliassen.System;
 using Eliassen.Common.Extensions;
 using Eliassen.Common.Extensions.Hosting;
+using Eliassen.System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Identity.Identity;
+﻿namespace Eliassen.Identity;
 
 /// <summary>
 /// Represents a model for user identity information.

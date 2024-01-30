@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Identity.Identity;
+﻿namespace Eliassen.Identity;
 
 /// <summary>
 /// Represents the model for a user created as a result of account creation.

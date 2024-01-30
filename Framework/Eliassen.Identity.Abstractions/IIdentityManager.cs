@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Identity.Identity;
+﻿namespace Eliassen.Identity;
 
 /// <summary>
 /// Represents an identity manager for managing user identities.

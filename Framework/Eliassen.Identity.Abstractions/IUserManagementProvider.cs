@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Identity.Identity;
+﻿namespace Eliassen.Identity;
 
 /// <summary>
 /// Provides methods for managing user accounts.

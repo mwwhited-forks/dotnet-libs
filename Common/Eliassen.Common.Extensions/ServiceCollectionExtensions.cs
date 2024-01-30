@@ -1,9 +1,9 @@
 ﻿using Eliassen.Azure.StorageAccount;
+using Eliassen.Keycloak;
 using Eliassen.MailKit;
+using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB.Extensions;
 using Eliassen.RabbitMQ;
-using Eliassen.Microsoft.B2C;
-using Eliassen.Keycloak;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

@@ -18,7 +18,7 @@ public static class ServiceCollectionExtensions
     /// <param name="mongoDatabaseConfigurationSection"></param>
     /// <returns></returns>
     public static IServiceCollection TryAddMongoServices(
-        this IServiceCollection services, 
+        this IServiceCollection services,
         IConfiguration configuration,
         string mongoDatabaseConfigurationSection = nameof(MongoDatabaseOptions)
         )

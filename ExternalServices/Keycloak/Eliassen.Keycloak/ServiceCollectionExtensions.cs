@@ -1,4 +1,4 @@
-﻿using Eliassen.Identity.Identity;
+﻿using Eliassen.Identity;
 using Eliassen.Keycloak.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

@@ -1,5 +1,5 @@
 ﻿using Eliassen.Extensions.Configuration;
-using Eliassen.Identity.Identity;
+using Eliassen.Identity;
 using Eliassen.Microsoft.B2C.Identity;
 using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;

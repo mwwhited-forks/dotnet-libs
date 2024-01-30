@@ -32,7 +32,7 @@ public class Program
         services.TryAllCommonExtensions(
             builder.Configuration,
             systemBuilder: new()
-            {                 
+            {
             },
             aspNetBuilder: new()
             {

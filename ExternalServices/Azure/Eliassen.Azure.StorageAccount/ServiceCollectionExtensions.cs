@@ -20,7 +20,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddAzureStorageServices(
         this IServiceCollection services,
         IConfiguration configuration,
-        string azureBlobContainerConfigurationSection = nameof (AzureBlobContainerOptions)
+        string azureBlobContainerConfigurationSection = nameof(AzureBlobContainerOptions)
         ) =>
         services
             .TryAddAzureStorageBlobServices(configuration, azureBlobContainerConfigurationSection)
