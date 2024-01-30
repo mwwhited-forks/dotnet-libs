@@ -24,7 +24,6 @@ namespace Eliassen.WebApi;
 /// </summary>
 public class Program
 {
-
     /// <summary>
     /// primary entry point
     /// </summary>
