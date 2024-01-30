@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Microsoft.B2C.Identity;
+﻿namespace Eliassen.Identity.Identity;
 
 /// <summary>
 /// Provides methods for managing user accounts.

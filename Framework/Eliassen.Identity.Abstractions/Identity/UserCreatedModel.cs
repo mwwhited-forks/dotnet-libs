@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Microsoft.B2C.Identity;
+﻿namespace Eliassen.Identity.Identity;
 
 /// <summary>
 /// Represents the model for a user created as a result of account creation.

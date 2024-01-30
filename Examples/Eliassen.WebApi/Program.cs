@@ -4,6 +4,8 @@ using Eliassen.AspNetCore.Mvc;
 using Eliassen.Azure.StorageAccount;
 using Eliassen.Communications;
 using Eliassen.Communications.MessageQueueing;
+using Eliassen.Keycloak;
+using Eliassen.Identity;
 using Eliassen.MailKit;
 using Eliassen.MailKit.Hosting;
 using Eliassen.MessageQueueing;
@@ -46,16 +48,18 @@ public class Program
             .TryAddMongoServices(builder.Configuration)
 
             .TryAddMessageQueueingServices()
-                //.TryAddMessageQueueingHosting()
+                .TryAddMessageQueueingHosting()
                 .TryAddAzureStorageServices()
                 .TryAddRabbitMQServices()
 
             .TryAddCommunicationsServices()
                 .TryAddCommunicationQueueServices()
                 .TryAddMailKitExtensions(builder.Configuration)
-                   //.TryAddMailKitHosting()
+                   .TryAddMailKitHosting()
 
-            .AddMicrosoftB2CServices() //TODO: rename this to identity management
+            .TryAddIdentityServices(builder.Configuration)
+                .AddMicrosoftB2CServices() //TODO: rename this to identity management
+                .TryAddKeycloakServices()
 
             .TryAddAspNetCoreExtensions(requireApplicationUserId: false)
                 .TryAddJwtBearerServices(builder.Configuration, 

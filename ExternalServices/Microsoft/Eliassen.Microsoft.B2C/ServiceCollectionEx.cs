@@ -1,4 +1,5 @@
-﻿using Eliassen.Microsoft.B2C.Identity;
+﻿using Eliassen.Identity.Identity;
+using Eliassen.Microsoft.B2C.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -18,7 +19,6 @@ public static class ServiceCollectionEx
     {
         services.TryAddTransient<IIdentityManager, ManageGraphUser>();
         services.TryAddTransient<IManageGraphUser, ManageGraphUser>();
-        services.TryAddTransient<IUserManagementProvider, UserManagementProvider>();
         return services;
     }
 }

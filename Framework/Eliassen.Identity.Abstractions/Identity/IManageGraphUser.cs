@@ -1,8 +1,9 @@
-﻿namespace Eliassen.Microsoft.B2C.Identity;
+﻿namespace Eliassen.Identity.Identity;
 
 /// <summary>
 /// Represents a service for managing users in the Microsoft Graph.
 /// </summary>
+[Obsolete]
 public interface IManageGraphUser
 {
     /// <summary>

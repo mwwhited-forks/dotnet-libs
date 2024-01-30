@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Microsoft.B2C.Identity;
+﻿namespace Eliassen.Identity.Identity;
 
 /// <summary>
 /// Represents an identity manager for managing user identities.

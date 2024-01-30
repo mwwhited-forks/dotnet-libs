@@ -5,6 +5,7 @@
 /// </summary>
 public static class ConfigKeys
 {
+#warning get rid of these mappings
     /// <summary>
     /// Contains keys related to Azure configuration.
     /// </summary>
