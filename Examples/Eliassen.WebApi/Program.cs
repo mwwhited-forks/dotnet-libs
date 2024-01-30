@@ -58,7 +58,7 @@ public class Program
                    .TryAddMailKitHosting()
 
             .TryAddIdentityServices(builder.Configuration)
-                .AddMicrosoftB2CServices() //TODO: rename this to identity management
+                .AddMicrosoftB2CServices(builder.Configuration) //TODO: rename this to identity management
                 .TryAddKeycloakServices()
 
             .TryAddAspNetCoreExtensions(requireApplicationUserId: false)

@@ -9,7 +9,9 @@ namespace Eliassen.Identity;
 /// Initializes a new instance of the <see cref="UserManagementProvider"/> class.
 /// </remarks>
 /// <param name="user">The user manager for managing graph users.</param>
-public class UserManagementProvider(IManageGraphUser user) : IUserManagementProvider
+public class UserManagementProvider(
+    IManageGraphUser user
+    ) : IUserManagementProvider
 {
 
     /// <summary>

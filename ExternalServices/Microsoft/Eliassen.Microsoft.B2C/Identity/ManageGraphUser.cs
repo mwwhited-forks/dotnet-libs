@@ -2,6 +2,7 @@
 using Eliassen.Identity.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.Graph;
 using Microsoft.Graph.Models;
 
@@ -17,11 +18,11 @@ namespace Eliassen.Microsoft.B2C.Identity;
 /// <param name="config">The configuration.</param>
 public class ManageGraphUser(
     ILogger<ManageGraphUser> log,
-    IConfiguration config
+    IOptions<MicrosoftIdentityOptions> config
         ) : IManageGraphUser, IIdentityManager
 {
     private readonly ILogger _log = log;
-    private readonly IConfiguration _config = config;
+    private readonly IOptions<MicrosoftIdentityOptions> _config = config;
 
     /// <summary>
     /// Gets the authentication provider for Microsoft Graph.
@@ -31,9 +32,9 @@ public class ManageGraphUser(
     {
         var config = new
         {
-            clientId = _config[ConfigKeys.Azure.AdB2C.ClientID],
-            tenantId = _config[ConfigKeys.Azure.AdB2C.Issuer],
-            clientSecret = _config[ConfigKeys.Azure.AdB2C.ClientSecret],
+            clientId = _config.Value.ClientID,
+            tenantId = _config.Value.Issuer,
+            clientSecret = _config.Value.ClientSecret,
         };
 
         var token = new ClientSecretCredential(config.tenantId, config.clientId, config.clientSecret);
@@ -129,7 +130,7 @@ public class ManageGraphUser(
                     new ObjectIdentity()
                     {
                         SignInType = "emailAddress",
-                        Issuer = $"{_config[ConfigKeys.Azure.AdB2C.Tenant]}.onmicrosoft.com",
+                        Issuer = $"{_config.Value.Tenant}.onmicrosoft.com",
                         IssuerAssignedId = email,
                     }
                 ],
