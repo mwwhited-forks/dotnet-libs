@@ -3,8 +3,8 @@
 
 ## Class: Microsoft.B2C.Identity.ManageGraphUser
 Implementation of 
- *See: T:Eliassen.Microsoft.B2C.Identity.IManageGraphUser*and 
- *See: T:Eliassen.Microsoft.B2C.Identity.IIdentityManager*for managing users in Microsoft Graph. 
+ *See: T:Eliassen.Identity.IManageGraphUser*and 
+ *See: T:Eliassen.Identity.IIdentityManager*for managing users in Microsoft Graph. 
 
 Initializes a new instance of the class.
 ### Methods
@@ -13,8 +13,8 @@ Initializes a new instance of the class.
 #### Constructor
 Initializes a new instance of the class.
 Implementation of 
- *See: T:Eliassen.Microsoft.B2C.Identity.IManageGraphUser*and 
- *See: T:Eliassen.Microsoft.B2C.Identity.IIdentityManager*for managing users in Microsoft Graph. 
+ *See: T:Eliassen.Identity.IManageGraphUser*and 
+ *See: T:Eliassen.Identity.IIdentityManager*for managing users in Microsoft Graph. 
 
 
 ##### Parameters
@@ -112,46 +112,27 @@ True if the user is successfully removed, false otherwise.
 
 
 
-## Class: Microsoft.B2C.Identity.UserManagementProvider
-Represents a provider for user management operations. 
+## Class: Microsoft.B2C.Identity.MicrosoftIdentityOptions
+Contains keys related to Azure Active Directory B2C configuration. 
 
-Initializes a new instance of the class.
-### Methods
+### Properties
 
+#### ClientID
+Represents the key for the Azure AD B2C client ID configuration.
+#### Issuer
+Represents the key for the Azure AD B2C issuer configuration.
+#### ClientSecret
+Represents the key for the Azure AD B2C client secret configuration.
+#### Tenant
+Represents the key for the Azure AD B2C tenant configuration.
 
-#### Constructor
-Initializes a new instance of the class.
-Represents a provider for user management operations. 
-
-
-##### Parameters
-* *user:* The user manager for managing graph users.
-
-
-
-
-#### CreateAccountAsync(Eliassen.Microsoft.B2C.Identity.UserCreateModel)
-Creates a new user account asynchronously. 
-
-
-##### Parameters
-* *model:* The model containing user information for account creation.
-
-
-
-
-##### Return value
-A task representing the asynchronous operation. The result is a model containing the created user's information.
-
-
-
-## Class: Microsoft.B2C.ServiceCollectionEx
+## Class: Microsoft.B2C.ServiceCollectionExtensions
 Extension methods for adding Microsoft B2C services to the service collection. 
 
 ### Methods
 
 
-#### AddMicrosoftB2CServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+#### TryAddMicrosoftB2CServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
 Adds Microsoft B2C services to the service collection. 
 
 

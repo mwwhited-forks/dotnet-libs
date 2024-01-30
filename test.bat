@@ -3,7 +3,7 @@ REM @REM SET
 @ECHO OFF
 SETLOCAL
 
-SET TestProject=Nucleus.Net.Libs.sln
+SET TestProject=Eliassen.Libs.sln
 REM SET Configuration=Debug
 SET Configuration=Release
 

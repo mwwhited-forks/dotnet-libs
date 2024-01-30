@@ -39,7 +39,7 @@ public class AzureStorageQueueMessageSenderProviderTests
 
         var config = configBuilder.Build();
 
-        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services => services.TryAddAzureStorageServices());
+        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services => services.TryAddAzureStorageServices(config));
 
         // ---------------
 
@@ -69,7 +69,7 @@ public class AzureStorageQueueMessageSenderProviderTests
 
         var config = configBuilder.Build();
 
-        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services => services.TryAddAzureStorageServices());
+        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services => services.TryAddAzureStorageServices(config));
 
         // ---------------
 
@@ -103,7 +103,7 @@ public class AzureStorageQueueMessageSenderProviderTests
 
         var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
         {
-            services.TryAddAzureStorageServices();
+            services.TryAddAzureStorageServices(config);
 
             services.AddTransient<IMessageQueueHandler, TestMessageHandler>();
             services.AddTransient<IMessageQueueHandler, TestMessageHandlerWithProvider>();

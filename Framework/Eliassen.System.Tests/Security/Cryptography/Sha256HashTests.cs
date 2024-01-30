@@ -22,4 +22,3 @@ public class Sha256HashTests
     }
 }
 
-

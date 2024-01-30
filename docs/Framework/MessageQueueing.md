@@ -13,6 +13,8 @@
 ## Structure
 
 ```plantuml
+top to bottom direction 
+
 package Abstractions {
     interface IMessageQueueSender {
     }
@@ -23,37 +25,41 @@ package Abstractions {
         + SimpleName : string 
     }
 
-    package services {
-        interface IMessageContext {
-            ...
-        }
-        interface IMessageHandlerProvider {
-            + HandleAsync(IQueueMessage message, string messageId) : Task
-            + Config : IConfigurationSection
-        }
-        interface IMessageReceiverProvider {
-            + RunAsync(CancellationToken) : Task
-        }
-        interface IMessageReceiverProviderFactory{
-            + Create() : IMessageReceiverProvider[]
-        }
-        interface IMessageSenderProvider {
-            + SendAsync(object, IMessageContext) : Task<string?>
-        }
-        interface IMessageSenderProviderFactory {
-            + Sender(Type, Type) : IMessageSenderProvider
-        }
-        interface IQueueMessage {
-            ...
-        }
-    }    
+    interface IMessageContext {
+        ...
+    }
+    interface IMessageHandlerProvider {
+        + HandleAsync(IQueueMessage message, string messageId) : Task
+        + Config : IConfigurationSection
+    }
+    interface IMessageReceiverProvider {
+        + RunAsync(CancellationToken) : Task
+    }
+    interface IMessageReceiverProviderFactory {
+        + Create() : IMessageReceiverProvider[]
+    }
+    interface IMessageSenderProvider {
+        + SendAsync(object, IMessageContext) : Task<string?>
+    }
+    interface IMessageSenderProviderFactory {
+        + Sender(Type, Type) : IMessageSenderProvider
+    }
+    interface IQueueMessage {
+        ...
+    }
 }
 
-package Extensions {
-    class EmailMessageHandler 
-    class AzureStorageQueueMessageProvider
-    class RabbitMQQueueMessageProvider 
-    class InProcessMessageProvider
+package Implementation {
+    class GenericHandler 
+    class GenericProvider
+}
+
+package Hosting  {
+    class MessageReceiverHost {
+        - factory IMessageReceiverProviderFactory
+        + StartAsync() : Task
+        + StopAsync() : Task
+    }
 }
 
 IMessageQueueHandler --> IMessageContext : uses
@@ -68,15 +74,11 @@ IMessageReceiverProviderFactory  --o IMessageQueueHandler : uses
 
 IMessageSenderProvider --* IMessageHandlerProvider : uses
 
-IMessageSenderProvider ^-- AzureStorageQueueMessageProvider : implements 
-IMessageReceiverProvider ^-- AzureStorageQueueMessageProvider : implements 
+IMessageSenderProvider ^-- GenericProvider : implements 
+IMessageReceiverProvider ^-- GenericProvider : implements 
 
-IMessageSenderProvider ^-- RabbitMQQueueMessageProvider : implements 
-IMessageReceiverProvider ^-- RabbitMQQueueMessageProvider : implements 
+IMessageQueueHandler ^-- GenericHandler : implements
 
-IMessageSenderProvider ^-- InProcessMessageProvider : implements 
-IMessageReceiverProvider ^-- InProcessMessageProvider : implements 
-
-IMessageQueueHandler ^-- EmailMessageHandler : implements
+MessageReceiverHost --* IMessageReceiverProviderFactory : uses
 
 ```

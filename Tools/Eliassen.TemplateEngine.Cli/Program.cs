@@ -1,5 +1,4 @@
-﻿using Eliassen.Extensions;
-using Eliassen.Extensions.Configuration;
+﻿using Eliassen.Extensions.Configuration;
 using Eliassen.Handlebars.Extensions;
 using Eliassen.System;
 using Eliassen.System.Text.Templating;
@@ -14,13 +13,12 @@ public class Program
     private static async Task Main(string[] args) =>
         await Host.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((context, config) => config.AddCommandLine(args,
-                    CommandLine.BuildParameters<TemplateEngineSettings>()
-                               .AddParameters<FileTemplatingSettings>()
+                    CommandLine.BuildParameters<TemplateEngineOptions>()
+                               .AddParameters<FileTemplatingOptions>()
                     ))
             .ConfigureServices((context, services) =>
             {
-                services.AddConfiguration<TemplateEngineSettings>(context.Configuration);
-                services.AddConfiguration<FileTemplatingSettings>(context.Configuration);
+                services.Configure<TemplateEngineOptions>(options => context.Configuration.Bind(nameof(TemplateEngineOptions), options));
 
                 services.AddHostedService<TemplateEngineService>();
 

@@ -23,5 +23,5 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\Framework\**\Eliassen.AspNetCore.*.csproj" />
 	</ItemGroup>
-
+		
 </Project>

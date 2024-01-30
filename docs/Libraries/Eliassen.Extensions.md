@@ -631,22 +631,6 @@ Register accessor type that is scoped to as AsyncLocal
 
 
 
-#### AddConfiguration``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
-Extend configuration options 
-
-
-##### Parameters
-* *services:* 
-* *config:* 
-
-
-
-
-##### Return value
-
-
-
-
 #### GetSingletonInstance``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,``1@)
 Get singleton instance from IOC container 
 

@@ -9,10 +9,6 @@
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 	</PropertyGroup>
-
-	<ItemGroup>
-	  <CodeDocumentation Remove="Readme.Communications.md" />
-	</ItemGroup>
 	
 	<ItemGroup>
 		<InternalsVisibleTo Include="Eliassen.Communications.Tests" />

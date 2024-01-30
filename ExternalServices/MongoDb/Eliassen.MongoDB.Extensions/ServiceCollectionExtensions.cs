@@ -14,11 +14,16 @@ public static class ServiceCollectionExtensions
     /// Enable common infrastructure.  
     /// </summary>
     /// <param name="services"></param>
-    /// <param name="config"></param>
+    /// <param name="configuration"></param>
+    /// <param name="mongoDatabaseConfigurationSection"></param>
     /// <returns></returns>
-    public static IServiceCollection TryAddMongoServices(this IServiceCollection services, IConfiguration config)
+    public static IServiceCollection TryAddMongoServices(
+        this IServiceCollection services,
+        IConfiguration configuration,
+        string mongoDatabaseConfigurationSection = nameof(MongoDatabaseOptions)
+        )
     {
-        services.AddConfiguration<DefaultMongoDatabaseSettings>(config);
+        services.Configure<MongoDatabaseOptions>(options => configuration.Bind(mongoDatabaseConfigurationSection, options));
         services.TryAddSingleton<IMongoDatabaseFactory, MongoDatabaseFactory>();
         return services;
     }
@@ -42,11 +47,11 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
-    /// register MongoDatabase instance that will use the <seealso cref="DefaultMongoDatabaseSettings"/> configuration options
+    /// register MongoDatabase instance that will use the <seealso cref="MongoDatabaseOptions"/> configuration options
     /// </summary>
     /// <typeparam name="TDatabase"></typeparam>
     /// <param name="services"></param>
     /// <returns></returns>
     public static IServiceCollection TryAddMongoDatabase<TDatabase>(this IServiceCollection services)
-        where TDatabase : class => TryAddMongoDatabase<TDatabase, DefaultMongoDatabaseSettings>(services);
+        where TDatabase : class => TryAddMongoDatabase<TDatabase, MongoDatabaseOptions>(services);
 }

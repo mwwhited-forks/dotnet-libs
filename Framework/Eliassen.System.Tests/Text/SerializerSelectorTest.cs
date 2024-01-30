@@ -22,7 +22,10 @@ public class SerializerSelectorTest
         var config = new ConfigurationBuilder().Build();
         var services = new ServiceCollection()
             .AddTransient<IConfiguration>(_ => config)
-            .TryAddSystemExtensions(config, defaultSerializerType: targetSerializerType)
+            .TryAddSystemExtensions(config, new()
+            {
+                DefaultSerializerType = targetSerializerType
+            })
             .BuildServiceProvider()
             ;
         var serializer = services.GetRequiredService<ISerializer>();

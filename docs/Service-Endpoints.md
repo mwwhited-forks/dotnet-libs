@@ -1,6 +1,6 @@
 # Swagger Description - Eliassen.WebApi
 
-*Version*: 0.1.64.13
+*Version*: 0.1.65.20
 
 ## Endpoints
 
@@ -112,6 +112,18 @@ The JSON data used for template processing.
 
 
 
+### /api/User/claims
+
+
+
+
+HTTP Method: *get* \
+Anonymous:   *False*
+
+
+
+
+
 ## Models
 
 ### Eliassen.Communications.Models.AttachmentReferenceModel
@@ -151,6 +163,22 @@ The JSON data used for template processing.
 | extension | string? | Gets or sets the file extension associated with the file type. | 
 | contentType | string? | Gets or sets the content type associated with the file type. | 
 | isTemplateType | boolean | Gets or sets a value indicating whether the file type is a template type. | 
+
+
+### Eliassen.WebApi.Models.ClaimModel
+
+
+#### Properties
+| Name | Type | other |
+|------|------|-------|
+| issuer | string? |  | 
+| value | string? |  | 
+| valueType | string? |  | 
+| type | string? |  | 
+| originalIssuer | string? |  | 
+| subjectName | string? |  | 
+| subjectLabel | string? |  | 
+| subjectAuthenticationType | string? |  | 
 
 
 ### Eliassen.WebApi.Models.ExampleMessageModel

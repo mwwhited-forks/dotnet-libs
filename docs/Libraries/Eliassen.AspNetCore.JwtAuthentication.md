@@ -8,7 +8,7 @@ Extension methods for configuring JWT Bearer authentication and SwaggerGen servi
 ### Methods
 
 
-#### TryAddJwtBearerServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String,System.String)
+#### TryAddJwtBearerServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Eliassen.AspNetCore.JwtAuthentication.JwtExtensionBuilder)
 Tries to add JWT Bearer authentication and SwaggerGen services to the specified 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
 
@@ -16,9 +16,7 @@ Tries to add JWT Bearer authentication and SwaggerGen services to the specified
 ##### Parameters
 * *services:* The to add the services to.
 * *configuration:* The configuration.
-* *defaultScheme:* The default authentication scheme.
-* *jwtBearerConfigurationSection:* The configuration section for JwtBearer options.
-* *oAuth2SwaggerConfigurationSection:* The configuration section for OAuth2Swagger options.
+* *builder:* The default authentication scheme.
 
 
 
