@@ -11,6 +11,7 @@
   
 
 # name: .NET
+# https://docs.github.com/en/actions/learn-github-actions/contexts#vars-context
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#run-name
 run-name: .NET ${{ inputs.build-configuration }}/${{ inputs.build-platform }} by @${{ github.actor }}
 
@@ -78,11 +79,11 @@ jobs:
     - name: Set Version Variables
       id: calculate-version
       run: |
-        $fullSemVer=${{ steps.gitversion.outputs.GitVersion_FullSemVer }}
-        $fullSemVerLower=$(echo "$fullSemVer" | awk '{print tolower($0)}')
+        $fullSemVer=$GitVersion_FullSemVer
+        $fullSemVerLower=$(echo "$GitVersion_FullSemVer" | awk '{print tolower($0)}')
         echo "fullSemVer=$fullSemVer"
         echo "fullSemVerLower=$fullSemVerLower"
-        echo "::set-output fullSemVerLower=$fullSemVerLower" >> $GITHUB_OUTPUT
+        echo "fullSemVerLower=$fullSemVerLower" >> $GITHUB_OUTPUT
 
 # #             Write-Host "##vso[build.updatebuildnumber]$fullSemVerLower"
 # #             Write-Host "##vso[task.setvariable variable=FullSemVerLower;issecret=false]$fullSemVerLower" 
