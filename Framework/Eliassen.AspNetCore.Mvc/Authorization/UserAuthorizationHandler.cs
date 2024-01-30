@@ -31,7 +31,7 @@ public class UserAuthorizationHandler(ILogger<UserAuthorizationHandler> logger) 
         var user = context.User;
 
         // These should be provided by the authentication provider
-        var userName = user.GetClaimValue(CommonClaims.ObjectId, CommonClaims.ObjectIdentifier)?.value;
+        var userName = user.GetClaimValue(CommonClaims.ObjectId, CommonClaims.ObjectIdentifier, CommonClaims.NameIdentifier)?.value;
 
         // If the application has extended the user id claim, it should be provided as well
         var userId = user.GetClaimValue(CommonClaims.UserId)?.value;

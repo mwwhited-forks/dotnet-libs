@@ -397,3 +397,24 @@ Sorts an IQueryable instance based on the provided sort query.
 ##### Return value
 An IOrderedQueryable instance representing the sorted result.
 
+
+
+## Class: System.ServiceCollectionExtensions
+Suggested IOC configurations 
+
+### Methods
+
+
+#### TryAddSearchQueryExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Add support for shared SearchQuery Extensions 
+
+
+##### Parameters
+* *services:* 
+
+
+
+
+##### Return value
+
+

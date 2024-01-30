@@ -2,8 +2,8 @@
 
 ## Summary 
 
-Application: Nucleus.Libs (0.1.64-dev-ado-ModelUnderDocker.13) \
-Time: 2024-01-25T22:13:19.2550696Z \
+Application: Nucleus.Libs (0.1.65-dev-ado-update-docs.20) \
+Time: 2024-01-30T18:50:41.0018208Z \
 Tool: CycloneDX (3.0.5.0). 
 
 ## Components 
@@ -160,6 +160,32 @@ Package URL: pkg:nuget/DnsClient@1.6.1
 DnsClient.NET is a simple yet very powerful and high performance open source library for the .NET Framework to do DNS lookups 
 
 
+### Flurl (3.0.6) 
+
+Author: Todd Menier \
+License: MIT \
+Reference: [website](https://flurl.dev/) \
+Hash: [SHA-512](20225472079EBDEF4425289C90C3919CA3272680AC2D7752D0F134E426CC85F73A4A04F99F3B5AE5CF8F5E0AAAC69C8642F88E6EC2D983E1F782B05EB84833F2) \
+Package URL: pkg:nuget/Flurl@3.0.6 
+
+#### Description: 
+
+A fluent, portable URL builder. To make HTTP calls off the fluent chain, check out Flurl.Http. 
+
+
+### Flurl.Http (3.2.4) 
+
+Author: Todd Menier \
+License: MIT \
+Reference: [website](https://flurl.dev/) \
+Hash: [SHA-512](71A33004A4216042D100577E4D31FBEBDE901AE08600CF3D5599827A555C51C583728A3295A81FE49A7A71A626B8A8775125211505B6924113D9B81934779256) \
+Package URL: pkg:nuget/Flurl.Http@3.2.4 
+
+#### Description: 
+
+A fluent, portable, testable HTTP client library. 
+
+
 ### Handlebars.Net (2.1.4) 
 
 Author: Rex Morgan \
@@ -230,6 +256,20 @@ Package URL: pkg:nuget/JsonDiffPatch.Net@2.3.0
 JSON object diffs and reversible patching 
 
 
+### Keycloak.Net.Core (1.0.22) 
+
+Author: Luk Vermeulen, Peter Andersson, Galip Tolga Erdem, Silent Partner Software \
+Copyright: Copyright 2023 by Luk Vermeulen, Peter Andersson, Silent Partner Software. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/silentpartnersoftware/Keycloak.Net) \
+Hash: [SHA-512](8E3FA562F7D7DB8E52C0D00FC540AF99E3A74B95AE5CE524AA16B9E0ABCB067B6068A0C60589903149B85A8A9820771081F3C238674A2FD2718F9C4761A328FF) \
+Package URL: pkg:nuget/Keycloak.Net.Core@1.0.22 
+
+#### Description: 
+
+C# client for Keycloak 
+
+
 ### MailKit (4.3.0) 
 
 Author: Jeffrey Stedfast \
@@ -244,20 +284,20 @@ Package URL: pkg:nuget/MailKit@4.3.0
 An Open Source .NET mail-client library for Windows, Mac, Linux, and mobile platforms such as iOS and Android. 
 
 
-### Microsoft.AspNetCore.Authentication.JwtBearer (8.0.0) 
+### Microsoft.AspNetCore.Authentication.JwtBearer (8.0.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://asp.net/) \
-Hash: [SHA-512](92CE78E9700FCF4871D130BC986E047E469F43A6429CDE5A01BC9BDE79A5B0064C575EF4549EF095756D0E9D66AA2380AB60ED50FA451717DB2E3B1A4D5FBCE4) \
-Package URL: pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.0 
+Hash: [SHA-512](6D27BE31E292FD63B9CAA2F1061751ED0D49B92F751399BA7668F65F3C827A28462958AE8A30F5F0FCC3F0AE2CB3F5EDAF7220B20E1BBD292AE346A47A15C783) \
+Package URL: pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.1 
 
 #### Description: 
 
 ASP.NET Core middleware that enables an application to receive an OpenID Connect bearer token.
 
-This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/3f1acb59718cadf111a0a796681e3d3509bb3381 
+This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/8e941eb42f819adb116b881195158b3887a70a1c 
 
 
 ### Microsoft.Bcl.AsyncInterfaces (1.1.1) 
@@ -356,6 +396,20 @@ License: MIT \
 Reference: [website](https://dot.net/) \
 Hash: [SHA-512](9A5931E9D417B8CD4903FE8B94AA8EC07A1F0D43386717BE38171A5EB432B1765D7DA95E7F092E6997ECCF3F4828D5716317A68FCC8FED32F0AD4F1F82BB7223) \
 Package URL: pkg:nuget/Microsoft.Extensions.Configuration.Binder@8.0.0 
+
+#### Description: 
+
+Provides the functionality to bind an object to data in configuration providers for Microsoft.Extensions.Configuration. This package enables you to represent the configuration data as strongly-typed classes defined in the application code. To bind a configuration, use the Microsoft.Extensions.Configuration.ConfigurationBinder.Get extension method on the IConfiguration object. To use this package, you also need to install a package for the configuration provider, for example, Microsoft.Extensions.Configuration.Json for the JSON provider. 
+
+
+### Microsoft.Extensions.Configuration.Binder (8.0.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](33EEB1774C8AA47E3B2715D63DAD025626340A70572462132CE8EAF60B6EAB3D714D51ABEFEF30E7783387E20517D2BEF3CACA3B665E23480E6DF09E0E1CAB6F) \
+Package URL: pkg:nuget/Microsoft.Extensions.Configuration.Binder@8.0.1 
 
 #### Description: 
 
@@ -695,6 +749,20 @@ Package URL: pkg:nuget/Microsoft.Extensions.Options@8.0.0
 Provides a strongly typed way of specifying and accessing settings using dependency injection. 
 
 
+### Microsoft.Extensions.Options (8.0.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](54025AD5F383E105DF6BBF9839A6671D86EE5ACB91E4548E269652CED1FC101D1A827FB3EDC54FD5CF81147B7AB45C47ACAAFB9F63EEA2E2FB7704E727FF6103) \
+Package URL: pkg:nuget/Microsoft.Extensions.Options@8.0.1 
+
+#### Description: 
+
+Provides a strongly typed way of specifying and accessing settings using dependency injection. 
+
+
 ### Microsoft.Extensions.Options.ConfigurationExtensions (8.0.0) 
 
 Author: Microsoft \
@@ -728,42 +796,42 @@ Microsoft.Extensions.Primitives.StringValues
 Microsoft.Extensions.Primitives.StringSegment 
 
 
-### Microsoft.Graph (5.37.0) 
+### Microsoft.Graph (5.40.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://developer.microsoft.com/graph) \
-Hash: [SHA-512](EA08DF2676F32A14519E9E84F13A6A58B816FC9E38597FF20F611BF85E2D3A0094163AFC5D0C41CB4ED161ECB49484132E18FC1431B8C2B3188C3561340C94E7) \
-Package URL: pkg:nuget/Microsoft.Graph@5.37.0 
+Hash: [SHA-512](1B567B265DBF1F9781087EBF9076DC9B5904F5C6EA743AD1190CBE4D3D54505C7B4B70F972BA8BD64E4B927F76EC34790C05F702CE8CF3C0B28E306A45DAFE49) \
+Package URL: pkg:nuget/Microsoft.Graph@5.40.0 
 
 #### Description: 
 
 Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience. 
 
 
-### Microsoft.Graph.Core (3.1.3) 
+### Microsoft.Graph.Core (3.1.6) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://developer.microsoft.com/graph) \
-Hash: [SHA-512](295FCD6C068FE6D0E167252D830B548FA576A510650E47221F50993F94C46E656AD31E6664E42AA8C81BEFBF289BE14FB789007C5FE22CA930D6C0BBEFE1F1AC) \
-Package URL: pkg:nuget/Microsoft.Graph.Core@3.1.3 
+Hash: [SHA-512](AAD302939E7438F4ED0704F56C5AC8A6EA8A634B2FAC0E898E1A6FC945414D81582028BA9EF22E97D1FF99821C8E8A7E211C25209CEC558B726B8A73D8A4D8B0) \
+Package URL: pkg:nuget/Microsoft.Graph.Core@3.1.6 
 
 #### Description: 
 
 Microsoft Graph Core Client Library implements core functionality used by Microsoft Graph client libraries. 
 
 
-### Microsoft.Identity.Client (4.58.1) 
+### Microsoft.Identity.Client (4.59.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://go.microsoft.com/fwlink/?linkid=844761) \
-Hash: [SHA-512](635DAEAA8F35359507204F1824027B4BDA6C9CC537E5BFB62B87DD5513489BCD933B94938AA22BC897DC9CF2474F7DF11C547563AC6AB45764107516D3C52A8C) \
-Package URL: pkg:nuget/Microsoft.Identity.Client@4.58.1 
+Hash: [SHA-512](212C8AD6D984B39A9B5D81CD7E4F21706456CD4E486B5D076343C22FCBA39687F66B3887D77BB1F50E6E41273F007D6CA9BBA71C47BF027182EE51AEA7E4A5DA) \
+Package URL: pkg:nuget/Microsoft.Identity.Client@4.59.0 
 
 #### Description: 
 
@@ -785,98 +853,98 @@ Package URL: pkg:nuget/Microsoft.Identity.Client.Extensions.Msal@4.56.0
 This package contains the public client (desktop) caching to Microsoft Authentication Library for .NET (MSAL.NET) 
 
 
-### Microsoft.IdentityModel.Abstractions (7.0.3) 
+### Microsoft.IdentityModel.Abstractions (7.2.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](9EA8FD427C7984BFADAC6B1695B175492B3E9F29883A5D7C691795168270FEA0D2A14DD44F281B556840AAF6A86B674B4C1269DE20F4CBDB0F1E048429E2DBCE) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Abstractions@7.0.3 
+Hash: [SHA-512](1CD8F5F9FA179A5A94349F1F6B6BDCBD46FBB795B266950CCFD0FCF6DDE09DC0C230AA56E16407CAFD6EA30EFF97C84867737D23A89190CE8712AE47425E3515) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Abstractions@7.2.0 
 
 #### Description: 
 
 A package containing thin abstractions for Microsoft.IdentityModel. 
 
 
-### Microsoft.IdentityModel.JsonWebTokens (7.0.3) 
+### Microsoft.IdentityModel.JsonWebTokens (7.2.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](C195B5B320BE28EFFC145514A6883EDF28BEE8E08400271A72802C9A27912997A4A613528F7AD16C5676CCF78DE2AEABED8B73D0EF007D3281DAB97CFA0F87CC) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.0.3 
+Hash: [SHA-512](16F1F8FBD567795BB57B31D1CF57A1E42576C4FC1A26EBFFC73CF9BE928071FE794B1ADDA17E2E68AC0F65A76932F2BB9133C0FA07596C3C46D73E5E3F1317FF) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.2.0 
 
 #### Description: 
 
-Includes types that provide support for creating, serializing and validating JSON Web Tokens. 
+Includes types that provide support for creating, serializing and validating JSON Web Tokens. This is a newer, faster version of System.IdentityModel.Tokens.Jwt that has additional functionality. 
 
 
-### Microsoft.IdentityModel.Logging (7.0.3) 
+### Microsoft.IdentityModel.Logging (7.2.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](E4B364B3ED83D83EE7BACAA27981DF652A6CBA956407C76CE7360B184DA3AD416FDA972FB436AC542D1BECF18382896B75507D49D4FE9DDC0A10F4A94B5EE5B6) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Logging@7.0.3 
+Hash: [SHA-512](C7AEC91C92322D8167F6E2D4500515412FC159F559734FA433E5F9386B3E7C0C94A11C46D0B3194F438DACEB8724A8A1F6E288767117A7A2E5316D6D7324E826) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Logging@7.2.0 
 
 #### Description: 
 
 Includes Event Source based logging support. 
 
 
-### Microsoft.IdentityModel.Protocols (7.0.3) 
+### Microsoft.IdentityModel.Protocols (7.2.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](816C6D46A38520F8E6B3D78CF1EFFFA5B20766F8FB45D32DDCB9F2A5F7500D4454332397AF3433418F41D2350240451C144A338BB85AEB0492AC43EA535E1E98) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols@7.0.3 
+Hash: [SHA-512](2CC2F933D497C4DB788038DB6D02C2E0C63DB4189233A77EB233C0EE2D0716620BDD653EBC9B6AD3C548461B649DEF9578403921AA4998F95382DDC6BE3D6FB2) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols@7.2.0 
 
 #### Description: 
 
 Provides base protocol support for OpenIdConnect and WsFederation. 
 
 
-### Microsoft.IdentityModel.Protocols.OpenIdConnect (7.0.3) 
+### Microsoft.IdentityModel.Protocols.OpenIdConnect (7.2.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](22702E52DEAF7938F68057C5F4C06901100555EB1EC6E5D0E624FD4300EDB864B782AA724B7816BB65EC4DC11FD849EC4E3A3C7349C1B6F4422B413345F105A0) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.0.3 
+Hash: [SHA-512](DD0A24708ADA0E0C86CAC2706A724B4FC5FEF3BE78A5957A16EC7772B911930BFB13C1A5AFE4B435717A80AACB1AA1B9C2E3173897C7783A27C178F20F2A70B5) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.2.0 
 
 #### Description: 
 
 Includes types that provide support for OpenIdConnect protocol. 
 
 
-### Microsoft.IdentityModel.Tokens (7.0.3) 
+### Microsoft.IdentityModel.Tokens (7.2.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](BBC881F9ECDF327FFDAC2C86A682A6A902FDA128266D8E804AEC5B33F56EA038D1D71D18BF7CD1FAB952D6BE8F285E8F7C94E36E2CCD775EC99AAD708AFD7B51) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Tokens@7.0.3 
+Hash: [SHA-512](E20F6D7AA8AFFA35576FEF11CAEE71466273EA41BB6A064269F47BEBC326C0DF3C7DB40B8282DB549B912848918193B3D000004330A751030289257E3E1BCDCD) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Tokens@7.2.0 
 
 #### Description: 
 
 Includes types that provide support for SecurityTokens, Cryptographic operations: Signing, Verifying Signatures, Encryption. 
 
 
-### Microsoft.Kiota.Abstractions (1.7.2) 
+### Microsoft.Kiota.Abstractions (1.7.5) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://aka.ms/kiota/docs) \
-Hash: [SHA-512](5A0002E7354D9BC96E96496566AA649F590ACD088226946EE02BC9C11DF14A81987B099C1AD2E321AD48B1D19B91DD81AF0D4360D742E201825A9BB94B8FE32C) \
-Package URL: pkg:nuget/Microsoft.Kiota.Abstractions@1.7.2 
+Hash: [SHA-512](05E591E53EB8B6283DA1D1447146688CED257113E11925B9B25634CC13DA54CE06F60AB9D5F216068FBEDA57205C417E8F80296DA90448F617412C40A83DE337) \
+Package URL: pkg:nuget/Microsoft.Kiota.Abstractions@1.7.5 
 
 #### Description: 
 
@@ -897,14 +965,14 @@ Package URL: pkg:nuget/Microsoft.Kiota.Authentication.Azure@1.1.2
 Kiota authentication provider implementation with Azure Identity. 
 
 
-### Microsoft.Kiota.Http.HttpClientLibrary (1.3.3) 
+### Microsoft.Kiota.Http.HttpClientLibrary (1.3.4) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://aka.ms/kiota/docs) \
-Hash: [SHA-512](B276B8D89881AEEC38D49655095329A23C5B62C303CA002ED85F567035872360720FF09B97B4F75CBB3A230A971844194FE7386B3C338E73FD5901B35EA97CC4) \
-Package URL: pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.3.3 
+Hash: [SHA-512](99C55398B25F433F2CF5042851D87A420D845ED0CAD4C833A26A05F83369BFC88B729761035BB11EDBCA94F648075E3E00D5B692C364F92D65A7AF2A2E4674B7) \
+Package URL: pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.3.4 
 
 #### Description: 
 
@@ -965,6 +1033,22 @@ Package URL: pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.1
 #### Description: 
 
 Text/plain serialization provider implementation for Kiota based SDKs. 
+
+
+### Microsoft.NETCore.Platforms (2.1.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://github.com/dotnet/corefx/blob/master/LICENSE.TXT) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](EC9EEF7881FB32EEB37389655A733B611813BFDF84C3E2569240E3D0AEDC11EF30B8503A1D1B7A493B70BB1DA0FAA8E90D7798796B0AD14437B8881189360722) \
+Package URL: pkg:nuget/Microsoft.NETCore.Platforms@2.1.2 
+
+#### Description: 
+
+Provides runtime information required to resolve target framework, platform, and runtime specific implementations of .NETCore packages. 
+6851cc781ad2ff33d4a0f429a6fc1ab85abaff86 
+When using NuGet 3.x this package requires at least version 3.4. 
 
 
 ### Microsoft.NETCore.Platforms (5.0.0) 
@@ -1118,14 +1202,14 @@ Package URL: pkg:nuget/Moq@4.20.70
 Moq is the most popular and friendly mocking framework for .NET. 
 
 
-### MSTest.TestFramework (3.1.1) 
+### MSTest.TestFramework (3.2.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/microsoft/testfx) \
-Hash: [SHA-512](B33338A0729E784E6D88A7868D658273DB6CCCB78BAE62063D718EDCBC4F3211BE31358C5FEF6146BA714496A7E0B2412D7F370C7D86E3BA4E75F9113D85A10F) \
-Package URL: pkg:nuget/MSTest.TestFramework@3.1.1 
+Hash: [SHA-512](BA9B132C88CBE63ACE7A7F05F3E961B21A2E33FCEEA0CC81D42A5E9EEB23D1832B2530A17565680A6CF6E9CB7B467B32D687DF7E3389DA568CC5E8AF9E2BBA16) \
+Package URL: pkg:nuget/MSTest.TestFramework@3.2.0 
 
 #### Description: 
 
@@ -1171,6 +1255,20 @@ Package URL: pkg:nuget/Newtonsoft.Json@11.0.1
 Json.NET is a popular high-performance JSON framework for .NET 
 
 
+### Newtonsoft.Json (12.0.2) 
+
+Author: James Newton-King \
+Copyright: Copyright © James Newton-King 2008 \
+License: MIT \
+Reference: [website](https://www.newtonsoft.com/json) \
+Hash: [SHA-512](9ADC1E0573D6869D42310013B414FB65F319ADB6414CA7E31B0CFA63BE4DC068F1FC6CED0DA5277F0F062BD299D93E1F0C8A8A2720E373D471970E7E1B615C54) \
+Package URL: pkg:nuget/Newtonsoft.Json@12.0.2 
+
+#### Description: 
+
+Json.NET is a popular high-performance JSON framework for .NET 
+
+
 ### RabbitMQ.Client (6.8.1) 
 
 Author: VMware \
@@ -1184,6 +1282,231 @@ Package URL: pkg:nuget/RabbitMQ.Client@6.8.1
 #### Description: 
 
 The RabbitMQ .NET client is the official client library for C# (and, implicitly, other .NET languages) 
+
+
+### runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](8F071552EE042F0CBA39B1BA0A1205CF73DE447D662995BAE68F857A5946F7D154C029A79E37469081675687873C8BF2B9EFE57F5CBD660C366B1CA51823F7F2) \
+Package URL: pkg:nuget/runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](A135CA0F4F5A49319B5A52B7F4338F8A5FC4387EDF26F29E6CBF63A3C3A37B2B5C51C9CAF562EC41E470FBA281060362465BC56915BE782D6C75778AA6195E46) \
+Package URL: pkg:nuget/runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](2F24E2CBA88A96BB23848E1404878E4478A65642387B7B76AA4007587FE7C4D8208CBDE53D3ED65F8D0D71CD688BFC16BE66DC5F7BCF84C7B2CCF1B3C505B0B4) \
+Package URL: pkg:nuget/runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.native.System (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](299C5A96FFFDCAF1972E3E3D1C727837D18AC9E88CB79C09914F12FF1DE7280DFF10C9232A49A1C1D3BA7785A5CF76F28C9DCE414F0A2A567688DE7FD5331DC8) \
+Package URL: pkg:nuget/runtime.native.System@4.3.0 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.native.System.Net.Http (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](DDD1E5B67545477F7C72B5883666DE40E89EFB0836D91E7A349E2F3D4AC05CE1125E6ADD3CB09C39CBDFE7AB7C5DC8FDAEAF6AC25ACD92F6DE3D8CE2D6DB7918) \
+Package URL: pkg:nuget/runtime.native.System.Net.Http@4.3.0 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.native.System.Security.Cryptography.Apple (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](23C6A99B323CD71CDCB28C6FAA71F099F69FF0972D5125607AE8BBC99BA7C08513571D14526E8C2805AB3A8B70D3D3A6DD76DFA193320393ECB05906EE91F37D) \
+Package URL: pkg:nuget/runtime.native.System.Security.Cryptography.Apple@4.3.0 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](A34AD2DBE67EFCAE97FCBEA57AF386B30660A98AB8229A56C0DCA241316E673CF7A26E19C6EFB6B7117CC271FDF208741BA6F8447AE254C91ACBA3DDB7D2923A) \
+Package URL: pkg:nuget/runtime.native.System.Security.Cryptography.OpenSsl@4.3.2 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](CE0873E07000DF98E640BD265E969D4A9236535CEE2699C5363F3AB297557B0D756260557995F2EE163CFF05FC2BA922D66BA0E4CB28521F841E7D546AB3B63E) \
+Package URL: pkg:nuget/runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](BF754C1A66CD70DC1BD38D54FE675E9DD470417EBBA62E2F79E278BE8F06CC3496FF58ED90D30B5DD4D3EFEA9ACCBD09EB17CD87BE882951C0FDFB833C371F70) \
+Package URL: pkg:nuget/runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](9929942914071E0EA0944A952FF9AD3C296BE39E719A2F4BB3EAC298D41829B4468B332FBA880EBE242871A02145E1C26DC7660021375D12C7EFCAE4D200278A) \
+Package URL: pkg:nuget/runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple@4.3.0 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](0A38F25E8773B58155B5D3F94F849B93353D0809DA56228B8EBAB5C976E6458CA50EB5A38ACCA4C8940678E6E9521FB57AE487337F7CBF2EA7893AE9E3F43935) \
+Package URL: pkg:nuget/runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](2AE9DB4B719B31FA7E40C60F52C70038FC8668E029CF4E1D120FDE8C295631D6B08207D7018A22937B79546016C560C894E27DD6EBC01D5E0F677567E6B2C4F2) \
+Package URL: pkg:nuget/runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](CD4B7BA744DE80086521AB67CAD2DB3085D488388D3D9CB83D9946389F0F4C784539BF3A4FFB8D4F3347C5C7813AADEF95B355FD2563E30C948A883C27B95287) \
+Package URL: pkg:nuget/runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](D7FC28A9F600E471EDCE0989C01C485D4E2A7E99551F531413AFA75039A4004D4E2C27E88976D65432635A321D86316A3C6CDAEBC7B2FEFA42141B64F4F10D66) \
+Package URL: pkg:nuget/runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](5FE0E6A878EFF59CFE24A8D57AF51140576D8E0FEC4988E4892C233C47B3A3EED27DEC072A6C0D55DD615777CD9CE3FE545C5353B4A95289376AD0B9408ED4BE) \
+Package URL: pkg:nuget/runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2 
+
+#### Description: 
+
+Internal implementation package not meant for direct consumption.  Please do not reference directly. 
+When using NuGet 3.x this package requires at least version 3.4. 
 
 
 ### SharpCompress (0.30.1) 
@@ -1218,13 +1541,13 @@ A near-C++ performance implementation of the Snappy compression algorithm for .N
       help of System.Runtime.Instrinsics. 
 
 
-### Std.UriTemplate (0.0.46) 
+### Std.UriTemplate (0.0.50) 
 
 Author: Std.UriTemplate \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [vcs](https://github.com/std-uritemplate/std-uritemplate) \
-Hash: [SHA-512](C15055FE402F9CC84C843A9E3A11EE27896F50D55C4F79B63EA443E1C420F91E6B5662BB788BD112E0552DD34BFC23AF45BA9BAE150EF6DADECE4E367BB9E72C) \
-Package URL: pkg:nuget/Std.UriTemplate@0.0.46 
+Hash: [SHA-512](BB0E7B11B6305EA2FE76B71ACCFCA7C2311AFD3D0203E8CE7538EFF1478BF4C7B62BCE6192A89C9E639037A80C5788D2D0C7F905ECDF0014C004319BCB9BC1DA) \
+Package URL: pkg:nuget/Std.UriTemplate@0.0.50 
 
 #### Description: 
 
@@ -1344,14 +1667,64 @@ System.Collections.Generic.SortedDictionary&lt;TKey, TValue&gt;
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
-### System.Diagnostics.DiagnosticSource (6.0.1) 
+### System.Collections.Concurrent (4.3.0) 
 
 Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: MIT \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
 Reference: [website](https://dot.net/) \
-Hash: [SHA-512](80A0F9BF3A7AFDB28D9F00E1F301FEEACB39C34FE4AC8F55A392377E2E018FB546FC3FC56E2FE4336DEA222B7AB3F4BAB58A0B8D86EB18C71951EF2E1C752789) \
-Package URL: pkg:nuget/System.Diagnostics.DiagnosticSource@6.0.1 
+Hash: [SHA-512](35C1AA3E636216FE5DC2EBEB504293E69AD6355D26E22453AF060AF94D8279FAA93BDCFE127AECB0B316C7E7D9185BCAC72E994984EFDB7F2D8515F1F55CF682) \
+Package URL: pkg:nuget/System.Collections.Concurrent@4.3.0 
+
+#### Description: 
+
+Provides several thread-safe collection classes that should be used in place of the corresponding types in the System.Collections.NonGeneric and System.Collections packages whenever multiple threads are accessing the collection concurrently.
+
+Commonly Used Types:
+System.Collections.Concurrent.ConcurrentDictionary&lt;TKey, TValue&gt;
+System.Collections.Concurrent.ConcurrentQueue&lt;T&gt;
+System.Collections.Concurrent.ConcurrentBag&lt;T&gt;
+System.Collections.Concurrent.BlockingCollection&lt;T&gt;
+System.Collections.Concurrent.ConcurrentStack&lt;T&gt;
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Diagnostics.Debug (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](6C58FE1E3618E7F87684C1CEA7EFC7D3B19BD7DF8D2535F9E27B62C52F441F11B67B21225D6BCD62F409E02C2A16231C4DB19BE33B8FAB5B9B0A5C8660DDAB24) \
+Package URL: pkg:nuget/System.Diagnostics.Debug@4.3.0 
+
+#### Description: 
+
+Provides classes and attributes that allows basic interaction with a debugger.
+
+Commonly Used Types:
+System.Diagnostics.Debug
+System.Diagnostics.DebuggerStepThroughAttribute
+System.Diagnostics.Debugger
+System.Diagnostics.DebuggerDisplayAttribute
+System.Diagnostics.DebuggerBrowsableAttribute
+System.Diagnostics.DebuggerBrowsableState
+System.Diagnostics.DebuggerHiddenAttribute
+System.Diagnostics.DebuggerNonUserCodeAttribute
+System.Diagnostics.DebuggerTypeProxyAttribute
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Diagnostics.DiagnosticSource (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](8F54DF5FF382B6650E2E10D1043863A24BF49FF0714E779E837CD7073E46FB2635BCFCDCF99D7C4A9D95F35EBFFD86AB0CA068305F4B245072E08303B917B34D) \
+Package URL: pkg:nuget/System.Diagnostics.DiagnosticSource@4.3.0 
 
 #### Description: 
 
@@ -1362,14 +1735,14 @@ System.Diagnostics.DiagnosticListener
 System.Diagnostics.DiagnosticSource 
 
 
-### System.Diagnostics.DiagnosticSource (7.0.2) 
+### System.Diagnostics.DiagnosticSource (6.0.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://dot.net/) \
-Hash: [SHA-512](1D346C423DC811AAA04F31436B48711659F7F0C87599758F842C10C3BEB2779C40B028B9D4718C75EDA7F9D9E40F341C05F267F863AA9357237B5EDD95E3C2A8) \
-Package URL: pkg:nuget/System.Diagnostics.DiagnosticSource@7.0.2 
+Hash: [SHA-512](80A0F9BF3A7AFDB28D9F00E1F301FEEACB39C34FE4AC8F55A392377E2E018FB546FC3FC56E2FE4336DEA222B7AB3F4BAB58A0B8D86EB18C71951EF2E1C752789) \
+Package URL: pkg:nuget/System.Diagnostics.DiagnosticSource@6.0.1 
 
 #### Description: 
 
@@ -1432,6 +1805,32 @@ Commonly Used Types:
 System.Diagnostics.EventLog 
 
 
+### System.Diagnostics.Tracing (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](D0A5D30E261CD45B7DFAB02B7FFBD76B64E0C9B892ED826EA61481C983C0208B05B69981CD79E91CD4E5811E1CD4C3CEA06A1AFCE05811ECE58BE5E4C20169EA) \
+Package URL: pkg:nuget/System.Diagnostics.Tracing@4.3.0 
+
+#### Description: 
+
+Provides class that enable you to create high performance tracing events to be captured by event tracing for Windows (ETW).
+
+Commonly Used Types:
+System.Diagnostics.Tracing.EventSource
+System.Diagnostics.Tracing.EventListener
+System.Diagnostics.Tracing.EventLevel
+System.Diagnostics.Tracing.EventKeywords
+System.Diagnostics.Tracing.EventWrittenEventArgs
+System.Diagnostics.Tracing.EventAttribute
+System.Diagnostics.Tracing.EventSourceAttribute
+System.Diagnostics.Tracing.NonEventAttribute
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
 ### System.Formats.Asn1 (7.0.0) 
 
 Author: Microsoft \
@@ -1477,18 +1876,67 @@ System.Globalization.UnicodeCategory
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
-### System.IdentityModel.Tokens.Jwt (7.0.3) 
+### System.Globalization.Calendars (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](E97190231402B393774B925EFC02A2BFA41D1D117A17FB87DA6E399F5234546962767E9CD8F39970EFA408E4F453CD1E6751A2A61E366BC97406E1B0B8A4BE86) \
+Package URL: pkg:nuget/System.Globalization.Calendars@4.3.0 
+
+#### Description: 
+
+Provides classes for performing date calculations using specific calendars, including the Gregorian, Julian, Hijri and Korean calendars.
+
+Commonly Used Types:
+System.Globalization.HijriCalendar
+System.Globalization.GregorianCalendar
+System.Globalization.HebrewCalendar
+System.Globalization.KoreanCalendar
+System.Globalization.ThaiBuddhistCalendar
+System.Globalization.TaiwanCalendar
+System.Globalization.JapaneseCalendar
+System.Globalization.GregorianCalendarTypes
+System.Globalization.PersianCalendar
+System.Globalization.UmAlQuraCalendar
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Globalization.Extensions (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](A4D360003F95E0C31EDF39C0B91E1C73850A60AC5D0032B17DB888A3C7D7134CEF9ACD97219D14174AD213B7C044F49B364CC5720073EBFCB6E1BF6E4EC24CE5) \
+Package URL: pkg:nuget/System.Globalization.Extensions@4.3.0 
+
+#### Description: 
+
+Provides classes for performing Unicode string normalization, culture-specific string comparisons and support the use of non-ASCII characters for Internet domain names.
+
+Commonly Used Types:
+System.StringNormalizationExtensions
+System.Text.NormalizationForm
+System.Globalization.IdnMapping
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.IdentityModel.Tokens.Jwt (7.2.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](F8A39B734873F0E30F1031B2C11A430AD7083AD2322D8F80477E49CFA7F7E32606301F8CFDADCB7B3ADB4236210F82A7E9627936CE99F292F62BC2A18700E3BD) \
-Package URL: pkg:nuget/System.IdentityModel.Tokens.Jwt@7.0.3 
+Hash: [SHA-512](2A35BDF445ED52B8DFEC28CE8D47A4E47CDF6A23F641D4F62B011AC239CCD78BACBEF854282FE828ED576DC5036CA009A94925D8394BE44A38A6093F3630554B) \
+Package URL: pkg:nuget/System.IdentityModel.Tokens.Jwt@7.2.0 
 
 #### Description: 
 
-Includes types that provide support for creating, serializing and validating JSON Web Tokens. 
+Includes types that provide support for creating, serializing and validating JSON Web Tokens. As of IdentityModel 7x, this is a legacy tool that should be replaced with Microsoft.IdentityModel.JsonWebTokens. 
 
 
 ### System.IO (4.3.0) 
@@ -1513,6 +1961,32 @@ System.IO.StreamWriter
 System.IO.StringWriter
 System.IO.TextWriter
 System.IO.TextReader
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.IO.FileSystem (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](4FB581D6F85B9529A091A0E974633752AA39E50B2BE6C8A9E5ECA8C2BC225CEA07064CCEC7778F77DF9987DEEBF4DCCEC050B1A97EDAC0EE9107142E6A8EE7EE) \
+Package URL: pkg:nuget/System.IO.FileSystem@4.3.0 
+
+#### Description: 
+
+Provides types that allow reading and writing to files and types that provide basic file and directory support.
+
+Commonly Used Types:
+System.IO.FileStream
+System.IO.FileInfo
+System.IO.DirectoryInfo
+System.IO.FileSystemInfo
+System.IO.File
+System.IO.Directory
+System.IO.SearchOption
+System.IO.FileOptions
  
 When using NuGet 3.x this package requires at least version 3.4. 
 
@@ -1542,6 +2016,31 @@ System.Security.AccessControl.FileSystemSecurity
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.IO.FileSystem.Primitives (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](5885953D09582CFFD973D23A21A929064D72F2BC9518AF3732D671FFFCC628A8B686F1D058A001EE6A114023B3E48B3FC0D0E4B22629A1C7F715E03795EE9EE5) \
+Package URL: pkg:nuget/System.IO.FileSystem.Primitives@4.3.0 
+
+#### Description: 
+
+Provides common enumerations and exceptions for path-based I/O libraries.
+
+Commonly Used Types:
+System.IO.DirectoryNotFoundException
+System.IO.FileAccess
+System.IO.FileLoadException
+System.IO.PathTooLongException
+System.IO.FileMode
+System.IO.FileShare
+System.IO.FileAttributes
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
 ### System.IO.Hashing (6.0.0) 
 
 Author: Microsoft \
@@ -1558,6 +2057,29 @@ Provides non-cryptographic hash algorithms, such as CRC-32.
 Commonly Used Types:
 System.IO.Hashing.Crc32
 System.IO.Hashing.XxHash32 
+
+
+### System.Linq (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](EACC7FE1EC526F405F5BA0E671F616D0E5BE9C1828D543A9E2F8C65DF4099D6B2EA4A9FA2CDAE4F34B170DC37142F60E267E137CA39F350281ED70D2DC620458) \
+Package URL: pkg:nuget/System.Linq@4.3.0 
+
+#### Description: 
+
+Provides classes and interfaces that supports queries that use Language-Integrated Query (LINQ).
+
+Commonly Used Types:
+System.Linq.Enumerable
+System.Linq.IGrouping&lt;TKey, TElement&gt;
+System.Linq.IOrderedEnumerable&lt;TElement&gt;
+System.Linq.ILookup&lt;TKey, TElement&gt;
+System.Linq.Lookup&lt;TKey, TElement&gt;
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
 
 
 ### System.Memory (4.5.4) 
@@ -1643,6 +2165,62 @@ A lightweight abstraction for a payload of bytes. Provides methods for convertin
 
 Commonly Used Types:
 System.BinaryData 
+
+
+### System.Net.Http (4.3.4) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](163EDEEF734D1F0A1FF7B8053D326EABC82FE86F3DE72C6466DD780D59D974487882F2A5F16AE4B02C0D8C8A7F25E617FF2BBFAB133F88EBFD6A2F99637169ED) \
+Package URL: pkg:nuget/System.Net.Http@4.3.4 
+
+#### Description: 
+
+Provides a programming interface for modern HTTP applications, including HTTP client components that allow applications to consume web services over HTTP and HTTP components that can be used by both clients and servers for parsing HTTP headers.
+
+Commonly Used Types:
+System.Net.Http.HttpResponseMessage
+System.Net.Http.DelegatingHandler
+System.Net.Http.HttpRequestException
+System.Net.Http.HttpClient
+System.Net.Http.MultipartContent
+System.Net.Http.Headers.HttpContentHeaders
+System.Net.Http.HttpClientHandler
+System.Net.Http.StreamContent
+System.Net.Http.FormUrlEncodedContent
+System.Net.Http.HttpMessageHandler
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Net.Primitives (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](9F7FDECE330A81F3312EA7C804927852413BEE2C929F3066B736993803DF47CC0692FBCA236C222BF19DC8F59B42F54F2A4C00DA9A4D624E458DA5874D127CE6) \
+Package URL: pkg:nuget/System.Net.Primitives@4.3.0 
+
+#### Description: 
+
+Provides common types for network-based libraries, including System.Net.IPAddress, System.Net.IPEndPoint, and System.Net.CookieContainer.
+
+Commonly Used Types:
+System.Net.HttpStatusCode
+System.Net.Sockets.SocketError
+System.Net.Cookie
+System.Net.Sockets.SocketException
+System.Net.IPEndPoint
+System.Net.ICredentials
+System.Net.NetworkCredential
+System.Net.IPAddress
+System.Net.CookieCollection
+System.Net.CookieContainer
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
 
 
 ### System.Numerics.Vectors (4.5.0) 
@@ -1787,6 +2365,26 @@ System.Uri
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.Runtime.CompilerServices.Unsafe (4.5.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://github.com/dotnet/corefx/blob/master/LICENSE.TXT) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](84C91D5B192CCA942515707B25A9907A00EC73110040EE051DDFE5C3FCE549953D7598008A3EB9C630AB5DEAF5F37C2FA0D033262739CF38E3DA873DFDD9685A) \
+Package URL: pkg:nuget/System.Runtime.CompilerServices.Unsafe@4.5.2 
+
+#### Description: 
+
+Provides the System.Runtime.CompilerServices.Unsafe class, which provides generic, low-level functionality for manipulating pointers.
+
+Commonly Used Types:
+System.Runtime.CompilerServices.Unsafe
+ 
+02b11eeee1fbc5f3ef43a1452fe07efd25fa1715 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
 ### System.Runtime.CompilerServices.Unsafe (5.0.0) 
 
 Author: Microsoft \
@@ -1850,6 +2448,72 @@ System.IO.Path
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.Runtime.Handles (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](0A5BAF1DD554BF9E01BCB4CE082CB26EE82B783364FEB47CBA730FAEECD70EDC528EFAD0394DCCE11F37D7F9507F8608F15629EBAF051906BFD3513E46AF0F11) \
+Package URL: pkg:nuget/System.Runtime.Handles@4.3.0 
+
+#### Description: 
+
+Provides base classes, including System.Runtime.InteropServices.CriticalHandle and System.Runtime.InteropServices.SafeHandle, for types that represent operating system handles.
+
+Commonly Used Types:
+System.Runtime.InteropServices.SafeHandle
+Microsoft.Win32.SafeHandles.SafeWaitHandle
+System.Runtime.InteropServices.CriticalHandle
+System.Threading.WaitHandleExtensions
+System.IO.HandleInheritability
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Runtime.InteropServices (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](650799C3E654EFBB9AD67157C9C60CE46F288A81597BE37CE2A0BF5D4835044065EF3F65B997328CBBBBFB81F4C89B8D7E7D61380880019DEEE6EB3F963F70D9) \
+Package URL: pkg:nuget/System.Runtime.InteropServices@4.3.0 
+
+#### Description: 
+
+Provides types that support COM interop and platform invoke services.
+
+Commonly Used Types:
+System.Runtime.InteropServices.GCHandle
+System.Runtime.InteropServices.GuidAttribute
+System.Runtime.InteropServices.COMException
+System.DllNotFoundException
+System.Runtime.InteropServices.DllImportAttribute
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Runtime.Numerics (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](3E347FAA8E7EC484D481E53B1C219FE1CE346AE8278A214B4508CF0E233C1627BD9C6C6C7C654E8C1F4143271838DDD9593F63A1043577AD87C40E392AF7FD34) \
+Package URL: pkg:nuget/System.Runtime.Numerics@4.3.0 
+
+#### Description: 
+
+Provides the numeric types System.Numerics.BigInteger and System.Numerics.Complex, which complement the numeric primitives, such as System.Byte, System.Double and System.Int32.
+
+Commonly Used Types:
+System.Numerics.BigInteger
+System.Numerics.Complex
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
 ### System.Security.AccessControl (5.0.0) 
 
 Author: Microsoft \
@@ -1896,6 +2560,117 @@ System.Security.Principal.GenericPrincipal
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.Security.Cryptography.Algorithms (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](7641D70C2BA6F37BF429D5D949BDA427F078098C2DCB8924FD79B23BB22C4B956EF14235422D8B1CC5720CBBCC6CFEE8943D5FF87CE7ABF0D54C5E8BCE2AA5E2) \
+Package URL: pkg:nuget/System.Security.Cryptography.Algorithms@4.3.0 
+
+#### Description: 
+
+Provides base types for cryptographic algorithms, including hashing, encryption, and signing operations.
+
+Commonly Used Types:
+System.Security.Cryptography.Aes
+System.Security.Cryptography.RSA
+System.Security.Cryptography.RSAParameters
+System.Security.Cryptography.HMACSHA1
+System.Security.Cryptography.SHA256
+System.Security.Cryptography.SHA1
+System.Security.Cryptography.SHA512
+System.Security.Cryptography.SHA384
+System.Security.Cryptography.HMACSHA256
+System.Security.Cryptography.MD5
+System.Security.Cryptography.HMACSHA384
+System.Security.Cryptography.HMACSHA512
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Security.Cryptography.Cng (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](6272273414EAA777E78DCA1B5ECBBDF65E9659908082AEA924DF0975E71F4C1B47F85617EDF90EAD57078C29513A160CA62F123BE9F9F339DFB9C9386844F5EA) \
+Package URL: pkg:nuget/System.Security.Cryptography.Cng@4.3.0 
+
+#### Description: 
+
+Provides cryptographic algorithm implementations and key management with Windows Cryptographic Next Generation API (CNG).
+
+Commonly Used Types:
+System.Security.Cryptography.RSACng
+System.Security.Cryptography.ECDsaCng
+System.Security.Cryptography.CngKey
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Security.Cryptography.Csp (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](43317591747A18F52F683187E09ADFE0E03573E6DAC430BF3BA13F440CDB1C7BB1F9205369D5F3B2A0F3FDF9604D5BA1E6D94A899A25D2C533E453338578F351) \
+Package URL: pkg:nuget/System.Security.Cryptography.Csp@4.3.0 
+
+#### Description: 
+
+Provides cryptographic algorithm implementations and key management with Windows Cryptographic API (CryptoAPI).
+
+Commonly Used Types:
+System.Security.Cryptography.RSACryptoServiceProvider
+System.Security.Cryptography.CspParameters
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Security.Cryptography.Encoding (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](5C26ADD23E63542F37506F5FA1F72E8980F03743D529CD8E583D1054B8D8A579FB773FA035A00D9073DB84DB6BE4F47CAC340D1EBC6D23DD761DBDBD600075E0) \
+Package URL: pkg:nuget/System.Security.Cryptography.Encoding@4.3.0 
+
+#### Description: 
+
+Provides types for representing Abstract Syntax Notation One (ASN.1)-encoded data.
+
+Commonly Used Types:
+System.Security.Cryptography.AsnEncodedData
+System.Security.Cryptography.Oid
+System.Security.Cryptography.OidCollection
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Security.Cryptography.OpenSsl (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](64530A19489730F873F8C68E6B245135EA260C02D68591880261768358D0145795132BA5EE877741822FF05DCD0C61EDCA27696EF99E8F9302A21CADF3B1329F) \
+Package URL: pkg:nuget/System.Security.Cryptography.OpenSsl@4.3.0 
+
+#### Description: 
+
+Provides cryptographic algorithm implementations and key management for non-Windows systems with OpenSSL.
+
+Commonly Used Types:
+System.Security.Cryptography.RSAOpenSsl
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
 ### System.Security.Cryptography.Pkcs (7.0.3) 
 
 Author: Microsoft \
@@ -1911,6 +2686,36 @@ Provides support for PKCS and CMS algorithms.
 
 Commonly Used Types:
 System.Security.Cryptography.Pkcs.EnvelopedCms 
+
+
+### System.Security.Cryptography.Primitives (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](5AD8273F998EBB9CCA2F7BD03143D3F6D57B5D560657B26D6F4E78D038010FB30C379A23A27C08730F15C9B66F4BA565A06984EC246DFC79ACF1A741B0DD4347) \
+Package URL: pkg:nuget/System.Security.Cryptography.Primitives@4.3.0 
+
+#### Description: 
+
+Provides common types for the cryptographic libraries.
+
+Commonly Used Types:
+System.Security.Cryptography.ICryptoTransform
+System.Security.Cryptography.AsymmetricAlgorithm
+System.Security.Cryptography.SymmetricAlgorithm
+System.Security.Cryptography.HashAlgorithm
+System.Security.Cryptography.KeyedHashAlgorithm
+System.Security.Cryptography.HMAC
+System.Security.Cryptography.KeySizes
+System.Security.Cryptography.CryptographicException
+System.Security.Cryptography.CipherMode
+System.Security.Cryptography.PaddingMode
+System.Security.Cryptography.CryptoStream
+System.Security.Cryptography.CryptoStreamMode
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
 
 
 ### System.Security.Cryptography.ProtectedData (4.7.0) 
@@ -1929,6 +2734,34 @@ Provides access to Windows Data Protection Api.
 Commonly Used Types:
 System.Security.Cryptography.DataProtectionScope
 System.Security.Cryptography.ProtectedData
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Security.Cryptography.X509Certificates (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](318D86AB5528E2B444EC3E4B9824C1BE82BB93DB513EAB34B238E486F886C4D74310ED82C2110401FE5CD790E4D97F4A023A0B2D5C2E29952D3FD02E42734D00) \
+Package URL: pkg:nuget/System.Security.Cryptography.X509Certificates@4.3.0 
+
+#### Description: 
+
+Provides types for reading, exporting and verifying Authenticode X.509 v3 certificates. These certificates are signed with a private key that uniquely and positively identifies the holder of the certificate.
+
+Commonly Used Types:
+System.Security.Cryptography.X509Certificates.X509Certificate2
+System.Security.Cryptography.X509Certificates.X509Certificate
+System.Security.Cryptography.X509Certificates.X509ContentType
+System.Security.Cryptography.X509Certificates.StoreLocation
+System.Security.Cryptography.X509Certificates.StoreName
+System.Security.Cryptography.X509Certificates.X509FindType
+System.Security.Cryptography.X509Certificates.X509ChainStatus
+System.Security.Cryptography.X509Certificates.X509Certificate2Collection
+System.Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension
+System.Security.Cryptography.X509Certificates.X509Chain
  
 When using NuGet 3.x this package requires at least version 3.4. 
 
@@ -2005,6 +2838,26 @@ System.Text.DecoderFallback
 System.Text.DecoderFallbackBuffer
 System.Text.DecoderExceptionFallback
  
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Text.Encoding.CodePages (4.5.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://github.com/dotnet/corefx/blob/master/LICENSE.TXT) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](12EDDDC9452A0C592EB24AEB2B9E152D60B8D44540349368E6FCE3A239C6029847F8557ADCD260DF3B39C744EF45A6034D9DB2FBCE9E20E2B8DC78363578B0EF) \
+Package URL: pkg:nuget/System.Text.Encoding.CodePages@4.5.1 
+
+#### Description: 
+
+Provides support for code-page based encodings, including Windows-1252, Shift-JIS, and GB2312.
+
+Commonly Used Types:
+System.Text.CodePagesEncodingProvider
+ 
+99ce22c306b07f99ddae60f443d23a983ae78f7b 
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
@@ -2165,6 +3018,32 @@ Package URL: pkg:nuget/System.Text.Json@8.0.0
 Provides high-performance and low-allocating types that serialize objects to JavaScript Object Notation (JSON) text and deserialize JSON text to objects, with UTF-8 support built-in. Also provides types to read and write JSON text encoded as UTF-8, and to create an in-memory document object model (DOM), that is read-only, for random access of the JSON elements within a structured view of the data.
 
 The System.Text.Json library is built-in as part of the shared framework in .NET Runtime. The package can be installed when you need to use it in other target frameworks. 
+
+
+### System.Threading (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](97A2751BDCE69FAAF9C54F834A9FD5C60C7A786FAA52F420769828DBC9B5804C1F3721BA1EA945EA1D844835D909810F9E782C9A44D0FAAECCCB230C4CD95A88) \
+Package URL: pkg:nuget/System.Threading@4.3.0 
+
+#### Description: 
+
+Provides the fundamental synchronization primitives, including System.Threading.Monitor and System.Threading.Mutex, that are required when writing asynchronous code.
+
+Commonly Used Types:
+System.Threading.Monitor
+System.Threading.SynchronizationContext
+System.Threading.ManualResetEvent
+System.Threading.AutoResetEvent
+System.Threading.ThreadLocal&lt;T&gt;
+System.Threading.EventWaitHandle
+System.Threading.SemaphoreSlim
+System.Threading.Mutex
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
 
 
 ### System.Threading.Channels (7.0.0) 

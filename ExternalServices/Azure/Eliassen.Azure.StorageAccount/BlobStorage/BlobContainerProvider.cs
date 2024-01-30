@@ -1,8 +1,8 @@
 ﻿using Azure;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -18,12 +18,12 @@ namespace Eliassen.Azure.StorageAccount.BlobStorage;
 /// <param name="config">The configuration.</param>
 /// <param name="logger">The logger.</param>
 public class BlobContainerProvider(
-    IConfiguration config,
+    IOptions<AzureBlobContainerOptions> config,
     ILogger<BlobContainerProvider> logger
         ) : IDocumentProvider
 {
-    private readonly string? _containerName = config[ConfigKeys.Container.DefaultContainerName];
-    private readonly BlobContainerClient _blobClient = new(config[ConfigKeys.Container.DefaultConnectionString], config[ConfigKeys.Container.DefaultContainerName]);
+    private readonly string? _containerName = config.Value.ContainerName;
+    private readonly BlobContainerClient _blobClient = new(config.Value.ConnectionString, config.Value.ContainerName);
     private readonly ILogger<BlobContainerProvider> _logger = logger;
 
     /// <summary>

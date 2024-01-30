@@ -10,12 +10,12 @@ namespace Eliassen.System.Text.Templating;
 /// Access template from file system
 /// </summary>
 public class FileTemplateSource(
-    IOptions<FileTemplatingSettings> settings,
+    IOptions<FileTemplatingOptions> settings,
     IEnumerable<IFileType> fileTypes,
     ILogger<FileTemplateSource> logger
         ) : ITemplateSource
 {
-    private readonly FileTemplatingSettings _settings = settings.Value;
+    private readonly FileTemplatingOptions _settings = settings.Value;
     private readonly IEnumerable<IFileType> _fileTypes = fileTypes;
     private readonly ILogger _logger = logger;
 

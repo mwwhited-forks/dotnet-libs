@@ -49,7 +49,7 @@ using Eliassen.MongoDB.Extensions;
 
 namespace Nucleus.Core.Persistence;
 
-public static class ServiceCollectionEx
+public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddCorePersistenceServices(this IServiceCollection services)
     {

@@ -203,14 +203,14 @@ A new instance of for the specified Azure Storage Queue.
 
 
 
-## Class: Azure.StorageAccount.ServiceCollectionEx
+## Class: Azure.StorageAccount.ServiceCollectionExtensions
 Provides extension methods for configuring Azure Storage services in the 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
 
 ### Methods
 
 
-#### TryAddAzureStorageServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+#### TryAddAzureStorageServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
 Tries to add Azure Storage services including blob and queue services to the specified 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
 
@@ -226,7 +226,7 @@ The modified .
 
 
 
-#### TryAddAzureStorageBlobServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+#### TryAddAzureStorageBlobServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
 Tries to add Azure Storage blob services to the specified 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
 

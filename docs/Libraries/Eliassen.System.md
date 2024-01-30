@@ -70,30 +70,14 @@ Suggested IOC configurations
 ### Methods
 
 
-#### TryAddSystemExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Eliassen.System.Security.Cryptography.HashTypes,Eliassen.System.Text.SerializerTypes)
+#### TryAddSystemExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Eliassen.System.SystemExtensionBuilder)
 This will add all available extensions to the IOC container 
 
 
 ##### Parameters
 * *services:* 
 * *config:* 
-* *defaultHashType:* 
-* *defaultSerializerType:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### TryAddSearchQueryExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-Add support for shared SearchQuery Extensions 
-
-
-##### Parameters
-* *services:* 
+* *builder:* 
 
 
 
@@ -135,13 +119,13 @@ Add support for shared Serializer
 
 
 
-#### TryTemplatingExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+#### TryTemplatingExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
 Add support for shared Templating 
 
 
 ##### Parameters
 * *services:* 
-* *config:* 
+* *configurationSection:* 
 
 
 
@@ -504,7 +488,7 @@ Look up templates from a file system.
 
 
 
-## Class: System.Text.Templating.FileTemplatingSettings
+## Class: System.Text.Templating.FileTemplatingOptions
 Configuration settings for file templating engine 
 
 ### Properties

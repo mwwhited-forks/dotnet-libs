@@ -1,7 +1,20 @@
 
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=nucleus" ^
-   -p 1433:1433 --name sql-server --hostname  sql-server ^
-   -d ^
-   mcr.microsoft.com/mssql/server:2022-latest
+@ECHO OFF
 
-docker start sql-server    
+IF /I "%1" EQU "--clean" (
+    docker stop sql-server 
+    docker remove sql-server 
+)
+
+docker network create dev-net
+
+docker run ^
+--name sql-server  ^
+--detach ^
+--publish 1433:1433 ^
+--env ACCEPT_EULA=Y ^
+--env MSSQL_SA_PASSWORD=nucleus ^
+--network=dev-net ^
+mcr.microsoft.com/mssql/server:2022-latest
+
+docker start sql-server  

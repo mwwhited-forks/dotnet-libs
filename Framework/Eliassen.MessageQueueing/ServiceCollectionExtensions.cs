@@ -31,9 +31,6 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IMessageSenderProvider, InProcessMessageProvider>();
         services.TryAddKeyedTransient<IMessageSenderProvider, InProcessMessageProvider>(InProcessMessageProvider.MessageProviderKey);
 
-        services.AddTransient<IMessageReceiverProvider, InProcessMessageProvider>();
-        services.TryAddKeyedTransient<IMessageReceiverProvider, InProcessMessageProvider>(InProcessMessageProvider.MessageProviderKey);
-
         return services;
     }
 }
