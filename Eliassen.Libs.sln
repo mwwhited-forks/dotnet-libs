@@ -52,62 +52,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{F1FE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.System.Abstractions", "Framework\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj", "{FA9DEE5A-48BF-478D-ABBB-1300660FB786}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{26D6201D-81AD-4596-BEE5-DE42FC5EE58D}"
-	ProjectSection(SolutionItems) = preProject
-		docs\Notes.md = docs\Notes.md
-		docs\Service-Endpoints.md = docs\Service-Endpoints.md
-		docs\swagger.json = docs\swagger.json
-		docs\swagger.yaml = docs\swagger.yaml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{7796027A-C66D-46FD-867E-5751E7FADE50}"
-	ProjectSection(SolutionItems) = preProject
-		docs\Libraries\Eliassen.AspNetCore.JwtAuthentication.md = docs\Libraries\Eliassen.AspNetCore.JwtAuthentication.md
-		docs\Libraries\Eliassen.AspNetCore.Mvc.md = docs\Libraries\Eliassen.AspNetCore.Mvc.md
-		docs\Libraries\Eliassen.Azure.StorageAccount.Abstractions.md = docs\Libraries\Eliassen.Azure.StorageAccount.Abstractions.md
-		docs\Libraries\Eliassen.Azure.StorageAccount.md = docs\Libraries\Eliassen.Azure.StorageAccount.md
-		docs\Libraries\Eliassen.Common.Abstractions.md = docs\Libraries\Eliassen.Common.Abstractions.md
-		docs\Libraries\Eliassen.Common.AspNetCore.md = docs\Libraries\Eliassen.Common.AspNetCore.md
-		docs\Libraries\Eliassen.Common.Complete.md = docs\Libraries\Eliassen.Common.Complete.md
-		docs\Libraries\Eliassen.Common.Extensions.Hosting.md = docs\Libraries\Eliassen.Common.Extensions.Hosting.md
-		docs\Libraries\Eliassen.Common.Extensions.md = docs\Libraries\Eliassen.Common.Extensions.md
-		docs\Libraries\Eliassen.Common.Hosting.md = docs\Libraries\Eliassen.Common.Hosting.md
-		docs\Libraries\Eliassen.Common.md = docs\Libraries\Eliassen.Common.md
-		docs\Libraries\Eliassen.Communications.Abstractions.md = docs\Libraries\Eliassen.Communications.Abstractions.md
-		docs\Libraries\Eliassen.Communications.md = docs\Libraries\Eliassen.Communications.md
-		docs\Libraries\Eliassen.Communications.MessageQueueing.md = docs\Libraries\Eliassen.Communications.MessageQueueing.md
-		docs\Libraries\Eliassen.Handlebars.Extensions.md = docs\Libraries\Eliassen.Handlebars.Extensions.md
-		docs\Libraries\Eliassen.MailKit.Hosting.md = docs\Libraries\Eliassen.MailKit.Hosting.md
-		docs\Libraries\Eliassen.MailKit.md = docs\Libraries\Eliassen.MailKit.md
-		docs\Libraries\Eliassen.MessageQueueing.Abstractions.md = docs\Libraries\Eliassen.MessageQueueing.Abstractions.md
-		docs\Libraries\Eliassen.MessageQueueing.Hosting.md = docs\Libraries\Eliassen.MessageQueueing.Hosting.md
-		docs\Libraries\Eliassen.MessageQueueing.md = docs\Libraries\Eliassen.MessageQueueing.md
-		docs\Libraries\Eliassen.Microsoft.B2C.Abstractions.md = docs\Libraries\Eliassen.Microsoft.B2C.Abstractions.md
-		docs\Libraries\Eliassen.Microsoft.B2C.md = docs\Libraries\Eliassen.Microsoft.B2C.md
-		docs\Libraries\Eliassen.MongoDB.Extensions.md = docs\Libraries\Eliassen.MongoDB.Extensions.md
-		docs\Libraries\Eliassen.RabbitMQ.md = docs\Libraries\Eliassen.RabbitMQ.md
-		docs\Libraries\Eliassen.System.Abstractions.md = docs\Libraries\Eliassen.System.Abstractions.md
-		docs\Libraries\Eliassen.System.md = docs\Libraries\Eliassen.System.md
-		docs\Libraries\Eliassen.TestUtilities.md = docs\Libraries\Eliassen.TestUtilities.md
-		docs\Libraries\Eliassen.WebApi.md = docs\Libraries\Eliassen.WebApi.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{E6BCF7BB-2130-43E9-960F-EBE6C79BDDD8}"
-	ProjectSection(SolutionItems) = preProject
-		docs\Framework\BuildExtensions.md = docs\Framework\BuildExtensions.md
-		docs\Framework\CultureInfoMiddleware.md = docs\Framework\CultureInfoMiddleware.md
-		docs\Framework\MajorFunctionality.md = docs\Framework\MajorFunctionality.md
-		docs\Framework\MessageQueueing.md = docs\Framework\MessageQueueing.md
-		docs\Framework\MongoDbExtensions.md = docs\Framework\MongoDbExtensions.md
-		docs\Framework\SearchQueryMiddleware.md = docs\Framework\SearchQueryMiddleware.md
-		docs\Framework\TextTemplating.md = docs\Framework\TextTemplating.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{04470E53-0CD0-4AA0-BFE0-C28DDE5C34B3}"
-	ProjectSection(SolutionItems) = preProject
-		docs\Framework\Design\DynamicSearchFilter.md = docs\Framework\Design\DynamicSearchFilter.md
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microsoft", "Microsoft", "{71129CCF-1669-468F-A0B3-7A306149C3F5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Azure.StorageAccount", "ExternalServices\Azure\Eliassen.Azure.StorageAccount\Eliassen.Azure.StorageAccount.csproj", "{8D340410-3940-463E-8AB2-AF1D6D2EB00E}"
@@ -165,40 +109,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{0D029514
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.TemplateEngine.Cli", "Tools\Eliassen.TemplateEngine.Cli\Eliassen.TemplateEngine.Cli.csproj", "{52E2A264-82B8-4A68-8EB1-FBF5C3A61761}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{6768313F-1A76-42A3-A260-1E8D50EA8A39}"
-	ProjectSection(SolutionItems) = preProject
-		docs\templates\Documentation.md.xslt = docs\templates\Documentation.md.xslt
-		docs\templates\DuplicateXml.xml.xslt = docs\templates\DuplicateXml.xml.xslt
-		docs\templates\Service-Endpoints.md.hbs = docs\templates\Service-Endpoints.md.hbs
-		docs\templates\SoftwareBillOfMaterials.md.xslt = docs\templates\SoftwareBillOfMaterials.md.xslt
-		docs\templates\TestResultsToMarkdown.md.xslt = docs\templates\TestResultsToMarkdown.md.xslt
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MailKit.Tests", "ExternalServices\MailKit\Eliassen.MailKit.Tests\Eliassen.MailKit.Tests.csproj", "{4CDE950E-73E6-445F-9B78-E4AE0550D45F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MailKit.Hosting", "ExternalServices\MailKit\Eliassen.MailKit.Hosting\Eliassen.MailKit.Hosting.csproj", "{8A26963A-C2CC-4ECD-92F5-7B2638BB3485}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.FixSourceLinks.Cli", "Tools\Eliassen.FixSourceLinks.Cli\Eliassen.FixSourceLinks.Cli.csproj", "{C1CA926A-1605-40C7-8399-EA966E1DE00D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D43EC245-FAB0-4B78-8FEB-6250EA598063}"
-	ProjectSection(SolutionItems) = preProject
-		docs\Tests\Cobertura.coverage = docs\Tests\Cobertura.coverage
-		docs\Tests\LatestTestResults.md = docs\Tests\LatestTestResults.md
-		docs\Tests\LatestTestResults.trx = docs\Tests\LatestTestResults.trx
-		docs\Tests\Summary.md = docs\Tests\Summary.md
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{92FD4EEB-1BF5-4105-B55F-DB70DFB2C35E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.RabbitMQ", "ExternalServices\RabbitMQ\Eliassen.RabbitMQ\Eliassen.RabbitMQ.csproj", "{CD2D80EC-9759-4579-9041-CA0D0A3BFECB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.RabbitMQ.Tests", "ExternalServices\RabbitMQ\Eliassen.RabbitMQ.Tests\Eliassen.RabbitMQ.Tests.csproj", "{37092C41-C418-4C6A-B375-3D0FA6DF42A7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sbom", "sbom", "{2082898F-D921-42A0-AAF7-248B81EA6F77}"
-	ProjectSection(SolutionItems) = preProject
-		docs\sbom\BillOfMaterials.md = docs\sbom\BillOfMaterials.md
-		docs\sbom\bom.xml = docs\sbom\bom.xml
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{A0D44B1C-DF50-4B24-91C0-BEC70DCCB1C8}"
 EndProject
@@ -436,10 +357,6 @@ Global
 		{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{F1FECC6B-DCFF-461F-9B99-CA7E6C1FF543} = {6BEF035F-ABDF-47D9-B230-B88FEE87B53B}
 		{FA9DEE5A-48BF-478D-ABBB-1300660FB786} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
-		{26D6201D-81AD-4596-BEE5-DE42FC5EE58D} = {6BEF035F-ABDF-47D9-B230-B88FEE87B53B}
-		{7796027A-C66D-46FD-867E-5751E7FADE50} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
-		{E6BCF7BB-2130-43E9-960F-EBE6C79BDDD8} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
-		{04470E53-0CD0-4AA0-BFE0-C28DDE5C34B3} = {E6BCF7BB-2130-43E9-960F-EBE6C79BDDD8}
 		{71129CCF-1669-468F-A0B3-7A306149C3F5} = {23338E7F-E943-4D99-B58C-CFBB7F2F53B2}
 		{8D340410-3940-463E-8AB2-AF1D6D2EB00E} = {7F87E973-492B-437E-A5AC-C14580FFA0DD}
 		{2601AF85-9165-454E-ABBE-D6F5E4DDDF77} = {7F87E973-492B-437E-A5AC-C14580FFA0DD}
@@ -460,15 +377,12 @@ Global
 		{E7A11D0C-A892-415B-BAF2-9EAFCFA12221} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{4E28E35D-36C9-44F2-A676-2F318997E09A} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{52E2A264-82B8-4A68-8EB1-FBF5C3A61761} = {0D029514-4C08-465F-8842-D3E59E9F5099}
-		{6768313F-1A76-42A3-A260-1E8D50EA8A39} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
 		{4CDE950E-73E6-445F-9B78-E4AE0550D45F} = {8348F5A5-13B0-46FD-93A1-11978029E0ED}
 		{8A26963A-C2CC-4ECD-92F5-7B2638BB3485} = {8348F5A5-13B0-46FD-93A1-11978029E0ED}
 		{C1CA926A-1605-40C7-8399-EA966E1DE00D} = {0D029514-4C08-465F-8842-D3E59E9F5099}
-		{D43EC245-FAB0-4B78-8FEB-6250EA598063} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
 		{92FD4EEB-1BF5-4105-B55F-DB70DFB2C35E} = {23338E7F-E943-4D99-B58C-CFBB7F2F53B2}
 		{CD2D80EC-9759-4579-9041-CA0D0A3BFECB} = {92FD4EEB-1BF5-4105-B55F-DB70DFB2C35E}
 		{37092C41-C418-4C6A-B375-3D0FA6DF42A7} = {92FD4EEB-1BF5-4105-B55F-DB70DFB2C35E}
-		{2082898F-D921-42A0-AAF7-248B81EA6F77} = {26D6201D-81AD-4596-BEE5-DE42FC5EE58D}
 		{DD3E3A76-80C8-4DFD-B511-05FB86B7260C} = {A0D44B1C-DF50-4B24-91C0-BEC70DCCB1C8}
 		{2DA68224-2592-405D-A8F1-01BDDD1112EC} = {A0D44B1C-DF50-4B24-91C0-BEC70DCCB1C8}
 		{293E0410-8395-424D-B0CA-78A20391F4D3} = {A0D44B1C-DF50-4B24-91C0-BEC70DCCB1C8}
