@@ -55,12 +55,6 @@ jobs:
       with:
         global-json-file: global.json
 
-    # https://github.com/actions/setup-dotnet
-    - name: Install GitVersion
-      uses: actions/setup-gitversion@v1.0.0
-      with:
-        gitversion-version: 5.12.x
-        
     - name: Use GitVersion
       uses: gittools/actions/gitversion/execute@v0
       id:   gitversion
