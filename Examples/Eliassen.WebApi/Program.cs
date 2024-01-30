@@ -1,9 +1,7 @@
 ﻿using Eliassen.AspNetCore.JwtAuthentication.SwaggerGen;
-using Eliassen.AspNetCore.Mvc;
 using Eliassen.Common;
 using Eliassen.Common.AspNetCore;
 using Eliassen.Common.Extensions;
-using Eliassen.Common.Extensions.Hosting;
 using Eliassen.MessageQueueing;
 using Eliassen.WebApi.Provider;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -41,28 +39,27 @@ public class Program
         // Add internal services
         services.TryAllCommonExtensions(
             builder.Configuration,
-            new()
+            systemBuilder: new()
             {
             },
-            new()
+            aspNetBuilder: new()
             {
                 RequireApplicationUserId = false,
             },
-            new()
+            jwtBuilder: new()
             {
                 JwtBearerConfigurationSection = nameof(JwtBearerOptions) + authSuffix,
                 OAuth2SwaggerConfigurationSection = nameof(OAuth2SwaggerOptions) + authSuffix,
             },
-            new()
+            identityBuilder: new()
             {
                 IdentityProvider = identityProvider,
             },
-            new()
+            hostingBuilder: new()
             {
                 DisableMailKit = skipHosting,
                 DisableMessageQueueing = skipHosting,
-            }
-            );
+            });
 
         // Add services to the container.
         services.AddLogging(builder => builder
