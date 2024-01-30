@@ -23,20 +23,16 @@ public class Program
         // Add example application services 
         services.AddApplicationServices();
 
-        var identityProvider = IdentityProviders.Keycloak;
-        var authSuffix = identityProvider switch
-        {
-            IdentityProviders.Keycloak => "-kc",
-            IdentityProviders.AzureB2C => "-b2c",
-            _ => ""
-        };
+        var identityProvider = Enum.TryParse<IdentityProviders>(
+            Environment.GetEnvironmentVariable("IDENTITY_PROVIDER"), ignoreCase: true, out var ip) ? ip : IdentityProviders.AzureB2C;
+        var authProvider = identityProvider != IdentityProviders.None ? $"{identityProvider}:" : "";
         var skipHosting = bool.TryParse(Environment.GetEnvironmentVariable("SWAGGER_ONLY"), out var ret) && ret;
 
         // Add internal services
         services.TryAllCommonExtensions(
             builder.Configuration,
             systemBuilder: new()
-            {
+            {                 
             },
             aspNetBuilder: new()
             {
@@ -44,8 +40,8 @@ public class Program
             },
             jwtBuilder: new()
             {
-                JwtBearerConfigurationSection = nameof(JwtBearerOptions) + authSuffix,
-                OAuth2SwaggerConfigurationSection = nameof(OAuth2SwaggerOptions) + authSuffix,
+                JwtBearerConfigurationSection = authProvider + nameof(JwtBearerOptions),
+                OAuth2SwaggerConfigurationSection = authProvider + nameof(OAuth2SwaggerOptions),
             },
             identityBuilder: new()
             {
