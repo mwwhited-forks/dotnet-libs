@@ -4,6 +4,8 @@
 		<Company>Eliassen Group</Company>
 		<Authors>$(USERNAME)@$(USERDNSDOMAIN)</Authors>
 		<Copyright>Eliassen Group, $([System.DateTime]::Now.ToString('yyyy'))</Copyright>
+
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(LOCAL_NUGET)' != ''">
@@ -18,6 +20,10 @@
 	<PropertyGroup Condition="'$(CodeDocumentPath)' == ''">
 		<CodeDocumentPath>$(DocumentPath)code\</CodeDocumentPath>
 	</PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(SolutionDir)LICENSE" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
 	<ItemGroup>
 		<!-- GitVersion will automatically calculate and maintain the version of projects within your solution -->
