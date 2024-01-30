@@ -1,15 +1,6 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
-# variables:
-#   - name: solution
-#     value: '**/*.sln'
-#   - name: buildPlatform
-#     value: 'Any CPU'
-#   - name: nugetRepository
-#     value: 'https://pkgs.dev.azure.com/lightwellinc-clouddev/Lightwell-Nucleus/_packaging/Eliassen.Nucleus.Net.Libs/nuget/v3/index.json'
-  
-
 # name: .NET
 # https://docs.github.com/en/actions/learn-github-actions/contexts#vars-context
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#run-name
@@ -95,6 +86,12 @@ jobs:
         echo "FullSemVerLower=$fullSemVerLower" >> $GITHUB_OUTPUT
         echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> $GITHUB_OUTPUT
 
+    - name: Set Version Variables
+      shell: pwsh
+      run: |        
+        echo "FullSemVerLower=${{ steps.calculate-version.outputs.FullSemVerLower }}"
+        echo "FullSemVerLowerTag=${{ steps.calculate-version.outputs.FullSemVerLowerTag }}"
+
       # echo "##vso[build.updatebuildnumber]$fullSemVerLower"
 
     - name: Restore dependencies
@@ -104,7 +101,7 @@ jobs:
       run: >
         dotnet build
         --configuration ${{ inputs.build-configuration }}
-        --property:Version=${{ steps.calculate-version.outputs.fullSemVerLower }}
+        --property:Version=${{ steps.calculate-version.outputs.FullSemVerLower }}
         --nologo 
         --no-restore
 
