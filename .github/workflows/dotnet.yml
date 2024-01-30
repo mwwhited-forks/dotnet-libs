@@ -98,10 +98,7 @@ jobs:
       # echo "##vso[build.updatebuildnumber]$fullSemVerLower"
 
     - name: Restore dependencies
-      run: >
-        dotnet restore
-        --configuration ${{ inputs.build-configuration }}
-        --nologo
+      run: dotnet restore
 
     - name: Dotnet Build for Libraries
       run: >
