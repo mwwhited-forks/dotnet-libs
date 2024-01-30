@@ -2,8 +2,6 @@
 using Eliassen.Common;
 using Eliassen.Common.AspNetCore;
 using Eliassen.Common.Extensions;
-using Eliassen.MessageQueueing;
-using Eliassen.WebApi.Provider;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Eliassen.WebApi;
@@ -23,9 +21,7 @@ public class Program
         var services = builder.Services;
 
         // Add example application services 
-
-        services.AddTransient<IExampleMessageProvider, ExampleMessageProvider>();
-        services.AddTransient<IMessageQueueHandler, ExampleMessageProvider>();
+        services.AddApplicationServices();
 
         var identityProvider = IdentityProviders.Keycloak;
         var authSuffix = identityProvider switch
