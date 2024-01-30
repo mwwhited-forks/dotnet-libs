@@ -1,55 +1,7 @@
-﻿# Eliassen.Microsoft.B2C.Abstractions
+﻿# Eliassen.Identity.Abstractions
 
 
-## Class: Microsoft.B2C.Identity.ConfigKeys
-Contains constant keys for Azure-related configuration settings. 
-
-### Fields
-
-#### Azure.AdB2C.ClientID
-Represents the key for the Azure AD B2C client ID configuration.
-#### Azure.AdB2C.Issuer
-Represents the key for the Azure AD B2C issuer configuration.
-#### Azure.AdB2C.ClientSecret
-Represents the key for the Azure AD B2C client secret configuration.
-#### Azure.AdB2C.Tenant
-Represents the key for the Azure AD B2C tenant configuration.
-#### Azure.AdB2C.Domain
-Represents the key for the Azure AD B2C domain configuration.
-
-## Class: Microsoft.B2C.Identity.ConfigKeys.Azure
-Contains keys related to Azure configuration. 
-
-### Fields
-
-#### AdB2C.ClientID
-Represents the key for the Azure AD B2C client ID configuration.
-#### AdB2C.Issuer
-Represents the key for the Azure AD B2C issuer configuration.
-#### AdB2C.ClientSecret
-Represents the key for the Azure AD B2C client secret configuration.
-#### AdB2C.Tenant
-Represents the key for the Azure AD B2C tenant configuration.
-#### AdB2C.Domain
-Represents the key for the Azure AD B2C domain configuration.
-
-## Class: Microsoft.B2C.Identity.ConfigKeys.Azure.AdB2C
-Contains keys related to Azure Active Directory B2C configuration. 
-
-### Fields
-
-#### ClientID
-Represents the key for the Azure AD B2C client ID configuration.
-#### Issuer
-Represents the key for the Azure AD B2C issuer configuration.
-#### ClientSecret
-Represents the key for the Azure AD B2C client secret configuration.
-#### Tenant
-Represents the key for the Azure AD B2C tenant configuration.
-#### Domain
-Represents the key for the Azure AD B2C domain configuration.
-
-## Class: Microsoft.B2C.Identity.IIdentityManager
+## Class: Identity.IIdentityManager
 Represents an identity manager for managing user identities. 
 
 ### Methods
@@ -102,7 +54,7 @@ A task that represents the asynchronous operation. The task result is true if th
 
 
 
-## Class: Microsoft.B2C.Identity.IManageGraphUser
+## Class: Identity.IManageGraphUser
 Represents a service for managing users in the Microsoft Graph. 
 
 ### Methods
@@ -140,13 +92,13 @@ A task that represents the asynchronous operation. The task result is true if th
 
 
 
-## Class: Microsoft.B2C.Identity.IUserManagementProvider
+## Class: Identity.IUserManagementProvider
 Provides methods for managing user accounts. 
 
 ### Methods
 
 
-#### CreateAccountAsync(Eliassen.Microsoft.B2C.Identity.UserCreateModel)
+#### CreateAccountAsync(Eliassen.Identity.UserCreateModel)
 Creates a user account asynchronously based on the provided model. 
 
 
@@ -161,7 +113,7 @@ A task representing the asynchronous operation, containing the created user mode
 
 
 
-## Class: Microsoft.B2C.Identity.UserCreatedModel
+## Class: Identity.UserCreatedModel
 Represents the model for a user created as a result of account creation. 
 
 ### Properties
@@ -171,7 +123,7 @@ Gets or sets the username associated with the created user.
 #### Password
 Gets or sets the password associated with the created user.
 
-## Class: Microsoft.B2C.Identity.UserCreateModel
+## Class: Identity.UserCreateModel
 Represents a model for creating a user in Microsoft B2C Identity. 
 
 ### Properties
@@ -183,7 +135,7 @@ Gets or sets the last name of the user.
 #### EmailAddress
 Gets or sets the email address of the user.
 
-## Class: Microsoft.B2C.Identity.UserIdentityModel
+## Class: Identity.UserIdentityModel
 Represents a model for user identity information. 
 
 ### Properties

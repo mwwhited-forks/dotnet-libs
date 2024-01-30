@@ -315,15 +315,13 @@ Extension methods for configuring ASP.Net Core extensions and related services.
 ### Methods
 
 
-#### TryAddAspNetCoreExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Boolean,System.Boolean,System.Action{Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder})
+#### TryAddAspNetCoreExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Eliassen.AspNetCore.Mvc.AspNetCoreExtensionBuilder)
 Adds IOC configurations to support all ASP.Net Core extensions provided by this library. 
 
 
 ##### Parameters
 * *services:* The service collection to which ASP.Net Core extensions should be added.
-* *requireAuthenticatedByDefault:* Indicates whether authentication is required by default.
-* *requireApplicationUserId:* Indicates whether the application user ID is required.
-* *authorizationPolicyBuilder:* Action to configure the authorization policy builder.
+* *builder:* Indicates whether authentication is required by default.
 
 
 

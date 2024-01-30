@@ -277,30 +277,6 @@ Gets or sets the value of the command parameter.
 #### TypeId
 Gets a unique identifier for this attribute.
 
-## Class: System.Configuration.ConfigurationSectionAttribute
-Specifies the configuration section associated with a class. 
-
-Initializes a new instance of the class.
-### Properties
-
-#### ConfigurationSection
-Gets the configuration section name.
-#### TypeId
-Gets a unique identifier for this attribute.
-### Methods
-
-
-#### Constructor
-Initializes a new instance of the class.
-Specifies the configuration section associated with a class. 
-
-
-##### Parameters
-* *configurationSection:* The configuration section name.
-
-
-
-
 ## Class: System.Linq.Expressions.IExpressionTreeBuilder
 Represents a builder for constructing expression trees used in querying and filtering. 
 
@@ -1230,6 +1206,8 @@ Represents the claim for application rights.
 Represents the claim for object ID.
 #### ObjectIdentifier
 Represents the claim for object identifier.
+#### NameIdentifier
+Represents the claim for name identifier.
 
 ## Class: System.Security.Cryptography.IHash
 Simplified hash generator 

@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Eliassen.WebApi
-  version: 0.1.65.12
+  version: 0.1.65.20
 paths:
   /api/Communications/public:
     post:
@@ -401,8 +401,9 @@ components:
       description: oauth2 authentication
       flows:
         implicit:
-          authorizationUrl: http://localhost:8081/realms/local-dev/protocol/openid-connect/auth/
-          tokenUrl: http://localhost:8081/realms/local-dev/protocol/openid-connect/token
-          scopes: { }
+          authorizationUrl: https://lightwellnucleusdev.b2clogin.com/lightwellnucleusdev.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_NucAcc_Signin
+          tokenUrl: https://lightwellnucleusdev.b2clogin.com/lightwellnucleusdev.onmicrosoft.com/oauth2/v2.0/token?p=B2C_1_NucAcc_Signin
+          scopes:
+            https://lightwellnucleusdev.onmicrosoft.com/user.read/read: UserReadApiClaim
 security:
   - oauth2: [ ]

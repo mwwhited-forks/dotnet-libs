@@ -33,27 +33,6 @@ Gets the type identifier for the attribute.
 declarative attribute for labeling properties as MongoDB Collections 
 
 
-## Class: MongoDB.Extensions.DefaultMongoDatabaseSettings
-Default connection information for MongoDB databases. Duplicating this class with a different value will allow for declaring secondary connection configurations. 
-
-### Properties
-
-#### ConnectionString
-Gets or sets the connection string for the MongoDB database.
-#### DatabaseName
-Gets or sets the name of the MongoDB database.
-### Methods
-
-
-#### ToString
-Returns a string that represents the current object. 
-
-
-##### Return value
-A string that represents the current object.
-
-
-
 ## Class: MongoDB.Extensions.IMongoDatabaseFactory
 provide a centralized means to created MongoDB instances 
 
@@ -137,6 +116,27 @@ The proxied MongoDB database instance.
 Static constructor to register serializers and conventions. 
 
 
+## Class: MongoDB.Extensions.MongoDatabaseOptions
+Default connection information for MongoDB databases. Duplicating this class with a different value will allow for declaring secondary connection configurations. 
+
+### Properties
+
+#### ConnectionString
+Gets or sets the connection string for the MongoDB database.
+#### DatabaseName
+Gets or sets the name of the MongoDB database.
+### Methods
+
+
+#### ToString
+Returns a string that represents the current object. 
+
+
+##### Return value
+A string that represents the current object.
+
+
+
 ## Class: MongoDB.Extensions.MongoDatabaseRegistration
 Represents a registration of types for MongoDB databases. 
 
@@ -159,13 +159,14 @@ Common libraries to enable MongoDB Support
 ### Methods
 
 
-#### TryAddMongoServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+#### TryAddMongoServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
 Enable common infrastructure. 
 
 
 ##### Parameters
 * *services:* 
-* *config:* 
+* *configuration:* 
+* *mongoDatabaseConfigurationSection:* 
 
 
 
@@ -192,7 +193,7 @@ register MongoDatabase instance with custom configuration options
 
 #### TryAddMongoDatabase``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)
 register MongoDatabase instance that will use the 
- *See: T:Eliassen.MongoDB.Extensions.DefaultMongoDatabaseSettings*configuration options 
+ *See: T:Eliassen.MongoDB.Extensions.MongoDatabaseOptions*configuration options 
 
 
 ##### Parameters
