@@ -76,11 +76,12 @@ jobs:
         configFilePath: GitVersion.yml
     
       # https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+      # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
     - name: Set Version Variables
       id: calculate-version
       shell: pwsh
       run: |
-        $fullSemVerLower = "$(fullSemVer)".ToLower() 
+        $fullSemVerLower = "${{ steps.gitversion.outputs.fullSemVer }}".ToLower() 
         if ("${{ inputs.build-configuration }}" -eq "Debug") {
             # 0.1.58-dev-NDM-366-Test.10 => 0.1.58-debug-dev-ndm-366-test.10
             $majorParts = $fullSemVerLower.Split(".")
