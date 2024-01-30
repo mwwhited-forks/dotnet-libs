@@ -148,7 +148,7 @@ jobs:
 #   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
       run: >
         dotnet pack
-        --configuration ${{parameters.buildConfiguration}} 
+        --configuration ${{ inputs.build-configuration }}
         --no-build 
         --no-restore 
         --output $GITHUB_WORKSPACE/Packages 
@@ -168,7 +168,7 @@ jobs:
 #     custom: 'pack'
 #     projects: $(solution)
 #     arguments: >
-#       --configuration ${{parameters.buildConfiguration}} 
+#       --configuration ${{ inputs.build-configuration }}
 #       --no-build 
 #       --no-restore 
 #       --output $(Build.ArtifactStagingDirectory)/Packages 
@@ -195,7 +195,7 @@ jobs:
 #     type: 'Build'
 #     tags: |
 #         $(FullSemVerLowerTag)
-#         ${{parameters.buildConfiguration}} 
+#         ${{ inputs.build-configuration }}
     
 # # https://dina-muscanell.com/blog/set-git-tags-with-azure-devops/
 # # https://stackoverflow.com/questions/59226055/setting-git-tag-from-azure-devops-build-pipeline-on-complete
