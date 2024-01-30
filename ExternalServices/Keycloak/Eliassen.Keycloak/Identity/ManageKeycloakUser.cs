@@ -1,17 +1,16 @@
 ﻿using Eliassen.Identity.Identity;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Eliassen.Keycloak.Identity;
 
 public class ManageKeycloakUser(
     ILogger<ManageKeycloakUser> log,
-    IConfiguration config
+    IOptions<KeycloakIdentityOptions> config
         ) : IManageGraphUser, IIdentityManager
 {
     private readonly ILogger _log = log;
-    private readonly IConfiguration _config = config;
-
+    private readonly IOptions<KeycloakIdentityOptions> config = config;
 
     public Task<List<UserIdentityModel>?> GetGraphUsersByEmail(string email) =>
          throw new NotSupportedException();

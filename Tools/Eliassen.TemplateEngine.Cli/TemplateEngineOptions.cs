@@ -3,8 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Eliassen.TemplateEngine.Cli;
 
-[ConfigurationSection("TemplateEngine")]
-public class TemplateEngineSettings
+public class TemplateEngineOptions
 {
     [CommandParameter(Value = "input")]
     public string? InputFile { get; set; }

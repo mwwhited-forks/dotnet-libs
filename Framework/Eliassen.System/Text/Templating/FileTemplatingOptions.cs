@@ -5,8 +5,7 @@ namespace Eliassen.System.Text.Templating;
 /// <summary>
 /// Configuration settings for file templating engine
 /// </summary>
-[ConfigurationSection("FileTemplating")]
-public class FileTemplatingSettings
+public class FileTemplatingOptions
 {
     /// <summary>
     /// template source path

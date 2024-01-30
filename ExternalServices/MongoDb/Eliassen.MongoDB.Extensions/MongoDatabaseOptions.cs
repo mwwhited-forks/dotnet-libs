@@ -1,13 +1,10 @@
-﻿using Eliassen.System.Configuration;
-
-namespace Eliassen.MongoDB.Extensions;
+﻿namespace Eliassen.MongoDB.Extensions;
 
 /// <summary>
 /// Default connection information for MongoDB databases. Duplicating this class with a different
 /// value will allow for declaring secondary connection configurations.
 /// </summary>
-[ConfigurationSection("MongoDatabase")]
-public class DefaultMongoDatabaseSettings : IMongoSettings
+public class MongoDatabaseOptions : IMongoSettings
 {
     /// <summary>
     /// Gets or sets the connection string for the MongoDB database.

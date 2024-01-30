@@ -49,7 +49,7 @@ public class Program
 
             .TryAddMessageQueueingServices()
                 .TryAddMessageQueueingHosting()
-                .TryAddAzureStorageServices()
+                .TryAddAzureStorageServices(builder.Configuration)
                 .TryAddRabbitMQServices()
 
             .TryAddCommunicationsServices()
@@ -58,8 +58,8 @@ public class Program
                    .TryAddMailKitHosting()
 
             .TryAddIdentityServices(builder.Configuration)
-                .AddMicrosoftB2CServices(builder.Configuration) //TODO: rename this to identity management
-                .TryAddKeycloakServices()
+                .TryAddMicrosoftB2CServices(builder.Configuration)
+                .TryAddKeycloakServices(builder.Configuration)
 
             .TryAddAspNetCoreExtensions(requireApplicationUserId: false)
                 .TryAddJwtBearerServices(builder.Configuration, 

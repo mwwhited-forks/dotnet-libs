@@ -16,7 +16,7 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The service collection to which Microsoft B2C services should be added.</param>
     /// <returns>The modified service collection.</returns>
-    public static IServiceCollection AddMicrosoftB2CServices(
+    public static IServiceCollection TryAddMicrosoftB2CServices(
         this IServiceCollection services,
         IConfiguration configuration,
         string microsoftIdentityConfigurationSection = nameof(MicrosoftIdentityOptions)
