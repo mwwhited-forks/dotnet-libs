@@ -1,28 +1,211 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
+# variables:
+#   - name: solution
+#     value: '**/*.sln'
+#   - name: buildPlatform
+#     value: 'Any CPU'
+#   - name: nugetRepository
+#     value: 'https://pkgs.dev.azure.com/lightwellinc-clouddev/Lightwell-Nucleus/_packaging/Eliassen.Nucleus.Net.Libs/nuget/v3/index.json'
+  
+
 name: .NET
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  workflow_dispatch:
+    inputs:
+      build-configuration: 
+        description: 'Build Configuration'
+        required: true
+        default: 'Release'
+        type: choice
+        options:
+          - Release
+          - Debug
+      build-platform: 
+        description: 'Build Platform'
+        required: true
+        default: 'windows-latest'
+        type: choice
+        options:
+          - windows-latest
+          - ubuntu-latest
+
+  # push:
+  #   branches: 
+  #   - master
+  # pull_request:
+  #   branches:
+  #   - master
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: "${{ inputs.build-platform }}"
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
+    - uses: actions/checkout@v4.1.1
+      with:
+        clean: true
+        persist-credentials: true
+        fetch-depth: 0
+   
+    - name: Install .Net 8.0 SDK
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
+        global-json-file: global.json
+
+    # https://github.com/actions/setup-dotnet
+    - name: Install GitVersion
+      uses: actions/setup-gitversion@v1.0.1
+      with:
+        gitversion-version: 5.12.x
+        
+    - name: Use GitVersion
+      uses: gittools/actions/gitversion/execute@v0
+      id:   gitversion
+      with:
+        useConfigFile: true
+        configFilePath: GitVersion.yml
+    
+# https://github.com/GitTools/actions/blob/main/docs/examples/github/gitversion/execute/usage-examples.md#example-5
+
+    - name: Set Version Variables
+      id: calculate-version
+      run: |
+        fullSemVer=${{ steps.gitversion.outputs.GitVersion_FullSemVer }}
+        fullSemVerLower=$(echo "$fullSemVer" | awk '{print tolower($0)}')
+        echo "fullSemVer=fullSemVer"
+        echo "fullSemVerLower=$fullSemVerLower"
+        echo "::set-output name=fullSemVerLower::fullSemVerLower"
+
+# #             Write-Host "##vso[build.updatebuildnumber]$fullSemVerLower"
+# #             Write-Host "##vso[task.setvariable variable=FullSemVerLower;issecret=false]$fullSemVerLower" 
+# #             Write-Host "##vso[task.setvariable variable=FullSemVerLowerTag;issecret=false]$fullSemVerLowerTag"  
+# #             Write-Host "##vso[task.setvariable variable=TestResultsPath;issecret=false]$(Agent.TempDirectory)"  
+#         echo "::set-output name=today::$(date -I)"
+
     - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
+      run: >
+        dotnet restore
+        --configuration ${{ inputs.build-configuration }}
+        --nologo
+
+    - name: Dotnet Build for Libraries
+      run: >
+        dotnet build
+        --configuration ${{ inputs.build-configuration }}
+        --property:Version=${{ steps.calculate-version.outputs.fullSemVerLower }}
+        --nologo 
+        --no-restore
+
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: >
+        dotnet test
+        --configuration ${{ inputs.build-configuration }} 
+        --no-build 
+        --no-restore 
+        --nologo 
+        --filter "TestCategory=Unit|TestCategory=Simulate" 
+        --collect:"XPlat Code Coverage" 
+        --settings "$GITHUB_WORKSPACE\.runsettings"
+
+#     publishTestResults: true
+
+    
+# - task: DotNetCoreCLI@2
+#   displayName: Coverage Tool Install
+#   inputs:
+#     command: 'custom'
+#     custom: 'tool'
+#     arguments: >
+#       install 
+#       dotnet-coverage 
+#       --global      
+    
+# - task: DotNetCoreCLI@2
+#   displayName: Merge Test Results
+#   inputs:
+#     command: 'custom'
+#     custom: 'coverage'
+#     workingDirectory: '$(TestResultsPath)'
+#     arguments: >
+#       merge 
+#       coverage.*.xml 
+#       --recursive 
+#       --output .\Cobertura.coverage 
+#       --output-format cobertura
+     
+# - task: PublishCodeCoverageResults@1
+#   displayName: 'Publish Coverage Reports'
+#   inputs:
+#     codeCoverageTool: 'cobertura'
+#     summaryFileLocation: $(TestResultsPath)\Cobertura.coverage
+#     failIfCoverageEmpty: false 
+
+
+    - name: Package to Staging directory
+#   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+      run: >
+        dotnet pack
+        --configuration ${{parameters.buildConfiguration}} 
+        --no-build 
+        --no-restore 
+        --output $GITHUB_WORKSPACE/Packages 
+        --property:Version=${{ steps.calculate-version.outputs.fullSemVerLower }}
+        
+#     verbosityRestore: Minimal
+#     verbosityPack: Minimal
+#     feedsToUse: select
+#     vstsFeed: personalnugetfeed
+#     nuGetFeedType: internal
+#     includeNuGetOrg: true
+
+# - task: DotNetCoreCLI@2
+#   displayName: Package to Staging directory
+#   inputs:
+#     command: custom
+#     custom: 'pack'
+#     projects: $(solution)
+#     arguments: >
+#       --configuration ${{parameters.buildConfiguration}} 
+#       --no-build 
+#       --no-restore 
+#       --output $(Build.ArtifactStagingDirectory)/Packages 
+#       --property:Version=$(FullSemVerLower)
+
+# - script: |
+#         dotnet nuget push --skip-duplicate --source $(nugetRepository) --api-key az $(Build.ArtifactStagingDirectory)\Packages\*.nupkg
+#   displayName: 'NuGet Push Packages'
+#   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) 
+
+# - task: PublishSymbols@2
+#   displayName: 'Publish Symbols'
+#   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+#   inputs:
+#     SearchPattern: '**/bin/**/*.pdb'
+#     IndexSources: false
+#     SymbolServerType: 'TeamServices'
+#     TreatNotIndexedAsWarning: true
+    
+# - task: tagBuildOrRelease@0
+#   displayName: 'Tag Build'
+#   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+#   inputs:
+#     type: 'Build'
+#     tags: |
+#         $(FullSemVerLowerTag)
+#         ${{parameters.buildConfiguration}} 
+    
+# # https://dina-muscanell.com/blog/set-git-tags-with-azure-devops/
+# # https://stackoverflow.com/questions/59226055/setting-git-tag-from-azure-devops-build-pipeline-on-complete
+# # make sure the build service account is granted "Create Tag" and "Contribute" under repository security
+# - script: |
+#           git config --global user.name "AzureDevOps Agent"
+#           git tag "$(FullSemVerLowerTag)" --force
+#           git push origin "$(FullSemVerLowerTag)" --force
+#           echo "Tagging $(Build.Repository.Name) with $(FullSemVerLowerTag)"
+#   displayName: 'Tag Code'
+#   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+
+# #TODO: add push to artifact store/nuget 
