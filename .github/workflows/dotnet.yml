@@ -10,7 +10,9 @@
 #     value: 'https://pkgs.dev.azure.com/lightwellinc-clouddev/Lightwell-Nucleus/_packaging/Eliassen.Nucleus.Net.Libs/nuget/v3/index.json'
   
 
-name: .NET
+# name: .NET
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#run-name
+run-name: .NET ${{ inputs.build-configuration }}/${{ inputs.build-platform }} by @${{ github.actor }}
 
 on:
   # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpull_requestpull_request_targetbranchesbranches-ignore
@@ -76,8 +78,8 @@ jobs:
     - name: Set Version Variables
       id: calculate-version
       run: |
-        export fullSemVer=${{ steps.gitversion.outputs.GitVersion_FullSemVer }}
-        export fullSemVerLower=$(echo "$fullSemVer" | awk '{print tolower($0)}')
+        $fullSemVer=${{ steps.gitversion.outputs.GitVersion_FullSemVer }}
+        $fullSemVerLower=$(echo "$fullSemVer" | awk '{print tolower($0)}')
         echo "fullSemVer=$fullSemVer"
         echo "fullSemVerLower=$fullSemVerLower"
         echo "::set-output fullSemVerLower=$fullSemVerLower" >> $GITHUB_OUTPUT
