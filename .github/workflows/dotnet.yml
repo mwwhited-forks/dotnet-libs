@@ -85,12 +85,16 @@ jobs:
         echo "FullSemVerLowerTag=$fullSemVerLowerTag"
         echo "FullSemVerLower=$fullSemVerLower" >> $GITHUB_OUTPUT
         echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> $GITHUB_OUTPUT
+        echo "FullSemVerLower=$fullSemVerLower" >> $GITHUB_ENV
+        echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> $GITHUB_ENV
 
     - name: Set Version Variables
       shell: pwsh
       run: |        
-        echo "FullSemVerLower=${{ steps.calculate-version.outputs.FullSemVerLower }}"
+        echo "FullSemVerLower   =${{ steps.calculate-version.outputs.FullSemVerLower }}"
         echo "FullSemVerLowerTag=${{ steps.calculate-version.outputs.FullSemVerLowerTag }}"
+        echo "FullSemVerLowe   r=${{ env.FullSemVerLower }}"
+        echo "FullSemVerLowerTag=${{ env.FullSemVerLowerTag }}"
 
       # echo "##vso[build.updatebuildnumber]$fullSemVerLower"
 
