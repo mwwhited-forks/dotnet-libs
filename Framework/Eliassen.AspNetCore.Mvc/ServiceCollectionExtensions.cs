@@ -29,17 +29,16 @@ public static class ServiceCollectionExtensions
     /// Adds IOC configurations to support all ASP.Net Core extensions provided by this library.
     /// </summary>
     /// <param name="services">The service collection to which ASP.Net Core extensions should be added.</param>
-    /// <param name="requireAuthenticatedByDefault">Indicates whether authentication is required by default.</param>
-    /// <param name="requireApplicationUserId">Indicates whether the application user ID is required.</param>
-    /// <param name="authorizationPolicyBuilder">Action to configure the authorization policy builder.</param>
+    /// <param name="builder">Indicates whether authentication is required by default.</param>
     /// <returns>The modified service collection.</returns>
     public static IServiceCollection TryAddAspNetCoreExtensions(
         this IServiceCollection services,
-        bool requireAuthenticatedByDefault = UserAuthorizationRequirement.RequireAuthenticatedByDefault,
-        bool requireApplicationUserId = UserAuthorizationRequirement.RequireApplicationUserIdDefault,
-        Action<AuthorizationPolicyBuilder>? authorizationPolicyBuilder = null
+
+        AspNetCoreExtensionBuilder? builder = default
     )
     {
+        builder ??= new();
+
         services.TryAddCommonOpenApiExtensions();
         services.TryAddAspNetCoreSearchQuery();
 
@@ -55,9 +54,12 @@ public static class ServiceCollectionExtensions
 
         services.AddSwaggerGen();
 
-        if (requireAuthenticatedByDefault)
+        if (builder.RequireAuthenticatedByDefault)
         {
-            services.AddRequireAuthenticatedUser(requireApplicationUserId, authorizationPolicyBuilder);
+            services.AddRequireAuthenticatedUser(
+                builder.RequireAuthenticatedByDefault,
+                builder.AuthorizationPolicyBuilder
+                );
         }
 
         return services;

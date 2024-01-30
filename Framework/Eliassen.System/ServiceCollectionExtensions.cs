@@ -1,7 +1,4 @@
-﻿using Eliassen.System.Linq.Expressions;
-using Eliassen.System.Linq.Search;
-using Eliassen.System.Net.Mime;
-using Eliassen.System.ResponseModel;
+﻿using Eliassen.System.Net.Mime;
 using Eliassen.System.Security.Cryptography;
 using Eliassen.System.Text;
 using Eliassen.System.Text.Json.Serialization;
@@ -23,22 +20,22 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services"></param>
     /// <param name="config"></param>
-    /// <param name="defaultHashType"></param>
-    /// <param name="defaultSerializerType"></param>
+    /// <param name="builder"></param>
     /// <returns></returns>
     public static IServiceCollection TryAddSystemExtensions(
         this IServiceCollection services,
         IConfiguration config,
-        string fileTemplatingConfigurationSection = nameof(FileTemplatingOptions),
-        HashTypes defaultHashType = HashTypes.Md5,
-        SerializerTypes defaultSerializerType = SerializerTypes.Json
-        ) =>
-        services
-        .TryAddSearchQueryExtensions()
-        .TryTemplatingExtensions(config, fileTemplatingConfigurationSection)
-        .TrySecurityExtensions(defaultHashType)
-        .TrySerializerExtensions(defaultSerializerType)
+        SystemExtensionBuilder? builder = default
+        )
+    {
+        builder ??= new();
+        services.TryAddSearchQueryExtensions();
+        services.TryTemplatingExtensions(config, builder.FileTemplatingConfigurationSection);
+        services.TrySecurityExtensions(builder.DefaultHashType);
+        services.TrySerializerExtensions(builder.DefaultSerializerType);
         ;
+        return services;
+    }
 
     /// <summary>
     /// Add support for shared security extensions
@@ -116,7 +113,7 @@ public static class ServiceCollectionExtensions
     /// Add support for shared Templating
     /// </summary>
     /// <param name="services"></param>
-    /// <param name="configuration"></param>
+    /// <param name="configurationSection"></param>
     /// <returns></returns>
     public static IServiceCollection TryTemplatingExtensions(
         this IServiceCollection services,
