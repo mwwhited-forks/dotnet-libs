@@ -75,21 +75,26 @@ jobs:
         useConfigFile: true
         configFilePath: GitVersion.yml
     
-    # https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+      # https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
     - name: Set Version Variables
       id: calculate-version
+      shell: pwsh
       run: |
-        $fullSemVer=$GitVersion_FullSemVer
-        $fullSemVerLower=$(echo "$GitVersion_FullSemVer" | awk '{print tolower($0)}')
-        echo "fullSemVer=$fullSemVer"
-        echo "fullSemVerLower=$fullSemVerLower"
-        echo "fullSemVerLower=$fullSemVerLower" >> $GITHUB_OUTPUT
+        $fullSemVerLower = "$(fullSemVer)".ToLower() 
+        if ("${{ inputs.build-configuration }}" -eq "Debug") {
+            # 0.1.58-dev-NDM-366-Test.10 => 0.1.58-debug-dev-ndm-366-test.10
+            $majorParts = $fullSemVerLower.Split(".")
+            $minorParts = $majorParts[2].Split("-", 2)
+            $majorParts[2] = $minorParts[0] + "-debug-" + $minorParts[1]
+            $fullSemVerLower = [System.String]::Join(".", $majorParts)
+        }
+        $fullSemVerLowerTag = ("libs-"+$fullSemVerLower).ToLower()  
+        echo "FullSemVerLower=$fullSemVerLower"
+        echo "FullSemVerLowerTag=$fullSemVerLowerTag"
+        echo "FullSemVerLower=$fullSemVerLower" >> $GITHUB_OUTPUT
+        echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> $GITHUB_OUTPUT
 
-# #             Write-Host "##vso[build.updatebuildnumber]$fullSemVerLower"
-# #             Write-Host "##vso[task.setvariable variable=FullSemVerLower;issecret=false]$fullSemVerLower" 
-# #             Write-Host "##vso[task.setvariable variable=FullSemVerLowerTag;issecret=false]$fullSemVerLowerTag"  
-# #             Write-Host "##vso[task.setvariable variable=TestResultsPath;issecret=false]$(Agent.TempDirectory)"  
-#         echo "::set-output name=today::$(date -I)"
+      # echo "##vso[build.updatebuildnumber]$fullSemVerLower"
 
     - name: Restore dependencies
       run: >
