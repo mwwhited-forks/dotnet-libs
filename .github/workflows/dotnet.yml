@@ -44,17 +44,26 @@ jobs:
     runs-on: "${{ inputs.build-platform }}"
 
     steps:
+      # https://github.com/actions/checkout
     - uses: actions/checkout@v4.1.1
       with:
         clean: true
         persist-credentials: true
         fetch-depth: 0
-   
+
+      # https://github.com/actions/setup-dotnet
     - name: Install .Net 8.0 SDK
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 8.0.x        
 
+      # https://github.com/GitTools/actions/blob/main/docs/examples/github/gitversion/setup/usage-examples.md
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v0
+      with:
+        versionSpec: '5.x'  
+
+      # https://github.com/GitTools/actions/blob/main/docs/examples/github/gitversion/execute/usage-examples.md 
     - name: Use GitVersion
       uses: gittools/actions/gitversion/execute@v0
       id:   gitversion
@@ -62,8 +71,6 @@ jobs:
         useConfigFile: true
         configFilePath: GitVersion.yml
     
-# https://github.com/GitTools/actions/blob/main/docs/examples/github/gitversion/execute/usage-examples.md#example-5
-
     - name: Set Version Variables
       id: calculate-version
       run: |
