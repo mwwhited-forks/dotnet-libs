@@ -9,8 +9,18 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Eliassen.Common.Extensions;
 
+/// <summary>
+/// Provides extension methods for configuring common external services in the <see cref="IServiceCollection"/>.
+/// </summary>
 public static class ServiceCollectionExtensions
 {
+    /// <summary>
+    /// Tries to add common external services to the specified <see cref="IServiceCollection"/>.
+    /// </summary>
+    /// <param name="services">The <see cref="IServiceCollection"/> instance.</param>
+    /// <param name="configuration">The configuration containing settings for external services.</param>
+    /// <param name="builder">Optional builder for configuring identity extensions. Default is <c>null</c>.</param>
+    /// <returns>The updated <see cref="IServiceCollection"/> instance.</returns>
     public static IServiceCollection TryCommonExternalExtensions(
         this IServiceCollection services,
         IConfiguration configuration,
