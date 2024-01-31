@@ -68,9 +68,6 @@ jobs:
       with:
         useConfigFile: true
         configFilePath: GitVersion.yml
-
-    - name: get variables
-      run: env            
     
       # https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
       # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
@@ -82,7 +79,10 @@ jobs:
         $fullSemVerLower = "${{ steps.gitversion.outputs.fullSemVer }}".ToLower() 
         if ("${{ inputs.build-configuration }}" -eq "Debug") {
             $fullSemVerLower = "${{ steps.gitversion.outputs.majorMinorPatch }}${{ steps.gitversion.outputs.preReleaseLabelWithDash }}-debug.${{ steps.gitversion.outputs.preReleaseNumber }}"
-        }
+        }        
+        echo "GITHUB_WORKSPACE=${{ env.GITHUB_WORKSPACE }}"
+        echo "GITHUB_WORKSPACE=$env:GITHUB_WORKSPACE"
+        echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
         $fullSemVerLowerTag = ("libs-"+$fullSemVerLower).ToLower()  
         echo "FullSemVerLower=$fullSemVerLower"
         echo "FullSemVerLowerTag=$fullSemVerLowerTag"
@@ -92,8 +92,8 @@ jobs:
         echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> "$env:GITHUB_ENV"
         echo "RUN_NAME=$fullSemVerLowerTag" >> "$env:GITHUB_ENV"
 
-    - name: get variables
-      run: env      
+    # - name: get variables
+    #   run: env      
   
     - name: Restore dependencies
       run: dotnet restore
