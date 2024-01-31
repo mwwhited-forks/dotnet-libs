@@ -8,11 +8,11 @@
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 
-		<PackageReadmeFile>Readme.Handlebars.Extensions.md</PackageReadmeFile>
+		<PackageReadmeFile>Readme.Handlebars.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="Readme.Handlebars.Extensions.md" Pack="true" PackagePath="\" />
+		<None Include="Readme.Handlebars.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 	<ItemGroup>

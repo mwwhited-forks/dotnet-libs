@@ -1,9 +1,10 @@
 ﻿using Eliassen.Extensions;
+using Eliassen.MongoDB.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace Eliassen.MongoDB.Extensions;
+namespace Eliassen.MongoDB;
 
 /// <summary>
 /// Common libraries to enable MongoDB Support
@@ -53,5 +54,5 @@ public static class ServiceCollectionExtensions
     /// <param name="services"></param>
     /// <returns></returns>
     public static IServiceCollection TryAddMongoDatabase<TDatabase>(this IServiceCollection services)
-        where TDatabase : class => TryAddMongoDatabase<TDatabase, MongoDatabaseOptions>(services);
+        where TDatabase : class => services.TryAddMongoDatabase<TDatabase, MongoDatabaseOptions>();
 }

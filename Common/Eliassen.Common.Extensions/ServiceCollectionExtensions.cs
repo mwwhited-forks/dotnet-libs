@@ -2,7 +2,7 @@
 using Eliassen.Keycloak;
 using Eliassen.MailKit;
 using Eliassen.Microsoft.B2C;
-using Eliassen.MongoDB.Extensions;
+using Eliassen.MongoDB;
 using Eliassen.RabbitMQ;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
