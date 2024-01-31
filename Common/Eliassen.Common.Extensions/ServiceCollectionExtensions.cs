@@ -25,8 +25,13 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryCommonExternalExtensions(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        IdentityExtensionBuilder? identityBuilder,
+        ExternalExtensionBuilder? externalBuilder
+#else
         IdentityExtensionBuilder? identityBuilder = default,
         ExternalExtensionBuilder? externalBuilder = default
+#endif
     )
     {
         identityBuilder ??= new();

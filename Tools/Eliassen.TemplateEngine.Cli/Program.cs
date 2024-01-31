@@ -22,7 +22,7 @@ public class Program
 
                 services.AddHostedService<TemplateEngineService>();
 
-                services.TryAddSystemExtensions(context.Configuration);
+                services.TryAddSystemExtensions(context.Configuration, new());
                 services.TryAddHandlebarServices();
             })
             .StartAsync();

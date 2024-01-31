@@ -21,7 +21,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddMongoServices(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        string mongoDatabaseConfigurationSection
+#else
         string mongoDatabaseConfigurationSection = nameof(MongoDatabaseOptions)
+#endif
         )
     {
         services.Configure<MongoDatabaseOptions>(options => configuration.Bind(mongoDatabaseConfigurationSection, options));

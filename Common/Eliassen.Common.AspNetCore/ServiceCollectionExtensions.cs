@@ -21,8 +21,13 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryCommonAspNetCoreExtensions(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        AspNetCoreExtensionBuilder? aspNetBuilder,
+        JwtExtensionBuilder? jwtBuilder
+#else
         AspNetCoreExtensionBuilder? aspNetBuilder = default,
         JwtExtensionBuilder? jwtBuilder = default
+#endif
     )
     {
         // Add common ASP.NET Core extensions

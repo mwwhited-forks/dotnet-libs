@@ -29,12 +29,21 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAllCommonExtensions(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        SystemExtensionBuilder? systemBuilder,
+        AspNetCoreExtensionBuilder? aspNetBuilder,
+        JwtExtensionBuilder? jwtBuilder,
+        IdentityExtensionBuilder? identityBuilder,
+        ExternalExtensionBuilder? externalBuilder,
+        HostingBuilder? hostingBuilder
+#else
         SystemExtensionBuilder? systemBuilder = default,
         AspNetCoreExtensionBuilder? aspNetBuilder = default,
         JwtExtensionBuilder? jwtBuilder = default,
         IdentityExtensionBuilder? identityBuilder = default,
         ExternalExtensionBuilder? externalBuilder = default,
         HostingBuilder? hostingBuilder = default
+#endif
     )
     {
         // Add all common extensions

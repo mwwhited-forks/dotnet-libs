@@ -20,7 +20,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryCommonHosting(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        HostingBuilder? builder
+#else
         HostingBuilder? builder = default
+#endif
     )
     {
         builder ??= new();

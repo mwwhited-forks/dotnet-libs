@@ -23,7 +23,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryCommonExtensions(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        SystemExtensionBuilder? builder
+#else
         SystemExtensionBuilder? builder = default
+#endif
     )
     {
         // Add system extensions

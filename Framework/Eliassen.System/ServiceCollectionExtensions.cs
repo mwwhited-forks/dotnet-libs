@@ -26,7 +26,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddSystemExtensions(
         this IServiceCollection services,
         IConfiguration config,
+#if DEBUG
+        SystemExtensionBuilder? builder
+#else
         SystemExtensionBuilder? builder = default
+#endif
         )
     {
         builder ??= new();
@@ -46,7 +50,11 @@ public static class ServiceCollectionExtensions
     /// <returns></returns>
     public static IServiceCollection TrySecurityExtensions(
         this IServiceCollection services,
+#if DEBUG
+        HashTypes defaultHashType
+#else
         HashTypes defaultHashType = HashTypes.Md5
+#endif
         )
     {
         services.TryAddSingleton(sp => sp.GetRequiredKeyedService<IHash>(defaultHashType));
@@ -70,7 +78,11 @@ public static class ServiceCollectionExtensions
     /// <returns></returns>
     public static IServiceCollection TrySerializerExtensions(
         this IServiceCollection services,
+#if DEBUG
+        SerializerTypes defaultSerializerType
+#else
         SerializerTypes defaultSerializerType = SerializerTypes.Json
+#endif
         )
     {
         services.TryAddSingleton(sp => sp.GetRequiredKeyedService<ISerializer>(defaultSerializerType));
@@ -120,7 +132,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryTemplatingExtensions(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        string configurationSection
+#else
         string configurationSection = nameof(FileTemplatingOptions)
+#endif
         )
     {
         services.TryAddTransient<ITemplateEngine, TemplateEngine>();

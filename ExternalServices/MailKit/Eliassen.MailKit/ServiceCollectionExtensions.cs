@@ -22,8 +22,13 @@ public static class ServiceCollectionExtensions
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddMailKitExtensions(this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        string smtpConfigurationSection,
+        string imapConfigurationSection
+#else
         string smtpConfigurationSection = nameof(MailKitSmtpClientOptions),
         string imapConfigurationSection = nameof(MailKitImapClientOptions)
+#endif
         )
     {
         services.TryAddTransient<ICommunicationSender<EmailMessageModel>, MailKitProvider>();

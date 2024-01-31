@@ -1,4 +1,5 @@
-﻿using Eliassen.System;
+﻿using Eliassen.MongoDB.Extensions;
+using Eliassen.System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -17,15 +18,15 @@ public class MongoDBTests
         var configBuilder = new ConfigurationBuilder()
             .AddInMemoryCollection(new Dictionary<string, string?>
             {
-                { "MongoDatabase:DatabaseName" , "Test"},
-                { "MongoDatabase:ConnectionString" , "mongodb://localhost:27017?collation={locale:'en_US',caseLevel:false,strength:2 }"},
+                { "MongoDatabaseOptions:DatabaseName" , "Test"},
+                { "MongoDatabaseOptions:ConnectionString" , "mongodb://localhost:27017?collation={locale:'en_US',caseLevel:false,strength:2 }"},
             })
             ;
         var config = configBuilder.Build();
 
         var services = new ServiceCollection();
-        services.TryAddMongoServices(config);
-        services.TryAddSystemExtensions(config);
+        services.TryAddMongoServices(config, nameof(MongoDatabaseOptions));
+        services.TryAddSystemExtensions(config, new());
 
         services.TryAddMongoDatabase<ITestMongoDatabase>();
         var provider = services.BuildServiceProvider();
@@ -92,8 +93,8 @@ public class MongoDBTests
         var config = configBuilder.Build();
 
         var services = new ServiceCollection();
-        services.TryAddMongoServices(config);
-        services.TryAddSystemExtensions(config);
+        services.TryAddMongoServices(config, "MongoDatabase");
+        services.TryAddSystemExtensions(config, new());
 
         services.TryAddMongoDatabase<ITestMongoDatabase>();
         var provider = services.BuildServiceProvider();

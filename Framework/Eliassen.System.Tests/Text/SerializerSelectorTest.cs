@@ -44,7 +44,7 @@ public class SerializerSelectorTest
         var config = new ConfigurationBuilder().Build();
         var services = new ServiceCollection()
             .AddTransient<IConfiguration>(_ => config)
-            .TryAddSystemExtensions(config)
+            .TryAddSystemExtensions(config, new())
             .BuildServiceProvider()
             ;
         var serializer = services.GetRequiredKeyedService<ISerializer>(targetSerializerType);

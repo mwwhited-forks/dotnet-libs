@@ -22,7 +22,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddAzureStorageServices(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        string azureBlobContainerConfigurationSection
+#else
         string azureBlobContainerConfigurationSection = nameof(AzureBlobContainerOptions)
+#endif
         ) =>
         services
             .TryAddAzureStorageBlobServices(configuration, azureBlobContainerConfigurationSection)
@@ -39,7 +43,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddAzureStorageBlobServices(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        string configurationSection
+#else
         string configurationSection = nameof(AzureBlobContainerOptions)
+#endif
         )
     {
         services.TryAddTransient<IDocumentProvider, BlobContainerProvider>();

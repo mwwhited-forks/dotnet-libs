@@ -33,8 +33,11 @@ public static class ServiceCollectionExtensions
     /// <returns>The modified service collection.</returns>
     public static IServiceCollection TryAddAspNetCoreExtensions(
         this IServiceCollection services,
-
+#if DEBUG
+        AspNetCoreExtensionBuilder? builder
+#else
         AspNetCoreExtensionBuilder? builder = default
+#endif
     )
     {
         builder ??= new();

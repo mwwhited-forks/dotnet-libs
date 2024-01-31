@@ -21,7 +21,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddMicrosoftB2CServices(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        string microsoftIdentityConfigurationSection
+#else
         string microsoftIdentityConfigurationSection = nameof(MicrosoftIdentityOptions)
+#endif
         )
     {
         services.TryAddTransient<IIdentityManager, ManageGraphUser>();

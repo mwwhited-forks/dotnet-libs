@@ -23,7 +23,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddKeycloakServices(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        string keycloakIdentityConfigurationSection
+#else
         string keycloakIdentityConfigurationSection = nameof(KeycloakIdentityOptions)
+#endif
     )
     {
         services.TryAddTransient<IIdentityManager, ManageKeycloakUser>();
