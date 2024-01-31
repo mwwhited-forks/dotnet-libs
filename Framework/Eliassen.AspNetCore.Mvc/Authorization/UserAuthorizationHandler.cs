@@ -1,7 +1,9 @@
 ﻿using Eliassen.System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
+#if DEBUG 
 using Microsoft.IdentityModel.Logging;
+#endif
 using System.Threading.Tasks;
 
 namespace Eliassen.AspNetCore.Mvc.Authorization;
