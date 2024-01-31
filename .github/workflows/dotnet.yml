@@ -80,9 +80,7 @@ jobs:
         if ("${{ inputs.build-configuration }}" -eq "Debug") {
             $fullSemVerLower = "${{ steps.gitversion.outputs.majorMinorPatch }}${{ steps.gitversion.outputs.preReleaseLabelWithDash }}-debug.${{ steps.gitversion.outputs.preReleaseNumber }}"
         }        
-        echo "GITHUB_WORKSPACE=${{ env.GITHUB_WORKSPACE }}"
         echo "GITHUB_WORKSPACE=$env:GITHUB_WORKSPACE"
-        echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
         $fullSemVerLowerTag = ("libs-"+$fullSemVerLower).ToLower()  
         echo "FullSemVerLower=$fullSemVerLower"
         echo "FullSemVerLowerTag=$fullSemVerLowerTag"
@@ -115,7 +113,7 @@ jobs:
         --nologo 
         --filter "TestCategory=Unit|TestCategory=Simulate" 
         --collect:"XPlat Code Coverage" 
-        --settings "${{ env.GITHUB_WORKSPACE }}\.runsettings"
+        --settings "$env:GITHUB_WORKSPACE\.runsettings"
 
 #     publishTestResults: true
 
@@ -152,34 +150,16 @@ jobs:
 
 
     - name: Package to Staging directory
-#   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
       run: >
         dotnet pack
         --configuration ${{ inputs.build-configuration }}
         --no-build 
         --no-restore 
-        --output "${{ env.GITHUB_WORKSPACE }}/Packages"
+        --output "$env:GITHUB_WORKSPACE/Packages"
         --property:Version=${{ steps.calculate-version.outputs.fullSemVerLower }}
-        
-#     verbosityRestore: Minimal
-#     verbosityPack: Minimal
-#     feedsToUse: select
-#     vstsFeed: personalnugetfeed
-#     nuGetFeedType: internal
-#     includeNuGetOrg: true
 
-# - task: DotNetCoreCLI@2
-#   displayName: Package to Staging directory
-#   inputs:
-#     command: custom
-#     custom: 'pack'
-#     projects: $(solution)
-#     arguments: >
-#       --configuration ${{ inputs.build-configuration }}
-#       --no-build 
-#       --no-restore 
-#       --output $(Build.ArtifactStagingDirectory)/Packages 
-#       --property:Version=$(FullSemVerLower)
+##TODO: Attach to build/Create release        
+
 
 # - script: |
 #         dotnet nuget push --skip-duplicate --source $(nugetRepository) --api-key az $(Build.ArtifactStagingDirectory)\Packages\*.nupkg
@@ -214,5 +194,3 @@ jobs:
 #           echo "Tagging $(Build.Repository.Name) with $(FullSemVerLowerTag)"
 #   displayName: 'Tag Code'
 #   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-
-# #TODO: add push to artifact store/nuget 
