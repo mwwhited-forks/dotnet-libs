@@ -9,7 +9,7 @@ ECHO PublishPath %PublishPath%
 
 SET TARGET_SOLUTION=Eliassen.Libs.sln
 SET TARGET_SOLUTION_NAME=Nucleus.Libs
-SET TARGET_WEB_PROJECT=.\Examples\Eliassen.WebApi
+SET TARGET_WEB_PROJECT=.\Examples\Eliassen.WebApi\Eliassen.WebApi.csproj
 
 ECHO "restore current .net tools"
 dotnet tool restore
@@ -34,7 +34,7 @@ IF NOT "%TEST_ERR%"=="0" (
 )
 
 ECHO "Generate - swagger docs"
-dotnet msbuild /T:BuildSwagger %TARGET_WEB_PROJECT%
+dotnet build /T:BuildSwagger %TARGET_WEB_PROJECT%
 
 ECHO "Generate Service-Endpoints"
 REM dotnet templateengine ^
