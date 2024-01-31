@@ -6,6 +6,9 @@
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#run-name
 run-name: .NET ${{ inputs.build-configuration }}/${{ inputs.build-platform }} by @${{ github.actor }}
 
+# $GITHUB_WORKSPACE
+# $GITHUB_PATH
+
 on:
   # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpull_requestpull_request_targetbranchesbranches-ignore
   workflow_dispatch:
@@ -68,6 +71,7 @@ jobs:
     
       # https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
       # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
+      # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions?tool=powershell
     - name: Set Version Variables
       id: calculate-version
       shell: pwsh
@@ -85,21 +89,11 @@ jobs:
         echo "FullSemVerLowerTag=$fullSemVerLowerTag"
         echo "FullSemVerLower=$fullSemVerLower" >> "$env:GITHUB_OUTPUT"
         echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> "$env:GITHUB_OUTPUT"
-        echo "FullSemVerLower=$fullSemVerLower" >> "$env:GITHUB_ENV"
-        echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> "$env:GITHUB_ENV"
+        echo "RUN_NAME=$fullSemVerLowerTag" >> "$env:GITHUB_ENV"
 
-    - name: Set Version Variables
-      shell: pwsh
-      run: |        
-        echo "FullSemVerLower   =${{ steps.calculate-version.outputs.FullSemVerLower }}"
-        echo "FullSemVerLowerTag=${{ steps.calculate-version.outputs.FullSemVerLowerTag }}"
-        echo "FullSemVerLower   =${{ env.FullSemVerLower }}"
-        echo "FullSemVerLowerTag=${{ env.FullSemVerLowerTag }}"
-        echo "FullSemVerLower   =$FullSemVerLower"
-        echo "FullSemVerLowerTag=$FullSemVerLowerTag"
-
-      # echo "##vso[build.updatebuildnumber]$fullSemVerLower"
-
+    - name: get variables
+      run: env      
+  
     - name: Restore dependencies
       run: dotnet restore
 
@@ -110,7 +104,7 @@ jobs:
         --property:Version=${{ steps.calculate-version.outputs.FullSemVerLower }}
         --nologo 
         --no-restore
-
+        
     - name: Test
       run: >
         dotnet test
