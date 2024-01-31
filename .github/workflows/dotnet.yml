@@ -6,10 +6,17 @@
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#run-name
 run-name: .NET ${{ inputs.build-configuration }}/${{ inputs.build-platform }} by @${{ github.actor }}
 
-# $GITHUB_WORKSPACE
-# $GITHUB_PATH
-
 on:
+  push:
+    branches:
+    - master
+    - main
+
+  pull_request:
+    branches:
+    - master
+    - main
+
   # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpull_requestpull_request_targetbranchesbranches-ignore
   workflow_dispatch:
     inputs:
@@ -29,13 +36,7 @@ on:
         options:
           - windows-latest
           - ubuntu-latest
-
-  # push:
-  #   branches: 
-  #   - master
-  # pull_request:
-  #   branches:
-  #   - master
+          - macos-latest
 
 jobs:
   build:
@@ -81,14 +82,9 @@ jobs:
             $fullSemVerLower = "${{ steps.gitversion.outputs.majorMinorPatch }}${{ steps.gitversion.outputs.preReleaseLabelWithDash }}-debug.${{ steps.gitversion.outputs.preReleaseNumber }}"
         }        
         echo "GITHUB_WORKSPACE=$env:GITHUB_WORKSPACE"
-        $fullSemVerLowerTag = ("libs-"+$fullSemVerLower).ToLower()  
         echo "FullSemVerLower=$fullSemVerLower"
-        echo "FullSemVerLowerTag=$fullSemVerLowerTag"
         echo "FullSemVerLower=$fullSemVerLower" >> "$env:GITHUB_OUTPUT"
-        echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> "$env:GITHUB_OUTPUT"
         echo "FullSemVerLower=$fullSemVerLower" >> "$env:GITHUB_ENV"
-        echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> "$env:GITHUB_ENV"
-        echo "RUN_NAME=$fullSemVerLowerTag" >> "$env:GITHUB_ENV"
 
     # - name: get variables
     #   run: env      
@@ -148,7 +144,6 @@ jobs:
 #     summaryFileLocation: $(TestResultsPath)\Cobertura.coverage
 #     failIfCoverageEmpty: false 
 
-
     - name: Package to Staging directory
       run: >
         dotnet pack
@@ -175,15 +170,16 @@ jobs:
 #     SymbolServerType: 'TeamServices'
 #     TreatNotIndexedAsWarning: true
     
-# - task: tagBuildOrRelease@0
-#   displayName: 'Tag Build'
-#   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-#   inputs:
-#     type: 'Build'
-#     tags: |
-#         $(FullSemVerLowerTag)
-#         ${{ inputs.build-configuration }}
-    
+
+    - name: Commit Tag
+      if: github.ref != 'refs/heads/master' && github.event_name != 'pull_request'
+      uses: EndBug/add-and-commit@v5
+      with:
+        message: '${{ steps.calculate-version.outputs.FullSemVerLower }} - ${{ inputs.build-configuration }}'
+        tag: ${{ steps.calculate-version.outputs.FullSemVerLower }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
 # # https://dina-muscanell.com/blog/set-git-tags-with-azure-devops/
 # # https://stackoverflow.com/questions/59226055/setting-git-tag-from-azure-devops-build-pipeline-on-complete
 # # make sure the build service account is granted "Create Tag" and "Contribute" under repository security
