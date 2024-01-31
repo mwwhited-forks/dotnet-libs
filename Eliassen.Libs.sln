@@ -169,6 +169,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "keycloak-import", "keycloak
 		Scripts\keycloak-import\readme.keycloak.md = Scripts\keycloak-import\readme.keycloak.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.AspNetCore.Tests", "Framework\Eliassen.AspNetCore.Tests\Eliassen.AspNetCore.Tests.csproj", "{F82EED08-8712-4B19-99D2-BD66F8A74C26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -355,6 +357,10 @@ Global
 		{A932AB8D-FE66-40CA-9300-F1B107FBD5EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A932AB8D-FE66-40CA-9300-F1B107FBD5EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A932AB8D-FE66-40CA-9300-F1B107FBD5EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F82EED08-8712-4B19-99D2-BD66F8A74C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F82EED08-8712-4B19-99D2-BD66F8A74C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F82EED08-8712-4B19-99D2-BD66F8A74C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F82EED08-8712-4B19-99D2-BD66F8A74C26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -415,6 +421,7 @@ Global
 		{A932AB8D-FE66-40CA-9300-F1B107FBD5EF} = {667F54FE-8F90-46F6-87CF-694714720046}
 		{44A196A6-FC28-4643-9ED0-301CE450A4DD} = {6BEF035F-ABDF-47D9-B230-B88FEE87B53B}
 		{CB66E814-14F9-4665-BEEA-61BF24354307} = {44A196A6-FC28-4643-9ED0-301CE450A4DD}
+		{F82EED08-8712-4B19-99D2-BD66F8A74C26} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}
