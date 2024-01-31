@@ -2,7 +2,7 @@
 using Eliassen.AspNetCore.Mvc;
 using Eliassen.Common.AspNetCore;
 using Eliassen.Common.Extensions;
-using Eliassen.Common.Extensions.Hosting;
+using Eliassen.Common.Hosting;
 using Eliassen.System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +23,8 @@ public static class ServiceCollectionExtensions
     /// <param name="aspNetBuilder">Optional builder for configuring ASP.NET Core extensions. Default is <c>null</c>.</param>
     /// <param name="jwtBuilder">Optional builder for configuring JWT extensions. Default is <c>null</c>.</param>
     /// <param name="identityBuilder">Optional builder for configuring identity extensions. Default is <c>null</c>.</param>
-    /// <param name="hostingBuilder">Optional builder for configuring hosting extensions. Default is <c>null</c>.</param>
+    /// <param name="externalBuilder">Optional builder for configuring external extensions. Default is <c>null</c>.</param>
+    /// <param name="hostingBuilder">Optional builder for configuring hosting. Default is <c>null</c>.</param>
     /// <returns>The updated <see cref="IServiceCollection"/> instance.</returns>
     public static IServiceCollection TryAllCommonExtensions(
         this IServiceCollection services,
@@ -32,14 +33,15 @@ public static class ServiceCollectionExtensions
         AspNetCoreExtensionBuilder? aspNetBuilder = default,
         JwtExtensionBuilder? jwtBuilder = default,
         IdentityExtensionBuilder? identityBuilder = default,
-        HostingExtensionsBuilder? hostingBuilder = default
+        ExternalExtensionBuilder? externalBuilder = default,
+        HostingBuilder? hostingBuilder = default
     )
     {
         // Add all common extensions
         services.TryCommonExtensions(configuration, systemBuilder);
         services.TryCommonAspNetCoreExtensions(configuration, aspNetBuilder, jwtBuilder);
-        services.TryCommonExternalExtensions(configuration, identityBuilder);
-        services.TryCommonHostingExtensions(configuration, hostingBuilder);
+        services.TryCommonExternalExtensions(configuration, identityBuilder, externalBuilder);
+        services.TryCommonHosting(configuration, hostingBuilder);
 
         return services;
     }

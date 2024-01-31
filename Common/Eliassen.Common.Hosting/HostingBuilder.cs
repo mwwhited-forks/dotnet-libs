@@ -1,9 +1,9 @@
-﻿namespace Eliassen.Common.Extensions.Hosting;
+﻿namespace Eliassen.Common.Hosting;
 
 /// <summary>
 /// Represents a builder for configuring hosting extensions.
 /// </summary>
-public record HostingExtensionsBuilder
+public record HostingBuilder
 {
     /// <summary>
     /// Gets or sets a value indicating whether MailKit functionality should be disabled.

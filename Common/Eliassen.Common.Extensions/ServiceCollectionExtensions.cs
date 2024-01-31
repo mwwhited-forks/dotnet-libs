@@ -19,35 +19,29 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> instance.</param>
     /// <param name="configuration">The configuration containing settings for external services.</param>
-    /// <param name="builder">Optional builder for configuring identity extensions. Default is <c>null</c>.</param>
+    /// <param name="identityBuilder">Optional builder for configuring identity extensions. Default is <c>null</c>.</param>
+    /// <param name="externalBuilder">Optional builder for configuring external extensions. Default is <c>null</c>.</param>
     /// <returns>The updated <see cref="IServiceCollection"/> instance.</returns>
     public static IServiceCollection TryCommonExternalExtensions(
         this IServiceCollection services,
         IConfiguration configuration,
-        IdentityExtensionBuilder? builder = default
+        IdentityExtensionBuilder? identityBuilder = default,
+        ExternalExtensionBuilder? externalBuilder = default
     )
     {
-        builder ??= new();
+        identityBuilder ??= new();
+        externalBuilder ??= new();
 
-        services.TryAddMongoServices(configuration);
-        services.TryAddAzureStorageServices(configuration);
+        services.TryAddMongoServices(configuration, externalBuilder.MongoDatabaseConfigurationSection);
+        services.TryAddAzureStorageServices(configuration, externalBuilder.AzureBlobContainerConfigurationSection);
         services.TryAddRabbitMQServices();
-        services.TryAddMailKitExtensions(configuration);
+        services.TryAddMailKitExtensions(configuration, externalBuilder.SmtpConfigurationSection, externalBuilder.ImapConfigurationSection);
 
-        switch (builder.IdentityProvider)
-        {
-            default:
-            case IdentityProviders.None:
-                break;
+        if (identityBuilder.IdentityProvider.HasFlag(IdentityProviders.AzureB2C))
+            services.TryAddMicrosoftB2CServices(configuration, identityBuilder.MicrosoftIdentityConfigurationSection);
 
-            case IdentityProviders.AzureB2C:
-                services.TryAddMicrosoftB2CServices(configuration);
-                break;
-
-            case IdentityProviders.Keycloak:
-                services.TryAddKeycloakServices(configuration);
-                break;
-        }
+        if (identityBuilder.IdentityProvider.HasFlag(IdentityProviders.Keycloak))
+            services.TryAddKeycloakServices(configuration, identityBuilder.KeycloakIdentityConfigurationSection);
 
         return services;
     }

@@ -3,7 +3,7 @@ using Eliassen.MessageQueueing.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Eliassen.Common.Extensions.Hosting;
+namespace Eliassen.Common.Hosting;
 
 /// <summary>
 /// Provides extension methods for configuring common hosting services in the <see cref="IServiceCollection"/>.
@@ -15,21 +15,19 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> instance.</param>
     /// <param name="configuration">The configuration containing settings for hosting services.</param>
-    /// <param name="builder">Optional builder for configuring hosting extensions. Default is <c>null</c>.</param>
+    /// <param name="builder">Optional builder for configuring hosting. Default is <c>null</c>.</param>
     /// <returns>The updated <see cref="IServiceCollection"/> instance.</returns>
-    public static IServiceCollection TryCommonHostingExtensions(
+    public static IServiceCollection TryCommonHosting(
         this IServiceCollection services,
         IConfiguration configuration,
-        HostingExtensionsBuilder? builder = default
+        HostingBuilder? builder = default
     )
     {
         builder ??= new();
 
-        // Add MailKit hosting if not disabled
         if (!builder.DisableMailKit)
             services.TryAddMailKitHosting();
 
-        // Add MessageQueueing hosting if not disabled
         if (!builder.DisableMessageQueueing)
             services.TryAddMessageQueueingHosting();
 
