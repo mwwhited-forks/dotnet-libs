@@ -83,10 +83,10 @@ jobs:
         $fullSemVerLowerTag = ("libs-"+$fullSemVerLower).ToLower()  
         echo "FullSemVerLower=$fullSemVerLower"
         echo "FullSemVerLowerTag=$fullSemVerLowerTag"
-        echo "FullSemVerLower=$fullSemVerLower" >> $GITHUB_OUTPUT
-        echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> $GITHUB_OUTPUT
-        echo "FullSemVerLower=$fullSemVerLower" >> $GITHUB_ENV
-        echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> $GITHUB_ENV
+        echo "FullSemVerLower=$fullSemVerLower" >> "$GITHUB_OUTPUT"
+        echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> "$GITHUB_OUTPUT"
+        echo "FullSemVerLower=$fullSemVerLower" >> "$GITHUB_ENV"
+        echo "FullSemVerLowerTag=$fullSemVerLowerTag" >> "$GITHUB_ENV"
 
     - name: Set Version Variables
       shell: pwsh
