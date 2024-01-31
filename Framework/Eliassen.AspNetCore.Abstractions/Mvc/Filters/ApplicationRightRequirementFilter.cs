@@ -1,8 +1,6 @@
 ﻿using Eliassen.System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Eliassen.AspNetCore.Mvc.Filters;
 

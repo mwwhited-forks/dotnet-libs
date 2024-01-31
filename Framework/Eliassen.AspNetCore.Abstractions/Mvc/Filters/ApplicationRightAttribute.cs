@@ -5,7 +5,7 @@ namespace Eliassen.AspNetCore.Mvc.Filters;
 /// <summary>
 /// At least one of these declared rights must be assigned to the user to access this point
 /// </summary>
-public class ApplicationRightAttribute : TypeFilterAttribute
+public class ApplicationRightAttribute : TypeFilterAttribute<ApplicationRightRequirementFilter>
 {
     /// <summary>
     /// list of required rights
@@ -16,8 +16,7 @@ public class ApplicationRightAttribute : TypeFilterAttribute
     /// Declare required rights for endpoint
     /// </summary>
     /// <param name="rights"></param>
-    public ApplicationRightAttribute(params string[] rights) :
-        base(typeof(ApplicationRightRequirementFilter))
+    public ApplicationRightAttribute(params string[] rights)
     {
         Rights = rights;
         Arguments = new[] { rights };

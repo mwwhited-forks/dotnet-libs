@@ -31,7 +31,7 @@ Provides extension methods for configuring all common extensions in the
 ### Methods
 
 
-#### TryAllCommonExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Eliassen.System.SystemExtensionBuilder,Eliassen.AspNetCore.Mvc.AspNetCoreExtensionBuilder,Eliassen.AspNetCore.JwtAuthentication.JwtExtensionBuilder,Eliassen.Common.Extensions.IdentityExtensionBuilder,Eliassen.Common.Extensions.Hosting.HostingExtensionsBuilder)
+#### TryAllCommonExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Eliassen.System.SystemExtensionBuilder,Eliassen.AspNetCore.Mvc.AspNetCoreExtensionBuilder,Eliassen.AspNetCore.JwtAuthentication.JwtExtensionBuilder,Eliassen.Common.Extensions.IdentityExtensionBuilder,Eliassen.Common.Extensions.ExternalExtensionBuilder,Eliassen.Common.Hosting.HostingBuilder)
 Tries to add all common extensions to the specified 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
 
@@ -43,7 +43,8 @@ Tries to add all common extensions to the specified
 * *aspNetBuilder:* Optional builder for configuring ASP.NET Core extensions. Default is null.
 * *jwtBuilder:* Optional builder for configuring JWT extensions. Default is null.
 * *identityBuilder:* Optional builder for configuring identity extensions. Default is null.
-* *hostingBuilder:* Optional builder for configuring hosting extensions. Default is null.
+* *externalBuilder:* Optional builder for configuring external extensions. Default is null.
+* *hostingBuilder:* Optional builder for configuring hosting. Default is null.
 
 
 

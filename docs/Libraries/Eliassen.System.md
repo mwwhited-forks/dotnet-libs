@@ -148,6 +148,18 @@ Add support for shared Templating
 
 
 
+## Class: System.SystemExtensionBuilder
+Represents a builder for configuring system extensions. 
+
+### Properties
+
+#### FileTemplatingConfigurationSection
+Gets or sets the configuration section name for file templating options. The configuration section name for file templating options. Default is "FileTemplatingOptions".
+#### DefaultHashType
+Gets or sets the default hash type to be used. The default hash type. The default value is .
+#### DefaultSerializerType
+Gets or sets the default serializer type to be used. The default serializer type. The default value is .
+
 ## Class: System.Text.Json.BsonDateTimeOffsetConverter
 System.Text.Json converter to support BsonDatetimeOffset 
 

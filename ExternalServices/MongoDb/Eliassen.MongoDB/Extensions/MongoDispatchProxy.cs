@@ -2,6 +2,7 @@
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
 
@@ -32,8 +33,8 @@ internal class MongoDispatchProxy : DispatchProxy
 
         var name = targetMethod.DeclaringType?.GetProperty(originalName)
             ?.GetCustomAttributes()
-            ?.OfType<CollectionNameAttribute>()
-            ?.FirstOrDefault()?.CollectionName;
+            ?.OfType<TableAttribute>()
+            ?.FirstOrDefault()?.Name;
 
         if (string.IsNullOrWhiteSpace(name) &&
             targetMethod.ReturnType.IsGenericType)
@@ -41,8 +42,8 @@ internal class MongoDispatchProxy : DispatchProxy
             var targetType = targetMethod.ReturnType.GetGenericArguments()[0];
             name = targetType
                ?.GetCustomAttributes()
-               ?.OfType<CollectionNameAttribute>()
-               ?.FirstOrDefault()?.CollectionName;
+               ?.OfType<TableAttribute>()
+               ?.FirstOrDefault()?.Name;
         }
 
         if (string.IsNullOrWhiteSpace(name))

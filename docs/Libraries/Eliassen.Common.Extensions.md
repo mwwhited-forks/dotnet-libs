@@ -1,6 +1,20 @@
 ﻿# Eliassen.Common.Extensions
 
 
+## Class: Common.Extensions.ExternalExtensionBuilder
+Represents a builder for configuring external extensions. 
+
+### Properties
+
+#### MongoDatabaseConfigurationSection
+Gets or sets the configuration section name for MongoDB database options. The configuration section name for MongoDB database options. Default is "MongoDatabaseOptions".
+#### AzureBlobContainerConfigurationSection
+Gets or sets the configuration section name for Azure Blob Container options. The configuration section name for Azure Blob Container options. Default is "AzureBlobContainerOptions".
+#### SmtpConfigurationSection
+Gets or sets the configuration section name for SMTP client options (MailKit). The configuration section name for SMTP client options (MailKit). Default is "MailKitSmtpClientOptions".
+#### ImapConfigurationSection
+Gets or sets the configuration section name for IMAP client options (MailKit). The configuration section name for IMAP client options (MailKit). Default is "MailKitImapClientOptions".
+
 ## Class: Common.Extensions.IdentityExtensionBuilder
 Represents a builder for configuring identity extensions. 
 
@@ -8,6 +22,10 @@ Represents a builder for configuring identity extensions.
 
 #### IdentityProvider
 Gets or sets the identity provider to use. Specifies the identity provider for authentication. The default value is .
+#### MicrosoftIdentityConfigurationSection
+Gets or sets the configuration section name for Microsoft Identity options. The configuration section name for Microsoft Identity options. Default is "MicrosoftIdentityOptions".
+#### KeycloakIdentityConfigurationSection
+Gets or sets the configuration section name for Keycloak identity options. The configuration section name for Keycloak identity options. Default is "KeycloakIdentityOptions".
 
 ## Class: Common.Extensions.IdentityProviders
 Specifies different identity providers for authentication. 
@@ -28,7 +46,7 @@ Provides extension methods for configuring common external services in the
 ### Methods
 
 
-#### TryCommonExternalExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Eliassen.Common.Extensions.IdentityExtensionBuilder)
+#### TryCommonExternalExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Eliassen.Common.Extensions.IdentityExtensionBuilder,Eliassen.Common.Extensions.ExternalExtensionBuilder)
 Tries to add common external services to the specified 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
 
@@ -36,7 +54,8 @@ Tries to add common external services to the specified
 ##### Parameters
 * *services:* The instance.
 * *configuration:* The configuration containing settings for external services.
-* *builder:* Optional builder for configuring identity extensions. Default is null.
+* *identityBuilder:* Optional builder for configuring identity extensions. Default is null.
+* *externalBuilder:* Optional builder for configuring external extensions. Default is null.
 
 
 

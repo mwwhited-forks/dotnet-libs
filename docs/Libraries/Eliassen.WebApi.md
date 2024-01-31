@@ -182,6 +182,33 @@ An action result containing the processed template content as a downloadable fil
 
 
 
+## Class: WebApi.Controllers.UserController
+Initializes a new instance of the 
+ *See: T:Eliassen.WebApi.Controllers.UserController*class. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.WebApi.Controllers.UserController*class. 
+
+
+##### Parameters
+* *claimsPrincipal:* The claims principal representing the current user.
+
+
+
+
+#### GetClaims
+Gets the claims associated with the current user. 
+
+
+##### Return value
+An enumerable collection of representing the user's claims.
+
+
+
 ## Class: WebApi.Models.ClaimModel
 Represents a model for a claim. 
 

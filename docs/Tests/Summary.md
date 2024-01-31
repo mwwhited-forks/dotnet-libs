@@ -1,24 +1,50 @@
 # Summary - Eliassen.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 1/31/2024 - 11:35:00 AM |
-| Coverage date: | 1/31/2024 - 11:34:17 AM - 1/31/2024 - 11:34:55 AM |
-| Parser: | MultiReport (24x Cobertura) |
-| Assemblies: | 15 |
-| Classes: | 81 |
-| Files: | 80 |
-| **Line coverage:** | 46.9% (1075 of 2289) |
+| Generated on: | 1/31/2024 - 12:22:40 PM |
+| Coverage date: | 1/31/2024 - 12:21:53 PM - 1/31/2024 - 12:22:25 PM |
+| Parser: | MultiReport (26x Cobertura) |
+| Assemblies: | 17 |
+| Classes: | 105 |
+| Files: | 104 |
+| **Line coverage:** | 39% (1075 of 2753) |
 | Covered lines: | 1075 |
-| Uncovered lines: | 1214 |
-| Coverable lines: | 2289 |
-| Total lines: | 6653 |
-| **Branch coverage:** | 45.7% (578 of 1263) |
+| Uncovered lines: | 1678 |
+| Coverable lines: | 2753 |
+| Total lines: | 8153 |
+| **Branch coverage:** | 39.6% (578 of 1459) |
 | Covered branches: | 578 |
-| Total branches: | 1263 |
+| Total branches: | 1459 |
 | **Method coverage:** | [Feature is only available for sponsors](https://reportgenerator.io/pro) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|
+|**Eliassen.AspNetCore.JwtAuthentication**|**0**|**49**|**49**|**212**|**0%**|**0**|**8**|**0%**|
+|Eliassen.AspNetCore.JwtAuthentication.JwtExtensionBuilder|0|1|1|34|0%|0|0||
+|Eliassen.AspNetCore.JwtAuthentication.ServiceCollectionExtensions|0|13|13|78|0%|0|2|0%|
+|Eliassen.AspNetCore.JwtAuthentication.SwaggerGen.ConfigureOAuthSwaggerGenOptions|0|31|31|71|0%|0|6|0%|
+|Eliassen.AspNetCore.JwtAuthentication.SwaggerGen.ConfigureOAuthSwaggerUIOptions|0|4|4|29|0%|0|0||
+|**Eliassen.AspNetCore.Mvc**|**0**|**415**|**415**|**1265**|**0%**|**0**|**188**|**0%**|
+|Eliassen.AspNetCore.Mvc.ApplicationBuilderExtensions|0|3|3|24|0%|0|0||
+|Eliassen.AspNetCore.Mvc.AspNetCoreExtensionBuilder|0|1|1|38|0%|0|0||
+|Eliassen.AspNetCore.Mvc.Authorization.UserAuthorizationHandler|0|14|14|61|0%|0|10|0%|
+|Eliassen.AspNetCore.Mvc.Authorization.UserAuthorizationRequirement|0|2|2|30|0%|0|0||
+|Eliassen.AspNetCore.Mvc.Filters.ApplicationPermissionsApiFilter|0|14|14|43|0%|0|8|0%|
+|Eliassen.AspNetCore.Mvc.Filters.ApplicationRightAttribute|0|3|3|25|0%|0|0||
+|Eliassen.AspNetCore.Mvc.Filters.ApplicationRightRequirementFilter|0|14|14|39|0%|0|16|0%|
+|Eliassen.AspNetCore.Mvc.Filters.FormFileOperationFilter|0|11|11|41|0%|0|6|0%|
+|Eliassen.AspNetCore.Mvc.Filters.SearchQueryOperationFilter|0|111|111|266|0%|0|46|0%|
+|Eliassen.AspNetCore.Mvc.Filters.SearchQueryResultFilter|0|14|14|66|0%|0|8|0%|
+|Eliassen.AspNetCore.Mvc.Middleware.CultureInfoMiddleware|0|31|31|83|0%|0|10|0%|
+|Eliassen.AspNetCore.Mvc.Middleware.SearchQueryMiddleware|0|75|75|153|0%|0|38|0%|
+|Eliassen.AspNetCore.Mvc.OpenApi.ApiPermissionsExtension|0|6|6|39|0%|0|0||
+|Eliassen.AspNetCore.Mvc.ServiceCollectionExtensions|0|39|39|129|0%|0|12|0%|
+|Eliassen.AspNetCore.Mvc.SwaggerGen.AdditionalSwaggerGenEndpointsOptions|0|64|64|117|0%|0|30|0%|
+|Eliassen.AspNetCore.Mvc.SwaggerGen.AdditionalSwaggerUIEndpointsOptions|0|9|9|38|0%|0|4|0%|
+|Eliassen.AspNetCore.Mvc.SwaggerGen.AddMvcFilterOptions`1|0|1|1|20|0%|0|0||
+|Eliassen.AspNetCore.Mvc.SwaggerGen.AddOperationFilterOptions`1|0|1|1|19|0%|0|0||
+|Eliassen.AspNetCore.Mvc.SwaggerGen.AddSchemaFilterOptions`1|0|1|1|19|0%|0|0||
+|Eliassen.AspNetCore.Mvc.SwaggerGen.ApiNamespaceControllerModelConvention|0|1|1|15|0%|0|0||
 |**Eliassen.Azure.StorageAccount**|**0**|**109**|**109**|**364**|**0%**|**0**|**22**|**0%**|
 |Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider|0|59|59|172|0%|0|4|0%|
 |Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider|0|31|31|96|0%|0|14|0%|
@@ -82,12 +108,12 @@
 |Eliassen.RabbitMQ.MessageQueueing.QueueClientFactory|0|9|9|35|0%|0|2|0%|
 |Eliassen.RabbitMQ.MessageQueueing.RabbitMQQueueMessageProvider|0|46|46|118|0%|0|12|0%|
 |Eliassen.RabbitMQ.ServiceCollectionEx|0|8|8|40|0%|0|0||
-|**Eliassen.System**|**138**|**266**|**404**|**1410**|**34.1%**|**45**|**215**|**20.9%**|
+|**Eliassen.System**|**138**|**266**|**404**|**1433**|**34.1%**|**45**|**215**|**20.9%**|
 |Eliassen.System.Security.Cryptography.Md5Hash|1|0|1|19|100%|0|0||
 |Eliassen.System.Security.Cryptography.Sha256Hash|1|0|1|19|100%|0|0||
 |Eliassen.System.Security.Cryptography.Sha512Hash|1|0|1|19|100%|0|0||
 |Eliassen.System.ServiceCollectionExtensions|50|6|56|147|89.2%|2|26|7.6%|
-|Eliassen.System.SystemExtensionBuilder|0|1|1|12|0%|0|0||
+|Eliassen.System.SystemExtensionBuilder|0|1|1|35|0%|0|0||
 |Eliassen.System.Text.Json.BsonDateTimeOffsetConverter|18|19|37|108|48.6%|8|40|20%|
 |Eliassen.System.Text.Json.BsonIdConverter|13|1|14|56|92.8%|8|14|57.1%|
 |Eliassen.System.Text.Json.BsonTypeInfoResolver|0|25|25|59|0%|0|16|0%|

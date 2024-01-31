@@ -11,7 +11,7 @@ public enum IdentityProviders
     /// <summary>
     /// Represents no specific identity provider.
     /// </summary>
-    None =0,
+    None = 0,
 
     /// <summary>
     /// Represents the Azure B2C identity provider.
