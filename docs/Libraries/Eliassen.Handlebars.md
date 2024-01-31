@@ -1,7 +1,7 @@
-﻿# Eliassen.Handlebars.Extensions
+﻿# Eliassen.Handlebars
 
 
-## Class: Handlebars.Extensions.ServiceCollectionExtensions
+## Class: Handlebars.ServiceCollectionExtensions
 Provides extension methods for configuring services related to Handlebars templates in the 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
 
@@ -24,7 +24,7 @@ The modified with added Handlebars template services.
 
 
 
-## Class: Handlebars.Extensions.Templating.HandlebarsTemplateProvider
+## Class: Handlebars.Templating.HandlebarsTemplateProvider
 Provides Handlebars template processing functionality. 
 
 Initializes a new instance of the class.

@@ -1,4 +1,4 @@
-﻿# Eliassen.MongoDB.Extensions
+﻿# Eliassen.MongoDB
 
 
 ## Class: MongoDB.Extensions.BsonObjectIdConvention
@@ -153,7 +153,7 @@ Gets the read-only collection of types registered for MongoDB databases.
 This proxy allow for dynamic creation of wrapper classes to expose MongoDatabase instances 
 
 
-## Class: MongoDB.Extensions.ServiceCollectionExtensions
+## Class: MongoDB.ServiceCollectionExtensions
 Common libraries to enable MongoDB Support 
 
 ### Methods
