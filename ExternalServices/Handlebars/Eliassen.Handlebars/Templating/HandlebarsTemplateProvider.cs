@@ -10,7 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Eliassen.Handlebars.Extensions.Templating;
+namespace Eliassen.Handlebars.Templating;
 
 /// <summary>
 /// Provides Handlebars template processing functionality.

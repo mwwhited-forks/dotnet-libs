@@ -16,6 +16,8 @@ public static class ServiceCollectionExtensions
     /// Tries to add Azure Storage services including blob and queue services to the specified <see cref="IServiceCollection"/>.
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add services to.</param>
+    /// <param name="configuration">The <see cref="IConfiguration"/> to add services to.</param>
+    /// <param name="azureBlobContainerConfigurationSection">The name for the ConfigurationSectionName.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddAzureStorageServices(
         this IServiceCollection services,
@@ -31,6 +33,8 @@ public static class ServiceCollectionExtensions
     /// Tries to add Azure Storage blob services to the specified <see cref="IServiceCollection"/>.
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add services to.</param>
+    /// <param name="configuration">The <see cref="IConfiguration"/> to add services to.</param>
+    /// <param name="configurationSection">The name for the ConfigurationSectionName.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddAzureStorageBlobServices(
         this IServiceCollection services,

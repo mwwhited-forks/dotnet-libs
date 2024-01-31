@@ -1,4 +1,5 @@
-﻿using Eliassen.System.Net.Mime;
+﻿using Eliassen.System.Linq;
+using Eliassen.System.Net.Mime;
 using Eliassen.System.Security.Cryptography;
 using Eliassen.System.Text;
 using Eliassen.System.Text.Json.Serialization;
@@ -113,6 +114,7 @@ public static class ServiceCollectionExtensions
     /// Add support for shared Templating
     /// </summary>
     /// <param name="services"></param>
+    /// <param name="configuration">The <see cref="IConfiguration"/> to add services to.</param>
     /// <param name="configurationSection"></param>
     /// <returns></returns>
     public static IServiceCollection TryTemplatingExtensions(

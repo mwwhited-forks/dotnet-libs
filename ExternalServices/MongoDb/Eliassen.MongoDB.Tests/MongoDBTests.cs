@@ -30,7 +30,7 @@ public class MongoDBTests
         services.TryAddMongoDatabase<ITestMongoDatabase>();
         var provider = services.BuildServiceProvider();
 
-        var db = provider.GetService<ITestMongoDatabase>();
+        var db = provider.GetRequiredService<ITestMongoDatabase>();
 
         var entity = new TestCollection
         {

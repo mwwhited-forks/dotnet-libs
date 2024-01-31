@@ -1,5 +1,5 @@
 ﻿using Eliassen.Extensions.Configuration;
-using Eliassen.Handlebars.Extensions;
+using Eliassen.Handlebars;
 using Eliassen.System;
 using Eliassen.System.Text.Templating;
 using Microsoft.Extensions.Configuration;

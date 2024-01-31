@@ -1,9 +1,9 @@
-﻿using Eliassen.Handlebars.Extensions.Templating;
+﻿using Eliassen.Handlebars.Templating;
 using Eliassen.System.Net.Mime;
 using Eliassen.System.Text.Templating;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Eliassen.Handlebars.Extensions;
+namespace Eliassen.Handlebars;
 
 /// <summary>
 /// Provides extension methods for configuring services related to Handlebars templates in the <see cref="IServiceCollection"/>.

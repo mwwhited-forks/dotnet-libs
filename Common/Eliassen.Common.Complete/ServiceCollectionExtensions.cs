@@ -1,12 +1,13 @@
 ﻿using Eliassen.AspNetCore.JwtAuthentication;
 using Eliassen.AspNetCore.Mvc;
+using Eliassen.Common.AspNetCore;
 using Eliassen.Common.Extensions;
 using Eliassen.Common.Extensions.Hosting;
 using Eliassen.System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Eliassen.Common.AspNetCore;
+namespace Eliassen.Common;
 
 public static class ServiceCollectionExtensions
 {
