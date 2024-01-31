@@ -1,0 +1,16 @@
+name: sql-server
+services:
+    server:
+        container_name: sql-server
+        ports:
+            - 1433:1433
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=nucleus
+        networks:
+            - dev-net
+        image: mcr.microsoft.com/mssql/server:2022-latest
+networks:
+    dev-net:
+        external: true
+        name: dev-net

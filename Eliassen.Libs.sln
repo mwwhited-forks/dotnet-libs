@@ -142,7 +142,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MongoDB", "Externa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Handlebars", "ExternalServices\Handlebars\Eliassen.Handlebars\Eliassen.Handlebars.csproj", "{75BC3C71-C09F-4DA7-BEA0-91320FCDC29F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Handlebars.Tests", "ExternalServices\Handlebars\Eliassen.Handlebars.Tests\Eliassen.Handlebars.Tests.csproj", "{A932AB8D-FE66-40CA-9300-F1B107FBD5EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Handlebars.Tests", "ExternalServices\Handlebars\Eliassen.Handlebars.Tests\Eliassen.Handlebars.Tests.csproj", "{A932AB8D-FE66-40CA-9300-F1B107FBD5EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{44A196A6-FC28-4643-9ED0-301CE450A4DD}"
 	ProjectSection(SolutionItems) = preProject
@@ -169,9 +169,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "keycloak-import", "keycloak
 		Scripts\keycloak-import\readme.keycloak.md = Scripts\keycloak-import\readme.keycloak.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.AspNetCore.Tests", "Framework\Eliassen.AspNetCore.Tests\Eliassen.AspNetCore.Tests.csproj", "{F82EED08-8712-4B19-99D2-BD66F8A74C26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.AspNetCore.Tests", "Framework\Eliassen.AspNetCore.Tests\Eliassen.AspNetCore.Tests.csproj", "{F82EED08-8712-4B19-99D2-BD66F8A74C26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.AspNetCore.Abstractions", "Framework\Eliassen.AspNetCore.Abstractions\Eliassen.AspNetCore.Abstractions.csproj", "{A51C7113-7526-4F43-8A81-9BAA84FDED12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.AspNetCore.Abstractions", "Framework\Eliassen.AspNetCore.Abstractions\Eliassen.AspNetCore.Abstractions.csproj", "{A51C7113-7526-4F43-8A81-9BAA84FDED12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-config", "docker-config", "{D052D1B8-E7FA-4F8C-8CF1-0E3CAB7DBEE1}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\docker-config\azurite.yml = Scripts\docker-config\azurite.yml
+		Scripts\docker-config\keycloak.yml = Scripts\docker-config\keycloak.yml
+		Scripts\docker-config\mongodb.yml = Scripts\docker-config\mongodb.yml
+		Scripts\docker-config\notes.md = Scripts\docker-config\notes.md
+		Scripts\docker-config\rabbitmq.yml = Scripts\docker-config\rabbitmq.yml
+		Scripts\docker-config\smtp4dev.yml = Scripts\docker-config\smtp4dev.yml
+		Scripts\docker-config\sql-server.yml = Scripts\docker-config\sql-server.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -429,6 +440,7 @@ Global
 		{CB66E814-14F9-4665-BEEA-61BF24354307} = {44A196A6-FC28-4643-9ED0-301CE450A4DD}
 		{F82EED08-8712-4B19-99D2-BD66F8A74C26} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{A51C7113-7526-4F43-8A81-9BAA84FDED12} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
+		{D052D1B8-E7FA-4F8C-8CF1-0E3CAB7DBEE1} = {44A196A6-FC28-4643-9ED0-301CE450A4DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}
