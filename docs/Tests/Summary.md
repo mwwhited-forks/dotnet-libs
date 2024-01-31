@@ -1,8 +1,8 @@
 # Summary - Eliassen.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 1/31/2024 - 11:10:57 AM |
-| Coverage date: | 1/31/2024 - 11:10:13 AM - 1/31/2024 - 11:10:51 AM |
+| Generated on: | 1/31/2024 - 11:35:00 AM |
+| Coverage date: | 1/31/2024 - 11:34:17 AM - 1/31/2024 - 11:34:55 AM |
 | Parser: | MultiReport (24x Cobertura) |
 | Assemblies: | 15 |
 | Classes: | 81 |
@@ -11,7 +11,7 @@
 | Covered lines: | 1075 |
 | Uncovered lines: | 1214 |
 | Coverable lines: | 2289 |
-| Total lines: | 6641 |
+| Total lines: | 6653 |
 | **Branch coverage:** | 45.7% (578 of 1263) |
 | Covered branches: | 578 |
 | Total branches: | 1263 |
@@ -43,9 +43,9 @@
 |**Eliassen.Identity**|**0**|**9**|**9**|**43**|**0%**|**0**|**2**|**0%**|
 |Eliassen.Identity.ServiceCollectionExtensions|0|2|2|14|0%|0|0||
 |Eliassen.Identity.UserManagementProvider|0|7|7|29|0%|0|2|0%|
-|**Eliassen.Keycloak**|**0**|**11**|**11**|**52**|**0%**|**0**|**0**|****|
+|**Eliassen.Keycloak**|**0**|**11**|**11**|**64**|**0%**|**0**|**0**|****|
 |Eliassen.Keycloak.Identity.ManageKeycloakUser|0|7|7|28|0%|0|0||
-|Eliassen.Keycloak.ServiceCollectionExtensions|0|4|4|24|0%|0|0||
+|Eliassen.Keycloak.ServiceCollectionExtensions|0|4|4|36|0%|0|0||
 |**Eliassen.MailKit**|**0**|**76**|**76**|**271**|**0%**|**0**|**30**|**0%**|
 |Eliassen.MailKit.ServiceCollectionExtensions|0|7|7|41|0%|0|0||
 |Eliassen.MailKit.Services.ImapClientFactory|0|8|8|41|0%|0|6|0%|

@@ -1,6 +1,18 @@
 ﻿# Eliassen.System
 
 
+## Class: System.Security.Cryptography.HashTypes
+Specifies different types of hash algorithms. 
+
+### Fields
+
+#### Md5
+Represents the MD5 hash algorithm.
+#### Sha256
+Represents the SHA-256 hash algorithm.
+#### Sha512
+Represents the SHA-512 hash algorithm.
+
 ## Class: System.Security.Cryptography.Md5Hash
 Default hash of input value. Base64 encoded MD5 Hash 
 
@@ -125,6 +137,7 @@ Add support for shared Templating
 
 ##### Parameters
 * *services:* 
+* *configuration:* The to add services to.
 * *configurationSection:* 
 
 
@@ -462,6 +475,18 @@ Use the configured property naming policy to change the provided value.
 The converted property name.
 
 
+
+## Class: System.Text.SerializerTypes
+Specifies different types of serialization formats. 
+
+### Fields
+
+#### Json
+Represents the JSON serialization format.
+#### Bson
+Represents the BSON (Binary JSON) serialization format.
+#### Xml
+Represents the XML serialization format.
 
 ## Class: System.Text.Templating.FileTemplateSource
 Access template from file system 

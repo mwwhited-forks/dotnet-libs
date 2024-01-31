@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<coverage line-rate="0.46963739624290085" branch-rate="0.40583232077764275" complexity="1014" version="1.9" timestamp="0" lines-covered="1075" lines-valid="2289" branches-covered="334" branches-valid="823">
+<coverage line-rate="0.46963739624290085" branch-rate="0.3985239852398524" complexity="1006" version="1.9" timestamp="0" lines-covered="1075" lines-valid="2289" branches-covered="324" branches-valid="813">
   <sources>
     <source>c:\Repos\Nucleus\Net.Libs\</source>
+    <source>c:\Repos\Nucleus\Net.Libs\Framework\</source>
     <source>C:\</source>
     <source>c:\Repos\Nucleus\Net.Libs\Framework\Eliassen.Identity\</source>
-    <source>c:\Repos\Nucleus\Net.Libs\Framework\</source>
   </sources>
   <packages>
-    <package line-rate="0.5462555066079295" branch-rate="0.38461538461538464" complexity="149" name="Eliassen.Extensions">
+    <package line-rate="0.5462555066079295" branch-rate="0.375" complexity="148" name="Eliassen.Extensions">
       <classes>
         <class line-rate="0.4" branch-rate="0" complexity="7" name="Eliassen.Extensions.ServiceCollectionExtensions" filename="Framework\Eliassen.Extensions\ServiceCollectionExtensions.cs">
           <methods>
@@ -521,16 +521,12 @@
             <line number="81" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="1" branch-rate="1" complexity="2" name="Eliassen.Extensions.Reflection.ResourceExtensions/&lt;GetResourceAsStringAsync&gt;d__3" filename="Framework\Eliassen.Extensions\Reflection\ResourceExtensions.cs">
+        <class line-rate="1" branch-rate="1" complexity="1" name="Eliassen.Extensions.Reflection.ResourceExtensions/&lt;GetResourceAsStringAsync&gt;d__3" filename="Framework\Eliassen.Extensions\Reflection\ResourceExtensions.cs">
           <methods>
-            <method line-rate="1" branch-rate="1" complexity="2" name="MoveNext" signature="()">
+            <method line-rate="1" branch-rate="1" complexity="1" name="MoveNext" signature="()">
               <lines>
                 <line number="61" hits="1" branch="False" />
-                <line number="62" hits="1" branch="True" condition-coverage="100% (2/2)">
-                  <conditions>
-                    <condition number="29" type="jump" coverage="100%" />
-                  </conditions>
-                </line>
+                <line number="62" hits="1" branch="True" />
                 <line number="63" hits="1" branch="False" />
                 <line number="64" hits="1" branch="False" />
                 <line number="65" hits="1" branch="False" />
@@ -540,11 +536,7 @@
           </methods>
           <lines>
             <line number="61" hits="1" branch="False" />
-            <line number="62" hits="1" branch="True" condition-coverage="100% (2/2)">
-              <conditions>
-                <condition number="29" type="jump" coverage="100%" />
-              </conditions>
-            </line>
+            <line number="62" hits="1" branch="True" />
             <line number="63" hits="1" branch="False" />
             <line number="64" hits="1" branch="False" />
             <line number="65" hits="1" branch="False" />
@@ -1141,18 +1133,18 @@
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="TryAddMicrosoftB2CServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)">
               <lines>
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
                 <line number="28" hits="0" branch="False" />
                 <line number="30" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
             <line number="28" hits="0" branch="False" />
             <line number="30" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
           </lines>
         </class>
         <class line-rate="0" branch-rate="1" complexity="4" name="Eliassen.Microsoft.B2C.Identity.ManageGraphUser" filename="ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Identity\ManageGraphUser.cs">
@@ -1479,7 +1471,7 @@
         </class>
       </classes>
     </package>
-    <package line-rate="0.3415841584158416" branch-rate="0.09271523178807947" complexity="198" name="Eliassen.System">
+    <package line-rate="0.3415841584158416" branch-rate="0.08053691275167785" complexity="197" name="Eliassen.System">
       <classes>
         <class line-rate="0.8928571428571429" branch-rate="0.07692307692307693" complexity="27" name="Eliassen.System.ServiceCollectionExtensions" filename="Framework\Eliassen.System\ServiceCollectionExtensions.cs">
           <methods>
@@ -1575,18 +1567,18 @@
             </method>
             <method line-rate="1" branch-rate="1" complexity="1" name="TryTemplatingExtensions" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)">
               <lines>
-                <line number="125" hits="1" branch="False" />
-                <line number="127" hits="1" branch="False" />
-                <line number="129" hits="1" branch="False" />
-                <line number="131" hits="1" branch="False" />
-                <line number="134" hits="1" branch="False" />
+                <line number="126" hits="1" branch="False" />
+                <line number="128" hits="1" branch="False" />
+                <line number="130" hits="1" branch="False" />
+                <line number="132" hits="1" branch="False" />
                 <line number="135" hits="1" branch="False" />
-                <line number="137" hits="1" branch="False" />
+                <line number="136" hits="1" branch="False" />
                 <line number="138" hits="1" branch="False" />
                 <line number="139" hits="1" branch="False" />
                 <line number="140" hits="1" branch="False" />
-                <line number="142" hits="1" branch="False" />
-                <line number="144" hits="1" branch="False" />
+                <line number="141" hits="1" branch="False" />
+                <line number="143" hits="1" branch="False" />
+                <line number="145" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
@@ -1669,18 +1661,18 @@
             <line number="107" hits="1" branch="False" />
             <line number="109" hits="1" branch="False" />
             <line number="110" hits="1" branch="False" />
-            <line number="125" hits="1" branch="False" />
-            <line number="127" hits="1" branch="False" />
-            <line number="129" hits="1" branch="False" />
-            <line number="131" hits="1" branch="False" />
-            <line number="134" hits="1" branch="False" />
+            <line number="126" hits="1" branch="False" />
+            <line number="128" hits="1" branch="False" />
+            <line number="130" hits="1" branch="False" />
+            <line number="132" hits="1" branch="False" />
             <line number="135" hits="1" branch="False" />
-            <line number="137" hits="1" branch="False" />
+            <line number="136" hits="1" branch="False" />
             <line number="138" hits="1" branch="False" />
             <line number="139" hits="1" branch="False" />
             <line number="140" hits="1" branch="False" />
-            <line number="142" hits="1" branch="False" />
-            <line number="144" hits="1" branch="False" />
+            <line number="141" hits="1" branch="False" />
+            <line number="143" hits="1" branch="False" />
+            <line number="145" hits="1" branch="False" />
           </lines>
         </class>
         <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.System.SystemExtensionBuilder" filename="Framework\Eliassen.System\SystemExtensionBuilder.cs">
@@ -2717,15 +2709,11 @@
             <line number="53" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="0.5454545454545454" branch-rate="0.5" complexity="9" name="Eliassen.System.Text.Json.DictionaryStringObjectJsonConverter" filename="Framework\Eliassen.System\Text\Json\DictionaryStringObjectJsonConverter.cs">
+        <class line-rate="0.5454545454545454" branch-rate="0.3333333333333333" complexity="8" name="Eliassen.System.Text.Json.DictionaryStringObjectJsonConverter" filename="Framework\Eliassen.System\Text\Json\DictionaryStringObjectJsonConverter.cs">
           <methods>
-            <method line-rate="1" branch-rate="1" complexity="2" name="CanConvert" signature="(System.Type)">
+            <method line-rate="1" branch-rate="1" complexity="1" name="CanConvert" signature="(System.Type)">
               <lines>
-                <line number="22" hits="1" branch="True" condition-coverage="100% (2/2)">
-                  <conditions>
-                    <condition number="16" type="jump" coverage="100%" />
-                  </conditions>
-                </line>
+                <line number="22" hits="1" branch="True" />
                 <line number="23" hits="1" branch="False" />
               </lines>
             </method>
@@ -2783,11 +2771,7 @@
             </method>
           </methods>
           <lines>
-            <line number="22" hits="1" branch="True" condition-coverage="100% (2/2)">
-              <conditions>
-                <condition number="16" type="jump" coverage="100%" />
-              </conditions>
-            </line>
+            <line number="22" hits="1" branch="True" />
             <line number="23" hits="1" branch="False" />
             <line number="36" hits="1" branch="True" />
             <line number="38" hits="0" branch="False" />
@@ -5607,9 +5591,9 @@
         </class>
       </classes>
     </package>
-    <package line-rate="0.8562091503267973" branch-rate="0.8125" complexity="47" name="Eliassen.TestUtilities">
+    <package line-rate="0.8562091503267973" branch-rate="0.7692307692307693" complexity="41" name="Eliassen.TestUtilities">
       <classes>
-        <class line-rate="0.84375" branch-rate="0.7" complexity="27" name="Eliassen.TestUtilities.TestContextExtensions" filename="Framework\Eliassen.TestUtilities\TestContextExtensions.cs">
+        <class line-rate="0.84375" branch-rate="0.5714285714285714" complexity="21" name="Eliassen.TestUtilities.TestContextExtensions" filename="Framework\Eliassen.TestUtilities\TestContextExtensions.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="AddResult" signature="(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.Object,System.String,System.Int32,System.String)">
               <lines>
@@ -5626,7 +5610,7 @@
                 <line number="66" hits="1" branch="False" />
               </lines>
             </method>
-            <method line-rate="0.8648648648648649" branch-rate="1" complexity="12" name="AddResult" signature="(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.Object,System.String,System.String&amp;,System.String,System.Int32,System.String)">
+            <method line-rate="0.8648648648648649" branch-rate="1" complexity="6" name="AddResult" signature="(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.Object,System.String,System.String&amp;,System.String,System.Int32,System.String)">
               <lines>
                 <line number="81" hits="1" branch="True" />
                 <line number="83" hits="0" branch="False" />
@@ -5655,11 +5639,7 @@
                 <line number="122" hits="0" branch="False" />
                 <line number="123" hits="0" branch="False" />
                 <line number="124" hits="0" branch="False" />
-                <line number="126" hits="1" branch="True" condition-coverage="100% (2/2)">
-                  <conditions>
-                    <condition number="360" type="jump" coverage="100%" />
-                  </conditions>
-                </line>
+                <line number="126" hits="1" branch="True" />
                 <line number="128" hits="1" branch="False" />
                 <line number="129" hits="1" branch="False" />
                 <line number="130" hits="1" branch="False" />
@@ -5673,11 +5653,7 @@
                 <line number="136" hits="1" branch="False" />
                 <line number="137" hits="1" branch="False" />
                 <line number="138" hits="1" branch="False" />
-                <line number="140" hits="1" branch="True" condition-coverage="100% (2/2)">
-                  <conditions>
-                    <condition number="527" type="jump" coverage="100%" />
-                  </conditions>
-                </line>
+                <line number="140" hits="1" branch="True" />
                 <line number="142" hits="1" branch="True" />
                 <line number="143" hits="1" branch="False" />
                 <line number="144" hits="1" branch="False" />
@@ -5697,11 +5673,7 @@
                 <line number="156" hits="1" branch="False" />
                 <line number="157" hits="1" branch="False" />
                 <line number="158" hits="1" branch="False" />
-                <line number="160" hits="1" branch="True" condition-coverage="100% (2/2)">
-                  <conditions>
-                    <condition number="680" type="jump" coverage="100%" />
-                  </conditions>
-                </line>
+                <line number="160" hits="1" branch="True" />
                 <line number="162" hits="1" branch="True" />
                 <line number="163" hits="1" branch="False" />
                 <line number="164" hits="1" branch="False" />
@@ -5838,11 +5810,7 @@
             <line number="122" hits="0" branch="False" />
             <line number="123" hits="0" branch="False" />
             <line number="124" hits="0" branch="False" />
-            <line number="126" hits="1" branch="True" condition-coverage="100% (2/2)">
-              <conditions>
-                <condition number="360" type="jump" coverage="100%" />
-              </conditions>
-            </line>
+            <line number="126" hits="1" branch="True" />
             <line number="128" hits="1" branch="False" />
             <line number="129" hits="1" branch="False" />
             <line number="130" hits="1" branch="False" />
@@ -5856,11 +5824,7 @@
             <line number="136" hits="1" branch="False" />
             <line number="137" hits="1" branch="False" />
             <line number="138" hits="1" branch="False" />
-            <line number="140" hits="1" branch="True" condition-coverage="100% (2/2)">
-              <conditions>
-                <condition number="527" type="jump" coverage="100%" />
-              </conditions>
-            </line>
+            <line number="140" hits="1" branch="True" />
             <line number="142" hits="1" branch="True" />
             <line number="143" hits="1" branch="False" />
             <line number="144" hits="1" branch="False" />
@@ -5880,11 +5844,7 @@
             <line number="156" hits="1" branch="False" />
             <line number="157" hits="1" branch="False" />
             <line number="158" hits="1" branch="False" />
-            <line number="160" hits="1" branch="True" condition-coverage="100% (2/2)">
-              <conditions>
-                <condition number="680" type="jump" coverage="100%" />
-              </conditions>
-            </line>
+            <line number="160" hits="1" branch="True" />
             <line number="162" hits="1" branch="True" />
             <line number="163" hits="1" branch="False" />
             <line number="164" hits="1" branch="False" />
@@ -6175,6 +6135,22 @@
           </methods>
           <lines>
             <line number="306" hits="1" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Communications">
+      <classes>
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Communications.ServiceCollectionExtensions" filename="Eliassen.Communications\ServiceCollectionExtensions.cs">
+          <methods>
+            <method line-rate="0" branch-rate="1" complexity="1" name="TryAddCommunicationsServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+              <lines>
+                <line number="15" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="0" branch="False" />
           </lines>
         </class>
       </classes>
@@ -8339,318 +8315,6 @@
         </class>
       </classes>
     </package>
-    <package line-rate="0" branch-rate="0" complexity="31" name="Eliassen.MailKit">
-      <classes>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.MailKit.ServiceCollectionExtensions" filename="ExternalServices\MailKit\Eliassen.MailKit\ServiceCollectionExtensions.cs">
-          <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name="TryAddMailKitExtensions" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)">
-              <lines>
-                <line number="29" hits="0" branch="False" />
-                <line number="31" hits="0" branch="False" />
-                <line number="33" hits="0" branch="False" />
-                <line number="34" hits="0" branch="False" />
-                <line number="36" hits="0" branch="False" />
-                <line number="37" hits="0" branch="False" />
-                <line number="39" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="29" hits="0" branch="False" />
-            <line number="31" hits="0" branch="False" />
-            <line number="33" hits="0" branch="False" />
-            <line number="34" hits="0" branch="False" />
-            <line number="36" hits="0" branch="False" />
-            <line number="37" hits="0" branch="False" />
-            <line number="39" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="6" name="Eliassen.MailKit.Services.ImapClientFactory/&lt;CreateAsync&gt;d__2" filename="ExternalServices\MailKit\Eliassen.MailKit\Services\ImapClientFactory.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="6" name="MoveNext" signature="()">
-              <lines>
-                <line number="23" hits="0" branch="False" />
-                <line number="25" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="65" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="27" hits="0" branch="False" />
-                <line number="31" hits="0" branch="False" />
-                <line number="34" hits="0" branch="True" condition-coverage="0% (0/4)">
-                  <conditions>
-                    <condition number="369" type="jump" coverage="0%" />
-                    <condition number="395" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="36" hits="0" branch="False" />
-                <line number="39" hits="0" branch="False" />
-                <line number="40" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="23" hits="0" branch="False" />
-            <line number="25" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="65" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="27" hits="0" branch="False" />
-            <line number="31" hits="0" branch="False" />
-            <line number="34" hits="0" branch="True" condition-coverage="0% (0/4)">
-              <conditions>
-                <condition number="369" type="jump" coverage="0%" />
-                <condition number="395" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="36" hits="0" branch="False" />
-            <line number="39" hits="0" branch="False" />
-            <line number="40" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.MailKit.Services.MailKitProvider/&lt;SendAsync&gt;d__4" filename="ExternalServices\MailKit\Eliassen.MailKit\Services\MailKitProvider.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
-              <lines>
-                <line number="31" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="21" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="32" hits="0" branch="False" />
-                <line number="34" hits="0" branch="False" />
-                <line number="35" hits="0" branch="False" />
-                <line number="37" hits="0" branch="False" />
-                <line number="38" hits="0" branch="False" />
-                <line number="39" hits="0" branch="False" />
-                <line number="40" hits="0" branch="False" />
-                <line number="41" hits="0" branch="False" />
-                <line number="42" hits="0" branch="False" />
-                <line number="44" hits="0" branch="False" />
-                <line number="45" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="31" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="21" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="32" hits="0" branch="False" />
-            <line number="34" hits="0" branch="False" />
-            <line number="35" hits="0" branch="False" />
-            <line number="37" hits="0" branch="False" />
-            <line number="38" hits="0" branch="False" />
-            <line number="39" hits="0" branch="False" />
-            <line number="40" hits="0" branch="False" />
-            <line number="41" hits="0" branch="False" />
-            <line number="42" hits="0" branch="False" />
-            <line number="44" hits="0" branch="False" />
-            <line number="45" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="16" name="Eliassen.MailKit.Services.MimeMessageFactory" filename="ExternalServices\MailKit\Eliassen.MailKit\Services\MimeMessageFactory.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="14" name="Create" signature="(Eliassen.Communications.Models.EmailMessageModel)">
-              <lines>
-                <line number="24" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="18" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-                <line number="27" hits="0" branch="False" />
-                <line number="28" hits="0" branch="False" />
-                <line number="29" hits="0" branch="False" />
-                <line number="30" hits="0" branch="False" />
-                <line number="32" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="59" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="34" hits="0" branch="False" />
-                <line number="37" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="171" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="39" hits="0" branch="False" />
-                <line number="42" hits="0" branch="False" />
-                <line number="43" hits="0" branch="False" />
-                <line number="44" hits="0" branch="False" />
-                <line number="46" hits="0" branch="False" />
-                <line number="48" hits="0" branch="False" />
-                <line number="49" hits="0" branch="True" condition-coverage="0% (0/4)">
-                  <conditions>
-                    <condition number="373" type="jump" coverage="0%" />
-                    <condition number="386" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="51" hits="0" branch="False" />
-                <line number="53" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="410" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="55" hits="0" branch="False" />
-                <line number="57" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="435" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="59" hits="0" branch="False" />
-                <line number="61" hits="0" branch="False" />
-                <line number="65" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method line-rate="0" branch-rate="0" complexity="2" name="ToReceived" signature="(MimeKit.MimeMessage,System.String,System.String)">
-              <lines>
-                <line number="78" hits="0" branch="False" />
-                <line number="79" hits="0" branch="False" />
-                <line number="80" hits="0" branch="False" />
-                <line number="81" hits="0" branch="False" />
-                <line number="82" hits="0" branch="False" />
-                <line number="83" hits="0" branch="False" />
-                <line number="84" hits="0" branch="False" />
-                <line number="85" hits="0" branch="False" />
-                <line number="86" hits="0" branch="False" />
-                <line number="87" hits="0" branch="False" />
-                <line number="88" hits="0" branch="False" />
-                <line number="89" hits="0" branch="False" />
-                <line number="90" hits="0" branch="False" />
-                <line number="91" hits="0" branch="False" />
-                <line number="94" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="316" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="96" hits="0" branch="False" />
-                <line number="99" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="24" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="18" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
-            <line number="28" hits="0" branch="False" />
-            <line number="29" hits="0" branch="False" />
-            <line number="30" hits="0" branch="False" />
-            <line number="32" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="59" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="34" hits="0" branch="False" />
-            <line number="37" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="171" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="39" hits="0" branch="False" />
-            <line number="42" hits="0" branch="False" />
-            <line number="43" hits="0" branch="False" />
-            <line number="44" hits="0" branch="False" />
-            <line number="46" hits="0" branch="False" />
-            <line number="48" hits="0" branch="False" />
-            <line number="49" hits="0" branch="True" condition-coverage="0% (0/4)">
-              <conditions>
-                <condition number="373" type="jump" coverage="0%" />
-                <condition number="386" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="51" hits="0" branch="False" />
-            <line number="53" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="410" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="55" hits="0" branch="False" />
-            <line number="57" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="435" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="59" hits="0" branch="False" />
-            <line number="61" hits="0" branch="False" />
-            <line number="65" hits="0" branch="False" />
-            <line number="78" hits="0" branch="False" />
-            <line number="79" hits="0" branch="False" />
-            <line number="80" hits="0" branch="False" />
-            <line number="81" hits="0" branch="False" />
-            <line number="82" hits="0" branch="False" />
-            <line number="83" hits="0" branch="False" />
-            <line number="84" hits="0" branch="False" />
-            <line number="85" hits="0" branch="False" />
-            <line number="86" hits="0" branch="False" />
-            <line number="87" hits="0" branch="False" />
-            <line number="88" hits="0" branch="False" />
-            <line number="89" hits="0" branch="False" />
-            <line number="90" hits="0" branch="False" />
-            <line number="91" hits="0" branch="False" />
-            <line number="94" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="316" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="96" hits="0" branch="False" />
-            <line number="99" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="6" name="Eliassen.MailKit.Services.SmtpClientFactory/&lt;CreateAsync&gt;d__2" filename="ExternalServices\MailKit\Eliassen.MailKit\Services\SmtpClientFactory.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="6" name="MoveNext" signature="()">
-              <lines>
-                <line number="23" hits="0" branch="False" />
-                <line number="25" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="65" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="27" hits="0" branch="False" />
-                <line number="31" hits="0" branch="False" />
-                <line number="34" hits="0" branch="True" condition-coverage="0% (0/4)">
-                  <conditions>
-                    <condition number="369" type="jump" coverage="0%" />
-                    <condition number="395" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="36" hits="0" branch="False" />
-                <line number="39" hits="0" branch="False" />
-                <line number="40" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="23" hits="0" branch="False" />
-            <line number="25" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="65" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="27" hits="0" branch="False" />
-            <line number="31" hits="0" branch="False" />
-            <line number="34" hits="0" branch="True" condition-coverage="0% (0/4)">
-              <conditions>
-                <condition number="369" type="jump" coverage="0%" />
-                <condition number="395" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="36" hits="0" branch="False" />
-            <line number="39" hits="0" branch="False" />
-            <line number="40" hits="0" branch="False" />
-          </lines>
-        </class>
-      </classes>
-    </package>
     <package line-rate="0" branch-rate="0" complexity="47" name="Eliassen.Handlebars">
       <classes>
         <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Handlebars.ServiceCollectionExtensions" filename="ExternalServices\Handlebars\Eliassen.Handlebars\ServiceCollectionExtensions.cs">
@@ -9269,18 +8933,18 @@
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="TryAddKeycloakServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)">
               <lines>
-                <line number="17" hits="0" branch="False" />
-                <line number="18" hits="0" branch="False" />
-                <line number="20" hits="0" branch="False" />
-                <line number="22" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="17" hits="0" branch="False" />
-            <line number="18" hits="0" branch="False" />
-            <line number="20" hits="0" branch="False" />
-            <line number="22" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
           </lines>
         </class>
         <class line-rate="0" branch-rate="1" complexity="6" name="Eliassen.Keycloak.Identity.ManageKeycloakUser" filename="ExternalServices\Keycloak\Eliassen.Keycloak\Identity\ManageKeycloakUser.cs">
@@ -9329,18 +8993,314 @@
         </class>
       </classes>
     </package>
-    <package line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Communications">
+    <package line-rate="0" branch-rate="0" complexity="31" name="Eliassen.MailKit">
       <classes>
-        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.Communications.ServiceCollectionExtensions" filename="Eliassen.Communications\ServiceCollectionExtensions.cs">
+        <class line-rate="0" branch-rate="1" complexity="1" name="Eliassen.MailKit.ServiceCollectionExtensions" filename="ExternalServices\MailKit\Eliassen.MailKit\ServiceCollectionExtensions.cs">
           <methods>
-            <method line-rate="0" branch-rate="1" complexity="1" name="TryAddCommunicationsServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <method line-rate="0" branch-rate="1" complexity="1" name="TryAddMailKitExtensions" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)">
               <lines>
-                <line number="15" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="15" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="6" name="Eliassen.MailKit.Services.ImapClientFactory/&lt;CreateAsync&gt;d__2" filename="ExternalServices\MailKit\Eliassen.MailKit\Services\ImapClientFactory.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="6" name="MoveNext" signature="()">
+              <lines>
+                <line number="23" hits="0" branch="False" />
+                <line number="25" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="65" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="27" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="34" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="369" type="jump" coverage="0%" />
+                    <condition number="395" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="36" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="40" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="23" hits="0" branch="False" />
+            <line number="25" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="65" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="27" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="34" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="369" type="jump" coverage="0%" />
+                <condition number="395" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="36" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="40" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="2" name="Eliassen.MailKit.Services.MailKitProvider/&lt;SendAsync&gt;d__4" filename="ExternalServices\MailKit\Eliassen.MailKit\Services\MailKitProvider.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
+              <lines>
+                <line number="31" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="21" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="32" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="40" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="45" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="31" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="21" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="32" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="40" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="16" name="Eliassen.MailKit.Services.MimeMessageFactory" filename="ExternalServices\MailKit\Eliassen.MailKit\Services\MimeMessageFactory.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="14" name="Create" signature="(Eliassen.Communications.Models.EmailMessageModel)">
+              <lines>
+                <line number="24" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="18" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="28" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+                <line number="32" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="59" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="34" hits="0" branch="False" />
+                <line number="37" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="171" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="39" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="48" hits="0" branch="False" />
+                <line number="49" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="373" type="jump" coverage="0%" />
+                    <condition number="386" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="51" hits="0" branch="False" />
+                <line number="53" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="410" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="55" hits="0" branch="False" />
+                <line number="57" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="435" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="59" hits="0" branch="False" />
+                <line number="61" hits="0" branch="False" />
+                <line number="65" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="0" complexity="2" name="ToReceived" signature="(MimeKit.MimeMessage,System.String,System.String)">
+              <lines>
+                <line number="78" hits="0" branch="False" />
+                <line number="79" hits="0" branch="False" />
+                <line number="80" hits="0" branch="False" />
+                <line number="81" hits="0" branch="False" />
+                <line number="82" hits="0" branch="False" />
+                <line number="83" hits="0" branch="False" />
+                <line number="84" hits="0" branch="False" />
+                <line number="85" hits="0" branch="False" />
+                <line number="86" hits="0" branch="False" />
+                <line number="87" hits="0" branch="False" />
+                <line number="88" hits="0" branch="False" />
+                <line number="89" hits="0" branch="False" />
+                <line number="90" hits="0" branch="False" />
+                <line number="91" hits="0" branch="False" />
+                <line number="94" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="316" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="96" hits="0" branch="False" />
+                <line number="99" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="18" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="32" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="59" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="34" hits="0" branch="False" />
+            <line number="37" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="171" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="39" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="48" hits="0" branch="False" />
+            <line number="49" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="373" type="jump" coverage="0%" />
+                <condition number="386" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="51" hits="0" branch="False" />
+            <line number="53" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="410" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="55" hits="0" branch="False" />
+            <line number="57" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="435" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="59" hits="0" branch="False" />
+            <line number="61" hits="0" branch="False" />
+            <line number="65" hits="0" branch="False" />
+            <line number="78" hits="0" branch="False" />
+            <line number="79" hits="0" branch="False" />
+            <line number="80" hits="0" branch="False" />
+            <line number="81" hits="0" branch="False" />
+            <line number="82" hits="0" branch="False" />
+            <line number="83" hits="0" branch="False" />
+            <line number="84" hits="0" branch="False" />
+            <line number="85" hits="0" branch="False" />
+            <line number="86" hits="0" branch="False" />
+            <line number="87" hits="0" branch="False" />
+            <line number="88" hits="0" branch="False" />
+            <line number="89" hits="0" branch="False" />
+            <line number="90" hits="0" branch="False" />
+            <line number="91" hits="0" branch="False" />
+            <line number="94" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="316" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="96" hits="0" branch="False" />
+            <line number="99" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="6" name="Eliassen.MailKit.Services.SmtpClientFactory/&lt;CreateAsync&gt;d__2" filename="ExternalServices\MailKit\Eliassen.MailKit\Services\SmtpClientFactory.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="6" name="MoveNext" signature="()">
+              <lines>
+                <line number="23" hits="0" branch="False" />
+                <line number="25" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="65" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="27" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="34" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="369" type="jump" coverage="0%" />
+                    <condition number="395" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="36" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="40" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="23" hits="0" branch="False" />
+            <line number="25" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="65" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="27" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="34" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="369" type="jump" coverage="0%" />
+                <condition number="395" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="36" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="40" hits="0" branch="False" />
           </lines>
         </class>
       </classes>

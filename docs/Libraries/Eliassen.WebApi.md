@@ -1,6 +1,29 @@
 ﻿# Eliassen.WebApi
 
 
+## Class: WebApi.ApplicationServiceCollectionBuilder
+Provides extension methods for configuring application services in the 
+ *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
+
+### Methods
+
+
+#### AddApplicationServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Adds application services to the specified 
+ *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
+
+
+##### Parameters
+* *services:* The instance.
+
+
+
+
+##### Return value
+The updated instance.
+
+
+
 ## Class: WebApi.Controllers.CommunicationsController
 Controller for handling communication-related operations, such as sending emails and messages to a queue. 
 
@@ -158,6 +181,28 @@ Applies a text template with the specified name and data.
 An action result containing the processed template content as a downloadable file.
 
 
+
+## Class: WebApi.Models.ClaimModel
+Represents a model for a claim. 
+
+### Properties
+
+#### Issuer
+Gets or sets the issuer of the claim. This property is required.
+#### Value
+Gets or sets the value of the claim. This property is required.
+#### ValueType
+Gets or sets the value type of the claim. This property is required.
+#### Type
+Gets or sets the type of the claim. This property is required.
+#### OriginalIssuer
+Gets or sets the original issuer of the claim. This property is required.
+#### SubjectName
+Gets or sets the subject name associated with the claim. This property is optional.
+#### SubjectLabel
+Gets or sets the subject label associated with the claim. This property is optional.
+#### SubjectAuthenticationType
+Gets or sets the authentication type of the subject associated with the claim. This property is optional.
 
 ## Class: WebApi.Models.ExampleMessageModel
 Represents an example message model. 
