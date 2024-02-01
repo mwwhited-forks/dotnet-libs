@@ -1,0 +1,13 @@
+name: mongodb
+services:
+    mongo:
+        container_name: mongodb
+        ports:
+            - 27017:27017
+        networks:
+            - dev-net
+        image: mongo:latest
+networks:
+    dev-net:
+        external: true
+        name: dev-net

@@ -1,6 +1,16 @@
 ﻿# Eliassen.Azure.StorageAccount
 
 
+## Class: Azure.StorageAccount.BlobStorage.AzureBlobContainerOptions
+Represents the options for configuring an Azure Blob Storage container. 
+
+### Properties
+
+#### ContainerName
+Gets or sets the name of the container. This property is required and specifies the name of the Azure Blob Storage container.
+#### ConnectionString
+Gets or sets the connection string for the Azure Storage account. This property is required and specifies the connection string used to connect to the Azure Storage account.
+
 ## Class: Azure.StorageAccount.BlobStorage.BlobContainerProvider
 Implementation of 
  *See: T:Eliassen.Azure.StorageAccount.BlobStorage.IDocumentProvider*for handling blob containers in Azure Storage. 
@@ -217,6 +227,8 @@ Tries to add Azure Storage services including blob and queue services to the spe
 
 ##### Parameters
 * *services:* The to add services to.
+* *configuration:* The to add services to.
+* *azureBlobContainerConfigurationSection:* The name for the ConfigurationSectionName.
 
 
 
@@ -233,6 +245,8 @@ Tries to add Azure Storage blob services to the specified
 
 ##### Parameters
 * *services:* The to add services to.
+* *configuration:* The to add services to.
+* *configurationSection:* The name for the ConfigurationSectionName.
 
 
 

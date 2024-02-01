@@ -399,7 +399,7 @@ An IOrderedQueryable instance representing the sorted result.
 
 
 
-## Class: System.ServiceCollectionExtensions
+## Class: System.Linq.ServiceCollectionExtensions
 Suggested IOC configurations 
 
 ### Methods

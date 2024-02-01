@@ -1,5 +1,7 @@
 # Eliassen - Text Templating
 
+See [back](MajorFunctionality.md)
+
 ## Summary
 
 The text templating engine exists to provide a centralized way to transform object model text.
@@ -7,12 +9,21 @@ The text templating engine exists to provide a centralized way to transform obje
 The engine is extensible to support multiple template providers such as 
 [Handlebars](https://handlebarsjs.com/guide/) and [XSLT](https://www.w3schools.com/xml/xsl_intro.asp).
 
+
+Text Templating is a native portion of the framework.  It is designed to provide a common way to 
+generate simple text content. `Eliassen.System.Text.Templating`
+
+#### Current Implementations
+
+* XSLT 1.0 - Built in `XsltTemplateProvider`
+* Handlebars.Net - Requires `Eliassen.Handlebars`
+
 ## Related Notes
 
 * [System](../Libraries/Eliassen.System.md)
   * [System.Abstractions](../Libraries/Eliassen.System.Abstractions.md)
-* [Handlebars.Extensions](../Libraries/Eliassen.Handlebars.Extensions.md)
-  * [Notes](../code/Eliassen.Handlebars.Extensions/Readme.Handlebars.Extensions.md)
+* [Handlebars](../Libraries/Eliassen.Handlebars.md)
+  * [Notes](../code/Eliassen.Handlebars/Readme.Handlebars.md)
 
 ## Structure
 
@@ -169,3 +180,7 @@ public class YourComponent(
 The built in template source will try to retreive the file from the local file system based on the 
 configured base path and the template name as the file name.  The format of template content is 
 dependant on the related provider.
+
+---
+
+See [back](MajorFunctionality.md)

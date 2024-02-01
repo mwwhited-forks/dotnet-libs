@@ -5,6 +5,10 @@ using System.Security.Claims;
 
 namespace Eliassen.WebApi.Controllers;
 
+/// <summary>
+/// Initializes a new instance of the <see cref="UserController"/> class.
+/// </summary>
+/// <param name="claimsPrincipal">The claims principal representing the current user.</param>
 [ApiController]
 [Authorize]
 [Route("api/[controller]")]
@@ -12,7 +16,10 @@ public class UserController(
     ClaimsPrincipal claimsPrincipal
     )
 {
-
+    /// <summary>
+    /// Gets the claims associated with the current user.
+    /// </summary>
+    /// <returns>An enumerable collection of <see cref="ClaimModel"/> representing the user's claims.</returns>
     [HttpGet("claims")]
     public IEnumerable<ClaimModel> GetClaims() =>
          from claim in claimsPrincipal.Claims

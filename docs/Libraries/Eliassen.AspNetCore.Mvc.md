@@ -22,6 +22,18 @@ Add custom middleware to ASP.Net to support these extensions
 
 
 
+## Class: AspNetCore.Mvc.AspNetCoreExtensionBuilder
+Represents a builder for configuring ASP.NET Core extensions. 
+
+### Properties
+
+#### RequireAuthenticatedByDefault
+Gets or sets a value indicating whether authentication is required by default. Set to true to require authentication by default; otherwise, set to false. The default value is .
+#### RequireApplicationUserId
+Gets or sets a value indicating whether an application user ID is required. Set to true to require an application user ID; otherwise, set to false. The default value is .
+#### AuthorizationPolicyBuilder
+Gets or sets the delegate for configuring an . Set to a delegate that configures an . The default value is null.
+
 ## Class: AspNetCore.Mvc.Authorization.UserAuthorizationHandler
 Handles user authorization based on specified requirements. 
 

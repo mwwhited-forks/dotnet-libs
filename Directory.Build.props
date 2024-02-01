@@ -52,7 +52,7 @@
 		<Examples Remove="obj\**\*.*" />
 
 		<Content Include="@(CodeDocumentation)" Pack="true" PackagePath="\docs" />
-		<EmbeddedResource Include="@(Examples)" />
+    <Content Include="@(Examples)" Pack="true" PackagePath="\examples"  />
 	</ItemGroup>
 	
 	<ItemGroup Condition="'$(PackageReadmeFile)'!='' and Exists('$(PackageReadmeFile)')">

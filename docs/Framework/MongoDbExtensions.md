@@ -1,10 +1,17 @@
 # Eliassen - MongoDbExtensions
 
+See [back](MajorFunctionality.md)
+
 ## Summary
 
 The MongoDbExtensions from Eliassen are intended to simplify configuration and instancation of Mongo Database collections for use with .Net 7.0+.
 
 This provides a common means to build, configure and use collections by conventions to reduce complexity for developers. 
+
+Define a common means to support mongo collections from within .Net applications.  Also provides 
+serialization and query extensions. `Eliassen.MongoDB.Extensions`
+
+* Add functionality to make compatible with Entity Framework
 
 ## Usage
 
@@ -58,3 +65,7 @@ public static class ServiceCollectionExtensions
     }
 }
 ```
+
+---
+
+See [back](MajorFunctionality.md)

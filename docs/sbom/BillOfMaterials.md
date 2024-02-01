@@ -2,8 +2,8 @@
 
 ## Summary 
 
-Application: Nucleus.Libs (0.1.65-dev-ado-update-docs.20) \
-Time: 2024-01-30T18:50:41.0018208Z \
+Application: Nucleus.Libs (0.1.67-dev-ado-update-docs.14) \
+Time: 2024-01-31T17:22:49.2518175Z \
 Tool: CycloneDX (3.0.5.0). 
 
 ## Components 
@@ -284,6 +284,20 @@ Package URL: pkg:nuget/MailKit@4.3.0
 An Open Source .NET mail-client library for Windows, Mac, Linux, and mobile platforms such as iOS and Android. 
 
 
+### Microsoft.ApplicationInsights (2.21.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://go.microsoft.com/fwlink/?LinkId=392727) \
+Hash: [SHA-512](9F1D6B795B083E493CCCA927D5F5CA0A09A5ACFB808B70906E764798BD28A4DA81D2AC58DDD9577EE75A800E2A682F7E059D47A85C71254C10BE152A68F1F6C4) \
+Package URL: pkg:nuget/Microsoft.ApplicationInsights@2.21.0 
+
+#### Description: 
+
+Application Insights Base API. This package provides core functionality for transmission of all Application Insights Telemetry Types and is a dependent package for all other Application Insights packages. Please install the platform specific package for the best experience. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156 
+
+
 ### Microsoft.AspNetCore.Authentication.JwtBearer (8.0.1) 
 
 Author: Microsoft \
@@ -319,6 +333,20 @@ System.Collections.Generic.IAsyncEnumerable
 System.Collections.Generic.IAsyncEnumerator
  
 When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### Microsoft.CodeCoverage (17.8.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/microsoft/vstest) \
+Hash: [SHA-512](BBFB44E01038C77DC33C175478C5F1107BDA23536CFC212C14060385C5E41145411550462F6665924883788FBF66477D2F517ACB28C51FAD53C0F895CEEC288C) \
+Package URL: pkg:nuget/Microsoft.CodeCoverage@17.8.0 
+
+#### Description: 
+
+Microsoft.CodeCoverage package brings infra for collecting code coverage from vstest.console.exe and "dotnet test". 
 
 
 ### Microsoft.CSharp (4.7.0) 
@@ -867,6 +895,20 @@ Package URL: pkg:nuget/Microsoft.IdentityModel.Abstractions@7.2.0
 A package containing thin abstractions for Microsoft.IdentityModel. 
 
 
+### Microsoft.IdentityModel.Abstractions (7.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
+Hash: [SHA-512](1F135AF6382B383A453E889E6B3BBA8E764CC79CBAF746414E132AB4183D18E67ABBD21410D2FDFB54EE628B3CD0CBB7A712D28A37FA85AFE45B038673215748) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.0 
+
+#### Description: 
+
+A package containing thin abstractions for Microsoft.IdentityModel. 
+
+
 ### Microsoft.IdentityModel.JsonWebTokens (7.2.0) 
 
 Author: Microsoft \
@@ -889,6 +931,20 @@ License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
 Hash: [SHA-512](C7AEC91C92322D8167F6E2D4500515412FC159F559734FA433E5F9386B3E7C0C94A11C46D0B3194F438DACEB8724A8A1F6E288767117A7A2E5316D6D7324E826) \
 Package URL: pkg:nuget/Microsoft.IdentityModel.Logging@7.2.0 
+
+#### Description: 
+
+Includes Event Source based logging support. 
+
+
+### Microsoft.IdentityModel.Logging (7.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
+Hash: [SHA-512](DB9D6CAA2E318BCC4B59BD180EE45C80741AE12348E6042CFBA51BD1CA6B50CA692D8318A7EEE6FD08B8190A7C6B42C8808F53DB60CAED9BDA384C2E5C2CEE02) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0 
 
 #### Description: 
 
@@ -1035,6 +1091,20 @@ Package URL: pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.1
 Text/plain serialization provider implementation for Kiota based SDKs. 
 
 
+### Microsoft.NET.Test.Sdk (17.8.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/microsoft/vstest) \
+Hash: [SHA-512](F211F2610137CD114621BD6C8418E52A64149AF37C176A79F418892FADB6D5DBA31EA4622A95C67E50B32A92FB1B1D5D7FB980502C5C9570DCC4C3258C6787E9) \
+Package URL: pkg:nuget/Microsoft.NET.Test.Sdk@17.8.0 
+
+#### Description: 
+
+The MSbuild targets and properties for building .NET test projects. 
+
+
 ### Microsoft.NETCore.Platforms (2.1.2) 
 
 Author: Microsoft \
@@ -1093,6 +1163,112 @@ Package URL: pkg:nuget/Microsoft.OpenApi@1.2.3
 #### Description: 
 
 .NET models with JSON and YAML writers for OpenAPI specification 
+
+
+### Microsoft.Testing.Extensions.Telemetry (1.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/microsoft/testfx) \
+Hash: [SHA-512](CEB417AE1682D0A47B4454122303FF30568199334FAD129401DCEA71F76E46579CBEDD9CDFA57266953D7340816363AB9885A093C0CE84CED9519C0C061CA0FB) \
+Package URL: pkg:nuget/Microsoft.Testing.Extensions.Telemetry@1.0.0 
+
+#### Description: 
+
+Microsoft Testing is a set of platform, framework and protocol intended to make it possible to run any test on any target or device.
+
+This package provides telemetry for the platform. 
+
+
+### Microsoft.Testing.Extensions.TrxReport.Abstractions (1.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/microsoft/testfx) \
+Hash: [SHA-512](4B53A48F9DF5F3667F5BC697CE6FAFACF6F6DA79D82B13D087F56958767F771059A197912188211BB75CECD759E836EDCDDA416A813FAC0DD3AA9EC662C3DA72) \
+Package URL: pkg:nuget/Microsoft.Testing.Extensions.TrxReport.Abstractions@1.0.0 
+
+#### Description: 
+
+Package Description 
+
+
+### Microsoft.Testing.Extensions.VSTestBridge (1.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/microsoft/testfx) \
+Hash: [SHA-512](361BF19A91D76AD06FC10088EA58573809DBC9E07C3A2D0BC475FDFE605F8ADE5B0274CBAF8462FB54D91DC4B9103CAFBF1C3C74B4E753F9209AAF16BBFB7CC4) \
+Package URL: pkg:nuget/Microsoft.Testing.Extensions.VSTestBridge@1.0.0 
+
+#### Description: 
+
+Microsoft Testing is a set of platform, framework and protocol intended to make it possible to run any test on any target or device.
+
+This package provides a bridge integration for test adapters wanting to target both VSTest and Microsoft.Testing.Platform test platforms. 
+
+
+### Microsoft.Testing.Platform (1.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/microsoft/testfx) \
+Hash: [SHA-512](449DE60314C929EAABBC58109BC7043E857E3379D805B4605E81B36766A2BD5F589B90074C5B0C6E7FF319228892B805F355AD0F4F3CF8F9C8C9E7665FAFE6E1) \
+Package URL: pkg:nuget/Microsoft.Testing.Platform@1.0.0 
+
+#### Description: 
+
+Microsoft Testing is a set of platform, framework and protocol intended to make it possible to run any test on any target or device.
+
+This package provides the core platform and the .NET implementation of the protocol. 
+
+
+### Microsoft.Testing.Platform.MSBuild (1.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/microsoft/testfx) \
+Hash: [SHA-512](7958662A6F81AF12F422D28D321AE64D8A6CA7637CA0CA0DD88A93F7E63E214E7C8AC437D56B7CBFC8B4FF5B0A680FE4B2BE6D8CA2890CE05229A914AD86BA2E) \
+Package URL: pkg:nuget/Microsoft.Testing.Platform.MSBuild@1.0.0 
+
+#### Description: 
+
+Microsoft Testing is a set of platform, framework and protocol intended to make it possible to run any test on any target or device.
+
+This package provides MSBuild integration of the platform, its extensions and configuration files. 
+
+
+### Microsoft.TestPlatform.ObjectModel (17.8.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/microsoft/vstest) \
+Hash: [SHA-512](17119C472FD87FF721677F92A801693EAB53A1897582150C26A60429C99EB1764628E7BA895B40E3B10B9EDC00F803B18316A6FDC906FFE54DBD2D04AC63DB33) \
+Package URL: pkg:nuget/Microsoft.TestPlatform.ObjectModel@17.8.0 
+
+#### Description: 
+
+The Microsoft Test Platform Object Model. 
+
+
+### Microsoft.TestPlatform.TestHost (17.8.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/microsoft/vstest) \
+Hash: [SHA-512](39FB1549FD23FC2C7B4F5525043FC1152B8C62CC813A88C9701F33A666041C6690DADD455899D247FEF5E6DF372D17F081D6098839086007B2C10618E187AC7A) \
+Package URL: pkg:nuget/Microsoft.TestPlatform.TestHost@17.8.0 
+
+#### Description: 
+
+Testplatform host executes the test using specified adapter. 
 
 
 ### Microsoft.Win32.Registry (5.0.0) 
@@ -1202,6 +1378,29 @@ Package URL: pkg:nuget/Moq@4.20.70
 Moq is the most popular and friendly mocking framework for .NET. 
 
 
+### MSTest.TestAdapter (3.2.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/microsoft/testfx) \
+Hash: [SHA-512](CBA04976CF895616A7B7D6C94DE9CF993E8F76A33031060D99B692BBAA8A16A40958F79194BC27D45045B7E3509724DCCADBD5AD9A4D7BB91B7F93900F50E595) \
+Package URL: pkg:nuget/MSTest.TestAdapter@3.2.0 
+
+#### Description: 
+
+MSTest is Microsoft supported Test Framework.
+
+      This package includes the adapter logic to discover and run tests. For access to the testing framework, install the MSTest.TestFramework package.
+
+      Supported platforms:
+      - .NET 4.6.2+
+      - .NET Core 3.1+
+      - .NET 6.0
+      - .NET 6.0 Windows.18362+
+      - UWP 10.0.16299 
+
+
 ### MSTest.TestFramework (3.2.0) 
 
 Author: Microsoft \
@@ -1267,6 +1466,34 @@ Package URL: pkg:nuget/Newtonsoft.Json@12.0.2
 #### Description: 
 
 Json.NET is a popular high-performance JSON framework for .NET 
+
+
+### Newtonsoft.Json (13.0.1) 
+
+Author: James Newton-King \
+Copyright: Copyright © James Newton-King 2008 \
+License: MIT \
+Reference: [website](https://www.newtonsoft.com/json) \
+Hash: [SHA-512](83731B662EAF05379A23F8446EF47BBC111349DD4358B7BD8B51383FE9CF637E2FE62F78CEA52A0D7BDD582DC6FBBB5837D4A7B1D53DCF37A0AE7473E21EE7B1) \
+Package URL: pkg:nuget/Newtonsoft.Json@13.0.1 
+
+#### Description: 
+
+Json.NET is a popular high-performance JSON framework for .NET 
+
+
+### NuGet.Frameworks (6.5.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: Apache-2.0 \
+Reference: [website](https://aka.ms/nugetprj) \
+Hash: [SHA-512](3F97626AF018FA9B03F06751054BE2C4E8DBD0D5329DE21662B36F3336849838BF5AF7D3721643FAA6EA90935F836CF502661573953176CFF33D4D829D953D56) \
+Package URL: pkg:nuget/NuGet.Frameworks@6.5.0 
+
+#### Description: 
+
+NuGet's understanding of target frameworks. 
 
 
 ### RabbitMQ.Client (6.8.1) 
@@ -2274,6 +2501,30 @@ System.Reflection.MemberInfo
 System.Reflection.EventInfo
 System.Reflection.Module
  
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Reflection.Metadata (1.6.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](https://github.com/dotnet/corefx/blob/master/LICENSE.TXT) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](F5227666EDC6BB1DA78B8A8E86A68E9BD647CAA2EC6A1580C14A4A5E1FE5CFDE3BDAF0D8C23DC210C405A55F83CEB6ADD1A9ADAB149DC065B38CFDDC9B01BA20) \
+Package URL: pkg:nuget/System.Reflection.Metadata@1.6.0 
+
+#### Description: 
+
+This packages provides a low-level .NET (ECMA-335) metadata reader and writer. It's geared for performance and is the ideal choice for building higher-level libraries that intend to provide their own object model, such as compilers.
+
+Commonly Used Types:
+System.Reflection.Metadata.MetadataReader
+System.Reflection.PortableExecutable.PEReader
+System.Reflection.Metadata.Ecma335.MetadataBuilder
+System.Reflection.PortableExecutable.PEBuilder
+System.Reflection.PortableExecutable.ManagedPEBuilder
+ 
+30ab651fcb4354552bd4891619a0bdd81e0ebdbf 
 When using NuGet 3.x this package requires at least version 3.4. 
 
 

@@ -23,7 +23,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddJwtBearerServices(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        JwtExtensionBuilder? builder
+#else
         JwtExtensionBuilder? builder = default
+#endif
     )
     {
         builder ??= new();
@@ -43,8 +47,13 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddJwtBearerAuthentication(
          this IServiceCollection services,
          IConfiguration configuration,
+#if DEBUG
+         string defaultScheme,
+         string configurationSection
+#else
          string defaultScheme = JwtBearerDefaults.AuthenticationScheme,
          string configurationSection = nameof(JwtBearerOptions)
+#endif
     )
     {
         services.Configure<JwtBearerOptions>(options => configuration.Bind(configurationSection, options));
@@ -65,7 +74,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddJwtBearerSwaggerGen(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        string configurationSection
+#else
         string configurationSection = nameof(OAuth2SwaggerOptions)
+#endif
     )
     {
         services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, ConfigureOAuthSwaggerUIOptions>();

@@ -1,0 +1,14 @@
+name: rabbitmq
+services:
+    rabbitmq:
+        container_name: rabbitmq
+        ports:
+            - 5672:5672
+            - 15672:15672
+        networks:
+            - dev-net
+        image: rabbitmq:latest
+networks:
+    dev-net:
+        external: true
+        name: dev-net

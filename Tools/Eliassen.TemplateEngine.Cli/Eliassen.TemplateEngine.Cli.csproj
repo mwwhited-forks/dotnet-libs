@@ -17,7 +17,7 @@
 
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\ExternalServices\Handlebars\Eliassen.Handlebars.Extensions\Eliassen.Handlebars.Extensions.csproj" />
+		<ProjectReference Include="..\..\ExternalServices\Handlebars\Eliassen.Handlebars\Eliassen.Handlebars.csproj" />
 		<ProjectReference Include="..\..\Framework\Eliassen.Extensions\Eliassen.Extensions.csproj" />
 		<ProjectReference Include="..\..\Framework\Eliassen.System\Eliassen.System.csproj" />
 	</ItemGroup>

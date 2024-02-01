@@ -5,9 +5,9 @@
 		<ImplicitUsings>false</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageReadmeFile>Readme.System.Linq.md</PackageReadmeFile>
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -18,6 +18,5 @@
 		<ProjectReference Include="..\Eliassen.Extensions\Eliassen.Extensions.csproj" />
 		<ProjectReference Include="..\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj" />
 	</ItemGroup>
-
 
 </Project>
