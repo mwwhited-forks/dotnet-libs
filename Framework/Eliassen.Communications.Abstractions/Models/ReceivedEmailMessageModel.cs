@@ -8,7 +8,7 @@ public class ReceivedEmailMessageModel : EmailMessageModel
     /// <summary>
     /// this is the host reference for the inbound message
     /// </summary>
-    public required string Server { get; set; } 
+    public required string Server { get; set; }
     /// <summary>
     /// what inbox path is the message received on
     /// </summary>

@@ -47,7 +47,7 @@ public class Program
                 IdentityProvider = identityProvider,
             },
             externalBuilder: new()
-            {                  
+            {
             },
             hostingBuilder: new()
             {

@@ -17,22 +17,6 @@ Applies a modification to the member map.
 
 
 
-## Class: MongoDB.Extensions.CollectionNameAttribute
-declarative attribute for labeling properties as MongoDB Collections 
-
-### Properties
-
-#### CollectionName
-Name to use for MongoDB collection
-#### TypeId
-Gets the type identifier for the attribute.
-### Methods
-
-
-#### Constructor
-declarative attribute for labeling properties as MongoDB Collections 
-
-
 ## Class: MongoDB.Extensions.IMongoDatabaseFactory
 provide a centralized means to created MongoDB instances 
 

@@ -2,5 +2,5 @@
 
 public class TestModel
 {
-    public required string Property { get; set; } 
+    public required string Property { get; set; }
 }

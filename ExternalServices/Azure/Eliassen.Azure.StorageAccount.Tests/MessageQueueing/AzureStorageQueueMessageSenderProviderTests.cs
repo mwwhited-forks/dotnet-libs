@@ -75,7 +75,7 @@ public class AzureStorageQueueMessageSenderProviderTests
 
         var service = MessageSenderTests.GetServiceProvider(
             TestContext,
-            config, 
+            config,
             services => services.TryAddAzureStorageServices(config, "DontCare")
             );
 

@@ -9,8 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Scripts Include="$(SolutionDir)Scripts\**\*.*" />
-    <Content Include="@(Scripts)" />
+    <None Include="$(SolutionDir)Scripts\**\*.*" />
   </ItemGroup>
 
 </Project>

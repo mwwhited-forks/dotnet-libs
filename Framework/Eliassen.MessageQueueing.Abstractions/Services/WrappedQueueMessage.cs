@@ -18,12 +18,12 @@ public record WrappedQueueMessage : IQueueMessage
     /// <summary>
     /// Gets or initializes the payload of the message.
     /// </summary>
-    public required object Payload { get; init; } 
+    public required object Payload { get; init; }
 
     /// <summary>
     /// Gets or initializes the payload type of the message.
     /// </summary>
-    public required string PayloadType { get; init; } 
+    public required string PayloadType { get; init; }
 
     /// <summary>
     /// Gets or initializes the properties associated with the message.

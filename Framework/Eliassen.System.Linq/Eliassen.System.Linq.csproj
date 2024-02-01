@@ -15,9 +15,9 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <Content Include="@(Examples)" Pack="true" PackagePath="\examples"  />
+    <Content Include="@(Examples)" Pack="true" PackagePath="\examples" />
   </ItemGroup>
-  
+
 	<ItemGroup>
 		<ProjectReference Include="..\Eliassen.Extensions\Eliassen.Extensions.csproj" />
 		<ProjectReference Include="..\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj" />
