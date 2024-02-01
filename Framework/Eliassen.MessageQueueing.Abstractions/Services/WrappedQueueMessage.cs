@@ -8,25 +8,25 @@ public record WrappedQueueMessage : IQueueMessage
     /// <summary>
     /// Gets or initializes the content type of the message.
     /// </summary>
-    public string ContentType { get; init; } = null!;
+    public required string ContentType { get; init; }
 
     /// <summary>
     /// Gets or initializes the correlation ID of the message.
     /// </summary>
-    public string CorrelationId { get; init; } = null!;
+    public required string CorrelationId { get; init; }
 
     /// <summary>
     /// Gets or initializes the payload of the message.
     /// </summary>
-    public object Payload { get; init; } = null!;
+    public required object Payload { get; init; } 
 
     /// <summary>
     /// Gets or initializes the payload type of the message.
     /// </summary>
-    public string? PayloadType { get; init; } = null!;
+    public required string PayloadType { get; init; } 
 
     /// <summary>
     /// Gets or initializes the properties associated with the message.
     /// </summary>
-    public Dictionary<string, object?> Properties { get; init; } = null!;
+    public Dictionary<string, object?> Properties { get; init; }
 }

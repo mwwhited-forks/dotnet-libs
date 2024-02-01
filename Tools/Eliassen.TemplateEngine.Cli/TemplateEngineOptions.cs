@@ -9,7 +9,7 @@ public class TemplateEngineOptions
     public string? InputFile { get; set; }
 
     [Required]
-    public string Template { get; set; } = null!;
+    public required string Template { get; set; }
 
     [CommandParameter(Value = "input-type")]
     public FileTypes? InputFileType { get; set; }

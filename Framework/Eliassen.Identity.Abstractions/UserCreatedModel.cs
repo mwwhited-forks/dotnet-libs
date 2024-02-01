@@ -8,10 +8,10 @@ public record UserCreatedModel
     /// <summary>
     /// Gets or sets the username associated with the created user.
     /// </summary>
-    public string Username { get; set; } = null!;
+    public required string Username { get; set; }
 
     /// <summary>
     /// Gets or sets the password associated with the created user.
     /// </summary>
-    public string Password { get; set; } = null!;
+    public required string Password { get; set; }
 }

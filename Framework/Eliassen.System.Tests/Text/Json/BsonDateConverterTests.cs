@@ -9,7 +9,7 @@ namespace Eliassen.System.Tests.Text.Json;
 [TestClass]
 public class BsonDateConverterTests
 {
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     [TestMethod]
     [TestCategory(TestCategories.Unit)]

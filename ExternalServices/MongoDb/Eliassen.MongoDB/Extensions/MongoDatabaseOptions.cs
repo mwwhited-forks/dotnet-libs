@@ -9,12 +9,12 @@ public class MongoDatabaseOptions : IMongoSettings
     /// <summary>
     /// Gets or sets the connection string for the MongoDB database.
     /// </summary>
-    public string ConnectionString { get; set; } = null!;
+    public required string ConnectionString { get; set; }
 
     /// <summary>
     /// Gets or sets the name of the MongoDB database.
     /// </summary>
-    public string DatabaseName { get; set; } = null!;
+    public required string DatabaseName { get; set; }
 
     /// <summary>
     /// Returns a string that represents the current object.

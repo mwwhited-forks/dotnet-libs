@@ -11,42 +11,42 @@ public record TemplateContext : ITemplateContext
     /// <summary>
     /// Gets or sets the name of the template.
     /// </summary>
-    public string TemplateName { get; set; } = null!;
+    public required string TemplateName { get; set; }
 
     /// <summary>
     /// Gets or sets the content type of the template.
     /// </summary>
-    public string TemplateContentType { get; set; } = null!;
+    public required string TemplateContentType { get; set; }
 
     /// <summary>
     /// Gets or sets the file extension of the template.
     /// </summary>
-    public string TemplateFileExtension { get; set; } = null!;
+    public required string TemplateFileExtension { get; set; }
 
     /// <summary>
     /// Gets or sets the source of the template.
     /// </summary>
-    public ITemplateSource TemplateSource { get; set; } = null!;
+    public required ITemplateSource TemplateSource { get; set; }
 
     /// <summary>
     /// Gets or sets the reference identifier of the template.
     /// </summary>
-    public string TemplateReference { get; set; } = null!;
+    public required string TemplateReference { get; set; }
 
     /// <summary>
     /// Gets or sets the function to open the template as a stream.
     /// </summary>
-    public Func<ITemplateContext, Stream> OpenTemplate { get; set; } = null!;
+    public required Func<ITemplateContext, Stream> OpenTemplate { get; set; }
 
     /// <summary>
     /// Gets or sets the content type of the target.
     /// </summary>
-    public string TargetContentType { get; set; } = null!;
+    public required string TargetContentType { get; set; }
 
     /// <summary>
     /// Gets or sets the file extension of the target.
     /// </summary>
-    public string TargetFileExtension { get; set; } = null!;
+    public required string TargetFileExtension { get; set; }
 
     /// <summary>
     /// Gets or sets the priority of the template.
