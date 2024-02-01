@@ -117,6 +117,21 @@ not needed as long as UseSourceLinks is not enabled in .runsettings for MSTest
   - [ ] add support for server side translation.  key/culture => value mapping
   - [ ] allow for use from within the text engine
 
+- [ ] Demo Kubernetes Cluster
+  - [ ] Integration Test Examples
+  - [ ] DAPR
+
+- Tools
+  - [ ] DACPAC Merge
+  - [ ] DACPAC extentions/translations for other databases
+  - [ ] MongoDB extensions for Entity Framework
+
+- [ ] Design Pattern Examples
+  - [ ] Microservices
+  - [ ] Business Events
+  - [ ] [SideCar](https://learn.microsoft.com/en-us/azure/architecture/patterns/sidecar)
+  - [ ] [Ambassador](https://learn.microsoft.com/en-us/azure/architecture/patterns/ambassador)
+
 ### Analytics and Health monitoring
 
 * [Initiative: Application Analytics](https://eliassenps.atlassian.net/browse/NIT-19)
@@ -133,5 +148,3 @@ not needed as long as UseSourceLinks is not enabled in .runsettings for MSTest
 - [ ] [Tech Debt: Filters on Date for 'equals to' don't work](https://eliassenps.atlassian.net/browse/NDM-245)
 - [ ] [Create example dotnet template set](https://eliassenps.atlassian.net/browse/NDM-102)
 - [ ] [Add data redaction extension for query engine](https://eliassenps.atlassian.net/browse/NDM-137)
-
-## Proposed Features
