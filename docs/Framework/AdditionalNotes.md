@@ -28,6 +28,7 @@
 * https://stackoverflow.com/questions/74614369/how-to-run-swagger-3-on-spring-boot-3
 * https://swagger.io/tools/swaggerhub/
 * https://github.com/docker/for-win/issues/868
+* https://learn.microsoft.com/en-us/aspnet/core/test/middleware?view=aspnetcore-8.0
    
 * [Comparing Container Apps with other Azure container options | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/compare-options)
 * [Vector Index Basics and the Inverted File Index - Zilliz Vector database blog](https://zilliz.com/learn/vector-index)
@@ -230,3 +231,8 @@ If you need to test the azure functions such as complex events, emails to schedu
   * Beyond Compare
   * OBS Studio
 * Azure Storage Explorer
+
+* State machines
+* Model validation 
+* Data authorization
+* Reports 
