@@ -3,28 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{6BEF035F-ABDF-47D9-B230-B88FEE87B53B}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-		.gitattributes = .gitattributes
-		.gitignore = .gitignore
-		.runsettings = .runsettings
-		azure-pipelines.yml = azure-pipelines.yml
-		build.bat = build.bat
-		deploy-data.bat = deploy-data.bat
-		Directory.Build.props = Directory.Build.props
-		Directory.Build.targets = Directory.Build.targets
-		generate-docs.bat = generate-docs.bat
-		GitVersion.yml = GitVersion.yml
-		global.json = global.json
-		LICENSE = LICENSE
-		Nuget.config = Nuget.config
-		package.bat = package.bat
-		ProjectSetup.md = ProjectSetup.md
-		readme.md = readme.md
-		test.bat = test.bat
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalServices", "ExternalServices", "{23338E7F-E943-4D99-B58C-CFBB7F2F53B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Azure", "Azure", "{7F87E973-492B-437E-A5AC-C14580FFA0DD}"
@@ -40,11 +18,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.TestUtilities.Tests", "Framework\Eliassen.TestUtilities.Tests\Eliassen.TestUtilities.Tests.csproj", "{93A1F684-0F32-4FF7-B4EE-59FE8E63F2BF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.AspNetCore.Mvc", "Framework\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj", "{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{F1FECC6B-DCFF-461F-9B99-CA7E6C1FF543}"
-	ProjectSection(SolutionItems) = preProject
-		.config\dotnet-tools.json = .config\dotnet-tools.json
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.System.Abstractions", "Framework\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj", "{FA9DEE5A-48BF-478D-ABBB-1300660FB786}"
 EndProject
@@ -148,13 +121,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.AspNetCore.Tests",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.AspNetCore.Abstractions", "Framework\Eliassen.AspNetCore.Abstractions\Eliassen.AspNetCore.Abstractions.csproj", "{A51C7113-7526-4F43-8A81-9BAA84FDED12}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Docs", "Common\Eliassen.Docs\Eliassen.Docs.csproj", "{3A4E5A35-04BB-42F8-9DDA-EC504F3F122E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Microsoft.ApplicationInsights", "ExternalServices\Microsoft\Eliassen.Microsoft.ApplicationInsights\Eliassen.Microsoft.ApplicationInsights.csproj", "{FA9FE5D4-CE46-4347-A165-F1E9B77680CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Scripts", "Common\Eliassen.Scripts\Eliassen.Scripts.csproj", "{AEC93850-4603-47FC-96D6-A9BDD83702CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Microsoft.ApplicationInsights.Tests", "ExternalServices\Microsoft\Eliassen.Microsoft.ApplicationInsights.Tests\Eliassen.Microsoft.ApplicationInsights.Tests.csproj", "{E9B91945-1CBD-4801-A01E-C39B733048EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Microsoft.ApplicationInsights", "ExternalServices\Microsoft\Eliassen.Microsoft.ApplicationInsights\Eliassen.Microsoft.ApplicationInsights.csproj", "{FA9FE5D4-CE46-4347-A165-F1E9B77680CF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Microsoft.ApplicationInsights.Tests", "ExternalServices\Microsoft\Eliassen.Microsoft.ApplicationInsights.Tests\Eliassen.Microsoft.ApplicationInsights.Tests.csproj", "{E9B91945-1CBD-4801-A01E-C39B733048EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Notes", "Eliassen.Notes\Eliassen.Notes.csproj", "{BA1B64DB-6FD4-4A9E-A577-E1B7E958B801}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -350,14 +321,6 @@ Global
 		{A51C7113-7526-4F43-8A81-9BAA84FDED12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A51C7113-7526-4F43-8A81-9BAA84FDED12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A51C7113-7526-4F43-8A81-9BAA84FDED12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A4E5A35-04BB-42F8-9DDA-EC504F3F122E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A4E5A35-04BB-42F8-9DDA-EC504F3F122E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A4E5A35-04BB-42F8-9DDA-EC504F3F122E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A4E5A35-04BB-42F8-9DDA-EC504F3F122E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AEC93850-4603-47FC-96D6-A9BDD83702CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AEC93850-4603-47FC-96D6-A9BDD83702CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AEC93850-4603-47FC-96D6-A9BDD83702CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AEC93850-4603-47FC-96D6-A9BDD83702CE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA9FE5D4-CE46-4347-A165-F1E9B77680CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA9FE5D4-CE46-4347-A165-F1E9B77680CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA9FE5D4-CE46-4347-A165-F1E9B77680CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -366,6 +329,10 @@ Global
 		{E9B91945-1CBD-4801-A01E-C39B733048EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9B91945-1CBD-4801-A01E-C39B733048EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9B91945-1CBD-4801-A01E-C39B733048EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA1B64DB-6FD4-4A9E-A577-E1B7E958B801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1B64DB-6FD4-4A9E-A577-E1B7E958B801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1B64DB-6FD4-4A9E-A577-E1B7E958B801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1B64DB-6FD4-4A9E-A577-E1B7E958B801}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -377,7 +344,6 @@ Global
 		{4C49EAE2-1F82-465F-9C70-5E63557A6E83} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{93A1F684-0F32-4FF7-B4EE-59FE8E63F2BF} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{2B26B6F4-DB4A-4AF4-9DE5-582CB7E5E850} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
-		{F1FECC6B-DCFF-461F-9B99-CA7E6C1FF543} = {6BEF035F-ABDF-47D9-B230-B88FEE87B53B}
 		{FA9DEE5A-48BF-478D-ABBB-1300660FB786} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{71129CCF-1669-468F-A0B3-7A306149C3F5} = {23338E7F-E943-4D99-B58C-CFBB7F2F53B2}
 		{8D340410-3940-463E-8AB2-AF1D6D2EB00E} = {7F87E973-492B-437E-A5AC-C14580FFA0DD}
@@ -426,8 +392,6 @@ Global
 		{A932AB8D-FE66-40CA-9300-F1B107FBD5EF} = {667F54FE-8F90-46F6-87CF-694714720046}
 		{F82EED08-8712-4B19-99D2-BD66F8A74C26} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
 		{A51C7113-7526-4F43-8A81-9BAA84FDED12} = {44FA51E2-00C0-4F5A-8F6D-9D0D0F61F1AC}
-		{3A4E5A35-04BB-42F8-9DDA-EC504F3F122E} = {A0D44B1C-DF50-4B24-91C0-BEC70DCCB1C8}
-		{AEC93850-4603-47FC-96D6-A9BDD83702CE} = {A0D44B1C-DF50-4B24-91C0-BEC70DCCB1C8}
 		{FA9FE5D4-CE46-4347-A165-F1E9B77680CF} = {71129CCF-1669-468F-A0B3-7A306149C3F5}
 		{E9B91945-1CBD-4801-A01E-C39B733048EF} = {71129CCF-1669-468F-A0B3-7A306149C3F5}
 	EndGlobalSection
