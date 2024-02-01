@@ -77,83 +77,85 @@ jobs:
       id: calculate-version
       shell: pwsh
       run: |
+        echo "GITHUB_WORKSPACE=$env:GITHUB_WORKSPACE"
+        echo "RUNNER_TEMP=$env:RUNNER_TEMP"
+
         $fullSemVerLower = "${{ steps.gitversion.outputs.fullSemVer }}".ToLower() 
         if ("${{ inputs.build-configuration }}" -eq "Debug") {
             $fullSemVerLower = "${{ steps.gitversion.outputs.majorMinorPatch }}${{ steps.gitversion.outputs.preReleaseLabelWithDash }}-debug.${{ steps.gitversion.outputs.preReleaseNumber }}"
-        }        
-        echo "GITHUB_WORKSPACE=$env:GITHUB_WORKSPACE"
+        }
         echo "FullSemVerLower=$fullSemVerLower"
         echo "FullSemVerLower=$fullSemVerLower" >> "$env:GITHUB_OUTPUT"
         echo "FullSemVerLower=$fullSemVerLower" >> "$env:GITHUB_ENV"
 
+        $testResultsPath = JOIN-PATH -Path $env:RUNNER_TEMP -ChildPath "TestResults"
+        echo "TestResultsPath=$testResultsPath"
+        echo "TestResultsPath=$testResultsPath" >> "$env:GITHUB_OUTPUT"
+        echo "TestResultsPath=$testResultsPath" >> "$env:GITHUB_ENV"
+        
+        $packagesPath = JOIN-PATH -Path $env:RUNNER_TEMP -ChildPath "Packages"
+        echo "PackagesPath=$packagesPath"
+        echo "PackagesPath=$packagesPath" >> "$env:GITHUB_OUTPUT"
+        echo "PackagesPath=$packagesPath" >> "$env:GITHUB_ENV"
+
     # - name: get variables
     #   run: env      
   
-    # SKIP ALL THIS FOR NOW
-    # - name: Restore dependencies
-    #   run: dotnet restore
+    - name: Restore dependencies
+      run: dotnet restore
 
-    # - name: Build
-    #   run: >
-    #     dotnet build
-    #     --configuration ${{ inputs.build-configuration }}
-    #     --property:Version=${{ steps.calculate-version.outputs.FullSemVerLower }}
-    #     --nologo 
-    #     --no-restore
+    - name: Build
+      run: >
+        dotnet build
+        --configuration ${{ inputs.build-configuration }}
+        --property:Version=${{ steps.calculate-version.outputs.FullSemVerLower }}
+        --nologo 
+        --no-restore
 
-    # - name: Package projects
-    #   run: >
-    #     dotnet pack
-    #     --configuration ${{ inputs.build-configuration }}
-    #     --no-build 
-    #     --no-restore 
-    #     --output "$env:GITHUB_WORKSPACE/Packages"
-    #     --property:Version=${{ steps.calculate-version.outputs.fullSemVerLower }}
+    - name: Package projects
+      run: >
+        dotnet pack
+        --configuration ${{ inputs.build-configuration }}
+        --no-build 
+        --no-restore 
+        --output "${{ steps.calculate-version.outputs.PackagesPath }}"
+        --property:Version=${{ steps.calculate-version.outputs.fullSemVerLower }}
         
-    # - name: Unit Test
+    - name: Unit Test
+      run: >
+        dotnet test
+        --configuration ${{ inputs.build-configuration }} 
+        --no-build 
+        --no-restore 
+        --nologo 
+        --filter "TestCategory=Unit|TestCategory=Simulate" 
+        --collect:"XPlat Code Coverage" 
+        --settings "$env:GITHUB_WORKSPACE\.runsettings"
+        --results-directory "${{ steps.calculate-version.outputs.TestResultsPath }}"
+        
+    # - name: Coverage Tool Install
+    #   run: dotnet tool install dotnet-coverage --global  
+    
+    # - name: Merge Test Results
+    #   working-directory: ${{ steps.calculate-version.outputs.TestResultsPath }}
     #   run: >
-    #     dotnet test
-    #     --configuration ${{ inputs.build-configuration }} 
-    #     --no-build 
-    #     --no-restore 
-    #     --nologo 
-    #     --filter "TestCategory=Unit|TestCategory=Simulate" 
-    #     --collect:"XPlat Code Coverage" 
-    #     --settings "$env:GITHUB_WORKSPACE\.runsettings"
+    #     dotnet coverage
+    #     merge 
+    #     coverage.*.xml 
+    #     --recursive 
+    #     --output .\Cobertura.coverage 
+    #     --output-format cobertura
+        
+# https://github.com/marketplace/actions/publish-test-results
 
-#     publishTestResults: true
-
-    
-# - task: DotNetCoreCLI@2
-#   displayName: Coverage Tool Install
-#   inputs:
-#     command: 'custom'
-#     custom: 'tool'
-#     arguments: >
-#       install 
-#       dotnet-coverage 
-#       --global      
-    
-# - task: DotNetCoreCLI@2
-#   displayName: Merge Test Results
-#   inputs:
-#     command: 'custom'
-#     custom: 'coverage'
-#     workingDirectory: '$(TestResultsPath)'
-#     arguments: >
-#       merge 
-#       coverage.*.xml 
-#       --recursive 
-#       --output .\Cobertura.coverage 
-#       --output-format cobertura
-     
-# - task: PublishCodeCoverageResults@1
-#   displayName: 'Publish Coverage Reports'
-#   inputs:
-#     codeCoverageTool: 'cobertura'
-#     summaryFileLocation: $(TestResultsPath)\Cobertura.coverage
-#     failIfCoverageEmpty: false 
-
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
+      with:
+        files: |
+          ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.xml
+          ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.trx
+          ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.json    
 
 ##TODO: Attach to build/Create release        
 
@@ -173,32 +175,13 @@ jobs:
 #     TreatNotIndexedAsWarning: true
 
     - uses: thejeff77/action-push-tag@v1.0.0
+      if: github.event_name != 'pull_request'
       with:
         tag: ${{ steps.calculate-version.outputs.FullSemVerLower }}
-        # message: '${{ steps.calculate-version.outputs.FullSemVerLower }}: PR #${{ github.event.pull_request.number }} ${{ github.event.pull_request.title }}'
 
-    # - uses: hole19/git-tag-action@master
-    #   if: github.ref != 'refs/heads/master' && github.event_name != 'pull_request'
-    #   env:
-    #     TAG: ${{ steps.calculate-version.outputs.FullSemVerLower }}
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: thejeff77/action-push-tag@v1.0.0
+      if: github.event_name == 'pull_request'
+      with:
+        tag: ${{ steps.calculate-version.outputs.FullSemVerLower }}
+        message: '${{ steps.calculate-version.outputs.FullSemVerLower }}: PR #${{ github.event.pull_request.number }} ${{ github.event.pull_request.title }}'
 
-#    - name: Commit Tag
-#      if: github.ref != 'refs/heads/master' && github.event_name != 'pull_request'
-#      uses: EndBug/add-and-commit@v5
-#      with:
-#        message: '${{ steps.calculate-version.outputs.FullSemVerLower }} - ${{ inputs.build-configuration }}'
-#        tag: ${{ steps.calculate-version.outputs.FullSemVerLower }}
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-# # https://dina-muscanell.com/blog/set-git-tags-with-azure-devops/
-# # https://stackoverflow.com/questions/59226055/setting-git-tag-from-azure-devops-build-pipeline-on-complete
-# # make sure the build service account is granted "Create Tag" and "Contribute" under repository security
-# - script: |
-#           git config --global user.name "AzureDevOps Agent"
-#           git tag "$(FullSemVerLowerTag)" --force
-#           git push origin "$(FullSemVerLowerTag)" --force
-#           echo "Tagging $(Build.Repository.Name) with $(FullSemVerLowerTag)"
-#   displayName: 'Tag Code'
-#   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
