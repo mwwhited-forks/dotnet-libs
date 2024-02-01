@@ -2,7 +2,7 @@
 
 ## Summary
 
-[Dynamic Search Concept and Design](./Design/DynamicSearchFilter.md)
+[Dynamic Search Concept and Design](Design.DynamicSearchFilter.md)
 
 This enables for a common means to query anything using the `IQueryable<T>` model.  General features provided 
 by this engine are a common reusable pattern for writing queries that support searching, filtering, sorting 

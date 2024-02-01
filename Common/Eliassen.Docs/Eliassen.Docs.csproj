@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!--https://github.com/microsoft/MSBuildSdks/blob/main/src/NoTargets/README.md-->
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>false</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CodeDocumentation Include="$(SolutionDir)docs\**\*.*" Pack="true" PackagePath="\docs" />
+    <Content Include="@(CodeDocumentation)" Pack="true" PackagePath="\docs" />
+  </ItemGroup>
+
+</Project>

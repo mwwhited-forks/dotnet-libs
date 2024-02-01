@@ -8,25 +8,11 @@ This is a collection of libraries designed to allow for faster and more consiste
 
 ### Message Queueing
 
-Messages and business event supported is provided by the `Eliassen.MessageQueueing` libraries.  
-
-Handlers are provided in process though an Hosting Engine extension.
-
-#### Current Implementations
-
-* In Process `ConcurrentQueue` - Built in
-* Azure Storage Queues - Requires `Eliassen.Azure.StorageAccount`
-* should have support for impersonate the originating ClaimsPrincipal
+See [Message Queueing](MessageQueueing.md)
 
 ### Text Templating
 
-Text Templating is a native portion of the framework.  It is designed to provide a common way to 
-generate simple text content. `Eliassen.System.Text.Templating`
-
-#### Current Implementations
-
-* XSLT 1.0 - Built in `XsltTemplateProvider`
-* Handlebars.Net - Requires `Eliassen.Handlebars.Extensions`
+See [Text Templating](TextTemplating.md)
 
 ### ASP.Net Core Extensions
 
@@ -34,31 +20,20 @@ These extensions include
 
 * Common query though IQueryable<T> support as controller actions
 * SwaggerGen extensions for oauth2 authentication as well as enumeration of options for querying 
+  * Tested to support Azure B2C and Keycloak providers
+  * User management is tested for B2C
+  * User management is in progress for Keycloak 
 * CultureInfo mapping based on request/response headers
 * Application Permission filtering based on Claims authorization
 * Improved OAuth/JWT configuration support
 
 ### Communications 
 
-The communications provides a common means for sending and receiving messages between users 
-and your application. `Eliassen.Communications`
-
-Additional queue mapping provided from `Eliassen.Communications.MessageQueueing`
-
-#### Current Implementations
-
-* https://eliassenps.atlassian.net/browse/NIT-12
-* MailKit - IMAP (inbound) / SMTP (Outbound)  Requires `Eliassen.MailKit`
-  * IMAP support is currently in design and is not fully supported at this time.
-  * should have the ability to read, dispatch to queue then either delete or mark read
-  * should have the ability to read more than the inbox
-  * should have the ability to read filter by inbound email address
-  * should have the ability to monitor multiple accounts
+See [Text Templating](CommunicationServices.md)
 
 ### MongoDB Extensions
 
-Define a common means to support mongo collections from within .Net applications.  Also provides 
-serialization and query extensions. `Eliassen.MongoDB.Extensions`
+See [MongoDB Extensions](MongoDbExtensions.md)
 
 ### Common Query Extension
 
@@ -109,40 +84,38 @@ not needed as long as UseSourceLinks is not enabled in .runsettings for MSTest
 
 ## Proposed Features
 
-### Event Scheduler
 
-* assign default rules as attribute based on event generator
-  * allow overriding though configuration
-  * possibly allow extensions to override the schedule provider
-* provide means to know last run time so the system can catch up
-* add support for NCrontab but also allow other options for recurrence calculation such as RRule
-  * https://github.com/atifaziz/NCrontab
-  * https://icalendar.org/rrule-tool.html
+- [ ] Create common chatbox integration
+- [ ] Look at creating a global notification preferences model
+- [ ] Create bulk user management
+- [ ] Create application roles/claims management
+- [ ] enable client side event bus support using signal/socket.io/websockets
+- [ ] create services to submit/check status of work items
+  - [ ] [Initiative: Issue Reporting / Feedback Integration](https://eliassenps.atlassian.net/browse/NIT-13)
 
-### Document Management and Conversion
+- [ ] Event Scheduler
+  - [ ] assign default rules as attribute based on event generator
+    - [ ] allow overriding though configuration
+    - [ ] possibly allow extensions to override the schedule provider
+  - [ ] provide means to know last run time so the system can catch up
+  - [ ] add support for NCrontab but also allow other options for recurrence   calculation such as RRule
+    * https://github.com/atifaziz/NCrontab
+    * https://icalendar.org/rrule-tool.html
 
-* [Initiative: Notifications](https://eliassenps.atlassian.net/browse/NIT-17)
-* normalize blob storage
-* https://github.com/okhosting/awesome-storage
-* https://github.com/topics/blob-storage
-* upload/download support
-* restore support for transforming documents 
-  * example, markdown to html, html to pdf
-* add support to create/read zip files
+- [ ] Document Management and Conversion
 
-### Resource Translation
+  - [ ] [Initiative: Document Center](https://eliassenps.atlassian.net/browse/NIT-17)
+  - [ ] normalize blob storage
+  - [ ] https://github.com/okhosting/awesome-storage
+  - [ ] https://github.com/topics/blob-storage
+  - [ ] upload/download support
+  - [ ] restore support for transforming documents 
+  - [ ] example, markdown to html, html to pdf
+  - [ ] add support to create/read zip files
 
-* add support for server side translation.  key/culture => value mapping
-* allow for use from within the text engine
-
-### Communication Channels
-
-* finish support for SMS, in application and chat
-* allow chat to work with teams, skype, discord, slack...
-* add twillio support for outbound email
-* add the ability for "channel extensions" these would be multiple instances of the same protocol 
-  but a different test of configurations.  This would for sending/receiving messages from multiple
-  accounts with the same provider.
+- [ ] Resource Translation
+  - [ ] add support for server side translation.  key/culture => value mapping
+  - [ ] allow for use from within the text engine
 
 ### Analytics and Health monitoring
 
@@ -155,19 +128,10 @@ not needed as long as UseSourceLinks is not enabled in .runsettings for MSTest
   * https://hilton.org.uk/blog/microservices-correlation-id
   * https://stackoverflow.com/questions/25433258/what-is-the-x-request-id-http-header
 
-### Authorization Support
+## Known Issues
 
-* create a extension point for providing additional claims to a user account.
+- [ ] [Tech Debt: Filters on Date for 'equals to' don't work](https://eliassenps.atlassian.net/browse/NDM-245)
+- [ ] [Create example dotnet template set](https://eliassenps.atlassian.net/browse/NDM-102)
+- [ ] [Add data redaction extension for query engine](https://eliassenps.atlassian.net/browse/NDM-137)
 
-### Ticket Tracking and Bug Reporting
-
-* create services to submit/check status of work items
-* [Initiative: Issue Reporting / Feedback Integration](https://eliassenps.atlassian.net/browse/NIT-13)
-
-### Chat Bots
-
-### websocket/signalr/socket.io
-
-## Role management/claims composition
-
-## Bulk user management
+## Proposed Features
