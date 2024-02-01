@@ -5,7 +5,7 @@ namespace Eliassen.Microsoft.ApplicationInsights;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddApplicationInsightsExtensions(this IServiceCollection services)
+    public static IServiceCollection TryAddApplicationInsightsExtensions(this IServiceCollection services)
     {
         services.AddApplicationInsightsTelemetryProcessor<CorrelationInfoTelemetryProcessor>();
         services.AddApplicationInsightsTelemetryProcessor<UserTelemetryProcessor>();
