@@ -15,7 +15,7 @@ namespace Eliassen.Microsoft.B2C.Tests;
 [TestClass]
 public class ManageGraphUserIntegrationTests
 {
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     private static IConfiguration GetConfiguration() =>
         new ConfigurationBuilder()

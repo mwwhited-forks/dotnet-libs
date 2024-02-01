@@ -13,7 +13,7 @@ public record ResultMessage
     /// <summary>
     /// Simple English message about issue. 
     /// </summary>
-    public string Message { get; init; } = null!;
+    public required string Message { get; init; }
 
     /// <summary>
     /// unique code that may be used to assist in translating issue

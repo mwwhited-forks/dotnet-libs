@@ -2,8 +2,8 @@
 
 ## Summary 
 
-Application: Nucleus.Libs (0.1.67-dev-ado-update-docs.14) \
-Time: 2024-01-31T17:22:49.2518175Z \
+Application: Nucleus.Libs (0.1.67-dev-ado-update-docs.23) \
+Time: 2024-02-01T22:07:09.1924311Z \
 Tool: CycloneDX (3.0.5.0). 
 
 ## Components 
@@ -298,6 +298,104 @@ Package URL: pkg:nuget/Microsoft.ApplicationInsights@2.21.0
 Application Insights Base API. This package provides core functionality for transmission of all Application Insights Telemetry Types and is a dependent package for all other Application Insights packages. Please install the platform specific package for the best experience. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156 
 
 
+### Microsoft.ApplicationInsights.AspNetCore (2.21.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://go.microsoft.com/fwlink/?LinkId=392727) \
+Hash: [SHA-512](4BCE59D263658194AC2AEB8292CF3AA7E22D2AFEDEC18A3113CB999177F9AD8AB20D984E34AF65FC682507A0EAE4328FECA4391A7DC7BF9178537AF67528C821) \
+Package URL: pkg:nuget/Microsoft.ApplicationInsights.AspNetCore@2.21.0 
+
+#### Description: 
+
+Application Insights for ASP.NET Core web applications. See https://azure.microsoft.com/documentation/articles/app-insights-asp-net-five/ for more information. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156 
+
+
+### Microsoft.ApplicationInsights.DependencyCollector (2.21.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://go.microsoft.com/fwlink/?LinkId=392727) \
+Hash: [SHA-512](FB8A307E7CCCDE67EA76C1E0F9ED4218BDCCA629607965CAADF0B17F7FC38629BFC83C8BAD06F8C655D59D66B247BD72C256D1BD0AED6932053910B295BC49B1) \
+Package URL: pkg:nuget/Microsoft.ApplicationInsights.DependencyCollector@2.21.0 
+
+#### Description: 
+
+Application Insights Dependency Collector for .NET applications. This is a dependent package for Application Insights platform specific packages and provides automatic collection of dependency telemetry. Please install the platform specific packages directly for the best experience. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156 
+
+
+### Microsoft.ApplicationInsights.EventCounterCollector (2.21.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://go.microsoft.com/fwlink/?LinkId=392727) \
+Hash: [SHA-512](BD09DE94817E649D2FB3373CCCBC0EF99AA2132C577FB11409E0068E9A6A3BEB5B217EABE50FBFDD5E5B60A98D5E336FD20FBA1027DBC91EACE35F16D8D379B5) \
+Package URL: pkg:nuget/Microsoft.ApplicationInsights.EventCounterCollector@2.21.0 
+
+#### Description: 
+
+Application Insights Event Counter Collector allows you to send data sent from EventCounters to Application Insights. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156 
+
+
+### Microsoft.ApplicationInsights.PerfCounterCollector (2.21.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://go.microsoft.com/fwlink/?LinkId=392727) \
+Hash: [SHA-512](C07444E6EA6C8B521D2211BDCA1E11332F8052CE459A612BC7952E624A5E3A88ED1F8EB27022E70E2DD3F7CCD7103DB764B11D323522CAA17571036D9D99FBC8) \
+Package URL: pkg:nuget/Microsoft.ApplicationInsights.PerfCounterCollector@2.21.0 
+
+#### Description: 
+
+Application Insights Performance Counters Collector allows you to send data collected by Performance Counters to Application Insights. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156 
+
+
+### Microsoft.ApplicationInsights.SnapshotCollector (1.4.3) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://aka.ms/pnv0qt) \
+Hash: [SHA-512](E3950F8284823D1F2685A1B1C4C1CB7B0A59ED3C6B997A9A32E400047CB4BE5DB093A3B5E548CACE8D19BA12C642F3314B897D3F1FC2AB1D9D958AECC88D69DF) \
+Package URL: pkg:nuget/Microsoft.ApplicationInsights.SnapshotCollector@1.4.3 
+
+#### Description: 
+
+Monitors exceptions in your application and automatically collects snapshots for offline analysis. 
+
+
+### Microsoft.ApplicationInsights.WindowsServer (2.21.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://go.microsoft.com/fwlink/?LinkId=392727) \
+Hash: [SHA-512](9555ADFADFEC3DF795DEADB92F9C3A783EB0EA35A625122E68F9A4FD5170384E0959ECE1BC3E9BAD124F46D3288680F94575D943BFC98963810C5D89216B97A1) \
+Package URL: pkg:nuget/Microsoft.ApplicationInsights.WindowsServer@2.21.0 
+
+#### Description: 
+
+Application Insights Windows Server nuget package provides automatic collection of application insights telemetry for .NET applications. This package can be used as a dependent package for Application Insights platform specific packages or as a standalone package for .NET applications that are not covered by platform specific packages (like for .NET worker roles). Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156 
+
+
+### Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel (2.21.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://go.microsoft.com/fwlink/?LinkId=392727) \
+Hash: [SHA-512](B60B69202BF460939078DEFF6FC28796AABEFBD6CD60CB6C24B58FD286322513BE6FF8679803C38A0328DE70CF189ABC45192D7B587CF074B159BDADBC266A36) \
+Package URL: pkg:nuget/Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel@2.21.0 
+
+#### Description: 
+
+This nuget provides a telemetry channel to Application Insights Windows Server SDK that will preserve telemetry in offline scenarios. This is a dependent package, for the best experience please install the platform specific package. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156 
+
+
 ### Microsoft.AspNetCore.Authentication.JwtBearer (8.0.1) 
 
 Author: Microsoft \
@@ -312,6 +410,165 @@ Package URL: pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.1
 ASP.NET Core middleware that enables an application to receive an OpenID Connect bearer token.
 
 This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/8e941eb42f819adb116b881195158b3887a70a1c 
+
+
+### Microsoft.AspNetCore.Hosting (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](B8D6FAB396D1A2B77DF55BFBB622180179E01AA33D3ED6C0E7F66AD1A3CBC6FE6035B191835E1FD25B7363E0DC5F61739B8B28F66D0E1321ADCDFE58473D76D1) \
+Package URL: pkg:nuget/Microsoft.AspNetCore.Hosting@2.1.1 
+
+#### Description: 
+
+ASP.NET Core hosting infrastructure and startup logic for web applications. 
+
+
+### Microsoft.AspNetCore.Hosting.Abstractions (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](728DB1EAD835E64066ABD41D9B458850CA8916C4C05E881B6E5C9A2574F4F5E3E4714104C67B9FCBC9F7D39571BEF953D2F70ED1FD145B5824CEE2B62D9570FF) \
+Package URL: pkg:nuget/Microsoft.AspNetCore.Hosting.Abstractions@2.1.1 
+
+#### Description: 
+
+ASP.NET Core hosting and startup abstractions for web applications. 
+
+
+### Microsoft.AspNetCore.Hosting.Server.Abstractions (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](22E7DEDF8D453B70487D28B32585AE96E2FB54BEE4955F11A4A08732C721BB29EED6CB0A684AF315ABAAB2F66EB0A51AE4288C2D589E9C254B4111DB11846D83) \
+Package URL: pkg:nuget/Microsoft.AspNetCore.Hosting.Server.Abstractions@2.1.1 
+
+#### Description: 
+
+ASP.NET Core hosting server abstractions for web applications. 
+
+
+### Microsoft.AspNetCore.Http (2.1.22) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/AspNetCore/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](D9D8FA8592225285A11C57C080D778A822D8939E555ACD1D75BFE8BC757673655B700D0DA6DA4741753DF7A3432A9690B763A64B17AFCBBB71683780771C719A) \
+Package URL: pkg:nuget/Microsoft.AspNetCore.Http@2.1.22 
+
+#### Description: 
+
+ASP.NET Core default HTTP feature implementations. 
+
+
+### Microsoft.AspNetCore.Http.Abstractions (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](F2AF271C5AAD3DADB52035A180A04C1C8AC810E36474998928201548B316C65C2291564C62CAE3134F4B030CC39EF423D3E46D4F1127268C47B3E9DAE1BEC573) \
+Package URL: pkg:nuget/Microsoft.AspNetCore.Http.Abstractions@2.1.1 
+
+#### Description: 
+
+ASP.NET Core HTTP object model for HTTP requests and responses and also common extension methods for registering middleware in an IApplicationBuilder.
+Commonly used types:
+Microsoft.AspNetCore.Builder.IApplicationBuilder
+Microsoft.AspNetCore.Http.HttpContext
+Microsoft.AspNetCore.Http.HttpRequest
+Microsoft.AspNetCore.Http.HttpResponse 
+
+
+### Microsoft.AspNetCore.Http.Extensions (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](8A6DB52054C78D6B8FFB74FFEE48B22AC94E5F182C392099A6BD7B3AF62965A899D5F43AD3EF5E3EB6333BC124A336C07CEA5AA27D4DA05615CA0AFB2A116650) \
+Package URL: pkg:nuget/Microsoft.AspNetCore.Http.Extensions@2.1.1 
+
+#### Description: 
+
+ASP.NET Core common extension methods for HTTP abstractions, HTTP headers, HTTP request/response, and session state. 
+
+
+### Microsoft.AspNetCore.Http.Features (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](3D952FDF0BF26B1DC68B60F3A66B5C957DDCC6C937B6B5C1CDE18488C0C5B0AA09F840B48763BCB748307AF619C03B87A67FBD6466090EE3F9B9BE13AE1F0CB0) \
+Package URL: pkg:nuget/Microsoft.AspNetCore.Http.Features@2.1.1 
+
+#### Description: 
+
+ASP.NET Core HTTP feature interface definitions. 
+
+
+### Microsoft.AspNetCore.WebUtilities (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](482BC6ACBDD13F7219F83F097CAC5E394BEA7ABA163150533249E817290E8831521DD1B73FFCBA22075A63ACFD86E5701548C0D4AC564B2AF4D9AAB01BAE1DAB) \
+Package URL: pkg:nuget/Microsoft.AspNetCore.WebUtilities@2.1.1 
+
+#### Description: 
+
+ASP.NET Core utilities, such as for working with forms, multipart messages, and query strings. 
+
+
+### Microsoft.Azure.WebJobs (3.0.33) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](http://go.microsoft.com/fwlink/?LinkID=320972) \
+Hash: [SHA-512](4A607563F178F9AC93C35E01474E5DA1FB2EAED3E79FD2AC91623B25800EE365D841484B5E22F045D8FCCB67830E622F4CD751B740FA34660F67F070901ABC64) \
+Package URL: pkg:nuget/Microsoft.Azure.WebJobs@3.0.33 
+
+#### Description: 
+
+This package contains the runtime assemblies for Microsoft.Azure.WebJobs.Host. It also adds rich diagnostics capabilities which makes it easier to monitor the WebJobs in the dashboard. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=320971 
+
+
+### Microsoft.Azure.WebJobs.Core (3.0.33) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](http://go.microsoft.com/fwlink/?LinkID=320972) \
+Hash: [SHA-512](DE10A84C6BD77B45AB154DAD91D207D5B74CB69FEF0EAF1E50D567451B0C1AAC91A3893E6F8B505398BF2F54E08D9DAE000A0AB89EC6D66C13F31CE8D37D0DCE) \
+Package URL: pkg:nuget/Microsoft.Azure.WebJobs.Core@3.0.33 
+
+#### Description: 
+
+This library simplifies the task of adding background processing to your Microsoft Azure Web Sites. The SDK uses Microsoft Azure Storage, triggering a function in your program when items are added to Queues and Blobs. A dashboard provides rich monitoring and diagnostics for the programs that you write by using the SDK. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=320971 
+
+
+### Microsoft.Azure.WebJobs.Logging.ApplicationInsights (3.0.35) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](http://go.microsoft.com/fwlink/?LinkID=320972) \
+Hash: [SHA-512](EA8F73A8CB741F657BBE3DD9DDB4FF9626CDDE8062071B9AD025D1E1AB08EF7BFA1B88C9FCBA406FC74AF8C2A46F2A6C16DC8C2D85A5E7DC4EB3640585D17015) \
+Package URL: pkg:nuget/Microsoft.Azure.WebJobs.Logging.ApplicationInsights@3.0.35 
+
+#### Description: 
+
+This package contains the runtime assemblies for Microsoft.Azure.WebJobs.Logging.ApplicationInsights. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=320971 
 
 
 ### Microsoft.Bcl.AsyncInterfaces (1.1.1) 
@@ -333,20 +590,6 @@ System.Collections.Generic.IAsyncEnumerable
 System.Collections.Generic.IAsyncEnumerator
  
 When using NuGet 3.x this package requires at least version 3.4. 
-
-
-### Microsoft.CodeCoverage (17.8.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
-Reference: [website](https://github.com/microsoft/vstest) \
-Hash: [SHA-512](BBFB44E01038C77DC33C175478C5F1107BDA23536CFC212C14060385C5E41145411550462F6665924883788FBF66477D2F517ACB28C51FAD53C0F895CEEC288C) \
-Package URL: pkg:nuget/Microsoft.CodeCoverage@17.8.0 
-
-#### Description: 
-
-Microsoft.CodeCoverage package brings infra for collecting code coverage from vstest.console.exe and "dotnet test". 
 
 
 ### Microsoft.CSharp (4.7.0) 
@@ -388,6 +631,51 @@ MSBuild tasks and targets for build-time Swagger and OpenApi document generation
 This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/e5f183b656a0e8bc087108130a5a9b54ae94494e 
 
 
+### Microsoft.Extensions.Caching.Abstractions (1.0.0) 
+
+Author: Microsoft.Extensions.Caching.Abstractions \
+Copyright: Copyright © Microsoft Corporation \
+License: [Unknown - See URL](http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm) \
+Reference: [website](http://www.asp.net/) \
+Hash: [SHA-512](1540F474B933E6E1FB01690A2A7308C8874BF8B80BF2293A1E0C876BE56235A3F6CE859641588931BB3F5DB522290908508830139BE6E5E9E400BB10ABF12A35) \
+Package URL: pkg:nuget/Microsoft.Extensions.Caching.Abstractions@1.0.0 
+
+#### Description: 
+
+Caching abstractions for in-memory cache and distributed cache.
+Commonly used types:
+Microsoft.Extensions.Caching.Distributed.IDistributedCache
+Microsoft.Extensions.Caching.Memory.IMemoryCache 
+
+
+### Microsoft.Extensions.Caching.Memory (1.0.0) 
+
+Author: Microsoft.Extensions.Caching.Memory \
+Copyright: Copyright © Microsoft Corporation \
+License: [Unknown - See URL](http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm) \
+Reference: [website](http://www.asp.net/) \
+Hash: [SHA-512](E384E3C5FE7DA3F0CC95A794EEE2AA9519344DA8B0C80A3AD31DA508295198125AC8ECE0C8AD1D143B0934D945C78D66E76DFFD8081DB7DDCE0CCF580FF2F0A3) \
+Package URL: pkg:nuget/Microsoft.Extensions.Caching.Memory@1.0.0 
+
+#### Description: 
+
+In-memory cache implementation of Microsoft.Extensions.Caching.Memory.IMemoryCache. 
+
+
+### Microsoft.Extensions.Configuration (3.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: Apache-2.0 \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](314056D5E02A6D57B1F2AD1B9C2C59D27A7326D88A08C5B938758A08162D49C9B227E89354FF4FBFA47D2679C5D1463E3ECA489033CD5EAA38A71422FC757ECB) \
+Package URL: pkg:nuget/Microsoft.Extensions.Configuration@3.1.0 
+
+#### Description: 
+
+Implementation of key-value pair based configuration for Microsoft.Extensions.Configuration. Includes the memory configuration provider. 
+
+
 ### Microsoft.Extensions.Configuration (8.0.0) 
 
 Author: Microsoft \
@@ -402,6 +690,26 @@ Package URL: pkg:nuget/Microsoft.Extensions.Configuration@8.0.0
 Implementation of key-value pair based configuration for Microsoft.Extensions.Configuration. Includes the memory configuration provider. 
 
 
+### Microsoft.Extensions.Configuration.Abstractions (3.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: Apache-2.0 \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](13EBE935F71A5447ECF5729D177816DBC00B052ED8908C7371F62AEF3510614031F6279E694D6EA3BAED141C91645568C98290E9445D6278DB2455E28136D1D6) \
+Package URL: pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@3.1.0 
+
+#### Description: 
+
+Abstractions of key-value pair based configuration.
+Commonly used types:
+Microsoft.Extensions.Configuration.IConfiguration
+Microsoft.Extensions.Configuration.IConfigurationBuilder
+Microsoft.Extensions.Configuration.IConfigurationProvider
+Microsoft.Extensions.Configuration.IConfigurationRoot
+Microsoft.Extensions.Configuration.IConfigurationSection 
+
+
 ### Microsoft.Extensions.Configuration.Abstractions (8.0.0) 
 
 Author: Microsoft \
@@ -414,6 +722,20 @@ Package URL: pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0
 #### Description: 
 
 Provides abstractions of key-value pair based configuration. Interfaces defined in this package are implemented by classes in Microsoft.Extensions.Configuration and other configuration packages. 
+
+
+### Microsoft.Extensions.Configuration.Binder (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](FAF0C073239B014DE6C3B2EDF61B7CA72B655CA96A678A405C6E511162485E446D75FE63B82B807A900470245B1F3E68F4B7AC4BE8AE14D89F4F21E615DC6B55) \
+Package URL: pkg:nuget/Microsoft.Extensions.Configuration.Binder@2.1.1 
+
+#### Description: 
+
+Functionality to bind an object to data in configuration providers for Microsoft.Extensions.Configuration. 
 
 
 ### Microsoft.Extensions.Configuration.Binder (8.0.0) 
@@ -458,6 +780,20 @@ Package URL: pkg:nuget/Microsoft.Extensions.Configuration.CommandLine@8.0.0
 Command line configuration provider implementation for Microsoft.Extensions.Configuration. This package enables you to read configuration parameters from the command line arguments of your application. You can use CommandLineConfigurationExtensions.AddCommandLine extension method on IConfigurationBuilder to add the command line configuration provider to the configuration builder. 
 
 
+### Microsoft.Extensions.Configuration.EnvironmentVariables (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](10E376A05CA34C8EAB042703E8FF428A81E97973907A72C2980C274FB8576DB9EC6C99EB0DEF7A09A0B57BFCBC76E86B4804A38533F9A336E2826147259692E6) \
+Package URL: pkg:nuget/Microsoft.Extensions.Configuration.EnvironmentVariables@2.1.1 
+
+#### Description: 
+
+Environment variables configuration provider implementation for Microsoft.Extensions.Configuration. 
+
+
 ### Microsoft.Extensions.Configuration.EnvironmentVariables (8.0.0) 
 
 Author: Microsoft \
@@ -472,6 +808,20 @@ Package URL: pkg:nuget/Microsoft.Extensions.Configuration.EnvironmentVariables@8
 Environment variables configuration provider implementation for Microsoft.Extensions.Configuration. This package enables you to read configuration parameters from environment variables. You can use EnvironmentVariablesExtensions.AddEnvironmentVariables extension method on IConfigurationBuilder to add the environment variables configuration provider to the configuration builder. 
 
 
+### Microsoft.Extensions.Configuration.FileExtensions (3.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: Apache-2.0 \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](F63A52BAA38AADAFC654A603388B72E8D198DA98629663C4FF534A9B57E7C0F7CB74075F6487024BC620E8F5E6DDD4D2731CA53504EAB21FBF6E7CC40DE09AF9) \
+Package URL: pkg:nuget/Microsoft.Extensions.Configuration.FileExtensions@3.1.0 
+
+#### Description: 
+
+Extension methods for configuring file-based configuration providers for Microsoft.Extensions.Configuration. 
+
+
 ### Microsoft.Extensions.Configuration.FileExtensions (8.0.0) 
 
 Author: Microsoft \
@@ -484,6 +834,20 @@ Package URL: pkg:nuget/Microsoft.Extensions.Configuration.FileExtensions@8.0.0
 #### Description: 
 
 Provides a base class for file-based configuration providers used with Microsoft.Extensions.Configuration and extension methods for configuring them. 
+
+
+### Microsoft.Extensions.Configuration.Json (3.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: Apache-2.0 \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](7781B6A2E3A89C8AC3198DB06D4734063B1D3AA030D78701048B2DE2D9E013B79E27253A7F189A1738120164C34DCB801DE1DB640985D0F3C88E61593BBEAE5B) \
+Package URL: pkg:nuget/Microsoft.Extensions.Configuration.Json@3.1.0 
+
+#### Description: 
+
+JSON configuration provider implementation for Microsoft.Extensions.Configuration. 
 
 
 ### Microsoft.Extensions.Configuration.Json (8.0.0) 
@@ -514,6 +878,20 @@ Package URL: pkg:nuget/Microsoft.Extensions.Configuration.UserSecrets@8.0.0
 User secrets configuration provider implementation for Microsoft.Extensions.Configuration. User secrets mechanism enables you to override application configuration settings with values stored in the local secrets file. You can use UserSecretsConfigurationExtensions.AddUserSecrets extension method on IConfigurationBuilder to add user secrets provider to the configuration builder. 
 
 
+### Microsoft.Extensions.DependencyInjection (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](F138C907CC038AAD864F50EA9CE2CB9D9AF63555FD324DFFC0E18A5D5E3F7AD0974B9D344B17109C07E36F1511B69534F160CA023B26370D8BB2A84C40F2B636) \
+Package URL: pkg:nuget/Microsoft.Extensions.DependencyInjection@2.1.1 
+
+#### Description: 
+
+Default implementation of dependency injection for Microsoft.Extensions.DependencyInjection. 
+
+
 ### Microsoft.Extensions.DependencyInjection (8.0.0) 
 
 Author: Microsoft \
@@ -526,6 +904,23 @@ Package URL: pkg:nuget/Microsoft.Extensions.DependencyInjection@8.0.0
 #### Description: 
 
 Default implementation of dependency injection for Microsoft.Extensions.DependencyInjection. 
+
+
+### Microsoft.Extensions.DependencyInjection.Abstractions (7.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](A1CF52B01F5DE43FE9DE6055EC4C7B7F8247669E8DD049BE9626DF36E3163E0769D47843EAC5D09FA3F9AAB41BDA228BBD51946C9350B6E24D45D86CC92EB317) \
+Package URL: pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0 
+
+#### Description: 
+
+Abstractions for dependency injection.
+
+Commonly Used Types:
+Microsoft.Extensions.DependencyInjection.IServiceCollection 
 
 
 ### Microsoft.Extensions.DependencyInjection.Abstractions (8.0.0) 
@@ -581,6 +976,24 @@ Microsoft.Extensions.Diagnostics.Metrics.MetricsBuilderExtensions
 Microsoft.Extensions.Diagnostics.Metrics.MetricsOptions 
 
 
+### Microsoft.Extensions.FileProviders.Abstractions (3.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: Apache-2.0 \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](C7236B52C5ABE7A121C83CA8D707D49B17F0734BF3995D6ACE549963C31A94C5FF0963C60A72F30E0C10AF890E1CF157A3D60F1AE125F03CEA88581941991E3D) \
+Package URL: pkg:nuget/Microsoft.Extensions.FileProviders.Abstractions@3.1.0 
+
+#### Description: 
+
+Abstractions of files and directories.
+Commonly used types:
+Microsoft.Extensions.FileProviders.IDirectoryContents
+Microsoft.Extensions.FileProviders.IFileInfo
+Microsoft.Extensions.FileProviders.IFileProvider 
+
+
 ### Microsoft.Extensions.FileProviders.Abstractions (8.0.0) 
 
 Author: Microsoft \
@@ -600,6 +1013,20 @@ Microsoft.Extensions.FileProviders.IFileInfo
 Microsoft.Extensions.FileProviders.IFileProvider 
 
 
+### Microsoft.Extensions.FileProviders.Physical (3.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: Apache-2.0 \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](81D6CB2763837409A9DAFD93FA9CB1A0C818A00682145ACB76524B8CDDBC25DB61DEDD811202CE9D8FA691C04159EC3510E8D28EEDF6AC2FD53CE03D0DCDCE09) \
+Package URL: pkg:nuget/Microsoft.Extensions.FileProviders.Physical@3.1.0 
+
+#### Description: 
+
+File provider for physical files for Microsoft.Extensions.FileProviders. 
+
+
 ### Microsoft.Extensions.FileProviders.Physical (8.0.0) 
 
 Author: Microsoft \
@@ -612,6 +1039,20 @@ Package URL: pkg:nuget/Microsoft.Extensions.FileProviders.Physical@8.0.0
 #### Description: 
 
 File provider for physical files for Microsoft.Extensions.FileProviders. 
+
+
+### Microsoft.Extensions.FileSystemGlobbing (3.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: Apache-2.0 \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](97BF5B470349C5FF0E2E3EB5B16423525E680A97E73801C2043104CAEBFD85BFF80AA68714940B5BCE998A6CC11666E75E56913373881B2F52F6FABDEA7948CC) \
+Package URL: pkg:nuget/Microsoft.Extensions.FileSystemGlobbing@3.1.0 
+
+#### Description: 
+
+File system globbing to find files matching a specified pattern. 
 
 
 ### Microsoft.Extensions.FileSystemGlobbing (8.0.0) 
@@ -628,6 +1069,20 @@ Package URL: pkg:nuget/Microsoft.Extensions.FileSystemGlobbing@8.0.0
 File system globbing to find files matching a specified pattern. 
 
 
+### Microsoft.Extensions.Hosting (2.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](6E941C38A9C3DB028A338BDE4CC92DCBC91E6867040045A9112BC4116DF3EA7F8CF2756F2C5CAB661E7A1F4FDF658B29AEF45C7AECCDD981E21BFE3C106EFF52) \
+Package URL: pkg:nuget/Microsoft.Extensions.Hosting@2.1.0 
+
+#### Description: 
+
+.NET Core hosting and startup infrastructures for applications. 
+
+
 ### Microsoft.Extensions.Hosting (8.0.0) 
 
 Author: Microsoft \
@@ -640,6 +1095,20 @@ Package URL: pkg:nuget/Microsoft.Extensions.Hosting@8.0.0
 #### Description: 
 
 Hosting and startup infrastructures for applications. 
+
+
+### Microsoft.Extensions.Hosting.Abstractions (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](79CEACC072F43C777B24FF18E9990BB02B20EDF7B38742A1845DA37988D53E23657EF49A266F4552EA1235A939C029EF4195FD63513FF79BA797161FAFC43194) \
+Package URL: pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@2.1.1 
+
+#### Description: 
+
+.NET Core hosting and startup abstractions for applications. 
 
 
 ### Microsoft.Extensions.Hosting.Abstractions (8.0.0) 
@@ -656,6 +1125,20 @@ Package URL: pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@8.0.0
 Hosting and startup abstractions for applications. 
 
 
+### Microsoft.Extensions.Logging (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](1C1988872213742DAD197F4309436334CDB517721CEF1B3B3F72B689520D1F846B10398DED82389F45D9669CE6CED4EF0C72DFFF93E109ACE75C7BBD4E569B05) \
+Package URL: pkg:nuget/Microsoft.Extensions.Logging@2.1.1 
+
+#### Description: 
+
+Logging infrastructure default implementation for Microsoft.Extensions.Logging. 
+
+
 ### Microsoft.Extensions.Logging (8.0.0) 
 
 Author: Microsoft \
@@ -668,6 +1151,28 @@ Package URL: pkg:nuget/Microsoft.Extensions.Logging@8.0.0
 #### Description: 
 
 Logging infrastructure default implementation for Microsoft.Extensions.Logging. 
+
+
+### Microsoft.Extensions.Logging.Abstractions (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](7EB031114A70AF9F9FE82D84935CADEDEB3BD9A9C60E00C914D741CF0D52B9F854CB82ABBF294B2494E46603B14DECA2C4B5E2CB39591DF990E7F79B3A327091) \
+Package URL: pkg:nuget/Microsoft.Extensions.Logging.Abstractions@2.1.1 
+
+#### Description: 
+
+Logging abstractions for Microsoft.Extensions.Logging.
+Commonly used types:
+Microsoft.Extensions.Logging.ILogger
+Microsoft.Extensions.Logging.ILoggerFactory
+Microsoft.Extensions.Logging.ILogger&lt;TCategoryName&gt;
+Microsoft.Extensions.Logging.LogLevel
+Microsoft.Extensions.Logging.Logger&lt;T&gt;
+Microsoft.Extensions.Logging.LoggerMessage
+Microsoft.Extensions.Logging.Abstractions.NullLogger 
 
 
 ### Microsoft.Extensions.Logging.Abstractions (8.0.0) 
@@ -691,6 +1196,34 @@ Microsoft.Extensions.Logging.LogLevel
 Microsoft.Extensions.Logging.Logger&lt;T&gt;
 Microsoft.Extensions.Logging.LoggerMessage
 Microsoft.Extensions.Logging.Abstractions.NullLogger 
+
+
+### Microsoft.Extensions.Logging.ApplicationInsights (2.21.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://go.microsoft.com/fwlink/?LinkId=392727) \
+Hash: [SHA-512](9AB4E2D804F68AAB945D9E6BBAC621F639DC28E7AB48CBE082BB727560DB02329C5DA248BEACAB27C472ABD894D768C40ED8537FAA5A1D5A9FD4088E84EE68D9) \
+Package URL: pkg:nuget/Microsoft.Extensions.Logging.ApplicationInsights@2.21.0 
+
+#### Description: 
+
+Application Insights ILogger allows forwarding events from ILogger to Application Insights. Application Insights will collect your logs from multiple sources and provide rich powerful search capabilities. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156 
+
+
+### Microsoft.Extensions.Logging.Configuration (2.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](790C4ECC04BD34C4EE1C88A4D274A9D27C36D545D2A4A269018B85C0F762EFA950FDDCE93E6891DDB318E2A8687069A054EE1123525C185C828FD5E3EE1B7BCE) \
+Package URL: pkg:nuget/Microsoft.Extensions.Logging.Configuration@2.1.0 
+
+#### Description: 
+
+Configuration support for Microsoft.Extensions.Logging. 
 
 
 ### Microsoft.Extensions.Logging.Configuration (8.0.0) 
@@ -763,6 +1296,34 @@ Package URL: pkg:nuget/Microsoft.Extensions.Logging.EventSource@8.0.0
 EventSource/EventListener logger provider implementation for Microsoft.Extensions.Logging. 
 
 
+### Microsoft.Extensions.ObjectPool (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](8C86F733712BA32F7A93C234FA36DE387CE4D6DBF2DDE3CB5B2BBD094FA4F6866F3AF09C8486027A9B05932C17FAF929C637D885E27718CF85E8B6099BF22A2B) \
+Package URL: pkg:nuget/Microsoft.Extensions.ObjectPool@2.1.1 
+
+#### Description: 
+
+A simple object pool implementation. 
+
+
+### Microsoft.Extensions.Options (2.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](55C72F83C97892406B5C00DA965B84198373F475D23188A52A849A2DD69600DEB48029B2488072CF987857CD8627AFB353065C3A8C81AE38A7AF4BAF4F897EE5) \
+Package URL: pkg:nuget/Microsoft.Extensions.Options@2.1.1 
+
+#### Description: 
+
+Provides a strongly typed way of specifying and accessing settings using dependency injection. 
+
+
 ### Microsoft.Extensions.Options (8.0.0) 
 
 Author: Microsoft \
@@ -791,6 +1352,20 @@ Package URL: pkg:nuget/Microsoft.Extensions.Options@8.0.1
 Provides a strongly typed way of specifying and accessing settings using dependency injection. 
 
 
+### Microsoft.Extensions.Options.ConfigurationExtensions (2.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](92A61BFA5AA733EA67CBB17FF1E70B15C34DE691AB966B0D3C6DD0E32C1736419D402CAB0C546D1CED668D43ACFFD59F280F61C6AB6CC26B5719738318378182) \
+Package URL: pkg:nuget/Microsoft.Extensions.Options.ConfigurationExtensions@2.1.0 
+
+#### Description: 
+
+Provides additional configuration specific functionality related to Options. 
+
+
 ### Microsoft.Extensions.Options.ConfigurationExtensions (8.0.0) 
 
 Author: Microsoft \
@@ -803,6 +1378,23 @@ Package URL: pkg:nuget/Microsoft.Extensions.Options.ConfigurationExtensions@8.0.
 #### Description: 
 
 Provides additional configuration specific functionality related to Options. 
+
+
+### Microsoft.Extensions.Primitives (3.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: Apache-2.0 \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](ABD8306BC481C1AA6AC016576E2BE6BE4332037AF80DAE407896727684E799D5147AF2FFF39A05F5BE3E864391D5753897B7F35D8C57FC7221F5C4783E002CE5) \
+Package URL: pkg:nuget/Microsoft.Extensions.Primitives@3.1.0 
+
+#### Description: 
+
+Primitives shared by framework extensions. Commonly used types include:
+Microsoft.Extensions.Primitives.IChangeToken
+Microsoft.Extensions.Primitives.StringValues
+Microsoft.Extensions.Primitives.StringSegment 
 
 
 ### Microsoft.Extensions.Primitives (8.0.0) 
@@ -909,6 +1501,20 @@ Package URL: pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.0
 A package containing thin abstractions for Microsoft.IdentityModel. 
 
 
+### Microsoft.IdentityModel.JsonWebTokens (7.1.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
+Hash: [SHA-512](E8AF28529EE1D8E74BB0BD76EC5984843D385378B842F9BE3EFAAD4BA156E1B6DC35966904BA901B572331DF0A58F41F008A3FB1F2682421958CD0201C1CCE67) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.1.2 
+
+#### Description: 
+
+Includes types that provide support for creating, serializing and validating JSON Web Tokens. This is a newer, faster version of System.IdentityModel.Tokens.Jwt that has additional functionality. 
+
+
 ### Microsoft.IdentityModel.JsonWebTokens (7.2.0) 
 
 Author: Microsoft \
@@ -951,6 +1557,20 @@ Package URL: pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0
 Includes Event Source based logging support. 
 
 
+### Microsoft.IdentityModel.Protocols (7.1.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
+Hash: [SHA-512](D7DC1E3AFCA19B52030DFC1C3AC1EEF82DBF458467FA688BED226D2223E3C639795E2E9CC532167F294974CA44A7C4AF5A8FD0116CE33EB59DD2EBF218421525) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols@7.1.2 
+
+#### Description: 
+
+Provides base protocol support for OpenIdConnect and WsFederation. 
+
+
 ### Microsoft.IdentityModel.Protocols (7.2.0) 
 
 Author: Microsoft \
@@ -965,6 +1585,20 @@ Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols@7.2.0
 Provides base protocol support for OpenIdConnect and WsFederation. 
 
 
+### Microsoft.IdentityModel.Protocols.OpenIdConnect (7.1.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
+Hash: [SHA-512](F4065228CD6C3E8134DAA446E78379CDA497E81293B3DFA7961E434B187B8C0EBD4098F11466FEB7A86D0CBCC68DA4D206591B4909C834F62626F111EAFC683A) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.1.2 
+
+#### Description: 
+
+Includes types that provide support for OpenIdConnect protocol. 
+
+
 ### Microsoft.IdentityModel.Protocols.OpenIdConnect (7.2.0) 
 
 Author: Microsoft \
@@ -977,6 +1611,20 @@ Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.2.0
 #### Description: 
 
 Includes types that provide support for OpenIdConnect protocol. 
+
+
+### Microsoft.IdentityModel.Tokens (7.1.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
+Hash: [SHA-512](441F66D684E32E9ED47AEB0860BE88EFF97890978B949211BC1AEECFAF50EFE59D390554E576712FE08CF8930A5834C2647D72D8F8C9736C2905C127BAEE6D81) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Tokens@7.1.2 
+
+#### Description: 
+
+Includes types that provide support for SecurityTokens, Cryptographic operations: Signing, Verifying Signatures, Encryption. 
 
 
 ### Microsoft.IdentityModel.Tokens (7.2.0) 
@@ -1091,18 +1739,18 @@ Package URL: pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.1
 Text/plain serialization provider implementation for Kiota based SDKs. 
 
 
-### Microsoft.NET.Test.Sdk (17.8.0) 
+### Microsoft.Net.Http.Headers (2.1.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
-License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
-Reference: [website](https://github.com/microsoft/vstest) \
-Hash: [SHA-512](F211F2610137CD114621BD6C8418E52A64149AF37C176A79F418892FADB6D5DBA31EA4622A95C67E50B32A92FB1B1D5D7FB980502C5C9570DCC4C3258C6787E9) \
-Package URL: pkg:nuget/Microsoft.NET.Test.Sdk@17.8.0 
+License: [Unknown - See URL](https://raw.githubusercontent.com/aspnet/Home/2.0.0/LICENSE.txt) \
+Reference: [website](https://asp.net/) \
+Hash: [SHA-512](7F4B3DDDE2A8342C33C10F4CD0C819BB77DCAE1AC428FD8D3B4C08C7401F019E8D7B5581B4ED2400B7DB8E856B8E3C8B7179D282CB4423F649C0E3433A89F22B) \
+Package URL: pkg:nuget/Microsoft.Net.Http.Headers@2.1.1 
 
 #### Description: 
 
-The MSbuild targets and properties for building .NET test projects. 
+HTTP header parser implementations. 
 
 
 ### Microsoft.NETCore.Platforms (2.1.2) 
@@ -1118,6 +1766,21 @@ Package URL: pkg:nuget/Microsoft.NETCore.Platforms@2.1.2
 
 Provides runtime information required to resolve target framework, platform, and runtime specific implementations of .NETCore packages. 
 6851cc781ad2ff33d4a0f429a6fc1ab85abaff86 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### Microsoft.NETCore.Platforms (3.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](636A1E3768F782CED193B18EC61616C122B5B756395BBEC3EDE805B172CE62DB2D631407DEEBBA73BF136234479BE4824F0268A57F52FF4F8D7D37D4370CD966) \
+Package URL: pkg:nuget/Microsoft.NETCore.Platforms@3.1.0 
+
+#### Description: 
+
+Provides runtime information required to resolve target framework, platform, and runtime specific implementations of .NETCore packages. 
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
@@ -1165,110 +1828,27 @@ Package URL: pkg:nuget/Microsoft.OpenApi@1.2.3
 .NET models with JSON and YAML writers for OpenAPI specification 
 
 
-### Microsoft.Testing.Extensions.Telemetry (1.0.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
-Reference: [website](https://github.com/microsoft/testfx) \
-Hash: [SHA-512](CEB417AE1682D0A47B4454122303FF30568199334FAD129401DCEA71F76E46579CBEDD9CDFA57266953D7340816363AB9885A093C0CE84CED9519C0C061CA0FB) \
-Package URL: pkg:nuget/Microsoft.Testing.Extensions.Telemetry@1.0.0 
-
-#### Description: 
-
-Microsoft Testing is a set of platform, framework and protocol intended to make it possible to run any test on any target or device.
-
-This package provides telemetry for the platform. 
-
-
-### Microsoft.Testing.Extensions.TrxReport.Abstractions (1.0.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
-Reference: [website](https://github.com/microsoft/testfx) \
-Hash: [SHA-512](4B53A48F9DF5F3667F5BC697CE6FAFACF6F6DA79D82B13D087F56958767F771059A197912188211BB75CECD759E836EDCDDA416A813FAC0DD3AA9EC662C3DA72) \
-Package URL: pkg:nuget/Microsoft.Testing.Extensions.TrxReport.Abstractions@1.0.0 
-
-#### Description: 
-
-Package Description 
-
-
-### Microsoft.Testing.Extensions.VSTestBridge (1.0.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
-Reference: [website](https://github.com/microsoft/testfx) \
-Hash: [SHA-512](361BF19A91D76AD06FC10088EA58573809DBC9E07C3A2D0BC475FDFE605F8ADE5B0274CBAF8462FB54D91DC4B9103CAFBF1C3C74B4E753F9209AAF16BBFB7CC4) \
-Package URL: pkg:nuget/Microsoft.Testing.Extensions.VSTestBridge@1.0.0 
-
-#### Description: 
-
-Microsoft Testing is a set of platform, framework and protocol intended to make it possible to run any test on any target or device.
-
-This package provides a bridge integration for test adapters wanting to target both VSTest and Microsoft.Testing.Platform test platforms. 
-
-
-### Microsoft.Testing.Platform (1.0.0) 
+### Microsoft.Win32.Registry (4.7.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
-Reference: [website](https://github.com/microsoft/testfx) \
-Hash: [SHA-512](449DE60314C929EAABBC58109BC7043E857E3379D805B4605E81B36766A2BD5F589B90074C5B0C6E7FF319228892B805F355AD0F4F3CF8F9C8C9E7665FAFE6E1) \
-Package URL: pkg:nuget/Microsoft.Testing.Platform@1.0.0 
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](FDA3DFFB486BD665557E603DB84D231722943AA333A4408A4FC0FD2BCB16E829883534B69D0D68FBC35B559BE9F9B919725E9DBC5FC8EE2AAA163546AFD46E03) \
+Package URL: pkg:nuget/Microsoft.Win32.Registry@4.7.0 
 
 #### Description: 
 
-Microsoft Testing is a set of platform, framework and protocol intended to make it possible to run any test on any target or device.
+Provides support for accessing and modifying the Windows Registry.
 
-This package provides the core platform and the .NET implementation of the protocol. 
-
-
-### Microsoft.Testing.Platform.MSBuild (1.0.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
-Reference: [website](https://github.com/microsoft/testfx) \
-Hash: [SHA-512](7958662A6F81AF12F422D28D321AE64D8A6CA7637CA0CA0DD88A93F7E63E214E7C8AC437D56B7CBFC8B4FF5B0A680FE4B2BE6D8CA2890CE05229A914AD86BA2E) \
-Package URL: pkg:nuget/Microsoft.Testing.Platform.MSBuild@1.0.0 
-
-#### Description: 
-
-Microsoft Testing is a set of platform, framework and protocol intended to make it possible to run any test on any target or device.
-
-This package provides MSBuild integration of the platform, its extensions and configuration files. 
-
-
-### Microsoft.TestPlatform.ObjectModel (17.8.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
-Reference: [website](https://github.com/microsoft/vstest) \
-Hash: [SHA-512](17119C472FD87FF721677F92A801693EAB53A1897582150C26A60429C99EB1764628E7BA895B40E3B10B9EDC00F803B18316A6FDC906FFE54DBD2D04AC63DB33) \
-Package URL: pkg:nuget/Microsoft.TestPlatform.ObjectModel@17.8.0 
-
-#### Description: 
-
-The Microsoft Test Platform Object Model. 
-
-
-### Microsoft.TestPlatform.TestHost (17.8.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
-Reference: [website](https://github.com/microsoft/vstest) \
-Hash: [SHA-512](39FB1549FD23FC2C7B4F5525043FC1152B8C62CC813A88C9701F33A666041C6690DADD455899D247FEF5E6DF372D17F081D6098839086007B2C10618E187AC7A) \
-Package URL: pkg:nuget/Microsoft.TestPlatform.TestHost@17.8.0 
-
-#### Description: 
-
-Testplatform host executes the test using specified adapter. 
+Commonly Used Types:
+Microsoft.Win32.RegistryKey
+Microsoft.Win32.Registry
+Microsoft.Win32.RegistryValueKind
+Microsoft.Win32.RegistryHive
+Microsoft.Win32.RegistryView
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
 
 
 ### Microsoft.Win32.Registry (5.0.0) 
@@ -1290,6 +1870,25 @@ Microsoft.Win32.Registry
 Microsoft.Win32.RegistryValueKind
 Microsoft.Win32.RegistryHive
 Microsoft.Win32.RegistryView
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### Microsoft.Win32.SystemEvents (4.7.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](3DC95211FD597CBEB7B8498E79D58C8DC373767D129252F1858F223FE9228BEF56C4DD48E613694581FD197E8C1EC428EC8788A451B9C248E2073C7603C994D4) \
+Package URL: pkg:nuget/Microsoft.Win32.SystemEvents@4.7.0 
+
+#### Description: 
+
+Provides access to Windows system event notifications.
+
+Commonly Used Types:
+Microsoft.Win32.SystemEvents
  
 When using NuGet 3.x this package requires at least version 3.4. 
 
@@ -1378,29 +1977,6 @@ Package URL: pkg:nuget/Moq@4.20.70
 Moq is the most popular and friendly mocking framework for .NET. 
 
 
-### MSTest.TestAdapter (3.2.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: MIT \
-Reference: [website](https://github.com/microsoft/testfx) \
-Hash: [SHA-512](CBA04976CF895616A7B7D6C94DE9CF993E8F76A33031060D99B692BBAA8A16A40958F79194BC27D45045B7E3509724DCCADBD5AD9A4D7BB91B7F93900F50E595) \
-Package URL: pkg:nuget/MSTest.TestAdapter@3.2.0 
-
-#### Description: 
-
-MSTest is Microsoft supported Test Framework.
-
-      This package includes the adapter logic to discover and run tests. For access to the testing framework, install the MSTest.TestFramework package.
-
-      Supported platforms:
-      - .NET 4.6.2+
-      - .NET Core 3.1+
-      - .NET 6.0
-      - .NET 6.0 Windows.18362+
-      - UWP 10.0.16299 
-
-
 ### MSTest.TestFramework (3.2.0) 
 
 Author: Microsoft \
@@ -1454,6 +2030,20 @@ Package URL: pkg:nuget/Newtonsoft.Json@11.0.1
 Json.NET is a popular high-performance JSON framework for .NET 
 
 
+### Newtonsoft.Json (11.0.2) 
+
+Author: James Newton-King \
+Copyright: Copyright © James Newton-King 2008 \
+License: [Unknown - See URL](https://raw.github.com/JamesNK/Newtonsoft.Json/master/LICENSE.md) \
+Reference: [website](https://www.newtonsoft.com/json) \
+Hash: [SHA-512](CE76466F0B3B138040F63C4D67B16E888448DC2F61AE06AD5504932A121865834EB9DE0CE557C6953622E917583B9B10ADE6C5B85FE0F54115DE13B10CC5C5E9) \
+Package URL: pkg:nuget/Newtonsoft.Json@11.0.2 
+
+#### Description: 
+
+Json.NET is a popular high-performance JSON framework for .NET 
+
+
 ### Newtonsoft.Json (12.0.2) 
 
 Author: James Newton-King \
@@ -1466,34 +2056,6 @@ Package URL: pkg:nuget/Newtonsoft.Json@12.0.2
 #### Description: 
 
 Json.NET is a popular high-performance JSON framework for .NET 
-
-
-### Newtonsoft.Json (13.0.1) 
-
-Author: James Newton-King \
-Copyright: Copyright © James Newton-King 2008 \
-License: MIT \
-Reference: [website](https://www.newtonsoft.com/json) \
-Hash: [SHA-512](83731B662EAF05379A23F8446EF47BBC111349DD4358B7BD8B51383FE9CF637E2FE62F78CEA52A0D7BDD582DC6FBBB5837D4A7B1D53DCF37A0AE7473E21EE7B1) \
-Package URL: pkg:nuget/Newtonsoft.Json@13.0.1 
-
-#### Description: 
-
-Json.NET is a popular high-performance JSON framework for .NET 
-
-
-### NuGet.Frameworks (6.5.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: Apache-2.0 \
-Reference: [website](https://aka.ms/nugetprj) \
-Hash: [SHA-512](3F97626AF018FA9B03F06751054BE2C4E8DBD0D5329DE21662B36F3336849838BF5AF7D3721643FAA6EA90935F836CF502661573953176CFF33D4D829D953D56) \
-Package URL: pkg:nuget/NuGet.Frameworks@6.5.0 
-
-#### Description: 
-
-NuGet's understanding of target frameworks. 
 
 
 ### RabbitMQ.Client (6.8.1) 
@@ -1847,6 +2409,26 @@ Package URL: pkg:nuget/Swashbuckle.AspNetCore.SwaggerUI@6.5.0
 Middleware to expose an embedded version of the swagger-ui from an ASP.NET Core application 
 
 
+### System.Buffers (4.5.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](https://github.com/dotnet/corefx/blob/master/LICENSE.TXT) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](D3DC8BFD088F103648F492E0D11D0E7067BFD327059BAF50375E830AF5E4AA4228AC20B563610AC24E4ABD295F3261AC7BE2DC2A40F71FE0AB6BB7C59311D712) \
+Package URL: pkg:nuget/System.Buffers@4.5.0 
+
+#### Description: 
+
+Provides resource pooling of any type for performance-critical applications that allocate and deallocate objects frequently.
+
+Commonly Used Types:
+System.Buffers.ArrayPool&lt;T&gt;
+ 
+30ab651fcb4354552bd4891619a0bdd81e0ebdbf 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
 ### System.Buffers (4.5.1) 
 
 Author: Microsoft \
@@ -1917,6 +2499,55 @@ System.Collections.Concurrent.ConcurrentStack&lt;T&gt;
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.ComponentModel.Annotations (4.4.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](https://github.com/dotnet/corefx/blob/master/LICENSE.TXT) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](BDDD37A301CBA60723C6E65026DFEB643B2985BEAEA1F85BC5E15D5C01C8EDBCADB8704A3A6011195D2313A7CA1F7DAF99094F9119EFC5045B3D2D9E94B0264A) \
+Package URL: pkg:nuget/System.ComponentModel.Annotations@4.4.0 
+
+#### Description: 
+
+Provides attributes that are used to define metadata for objects used as data sources.
+
+Commonly Used Types:
+System.ComponentModel.DataAnnotations.ValidationResult
+System.ComponentModel.DataAnnotations.IValidatableObject
+System.ComponentModel.DataAnnotations.ValidationAttribute
+System.ComponentModel.DataAnnotations.RequiredAttribute
+System.ComponentModel.DataAnnotations.StringLengthAttribute
+System.ComponentModel.DataAnnotations.DisplayAttribute
+System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+System.ComponentModel.DataAnnotations.DataTypeAttribute
+System.ComponentModel.DataAnnotations.RangeAttribute
+System.ComponentModel.DataAnnotations.KeyAttribute
+ 
+8321c729934c0f8be754953439b88e6e1c120c24 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Configuration.ConfigurationManager (4.7.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](0047BBC7777FA368F0A6F352BF994B44BCCB1BEF81EF7037065EB976977CFFE99E6C964407A7D30961F3A8213DD52CF44A81F47B6FC7D698EA5D54444618F6AF) \
+Package URL: pkg:nuget/System.Configuration.ConfigurationManager@4.7.0 
+
+#### Description: 
+
+Provides types that support using configuration files.
+
+Commonly Used Types:
+System.Configuration.Configuration
+System.Configuration.ConfigurationManager
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
 ### System.Diagnostics.Debug (4.3.0) 
 
 Author: Microsoft \
@@ -1960,6 +2591,26 @@ Provides Classes that allow you to decouple code logging rich (unserializable) d
 Commonly Used Types:
 System.Diagnostics.DiagnosticListener
 System.Diagnostics.DiagnosticSource 
+
+
+### System.Diagnostics.DiagnosticSource (5.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/runtime) \
+Hash: [SHA-512](BA21118BAD3B362FC480708C71E239368D4BCCBF2B2E0E5C83577D54205DB26B162F46E24B4FB846B641EBE80F4FA341790B0AEC8E725A0978F01B165E3BDDD7) \
+Package URL: pkg:nuget/System.Diagnostics.DiagnosticSource@5.0.0 
+
+#### Description: 
+
+Provides Classes that allow you to decouple code logging rich (unserializable) diagnostics/telemetry (e.g. framework) from code that consumes it (e.g. tools)
+
+Commonly Used Types:
+System.Diagnostics.DiagnosticListener
+System.Diagnostics.DiagnosticSource
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
 
 
 ### System.Diagnostics.DiagnosticSource (6.0.1) 
@@ -2032,6 +2683,49 @@ Commonly Used Types:
 System.Diagnostics.EventLog 
 
 
+### System.Diagnostics.PerformanceCounter (4.7.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](1985CB52A55AC5B33FAA1BEBC06A7EDEEF0B046C86C7A89DDD24DF441F7F39C8249EEF29033DA0E1EDFA8823426F01A7F2E1F9B91970F06D4DD751F7E93F0944) \
+Package URL: pkg:nuget/System.Diagnostics.PerformanceCounter@4.7.0 
+
+#### Description: 
+
+Provides the System.Diagnostics.PerformanceCounter class, which allows access to Windows performance counters.
+
+Commonly Used Types:
+System.Diagnostics.PerformanceCounter
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Diagnostics.TraceSource (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](0655962FDABF1CA334281CEE3923AA7211606B932A9EF90AE666FE214EDFE1E7089D2CA0865B3047789BDE7C30D6BB8198BAED748E5CA02041D87D8096D4C5C8) \
+Package URL: pkg:nuget/System.Diagnostics.TraceSource@4.3.0 
+
+#### Description: 
+
+Provides classes that help you trace the execution of your code. Developers should prefer the classes in the ETW-based System.Diagnostics.Tracing package.
+
+Commonly Used Types:
+System.Diagnostics.TraceListener
+System.Diagnostics.TraceLevel
+System.Diagnostics.TraceSource
+System.Diagnostics.TraceEventType
+System.Diagnostics.DefaultTraceListener
+System.Diagnostics.Trace
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
 ### System.Diagnostics.Tracing (4.3.0) 
 
 Author: Microsoft \
@@ -2054,6 +2748,30 @@ System.Diagnostics.Tracing.EventWrittenEventArgs
 System.Diagnostics.Tracing.EventAttribute
 System.Diagnostics.Tracing.EventSourceAttribute
 System.Diagnostics.Tracing.NonEventAttribute
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Drawing.Common (4.7.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](5CA48FB9622FBE9C7C52E93902879AF730C356BB276B65570D774F8786C59D75E6AD993CE2AF477F9611A8E97967C12373AFD0A8CB8A9F1D6E63505DA4BED334) \
+Package URL: pkg:nuget/System.Drawing.Common@4.7.0 
+
+#### Description: 
+
+Provides access to GDI+ graphics functionality.
+
+Commonly Used Types:
+System.Drawing.Bitmap
+System.Drawing.BitmapData
+System.Drawing.Brush
+System.Drawing.Font
+System.Drawing.Graphics
+System.Drawing.Icon
  
 When using NuGet 3.x this package requires at least version 3.4. 
 
@@ -2152,6 +2870,20 @@ System.Globalization.IdnMapping
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.IdentityModel.Tokens.Jwt (7.1.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
+Hash: [SHA-512](EB5FDC3317A15F36E334655EDABF61A490260061F0D2C8FA606093758FA3745DDC742F568084D0205FD5A5E5CB4630C96D45FC47A2BA9092F5EC843BF63D2C5D) \
+Package URL: pkg:nuget/System.IdentityModel.Tokens.Jwt@7.1.2 
+
+#### Description: 
+
+Includes types that provide support for creating, serializing and validating JSON Web Tokens. As of IdentityModel 7x, this is a legacy tool that should be replaced with Microsoft.IdentityModel.JsonWebTokens. 
+
+
 ### System.IdentityModel.Tokens.Jwt (7.2.0) 
 
 Author: Microsoft \
@@ -2214,6 +2946,31 @@ System.IO.File
 System.IO.Directory
 System.IO.SearchOption
 System.IO.FileOptions
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.IO.FileSystem.AccessControl (4.7.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](7FBB40E2C6762F099D63EADF8695513F3C8DB5ABAA027A14F93BE90A3B55DB9516187450F5AA5578586661EA53835107F60972A23868FEAB2BC5FBE7265BD307) \
+Package URL: pkg:nuget/System.IO.FileSystem.AccessControl@4.7.0 
+
+#### Description: 
+
+Provides types for managing access and audit control lists for files and directories.
+
+Commonly Used Types:
+System.Security.AccessControl.DirectoryObjectSecurity
+System.Security.AccessControl.DirectorySecurity
+System.Security.AccessControl.FileSecurity
+System.Security.AccessControl.FileSystemAccessRule
+System.Security.AccessControl.FileSystemAuditRule
+System.Security.AccessControl.FileSystemRights
+System.Security.AccessControl.FileSystemSecurity
  
 When using NuGet 3.x this package requires at least version 3.4. 
 
@@ -2284,6 +3041,29 @@ Provides non-cryptographic hash algorithms, such as CRC-32.
 Commonly Used Types:
 System.IO.Hashing.Crc32
 System.IO.Hashing.XxHash32 
+
+
+### System.Linq (4.1.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](6D0D226053902349EE4E7B7E3500039ECEAE715E0352F31DC0DE826E4075CA3F22EDAAD31A24CDE5EA24D644307679CD5920D97C853249063E2777792A35A7D2) \
+Package URL: pkg:nuget/System.Linq@4.1.0 
+
+#### Description: 
+
+Provides classes and interfaces that supports queries that use Language-Integrated Query (LINQ).
+
+Commonly Used Types:
+System.Linq.Enumerable
+System.Linq.IGrouping&lt;TKey, TElement&gt;
+System.Linq.IOrderedEnumerable&lt;TElement&gt;
+System.Linq.ILookup&lt;TKey, TElement&gt;
+System.Linq.Lookup&lt;TKey, TElement&gt;
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
 
 
 ### System.Linq (4.3.0) 
@@ -2361,6 +3141,20 @@ System.Buffers.Text.Utf8Formatter
  
 32b491939fbd125f304031c35038b1e14b4e3958 
 When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Memory.Data (1.0.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/Azure/azure-sdk-for-net/blob/System.Memory.Data_1.0.1/sdk/core/System.Memory.Data/README.md) \
+Hash: [SHA-512](36C0F75045D7E38BC76EC8A2221ABE398EC578DFAC34A26E013157CB013AB9335B30A0A48613692D04D93D680584772D42F47BD57E98D69C969C95F49EA4EA46) \
+Package URL: pkg:nuget/System.Memory.Data@1.0.1 
+
+#### Description: 
+
+Contains the BinaryData type, which is useful for converting between strings, streams, JSON, and bytes. 
 
 
 ### System.Memory.Data (1.0.2) 
@@ -2765,6 +3559,29 @@ System.Numerics.Complex
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.Security.AccessControl (4.7.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](464255881CC1AD9A0DF09EAA1EA926C75DF4196537A1C5ADB180665EC21F8DA627D00C778601EE05894EE745664374A38F0369778C98B29CBE236AA70DEAB5AE) \
+Package URL: pkg:nuget/System.Security.AccessControl@4.7.0 
+
+#### Description: 
+
+Provides base classes that enable managing access and audit control lists on securable objects.
+
+Commonly Used Types:
+System.Security.AccessControl.AccessRule
+System.Security.AccessControl.AuditRule
+System.Security.AccessControl.ObjectAccessRule
+System.Security.AccessControl.ObjectAuditRule
+System.Security.AccessControl.ObjectSecurity
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
 ### System.Security.AccessControl (5.0.0) 
 
 Author: Microsoft \
@@ -3017,6 +3834,21 @@ System.Security.Cryptography.X509Certificates.X509Chain
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.Security.Permissions (4.7.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](9C86C3B424218D618D3028CD4E16E2B93140EE4E082D989A4B234941EB2822E5DB9CD42165157E1DE7A476482A94B947BC16AD9603888B3A926F63579733B684) \
+Package URL: pkg:nuget/System.Security.Permissions@4.7.0 
+
+#### Description: 
+
+Provides types supporting Code Access Security (CAS). 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
 ### System.Security.Principal (4.3.0) 
 
 Author: Microsoft \
@@ -3034,6 +3866,32 @@ Commonly Used Types:
 System.Security.Principal.IPrincipal
 System.Security.Principal.IIdentity
 System.Security.Principal.TokenImpersonationLevel
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Security.Principal.Windows (4.7.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](F30A16D34C8792DB60B2240363A8B200CAB28BC2C7441405CF19ABF71DBF5FB0BF3BD1CBEC4D9B5EB4CF73EC482E4505D08D80AFDEF00B2B4B3BB56D6D4CAE96) \
+Package URL: pkg:nuget/System.Security.Principal.Windows@4.7.0 
+
+#### Description: 
+
+Provides classes for retrieving the current Windows user and for interacting with Windows users and groups.
+
+Commonly Used Types:
+System.Security.Principal.WindowsIdentity
+System.Security.Principal.SecurityIdentifier
+System.Security.Principal.NTAccount
+System.Security.Principal.WindowsPrincipal
+System.Security.Principal.IdentityReference
+System.Security.Principal.IdentityNotMappedException
+System.Security.Principal.WindowsBuiltInRole
+System.Security.Principal.WellKnownSidType
  
 When using NuGet 3.x this package requires at least version 3.4. 
 
@@ -3188,6 +4046,29 @@ System.Text.Encodings.Web.UrlEncoder
 System.Text.Encodings.Web.JavaScriptEncoder 
 
 
+### System.Text.Json (4.6.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](https://github.com/dotnet/corefx/blob/master/LICENSE.TXT) \
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](14882E14C01813FCB211A49C27516268F38DC356203895F0A415DFA1AECC02098DB9FD777C19D42B444BCA36AC0F096A4322DF1225F818ABEAB8D121D49C7750) \
+Package URL: pkg:nuget/System.Text.Json@4.6.0 
+
+#### Description: 
+
+Provides high-performance and low-allocating types that serialize objects to JavaScript Object Notation (JSON) text and deserialize JSON text to objects, with UTF-8 support built-in. Also provides types to read and write JSON text encoded as UTF-8, and to create an in-memory document object model (DOM), that is read-only, for random access of the JSON elements within a structured view of the data.
+
+Commonly Used Types:
+System.Text.Json.JsonSerializer
+System.Text.Json.JsonDocument
+System.Text.Json.JsonElement
+System.Text.Json.Utf8JsonWriter
+System.Text.Json.Utf8JsonReader
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
 ### System.Text.Json (4.7.2) 
 
 Author: Microsoft \
@@ -3339,6 +4220,36 @@ System.AggregateException
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.Threading.Tasks.Dataflow (4.8.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](https://github.com/dotnet/corefx/blob/master/LICENSE.TXT) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](0B20F6E3CCD424FDB34D81468566770A79DD808F6B15EC94DC23071CF66E82C31E9DB972430E46AEEC12D1868E069D0F760A4FBC5860E69AACD189ECD0DBE035) \
+Package URL: pkg:nuget/System.Threading.Tasks.Dataflow@4.8.0 
+
+#### Description: 
+
+TPL Dataflow promotes actor/agent-oriented designs through primitives for in-process message passing, dataflow, and pipelining. TDF builds upon the APIs and scheduling infrastructure provided by the Task Parallel Library (TPL), and integrates with the language support for asynchrony provided by C#, Visual Basic, and F#.
+
+Commonly Used Types:
+System.Threading.Tasks.Dataflow.ActionBlock&lt;TInput&gt;
+System.Threading.Tasks.Dataflow.BatchBlock&lt;T&gt;
+System.Threading.Tasks.Dataflow.BatchedJoinBlock&lt;T1, T2&gt;
+System.Threading.Tasks.Dataflow.BatchedJoinBlock&lt;T1, T2, T3&gt;
+System.Threading.Tasks.Dataflow.BroadcastBlock&lt;T&gt;
+System.Threading.Tasks.Dataflow.BufferBlock&lt;T&gt;
+System.Threading.Tasks.Dataflow.DataflowBlock
+System.Threading.Tasks.Dataflow.JoinBlock&lt;T1, T2&gt;
+System.Threading.Tasks.Dataflow.JoinBlock&lt;T1, T2, T3&gt;
+System.Threading.Tasks.Dataflow.TransformBlock&lt;TInput, TOutput&gt;
+System.Threading.Tasks.Dataflow.TransformManyBlock&lt;TInput, TOutput&gt;
+System.Threading.Tasks.Dataflow.WriteOnceBlock&lt;T&gt;
+ 
+8321c729934c0f8be754953439b88e6e1c120c24 
+
+
 ### System.Threading.Tasks.Extensions (4.5.4) 
 
 Author: Microsoft \
@@ -3356,6 +4267,47 @@ Commonly Used Types:
 System.Threading.Tasks.ValueTask&lt;TResult&gt;
  
 7601f4f6225089ffb291dc7d58293c7bbf5c5d4f 
+
+
+### System.Threading.Thread (4.3.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](CFE12B6A60E79E2F7FCA779A511153D5B0DCAE59EA1B11606F6327DBF8B3C565E2551E8ECADA558E62DD3B684B5C9D676575025048EDFBD3988FAF7F7235A5FE) \
+Package URL: pkg:nuget/System.Threading.Thread@4.3.0 
+
+#### Description: 
+
+Provides the System.Threading.Thread class, which allows developers to create and control a thread, set its priority, and get its state.
+
+Commonly Used Types:
+System.Threading.Thread
+System.Threading.ThreadStart
+System.Threading.ParameterizedThreadStart
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Windows.Extensions (4.7.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](F7BC7CAFC5F542A11457A27FDB96AB8A8C8D06851DF6D8BC3AC40C2038ABC71907FEB64AD9EC27CA940D6E51B316F04D2DC3D24CF1B2B5173CDE9E20B6AA0709) \
+Package URL: pkg:nuget/System.Windows.Extensions@4.7.0 
+
+#### Description: 
+
+Provides miscellaneous Windows-specific types
+
+Commonly Used Types:
+System.Security.Cryptography.X509Certificates.X509Certificate2UI
+System.Security.Cryptography.X509Certificates.X509SelectionFlag
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
 
 
 ### ZstdSharp.Port (0.7.3) 

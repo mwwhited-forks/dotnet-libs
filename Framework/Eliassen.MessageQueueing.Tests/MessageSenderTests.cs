@@ -19,7 +19,7 @@ namespace Eliassen.MessageQueueing.Tests;
 [TestClass]
 public class MessageSenderTests
 {
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     [TestMethod]
     [TestCategory(TestCategories.Simulate)]

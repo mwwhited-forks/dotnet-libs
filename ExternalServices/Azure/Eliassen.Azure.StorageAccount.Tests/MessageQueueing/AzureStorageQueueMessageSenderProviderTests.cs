@@ -21,7 +21,7 @@ public class AzureStorageQueueMessageSenderProviderTests
 {
     public const string QueueConfig = "test-config";
 
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     [TestMethod]
     [TestCategory(TestCategories.DevLocal)]
@@ -75,7 +75,7 @@ public class AzureStorageQueueMessageSenderProviderTests
 
         var service = MessageSenderTests.GetServiceProvider(
             TestContext,
-            config, 
+            config,
             services => services.TryAddAzureStorageServices(config, "DontCare")
             );
 

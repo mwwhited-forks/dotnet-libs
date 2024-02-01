@@ -21,7 +21,7 @@ public class RabbitMQQueueMessageSenderProviderTests
 {
     public const string QueueConfig = "test-config";
 
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     [TestMethod]
     [TestCategory(TestCategories.DevLocal)]

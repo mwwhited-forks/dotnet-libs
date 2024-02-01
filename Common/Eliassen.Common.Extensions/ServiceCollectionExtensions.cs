@@ -1,6 +1,7 @@
 ﻿using Eliassen.Azure.StorageAccount;
 using Eliassen.Keycloak;
 using Eliassen.MailKit;
+using Eliassen.Microsoft.ApplicationInsights;
 using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB;
 using Eliassen.RabbitMQ;
@@ -41,6 +42,11 @@ public static class ServiceCollectionExtensions
         services.TryAddAzureStorageServices(configuration, externalBuilder.AzureBlobContainerConfigurationSection);
         services.TryAddRabbitMQServices();
         services.TryAddMailKitExtensions(configuration, externalBuilder.SmtpConfigurationSection, externalBuilder.ImapConfigurationSection);
+
+#if DEBUG
+#warning Not feature is not complete and should not be used in production.
+        services.TryAddApplicationInsightsExtensions();
+#endif
 
         if (identityBuilder.IdentityProvider.HasFlag(IdentityProviders.AzureB2C))
             services.TryAddMicrosoftB2CServices(configuration, identityBuilder.MicrosoftIdentityConfigurationSection);

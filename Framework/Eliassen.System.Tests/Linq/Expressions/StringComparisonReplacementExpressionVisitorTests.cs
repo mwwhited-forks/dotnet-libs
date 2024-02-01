@@ -9,7 +9,7 @@ namespace Eliassen.System.Tests.Linq.Expressions;
 [TestClass]
 public class StringComparisonReplacementExpressionVisitorTests
 {
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     [DataTestMethod]
     [TestCategory(TestCategories.Unit)]
