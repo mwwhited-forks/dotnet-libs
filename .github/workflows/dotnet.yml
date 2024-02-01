@@ -31,7 +31,7 @@ on:
       build-platform: 
         description: 'Build Platform'
         required: true
-        default: 'windows-latest'
+        default: 'ubuntu-latest'
         type: choice
         options:
           - windows-latest
@@ -146,13 +146,13 @@ jobs:
     #     --output .\Cobertura.coverage 
     #     --output-format cobertura
         
-# https://github.com/marketplace/actions/publish-test-results
-
+    # https://github.com/marketplace/actions/publish-test-results
+    # this doesn't support windows right now for some reason
     - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v2
+      uses: turing85/publish-report@v1.0.11
       if: always()
       with:
-        files: |
+        report-path: |
           ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.xml
           ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.trx
           ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.json    
