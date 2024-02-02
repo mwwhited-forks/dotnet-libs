@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Eliassen.AspNetCore.Mvc.Middleware;
 
-// <summary>
+/// <summary>
 /// Middleware for handling correlation information in HTTP requests and responses.
 /// </summary>
 public class CorrelationInfoMiddleware

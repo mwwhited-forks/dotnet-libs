@@ -5,10 +5,17 @@ using Microsoft.AspNetCore.Http;
 
 namespace Eliassen.ApplicationInsights;
 
+/// <summary>
+/// Telemetry processor that extracts user information from the HTTP context and adds it to telemetry items.
+/// </summary>
 public class UserTelemetryProcessor : ITelemetryProcessor
 {
     private readonly IHttpContextAccessor _accessor;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="UserTelemetryProcessor"/> class.
+    /// </summary>
+    /// <param name="accessor">The accessor for accessing the current HTTP context.</param>
     public UserTelemetryProcessor(
         IHttpContextAccessor accessor
         )
@@ -16,6 +23,10 @@ public class UserTelemetryProcessor : ITelemetryProcessor
         _accessor = accessor;
     }
 
+    /// <summary>
+    /// Processes telemetry items by extracting user information from the HTTP context and adding it to the global properties.
+    /// </summary>
+    /// <param name="item">The telemetry item to process.</param>
     public void Process(ITelemetry item)
     {
         var user = _accessor.HttpContext?.User;

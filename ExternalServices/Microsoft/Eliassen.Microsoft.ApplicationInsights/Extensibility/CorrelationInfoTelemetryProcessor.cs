@@ -5,15 +5,28 @@ using Microsoft.ApplicationInsights.Extensibility;
 
 namespace Eliassen.ApplicationInsights;
 
+/// <summary>
+/// Implements an <see cref="ITelemetryProcessor"/> that adds correlation information to telemetry items.
+/// </summary>
 public class CorrelationInfoTelemetryProcessor : ITelemetryProcessor
 {
     private readonly IAccessor<CorrelationInfo> _correlationAccessor;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CorrelationInfoTelemetryProcessor"/> class.
+    /// </summary>
+    /// <param name="stringAccessor">The accessor for managing correlation information.</param>
     public CorrelationInfoTelemetryProcessor(
         IAccessor<CorrelationInfo> stringAccessor
         )
     {
         _correlationAccessor = stringAccessor;
     }
+
+    /// <summary>
+    /// Processes telemetry items by adding correlation information to the global properties.
+    /// </summary>
+    /// <param name="item">The telemetry item to process.</param>
     public void Process(ITelemetry item)
     {
         var correlationId = _correlationAccessor.Value?.CorrelationId;
