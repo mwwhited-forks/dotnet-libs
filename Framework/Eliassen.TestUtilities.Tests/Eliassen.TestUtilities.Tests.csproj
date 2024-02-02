@@ -24,11 +24,5 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
 	</ItemGroup>
-
-	<ItemGroup>
-		<EmbeddedResource Include="..\Eliassen.EntityFrameworkCore.EmbeddedResources.Tests\Data\**\*.json">
-			<Link>Data\%(RecursiveDir)%(Filename)%(Extension)</Link>
-		</EmbeddedResource>
-	</ItemGroup>
 	
 </Project>

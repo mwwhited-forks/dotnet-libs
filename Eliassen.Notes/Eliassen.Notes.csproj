@@ -13,7 +13,7 @@
   </Target>
   
   <ItemGroup>
-    <None Include="$(SolutionDir)docs\**\*.*" Pack="true" PackagePath="\docs" >
+    <None Include="$(SolutionDir)docs\**\*.*" >
       <Link>\docs\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </None>
     <None Include="$(SolutionDir)Scripts\**\*.*">
