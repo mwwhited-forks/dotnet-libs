@@ -87,6 +87,11 @@ jobs:
         echo "FullSemVerLower=$fullSemVerLower"
         echo "FullSemVerLower=$fullSemVerLower" >> "$env:GITHUB_OUTPUT"
         echo "FullSemVerLower=$fullSemVerLower" >> "$env:GITHUB_ENV"
+        
+        $workspace = $env:GITHUB_WORKSPACE
+        echo "BuildWorkspace=$workspace"
+        echo "BuildWorkspace=$workspace" >> "$env:GITHUB_OUTPUT"
+        echo "BuildWorkspace=$workspace" >> "$env:GITHUB_ENV"
 
         $testResultsPath = JOIN-PATH -Path $env:RUNNER_TEMP -ChildPath "TestResults"
         echo "TestResultsPath=$testResultsPath"
@@ -114,6 +119,7 @@ jobs:
         dotnet build
         --configuration ${{ inputs.build-configuration }}
         --property:Version=${{ steps.calculate-version.outputs.FullSemVerLower }}
+        --property:SolutionDir=${{ steps.calculate-version.outputs.BuildWorkspace }}
         --nologo 
         --no-restore
 
@@ -159,10 +165,11 @@ jobs:
       id: test-results
       if: always()
       with:
-        report-path: |
-          ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.xml
-          ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.trx
-          ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.json    
+        trx_files: ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.trx
+        # files: |
+        #   ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.xml
+        #   ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.trx
+        #   ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.json    
 
 ##TODO: Attach to build/Create release        
 
