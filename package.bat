@@ -7,4 +7,4 @@ IF "%1"=="--clean" (
 dotnet pack ^
 --configuration Release ^
 --output .\publish\packages ^
-Nucleus.Net.Libs.sln 
+Eliassen.Libs.sln 

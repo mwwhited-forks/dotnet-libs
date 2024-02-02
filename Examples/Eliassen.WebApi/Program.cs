@@ -1,17 +1,7 @@
-﻿using Eliassen.AspNetCore.JwtAuthentication;
-using Eliassen.AspNetCore.Mvc;
-using Eliassen.Azure.StorageAccount;
-using Eliassen.Communications;
-using Eliassen.Communications.MessageQueueing;
-using Eliassen.MailKit;
-using Eliassen.MailKit.Hosting;
-using Eliassen.MessageQueueing;
-using Eliassen.MessageQueueing.Hosting;
-using Eliassen.Microsoft.B2C;
-using Eliassen.MongoDB.Extensions;
-using Eliassen.RabbitMQ;
-using Eliassen.System;
-using Eliassen.WebApi.Provider;
+﻿using Eliassen.AspNetCore.JwtAuthentication.SwaggerGen;
+using Eliassen.Common;
+using Eliassen.Common.Extensions;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Eliassen.WebApi;
 
@@ -20,7 +10,6 @@ namespace Eliassen.WebApi;
 /// </summary>
 public class Program
 {
-
     /// <summary>
     /// primary entry point
     /// </summary>
@@ -31,33 +20,42 @@ public class Program
         var services = builder.Services;
 
         // Add example application services 
+        services.AddApplicationServices();
 
-        services.AddTransient<IExampleMessageProvider, ExampleMessageProvider>();
-        services.AddTransient<IMessageQueueHandler, ExampleMessageProvider>();
+        var identityProvider = Enum.TryParse<IdentityProviders>(
+            Environment.GetEnvironmentVariable("IDENTITY_PROVIDER"), ignoreCase: true, out var ip) ? ip : IdentityProviders.AzureB2C;
+        var authProvider = identityProvider != IdentityProviders.None ? $"{identityProvider}:" : "";
+        var skipHosting = bool.TryParse(Environment.GetEnvironmentVariable("SWAGGER_ONLY"), out var ret) && ret;
 
         // Add internal services
-        services
-            .TryAddSystemExtensions(builder.Configuration)
-            .TryAddMongoServices(builder.Configuration)
-
-            .TryAddMessageQueueingServices()
-                .TryAddMessageQueueingHosting()
-                .TryAddAzureStorageServices()
-                .TryAddRabbitMQServices()
-
-            .TryAddCommunicationsServices()
-                .TryAddCommunicationQueueServices()
-                .TryAddMailKitExtensions(builder.Configuration)
-                    .TryAddMailKitHosting()
-
-            .AddMicrosoftB2CServices() //TODO: rename this to identity management
-
-            .TryAddAspNetCoreExtensions(requireApplicationUserId: false)
-                .TryAddJwtBearerServices(builder.Configuration)
-            ;
+        services.TryAllCommonExtensions(
+            builder.Configuration,
+            systemBuilder: new()
+            {
+            },
+            aspNetBuilder: new()
+            {
+                RequireApplicationUserId = false,
+            },
+            jwtBuilder: new()
+            {
+                JwtBearerConfigurationSection = authProvider + nameof(JwtBearerOptions),
+                OAuth2SwaggerConfigurationSection = authProvider + nameof(OAuth2SwaggerOptions),
+            },
+            identityBuilder: new()
+            {
+                IdentityProvider = identityProvider,
+            },
+            externalBuilder: new()
+            {
+            },
+            hostingBuilder: new()
+            {
+                DisableMailKit = skipHosting,
+                DisableMessageQueueing = skipHosting,
+            });
 
         // Add services to the container.
-
         services.AddLogging(builder => builder
             .AddConsole()
             .SetMinimumLevel(LogLevel.Debug)
@@ -79,7 +77,7 @@ public class Program
 
         app.UseHttpsRedirection();
 
-        app.UseAspNetCoreExtensionMiddleware();
+        app.UseAllCommonMiddleware();
 
         app.UseAuthentication();
         app.UseAuthorization();

@@ -1,4 +1,5 @@
 ﻿using Eliassen.Extensions.Configuration;
+using Eliassen.Identity;
 using Eliassen.Microsoft.B2C.Identity;
 using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
@@ -14,15 +15,15 @@ namespace Eliassen.Microsoft.B2C.Tests;
 [TestClass]
 public class ManageGraphUserIntegrationTests
 {
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     private static IConfiguration GetConfiguration() =>
         new ConfigurationBuilder()
             .AddInMemoryCollection(
-                        (ConfigKeys.Azure.AdB2C.ClientID, "6721294c-f956-4290-9629-6455b92fbcf2"),
-                        (ConfigKeys.Azure.AdB2C.Issuer, "f94cddd5-af89-42f6-9a81-d7898aef64a3"),
-                        (ConfigKeys.Azure.AdB2C.Tenant, "lightwellnucleusdev"),
-                        (ConfigKeys.Azure.AdB2C.ClientSecret, "bf68Q~SI7x0osvcUaA8qR-oE9xA3ZTqNZVvl.b86")
+                        ("MicrosoftIdentityOptions:ClientID", "6721294c-f956-4290-9629-6455b92fbcf2"),
+                        ("MicrosoftIdentityOptions:Issuer", "f94cddd5-af89-42f6-9a81-d7898aef64a3"),
+                        ("MicrosoftIdentityOptions:Tenant", "lightwellnucleusdev"),
+                        ("MicrosoftIdentityOptions:ClientSecret", "bf68Q~SI7x0osvcUaA8qR-oE9xA3ZTqNZVvl.b86")
                 )
             .Build();
 

@@ -6,11 +6,21 @@
 	-->
 	<Target Name="DeepClean">
 		<Message Text="===== Really cleaning project: $(Configuration) - &quot;$(MSBuildProjectName)&quot;"  Importance="high"/>
-		<RemoveDir Directories="$(BaseIntermediateOutputPath)" ContinueOnError="true" />
-		<MakeDir Directories="$(BaseIntermediateOutputPath)" ContinueOnError="true" />
-		<RemoveDir Directories="$(BaseOutputPath)" ContinueOnError="true" />
-		<MakeDir Directories="$(BaseOutputPath)" ContinueOnError="true" />
+    <Message Text="===== SolutionDir: $(SolutionDir)"  Importance="high"/>    
+		<RemoveDir Directories="$(BaseIntermediateOutputPath)" Condition="Exists('$(BaseIntermediateOutputPath)')" ContinueOnError="true" />
+		<RemoveDir Directories="$(BaseOutputPath)" Condition="Exists('$(BaseOutputPath)')" ContinueOnError="true" />
+    <RemoveDir Directories="$(TestResultsOutFolderPath)" Condition="Exists('$(TestResultsOutFolderPath)')" ContinueOnError="true" />
 	</Target>
+  <Target Name="CleanPaths">
+    <Message Text="===== Check: $(SolutionDir)"  Importance="high"/>
+    <ItemGroup>
+      <Directories Include="$([System.IO.Directory]::GetDirectories('$(SolutionDir)', '*', System.IO.SearchOption.AllDirectories))" />
+      <Directories>
+        <Files>$([System.IO.Directory]::GetFiles("%(Directories.Identity)", "*", System.IO.SearchOption.AllDirectories).get_Length())</Files>
+      </Directories>
+    </ItemGroup>
+    <RemoveDir Directories="@(Directories)" Condition="%(Files)=='0'" />
+  </Target>
 
 	<Target Name="GetDocumentation" Condition="'@(CodeDocumentation)' != ''">
 		<!--AfterTargets="PostBuildEvent"-->

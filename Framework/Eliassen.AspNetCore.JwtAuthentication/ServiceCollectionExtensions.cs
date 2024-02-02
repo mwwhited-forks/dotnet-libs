@@ -18,21 +18,23 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
     /// <param name="configuration">The configuration.</param>
-    /// <param name="defaultScheme">The default authentication scheme.</param>
-    /// <param name="jwtBearerConfigurationSection">The configuration section for JwtBearer options.</param>
-    /// <param name="oAuth2SwaggerConfigurationSection">The configuration section for OAuth2Swagger options.</param>
+    /// <param name="builder">The default authentication scheme.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddJwtBearerServices(
         this IServiceCollection services,
         IConfiguration configuration,
-        string defaultScheme = JwtBearerDefaults.AuthenticationScheme,
-        string jwtBearerConfigurationSection = nameof(JwtBearerOptions),
-        string oAuth2SwaggerConfigurationSection = nameof(OAuth2SwaggerOptions)
-    ) =>
-        services
-        .TryAddJwtBearerAuthentication(configuration, defaultScheme, configurationSection: jwtBearerConfigurationSection)
-        .TryAddJwtBearerSwaggerGen(configuration, configurationSection: oAuth2SwaggerConfigurationSection)
-        ;
+#if DEBUG
+        JwtExtensionBuilder? builder
+#else
+        JwtExtensionBuilder? builder = default
+#endif
+    )
+    {
+        builder ??= new();
+        services.TryAddJwtBearerAuthentication(configuration, builder.DefaultSchema, builder.JwtBearerConfigurationSection);
+        services.TryAddJwtBearerSwaggerGen(configuration, builder.OAuth2SwaggerConfigurationSection);
+        return services;
+    }
 
     /// <summary>
     /// Tries to add JWT Bearer authentication services to the specified <see cref="IServiceCollection"/>.
@@ -45,8 +47,13 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddJwtBearerAuthentication(
          this IServiceCollection services,
          IConfiguration configuration,
+#if DEBUG
+         string defaultScheme,
+         string configurationSection
+#else
          string defaultScheme = JwtBearerDefaults.AuthenticationScheme,
          string configurationSection = nameof(JwtBearerOptions)
+#endif
     )
     {
         services.Configure<JwtBearerOptions>(options => configuration.Bind(configurationSection, options));
@@ -67,7 +74,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddJwtBearerSwaggerGen(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        string configurationSection
+#else
         string configurationSection = nameof(OAuth2SwaggerOptions)
+#endif
     )
     {
         services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, ConfigureOAuthSwaggerUIOptions>();

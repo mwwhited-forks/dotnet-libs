@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Eliassen.WebApi",
-    "version": "0.1.64.13"
+    "version": "0.1.67.23"
   },
   "paths": {
     "/api/Communications/public": {
@@ -377,6 +377,48 @@
           "anonymous": true
         }
       }
+    },
+    "/api/User/claims": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Gets the claims associated with the current user.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Eliassen.WebApi.Models.ClaimModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Eliassen.WebApi.Models.ClaimModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Eliassen.WebApi.Models.ClaimModel"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": false
+        }
+      }
     }
   },
   "components": {
@@ -490,6 +532,53 @@
         },
         "additionalProperties": false,
         "description": "Represents a file type, providing information about the file extension, content type, and whether it is a template type."
+      },
+      "Eliassen.WebApi.Models.ClaimModel": {
+        "type": "object",
+        "properties": {
+          "issuer": {
+            "type": "string",
+            "description": "Gets or sets the issuer of the claim.",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Gets or sets the value of the claim.",
+            "nullable": true
+          },
+          "valueType": {
+            "type": "string",
+            "description": "Gets or sets the value type of the claim.",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Gets or sets the type of the claim.",
+            "nullable": true
+          },
+          "originalIssuer": {
+            "type": "string",
+            "description": "Gets or sets the original issuer of the claim.",
+            "nullable": true
+          },
+          "subjectName": {
+            "type": "string",
+            "description": "Gets or sets the subject name associated with the claim.",
+            "nullable": true
+          },
+          "subjectLabel": {
+            "type": "string",
+            "description": "Gets or sets the subject label associated with the claim.",
+            "nullable": true
+          },
+          "subjectAuthenticationType": {
+            "type": "string",
+            "description": "Gets or sets the authentication type of the subject associated with the claim.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a model for a claim."
       },
       "Eliassen.WebApi.Models.ExampleMessageModel": {
         "type": "object",

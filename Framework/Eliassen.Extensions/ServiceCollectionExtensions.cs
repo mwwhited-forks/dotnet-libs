@@ -1,10 +1,8 @@
 ﻿using Eliassen.Extensions.Accessors;
 using Eliassen.System.Accessors;
-using Eliassen.System.Configuration;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System.ComponentModel;
+using System;
 using System.Linq;
 
 namespace Eliassen.Extensions;
@@ -24,26 +22,6 @@ public static class ServiceCollectionExtensions
         where TService : class
     {
         services.TryAddSingleton(typeof(IAccessor<>), typeof(Accessor<>));
-        return services;
-    }
-
-    /// <summary>
-    /// Extend configuration options
-    /// </summary>
-    /// <typeparam name="TConfig"></typeparam>
-    /// <param name="services"></param>
-    /// <param name="config"></param>
-    /// <returns></returns>
-    public static IServiceCollection AddConfiguration<TConfig>(
-        this IServiceCollection services,
-        IConfiguration config
-        )
-        where TConfig : class
-    {
-        var section = TypeDescriptor.GetAttributes(typeof(TConfig))
-            .OfType<ConfigurationSectionAttribute>()
-            .FirstOrDefault()?.ConfigurationSection ?? typeof(TConfig).Name;
-        services.Configure<TConfig>(config.GetSection(section));
         return services;
     }
 

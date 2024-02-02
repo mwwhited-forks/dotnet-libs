@@ -14,7 +14,7 @@ namespace Eliassen.MailKit.Tests;
 [TestClass]
 public class ClientExampleTests
 {
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     [DataTestMethod]
     [TestCategory(TestCategories.DevLocal)]

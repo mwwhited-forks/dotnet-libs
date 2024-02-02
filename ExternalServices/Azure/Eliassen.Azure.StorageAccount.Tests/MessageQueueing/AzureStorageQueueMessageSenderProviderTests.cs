@@ -21,7 +21,7 @@ public class AzureStorageQueueMessageSenderProviderTests
 {
     public const string QueueConfig = "test-config";
 
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     [TestMethod]
     [TestCategory(TestCategories.DevLocal)]
@@ -39,7 +39,11 @@ public class AzureStorageQueueMessageSenderProviderTests
 
         var config = configBuilder.Build();
 
-        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services => services.TryAddAzureStorageServices());
+        var service = MessageSenderTests.GetServiceProvider(
+            TestContext,
+            config,
+            services => services.TryAddAzureStorageServices(config, "DontCare")
+            );
 
         // ---------------
 
@@ -69,7 +73,11 @@ public class AzureStorageQueueMessageSenderProviderTests
 
         var config = configBuilder.Build();
 
-        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services => services.TryAddAzureStorageServices());
+        var service = MessageSenderTests.GetServiceProvider(
+            TestContext,
+            config,
+            services => services.TryAddAzureStorageServices(config, "DontCare")
+            );
 
         // ---------------
 
@@ -103,7 +111,7 @@ public class AzureStorageQueueMessageSenderProviderTests
 
         var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
         {
-            services.TryAddAzureStorageServices();
+            services.TryAddAzureStorageServices(config, "DontCare");
 
             services.AddTransient<IMessageQueueHandler, TestMessageHandler>();
             services.AddTransient<IMessageQueueHandler, TestMessageHandlerWithProvider>();

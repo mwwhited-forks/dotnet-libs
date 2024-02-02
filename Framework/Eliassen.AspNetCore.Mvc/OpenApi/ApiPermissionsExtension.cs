@@ -13,7 +13,6 @@ namespace Eliassen.AspNetCore.Mvc.OpenApi;
 /// <param name="rights">end point requires at least one of these permissions</param>
 public class ApiPermissionsExtension(bool allowAnonymous, IEnumerable<string> rights) : IOpenApiExtension
 {
-
     /// <summary>
     /// End point allows unauthenticated requests
     /// </summary>

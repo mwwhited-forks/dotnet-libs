@@ -9,10 +9,6 @@
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 	</PropertyGroup>
-
-	<ItemGroup>
-	  <CodeDocumentation Remove="Readme.Communications.md" />
-	</ItemGroup>
 	
 	<ItemGroup>
 		<InternalsVisibleTo Include="Eliassen.Communications.Tests" />
@@ -21,10 +17,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Eliassen.Communications.Abstractions\Eliassen.Communications.Abstractions.csproj" />
 		<ProjectReference Include="..\Eliassen.Extensions\Eliassen.Extensions.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Services\" />
 	</ItemGroup>
 
 	<ItemGroup>

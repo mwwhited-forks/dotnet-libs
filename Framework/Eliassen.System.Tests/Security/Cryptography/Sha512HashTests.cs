@@ -7,7 +7,7 @@ namespace Eliassen.System.Tests.Security.Cryptography;
 [TestClass]
 public class Sha512HashTests
 {
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     [DataTestMethod]
     [TestCategory(TestCategories.Unit)]
@@ -21,5 +21,4 @@ public class Sha512HashTests
         Assert.AreEqual(expected, hashed);
     }
 }
-
 

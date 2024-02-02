@@ -20,7 +20,10 @@ public class HashSelectorTest
         var config = new ConfigurationBuilder().Build();
         var services = new ServiceCollection()
             .AddTransient<IConfiguration>(_ => config)
-            .TryAddSystemExtensions(config, defaultHashType: targetType)
+            .TryAddSystemExtensions(config, new()
+            {
+                DefaultHashType = targetType,
+            })
             .BuildServiceProvider()
             ;
         var serializer = services.GetRequiredService<IHash>();
@@ -39,7 +42,7 @@ public class HashSelectorTest
         var config = new ConfigurationBuilder().Build();
         var services = new ServiceCollection()
             .AddTransient<IConfiguration>(_ => config)
-            .TryAddSystemExtensions(config)
+            .TryAddSystemExtensions(config, new())
             .BuildServiceProvider()
             ;
         var serializer = services.GetRequiredKeyedService<IHash>(targetSerializerType);

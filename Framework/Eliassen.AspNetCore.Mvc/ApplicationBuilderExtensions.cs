@@ -17,6 +17,7 @@ public static class ApplicationBuilderExtensions
     /// <returns></returns>
     public static IApplicationBuilder UseAspNetCoreExtensionMiddleware(this IApplicationBuilder builder)
     {
+        builder.UseMiddleware<CorrelationInfoMiddleware>();
         builder.UseMiddleware<CultureInfoMiddleware>();
         builder.UseMiddleware<SearchQueryMiddleware>();
         return builder;

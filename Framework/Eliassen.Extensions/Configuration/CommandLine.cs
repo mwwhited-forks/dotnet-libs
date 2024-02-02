@@ -33,7 +33,6 @@ public static class CommandLine
     public static IDictionary<string, string> BuildParameters<T>()
     {
         var type = typeof(T);
-        var section = TypeDescriptor.GetAttributes(type).OfType<ConfigurationSectionAttribute>().FirstOrDefault()?.ConfigurationSection ?? type.Name;
 
         var properties = from property in TypeDescriptor.GetProperties(type).OfType<PropertyDescriptor>()
                          let attribute = property.Attributes.OfType<CommandParameterAttribute>().FirstOrDefault()
@@ -42,7 +41,7 @@ public static class CommandLine
                          select new
                          {
                              Key = $"--{parameter}",
-                             Value = $"{section}:{property.Name}"
+                             Value = $"{type.Name}:{property.Name}"
                          };
         var dictionary =
             properties.GroupBy(i => i.Key, Comparer)

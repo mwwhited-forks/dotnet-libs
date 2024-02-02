@@ -1,8 +1,5 @@
-﻿using Eliassen.Extensions;
-using Eliassen.System.Linq.Expressions;
-using Eliassen.System.Linq.Search;
+﻿using Eliassen.System.Linq;
 using Eliassen.System.Net.Mime;
-using Eliassen.System.ResponseModel;
 using Eliassen.System.Security.Cryptography;
 using Eliassen.System.Text;
 using Eliassen.System.Text.Json.Serialization;
@@ -24,38 +21,24 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services"></param>
     /// <param name="config"></param>
-    /// <param name="defaultHashType"></param>
-    /// <param name="defaultSerializerType"></param>
+    /// <param name="builder"></param>
     /// <returns></returns>
     public static IServiceCollection TryAddSystemExtensions(
         this IServiceCollection services,
         IConfiguration config,
-        HashTypes defaultHashType = HashTypes.Md5,
-        SerializerTypes defaultSerializerType = SerializerTypes.Json
-        ) =>
-        services
-        .TryAddSearchQueryExtensions()
-        .TrySecurityExtensions(defaultHashType)
-        .TryTemplatingExtensions(config)
-        .TrySerializerExtensions(defaultSerializerType)
-        ;
-
-    /// <summary>
-    /// Add support for shared SearchQuery Extensions
-    /// </summary>
-    /// <param name="services"></param>
-    /// <returns></returns>
-    public static IServiceCollection TryAddSearchQueryExtensions(this IServiceCollection services)
+#if DEBUG
+        SystemExtensionBuilder? builder
+#else
+        SystemExtensionBuilder? builder = default
+#endif
+        )
     {
-        services.TryAddTransient(typeof(IQueryBuilder<>), typeof(QueryBuilder<>));
-        services.TryAddTransient(typeof(ISortBuilder<>), typeof(SortBuilder<>));
-        services.TryAddTransient(typeof(IExpressionTreeBuilder<>), typeof(ExpressionTreeBuilder<>));
-
-        services.AddTransient<IPostBuildExpressionVisitor, StringComparisonReplacementExpressionVisitor>();
-
-        //services.AddTransient<IPostBuildExpressionVisitor, SkipInstanceMethodOnNullExpressionVisitor>();
-
-        services.TryAddScoped<ICaptureResultMessage, CaptureResultMessage>();
+        builder ??= new();
+        services.TryAddSearchQueryExtensions();
+        services.TryTemplatingExtensions(config, builder.FileTemplatingConfigurationSection);
+        services.TrySecurityExtensions(builder.DefaultHashType);
+        services.TrySerializerExtensions(builder.DefaultSerializerType);
+        ;
         return services;
     }
 
@@ -67,7 +50,11 @@ public static class ServiceCollectionExtensions
     /// <returns></returns>
     public static IServiceCollection TrySecurityExtensions(
         this IServiceCollection services,
+#if DEBUG
+        HashTypes defaultHashType
+#else
         HashTypes defaultHashType = HashTypes.Md5
+#endif
         )
     {
         services.TryAddSingleton(sp => sp.GetRequiredKeyedService<IHash>(defaultHashType));
@@ -91,7 +78,11 @@ public static class ServiceCollectionExtensions
     /// <returns></returns>
     public static IServiceCollection TrySerializerExtensions(
         this IServiceCollection services,
+#if DEBUG
+        SerializerTypes defaultSerializerType
+#else
         SerializerTypes defaultSerializerType = SerializerTypes.Json
+#endif
         )
     {
         services.TryAddSingleton(sp => sp.GetRequiredKeyedService<ISerializer>(defaultSerializerType));
@@ -135,14 +126,24 @@ public static class ServiceCollectionExtensions
     /// Add support for shared Templating
     /// </summary>
     /// <param name="services"></param>
-    /// <param name="config"></param>
+    /// <param name="configuration">The <see cref="IConfiguration"/> to add services to.</param>
+    /// <param name="configurationSection"></param>
     /// <returns></returns>
-    public static IServiceCollection TryTemplatingExtensions(this IServiceCollection services, IConfiguration config)
+    public static IServiceCollection TryTemplatingExtensions(
+        this IServiceCollection services,
+        IConfiguration configuration,
+#if DEBUG
+        string configurationSection
+#else
+        string configurationSection = nameof(FileTemplatingOptions)
+#endif
+        )
     {
         services.TryAddTransient<ITemplateEngine, TemplateEngine>();
 
         services.AddTransient<ITemplateSource, FileTemplateSource>();
-        services.AddConfiguration<FileTemplatingSettings>(config);
+
+        services.Configure<FileTemplatingOptions>(options => configuration.Bind(configurationSection, options));
 
         services.AddTransient<ITemplateProvider, XsltTemplateProvider>();
 

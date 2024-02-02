@@ -4,12 +4,12 @@
 SETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 
 SET APPLICATION_NAME=nucleus
-SET APPLICATION_QUEUES=%APPLICATION_NAME%-events %APPLICATION_NAME%-communications test-queue
+SET APPLICATION_QUEUES=%APPLICATION_NAME%-events %APPLICATION_NAME%-communications test-queue another
 SET APPLICATION_QUEUES=%APPLICATION_QUEUES% email-send email-receive
 SET APPLICATION_CONTAINERS=%APPLICATION_NAME%-blobs
 SET APPLICATION_TABLES=%APPLICATION_NAME%-data
 
-SET AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1
+SET AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://localhost:10000/devstoreaccount1;QueueEndpoint=http://localhost:10001/devstoreaccount1;TableEndpoint=http://localhost:10002/devstoreaccount1
 
 CALL :BUILD_QUEUES %APPLICATION_QUEUES%
 CALL :BUILD_CONTAINERS %APPLICATION_CONTAINERS%

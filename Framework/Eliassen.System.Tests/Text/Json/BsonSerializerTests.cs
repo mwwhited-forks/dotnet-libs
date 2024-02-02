@@ -8,7 +8,7 @@ namespace Eliassen.System.Tests.Text.Json;
 [TestClass]
 public class BsonSerializerTests
 {
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     private static JsonSerializerOptions GetOptions() => new()
     {

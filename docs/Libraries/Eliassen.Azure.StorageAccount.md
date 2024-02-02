@@ -1,6 +1,16 @@
 ﻿# Eliassen.Azure.StorageAccount
 
 
+## Class: Azure.StorageAccount.BlobStorage.AzureBlobContainerOptions
+Represents the options for configuring an Azure Blob Storage container. 
+
+### Properties
+
+#### ContainerName
+Gets or sets the name of the container. This property is required and specifies the name of the Azure Blob Storage container.
+#### ConnectionString
+Gets or sets the connection string for the Azure Storage account. This property is required and specifies the connection string used to connect to the Azure Storage account.
+
 ## Class: Azure.StorageAccount.BlobStorage.BlobContainerProvider
 Implementation of 
  *See: T:Eliassen.Azure.StorageAccount.BlobStorage.IDocumentProvider*for handling blob containers in Azure Storage. 
@@ -203,20 +213,22 @@ A new instance of for the specified Azure Storage Queue.
 
 
 
-## Class: Azure.StorageAccount.ServiceCollectionEx
+## Class: Azure.StorageAccount.ServiceCollectionExtensions
 Provides extension methods for configuring Azure Storage services in the 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
 
 ### Methods
 
 
-#### TryAddAzureStorageServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+#### TryAddAzureStorageServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
 Tries to add Azure Storage services including blob and queue services to the specified 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
 
 
 ##### Parameters
 * *services:* The to add services to.
+* *configuration:* The to add services to.
+* *azureBlobContainerConfigurationSection:* The name for the ConfigurationSectionName.
 
 
 
@@ -226,13 +238,15 @@ The modified .
 
 
 
-#### TryAddAzureStorageBlobServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+#### TryAddAzureStorageBlobServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
 Tries to add Azure Storage blob services to the specified 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
 
 
 ##### Parameters
 * *services:* The to add services to.
+* *configuration:* The to add services to.
+* *configurationSection:* The name for the ConfigurationSectionName.
 
 
 

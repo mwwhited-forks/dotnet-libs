@@ -9,12 +9,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.1" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\..\ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Eliassen.Microsoft.B2C.csproj" />
-		<ProjectReference Include="..\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eliassen.AspNetCore.Mvc\Eliassen.AspNetCore.Mvc.csproj" />
+    <ProjectReference Include="..\Eliassen.Identity.Abstractions\Eliassen.Identity.Abstractions.csproj" />
+  </ItemGroup>
 
 </Project>

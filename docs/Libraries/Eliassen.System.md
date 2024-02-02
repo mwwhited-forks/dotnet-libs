@@ -1,6 +1,18 @@
 ﻿# Eliassen.System
 
 
+## Class: System.Security.Cryptography.HashTypes
+Specifies different types of hash algorithms. 
+
+### Fields
+
+#### Md5
+Represents the MD5 hash algorithm.
+#### Sha256
+Represents the SHA-256 hash algorithm.
+#### Sha512
+Represents the SHA-512 hash algorithm.
+
 ## Class: System.Security.Cryptography.Md5Hash
 Default hash of input value. Base64 encoded MD5 Hash 
 
@@ -70,30 +82,14 @@ Suggested IOC configurations
 ### Methods
 
 
-#### TryAddSystemExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Eliassen.System.Security.Cryptography.HashTypes,Eliassen.System.Text.SerializerTypes)
+#### TryAddSystemExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Eliassen.System.SystemExtensionBuilder)
 This will add all available extensions to the IOC container 
 
 
 ##### Parameters
 * *services:* 
 * *config:* 
-* *defaultHashType:* 
-* *defaultSerializerType:* 
-
-
-
-
-##### Return value
-
-
-
-
-#### TryAddSearchQueryExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-Add support for shared SearchQuery Extensions 
-
-
-##### Parameters
-* *services:* 
+* *builder:* 
 
 
 
@@ -135,13 +131,14 @@ Add support for shared Serializer
 
 
 
-#### TryTemplatingExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+#### TryTemplatingExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
 Add support for shared Templating 
 
 
 ##### Parameters
 * *services:* 
-* *config:* 
+* *configuration:* The to add services to.
+* *configurationSection:* 
 
 
 
@@ -150,6 +147,18 @@ Add support for shared Templating
 
 
 
+
+## Class: System.SystemExtensionBuilder
+Represents a builder for configuring system extensions. 
+
+### Properties
+
+#### FileTemplatingConfigurationSection
+Gets or sets the configuration section name for file templating options. The configuration section name for file templating options. Default is "FileTemplatingOptions".
+#### DefaultHashType
+Gets or sets the default hash type to be used. The default hash type. The default value is .
+#### DefaultSerializerType
+Gets or sets the default serializer type to be used. The default serializer type. The default value is .
 
 ## Class: System.Text.Json.BsonDateTimeOffsetConverter
 System.Text.Json converter to support BsonDatetimeOffset 
@@ -479,6 +488,18 @@ The converted property name.
 
 
 
+## Class: System.Text.SerializerTypes
+Specifies different types of serialization formats. 
+
+### Fields
+
+#### Json
+Represents the JSON serialization format.
+#### Bson
+Represents the BSON (Binary JSON) serialization format.
+#### Xml
+Represents the XML serialization format.
+
 ## Class: System.Text.Templating.FileTemplateSource
 Access template from file system 
 
@@ -504,7 +525,7 @@ Look up templates from a file system.
 
 
 
-## Class: System.Text.Templating.FileTemplatingSettings
+## Class: System.Text.Templating.FileTemplatingOptions
 Configuration settings for file templating engine 
 
 ### Properties

@@ -9,7 +9,7 @@ namespace Eliassen.System.Tests.Text.Json.Serialization;
 [TestClass]
 public class DefaultJsonSerializerTests
 {
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
