@@ -152,9 +152,11 @@ jobs:
     #     --output-format cobertura
         
     # https://github.com/marketplace/actions/publish-test-results
+    # https://github.com/marketplace/actions/publish-test-results#create-a-badge-from-test-results
     # this doesn't support windows right now for some reason
     - name: Publish Test Results
-      uses: turing85/publish-report@v1.0.11
+      uses: EnricoMi/publish-unit-test-result-action/composite@v2
+      id: test-results
       if: always()
       with:
         report-path: |
