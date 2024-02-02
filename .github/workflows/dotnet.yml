@@ -52,19 +52,19 @@ jobs:
 
       # https://github.com/actions/setup-dotnet
     - name: Install .Net 8.0 SDK
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x        
 
       # https://github.com/GitTools/actions/blob/main/docs/examples/github/gitversion/setup/usage-examples.md
     - name: Install GitVersion
-      uses: gittools/actions/gitversion/setup@v0
+      uses: gittools/actions/gitversion/setup@v1
       with:
         versionSpec: '5.x'  
 
       # https://github.com/GitTools/actions/blob/main/docs/examples/github/gitversion/execute/usage-examples.md 
     - name: Use GitVersion
-      uses: gittools/actions/gitversion/execute@v0
+      uses: gittools/actions/gitversion/execute@v1
       id:   gitversion
       with:
         useConfigFile: true
@@ -97,6 +97,11 @@ jobs:
         echo "PackagesPath=$packagesPath"
         echo "PackagesPath=$packagesPath" >> "$env:GITHUB_OUTPUT"
         echo "PackagesPath=$packagesPath" >> "$env:GITHUB_ENV"
+        
+        runSettings = JOIN-PATH -Path $env:GITHUB_WORKSPACE -ChildPath ".runsettings"
+        echo "RunSettings=$runSettings"
+        echo "RunSettings=$runSettings" >> "$env:GITHUB_OUTPUT"
+        echo "RunSettings=$runSettings" >> "$env:GITHUB_ENV"
 
     # - name: get variables
     #   run: env      
@@ -130,7 +135,7 @@ jobs:
         --nologo 
         --filter "TestCategory=Unit|TestCategory=Simulate" 
         --collect:"XPlat Code Coverage" 
-        --settings "$env:GITHUB_WORKSPACE\.runsettings"
+        --settings "${{ steps.calculate-version.outputs.RunSettings }}"
         --results-directory "${{ steps.calculate-version.outputs.TestResultsPath }}"
         
     # - name: Coverage Tool Install
