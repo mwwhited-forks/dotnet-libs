@@ -3,7 +3,6 @@
 
 ## Class: Microsoft.B2C.Identity.ManageGraphUser
 Implementation of 
- *See: T:Eliassen.Identity.IManageGraphUser*and 
  *See: T:Eliassen.Identity.IIdentityManager*for managing users in Microsoft Graph. 
 
 Initializes a new instance of the class.
@@ -13,7 +12,6 @@ Initializes a new instance of the class.
 #### Constructor
 Initializes a new instance of the class.
 Implementation of 
- *See: T:Eliassen.Identity.IManageGraphUser*and 
  *See: T:Eliassen.Identity.IIdentityManager*for managing users in Microsoft Graph. 
 
 
@@ -21,30 +19,6 @@ Implementation of
 * *log:* The logger.
 * *config:* The configuration.
 
-
-
-
-#### GetAuthProvider
-Gets the authentication provider for Microsoft Graph. 
-
-
-##### Return value
-The authentication provider.
-
-
-
-#### GetGraphUsersByEmail(System.String)
-Retrieves a list of user identity models based on the provided email address. 
-
-
-##### Parameters
-* *email:* The email address to query users by.
-
-
-
-
-##### Return value
-A list of user identity models matching the specified email address, or null if no matches are found.
 
 
 
@@ -65,40 +39,23 @@ A tuple containing the object ID and password of the created user, or null if th
 
 
 
-#### CreateGraphUserAsync(System.String,System.String,System.String)
-Creates a new user asynchronously with the specified email, first name, and last name in Microsoft Graph. 
+#### GetIdentityUsersByEmail(System.String)
+Retrieves a list of user identity models based on the provided email address. 
 
 
 ##### Parameters
-* *email:* The email address for the new user.
-* *firstName:* The first name for the new user.
-* *lastName:* The last name for the new user.
+* *emailAddress:* The email address to query users by.
 
 
 
 
 ##### Return value
-A tuple containing the object ID and password of the created user, or null if the user already exists.
+A list of user identity models matching the specified email address, or null if no matches are found.
 
 
 
 #### RemoveIdentityUserAsync(System.String)
 Removes an identity user asynchronously based on the specified object ID. 
-
-
-##### Parameters
-* *objectId:* The object ID of the user to be removed.
-
-
-
-
-##### Return value
-True if the user is successfully removed, false otherwise.
-
-
-
-#### RemoveGraphUserAsync(System.String)
-Removes a user asynchronously based on the specified object ID in Microsoft Graph. 
 
 
 ##### Parameters
@@ -109,6 +66,15 @@ Removes a user asynchronously based on the specified object ID in Microsoft Grap
 
 ##### Return value
 True if the user is successfully removed, false otherwise.
+
+
+
+#### GetAuthProvider
+Gets the authentication provider for Microsoft Graph. 
+
+
+##### Return value
+The authentication provider.
 
 
 

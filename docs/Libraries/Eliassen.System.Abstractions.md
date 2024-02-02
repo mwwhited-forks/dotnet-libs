@@ -265,6 +265,25 @@ Represents a starts-with comparison for search terms.
 #### EndsWith
 Represents an ends-with comparison for search terms.
 
+## Class: System.ConfigurationMissingException
+Represents an exception thrown when a required configuration is missing. 
+
+This exception is typically thrown when attempting to access a configuration value that is not present.
+### Methods
+
+
+#### Constructor
+This constructor sets the exception message to indicate the missing configuration key.
+Initializes a new instance of the 
+ *See: T:Eliassen.System.ConfigurationMissingException*class with the specified configuration key. 
+
+
+##### Parameters
+* *configurationKey:* The key of the missing configuration.
+
+
+
+
 ## Class: System.Configuration.CommandParameterAttribute
 Specifies that a property represents a command parameter. 
 
@@ -669,6 +688,30 @@ Generates a string representation of the search query.
 A string representation of the search query.
 
 
+
+## Class: System.Net.Http.CorrelationInfo
+Represents information related to correlation and tracking in a system. 
+
+### Properties
+
+#### CorrelationId
+Gets or sets the correlation identifier. The correlation identifier is used to associate related operations or events across different components or services.
+#### RequestId
+Gets or sets the request identifier. The request identifier is used to uniquely identify a specific request or operation within a system.
+
+## Class: System.Net.Http.DefinedHttpHeaders
+Contains constant values for commonly used HTTP headers. 
+
+### Fields
+
+#### CorrelationIdHeader
+Represents the "X-Correlation-ID" HTTP header used for correlation identification.
+#### RequestIdHeader
+Represents the "X-Request-ID" HTTP header used for request identification.
+#### AcceptLanguage
+Represents the "Accept-Language" HTTP header used for specifying acceptable languages for the response.
+#### ContentLanguage
+Represents the "Content-Language" HTTP header used for specifying the language of the content.
 
 ## Class: System.Net.Mime.ContentTypesExtensions
 Provides constants representing various content types. 
