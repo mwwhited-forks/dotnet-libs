@@ -17,7 +17,7 @@ dotnet sonarscanner begin ^
 /d:sonar.cs.vscoveragexml.reportsPaths=.\TestResults\coverage.xml ^
 /v:"%BUILD_VERSION%"
 
-RMDIR /S .\TestResults
+RMDIR /S .\TestResults /Y
 dotnet build
 dotnet coverage collect "dotnet test --filter TestCategory=Unit" -f xml -o ".\TestResults\coverage.xml"
 
