@@ -8,7 +8,7 @@ namespace Eliassen.WebApi;
 /// <summary>
 /// primary entry point
 /// </summary>
-public class Program
+public static class Program
 {
     /// <summary>
     /// primary entry point

@@ -3,7 +3,7 @@
 /// <summary>
 /// Contains global constants related to Rabbit MQ.
 /// </summary>
-public class RabbitMQGlobals
+public static class RabbitMQGlobals
 {
     /// <summary>
     /// The key associated with the Rabbit MQ message provider.

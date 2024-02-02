@@ -42,9 +42,10 @@ public static class EnumExtensions
     {
         if (string.IsNullOrWhiteSpace(input)) return default;
         else if (Enum.TryParse<TEnum>(input?.Replace('|', ','), out var parsed)) return parsed;
+        else if (input == null) throw new NotImplementedException();
 
         var enumModel = AsModels<TEnum>();
-        var enumValues = input?.Split('|', ',') ?? [];
+        var enumValues = input.Split('|', ',') ?? [];
 
         var map = from m in enumModel
                   from v in enumValues

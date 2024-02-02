@@ -90,7 +90,7 @@ public class AzureStorageQueueMessageProvider(
             await _handlerProvider.HandleAsync(deserialized, message.Value.MessageId);
 
             logger.LogInformation($"Dequeue: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
-            var response = await client.DeleteMessageAsync(message.Value.MessageId, message.Value.PopReceipt, newCancellationToken);
+            _ = await client.DeleteMessageAsync(message.Value.MessageId, message.Value.PopReceipt, newCancellationToken);
         }
     }
 }

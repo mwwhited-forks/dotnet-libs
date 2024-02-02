@@ -22,16 +22,9 @@ public class ApplicationRightRequirementFilter(string[] rights) : IAuthorization
 
         if (userAuthenticated is null or false)
             context.Result = new ForbidResult();
-        else if (_rights.Any())
-            if (!Any(userRights.Select(c => c.value)))
-                context.Result = new ForbidResult();
+        else if (_rights.Any() && !Any(userRights.Select(c => c.value)))
+            context.Result = new ForbidResult();
     }
 
-    internal bool Any(IEnumerable<string> items)
-    {
-        foreach (var item in items)
-            if (_rights.Contains(item))
-                return true;
-        return false;
-    }
+    internal bool Any(IEnumerable<string> items) => items.Any(_rights.Contains);
 }
