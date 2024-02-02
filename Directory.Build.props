@@ -13,9 +13,11 @@
   <PropertyGroup>
     <Company>Eliassen Group</Company>
     <Authors>$(USERNAME)@$(USERDNSDOMAIN)</Authors>
-    <Copyright>Eliassen Group, $([System.DateTime]::Now.ToString('yyyy'))</Copyright>
+    <Copyright>$(Company), $([System.DateTime]::Now.ToString('yyyy'))</Copyright>
 
     <TestResultsOutFolderPath>$(SolutionDir)TestResults\</TestResultsOutFolderPath>
+    <VSTestResultsDirectory>$(SolutionDir)TestResults\</VSTestResultsDirectory>
+    <RunSettingsFilePath>$(SolutionDir).runsettings</RunSettingsFilePath>
   </PropertyGroup>
 
   <PropertyGroup Condition="Exists('$(SolutionDir)LICENSE')">

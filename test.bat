@@ -47,11 +47,12 @@ MKDIR ".\TestResults\Coverage\Reports" 2>NUL
 
 dotnet test "%TestProject%" ^
 --configuration %Configuration% ^
---results-directory .\TestResults ^
 --nologo ^
---settings .runsettings ^
 --filter "%TestFilter%"
 )
+
+REM --settings .runsettings ^
+REM --results-directory .\TestResults ^
 
 SET TEST_ERR=%ERRORLEVEL%
 
