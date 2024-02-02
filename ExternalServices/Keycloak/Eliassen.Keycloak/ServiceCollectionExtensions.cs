@@ -31,7 +31,6 @@ public static class ServiceCollectionExtensions
     )
     {
         services.TryAddTransient<IIdentityManager, ManageKeycloakUser>();
-        services.TryAddTransient<IManageGraphUser, ManageKeycloakUser>();
 
         services.Configure<KeycloakIdentityOptions>(options => configuration.Bind(keycloakIdentityConfigurationSection, options));
 
