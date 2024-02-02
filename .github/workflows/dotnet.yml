@@ -112,9 +112,6 @@ jobs:
         echo "RunSettings=$runSettings"
         echo "RunSettings=$runSettings" >> "$env:GITHUB_OUTPUT"
         echo "RunSettings=$runSettings" >> "$env:GITHUB_ENV"
-
-    # - name: get variables
-    #   run: env      
   
     - name: Restore dependencies
       run: dotnet restore
@@ -128,6 +125,7 @@ jobs:
         --nologo 
         --no-restore
 
+      # https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/
     - name: Package projects
       run: >
         dotnet pack
@@ -171,10 +169,7 @@ jobs:
       if: always()
       with:
         trx_files: ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.trx
-        # files: |
-        #   ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.xml
-        #   ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.trx
-        #   ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.json    
+        report_individual_runs: true
 
 ##TODO: Attach to build/Create release        
 
@@ -193,14 +188,9 @@ jobs:
 #     SymbolServerType: 'TeamServices'
 #     TreatNotIndexedAsWarning: true
 
-    - uses: thejeff77/action-push-tag@v1.0.0
+    - name: Tag Commit
+      uses: thejeff77/action-push-tag@v1.0.0
       if: github.event_name != 'pull_request'
       with:
         tag: ${{ steps.calculate-version.outputs.FullSemVerLower }}
-
-    - uses: thejeff77/action-push-tag@v1.0.0
-      if: github.event_name == 'pull_request'
-      with:
-        tag: ${{ steps.calculate-version.outputs.FullSemVerLower }}
-        message: '${{ steps.calculate-version.outputs.FullSemVerLower }}: PR #${{ github.event.pull_request.number }} ${{ github.event.pull_request.title }}'
-
+        
