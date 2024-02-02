@@ -233,7 +233,8 @@ public class QueryBuilder<TModel>(
     {
         ArgumentNullException.ThrowIfNull(query, nameof(query));
 
-        var pageLength = (pager?.PageSize ?? 0) <= 0 ? DefaultPageSize : pager?.PageSize ?? DefaultPageSize;
+        var pageLength = pager?.PageSize ?? DefaultPageSize;
+        if (pageLength <= 0) pageLength = DefaultPageSize;
         var page = (pager?.CurrentPage ?? 0) < 0 ? 0 : pager?.CurrentPage ?? 0;
         var excludePageCount = pager?.ExcludePageCount ?? false;
 
