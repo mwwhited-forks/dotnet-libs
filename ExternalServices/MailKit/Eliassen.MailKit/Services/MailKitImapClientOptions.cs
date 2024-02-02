@@ -10,7 +10,7 @@ public class MailKitImapClientOptions
     /// <summary>
     /// Gets or sets the host address of the IMAP server.
     /// </summary>
-    public string Host { get; set; } = null!;
+    public required string Host { get; set; }
 
     /// <summary>
     /// Gets or sets the port number for the IMAP server.

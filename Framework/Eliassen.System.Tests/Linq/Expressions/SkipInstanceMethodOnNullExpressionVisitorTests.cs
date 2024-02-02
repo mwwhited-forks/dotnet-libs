@@ -9,7 +9,7 @@ namespace Eliassen.System.Tests.Linq.Expressions;
 [TestClass]
 public class SkipInstanceMethodOnNullExpressionVisitorTests
 {
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     [DataTestMethod]
     [TestCategory(TestCategories.Unit)]

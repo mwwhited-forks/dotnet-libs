@@ -1,6 +1,18 @@
 ﻿# Eliassen.AspNetCore.JwtAuthentication
 
 
+## Class: AspNetCore.JwtAuthentication.JwtExtensionBuilder
+Represents a builder for configuring JWT extensions. 
+
+### Properties
+
+#### DefaultSchema
+Gets or sets the default authentication schema for JWT. Specifies the default authentication schema used for JWT. The default value is .
+#### JwtBearerConfigurationSection
+Gets or sets the configuration section name for JwtBearerOptions. Specifies the configuration section name for JwtBearerOptions. The default value is the name of .
+#### OAuth2SwaggerConfigurationSection
+Gets or sets the configuration section name for OAuth2SwaggerOptions. Specifies the configuration section name for OAuth2SwaggerOptions. The default value is the name of .
+
 ## Class: AspNetCore.JwtAuthentication.ServiceCollectionExtensions
 Extension methods for configuring JWT Bearer authentication and SwaggerGen services in 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 

@@ -22,6 +22,18 @@ Add custom middleware to ASP.Net to support these extensions
 
 
 
+## Class: AspNetCore.Mvc.AspNetCoreExtensionBuilder
+Represents a builder for configuring ASP.NET Core extensions. 
+
+### Properties
+
+#### RequireAuthenticatedByDefault
+Gets or sets a value indicating whether authentication is required by default. Set to true to require authentication by default; otherwise, set to false. The default value is .
+#### RequireApplicationUserId
+Gets or sets a value indicating whether an application user ID is required. Set to true to require an application user ID; otherwise, set to false. The default value is .
+#### AuthorizationPolicyBuilder
+Gets or sets the delegate for configuring an . Set to a delegate that configures an . The default value is null.
+
 ## Class: AspNetCore.Mvc.Authorization.UserAuthorizationHandler
 Handles user authorization based on specified requirements. 
 
@@ -96,46 +108,6 @@ Applies the operation filter to include application rights in Swagger documentat
 ##### Parameters
 * *operation:* The OpenApiOperation to be modified.
 * *context:* The OperationFilterContext providing information about the operation.
-
-
-
-
-## Class: AspNetCore.Mvc.Filters.ApplicationRightAttribute
-At least one of these declared rights must be assigned to the user to access this point 
-
-### Properties
-
-#### Rights
-list of required rights
-### Methods
-
-
-#### Constructor
-Declare required rights for endpoint 
-
-
-##### Parameters
-* *rights:* 
-
-
-
-
-## Class: AspNetCore.Mvc.Filters.ApplicationRightRequirementFilter
-Authorization filter to compared application rights for user to rights required by endpoint 
-
-### Methods
-
-
-#### Constructor
-Authorization filter to compared application rights for user to rights required by endpoint 
-
-
-#### OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)
-Ensure that current authenticated user matches as least one requested right 
-
-
-##### Parameters
-* *context:* 
 
 
 

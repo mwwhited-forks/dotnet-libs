@@ -16,11 +16,17 @@ public static class ServiceCollectionExtensions
     /// Tries to add Azure Storage services including blob and queue services to the specified <see cref="IServiceCollection"/>.
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add services to.</param>
+    /// <param name="configuration">The <see cref="IConfiguration"/> to add services to.</param>
+    /// <param name="azureBlobContainerConfigurationSection">The name for the ConfigurationSectionName.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddAzureStorageServices(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        string azureBlobContainerConfigurationSection
+#else
         string azureBlobContainerConfigurationSection = nameof(AzureBlobContainerOptions)
+#endif
         ) =>
         services
             .TryAddAzureStorageBlobServices(configuration, azureBlobContainerConfigurationSection)
@@ -31,11 +37,17 @@ public static class ServiceCollectionExtensions
     /// Tries to add Azure Storage blob services to the specified <see cref="IServiceCollection"/>.
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add services to.</param>
+    /// <param name="configuration">The <see cref="IConfiguration"/> to add services to.</param>
+    /// <param name="configurationSection">The name for the ConfigurationSectionName.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddAzureStorageBlobServices(
         this IServiceCollection services,
         IConfiguration configuration,
+#if DEBUG
+        string configurationSection
+#else
         string configurationSection = nameof(AzureBlobContainerOptions)
+#endif
         )
     {
         services.TryAddTransient<IDocumentProvider, BlobContainerProvider>();

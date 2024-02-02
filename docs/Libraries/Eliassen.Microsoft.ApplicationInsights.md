@@ -1,0 +1,1 @@
+﻿# Eliassen.Microsoft.ApplicationInsights

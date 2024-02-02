@@ -1,18 +1,23 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
-# variables:
-#   - name: solution
-#     value: '**/*.sln'
-#   - name: buildPlatform
-#     value: 'Any CPU'
-#   - name: nugetRepository
-#     value: 'https://pkgs.dev.azure.com/lightwellinc-clouddev/Lightwell-Nucleus/_packaging/Eliassen.Nucleus.Net.Libs/nuget/v3/index.json'
-  
-
-name: .NET
+name: .NET Build Pipeline
+# https://docs.github.com/en/actions/learn-github-actions/contexts#vars-context
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#run-name
+run-name: .NET ${{ inputs.build-configuration }}/${{ inputs.build-platform }} by @${{ github.actor }}
 
 on:
+  push:
+    branches:
+    - master
+    - main
+
+  pull_request:
+    branches:
+    - master
+    - main
+
+  # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpull_requestpull_request_targetbranchesbranches-ignore
   workflow_dispatch:
     inputs:
       build-configuration: 
@@ -26,41 +31,38 @@ on:
       build-platform: 
         description: 'Build Platform'
         required: true
-        default: 'windows-latest'
+        default: 'ubuntu-latest'
         type: choice
         options:
           - windows-latest
           - ubuntu-latest
-
-  # push:
-  #   branches: 
-  #   - master
-  # pull_request:
-  #   branches:
-  #   - master
+          - macos-latest
 
 jobs:
   build:
     runs-on: "${{ inputs.build-platform }}"
 
     steps:
+      # https://github.com/actions/checkout
     - uses: actions/checkout@v4.1.1
       with:
         clean: true
         persist-credentials: true
         fetch-depth: 0
-   
-    - name: Install .Net 8.0 SDK
-      uses: actions/setup-dotnet@v3
-      with:
-        global-json-file: global.json
 
-    # https://github.com/actions/setup-dotnet
-    - name: Install GitVersion
-      uses: actions/setup-gitversion@v1.0.1
+      # https://github.com/actions/setup-dotnet
+    - name: Install .Net 8.0 SDK
+      uses: actions/setup-dotnet@v4
       with:
-        gitversion-version: 5.12.x
-        
+        dotnet-version: 8.0.x        
+
+      # https://github.com/GitTools/actions/blob/main/docs/examples/github/gitversion/setup/usage-examples.md
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v0
+      with:
+        versionSpec: '5.x'  
+
+      # https://github.com/GitTools/actions/blob/main/docs/examples/github/gitversion/execute/usage-examples.md 
     - name: Use GitVersion
       uses: gittools/actions/gitversion/execute@v0
       id:   gitversion
@@ -68,38 +70,69 @@ jobs:
         useConfigFile: true
         configFilePath: GitVersion.yml
     
-# https://github.com/GitTools/actions/blob/main/docs/examples/github/gitversion/execute/usage-examples.md#example-5
-
+      # https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+      # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
+      # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions?tool=powershell
     - name: Set Version Variables
       id: calculate-version
+      shell: pwsh
       run: |
-        fullSemVer=${{ steps.gitversion.outputs.GitVersion_FullSemVer }}
-        fullSemVerLower=$(echo "$fullSemVer" | awk '{print tolower($0)}')
-        echo "fullSemVer=fullSemVer"
-        echo "fullSemVerLower=$fullSemVerLower"
-        echo "::set-output name=fullSemVerLower::fullSemVerLower"
+        echo "GITHUB_WORKSPACE=$env:GITHUB_WORKSPACE"
+        echo "RUNNER_TEMP=$env:RUNNER_TEMP"
 
-# #             Write-Host "##vso[build.updatebuildnumber]$fullSemVerLower"
-# #             Write-Host "##vso[task.setvariable variable=FullSemVerLower;issecret=false]$fullSemVerLower" 
-# #             Write-Host "##vso[task.setvariable variable=FullSemVerLowerTag;issecret=false]$fullSemVerLowerTag"  
-# #             Write-Host "##vso[task.setvariable variable=TestResultsPath;issecret=false]$(Agent.TempDirectory)"  
-#         echo "::set-output name=today::$(date -I)"
+        $fullSemVerLower = "${{ steps.gitversion.outputs.fullSemVer }}".ToLower() 
+        if ("${{ inputs.build-configuration }}" -eq "Debug") {
+            $fullSemVerLower = "${{ steps.gitversion.outputs.majorMinorPatch }}${{ steps.gitversion.outputs.preReleaseLabelWithDash }}-debug.${{ steps.gitversion.outputs.preReleaseNumber }}"
+        }
+        echo "FullSemVerLower=$fullSemVerLower"
+        echo "FullSemVerLower=$fullSemVerLower" >> "$env:GITHUB_OUTPUT"
+        echo "FullSemVerLower=$fullSemVerLower" >> "$env:GITHUB_ENV"
+        
+        $workspace = $env:GITHUB_WORKSPACE
+        echo "BuildWorkspace=$workspace"
+        echo "BuildWorkspace=$workspace" >> "$env:GITHUB_OUTPUT"
+        echo "BuildWorkspace=$workspace" >> "$env:GITHUB_ENV"
 
+        $testResultsPath = JOIN-PATH -Path $env:RUNNER_TEMP -ChildPath "TestResults"
+        echo "TestResultsPath=$testResultsPath"
+        echo "TestResultsPath=$testResultsPath" >> "$env:GITHUB_OUTPUT"
+        echo "TestResultsPath=$testResultsPath" >> "$env:GITHUB_ENV"
+        
+        $packagesPath = JOIN-PATH -Path $env:RUNNER_TEMP -ChildPath "Packages"
+        echo "PackagesPath=$packagesPath"
+        echo "PackagesPath=$packagesPath" >> "$env:GITHUB_OUTPUT"
+        echo "PackagesPath=$packagesPath" >> "$env:GITHUB_ENV"
+        
+        $runSettings = JOIN-PATH -Path $env:GITHUB_WORKSPACE -ChildPath ".runsettings"
+        echo "RunSettings=$runSettings"
+        echo "RunSettings=$runSettings" >> "$env:GITHUB_OUTPUT"
+        echo "RunSettings=$runSettings" >> "$env:GITHUB_ENV"
+
+    # - name: get variables
+    #   run: env      
+  
     - name: Restore dependencies
-      run: >
-        dotnet restore
-        --configuration ${{ inputs.build-configuration }}
-        --nologo
+      run: dotnet restore
 
-    - name: Dotnet Build for Libraries
+    - name: Build
       run: >
         dotnet build
         --configuration ${{ inputs.build-configuration }}
-        --property:Version=${{ steps.calculate-version.outputs.fullSemVerLower }}
+        --property:Version=${{ steps.calculate-version.outputs.FullSemVerLower }}
+        --property:SolutionDir=${{ steps.calculate-version.outputs.BuildWorkspace }}
         --nologo 
         --no-restore
 
-    - name: Test
+    - name: Package projects
+      run: >
+        dotnet pack
+        --configuration ${{ inputs.build-configuration }}
+        --no-build 
+        --no-restore 
+        --output "${{ steps.calculate-version.outputs.PackagesPath }}"
+        --property:Version=${{ steps.calculate-version.outputs.fullSemVerLower }}
+        
+    - name: Unit Test
       run: >
         dotnet test
         --configuration ${{ inputs.build-configuration }} 
@@ -108,71 +141,38 @@ jobs:
         --nologo 
         --filter "TestCategory=Unit|TestCategory=Simulate" 
         --collect:"XPlat Code Coverage" 
-        --settings "$GITHUB_WORKSPACE\.runsettings"
-
-#     publishTestResults: true
-
-    
-# - task: DotNetCoreCLI@2
-#   displayName: Coverage Tool Install
-#   inputs:
-#     command: 'custom'
-#     custom: 'tool'
-#     arguments: >
-#       install 
-#       dotnet-coverage 
-#       --global      
-    
-# - task: DotNetCoreCLI@2
-#   displayName: Merge Test Results
-#   inputs:
-#     command: 'custom'
-#     custom: 'coverage'
-#     workingDirectory: '$(TestResultsPath)'
-#     arguments: >
-#       merge 
-#       coverage.*.xml 
-#       --recursive 
-#       --output .\Cobertura.coverage 
-#       --output-format cobertura
-     
-# - task: PublishCodeCoverageResults@1
-#   displayName: 'Publish Coverage Reports'
-#   inputs:
-#     codeCoverageTool: 'cobertura'
-#     summaryFileLocation: $(TestResultsPath)\Cobertura.coverage
-#     failIfCoverageEmpty: false 
-
-
-    - name: Package to Staging directory
-#   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-      run: >
-        dotnet pack
-        --configuration ${{parameters.buildConfiguration}} 
-        --no-build 
-        --no-restore 
-        --output $GITHUB_WORKSPACE/Packages 
-        --property:Version=${{ steps.calculate-version.outputs.fullSemVerLower }}
+        --settings "${{ steps.calculate-version.outputs.RunSettings }}"
+        --results-directory "${{ steps.calculate-version.outputs.TestResultsPath }}"
         
-#     verbosityRestore: Minimal
-#     verbosityPack: Minimal
-#     feedsToUse: select
-#     vstsFeed: personalnugetfeed
-#     nuGetFeedType: internal
-#     includeNuGetOrg: true
+    # - name: Coverage Tool Install
+    #   run: dotnet tool install dotnet-coverage --global  
+    
+    # - name: Merge Test Results
+    #   working-directory: ${{ steps.calculate-version.outputs.TestResultsPath }}
+    #   run: >
+    #     dotnet coverage
+    #     merge 
+    #     coverage.*.xml 
+    #     --recursive 
+    #     --output .\Cobertura.coverage 
+    #     --output-format cobertura
+        
+    # https://github.com/marketplace/actions/publish-test-results
+    # https://github.com/marketplace/actions/publish-test-results#create-a-badge-from-test-results
+    # this doesn't support windows right now for some reason
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action/composite@v2
+      id: test-results
+      if: always()
+      with:
+        trx_files: ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.trx
+        # files: |
+        #   ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.xml
+        #   ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.trx
+        #   ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.json    
 
-# - task: DotNetCoreCLI@2
-#   displayName: Package to Staging directory
-#   inputs:
-#     command: custom
-#     custom: 'pack'
-#     projects: $(solution)
-#     arguments: >
-#       --configuration ${{parameters.buildConfiguration}} 
-#       --no-build 
-#       --no-restore 
-#       --output $(Build.ArtifactStagingDirectory)/Packages 
-#       --property:Version=$(FullSemVerLower)
+##TODO: Attach to build/Create release        
+
 
 # - script: |
 #         dotnet nuget push --skip-duplicate --source $(nugetRepository) --api-key az $(Build.ArtifactStagingDirectory)\Packages\*.nupkg
@@ -187,25 +187,15 @@ jobs:
 #     IndexSources: false
 #     SymbolServerType: 'TeamServices'
 #     TreatNotIndexedAsWarning: true
-    
-# - task: tagBuildOrRelease@0
-#   displayName: 'Tag Build'
-#   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-#   inputs:
-#     type: 'Build'
-#     tags: |
-#         $(FullSemVerLowerTag)
-#         ${{parameters.buildConfiguration}} 
-    
-# # https://dina-muscanell.com/blog/set-git-tags-with-azure-devops/
-# # https://stackoverflow.com/questions/59226055/setting-git-tag-from-azure-devops-build-pipeline-on-complete
-# # make sure the build service account is granted "Create Tag" and "Contribute" under repository security
-# - script: |
-#           git config --global user.name "AzureDevOps Agent"
-#           git tag "$(FullSemVerLowerTag)" --force
-#           git push origin "$(FullSemVerLowerTag)" --force
-#           echo "Tagging $(Build.Repository.Name) with $(FullSemVerLowerTag)"
-#   displayName: 'Tag Code'
-#   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
 
-# #TODO: add push to artifact store/nuget 
+    - uses: thejeff77/action-push-tag@v1.0.0
+      if: github.event_name != 'pull_request'
+      with:
+        tag: ${{ steps.calculate-version.outputs.FullSemVerLower }}
+
+    - uses: thejeff77/action-push-tag@v1.0.0
+      if: github.event_name == 'pull_request'
+      with:
+        tag: ${{ steps.calculate-version.outputs.FullSemVerLower }}
+        message: '${{ steps.calculate-version.outputs.FullSemVerLower }}: PR #${{ github.event.pull_request.number }} ${{ github.event.pull_request.title }}'
+

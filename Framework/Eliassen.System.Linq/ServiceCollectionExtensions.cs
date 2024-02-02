@@ -4,7 +4,7 @@ using Eliassen.System.ResponseModel;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace Eliassen.System;
+namespace Eliassen.System.Linq;
 
 /// <summary>
 /// Suggested IOC configurations

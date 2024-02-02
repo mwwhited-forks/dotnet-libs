@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents a service for managing users in the Microsoft Graph.
 /// </summary>
-[Obsolete]
+[Obsolete("this functionality should be refactored to use IIdentityManager")]
 public interface IManageGraphUser
 {
     /// <summary>

@@ -1,6 +1,6 @@
 # Swagger Description - Eliassen.WebApi
 
-*Version*: 0.1.65.20
+*Version*: 0.1.67.23
 
 ## Endpoints
 
@@ -115,7 +115,7 @@ The JSON data used for template processing.
 ### /api/User/claims
 
 
-
+Gets the claims associated with the current user.
 
 HTTP Method: *get* \
 Anonymous:   *False*
@@ -171,14 +171,14 @@ Anonymous:   *False*
 #### Properties
 | Name | Type | other |
 |------|------|-------|
-| issuer | string? |  | 
-| value | string? |  | 
-| valueType | string? |  | 
-| type | string? |  | 
-| originalIssuer | string? |  | 
-| subjectName | string? |  | 
-| subjectLabel | string? |  | 
-| subjectAuthenticationType | string? |  | 
+| issuer | string? | Gets or sets the issuer of the claim. | 
+| value | string? | Gets or sets the value of the claim. | 
+| valueType | string? | Gets or sets the value type of the claim. | 
+| type | string? | Gets or sets the type of the claim. | 
+| originalIssuer | string? | Gets or sets the original issuer of the claim. | 
+| subjectName | string? | Gets or sets the subject name associated with the claim. | 
+| subjectLabel | string? | Gets or sets the subject label associated with the claim. | 
+| subjectAuthenticationType | string? | Gets or sets the authentication type of the subject associated with the claim. | 
 
 
 ### Eliassen.WebApi.Models.ExampleMessageModel

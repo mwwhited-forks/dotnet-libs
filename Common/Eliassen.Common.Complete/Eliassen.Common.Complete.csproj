@@ -22,7 +22,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\**\*.csproj" />
+		<ProjectReference Include="..\Eliassen.Common.Abstractions\Eliassen.Common.Abstractions.csproj" />
+		<ProjectReference Include="..\Eliassen.Common.AspNetCore\Eliassen.Common.AspNetCore.csproj" />
+		<ProjectReference Include="..\Eliassen.Common.Extensions\Eliassen.Common.Extensions.csproj" />
+		<ProjectReference Include="..\Eliassen.Common.Hosting\Eliassen.Common.Hosting.csproj" />
+		<ProjectReference Include="..\Eliassen.Common\Eliassen.Common.csproj" />
 		<ProjectReference Remove="..\**\*.Complete.csproj" />
 	</ItemGroup>
 

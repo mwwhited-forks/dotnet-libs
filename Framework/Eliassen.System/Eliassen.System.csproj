@@ -19,5 +19,4 @@
 	  <ProjectReference Include="..\Eliassen.System.Linq\Eliassen.System.Linq.csproj" />
 	</ItemGroup>
 
-
 </Project>

@@ -7,7 +7,7 @@ namespace Eliassen.System.Tests.Security.Cryptography;
 [TestClass]
 public class Sha256HashTests
 {
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     [DataTestMethod]
     [TestCategory(TestCategories.Unit)]

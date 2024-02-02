@@ -138,6 +138,8 @@ Adds Microsoft B2C services to the service collection.
 
 ##### Parameters
 * *services:* The service collection to which Microsoft B2C services should be added.
+* *configuration:* The to add services to.
+* *microsoftIdentityConfigurationSection:* The name for the ConfigurationSectionName.
 
 
 

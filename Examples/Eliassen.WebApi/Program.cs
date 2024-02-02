@@ -1,6 +1,5 @@
 ﻿using Eliassen.AspNetCore.JwtAuthentication.SwaggerGen;
 using Eliassen.Common;
-using Eliassen.Common.AspNetCore;
 using Eliassen.Common.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
@@ -46,6 +45,9 @@ public class Program
             identityBuilder: new()
             {
                 IdentityProvider = identityProvider,
+            },
+            externalBuilder: new()
+            {
             },
             hostingBuilder: new()
             {

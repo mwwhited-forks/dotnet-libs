@@ -2,7 +2,7 @@
 using Eliassen.AspNetCore.Mvc.Filters;
 using Eliassen.AspNetCore.Mvc.SwaggerGen;
 using Eliassen.Extensions;
-using Eliassen.System;
+using Eliassen.System.Linq;
 using Eliassen.System.Linq.Search;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -33,8 +33,11 @@ public static class ServiceCollectionExtensions
     /// <returns>The modified service collection.</returns>
     public static IServiceCollection TryAddAspNetCoreExtensions(
         this IServiceCollection services,
-
+#if DEBUG
+        AspNetCoreExtensionBuilder? builder
+#else
         AspNetCoreExtensionBuilder? builder = default
+#endif
     )
     {
         builder ??= new();

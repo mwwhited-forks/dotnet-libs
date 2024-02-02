@@ -19,7 +19,7 @@ namespace Eliassen.MessageQueueing.Tests;
 [TestClass]
 public class MessageSenderTests
 {
-    public TestContext TestContext { get; set; } = null!;
+    public required TestContext TestContext { get; set; }
 
     [TestMethod]
     [TestCategory(TestCategories.Simulate)]
@@ -108,7 +108,7 @@ public class MessageSenderTests
 
         var serviceCollection = new ServiceCollection()
             .TryAddMessageQueueingServices()
-            .TryAddSystemExtensions(config)
+            .TryAddSystemExtensions(config, new())
             ;
 
         serviceCollection.AddLogging(builder => builder

@@ -8,12 +8,12 @@ public record FileType : IFileType
     /// <summary>
     /// Gets or sets the file extension associated with the file type.
     /// </summary>
-    public string Extension { get; set; } = null!;
+    public required string Extension { get; set; }
 
     /// <summary>
     /// Gets or sets the content type associated with the file type.
     /// </summary>
-    public string ContentType { get; set; } = null!;
+    public required string ContentType { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the file type is a template type.

@@ -8,10 +8,10 @@ public class AttachmentReferenceModel
     /// <summary>
     /// Gets the name of the container where the attachment is stored.
     /// </summary>
-    public string ContainerName { get; init; } = null!;
+    public required string ContainerName { get; init; }
 
     /// <summary>
     /// Gets the key or identifier of the document associated with the attachment.
     /// </summary>
-    public string DocumentKey { get; init; } = null!;
+    public required string DocumentKey { get; init; }
 }

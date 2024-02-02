@@ -1,6 +1,21 @@
 # Eliassen - Message Queueing
 
+See [back](MajorFunctionality.md)
+
 ## Summary
+
+Messages and business event supported is provided by the `Eliassen.MessageQueueing` libraries.  
+
+Handlers are provided in process though an Hosting Engine extension.
+
+### Current Implementations
+
+* In Process `ConcurrentQueue` - Built in
+* Azure Storage Queues - Requires `Eliassen.Azure.StorageAccount`
+
+### 
+
+* should have support for impersonate the originating ClaimsPrincipal
 
 ## Related Notes
 
@@ -82,3 +97,7 @@ IMessageQueueHandler ^-- GenericHandler : implements
 MessageReceiverHost --* IMessageReceiverProviderFactory : uses
 
 ```
+
+---
+
+See [back](MajorFunctionality.md)

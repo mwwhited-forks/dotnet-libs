@@ -22,6 +22,7 @@
 		
 	<ItemGroup>
 		<ProjectReference Include="..\..\Framework\**\Eliassen.AspNetCore.*.csproj" />
+		<ProjectReference Remove="..\..\Framework\**\Eliassen.*.Tests.csproj" />
 	</ItemGroup>
 		
 </Project>
