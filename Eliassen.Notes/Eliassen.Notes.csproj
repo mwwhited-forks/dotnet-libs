@@ -29,6 +29,13 @@
       <Link>\%(FileName)%(Extension)</Link>
     </None>
     <None Remove="$(SolutionDir)*.sln" />
+
+    <None Include="$(SolutionDir)TestResults\**\*.*" Pack="true" PackagePath="\docs" >
+      <Link>\TestResults\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </None>
+    <None Include="$(SolutionDir)publish\**\*.*" Pack="true" PackagePath="\docs" >
+      <Link>\publish\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </None>
   </ItemGroup>
 
 </Project>
