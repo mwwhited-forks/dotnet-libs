@@ -18,8 +18,19 @@
     <TestResultsOutFolderPath>$(SolutionDir)TestResults\</TestResultsOutFolderPath>
   </PropertyGroup>
 
+  <PropertyGroup Condition="Exists('$(SolutionDir)LICENSE')">
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+  <ItemGroup Condition="Exists('$(SolutionDir)LICENSE')">
+    <LicenseFile Include="$(SolutionDir)LICENSE" />
+    <None Include="@(LicenseFile)" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
   <PropertyGroup Condition="'$(LOCAL_NUGET)' != ''">
     <PackageOutputPath>$(LOCAL_NUGET.Trim('\'))\</PackageOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(LOCAL_NUGET)' == ''">
+    <PackageOutputPath>$(SolutionDir)publish\packages</PackageOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(DOCUMENT_PATH)' != ''">
     <DocumentPath>$(DOCUMENT_PATH.Trim('\'))\</DocumentPath>
@@ -30,6 +41,17 @@
   <PropertyGroup Condition="'$(CodeDocumentPath)' == ''">
     <CodeDocumentPath>$(DocumentPath)code\</CodeDocumentPath>
   </PropertyGroup>
+
+  <Target Name="Details">
+    <Message Text="===== SolutionDir:              $(SolutionDir)"  Importance="high"/>
+    <Message Text="===== TestResultsOutFolderPath: $(TestResultsOutFolderPath)"  Importance="high"/>
+    <Message Text="===== DocumentPath:             $(DocumentPath)"  Importance="high"/>
+    <Message Text="===== CodeDocumentPath:         $(CodeDocumentPath)"  Importance="high"/>
+    <Message Text="===== LicenseFile:              @(LicenseFile)"  Importance="high"/>
+    <Message Text="===== PackageOutputPath:        $(PackageOutputPath)"  Importance="high"/>
+    <Message Text="===== PackageLicenseFile:       $(PackageLicenseFile)"  Importance="high"/>
+  </Target>
+
 
   <ItemGroup>
     <!-- GitVersion will automatically calculate and maintain the version of projects within your solution -->
