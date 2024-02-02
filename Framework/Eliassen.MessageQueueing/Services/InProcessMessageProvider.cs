@@ -36,7 +36,7 @@ public class InProcessMessageProvider(
         var wrapped = new WrappedQueueMessage
         {
             ContentType = "application/json;",
-            PayloadType = message.GetType().AssemblyQualifiedName,
+            PayloadType = message.GetType().AssemblyQualifiedName ?? throw new NotSupportedException(),
             CorrelationId = context.CorrelationId ?? Guid.NewGuid().ToString(), //TODO: do this better
             Payload = message,
             Properties = context.Headers,

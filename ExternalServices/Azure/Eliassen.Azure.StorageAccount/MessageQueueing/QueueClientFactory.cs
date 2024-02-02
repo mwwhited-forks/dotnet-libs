@@ -1,4 +1,5 @@
 ﻿using Azure.Storage.Queues;
+using Eliassen.System;
 using Microsoft.Extensions.Configuration;
 using System;
 
@@ -19,10 +20,11 @@ public class QueueClientFactory : IQueueClientFactory
     /// </exception>
     public QueueClient Create(IConfigurationSection config) =>
          new(
-            config["ConnectionString"] ?? throw new ApplicationException($"Configuration \"{config.Path}:ConnectionString\" is missing"),
-            config["QueueName"] ?? throw new ApplicationException($"Configuration \"{config.Path}:QueueName\" is missing"),
+            config["ConnectionString"] ?? throw new ConfigurationMissingException($"{config.Path}:ConnectionString"),
+            config["QueueName"] ?? throw new ConfigurationMissingException($"{config.Path}:QueueName"),
             new QueueClientOptions
             {
                 MessageEncoding = QueueMessageEncoding.Base64,
             });
 }
+

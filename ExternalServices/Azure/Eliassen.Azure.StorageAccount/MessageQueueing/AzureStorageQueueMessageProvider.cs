@@ -1,4 +1,5 @@
 ﻿using Eliassen.MessageQueueing.Services;
+using Eliassen.System;
 using Eliassen.System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
 using System;
@@ -37,7 +38,7 @@ public class AzureStorageQueueMessageProvider(
         var wrapped = new WrappedQueueMessage
         {
             ContentType = "application/json;",
-            PayloadType = message.GetType().AssemblyQualifiedName,
+            PayloadType = message.GetType().AssemblyQualifiedName ?? throw new NotSupportedException(),
             CorrelationId = context.CorrelationId ?? "",
             Payload = message,
             Properties = context.Headers,
@@ -69,7 +70,7 @@ public class AzureStorageQueueMessageProvider(
         CancellationToken cancellationToken = default
         )
     {
-        var client = clientFactory.Create(_handlerProvider?.Config ?? throw new ApplicationException("No configuration"));
+        var client = clientFactory.Create(_handlerProvider?.Config ?? throw new ConfigurationMissingException("UNKNOWN"));
         var newCancellationToken = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken).Token;
 
         while (!newCancellationToken.IsCancellationRequested)
@@ -90,7 +91,7 @@ public class AzureStorageQueueMessageProvider(
             await _handlerProvider.HandleAsync(deserialized, message.Value.MessageId);
 
             logger.LogInformation($"Dequeue: {{{nameof(message.Value.MessageId)}}}", message.Value.MessageId);
-            var response = await client.DeleteMessageAsync(message.Value.MessageId, message.Value.PopReceipt, newCancellationToken);
+            _ = await client.DeleteMessageAsync(message.Value.MessageId, message.Value.PopReceipt, newCancellationToken);
         }
     }
 }
