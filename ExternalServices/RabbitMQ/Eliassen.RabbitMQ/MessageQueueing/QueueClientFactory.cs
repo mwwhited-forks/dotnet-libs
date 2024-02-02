@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Eliassen.System;
+using Microsoft.Extensions.Configuration;
 using RabbitMQ.Client;
 using System;
 
@@ -28,7 +29,7 @@ public class QueueClientFactory : IQueueClientFactory
         var connection = factory.CreateConnection();
         var model = connection.CreateModel();
 
-        var queueName = config["QueueName"] ?? throw new ApplicationException("config missing QueueName");
+        var queueName = config["QueueName"] ?? throw new ConfigurationMissingException($"{config.Path}:QueueName");
 
         return (connection, model, queueName);
     }

@@ -181,6 +181,40 @@ Called before the action result executes.
 
 
 
+## Class: AspNetCore.Mvc.Middleware.CorrelationInfoMiddleware
+Middleware for handling correlation information in HTTP requests and responses. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.AspNetCore.Mvc.Middleware.CorrelationInfoMiddleware*class. 
+
+
+##### Parameters
+* *next:* The delegate representing the next middleware in the pipeline.
+
+
+
+
+#### Invoke(Microsoft.AspNetCore.Http.HttpContext,Microsoft.Extensions.Logging.ILogger{Eliassen.AspNetCore.Mvc.Middleware.CorrelationInfoMiddleware},Eliassen.System.Accessors.IAccessor{Eliassen.System.Net.Http.CorrelationInfo})
+Invokes the middleware to handle correlation information in the HTTP context. 
+
+
+##### Parameters
+* *context:* The HTTP context.
+* *logger:* The logger for logging correlation information.
+* *correlationAccessor:* The accessor for managing correlation information.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
 ## Class: AspNetCore.Mvc.Middleware.CultureInfoMiddleware
 Custom middleware to enable detection of language/culture from HTTP request header as well as assignment for response header 
 

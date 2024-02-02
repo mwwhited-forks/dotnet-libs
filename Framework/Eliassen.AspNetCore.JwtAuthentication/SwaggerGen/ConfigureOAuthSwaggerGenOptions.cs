@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Eliassen.System;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -51,8 +52,8 @@ public class ConfigureOAuthSwaggerGenOptions(
                 Implicit = new OpenApiOAuthFlow()
                 {
                     Scopes = GetScopes(),
-                    AuthorizationUrl = new Uri(config.Value.AuthorizationUrl ?? throw new ApplicationException($"{nameof(config.Value.AuthorizationUrl)} is not configured")),
-                    TokenUrl = new Uri(config.Value.TokenUrl ?? throw new ApplicationException($"{nameof(config.Value.TokenUrl)} is not configured")),
+                    AuthorizationUrl = new Uri(config.Value.AuthorizationUrl ?? throw new ConfigurationMissingException($"{nameof(OAuth2SwaggerOptions)}:{nameof(config.Value.AuthorizationUrl)}")),
+                    TokenUrl = new Uri(config.Value.TokenUrl ?? throw new ConfigurationMissingException($"{nameof(OAuth2SwaggerOptions)}:{nameof(config.Value.TokenUrl)}")),
                 },
             }
         });

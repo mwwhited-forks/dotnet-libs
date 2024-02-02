@@ -7,10 +7,17 @@ using System.Threading.Tasks;
 
 namespace Eliassen.AspNetCore.Mvc.Middleware;
 
+/// <summary>
+/// Middleware for handling correlation information in HTTP requests and responses.
+/// </summary>
 public class CorrelationInfoMiddleware
 {
     private readonly RequestDelegate _next;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CorrelationInfoMiddleware"/> class.
+    /// </summary>
+    /// <param name="next">The delegate representing the next middleware in the pipeline.</param>
     public CorrelationInfoMiddleware(
         RequestDelegate next
         )
@@ -18,6 +25,13 @@ public class CorrelationInfoMiddleware
         _next = next;
     }
 
+    /// <summary>
+    /// Invokes the middleware to handle correlation information in the HTTP context.
+    /// </summary>
+    /// <param name="context">The HTTP context.</param>
+    /// <param name="logger">The logger for logging correlation information.</param>
+    /// <param name="correlationAccessor">The accessor for managing correlation information.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
     public async Task Invoke(
         HttpContext context,
         ILogger<CorrelationInfoMiddleware> logger,

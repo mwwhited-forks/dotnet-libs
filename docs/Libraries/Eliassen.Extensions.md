@@ -105,12 +105,13 @@ Convert JSON Stream to .Net Object
 
 
 
-#### AsJson``1(System.IO.Stream,System.Text.Json.JsonSerializerOptions)
+#### AsJsonAsync(System.IO.Stream,System.Type,System.Text.Json.JsonSerializerOptions)
 Convert JSON Stream to .Net Object 
 
 
 ##### Parameters
 * *stream:* 
+* *type:* 
 * *options:* 
 
 
@@ -121,13 +122,12 @@ Convert JSON Stream to .Net Object
 
 
 
-#### AsJsonAsync(System.IO.Stream,System.Type,System.Text.Json.JsonSerializerOptions)
+#### AsJson``1(System.IO.Stream,System.Text.Json.JsonSerializerOptions)
 Convert JSON Stream to .Net Object 
 
 
 ##### Parameters
 * *stream:* 
-* *type:* 
 * *options:* 
 
 
@@ -177,12 +177,13 @@ Convert XML Stream to .Net Object
 
 
 
-#### AsXml``1(System.IO.Stream,System.Type[])
+#### AsXmlAsync(System.IO.Stream,System.Type,System.Type[])
 Convert XML Stream to .Net Object 
 
 
 ##### Parameters
 * *stream:* 
+* *type:* 
 * *extraTypes:* 
 
 
@@ -193,13 +194,12 @@ Convert XML Stream to .Net Object
 
 
 
-#### AsXmlAsync(System.IO.Stream,System.Type,System.Type[])
+#### AsXml``1(System.IO.Stream,System.Type[])
 Convert XML Stream to .Net Object 
 
 
 ##### Parameters
 * *stream:* 
-* *type:* 
 * *extraTypes:* 
 
 

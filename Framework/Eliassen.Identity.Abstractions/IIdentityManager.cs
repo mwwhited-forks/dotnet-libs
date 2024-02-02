@@ -10,7 +10,7 @@ public interface IIdentityManager
     /// </summary>
     /// <param name="emailAddress">The email address to search for.</param>
     /// <returns>A task that represents the asynchronous operation. The task result contains the list of user identity models or <c>null</c> if no users are found.</returns>
-    Task<List<UserIdentityModel>?> GetGraphUsersByEmail(string emailAddress);
+    Task<List<UserIdentityModel>?> GetIdentityUsersByEmail(string emailAddress);
 
     /// <summary>
     /// Creates a new identity user asynchronously with the specified details.
@@ -24,7 +24,7 @@ public interface IIdentityManager
     /// <summary>
     /// Removes an identity user asynchronously based on the specified object ID.
     /// </summary>
-    /// <param name="objectId">The object ID of the user to remove.</param>
+    /// <param name="userId">The object ID of the user to remove.</param>
     /// <returns>A task that represents the asynchronous operation. The task result is <c>true</c> if the user was successfully removed; otherwise, <c>false</c>.</returns>
-    Task<bool> RemoveIdentityUserAsync(string objectId);
+    Task<bool> RemoveIdentityUserAsync(string userId);
 }

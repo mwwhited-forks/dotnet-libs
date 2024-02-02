@@ -3,7 +3,7 @@
 /// <summary>
 /// Contains global constants related to Azure Storage.
 /// </summary>
-public class AzureStorageGlobals
+public static class AzureStorageGlobals
 {
     /// <summary>
     /// The key associated with the Azure Storage message provider.
