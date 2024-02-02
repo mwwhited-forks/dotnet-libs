@@ -8,10 +8,9 @@
 /// </remarks>
 /// <param name="user">The user manager for managing graph users.</param>
 public class UserManagementProvider(
-    IManageGraphUser user
+    IIdentityManager user
     ) : IUserManagementProvider
 {
-
     /// <summary>
     /// Creates a new user account asynchronously.
     /// </summary>
@@ -19,7 +18,7 @@ public class UserManagementProvider(
     /// <returns>A task representing the asynchronous operation. The result is a model containing the created user's information.</returns>
     public async Task<UserCreatedModel> CreateAccountAsync(UserCreateModel model)
     {
-        var (objectid, password) = await user.CreateGraphUserAsync(model.EmailAddress, model.FirstName, model.LastName);
+        var (objectid, password) = await user.CreateIdentityUserAsync(model.EmailAddress, model.FirstName, model.LastName);
         return new UserCreatedModel
         {
             Password = password ?? "",

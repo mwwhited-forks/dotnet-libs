@@ -8,7 +8,7 @@ using Microsoft.Graph.Models;
 namespace Eliassen.Microsoft.B2C.Identity;
 
 /// <summary>
-/// Implementation of <see cref="IManageGraphUser"/> and <see cref="IIdentityManager"/> for managing users in Microsoft Graph.
+/// Implementation of  <see cref="IIdentityManager"/> for managing users in Microsoft Graph.
 /// </summary>
 /// <remarks>
 /// Initializes a new instance of the <see cref="ManageGraphUser"/> class.
@@ -18,62 +18,10 @@ namespace Eliassen.Microsoft.B2C.Identity;
 public class ManageGraphUser(
     ILogger<ManageGraphUser> log,
     IOptions<MicrosoftIdentityOptions> config
-        ) : IManageGraphUser, IIdentityManager
+        ) : IIdentityManager
 {
     private readonly ILogger _log = log;
     private readonly IOptions<MicrosoftIdentityOptions> _config = config;
-
-    /// <summary>
-    /// Gets the authentication provider for Microsoft Graph.
-    /// </summary>
-    /// <returns>The authentication provider.</returns>
-    private ClientSecretCredential GetAuthProvider()
-    {
-        var config = new
-        {
-            clientId = _config.Value.ClientID,
-            tenantId = _config.Value.Issuer,
-            clientSecret = _config.Value.ClientSecret,
-        };
-
-        var token = new ClientSecretCredential(config.tenantId, config.clientId, config.clientSecret);
-
-        return token;
-    }
-
-    /// <summary>
-    /// Retrieves a list of user identity models based on the provided email address.
-    /// </summary>
-    /// <param name="email">The email address to query users by.</param>
-    /// <returns>A list of user identity models matching the specified email address, or null if no matches are found.</returns>
-    public async Task<List<UserIdentityModel>?> GetGraphUsersByEmail(string email)
-    {
-        // Set up the Microsoft Graph service client with client credentials
-        var graphClient = new GraphServiceClient(GetAuthProvider());
-
-        // Query existing users by email, iff it already exists, return that id.
-        var existingUsers = await graphClient.Users.GetAsync(user =>
-        {
-            user.QueryParameters.Select = [
-                nameof(User.Id),
-                nameof(User.Mail),
-                nameof(User.GivenName),
-                nameof(User.Surname),
-                "PasswordProfile.ForceChangePasswordNextSignIn",
-            ];
-            user.QueryParameters.Top = 1;
-            user.QueryParameters.Filter = $"mail eq '{email}'";
-        });
-
-        return existingUsers?.Value?.Select(r => new UserIdentityModel()
-        {
-            UserName = r.Id,
-            FirstName = r.GivenName,
-            LastName = r.Surname,
-            EmailAddress = r.Mail,
-            ForcePasswordChangeNextSignIn = r.PasswordProfile?.ForceChangePasswordNextSignIn ?? false
-        })?.ToList() ?? [];
-    }
 
     /// <summary>
     /// Creates a new identity user asynchronously with the specified email, first name, and last name.
@@ -82,17 +30,7 @@ public class ManageGraphUser(
     /// <param name="firstName">The first name for the new user.</param>
     /// <param name="lastName">The last name for the new user.</param>
     /// <returns>A tuple containing the object ID and password of the created user, or null if the user already exists.</returns>
-    public Task<(string objectId, string? password)> CreateIdentityUserAsync(string email, string firstName, string lastName) =>
-        CreateGraphUserAsync(email, firstName, lastName);
-
-    /// <summary>
-    /// Creates a new user asynchronously with the specified email, first name, and last name in Microsoft Graph.
-    /// </summary>
-    /// <param name="email">The email address for the new user.</param>
-    /// <param name="firstName">The first name for the new user.</param>
-    /// <param name="lastName">The last name for the new user.</param>
-    /// <returns>A tuple containing the object ID and password of the created user, or null if the user already exists.</returns>
-    public async Task<(string objectId, string? password)> CreateGraphUserAsync(string email, string firstName, string lastName)
+    public async Task<(string objectId, string? password)> CreateIdentityUserAsync(string email, string firstName, string lastName)
     {
         try
         {
@@ -156,18 +94,45 @@ public class ManageGraphUser(
     }
 
     /// <summary>
-    /// Removes an identity user asynchronously based on the specified object ID.
+    /// Retrieves a list of user identity models based on the provided email address.
     /// </summary>
-    /// <param name="objectId">The object ID of the user to be removed.</param>
-    /// <returns>True if the user is successfully removed, false otherwise.</returns>
-    public Task<bool> RemoveIdentityUserAsync(string objectId) => RemoveGraphUserAsync(objectId);
+    /// <param name="emailAddress">The email address to query users by.</param>
+    /// <returns>A list of user identity models matching the specified email address, or null if no matches are found.</returns>
+    public async Task<List<UserIdentityModel>?> GetIdentityUsersByEmail(string emailAddress)
+    {
+        //Set up the Microsoft Graph service client with client credentials
+        var graphClient = new GraphServiceClient(GetAuthProvider());
+
+        // Query existing users by email, iff it already exists, return that id.
+        var existingUsers = await graphClient.Users.GetAsync(user =>
+        {
+            user.QueryParameters.Select = [
+                nameof(User.Id),
+                nameof(User.Mail),
+                nameof(User.GivenName),
+                nameof(User.Surname),
+                "PasswordProfile.ForceChangePasswordNextSignIn",
+            ];
+            user.QueryParameters.Top = 1;
+            user.QueryParameters.Filter = $"mail eq '{emailAddress}'";
+        });
+
+        return existingUsers?.Value?.Select(r => new UserIdentityModel()
+        {
+            UserName = r.Id,
+            FirstName = r.GivenName,
+            LastName = r.Surname,
+            EmailAddress = r.Mail,
+            ForcePasswordChangeNextSignIn = r.PasswordProfile?.ForceChangePasswordNextSignIn ?? false
+        })?.ToList() ?? [];
+    }
 
     /// <summary>
-    /// Removes a user asynchronously based on the specified object ID in Microsoft Graph.
+    /// Removes an identity user asynchronously based on the specified object ID.
     /// </summary>
     /// <param name="userId">The object ID of the user to be removed.</param>
     /// <returns>True if the user is successfully removed, false otherwise.</returns>
-    public async Task<bool> RemoveGraphUserAsync(string userId)
+    public async Task<bool> RemoveIdentityUserAsync(string userId)
     {
         try
         {
@@ -199,5 +164,23 @@ public class ManageGraphUser(
             _log.LogDebug($"Error: {{{nameof(Exception)}}}", ex);
             return false;
         }
+    }
+
+    /// <summary>
+    /// Gets the authentication provider for Microsoft Graph.
+    /// </summary>
+    /// <returns>The authentication provider.</returns>
+    private ClientSecretCredential GetAuthProvider()
+    {
+        var config = new
+        {
+            clientId = _config.Value.ClientID,
+            tenantId = _config.Value.Issuer,
+            clientSecret = _config.Value.ClientSecret,
+        };
+
+        var token = new ClientSecretCredential(config.tenantId, config.clientId, config.clientSecret);
+
+        return token;
     }
 }

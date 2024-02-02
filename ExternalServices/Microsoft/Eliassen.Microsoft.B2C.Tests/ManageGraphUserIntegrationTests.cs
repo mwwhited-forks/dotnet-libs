@@ -31,40 +31,12 @@ public class ManageGraphUserIntegrationTests
     {
         var services = new ServiceCollection()
             .AddLogging(logging => logging.AddConsole())
-            .AddSingleton<IManageGraphUser, ManageGraphUser>()
             .AddSingleton<IIdentityManager, ManageGraphUser>()
             ;
 
         services.Replace(ServiceDescriptor.Transient(_ => GetConfiguration()));
 
         return services.BuildServiceProvider();
-    }
-
-    [TestMethod]
-    [TestCategory(TestCategories.DevLocal)]
-    public async Task CreateGraphUserAsyncTest_Integration_Exists()
-    {
-        // Stage
-        var serviceProvider = GetIntegrationServiceProvider();
-        var emailAddress = $"mwwhited@gmail.com";
-
-        // Mock
-
-        // Test
-        var manageGraphUser = serviceProvider.GetRequiredService<IManageGraphUser>();
-
-        var result = await manageGraphUser.CreateGraphUserAsync(
-            email: emailAddress,
-            firstName: "Matthew",
-        lastName: "Whited");
-
-        this.TestContext.WriteLine($"emailAddress: {emailAddress}");
-        this.TestContext.WriteLine($"result: {result}");
-
-        // Assert
-        Assert.AreNotEqual(Guid.Empty.ToString(), result.objectId);
-
-        // Verify
     }
 
     [TestMethod]
@@ -80,8 +52,8 @@ public class ManageGraphUserIntegrationTests
         // Test
         var manageGraphUser = serviceProvider.GetRequiredService<IIdentityManager>();
 
-        var result = await manageGraphUser.GetGraphUsersByEmail(emailAddress)
-            ?? throw new ApplicationException($"{nameof(manageGraphUser.GetGraphUsersByEmail)} should return a value");
+        var result = await manageGraphUser.GetIdentityUsersByEmail(emailAddress)
+            ?? throw new ApplicationException($"{nameof(manageGraphUser.GetIdentityUsersByEmail)} should return a value");
 
         foreach (var item in result)
         {
@@ -94,33 +66,6 @@ public class ManageGraphUserIntegrationTests
         // Assert
         foreach (var customer in result.ToArray())
             Assert.AreNotEqual(Guid.Empty.ToString(), customer.EmailAddress);
-
-        // Verify
-    }
-
-    [TestMethod]
-    [TestCategory(TestCategories.DevLocal)]
-    public async Task CreateGraphUserAsyncTest_Integration_DoesNotExists()
-    {
-        // Stage
-        var serviceProvider = GetIntegrationServiceProvider();
-        var emailAddress = $"mwwhited.{Guid.NewGuid()}@gmail.com";
-
-        // Mock
-
-        // Test
-        var manageGraphUser = serviceProvider.GetRequiredService<IManageGraphUser>();
-
-        var result = await manageGraphUser.CreateGraphUserAsync(
-            email: emailAddress,
-            firstName: "Matthew",
-            lastName: "Whited");
-
-        this.TestContext.WriteLine($"emailAddress: {emailAddress}");
-        this.TestContext.WriteLine($"result: {result}");
-
-        // Assert
-        Assert.AreNotEqual(Guid.Empty.ToString(), result.objectId);
 
         // Verify
     }
@@ -148,27 +93,6 @@ public class ManageGraphUserIntegrationTests
 
         // Assert
         Assert.AreNotEqual(Guid.Empty.ToString(), result.objectId);
-
-        // Verify
-    }
-
-    [TestMethod]
-    [TestCategory(TestCategories.DevLocal)]
-    public async Task RemoveGraphUserAsyncTest_Integration()
-    {
-        // Stage
-        var serviceProvider = GetIntegrationServiceProvider();
-
-        // Mock
-
-        // Test
-        var manageGraphUser = serviceProvider.GetRequiredService<IManageGraphUser>();
-        var userId = "581c2f51-bda2-4ca2-9bab-6fedd1470fc1";
-
-        var result = await manageGraphUser.RemoveGraphUserAsync(userId);
-
-        // Assert
-        Assert.IsTrue(result);
 
         // Verify
     }
