@@ -1,4 +1,5 @@
 ﻿using Eliassen.MessageQueueing.Services;
+using Eliassen.System;
 using Eliassen.System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
@@ -86,7 +87,7 @@ public class RabbitMQQueueMessageProvider(
     {
         // https://www.rabbitmq.com/tutorials/tutorial-one-dotnet.html
 
-        var (connection, channel, queueName) = clientFactory.Create(_handlerProvider?.Config ?? throw new ApplicationException("No configuration"));
+        var (connection, channel, queueName) = clientFactory.Create(_handlerProvider?.Config ?? throw new ConfigurationMissingException("UNKNOWN"));
         var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
         var newCancellationToken = cts.Token;
 
@@ -94,7 +95,7 @@ public class RabbitMQQueueMessageProvider(
         using (channel)
         {
             var consumer = new EventingBasicConsumer(channel);
-            consumer.Received += (model, ea) =>
+            consumer.Received += async (model, ea) =>
             {
                 var body = ea.Body.ToArray();
                 using var stream = new MemoryStream(body);
@@ -103,6 +104,11 @@ public class RabbitMQQueueMessageProvider(
 
                 var message = Encoding.UTF8.GetString(body);
                 logger.LogInformation($"Dequeue: {{{nameof(deserialized.CorrelationId)}}}", deserialized.CorrelationId);
+
+                await _handlerProvider.HandleAsync(deserialized, deserialized.CorrelationId);
+
+                logger.LogInformation($"Dequeue: {{{nameof(deserialized.CorrelationId)}}}", deserialized.CorrelationId);
+
             };
 
             channel.BasicConsume(queue: queueName,
