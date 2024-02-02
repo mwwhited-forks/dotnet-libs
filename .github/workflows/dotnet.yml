@@ -98,7 +98,7 @@ jobs:
         echo "PackagesPath=$packagesPath" >> "$env:GITHUB_OUTPUT"
         echo "PackagesPath=$packagesPath" >> "$env:GITHUB_ENV"
         
-        runSettings = JOIN-PATH -Path $env:GITHUB_WORKSPACE -ChildPath ".runsettings"
+        $runSettings = JOIN-PATH -Path $env:GITHUB_WORKSPACE -ChildPath ".runsettings"
         echo "RunSettings=$runSettings"
         echo "RunSettings=$runSettings" >> "$env:GITHUB_OUTPUT"
         echo "RunSettings=$runSettings" >> "$env:GITHUB_ENV"
