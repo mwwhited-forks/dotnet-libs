@@ -4,7 +4,7 @@
 name: .NET Build Pipeline
 # https://docs.github.com/en/actions/learn-github-actions/contexts#vars-context
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#run-name
-run-name: .NET ${{ inputs.build-configuration }}/${{ inputs.build-platform }} by @${{ github.actor }}
+run-name: .NET ${{ inputs.build-configuration || 'Release' }}/${{ inputs.build-platform || 'ubuntu-latest' }} by @${{ github.actor }} (@${{ github.event_name }})
 
 on:
   push:
@@ -146,20 +146,7 @@ jobs:
         --collect:"XPlat Code Coverage" 
         --settings "${{ steps.calculate-version.outputs.RunSettings }}"
         --results-directory "${{ steps.calculate-version.outputs.TestResultsPath }}"
-        
-    # - name: Coverage Tool Install
-    #   run: dotnet tool install dotnet-coverage --global  
-    
-    # - name: Merge Test Results
-    #   working-directory: ${{ steps.calculate-version.outputs.TestResultsPath }}
-    #   run: >
-    #     dotnet coverage
-    #     merge 
-    #     coverage.*.xml 
-    #     --recursive 
-    #     --output .\Cobertura.coverage 
-    #     --output-format cobertura
-        
+
     # https://github.com/marketplace/actions/publish-test-results
     # https://github.com/marketplace/actions/publish-test-results#create-a-badge-from-test-results
     # this doesn't support windows right now for some reason
@@ -178,15 +165,6 @@ jobs:
 #         dotnet nuget push --skip-duplicate --source $(nugetRepository) --api-key az $(Build.ArtifactStagingDirectory)\Packages\*.nupkg
 #   displayName: 'NuGet Push Packages'
 #   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) 
-
-# - task: PublishSymbols@2
-#   displayName: 'Publish Symbols'
-#   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-#   inputs:
-#     SearchPattern: '**/bin/**/*.pdb'
-#     IndexSources: false
-#     SymbolServerType: 'TeamServices'
-#     TreatNotIndexedAsWarning: true
 
     - name: Tag Commit
       uses: thejeff77/action-push-tag@v1.0.0
