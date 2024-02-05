@@ -7,7 +7,7 @@ Represents an identity manager for managing user identities.
 ### Methods
 
 
-#### GetGraphUsersByEmail(System.String)
+#### GetIdentityUsersByEmail(System.String)
 Retrieves a list of user identity models based on the specified email address. 
 
 
@@ -44,45 +44,7 @@ Removes an identity user asynchronously based on the specified object ID.
 
 
 ##### Parameters
-* *objectId:* The object ID of the user to remove.
-
-
-
-
-##### Return value
-A task that represents the asynchronous operation. The task result is true if the user was successfully removed; otherwise, false.
-
-
-
-## Class: Identity.IManageGraphUser
-Represents a service for managing users in the Microsoft Graph. 
-
-### Methods
-
-
-#### CreateGraphUserAsync(System.String,System.String,System.String)
-Creates a new user in the Microsoft Graph asynchronously with the specified details. 
-
-
-##### Parameters
-* *email:* The email address of the user.
-* *firstName:* The first name of the user.
-* *lastName:* The last name of the user.
-
-
-
-
-##### Return value
-A task that represents the asynchronous operation. The task result contains the object ID and an optional password for the created user.
-
-
-
-#### RemoveGraphUserAsync(System.String)
-Removes a user from the Microsoft Graph asynchronously based on the specified user ID. 
-
-
-##### Parameters
-* *userId:* The user ID of the user to remove.
+* *userId:* The object ID of the user to remove.
 
 
 

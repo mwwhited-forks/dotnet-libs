@@ -27,20 +27,6 @@ public static class StreamJsonDeserializeExtensions
     /// <summary>
     /// Convert JSON Stream to .Net Object
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="stream"></param>
-    /// <param name="options"></param>
-    /// <returns></returns>
-    public static T? AsJson<T>(this Stream? stream, JsonSerializerOptions? options = default) =>
-        stream switch
-        {
-            null => default,
-            _ => JsonSerializer.Deserialize<T>(stream, options)
-        };
-
-    /// <summary>
-    /// Convert JSON Stream to .Net Object
-    /// </summary>
     /// <param name="stream"></param>
     /// <param name="type"></param>
     /// <param name="options"></param>
@@ -50,6 +36,20 @@ public static class StreamJsonDeserializeExtensions
         {
             null => default,
             _ => await JsonSerializer.DeserializeAsync(stream, type, options)
+        };
+
+    /// <summary>
+    /// Convert JSON Stream to .Net Object
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="stream"></param>
+    /// <param name="options"></param>
+    /// <returns></returns>
+    public static T? AsJson<T>(this Stream? stream, JsonSerializerOptions? options = default) =>
+        stream switch
+        {
+            null => default,
+            _ => JsonSerializer.Deserialize<T>(stream, options)
         };
 
     /// <summary>

@@ -730,3 +730,179 @@ A task representing the asynchronous operation, indicating whether the applicati
 
 ## Class: System.Text.Xml.Serialization.DefaultXmlSerializer
 Default XmlSerializer, 
+
+### Fields
+
+#### DefaultContentType
+Gets the default content type for XML serialization.
+### Properties
+
+#### ContentType
+Gets the content type used for XML serialization.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer*class. 
+
+
+#### Deserialize``1(System.IO.Stream)
+convert stream into object 
+
+
+##### Parameters
+* *stream:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### Deserialize(System.IO.Stream,System.Type)
+convert stream into object 
+
+
+##### Parameters
+* *stream:* 
+* *type:* template model to deserialize
+
+
+
+
+##### Return value
+
+
+
+
+#### Deserialize``1(System.String)
+convert stream into object 
+
+
+##### Parameters
+* *input:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### Deserialize(System.String,System.Type)
+convert stream into object 
+
+
+##### Parameters
+* *input:* 
+* *type:* template model to deserialize
+
+
+
+
+##### Return value
+
+
+
+
+#### DeserializeAsync``1(System.IO.Stream,System.Threading.CancellationToken)
+convert stream into object 
+
+
+##### Parameters
+* *stream:* 
+* *cancellationToken:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### DeserializeAsync(System.IO.Stream,System.Type,System.Threading.CancellationToken)
+convert stream into object 
+
+
+##### Parameters
+* *stream:* 
+* *type:* template model to deserialize
+* *cancellationToken:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### Serialize(System.Object,System.Type)
+convert the object based on the type definition 
+
+
+##### Parameters
+* *obj:* object to serialize
+* *type:* template model to serialize
+
+
+
+
+##### Return value
+
+
+
+
+#### Serialize``1(``0)
+convert the object based on the type definition 
+
+
+##### Parameters
+* *obj:* object to serialize
+
+
+
+
+##### Return value
+
+
+
+
+#### SerializeAsync(System.Object,System.Type,System.IO.Stream,System.Threading.CancellationToken)
+convert the object based on the type definition 
+
+
+##### Parameters
+* *obj:* object to serialize
+* *type:* template model to serialize
+* *stream:* 
+* *cancellationToken:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### SerializeAsync``1(``0,System.IO.Stream,System.Threading.CancellationToken)
+convert the object based on the type definition 
+
+
+##### Parameters
+* *obj:* object to serialize
+* *stream:* 
+* *cancellationToken:* 
+
+
+
+
+##### Return value
+
+

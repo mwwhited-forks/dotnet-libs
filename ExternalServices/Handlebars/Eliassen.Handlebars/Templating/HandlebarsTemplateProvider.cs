@@ -58,13 +58,13 @@ public class HandlebarsTemplateProvider(IHash hash, IEnumerable<IHelpersRegistry
         var handlebar = HandlebarsDotNet.Handlebars.Create();
         handlebar.Configuration.UseJson();
 
-        foreach (var helpersRegistry in helpersRegistry ?? Enumerable.Empty<IHelpersRegistry>())
+        foreach (var item in helpersRegistry ?? Enumerable.Empty<IHelpersRegistry>())
         {
-            foreach (var helper in helpersRegistry.GetBlockHelpers())
+            foreach (var helper in item.GetBlockHelpers())
             {
                 handlebar.RegisterHelper(helper.Value);
             }
-            foreach (var helper in helpersRegistry.GetHelpers())
+            foreach (var helper in item.GetHelpers())
             {
                 handlebar.RegisterHelper(helper.Value);
             }
@@ -121,7 +121,6 @@ public class HandlebarsTemplateProvider(IHash hash, IEnumerable<IHelpersRegistry
             var input = arguments.ElementAtOrDefault(0)?.ToString();
             var find = arguments.ElementAtOrDefault(1)?.ToString();
             var replacement = arguments.ElementAtOrDefault(2)?.ToString();
-            //_log.LogDebug($"replace: {{{nameof(input)}}} ({{{nameof(find)}}},{{{nameof(replacement)}}})", input, find, replacement);
             if (!string.IsNullOrWhiteSpace(input) && !string.IsNullOrWhiteSpace(find))
             {
                 output.Write(input.Replace(find, replacement ?? ""));
@@ -136,7 +135,7 @@ public class HandlebarsTemplateProvider(IHash hash, IEnumerable<IHelpersRegistry
         {
             AutoFlush = true,
         };
-        compiled(writer, data, context);
+        compiled(writer, context: data, data: context);
         await writer.FlushAsync();
         return true;
     }

@@ -29,7 +29,6 @@ public static class ServiceCollectionExtensions
         )
     {
         services.TryAddTransient<IIdentityManager, ManageGraphUser>();
-        services.TryAddTransient<IManageGraphUser, ManageGraphUser>();
 
         services.Configure<MicrosoftIdentityOptions>(options => configuration.Bind(microsoftIdentityConfigurationSection, options));
 

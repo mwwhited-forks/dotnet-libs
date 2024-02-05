@@ -32,7 +32,6 @@ public class BlobContainerProvider(
     /// <returns>A list of <see cref="BlobDto"/> representing the blobs in the container.</returns>
     public async Task<List<BlobDto>> ListAsync()
     {
-
         // Create a new list object for 
         List<BlobDto> files = [];
 
@@ -65,7 +64,6 @@ public class BlobContainerProvider(
     {
         BlobResponseDto response = new();
 
-        //await container.CreateAsync();
         try
         {
             // Get a reference to the blob just uploaded from the API in a container from configuration settings

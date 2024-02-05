@@ -92,7 +92,10 @@ public static class ReflectionExtensions
                 {
                     return Convert.FromBase64String(inputString);
                 }
-                catch { }
+                catch
+                {
+                    //Intentional
+                }
             }
         }
         else if (type.IsEnum && input is int enumInt)
