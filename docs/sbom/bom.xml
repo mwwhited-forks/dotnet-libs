@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:273aeeb5-7b97-4057-ad69-2f24093d7529" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:47e217af-4e81-4737-ac49-f0a5698f3fac" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
   <metadata>
-    <timestamp>2024-02-02T20:36:33.8966629Z</timestamp>
+    <timestamp>2024-02-07T17:44:05.7169926Z</timestamp>
     <tools>
       <tool>
         <vendor>CycloneDX</vendor>
@@ -9,9 +9,9 @@
         <version>3.0.5.0</version>
       </tool>
     </tools>
-    <component type="application" bom-ref="Nucleus.Libs@0.1.70-dev-update-docs.6">
-      <name>Nucleus.Libs</name>
-      <version>0.1.70-dev-update-docs.6</version>
+    <component type="application" bom-ref="Eliassen.Libs@0.1.68-dev-fix-local-scripts.0">
+      <name>Eliassen.Libs</name>
+      <version>0.1.68-dev-fix-local-scripts.0</version>
     </component>
   </metadata>
   <components>
@@ -498,14 +498,14 @@
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0">
       <author>Microsoft</author>
       <name>Microsoft.ApplicationInsights</name>
-      <version>2.21.0</version>
+      <version>2.22.0</version>
       <description>Application Insights Base API. This package provides core functionality for transmission of all Application Insights Telemetry Types and is a dependent package for all other Application Insights packages. Please install the platform specific package for the best experience. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">9F1D6B795B083E493CCCA927D5F5CA0A09A5ACFB808B70906E764798BD28A4DA81D2AC58DDD9577EE75A800E2A682F7E059D47A85C71254C10BE152A68F1F6C4</hash>
+        <hash alg="SHA-512">3E3D036C471F7BBDB121FEEE896F1DCD44F2D3A5C3CF76E44D8CA85399E2F7E6B9855AACB38EEECA9B02101092EA175E5E6A0E5B76B42904683ABEA0572C61D2</hash>
       </hashes>
       <licenses>
         <license>
@@ -513,7 +513,7 @@
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.ApplicationInsights@2.21.0</purl>
+      <purl>pkg:nuget/Microsoft.ApplicationInsights@2.22.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://go.microsoft.com/fwlink/?LinkId=392727</url>
@@ -1581,34 +1581,6 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0">
-      <author>Microsoft</author>
-      <name>Microsoft.Extensions.DependencyInjection.Abstractions</name>
-      <version>7.0.0</version>
-      <description>Abstractions for dependency injection.
-
-Commonly Used Types:
-Microsoft.Extensions.DependencyInjection.IServiceCollection</description>
-      <scope>required</scope>
-      <hashes>
-        <hash alg="SHA-512">A1CF52B01F5DE43FE9DE6055EC4C7B7F8247669E8DD049BE9626DF36E3163E0769D47843EAC5D09FA3F9AAB41BDA228BBD51946C9350B6E24D45D86CC92EB317</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>MIT</id>
-        </license>
-      </licenses>
-      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0</purl>
-      <externalReferences>
-        <reference type="website">
-          <url>https://dot.net/</url>
-        </reference>
-        <reference type="vcs">
-          <url>https://github.com/dotnet/runtime</url>
-        </reference>
-      </externalReferences>
-    </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0">
       <author>Microsoft</author>
       <name>Microsoft.Extensions.DependencyInjection.Abstractions</name>
@@ -2462,14 +2434,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Graph@5.40.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Graph@5.41.0">
       <author>Microsoft</author>
       <name>Microsoft.Graph</name>
-      <version>5.40.0</version>
+      <version>5.41.0</version>
       <description>Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">1B567B265DBF1F9781087EBF9076DC9B5904F5C6EA743AD1190CBE4D3D54505C7B4B70F972BA8BD64E4B927F76EC34790C05F702CE8CF3C0B28E306A45DAFE49</hash>
+        <hash alg="SHA-512">CACF0BCD122BC8B30D0EF4B214CA0E1A1D7AF22F27B593ED340D974F1F52A737FA9D6B77A1084100F03341504BC5F95191AB9C41AAFF8B2A6C3D960A25E360D4</hash>
       </hashes>
       <licenses>
         <license>
@@ -2478,7 +2450,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Graph@5.40.0</purl>
+      <purl>pkg:nuget/Microsoft.Graph@5.41.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://developer.microsoft.com/graph</url>
@@ -2590,14 +2562,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.1">
       <author>Microsoft</author>
       <name>Microsoft.IdentityModel.Abstractions</name>
-      <version>7.3.0</version>
+      <version>7.3.1</version>
       <description>A package containing thin abstractions for Microsoft.IdentityModel.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">1F135AF6382B383A453E889E6B3BBA8E764CC79CBAF746414E132AB4183D18E67ABBD21410D2FDFB54EE628B3CD0CBB7A712D28A37FA85AFE45B038673215748</hash>
+        <hash alg="SHA-512">BD669AC367CD89BCE859A830040F8B04B2DA20495023C83661A693C3B64928CC6D6811254FF38E94120C9649E4BEA1CB979D95422CAF68757DE212615F6BEB2C</hash>
       </hashes>
       <licenses>
         <license>
@@ -2605,7 +2577,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.0</purl>
+      <purl>pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.1</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</url>
@@ -2690,14 +2662,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1">
       <author>Microsoft</author>
       <name>Microsoft.IdentityModel.Logging</name>
-      <version>7.3.0</version>
+      <version>7.3.1</version>
       <description>Includes Event Source based logging support.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">DB9D6CAA2E318BCC4B59BD180EE45C80741AE12348E6042CFBA51BD1CA6B50CA692D8318A7EEE6FD08B8190A7C6B42C8808F53DB60CAED9BDA384C2E5C2CEE02</hash>
+        <hash alg="SHA-512">4A36BA3F6D7F9E4B05AE7E1D63D93637B135B20B9FE51FD3F3BAF766B2BCF06738DED2F87C300B8004A1AA13375A849AC24DDD129796BE004E4F633E75582D6D</hash>
       </hashes>
       <licenses>
         <license>
@@ -2705,7 +2677,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0</purl>
+      <purl>pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</url>
@@ -6890,7 +6862,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     </component>
   </components>
   <dependencies>
-    <dependency ref="Nucleus.Libs@0.1.70-dev-update-docs.6">
+    <dependency ref="Eliassen.Libs@0.1.68-dev-fix-local-scripts.0">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
@@ -6904,20 +6876,20 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Moq@4.20.70" />
       <dependency ref="pkg:nuget/MSTest.TestFramework@3.2.0" />
       <dependency ref="pkg:nuget/System.Memory.Data@8.0.0" />
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0" />
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1" />
       <dependency ref="pkg:nuget/Swashbuckle.AspNetCore@6.5.0" />
       <dependency ref="pkg:nuget/Swashbuckle.AspNetCore.SwaggerGen@6.5.0" />
       <dependency ref="pkg:nuget/Azure.Storage.Blobs@12.19.1" />
       <dependency ref="pkg:nuget/Azure.Storage.Queues@12.17.1" />
       <dependency ref="pkg:nuget/Azure.Identity@1.10.4" />
-      <dependency ref="pkg:nuget/Microsoft.Graph@5.40.0" />
+      <dependency ref="pkg:nuget/Microsoft.Graph@5.41.0" />
       <dependency ref="pkg:nuget/Microsoft.Identity.Client@4.59.0" />
       <dependency ref="pkg:nuget/Handlebars.Net@2.1.4" />
       <dependency ref="pkg:nuget/Handlebars.Net.Extension.Json@1.0.0" />
       <dependency ref="pkg:nuget/Handlebars.Net.Helpers@2.4.1.4" />
       <dependency ref="pkg:nuget/Keycloak.Net.Core@1.0.22" />
       <dependency ref="pkg:nuget/MailKit@4.3.0" />
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.1" />
       <dependency ref="pkg:nuget/Microsoft.Azure.WebJobs.Logging.ApplicationInsights@3.0.35" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Binder@8.0.1" />
@@ -6929,7 +6901,6 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.EnvironmentVariables@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.FileSystemGlobbing@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Hosting@8.0.0" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/AWSSDK.Core@3.7.100.14" />
     <dependency ref="pkg:nuget/AWSSDK.SecurityToken@3.7.100.14">
@@ -7005,7 +6976,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/MimeKit@4.3.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.AspNetCore@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.DependencyCollector@2.21.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.EventCounterCollector@2.21.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.PerfCounterCollector@2.21.0" />
@@ -7018,34 +6989,34 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Text.Encodings.Web@6.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.DependencyCollector@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.EventCounterCollector@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.PerfCounterCollector@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Caching.Memory@1.0.0" />
       <dependency ref="pkg:nuget/System.Diagnostics.PerformanceCounter@4.7.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.SnapshotCollector@1.4.3">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.1" />
       <dependency ref="pkg:nuget/System.IO.FileSystem.AccessControl@5.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/System.IO.FileSystem.AccessControl@5.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.WindowsServer@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.DependencyCollector@2.21.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.PerfCounterCollector@2.21.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel@2.21.0" />
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@8.0.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0">
+    <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0">
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.1">
@@ -7104,7 +7075,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Diagnostics.TraceSource@4.3.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Azure.WebJobs.Logging.ApplicationInsights@3.0.35">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.AspNetCore@2.21.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.DependencyCollector@2.21.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.PerfCounterCollector@2.21.0" />
@@ -7210,7 +7181,6 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@8.0.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0" />
     <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
     <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection@2.1.1">
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
@@ -7294,7 +7264,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.ApplicationInsights@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Logging@2.1.1" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Configuration@2.1.0">
@@ -7354,7 +7324,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Options.ConfigurationExtensions@2.1.0">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@3.1.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Binder@2.1.1" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Options@2.1.1" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Options.ConfigurationExtensions@8.0.0">
@@ -7365,7 +7335,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Options@2.1.1">
-      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@3.1.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.0">
@@ -7390,7 +7360,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/NETStandard.Library@2.0.3" />
       <dependency ref="pkg:nuget/System.Security.Claims@4.3.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Graph@5.40.0">
+    <dependency ref="pkg:nuget/Microsoft.Graph@5.41.0">
       <dependency ref="pkg:nuget/Microsoft.Graph.Core@3.1.6" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Identity.Client.Extensions.Msal@4.56.0">
@@ -7403,7 +7373,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@6.0.1" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.2.0" />
-    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.0" />
+    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.1" />
     <dependency ref="pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.1.2">
       <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.1.2" />
     </dependency>
@@ -7413,8 +7383,8 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.2.0">
       <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.2.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.0" />
+    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1">
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.1" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.1.2">
       <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols@7.1.2" />
@@ -7425,7 +7395,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.IdentityModel.Tokens.Jwt@7.2.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols@7.1.2">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0" />
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1" />
       <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.1.2" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols@7.2.0">
@@ -7433,7 +7403,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.2.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.1.2">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0" />
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.2.0">
       <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.2.0" />

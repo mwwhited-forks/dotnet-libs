@@ -2,8 +2,8 @@
 
 ## Summary 
 
-Application: Nucleus.Libs (0.1.70-dev-update-docs.6) \
-Time: 2024-02-02T20:36:33.8966629Z \
+Application: Eliassen.Libs (0.1.68-dev-fix-local-scripts.0) \
+Time: 2024-02-07T17:44:05.7169926Z \
 Tool: CycloneDX (3.0.5.0). 
 
 ## Components 
@@ -284,14 +284,14 @@ Package URL: pkg:nuget/MailKit@4.3.0
 An Open Source .NET mail-client library for Windows, Mac, Linux, and mobile platforms such as iOS and Android. 
 
 
-### Microsoft.ApplicationInsights (2.21.0) 
+### Microsoft.ApplicationInsights (2.22.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://go.microsoft.com/fwlink/?LinkId=392727) \
-Hash: [SHA-512](9F1D6B795B083E493CCCA927D5F5CA0A09A5ACFB808B70906E764798BD28A4DA81D2AC58DDD9577EE75A800E2A682F7E059D47A85C71254C10BE152A68F1F6C4) \
-Package URL: pkg:nuget/Microsoft.ApplicationInsights@2.21.0 
+Hash: [SHA-512](3E3D036C471F7BBDB121FEEE896F1DCD44F2D3A5C3CF76E44D8CA85399E2F7E6B9855AACB38EEECA9B02101092EA175E5E6A0E5B76B42904683ABEA0572C61D2) \
+Package URL: pkg:nuget/Microsoft.ApplicationInsights@2.22.0 
 
 #### Description: 
 
@@ -906,23 +906,6 @@ Package URL: pkg:nuget/Microsoft.Extensions.DependencyInjection@8.0.0
 Default implementation of dependency injection for Microsoft.Extensions.DependencyInjection. 
 
 
-### Microsoft.Extensions.DependencyInjection.Abstractions (7.0.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: MIT \
-Reference: [website](https://dot.net/) \
-Hash: [SHA-512](A1CF52B01F5DE43FE9DE6055EC4C7B7F8247669E8DD049BE9626DF36E3163E0769D47843EAC5D09FA3F9AAB41BDA228BBD51946C9350B6E24D45D86CC92EB317) \
-Package URL: pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0 
-
-#### Description: 
-
-Abstractions for dependency injection.
-
-Commonly Used Types:
-Microsoft.Extensions.DependencyInjection.IServiceCollection 
-
-
 ### Microsoft.Extensions.DependencyInjection.Abstractions (8.0.0) 
 
 Author: Microsoft \
@@ -1416,14 +1399,14 @@ Microsoft.Extensions.Primitives.StringValues
 Microsoft.Extensions.Primitives.StringSegment 
 
 
-### Microsoft.Graph (5.40.0) 
+### Microsoft.Graph (5.41.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://developer.microsoft.com/graph) \
-Hash: [SHA-512](1B567B265DBF1F9781087EBF9076DC9B5904F5C6EA743AD1190CBE4D3D54505C7B4B70F972BA8BD64E4B927F76EC34790C05F702CE8CF3C0B28E306A45DAFE49) \
-Package URL: pkg:nuget/Microsoft.Graph@5.40.0 
+Hash: [SHA-512](CACF0BCD122BC8B30D0EF4B214CA0E1A1D7AF22F27B593ED340D974F1F52A737FA9D6B77A1084100F03341504BC5F95191AB9C41AAFF8B2A6C3D960A25E360D4) \
+Package URL: pkg:nuget/Microsoft.Graph@5.41.0 
 
 #### Description: 
 
@@ -1487,14 +1470,14 @@ Package URL: pkg:nuget/Microsoft.IdentityModel.Abstractions@7.2.0
 A package containing thin abstractions for Microsoft.IdentityModel. 
 
 
-### Microsoft.IdentityModel.Abstractions (7.3.0) 
+### Microsoft.IdentityModel.Abstractions (7.3.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](1F135AF6382B383A453E889E6B3BBA8E764CC79CBAF746414E132AB4183D18E67ABBD21410D2FDFB54EE628B3CD0CBB7A712D28A37FA85AFE45B038673215748) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.0 
+Hash: [SHA-512](BD669AC367CD89BCE859A830040F8B04B2DA20495023C83661A693C3B64928CC6D6811254FF38E94120C9649E4BEA1CB979D95422CAF68757DE212615F6BEB2C) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.1 
 
 #### Description: 
 
@@ -1543,14 +1526,14 @@ Package URL: pkg:nuget/Microsoft.IdentityModel.Logging@7.2.0
 Includes Event Source based logging support. 
 
 
-### Microsoft.IdentityModel.Logging (7.3.0) 
+### Microsoft.IdentityModel.Logging (7.3.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](DB9D6CAA2E318BCC4B59BD180EE45C80741AE12348E6042CFBA51BD1CA6B50CA692D8318A7EEE6FD08B8190A7C6B42C8808F53DB60CAED9BDA384C2E5C2CEE02) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0 
+Hash: [SHA-512](4A36BA3F6D7F9E4B05AE7E1D63D93637B135B20B9FE51FD3F3BAF766B2BCF06738DED2F87C300B8004A1AA13375A849AC24DDD129796BE004E4F633E75582D6D) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1 
 
 #### Description: 
 
