@@ -23,14 +23,14 @@ public class ApplicationPermissionsApiFilter : IOperationFilter
             context.MethodInfo.GetCustomAttributes<AllowAnonymousAttribute>()
             .Concat(
             context.MethodInfo.DeclaringType?.GetCustomAttributes<AllowAnonymousAttribute>() ??
-                Enumerable.Empty<AllowAnonymousAttribute>()
+                []
             ).Any();
 
         var applicationRights =
             context.MethodInfo.GetCustomAttributes<ApplicationRightAttribute>()
             .Concat(
             context.MethodInfo.DeclaringType?.GetCustomAttributes<ApplicationRightAttribute>() ??
-                Enumerable.Empty<ApplicationRightAttribute>()
+                []
             ).SelectMany(a => a.Rights);
 
         //operation.Security.Add(new OpenApiSecurityRequirement()
