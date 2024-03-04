@@ -1,17 +1,17 @@
 # Summary - Eliassen.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 2/9/2024 - 1:18:15 PM |
-| Coverage date: | 2/9/2024 - 1:17:14 PM - 2/9/2024 - 1:18:02 PM |
+| Generated on: | 3/4/2024 - 2:09:12 PM |
+| Coverage date: | 3/4/2024 - 2:07:19 PM - 3/4/2024 - 2:08:54 PM |
 | Parser: | MultiReport (28x Cobertura, 28x OpenCover) |
 | Assemblies: | 18 |
-| Classes: | 106 |
-| Files: | 105 |
-| **Line coverage:** | 38.6% (1076 of 2782) |
+| Classes: | 103 |
+| Files: | 102 |
+| **Line coverage:** | 38.7% (1076 of 2777) |
 | Covered lines: | 1076 |
-| Uncovered lines: | 1706 |
-| Coverable lines: | 2782 |
-| Total lines: | 8374 |
+| Uncovered lines: | 1701 |
+| Coverable lines: | 2777 |
+| Total lines: | 8267 |
 | **Branch coverage:** | 38.8% (1153 of 2968) |
 | Covered branches: | 1153 |
 | Total branches: | 2968 |
@@ -19,16 +19,14 @@
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|
-|**Eliassen.AspNetCore.JwtAuthentication**|**0**|**49**|**49**|**226**|**0%**|**0**|**16**|**0%**|
-|Eliassen.AspNetCore.JwtAuthentication.JwtExtensionBuilder|0|1|1|34|0%|0|0||
+|**Eliassen.AspNetCore.JwtAuthentication**|**0**|**48**|**48**|**192**|**0%**|**0**|**16**|**0%**|
 |Eliassen.AspNetCore.JwtAuthentication.ServiceCollectionExtensions|0|13|13|91|0%|0|4|0%|
 |Eliassen.AspNetCore.JwtAuthentication.SwaggerGen.ConfigureOAuthSwaggerGenOptions|0|31|31|72|0%|0|12|0%|
 |Eliassen.AspNetCore.JwtAuthentication.SwaggerGen.ConfigureOAuthSwaggerUIOptions|0|4|4|29|0%|0|0||
-|**Eliassen.AspNetCore.Mvc**|**0**|**424**|**424**|**1275**|**0%**|**0**|**372**|**0%**|
+|**Eliassen.AspNetCore.Mvc**|**0**|**422**|**422**|**1237**|**0%**|**0**|**372**|**0%**|
 |Eliassen.AspNetCore.Mvc.ApplicationBuilderExtensions|0|4|4|25|0%|0|0||
-|Eliassen.AspNetCore.Mvc.AspNetCoreExtensionBuilder|0|1|1|38|0%|0|0||
 |Eliassen.AspNetCore.Mvc.Authorization.UserAuthorizationHandler|0|14|14|61|0%|0|20|0%|
-|Eliassen.AspNetCore.Mvc.Authorization.UserAuthorizationRequirement|0|2|2|30|0%|0|0||
+|Eliassen.AspNetCore.Mvc.Authorization.UserAuthorizationRequirement|0|1|1|30|0%|0|0||
 |Eliassen.AspNetCore.Mvc.Filters.ApplicationPermissionsApiFilter|0|14|14|43|0%|0|16|0%|
 |Eliassen.AspNetCore.Mvc.Filters.FormFileOperationFilter|0|11|11|41|0%|0|12|0%|
 |Eliassen.AspNetCore.Mvc.Filters.SearchQueryOperationFilter|0|111|111|266|0%|0|92|0%|
@@ -110,12 +108,11 @@
 |Eliassen.RabbitMQ.MessageQueueing.QueueClientFactory|0|9|9|36|0%|0|4|0%|
 |Eliassen.RabbitMQ.MessageQueueing.RabbitMQQueueMessageProvider|0|51|51|124|0%|0|28|0%|
 |Eliassen.RabbitMQ.ServiceCollectionEx|0|8|8|40|0%|0|0||
-|**Eliassen.System**|**138**|**266**|**404**|**1512**|**34.1%**|**88**|**430**|**20.4%**|
+|**Eliassen.System**|**138**|**264**|**402**|**1477**|**34.3%**|**88**|**430**|**20.4%**|
 |Eliassen.System.Security.Cryptography.Md5Hash|1|0|1|19|100%|0|0||
 |Eliassen.System.Security.Cryptography.Sha256Hash|1|0|1|19|100%|0|0||
 |Eliassen.System.Security.Cryptography.Sha512Hash|1|0|1|19|100%|0|0||
 |Eliassen.System.ServiceCollectionExtensions|50|6|56|163|89.2%|2|52|3.8%|
-|Eliassen.System.SystemExtensionBuilder|0|1|1|35|0%|0|0||
 |Eliassen.System.Text.Json.BsonDateTimeOffsetConverter|18|19|37|108|48.6%|16|80|20%|
 |Eliassen.System.Text.Json.BsonIdConverter|13|1|14|56|92.8%|16|28|57.1%|
 |Eliassen.System.Text.Json.BsonTypeInfoResolver|0|25|25|59|0%|0|32|0%|
@@ -125,7 +122,7 @@
 |Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer|0|3|3|24|0%|0|0||
 |Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer|24|8|32|122|75%|14|20|70%|
 |Eliassen.System.Text.Templating.FileTemplateSource|0|45|45|77|0%|0|8|0%|
-|Eliassen.System.Text.Templating.TemplateContext|0|7|7|67|0%|0|4|0%|
+|Eliassen.System.Text.Templating.TemplateContext|0|6|6|67|0%|0|4|0%|
 |Eliassen.System.Text.Templating.TemplateEngine|0|41|41|123|0%|0|28|0%|
 |Eliassen.System.Text.Templating.XsltTemplateProvider|0|45|45|108|0%|0|32|0%|
 |Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer|0|12|12|133|0%|0|0||
