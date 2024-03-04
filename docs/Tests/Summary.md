@@ -1,8 +1,8 @@
 # Summary - Eliassen.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 2/7/2024 - 12:43:35 PM |
-| Coverage date: | 2/7/2024 - 12:42:49 PM - 2/7/2024 - 12:43:25 PM |
+| Generated on: | 2/9/2024 - 1:18:15 PM |
+| Coverage date: | 2/9/2024 - 1:17:14 PM - 2/9/2024 - 1:18:02 PM |
 | Parser: | MultiReport (28x Cobertura, 28x OpenCover) |
 | Assemblies: | 18 |
 | Classes: | 106 |

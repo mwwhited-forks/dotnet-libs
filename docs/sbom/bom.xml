@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:47e217af-4e81-4737-ac49-f0a5698f3fac" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:bd6b2077-996b-4ea3-b969-079d6b7d7a07" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
   <metadata>
-    <timestamp>2024-02-07T17:44:05.7169926Z</timestamp>
+    <timestamp>2024-02-09T18:18:29.9245555Z</timestamp>
     <tools>
       <tool>
         <vendor>CycloneDX</vendor>
@@ -9,9 +9,9 @@
         <version>3.0.5.0</version>
       </tool>
     </tools>
-    <component type="application" bom-ref="Eliassen.Libs@0.1.68-dev-fix-local-scripts.0">
+    <component type="application" bom-ref="Eliassen.Libs@0.1.68-dev-fix-local-scripts.1">
       <name>Eliassen.Libs</name>
-      <version>0.1.68-dev-fix-local-scripts.0</version>
+      <version>0.1.68-dev-fix-local-scripts.1</version>
     </component>
   </metadata>
   <components>
@@ -6862,7 +6862,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     </component>
   </components>
   <dependencies>
-    <dependency ref="Eliassen.Libs@0.1.68-dev-fix-local-scripts.0">
+    <dependency ref="Eliassen.Libs@0.1.68-dev-fix-local-scripts.1">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
