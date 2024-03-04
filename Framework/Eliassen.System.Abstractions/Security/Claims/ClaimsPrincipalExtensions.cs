@@ -13,7 +13,7 @@ public static class ClaimsPrincipalExtensions
     /// <param name="principal"></param>
     /// <returns></returns>
     public static IEnumerable<Claim> GetAllClaims(this ClaimsPrincipal principal) =>
-       principal?.Identities?.SelectMany(c => c.Claims) ?? Enumerable.Empty<Claim>();
+       principal?.Identities?.SelectMany(c => c.Claims) ?? [];
 
     /// <summary>
     /// Get for matched <seealso cref="Claim"/> on <seealso cref="ClaimsPrincipal"/> 

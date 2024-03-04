@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:273aeeb5-7b97-4057-ad69-2f24093d7529" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:c5e7e169-11bb-42b1-baad-553686bc1639" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
   <metadata>
-    <timestamp>2024-02-02T20:36:33.8966629Z</timestamp>
+    <timestamp>2024-03-04T19:09:28.7941725Z</timestamp>
     <tools>
       <tool>
         <vendor>CycloneDX</vendor>
@@ -9,9 +9,9 @@
         <version>3.0.5.0</version>
       </tool>
     </tools>
-    <component type="application" bom-ref="Nucleus.Libs@0.1.70-dev-update-docs.6">
-      <name>Nucleus.Libs</name>
-      <version>0.1.70-dev-update-docs.6</version>
+    <component type="application" bom-ref="Eliassen.Libs@0.1.68-dev-fix-local-scripts.2">
+      <name>Eliassen.Libs</name>
+      <version>0.1.68-dev-fix-local-scripts.2</version>
     </component>
   </metadata>
   <components>
@@ -78,6 +78,31 @@
       <externalReferences>
         <reference type="website">
           <url>https://github.com/Azure/azure-sdk-for-net/blob/Azure.Core_1.36.0/sdk/core/Azure.Core/README.md</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/Azure/azure-sdk-for-net</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Azure.Core@1.37.0">
+      <author>Microsoft</author>
+      <name>Azure.Core</name>
+      <version>1.37.0</version>
+      <description>This is the implementation of the Azure Client Pipeline</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">9913C32D99606A4746B87CB90ED0F5838D18A0669F343366686B94C5EA11174A67462A633F12D485E2B38EF03E86439BCEFD4D74795F56E37B718515A85C304E</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Azure.Core@1.37.0</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/Azure/azure-sdk-for-net/blob/Azure.Core_1.37.0/sdk/core/Azure.Core/README.md</url>
         </reference>
         <reference type="vcs">
           <url>https://github.com/Azure/azure-sdk-for-net</url>
@@ -198,23 +223,22 @@
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/BouncyCastle.Cryptography@2.2.1">
+    <component type="library" bom-ref="pkg:nuget/BouncyCastle.Cryptography@2.3.0">
       <author>Legion of the Bouncy Castle Inc.</author>
       <name>BouncyCastle.Cryptography</name>
-      <version>2.2.1</version>
+      <version>2.3.0</version>
       <description>BouncyCastle.NET is a popular cryptography library for .NET</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">99D01493B88538A17DD516ACFCF3091ACD08EBCA169D03D93128135534AFEEC54CDAD1417BEFEFBDFFCCA308B2BC4330F47BF9443DB4C84CB8C9770B4DF9193D</hash>
+        <hash alg="SHA-512">2A2F4D414725E934A2D91DAB3C23F2B180F66977B40A869E08D38DC0C5A89E718D1B80A513856D8EBBDE52DA4FA1ECE2124DF4F84E41C6026B1F9C5E00E5B34A</hash>
       </hashes>
       <licenses>
         <license>
-          <name>Unknown - See URL</name>
-          <url>https://aka.ms/deprecateLicenseUrl</url>
+          <id>MIT</id>
         </license>
       </licenses>
-      <copyright>Copyright © Legion of the Bouncy Castle Inc. 2000-2023</copyright>
-      <purl>pkg:nuget/BouncyCastle.Cryptography@2.2.1</purl>
+      <copyright>Copyright © Legion of the Bouncy Castle Inc. 2000-2024</copyright>
+      <purl>pkg:nuget/BouncyCastle.Cryptography@2.3.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://www.bouncycastle.org/csharp/</url>
@@ -473,14 +497,14 @@
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/MailKit@4.3.0">
+    <component type="library" bom-ref="pkg:nuget/MailKit@4.4.0">
       <author>Jeffrey Stedfast</author>
       <name>MailKit</name>
-      <version>4.3.0</version>
+      <version>4.4.0</version>
       <description>An Open Source .NET mail-client library for Windows, Mac, Linux, and mobile platforms such as iOS and Android.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">9146D69579085FEE379A84B59781A132948D4E765543619A6825165001943E2165F3706B7C69FB97600E4CC912E94D21ACCDC5B73F472C8749C388553B18B6F4</hash>
+        <hash alg="SHA-512">4103A3A7C99BE997654C4CC9F7B1D0910710337099DF34800C1E03C77F9BEBECCE21A42B97678CFDF668F437A6D65090749A29C05740013B3C0D289599EC353C</hash>
       </hashes>
       <licenses>
         <license>
@@ -488,7 +512,7 @@
         </license>
       </licenses>
       <copyright>.NET Foundation and Contributors</copyright>
-      <purl>pkg:nuget/MailKit@4.3.0</purl>
+      <purl>pkg:nuget/MailKit@4.4.0</purl>
       <externalReferences>
         <reference type="website">
           <url>http://www.mimekit.net/</url>
@@ -498,14 +522,14 @@
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0">
       <author>Microsoft</author>
       <name>Microsoft.ApplicationInsights</name>
-      <version>2.21.0</version>
+      <version>2.22.0</version>
       <description>Application Insights Base API. This package provides core functionality for transmission of all Application Insights Telemetry Types and is a dependent package for all other Application Insights packages. Please install the platform specific package for the best experience. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">9F1D6B795B083E493CCCA927D5F5CA0A09A5ACFB808B70906E764798BD28A4DA81D2AC58DDD9577EE75A800E2A682F7E059D47A85C71254C10BE152A68F1F6C4</hash>
+        <hash alg="SHA-512">3E3D036C471F7BBDB121FEEE896F1DCD44F2D3A5C3CF76E44D8CA85399E2F7E6B9855AACB38EEECA9B02101092EA175E5E6A0E5B76B42904683ABEA0572C61D2</hash>
       </hashes>
       <licenses>
         <license>
@@ -513,7 +537,7 @@
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.ApplicationInsights@2.21.0</purl>
+      <purl>pkg:nuget/Microsoft.ApplicationInsights@2.22.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://go.microsoft.com/fwlink/?LinkId=392727</url>
@@ -696,16 +720,16 @@
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.1">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.2">
       <author>Microsoft</author>
       <name>Microsoft.AspNetCore.Authentication.JwtBearer</name>
-      <version>8.0.1</version>
+      <version>8.0.2</version>
       <description>ASP.NET Core middleware that enables an application to receive an OpenID Connect bearer token.
 
-This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/8e941eb42f819adb116b881195158b3887a70a1c</description>
+This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/da7e9894ce22ef8cc02e5acc56e95a6f8cf8f644</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">6D27BE31E292FD63B9CAA2F1061751ED0D49B92F751399BA7668F65F3C827A28462958AE8A30F5F0FCC3F0AE2CB3F5EDAF7220B20E1BBD292AE346A47A15C783</hash>
+        <hash alg="SHA-512">EBD8E486275A91C76D58762EA198789848F7ADA3748725C3F01EC0A22E245F42A46CCD8F7FEA4FE9111AC040F1B212856E73BA6F4EEB542EDBEC494C88A694EF</hash>
       </hashes>
       <licenses>
         <license>
@@ -713,7 +737,7 @@ This package was built from the source code at https://github.com/dotnet/aspnetc
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.1</purl>
+      <purl>pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.2</purl>
       <externalReferences>
         <reference type="website">
           <url>https://asp.net/</url>
@@ -1581,34 +1605,6 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0">
-      <author>Microsoft</author>
-      <name>Microsoft.Extensions.DependencyInjection.Abstractions</name>
-      <version>7.0.0</version>
-      <description>Abstractions for dependency injection.
-
-Commonly Used Types:
-Microsoft.Extensions.DependencyInjection.IServiceCollection</description>
-      <scope>required</scope>
-      <hashes>
-        <hash alg="SHA-512">A1CF52B01F5DE43FE9DE6055EC4C7B7F8247669E8DD049BE9626DF36E3163E0769D47843EAC5D09FA3F9AAB41BDA228BBD51946C9350B6E24D45D86CC92EB317</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>MIT</id>
-        </license>
-      </licenses>
-      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0</purl>
-      <externalReferences>
-        <reference type="website">
-          <url>https://dot.net/</url>
-        </reference>
-        <reference type="vcs">
-          <url>https://github.com/dotnet/runtime</url>
-        </reference>
-      </externalReferences>
-    </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0">
       <author>Microsoft</author>
       <name>Microsoft.Extensions.DependencyInjection.Abstractions</name>
@@ -2328,14 +2324,14 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Options@8.0.1">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2">
       <author>Microsoft</author>
       <name>Microsoft.Extensions.Options</name>
-      <version>8.0.1</version>
+      <version>8.0.2</version>
       <description>Provides a strongly typed way of specifying and accessing settings using dependency injection.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">54025AD5F383E105DF6BBF9839A6671D86EE5ACB91E4548E269652CED1FC101D1A827FB3EDC54FD5CF81147B7AB45C47ACAAFB9F63EEA2E2FB7704E727FF6103</hash>
+        <hash alg="SHA-512">CC0C10336580C9519740A042B1E42D391BCB32B63732163AE1161E1C5B55A4CD4A736E1902EB2A4DBB89D784B0ACF584B5042B4F3481A61DD30A4E229FB523C5</hash>
       </hashes>
       <licenses>
         <license>
@@ -2343,7 +2339,7 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Extensions.Options@8.0.1</purl>
+      <purl>pkg:nuget/Microsoft.Extensions.Options@8.0.2</purl>
       <externalReferences>
         <reference type="website">
           <url>https://dot.net/</url>
@@ -2462,14 +2458,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Graph@5.40.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Graph@5.44.0">
       <author>Microsoft</author>
       <name>Microsoft.Graph</name>
-      <version>5.40.0</version>
+      <version>5.44.0</version>
       <description>Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">1B567B265DBF1F9781087EBF9076DC9B5904F5C6EA743AD1190CBE4D3D54505C7B4B70F972BA8BD64E4B927F76EC34790C05F702CE8CF3C0B28E306A45DAFE49</hash>
+        <hash alg="SHA-512">A6E87C89A34BCB2DE84ACDE5413F9E5B8ECF335CCCEC8BEA5DAD60512520783AD849040560DB4ECE75BC9F9115D1BB41DB54BC5ADDDB9716B19CE7771D4E3618</hash>
       </hashes>
       <licenses>
         <license>
@@ -2478,7 +2474,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Graph@5.40.0</purl>
+      <purl>pkg:nuget/Microsoft.Graph@5.44.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://developer.microsoft.com/graph</url>
@@ -2488,14 +2484,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Graph.Core@3.1.6">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Graph.Core@3.1.8">
       <author>Microsoft</author>
       <name>Microsoft.Graph.Core</name>
-      <version>3.1.6</version>
+      <version>3.1.8</version>
       <description>Microsoft Graph Core Client Library implements core functionality used by Microsoft Graph client libraries.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">AAD302939E7438F4ED0704F56C5AC8A6EA8A634B2FAC0E898E1A6FC945414D81582028BA9EF22E97D1FF99821C8E8A7E211C25209CEC558B726B8A73D8A4D8B0</hash>
+        <hash alg="SHA-512">6DE2723FAAD147712B9523D74ED8B4081628C4F0AAA7DFB05220D1453039AFAF17B02A59B7E00D6998CD628BFE819899C54164E9DFB73EB489AB11BB7681CC53</hash>
       </hashes>
       <licenses>
         <license>
@@ -2504,7 +2500,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Graph.Core@3.1.6</purl>
+      <purl>pkg:nuget/Microsoft.Graph.Core@3.1.8</purl>
       <externalReferences>
         <reference type="website">
           <url>https://developer.microsoft.com/graph</url>
@@ -2565,14 +2561,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.2.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.1">
       <author>Microsoft</author>
       <name>Microsoft.IdentityModel.Abstractions</name>
-      <version>7.2.0</version>
+      <version>7.3.1</version>
       <description>A package containing thin abstractions for Microsoft.IdentityModel.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">1CD8F5F9FA179A5A94349F1F6B6BDCBD46FBB795B266950CCFD0FCF6DDE09DC0C230AA56E16407CAFD6EA30EFF97C84867737D23A89190CE8712AE47425E3515</hash>
+        <hash alg="SHA-512">BD669AC367CD89BCE859A830040F8B04B2DA20495023C83661A693C3B64928CC6D6811254FF38E94120C9649E4BEA1CB979D95422CAF68757DE212615F6BEB2C</hash>
       </hashes>
       <licenses>
         <license>
@@ -2580,7 +2576,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.IdentityModel.Abstractions@7.2.0</purl>
+      <purl>pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.1</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</url>
@@ -2590,14 +2586,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.4.0">
       <author>Microsoft</author>
       <name>Microsoft.IdentityModel.Abstractions</name>
-      <version>7.3.0</version>
+      <version>7.4.0</version>
       <description>A package containing thin abstractions for Microsoft.IdentityModel.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">1F135AF6382B383A453E889E6B3BBA8E764CC79CBAF746414E132AB4183D18E67ABBD21410D2FDFB54EE628B3CD0CBB7A712D28A37FA85AFE45B038673215748</hash>
+        <hash alg="SHA-512">0B3959CF6FA4A315873C83DCEF2993E9EF1838315DD8E1EF5B548722F5D1F30E1A846C5EFA58641841DACB7C5D45625B26E841CBA66675A179874DB11A3DF205</hash>
       </hashes>
       <licenses>
         <license>
@@ -2605,7 +2601,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.0</purl>
+      <purl>pkg:nuget/Microsoft.IdentityModel.Abstractions@7.4.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</url>
@@ -2640,14 +2636,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.2.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.3.1">
       <author>Microsoft</author>
       <name>Microsoft.IdentityModel.JsonWebTokens</name>
-      <version>7.2.0</version>
+      <version>7.3.1</version>
       <description>Includes types that provide support for creating, serializing and validating JSON Web Tokens. This is a newer, faster version of System.IdentityModel.Tokens.Jwt that has additional functionality.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">16F1F8FBD567795BB57B31D1CF57A1E42576C4FC1A26EBFFC73CF9BE928071FE794B1ADDA17E2E68AC0F65A76932F2BB9133C0FA07596C3C46D73E5E3F1317FF</hash>
+        <hash alg="SHA-512">63D836FC244E5F2737DDFDAF24D680DEBF73CE7217CC12FD82DECF25844E2A625C6BE8DA7A32517FF5515240FCA5EA4DAB00E2F39B9AA148FC6D64B9DA8473A9</hash>
       </hashes>
       <licenses>
         <license>
@@ -2655,7 +2651,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.2.0</purl>
+      <purl>pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.3.1</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</url>
@@ -2665,14 +2661,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.2.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1">
       <author>Microsoft</author>
       <name>Microsoft.IdentityModel.Logging</name>
-      <version>7.2.0</version>
+      <version>7.3.1</version>
       <description>Includes Event Source based logging support.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">C7AEC91C92322D8167F6E2D4500515412FC159F559734FA433E5F9386B3E7C0C94A11C46D0B3194F438DACEB8724A8A1F6E288767117A7A2E5316D6D7324E826</hash>
+        <hash alg="SHA-512">4A36BA3F6D7F9E4B05AE7E1D63D93637B135B20B9FE51FD3F3BAF766B2BCF06738DED2F87C300B8004A1AA13375A849AC24DDD129796BE004E4F633E75582D6D</hash>
       </hashes>
       <licenses>
         <license>
@@ -2680,7 +2676,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.IdentityModel.Logging@7.2.0</purl>
+      <purl>pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</url>
@@ -2690,14 +2686,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.4.0">
       <author>Microsoft</author>
       <name>Microsoft.IdentityModel.Logging</name>
-      <version>7.3.0</version>
+      <version>7.4.0</version>
       <description>Includes Event Source based logging support.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">DB9D6CAA2E318BCC4B59BD180EE45C80741AE12348E6042CFBA51BD1CA6B50CA692D8318A7EEE6FD08B8190A7C6B42C8808F53DB60CAED9BDA384C2E5C2CEE02</hash>
+        <hash alg="SHA-512">1B847761B7B7C6167F2B7BCBD0AE63B387B95280C805FEDF1B90FCC3D1037886A8EF124E9E256A3D3CB030BDFAD8DC38267B033956D93643EACDC08D2742298A</hash>
       </hashes>
       <licenses>
         <license>
@@ -2705,7 +2701,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0</purl>
+      <purl>pkg:nuget/Microsoft.IdentityModel.Logging@7.4.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</url>
@@ -2740,14 +2736,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Protocols@7.2.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Protocols@7.3.1">
       <author>Microsoft</author>
       <name>Microsoft.IdentityModel.Protocols</name>
-      <version>7.2.0</version>
+      <version>7.3.1</version>
       <description>Provides base protocol support for OpenIdConnect and WsFederation.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">2CC2F933D497C4DB788038DB6D02C2E0C63DB4189233A77EB233C0EE2D0716620BDD653EBC9B6AD3C548461B649DEF9578403921AA4998F95382DDC6BE3D6FB2</hash>
+        <hash alg="SHA-512">93C47F116FEF8C40BAD013D36F394A78303470C390B5262EF9E5BA6005E7D0EDD73B921D8731B659A1423282D2F465405BFC99F57CB83FD58A41C7ED8A55D798</hash>
       </hashes>
       <licenses>
         <license>
@@ -2755,7 +2751,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.IdentityModel.Protocols@7.2.0</purl>
+      <purl>pkg:nuget/Microsoft.IdentityModel.Protocols@7.3.1</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</url>
@@ -2790,14 +2786,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.2.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.3.1">
       <author>Microsoft</author>
       <name>Microsoft.IdentityModel.Protocols.OpenIdConnect</name>
-      <version>7.2.0</version>
+      <version>7.3.1</version>
       <description>Includes types that provide support for OpenIdConnect protocol.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">DD0A24708ADA0E0C86CAC2706A724B4FC5FEF3BE78A5957A16EC7772B911930BFB13C1A5AFE4B435717A80AACB1AA1B9C2E3173897C7783A27C178F20F2A70B5</hash>
+        <hash alg="SHA-512">D8BF57CC0507769B8759FABF916C598F5065FAA7089F678E90C863A8A54DBDA1861DAA1E0B247EC783DD986389965145AF3F8C8D84749EC0EFB81D69D28A9810</hash>
       </hashes>
       <licenses>
         <license>
@@ -2805,7 +2801,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.2.0</purl>
+      <purl>pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.3.1</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</url>
@@ -2840,14 +2836,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.2.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.3.1">
       <author>Microsoft</author>
       <name>Microsoft.IdentityModel.Tokens</name>
-      <version>7.2.0</version>
+      <version>7.3.1</version>
       <description>Includes types that provide support for SecurityTokens, Cryptographic operations: Signing, Verifying Signatures, Encryption.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">E20F6D7AA8AFFA35576FEF11CAEE71466273EA41BB6A064269F47BEBC326C0DF3C7DB40B8282DB549B912848918193B3D000004330A751030289257E3E1BCDCD</hash>
+        <hash alg="SHA-512">B607588A670EA8D94585FA1345C9295F6E7177C4E4F53CE18A4177C2ADDECDD012C1368C34E9BF557ED1C017AE5C3A2A7EEFB5EA501467B9805DD21D76926C3B</hash>
       </hashes>
       <licenses>
         <license>
@@ -2855,7 +2851,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.IdentityModel.Tokens@7.2.0</purl>
+      <purl>pkg:nuget/Microsoft.IdentityModel.Tokens@7.3.1</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</url>
@@ -2865,14 +2861,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.5">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.9">
       <author>Microsoft</author>
       <name>Microsoft.Kiota.Abstractions</name>
-      <version>1.7.5</version>
+      <version>1.7.9</version>
       <description>Abstractions library for the Kiota generated SDKs in dotnet.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">05E591E53EB8B6283DA1D1447146688CED257113E11925B9B25634CC13DA54CE06F60AB9D5F216068FBEDA57205C417E8F80296DA90448F617412C40A83DE337</hash>
+        <hash alg="SHA-512">3A14908AA9C10FE66208A1D4CF0B954F5B793F7432CD03EE7FED88679784F33980720CF59BFF0DD0A19BA75C6F61689CAD06DA7F508F39203E83704AE8C346B7</hash>
       </hashes>
       <licenses>
         <license>
@@ -2881,7 +2877,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Kiota.Abstractions@1.7.5</purl>
+      <purl>pkg:nuget/Microsoft.Kiota.Abstractions@1.7.9</purl>
       <externalReferences>
         <reference type="website">
           <url>https://aka.ms/kiota/docs</url>
@@ -2891,14 +2887,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Authentication.Azure@1.1.2">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Authentication.Azure@1.1.3">
       <author>Microsoft</author>
       <name>Microsoft.Kiota.Authentication.Azure</name>
-      <version>1.1.2</version>
+      <version>1.1.3</version>
       <description>Kiota authentication provider implementation with Azure Identity.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">9598D98DE045E46A025E834F4F512D512C6BA17FA48FC0CA206B9EC16CC2B0729609C36AD3F9BEAE4E7C7F71799EA730E9308B0CFFDD3D28422004F2CA3A272D</hash>
+        <hash alg="SHA-512">5720529DA69A64A98CAE2D437E835454663B6F7C5B30C1E3786F12DBA14511ABDE1D28758597946B7C88D462BBDA7F3C0DD8310147A21B3C67118F52886B8F70</hash>
       </hashes>
       <licenses>
         <license>
@@ -2907,7 +2903,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Kiota.Authentication.Azure@1.1.2</purl>
+      <purl>pkg:nuget/Microsoft.Kiota.Authentication.Azure@1.1.3</purl>
       <externalReferences>
         <reference type="website">
           <url>https://aka.ms/kiota/docs</url>
@@ -2917,14 +2913,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.3.4">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.3.6">
       <author>Microsoft</author>
       <name>Microsoft.Kiota.Http.HttpClientLibrary</name>
-      <version>1.3.4</version>
+      <version>1.3.6</version>
       <description>Kiota Http provider implementation for dotnet with HttpClient.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">99C55398B25F433F2CF5042851D87A420D845ED0CAD4C833A26A05F83369BFC88B729761035BB11EDBCA94F648075E3E00D5B692C364F92D65A7AF2A2E4674B7</hash>
+        <hash alg="SHA-512">9015133AB1197F84422CFE60898916045BDFEE0CD4C292E5E0A219592E6C65777EF52C2E5002D9F46E2CDD29CE1644F8176E9E5DC8829A5B36CEBAC7BD5FC2E1</hash>
       </hashes>
       <licenses>
         <license>
@@ -2933,7 +2929,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.3.4</purl>
+      <purl>pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.3.6</purl>
       <externalReferences>
         <reference type="website">
           <url>https://aka.ms/kiota/docs</url>
@@ -2943,14 +2939,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Serialization.Form@1.1.1">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Serialization.Form@1.1.3">
       <author>Microsoft</author>
       <name>Microsoft.Kiota.Serialization.Form</name>
-      <version>1.1.1</version>
+      <version>1.1.3</version>
       <description>Kiota URI form encoded serialization provider.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">B31C4209B752D84523C69B39B86C5806891B33B21ECA6D8BA70C84D0C514A985F0AFE52E83F7BBA35559603C40FFF8B800A738598C1BC1FF6E8DC693DCD407A4</hash>
+        <hash alg="SHA-512">30D30B35290E3CF4736577B94A4C66596E4446356A3EE981706169E79631083B6F3765D07200118807678AFC0A59E2F61B6C3C243D3706FE18ED231510E14FBC</hash>
       </hashes>
       <licenses>
         <license>
@@ -2959,7 +2955,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Kiota.Serialization.Form@1.1.1</purl>
+      <purl>pkg:nuget/Microsoft.Kiota.Serialization.Form@1.1.3</purl>
       <externalReferences>
         <reference type="website">
           <url>https://aka.ms/kiota/docs</url>
@@ -2969,14 +2965,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Serialization.Json@1.1.2">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Serialization.Json@1.1.5">
       <author>Microsoft</author>
       <name>Microsoft.Kiota.Serialization.Json</name>
-      <version>1.1.2</version>
+      <version>1.1.5</version>
       <description>Kiota JSON serialization provider implementation with System.Text.Json.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">1119F02FBA9F30430F9BB16012D048388988420CE36445DA6C4CC8B8E92F862EC6B02438BE325FE59ECC9CDC5DD043C8C74ABBA7E6D13B7DCFBCAFB164E06BC3</hash>
+        <hash alg="SHA-512">8CAED1E53BD6D14A721284E69715C981E7F21B69EB33B23600FED26F6CAF473911E779FC95D26B8175B11B20381E306757EF17BA596CD83E07336679CE06AFAF</hash>
       </hashes>
       <licenses>
         <license>
@@ -2985,7 +2981,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Kiota.Serialization.Json@1.1.2</purl>
+      <purl>pkg:nuget/Microsoft.Kiota.Serialization.Json@1.1.5</purl>
       <externalReferences>
         <reference type="website">
           <url>https://aka.ms/kiota/docs</url>
@@ -2995,14 +2991,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Serialization.Multipart@1.1.1">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Serialization.Multipart@1.1.2">
       <author>Microsoft</author>
       <name>Microsoft.Kiota.Serialization.Multipart</name>
-      <version>1.1.1</version>
+      <version>1.1.2</version>
       <description>Kiota Multipart serialization provider implementation.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">8FC329D3763439A922D78A8244BB93E837DC8DC47962180B45057A53A065AFD5216EE68B2D63D36E5808F41F16CCAAA8BDADC37660708A0C75BBFB5C89A548F3</hash>
+        <hash alg="SHA-512">0FD6A0214BFC1559799B883F328733CD9BF694A04D02241E8378E73FABF11804774B48FF597AD975DB9C780F399FF3125E52C5C0E76C88B11434678249B96922</hash>
       </hashes>
       <licenses>
         <license>
@@ -3011,7 +3007,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Kiota.Serialization.Multipart@1.1.1</purl>
+      <purl>pkg:nuget/Microsoft.Kiota.Serialization.Multipart@1.1.2</purl>
       <externalReferences>
         <reference type="website">
           <url>https://aka.ms/kiota/docs</url>
@@ -3021,14 +3017,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.1">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.2">
       <author>Microsoft</author>
       <name>Microsoft.Kiota.Serialization.Text</name>
-      <version>1.1.1</version>
+      <version>1.1.2</version>
       <description>Text/plain serialization provider implementation for Kiota based SDKs.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">AA11BA583E4F83B5D35F916BA969506014A36426DFE231483B1EAA57A78AFDD9B8256F60239ED45F9C365EC3E3B8DA7FFBD2543F0F094FE236C267656FF95603</hash>
+        <hash alg="SHA-512">5AB01F9694BCDFCBBA760FF18A9C1A81B3E67C4A6B96EADC28A26B2ACDB580DB7B3265D63430DF87AE66B21BFD6F39800EF6CC5995BDA222FFB4A8DAF91E4829</hash>
       </hashes>
       <licenses>
         <license>
@@ -3037,7 +3033,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.1</purl>
+      <purl>pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.2</purl>
       <externalReferences>
         <reference type="website">
           <url>https://aka.ms/kiota/docs</url>
@@ -3286,14 +3282,14 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/MimeKit@4.3.0">
+    <component type="library" bom-ref="pkg:nuget/MimeKit@4.4.0">
       <author>Jeffrey Stedfast</author>
       <name>MimeKit</name>
-      <version>4.3.0</version>
+      <version>4.4.0</version>
       <description>An Open Source library for creating and parsing MIME, S/MIME and PGP messages on desktop and mobile platforms.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">DC3E79C072097C8887A71DFB744AA054DE181E2F867E09C717E235D07253A356679BBD04CD696B64DC74AE54EAB15558476ED99806161A42B4642363A76C2903</hash>
+        <hash alg="SHA-512">E11DB116C2FBFC303F206A18FE59A9C4915532088369E576638EE442172E996AD2DAB4D145D492EF8C1B44B599425FC79330217ADB85EC671B1D60B0FECEA768</hash>
       </hashes>
       <licenses>
         <license>
@@ -3301,24 +3297,24 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </license>
       </licenses>
       <copyright>.NET Foundation and Contributors</copyright>
-      <purl>pkg:nuget/MimeKit@4.3.0</purl>
+      <purl>pkg:nuget/MimeKit@4.4.0</purl>
       <externalReferences>
         <reference type="website">
-          <url>http://www.mimekit.net/</url>
+          <url>https://www.mimekit.net/</url>
         </reference>
         <reference type="vcs">
           <url>https://github.com/jstedfast/MimeKit</url>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/MongoDB.Bson@2.23.1">
+    <component type="library" bom-ref="pkg:nuget/MongoDB.Bson@2.24.0">
       <author>MongoDB Inc.</author>
       <name>MongoDB.Bson</name>
-      <version>2.23.1</version>
+      <version>2.24.0</version>
       <description>MongoDB's Official Bson Library.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">85395E14366D3AC796E74E2E4BFAB35C26515747A65284F772DC02BCB646628077AB56D03756792305ACBF30FD5A394E6BEEF016FFEC4B640F09673DD7323756</hash>
+        <hash alg="SHA-512">C9E2F4098F5FBF2CC610E8A6FD090E49C3100DB512442D899FD553C93B4F1A0C06AE921009A45704B831F1F7AA5D45388589368F6160EC4CAC85D71A7AFBBB3C</hash>
       </hashes>
       <licenses>
         <license>
@@ -3327,7 +3323,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </license>
       </licenses>
       <copyright>Copyright © 2010-present MongoDB Inc.</copyright>
-      <purl>pkg:nuget/MongoDB.Bson@2.23.1</purl>
+      <purl>pkg:nuget/MongoDB.Bson@2.24.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://www.mongodb.com/docs/drivers/csharp/</url>
@@ -3337,14 +3333,14 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/MongoDB.Driver@2.23.1">
+    <component type="library" bom-ref="pkg:nuget/MongoDB.Driver@2.24.0">
       <author>MongoDB Inc.</author>
       <name>MongoDB.Driver</name>
-      <version>2.23.1</version>
+      <version>2.24.0</version>
       <description>Official .NET driver for MongoDB.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">2DA968BB3BADAC8083A6FF1B646F02D1786849E60E0F08621057C0703CAED54DE19F3A44733DCCADDD078F1803AAC962817F3A68D2F335A8A7504FB92E353EFC</hash>
+        <hash alg="SHA-512">C3C0CB95720D7F7DD5C4718B8787E6C8FBA88F2E68B3663CD000242D8347254FFDCEF97D589A0F7181EC08F029E8B8D9023E5EC9315EB36E0E07578897F88576</hash>
       </hashes>
       <licenses>
         <license>
@@ -3353,7 +3349,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </license>
       </licenses>
       <copyright>Copyright © 2010-present MongoDB Inc.</copyright>
-      <purl>pkg:nuget/MongoDB.Driver@2.23.1</purl>
+      <purl>pkg:nuget/MongoDB.Driver@2.24.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://www.mongodb.com/docs/drivers/csharp/</url>
@@ -3363,14 +3359,14 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/MongoDB.Driver.Core@2.23.1">
+    <component type="library" bom-ref="pkg:nuget/MongoDB.Driver.Core@2.24.0">
       <author>MongoDB Inc.</author>
       <name>MongoDB.Driver.Core</name>
-      <version>2.23.1</version>
+      <version>2.24.0</version>
       <description>Core Component of the Official MongoDB .NET Driver.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">85D81766EC575F791DC8C8C4ABA61EB50431EBB88E76EE00AEB5D525C91198E32647B05E764F4EDD2D1AF2D691B847FC57A9E1D8B4CFA6337CEB1102255E5EC1</hash>
+        <hash alg="SHA-512">98479DB204CC88A903BEA1785D5D46C980577B6193454F20F7380CE98D58545D9228DD0CC93C9D37B4F9F6419FE42D38B32398FE9A77198A213DA739E0FDACEE</hash>
       </hashes>
       <licenses>
         <license>
@@ -3379,7 +3375,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </license>
       </licenses>
       <copyright>Copyright © 2010-present MongoDB Inc.</copyright>
-      <purl>pkg:nuget/MongoDB.Driver.Core@2.23.1</purl>
+      <purl>pkg:nuget/MongoDB.Driver.Core@2.24.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://www.mongodb.com/docs/drivers/csharp/</url>
@@ -3389,14 +3385,14 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/MongoDB.Libmongocrypt@1.8.0">
+    <component type="library" bom-ref="pkg:nuget/MongoDB.Libmongocrypt@1.8.2">
       <author>MongoDB Inc.</author>
       <name>MongoDB.Libmongocrypt</name>
-      <version>1.8.0</version>
+      <version>1.8.2</version>
       <description>Libmongocrypt wrapper for the .NET driver.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">6497B5C865AD821E318BAE4A713E9ED44AB8398D22BD83BE4164D4D0521742FB18AE4FA96FEC97EE94ECE41EBE3C56890DA31CE3590C2C39A257B11F4D221691</hash>
+        <hash alg="SHA-512">014085A74321962C299683CD9C278876A2B4D5E539A7B4271D9D20A1BB363D92DCE767BB05BEAAFAE50888FE982577B7921FC0A0F111C8A3C343405CD5B27B5C</hash>
       </hashes>
       <licenses>
         <license>
@@ -3405,7 +3401,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </license>
       </licenses>
       <copyright>Copyright © 2019–present MongoDB Inc.</copyright>
-      <purl>pkg:nuget/MongoDB.Libmongocrypt@1.8.0</purl>
+      <purl>pkg:nuget/MongoDB.Libmongocrypt@1.8.2</purl>
       <externalReferences>
         <reference type="website">
           <url>http://www.mongodb.org/display/DOCS/CSharp+Language+Center</url>
@@ -3437,10 +3433,10 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/MSTest.TestFramework@3.2.0">
+    <component type="library" bom-ref="pkg:nuget/MSTest.TestFramework@3.2.2">
       <author>Microsoft</author>
       <name>MSTest.TestFramework</name>
-      <version>3.2.0</version>
+      <version>3.2.2</version>
       <description>MSTest is Microsoft supported Test Framework.
 
       This package includes the libraries for writing tests with MSTest. To ensure discovery and execution of your tests, install the MSTest.TestAdapter package.
@@ -3453,7 +3449,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       - UWP 10.0.16299</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">BA9B132C88CBE63ACE7A7F05F3E961B21A2E33FCEEA0CC81D42A5E9EEB23D1832B2530A17565680A6CF6E9CB7B467B32D687DF7E3389DA568CC5E8AF9E2BBA16</hash>
+        <hash alg="SHA-512">CACD1F844B75541A4E5CB2DF2C222ECF6B8EACFBBF2D438F6B5EA6BCE53BA5180730C8D3314A1405C130EC0B0779D114E67C754EABA9ACD075DC911D907FF96B</hash>
       </hashes>
       <licenses>
         <license>
@@ -3461,7 +3457,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/MSTest.TestFramework@3.2.0</purl>
+      <purl>pkg:nuget/MSTest.TestFramework@3.2.2</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/microsoft/testfx</url>
@@ -4685,10 +4681,10 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/System.Formats.Asn1@7.0.0">
+    <component type="library" bom-ref="pkg:nuget/System.Formats.Asn1@8.0.0">
       <author>Microsoft</author>
       <name>System.Formats.Asn1</name>
-      <version>7.0.0</version>
+      <version>8.0.0</version>
       <description>Provides classes that can read and write the ASN.1 BER, CER, and DER data formats.
 
 Commonly Used Types:
@@ -4696,7 +4692,7 @@ System.Formats.Asn1.AsnReader
 System.Formats.Asn1.AsnWriter</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">F04F2AFBDBBA7D926979C92854CEC18315CC76E9D0C287E3703D113E4CFB0FEF602F094CB874CC615EAE84373E6B83BB8BF437579AF3B0607FF8E604083AC8DB</hash>
+        <hash alg="SHA-512">28070E0E1B4410326CEB8F78BB0D3FB3F071CA64560F5C95E091DDD103B1F0857807C268702BE4DA67CE9A6C15A6D071C9D4F6E5626F3A7CE6876BE3A2A6DBC2</hash>
       </hashes>
       <licenses>
         <license>
@@ -4704,7 +4700,7 @@ System.Formats.Asn1.AsnWriter</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/System.Formats.Asn1@7.0.0</purl>
+      <purl>pkg:nuget/System.Formats.Asn1@8.0.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://dot.net/</url>
@@ -4842,14 +4838,14 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/System.IdentityModel.Tokens.Jwt@7.2.0">
+    <component type="library" bom-ref="pkg:nuget/System.IdentityModel.Tokens.Jwt@7.3.1">
       <author>Microsoft</author>
       <name>System.IdentityModel.Tokens.Jwt</name>
-      <version>7.2.0</version>
+      <version>7.3.1</version>
       <description>Includes types that provide support for creating, serializing and validating JSON Web Tokens. As of IdentityModel 7x, this is a legacy tool that should be replaced with Microsoft.IdentityModel.JsonWebTokens.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">2A35BDF445ED52B8DFEC28CE8D47A4E47CDF6A23F641D4F62B011AC239CCD78BACBEF854282FE828ED576DC5036CA009A94925D8394BE44A38A6093F3630554B</hash>
+        <hash alg="SHA-512">DD22B89DE3DEC3967A4D7587DFF9008FA5EFECBE0ED18057EA77D84C42FE27C109BE4FA36D6688A42F5B1B8768546F16D10FBA3A658EF72ED1FD8B0CD774E3A8</hash>
       </hashes>
       <licenses>
         <license>
@@ -4857,7 +4853,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/System.IdentityModel.Tokens.Jwt@7.2.0</purl>
+      <purl>pkg:nuget/System.IdentityModel.Tokens.Jwt@7.3.1</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</url>
@@ -6046,17 +6042,17 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/System.Security.Cryptography.Pkcs@7.0.3">
+    <component type="library" bom-ref="pkg:nuget/System.Security.Cryptography.Pkcs@8.0.0">
       <author>Microsoft</author>
       <name>System.Security.Cryptography.Pkcs</name>
-      <version>7.0.3</version>
+      <version>8.0.0</version>
       <description>Provides support for PKCS and CMS algorithms.
 
 Commonly Used Types:
 System.Security.Cryptography.Pkcs.EnvelopedCms</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">5D416F90C72AB139F7276383593A564F960BA1CA01F33812BB3BABECA4B1DFA997E6594920C30DFC942B5525298BBFF2B1AF97B386FEA617EFCA5CDF28E04E51</hash>
+        <hash alg="SHA-512">CD693D830F8A49762705FAE6FA7505EEED7B81EC6B36624EC23D1670BC3B931241F5501A6CF4EC8FD3F03E877C408912A74AB833FE034C72A131B73BA29D8695</hash>
       </hashes>
       <licenses>
         <license>
@@ -6064,7 +6060,7 @@ System.Security.Cryptography.Pkcs.EnvelopedCms</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/System.Security.Cryptography.Pkcs@7.0.3</purl>
+      <purl>pkg:nuget/System.Security.Cryptography.Pkcs@8.0.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://dot.net/</url>
@@ -6368,17 +6364,17 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/System.Text.Encoding.CodePages@7.0.0">
+    <component type="library" bom-ref="pkg:nuget/System.Text.Encoding.CodePages@8.0.0">
       <author>Microsoft</author>
       <name>System.Text.Encoding.CodePages</name>
-      <version>7.0.0</version>
+      <version>8.0.0</version>
       <description>Provides support for code-page based encodings, including Windows-1252, Shift-JIS, and GB2312.
 
 Commonly Used Types:
 System.Text.CodePagesEncodingProvider</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">485ABFAEB1F9DAC307249B2D84375A7D63C4BB175109107BA59E3AB6B476C52A62D677CA3C06F0E9A999AFD5BF2F21D396A4B4D534563BB9DA8D1B8ED6FC458A</hash>
+        <hash alg="SHA-512">77DADF6B1A73EEEFB50507A6D76F5E3A20E0AE7D3F550C349265AE4E0D55F0AE4F0EF1B41BE08DD810798A8E01DBBA74E2CAAC746B5158B8E23D722523D473ED</hash>
       </hashes>
       <licenses>
         <license>
@@ -6386,7 +6382,7 @@ System.Text.CodePagesEncodingProvider</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/System.Text.Encoding.CodePages@7.0.0</purl>
+      <purl>pkg:nuget/System.Text.Encoding.CodePages@8.0.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://dot.net/</url>
@@ -6890,7 +6886,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     </component>
   </components>
   <dependencies>
-    <dependency ref="Nucleus.Libs@0.1.70-dev-update-docs.6">
+    <dependency ref="Eliassen.Libs@0.1.68-dev-fix-local-scripts.2">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
@@ -6902,34 +6898,33 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Console@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Debug@8.0.0" />
       <dependency ref="pkg:nuget/Moq@4.20.70" />
-      <dependency ref="pkg:nuget/MSTest.TestFramework@3.2.0" />
+      <dependency ref="pkg:nuget/MSTest.TestFramework@3.2.2" />
       <dependency ref="pkg:nuget/System.Memory.Data@8.0.0" />
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0" />
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.4.0" />
       <dependency ref="pkg:nuget/Swashbuckle.AspNetCore@6.5.0" />
       <dependency ref="pkg:nuget/Swashbuckle.AspNetCore.SwaggerGen@6.5.0" />
       <dependency ref="pkg:nuget/Azure.Storage.Blobs@12.19.1" />
       <dependency ref="pkg:nuget/Azure.Storage.Queues@12.17.1" />
       <dependency ref="pkg:nuget/Azure.Identity@1.10.4" />
-      <dependency ref="pkg:nuget/Microsoft.Graph@5.40.0" />
+      <dependency ref="pkg:nuget/Microsoft.Graph@5.44.0" />
       <dependency ref="pkg:nuget/Microsoft.Identity.Client@4.59.0" />
       <dependency ref="pkg:nuget/Handlebars.Net@2.1.4" />
       <dependency ref="pkg:nuget/Handlebars.Net.Extension.Json@1.0.0" />
       <dependency ref="pkg:nuget/Handlebars.Net.Helpers@2.4.1.4" />
       <dependency ref="pkg:nuget/Keycloak.Net.Core@1.0.22" />
-      <dependency ref="pkg:nuget/MailKit@4.3.0" />
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
-      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.1" />
+      <dependency ref="pkg:nuget/MailKit@4.4.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.2" />
       <dependency ref="pkg:nuget/Microsoft.Azure.WebJobs.Logging.ApplicationInsights@3.0.35" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Binder@8.0.1" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@8.0.0" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.1" />
-      <dependency ref="pkg:nuget/MongoDB.Driver@2.23.1" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2" />
+      <dependency ref="pkg:nuget/MongoDB.Driver@2.24.0" />
       <dependency ref="pkg:nuget/RabbitMQ.Client@6.8.1" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.CommandLine@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.EnvironmentVariables@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.FileSystemGlobbing@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Hosting@8.0.0" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/AWSSDK.Core@3.7.100.14" />
     <dependency ref="pkg:nuget/AWSSDK.SecurityToken@3.7.100.14">
@@ -6944,8 +6939,17 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Text.Json@4.7.2" />
       <dependency ref="pkg:nuget/System.Threading.Tasks.Extensions@4.5.4" />
     </dependency>
+    <dependency ref="pkg:nuget/Azure.Core@1.37.0">
+      <dependency ref="pkg:nuget/Microsoft.Bcl.AsyncInterfaces@1.1.1" />
+      <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@6.0.1" />
+      <dependency ref="pkg:nuget/System.Memory.Data@1.0.2" />
+      <dependency ref="pkg:nuget/System.Numerics.Vectors@4.5.0" />
+      <dependency ref="pkg:nuget/System.Text.Encodings.Web@6.0.0" />
+      <dependency ref="pkg:nuget/System.Text.Json@6.0.0" />
+      <dependency ref="pkg:nuget/System.Threading.Tasks.Extensions@4.5.4" />
+    </dependency>
     <dependency ref="pkg:nuget/Azure.Identity@1.10.4">
-      <dependency ref="pkg:nuget/Azure.Core@1.36.0" />
+      <dependency ref="pkg:nuget/Azure.Core@1.37.0" />
       <dependency ref="pkg:nuget/Microsoft.Identity.Client@4.59.0" />
       <dependency ref="pkg:nuget/Microsoft.Identity.Client.Extensions.Msal@4.56.0" />
       <dependency ref="pkg:nuget/System.Memory@4.5.4" />
@@ -6966,7 +6970,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Memory.Data@1.0.2" />
       <dependency ref="pkg:nuget/System.Text.Json@4.7.2" />
     </dependency>
-    <dependency ref="pkg:nuget/BouncyCastle.Cryptography@2.2.1" />
+    <dependency ref="pkg:nuget/BouncyCastle.Cryptography@2.3.0" />
     <dependency ref="pkg:nuget/Castle.Core@5.1.1">
       <dependency ref="pkg:nuget/System.Diagnostics.EventLog@6.0.0" />
     </dependency>
@@ -6976,7 +6980,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <dependency ref="pkg:nuget/Flurl.Http@3.2.4">
       <dependency ref="pkg:nuget/Flurl@3.0.6" />
       <dependency ref="pkg:nuget/Newtonsoft.Json@12.0.2" />
-      <dependency ref="pkg:nuget/System.Text.Encoding.CodePages@7.0.0" />
+      <dependency ref="pkg:nuget/System.Text.Encoding.CodePages@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Flurl@3.0.6" />
     <dependency ref="pkg:nuget/Handlebars.Net.Extension.Json@1.0.0">
@@ -7001,11 +7005,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.CSharp@4.7.0" />
       <dependency ref="pkg:nuget/System.Net.Http@4.3.4" />
     </dependency>
-    <dependency ref="pkg:nuget/MailKit@4.3.0">
-      <dependency ref="pkg:nuget/MimeKit@4.3.0" />
+    <dependency ref="pkg:nuget/MailKit@4.4.0">
+      <dependency ref="pkg:nuget/MimeKit@4.4.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.AspNetCore@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.DependencyCollector@2.21.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.EventCounterCollector@2.21.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.PerfCounterCollector@2.21.0" />
@@ -7018,38 +7022,38 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Text.Encodings.Web@6.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.DependencyCollector@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.EventCounterCollector@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.PerfCounterCollector@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Caching.Memory@1.0.0" />
       <dependency ref="pkg:nuget/System.Diagnostics.PerformanceCounter@4.7.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.SnapshotCollector@1.4.3">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.1" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2" />
       <dependency ref="pkg:nuget/System.IO.FileSystem.AccessControl@5.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/System.IO.FileSystem.AccessControl@5.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.WindowsServer@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.DependencyCollector@2.21.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.PerfCounterCollector@2.21.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel@2.21.0" />
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@8.0.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0">
+    <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0">
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@8.0.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.1">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.2.0" />
+    <dependency ref="pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.2">
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.3.1" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.AspNetCore.Hosting.Abstractions@2.1.1">
       <dependency ref="pkg:nuget/Microsoft.AspNetCore.Hosting.Server.Abstractions@2.1.1" />
@@ -7071,7 +7075,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.FileProviders.Physical@3.1.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Logging@2.1.1" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.1" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2" />
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@8.0.0" />
       <dependency ref="pkg:nuget/System.Reflection.Metadata@1.6.0" />
     </dependency>
@@ -7092,7 +7096,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.AspNetCore.Http.Abstractions@2.1.1" />
       <dependency ref="pkg:nuget/Microsoft.AspNetCore.WebUtilities@2.1.1" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.ObjectPool@2.1.1" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.1" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2" />
       <dependency ref="pkg:nuget/Microsoft.Net.Http.Headers@2.1.1" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.AspNetCore.WebUtilities@2.1.1">
@@ -7104,7 +7108,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Diagnostics.TraceSource@4.3.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Azure.WebJobs.Logging.ApplicationInsights@3.0.35">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.AspNetCore@2.21.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.DependencyCollector@2.21.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights.PerfCounterCollector@2.21.0" />
@@ -7145,7 +7149,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Caching.Memory@1.0.0">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Caching.Abstractions@1.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.1" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2" />
       <dependency ref="pkg:nuget/System.Linq@4.3.0" />
       <dependency ref="pkg:nuget/System.Threading@4.3.0" />
     </dependency>
@@ -7210,7 +7214,6 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@8.0.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0" />
     <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
     <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection@2.1.1">
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
@@ -7220,7 +7223,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Diagnostics.Abstractions@8.0.0">
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.1" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2" />
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Diagnostics@8.0.0">
@@ -7294,7 +7297,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.ApplicationInsights@2.21.0">
-      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.21.0" />
+      <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Logging@2.1.1" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Configuration@2.1.0">
@@ -7343,7 +7346,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Binder@8.0.1" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@8.0.0" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.1" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Logging@8.0.0">
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection@8.0.0" />
@@ -7354,7 +7357,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Options.ConfigurationExtensions@2.1.0">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@3.1.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Binder@2.1.1" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Options@2.1.1" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Options.ConfigurationExtensions@8.0.0">
@@ -7365,33 +7368,33 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Options@2.1.1">
-      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@7.0.0" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@3.1.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.0">
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@8.0.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.1">
+    <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2">
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@3.1.0" />
     <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@8.0.0" />
-    <dependency ref="pkg:nuget/Microsoft.Graph.Core@3.1.6">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.2.0" />
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.5" />
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Authentication.Azure@1.1.2" />
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.3.4" />
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Form@1.1.1" />
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Json@1.1.2" />
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Multipart@1.1.1" />
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.1" />
+    <dependency ref="pkg:nuget/Microsoft.Graph.Core@3.1.8">
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.3.1" />
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.9" />
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Authentication.Azure@1.1.3" />
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.3.6" />
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Form@1.1.3" />
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Json@1.1.5" />
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Multipart@1.1.2" />
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.2" />
       <dependency ref="pkg:nuget/NETStandard.Library@2.0.3" />
       <dependency ref="pkg:nuget/System.Security.Claims@4.3.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Graph@5.40.0">
-      <dependency ref="pkg:nuget/Microsoft.Graph.Core@3.1.6" />
+    <dependency ref="pkg:nuget/Microsoft.Graph@5.44.0">
+      <dependency ref="pkg:nuget/Microsoft.Graph.Core@3.1.8" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Identity.Client.Extensions.Msal@4.56.0">
       <dependency ref="pkg:nuget/Microsoft.Identity.Client@4.59.0" />
@@ -7399,71 +7402,71 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Security.Cryptography.ProtectedData@4.7.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Identity.Client@4.59.0">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.2.0" />
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.1" />
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@6.0.1" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.2.0" />
-    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.0" />
+    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.1" />
+    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.4.0" />
     <dependency ref="pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.1.2">
       <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.1.2" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.2.0">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.2.0" />
+    <dependency ref="pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.3.1">
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.3.1" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.2.0">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.2.0" />
+    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1">
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.1" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.0" />
+    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.4.0">
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@7.4.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.1.2">
       <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols@7.1.2" />
       <dependency ref="pkg:nuget/System.IdentityModel.Tokens.Jwt@7.1.2" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.2.0">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols@7.2.0" />
-      <dependency ref="pkg:nuget/System.IdentityModel.Tokens.Jwt@7.2.0" />
+    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.3.1">
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols@7.3.1" />
+      <dependency ref="pkg:nuget/System.IdentityModel.Tokens.Jwt@7.3.1" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols@7.1.2">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0" />
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.4.0" />
       <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.1.2" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols@7.2.0">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.2.0" />
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.2.0" />
+    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Protocols@7.3.1">
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1" />
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.3.1" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.1.2">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.0" />
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.4.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.2.0">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.2.0" />
+    <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.3.1">
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.5">
+    <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.9">
       <dependency ref="pkg:nuget/Std.UriTemplate@0.0.50" />
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@6.0.1" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Kiota.Authentication.Azure@1.1.2">
-      <dependency ref="pkg:nuget/Azure.Core@1.36.0" />
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.5" />
+    <dependency ref="pkg:nuget/Microsoft.Kiota.Authentication.Azure@1.1.3">
+      <dependency ref="pkg:nuget/Azure.Core@1.37.0" />
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.9" />
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@6.0.1" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.3.4">
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.5" />
+    <dependency ref="pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.3.6">
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.9" />
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@6.0.1" />
       <dependency ref="pkg:nuget/System.Text.Json@6.0.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Form@1.1.1">
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.5" />
+    <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Form@1.1.3">
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.9" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Json@1.1.2">
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.5" />
+    <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Json@1.1.5">
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.9" />
       <dependency ref="pkg:nuget/System.Text.Json@6.0.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Multipart@1.1.1">
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.5" />
+    <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Multipart@1.1.2">
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.9" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.1">
-      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.5" />
+    <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.2">
+      <dependency ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.7.9" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Net.Http.Headers@2.1.1">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@8.0.0" />
@@ -7485,38 +7488,38 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <dependency ref="pkg:nuget/Microsoft.Win32.SystemEvents@4.7.0">
       <dependency ref="pkg:nuget/Microsoft.NETCore.Platforms@5.0.0" />
     </dependency>
-    <dependency ref="pkg:nuget/MimeKit@4.3.0">
-      <dependency ref="pkg:nuget/BouncyCastle.Cryptography@2.2.1" />
+    <dependency ref="pkg:nuget/MimeKit@4.4.0">
+      <dependency ref="pkg:nuget/BouncyCastle.Cryptography@2.3.0" />
       <dependency ref="pkg:nuget/System.Runtime.CompilerServices.Unsafe@6.0.0" />
-      <dependency ref="pkg:nuget/System.Security.Cryptography.Pkcs@7.0.3" />
-      <dependency ref="pkg:nuget/System.Text.Encoding.CodePages@7.0.0" />
+      <dependency ref="pkg:nuget/System.Security.Cryptography.Pkcs@8.0.0" />
+      <dependency ref="pkg:nuget/System.Text.Encoding.CodePages@8.0.0" />
     </dependency>
-    <dependency ref="pkg:nuget/MongoDB.Bson@2.23.1">
+    <dependency ref="pkg:nuget/MongoDB.Bson@2.24.0">
       <dependency ref="pkg:nuget/System.Memory@4.5.5" />
       <dependency ref="pkg:nuget/System.Runtime.CompilerServices.Unsafe@6.0.0" />
     </dependency>
-    <dependency ref="pkg:nuget/MongoDB.Driver.Core@2.23.1">
+    <dependency ref="pkg:nuget/MongoDB.Driver.Core@2.24.0">
       <dependency ref="pkg:nuget/AWSSDK.SecurityToken@3.7.100.14" />
       <dependency ref="pkg:nuget/DnsClient@1.6.1" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@8.0.0" />
-      <dependency ref="pkg:nuget/MongoDB.Bson@2.23.1" />
-      <dependency ref="pkg:nuget/MongoDB.Libmongocrypt@1.8.0" />
+      <dependency ref="pkg:nuget/MongoDB.Bson@2.24.0" />
+      <dependency ref="pkg:nuget/MongoDB.Libmongocrypt@1.8.2" />
       <dependency ref="pkg:nuget/SharpCompress@0.30.1" />
       <dependency ref="pkg:nuget/Snappier@1.0.0" />
       <dependency ref="pkg:nuget/System.Buffers@4.5.1" />
       <dependency ref="pkg:nuget/ZstdSharp.Port@0.7.3" />
     </dependency>
-    <dependency ref="pkg:nuget/MongoDB.Driver@2.23.1">
+    <dependency ref="pkg:nuget/MongoDB.Driver@2.24.0">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@8.0.0" />
-      <dependency ref="pkg:nuget/MongoDB.Bson@2.23.1" />
-      <dependency ref="pkg:nuget/MongoDB.Driver.Core@2.23.1" />
-      <dependency ref="pkg:nuget/MongoDB.Libmongocrypt@1.8.0" />
+      <dependency ref="pkg:nuget/MongoDB.Bson@2.24.0" />
+      <dependency ref="pkg:nuget/MongoDB.Driver.Core@2.24.0" />
+      <dependency ref="pkg:nuget/MongoDB.Libmongocrypt@1.8.2" />
     </dependency>
-    <dependency ref="pkg:nuget/MongoDB.Libmongocrypt@1.8.0" />
+    <dependency ref="pkg:nuget/MongoDB.Libmongocrypt@1.8.2" />
     <dependency ref="pkg:nuget/Moq@4.20.70">
       <dependency ref="pkg:nuget/Castle.Core@5.1.1" />
     </dependency>
-    <dependency ref="pkg:nuget/MSTest.TestFramework@3.2.0" />
+    <dependency ref="pkg:nuget/MSTest.TestFramework@3.2.2" />
     <dependency ref="pkg:nuget/NETStandard.Library@2.0.3">
       <dependency ref="pkg:nuget/Microsoft.NETCore.Platforms@5.0.0" />
     </dependency>
@@ -7647,7 +7650,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.NETCore.Platforms@5.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Win32.SystemEvents@4.7.0" />
     </dependency>
-    <dependency ref="pkg:nuget/System.Formats.Asn1@7.0.0" />
+    <dependency ref="pkg:nuget/System.Formats.Asn1@8.0.0" />
     <dependency ref="pkg:nuget/System.Globalization.Calendars@4.3.0">
       <dependency ref="pkg:nuget/Microsoft.NETCore.Platforms@5.0.0" />
       <dependency ref="pkg:nuget/Microsoft.NETCore.Targets@1.1.0" />
@@ -7671,9 +7674,9 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.1.2" />
       <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.1.2" />
     </dependency>
-    <dependency ref="pkg:nuget/System.IdentityModel.Tokens.Jwt@7.2.0">
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.2.0" />
-      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.2.0" />
+    <dependency ref="pkg:nuget/System.IdentityModel.Tokens.Jwt@7.3.1">
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.3.1" />
+      <dependency ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.3.1" />
     </dependency>
     <dependency ref="pkg:nuget/System.IO.FileSystem.AccessControl@4.7.0">
       <dependency ref="pkg:nuget/System.Security.AccessControl@4.7.0" />
@@ -7906,8 +7909,8 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Text.Encoding@4.3.0" />
       <dependency ref="pkg:nuget/runtime.native.System.Security.Cryptography.OpenSsl@4.3.2" />
     </dependency>
-    <dependency ref="pkg:nuget/System.Security.Cryptography.Pkcs@7.0.3">
-      <dependency ref="pkg:nuget/System.Formats.Asn1@7.0.0" />
+    <dependency ref="pkg:nuget/System.Security.Cryptography.Pkcs@8.0.0">
+      <dependency ref="pkg:nuget/System.Formats.Asn1@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/System.Security.Cryptography.Primitives@4.3.0">
       <dependency ref="pkg:nuget/System.Diagnostics.Debug@4.3.0" />
@@ -7959,7 +7962,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.NETCore.Platforms@2.1.2" />
       <dependency ref="pkg:nuget/System.Runtime.CompilerServices.Unsafe@4.5.2" />
     </dependency>
-    <dependency ref="pkg:nuget/System.Text.Encoding.CodePages@7.0.0" />
+    <dependency ref="pkg:nuget/System.Text.Encoding.CodePages@8.0.0" />
     <dependency ref="pkg:nuget/System.Text.Encoding@4.3.0">
       <dependency ref="pkg:nuget/Microsoft.NETCore.Platforms@5.0.0" />
       <dependency ref="pkg:nuget/Microsoft.NETCore.Targets@1.1.0" />

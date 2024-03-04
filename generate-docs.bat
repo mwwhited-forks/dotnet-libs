@@ -8,7 +8,7 @@ SET PublishPath=%SolutionDir%publish\libs\
 ECHO PublishPath %PublishPath%
 
 SET TARGET_SOLUTION=Eliassen.Libs.sln
-SET TARGET_SOLUTION_NAME=Nucleus.Libs
+SET TARGET_SOLUTION_NAME=Eliassen.Libs
 SET TARGET_WEB_PROJECT=.\Examples\Eliassen.WebApi\Eliassen.WebApi.csproj
 
 SET TEMPLATE_COMMAND=run --project Tools\Eliassen.TemplateEngine.Cli
