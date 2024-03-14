@@ -8,7 +8,7 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0069391
+  * Duration: 00:00:00.0053008
   * Outcome: Passed
 
 
@@ -20,14 +20,14 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0114569
+  * Duration: 00:00:00.0061557
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-c:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240304T140735\In\DESKTOP-3FN5V33\test-file.txt
+c:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240314T115010\In\DESKTOP-3FN5V33\test-file.txt
 
 ## Test Name: AddResultTest_Json
 
@@ -37,14 +37,14 @@ c:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240304T140735\In\DESKTOP-
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0121394
+  * Duration: 00:00:00.0098192
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-JObject-TextContextExtensionsTests_AddResultTest_Json(190)-638451580565245667.json: Attached
+JObject-TextContextExtensionsTests_AddResultTest_Json(190)-638460138105029736.json: Attached
 
 ## Test Name: AddResultTest_Lines
 
@@ -54,14 +54,14 @@ JObject-TextContextExtensionsTests_AddResultTest_Json(190)-638451580565245667.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0036087
+  * Duration: 00:00:00.0028676
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String[]-TextContextExtensionsTests_AddResultTest_Lines(70)-638451580564892525.txt: Attached
+String[]-TextContextExtensionsTests_AddResultTest_Lines(70)-638460138104732464.txt: Attached
 
 ## Test Name: AddResultTest_Object
 
@@ -71,14 +71,14 @@ String[]-TextContextExtensionsTests_AddResultTest_Lines(70)-638451580564892525.t
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.6076108
+  * Duration: 00:00:00.2273954
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestData-TextContextExtensionsTests_AddResultTest_Object(30)-638451580563610165.json: Attached
+TestData-TextContextExtensionsTests_AddResultTest_Object(30)-638460138104139183.json: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameAndChangeExtension
 
@@ -88,14 +88,14 @@ TestData-TextContextExtensionsTests_AddResultTest_Object(30)-638451580563610165.
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0038521
+  * Duration: 00:00:00.0032185
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndChangeExtension(130)-638451580565060944.html: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndChangeExtension(130)-638460138104870035.html: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameAndExtension
 
@@ -105,14 +105,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndChan
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0035441
+  * Duration: 00:00:00.0036830
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndExtension(110)-638451580565010511.txt: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndExtension(110)-638460138104825255.txt: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameNoExtension
 
@@ -122,14 +122,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndExte
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0047598
+  * Duration: 00:00:00.0041490
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameNoExtension(90)-638451580564945956.json: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameNoExtension(90)-638460138104769062.json: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameRemoveExtension
 
@@ -139,14 +139,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameNoExten
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0044603
+  * Duration: 00:00:00.0037151
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameRemoveExtension(150)-638451580565123249: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameRemoveExtension(150)-638460138104917788: Attached
 
 ## Test Name: AddResultTest_Stream
 
@@ -156,14 +156,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameRemoveE
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0042602
+  * Duration: 00:00:00.0044733
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-MemoryStream-TextContextExtensionsTests_AddResultTest_Stream(170)-638451580565178746.bin: Attached
+MemoryStream-TextContextExtensionsTests_AddResultTest_Stream(170)-638460138104972076.bin: Attached
 
 ## Test Name: AddResultTest_String
 
@@ -173,14 +173,14 @@ MemoryStream-TextContextExtensionsTests_AddResultTest_Stream(170)-63845158056517
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0044793
+  * Duration: 00:00:00.0040053
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-TextContextExtensionsTests_AddResultTest_String(50)-638451580564819232.txt: Attached
+String-TextContextExtensionsTests_AddResultTest_String(50)-638460138104677864.txt: Attached
 
 ## Test Name: AddResultTest_ValueOutFile
 
@@ -190,15 +190,15 @@ String-TextContextExtensionsTests_AddResultTest_String(50)-638451580564819232.tx
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0133129
+  * Duration: 00:00:00.0044301
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638451580566290286.json: Attached
-c:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240304T140735\In\DESKTOP-3FN5V33\TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638451580566290286.json
+TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638460138105654961.json: Attached
+c:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240314T115010\In\DESKTOP-3FN5V33\TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638460138105654961.json
 
 ## Test Name: AsModelsTest
 
@@ -208,7 +208,7 @@ c:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240304T140735\In\DESKTOP-
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0324566
+  * Duration: 00:00:00.0394819
   * Outcome: Passed
 
 
@@ -240,7 +240,7 @@ EnumModel { Id = 32767, Name = All, Code = ALL, Description = , Order = 0, Value
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0131263
+  * Duration: 00:00:00.0301108
   * Outcome: Passed
 
 
@@ -263,7 +263,7 @@ EnumModel { Id = 32, Name = test name, Code = test short, Description = test dis
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0007313
+  * Duration: 00:00:00.0007044
   * Outcome: Passed
 
 
@@ -275,15 +275,15 @@ EnumModel { Id = 32, Name = test name, Code = test short, Description = test dis
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0082932
+  * Duration: 00:00:00.1322504
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-input-BsonIdConverterTests_DeserializeTest(39)-638451580928490846.json: Attached
-result-BsonIdConverterTests_DeserializeTest(41)-638451580928528742.json: Attached
+input-BsonIdConverterTests_DeserializeTest(39)-638460138432140841.json: Attached
+result-BsonIdConverterTests_DeserializeTest(41)-638460138432662231.json: Attached
 
 ## Test Name: DeserializeTest ({"_id":{"$oid":"Hello World"}},Hello World)
 
@@ -293,15 +293,15 @@ result-BsonIdConverterTests_DeserializeTest(41)-638451580928528742.json: Attache
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0168249
+  * Duration: 00:00:00.0441663
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-input-BsonIdConverterTests_DeserializeTest(39)-638451580928301276.json: Attached
-result-BsonIdConverterTests_DeserializeTest(41)-638451580928418520.json: Attached
+input-BsonIdConverterTests_DeserializeTest(39)-638460138431682498.json: Attached
+result-BsonIdConverterTests_DeserializeTest(41)-638460138431832763.json: Attached
 
 ## Test Name: DeserializeTest_Nullable ({"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}},2023-07-05T14:16:32.2015217-04:00)
 
@@ -311,15 +311,15 @@ result-BsonIdConverterTests_DeserializeTest(41)-638451580928418520.json: Attache
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0212637
+  * Duration: 00:00:00.0991655
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-input-BsonDateConverterTests_DeserializeTest_Nullable(64)-638451580926647899.json: Attached
-result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638451580926755169.json: Attached
+input-BsonDateConverterTests_DeserializeTest_Nullable(64)-638460138424727819.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638460138425093770.json: Attached
 
 ## Test Name: DeserializeTest_Nullable ({"Nullable":null,"Value":{"$date":"2023-07-05T14:17:05.2315812-04:00"}},)
 
@@ -329,15 +329,15 @@ result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638451580926755169.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0230601
+  * Duration: 00:00:00.0885888
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-input-BsonDateConverterTests_DeserializeTest_Nullable(64)-638451580926879021.json: Attached
-result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638451580926962599.json: Attached
+input-BsonDateConverterTests_DeserializeTest_Nullable(64)-638460138425745588.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638460138425819151.json: Attached
 
 ## Test Name: DeserializeTest_Value ({"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}},0001-01-01T00:00:00+00:00)
 
@@ -347,15 +347,15 @@ result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638451580926962599.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0256016
+  * Duration: 00:00:00.0987163
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-input-BsonDateConverterTests_DeserializeTest_Value(78)-638451580927139851.json: Attached
-result-BsonDateConverterTests_DeserializeTest_Value(80)-638451580927268998.json: Attached
+input-BsonDateConverterTests_DeserializeTest_Value(78)-638460138426655737.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Value(80)-638460138427388701.json: Attached
 
 ## Test Name: DeserializeTest_Value ({"Nullable":null,"Value":{"$date":"2023-07-05T14:17:05.2315812-04:00"}},2023-07-05T14:17:05.2315812-04:00)
 
@@ -365,15 +365,15 @@ result-BsonDateConverterTests_DeserializeTest_Value(80)-638451580927268998.json:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0632533
+  * Duration: 00:00:00.1972333
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-input-BsonDateConverterTests_DeserializeTest_Value(78)-638451580927526347.json: Attached
-result-BsonDateConverterTests_DeserializeTest_Value(80)-638451580927875682.json: Attached
+input-BsonDateConverterTests_DeserializeTest_Value(78)-638460138428073247.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Value(80)-638460138429201863.json: Attached
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,Date,GreaterThan,3/1/2020,10,3,4,5,6,7,8,9,10,11,12)
 
@@ -383,7 +383,7 @@ result-BsonDateConverterTests_DeserializeTest_Value(80)-638451580927875682.json:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.4696232
+  * Duration: 00:00:00.6424634
   * Outcome: Passed
 
 
@@ -404,9 +404,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580945329207.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580945370717.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580949866877.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138461702915.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138461905930.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138467555985.json: Attached
 resultKeys: 3,4,5,6,7,8,9,10,11,12
 
 ### Standard Error
@@ -422,7 +422,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expression
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.4818937
+  * Duration: 00:00:01.0069379
   * Outcome: Passed
 
 
@@ -443,9 +443,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580950047958.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580950084976.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580954671819.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138468177984.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138468217297.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138478029107.json: Attached
 resultKeys: 2,3,4,5,6,7,8,9,10,11
 
 ### Standard Error
@@ -461,7 +461,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expression
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.3403837
+  * Duration: 00:00:00.5152293
   * Outcome: Passed
 
 
@@ -482,9 +482,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580958478029.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580958523630.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580961753450.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138484781248.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138485103520.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138489714734.json: Attached
 resultKeys: -1,0,1
 
 ### Standard Error
@@ -500,7 +500,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expression
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.3372866
+  * Duration: 00:00:00.6456876
   * Outcome: Passed
 
 
@@ -521,9 +521,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580961883665.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580961926409.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580965130034.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138489929865.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138490045435.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138496145866.json: Attached
 resultKeys: -1,0,1,2
 
 ### Standard Error
@@ -539,7 +539,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expression
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.7104106
+  * Duration: 00:00:00.3697968
   * Outcome: Passed
 
 
@@ -560,9 +560,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580965272542.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580965364797.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580972220627.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138496424983.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138496586012.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138499938622.json: Attached
 resultKeys: -1,0,1
 
 ### Standard Error
@@ -578,7 +578,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expression
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.3611452
+  * Duration: 00:00:00.6579748
   * Outcome: Passed
 
 
@@ -599,9 +599,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580954865023.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580954915950.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580958352490.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138478221266.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138478269414.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138484467604.json: Attached
 resultKeys: -1,0,1
 
 ### Standard Error
@@ -617,7 +617,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expression
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.5339709
+  * Duration: 00:00:00.6155605
   * Outcome: Passed
 
 
@@ -638,9 +638,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580981041725.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580981099489.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580986198294.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138508075062.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138508129837.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138513999354.json: Attached
 resultKeys: -1,0,1,2
 
 ### Standard Error
@@ -656,7 +656,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expression
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.4495497
+  * Duration: 00:00:00.3733236
   * Outcome: Passed
 
 
@@ -677,9 +677,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580972378276.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580972430595.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580976736208.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138500106533.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138500152510.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138503708258.json: Attached
 resultKeys: 0,1
 
 ### Standard Error
@@ -695,7 +695,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expression
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.4148724
+  * Duration: 00:00:00.4197171
   * Outcome: Passed
 
 
@@ -716,9 +716,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580976883801.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580976923145.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580980859965.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138503854368.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138503963714.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138507885711.json: Attached
 resultKeys: 0,1
 
 ### Standard Error
@@ -734,7 +734,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expression
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.5473078
+  * Duration: 00:00:00.6176601
   * Outcome: Passed
 
 
@@ -755,9 +755,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580986358820.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580986436889.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580991638557.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138514197667.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138514296460.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138520204128.json: Attached
 resultKeys: -1,0
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,May,EqualTo,,10,0,3,6,9,12,15,18,21,24,27)
@@ -768,7 +768,7 @@ resultKeys: -1,0
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.4774839
+  * Duration: 00:00:00.7761453
   * Outcome: Passed
 
 
@@ -789,9 +789,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580995035448.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580995110542.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580999698378.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138523833981.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138523896944.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138531332523.json: Attached
 resultKeys: 0,3,6,9,12,15,18,21,24,27
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,May,EqualTo,!,10,-1,1,2,4,5,7,8,10,11,13)
@@ -802,7 +802,7 @@ resultKeys: 0,3,6,9,12,15,18,21,24,27
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.8053199
+  * Duration: 00:00:00.4902869
   * Outcome: Passed
 
 
@@ -823,9 +823,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451581004516860.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451581004787284.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451581012360056.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138537221992.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138537266782.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138541988387.json: Attached
 resultKeys: -1,1,2,4,5,7,8,10,11,13
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,May,NotEqualTo,,10,-1,1,2,4,5,7,8,10,11,13)
@@ -836,7 +836,7 @@ resultKeys: -1,1,2,4,5,7,8,10,11,13
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.4684533
+  * Duration: 00:00:00.5744170
   * Outcome: Passed
 
 
@@ -857,9 +857,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580999828791.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580999879148.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451581004184926.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138531518091.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138531561274.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138537072237.json: Attached
 resultKeys: -1,1,2,4,5,7,8,10,11,13
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,May,NotEqualTo,!,10,-1,1,2,4,5,7,8,10,11,13)
@@ -870,7 +870,7 @@ resultKeys: -1,1,2,4,5,7,8,10,11,13
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:01.0484970
+  * Duration: 00:00:00.5344206
   * Outcome: Passed
 
 
@@ -891,9 +891,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451581012578382.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451581012676659.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451581022890245.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138542107057.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138542228818.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138547292752.json: Attached
 resultKeys: -1,1,2,4,5,7,8,10,11,13
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,index,EqualTo,!1,10,0,2,3,4,5,6,7,8,9,10)
@@ -904,7 +904,7 @@ resultKeys: -1,1,2,4,5,7,8,10,11,13
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0444904
+  * Duration: 00:00:00.0837184
   * Outcome: Passed
 
 
@@ -923,9 +923,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580937337754.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580937377238.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580937626563.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138449539796.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138449666386.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138450045639.json: Attached
 resultKeys: 0,2,3,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -943,7 +943,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.2064863
+  * Duration: 00:00:00.3898729
   * Outcome: Passed
 
 
@@ -962,9 +962,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580935668933.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580935797167.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580936907288.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138446438197.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138446955690.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138448960943.json: Attached
 resultKeys: 0,2,3,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -982,7 +982,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0297536
+  * Duration: 00:00:00.0728281
   * Outcome: Passed
 
 
@@ -1001,9 +1001,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580938186161.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580938225443.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580938393147.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138450785657.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138450874011.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138451299897.json: Attached
 resultKeys: 0,2,3,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -1021,7 +1021,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0453376
+  * Duration: 00:00:00.0539475
   * Outcome: Passed
 
 
@@ -1040,9 +1040,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580937733644.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580937775826.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580938070514.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138450292835.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138450383798.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138450663799.json: Attached
 resultKeys: 0,2,3,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -1060,7 +1060,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0317809
+  * Duration: 00:00:00.0505696
   * Outcome: Passed
 
 
@@ -1079,9 +1079,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580942166727.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580942209374.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580942378811.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138457443167.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138457584219.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138457785414.json: Attached
 resultKeys: 0
 
 ### Standard Error
@@ -1099,7 +1099,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0418006
+  * Duration: 00:00:00.0535238
   * Outcome: Passed
 
 
@@ -1118,9 +1118,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580938499996.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580938544628.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580938802747.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138451540172.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138451688841.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138451853301.json: Attached
 resultKeys: 1
 
 ### Standard Error
@@ -1138,7 +1138,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0493175
+  * Duration: 00:00:00.0994605
   * Outcome: Passed
 
 
@@ -1157,9 +1157,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580940962288.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580941039141.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580941319134.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138455748141.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138456240897.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138456557716.json: Attached
 resultKeys: 996,997,998,999
 
 ### Standard Error
@@ -1177,7 +1177,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0377159
+  * Duration: 00:00:00.0447395
   * Outcome: Passed
 
 
@@ -1196,9 +1196,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580941477790.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580941525312.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580941701830.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138456742477.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138456828206.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138456992740.json: Attached
 resultKeys: 995,996,997,998,999
 
 ### Standard Error
@@ -1216,7 +1216,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0361564
+  * Duration: 00:00:00.0707625
   * Outcome: Passed
 
 
@@ -1235,9 +1235,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580939654881.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580939695100.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580939887574.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138453449521.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138453691534.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138453911541.json: Attached
 resultKeys: 1,2,3
 
 ### Standard Error
@@ -1253,7 +1253,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0307624
+  * Duration: 00:00:00.0611503
   * Outcome: Passed
 
 
@@ -1272,9 +1272,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580940296247.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580940342040.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580940507012.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138454157516.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138454334868.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138454555874.json: Attached
 resultKeys: 0,1,2,3,4
 
 ### Standard Error
@@ -1292,7 +1292,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0336480
+  * Duration: 00:00:00.0363365
   * Outcome: Passed
 
 
@@ -1311,9 +1311,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580940608969.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580940662034.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580940844230.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138455359987.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138455404978.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138455610700.json: Attached
 resultKeys: 0,1,2,3,4,5
 
 ### Standard Error
@@ -1331,7 +1331,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0342293
+  * Duration: 00:00:00.0402113
   * Outcome: Passed
 
 
@@ -1350,9 +1350,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580945004666.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580945054764.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580945231278.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138461321552.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138461357968.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138461552217.json: Attached
 resultKeys: 0,2,3,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -1370,7 +1370,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0494295
+  * Duration: 00:00:00.0462702
   * Outcome: Passed
 
 
@@ -1389,9 +1389,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580993810243.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580993870465.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580994145129.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138522061320.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138522113345.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138522385803.json: Attached
 resultKeys:
 
 ### Standard Error
@@ -1407,7 +1407,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0355083
+  * Duration: 00:00:00.0394818
   * Outcome: Passed
 
 
@@ -1426,9 +1426,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580994679541.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580994729636.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580994931495.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138523308026.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138523363139.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138523598554.json: Attached
 resultKeys: 0,1,2,3,4,5,6,7,8,9
 
 ### Standard Error
@@ -1453,7 +1453,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0334412
+  * Duration: 00:00:00.0395233
   * Outcome: Passed
 
 
@@ -1472,9 +1472,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580942872262.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580942917168.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580943111482.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138458709410.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138458827754.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138459023883.json: Attached
 resultKeys: 103,203,303,403,503,603,703,803,903
 
 ### Standard Error
@@ -1490,7 +1490,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0286942
+  * Duration: 00:00:00.0469796
   * Outcome: Passed
 
 
@@ -1509,9 +1509,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580943199943.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580943242142.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580943408640.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138459132088.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138459339667.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138459510449.json: Attached
 resultKeys: 2,20,21,22,23,24,25,26,27,28
 
 ### Standard Error
@@ -1527,7 +1527,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0315478
+  * Duration: 00:00:00.0456170
   * Outcome: Passed
 
 
@@ -1546,9 +1546,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580943500852.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580943553027.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580943725700.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138459578491.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138459654391.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138459877985.json: Attached
 resultKeys: 1,10,11,12,13,14,15,16,17,18
 
 ### Standard Error
@@ -1564,7 +1564,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0346658
+  * Duration: 00:00:00.0659762
   * Outcome: Passed
 
 
@@ -1583,9 +1583,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580938903129.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580938957149.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580939140331.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138452052241.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138452093479.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138452261726.json: Attached
 resultKeys: 3
 
 ### Standard Error
@@ -1601,7 +1601,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0353018
+  * Duration: 00:00:00.0701545
   * Outcome: Passed
 
 
@@ -1620,9 +1620,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580939255834.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580939320337.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580939531363.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138452717619.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138453172596.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138453344019.json: Attached
 resultKeys: 1,2,3
 
 ### Standard Error
@@ -1638,7 +1638,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0382596
+  * Duration: 00:00:00.0756719
   * Outcome: Passed
 
 
@@ -1657,9 +1657,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580994297282.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580994356765.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580994544251.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138522527971.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138522651719.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138523001832.json: Attached
 resultKeys: 0,1,2,3,4,5,6,7,8,9
 
 ### Standard Error
@@ -1675,7 +1675,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0489412
+  * Duration: 00:00:00.0401519
   * Outcome: Passed
 
 
@@ -1694,9 +1694,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580943815411.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580943868614.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580944159976.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138460038221.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138460074104.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138460360567.json: Attached
 resultKeys: 0,1,2,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -1712,7 +1712,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0383758
+  * Duration: 00:00:00.0447858
   * Outcome: Passed
 
 
@@ -1731,9 +1731,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580944297483.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580944414270.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580944604054.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138460445157.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138460509080.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138460776543.json: Attached
 resultKeys: 0,1,3,4,5,6,7,8,9,10
 
 ### Standard Error
@@ -1749,7 +1749,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0300053
+  * Duration: 00:00:00.0401066
   * Outcome: Passed
 
 
@@ -1768,9 +1768,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580944683091.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580944721205.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580944909299.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138460887257.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138460924521.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138461093099.json: Attached
 resultKeys: 0,2,3,4,5,6,7,8,9,20
 
 ### Standard Error
@@ -1786,7 +1786,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1197780
+  * Duration: 00:00:00.0791059
   * Outcome: Passed
 
 
@@ -1805,9 +1805,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580991963061.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580992008088.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580992861235.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138520383682.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138520455420.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138520954073.json: Attached
 resultKeys: 2,3,4,5,6,7,8,9,12,13
 
 ### Standard Error
@@ -1823,7 +1823,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0789532
+  * Duration: 00:00:00.0912610
   * Outcome: Passed
 
 
@@ -1842,9 +1842,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451580993029197.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451580993088903.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451580993664426.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138521163258.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138521238268.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138521889252.json: Attached
 resultKeys: 2,3,4,5,6,7,8,9,12,13
 
 ### Standard Error
@@ -1860,7 +1860,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1356113
+  * Duration: 00:00:00.0528608
   * Outcome: Passed
 
 
@@ -1879,9 +1879,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451581023953067.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451581024055297.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451581024445932.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138547939148.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138547985387.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138548250442.json: Attached
 resultKeys: 3
 
 ### Standard Error
@@ -1897,7 +1897,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:01.1582833
+  * Duration: 00:00:00.5776179
   * Outcome: Passed
 
 
@@ -1918,9 +1918,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638451581025264832.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638451581025312844.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638451581036647253.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(142)-638460138548502282.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(144)-638460138548549700.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(146)-638460138554111467.json: Attached
 resultKeys: 3,4,5,6,7,8,9,10,11,12
 
 ## Test Name: ExecuteByTest_Filter_Range_Bounds
@@ -1931,7 +1931,7 @@ resultKeys: 3,4,5,6,7,8,9,10,11,12
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.3279916
+  * Duration: 00:00:00.1843518
   * Outcome: Passed
 
 
@@ -1953,8 +1953,8 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(174)-638451581037258590.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(176)-638451581040393649.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(174)-638460138554280345.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(176)-638460138555919024.json: Attached
 
 ### Standard Error
 
@@ -1971,7 +1971,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expression
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0808958
+  * Duration: 00:00:00.0351680
   * Outcome: Passed
 
 
@@ -1989,9 +1989,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(296)-638451581052731462.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(298)-638451581052867713.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(300)-638451581053379714.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(296)-638460138561667614.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(298)-638460138561706983.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(300)-638460138561926641.json: Attached
 resultKeys: 0,1,2,3,4,5,6,7,8,9
 
 ### Standard Error
@@ -2013,7 +2013,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0692622
+  * Duration: 00:00:00.0464317
   * Outcome: Passed
 
 
@@ -2031,9 +2031,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(296)-638451581053572428.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(298)-638451581053771763.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(300)-638451581054158432.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(296)-638460138562043552.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(298)-638460138562121329.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(300)-638460138562433918.json: Attached
 resultKeys: 0
 
 ### Standard Error
@@ -2055,7 +2055,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0439785
+  * Duration: 00:00:00.0487223
   * Outcome: Passed
 
 
@@ -2073,9 +2073,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(296)-638451581055095729.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(298)-638451581055159097.json: Attached
-QueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(300)-638451581055418613.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(296)-638460138562918397.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(298)-638460138563037770.json: Attached
+QueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(300)-638460138563273223.json: Attached
 
 ### Standard Error
 
@@ -2096,7 +2096,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0764869
+  * Duration: 00:00:00.0296518
   * Outcome: Passed
 
 
@@ -2114,9 +2114,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(296)-638451581054308886.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(298)-638451581054405312.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(300)-638451581054861314.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(296)-638460138562535654.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(298)-638460138562581248.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(300)-638460138562753896.json: Attached
 resultKeys: 1
 
 ### Standard Error
@@ -2138,7 +2138,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:01.2080580
+  * Duration: 00:00:00.5470459
   * Outcome: Passed
 
 
@@ -2156,10 +2156,49 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(266)-638451581040593942.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(268)-638451581040681504.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(270)-638451581052475585.json: Attached
+SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(266)-638460138556342379.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(268)-638460138556426385.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(270)-638460138561557060.json: Attached
 resultKeys: 1
+
+## Test Name: ExecuteByTest_Sort (Name,Ascending,0,1,10,100,101,102,103,104,105,106)
+
+* Name: ExecuteByTest_Sort (Name,Ascending,0,1,10,100,101,102,103,104,105,106)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0436221
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(340)-638460138565033265.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(342)-638460138565316503.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Ascending
 
 ## Test Name: ExecuteByTest_Sort (Name,Ascending,0,1,10,100,101,102,103,104,105,106)
 
@@ -2520,6 +2559,45 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
+  * Duration: 00:00:00.0767484
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:name: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(340)-638460138563772828.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(342)-638460138563965114.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:name: Descending
+
+## Test Name: ExecuteByTest_Sort (name,Descending,999,998,997,996,995,994,993,992,991,990)
+
+* Name: ExecuteByTest_Sort (name,Descending,999,998,997,996,995,994,993,992,991,990)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Sort
+* Categories
+  * Unit
+* Details: 
   * Duration: 00:00:00.0255903
   * Outcome: Passed
 
@@ -2862,6 +2940,45 @@ PageSize: 0
 ExcludePageCount: False
 SearchTerm: (null)
 	S:name: Descending
+
+## Test Name: ExecuteByTest_Sort (Name,Descending,999,998,997,996,995,994,993,992,991,990)
+
+* Name: ExecuteByTest_Sort (Name,Descending,999,998,997,996,995,994,993,992,991,990)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0224889
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(340)-638460138563437826.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(342)-638460138563576664.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Descending
 
 ## Test Name: ExecuteByTest_Sort (Name,Descending,999,998,997,996,995,994,993,992,991,990)
 
@@ -3222,6 +3339,45 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
+  * Duration: 00:00:00.0428831
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:NAME: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(340)-638460138564569118.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(342)-638460138564725261.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:NAME: Descending
+
+## Test Name: ExecuteByTest_Sort (NAME,Descending,999,998,997,996,995,994,993,992,991,990)
+
+* Name: ExecuteByTest_Sort (NAME,Descending,999,998,997,996,995,994,993,992,991,990)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Sort
+* Categories
+  * Unit
+* Details: 
   * Duration: 00:00:00.0233721
   * Outcome: Passed
 
@@ -3573,7 +3729,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0046775
+  * Duration: 00:00:00.0016287
   * Outcome: Passed
 
 
@@ -3585,7 +3741,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0008392
+  * Duration: 00:00:00.0004515
   * Outcome: Passed
 
 
@@ -3597,7 +3753,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0202141
+  * Duration: 00:00:00.0086754
   * Outcome: Passed
 
 
@@ -3609,7 +3765,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006275
+  * Duration: 00:00:00.0005215
   * Outcome: Passed
 
 
@@ -3626,7 +3782,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005605
+  * Duration: 00:00:00.0024186
   * Outcome: Passed
 
 
@@ -3643,7 +3799,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0007616
+  * Duration: 00:00:00.0006079
   * Outcome: Passed
 
 
@@ -3677,7 +3833,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0091418
+  * Duration: 00:00:00.0150602
   * Outcome: Passed
 
 
@@ -3711,7 +3867,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0011623
+  * Duration: 00:00:00.0012867
   * Outcome: Passed
 
 
@@ -3728,7 +3884,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0014631
+  * Duration: 00:00:00.0010637
   * Outcome: Passed
 
 
@@ -3745,7 +3901,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0047523
+  * Duration: 00:00:00.0134543
   * Outcome: Passed
 
 
@@ -3757,7 +3913,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0073240
+  * Duration: 00:00:00.0073870
   * Outcome: Passed
 
 
@@ -3769,7 +3925,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0008033
+  * Duration: 00:00:00.0007726
   * Outcome: Passed
 
 
@@ -3781,7 +3937,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004928
+  * Duration: 00:00:00.0006254
   * Outcome: Passed
 
 
@@ -3793,7 +3949,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001518
+  * Duration: 00:00:00.0001442
   * Outcome: Passed
 
 
@@ -3805,7 +3961,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0539721
+  * Duration: 00:00:00.0895987
   * Outcome: Passed
 
 
@@ -3817,7 +3973,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0110280
+  * Duration: 00:00:00.0079240
   * Outcome: Passed
 
 
@@ -3829,7 +3985,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009217
+  * Duration: 00:00:00.0004799
   * Outcome: Passed
 
 
@@ -3841,7 +3997,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002971
+  * Duration: 00:00:00.0012174
   * Outcome: Passed
 
 
@@ -3853,7 +4009,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003430
+  * Duration: 00:00:00.0003708
   * Outcome: Passed
 
 
@@ -3865,7 +4021,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003958
+  * Duration: 00:00:00.0019273
   * Outcome: Passed
 
 
@@ -3877,7 +4033,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009209
+  * Duration: 00:00:00.0010850
   * Outcome: Passed
 
 
@@ -3889,7 +4045,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009482
+  * Duration: 00:00:00.0004464
   * Outcome: Passed
 
 
@@ -3901,7 +4057,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002898
+  * Duration: 00:00:00.0002320
   * Outcome: Passed
 
 
@@ -3913,7 +4069,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004963
+  * Duration: 00:00:00.0003251
   * Outcome: Passed
 
 
@@ -3925,7 +4081,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006534
+  * Duration: 00:00:00.0011552
   * Outcome: Passed
 
 
@@ -3937,7 +4093,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003540
+  * Duration: 00:00:00.0004314
   * Outcome: Passed
 
 
@@ -3949,7 +4105,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0049752
+  * Duration: 00:00:00.0027068
   * Outcome: Passed
 
 
@@ -3961,7 +4117,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.8665934
+  * Duration: 00:00:00.4940092
   * Outcome: Passed
 
 
@@ -3973,7 +4129,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0221560
+  * Duration: 00:00:00.0094881
   * Outcome: Passed
 
 
@@ -3985,7 +4141,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0160531
+  * Duration: 00:00:00.0091839
   * Outcome: Passed
 
 
@@ -3997,7 +4153,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0231118
+  * Duration: 00:00:00.0093611
   * Outcome: Passed
 
 
@@ -4009,7 +4165,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001385
+  * Duration: 00:00:00.0002001
   * Outcome: Passed
 
 
@@ -4021,7 +4177,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006660
+  * Duration: 00:00:00.0011084
   * Outcome: Passed
 
 
@@ -4033,7 +4189,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000245
+  * Duration: 00:00:00.0000223
   * Outcome: Passed
 
 
@@ -4045,7 +4201,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000197
+  * Duration: 00:00:00.0000132
   * Outcome: Passed
 
 
@@ -4057,7 +4213,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0019380
+  * Duration: 00:00:00.0017876
   * Outcome: Passed
 
 
@@ -4069,7 +4225,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0031320
+  * Duration: 00:00:00.0032287
   * Outcome: Passed
 
 
@@ -4081,7 +4237,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001824
+  * Duration: 00:00:00.0001361
   * Outcome: Passed
 
 
@@ -4093,7 +4249,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002574
+  * Duration: 00:00:00.0001952
   * Outcome: Passed
 
 
@@ -4105,7 +4261,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000710
+  * Duration: 00:00:00.0000633
   * Outcome: Passed
 
 
@@ -4117,7 +4273,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0020554
+  * Duration: 00:00:00.0000122
   * Outcome: Passed
 
 
@@ -4129,7 +4285,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002288
+  * Duration: 00:00:00.0002338
   * Outcome: Passed
 
 
@@ -4141,7 +4297,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0132962
+  * Duration: 00:00:00.0119654
   * Outcome: Passed
 
 
@@ -4153,7 +4309,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0010962
+  * Duration: 00:00:00.0011406
   * Outcome: Passed
 
 
@@ -4165,7 +4321,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001419
+  * Duration: 00:00:00.0001276
   * Outcome: Passed
 
 
@@ -4177,7 +4333,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003289
+  * Duration: 00:00:00.0004237
   * Outcome: Passed
 
 
@@ -4189,7 +4345,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000857
+  * Duration: 00:00:00.0000939
   * Outcome: Passed
 
 
@@ -4201,7 +4357,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000318
+  * Duration: 00:00:00.0000246
   * Outcome: Passed
 
 
@@ -4213,7 +4369,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012125
+  * Duration: 00:00:00.0012647
   * Outcome: Passed
 
 
@@ -4225,7 +4381,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000037
+  * Duration: 00:00:00.0000049
   * Outcome: Passed
 
 
@@ -4237,7 +4393,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001779
+  * Duration: 00:00:00.0001613
   * Outcome: Passed
 
 
@@ -4249,7 +4405,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003022
+  * Duration: 00:00:00.0003847
   * Outcome: Passed
 
 
@@ -4261,7 +4417,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001359
+  * Duration: 00:00:00.0001280
   * Outcome: Passed
 
 
@@ -4273,7 +4429,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003318
+  * Duration: 00:00:00.0003347
   * Outcome: Passed
 
 
@@ -4285,7 +4441,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001534
+  * Duration: 00:00:00.0001434
   * Outcome: Passed
 
 
@@ -4297,7 +4453,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002224
+  * Duration: 00:00:00.0002248
   * Outcome: Passed
 
 
@@ -4309,7 +4465,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001687
+  * Duration: 00:00:00.0001825
   * Outcome: Passed
 
 
@@ -4321,7 +4477,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002090
+  * Duration: 00:00:00.0002002
   * Outcome: Passed
 
 
@@ -4333,7 +4489,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001477
+  * Duration: 00:00:00.0001170
   * Outcome: Passed
 
 
@@ -4345,7 +4501,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004727
+  * Duration: 00:00:00.0003321
   * Outcome: Passed
 
 
@@ -4357,7 +4513,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1517851
+  * Duration: 00:00:00.1785509
   * Outcome: Passed
 
 
@@ -4369,7 +4525,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009349
+  * Duration: 00:00:00.0008482
   * Outcome: Passed
 
 
@@ -4381,24 +4537,26 @@ TestContext Messages:
 * Categories
   * Simulate
 * Details: 
-  * Duration: 00:00:01.5064012
+  * Duration: 00:00:00.7313352
   * Outcome: Passed
 
 
 ### Standard Out
 
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sending: "{ hello = world }" [(null) -> af0d36be-1126-4421-8cf1-3807555ca138] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
+      Sending: "{ hello = world }" [(null) -> 5571d44a-cfba-46f2-9530-220f770ee3fa] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
 info: Eliassen.MessageQueueing.Tests.TestItems.TestMessageSenderProvider[0]
       SendAsync({ hello = world }, Eliassen.MessageQueueing.Services.MessageContext)
+info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
+      Sent: [(null) -> 5571d44a-cfba-46f2-9530-220f770ee3fa] => ((null))
 
 
 
 TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(107)-638451580929335330.txt: Attached
-message-TestMessageSenderProvider_SendAsync(22)-638451580934749560.json: Attached
-context-TestMessageSenderProvider_SendAsync(23)-638451580935275644.json: Attached
-correlationId: af0d36be-1126-4421-8cf1-3807555ca138
+Configuration-MessageSenderTests_GetServiceProvider(107)-638460138601114075.txt: Attached
+message-TestMessageSenderProvider_SendAsync(22)-638460138603536726.json: Attached
+context-TestMessageSenderProvider_SendAsync(23)-638460138603865478.json: Attached
+correlationId: 5571d44a-cfba-46f2-9530-220f770ee3fa
 
 ## Test Name: SendAsyncTest_ByKeyed
 
@@ -4408,30 +4566,26 @@ correlationId: af0d36be-1126-4421-8cf1-3807555ca138
 * Categories
   * Simulate
 * Details: 
-  * Duration: 00:00:00.0492646
+  * Duration: 00:00:00.0188950
   * Outcome: Passed
 
 
 ### Standard Out
 
-fail: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Error: "Error in the application." [(null) -> be174720-d78d-416a-a687-3ac2d38ee6ae]
-dbug: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Exception: System.ApplicationException: Error in the application.
-         at Eliassen.MessageQueueing.MessageSender`1.SendAsync(Object message, String correlationId) in c:\Repos\Nucleus\Net.Libs\Framework\Eliassen.MessageQueueing\MessageSender.cs:line 79
-       [(null) -> be174720-d78d-416a-a687-3ac2d38ee6ae]
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sending: "{ hello = world }" [(null) -> 1b54e3cd-0362-4cd1-b3c1-7257e7b8a656] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
+      Sending: "{ hello = world }" [(null) -> 8846b108-0f60-4c0e-9d19-65987846e931] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
 info: Eliassen.MessageQueueing.Tests.TestItems.TestMessageSenderProvider[0]
       SendAsync({ hello = world }, Eliassen.MessageQueueing.Services.MessageContext)
-info
+info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
+      Sent: [(null) -> 8846b108-0f60-4c0e-9d19-65987846e931] => ((null))
+
 
 
 TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(107)-638451580936292397.txt: Attached
-message-TestMessageSenderProvider_SendAsync(22)-638451580936481124.json: Attached
-context-TestMessageSenderProvider_SendAsync(23)-638451580936524378.json: Attached
-correlationId: 1b54e3cd-0362-4cd1-b3c1-7257e7b8a656
+Configuration-MessageSenderTests_GetServiceProvider(107)-638460138604778741.txt: Attached
+message-TestMessageSenderProvider_SendAsync(22)-638460138604844497.json: Attached
+context-TestMessageSenderProvider_SendAsync(23)-638460138604875245.json: Attached
+correlationId: 8846b108-0f60-4c0e-9d19-65987846e931
 
 ## Test Name: SendAsyncTest_Error
 
@@ -4441,21 +4595,25 @@ correlationId: 1b54e3cd-0362-4cd1-b3c1-7257e7b8a656
 * Categories
   * Simulate
 * Details: 
-  * Duration: 00:00:00.0243095
+  * Duration: 00:00:00.0187880
   * Outcome: Passed
 
 
 ### Standard Out
 
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sent: [(null) -> af0d36be-1126-4421-8cf1-3807555ca138] => ((null))
-info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sending: "{ hello = world }" [(null) -> be174720-d78d-416a-a687-3ac2d38ee6ae] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
+      Sending: "{ hello = world }" [(null) -> c599c2e8-0c80-4e64-b426-0d337fd786b2] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
+fail: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
+      Error: "Error in the application." [(null) -> c599c2e8-0c80-4e64-b426-0d337fd786b2]
+dbug: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
+      Exception: System.ApplicationException: Error in the application.
+         at Eliassen.MessageQueueing.MessageSender`1.SendAsync(Object message, String correlationId) in c:\Repos\Nucleus\Net.Libs\Framework\Eliassen.MessageQueueing\MessageSender.cs:line 79
+       [(null) -> c599c2e8-0c80-4e64-b426-0d337fd786b2]
 
 
 
 TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(107)-638451580936014048.txt: Attached
+Configuration-MessageSenderTests_GetServiceProvider(107)-638460138604564523.txt: Attached
 
 ## Test Name: SerializeTest
 
@@ -4465,14 +4623,14 @@ Configuration-MessageSenderTests_GetServiceProvider(107)-638451580936014048.txt:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0094795
+  * Duration: 00:00:00.1579428
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-result-BsonIdConverterTests_SerializeTest(24)-638451580928204404.json: Attached
+result-BsonIdConverterTests_SerializeTest(24)-638460138430100128.json: Attached
 Hello World
 
 ## Test Name: SerializeTest_Anonymous
@@ -4483,15 +4641,15 @@ Hello World
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0161306
+  * Duration: 00:00:00.1129983
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-DefaultJsonSerializerTests_SerializeTest_Anonymous(23)-638451580929021216.txt: Attached
-__f__AnonymousType0_1-DefaultJsonSerializerTests_SerializeTest_Anonymous(24)-638451580929060706.json: Attached
+String-DefaultJsonSerializerTests_SerializeTest_Anonymous(23)-638460138433917424.txt: Attached
+__f__AnonymousType0_1-DefaultJsonSerializerTests_SerializeTest_Anonymous(24)-638460138434620477.json: Attached
 
 ## Test Name: SerializeTest_AnonymousWithStringObjectDictionary
 
@@ -4501,15 +4659,15 @@ __f__AnonymousType0_1-DefaultJsonSerializerTests_SerializeTest_Anonymous(24)-638
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0425234
+  * Duration: 00:00:00.1163577
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(48)-638451580929438776.txt: Attached
-__f__AnonymousType1_2-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(49)-638451580929493561.json: Attached
+String-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(48)-638460138435523113.txt: Attached
+__f__AnonymousType1_2-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(49)-638460138436121126.json: Attached
 
 ## Test Name: SerializeTest_IConfigurationSection
 
@@ -4519,15 +4677,15 @@ __f__AnonymousType1_2-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStri
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0430563
+  * Duration: 00:00:00.1824293
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(72)-638451580929920369.txt: Attached
-Configuration-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(73)-638451580929986547.txt: Attached
+String-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(72)-638460138436670076.txt: Attached
+Configuration-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(73)-638460138437094596.txt: Attached
 
 ## Test Name: SerializeTest_Nullable
 
@@ -4537,15 +4695,15 @@ Configuration-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(73)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.3809662
+  * Duration: 00:00:00.5721145
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-result-BsonDateConverterTests_SerializeTest_Nullable(25)-638451580925589590.json: Attached
-2024-03-04T14:08:12.447924-05:00
+result-BsonDateConverterTests_SerializeTest_Nullable(25)-638460138423313611.json: Attached
+2024-03-14T11:50:42.1822629-04:00
 
 ## Test Name: SerializeTest_Value
 
@@ -4555,15 +4713,27 @@ result-BsonDateConverterTests_SerializeTest_Nullable(25)-638451580925589590.json
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0169585
+  * Duration: 00:00:00.0255419
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: Attached
-2024-03-04T14:08:12.6366808-05:00
+result-BsonDateConverterTests_SerializeTest_Value(47)-638460138424381454.json: Attached
+2024-03-14T11:50:42.4379187-04:00
+
+## Test Name: ToEnumTest (-1,-1)
+
+* Name: ToEnumTest (-1,-1)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000398
+  * Outcome: Passed
+
 
 ## Test Name: ToEnumTest (-1,-1)
 
@@ -4681,7 +4851,19 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0024702
+  * Duration: 00:00:00.0021546
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (0,Val0)
+
+* Name: ToEnumTest (0,Val0)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000363
   * Outcome: Passed
 
 
@@ -4801,6 +4983,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
+  * Duration: 00:00:00.0000261
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (1,Val1)
+
+* Name: ToEnumTest (1,Val1)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
   * Duration: 00:00:00.0000343
   * Outcome: Passed
 
@@ -4898,6 +5092,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
   * Unit
 * Details: 
   * Duration: 00:00:00.0000118
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (2,Val2)
+
+* Name: ToEnumTest (2,Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000240
   * Outcome: Passed
 
 
@@ -5017,6 +5223,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
+  * Duration: 00:00:00.0000495
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (3,Val1, Val2)
+
+* Name: ToEnumTest (3,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
   * Duration: 00:00:00.0000207
   * Outcome: Passed
 
@@ -5114,6 +5332,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
   * Unit
 * Details: 
   * Duration: 00:00:00.0000257
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (4,WithEnumValue)
+
+* Name: ToEnumTest (4,WithEnumValue)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000466
   * Outcome: Passed
 
 
@@ -5233,6 +5463,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
+  * Duration: 00:00:00.0004351
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (name,name2|test name,WithEnumValue, WithMemberName, WithDisplay)
+
+* Name: ToEnumTest (name,name2|test name,WithEnumValue, WithMemberName, WithDisplay)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
   * Duration: 00:00:00.0002766
   * Outcome: Passed
 
@@ -5330,6 +5572,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
   * Unit
 * Details: 
   * Duration: 00:00:00.0001738
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (name,WithEnumValue)
+
+* Name: ToEnumTest (name,WithEnumValue)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0032013
   * Outcome: Passed
 
 
@@ -5449,6 +5703,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
+  * Duration: 00:00:00.0004460
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (name2,WithMemberName)
+
+* Name: ToEnumTest (name2,WithMemberName)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
   * Duration: 00:00:00.0004737
   * Outcome: Passed
 
@@ -5557,7 +5823,19 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0032468
+  * Duration: 00:00:00.0033355
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (test description,WithDescription)
+
+* Name: ToEnumTest (test description,WithDescription)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002160
   * Outcome: Passed
 
 
@@ -5677,6 +5955,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
+  * Duration: 00:00:00.0040805
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (test display,WithDisplay)
+
+* Name: ToEnumTest (test display,WithDisplay)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
   * Duration: 00:00:00.0003246
   * Outcome: Passed
 
@@ -5774,6 +6064,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
   * Unit
 * Details: 
   * Duration: 00:00:00.0001390
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (test name,WithDisplay)
+
+* Name: ToEnumTest (test name,WithDisplay)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0003704
   * Outcome: Passed
 
 
@@ -5893,6 +6195,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
+  * Duration: 00:00:00.0002242
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (test short,WithDisplay)
+
+* Name: ToEnumTest (test short,WithDisplay)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
   * Duration: 00:00:00.0004057
   * Outcome: Passed
 
@@ -5990,6 +6304,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
   * Unit
 * Details: 
   * Duration: 00:00:00.0002376
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (Val1,Val1)
+
+* Name: ToEnumTest (Val1,Val1)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0101277
   * Outcome: Passed
 
 
@@ -6109,6 +6435,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
+  * Duration: 00:00:00.0000268
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (Val2 , Val1,Val1, Val2)
+
+* Name: ToEnumTest (Val2 , Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
   * Duration: 00:00:00.0000318
   * Outcome: Passed
 
@@ -6206,6 +6544,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
   * Unit
 * Details: 
   * Duration: 00:00:00.0000114
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (Val2 ,Val1,Val1, Val2)
+
+* Name: ToEnumTest (Val2 ,Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000277
   * Outcome: Passed
 
 
@@ -6325,6 +6675,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
+  * Duration: 00:00:00.0000371
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (Val2, Val1,Val1, Val2)
+
+* Name: ToEnumTest (Val2, Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
   * Duration: 00:00:00.0000325
   * Outcome: Passed
 
@@ -6422,6 +6784,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
   * Unit
 * Details: 
   * Duration: 00:00:00.0000160
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (Val2,Val1,Val1, Val2)
+
+* Name: ToEnumTest (Val2,Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000363
   * Outcome: Passed
 
 
@@ -6541,6 +6915,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
+  * Duration: 00:00:00.0015432
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (Val2,Val2)
+
+* Name: ToEnumTest (Val2,Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
   * Duration: 00:00:00.0000437
   * Outcome: Passed
 
@@ -6638,6 +7024,18 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
   * Unit
 * Details: 
   * Duration: 00:00:00.0000481
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (Val2|Val1,Val1, Val2)
+
+* Name: ToEnumTest (Val2|Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000755
   * Outcome: Passed
 
 
@@ -6757,7 +7155,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000109
+  * Duration: 00:00:00.0000129
   * Outcome: Passed
 
 
@@ -6769,7 +7167,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000161
+  * Duration: 00:00:00.0000241
   * Outcome: Passed
 
 
@@ -6781,7 +7179,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000842
+  * Duration: 00:00:00.0001614
   * Outcome: Passed
 
 
@@ -6793,7 +7191,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000216
+  * Duration: 00:00:00.0000125
   * Outcome: Passed
 
 
@@ -6805,7 +7203,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000858
+  * Duration: 00:00:00.0000638
   * Outcome: Passed
 
 
@@ -6817,7 +7215,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0015953
+  * Duration: 00:00:00.0011784
   * Outcome: Passed
 
 
@@ -6829,7 +7227,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001550
+  * Duration: 00:00:00.0002880
   * Outcome: Passed
 
 
@@ -6841,7 +7239,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000145
+  * Duration: 00:00:00.0000114
   * Outcome: Passed
 
 
@@ -6853,7 +7251,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0002366
+  * Duration: 00:00:00.0000769
   * Outcome: Passed
 
 
@@ -6865,7 +7263,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000109
+  * Duration: 00:00:00.0000140
   * Outcome: Passed
 
 
@@ -6877,7 +7275,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000842
+  * Duration: 00:00:00.0001431
   * Outcome: Passed
 
 
@@ -6889,7 +7287,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000111
+  * Duration: 00:00:00.0000065
   * Outcome: Passed
 
 
@@ -6901,7 +7299,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000740
+  * Duration: 00:00:00.0003423
   * Outcome: Passed
 
 
@@ -6913,7 +7311,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004674
+  * Duration: 00:00:00.0004775
   * Outcome: Passed
 
 
@@ -6925,7 +7323,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000877
+  * Duration: 00:00:00.0001009
   * Outcome: Passed
 
 
@@ -6937,7 +7335,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000084
+  * Duration: 00:00:00.0000116
   * Outcome: Passed
 
 
@@ -6949,7 +7347,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001039
+  * Duration: 00:00:00.0000561
   * Outcome: Passed
 
 
@@ -6961,7 +7359,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638451580926369335.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0067310
+  * Duration: 00:00:00.0015268
   * Outcome: Passed
 
 
@@ -6984,7 +7382,7 @@ visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009378
+  * Duration: 00:00:00.0026230
   * Outcome: Passed
 
 
@@ -7007,7 +7405,7 @@ visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009898
+  * Duration: 00:00:00.0011259
   * Outcome: Passed
 
 
@@ -7030,7 +7428,7 @@ visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005325
+  * Duration: 00:00:00.0005050
   * Outcome: Passed
 
 
@@ -7053,7 +7451,7 @@ visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0016105
+  * Duration: 00:00:00.0012476
   * Outcome: Passed
 
 
@@ -7076,7 +7474,7 @@ visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0008686
+  * Duration: 00:00:00.0012638
   * Outcome: Passed
 
 
@@ -7099,7 +7497,7 @@ visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0040907
+  * Duration: 00:00:00.0005806
   * Outcome: Passed
 
 
@@ -7122,7 +7520,7 @@ visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComp
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0074416
+  * Duration: 00:00:00.0022782
   * Outcome: Passed
 
 
@@ -7140,7 +7538,7 @@ visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringCompar
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0022461
+  * Duration: 00:00:00.0009097
   * Outcome: Passed
 
 
@@ -7158,7 +7556,7 @@ visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringCompar
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0033147
+  * Duration: 00:00:00.0010667
   * Outcome: Passed
 
 
@@ -7176,7 +7574,7 @@ visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringCompar
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009262
+  * Duration: 00:00:00.0015909
   * Outcome: Passed
 
 
@@ -7195,7 +7593,7 @@ result: False
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0021810
+  * Duration: 00:00:00.0011995
   * Outcome: Passed
 
 
@@ -7214,7 +7612,7 @@ result: False
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0048346
+  * Duration: 00:00:00.0010007
   * Outcome: Passed
 
 
@@ -7233,7 +7631,7 @@ result: False
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0047244
+  * Duration: 00:00:00.0016395
   * Outcome: Passed
 
 
@@ -7252,7 +7650,7 @@ result: False
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0102000
+  * Duration: 00:00:00.0070527
   * Outcome: Passed
 
 
@@ -7275,7 +7673,7 @@ visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringCompar
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0077252
+  * Duration: 00:00:00.0037122
   * Outcome: Passed
 
 
@@ -7294,7 +7692,7 @@ result: True
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0035746
+  * Duration: 00:00:00.0007502
   * Outcome: Passed
 
 
@@ -7317,7 +7715,7 @@ visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringCompar
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0011586
+  * Duration: 00:00:00.0009490
   * Outcome: Passed
 
 
@@ -7340,7 +7738,7 @@ visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringCompar
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012716
+  * Duration: 00:00:00.0007090
   * Outcome: Passed
 
 
@@ -7363,7 +7761,7 @@ visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringCo
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0019771
+  * Duration: 00:00:00.0012383
   * Outcome: Passed
 
 
@@ -7386,7 +7784,7 @@ visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringCo
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0010013
+  * Duration: 00:00:00.0012629
   * Outcome: Passed
 
 
