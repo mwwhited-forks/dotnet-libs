@@ -2,8 +2,8 @@
 
 ## Summary 
 
-Application: Eliassen.Libs (0.1.68-dev-fix-local-scripts.2) \
-Time: 2024-03-04T19:09:28.7941725Z \
+Application: Eliassen.Libs (0.1.69-dev-update-framework.1) \
+Time: 2024-03-14T15:52:02.3461619Z \
 Tool: CycloneDX (3.0.5.0). 
 
 ## Components 
@@ -228,28 +228,28 @@ Package URL: pkg:nuget/Handlebars.Net.Extension.Json@1.0.0
 System.Text.Json extension for Handlebars.Net 
 
 
-### Handlebars.Net.Helpers (2.4.1.4) 
+### Handlebars.Net.Helpers (2.4.1.5) 
 
 Author: Stef Heyenrath \
 Copyright: Copyright © 2020-2023 Stef Heyenrath \
 License: MIT \
 Reference: [website](https://github.com/Handlebars-Net/Handlebars.Net.Helpers) \
-Hash: [SHA-512](3020CAED5D30DD8C52782721D721150594C3C2838B89FFF8F1464BD09AF6012E1CF0D39B629A85FE0D48E950190C41EA82E267C697FA0C00F6E1E9190132AFC9) \
-Package URL: pkg:nuget/Handlebars.Net.Helpers@2.4.1.4 
+Hash: [SHA-512](4E76087B27BC9CF1F07E4E9AF67AC1A8065CBE359DB8F860D028F421A7B16D43793C039D9A0C73CD23E2278C4C0611E81441E764B389CE603F2EFF0B82A6F70B) \
+Package URL: pkg:nuget/Handlebars.Net.Helpers@2.4.1.5 
 
 #### Description: 
 
 Several Handlebars.Net helpers in the categories: 'Boolean', 'Constants', 'DateTime', 'Path', 'Enumerable', 'Environment', 'Math', 'Regex', 'String' and 'Urls'. 
 
 
-### Handlebars.Net.Helpers.Core (2.4.1.4) 
+### Handlebars.Net.Helpers.Core (2.4.1.5) 
 
 Author: Stef Heyenrath \
 Copyright: Copyright © 2020-2023 Stef Heyenrath \
 License: MIT \
 Reference: [website](https://github.com/Handlebars-Net/Handlebars.Net.Helpers) \
-Hash: [SHA-512](AE746BF0371CE978FCDDE6F3DA3F17FE8D8B6B4FE00126AAB82E1BC967418B8C571B2042966E772E8799D27A957C5FEE30F7560F205120AD7002446577D55645) \
-Package URL: pkg:nuget/Handlebars.Net.Helpers.Core@2.4.1.4 
+Hash: [SHA-512](25E62908CB9383B5B4EADC5559B920B76BC8C151E9075D1A77604F328B409103211FEB42449386CC885F66CAD0EBCE05CAD3617A27E810CDC207071CC7284F26) \
+Package URL: pkg:nuget/Handlebars.Net.Helpers.Core@2.4.1.5 
 
 #### Description: 
 
@@ -410,20 +410,20 @@ Package URL: pkg:nuget/Microsoft.ApplicationInsights.WindowsServer.TelemetryChan
 This nuget provides a telemetry channel to Application Insights Windows Server SDK that will preserve telemetry in offline scenarios. This is a dependent package, for the best experience please install the platform specific package. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156 
 
 
-### Microsoft.AspNetCore.Authentication.JwtBearer (8.0.2) 
+### Microsoft.AspNetCore.Authentication.JwtBearer (8.0.3) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://asp.net/) \
-Hash: [SHA-512](EBD8E486275A91C76D58762EA198789848F7ADA3748725C3F01EC0A22E245F42A46CCD8F7FEA4FE9111AC040F1B212856E73BA6F4EEB542EDBEC494C88A694EF) \
-Package URL: pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.2 
+Hash: [SHA-512](002A33F10F28482C45CD96529C39292B1BA19656A62C5936B5AEC23233D38289DF632E4EFF05F224FA2B04A10EC86DC1A872C714EA20EDBA99AD3D5EECD214C1) \
+Package URL: pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.3 
 
 #### Description: 
 
 ASP.NET Core middleware that enables an application to receive an OpenID Connect bearer token.
 
-This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/da7e9894ce22ef8cc02e5acc56e95a6f8cf8f644 
+This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/88ec3bc3f37e76fbcc932a25f9f0c1c29fe2b343 
 
 
 ### Microsoft.AspNetCore.Hosting (2.1.1) 
@@ -920,14 +920,14 @@ Package URL: pkg:nuget/Microsoft.Extensions.DependencyInjection@8.0.0
 Default implementation of dependency injection for Microsoft.Extensions.DependencyInjection. 
 
 
-### Microsoft.Extensions.DependencyInjection.Abstractions (8.0.0) 
+### Microsoft.Extensions.DependencyInjection.Abstractions (8.0.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://dot.net/) \
-Hash: [SHA-512](94BC05ED29755109565D9CDFC901087EE1FA08302DDA393106BC9A0BD7384F0DC2B6C2F123C1BD53FCE06BABDBFA845DC6D22A163C4B0646C5251DCC5AEAC282) \
-Package URL: pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0 
+Hash: [SHA-512](8118DA9932DA382B1C22379F9169BEA93CABCF17F5D56C1B6616FAE23B1BF14B4A38539B7F8417F63F161B14021F2634DF9E4F9FA62F5FC84667018A1D92C967) \
+Package URL: pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.1 
 
 #### Description: 
 
@@ -1172,14 +1172,14 @@ Microsoft.Extensions.Logging.LoggerMessage
 Microsoft.Extensions.Logging.Abstractions.NullLogger 
 
 
-### Microsoft.Extensions.Logging.Abstractions (8.0.0) 
+### Microsoft.Extensions.Logging.Abstractions (8.0.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://dot.net/) \
-Hash: [SHA-512](50A0ADD96D30D90580FB8E02A25CEA0AA15F4D22744279B5ACFE18CC8568B74402AA062D5DB13CC5887A08BFD24E07CBC88B2FC10EE8EEC2C37EDF3BCDA7F8A7) \
-Package URL: pkg:nuget/Microsoft.Extensions.Logging.Abstractions@8.0.0 
+Hash: [SHA-512](C8E0FDB230E0133F2E3E2F84F300258F4348FC34AF23CE597CF12446E0E91711CB4D4D0FEF3333DE3AC23A49E006A9EEF36BAF95D2B5B7449C3D755A6D55C045) \
+Package URL: pkg:nuget/Microsoft.Extensions.Logging.Abstractions@8.0.1 
 
 #### Description: 
 
