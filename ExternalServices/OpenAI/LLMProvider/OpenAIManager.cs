@@ -1,11 +1,9 @@
-﻿using Nucleus.AbstractAI.Contracts.Managers;
-using System.Threading.Tasks;
+﻿using Azure;
 using Azure.AI.OpenAI;
-using Azure;
+using Eliassen.AI.Abstractions;
 using Microsoft.Extensions.Configuration;
-using System;
 
-namespace Nucleus.AbstractAI.Business.Managers
+namespace LLMProvider
 {
     public class OpenAIManager : IOpenAIManager
     {
@@ -24,7 +22,7 @@ namespace Nucleus.AbstractAI.Business.Managers
 
             ChatCompletionsOptions chatCompletionsOptions = new()
             {
-                DeploymentName = "gpt-3.5-turbo", 
+                DeploymentName = "gpt-3.5-turbo",
                 Messages =
                 {
                     // The system message represents instructions or other guidance about how the assistant should behave
@@ -36,11 +34,12 @@ namespace Nucleus.AbstractAI.Business.Managers
 
             Response<ChatCompletions> response;
 
-            try {
+            try
+            {
                 response = await api.GetChatCompletionsAsync(chatCompletionsOptions);
                 return response.Value.Choices[0].Message.Content;
-            } 
-            catch(Exception ex) 
+            }
+            catch (Exception ex)
             {
                 return ex.Message;
             }

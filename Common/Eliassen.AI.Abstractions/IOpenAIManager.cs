@@ -1,7 +1,5 @@
-﻿using System.Threading.Tasks;
-
-namespace Nucleus.AbstractAI.Contracts.Managers
-{
+﻿namespace Eliassen.AI.Abstractions
+{    
     public interface IOpenAIManager
     {
         Task<string> GetResponseAsync(string promptDetails, string userInput);
