@@ -3,7 +3,7 @@ using Azure.AI.OpenAI;
 using Eliassen.AI.Abstractions;
 using Microsoft.Extensions.Configuration;
 
-namespace LLMProvider
+namespace Eliassen.LLMProvider
 {
     public class OpenAIManager : IOpenAIManager
     {
