@@ -19,6 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\AI\Nucleus.AbstractAI.Contracts\Nucleus.AbstractAI.Contracts.csproj" />
 	  <ProjectReference Include="..\..\Common\Eliassen.Common.Complete\Eliassen.Common.Complete.csproj" />
 	</ItemGroup>
 
