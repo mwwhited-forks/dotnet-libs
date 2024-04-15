@@ -21,8 +21,8 @@ namespace Eliassen.WebApi.Controllers
         /// </summary>
         /// <returns>The string response from the AbstractAI</returns>
         [HttpPost]
-        public async Task<string> GetResponseAsync(string promptDetails, string userInput) =>
-            await _openAIManager.GetResponseAsync(promptDetails, userInput);
+        public async Task<string> GetResponseAsync(string promptDetails, string userInput, string openAiKey) =>
+            await _openAIManager.GetResponseAsync(promptDetails, userInput, openAiKey);
     }
 }
 

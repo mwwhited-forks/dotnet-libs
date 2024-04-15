@@ -7,18 +7,14 @@ namespace Eliassen.LLMProvider
 {
     public class OpenAIManager : IOpenAIManager
     {
-        private readonly IConfiguration _config;
-        private readonly string OpenAiKey = "";
-
-        public OpenAIManager(IConfiguration config)
+        public OpenAIManager()
         {
-            _config = config;
-            OpenAiKey = _config.GetValue<string>("OpenAI:apiKey");
+
         }
 
-        public async Task<string> GetResponseAsync(string promptDetails, string userInput)
+        public async Task<string> GetResponseAsync(string promptDetails, string userInput, string openAiKey)
         {
-            OpenAIClient api = new(OpenAiKey);
+            OpenAIClient api = new(openAiKey);
 
             ChatCompletionsOptions chatCompletionsOptions = new()
             {
