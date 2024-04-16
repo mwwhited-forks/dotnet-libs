@@ -1,6 +1,7 @@
 ﻿#if DEBUG
 
 using Eliassen.AI.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Eliassen.WebApi.Controllers
@@ -21,6 +22,7 @@ namespace Eliassen.WebApi.Controllers
         /// </summary>
         /// <returns>The string response from the AbstractAI</returns>
         [HttpPost]
+        [AllowAnonymous]
         public async Task<string> GetResponseAsync(string promptDetails, string userInput, string openAiKey) =>
             await _openAIManager.GetResponseAsync(promptDetails, userInput, openAiKey);
     }

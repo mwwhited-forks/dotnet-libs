@@ -1,4 +1,6 @@
-﻿using Eliassen.MessageQueueing;
+﻿using Eliassen.AI.Abstractions;
+using Eliassen.LLMProvider;
+using Eliassen.MessageQueueing;
 using Eliassen.WebApi.Provider;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -18,6 +20,7 @@ public static class ApplicationServiceCollectionBuilder
     {
         services.TryAddTransient<IExampleMessageProvider, ExampleMessageProvider>();
         services.TryAddTransient<IMessageQueueHandler, ExampleMessageProvider>();
+        services.TryAddTransient<IOpenAIManager, OpenAIManager>();
         return services;
     }
 }
