@@ -1,7 +1,6 @@
 ﻿using Eliassen.Azure.StorageAccount.BlobStorage;
 using Eliassen.MailKit.Services;
 using Eliassen.MongoDB.Extensions;
-using LLMProvider.Services;
 
 namespace Eliassen.Common.Extensions;
 
@@ -41,4 +40,6 @@ public record ExternalExtensionBuilder
     /// The configuration section name for IMAP client options (MailKit). Default is "MailKitImapClientOptions".
     /// </value>
     public string ImapConfigurationSection { get; init; } = nameof(MailKitImapClientOptions);
+
+    public string OpenAIClientOptions { get; init; } = nameof(OpenAIClientOptions);
 }

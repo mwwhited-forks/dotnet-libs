@@ -1,5 +1,4 @@
-﻿
-namespace LLMProvider.Services;
+﻿namespace Eliassen.OpenAI.AI.Services;
 public class OpenAIOptions
 {
     /// <summary>

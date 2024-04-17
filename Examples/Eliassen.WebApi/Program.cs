@@ -2,10 +2,6 @@
 using Eliassen.Common;
 using Eliassen.Common.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using LLMProvider;
-using Eliassen.Handlebars;
-using Microsoft.Graph.Models.ExternalConnectors;
-using Microsoft.Extensions.Configuration;
 
 namespace Eliassen.WebApi;
 
@@ -27,12 +23,11 @@ public static class Program
         services.AddApplicationServices();
 
         //TODO figure this out
-        services.TryAddAIAbstractions(builder.Configuration, "OpenAIClientOptions");
 
         var identityProvider = Enum.TryParse<IdentityProviders>(
             Environment.GetEnvironmentVariable("IDENTITY_PROVIDER"), ignoreCase: true, out var ip) ? ip : IdentityProviders.AzureB2C;
         var authProvider = identityProvider != IdentityProviders.None ? $"{identityProvider}:" : "";
-        var skipHosting = bool.TryParse(Environment.GetEnvironmentVariable("SWAGGER_ONLY"), out var ret) && ret;
+        var skipHosting = true; // bool.TryParse(Environment.GetEnvironmentVariable("SWAGGER_ONLY"), out var ret) && ret;
 
         // Add internal services
         services.TryAllCommonExtensions(

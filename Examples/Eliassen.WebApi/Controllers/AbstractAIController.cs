@@ -1,6 +1,4 @@
-﻿#if DEBUG
-
-using Eliassen.AI;
+﻿using Eliassen.AI;
 using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -28,5 +26,3 @@ namespace Eliassen.WebApi.Controllers
             await _llmProvider.GetResponseAsync(model.PromptDetails, model.UserInput);
     }
 }
-
-#endif
