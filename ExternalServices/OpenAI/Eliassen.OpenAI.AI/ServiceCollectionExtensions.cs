@@ -8,7 +8,7 @@ namespace Eliassen.OpenAI.AI;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection TryAddAIAbstractions(
+    public static IServiceCollection TryAddOpenAIServices(
         this IServiceCollection services,
         IConfiguration configuration,
 #if DEBUG
