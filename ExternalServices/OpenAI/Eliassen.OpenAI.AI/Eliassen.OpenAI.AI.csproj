@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\Eliassen.AI.Abstractions\Eliassen.AI.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\Framework\Eliassen.AI.Abstractions\Eliassen.AI.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
