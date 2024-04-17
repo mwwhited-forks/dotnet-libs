@@ -1,6 +1,7 @@
 ﻿#if DEBUG
 
 using Eliassen.AI;
+using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,8 +24,8 @@ namespace Eliassen.WebApi.Controllers
         /// <returns>The string response from the AbstractAI</returns>
         [HttpPost]
         [AllowAnonymous]
-        public async Task<string> GetResponseAsync(string promptDetails, string userInput) =>
-            await _llmProvider.GetResponseAsync(promptDetails, userInput);
+        public async Task<string> GetResponseAsync([FromBody] GenAiRequestModel model) =>
+            await _llmProvider.GetResponseAsync(model.PromptDetails, model.UserInput);
     }
 }
 
