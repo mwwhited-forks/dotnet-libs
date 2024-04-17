@@ -54,7 +54,7 @@ public static class ServiceCollectionExtensions
         if (identityBuilder.IdentityProvider.HasFlag(IdentityProviders.Keycloak))
             services.TryAddKeycloakServices(configuration, identityBuilder.KeycloakIdentityConfigurationSection);
 
-        services.TryAddAIAbstractions(configuration, externalBuilder.OpenAIClientOptions);
+        services.TryAddOpenAIServices(configuration, externalBuilder.OpenAIClientOptions);
 
         return services;
     }
