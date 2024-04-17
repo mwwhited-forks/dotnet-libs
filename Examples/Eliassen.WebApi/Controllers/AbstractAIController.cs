@@ -1,6 +1,6 @@
 ﻿#if DEBUG
 
-using Eliassen.AI.Abstractions;
+using Eliassen.AI;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,11 +10,11 @@ namespace Eliassen.WebApi.Controllers
     [ApiController]
     public class AbstractAIController : ControllerBase
     {
-        private readonly IOpenAIManager _openAIManager;
+        private readonly ILangageModelProvider _llmProvider;
 
-        public AbstractAIController(IOpenAIManager openAIManager)
+        public AbstractAIController(ILangageModelProvider llmProvider)
         {
-            _openAIManager = openAIManager;
+            _llmProvider = llmProvider;
         }
 
         /// <summary>
@@ -23,8 +23,8 @@ namespace Eliassen.WebApi.Controllers
         /// <returns>The string response from the AbstractAI</returns>
         [HttpPost]
         [AllowAnonymous]
-        public async Task<string> GetResponseAsync(string promptDetails, string userInput, string openAiKey) =>
-            await _openAIManager.GetResponseAsync(promptDetails, userInput, openAiKey);
+        public async Task<string> GetResponseAsync(string promptDetails, string userInput) =>
+            await _llmProvider.GetResponseAsync(promptDetails, userInput);
     }
 }
 

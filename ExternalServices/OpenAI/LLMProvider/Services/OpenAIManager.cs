@@ -2,8 +2,9 @@
 using Azure.AI.OpenAI;
 using Microsoft.Extensions.Options;
 using LLMProvider.Services;
+using Eliassen.AI;
 
-namespace Eliassen.LLMProvider
+namespace Eliassen.OpenAI.AI.Services
 {
     public class OpenAIManager(IOptions<OpenAIOptions> config) : ILangageModelProvider
     {

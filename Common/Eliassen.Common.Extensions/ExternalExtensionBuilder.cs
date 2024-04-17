@@ -1,6 +1,7 @@
 ﻿using Eliassen.Azure.StorageAccount.BlobStorage;
 using Eliassen.MailKit.Services;
 using Eliassen.MongoDB.Extensions;
+using LLMProvider.Services;
 
 namespace Eliassen.Common.Extensions;
 

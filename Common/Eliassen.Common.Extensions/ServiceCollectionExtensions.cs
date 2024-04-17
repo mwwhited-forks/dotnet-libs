@@ -5,6 +5,7 @@ using Eliassen.Microsoft.ApplicationInsights;
 using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB;
 using Eliassen.RabbitMQ;
+using LLMProvider;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -42,7 +43,6 @@ public static class ServiceCollectionExtensions
         services.TryAddAzureStorageServices(configuration, externalBuilder.AzureBlobContainerConfigurationSection);
         services.TryAddRabbitMQServices();
         services.TryAddMailKitExtensions(configuration, externalBuilder.SmtpConfigurationSection, externalBuilder.ImapConfigurationSection);
-
 #if DEBUG
 #warning Not feature is not complete and should not be used in production.
         services.TryAddApplicationInsightsExtensions();
