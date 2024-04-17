@@ -11,8 +11,4 @@
     <PackageReference Include="Eliassen.System" Version="0.1.57" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\Eliassen.AI.Abstractions\Eliassen.AI.Abstractions.csproj" />
-  </ItemGroup>
-
 </Project>

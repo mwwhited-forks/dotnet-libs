@@ -1,24 +1,19 @@
 ﻿using Azure;
 using Azure.AI.OpenAI;
-using Eliassen.AI.Abstractions;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using LLMProvider.Services;
 
 namespace Eliassen.LLMProvider
 {
-    public class OpenAIManager : IOpenAIManager
+    public class OpenAIManager(IOptions<OpenAIOptions> config) : ILangageModelProvider
     {
-        public OpenAIManager()
+        public async Task<string> GetResponseAsync(string promptDetails, string userInput)
         {
-
-        }
-
-        public async Task<string> GetResponseAsync(string promptDetails, string userInput, string openAiKey)
-        {
-            OpenAIClient api = new(openAiKey);
+            OpenAIClient api = new(config.Value.APIKey);
 
             ChatCompletionsOptions chatCompletionsOptions = new()
             {
-                DeploymentName = "gpt-3.5-turbo",
+                DeploymentName = config.Value.DeploymentName,
                 Messages =
                 {
                     // The system message represents instructions or other guidance about how the assistant should behave
@@ -37,7 +32,7 @@ namespace Eliassen.LLMProvider
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                throw;
             }
         }
     }
