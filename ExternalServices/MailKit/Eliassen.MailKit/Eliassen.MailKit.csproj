@@ -11,9 +11,9 @@
 	<ItemGroup>
 		<PackageReference Include="MailKit " Version="4.3.0" />
 
-		<PackageReference Include="Microsoft.Extensions.Options" Version="8.0.1" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.1" />
 	</ItemGroup>
 
@@ -23,6 +23,10 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\Framework\Eliassen.Communications.Abstractions\Eliassen.Communications.Abstractions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="MailKit" Version="4.4.0" />
 	</ItemGroup>
 
 </Project>

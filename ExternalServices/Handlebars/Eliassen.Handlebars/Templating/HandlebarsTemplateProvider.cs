@@ -58,7 +58,7 @@ public class HandlebarsTemplateProvider(IHash hash, IEnumerable<IHelpersRegistry
         var handlebar = HandlebarsDotNet.Handlebars.Create();
         handlebar.Configuration.UseJson();
 
-        foreach (var item in helpersRegistry ?? Enumerable.Empty<IHelpersRegistry>())
+        foreach (var item in helpersRegistry ?? [])
         {
             foreach (var helper in item.GetBlockHelpers())
             {

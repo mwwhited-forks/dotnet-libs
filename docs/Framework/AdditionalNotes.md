@@ -3,7 +3,7 @@
 ## Documentation To do
 
 - [ ] Write up how to use and configure these things
-  - [ ] Queueing System
+  - [ ] Queuing System
     - [ ] Sender
     - [ ] Receiver
   - [ ] Email
@@ -17,7 +17,7 @@
   - [ ] Core projects
   - [ ] Dev projects
     
-  - [ ] Extensable framework with patterns and pracitces 
+  - [ ] Extensible framework with patterns and practices 
   - [ ] Agnostic, queue, platform agnostic
   - [ ] Centralize openai chatbot
 

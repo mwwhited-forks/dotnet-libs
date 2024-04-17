@@ -129,7 +129,7 @@ public class QueryBuilder<TModel>(
     ICaptureResultMessage? messages = null
         ) : QueryBuilder, IQueryBuilder<TModel>
 {
-    private readonly IEnumerable<IPostBuildExpressionVisitor> _postBuildVisitors = postBuildVisitors ?? Enumerable.Empty<IPostBuildExpressionVisitor>();
+    private readonly IEnumerable<IPostBuildExpressionVisitor> _postBuildVisitors = postBuildVisitors ?? [];
     private readonly ILogger _logger = logger ?? new ConsoleLogger<QueryBuilder>();
     private readonly ICaptureResultMessage _messages = messages ?? CaptureResultMessage.Default;
 
