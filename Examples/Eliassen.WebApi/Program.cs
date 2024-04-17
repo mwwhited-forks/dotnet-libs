@@ -22,12 +22,10 @@ public static class Program
         // Add example application services 
         services.AddApplicationServices();
 
-        //TODO figure this out
-
         var identityProvider = Enum.TryParse<IdentityProviders>(
             Environment.GetEnvironmentVariable("IDENTITY_PROVIDER"), ignoreCase: true, out var ip) ? ip : IdentityProviders.AzureB2C;
         var authProvider = identityProvider != IdentityProviders.None ? $"{identityProvider}:" : "";
-        var skipHosting = true; // bool.TryParse(Environment.GetEnvironmentVariable("SWAGGER_ONLY"), out var ret) && ret;
+        var skipHosting = bool.TryParse(Environment.GetEnvironmentVariable("SWAGGER_ONLY"), out var ret) && ret;
 
         // Add internal services
         services.TryAllCommonExtensions(
