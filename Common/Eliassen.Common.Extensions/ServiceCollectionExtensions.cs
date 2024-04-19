@@ -9,6 +9,7 @@ using Eliassen.OpenSearch;
 using Eliassen.Qdrant;
 using Eliassen.RabbitMQ;
 using Eliassen.SBert;
+using Eliassen.WkHtmlToPdf;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -62,6 +63,8 @@ public static class ServiceCollectionExtensions
         services.TryAddSbertServices(configuration, externalBuilder.SBertOptionSection);
         services.TryAddQdrantServices(configuration, externalBuilder.QdrantOptionSection);
         services.TryAddOpenSearchServices(configuration, externalBuilder.OpenSearchOptionSection);
+
+        services.TryAddWkHtmlToPdfServices();
 
         return services;
     }
