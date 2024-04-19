@@ -17,9 +17,9 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
-		<PackageReference Include="Microsoft.Graph" Version="5.44.0" />
-		<PackageReference Include="Azure.Identity" Version="1.10.4" />
-		<PackageReference Include="Microsoft.Identity.Client" Version="4.59.0" />
+		<PackageReference Include="Microsoft.Graph" Version="5.49.0" />
+		<PackageReference Include="Azure.Identity" Version="1.11.1" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.60.3" />
 	</ItemGroup>
 
 	<ItemGroup>
