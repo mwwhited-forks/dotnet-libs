@@ -1,7 +1,6 @@
-﻿namespace Eliassen.Qdrant
+﻿namespace Eliassen.Qdrant;
+
+public interface ISemanticStoreProviderFactory
 {
-    public interface ISemanticStoreProviderFactory
-    {
-        SemanticStoreProvider Create(bool forSummary);
-    }
+    SemanticStoreProvider Create(bool forSummary);
 }

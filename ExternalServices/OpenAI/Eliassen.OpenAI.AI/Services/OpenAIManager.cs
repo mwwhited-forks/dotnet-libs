@@ -3,39 +3,38 @@ using Azure.AI.OpenAI;
 using Eliassen.AI;
 using Microsoft.Extensions.Options;
 
-namespace Eliassen.OpenAI.AI.Services
+namespace Eliassen.OpenAI.AI.Services;
+
+public class OpenAIManager(IOptions<OpenAIOptions> config) : ILangageModelProvider
 {
-    public class OpenAIManager(IOptions<OpenAIOptions> config) : ILangageModelProvider
+    private readonly IOptions<OpenAIOptions> _config = config;
+
+    public async Task<string> GetResponseAsync(string promptDetails, string userInput)
     {
-        private readonly IOptions<OpenAIOptions> _config = config;
+        OpenAIClient api = new(_config.Value.APIKey);
 
-        public async Task<string> GetResponseAsync(string promptDetails, string userInput)
+        ChatCompletionsOptions chatCompletionsOptions = new()
         {
-            OpenAIClient api = new(_config.Value.APIKey);
-
-            ChatCompletionsOptions chatCompletionsOptions = new()
+            DeploymentName = _config.Value.DeploymentName,
+            Messages =
             {
-                DeploymentName = _config.Value.DeploymentName,
-                Messages =
-                {
-                    // The system message represents instructions or other guidance about how the assistant should behave
-                    new ChatRequestSystemMessage(promptDetails),
-                    // User messages represent current or historical input from the end user
-                    new ChatRequestUserMessage(userInput)
-                }
-            };
-
-            Response<ChatCompletions> response;
-
-            try
-            {
-                response = await api.GetChatCompletionsAsync(chatCompletionsOptions);
-                return response.Value.Choices[0].Message.Content;
+                // The system message represents instructions or other guidance about how the assistant should behave
+                new ChatRequestSystemMessage(promptDetails),
+                // User messages represent current or historical input from the end user
+                new ChatRequestUserMessage(userInput)
             }
-            catch (Exception ex)
-            {
-                throw;
-            }
+        };
+
+        Response<ChatCompletions> response;
+
+        try
+        {
+            response = await api.GetChatCompletionsAsync(chatCompletionsOptions);
+            return response.Value.Choices[0].Message.Content;
+        }
+        catch (Exception ex)
+        {
+            throw;
         }
     }
 }

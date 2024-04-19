@@ -1,5 +1,6 @@
 ﻿using Eliassen.Communications;
 using Eliassen.Communications.MessageQueueing;
+using Eliassen.Documents;
 using Eliassen.Identity;
 using Eliassen.MessageQueueing;
 using Eliassen.Search;
@@ -40,6 +41,7 @@ public static class ServiceCollectionExtensions
         services.TryAddCommunicationsServices();
         services.TryAddIdentityServices(configuration);
         services.TryAddSearchServices();
+        services.TryAddDocumentServices();
 
         return services;
     }

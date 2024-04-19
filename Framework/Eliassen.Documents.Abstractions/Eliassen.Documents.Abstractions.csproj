@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <RootNamespace>$(MSBuildProjectName.Replace(" ", "_").Replace(".Abstractions", ""))</RootNamespace>
+
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Eliassen.Documents" />
+    <InternalsVisibleTo Include="Eliassen.Documents.Tests" />
+  </ItemGroup>
+
+</Project>
