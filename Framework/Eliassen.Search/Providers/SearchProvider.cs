@@ -1,4 +1,5 @@
-﻿using Eliassen.Extensions.Linq;
+﻿using Eliassen.AI;
+using Eliassen.Extensions.Linq;
 using Eliassen.Search.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;

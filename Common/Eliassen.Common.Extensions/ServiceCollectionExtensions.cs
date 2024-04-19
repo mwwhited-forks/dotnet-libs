@@ -5,6 +5,7 @@ using Eliassen.Microsoft.ApplicationInsights;
 using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB;
 using Eliassen.OpenAI.AI;
+using Eliassen.OpenSearch;
 using Eliassen.Qdrant;
 using Eliassen.RabbitMQ;
 using Eliassen.SBert;
@@ -57,8 +58,10 @@ public static class ServiceCollectionExtensions
             services.TryAddKeycloakServices(configuration, identityBuilder.KeycloakIdentityConfigurationSection);
 
         services.TryAddOpenAIServices(configuration, externalBuilder.OpenAIClientOptionSection);
-        services.TryAddSbertServices(configuration, externalBuilder.QdrantOptionSection);
+
+        services.TryAddSbertServices(configuration, externalBuilder.SBertOptionSection);
         services.TryAddQdrantServices(configuration, externalBuilder.QdrantOptionSection);
+        services.TryAddOpenSearchServices(configuration, externalBuilder.OpenSearchOptionSection);
 
         return services;
     }

@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Eliassen.AI.Abstractions\Eliassen.AI.Abstractions.csproj" />
     <ProjectReference Include="..\Eliassen.Search.Abstractions\Eliassen.Search.Abstractions.csproj" />
     <ProjectReference Include="..\Eliassen.Extensions\Eliassen.Extensions.csproj" />
   </ItemGroup>

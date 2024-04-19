@@ -1,4 +1,5 @@
 ﻿using Eliassen.AI;
+using Eliassen.Extensions.IO;
 using Eliassen.Search;
 using Eliassen.Search.Models;
 using Qdrant.Client.Grpc;
