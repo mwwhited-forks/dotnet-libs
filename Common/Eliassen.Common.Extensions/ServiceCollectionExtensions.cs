@@ -6,6 +6,7 @@ using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB;
 using Eliassen.OpenAI.AI;
 using Eliassen.RabbitMQ;
+using Eliassen.SBert;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -54,7 +55,8 @@ public static class ServiceCollectionExtensions
         if (identityBuilder.IdentityProvider.HasFlag(IdentityProviders.Keycloak))
             services.TryAddKeycloakServices(configuration, identityBuilder.KeycloakIdentityConfigurationSection);
 
-        services.TryAddOpenAIServices(configuration, externalBuilder.OpenAIClientOptions);
+        services.TryAddOpenAIServices(configuration, externalBuilder.OpenAIClientOptionSection);
+        services.TryAddSbertServices(configuration, externalBuilder.SBertClientOptionSection);
 
         return services;
     }

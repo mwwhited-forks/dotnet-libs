@@ -1,6 +1,7 @@
 ﻿using Eliassen.Azure.StorageAccount.BlobStorage;
 using Eliassen.MailKit.Services;
 using Eliassen.MongoDB.Extensions;
+using Eliassen.SBert;
 
 namespace Eliassen.Common.Extensions;
 
@@ -41,5 +42,6 @@ public record ExternalExtensionBuilder
     /// </value>
     public string ImapConfigurationSection { get; init; } = nameof(MailKitImapClientOptions);
 
-    public string OpenAIClientOptions { get; init; } = nameof(OpenAIClientOptions);
+    public string OpenAIClientOptionSection { get; init; } = nameof(OpenAIClientOptionSection);
+    public string SBertClientOptionSection { get; init; } = nameof(SBertOptions);
 }

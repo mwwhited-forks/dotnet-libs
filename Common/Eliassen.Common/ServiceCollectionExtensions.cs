@@ -2,6 +2,7 @@
 using Eliassen.Communications.MessageQueueing;
 using Eliassen.Identity;
 using Eliassen.MessageQueueing;
+using Eliassen.Search;
 using Eliassen.System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,6 +39,7 @@ public static class ServiceCollectionExtensions
         services.TryAddCommunicationQueueServices();
         services.TryAddCommunicationsServices();
         services.TryAddIdentityServices(configuration);
+        services.TryAddSearchServices();
 
         return services;
     }
