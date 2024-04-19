@@ -1,6 +1,7 @@
 ﻿using Eliassen.Azure.StorageAccount;
 using Eliassen.Keycloak;
 using Eliassen.MailKit;
+using Eliassen.Markdig;
 using Eliassen.Microsoft.ApplicationInsights;
 using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB;
@@ -65,6 +66,7 @@ public static class ServiceCollectionExtensions
         services.TryAddOpenSearchServices(configuration, externalBuilder.OpenSearchOptionSection);
 
         services.TryAddWkHtmlToPdfServices();
+        services.TryAddMarkdigServices();
 
         return services;
     }

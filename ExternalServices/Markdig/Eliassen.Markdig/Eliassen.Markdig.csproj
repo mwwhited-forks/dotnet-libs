@@ -16,11 +16,11 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
 
-		<PackageReference Include="Haukcode.WkHtmlToPdfDotNet" Version="1.5.86" />
+    <PackageReference Include="Markdig" Version="0.35.0" />
 	</ItemGroup>
-
+  
   <ItemGroup>
-    <InternalsVisibleTo Include="Eliassen.WkHtmlToPdf.Tests" />
+    <InternalsVisibleTo Include="Eliassen.Markdig.Tests" />
   </ItemGroup>
 
   <ItemGroup>

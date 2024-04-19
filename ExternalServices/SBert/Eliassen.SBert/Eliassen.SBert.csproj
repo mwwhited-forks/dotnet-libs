@@ -16,12 +16,10 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
 	</ItemGroup>
-
   
   <ItemGroup>
     <InternalsVisibleTo Include="Eliassen.SBert.Tests" />
   </ItemGroup>
-
   
   <ItemGroup>
     <ProjectReference Include="..\..\..\Framework\Eliassen.AI.Abstractions\Eliassen.AI.Abstractions.csproj" />
