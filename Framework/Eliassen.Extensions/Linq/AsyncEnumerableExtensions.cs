@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
@@ -104,5 +105,16 @@ public static class AsyncEnumerableExtensions
                 await Task.Yield();
             }
         }
+    }
+
+    public static async Task<IReadOnlyCollection<T>> ToReadOnlyCollectionAsync<T>(
+        this IAsyncEnumerable<T> items, 
+        CancellationToken cancellationToken = default
+        )
+    {
+        var collection = new Collection<T>();
+        await foreach (var item in items)
+            collection.Add(item);
+        return collection;
     }
 }

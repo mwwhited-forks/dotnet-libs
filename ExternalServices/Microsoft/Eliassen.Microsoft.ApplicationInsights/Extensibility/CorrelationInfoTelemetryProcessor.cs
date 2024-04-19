@@ -3,7 +3,7 @@ using Eliassen.System.Net.Http;
 using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.Extensibility;
 
-namespace Eliassen.ApplicationInsights;
+namespace Eliassen.Microsoft.ApplicationInsights.Extensibility;
 
 /// <summary>
 /// Implements an <see cref="ITelemetryProcessor"/> that adds correlation information to telemetry items.

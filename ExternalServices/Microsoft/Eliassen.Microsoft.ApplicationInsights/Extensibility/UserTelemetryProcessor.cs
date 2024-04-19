@@ -3,7 +3,7 @@ using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Http;
 
-namespace Eliassen.ApplicationInsights;
+namespace Eliassen.Microsoft.ApplicationInsights.Extensibility;
 
 /// <summary>
 /// Telemetry processor that extracts user information from the HTTP context and adds it to telemetry items.
