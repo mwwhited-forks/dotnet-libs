@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Search.Models;
+﻿namespace Eliassen.Documents.Models;
 
 public record ContentReference
 {

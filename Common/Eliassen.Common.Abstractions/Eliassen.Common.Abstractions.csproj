@@ -14,7 +14,6 @@
 
 	<ItemGroup>
     <ProjectReference Include="..\..\Framework\**\Eliassen.*.Abstractions.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\**\Eliassen.*.Abstractions.csproj" />
 	</ItemGroup>
 
 

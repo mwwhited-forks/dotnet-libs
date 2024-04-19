@@ -51,8 +51,8 @@ public static class Program
             },
             hostingBuilder: new()
             {
-                DisableMailKit = skipHosting,
-                DisableMessageQueueing = skipHosting,
+                DisableMailKit = true, //TODO: this is not supported at this time so just skip it ...skipHosting,
+                DisableMessageQueueing =true,  // skipHosting,
             });
 
         // Add services to the container.

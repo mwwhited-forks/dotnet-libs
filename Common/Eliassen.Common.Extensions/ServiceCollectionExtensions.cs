@@ -5,6 +5,7 @@ using Eliassen.Markdig;
 using Eliassen.Microsoft.ApplicationInsights;
 using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB;
+using Eliassen.Ollama;
 using Eliassen.OpenAI.AI;
 using Eliassen.OpenSearch;
 using Eliassen.Qdrant;
@@ -45,7 +46,7 @@ public static class ServiceCollectionExtensions
         externalBuilder ??= new();
 
         services.TryAddMongoServices(configuration, externalBuilder.MongoDatabaseConfigurationSection);
-        services.TryAddAzureStorageServices(configuration, externalBuilder.AzureBlobContainerConfigurationSection);
+        services.TryAddAzureStorageServices(configuration, externalBuilder.AzureBlobProviderOptionSection);
         services.TryAddRabbitMQServices();
         services.TryAddMailKitExtensions(configuration, externalBuilder.SmtpConfigurationSection, externalBuilder.ImapConfigurationSection);
 #if DEBUG
@@ -64,6 +65,7 @@ public static class ServiceCollectionExtensions
         services.TryAddSbertServices(configuration, externalBuilder.SBertOptionSection);
         services.TryAddQdrantServices(configuration, externalBuilder.QdrantOptionSection);
         services.TryAddOpenSearchServices(configuration, externalBuilder.OpenSearchOptionSection);
+        services.TryAddOllamaServices();
 
         services.TryAddWkHtmlToPdfServices();
         services.TryAddMarkdigServices();

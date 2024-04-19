@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Search;
+﻿namespace Eliassen.AI;
 
 public interface IMessageCompletion
 {

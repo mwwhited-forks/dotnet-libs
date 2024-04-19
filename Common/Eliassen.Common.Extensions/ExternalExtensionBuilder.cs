@@ -26,7 +26,7 @@ public record ExternalExtensionBuilder
     /// <value>
     /// The configuration section name for Azure Blob Container options. Default is "AzureBlobContainerOptions".
     /// </value>
-    public string AzureBlobContainerConfigurationSection { get; init; } = nameof(AzureBlobContainerOptions);
+    public string AzureBlobProviderOptionSection { get; init; } = nameof(AzureBlobProviderOptions);
 
     /// <summary>
     /// Gets or sets the configuration section name for SMTP client options (MailKit).

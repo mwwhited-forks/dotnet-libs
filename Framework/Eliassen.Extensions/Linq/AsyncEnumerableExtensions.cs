@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -105,6 +106,24 @@ public static class AsyncEnumerableExtensions
                 await Task.Yield();
             }
         }
+    }
+
+    public static async IAsyncEnumerable<TResult> Select<T, TResult>(
+        this IAsyncEnumerable<T> items,
+        Func<T, TResult> map
+        )
+    {
+        await foreach (var item in items)
+            yield return map(item);
+    }
+
+    public static async IAsyncEnumerable<TResult> Select<T, TResult>(
+        this IAsyncEnumerable<T> items,
+        Func<T, Task<TResult>> map
+        )
+    {
+        await foreach (var item in items)
+            yield return await map(item);
     }
 
     public static async Task<IReadOnlyCollection<T>> ToReadOnlyCollectionAsync<T>(

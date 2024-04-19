@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Search;
+﻿namespace Eliassen.Documents;
 
 public interface IGetSummary<T>
 {

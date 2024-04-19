@@ -4,8 +4,8 @@ namespace Eliassen.Search;
 
 public interface ISearchProvider
 {
-    Task<IEnumerable<SearchResultWithSummaryModel>> HybridSearchAsync(string? query, int limit);
-    Task<IEnumerable<SearchResultWithSummaryModel>> LexicalSearchAsync(string? query, int limit);
+    Task<IEnumerable<SearchResultModel>> HybridSearchAsync(string? query, int limit);
+    Task<IEnumerable<SearchResultModel>> LexicalSearchAsync(string? query, int limit);
     Task<IEnumerable<SearchResultModel>> ListAsync();
-    Task<IEnumerable<SearchResultWithSummaryModel>> SemanticSearchAsync(string? query, int limit);
+    Task<IEnumerable<SearchResultModel>> SemanticSearchAsync(string? query, int limit);
 }

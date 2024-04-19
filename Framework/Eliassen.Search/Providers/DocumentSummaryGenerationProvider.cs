@@ -1,4 +1,5 @@
-﻿using Eliassen.Extensions;
+﻿using Eliassen.AI;
+using Eliassen.Extensions;
 using System.Text;
 using System.Threading.Tasks;
 

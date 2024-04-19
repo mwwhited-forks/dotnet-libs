@@ -9,6 +9,7 @@
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 
   </PropertyGroup>
+  
   <ItemGroup>
     <InternalsVisibleTo Include="Eliassen.Search.Tests" />
   </ItemGroup>
