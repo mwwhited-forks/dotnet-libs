@@ -1,8 +1,6 @@
-﻿using Azure;
+﻿using Eliassen.Search;
 using Eliassen.Search.Models;
-using Eliassen.Search;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
 namespace Eliassen.WebApi.Controllers;
 

@@ -43,5 +43,5 @@ public record ExternalExtensionBuilder
     public string ImapConfigurationSection { get; init; } = nameof(MailKitImapClientOptions);
 
     public string OpenAIClientOptionSection { get; init; } = nameof(OpenAIClientOptionSection);
-    public string SBertClientOptionSection { get; init; } = nameof(SBertOptions);
+    public string QdrantOptionSection { get; init; } = nameof(SBertOptions);
 }

@@ -22,9 +22,9 @@ public class AIController : ControllerBase
     }
 
     /// <summary>
-    /// Generate an AbstractAI Response based on the prompt and user input
+    /// Generate an LLM Response based on the prompt and user input
     /// </summary>
-    /// <returns>The string response from the AbstractAI</returns>
+    /// <returns>The string response from the LLM</returns>
     [HttpPost]
     [AllowAnonymous]
     public async Task<string> GetResponseAsync([FromBody] GenAiRequestModel model) =>

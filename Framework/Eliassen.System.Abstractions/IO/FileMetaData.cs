@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Search.Models;
+﻿namespace Eliassen.System.IO;
 
 public record FileMetaData
 {
