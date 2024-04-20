@@ -8,17 +8,29 @@ using Microsoft.Extensions.Options;
 
 namespace Eliassen.SBert;
 
+/// <summary>
+/// Client for interacting with SBert.
+/// </summary>
 public class SBertClient
 {
     private readonly IOptions<SBertOptions> _options;
     private readonly HttpClient _httpClient; //TODO: this should be done differently
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SBertClient"/> class.
+    /// </summary>
+    /// <param name="options">The SBert options.</param>
     public SBertClient(IOptions<SBertOptions> options)
     {
         _options = options;
         _httpClient = new() { BaseAddress = new Uri(_options.Value.Url) };
     }
 
+    /// <summary>
+    /// Retrieves the embedding vector for the given input as an array of single-precision floats.
+    /// </summary>
+    /// <param name="input">The input text.</param>
+    /// <returns>An array of single-precision floats representing the embedding.</returns>
     public async Task<float[]> GetEmbeddingAsync(string input)
     {
         var results = await _httpClient.GetAsync($"/generate-embedding?query={input}");
@@ -29,6 +41,11 @@ public class SBertClient
         return floats;
     }
 
+    /// <summary>
+    /// Retrieves the embedding vector for the given input as an array of double-precision floats.
+    /// </summary>
+    /// <param name="input">The input text.</param>
+    /// <returns>An array of double-precision floats representing the embedding.</returns>
     public async Task<double[]> GetEmbeddingDoubleAsync(string input)
     {
         var results = await _httpClient.GetAsync($"/generate-embedding?query={input}");

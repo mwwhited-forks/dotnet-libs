@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 
 namespace Eliassen.OpenAI.AI.Services;
 
-public class OpenAIManager(IOptions<OpenAIOptions> config) : ILangageModelProvider
+public class OpenAIManager(IOptions<OpenAIOptions> config) : ILanguageModelProvider
 {
     private readonly IOptions<OpenAIOptions> _config = config;
 
@@ -25,16 +25,8 @@ public class OpenAIManager(IOptions<OpenAIOptions> config) : ILangageModelProvid
             }
         };
 
-        Response<ChatCompletions> response;
 
-        try
-        {
-            response = await api.GetChatCompletionsAsync(chatCompletionsOptions);
-            return response.Value.Choices[0].Message.Content;
-        }
-        catch (Exception ex)
-        {
-            throw;
-        }
+        var response = await api.GetChatCompletionsAsync(chatCompletionsOptions);
+        return response.Value.Choices[0].Message.Content;
     }
 }

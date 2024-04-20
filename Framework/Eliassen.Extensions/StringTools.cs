@@ -4,8 +4,18 @@ using System.IO;
 
 namespace Eliassen.Extensions;
 
+/// <summary>
+/// Provides utility methods for string manipulation.
+/// </summary>
 public static class StringTools
 {
+    /// <summary>
+    /// Splits the input string into lines of specified length, breaking at the nearest space character.
+    /// </summary>
+    /// <param name="input">The input string to split.</param>
+    /// <param name="length">The maximum length of each line (default is 80).</param>
+    /// <param name="breaker">The character at which to break lines (default is space).</param>
+    /// <returns>An enumerable of strings representing the split lines.</returns>
     public static IEnumerable<string> SplitBy(this string input, int length = 80, char breaker = ' ')
     {
         var reader = new StringReader(input);
@@ -66,5 +76,10 @@ public static class StringTools
         }
     }
 
+    /// <summary>
+    /// Concatenates the lines into a single string with newline separators.
+    /// </summary>
+    /// <param name="lines">The lines to concatenate.</param>
+    /// <returns>A single string with newline separators.</returns>
     public static string WriteAsLines(this IEnumerable<string> lines) => string.Join(Environment.NewLine, lines);
 }

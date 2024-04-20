@@ -37,7 +37,13 @@ public static class ServiceCollectionExtensions
             .TryAddAzureStorageQueueServices()
         ;
 
-
+    /// <summary>
+    /// Configures services for Azure Storage Blob.
+    /// </summary>
+    /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
+    /// <param name="configuration">The <see cref="IConfiguration"/> to bind Azure Blob Storage options from.</param>
+    /// <param name="azureBlobProviderOptionSection">The configuration section name containing Azure Blob Storage options.</param>
+    /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddAzureStorageBlobServices(
         this IServiceCollection services, 
         IConfiguration configuration,

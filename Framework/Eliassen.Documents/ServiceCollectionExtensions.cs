@@ -4,8 +4,16 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Eliassen.Documents;
 
+/// <summary>
+/// Provides extension methods for configuring document-related services.
+/// </summary>
 public static class ServiceCollectionExtensions
 {
+    /// <summary>
+    /// Configures services for document processing.
+    /// </summary>
+    /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
+    /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddDocumentServices(this IServiceCollection services)
     {
         services.TryAddSingleton<IDocumentConversion, DocumentConversion>();

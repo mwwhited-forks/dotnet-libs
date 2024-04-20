@@ -7,8 +7,16 @@ using WkHtmlToPdfDotNet.Contracts;
 
 namespace Eliassen.WkHtmlToPdf;
 
+/// <summary>
+/// Provides extension methods for configuring services related to WkHtmlToPdf.
+/// </summary>
 public static class ServiceCollectionExtensions
 {
+    /// <summary>
+    /// Configures services for WkHtmlToPdf.
+    /// </summary>
+    /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
+    /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddWkHtmlToPdfServices(this IServiceCollection services)
     {
         services.AddTransient<IDocumentConversionHandler, HtmlToPdfConversionHandler>();

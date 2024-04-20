@@ -18,7 +18,7 @@ public static class ServiceCollectionExtensions
 #endif
         )
     {
-        services.TryAddTransient<ILangageModelProvider, OpenAIManager>();
+        services.TryAddTransient<ILanguageModelProvider, OpenAIManager>();
         services.Configure<OpenAIOptions>(options => configuration.Bind(openAIConfigurationSection, options));
         return services;
     }

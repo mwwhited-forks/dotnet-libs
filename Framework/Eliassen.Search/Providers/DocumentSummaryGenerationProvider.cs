@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Search.Providers;
 
-public class DocumentSummaryGenerationProvider : ISummerizeContent
+public class DocumentSummaryGenerationProvider : ISummarizeContent
 {
     private const int MAX_LENGTH = 4096; //TODO: should look this up from model.
 

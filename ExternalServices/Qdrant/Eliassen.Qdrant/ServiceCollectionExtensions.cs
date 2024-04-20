@@ -7,8 +7,18 @@ using Qdrant.Client.Grpc;
 
 namespace Eliassen.Qdrant;
 
+/// <summary>
+/// Provides extension methods for configuring services related to Qdrant.
+/// </summary>
 public static class ServiceCollectionExtensions
 {
+    /// <summary>
+    /// Configures services for Qdrant.
+    /// </summary>
+    /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
+    /// <param name="configuration">The <see cref="IConfiguration"/> to bind Qdrant options from.</param>
+    /// <param name="qdrantOptionSection">The configuration section name containing Qdrant options.</param>
+    /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddQdrantServices(
         this IServiceCollection services,
         IConfiguration configuration,

@@ -1,6 +1,4 @@
-﻿using Eliassen.Documents;
-
-namespace Eliassen.Documents.Models;
+﻿namespace Eliassen.Documents.Models;
 
 public record DocumentType : IDocumentType
 {

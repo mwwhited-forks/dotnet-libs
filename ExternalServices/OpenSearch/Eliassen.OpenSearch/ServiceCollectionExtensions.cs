@@ -7,8 +7,18 @@ using Eliassen.Search.Models;
 
 namespace Eliassen.OpenSearch;
 
+/// <summary>
+/// Provides extension methods for configuring services related to OpenSearch.
+/// </summary>
 public static class ServiceCollectionExtensions
 {
+    /// <summary>
+    /// Configures services for OpenSearch.
+    /// </summary>
+    /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
+    /// <param name="configuration">The <see cref="IConfiguration"/> to bind OpenSearch options from.</param>
+    /// <param name="openSearchOptionSections">The configuration section name containing OpenSearch options.</param>
+    /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddOpenSearchServices(
         this IServiceCollection services,
         IConfiguration configuration,

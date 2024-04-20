@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Qdrant;
 
+/// <summary>
+/// Provides storage and search functionality for semantic content.
+/// </summary>
 public class SemanticStoreProvider :
     IStoreContent,
     ISearchContent<ScoredPoint>,
@@ -22,6 +25,14 @@ public class SemanticStoreProvider :
     private readonly string _collectionName;
     private readonly bool _forSummary;
 
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SemanticStoreProvider"/> class.
+    /// </summary>
+    /// <param name="vectoreStore">The QdrantGrpcClient instance for accessing vector storage.</param>
+    /// <param name="embedding">The embedding provider for generating embeddings.</param>
+    /// <param name="storeName">The name of the store.</param>
+    /// <param name="forSummary">Indicates whether the provider is for summary.</param>
     public SemanticStoreProvider(
         QdrantGrpcClient vectoreStore,
         IEmbeddingProvider embedding,
@@ -52,6 +63,13 @@ public class SemanticStoreProvider :
 
     }
 
+    /// <summary>
+    /// Queries the semantic store asynchronously for search results.
+    /// </summary>
+    /// <param name="queryString">The search query string.</param>
+    /// <param name="limit">The maximum number of results to return.</param>
+    /// <param name="page">The page number of results.</param>
+    /// <returns>An asynchronous enumerable collection of search results.</returns>
     public async IAsyncEnumerable<SearchResultModel> QueryAsync(string? queryString, int limit = 25, int page = 0)
     {
         await foreach (var item in ((ISearchContent<ScoredPoint>)this).QueryAsync(queryString, 25, 0))
@@ -65,6 +83,13 @@ public class SemanticStoreProvider :
             };
     }
 
+    /// <summary>
+    /// Queries the semantic store asynchronously for scored points.
+    /// </summary>
+    /// <param name="queryString">The search query string.</param>
+    /// <param name="limit">The maximum number of results to return.</param>
+    /// <param name="page">The page number of results.</param>
+    /// <returns>An asynchronous enumerable collection of scored points.</returns>
     async IAsyncEnumerable<ScoredPoint> ISearchContent<ScoredPoint>.QueryAsync(string? queryString, int limit, int page)
     {
         if (string.IsNullOrWhiteSpace(queryString))
@@ -89,6 +114,13 @@ public class SemanticStoreProvider :
             yield return item;
     }
 
+    /// <summary>
+    /// Stores content in the semantic store asynchronously.
+    /// </summary>
+    /// <param name="full">The full content.</param>
+    /// <param name="file">The file name.</param>
+    /// <param name="pathHash">The path hash.</param>
+    /// <returns>A task representing the asynchronous operation. Returns true if the content is stored successfully, otherwise false.</returns>
     public async Task<bool> TryStoreAsync(string full, string file, string pathHash)
     {
         if ((await _vectoreStore.Points.ScrollAsync(new()

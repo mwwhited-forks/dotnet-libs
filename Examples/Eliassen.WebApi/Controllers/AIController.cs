@@ -9,11 +9,11 @@ namespace Eliassen.WebApi.Controllers;
 [ApiController]
 public class AIController : ControllerBase
 {
-    private readonly ILangageModelProvider _llmProvider;
+    private readonly ILanguageModelProvider _llmProvider;
     private readonly IEmbeddingProvider _embedding;
 
     public AIController(
-        ILangageModelProvider llmProvider,
+        ILanguageModelProvider llmProvider,
         IEmbeddingProvider embedding
         )
     {
