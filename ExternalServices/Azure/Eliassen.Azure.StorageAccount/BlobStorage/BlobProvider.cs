@@ -13,6 +13,9 @@ using System;
 
 namespace Eliassen.Azure.StorageAccount.BlobStorage;
 
+/// <summary>
+/// Represents a provider for storing and searching content in Azure Blob storage.
+/// </summary>
 public class BlobProvider :
     IStoreContent,
     ISearchContent<BlobItem>,
@@ -22,12 +25,22 @@ public class BlobProvider :
 {
     private readonly BlobContainerClient _blockBlobClient;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="BlobProvider"/> class with the specified <paramref name="client"/> and <paramref name="collectionName"/>.
+    /// </summary>
+    /// <param name="client">The BlobServiceClient used to connect to the Azure Blob storage.</param>
+    /// <param name="collectionName">The name of the collection in the Azure Blob storage.</param>
     public BlobProvider(BlobServiceClient client, string collectionName)
     {
         _blockBlobClient = client.GetBlobContainerClient(collectionName);
         _blockBlobClient.CreateIfNotExists();
     }
 
+    /// <summary>
+    /// Retrieves the content of the specified file from Azure Blob storage.
+    /// </summary>
+    /// <param name="file">The name of the file to retrieve.</param>
+    /// <returns>A ContentReference object representing the retrieved content.</returns>
     public async Task<ContentReference?> GetContentAsync(string file)
     {
         var blob = _blockBlobClient.GetBlobClient(file);
@@ -44,6 +57,13 @@ public class BlobProvider :
         };
     }
 
+    /// <summary>
+    /// Queries Azure Blob storage for files that match the specified criteria.
+    /// </summary>
+    /// <param name="queryString">The query string to search for.</param>
+    /// <param name="limit">The maximum number of results to return.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <returns>An asynchronous enumerable of SearchResultModel objects representing the search results.</returns>
     public Task<ContentReference?> GetSummaryAsync(string file) => GetContentAsync(file);
 
     public IAsyncEnumerable<SearchResultModel> QueryAsync(string? queryString, int limit = 25, int page = 0) =>
@@ -56,9 +76,24 @@ public class BlobProvider :
             Score = 1,
             Type = SearchTypes.None,
         };
+
+    /// <summary>
+    /// Queries Azure Blob storage for files that match the specified criteria.
+    /// </summary>
+    /// <param name="queryString">The query string to search for.</param>
+    /// <param name="limit">The maximum number of results to return.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <returns>An asynchronous enumerable of BlobItem objects representing the search results.</returns>
     IAsyncEnumerable<BlobItem> ISearchContent<BlobItem>.QueryAsync(string? queryString, int limit = 25, int page = 0) =>
         _blockBlobClient.GetBlobsAsync(); //todo: add query but who really cares
 
+    /// <summary>
+    /// Stores the specified content in Azure Blob storage.
+    /// </summary>
+    /// <param name="full">The full path of the content to store.</param>
+    /// <param name="file">The name of the file to store.</param>
+    /// <param name="pathHash">The hash value of the file path.</param>
+    /// <returns>A boolean value indicating whether the operation was successful.</returns>
     public async Task<bool> TryStoreAsync(string full, string file, string pathHash)
     {
         var blob = _blockBlobClient.GetBlobClient(file);

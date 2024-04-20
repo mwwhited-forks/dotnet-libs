@@ -5,10 +5,24 @@ using System.IO;
 
 namespace Eliassen.Qdrant;
 
+/// <summary>
+/// Factory for creating instances of <see cref="PointStruct"/>.
+/// </summary>
 public class PointStructFactory : IPointStructFactory
 {
+    /// <summary>
+    /// Represents the constant value indicating service instance type.
+    /// </summary>
     public const string ServiceInstanceType = "service-instance";
 
+    /// <summary>
+    /// Creates a <see cref="PointStruct"/> instance representing a file chunk.
+    /// </summary>
+    /// <param name="metadata">The metadata of the file.</param>
+    /// <param name="chunk">The content chunk.</param>
+    /// <param name="fileInfo">Information about the file.</param>
+    /// <param name="vector">The vector representing the file chunk.</param>
+    /// <returns>The created <see cref="PointStruct"/>.</returns>
     public PointStruct CreateFileChunk(FileMetaData metadata, ContentChunk chunk, FileInfo fileInfo, float[] vector) =>
         new()
         {
@@ -34,18 +48,26 @@ public class PointStructFactory : IPointStructFactory
             Vectors = new Vectors { Vector = vector, }
         };
 
+    /// <summary>
+    /// Creates a <see cref="PointStruct"/> instance representing a service reference.
+    /// </summary>
+    /// <param name="uuid">The UUID of the service reference.</param>
+    /// <param name="serviceType">The type of the service.</param>
+    /// <param name="description">The description of the service reference.</param>
+    /// <param name="vector">The vector representing the service reference.</param>
+    /// <returns>The created <see cref="PointStruct"/>.</returns>
     public PointStruct CreateServiceReference(
-        Guid uuid,
-        Type serviceType,
-        string description,
-        float[] vector
-        ) =>
-        new()
-        {
-            Id = new() { Uuid = uuid.ToString() },
+    Guid uuid,
+    Type serviceType,
+    string description,
+    float[] vector
+    ) =>
+    new()
+    {
+        Id = new() { Uuid = uuid.ToString() },
 
-            Payload =
-            {
+        Payload =
+        {
                 [nameof( serviceType.Name)] = serviceType.Name,
                 [nameof( serviceType.FullName)] = serviceType.FullName ?? serviceType.Name,
                 [nameof( serviceType.AssemblyQualifiedName)] = serviceType.AssemblyQualifiedName ?? serviceType.Name,
@@ -53,11 +75,19 @@ public class PointStructFactory : IPointStructFactory
                 [nameof( description)] = description,
 
                 ["type"]= ServiceInstanceType,
-            },
+        },
 
-            Vectors = new Vectors { Vector = vector, }
-        };
+        Vectors = new Vectors { Vector = vector, }
+    };
 
+    /// <summary>
+    /// Creates a <see cref="PointStruct"/> instance representing a question.
+    /// </summary>
+    /// <param name="uuid">The UUID of the question.</param>
+    /// <param name="question">The question text.</param>
+    /// <param name="vector">The vector representing the question.</param>
+    /// <param name="type">The type of the question.</param>
+    /// <returns>The created <see cref="PointStruct"/>.</returns>
     public PointStruct CreateQuestion(
         Guid uuid,
         string question,

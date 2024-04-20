@@ -4,10 +4,17 @@ using System;
 
 namespace Eliassen.OpenSearch;
 
+/// <summary>
+/// Implementation of the <see cref="IOpenSearchClientFactory"/> interface for creating instances of the <see cref="IOpenSearchLowLevelClient"/>.
+/// </summary>
 public class OpenSearchClientFactory : IOpenSearchClientFactory
 {
     private readonly IOptions<OpenSearchOptions> _config;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="OpenSearchClientFactory"/> class.
+    /// </summary>
+    /// <param name="config">The configuration options for the OpenSearch client.</param>
     public OpenSearchClientFactory(
         IOptions<OpenSearchOptions> config
         )
@@ -15,6 +22,10 @@ public class OpenSearchClientFactory : IOpenSearchClientFactory
         _config = config;
     }
 
+    /// <summary>
+    /// Creates a new instance of the <see cref="IOpenSearchLowLevelClient"/>.
+    /// </summary>
+    /// <returns>A new instance of the <see cref="IOpenSearchLowLevelClient"/>.</returns>
     public IOpenSearchLowLevelClient Create()
     {
         var connection = new ConnectionConfiguration(

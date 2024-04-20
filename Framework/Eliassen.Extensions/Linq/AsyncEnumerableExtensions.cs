@@ -108,6 +108,14 @@ public static class AsyncEnumerableExtensions
         }
     }
 
+    /// <summary>
+    /// Project each element of the source async enumerable sequence into a new form asynchronously.
+    /// </summary>
+    /// <typeparam name="T">The type of the elements in the source sequence.</typeparam>
+    /// <typeparam name="TResult">The type of the elements in the result sequence.</typeparam>
+    /// <param name="items">The source async enumerable sequence to project.</param>
+    /// <param name="map">A transform function to apply to each element.</param>
+    /// <returns>An async enumerable sequence whose elements are the result of invoking the transform function on each element of the source.</returns>
     public static async IAsyncEnumerable<TResult> Select<T, TResult>(
         this IAsyncEnumerable<T> items,
         Func<T, TResult> map
@@ -117,6 +125,14 @@ public static class AsyncEnumerableExtensions
             yield return map(item);
     }
 
+    /// <summary>
+    /// Project each element of the source async enumerable sequence into a new form asynchronously.
+    /// </summary>
+    /// <typeparam name="T">The type of the elements in the source sequence.</typeparam>
+    /// <typeparam name="TResult">The type of the elements in the result sequence.</typeparam>
+    /// <param name="items">The source async enumerable sequence to project.</param>
+    /// <param name="map">A transform function to apply to each element asynchronously.</param>
+    /// <returns>An async enumerable sequence whose elements are the result of invoking the transform function on each element of the source.</returns>
     public static async IAsyncEnumerable<TResult> Select<T, TResult>(
         this IAsyncEnumerable<T> items,
         Func<T, Task<TResult>> map
@@ -126,6 +142,13 @@ public static class AsyncEnumerableExtensions
             yield return await map(item);
     }
 
+    /// <summary>
+    /// Converts an async enumerable sequence to a read-only collection asynchronously.
+    /// </summary>
+    /// <typeparam name="T">The type of the elements in the source sequence.</typeparam>
+    /// <param name="items">The source async enumerable sequence to convert.</param>
+    /// <param name="cancellationToken">A cancellation token that can be used to cancel the operation.</param>
+    /// <returns>A task representing the asynchronous operation. The task result contains a read-only collection of elements.</returns>
     public static async Task<IReadOnlyCollection<T>> ToReadOnlyCollectionAsync<T>(
         this IAsyncEnumerable<T> items, 
         CancellationToken cancellationToken = default
