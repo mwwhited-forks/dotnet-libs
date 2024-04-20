@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Reflection;
 
 namespace Eliassen.MessageQueueing.Services;

@@ -1,4 +1,6 @@
-﻿namespace Eliassen.MessageQueueing.Services;
+﻿using System.Collections.Generic;
+
+namespace Eliassen.MessageQueueing.Services;
 /// <summary>
 /// Represents a message within a message queue.
 /// </summary>

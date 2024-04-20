@@ -1,4 +1,6 @@
-﻿namespace Eliassen.Search.Models;
+﻿using System;
+
+namespace Eliassen.Search.Models;
 
 /// <summary>
 /// Specifies the types of search.

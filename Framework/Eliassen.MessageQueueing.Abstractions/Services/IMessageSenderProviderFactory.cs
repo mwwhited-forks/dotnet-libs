@@ -1,4 +1,6 @@
-﻿namespace Eliassen.MessageQueueing.Services;
+﻿using System;
+
+namespace Eliassen.MessageQueueing.Services;
 
 /// <summary>
 /// Represents a factory for creating instances of <see cref="IMessageSenderProvider"/>.

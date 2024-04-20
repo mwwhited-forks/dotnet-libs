@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenSearch.Net;
+using System;
+using System.Threading.Tasks;
 
 namespace Eliassen.OpenSearch.Tests;
 

@@ -1,4 +1,6 @@
 ﻿using Eliassen.Search.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Eliassen.Search;
 

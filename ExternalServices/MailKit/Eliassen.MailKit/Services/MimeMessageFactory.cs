@@ -1,6 +1,8 @@
 ﻿using Eliassen.Communications.Models;
 using Microsoft.Extensions.Options;
 using MimeKit;
+using System;
+using System.Linq;
 
 namespace Eliassen.MailKit.Services;
 

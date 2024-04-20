@@ -1,4 +1,6 @@
-﻿namespace Eliassen.Communications.Services;
+﻿using System.Threading.Tasks;
+
+namespace Eliassen.Communications.Services;
 
 /// <summary>
 /// Represents an interface for sending communication messages of a specified type.

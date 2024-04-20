@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System;
+﻿using System;
+
+namespace Eliassen.System;
 
 /// <summary>
 /// Represents an exception thrown when a required configuration is missing.

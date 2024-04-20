@@ -1,4 +1,7 @@
-﻿namespace Eliassen.MessageQueueing.Services;
+﻿using System.Threading;
+using System.Threading.Tasks;
+
+namespace Eliassen.MessageQueueing.Services;
 
 /// <summary>
 /// Provides functionality for receiving messages from a message queue.

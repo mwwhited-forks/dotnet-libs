@@ -1,4 +1,6 @@
-﻿namespace Eliassen.Search;
+﻿using System.Collections.Generic;
+
+namespace Eliassen.Search;
 
 /// <summary>
 /// Represents a provider for searching content of type <typeparamref name="T"/>.

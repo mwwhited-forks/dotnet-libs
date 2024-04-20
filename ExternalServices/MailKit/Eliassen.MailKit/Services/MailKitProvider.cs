@@ -3,6 +3,7 @@ using Eliassen.Communications.Services;
 using MailKit.Net.Smtp;
 using Microsoft.Extensions.Logging;
 using MimeKit;
+using System.Threading.Tasks;
 
 namespace Eliassen.MailKit.Services;
 

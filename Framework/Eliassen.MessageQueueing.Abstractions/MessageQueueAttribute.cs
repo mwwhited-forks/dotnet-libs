@@ -1,4 +1,6 @@
-﻿namespace Eliassen.MessageQueueing;
+﻿using System;
+
+namespace Eliassen.MessageQueueing;
 
 /// <summary>
 /// Attribute used to mark a class as a message queue handler and provide configuration options.

@@ -2,6 +2,7 @@
 using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Eliassen.WebApi.Controllers;
 

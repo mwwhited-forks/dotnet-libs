@@ -1,5 +1,6 @@
 ﻿using Eliassen.MessageQueueing;
 using Eliassen.WebApi.Provider;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Eliassen.WebApi;

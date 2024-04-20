@@ -2,6 +2,7 @@
 using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Http;
+using System.Linq;
 
 namespace Eliassen.Microsoft.ApplicationInsights.Extensibility;
 

@@ -1,4 +1,6 @@
-﻿namespace Eliassen.AI;
+﻿using System.Threading.Tasks;
+
+namespace Eliassen.AI;
 
 /// <summary>
 /// Represents a provider for a language model.

@@ -1,4 +1,7 @@
-﻿namespace Eliassen.System.Reflection;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Eliassen.System.Reflection;
 
 internal record EnumModel : IEnumModel
 {

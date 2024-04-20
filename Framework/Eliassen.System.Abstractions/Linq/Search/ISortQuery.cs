@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.Linq.Search;
+﻿using System.Collections.Generic;
+
+namespace Eliassen.System.Linq.Search;
 
 /// <summary>
 /// Represents an interface for specifying sorting criteria in a query.

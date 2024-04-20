@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.ComponentModel;
+﻿using System;
+
+namespace Eliassen.System.ComponentModel;
 
 /// <summary>
 /// output enum string as this value when serialized as json

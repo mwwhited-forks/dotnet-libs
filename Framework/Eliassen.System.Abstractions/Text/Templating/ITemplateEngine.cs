@@ -1,4 +1,8 @@
-﻿namespace Eliassen.System.Text.Templating;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
+
+namespace Eliassen.System.Text.Templating;
 
 /// <summary>
 /// Represents a template engine for generating content based on templates.

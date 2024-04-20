@@ -1,6 +1,7 @@
 ﻿using Azure.AI.OpenAI;
 using Eliassen.AI;
 using Microsoft.Extensions.Options;
+using System.Threading.Tasks;
 
 namespace Eliassen.OpenAI.AI.Services;
 

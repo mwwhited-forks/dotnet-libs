@@ -1,4 +1,5 @@
 ﻿using Eliassen.MessageQueueing.Services;
+using System.Threading.Tasks;
 
 namespace Eliassen.MessageQueueing;
 

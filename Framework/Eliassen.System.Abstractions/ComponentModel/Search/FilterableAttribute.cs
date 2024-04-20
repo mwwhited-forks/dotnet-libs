@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.ComponentModel.Search;
+﻿using System;
+
+namespace Eliassen.System.ComponentModel.Search;
 
 /// <summary>
 /// Allow tagging entity classes to enumerate filterable fields/properties.

@@ -1,4 +1,6 @@
-﻿namespace Eliassen.Search;
+﻿using System.Threading.Tasks;
+
+namespace Eliassen.Search;
 
 /// <summary>
 /// Represents a provider for storing content.

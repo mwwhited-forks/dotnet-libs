@@ -1,4 +1,6 @@
-﻿namespace Eliassen.SBert.Tests;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Eliassen.SBert.Tests;
 
 [TestClass]
 public class SBertClientTests

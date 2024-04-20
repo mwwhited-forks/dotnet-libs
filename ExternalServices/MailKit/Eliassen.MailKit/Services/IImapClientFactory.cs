@@ -1,4 +1,5 @@
 ﻿using MailKit.Net.Imap;
+using System.Threading.Tasks;
 
 namespace Eliassen.MailKit.Services;
 

@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.ComponentModel;
+﻿using System;
+
+namespace Eliassen.System.ComponentModel;
 
 /// <summary>
 /// Attribute used to exclude an enum or enum field from being considered for uniqueness checks.
