@@ -1,7 +1,7 @@
 ﻿# Eliassen.Microsoft.ApplicationInsights
 
 
-## Class: ApplicationInsights.CorrelationInfoTelemetryProcessor
+## Class: Microsoft.ApplicationInsights.Extensibility.CorrelationInfoTelemetryProcessor
 Implements an 
  *See: T:Microsoft.ApplicationInsights.Extensibility.ITelemetryProcessor*that adds correlation information to telemetry items. 
 
@@ -10,7 +10,7 @@ Implements an
 
 #### Constructor
 Initializes a new instance of the 
- *See: T:Eliassen.ApplicationInsights.CorrelationInfoTelemetryProcessor*class. 
+ *See: T:Eliassen.Microsoft.ApplicationInsights.Extensibility.CorrelationInfoTelemetryProcessor*class. 
 
 
 ##### Parameters
@@ -29,7 +29,7 @@ Processes telemetry items by adding correlation information to the global proper
 
 
 
-## Class: ApplicationInsights.UserTelemetryProcessor
+## Class: Microsoft.ApplicationInsights.Extensibility.UserTelemetryProcessor
 Telemetry processor that extracts user information from the HTTP context and adds it to telemetry items. 
 
 ### Methods
@@ -37,7 +37,7 @@ Telemetry processor that extracts user information from the HTTP context and add
 
 #### Constructor
 Initializes a new instance of the 
- *See: T:Eliassen.ApplicationInsights.UserTelemetryProcessor*class. 
+ *See: T:Eliassen.Microsoft.ApplicationInsights.Extensibility.UserTelemetryProcessor*class. 
 
 
 ##### Parameters

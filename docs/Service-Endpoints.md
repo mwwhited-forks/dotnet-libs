@@ -1,8 +1,32 @@
 # Swagger Description - Eliassen.WebApi
 
-*Version*: 0.1.68.194
+*Version*: 0.1.72.13
 
 ## Endpoints
+
+### /api/AI
+
+
+Generate an LLM Response based on the prompt and user input
+
+HTTP Method: *post* \
+Anonymous:   *True*
+
+
+
+Request:     *#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel*
+
+
+
+
+Retrieves the embedding vector for the given text.
+
+HTTP Method: *get* \
+Anonymous:   *False*
+
+
+
+
 
 ### /api/Communications/public
 
@@ -52,6 +76,66 @@ The email message model.
 
 
 
+### /Document/Download/{file}
+
+
+Downloads the specified file.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Document/Text/{file}
+
+
+Retrieves the text of the specified file.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Document/Html/{file}
+
+
+Retrieves the html of the specified file.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Document/Pdf/{file}
+
+
+Retrieves the pdf of the specified file.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Document/Summary/{file}
+
+
+Retrieves the summary of the specified file.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
 ### /api/MessageQueueing/public
 
 
@@ -81,6 +165,54 @@ Anonymous:   *False*
 Request:     *#/components/schemas/Eliassen.WebApi.Models.ExampleMessageModel*
 
 The example message model.
+
+
+
+### /Search/List
+
+
+Retrieves a list of all available search results.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Search/SemanticSearch
+
+
+Performs a semantic search with the given query.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Search/LexicalSearch
+
+
+Performs a lexical search with the given query.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Search/HybridSearch
+
+
+Performs a hybrid search with the given query.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
 
 
 
@@ -154,6 +286,22 @@ Anonymous:   *False*
 | attachments | array? | Gets or sets the list of attachment references in the email message. | 
 
 
+### Eliassen.Search.Models.SearchResultModel
+
+
+#### Properties
+| Name | Type | other |
+|------|------|-------|
+| score | number | Gets or initializes the score of the search result. | 
+| pathHash | string? | Gets or initializes the hash of the path where the search result was found. | 
+| file | string? | Gets or initializes the name of the file where the search result was found. | 
+| content | string? | Gets or initializes the content of the file where the search result was found. | 
+| type | Eliassen.Search.Models.SearchTypes |  | 
+
+
+### Eliassen.Search.Models.SearchTypes
+
+
 ### Eliassen.System.Text.Templating.FileType
 
 
@@ -189,6 +337,17 @@ Anonymous:   *False*
 |------|------|-------|
 | input | string? | Gets or sets the input string. Default value is &quot;Default Value&quot;. | 
 | data | System.Text.Json.Nodes.JsonNode |  | 
+
+
+### Eliassen.WebApi.Models.GenerativeAiRequestModel
+
+
+#### Properties
+| Name | Type | other |
+|------|------|-------|
+| promptDetails | string? | Gets or sets the prompt details. | 
+| userInput | string? | Gets or sets the user input. | 
+| apiKey | string? | Gets or sets the input api key to use. | 
 
 
 ### System.Text.Json.Nodes.JsonNode

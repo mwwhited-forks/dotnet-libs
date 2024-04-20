@@ -8,12 +8,20 @@ Represents a builder for configuring external extensions.
 
 #### MongoDatabaseConfigurationSection
 Gets or sets the configuration section name for MongoDB database options. The configuration section name for MongoDB database options. Default is "MongoDatabaseOptions".
-#### AzureBlobContainerConfigurationSection
+#### AzureBlobProviderOptionSection
 Gets or sets the configuration section name for Azure Blob Container options. The configuration section name for Azure Blob Container options. Default is "AzureBlobContainerOptions".
 #### SmtpConfigurationSection
 Gets or sets the configuration section name for SMTP client options (MailKit). The configuration section name for SMTP client options (MailKit). Default is "MailKitSmtpClientOptions".
 #### ImapConfigurationSection
 Gets or sets the configuration section name for IMAP client options (MailKit). The configuration section name for IMAP client options (MailKit). Default is "MailKitImapClientOptions".
+#### OpenAIClientOptionSection
+Gets or sets the configuration section name for OpenAI client options.
+#### SBertOptionSection
+Gets or sets the configuration section name for SBert options.
+#### QdrantOptionSection
+Gets or sets the configuration section name for Qdrant options.
+#### OpenSearchOptionSection
+Gets or sets the configuration section name for OpenSearch options.
 
 ## Class: Common.Extensions.IdentityExtensionBuilder
 Represents a builder for configuring identity extensions. 

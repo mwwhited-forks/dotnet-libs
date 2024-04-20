@@ -296,6 +296,66 @@ Gets or sets the value of the command parameter.
 #### TypeId
 Gets a unique identifier for this attribute.
 
+## Class: System.IO.ContentChunk
+Represents a chunk of content along with metadata. 
+
+### Properties
+
+#### Data
+Gets the data of the content chunk.
+#### Sequence
+Gets the sequence number of the chunk within the original content.
+#### Start
+Gets the starting position of the chunk within the original content.
+#### Length
+Gets the length of the chunk.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.System.IO.ContentChunk*class. 
+
+
+##### Parameters
+* *data:* The data of the content chunk.
+* *sequence:* The sequence number of the chunk within the original content.
+* *start:* The starting position of the chunk within the original content.
+* *length:* The length of the chunk.
+
+
+
+
+## Class: System.IO.FileMetaData
+Represents metadata associated with a file. 
+
+### Properties
+
+#### Uuid
+Gets the universally unique identifier (UUID) of the file.
+#### Path
+Gets the path of the file.
+#### Hash
+Gets the hash value of the file.
+#### BasePath
+Gets the base path of the file.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.System.IO.FileMetaData*record. 
+
+
+##### Parameters
+* *uuid:* The universally unique identifier (UUID) of the file.
+* *path:* The path of the file.
+* *hash:* The hash value of the file.
+* *basePath:* The base path of the file.
+
+
+
+
 ## Class: System.Linq.Expressions.IExpressionTreeBuilder
 Represents a builder for constructing expression trees used in querying and filtering. 
 

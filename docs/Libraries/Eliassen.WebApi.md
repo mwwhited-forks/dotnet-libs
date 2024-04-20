@@ -24,6 +24,48 @@ The updated instance.
 
 
 
+## Class: WebApi.Controllers.AIController
+Controller for AI-related operations. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.WebApi.Controllers.AIController*class with the specified dependencies. 
+
+
+##### Parameters
+* *llmProvider:* The language model provider.
+* *embedding:* The embedding provider.
+
+
+
+
+#### GetResponseAsync(Eliassen.WebApi.Models.GenerativeAiRequestModel)
+Generate an LLM Response based on the prompt and user input 
+
+
+##### Return value
+The string response from the LLM
+
+
+
+#### Embed(System.String)
+Retrieves the embedding vector for the given text. 
+
+
+##### Parameters
+* *text:* The text for which to retrieve the embedding vector.
+
+
+
+
+##### Return value
+The embedding vector.
+
+
+
 ## Class: WebApi.Controllers.CommunicationsController
 Controller for handling communication-related operations, such as sending emails and messages to a queue. 
 
@@ -88,6 +130,74 @@ A task representing the asynchronous operation and containing a string result.
 
 
 
+## Class: WebApi.Controllers.DocumentController
+Controller for handling document-related operations. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.WebApi.Controllers.DocumentController*class with the specified dependencies. 
+
+
+##### Parameters
+* *converter:* The document conversion service.
+* *content:* The content provider service.
+
+
+
+
+#### Download(System.String)
+Downloads the specified file. 
+
+
+##### Parameters
+* *file:* The path to the file.
+
+
+
+
+#### Text(System.String)
+Retrieves the text of the specified file. 
+
+
+##### Parameters
+* *file:* The path to the file.
+
+
+
+
+#### Html(System.String)
+Retrieves the html of the specified file. 
+
+
+##### Parameters
+* *file:* The path to the file.
+
+
+
+
+#### Pdf(System.String)
+Retrieves the pdf of the specified file. 
+
+
+##### Parameters
+* *file:* The path to the file.
+
+
+
+
+#### Summary(System.String)
+Retrieves the summary of the specified file. 
+
+
+##### Parameters
+* *file:* The path to the file.
+
+
+
+
 ## Class: WebApi.Controllers.MessageQueueingController
 Controller for handling message queueing operations. 
 
@@ -135,6 +245,80 @@ Sends a message to the queue with authorization, requiring the caller to be auth
 
 ##### Return value
 A task representing the asynchronous operation and containing a string result.
+
+
+
+## Class: WebApi.Controllers.SearchController
+Controller for handling search operations. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.WebApi.Controllers.SearchController*class. 
+
+
+##### Parameters
+* *search:* The search provider.
+
+
+
+
+#### List
+Retrieves a list of all available search results. 
+
+
+##### Return value
+An enumerable collection of search results.
+
+
+
+#### SemanticSearch(System.String,System.Int32)
+Performs a semantic search with the given query. 
+
+
+##### Parameters
+* *query:* The search query.
+* *limit:* The maximum number of results to return.
+
+
+
+
+##### Return value
+An enumerable collection of search results.
+
+
+
+#### LexicalSearch(System.String,System.Int32)
+Performs a lexical search with the given query. 
+
+
+##### Parameters
+* *query:* The search query.
+* *limit:* The maximum number of results to return.
+
+
+
+
+##### Return value
+An enumerable collection of search results.
+
+
+
+#### HybridSearch(System.String,System.Int32)
+Performs a hybrid search with the given query. 
+
+
+##### Parameters
+* *query:* The search query.
+* *limit:* The maximum number of results to return.
+
+
+
+
+##### Return value
+An enumerable collection of search results.
 
 
 
@@ -240,6 +424,18 @@ Represents an example message model.
 Gets or sets the input string. Default value is "Default Value".
 #### Data
 Gets or sets the JSON data associated with the message.
+
+## Class: WebApi.Models.GenerativeAiRequestModel
+Represents the model used for generating AI responses. 
+
+### Properties
+
+#### PromptDetails
+Gets or sets the prompt details.
+#### UserInput
+Gets or sets the user input.
+#### ApiKey
+Gets or sets the input api key to use.
 
 ## Class: WebApi.Program
 primary entry point 
