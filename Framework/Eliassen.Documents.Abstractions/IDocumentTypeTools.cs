@@ -1,7 +1,7 @@
-﻿namespace Eliassen.Documents;
-
+﻿
 using System.IO;
 
+namespace Eliassen.Documents;
 /// <summary>
 /// Provides tools for working with document types.
 /// </summary>

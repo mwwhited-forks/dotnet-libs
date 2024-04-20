@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Eliassen.SBert;
 
-
 /// <summary>
 /// Provides extension methods for configuring services related to SBERT (Sentence-BERT).
 /// </summary>

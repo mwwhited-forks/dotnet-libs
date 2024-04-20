@@ -14,10 +14,7 @@ public class QdrantGrpcClientFactory : IQdrantGrpcClientFactory
     /// Creates a new instance of the Qdrant gRPC client.
     /// </summary>
     /// <returns>A new instance of the Qdrant gRPC client.</returns>
-    public QdrantGrpcClientFactory(IOptions<QdrantOptions> options)
-    {
-        _options = options;
-    }
+    public QdrantGrpcClientFactory(IOptions<QdrantOptions> options) => _options = options;
 
     /// <summary>
     /// Creates a new instance of the Qdrant gRPC client.

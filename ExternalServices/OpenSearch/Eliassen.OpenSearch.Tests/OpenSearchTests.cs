@@ -3,7 +3,6 @@ using OpenSearch.Net;
 
 namespace Eliassen.OpenSearch.Tests;
 
-
 [TestClass]
 public class OpenSearchTests
 {
@@ -12,7 +11,7 @@ public class OpenSearchTests
 
     public required TestContext TestContext { get; set; }
 
-    private IOpenSearchLowLevelClient GetClient()
+    private OpenSearchLowLevelClient GetClient()
     {
         var connection = new ConnectionConfiguration(
                 new Uri($"http://{hostName}:9200")
@@ -50,7 +49,7 @@ public class OpenSearchTests
     [TestMethod]
     public async Task SearchIndexTest()
     {
-        var id = Guid.NewGuid().ToString();
+        //var id = Guid.NewGuid().ToString();
         var client = GetClient();
         var result = await client.SearchAsync<StringResponse>(storeName,
             PostData.Serializable(new
@@ -73,7 +72,5 @@ public class OpenSearchTests
 
         Assert.IsTrue(result.Success);
     }
-
-
 
 }

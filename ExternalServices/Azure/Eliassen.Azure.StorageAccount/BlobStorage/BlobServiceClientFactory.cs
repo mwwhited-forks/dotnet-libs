@@ -16,10 +16,7 @@ public class BlobServiceClientFactory : IBlobServiceClientFactory
     /// <param name="config">The Azure Blob provider options.</param>
     public BlobServiceClientFactory(
         IOptions<AzureBlobProviderOptions> config
-    )
-    {
-        _config = config;
-    }
+    ) => _config = config;
 
     /// <summary>
     /// Creates a new instance of <see cref="BlobServiceClient"/>.

@@ -19,10 +19,7 @@ public class HtmlToPdfConversionHandler : IDocumentConversionHandler
     /// Initializes a new instance of the <see cref="HtmlToPdfConversionHandler"/> class.
     /// </summary>
     /// <param name="converter">The converter used for HTML to PDF conversion.</param>
-    public HtmlToPdfConversionHandler(IConverter converter)
-    {
-        _converter = converter;
-    }
+    public HtmlToPdfConversionHandler(IConverter converter) => _converter = converter;
 
     /// <summary>
     /// Converts HTML content from a source stream to PDF format and writes it to a destination stream.

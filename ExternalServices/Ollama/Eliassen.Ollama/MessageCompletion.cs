@@ -17,10 +17,7 @@ public class MessageCompletion : IMessageCompletion
     /// <param name="client">The OllamaApiClient instance used for communication with the Ollama API.</param>
     public MessageCompletion(
         OllamaApiClient client
-        )
-    {
-        _client = client;
-    }
+        ) => _client = client;
 
     /// <summary>
     /// Generates a completion for the given prompt using the specified model.

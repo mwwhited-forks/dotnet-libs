@@ -18,10 +18,7 @@ public class CorrelationInfoTelemetryProcessor : ITelemetryProcessor
     /// <param name="stringAccessor">The accessor for managing correlation information.</param>
     public CorrelationInfoTelemetryProcessor(
         IAccessor<CorrelationInfo> stringAccessor
-        )
-    {
-        _correlationAccessor = stringAccessor;
-    }
+        ) => _correlationAccessor = stringAccessor;
 
     /// <summary>
     /// Processes telemetry items by adding correlation information to the global properties.

@@ -14,7 +14,6 @@ public class SBertClientTests
     //    this.TestContext.WriteLine(string.Join(';', embedding));
     //}
 
-
     //[DataTestMethod, TestCategory("setup")]
     //[DataRow("192.168.1.170", "example-sbert")]
     //public async Task GetAllTest(string hostName, string collectionName)

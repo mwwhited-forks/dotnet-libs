@@ -67,7 +67,6 @@ public static class ServiceCollectionExtensions
         services.TryAddTransient<IGetSummary<ContentReference>>(sp => sp.GetRequiredKeyedService<BlobProvider>(BlobProviderFactory.SummaryCollectionKey));
         return services;
 
-
         //TODO: retire this
         //        services.TryAddTransient<IDocumentProvider, BlobContainerProvider>();
 

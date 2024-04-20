@@ -38,7 +38,6 @@ public class MarkdownToHtmlConversionHandler : IDocumentConversionHandler
     /// </summary>
     public string[] Destinations => ["text/html", "text/xhtml", "text/xhtml+xml"];
 
-
     /// <summary>
     /// Checks if the specified content type is supported for the destination stream.
     /// </summary>

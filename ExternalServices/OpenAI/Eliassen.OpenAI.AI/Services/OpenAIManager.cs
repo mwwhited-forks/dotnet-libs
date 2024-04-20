@@ -24,7 +24,6 @@ public class OpenAIManager(IOptions<OpenAIOptions> config) : ILanguageModelProvi
             }
         };
 
-
         var response = await api.GetChatCompletionsAsync(chatCompletionsOptions);
         return response.Value.Choices[0].Message.Content;
     }

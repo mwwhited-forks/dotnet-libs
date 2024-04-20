@@ -18,10 +18,7 @@ public class DocumentTypeTools : IDocumentTypeTools
     /// <param name="types">The collection of document types.</param>
     public DocumentTypeTools(
         IEnumerable<IDocumentType> types
-        )
-    {
-        _types = types;
-    }
+        ) => _types = types;
 
     /// <summary>
     /// Retrieves the document type associated with the specified content type.

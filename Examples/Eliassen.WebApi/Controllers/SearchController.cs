@@ -20,10 +20,7 @@ public class SearchController : Controller
     /// <param name="search">The search provider.</param>
     public SearchController(
         ISearchProvider search
-        )
-    {
-        _search = search;
-    }
+        ) => _search = search;
 
     /// <summary>
     /// Retrieves a list of all available search results.

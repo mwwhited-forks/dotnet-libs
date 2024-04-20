@@ -16,10 +16,7 @@ public class DocumentConversion : IDocumentConversion
     /// Initializes a new instance of the <see cref="DocumentConversion"/> class with the specified document conversion chain builder.
     /// </summary>
     /// <param name="chain">The document conversion chain builder.</param>
-    public DocumentConversion(IDocumentConversionChainBuilder chain)
-    {
-        _chain = chain;
-    }
+    public DocumentConversion(IDocumentConversionChainBuilder chain) => _chain = chain;
 
     private readonly Dictionary<(string source, string destination), ChainStep[]> _cache = [];
 

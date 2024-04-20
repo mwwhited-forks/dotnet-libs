@@ -25,7 +25,6 @@ public class SemanticStoreProvider :
     private readonly string _collectionName;
     private readonly bool _forSummary;
 
-
     /// <summary>
     /// Initializes a new instance of the <see cref="SemanticStoreProvider"/> class.
     /// </summary>

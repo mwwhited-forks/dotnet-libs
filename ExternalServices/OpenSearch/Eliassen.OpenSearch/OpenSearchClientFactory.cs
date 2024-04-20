@@ -17,10 +17,7 @@ public class OpenSearchClientFactory : IOpenSearchClientFactory
     /// <param name="config">The configuration options for the OpenSearch client.</param>
     public OpenSearchClientFactory(
         IOptions<OpenSearchOptions> config
-        )
-    {
-        _config = config;
-    }
+        ) => _config = config;
 
     /// <summary>
     /// Creates a new instance of the <see cref="IOpenSearchLowLevelClient"/>.

@@ -4,7 +4,6 @@ using System.Diagnostics;
 
 namespace Eliassen.Ollama.Tests;
 
-
 [TestClass]
 public class OllamaApiClientTests
 {
@@ -61,7 +60,6 @@ public class OllamaApiClientTests
             ));
     }
 
-
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("192.168.1.170", "llama2:13b")]
@@ -77,7 +75,6 @@ public class OllamaApiClientTests
         this.TestContext.WriteLine(embedding.Response);
     }
 
-
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("192.168.1.170")]
@@ -87,7 +84,6 @@ public class OllamaApiClientTests
         foreach (var localModel in await client.ListLocalModels())
             this.TestContext.WriteLine($"model: {localModel.Name}");
     }
-
 
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
@@ -143,7 +139,6 @@ public class OllamaApiClientTests
     //    var client = new OllamaApiClientFactory().Build(hostname);
     //    await client.DeleteModel(modelName);
     //}
-
 
     //    [DataTestMethod]
     //    //[DataRow("192.168.1.170", "what is the weather", "llama2:latest")]
@@ -217,8 +212,6 @@ public class OllamaApiClientTests
     //        var ollama = new OllamaApiClientFactory().Build(hostname);
     //        ollama.SelectedModel = model;
 
-
-
     //        var prompt = $@"
     //Using this information only answer the user's question.
     //Additional Information: 
@@ -236,7 +229,6 @@ public class OllamaApiClientTests
     //        {
     //            Model = model,
     //            Prompt = prompt,
-
 
     //            //Context = _context,
     //            //Raw = true,
@@ -358,11 +350,9 @@ public class OllamaApiClientTests
     //        //      ```{0}```
     //        //      SUMMARY:";
 
-
     //        var promptTemplate = @"summarize this content
 
     //{0}";
-
 
     //        var resource = $"{this.GetType().Namespace}.models.{fileName}";
     //        using var stream = this.GetType().Assembly.GetManifestResourceStream(resource);
@@ -407,7 +397,6 @@ public class OllamaApiClientTests
     //        while (!reader.EndOfStream)
     //            sb.Append(await reader.ReadLineAsync()).Append(" ");
 
-
     //        var content = sb.ToString();
     //        sb.Clear();
     //        var chunks = content.SplitBy(4096);
@@ -423,7 +412,6 @@ public class OllamaApiClientTests
     //        //this.TestContext.WriteLine($"--------------------------------");
     //        //this.TestContext.WriteLine($"{sb.Length} -> {sb}");
     //        //this.TestContext.WriteLine($"================================");
-
 
     //        var final = await DoCompletionAsync(ollama, modelName, promptTemplate, sb.ToString());
 

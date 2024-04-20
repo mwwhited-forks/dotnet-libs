@@ -107,7 +107,7 @@ public class BlobProvider :
             // Check if file exists in blob store
             //  If not exist upload
             Console.WriteLine($"upload -> {file}");//TODO: change this to logger
-            var contentInfo = await blob.UploadAsync(full, overwrite: false);
+            _ = await blob.UploadAsync(full, overwrite: false);
 
             // https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-properties-metadata
             await blob.SetMetadataAsync(new Dictionary<string, string>

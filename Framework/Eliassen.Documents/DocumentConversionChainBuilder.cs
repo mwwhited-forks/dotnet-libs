@@ -14,10 +14,7 @@ public class DocumentConversionChainBuilder : IDocumentConversionChainBuilder
     /// Initializes a new instance of the <see cref="DocumentConversionChainBuilder"/> class.
     /// </summary>
     /// <param name="handlers">The available document conversion handlers.</param>
-    public DocumentConversionChainBuilder(IEnumerable<IDocumentConversionHandler> handlers)
-    {
-        _handlers = handlers;
-    }
+    public DocumentConversionChainBuilder(IEnumerable<IDocumentConversionHandler> handlers) => _handlers = handlers;
 
     /// <summary>
     /// Constructs the document conversion steps for converting from the specified source content type to the destination content type.

@@ -18,10 +18,7 @@ public class UserTelemetryProcessor : ITelemetryProcessor
     /// <param name="accessor">The accessor for accessing the current HTTP context.</param>
     public UserTelemetryProcessor(
         IHttpContextAccessor accessor
-        )
-    {
-        _accessor = accessor;
-    }
+        ) => _accessor = accessor;
 
     /// <summary>
     /// Processes telemetry items by extracting user information from the HTTP context and adding it to the global properties.

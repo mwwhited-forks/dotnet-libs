@@ -18,20 +18,20 @@ public class PointStructFactory : IPointStructFactory
     /// <summary>
     /// Creates a <see cref="PointStruct"/> instance representing a file chunk.
     /// </summary>
-    /// <param name="metadata">The metadata of the file.</param>
+    /// <param name="metaData">The metadata of the file.</param>
     /// <param name="chunk">The content chunk.</param>
     /// <param name="fileInfo">Information about the file.</param>
     /// <param name="vector">The vector representing the file chunk.</param>
     /// <returns>The created <see cref="PointStruct"/>.</returns>
-    public PointStruct CreateFileChunk(FileMetaData metadata, ContentChunk chunk, FileInfo fileInfo, float[] vector) =>
+    public PointStruct CreateFileChunk(FileMetaData metaData, ContentChunk chunk, FileInfo fileInfo, float[] vector) =>
         new()
         {
-            Id = new() { Uuid = metadata.Uuid },
+            Id = new() { Uuid = metaData.Uuid },
             Payload = {
-                [nameof(metadata.Path)] = metadata.Path,
-                [nameof(metadata.Path) + nameof(metadata.Hash)] = Convert.ToBase64String(metadata.Hash),
-                [nameof(metadata.Path) + nameof(metadata.Hash) + "Id"] =new Guid(metadata.Hash).ToString(),
-                [nameof(metadata.BasePath)] = metadata.BasePath,
+                [nameof(metaData.Path)] = metaData.Path,
+                [nameof(metaData.Path) + nameof(metaData.Hash)] = Convert.ToBase64String(metaData.Hash),
+                [nameof(metaData.Path) + nameof(metaData.Hash) + "Id"] =new Guid(metaData.Hash).ToString(),
+                [nameof(metaData.BasePath)] = metaData.BasePath,
 
                 [$"chunk_{nameof(chunk.Data)}"] =chunk.Data,
                 [$"chunk_{nameof(chunk.Length)}"] =chunk.Length,

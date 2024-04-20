@@ -2,7 +2,6 @@
 
 namespace Eliassen.Qdrant.Tests;
 
-
 [TestClass]
 public class QdrantGrpcClientTests
 {
@@ -61,7 +60,6 @@ public class QdrantGrpcClientTests
     //    this.TestContext.WriteLine(result.Result ? "Created" : "Failed");
     //}
 
-
     //[DataTestMethod, TestCategory("setup")]
     ////[DataRow("192.168.1.170", "example-sbert", Distance.Cosine)]
     //[DataRow("192.168.1.170", "search-keys", Distance.Cosine)]
@@ -103,7 +101,6 @@ public class QdrantGrpcClientTests
     //        (IServiceInstance)Activator.CreateInstance(serviceType)
     //        );
     //}
-
 
     //[DataTestMethod, TestCategory("setup")]
     //[DataRow("192.168.1.170", "example-phi", Distance.Cosine, "phi")]
@@ -220,7 +217,6 @@ public class QdrantGrpcClientTests
     //        }
     //    }
     //}
-
 
     //[DataTestMethod, TestCategory("dev-local")]
     //[DataRow("192.168.1.170", "docs", "smtp")]
