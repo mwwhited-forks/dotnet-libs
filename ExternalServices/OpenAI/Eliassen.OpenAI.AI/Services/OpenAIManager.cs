@@ -1,5 +1,4 @@
-﻿using Azure;
-using Azure.AI.OpenAI;
+﻿using Azure.AI.OpenAI;
 using Eliassen.AI;
 using Microsoft.Extensions.Options;
 

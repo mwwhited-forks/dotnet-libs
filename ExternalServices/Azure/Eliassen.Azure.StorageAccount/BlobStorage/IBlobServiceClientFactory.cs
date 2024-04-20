@@ -8,9 +8,8 @@ namespace Eliassen.Azure.StorageAccount.BlobStorage;
 public interface IBlobServiceClientFactory
 {
     /// <summary>
-    /// Creates a new instance of <see cref="BlobProvider"/> with the specified <paramref name="collectionName"/>.
+    /// Creates a new instance of <see cref="BlobServiceClient"/>.
     /// </summary>
-    /// <param name="collectionName">The name of the collection to create the BlobProvider for.</param>
-    /// <returns>A new instance of <see cref="BlobProvider"/>.</returns>
+    /// <returns>The created <see cref="BlobServiceClient"/>.</returns>
     BlobServiceClient Create();
 }

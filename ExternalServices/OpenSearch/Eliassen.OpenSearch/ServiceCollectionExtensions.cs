@@ -1,9 +1,9 @@
-﻿using System.Text.Json.Nodes;
+﻿using Eliassen.Search;
+using Eliassen.Search.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Eliassen.Search;
-using Eliassen.Search.Models;
+using System.Text.Json.Nodes;
 
 namespace Eliassen.OpenSearch;
 
@@ -22,7 +22,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection TryAddOpenSearchServices(
         this IServiceCollection services,
         IConfiguration configuration,
-        #if DEBUG
+#if DEBUG
         string openSearchOptionSections
 #else
         string openSearchOptionSections = nameof(OpenSearchOptions)

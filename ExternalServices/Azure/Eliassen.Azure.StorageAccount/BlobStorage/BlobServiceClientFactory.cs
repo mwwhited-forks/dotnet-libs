@@ -3,10 +3,17 @@ using Microsoft.Extensions.Options;
 
 namespace Eliassen.Azure.StorageAccount.BlobStorage;
 
+/// <summary>
+/// Represents a factory for creating instances of <see cref="BlobServiceClient"/>.
+/// </summary>
 public class BlobServiceClientFactory : IBlobServiceClientFactory
 {
     private readonly IOptions<AzureBlobProviderOptions> _config;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="BlobServiceClientFactory"/> class with the specified configuration.
+    /// </summary>
+    /// <param name="config">The Azure Blob provider options.</param>
     public BlobServiceClientFactory(
         IOptions<AzureBlobProviderOptions> config
     )
@@ -14,5 +21,9 @@ public class BlobServiceClientFactory : IBlobServiceClientFactory
         _config = config;
     }
 
+    /// <summary>
+    /// Creates a new instance of <see cref="BlobServiceClient"/>.
+    /// </summary>
+    /// <returns>A new instance of <see cref="BlobServiceClient"/>.</returns>
     public BlobServiceClient Create() => new(_config.Value.ConnectionString);
 }

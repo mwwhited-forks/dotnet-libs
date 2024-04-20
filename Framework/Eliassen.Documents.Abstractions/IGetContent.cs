@@ -2,7 +2,7 @@
 
 namespace Eliassen.Documents;
 
-// <summary>
+/// <summary>
 /// Represents a provider for retrieving content of type <typeparamref name="T"/>.
 /// </summary>
 /// <typeparam name="T">The type of content to retrieve.</typeparam>

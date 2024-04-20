@@ -2,14 +2,14 @@
 using Azure.Storage.Blobs.Models;
 using Eliassen.Documents;
 using Eliassen.Documents.Models;
-using Eliassen.Search;
 using Eliassen.Extensions.Linq;
+using Eliassen.Search;
 using Eliassen.Search.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System;
 
 namespace Eliassen.Azure.StorageAccount.BlobStorage;
 
@@ -58,14 +58,19 @@ public class BlobProvider :
     }
 
     /// <summary>
+    /// Retrieves the summary of the specified file from Azure Blob storage.
+    /// </summary>
+    /// <param name="file">The name of the file to retrieve the summary for.</param>
+    /// <returns>A ContentReference object representing the summary content.</returns>
+    public Task<ContentReference?> GetSummaryAsync(string file) => GetContentAsync(file);
+
+    /// <summary>
     /// Queries Azure Blob storage for files that match the specified criteria.
     /// </summary>
     /// <param name="queryString">The query string to search for.</param>
     /// <param name="limit">The maximum number of results to return.</param>
     /// <param name="page">The page number of results to retrieve.</param>
-    /// <returns>An asynchronous enumerable of SearchResultModel objects representing the search results.</returns>
-    public Task<ContentReference?> GetSummaryAsync(string file) => GetContentAsync(file);
-
+    /// <returns>An asynchronous enumerable of BlobItem objects representing the search results.</returns>
     public IAsyncEnumerable<SearchResultModel> QueryAsync(string? queryString, int limit = 25, int page = 0) =>
         from item in ((ISearchContent<BlobItem>)this).QueryAsync(queryString, limit, page)
         select new SearchResultModel

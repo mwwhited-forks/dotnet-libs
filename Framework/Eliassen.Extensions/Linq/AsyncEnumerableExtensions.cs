@@ -150,7 +150,7 @@ public static class AsyncEnumerableExtensions
     /// <param name="cancellationToken">A cancellation token that can be used to cancel the operation.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains a read-only collection of elements.</returns>
     public static async Task<IReadOnlyCollection<T>> ToReadOnlyCollectionAsync<T>(
-        this IAsyncEnumerable<T> items, 
+        this IAsyncEnumerable<T> items,
         CancellationToken cancellationToken = default
         )
     {

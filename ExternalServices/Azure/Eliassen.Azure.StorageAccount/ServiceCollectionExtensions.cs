@@ -1,10 +1,10 @@
 ﻿using Eliassen.Azure.StorageAccount.BlobStorage;
 using Eliassen.Azure.StorageAccount.MessageQueueing;
-using Eliassen.Documents.Models;
 using Eliassen.Documents;
+using Eliassen.Documents.Models;
 using Eliassen.MessageQueueing.Services;
-using Eliassen.Search.Models;
 using Eliassen.Search;
+using Eliassen.Search.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -29,7 +29,7 @@ public static class ServiceCollectionExtensions
 #if DEBUG
         string azureBlobProviderOptionSection
 #else
-        string azureBlobProviderOptionSection = nameof(AzureBlobContainerOptions)
+        string azureBlobProviderOptionSection = nameof(AzureBlobProviderOptions)
 #endif
         ) =>
         services
@@ -45,7 +45,7 @@ public static class ServiceCollectionExtensions
     /// <param name="azureBlobProviderOptionSection">The configuration section name containing Azure Blob Storage options.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddAzureStorageBlobServices(
-        this IServiceCollection services, 
+        this IServiceCollection services,
         IConfiguration configuration,
 #if DEBUG
         string azureBlobProviderOptionSection

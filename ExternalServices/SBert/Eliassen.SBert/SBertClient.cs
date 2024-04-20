@@ -1,10 +1,10 @@
-﻿using System.Net.Http;
-using System.Text.Json.Nodes;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Options;
 using System;
 using System.Linq;
-using Microsoft.Extensions.Options;
+using System.Net.Http;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Threading.Tasks;
 
 namespace Eliassen.SBert;
 

@@ -1,6 +1,9 @@
 ﻿namespace Eliassen.WebApi.Models;
 
-public class GenAiRequestModel
+/// <summary>
+/// Represents the model used for generating AI responses.
+/// </summary>
+public class GenerativeAiRequestModel
 {
     /// <summary>
     /// Gets or sets the prompt details.

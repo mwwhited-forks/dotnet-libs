@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Search.Providers;
 
+/// <summary>
+/// Provides functionality to generate summaries for documents.
+/// </summary>
 public class DocumentSummaryGenerationProvider : ISummarizeContent
 {
     private const int MAX_LENGTH = 4096; //TODO: should look this up from model.
@@ -13,6 +16,12 @@ public class DocumentSummaryGenerationProvider : ISummarizeContent
     private readonly string _modelName;
     private readonly string _promptTemplate;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DocumentSummaryGenerationProvider"/> class.
+    /// </summary>
+    /// <param name="messageCompletion">The message completion service.</param>
+    /// <param name="modelName">The name of the model to use for completion.</param>
+    /// <param name="promptTemplate">The template for the completion prompt.</param>
     public DocumentSummaryGenerationProvider(
         IMessageCompletion messageCompletion,
         string modelName = "mistral:instruct", //TODO: move these to configs
@@ -26,6 +35,11 @@ public class DocumentSummaryGenerationProvider : ISummarizeContent
         ;
     }
 
+    /// <summary>
+    /// Generates a summary for the provided content asynchronously.
+    /// </summary>
+    /// <param name="content">The content for which to generate a summary.</param>
+    /// <returns>A summary of the content.</returns>
     public async Task<string> GenerateSummaryAsync(string content)
     {
         // if (content.Length < MAX_LENGTH) return content;

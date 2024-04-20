@@ -44,9 +44,23 @@ public record ExternalExtensionBuilder
     /// </value>
     public string ImapConfigurationSection { get; init; } = nameof(MailKitImapClientOptions);
 
+    /// <summary>
+    /// Gets or sets the configuration section name for OpenAI client options.
+    /// </summary>
     public string OpenAIClientOptionSection { get; init; } = nameof(OpenAIClientOptionSection);
 
+    /// <summary>
+    /// Gets or sets the configuration section name for SBert options.
+    /// </summary>
     public string SBertOptionSection { get; init; } = nameof(SBertOptions);
+
+    /// <summary>
+    /// Gets or sets the configuration section name for Qdrant options.
+    /// </summary>
     public string QdrantOptionSection { get; init; } = nameof(QdrantOptions);
+
+    /// <summary>
+    /// Gets or sets the configuration section name for OpenSearch options.
+    /// </summary>
     public string OpenSearchOptionSection { get; init; } = nameof(OpenSearchOptions);
 }

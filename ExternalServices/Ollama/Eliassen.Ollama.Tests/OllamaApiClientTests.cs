@@ -13,9 +13,9 @@ public class OllamaApiClientTests
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("192.168.1.170", "llama2:13b")]
-    public async Task GenerateEmbeddingsDoubleTest(string hostname, string model)
+    public async Task GenerateEmbeddingsDoubleTest(string hostName, string model)
     {
-        var client = new OllamaApiClientFactory().Build(hostname);
+        var client = new OllamaApiClientFactory().Build(hostName);
         var embedding = await client.GenerateEmbeddings(new()
         {
             Model = model,
@@ -28,9 +28,9 @@ public class OllamaApiClientTests
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("192.168.1.170", "llama2:13b")]
-    public async Task GenerateEmbeddingsSingleTest(string hostname, string model)
+    public async Task GenerateEmbeddingsSingleTest(string hostName, string model)
     {
-        var client = new OllamaApiClientFactory().Build(hostname);
+        var client = new OllamaApiClientFactory().Build(hostName);
         var embedding = await client.GenerateEmbeddings(new()
         {
             Model = model,
@@ -43,9 +43,9 @@ public class OllamaApiClientTests
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("192.168.1.170", "llama2:13b")]
-    public async Task GenerateEmbeddingsSingleExpandedTest(string hostname, string model)
+    public async Task GenerateEmbeddingsSingleExpandedTest(string hostName, string model)
     {
-        var client = new OllamaApiClientFactory().Build(hostname);
+        var client = new OllamaApiClientFactory().Build(hostName);
         var embedding = await client.GenerateEmbeddings(new()
         {
             Model = model,
@@ -65,9 +65,9 @@ public class OllamaApiClientTests
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("192.168.1.170", "llama2:13b")]
-    public async Task GetCompletionTest(string hostname, string model)
+    public async Task GetCompletionTest(string hostName, string model)
     {
-        var client = new OllamaApiClientFactory().Build(hostname);
+        var client = new OllamaApiClientFactory().Build(hostName);
         var embedding = await client.GetCompletion(new()
         {
             Model = model,
@@ -81,9 +81,9 @@ public class OllamaApiClientTests
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("192.168.1.170")]
-    public async Task ListModelsTest(string hostname)
+    public async Task ListModelsTest(string hostName)
     {
-        var client = new OllamaApiClientFactory().Build(hostname);
+        var client = new OllamaApiClientFactory().Build(hostName);
         foreach (var localModel in await client.ListLocalModels())
             this.TestContext.WriteLine($"model: {localModel.Name}");
     }
@@ -106,9 +106,9 @@ public class OllamaApiClientTests
     //[DataRow("192.168.1.170", "mixtral")]
     //[DataRow("192.168.1.170", "mixtral:instruct")]
     //[DataRow("192.168.1.170", "mixtral:text")]
-    public async Task PullModelTest(string hostname, string modelName)
+    public async Task PullModelTest(string hostName, string modelName)
     {
-        var client = new OllamaApiClientFactory().Build(hostname);
+        var client = new OllamaApiClientFactory().Build(hostName);
         double? last = default;
         await client.PullModel(modelName, ps =>
         {

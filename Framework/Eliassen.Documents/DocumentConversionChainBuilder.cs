@@ -3,15 +3,28 @@ using System.Linq;
 
 namespace Eliassen.Documents;
 
+/// <summary>
+/// Represents a builder for constructing document conversion chains.
+/// </summary>
 public class DocumentConversionChainBuilder : IDocumentConversionChainBuilder
 {
     private readonly IEnumerable<IDocumentConversionHandler> _handlers;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DocumentConversionChainBuilder"/> class.
+    /// </summary>
+    /// <param name="handlers">The available document conversion handlers.</param>
     public DocumentConversionChainBuilder(IEnumerable<IDocumentConversionHandler> handlers)
     {
         _handlers = handlers;
     }
 
+    /// <summary>
+    /// Constructs the document conversion steps for converting from the specified source content type to the destination content type.
+    /// </summary>
+    /// <param name="sourceContentType">The content type of the source document.</param>
+    /// <param name="destinationContentType">The desired content type of the converted document.</param>
+    /// <returns>An array of ChainStep objects representing the conversion steps.</returns>
     public ChainStep[] Steps(string sourceContentType, string destinationContentType)
     {
         var simple = _handlers

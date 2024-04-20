@@ -29,12 +29,12 @@ public class SemanticStoreProvider :
     /// <summary>
     /// Initializes a new instance of the <see cref="SemanticStoreProvider"/> class.
     /// </summary>
-    /// <param name="vectoreStore">The QdrantGrpcClient instance for accessing vector storage.</param>
+    /// <param name="vectorStore">The QdrantGrpcClient instance for accessing vector storage.</param>
     /// <param name="embedding">The embedding provider for generating embeddings.</param>
     /// <param name="storeName">The name of the store.</param>
     /// <param name="forSummary">Indicates whether the provider is for summary.</param>
     public SemanticStoreProvider(
-        QdrantGrpcClient vectoreStore,
+        QdrantGrpcClient vectorStore,
         IEmbeddingProvider embedding,
         string storeName,
         bool forSummary
@@ -45,7 +45,7 @@ public class SemanticStoreProvider :
         _collectionName = storeName;
         _forSummary = forSummary;
 
-        _vectoreStore = vectoreStore;
+        _vectoreStore = vectorStore;
         var vectorCollections = _vectoreStore.Collections.List(new ListCollectionsRequest { });
         if (!vectorCollections.Collections.Any(c => c.Name == _collectionName))
             _vectoreStore.Collections.Create(new CreateCollection

@@ -6,6 +6,9 @@ using System.Net;
 
 namespace Eliassen.WebApi.Controllers;
 
+/// <summary>
+/// Controller for handling document-related operations.
+/// </summary>
 [AllowAnonymous]
 [Route("[Controller]/[Action]")]
 public class DocumentController : Controller
@@ -13,6 +16,11 @@ public class DocumentController : Controller
     private readonly IDocumentConversion _converter;
     private readonly IContentProvider _content;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DocumentController"/> class with the specified dependencies.
+    /// </summary>
+    /// <param name="converter">The document conversion service.</param>
+    /// <param name="content">The content provider service.</param>
     public DocumentController(
         IDocumentConversion converter,
         IContentProvider content
@@ -22,6 +30,10 @@ public class DocumentController : Controller
         _content = content;
     }
 
+    /// <summary>
+    /// Downloads the specified file.
+    /// </summary>
+    /// <param name="file">The path to the file.</param>
     [HttpGet("{*file}")]
     [ProducesResponseType(typeof(FileStreamResult), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -32,6 +44,10 @@ public class DocumentController : Controller
             ContentReference blob => File(blob.Content, blob.ContentType, blob.FileName)
         };
 
+    /// <summary>
+    /// Retrieves the text of the specified file.
+    /// </summary>
+    /// <param name="file">The path to the file.</param>
     [HttpGet("{*file}")]
     [ProducesResponseType(typeof(FileStreamResult), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -45,6 +61,10 @@ public class DocumentController : Controller
                 Path.ChangeExtension(blob.FileName, ".txt"))
         };
 
+    /// <summary>
+    /// Retrieves the html of the specified file.
+    /// </summary>
+    /// <param name="file">The path to the file.</param>
     [HttpGet("{*file}")]
     [ProducesResponseType(typeof(FileStreamResult), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -58,6 +78,10 @@ public class DocumentController : Controller
                 Path.ChangeExtension(blob.FileName, ".html"))
         };
 
+    /// <summary>
+    /// Retrieves the pdf of the specified file.
+    /// </summary>
+    /// <param name="file">The path to the file.</param>
     [HttpGet("{*file}")]
     [ProducesResponseType(typeof(FileStreamResult), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -79,6 +103,10 @@ public class DocumentController : Controller
         return ms;
     }
 
+    /// <summary>
+    /// Retrieves the summary of the specified file.
+    /// </summary>
+    /// <param name="file">The path to the file.</param>
     [HttpGet("{*file}")]
     [ProducesResponseType(typeof(FileStreamResult), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]

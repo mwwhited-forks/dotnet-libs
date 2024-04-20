@@ -5,10 +5,17 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Documents;
 
+/// <summary>
+/// Represents a document conversion service.
+/// </summary>
 public class DocumentConversion : IDocumentConversion
 {
     private readonly IDocumentConversionChainBuilder _chain;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DocumentConversion"/> class with the specified document conversion chain builder.
+    /// </summary>
+    /// <param name="chain">The document conversion chain builder.</param>
     public DocumentConversion(IDocumentConversionChainBuilder chain)
     {
         _chain = chain;
@@ -16,6 +23,14 @@ public class DocumentConversion : IDocumentConversion
 
     private readonly Dictionary<(string source, string destination), ChainStep[]> _cache = [];
 
+    /// <summary>
+    /// Converts the content of a source stream to a destination stream asynchronously.
+    /// </summary>
+    /// <param name="source">The source stream containing the content to be converted.</param>
+    /// <param name="sourceContentType">The content type of the source content.</param>
+    /// <param name="destination">The destination stream where the converted content will be written.</param>
+    /// <param name="destinationContentType">The content type of the converted content.</param>
+    /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
     public async Task ConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType)
     {
         ArgumentNullException.ThrowIfNull(source, nameof(source));

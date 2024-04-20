@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using Eliassen.AI;
 using System;
-using Eliassen.AI;
+using System.Threading.Tasks;
 
 namespace Eliassen.SBert;
 

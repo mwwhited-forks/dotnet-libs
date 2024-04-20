@@ -7,11 +7,19 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Search.Providers;
 
+/// <summary>
+/// Represents a hybrid provider that combines results from lexical and semantic search providers.
+/// </summary>
 public class HybridProvider : ISearchContent<SearchResultModel>
 {
     private readonly ISearchContent<SearchResultModel> _lexicalProvider;
     private readonly ISearchContent<SearchResultModel> _semanticStoreProvider;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="HybridProvider"/> class.
+    /// </summary>
+    /// <param name="lexicalProvider">The lexical search provider.</param>
+    /// <param name="semanticStoreProvider">The semantic search provider.</param>
     public HybridProvider(
         [FromKeyedServices(SearchTypes.Lexical)] ISearchContent<SearchResultModel> lexicalProvider,
         [FromKeyedServices(SearchTypes.Semantic)] ISearchContent<SearchResultModel> semanticStoreProvider
@@ -21,6 +29,13 @@ public class HybridProvider : ISearchContent<SearchResultModel>
         _semanticStoreProvider = semanticStoreProvider;
     }
 
+    /// <summary>
+    /// Queries the hybrid provider asynchronously.
+    /// </summary>
+    /// <param name="queryString">The query string.</param>
+    /// <param name="limit">The maximum number of results to return.</param>
+    /// <param name="page">The page number of results to retrieve.</param>
+    /// <returns>An asynchronous enumerable of SearchResultModel objects representing the search results.</returns>
     public async IAsyncEnumerable<SearchResultModel> QueryAsync(string? queryString, int limit = 25, int page = 0)
     {
         var lexical = _lexicalProvider.QueryAsync(queryString, limit * 2, page).ToReadOnlyCollectionAsync();

@@ -5,10 +5,17 @@ using System.Linq;
 
 namespace Eliassen.Documents;
 
+/// <summary>
+/// Represents a toolset for managing document types.
+/// </summary>
 public class DocumentTypeTools : IDocumentTypeTools
 {
     private readonly IEnumerable<IDocumentType> _types;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DocumentTypeTools"/> class with the specified document types.
+    /// </summary>
+    /// <param name="types">The collection of document types.</param>
     public DocumentTypeTools(
         IEnumerable<IDocumentType> types
         )
@@ -16,12 +23,27 @@ public class DocumentTypeTools : IDocumentTypeTools
         _types = types;
     }
 
+    /// <summary>
+    /// Retrieves the document type associated with the specified content type.
+    /// </summary>
+    /// <param name="contentType">The content type to search for.</param>
+    /// <returns>The document type associated with the content type, if found; otherwise, null.</returns>
     public IDocumentType? GetByContentType(string contentType) =>
         _types.FirstOrDefault(t => t.ContentTypes.Any(i => string.Equals(i, contentType, StringComparison.OrdinalIgnoreCase)));
 
+    /// <summary>
+    /// Retrieves the document type associated with the specified file extension.
+    /// </summary>
+    /// <param name="fileExtension">The file extension to search for.</param>
+    /// <returns>The document type associated with the file extension, if found; otherwise, null.</returns>
     public IDocumentType? GetByFileExtension(string fileExtension) =>
         _types.FirstOrDefault(t => t.FileExtensions.Any(i => string.Equals(i, fileExtension, StringComparison.OrdinalIgnoreCase)));
 
+    /// <summary>
+    /// Retrieves the document type associated with the specified file header.
+    /// </summary>
+    /// <param name="stream">The stream containing the file header.</param>
+    /// <returns>The document type associated with the file header, if found; otherwise, null.</returns>
     public IDocumentType? GetByFileHeader(Stream stream)
     {
         var maxRead = _types.Max(t => t.FileHeader.Length);

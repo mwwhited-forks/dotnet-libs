@@ -16,7 +16,7 @@ public static class QdrantGrpcClientExtensions
     /// <summary>
     /// Ensures that the specified collection exists in Qdrant. If it doesn't exist, creates the collection with the specified parameters.
     /// </summary>
-    /// <param name="qdrant">The Qdrant gRPC client.</param>
+    /// <param name="qrdant">The Qdrant gRPC client.</param>
     /// <param name="collectionName">The name of the collection to ensure exists.</param>
     /// <param name="vectorSize">The size of the vectors in the collection.</param>
     /// <param name="distanceCalculation">The distance calculation method for the collection.</param>
