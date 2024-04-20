@@ -154,7 +154,7 @@ public class SemanticStoreProvider :
                         }
                     }
             }
-        })).Result.Any())
+        })).Result.Count != 0)
         {
             return false;
         }

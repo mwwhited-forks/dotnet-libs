@@ -37,7 +37,7 @@ public static class FileTools
 
         var buffer = new char[contextLength];
 
-        int sequence = 0;
+        var sequence = 0;
         while (file.Position < file.Length)
         {
             var start = file.Position;

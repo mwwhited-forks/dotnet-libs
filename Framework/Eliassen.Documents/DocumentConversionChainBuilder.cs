@@ -37,7 +37,7 @@ public class DocumentConversionChainBuilder : IDocumentConversionChainBuilder
     private IEnumerable<ChainStep[]> Chains(
         string sourceContentType,
         string destinationContentType,
-        IList<ChainStep> parents)
+        List<ChainStep> parents)
     {
         var realPossibles = _handlers.Except(parents.Select(p => p.Handler)).Where(i => i.SupportedSource(sourceContentType)).ToArray();
         if (realPossibles.Length == 0) yield break;

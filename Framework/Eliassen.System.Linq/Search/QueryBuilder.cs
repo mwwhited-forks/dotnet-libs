@@ -56,7 +56,7 @@ public abstract class QueryBuilder
             throw new NotSupportedException($"{query.GetType()} is not supported");
 
         var method = methodSignature.MakeGenericMethod(query.ElementType);
-        var result = method.Invoke(null, new object[] { query, searchQuery }) ??
+        var result = method.Invoke(null, [query, searchQuery]) ??
             throw new NotSupportedException($"{query.GetType()} is not supported");
         var paged = (IQueryResult)result;
         return paged;

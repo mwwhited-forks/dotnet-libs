@@ -36,9 +36,9 @@ public class SBertClient
         var results = await _httpClient.GetAsync($"/generate-embedding?query={input}");
         var json = await results.Content.ReadAsStringAsync();
         var node = JsonSerializer.Deserialize<JsonNode>(json);
-        var array = (JsonArray)node["embedding"];
-        var floats = array.Select(i => (float)i).ToArray();
-        return floats;
+        var array = (JsonArray?)node?["embedding"];
+        var floats = array?.OfType<JsonNode>().Select(i => (float)i).ToArray();
+        return floats ?? [];
     }
 
     /// <summary>
@@ -51,9 +51,9 @@ public class SBertClient
         var results = await _httpClient.GetAsync($"/generate-embedding?query={input}");
         var json = await results.Content.ReadAsStringAsync();
         var node = JsonSerializer.Deserialize<JsonNode>(json);
-        var array = (JsonArray)node["embedding"];
-        var floats = array.Select(i => (double)i).ToArray();
-        return floats;
+        var array = (JsonArray?)node?["embedding"];
+        var floats = array?.OfType<JsonNode>().Select(i => (double)i).ToArray();
+        return floats ?? [];
     }
 
 }
