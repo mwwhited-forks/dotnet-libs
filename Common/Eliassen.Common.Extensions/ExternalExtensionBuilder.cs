@@ -50,9 +50,9 @@ public record ExternalExtensionBuilder
     public string OpenAIClientOptionSection { get; init; } = nameof(OpenAIClientOptionSection);
 
     /// <summary>
-    /// Gets or sets the configuration section name for SBert options.
+    /// Gets or sets the configuration section name for SentenceEmbeddingOptions.
     /// </summary>
-    public string SBertOptionSection { get; init; } = nameof(SBertOptions);
+    public string SentenceEmbeddingOptionSection { get; init; } = nameof(SentenceEmbeddingOptions);
 
     /// <summary>
     /// Gets or sets the configuration section name for Qdrant options.

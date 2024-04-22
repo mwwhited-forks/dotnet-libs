@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Options;
+using System;
 
 namespace Eliassen.SBert;
 
@@ -27,9 +29,16 @@ public static class ServiceCollectionExtensions
 #endif
         )
     {
-        services.Configure<SBertOptions>(options => configuration.Bind(sbertOptionsSection, options));
-        services.TryAddTransient<SBertClient>();
+        services.Configure<SentenceEmbeddingOptions>(options => configuration.Bind(sbertOptionsSection, options));
+        //services.TryAddTransient<SentenceEmbeddingClient>();
         services.TryAddTransient<IEmbeddingProvider, SentenceEmbeddingProvider>();
+        //services.TryAddTransient<ISentenceEmbeddingClient>(sp=>ActivatorUtilities.CreateInstance<SentenceEmbeddingClient>(sp));
+
+        services.AddHttpClient<ISentenceEmbeddingClient, SentenceEmbeddingClient>((sp, http) =>
+        {
+            var options = sp.GetRequiredService<IOptions<SentenceEmbeddingOptions>>();
+            http.BaseAddress = new Uri(options.Value.Url);
+        });
 
         return services;
     }

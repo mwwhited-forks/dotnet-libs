@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
     <ProjectReference Include="..\Eliassen.SBert\Eliassen.SBert.csproj" />
   </ItemGroup>
 

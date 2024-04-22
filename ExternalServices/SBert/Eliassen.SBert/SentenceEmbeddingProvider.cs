@@ -1,5 +1,5 @@
 ﻿using Eliassen.AI;
-using System;
+using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace Eliassen.SBert;
@@ -9,18 +9,21 @@ namespace Eliassen.SBert;
 /// </summary>
 public class SentenceEmbeddingProvider : IEmbeddingProvider
 {
-    private readonly SBertClient _client;
+    private readonly ISentenceEmbeddingClient _client;
+    private readonly ILogger _logger;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SentenceEmbeddingProvider"/> class.
     /// </summary>
     /// <param name="client">The SBertClient instance for obtaining embeddings.</param>
     public SentenceEmbeddingProvider(
-        SBertClient client
+        ISentenceEmbeddingClient client,
+        ILogger<SentenceEmbeddingProvider> logger
     )
     {
         _client = client;
-        Console.WriteLine($"connect to embeddings");
+        _logger = logger;
+        logger.LogInformation($"connect to embeddings");
     }
 
     private int? _length;

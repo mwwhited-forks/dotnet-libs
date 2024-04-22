@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Options;
-using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -11,19 +9,19 @@ namespace Eliassen.SBert;
 /// <summary>
 /// Client for interacting with SBert.
 /// </summary>
-public class SBertClient
+public class SentenceEmbeddingClient : ISentenceEmbeddingClient
 {
-    private readonly IOptions<SBertOptions> _options;
-    private readonly HttpClient _httpClient; //TODO: this should be done differently
+    private readonly HttpClient _httpClient; 
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="SBertClient"/> class.
+    /// Initializes a new instance of the <see cref="SentenceEmbeddingClient"/> class.
     /// </summary>
-    /// <param name="options">The SBert options.</param>
-    public SBertClient(IOptions<SBertOptions> options)
+    /// <param name="httpClient">The HttpClient.</param>
+    public SentenceEmbeddingClient(
+        HttpClient httpClient
+        )
     {
-        _options = options;
-        _httpClient = new() { BaseAddress = new Uri(_options.Value.Url) };
+        _httpClient = httpClient;
     }
 
     /// <summary>
@@ -55,5 +53,4 @@ public class SBertClient
         var floats = array?.OfType<JsonNode>().Select(i => (double)i).ToArray();
         return floats ?? [];
     }
-
 }

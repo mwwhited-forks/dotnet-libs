@@ -3,7 +3,7 @@
 /// <summary>
 /// Options for configuring SBert.
 /// </summary>
-public class SBertOptions
+public class SentenceEmbeddingOptions
 {
     /// <summary>
     /// Gets or sets the URL for SBert.

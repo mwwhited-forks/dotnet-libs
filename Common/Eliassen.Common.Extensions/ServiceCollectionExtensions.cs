@@ -62,7 +62,7 @@ public static class ServiceCollectionExtensions
 
         services.TryAddOpenAIServices(configuration, externalBuilder.OpenAIClientOptionSection);
 
-        services.TryAddSbertServices(configuration, externalBuilder.SBertOptionSection);
+        services.TryAddSbertServices(configuration, externalBuilder.SentenceEmbeddingOptionSection);
         services.TryAddQdrantServices(configuration, externalBuilder.QdrantOptionSection);
         services.TryAddOpenSearchServices(configuration, externalBuilder.OpenSearchOptionSection);
         services.TryAddOllamaServices();
