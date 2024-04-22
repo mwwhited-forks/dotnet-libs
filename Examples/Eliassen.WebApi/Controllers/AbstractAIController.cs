@@ -24,5 +24,17 @@ namespace Eliassen.WebApi.Controllers
         [AllowAnonymous]
         public async Task<string> GetResponseAsync([FromBody] GenAiRequestModel model) =>
             await _llmProvider.GetResponseAsync(model.PromptDetails, model.UserInput);
+
+        /// <summary>
+        /// Generate an AbstractAI Response based on the prompt and user input
+        /// </summary>
+        /// <returns>The string response from the AbstractAI</returns>
+        [HttpPost("Streamed")]
+        [AllowAnonymous]
+        public async Task<string> GetStreamedResponseAsync([FromBody] GenAiRequestModel model)
+        {
+            string result = await _llmProvider.GetStreamedResponseAsync(model.PromptDetails, model.UserInput);
+            return result;
+        }
     }
 }
