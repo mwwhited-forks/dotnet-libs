@@ -15,7 +15,8 @@ public class SentenceEmbeddingProvider : IEmbeddingProvider
     /// <summary>
     /// Initializes a new instance of the <see cref="SentenceEmbeddingProvider"/> class.
     /// </summary>
-    /// <param name="client">The SBertClient instance for obtaining embeddings.</param>
+    /// <param name="client">The ISentenceEmbeddingClient for obtaining embeddings.</param>
+    /// <param name="logger">The ILogger{SentenceEmbeddingProvider} instance for logging.</param>
     public SentenceEmbeddingProvider(
         ISentenceEmbeddingClient client,
         ILogger<SentenceEmbeddingProvider> logger

@@ -12,6 +12,16 @@ namespace Eliassen.Markdig;
 /// </summary>
 public class MarkdownToHtmlConversionHandler : IDocumentConversionHandler
 {
+    private readonly MarkdownPipeline _pipeline;
+
+    /// <summary>
+    /// Constructor for MarkdownToHtmlConversionHandler
+    /// </summary>
+    /// <param name="pipeline"></param>
+    public MarkdownToHtmlConversionHandler(
+        MarkdownPipeline pipeline
+        ) => _pipeline = pipeline;
+
     /// <summary>
     /// Converts the content of a Markdown document in the source stream to HTML format
     /// and writes it to the destination stream.
@@ -29,7 +39,7 @@ public class MarkdownToHtmlConversionHandler : IDocumentConversionHandler
 
         using var reader = new StreamReader(source, leaveOpen: true);
         using var writer = new StreamWriter(destination, leaveOpen: true) { AutoFlush = true, };
-        var html = Markdown.ToHtml(await reader.ReadToEndAsync());
+        var html = Markdown.ToHtml(await reader.ReadToEndAsync(), _pipeline);
         await writer.WriteAsync(html);
     }
 

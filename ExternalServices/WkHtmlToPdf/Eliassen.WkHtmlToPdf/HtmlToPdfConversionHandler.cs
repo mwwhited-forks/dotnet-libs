@@ -55,6 +55,7 @@ public class HtmlToPdfConversionHandler : IDocumentConversionHandler
                 }
             }
         };
+
         var pdf = _converter.Convert(doc);
         await destination.WriteAsync(pdf);
     }
@@ -82,5 +83,5 @@ public class HtmlToPdfConversionHandler : IDocumentConversionHandler
     /// <param name="contentType">The content type to check.</param>
     /// <returns><c>true</c> if the content type is supported; otherwise, <c>false</c>.</returns>
     public bool SupportedSource(string contentType) => Sources.Any(t => string.Equals(t, contentType, StringComparison.OrdinalIgnoreCase));
-}
 
+}

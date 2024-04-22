@@ -109,7 +109,7 @@ public class SentenceEmbeddingClientTests
 
         this.TestContext.AddResult(
             dict.Select(i => string.Join('\t', i.Key, Convert.ToBase64String(i.Value.Select(i => BitConverter.GetBytes(i)).SelectMany(i => i).ToArray()))),
-            fileName: "Embeddings2.txt"
+            fileName: "Embeddings.txt"
             );
 
         this.TestContext.AddResult(

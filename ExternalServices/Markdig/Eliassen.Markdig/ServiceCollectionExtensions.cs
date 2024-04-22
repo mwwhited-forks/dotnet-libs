@@ -1,6 +1,8 @@
 ﻿using Eliassen.Documents;
 using Eliassen.Documents.Models;
+using Markdig;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Eliassen.Markdig;
 
@@ -16,6 +18,8 @@ public static class ServiceCollectionExtensions
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddMarkdigServices(this IServiceCollection services)
     {
+        services.TryAddTransient(_ => new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
+
         services.AddTransient<IDocumentConversionHandler, MarkdownToHtmlConversionHandler>();
 
         services.AddTransient<IDocumentType>(_ => new DocumentType
