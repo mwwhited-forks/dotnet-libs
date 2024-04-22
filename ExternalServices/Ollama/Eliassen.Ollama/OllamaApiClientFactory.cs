@@ -1,4 +1,5 @@
-﻿using OllamaSharp;
+﻿using Microsoft.Extensions.Options;
+using OllamaSharp;
 
 namespace Eliassen.Ollama;
 
@@ -7,10 +8,19 @@ namespace Eliassen.Ollama;
 /// </summary>
 public class OllamaApiClientFactory : IOllamaApiClientFactory
 {
+    private readonly IOptions<OllamaApiClientOptions> _options;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="OllamaApiClientFactory"/> class with the specified options.
+    /// </summary>
+    /// <param name="options">The options for configuring the Ollama API client.</param>
+    public OllamaApiClientFactory(
+        IOptions<OllamaApiClientOptions> options
+      ) => _options = options;
+
     /// <summary>
     /// Builds a new instance of the <see cref="OllamaApiClient"/> with the specified host.
     /// </summary>
-    /// <param name="host">The host address where the Ollama API is hosted.</param>
     /// <returns>A new instance of the <see cref="OllamaApiClient"/>.</returns>
-    public OllamaApiClient Build(string host) => new($"http://{host}:11434");
+    public OllamaApiClient Build() => new(_options.Value.Url, _options.Value.DefaultModel);
 }

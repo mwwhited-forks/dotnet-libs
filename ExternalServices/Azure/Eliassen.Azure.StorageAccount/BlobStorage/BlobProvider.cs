@@ -5,7 +5,7 @@ using Eliassen.Documents.Models;
 using Eliassen.Extensions.Linq;
 using Eliassen.Search;
 using Eliassen.Search.Models;
-using System;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,14 +24,21 @@ public class BlobProvider :
     IGetSummary<ContentReference>
 {
     private readonly BlobContainerClient _blockBlobClient;
+    private readonly ILogger _logger;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BlobProvider"/> class with the specified <paramref name="client"/> and <paramref name="collectionName"/>.
     /// </summary>
     /// <param name="client">The BlobServiceClient used to connect to the Azure Blob storage.</param>
     /// <param name="collectionName">The name of the collection in the Azure Blob storage.</param>
-    public BlobProvider(BlobServiceClient client, string collectionName)
+    /// <param name="loggerFactory">ILoggerFactory instance.</param>
+    public BlobProvider(
+        BlobServiceClient client,
+        string collectionName,
+        ILoggerFactory loggerFactory
+        )
     {
+        _logger = loggerFactory.CreateLogger(nameof(BlobProvider) + $"-{collectionName}");
         _blockBlobClient = client.GetBlobContainerClient(collectionName);
         _blockBlobClient.CreateIfNotExists();
     }
@@ -106,7 +113,7 @@ public class BlobProvider :
         {
             // Check if file exists in blob store
             //  If not exist upload
-            Console.WriteLine($"upload -> {file}");//TODO: change this to logger
+            _logger.LogInformation("upload -> {file}", file);
             _ = await blob.UploadAsync(full, overwrite: false);
 
             // https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-properties-metadata

@@ -65,7 +65,7 @@ public static class ServiceCollectionExtensions
         services.TryAddSbertServices(configuration, externalBuilder.SentenceEmbeddingOptionSection);
         services.TryAddQdrantServices(configuration, externalBuilder.QdrantOptionSection);
         services.TryAddOpenSearchServices(configuration, externalBuilder.OpenSearchOptionSection);
-        services.TryAddOllamaServices();
+        services.TryAddOllamaServices(configuration, externalBuilder.OllamaApiClientOptionSection);
 
         services.TryAddWkHtmlToPdfServices();
         services.TryAddMarkdigServices();

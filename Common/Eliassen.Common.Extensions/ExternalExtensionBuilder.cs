@@ -1,6 +1,7 @@
 ﻿using Eliassen.Azure.StorageAccount.BlobStorage;
 using Eliassen.MailKit.Services;
 using Eliassen.MongoDB.Extensions;
+using Eliassen.Ollama;
 using Eliassen.OpenSearch;
 using Eliassen.Qdrant;
 using Eliassen.SBert;
@@ -63,4 +64,9 @@ public record ExternalExtensionBuilder
     /// Gets or sets the configuration section name for OpenSearch options.
     /// </summary>
     public string OpenSearchOptionSection { get; init; } = nameof(OpenSearchOptions);
+
+    /// <summary>
+    /// Gets or sets the configuration section name for Ollama Api Client options.
+    /// </summary>
+    public string OllamaApiClientOptionSection { get; init; } = nameof(OllamaApiClientOptions);
 }

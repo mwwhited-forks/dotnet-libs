@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using OllamaSharp;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -28,7 +27,7 @@ public static class OllamaApiClientExtensions
         logger.LogInformation("list models");
         var models = await ollama.ListLocalModels();
         foreach (var model in models)
-            Console.WriteLine($"model: {model.Name}, size: {model.Size} ");
+            logger.LogInformation("model: {model}, size: {size} ", model.Name, model.Size);
 
         logger.LogInformation("create maybe");
         if (models.Any(m => !m.Name.StartsWith(modelName)))

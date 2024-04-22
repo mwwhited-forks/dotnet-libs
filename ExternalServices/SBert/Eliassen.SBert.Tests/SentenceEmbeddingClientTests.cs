@@ -58,7 +58,7 @@ public class SentenceEmbeddingClientTests
             var line = await reader.ReadLineAsync();
             try
             {
-                if (string.IsNullOrWhiteSpace(line.Trim())) continue;
+                if (string.IsNullOrWhiteSpace(line?.Trim())) continue;
 
                 var parts = line.Split([','], 2);
                 var section = parts[0].Trim();

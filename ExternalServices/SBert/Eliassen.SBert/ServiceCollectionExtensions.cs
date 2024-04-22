@@ -30,9 +30,7 @@ public static class ServiceCollectionExtensions
         )
     {
         services.Configure<SentenceEmbeddingOptions>(options => configuration.Bind(sbertOptionsSection, options));
-        //services.TryAddTransient<SentenceEmbeddingClient>();
         services.TryAddTransient<IEmbeddingProvider, SentenceEmbeddingProvider>();
-        //services.TryAddTransient<ISentenceEmbeddingClient>(sp=>ActivatorUtilities.CreateInstance<SentenceEmbeddingClient>(sp));
 
         services.AddHttpClient<ISentenceEmbeddingClient, SentenceEmbeddingClient>((sp, http) =>
         {

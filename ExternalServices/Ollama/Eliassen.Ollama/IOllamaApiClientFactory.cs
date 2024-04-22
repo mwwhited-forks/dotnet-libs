@@ -10,7 +10,6 @@ public interface IOllamaApiClientFactory
     /// <summary>
     /// Builds an instance of the OllamaApiClient for the specified host.
     /// </summary>
-    /// <param name="host">The host address where the Ollama API is hosted.</param>
     /// <returns>An instance of the OllamaApiClient.</returns>
-    OllamaApiClient Build(string host);
+    OllamaApiClient Build();
 }
