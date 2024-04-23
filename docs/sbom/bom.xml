@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:799172f5-1514-44c4-9978-756a25f731bd" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:1a23ac62-f143-405b-befe-68edf18fdc11" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
   <metadata>
-    <timestamp>2024-04-23T02:24:57.4855712Z</timestamp>
+    <timestamp>2024-04-23T02:50:11.5606306Z</timestamp>
     <tools>
       <tool>
         <vendor>CycloneDX</vendor>
@@ -9,9 +9,9 @@
         <version>3.0.5.0</version>
       </tool>
     </tools>
-    <component type="application" bom-ref="Eliassen.Libs@0.1.72-dev-ado-HybridSearch.23">
+    <component type="application" bom-ref="Eliassen.Libs@0.1.72-dev-ado-HybridSearch.24">
       <name>Eliassen.Libs</name>
-      <version>0.1.72-dev-ado-HybridSearch.23</version>
+      <version>0.1.72-dev-ado-HybridSearch.24</version>
     </component>
   </metadata>
   <components>
@@ -7217,7 +7217,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     </component>
   </components>
   <dependencies>
-    <dependency ref="Eliassen.Libs@0.1.72-dev-ado-HybridSearch.23">
+    <dependency ref="Eliassen.Libs@0.1.72-dev-ado-HybridSearch.24">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.1" />
