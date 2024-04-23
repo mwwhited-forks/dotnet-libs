@@ -2,6 +2,7 @@
 using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 
 namespace Eliassen.WebApi.Controllers
 {
@@ -33,9 +34,19 @@ namespace Eliassen.WebApi.Controllers
         [AllowAnonymous]
         public async IAsyncEnumerable<string> GetStreamedResponseAsync([FromBody] GenAiRequestModel model)
         {
-            await foreach (var contentUpdate in _llmProvider.GetStreamedResponseAsync(model.PromptDetails, model.UserInput))
+            var enumerator = _llmProvider.GetStreamedResponseAsync(model.PromptDetails, model.UserInput).GetAsyncEnumerator();
+            try
             {
-                yield return contentUpdate;
+                while (await enumerator.MoveNextAsync())
+                {
+                    var issue = enumerator.Current;
+                    yield return issue;
+                }
+            }
+            finally
+            {
+                if (enumerator != null)
+                    await enumerator.DisposeAsync();
             }
         }
     }
