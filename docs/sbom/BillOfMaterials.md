@@ -2,8 +2,8 @@
 
 ## Summary 
 
-Application: Eliassen.Libs (0.1.72-dev-ado-HybridSearch.13) \
-Time: 2024-04-20T02:29:52.5604134Z \
+Application: Eliassen.Libs (0.1.72-dev-ado-HybridSearch.22) \
+Time: 2024-04-23T01:35:30.0515133Z \
 Tool: CycloneDX (3.0.5.0). 
 
 ## Components 
@@ -1235,6 +1235,23 @@ Package URL: pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@8.0.0
 #### Description: 
 
 Hosting and startup abstractions for applications. 
+
+
+### Microsoft.Extensions.Http (8.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](C90A6DA21A015CEEB4F8786106B8F1C12FED14EC2F3AC0A58460806208516BE63456E51E4CB5EE0A2F299ED21F09BD03BD60D5E4A651EADF145663C050FDEEF1) \
+Package URL: pkg:nuget/Microsoft.Extensions.Http@8.0.0 
+
+#### Description: 
+
+The HttpClient factory is a pattern for configuring and retrieving named HttpClients in a composable way. The HttpClient factory provides extensibility to plug in DelegatingHandlers that address cross-cutting concerns such as service location, load balancing, and reliability. The default HttpClient factory provides built-in diagnostics and logging and manages the lifetimes of connections in a performant way.
+
+Commonly Used Types:
+System.Net.Http.IHttpClientFactory 
 
 
 ### Microsoft.Extensions.Logging (2.1.1) 

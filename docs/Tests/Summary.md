@@ -1,20 +1,20 @@
 # Summary - Eliassen.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 4/19/2024 - 10:29:37 PM |
-| Coverage date: | 4/19/2024 - 10:26:31 PM - 4/19/2024 - 10:29:25 PM |
+| Generated on: | 4/22/2024 - 9:35:15 PM |
+| Coverage date: | 4/22/2024 - 9:32:01 PM - 4/22/2024 - 9:35:00 PM |
 | Parser: | MultiReport (46x Cobertura, 46x OpenCover) |
 | Assemblies: | 25 |
 | Classes: | 132 |
 | Files: | 131 |
-| **Line coverage:** | 31.9% (1076 of 3367) |
-| Covered lines: | 1076 |
-| Uncovered lines: | 2291 |
-| Coverable lines: | 3367 |
-| Total lines: | 10102 |
-| **Branch coverage:** | 34.7% (1153 of 3320) |
-| Covered branches: | 1153 |
-| Total branches: | 3320 |
+| **Line coverage:** | 33.5% (1137 of 3388) |
+| Covered lines: | 1137 |
+| Uncovered lines: | 2251 |
+| Coverable lines: | 3388 |
+| Total lines: | 10164 |
+| **Branch coverage:** | 34.7% (1165 of 3352) |
+| Covered branches: | 1165 |
+| Total branches: | 3352 |
 | **Method coverage:** | [Feature is only available for sponsors](https://reportgenerator.io/pro) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|
@@ -23,7 +23,7 @@
 |Eliassen.AspNetCore.JwtAuthentication.ServiceCollectionExtensions|0|13|13|91|0%|0|4|0%|
 |Eliassen.AspNetCore.JwtAuthentication.SwaggerGen.ConfigureOAuthSwaggerGenOptions|0|31|31|72|0%|0|12|0%|
 |Eliassen.AspNetCore.JwtAuthentication.SwaggerGen.ConfigureOAuthSwaggerUIOptions|0|4|4|29|0%|0|0||
-|**Eliassen.AspNetCore.Mvc**|**0**|**422**|**422**|**1237**|**0%**|**0**|**372**|**0%**|
+|**Eliassen.AspNetCore.Mvc**|**0**|**421**|**421**|**1234**|**0%**|**0**|**372**|**0%**|
 |Eliassen.AspNetCore.Mvc.ApplicationBuilderExtensions|0|4|4|25|0%|0|0||
 |Eliassen.AspNetCore.Mvc.Authorization.UserAuthorizationHandler|0|14|14|61|0%|0|20|0%|
 |Eliassen.AspNetCore.Mvc.Authorization.UserAuthorizationRequirement|0|1|1|30|0%|0|0||
@@ -31,7 +31,7 @@
 |Eliassen.AspNetCore.Mvc.Filters.FormFileOperationFilter|0|11|11|41|0%|0|12|0%|
 |Eliassen.AspNetCore.Mvc.Filters.SearchQueryOperationFilter|0|111|111|266|0%|0|92|0%|
 |Eliassen.AspNetCore.Mvc.Filters.SearchQueryResultFilter|0|14|14|66|0%|0|16|0%|
-|Eliassen.AspNetCore.Mvc.Middleware.CorrelationInfoMiddleware|0|25|25|71|0%|0|28|0%|
+|Eliassen.AspNetCore.Mvc.Middleware.CorrelationInfoMiddleware|0|24|24|68|0%|0|28|0%|
 |Eliassen.AspNetCore.Mvc.Middleware.CultureInfoMiddleware|0|31|31|83|0%|0|20|0%|
 |Eliassen.AspNetCore.Mvc.Middleware.SearchQueryMiddleware|0|75|75|153|0%|0|76|0%|
 |Eliassen.AspNetCore.Mvc.OpenApi.ApiPermissionsExtension|0|6|6|38|0%|0|0||
@@ -42,13 +42,13 @@
 |Eliassen.AspNetCore.Mvc.SwaggerGen.AddOperationFilterOptions`1|0|1|1|19|0%|0|0||
 |Eliassen.AspNetCore.Mvc.SwaggerGen.AddSchemaFilterOptions`1|0|1|1|19|0%|0|0||
 |Eliassen.AspNetCore.Mvc.SwaggerGen.ApiNamespaceControllerModelConvention|0|1|1|15|0%|0|0||
-|**Eliassen.Azure.StorageAccount**|**0**|**109**|**109**|**428**|**0%**|**0**|**56**|**0%**|
-|Eliassen.Azure.StorageAccount.BlobStorage.BlobProvider|0|38|38|126|0%|0|8|0%|
+|**Eliassen.Azure.StorageAccount**|**0**|**118**|**118**|**435**|**0%**|**0**|**64**|**0%**|
+|Eliassen.Azure.StorageAccount.BlobStorage.BlobProvider|0|39|39|133|0%|0|8|0%|
 |Eliassen.Azure.StorageAccount.BlobStorage.BlobProviderFactory|0|9|9|51|0%|0|8|0%|
-|Eliassen.Azure.StorageAccount.BlobStorage.BlobServiceClientFactory|0|3|3|29|0%|0|0||
+|Eliassen.Azure.StorageAccount.BlobStorage.BlobServiceClientFactory|0|2|2|26|0%|0|0||
 |Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider|0|31|31|97|0%|0|32|0%|
 |Eliassen.Azure.StorageAccount.MessageQueueing.QueueClientFactory|0|7|7|30|0%|0|8|0%|
-|Eliassen.Azure.StorageAccount.ServiceCollectionExtensions|0|21|21|95|0%|0|0||
+|Eliassen.Azure.StorageAccount.ServiceCollectionExtensions|0|30|30|98|0%|0|8|0%|
 |**Eliassen.Communications**|**0**|**1**|**1**|**16**|**0%**|**0**|**0**|****|
 |Eliassen.Communications.ServiceCollectionExtensions|0|1|1|16|0%|0|0||
 |**Eliassen.Extensions**|**124**|**163**|**287**|**1037**|**43.2%**|**163**|**436**|**37.3%**|
@@ -68,21 +68,21 @@
 |**Eliassen.Handlebars**|**0**|**81**|**81**|**171**|**0%**|**0**|**84**|**0%**|
 |Eliassen.Handlebars.ServiceCollectionExtensions|0|3|3|29|0%|0|0||
 |Eliassen.Handlebars.Templating.HandlebarsTemplateProvider|0|78|78|142|0%|0|84|0%|
-|**Eliassen.Identity**|**0**|**9**|**9**|**42**|**0%**|**0**|**4**|**0%**|
+|**Eliassen.Identity**|**0**|**9**|**9**|**44**|**0%**|**0**|**4**|**0%**|
 |Eliassen.Identity.ServiceCollectionExtensions|0|2|2|14|0%|0|0||
-|Eliassen.Identity.UserManagementProvider|0|7|7|28|0%|0|4|0%|
-|**Eliassen.Keycloak**|**0**|**8**|**8**|**84**|**0%**|**0**|**0**|****|
-|Eliassen.Keycloak.Identity.ManageKeycloakUser|0|5|5|45|0%|0|0||
+|Eliassen.Identity.UserManagementProvider|0|7|7|30|0%|0|4|0%|
+|**Eliassen.Keycloak**|**0**|**8**|**8**|**87**|**0%**|**0**|**0**|****|
+|Eliassen.Keycloak.Identity.ManageKeycloakUser|0|5|5|48|0%|0|0||
 |Eliassen.Keycloak.ServiceCollectionExtensions|0|3|3|39|0%|0|0||
-|**Eliassen.MailKit**|**0**|**76**|**76**|**276**|**0%**|**0**|**60**|**0%**|
+|**Eliassen.MailKit**|**0**|**76**|**76**|**280**|**0%**|**0**|**60**|**0%**|
 |Eliassen.MailKit.ServiceCollectionExtensions|0|7|7|46|0%|0|0||
-|Eliassen.MailKit.Services.ImapClientFactory|0|8|8|41|0%|0|12|0%|
-|Eliassen.MailKit.Services.MailKitProvider|0|12|12|46|0%|0|4|0%|
-|Eliassen.MailKit.Services.MimeMessageFactory|0|41|41|102|0%|0|32|0%|
+|Eliassen.MailKit.Services.ImapClientFactory|0|8|8|42|0%|0|12|0%|
+|Eliassen.MailKit.Services.MailKitProvider|0|12|12|47|0%|0|4|0%|
+|Eliassen.MailKit.Services.MimeMessageFactory|0|41|41|104|0%|0|32|0%|
 |Eliassen.MailKit.Services.SmtpClientFactory|0|8|8|41|0%|0|12|0%|
-|**Eliassen.Markdig**|**0**|**20**|**20**|**91**|**0%**|**0**|**8**|**0%**|
-|Eliassen.Markdig.MarkdownToHtmlConversionHandler|0|11|11|60|0%|0|8|0%|
-|Eliassen.Markdig.ServiceCollectionExtensions|0|9|9|31|0%|0|0||
+|**Eliassen.Markdig**|**22**|**0**|**22**|**104**|**100%**|**4**|**8**|**50%**|
+|Eliassen.Markdig.MarkdownToHtmlConversionHandler|12|0|12|69|100%|4|8|50%|
+|Eliassen.Markdig.ServiceCollectionExtensions|10|0|10|35|100%|0|0||
 |**Eliassen.MessageQueueing**|**142**|**119**|**261**|**838**|**54.4%**|**74**|**228**|**32.4%**|
 |Eliassen.MessageQueueing.MessageSender`1|55|0|55|107|100%|10|16|62.5%|
 |Eliassen.MessageQueueing.ServiceCollectionExtensions|11|0|11|36|100%|0|0||
@@ -98,12 +98,12 @@
 |Eliassen.MessageQueueing.Tests.MessageSenderTests|0|66|66|137|0%|0|8|0%|
 |Eliassen.MessageQueueing.Tests.TestItems.TestExceptionMessageSenderProvider|0|1|1|11|0%|0|0||
 |Eliassen.MessageQueueing.Tests.TestItems.TestMessageSenderProvider|0|6|6|26|0%|0|0||
-|**Eliassen.Microsoft.ApplicationInsights**|**0**|**23**|**23**|**105**|**0%**|**0**|**40**|**0%**|
-|Eliassen.Microsoft.ApplicationInsights.Extensibility.CorrelationInfoTelemetryProcessor|0|9|9|39|0%|0|16|0%|
-|Eliassen.Microsoft.ApplicationInsights.Extensibility.UserTelemetryProcessor|0|11|11|44|0%|0|24|0%|
+|**Eliassen.Microsoft.ApplicationInsights**|**0**|**21**|**21**|**100**|**0%**|**0**|**40**|**0%**|
+|Eliassen.Microsoft.ApplicationInsights.Extensibility.CorrelationInfoTelemetryProcessor|0|8|8|36|0%|0|16|0%|
+|Eliassen.Microsoft.ApplicationInsights.Extensibility.UserTelemetryProcessor|0|10|10|42|0%|0|24|0%|
 |Eliassen.Microsoft.ApplicationInsights.ServiceCollectionExtensions|0|3|3|22|0%|0|0||
-|**Eliassen.Microsoft.B2C**|**0**|**96**|**96**|**223**|**0%**|**0**|**46**|**0%**|
-|Eliassen.Microsoft.B2C.Identity.ManageGraphUser|0|93|93|186|0%|0|46|0%|
+|**Eliassen.Microsoft.B2C**|**0**|**96**|**96**|**227**|**0%**|**0**|**46**|**0%**|
+|Eliassen.Microsoft.B2C.Identity.ManageGraphUser|0|93|93|190|0%|0|46|0%|
 |Eliassen.Microsoft.B2C.ServiceCollectionExtensions|0|3|3|37|0%|0|0||
 |**Eliassen.MongoDB**|**0**|**85**|**85**|**311**|**0%**|**0**|**112**|**0%**|
 |Eliassen.MongoDB.Extensions.BsonObjectIdConvention|0|13|13|42|0%|0|24|0%|
@@ -112,30 +112,30 @@
 |Eliassen.MongoDB.Extensions.MongoDatabaseRegistration|0|2|2|20|0%|0|0||
 |Eliassen.MongoDB.Extensions.MongoDispatchProxy|0|39|39|90|0%|0|80|0%|
 |Eliassen.MongoDB.ServiceCollectionExtensions|0|8|8|62|0%|0|4|0%|
-|**Eliassen.Ollama**|**0**|**33**|**33**|**184**|**0%**|**0**|**10**|**0%**|
-|Eliassen.Ollama.MessageCompletion|0|7|7|38|0%|0|0||
-|Eliassen.Ollama.OllamaApiClientExtensions|0|20|20|104|0%|0|10|0%|
-|Eliassen.Ollama.OllamaApiClientFactory|0|1|1|16|0%|0|0||
-|Eliassen.Ollama.ServiceCollectionExtensions|0|5|5|26|0%|0|0||
-|**Eliassen.OpenSearch**|**0**|**87**|**87**|**227**|**0%**|**0**|**96**|**0%**|
+|**Eliassen.Ollama**|**0**|**44**|**44**|**222**|**0%**|**0**|**10**|**0%**|
+|Eliassen.Ollama.OllamaApiClientExtensions|0|20|20|103|0%|0|10|0%|
+|Eliassen.Ollama.OllamaApiClientFactory|0|2|2|26|0%|0|0||
+|Eliassen.Ollama.OllamaMessageCompletion|0|13|13|49|0%|0|0||
+|Eliassen.Ollama.ServiceCollectionExtensions|0|9|9|44|0%|0|0||
+|**Eliassen.OpenSearch**|**0**|**86**|**86**|**224**|**0%**|**0**|**96**|**0%**|
 |Eliassen.OpenSearch.LexicalProvider|0|66|66|138|0%|0|88|0%|
-|Eliassen.OpenSearch.OpenSearchClientFactory|0|12|12|46|0%|0|8|0%|
+|Eliassen.OpenSearch.OpenSearchClientFactory|0|11|11|43|0%|0|8|0%|
 |Eliassen.OpenSearch.ServiceCollectionExtensions|0|9|9|43|0%|0|0||
-|**Eliassen.Qdrant**|**0**|**233**|**233**|**516**|**0%**|**0**|**78**|**0%**|
+|**Eliassen.Qdrant**|**0**|**232**|**232**|**511**|**0%**|**0**|**78**|**0%**|
 |Eliassen.Qdrant.PointStructFactory|0|53|53|110|0%|0|16|0%|
-|Eliassen.Qdrant.QdrantGrpcClientExtensions|0|21|21|57|0%|0|18|0%|
-|Eliassen.Qdrant.QdrantGrpcClientFactory|0|3|3|27|0%|0|0||
-|Eliassen.Qdrant.SemanticStoreProvider|0|142|142|240|0%|0|44|0%|
+|Eliassen.Qdrant.QdrantGrpcClientExtensions|0|21|21|56|0%|0|18|0%|
+|Eliassen.Qdrant.QdrantGrpcClientFactory|0|2|2|24|0%|0|0||
+|Eliassen.Qdrant.SemanticStoreProvider|0|142|142|239|0%|0|44|0%|
 |Eliassen.Qdrant.SemanticStoreProviderFactory|0|4|4|36|0%|0|0||
 |Eliassen.Qdrant.ServiceCollectionExtensions|0|10|10|46|0%|0|0||
 |**Eliassen.RabbitMQ**|**0**|**68**|**68**|**200**|**0%**|**0**|**32**|**0%**|
 |Eliassen.RabbitMQ.MessageQueueing.QueueClientFactory|0|9|9|36|0%|0|4|0%|
 |Eliassen.RabbitMQ.MessageQueueing.RabbitMQQueueMessageProvider|0|51|51|124|0%|0|28|0%|
 |Eliassen.RabbitMQ.ServiceCollectionEx|0|8|8|40|0%|0|0||
-|**Eliassen.SBert**|**0**|**26**|**26**|**134**|**0%**|**0**|**4**|**0%**|
-|Eliassen.SBert.SBertClient|0|17|17|59|0%|0|0||
-|Eliassen.SBert.SentenceEmbeddingProvider|0|5|5|38|0%|0|4|0%|
-|Eliassen.SBert.ServiceCollectionExtensions|0|4|4|37|0%|0|0||
+|**Eliassen.SBert**|**0**|**30**|**30**|**141**|**0%**|**0**|**24**|**0%**|
+|Eliassen.SBert.SentenceEmbeddingClient|0|16|16|56|0%|0|20|0%|
+|Eliassen.SBert.SentenceEmbeddingProvider|0|6|6|42|0%|0|4|0%|
+|Eliassen.SBert.ServiceCollectionExtensions|0|8|8|43|0%|0|0||
 |**Eliassen.Search**|**0**|**93**|**93**|**287**|**0%**|**0**|**80**|**0%**|
 |Eliassen.Search.Providers.DocumentSummaryGenerationProvider|0|20|20|71|0%|0|8|0%|
 |Eliassen.Search.Providers.HybridProvider|0|57|57|103|0%|0|72|0%|
@@ -173,6 +173,6 @@
 |Eliassen.System.Linq.ServiceCollectionExtensions|6|0|6|32|100%|0|0||
 |**Eliassen.TestUtilities**|**131**|**22**|**153**|**341**|**85.6%**|**148**|**232**|**63.7%**|
 |Eliassen.TestUtilities.TestContextExtensions|131|22|153|341|85.6%|148|232|63.7%|
-|**Eliassen.WkHtmlToPdf**|**0**|**39**|**39**|**125**|**0%**|**0**|**8**|**0%**|
-|Eliassen.WkHtmlToPdf.HtmlToPdfConversionHandler|0|29|29|89|0%|0|8|0%|
-|Eliassen.WkHtmlToPdf.ServiceCollectionExtensions|0|10|10|36|0%|0|0||
+|**Eliassen.WkHtmlToPdf**|**39**|**0**|**39**|**125**|**100%**|**8**|**12**|**66.6%**|
+|Eliassen.WkHtmlToPdf.HtmlToPdfConversionHandler|28|0|28|87|100%|4|8|50%|
+|Eliassen.WkHtmlToPdf.ServiceCollectionExtensions|11|0|11|38|100%|4|4|100%|

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:ae000cb9-e57f-4e64-af74-73e81ac4e0b5" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:b468dd2c-5169-4cc3-9b4c-258e02733b98" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
   <metadata>
-    <timestamp>2024-04-20T02:29:52.5604134Z</timestamp>
+    <timestamp>2024-04-23T01:35:30.0515133Z</timestamp>
     <tools>
       <tool>
         <vendor>CycloneDX</vendor>
@@ -9,9 +9,9 @@
         <version>3.0.5.0</version>
       </tool>
     </tools>
-    <component type="application" bom-ref="Eliassen.Libs@0.1.72-dev-ado-HybridSearch.13">
+    <component type="application" bom-ref="Eliassen.Libs@0.1.72-dev-ado-HybridSearch.22">
       <name>Eliassen.Libs</name>
-      <version>0.1.72-dev-ado-HybridSearch.13</version>
+      <version>0.1.72-dev-ado-HybridSearch.22</version>
     </component>
   </metadata>
   <components>
@@ -2146,6 +2146,34 @@ Microsoft.Extensions.FileProviders.IFileProvider</description>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
       <purl>pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@8.0.0</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://dot.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/runtime</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Http@8.0.0">
+      <author>Microsoft</author>
+      <name>Microsoft.Extensions.Http</name>
+      <version>8.0.0</version>
+      <description>The HttpClient factory is a pattern for configuring and retrieving named HttpClients in a composable way. The HttpClient factory provides extensibility to plug in DelegatingHandlers that address cross-cutting concerns such as service location, load balancing, and reliability. The default HttpClient factory provides built-in diagnostics and logging and manages the lifetimes of connections in a performant way.
+
+Commonly Used Types:
+System.Net.Http.IHttpClientFactory</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">C90A6DA21A015CEEB4F8786106B8F1C12FED14EC2F3AC0A58460806208516BE63456E51E4CB5EE0A2F299ED21F09BD03BD60D5E4A651EADF145663C050FDEEF1</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.Extensions.Http@8.0.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://dot.net/</url>
@@ -7189,7 +7217,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     </component>
   </components>
   <dependencies>
-    <dependency ref="Eliassen.Libs@0.1.72-dev-ado-HybridSearch.13">
+    <dependency ref="Eliassen.Libs@0.1.72-dev-ado-HybridSearch.22">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.1" />
@@ -7224,6 +7252,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Azure.WebJobs.Logging.ApplicationInsights@3.0.35" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Binder@8.0.1" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@8.0.0" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Http@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2" />
       <dependency ref="pkg:nuget/MongoDB.Driver@2.25.0" />
       <dependency ref="pkg:nuget/OllamaSharp@1.1.1" />
@@ -7624,6 +7653,14 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.EventSource@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.0" />
     </dependency>
+    <dependency ref="pkg:nuget/Microsoft.Extensions.Http@8.0.0">
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.1" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Diagnostics@8.0.0" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Logging@8.0.0" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@8.0.1" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2" />
+    </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@2.1.1" />
     <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@8.0.1">
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.1" />
@@ -7633,7 +7670,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.Logging@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Configuration@2.1.0">
-      <dependency ref="pkg:nuget/Microsoft.Extensions.Logging@2.1.1" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Logging@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Options.ConfigurationExtensions@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Configuration@8.0.0">
@@ -7675,10 +7712,10 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Text.Json@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Logging@2.1.1">
-      <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Binder@8.0.1" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Binder@2.1.1" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.1" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@8.0.1" />
-      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@2.1.1" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@2.1.1" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Extensions.Logging@8.0.0">
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection@8.0.0" />

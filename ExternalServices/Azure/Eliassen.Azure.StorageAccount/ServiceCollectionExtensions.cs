@@ -60,11 +60,11 @@ public static class ServiceCollectionExtensions
         services.TryAddTransient(sp => sp.GetRequiredService<IBlobServiceClientFactory>().Create());
         services.TryAddTransient<IBlobProviderFactory, BlobProviderFactory>();
         services.AddKeyedTransient(
-            BlobProviderFactory.DocumentCollectionKey, 
-            (sp, k) => sp.GetRequiredService<IBlobProviderFactory>().Create((k as string)?? throw new ApplicationException("Missing Key"))
+            BlobProviderFactory.DocumentCollectionKey,
+            (sp, k) => sp.GetRequiredService<IBlobProviderFactory>().Create((k as string) ?? throw new ApplicationException("Missing Key"))
             );
         services.AddKeyedTransient(
-            BlobProviderFactory.SummaryCollectionKey, 
+            BlobProviderFactory.SummaryCollectionKey,
             (sp, k) => sp.GetRequiredService<IBlobProviderFactory>().Create((k as string) ?? throw new ApplicationException("Missing Key"))
             );
         services.TryAddTransient<IStoreContent>(sp => sp.GetRequiredKeyedService<BlobProvider>(BlobProviderFactory.DocumentCollectionKey));

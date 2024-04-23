@@ -71,6 +71,7 @@
     <CodeDocumentation Remove="bin\**\*.*" />
     <CodeDocumentation Remove="obj\**\*.*" />
     <CodeDocumentation Remove="TestResults\**\*.*" />
+    <CodeDocumentation Remove="TestData\**\*.*" />
 
     <!-- these items will be automatically included as embedded resources in your assembly. -->
     <Examples Include="**\*.txt" />

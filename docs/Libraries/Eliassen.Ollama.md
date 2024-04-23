@@ -7,51 +7,12 @@ Represents a factory for creating instances of the OllamaApiClient.
 ### Methods
 
 
-#### Build(System.String)
+#### Build
 Builds an instance of the OllamaApiClient for the specified host. 
-
-
-##### Parameters
-* *host:* The host address where the Ollama API is hosted.
-
-
 
 
 ##### Return value
 An instance of the OllamaApiClient.
-
-
-
-## Class: Ollama.MessageCompletion
-Represents a class responsible for generating message completions using the Ollama API. 
-
-### Methods
-
-
-#### Constructor
-Initializes a new instance of the 
- *See: T:Eliassen.Ollama.MessageCompletion*class. 
-
-
-##### Parameters
-* *client:* The OllamaApiClient instance used for communication with the Ollama API.
-
-
-
-
-#### GetCompletionAsync(System.String,System.String)
-Generates a completion for the given prompt using the specified model. 
-
-
-##### Parameters
-* *modelName:* The name of the model to use for completion.
-* *prompt:* The prompt for which completion is requested.
-
-
-
-
-##### Return value
-A task representing the asynchronous operation. The task result contains the completion response.
 
 
 
@@ -154,19 +115,83 @@ Factory class for creating instances of the
 ### Methods
 
 
-#### Build(System.String)
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Ollama.OllamaApiClientFactory*class with the specified options. 
+
+
+##### Parameters
+* *options:* The options for configuring the Ollama API client.
+
+
+
+
+#### Build
 Builds a new instance of the 
  *See: T:OllamaSharp.OllamaApiClient*with the specified host. 
 
 
+##### Return value
+A new instance of the .
+
+
+
+## Class: Ollama.OllamaApiClientOptions
+Represents the configuration options for the Ollama API client. 
+
+### Properties
+
+#### Url
+Gets or initializes the URL of the Ollama API.
+#### DefaultModel
+Gets or initializes the default model to use with the Ollama API.
+
+## Class: Ollama.OllamaMessageCompletion
+Represents a class responsible for generating message completions using the Ollama API. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Ollama.OllamaMessageCompletion*class. 
+
+
 ##### Parameters
-* *host:* The host address where the Ollama API is hosted.
+* *client:* The OllamaApiClient instance used for communication with the Ollama API.
+
+
+
+
+#### GetCompletionAsync(System.String,System.String)
+Generates a completion for the given prompt using the specified model. 
+
+
+##### Parameters
+* *modelName:* The name of the model to use for completion.
+* *prompt:* The prompt for which completion is requested.
 
 
 
 
 ##### Return value
-A new instance of the .
+A task representing the asynchronous operation. The task result contains the completion response.
+
+
+
+#### GetResponseAsync(System.String,System.String)
+Retrieves a response from the language model based on the provided prompt details and user input. 
+
+
+##### Parameters
+* *promptDetails:* Details of the prompt or context.
+* *userInput:* The user input or query.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. The task result contains the response from the language model.
 
 
 
@@ -176,12 +201,14 @@ Provides extension methods for configuring services related to Ollama.
 ### Methods
 
 
-#### TryAddOllamaServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+#### TryAddOllamaServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
 Configures services for Ollama. 
 
 
 ##### Parameters
 * *services:* The to add the services to.
+* *configuration:* The configuration containing the Ollama API client options.
+* *ollamaApiClientOptionSection:* The name of the configuration section containing the Ollama API client options.
 
 
 

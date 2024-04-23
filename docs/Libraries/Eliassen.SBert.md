@@ -1,7 +1,43 @@
 ﻿# Eliassen.SBert
 
 
-## Class: SBert.SBertClient
+## Class: SBert.ISentenceEmbeddingClient
+Represents a client for generating sentence embeddings. 
+
+### Methods
+
+
+#### GetEmbeddingAsync(System.String)
+Asynchronously generates a sentence embedding as an array of single-precision floating-point numbers. 
+
+
+##### Parameters
+* *input:* The input sentence to generate the embedding for.
+
+
+
+
+##### Return value
+An array of single-precision floating-point numbers representing the embedding of the input sentence.
+
+
+
+#### GetEmbeddingDoubleAsync(System.String)
+Asynchronously generates a sentence embedding as an array of double-precision floating-point numbers. 
+
+
+##### Parameters
+* *input:* The input sentence to generate the embedding for.
+
+
+
+
+##### Return value
+An array of double-precision floating-point numbers representing the embedding of the input sentence.
+
+
+
+## Class: SBert.SentenceEmbeddingClient
 Client for interacting with SBert. 
 
 ### Methods
@@ -9,11 +45,11 @@ Client for interacting with SBert.
 
 #### Constructor
 Initializes a new instance of the 
- *See: T:Eliassen.SBert.SBertClient*class. 
+ *See: T:Eliassen.SBert.SentenceEmbeddingClient*class. 
 
 
 ##### Parameters
-* *options:* The SBert options.
+* *httpClient:* The HttpClient.
 
 
 
@@ -48,7 +84,7 @@ An array of double-precision floats representing the embedding.
 
 
 
-## Class: SBert.SBertOptions
+## Class: SBert.SentenceEmbeddingOptions
 Options for configuring SBert. 
 
 ### Properties
@@ -72,7 +108,8 @@ Initializes a new instance of the
 
 
 ##### Parameters
-* *client:* The SBertClient instance for obtaining embeddings.
+* *client:* The ISentenceEmbeddingClient for obtaining embeddings.
+* *logger:* The ILogger{SentenceEmbeddingProvider} instance for logging.
 
 
 
@@ -105,7 +142,7 @@ Configures services for SBERT (Sentence-BERT).
 ##### Parameters
 * *services:* The to add the services to.
 * *configuration:* The to bind SBERT options from.
-* *sbertOptionsSection:* The configuration section name containing SBERT options.
+* *sentenceEmbeddingOptionSection:* The configuration section name containing SBERT options.
 
 
 

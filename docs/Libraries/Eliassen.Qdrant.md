@@ -122,7 +122,7 @@ Creates a
 
 
 ##### Parameters
-* *metadata:* The metadata of the file.
+* *metaData:* The metadata of the file.
 * *chunk:* The content chunk.
 * *fileInfo:* Information about the file.
 * *vector:* The vector representing the file chunk.
@@ -184,7 +184,7 @@ Ensures that the specified collection exists in Qdrant. If it doesn't exist, cre
 
 
 ##### Parameters
-* *qrdant:* The Qdrant gRPC client.
+* *qdrant:* The Qdrant gRPC client.
 * *collectionName:* The name of the collection to ensure exists.
 * *vectorSize:* The size of the vectors in the collection.
 * *distanceCalculation:* The distance calculation method for the collection.

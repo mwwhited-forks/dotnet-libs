@@ -16,12 +16,14 @@ Gets or sets the configuration section name for SMTP client options (MailKit). T
 Gets or sets the configuration section name for IMAP client options (MailKit). The configuration section name for IMAP client options (MailKit). Default is "MailKitImapClientOptions".
 #### OpenAIClientOptionSection
 Gets or sets the configuration section name for OpenAI client options.
-#### SBertOptionSection
-Gets or sets the configuration section name for SBert options.
+#### SentenceEmbeddingOptionSection
+Gets or sets the configuration section name for SentenceEmbeddingOptions.
 #### QdrantOptionSection
 Gets or sets the configuration section name for Qdrant options.
 #### OpenSearchOptionSection
 Gets or sets the configuration section name for OpenSearch options.
+#### OllamaApiClientOptionSection
+Gets or sets the configuration section name for Ollama Api Client options.
 
 ## Class: Common.Extensions.IdentityExtensionBuilder
 Represents a builder for configuring identity extensions. 

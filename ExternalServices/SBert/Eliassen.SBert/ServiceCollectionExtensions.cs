@@ -17,19 +17,19 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
     /// <param name="configuration">The <see cref="IConfiguration"/> to bind SBERT options from.</param>
-    /// <param name="sbertOptionsSection">The configuration section name containing SBERT options.</param>
+    /// <param name="sentenceEmbeddingOptionSection">The configuration section name containing SBERT options.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddSbertServices(
         this IServiceCollection services,
         IConfiguration configuration,
 #if DEBUG
-        string sbertOptionsSection
+        string sentenceEmbeddingOptionSection
 #else
-        string sbertOptionsSection = nameof(SBertOptions)
+        string sentenceEmbeddingOptionSection = nameof(SentenceEmbeddingOptions)
 #endif
         )
     {
-        services.Configure<SentenceEmbeddingOptions>(options => configuration.Bind(sbertOptionsSection, options));
+        services.Configure<SentenceEmbeddingOptions>(options => configuration.Bind(sentenceEmbeddingOptionSection, options));
         services.TryAddTransient<IEmbeddingProvider, SentenceEmbeddingProvider>();
 
         services.AddHttpClient<ISentenceEmbeddingClient, SentenceEmbeddingClient>((sp, http) =>

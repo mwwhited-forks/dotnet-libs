@@ -13,6 +13,16 @@ Gets the content types supported for the source stream.
 ### Methods
 
 
+#### Constructor
+Constructor for MarkdownToHtmlConversionHandler 
+
+
+##### Parameters
+* *pipeline:* 
+
+
+
+
 #### ConvertAsync(System.IO.Stream,System.String,System.IO.Stream,System.String)
 Converts the content of a Markdown document in the source stream to HTML format and writes it to the destination stream. 
 

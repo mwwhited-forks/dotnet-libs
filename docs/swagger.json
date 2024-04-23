@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Eliassen.WebApi",
-    "version": "0.1.72.13"
+    "version": "0.1.72.22"
   },
   "paths": {
     "/api/AI": {

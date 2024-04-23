@@ -43,6 +43,7 @@ Initializes a new instance of the
 ##### Parameters
 * *client:* The BlobServiceClient used to connect to the Azure Blob storage.
 * *collectionName:* The name of the collection in the Azure Blob storage.
+* *loggerFactory:* ILoggerFactory instance.
 
 
 

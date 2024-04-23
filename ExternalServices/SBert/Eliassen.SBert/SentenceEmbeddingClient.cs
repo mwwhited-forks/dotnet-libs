@@ -11,7 +11,7 @@ namespace Eliassen.SBert;
 /// </summary>
 public class SentenceEmbeddingClient : ISentenceEmbeddingClient
 {
-    private readonly HttpClient _httpClient; 
+    private readonly HttpClient _httpClient;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SentenceEmbeddingClient"/> class.
