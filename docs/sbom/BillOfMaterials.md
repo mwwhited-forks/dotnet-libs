@@ -2,8 +2,8 @@
 
 ## Summary 
 
-Application: Eliassen.Libs (0.1.72-dev-ado-HybridSearch.22) \
-Time: 2024-04-23T01:35:30.0515133Z \
+Application: Eliassen.Libs (0.1.72-dev-ado-HybridSearch.23) \
+Time: 2024-04-23T02:24:57.4855712Z \
 Tool: CycloneDX (3.0.5.0). 
 
 ## Components 

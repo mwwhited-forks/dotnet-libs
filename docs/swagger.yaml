@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Eliassen.WebApi
-  version: 0.1.72.22
+  version: 0.1.72.23
 paths:
   /api/AI:
     post:
