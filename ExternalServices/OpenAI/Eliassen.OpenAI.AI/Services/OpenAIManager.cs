@@ -2,9 +2,11 @@
 using Azure.AI.OpenAI;
 using Eliassen.AI;
 using Microsoft.Extensions.Options;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
-using System.Text.Json;
-using System.Text.Json.Nodes;
+using System.Threading;
 
 namespace Eliassen.OpenAI.AI.Services
 {
@@ -25,7 +27,7 @@ namespace Eliassen.OpenAI.AI.Services
                     new ChatRequestSystemMessage(promptDetails),
                     // User messages represent current or historical input from the end user
                     new ChatRequestUserMessage(userInput)
-                }
+                } 
             };
 
             Response<ChatCompletions> response;
@@ -41,7 +43,7 @@ namespace Eliassen.OpenAI.AI.Services
             }
         }
 
-        public async Task<Stream> GetStreamedResponseAsync(string promptDetails, string userInput)
+        public async IAsyncEnumerable<string> GetStreamedResponseAsync(string promptDetails, string userInput)
         {
             OpenAIClient api = new(_config.Value.APIKey);
 
@@ -57,60 +59,13 @@ namespace Eliassen.OpenAI.AI.Services
                 }
             };
 
-            StreamingResponse<StreamingChatCompletionsUpdate> response = await api.GetChatCompletionsStreamingAsync(chatCompletionsOptions);
-
-            await foreach (StreamingChatCompletionsUpdate chatUpdate in response)
+            await foreach (StreamingChatCompletionsUpdate chatUpdate in await api.GetChatCompletionsStreamingAsync(chatCompletionsOptions))
             {
                 if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
                 {
-                    _ = chatUpdate.ContentUpdate;
+                    yield return chatUpdate.ContentUpdate;
                 }
             }
         }
-
-        //public async Task<string> GetStreamedResponseAsync(string promptDetails, string userInput)
-        //{
-        //    OpenAIClient api = new(_config.Value.APIKey);
-
-        //    ChatCompletionsOptions chatCompletionsOptions = new()
-        //    {
-        //        DeploymentName = _config.Value.DeploymentName,
-        //        Messages =
-        //            {
-        //                // The system message represents instructions or other guidance about how the assistant should behave
-        //                new ChatRequestSystemMessage(promptDetails),
-        //                // User messages represent current or historical input from the end user
-        //                // new ChatRequestUserMessage(userInput)
-        //            }
-        //    };
-
-
-        //    using (MemoryStream outputStream = new MemoryStream())
-        //    {
-
-        //        StreamingResponse<StreamingChatCompletionsUpdate> response = await api.GetChatCompletionsStreamingAsync(chatCompletionsOptions);
-
-        //        using (StreamWriter writer = new StreamWriter(outputStream, leaveOpen: true))
-        //        {
-        //            await foreach (StreamingChatCompletionsUpdate chatUpdate in response)
-        //            {
-        //                if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
-        //                {
-        //                    await writer.WriteLineAsync(chatUpdate.ContentUpdate);
-        //                    await writer.FlushAsync(); 
-        //                }
-        //            }
-        //        }
-
-        //        // Reset the memory stream position to the beginning before reading it
-        //        outputStream.Position = 0;
-
-        //        using (StreamReader reader = new StreamReader(outputStream, Encoding.UTF8))
-        //        {
-        //            // Read the streamed values asynchronously
-        //            return await reader.ReadToEndAsync();
-        //        }
-        //    }
-        //}
     }
 }
