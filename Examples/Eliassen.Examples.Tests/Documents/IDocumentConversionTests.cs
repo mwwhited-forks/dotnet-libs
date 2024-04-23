@@ -17,13 +17,15 @@ public class IDocumentConversionTests
 {
     public required TestContext TestContext { get; set; }
 
-
     [TestCategory(TestCategories.Unit)]
     [DataTestMethod]
+    [DataRow("HelloWorld.html", "text/html", "text/x-markdown", ".md")]
     [DataRow("HelloWorld.html", "text/html", "application/pdf", ".pdf")]
     [DataRow("HelloWorld.txt", "text/plain", "application/pdf", ".pdf")]
     [DataRow("HelloWorld.txt", "text/plain", "text/html", ".html")]
     [DataRow("HelloWorld.md", "text/markdown", "text/html", ".html")]
+    [DataRow("HelloWorld.txt", "text/plain", "text/plain", ".txt")]
+    [DataRow("HelloWorld.txt", "unknown/unknown", "text/plain", ".txt")]
     public async Task ConvertAsyncTest(string resourceName, string sourceType, string targetType, string extension)
     {
         var config = new ConfigurationBuilder()

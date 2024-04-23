@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Eliassen.Documents;
@@ -11,12 +13,21 @@ namespace Eliassen.Documents;
 public class DocumentConversion : IDocumentConversion
 {
     private readonly IDocumentConversionChainBuilder _chain;
+    private readonly ILogger _logger;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentConversion"/> class with the specified document conversion chain builder.
     /// </summary>
     /// <param name="chain">The document conversion chain builder.</param>
-    public DocumentConversion(IDocumentConversionChainBuilder chain) => _chain = chain;
+    /// <param name="logger">The logger.</param>
+    public DocumentConversion(
+        IDocumentConversionChainBuilder chain,
+        ILogger<DocumentConversion> logger
+        )
+    {
+        _chain = chain;
+        _logger = logger;
+    }
 
     private readonly Dictionary<(string source, string destination), ChainStep[]> _cache = [];
 
@@ -41,13 +52,21 @@ public class DocumentConversion : IDocumentConversion
         ChainStep[] steps;
         if (_cache.TryGetValue((sourceContentType, destinationContentType), out var cached))
         {
+            _logger.LogInformation("Use cached chain {source} -> {destination}", sourceContentType, destinationContentType);
             steps = cached;
         }
         else
         {
+            _logger.LogInformation("Build chain {source} -> {destination}", sourceContentType, destinationContentType);
             steps = _chain.Steps(sourceContentType, destinationContentType);
             _cache.TryAdd((sourceContentType, destinationContentType), steps);
         }
+
+        _logger.LogInformation(
+            "Chain {source} -> {destination} [{steps}]", 
+            sourceContentType, destinationContentType,
+            string.Join(';',steps.Select(s=>s.Handler))
+            );
 
         if (steps.Length == 0) throw new NotSupportedException($"Conversion from \"{sourceContentType}\" to \"{destinationContentType}\" is not supported");
         else if (steps.Length == 1) await steps[0].Handler.ConvertAsync(source, sourceContentType, destination, destinationContentType);
