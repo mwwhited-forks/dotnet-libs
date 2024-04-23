@@ -5,6 +5,7 @@ using Eliassen.Markdig;
 using Eliassen.Microsoft.ApplicationInsights;
 using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB;
+using Eliassen.MysticMind;
 using Eliassen.Ollama;
 using Eliassen.OpenAI.AI;
 using Eliassen.OpenSearch;
@@ -69,6 +70,7 @@ public static class ServiceCollectionExtensions
 
         services.TryAddWkHtmlToPdfServices();
         services.TryAddMarkdigServices();
+        services.TryAddMysticMindServices();
 
         return services;
     }

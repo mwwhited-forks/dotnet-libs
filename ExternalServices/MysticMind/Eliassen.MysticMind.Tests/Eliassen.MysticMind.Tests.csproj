@@ -10,11 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="TestData\*.*" />
-    <EmbeddedResource Include="TestData\*.*" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -26,8 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Framework\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
-    <ProjectReference Include="..\Eliassen.Markdig\Eliassen.Markdig.csproj" />
+    <ProjectReference Include="..\Eliassen.MysticMind\Eliassen.MysticMind.csproj" />
   </ItemGroup>
-
 
 </Project>

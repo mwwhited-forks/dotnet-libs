@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace Eliassen.Communications.MessageQueueing;
+
 /// <summary>
 /// Represents a message handler for handling and sending email messages.
 /// </summary>

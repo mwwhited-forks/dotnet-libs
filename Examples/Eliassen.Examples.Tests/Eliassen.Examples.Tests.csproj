@@ -25,9 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
-    <ProjectReference Include="..\Eliassen.Markdig\Eliassen.Markdig.csproj" />
+    <ProjectReference Include="..\..\Framework\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
+    <ProjectReference Include="..\..\Common\Eliassen.Common.Complete\Eliassen.Common.Complete.csproj" />
   </ItemGroup>
-
 
 </Project>

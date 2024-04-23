@@ -59,6 +59,7 @@ public static class ServiceCollectionExtensions
         services.TryAddTransient<IBlobServiceClientFactory, BlobServiceClientFactory>();
         services.TryAddTransient(sp => sp.GetRequiredService<IBlobServiceClientFactory>().Create());
         services.TryAddTransient<IBlobProviderFactory, BlobProviderFactory>();
+        //TODO: instead of doing this have it be IBlobContainer<T> where T provides details to select container provider and instance
         services.AddKeyedTransient(
             BlobProviderFactory.DocumentCollectionKey,
             (sp, k) => sp.GetRequiredService<IBlobProviderFactory>().Create((k as string) ?? throw new ApplicationException("Missing Key"))

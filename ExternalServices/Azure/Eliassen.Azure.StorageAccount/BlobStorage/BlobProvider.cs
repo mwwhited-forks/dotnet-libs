@@ -106,7 +106,7 @@ public class BlobProvider :
     /// <param name="file">The name of the file to store.</param>
     /// <param name="pathHash">The hash value of the file path.</param>
     /// <returns>A boolean value indicating whether the operation was successful.</returns>
-    public async Task<bool> TryStoreAsync(string full, string file, string pathHash)
+    public async Task<bool> TryStoreAsync(string full, string file, string pathHash) //TODO: change this to use streams and take a metadata collection
     {
         var blob = _blockBlobClient.GetBlobClient(file);
         if (!await blob.ExistsAsync())
