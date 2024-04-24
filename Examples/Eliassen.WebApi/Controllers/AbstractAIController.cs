@@ -34,20 +34,10 @@ namespace Eliassen.WebApi.Controllers
         [AllowAnonymous]
         public async IAsyncEnumerable<string> GetStreamedResponseAsync([FromBody] GenAiRequestModel model)
         {
-            var enumerator = _llmProvider.GetStreamedResponseAsync(model.PromptDetails, model.UserInput).GetAsyncEnumerator();
-            try
+            await foreach (var x in _llmProvider.GetStreamedResponseAsync(model.PromptDetails, model.UserInput))
             {
-                while (await enumerator.MoveNextAsync())
-                {
-                    var issue = enumerator.Current;
-                    yield return issue;
-                }
-            }
-            finally
-            {
-                if (enumerator != null)
-                    await enumerator.DisposeAsync();
-            }
+                yield return x;
+            };
         }
     }
 }

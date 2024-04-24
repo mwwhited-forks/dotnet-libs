@@ -61,9 +61,11 @@ namespace Eliassen.OpenAI.AI.Services
 
             while (await chatUpdate.MoveNextAsync())
             {
-                yield return (chatUpdate.Current?.ContentUpdate);
+                if (!string.IsNullOrEmpty(chatUpdate.Current?.ContentUpdate))
+                {
+                    yield return (chatUpdate.Current?.ContentUpdate);
+                }
             }
-
         }
     }
 }
