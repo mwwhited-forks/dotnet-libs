@@ -2,8 +2,7 @@
 using Azure.AI.OpenAI;
 using Eliassen.AI;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
 
 namespace Eliassen.OpenAI.AI.Services
 {
@@ -55,15 +54,12 @@ namespace Eliassen.OpenAI.AI.Services
                     new ChatRequestUserMessage(userInput)
                 }
             };
-            StreamingResponse<StreamingChatCompletionsUpdate> response = await api.GetChatCompletionsStreamingAsync(chatCompletionsOptions);
 
-            IAsyncEnumerator<StreamingChatCompletionsUpdate> chatUpdate = response.EnumerateValues().GetAsyncEnumerator();
-
-            while (await chatUpdate.MoveNextAsync())
+            await foreach (StreamingChatCompletionsUpdate chatUpdate in await api.GetChatCompletionsStreamingAsync(chatCompletionsOptions))
             {
-                if (!string.IsNullOrEmpty(chatUpdate.Current?.ContentUpdate))
+                if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
                 {
-                    yield return (chatUpdate.Current?.ContentUpdate);
+                    yield return JsonSerializer.Serialize(chatUpdate.ContentUpdate);
                 }
             }
         }

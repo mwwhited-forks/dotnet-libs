@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-
-namespace Eliassen.AI;
+﻿namespace Eliassen.AI;
 
 /// <summary>
 /// Represents a provider for interacting with a language model.

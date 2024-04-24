@@ -34,9 +34,9 @@ namespace Eliassen.WebApi.Controllers
         [AllowAnonymous]
         public async IAsyncEnumerable<string> GetStreamedResponseAsync([FromBody] GenAiRequestModel model)
         {
-            await foreach (var x in _llmProvider.GetStreamedResponseAsync(model.PromptDetails, model.UserInput))
+            await foreach (var response in _llmProvider.GetStreamedResponseAsync(model.PromptDetails, model.UserInput))
             {
-                yield return x;
+                yield return response;
             };
         }
     }
