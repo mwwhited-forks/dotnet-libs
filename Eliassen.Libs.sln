@@ -183,11 +183,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Ollama.Tests", "Ex
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MysticMind", "MysticMind", "{7B425CA7-7282-41B9-9BF1-82B887E276BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MysticMind", "ExternalServices\MysticMind\Eliassen.MysticMind\Eliassen.MysticMind.csproj", "{593AC4EE-DCE1-42DE-A025-8B5273E6A869}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MysticMind", "ExternalServices\MysticMind\Eliassen.MysticMind\Eliassen.MysticMind.csproj", "{593AC4EE-DCE1-42DE-A025-8B5273E6A869}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.MysticMind.Tests", "ExternalServices\MysticMind\Eliassen.MysticMind.Tests\Eliassen.MysticMind.Tests.csproj", "{F13CF0D3-858A-44E0-BA92-B343911C5994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MysticMind.Tests", "ExternalServices\MysticMind\Eliassen.MysticMind.Tests\Eliassen.MysticMind.Tests.csproj", "{F13CF0D3-858A-44E0-BA92-B343911C5994}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Examples.Tests", "Examples\Eliassen.Examples.Tests\Eliassen.Examples.Tests.csproj", "{96718D72-7C9D-4001-B41B-BCCB82777B34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Examples.Tests", "Examples\Eliassen.Examples.Tests\Eliassen.Examples.Tests.csproj", "{96718D72-7C9D-4001-B41B-BCCB82777B34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Microsoft.OpenXml", "ExternalServices\Microsoft\Eliassen.Microsoft.OpenXml\Eliassen.Microsoft.OpenXml.csproj", "{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Microsoft.OpenXml.Tests", "ExternalServices\Microsoft\Eliassen.Microsoft.OpenXml.Tests\Eliassen.Microsoft.OpenXml.Tests.csproj", "{6EAF6900-BD05-49FD-A54F-E3D713D1C613}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -487,6 +491,14 @@ Global
 		{96718D72-7C9D-4001-B41B-BCCB82777B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96718D72-7C9D-4001-B41B-BCCB82777B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96718D72-7C9D-4001-B41B-BCCB82777B34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EAF6900-BD05-49FD-A54F-E3D713D1C613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EAF6900-BD05-49FD-A54F-E3D713D1C613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EAF6900-BD05-49FD-A54F-E3D713D1C613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EAF6900-BD05-49FD-A54F-E3D713D1C613}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -579,6 +591,8 @@ Global
 		{593AC4EE-DCE1-42DE-A025-8B5273E6A869} = {7B425CA7-7282-41B9-9BF1-82B887E276BF}
 		{F13CF0D3-858A-44E0-BA92-B343911C5994} = {7B425CA7-7282-41B9-9BF1-82B887E276BF}
 		{96718D72-7C9D-4001-B41B-BCCB82777B34} = {B3B21062-BE2B-4DC6-BF6F-D94AF7096A9E}
+		{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D} = {71129CCF-1669-468F-A0B3-7A306149C3F5}
+		{6EAF6900-BD05-49FD-A54F-E3D713D1C613} = {71129CCF-1669-468F-A0B3-7A306149C3F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

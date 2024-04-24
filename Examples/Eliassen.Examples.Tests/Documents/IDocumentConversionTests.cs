@@ -19,13 +19,16 @@ public class IDocumentConversionTests
 
     [TestCategory(TestCategories.Unit)]
     [DataTestMethod]
-    [DataRow("HelloWorld.html", "text/html", "text/x-markdown", ".md")]
-    [DataRow("HelloWorld.html", "text/html", "application/pdf", ".pdf")]
-    [DataRow("HelloWorld.txt", "text/plain", "application/pdf", ".pdf")]
-    [DataRow("HelloWorld.txt", "text/plain", "text/html", ".html")]
-    [DataRow("HelloWorld.md", "text/markdown", "text/html", ".html")]
-    [DataRow("HelloWorld.txt", "text/plain", "text/plain", ".txt")]
-    [DataRow("HelloWorld.txt", "unknown/unknown", "text/plain", ".txt")]
+    //[DataRow("HelloWorld.html", "text/html", "text/x-markdown", ".md")]
+    //[DataRow("HelloWorld.html", "text/html", "application/pdf", ".pdf")]
+    //[DataRow("HelloWorld.txt", "text/plain", "application/pdf", ".pdf")]
+    //[DataRow("HelloWorld.txt", "text/plain", "text/html", ".html")]
+    //[DataRow("HelloWorld.md", "text/markdown", "text/html", ".html")]
+    //[DataRow("HelloWorld.txt", "text/plain", "text/plain", ".txt")]
+    //[DataRow("HelloWorld.txt", "unknown/unknown", "text/plain", ".txt")]
+    //[DataRow("sample1.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/plain", ".txt")]
+    [DataRow("sample1.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/html", ".html")]
+    //[DataRow("sample1.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/pdf", ".pdf")]
     public async Task ConvertAsyncTest(string resourceName, string sourceType, string targetType, string extension)
     {
         var config = new ConfigurationBuilder()

@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Eliassen.Markdig.Tests;
+namespace Eliassen.MysticMind.Tests;
 
 [TestClass]
 public class HtmlToMarkdownConversionHandlerTests
@@ -17,14 +17,14 @@ public class HtmlToMarkdownConversionHandlerTests
 
     [TestCategory(TestCategories.Unit)]
     [DataTestMethod]
-    [DataRow("HelloWorld.html", "text/html"     , "text/markdown"  )]
-    [DataRow("HelloWorld.html", "text/html"     , "text/plain"     )]
-    [DataRow("HelloWorld.html", "text/html"     , "text/x-markdown")]
-    [DataRow("HelloWorld.html", "text/xhtml"    , "text/markdown"  )]
-    [DataRow("HelloWorld.html", "text/xhtml"    , "text/plain"     )]
-    [DataRow("HelloWorld.html", "text/xhtml"    , "text/x-markdown")]
-    [DataRow("HelloWorld.html", "text/xhtml+xml", "text/markdown"  )]
-    [DataRow("HelloWorld.html", "text/xhtml+xml", "text/plain"     )]
+    [DataRow("HelloWorld.html", "text/html", "text/markdown")]
+    [DataRow("HelloWorld.html", "text/html", "text/plain")]
+    [DataRow("HelloWorld.html", "text/html", "text/x-markdown")]
+    [DataRow("HelloWorld.html", "text/xhtml", "text/markdown")]
+    [DataRow("HelloWorld.html", "text/xhtml", "text/plain")]
+    [DataRow("HelloWorld.html", "text/xhtml", "text/x-markdown")]
+    [DataRow("HelloWorld.html", "text/xhtml+xml", "text/markdown")]
+    [DataRow("HelloWorld.html", "text/xhtml+xml", "text/plain")]
     [DataRow("HelloWorld.html", "text/xhtml+xml", "text/x-markdown")]
     public async Task ConvertAsyncTest(string resourceName, string sourceType, string targetType)
     {

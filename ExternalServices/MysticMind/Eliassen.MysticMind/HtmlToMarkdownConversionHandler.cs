@@ -7,16 +7,6 @@ using System.Threading.Tasks;
 
 namespace Eliassen.MysticMind;
 
-public interface IConverterFactory
-{
-    public Converter Build();
-}
-
-public class ConverterFactory : IConverterFactory
-{
-    public Converter Build() => new ();
-}
-
 /// <summary>
 /// Converts HTML documents to Markdown format.
 /// </summary>
