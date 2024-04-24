@@ -189,9 +189,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MysticMind.Tests",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Examples.Tests", "Examples\Eliassen.Examples.Tests\Eliassen.Examples.Tests.csproj", "{96718D72-7C9D-4001-B41B-BCCB82777B34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Microsoft.OpenXml", "ExternalServices\Microsoft\Eliassen.Microsoft.OpenXml\Eliassen.Microsoft.OpenXml.csproj", "{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Microsoft.OpenXml", "ExternalServices\Microsoft\Eliassen.Microsoft.OpenXml\Eliassen.Microsoft.OpenXml.csproj", "{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Microsoft.OpenXml.Tests", "ExternalServices\Microsoft\Eliassen.Microsoft.OpenXml.Tests\Eliassen.Microsoft.OpenXml.Tests.csproj", "{6EAF6900-BD05-49FD-A54F-E3D713D1C613}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Microsoft.OpenXml.Tests", "ExternalServices\Microsoft\Eliassen.Microsoft.OpenXml.Tests\Eliassen.Microsoft.OpenXml.Tests.csproj", "{6EAF6900-BD05-49FD-A54F-E3D713D1C613}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.OpenAI.AI.Tests", "ExternalServices\OpenAI\Eliassen.OpenAI.AI.Tests\Eliassen.OpenAI.AI.Tests.csproj", "{F536508C-3D16-4ECE-BBBF-867BF4F0D6CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -499,6 +501,10 @@ Global
 		{6EAF6900-BD05-49FD-A54F-E3D713D1C613}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EAF6900-BD05-49FD-A54F-E3D713D1C613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EAF6900-BD05-49FD-A54F-E3D713D1C613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F536508C-3D16-4ECE-BBBF-867BF4F0D6CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F536508C-3D16-4ECE-BBBF-867BF4F0D6CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F536508C-3D16-4ECE-BBBF-867BF4F0D6CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F536508C-3D16-4ECE-BBBF-867BF4F0D6CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -593,6 +599,7 @@ Global
 		{96718D72-7C9D-4001-B41B-BCCB82777B34} = {B3B21062-BE2B-4DC6-BF6F-D94AF7096A9E}
 		{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D} = {71129CCF-1669-468F-A0B3-7A306149C3F5}
 		{6EAF6900-BD05-49FD-A54F-E3D713D1C613} = {71129CCF-1669-468F-A0B3-7A306149C3F5}
+		{F536508C-3D16-4ECE-BBBF-867BF4F0D6CA} = {BBC50FA6-6609-4558-8BDB-D49205D240A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

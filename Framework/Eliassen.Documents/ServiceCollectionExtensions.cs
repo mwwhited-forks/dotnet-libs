@@ -16,6 +16,8 @@ public static class ServiceCollectionExtensions
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddDocumentServices(this IServiceCollection services)
     {
+        services.TryAddSingleton<IContentProvider, ContentProvider>();//TODO: change this out
+
         services.TryAddSingleton<IDocumentConversion, DocumentConversion>();
         services.TryAddTransient<IDocumentConversionChainBuilder, DocumentConversionChainBuilder>();
         services.TryAddTransient<IDocumentConversionHandler, ToTextConversionHandler>();

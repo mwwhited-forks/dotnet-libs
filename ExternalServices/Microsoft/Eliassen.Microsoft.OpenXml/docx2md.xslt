@@ -98,9 +98,6 @@
             </xsl:otherwise>
         </xsl:choose>
 
-        <!--<w:pPr>
-			<w:pStyle w:val="Title"/>-->
-
     </xsl:template>
 
     <xsl:template match="w:tbl" mode="body">
@@ -108,7 +105,6 @@
             <xsl:for-each select="w:tc">
                 <xsl:text> | </xsl:text>
                 <xsl:value-of select="w:p/w:r/w:t"/>
-                <!--<xsl:value-of select="descendant::w:t"/>-->
             </xsl:for-each>
             <xsl:text> | </xsl:text>
             <xsl:text>&#13;</xsl:text>

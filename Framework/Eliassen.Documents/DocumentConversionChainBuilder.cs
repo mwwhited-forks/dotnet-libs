@@ -39,7 +39,11 @@ public class DocumentConversionChainBuilder : IDocumentConversionChainBuilder
         string destinationContentType,
         List<ChainStep> parents)
     {
-        var realPossibles = _handlers.Except(parents.Select(p => p.Handler)).Where(i => i.SupportedSource(sourceContentType)).ToArray();
+        var realPossibles = _handlers
+            .Except(parents.Select(p => p.Handler))
+            .Where(i => i.SupportedSource(sourceContentType))
+            .OrderBy(h => h is not ToTextConversionHandler ? 0 : 1)
+            .ToArray();
         if (realPossibles.Length == 0) yield break;
 
         var ends = realPossibles.Where(d => d.SupportedDestination(destinationContentType)).ToArray();

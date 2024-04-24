@@ -1,8 +1,12 @@
 ﻿using Eliassen.Documents;
 using Eliassen.Documents.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -17,19 +21,27 @@ public class DocumentController : Controller
 {
     private readonly IDocumentConversion _converter;
     private readonly IContentProvider _content;
+    private readonly IEnumerable<IDocumentType> _documentTypes;
+    private readonly ILogger _logger;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentController"/> class with the specified dependencies.
     /// </summary>
     /// <param name="converter">The document conversion service.</param>
     /// <param name="content">The content provider service.</param>
+    /// <param name="documentTypes">The existing type definitions service.</param>
+    /// <param name="logger">The logger service.</param>
     public DocumentController(
         IDocumentConversion converter,
-        IContentProvider content
+        IContentProvider content,
+        IEnumerable<IDocumentType> documentTypes,
+        ILogger<DocumentController> logger
         )
     {
         _converter = converter;
         _content = content;
+        _documentTypes = documentTypes;
+        _logger = logger;
     }
 
     /// <summary>
@@ -37,7 +49,7 @@ public class DocumentController : Controller
     /// </summary>
     /// <param name="file">The path to the file.</param>
     [HttpGet("{*file}")]
-    [ProducesResponseType(typeof(FileStreamResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(FileStreamResult), StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<IActionResult> Download(string file) =>
         await _content.DownloadAsync(file) switch
@@ -51,7 +63,7 @@ public class DocumentController : Controller
     /// </summary>
     /// <param name="file">The path to the file.</param>
     [HttpGet("{*file}")]
-    [ProducesResponseType(typeof(FileStreamResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(FileStreamResult), StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<IActionResult> Text(string file) =>
         await _content.DownloadAsync(file) switch
@@ -68,7 +80,7 @@ public class DocumentController : Controller
     /// </summary>
     /// <param name="file">The path to the file.</param>
     [HttpGet("{*file}")]
-    [ProducesResponseType(typeof(FileStreamResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(FileStreamResult), StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<IActionResult> Html(string file) =>
         await _content.DownloadAsync(file) switch
@@ -85,7 +97,7 @@ public class DocumentController : Controller
     /// </summary>
     /// <param name="file">The path to the file.</param>
     [HttpGet("{*file}")]
-    [ProducesResponseType(typeof(FileStreamResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(FileStreamResult), StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<IActionResult> Pdf(string file) =>
         await _content.DownloadAsync(file) switch
@@ -110,7 +122,7 @@ public class DocumentController : Controller
     /// </summary>
     /// <param name="file">The path to the file.</param>
     [HttpGet("{*file}")]
-    [ProducesResponseType(typeof(FileStreamResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(FileStreamResult), StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<IActionResult> Summary(string file) =>
         await _content.SummaryAsync(file) switch
@@ -118,4 +130,56 @@ public class DocumentController : Controller
             null => NotFound(),
             ContentReference blob => File(blob.Content, blob.ContentType, blob.FileName)
         };
+
+    /// <summary>
+    /// Upload file content
+    /// </summary>
+    /// <param name="content">upload file content</param>
+    /// <param name="file"></param>
+    /// <param name="sourceContentType">optionally overload the provided MIME Type</param>
+    /// <returns></returns>
+    [HttpPost("{*file}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Upload([FromForm] IFormFile content, string file, string? sourceContentType = null)
+    {
+        _logger.LogDebug("Start Upload");
+        if (ModelState.IsValid)
+        {
+            _logger.LogDebug("Upload Ok");
+          //  return Ok(await _uploader.UploadFileAsync(model));
+        }
+
+        _logger.LogDebug("Upload BadRequest");
+        return BadRequest(ModelState);
+    }
+
+    /// <summary>
+    /// Document Converter
+    /// </summary>
+    /// <param name="content">upload file content</param>
+    /// <param name="targetContentType">define the target MIME type</param>
+    /// <param name="sourceContentType">optionally overload the provided MIME Type</param>
+    /// <returns></returns>
+    [HttpPost]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Convert([FromForm] IFormFile content, string targetContentType, string? sourceContentType = null)
+    {
+        using var source = new MemoryStream();
+        await content.CopyToAsync(source);
+        source.Position = 0;
+
+        var destination = new MemoryStream();
+        await _converter.ConvertAsync(source, sourceContentType?? content.ContentType, destination, targetContentType);
+        destination.Position = 0;
+
+        var type = _documentTypes.FirstOrDefault(dt => dt.ContentTypes.Any(c => string.Equals(c, targetContentType)));
+
+        var targetFile = type != null ? Path.ChangeExtension(content.FileName, type.FileExtensions.FirstOrDefault()) : null;
+
+        return File(destination, targetContentType, fileDownloadName: targetFile);
+    }
 }
