@@ -2,7 +2,6 @@
 using Azure.AI.OpenAI;
 using Eliassen.AI;
 using Microsoft.Extensions.Options;
-using System.Text.Json;
 
 namespace Eliassen.OpenAI.AI.Services
 {
@@ -59,7 +58,7 @@ namespace Eliassen.OpenAI.AI.Services
             {
                 if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
                 {
-                    yield return JsonSerializer.Serialize(chatUpdate.ContentUpdate);
+                    yield return chatUpdate.ContentUpdate;
                 }
             }
         }
