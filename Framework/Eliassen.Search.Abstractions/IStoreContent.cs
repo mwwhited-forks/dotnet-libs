@@ -1,10 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace Eliassen.Search;
 
 /// <summary>
 /// Represents a provider for storing content.
 /// </summary>
+[Obsolete]
 public interface IStoreContent
 {
     /// <summary>

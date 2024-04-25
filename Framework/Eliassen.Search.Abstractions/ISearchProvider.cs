@@ -1,4 +1,5 @@
 ﻿using Eliassen.Search.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -7,6 +8,7 @@ namespace Eliassen.Search;
 /// <summary>
 /// Represents a provider for conducting searches.
 /// </summary>
+[Obsolete]
 public interface ISearchProvider
 {
     /// <summary>
