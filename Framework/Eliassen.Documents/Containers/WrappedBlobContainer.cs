@@ -19,8 +19,14 @@ public class WrappedBlobContainer : IBlobContainer
         _wrapped.GetContentMetaDataAsync(path);
     public IQueryable<ContentMetaDataReference> QueryContent() =>
         _wrapped.QueryContent();
-    public Task StoreContentAsync(ContentReference reference, IDictionary<string, string>? metadata = null) =>
-        _wrapped.StoreContentAsync(reference, metadata);
+    public Task StoreContentAsync(
+        ContentReference reference,
+        IDictionary<string, string>? metadata = null, 
+        bool overwrite = false
+        ) =>
+        _wrapped.StoreContentAsync(reference, metadata, overwrite);
+    public Task<bool> StoreContentMetaDataAsync(ContentMetaDataReference reference) =>
+        _wrapped.StoreContentMetaDataAsync(reference);
 }
 
 public class WrappedBlobContainer<T> : WrappedBlobContainer, IBlobContainer<T>

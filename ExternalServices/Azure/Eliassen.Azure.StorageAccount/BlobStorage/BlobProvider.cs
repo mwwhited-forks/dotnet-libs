@@ -7,14 +7,9 @@ using Eliassen.Extensions.Linq;
 using Eliassen.Search;
 using Eliassen.Search.Models;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection.PortableExecutable;
-using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace Eliassen.Azure.StorageAccount.BlobStorage;
@@ -154,12 +149,16 @@ public class BlobProvider :
         };
     }
 
-    public async Task StoreContentAsync(ContentReference reference, IDictionary<string, string>? metadata = null)
+    public async Task StoreContentAsync(
+        ContentReference reference,
+        IDictionary<string, string>? metadata = null,
+        bool overwrite = false
+        )
     {
         var blob = _blockBlobClient.GetBlobClient(reference.FileName);
 
         _logger.LogInformation("upload -> {file}", reference.FileName);
-        _ = await blob.UploadAsync(reference.Content, overwrite: false);
+        _ = await blob.UploadAsync(reference.Content, overwrite: overwrite);
 
         _ = await blob.SetHttpHeadersAsync(new BlobHttpHeaders
         {
@@ -175,6 +174,23 @@ public class BlobProvider :
         }
     }
 
+    public async Task<bool> StoreContentMetaDataAsync(ContentMetaDataReference reference)
+    {
+        var blob = _blockBlobClient.GetBlobClient(reference.FileName);
+        if (!await blob.ExistsAsync()) return false;
+
+        _logger.LogInformation("update -> {file}", reference.FileName);
+
+        _ = await blob.SetHttpHeadersAsync(new BlobHttpHeaders
+        {
+            ContentType = reference.ContentType,
+        });
+
+        await blob.SetMetadataAsync(reference.MetaData);
+
+        return true;
+    }
+
     public IQueryable<ContentMetaDataReference> QueryContent()
     {
         //TODO: build a query provider!
@@ -188,6 +204,7 @@ public class BlobProvider :
                     };
         return query.AsQueryable();
     }
+
 }
 
 //public class BlobQueryProvider : IQueryProvider
