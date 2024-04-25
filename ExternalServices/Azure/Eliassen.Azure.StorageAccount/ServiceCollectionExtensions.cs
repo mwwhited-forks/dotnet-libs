@@ -1,11 +1,7 @@
 ﻿using Eliassen.Azure.StorageAccount.BlobStorage;
 using Eliassen.Azure.StorageAccount.MessageQueueing;
 using Eliassen.Documents.Containers;
-using Eliassen.Documents.Depercated;
-using Eliassen.Documents.Models;
 using Eliassen.MessageQueueing.Services;
-using Eliassen.Search;
-using Eliassen.Search.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -69,14 +65,6 @@ public static class ServiceCollectionExtensions
             BlobProviderFactory.SummaryCollectionKey,
             (sp, k) => sp.GetRequiredService<IBlobProviderFactory>().Create((k as string) ?? throw new ApplicationException("Missing Key"))
             );
-        services.TryAddTransient<IStoreContent>(sp => sp.GetRequiredKeyedService<BlobProvider>(BlobProviderFactory.DocumentCollectionKey));
-        services.TryAddTransient<ISearchContent<SearchResultModel>>(sp => sp.GetRequiredKeyedService<BlobProvider>(BlobProviderFactory.DocumentCollectionKey));
-        services.TryAddKeyedTransient<ISearchContent<SearchResultModel>>(
-            SearchTypes.None,
-            (sp, k) => sp.GetRequiredKeyedService<BlobProvider>(BlobProviderFactory.DocumentCollectionKey)
-            );
-        services.TryAddTransient<IGetContent<ContentReference>>(sp => sp.GetRequiredKeyedService<BlobProvider>(BlobProviderFactory.DocumentCollectionKey));
-        services.TryAddTransient<IGetSummary<ContentReference>>(sp => sp.GetRequiredKeyedService<BlobProvider>(BlobProviderFactory.SummaryCollectionKey));
 
         services.AddTransient<IBlobContainerProviderFactory, AzureBlobContainerProviderFactory>();
 

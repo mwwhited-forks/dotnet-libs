@@ -1,4 +1,6 @@
-﻿namespace Eliassen.Search.Models;
+﻿using System.Collections.Generic;
+
+namespace Eliassen.Search.Models;
 
 /// <summary>
 /// Represents a search result model containing information about a search result.
@@ -11,22 +13,12 @@ public record SearchResultModel
     public required float Score { get; init; }
 
     /// <summary>
-    /// Gets or initializes the hash of the path where the search result was found.
+    /// Gets or initializes the item's id value.
     /// </summary>
-    public required string PathHash { get; init; }
+    public required string ItemId { get; init; }
 
     /// <summary>
-    /// Gets or initializes the name of the file where the search result was found.
+    /// Gets or initializes the item's metadata.
     /// </summary>
-    public required string File { get; init; }
-
-    /// <summary>
-    /// Gets or initializes the content of the file where the search result was found.
-    /// </summary>
-    public required string Content { get; init; }
-
-    /// <summary>
-    /// Gets or initializes the type of the search result.
-    /// </summary>
-    public SearchTypes Type { get; init; }
+    public Dictionary<string, object>? MetaData { get; init; }
 }

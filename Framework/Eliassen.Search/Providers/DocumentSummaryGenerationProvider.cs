@@ -1,5 +1,6 @@
 ﻿using Eliassen.AI;
 using Eliassen.Extensions;
+using System;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,7 +9,8 @@ namespace Eliassen.Search.Providers;
 /// <summary>
 /// Provides functionality to generate summaries for documents.
 /// </summary>
-public class DocumentSummaryGenerationProvider : ISummarizeContent
+[Obsolete]
+public class DocumentSummaryGenerationProvider 
 {
     private const int MAX_LENGTH = 4096; //TODO: should look this up from model.
 

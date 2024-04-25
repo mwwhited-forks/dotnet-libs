@@ -1,9 +1,6 @@
-﻿using Eliassen.Search;
-using Eliassen.Search.Models;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System.Text.Json.Nodes;
 
 namespace Eliassen.OpenSearch;
 
@@ -33,10 +30,6 @@ public static class ServiceCollectionExtensions
         services.Configure<OpenSearchOptions>(nameof(OpenSearchOptions), opt => { });
         services.TryAddTransient<IOpenSearchClientFactory, OpenSearchClientFactory>();
         services.TryAddTransient(sp => sp.GetRequiredService<IOpenSearchClientFactory>().Create());
-        services.TryAddTransient<LexicalProvider>();
-        services.TryAddTransient<IStoreContent, LexicalProvider>();
-        services.TryAddKeyedTransient<ISearchContent<SearchResultModel>, LexicalProvider>(SearchTypes.Lexical);
-        services.TryAddTransient<ISearchContent<JsonNode>, LexicalProvider>();
 
         return services;
     }

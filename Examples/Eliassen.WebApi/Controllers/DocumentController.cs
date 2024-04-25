@@ -1,8 +1,5 @@
-﻿using DocumentFormat.OpenXml.InkML;
-using Eliassen.Documents;
-using Eliassen.Documents.Depercated;
+﻿using Eliassen.Documents;
 using Eliassen.Documents.Models;
-using Microsoft.ApplicationInsights.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,11 +19,16 @@ namespace Eliassen.WebApi.Controllers;
 [BlobContainer(ContainerName = "docs")]
 public class DocumentController : Controller
 {
+    [BlobContainer(ContainerName = "docs")]
+    public class Documents { }
+    [BlobContainer(ContainerName = "summary")]
+    public class Summaries { }
+
     private readonly IDocumentConversion _converter;
-    private readonly IContentProvider _content;
     private readonly IDocumentTypeTools _documentTypes;
     private readonly ILogger _logger;
-    private readonly IBlobContainer<DocumentController> _container;
+    private readonly IBlobContainer<Documents> _docs;
+    private readonly IBlobContainer<Summaries> _summary;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentController"/> class with the specified dependencies.
@@ -37,17 +39,17 @@ public class DocumentController : Controller
     /// <param name="logger">The logger service.</param>
     public DocumentController(
         IDocumentConversion converter,
-        IContentProvider content,
         IDocumentTypeTools documentTypes,
         ILogger<DocumentController> logger,
-        IBlobContainer<DocumentController> container
+        IBlobContainer<Documents> docs,
+        IBlobContainer<Summaries> summary
         )
     {
         _converter = converter;
-        _content = content;
         _documentTypes = documentTypes;
         _logger = logger;
-        _container = container;
+        _docs = docs;
+        _summary = summary;
     }
 
     /// <summary>
@@ -58,7 +60,7 @@ public class DocumentController : Controller
     [ProducesResponseType(typeof(FileStreamResult), StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<IActionResult> Download(string file) =>
-        await _content.DownloadAsync(file) switch
+        await _docs.GetContentAsync(file) switch
         {
             null => NotFound(),
             ContentReference blob => File(blob.Content, blob.ContentType, blob.FileName)
@@ -72,7 +74,7 @@ public class DocumentController : Controller
     [ProducesResponseType(typeof(FileStreamResult), StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<IActionResult> Text(string file) =>
-        await _content.DownloadAsync(file) switch
+        await _docs.GetContentAsync(file) switch
         {
             null => NotFound(),
             ContentReference blob => File(
@@ -89,7 +91,7 @@ public class DocumentController : Controller
     [ProducesResponseType(typeof(FileStreamResult), StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<IActionResult> Html(string file) =>
-        await _content.DownloadAsync(file) switch
+        await _docs.GetContentAsync(file) switch
         {
             null => NotFound(),
             ContentReference blob => File(
@@ -106,7 +108,7 @@ public class DocumentController : Controller
     [ProducesResponseType(typeof(FileStreamResult), StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<IActionResult> Pdf(string file) =>
-        await _content.DownloadAsync(file) switch
+        await _docs.GetContentAsync(file) switch
         {
             null => NotFound(),
             ContentReference blob => File(
@@ -131,7 +133,7 @@ public class DocumentController : Controller
     [ProducesResponseType(typeof(FileStreamResult), StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<IActionResult> Summary(string file) =>
-        await _content.SummaryAsync(file) switch
+        await _docs.GetContentAsync(file) switch
         {
             null => NotFound(),
             ContentReference blob => File(blob.Content, blob.ContentType, blob.FileName)
@@ -155,7 +157,7 @@ public class DocumentController : Controller
         if (ModelState.IsValid)
         {
             _logger.LogDebug("Upload Ok");
-            await _container.StoreContentAsync(new()
+            await _docs.StoreContentAsync(new()
             {
                 Content = content.OpenReadStream(),
                 ContentType = content.ContentType,

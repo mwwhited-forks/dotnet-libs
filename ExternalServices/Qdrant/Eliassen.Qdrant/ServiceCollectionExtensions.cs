@@ -1,9 +1,6 @@
-﻿using Eliassen.Search;
-using Eliassen.Search.Models;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Qdrant.Client.Grpc;
 
 namespace Eliassen.Qdrant;
 
@@ -37,9 +34,6 @@ public static class ServiceCollectionExtensions
         services.TryAddTransient(sp => sp.GetRequiredService<ISemanticStoreProviderFactory>().Create(false));
 
         services.TryAddTransient<IPointStructFactory, PointStructFactory>();
-        services.TryAddTransient<IStoreContent>(sp => sp.GetRequiredService<SemanticStoreProvider>());
-        services.TryAddKeyedTransient<ISearchContent<SearchResultModel>>(SearchTypes.Semantic, (sp, k) => sp.GetRequiredService<SemanticStoreProvider>());
-        services.TryAddTransient<ISearchContent<ScoredPoint>>(sp => sp.GetRequiredService<SemanticStoreProvider>());
 
         return services;
     }

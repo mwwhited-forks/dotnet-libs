@@ -20,5 +20,9 @@
     <ProjectReference Include="..\Eliassen.Extensions\Eliassen.Extensions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Semantic\" />
+  </ItemGroup>
+
 
 </Project>
