@@ -13,19 +13,29 @@ public class OpenAIManager(IOptions<OpenAIOptions> config) : ILanguageModelProvi
     {
         OpenAIClient api = new(_config.Value.APIKey);
 
-        ChatCompletionsOptions chatCompletionsOptions = new()
-        {
-            DeploymentName = _config.Value.DeploymentName,
-            Messages =
+            ChatCompletionsOptions chatCompletionsOptions = new()
             {
-                // The system message represents instructions or other guidance about how the assistant should behave
-                new ChatRequestSystemMessage(promptDetails),
-                // User messages represent current or historical input from the end user
-                new ChatRequestUserMessage(userInput)
-            }
-        };
+                DeploymentName = _config.Value.DeploymentName,
+                Messages =
+                {
+                    // The system message represents instructions or other guidance about how the assistant should behave
+                    new ChatRequestSystemMessage(promptDetails),
+                    // User messages represent current or historical input from the end user
+                    new ChatRequestUserMessage(userInput)
+                }
+            };
 
-        var response = await api.GetChatCompletionsAsync(chatCompletionsOptions);
-        return response.Value.Choices[0].Message.Content;
+            Response<ChatCompletions> response;
+
+            try
+            {
+                response = await api.GetChatCompletionsAsync(chatCompletionsOptions);
+                return response.Value.Choices[0].Message.Content;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

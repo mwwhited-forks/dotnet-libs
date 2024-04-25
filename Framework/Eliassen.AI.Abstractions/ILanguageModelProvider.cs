@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Eliassen.AI;
 
@@ -8,10 +9,18 @@ namespace Eliassen.AI;
 public interface ILanguageModelProvider
 {
     /// <summary>
-    /// Retrieves a response from the language model based on the provided prompt details and user input.
+    /// Gets a response asynchronously based on the provided prompt details and user input.
     /// </summary>
-    /// <param name="promptDetails">Details of the prompt or context.</param>
-    /// <param name="userInput">The user input or query.</param>
-    /// <returns>A task representing the asynchronous operation. The task result contains the response from the language model.</returns>
+    /// <param name="promptDetails">The details of the prompt.</param>
+    /// <param name="userInput">The user input.</param>
+    /// <returns>A task representing the asynchronous operation that returns the response.</returns>
     Task<string> GetResponseAsync(string promptDetails, string userInput);
+
+    /// <summary>
+    /// Gets a streamed response asynchronously based on the provided prompt details and user input.
+    /// </summary>
+    /// <param name="promptDetails">The details of the prompt.</param>
+    /// <param name="userInput">The user input.</param>
+    /// <returns>An asynchronous enumerable of strings representing the streamed response.</returns>
+    IAsyncEnumerable<string> GetStreamedResponseAsync(string promptDetails, string userInput);
 }

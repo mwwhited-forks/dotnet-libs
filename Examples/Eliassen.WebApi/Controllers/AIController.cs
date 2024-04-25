@@ -2,6 +2,7 @@
 using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Eliassen.WebApi.Controllers;
@@ -38,6 +39,20 @@ public class AIController : ControllerBase
     [AllowAnonymous]
     public async Task<string> GetResponseAsync([FromBody] GenerativeAiRequestModel model) =>
         await _llmProvider.GetResponseAsync(model.PromptDetails, model.UserInput);
+
+    /// <summary>
+    /// Generate an AbstractAI Streamed Response based on the prompt and user input
+    /// </summary>
+    /// <returns>The streamed string responses from the AbstractAI</returns>
+    [HttpPost("Streamed")]
+    [AllowAnonymous]
+    public async IAsyncEnumerable<string> GetStreamedResponseAsync([FromBody] GenerativeAiRequestModel model)
+    {
+        await foreach (var response in _llmProvider.GetStreamedResponseAsync(model.PromptDetails, model.UserInput))
+        {
+            yield return response;
+        };
+    }
 
     /// <summary>
     /// Retrieves the embedding vector for the given text.
