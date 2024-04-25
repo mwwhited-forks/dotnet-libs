@@ -1,5 +1,6 @@
 ﻿using Eliassen.AI;
 using OllamaSharp;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Eliassen.Ollama;
@@ -46,4 +47,8 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
             $"" +
             $"USER: {userInput}",
         })).Response;
+
+//todo: fix this up
+    public IAsyncEnumerable<string> GetStreamedResponseAsync(string promptDetails, string userInput) => 
+        throw new System.NotImplementedException();
 }
