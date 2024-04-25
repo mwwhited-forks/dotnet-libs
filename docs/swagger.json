@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Eliassen.WebApi",
-    "version": "0.1.72.23"
+    "version": "0.1.72.31"
   },
   "paths": {
     "/api/AI": {
@@ -509,6 +509,157 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-permissions": {
+          "anonymous": true
+        }
+      }
+    },
+    "/Document/Upload/{file}": {
+      "post": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Upload file content",
+        "parameters": [
+          {
+            "name": "file",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sourceContentType",
+            "in": "query",
+            "description": "optionally overload the provided MIME Type",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "content": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "ContentType": {
+                  "style": "form"
+                },
+                "ContentDisposition": {
+                  "style": "form"
+                },
+                "Headers": {
+                  "style": "form"
+                },
+                "Length": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "FileName": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-permissions": {
+          "anonymous": true
+        }
+      }
+    },
+    "/Document/Convert": {
+      "post": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Document Converter",
+        "parameters": [
+          {
+            "name": "targetContentType",
+            "in": "query",
+            "description": "define the target MIME type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sourceContentType",
+            "in": "query",
+            "description": "optionally overload the provided MIME Type",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "content": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "ContentType": {
+                  "style": "form"
+                },
+                "ContentDisposition": {
+                  "style": "form"
+                },
+                "Headers": {
+                  "style": "form"
+                },
+                "Length": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "FileName": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "404": {
             "description": "Not Found"

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:1a23ac62-f143-405b-befe-68edf18fdc11" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:1d9b403d-2f97-4f3c-aade-8b1b45b4fa0a" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
   <metadata>
-    <timestamp>2024-04-23T02:50:11.5606306Z</timestamp>
+    <timestamp>2024-04-25T15:35:00.9587855Z</timestamp>
     <tools>
       <tool>
         <vendor>CycloneDX</vendor>
@@ -9,9 +9,9 @@
         <version>3.0.5.0</version>
       </tool>
     </tools>
-    <component type="application" bom-ref="Eliassen.Libs@0.1.72-dev-ado-HybridSearch.24">
+    <component type="application" bom-ref="Eliassen.Libs@0.1.72-dev-ado-HybridSearch.32">
       <name>Eliassen.Libs</name>
-      <version>0.1.72-dev-ado-HybridSearch.24</version>
+      <version>0.1.72-dev-ado-HybridSearch.32</version>
     </component>
   </metadata>
   <components>
@@ -324,6 +324,72 @@
         </reference>
       </externalReferences>
     </component>
+    <component type="library" bom-ref="pkg:nuget/DocumentFormat.OpenXml@3.0.2">
+      <author>Microsoft</author>
+      <name>DocumentFormat.OpenXml</name>
+      <version>3.0.2</version>
+      <description>The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents. It supports scenarios such as:
+
+- High-performance generation of word-processing documents, spreadsheets, and presentations.
+- Populating content in Word files from an XML data source.
+- Splitting up (shredding) a Word or PowerPoint file into multiple files, and combining multiple Word/PowerPoint files into a single file.
+- Extraction of data from Excel documents.
+- Searching and replacing content in Word/PowerPoint using regular expressions.
+- Updating cached data and embedded spreadsheets for charts in Word/PowerPoint.
+- Document modification, such as removing tracked revisions or removing unacceptable content from documents.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">D521E5E470AE0CA9A00742F43A005CA21CA415190A511D478E3C40E2110B77335422DBFFEFF8283F70169DDBBD0B91AD26E385BE56ED2EB96BFFC7316230A501</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/DocumentFormat.OpenXml@3.0.2</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/dotnet/Open-XML-SDK</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/Open-XML-SDK</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/DocumentFormat.OpenXml.Framework@3.0.2">
+      <author>Microsoft</author>
+      <name>DocumentFormat.OpenXml.Framework</name>
+      <version>3.0.2</version>
+      <description>The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents. It supports scenarios such as:
+
+- High-performance generation of word-processing documents, spreadsheets, and presentations.
+- Populating content in Word files from an XML data source.
+- Splitting up (shredding) a Word or PowerPoint file into multiple files, and combining multiple Word/PowerPoint files into a single file.
+- Extraction of data from Excel documents.
+- Searching and replacing content in Word/PowerPoint using regular expressions.
+- Updating cached data and embedded spreadsheets for charts in Word/PowerPoint.
+- Document modification, such as removing tracked revisions or removing unacceptable content from documents.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">E124628D7E7E1C84774BD3F0244C1C96B71C5E19F608C218402D440F9F2AAD102296A0A38F4E6F9FD16DE48CEF0B0D5F6C66DD33A17A4DFAFE08EFB16C3B8AA4</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/DocumentFormat.OpenXml.Framework@3.0.2</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/dotnet/Open-XML-SDK</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/Open-XML-SDK</url>
+        </reference>
+      </externalReferences>
+    </component>
     <component type="library" bom-ref="pkg:nuget/Flurl@3.0.6">
       <author>Todd Menier</author>
       <name>Flurl</name>
@@ -593,6 +659,32 @@
         </reference>
         <reference type="vcs">
           <url>https://github.com/HakanL/WkHtmlToPdf-DotNet</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/HtmlAgilityPack@1.11.57">
+      <author>ZZZ Projects,Simon Mourrier,Jeff Klawiter,Stephan Grell</author>
+      <name>HtmlAgilityPack</name>
+      <version>1.11.57</version>
+      <description>This is an agile HTML parser that builds a read/write DOM and supports plain XPATH or XSLT (you actually don't HAVE to understand XPATH nor XSLT to use it, don't worry...). It is a .NET code library that allows you to parse "out of the web" HTML files. The parser is very tolerant with "real world" malformed HTML. The object model is very similar to what proposes System.Xml, but for HTML documents (or streams).</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">1EBB2C9F93EF78A7B577F6B10EB971B41A810E479F73904C0D2F8E2A77CC5F8559F508FC71921F0AB1C7DED423CA12EE9CEF3807A89B0519A195D31DAD340967</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <name>Unknown - See URL</name>
+          <url>https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE</url>
+        </license>
+      </licenses>
+      <copyright>Copyright © ZZZ Projects Inc.</copyright>
+      <purl>pkg:nuget/HtmlAgilityPack@1.11.57</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://html-agility-pack.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/zzzprojects/html-agility-pack/</url>
         </reference>
       </externalReferences>
     </component>
@@ -3956,6 +4048,30 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </reference>
       </externalReferences>
     </component>
+    <component type="library" bom-ref="pkg:nuget/ReverseMarkdown@4.3.0">
+      <author>Babu Annamalai</author>
+      <name>ReverseMarkdown</name>
+      <version>4.3.0</version>
+      <description>ReverseMarkdown is a Html to Markdown converter library in c#</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">44B5CC89782C06E0B3375283EF3CEF5BF617F30617A6D2352F032548CDCA9022D83CFF278EBCA3353C3407DD7651C7E8593F5372212E16AA8C821B0B6B0A812D</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <purl>pkg:nuget/ReverseMarkdown@4.3.0</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/mysticmind/reversemarkdown-net</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/mysticmind/reversemarkdown-net.git</url>
+        </reference>
+      </externalReferences>
+    </component>
     <component type="library" bom-ref="pkg:nuget/runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2">
       <author>Microsoft</author>
       <name>runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl</name>
@@ -5402,6 +5518,31 @@ System.IO.Hashing.XxHash32</description>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
       <purl>pkg:nuget/System.IO.Hashing@6.0.0</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://dot.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/runtime</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/System.IO.Packaging@8.0.0">
+      <author>Microsoft</author>
+      <name>System.IO.Packaging</name>
+      <version>8.0.0</version>
+      <description>Provides classes that support storage of multiple data objects in a single container.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">141585B1465966C7D9A6CEF56100659054CF60330D1637FC76A7FBCEA9616195509081094B93DE3E5E01210EA8E5E90023E66C684392074AAA9B5BAD077FB15E</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/System.IO.Packaging@8.0.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://dot.net/</url>
@@ -7217,7 +7358,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     </component>
   </components>
   <dependencies>
-    <dependency ref="Eliassen.Libs@0.1.72-dev-ado-HybridSearch.24">
+    <dependency ref="Eliassen.Libs@0.1.72-dev-ado-HybridSearch.32">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.1" />
@@ -7240,6 +7381,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Graph@5.49.0" />
       <dependency ref="pkg:nuget/Microsoft.Identity.Client@4.60.3" />
       <dependency ref="pkg:nuget/Azure.AI.OpenAI@1.0.0-beta.16" />
+      <dependency ref="pkg:nuget/DocumentFormat.OpenXml@3.0.2" />
       <dependency ref="pkg:nuget/Handlebars.Net@2.1.6" />
       <dependency ref="pkg:nuget/Handlebars.Net.Extension.Json@1.0.0" />
       <dependency ref="pkg:nuget/Handlebars.Net.Helpers@2.4.2.1" />
@@ -7259,6 +7401,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/OpenSearch.Client@1.7.1" />
       <dependency ref="pkg:nuget/Qdrant.Client@1.8.0" />
       <dependency ref="pkg:nuget/RabbitMQ.Client@6.8.1" />
+      <dependency ref="pkg:nuget/ReverseMarkdown@4.3.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.CommandLine@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.EnvironmentVariables@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.FileSystemGlobbing@8.0.0" />
@@ -7321,6 +7464,12 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <dependency ref="pkg:nuget/DnsClient@1.6.1">
       <dependency ref="pkg:nuget/Microsoft.Win32.Registry@5.0.0" />
     </dependency>
+    <dependency ref="pkg:nuget/DocumentFormat.OpenXml.Framework@3.0.2">
+      <dependency ref="pkg:nuget/System.IO.Packaging@8.0.0" />
+    </dependency>
+    <dependency ref="pkg:nuget/DocumentFormat.OpenXml@3.0.2">
+      <dependency ref="pkg:nuget/DocumentFormat.OpenXml.Framework@3.0.2" />
+    </dependency>
     <dependency ref="pkg:nuget/Flurl.Http@3.2.4">
       <dependency ref="pkg:nuget/Flurl@3.0.6" />
       <dependency ref="pkg:nuget/Newtonsoft.Json@12.0.2" />
@@ -7356,6 +7505,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Runtime.InteropServices@4.3.0" />
       <dependency ref="pkg:nuget/System.Threading.Thread@4.3.0" />
     </dependency>
+    <dependency ref="pkg:nuget/HtmlAgilityPack@1.11.57" />
     <dependency ref="pkg:nuget/JsonDiffPatch.Net@2.3.0">
       <dependency ref="pkg:nuget/Newtonsoft.Json@11.0.1" />
     </dependency>
@@ -7905,6 +8055,9 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Memory@4.5.5" />
       <dependency ref="pkg:nuget/System.Threading.Channels@7.0.0" />
     </dependency>
+    <dependency ref="pkg:nuget/ReverseMarkdown@4.3.0">
+      <dependency ref="pkg:nuget/HtmlAgilityPack@1.11.57" />
+    </dependency>
     <dependency ref="pkg:nuget/runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2" />
     <dependency ref="pkg:nuget/runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2" />
     <dependency ref="pkg:nuget/runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2" />
@@ -8075,6 +8228,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Threading.Tasks@4.3.0" />
     </dependency>
     <dependency ref="pkg:nuget/System.IO.Hashing@6.0.0" />
+    <dependency ref="pkg:nuget/System.IO.Packaging@8.0.0" />
     <dependency ref="pkg:nuget/System.IO@4.3.0">
       <dependency ref="pkg:nuget/Microsoft.NETCore.Platforms@5.0.0" />
       <dependency ref="pkg:nuget/Microsoft.NETCore.Targets@1.1.3" />

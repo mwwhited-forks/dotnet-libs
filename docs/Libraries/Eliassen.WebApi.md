@@ -144,6 +144,8 @@ Initializes a new instance of the
 ##### Parameters
 * *converter:* The document conversion service.
 * *content:* The content provider service.
+* *documentTypes:* The existing type definitions service.
+* *logger:* The logger service.
 
 
 
@@ -194,6 +196,40 @@ Retrieves the summary of the specified file.
 
 ##### Parameters
 * *file:* The path to the file.
+
+
+
+
+#### Upload(Microsoft.AspNetCore.Http.IFormFile,System.String,System.String)
+Upload file content 
+
+
+##### Parameters
+* *content:* upload file content
+* *file:* 
+* *sourceContentType:* optionally overload the provided MIME Type
+
+
+
+
+##### Return value
+
+
+
+
+#### Convert(Microsoft.AspNetCore.Http.IFormFile,System.String,System.String)
+Document Converter 
+
+
+##### Parameters
+* *content:* upload file content
+* *targetContentType:* define the target MIME type
+* *sourceContentType:* optionally overload the provided MIME Type
+
+
+
+
+##### Return value
 
 
 

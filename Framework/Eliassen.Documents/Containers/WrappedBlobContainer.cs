@@ -21,7 +21,7 @@ public class WrappedBlobContainer : IBlobContainer
         _wrapped.QueryContent();
     public Task StoreContentAsync(
         ContentReference reference,
-        IDictionary<string, string>? metadata = null, 
+        IDictionary<string, string>? metadata = null,
         bool overwrite = false
         ) =>
         _wrapped.StoreContentAsync(reference, metadata, overwrite);

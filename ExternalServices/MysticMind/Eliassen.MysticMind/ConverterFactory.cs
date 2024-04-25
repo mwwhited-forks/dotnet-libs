@@ -4,5 +4,5 @@ namespace Eliassen.MysticMind;
 
 public class ConverterFactory : IConverterFactory
 {
-    public Converter Build() => new ();
+    public Converter Build() => new();
 }

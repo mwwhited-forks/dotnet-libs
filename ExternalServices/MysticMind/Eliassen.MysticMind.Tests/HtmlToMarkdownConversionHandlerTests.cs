@@ -1,5 +1,4 @@
-﻿using Eliassen.MysticMind;
-using Eliassen.TestUtilities;
+﻿using Eliassen.TestUtilities;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

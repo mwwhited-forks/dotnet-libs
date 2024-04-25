@@ -2,8 +2,8 @@
 
 ## Summary 
 
-Application: Eliassen.Libs (0.1.72-dev-ado-HybridSearch.24) \
-Time: 2024-04-23T02:50:11.5606306Z \
+Application: Eliassen.Libs (0.1.72-dev-ado-HybridSearch.32) \
+Time: 2024-04-25T15:35:00.9587855Z \
 Tool: CycloneDX (3.0.5.0). 
 
 ## Components 
@@ -189,6 +189,50 @@ Package URL: pkg:nuget/DnsClient@1.6.1
 DnsClient.NET is a simple yet very powerful and high performance open source library for the .NET Framework to do DNS lookups 
 
 
+### DocumentFormat.OpenXml (3.0.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/Open-XML-SDK) \
+Hash: [SHA-512](D521E5E470AE0CA9A00742F43A005CA21CA415190A511D478E3C40E2110B77335422DBFFEFF8283F70169DDBBD0B91AD26E385BE56ED2EB96BFFC7316230A501) \
+Package URL: pkg:nuget/DocumentFormat.OpenXml@3.0.2 
+
+#### Description: 
+
+The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents. It supports scenarios such as:
+
+- High-performance generation of word-processing documents, spreadsheets, and presentations.
+- Populating content in Word files from an XML data source.
+- Splitting up (shredding) a Word or PowerPoint file into multiple files, and combining multiple Word/PowerPoint files into a single file.
+- Extraction of data from Excel documents.
+- Searching and replacing content in Word/PowerPoint using regular expressions.
+- Updating cached data and embedded spreadsheets for charts in Word/PowerPoint.
+- Document modification, such as removing tracked revisions or removing unacceptable content from documents. 
+
+
+### DocumentFormat.OpenXml.Framework (3.0.2) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/Open-XML-SDK) \
+Hash: [SHA-512](E124628D7E7E1C84774BD3F0244C1C96B71C5E19F608C218402D440F9F2AAD102296A0A38F4E6F9FD16DE48CEF0B0D5F6C66DD33A17A4DFAFE08EFB16C3B8AA4) \
+Package URL: pkg:nuget/DocumentFormat.OpenXml.Framework@3.0.2 
+
+#### Description: 
+
+The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents. It supports scenarios such as:
+
+- High-performance generation of word-processing documents, spreadsheets, and presentations.
+- Populating content in Word files from an XML data source.
+- Splitting up (shredding) a Word or PowerPoint file into multiple files, and combining multiple Word/PowerPoint files into a single file.
+- Extraction of data from Excel documents.
+- Searching and replacing content in Word/PowerPoint using regular expressions.
+- Updating cached data and embedded spreadsheets for charts in Word/PowerPoint.
+- Document modification, such as removing tracked revisions or removing unacceptable content from documents. 
+
+
 ### Flurl (3.0.6) 
 
 Author: Todd Menier \
@@ -338,6 +382,20 @@ Package URL: pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.88
 #### Description: 
 
 .NET Core P/Invoke wrapper for wkhtmltopdf library that uses Webkit engine to convert HTML pages to PDF. 
+
+
+### HtmlAgilityPack (1.11.57) 
+
+Author: ZZZ Projects,Simon Mourrier,Jeff Klawiter,Stephan Grell \
+Copyright: Copyright © ZZZ Projects Inc. \
+License: [Unknown - See URL](https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE) \
+Reference: [website](http://html-agility-pack.net/) \
+Hash: [SHA-512](1EBB2C9F93EF78A7B577F6B10EB971B41A810E479F73904C0D2F8E2A77CC5F8559F508FC71921F0AB1C7DED423CA12EE9CEF3807A89B0519A195D31DAD340967) \
+Package URL: pkg:nuget/HtmlAgilityPack@1.11.57 
+
+#### Description: 
+
+This is an agile HTML parser that builds a read/write DOM and supports plain XPATH or XSLT (you actually don't HAVE to understand XPATH nor XSLT to use it, don't worry...). It is a .NET code library that allows you to parse "out of the web" HTML files. The parser is very tolerant with "real world" malformed HTML. The object model is very similar to what proposes System.Xml, but for HTML documents (or streams). 
 
 
 ### JsonDiffPatch.Net (2.3.0) 
@@ -2274,6 +2332,19 @@ Package URL: pkg:nuget/RabbitMQ.Client@6.8.1
 The RabbitMQ .NET client is the official client library for C# (and, implicitly, other .NET languages) 
 
 
+### ReverseMarkdown (4.3.0) 
+
+Author: Babu Annamalai \
+License: MIT \
+Reference: [website](https://github.com/mysticmind/reversemarkdown-net) \
+Hash: [SHA-512](44B5CC89782C06E0B3375283EF3CEF5BF617F30617A6D2352F032548CDCA9022D83CFF278EBCA3353C3407DD7651C7E8593F5372212E16AA8C821B0B6B0A812D) \
+Package URL: pkg:nuget/ReverseMarkdown@4.3.0 
+
+#### Description: 
+
+ReverseMarkdown is a Html to Markdown converter library in c# 
+
+
 ### runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
 
 Author: Microsoft \
@@ -3231,6 +3302,20 @@ Provides non-cryptographic hash algorithms, such as CRC-32.
 Commonly Used Types:
 System.IO.Hashing.Crc32
 System.IO.Hashing.XxHash32 
+
+
+### System.IO.Packaging (8.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](141585B1465966C7D9A6CEF56100659054CF60330D1637FC76A7FBCEA9616195509081094B93DE3E5E01210EA8E5E90023E66C684392074AAA9B5BAD077FB15E) \
+Package URL: pkg:nuget/System.IO.Packaging@8.0.0 
+
+#### Description: 
+
+Provides classes that support storage of multiple data objects in a single container. 
 
 
 ### System.Linq (4.1.0) 

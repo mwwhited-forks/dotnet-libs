@@ -1,6 +1,6 @@
 # Swagger Description - Eliassen.WebApi
 
-*Version*: 0.1.72.23
+*Version*: 0.1.72.31
 
 ## Endpoints
 
@@ -130,6 +130,30 @@ Anonymous:   *True*
 Retrieves the summary of the specified file.
 
 HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Document/Upload/{file}
+
+
+Upload file content
+
+HTTP Method: *post* \
+Anonymous:   *True*
+
+
+
+
+
+### /Document/Convert
+
+
+Document Converter
+
+HTTP Method: *post* \
 Anonymous:   *True*
 
 

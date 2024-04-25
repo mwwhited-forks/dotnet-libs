@@ -1,20 +1,20 @@
 # Summary - Eliassen.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 4/22/2024 - 10:49:57 PM |
-| Coverage date: | 4/22/2024 - 10:46:56 PM - 4/22/2024 - 10:49:44 PM |
-| Parser: | MultiReport (46x Cobertura, 46x OpenCover) |
-| Assemblies: | 25 |
-| Classes: | 132 |
-| Files: | 131 |
-| **Line coverage:** | 33.5% (1137 of 3388) |
-| Covered lines: | 1137 |
-| Uncovered lines: | 2251 |
-| Coverable lines: | 3388 |
-| Total lines: | 10164 |
-| **Branch coverage:** | 34.7% (1165 of 3352) |
-| Covered branches: | 1165 |
-| Total branches: | 3352 |
+| Generated on: | 4/25/2024 - 11:34:44 AM |
+| Coverage date: | 4/25/2024 - 11:30:57 AM - 4/25/2024 - 11:33:49 AM |
+| Parser: | MultiReport (52x Cobertura, 52x OpenCover) |
+| Assemblies: | 29 |
+| Classes: | 151 |
+| Files: | 149 |
+| **Line coverage:** | 32.4% (1186 of 3658) |
+| Covered lines: | 1186 |
+| Uncovered lines: | 2472 |
+| Coverable lines: | 3658 |
+| Total lines: | 11030 |
+| **Branch coverage:** | 33.4% (1173 of 3504) |
+| Covered branches: | 1173 |
+| Total branches: | 3504 |
 | **Method coverage:** | [Feature is only available for sponsors](https://reportgenerator.io/pro) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|
@@ -42,20 +42,33 @@
 |Eliassen.AspNetCore.Mvc.SwaggerGen.AddOperationFilterOptions`1|0|1|1|19|0%|0|0||
 |Eliassen.AspNetCore.Mvc.SwaggerGen.AddSchemaFilterOptions`1|0|1|1|19|0%|0|0||
 |Eliassen.AspNetCore.Mvc.SwaggerGen.ApiNamespaceControllerModelConvention|0|1|1|15|0%|0|0||
-|**Eliassen.Azure.StorageAccount**|**0**|**118**|**118**|**435**|**0%**|**0**|**64**|**0%**|
-|Eliassen.Azure.StorageAccount.BlobStorage.BlobProvider|0|39|39|133|0%|0|8|0%|
-|Eliassen.Azure.StorageAccount.BlobStorage.BlobProviderFactory|0|9|9|51|0%|0|8|0%|
+|**Eliassen.Azure.StorageAccount**|**0**|**162**|**162**|**539**|**0%**|**0**|**80**|**0%**|
+|Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProviderFactory|0|2|2|15|0%|0|0||
+|Eliassen.Azure.StorageAccount.BlobStorage.BlobProvider|0|80|80|217|0%|0|20|0%|
+|Eliassen.Azure.StorageAccount.BlobStorage.BlobProviderFactory|0|9|9|51|0%|0|12|0%|
 |Eliassen.Azure.StorageAccount.BlobStorage.BlobServiceClientFactory|0|2|2|26|0%|0|0||
 |Eliassen.Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider|0|31|31|97|0%|0|32|0%|
 |Eliassen.Azure.StorageAccount.MessageQueueing.QueueClientFactory|0|7|7|30|0%|0|8|0%|
-|Eliassen.Azure.StorageAccount.ServiceCollectionExtensions|0|30|30|98|0%|0|8|0%|
+|Eliassen.Azure.StorageAccount.ServiceCollectionExtensions|0|31|31|103|0%|0|8|0%|
 |**Eliassen.Communications**|**0**|**1**|**1**|**16**|**0%**|**0**|**0**|****|
 |Eliassen.Communications.ServiceCollectionExtensions|0|1|1|16|0%|0|0||
-|**Eliassen.Extensions**|**124**|**163**|**287**|**1037**|**43.2%**|**163**|**436**|**37.3%**|
+|**Eliassen.Documents**|**0**|**153**|**153**|**514**|**0%**|**0**|**120**|**0%**|
+|Eliassen.Documents.Containers.BlobContainerFactory|0|7|7|23|0%|0|16|0%|
+|Eliassen.Documents.Containers.BlobContainerProviderFactory|0|9|9|28|0%|0|8|0%|
+|Eliassen.Documents.Containers.WrappedBlobContainer|0|6|6|35|0%|0|0||
+|Eliassen.Documents.Containers.WrappedBlobContainer`1|0|1|1|35|0%|0|0||
+|Eliassen.Documents.Conversion.DocumentConversion|0|33|33|88|0%|0|24|0%|
+|Eliassen.Documents.Conversion.DocumentConversionChainBuilder|0|40|40|88|0%|0|44|0%|
+|Eliassen.Documents.Conversion.ToTextConversionHandler|0|8|8|52|0%|0|8|0%|
+|Eliassen.Documents.Depercated.ContentProvider|0|5|5|44|0%|0|0||
+|Eliassen.Documents.DocumentTypeTools|0|15|15|65|0%|0|20|0%|
+|Eliassen.Documents.ServiceCollectionExtensions|0|29|29|56|0%|0|0||
+|**Eliassen.Extensions**|**124**|**167**|**291**|**1051**|**42.6%**|**163**|**436**|**37.3%**|
 |Eliassen.Extensions.Accessors.Accessor`1|3|0|3|22|100%|0|0||
 |Eliassen.Extensions.Configuration.CommandLine|0|19|19|52|0%|0|48|0%|
 |Eliassen.Extensions.Configuration.ConfigurationBuilderExtensions|0|8|8|42|0%|0|0||
 |Eliassen.Extensions.IO.FileTools|0|13|13|53|0%|0|12|0%|
+|Eliassen.Extensions.IO.StreamExtensions|0|4|4|14|0%|0|0||
 |Eliassen.Extensions.IO.StreamJsonDeserializeExtensions|10|10|20|68|50%|8|16|50%|
 |Eliassen.Extensions.IO.StreamXmlDeserializeExtensions|8|12|20|69|40%|4|16|25%|
 |Eliassen.Extensions.Linq.AsyncEnumerableExtensions|0|36|36|162|0%|0|84|0%|
@@ -105,6 +118,9 @@
 |**Eliassen.Microsoft.B2C**|**0**|**96**|**96**|**227**|**0%**|**0**|**46**|**0%**|
 |Eliassen.Microsoft.B2C.Identity.ManageGraphUser|0|93|93|190|0%|0|46|0%|
 |Eliassen.Microsoft.B2C.ServiceCollectionExtensions|0|3|3|37|0%|0|0||
+|**Eliassen.Microsoft.OpenXml**|**32**|**0**|**32**|**109**|**100%**|**4**|**8**|**50%**|
+|Eliassen.Microsoft.OpenXml.DocxToMarkdownConversionHandler|23|0|23|78|100%|4|8|50%|
+|Eliassen.Microsoft.OpenXml.ServiceCollectionExtensions|9|0|9|31|100%|0|0||
 |**Eliassen.MongoDB**|**0**|**85**|**85**|**311**|**0%**|**0**|**112**|**0%**|
 |Eliassen.MongoDB.Extensions.BsonObjectIdConvention|0|13|13|42|0%|0|24|0%|
 |Eliassen.MongoDB.Extensions.MongoDatabaseFactory|0|18|18|69|0%|0|0||
@@ -112,11 +128,18 @@
 |Eliassen.MongoDB.Extensions.MongoDatabaseRegistration|0|2|2|20|0%|0|0||
 |Eliassen.MongoDB.Extensions.MongoDispatchProxy|0|39|39|90|0%|0|80|0%|
 |Eliassen.MongoDB.ServiceCollectionExtensions|0|8|8|62|0%|0|4|0%|
+|**Eliassen.MysticMind**|**17**|**0**|**17**|**102**|**100%**|**4**|**8**|**50%**|
+|Eliassen.MysticMind.ConverterFactory|1|0|1|8|100%|0|0||
+|Eliassen.MysticMind.HtmlToMarkdownConversionHandler|12|0|12|69|100%|4|8|50%|
+|Eliassen.MysticMind.ServiceCollectionExtensions|4|0|4|25|100%|0|0||
 |**Eliassen.Ollama**|**0**|**44**|**44**|**222**|**0%**|**0**|**10**|**0%**|
 |Eliassen.Ollama.OllamaApiClientExtensions|0|20|20|103|0%|0|10|0%|
 |Eliassen.Ollama.OllamaApiClientFactory|0|2|2|26|0%|0|0||
 |Eliassen.Ollama.OllamaMessageCompletion|0|13|13|49|0%|0|0||
 |Eliassen.Ollama.ServiceCollectionExtensions|0|9|9|44|0%|0|0||
+|**Eliassen.OpenAI.AI**|**0**|**20**|**20**|**58**|**0%**|**0**|**0**|****|
+|Eliassen.OpenAI.AI.ServiceCollectionExtensions|0|4|4|27|0%|0|0||
+|Eliassen.OpenAI.AI.Services.OpenAIManager|0|16|16|31|0%|0|0||
 |**Eliassen.OpenSearch**|**0**|**86**|**86**|**224**|**0%**|**0**|**96**|**0%**|
 |Eliassen.OpenSearch.LexicalProvider|0|66|66|138|0%|0|88|0%|
 |Eliassen.OpenSearch.OpenSearchClientFactory|0|11|11|43|0%|0|8|0%|

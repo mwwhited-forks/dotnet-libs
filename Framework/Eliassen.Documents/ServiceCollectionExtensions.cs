@@ -4,7 +4,6 @@ using Eliassen.Documents.Depercated;
 using Eliassen.Documents.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System;
 
 namespace Eliassen.Documents;
 

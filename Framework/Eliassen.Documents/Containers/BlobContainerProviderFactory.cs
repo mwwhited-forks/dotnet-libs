@@ -18,7 +18,7 @@ public class BlobContainerProviderFactory : IBlobContainerProviderFactory
         provider ??= _serviceProvider.GetServices<IBlobContainerProviderFactory>()
             .Where(i => i is not BlobContainerProviderFactory)
             .Select(i => i.Create(containerName))
-            .FirstOrDefault(i=>i!= null);
+            .FirstOrDefault(i => i != null);
 
         provider ??= _serviceProvider.GetRequiredService<IBlobContainerProvider>();
 

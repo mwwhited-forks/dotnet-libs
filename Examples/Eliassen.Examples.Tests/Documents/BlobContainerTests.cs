@@ -79,7 +79,7 @@ public class BlobContainerTests
     public void Create_IBlobContainer__Summary_List_Test()
     {
         var wrapper = ServiceProvider().GetRequiredService<IBlobContainer<Summary>>();
-        var items= wrapper.QueryContent().ToArray();
+        var items = wrapper.QueryContent().ToArray();
         this.TestContext.AddResult(items);
     }
 

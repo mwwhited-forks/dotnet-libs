@@ -1,6 +1,7 @@
-﻿using Eliassen.Documents;
+﻿using Eliassen.Common;
+using Eliassen.Documents;
 using Eliassen.TestUtilities;
-using Eliassen.Common;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -8,7 +9,6 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
 
 namespace Eliassen.Examples.Tests.Documents;
 
