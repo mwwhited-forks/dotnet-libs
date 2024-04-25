@@ -13,18 +13,25 @@ public class WrappedBlobContainer : IBlobContainer
         IBlobContainer wrapped
         ) => _wrapped = wrapped;
 
+    public Task DeleteContentAsync(string path) =>
+        _wrapped.DeleteContentAsync(path);
+
     public Task<ContentReference> GetContentAsync(string path) =>
         _wrapped.GetContentAsync(path);
+
     public Task<ContentMetaDataReference> GetContentMetaDataAsync(string path) =>
         _wrapped.GetContentMetaDataAsync(path);
+
     public IQueryable<ContentMetaDataReference> QueryContent() =>
         _wrapped.QueryContent();
+
     public Task StoreContentAsync(
         ContentReference reference,
         IDictionary<string, string>? metadata = null,
         bool overwrite = false
         ) =>
         _wrapped.StoreContentAsync(reference, metadata, overwrite);
+
     public Task<bool> StoreContentMetaDataAsync(ContentMetaDataReference reference) =>
         _wrapped.StoreContentMetaDataAsync(reference);
 }

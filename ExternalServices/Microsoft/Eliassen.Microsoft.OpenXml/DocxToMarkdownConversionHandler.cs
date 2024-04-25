@@ -24,7 +24,7 @@ public class DocxToMarkdownConversionHandler : IDocumentConversionHandler
     /// <param name="destinationContentType">The content type of the destination stream.</param>
     /// <returns>A task representing the asynchronous conversion operation.</returns>
     /// <exception cref="NotSupportedException">Thrown when either the source or destination content type is not supported.</exception>
-    public async Task ConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType)
+    public Task ConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType)
     {
         if (!SupportedSource(sourceContentType)) throw new NotSupportedException($"Source Content Type \"{sourceContentType}\" is not supported");
         if (!SupportedDestination(destinationContentType)) throw new NotSupportedException($"Source Content Type \"{destinationContentType}\" is not supported");
@@ -50,6 +50,8 @@ public class DocxToMarkdownConversionHandler : IDocumentConversionHandler
         destination.Position = 0;
 
         xslt.Transform(reader, writer);
+
+        return Task.CompletedTask;
     }
 
     /// <summary>

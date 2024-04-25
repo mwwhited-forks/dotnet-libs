@@ -13,7 +13,7 @@
   </Target>
   
   <ItemGroup>
-    <None Include="$(SolutionDir)docs\**\*.*" >
+    <None Include="$(SolutionDir)docs\**\*.*">
       <Link>\docs\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </None>
     <None Include="$(SolutionDir)Scripts\**\*.*">
@@ -30,12 +30,16 @@
     </None>
     <None Remove="$(SolutionDir)*.sln" />
 
-    <None Include="$(SolutionDir)TestResults\**\*.*" >
+    <None Include="$(SolutionDir)TestResults\**\*.*">
       <Link>\TestResults\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </None>
-    <None Include="$(SolutionDir)publish\**\*.*" >
+    <None Include="$(SolutionDir)publish\**\*.*">
       <Link>\publish\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="C:\Repos\Nucleus\Net.Libs\Scripts\SetupAzurite.bat" />
   </ItemGroup>
 
 </Project>

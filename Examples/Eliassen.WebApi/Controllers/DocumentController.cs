@@ -1,6 +1,8 @@
-﻿using Eliassen.Documents;
+﻿using DocumentFormat.OpenXml.InkML;
+using Eliassen.Documents;
 using Eliassen.Documents.Depercated;
 using Eliassen.Documents.Models;
+using Microsoft.ApplicationInsights.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,12 +19,14 @@ namespace Eliassen.WebApi.Controllers;
 /// </summary>
 [AllowAnonymous]
 [Route("[Controller]/[Action]")]
+[BlobContainer(ContainerName = "docs")]
 public class DocumentController : Controller
 {
     private readonly IDocumentConversion _converter;
     private readonly IContentProvider _content;
     private readonly IDocumentTypeTools _documentTypes;
     private readonly ILogger _logger;
+    private readonly IBlobContainer<DocumentController> _container;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentController"/> class with the specified dependencies.
@@ -35,13 +39,15 @@ public class DocumentController : Controller
         IDocumentConversion converter,
         IContentProvider content,
         IDocumentTypeTools documentTypes,
-        ILogger<DocumentController> logger
+        ILogger<DocumentController> logger,
+        IBlobContainer<DocumentController> container
         )
     {
         _converter = converter;
         _content = content;
         _documentTypes = documentTypes;
         _logger = logger;
+        _container = container;
     }
 
     /// <summary>
@@ -144,11 +150,18 @@ public class DocumentController : Controller
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Upload([FromForm] IFormFile content, string file, string? sourceContentType = null)
     {
+        await Task.Yield();
         _logger.LogDebug("Start Upload");
         if (ModelState.IsValid)
         {
             _logger.LogDebug("Upload Ok");
-            //  return Ok(await _uploader.UploadFileAsync(model));
+            await _container.StoreContentAsync(new()
+            {
+                Content = content.OpenReadStream(),
+                ContentType = content.ContentType,
+                FileName = file ?? content.FileName,
+            });
+            return Ok();
         }
 
         _logger.LogDebug("Upload BadRequest");

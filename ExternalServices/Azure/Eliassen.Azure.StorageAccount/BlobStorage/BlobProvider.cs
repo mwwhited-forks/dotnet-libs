@@ -45,7 +45,9 @@ public class BlobProvider :
         _logger = loggerFactory.CreateLogger(nameof(BlobProvider) + $"-{collectionName}");
         ContainerName = collectionName.ToLower();
         _blockBlobClient = client.GetBlobContainerClient(ContainerName);
-        _blockBlobClient.CreateIfNotExists();
+#if DEBUG
+        _blockBlobClient.CreateIfNotExists(); //TODO: should make this a config option and make config injectable like queues
+#endif
     }
 
     /// <summary>
@@ -205,6 +207,11 @@ public class BlobProvider :
         return query.AsQueryable();
     }
 
+    public async Task DeleteContentAsync(string path)
+    {
+        var blob = _blockBlobClient.GetBlobClient(path);
+        await blob.DeleteIfExistsAsync();
+    }
 }
 
 //public class BlobQueryProvider : IQueryProvider
