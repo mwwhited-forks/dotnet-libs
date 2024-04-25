@@ -1,6 +1,8 @@
-﻿using Azure.AI.OpenAI;
+﻿using Azure;
+using Azure.AI.OpenAI;
 using Eliassen.AI;
 using Microsoft.Extensions.Options;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Eliassen.OpenAI.AI.Services;
@@ -12,29 +14,40 @@ public class OpenAIManager(IOptions<OpenAIOptions> config) : ILanguageModelProvi
     public async Task<string> GetResponseAsync(string promptDetails, string userInput)
     {
         OpenAIClient api = new(_config.Value.APIKey);
-
-            ChatCompletionsOptions chatCompletionsOptions = new()
-            {
-                DeploymentName = _config.Value.DeploymentName,
-                Messages =
+        var response = await api.GetChatCompletionsAsync(new()
+        {
+            DeploymentName = _config.Value.DeploymentName,
+            Messages =
                 {
                     // The system message represents instructions or other guidance about how the assistant should behave
                     new ChatRequestSystemMessage(promptDetails),
                     // User messages represent current or historical input from the end user
                     new ChatRequestUserMessage(userInput)
                 }
-            };
+        });
+        return response.Value.Choices[0].Message.Content;
+    }
 
-            Response<ChatCompletions> response;
+    public async IAsyncEnumerable<string> GetStreamedResponseAsync(string promptDetails, string userInput)
+    {
+        OpenAIClient api = new(_config.Value.APIKey);
 
-            try
+
+        await foreach (var chatUpdate in await api.GetChatCompletionsStreamingAsync(new()
+        {
+            DeploymentName = _config.Value.DeploymentName,
+            Messages =
             {
-                response = await api.GetChatCompletionsAsync(chatCompletionsOptions);
-                return response.Value.Choices[0].Message.Content;
+                // The system message represents instructions or other guidance about how the assistant should behave
+                new ChatRequestSystemMessage(promptDetails),
+                // User messages represent current or historical input from the end user
+                new ChatRequestUserMessage(userInput)
             }
-            catch (Exception ex)
+        }))
+        {
+            if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
             {
-                throw;
+                yield return chatUpdate.ContentUpdate;
             }
         }
     }
