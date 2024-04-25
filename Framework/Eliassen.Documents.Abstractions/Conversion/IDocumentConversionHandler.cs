@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Documents;
+﻿namespace Eliassen.Documents.Conversion;
 
 /// <summary>
 /// Represents a handler for document conversion.

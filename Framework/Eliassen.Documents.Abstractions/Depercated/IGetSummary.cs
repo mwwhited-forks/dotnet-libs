@@ -1,11 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
-namespace Eliassen.Documents;
+namespace Eliassen.Documents.Depercated;
 
 /// <summary>
 /// Represents a provider for retrieving summaries of content of type <typeparamref name="T"/>.
 /// </summary>
 /// <typeparam name="T">The type of content summary to retrieve.</typeparam>
+[Obsolete]
 public interface IGetSummary<T>
 {
     /// <summary>

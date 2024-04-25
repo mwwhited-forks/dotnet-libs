@@ -1,6 +1,7 @@
 ﻿using Eliassen.Azure.StorageAccount.BlobStorage;
 using Eliassen.Azure.StorageAccount.MessageQueueing;
-using Eliassen.Documents;
+using Eliassen.Documents.Containers;
+using Eliassen.Documents.Depercated;
 using Eliassen.Documents.Models;
 using Eliassen.MessageQueueing.Services;
 using Eliassen.Search;
@@ -76,6 +77,9 @@ public static class ServiceCollectionExtensions
             );
         services.TryAddTransient<IGetContent<ContentReference>>(sp => sp.GetRequiredKeyedService<BlobProvider>(BlobProviderFactory.DocumentCollectionKey));
         services.TryAddTransient<IGetSummary<ContentReference>>(sp => sp.GetRequiredKeyedService<BlobProvider>(BlobProviderFactory.SummaryCollectionKey));
+
+        services.AddTransient<IBlobContainerProviderFactory, AzureBlobContainerProviderFactory>();
+
         return services;
     }
 

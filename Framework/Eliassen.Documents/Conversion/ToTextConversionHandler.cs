@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Eliassen.Documents;
+namespace Eliassen.Documents.Conversion;
 
 /// <summary>
 /// Represents a conversion handler for converting documents to text format.

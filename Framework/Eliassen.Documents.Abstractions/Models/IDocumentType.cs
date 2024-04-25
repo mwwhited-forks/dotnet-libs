@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Documents;
+﻿namespace Eliassen.Documents.Models;
 
 /// <summary>
 /// Represents a document type.

@@ -1,11 +1,13 @@
 ﻿using Eliassen.Documents.Models;
+using System;
 using System.Threading.Tasks;
 
-namespace Eliassen.Documents;
+namespace Eliassen.Documents.Depercated;
 
 /// <summary>
 /// Represents a provider for content retrieval and summarization.
 /// </summary>
+[Obsolete]
 public interface IContentProvider
 {
     //TODO: this should really be based on a collection name being passed in

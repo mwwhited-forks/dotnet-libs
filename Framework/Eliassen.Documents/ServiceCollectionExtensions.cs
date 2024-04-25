@@ -1,6 +1,10 @@
-﻿using Eliassen.Documents.Models;
+﻿using Eliassen.Documents.Containers;
+using Eliassen.Documents.Conversion;
+using Eliassen.Documents.Depercated;
+using Eliassen.Documents.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using System;
 
 namespace Eliassen.Documents;
 
@@ -21,6 +25,11 @@ public static class ServiceCollectionExtensions
         services.TryAddSingleton<IDocumentConversion, DocumentConversion>();
         services.TryAddTransient<IDocumentConversionChainBuilder, DocumentConversionChainBuilder>();
         services.TryAddTransient<IDocumentConversionHandler, ToTextConversionHandler>();
+
+        services.TryAddTransient<IBlobContainerProviderFactory, BlobContainerProviderFactory>();
+        services.TryAddTransient<IBlobContainerFactory, BlobContainerFactory>();
+        //services.TryAddKeyedTransient(null, (sp, key)=> sp.GetRequiredService<IBlobContainerFactory>().Create((key as string) ?? throw new NullReferenceException("key not provided") ));
+        services.TryAddTransient(typeof(IBlobContainer<>), typeof(WrappedBlobContainer<>));
 
         services.AddTransient<IDocumentType>(_ => new DocumentType
         {

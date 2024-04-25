@@ -1,14 +1,20 @@
 ﻿using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
-using Eliassen.Documents;
+using Eliassen.Documents.Containers;
+using Eliassen.Documents.Depercated;
 using Eliassen.Documents.Models;
 using Eliassen.Extensions.Linq;
 using Eliassen.Search;
 using Eliassen.Search.Models;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection.PortableExecutable;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace Eliassen.Azure.StorageAccount.BlobStorage;
@@ -21,10 +27,13 @@ public class BlobProvider :
     ISearchContent<BlobItem>,
     ISearchContent<SearchResultModel>,
     IGetContent<ContentReference>,
-    IGetSummary<ContentReference>
+    IGetSummary<ContentReference>,
+    IBlobContainerProvider
 {
     private readonly BlobContainerClient _blockBlobClient;
     private readonly ILogger _logger;
+
+    public string ContainerName { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BlobProvider"/> class with the specified <paramref name="client"/> and <paramref name="collectionName"/>.
@@ -39,7 +48,8 @@ public class BlobProvider :
         )
     {
         _logger = loggerFactory.CreateLogger(nameof(BlobProvider) + $"-{collectionName}");
-        _blockBlobClient = client.GetBlobContainerClient(collectionName);
+        ContainerName = collectionName.ToLower();
+        _blockBlobClient = client.GetBlobContainerClient(ContainerName);
         _blockBlobClient.CreateIfNotExists();
     }
 
@@ -130,4 +140,61 @@ public class BlobProvider :
         return false;
     }
 
+    public async Task<ContentMetaDataReference?> GetContentMetaDataAsync(string path)
+    {
+        var blob = _blockBlobClient.GetBlobClient(path);
+        if (!await blob.ExistsAsync()) return null;
+
+        var header = await blob.GetPropertiesAsync();
+        return new ContentMetaDataReference
+        {
+            FileName = blob.Name,
+            ContentType = header.Value.ContentType,
+            MetaData = header.Value.Metadata.ToDictionary(k => k.Key, k => k.Value),
+        };
+    }
+
+    public async Task StoreContentAsync(ContentReference reference, IDictionary<string, string>? metadata = null)
+    {
+        var blob = _blockBlobClient.GetBlobClient(reference.FileName);
+
+        _logger.LogInformation("upload -> {file}", reference.FileName);
+        _ = await blob.UploadAsync(reference.Content, overwrite: false);
+
+        _ = await blob.SetHttpHeadersAsync(new BlobHttpHeaders
+        {
+            ContentType = reference.ContentType,
+        });
+
+        // https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-properties-metadata
+
+        if (metadata != null)
+        {
+            var data = metadata.ToDictionary(k => k.Key, v => $"{v.Value}");
+            await blob.SetMetadataAsync(data);
+        }
+    }
+
+    public IQueryable<ContentMetaDataReference> QueryContent()
+    {
+        //TODO: build a query provider!
+        var query = from p in _blockBlobClient.GetBlobs().AsPages()
+                    from b in p.Values
+                    select new ContentMetaDataReference
+                    {
+                        FileName = b.Name,
+                        ContentType = b.Properties.ContentType,
+                        MetaData = b.Metadata.ToDictionary(k => k.Key, k => k.Value),
+                    };
+        return query.AsQueryable();
+    }
 }
+
+//public class BlobQueryProvider : IQueryProvider
+//{
+//    // https://learn.microsoft.com/en-us/previous-versions/bb546158(v=vs.140)?redirectedfrom=MSDN
+//    public IQueryable CreateQuery(Expression expression) => throw new NotImplementedException();
+//    public IQueryable<TElement> CreateQuery<TElement>(Expression expression) => throw new NotImplementedException();
+//    public object? Execute(Expression expression) => throw new NotImplementedException();
+//    public TResult Execute<TResult>(Expression expression) => throw new NotImplementedException();
+//}

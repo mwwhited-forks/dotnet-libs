@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Eliassen.Documents;
+namespace Eliassen.Documents.Depercated;
 
 /// <summary>
 /// Represents a content provider for downloading and summarizing content.

@@ -12,4 +12,5 @@ are converting from Text to PDF or PDF to HTML.
 * https://github.com/mwilliamson/dotnet-mammoth
 * https://stackoverflow.com/questions/8123786/converting-from-pdf-to-html
 * https://pdftohtml.sourceforge.net/
-* 
+
+* https://tika.apache.org/download.html

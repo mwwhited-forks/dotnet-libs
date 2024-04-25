@@ -1,17 +1,9 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 
 namespace Eliassen.Documents.Models;
 
-/// <summary>
-/// Represents a content reference containing information about content such as a stream, content type, and file name.
-/// </summary>
-public record ContentReference
+public record ContentMetaDataReference
 {
-    /// <summary>
-    /// Gets or initializes the content type of the content.
-    /// </summary>
-    public required Stream Content { get; init; }
 
     /// <summary>
     /// Gets or initializes the content type of the content.
@@ -22,4 +14,6 @@ public record ContentReference
     /// Gets or initializes the file name associated with the content.
     /// </summary>
     public required string FileName { get; init; }
+
+    public Dictionary<string, string>? MetaData { get; init; }
 }

@@ -1,4 +1,5 @@
 ﻿using Eliassen.Documents;
+using Eliassen.Documents.Depercated;
 using Eliassen.Documents.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -21,7 +22,7 @@ public class DocumentController : Controller
 {
     private readonly IDocumentConversion _converter;
     private readonly IContentProvider _content;
-    private readonly IEnumerable<IDocumentType> _documentTypes;
+    private readonly IDocumentTypeTools _documentTypes;
     private readonly ILogger _logger;
 
     /// <summary>
@@ -34,7 +35,7 @@ public class DocumentController : Controller
     public DocumentController(
         IDocumentConversion converter,
         IContentProvider content,
-        IEnumerable<IDocumentType> documentTypes,
+        IDocumentTypeTools documentTypes,
         ILogger<DocumentController> logger
         )
     {
@@ -148,7 +149,7 @@ public class DocumentController : Controller
         if (ModelState.IsValid)
         {
             _logger.LogDebug("Upload Ok");
-          //  return Ok(await _uploader.UploadFileAsync(model));
+            //  return Ok(await _uploader.UploadFileAsync(model));
         }
 
         _logger.LogDebug("Upload BadRequest");
@@ -173,10 +174,10 @@ public class DocumentController : Controller
         source.Position = 0;
 
         var destination = new MemoryStream();
-        await _converter.ConvertAsync(source, sourceContentType?? content.ContentType, destination, targetContentType);
+        await _converter.ConvertAsync(source, sourceContentType ?? content.ContentType, destination, targetContentType);
         destination.Position = 0;
 
-        var type = _documentTypes.FirstOrDefault(dt => dt.ContentTypes.Any(c => string.Equals(c, targetContentType)));
+        var type = _documentTypes.GetByContentType(targetContentType);
 
         var targetFile = type != null ? Path.ChangeExtension(content.FileName, type.FileExtensions.FirstOrDefault()) : null;
 

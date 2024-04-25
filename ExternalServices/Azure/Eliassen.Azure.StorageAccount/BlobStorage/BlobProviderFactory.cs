@@ -46,6 +46,6 @@ public class BlobProviderFactory : IBlobProviderFactory
         {
             DocumentCollectionKey => _config.Value.DocumentCollectionName,
             SummaryCollectionKey => _config.Value.SummaryCollectionName,
-            _ => throw new NotSupportedException($"{collectionName} collection key not supported"),
+            _ => collectionName ?? throw new NotSupportedException($"{collectionName} collection key not supported"),
         });
 }

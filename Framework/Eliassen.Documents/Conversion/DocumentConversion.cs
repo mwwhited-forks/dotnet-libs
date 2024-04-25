@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Eliassen.Documents;
+namespace Eliassen.Documents.Conversion;
 
 /// <summary>
 /// Represents a document conversion service.
@@ -63,9 +63,9 @@ public class DocumentConversion : IDocumentConversion
         }
 
         _logger.LogInformation(
-            "Chain {source} -> {destination} [{steps}]", 
+            "Chain {source} -> {destination} [{steps}]",
             sourceContentType, destinationContentType,
-            string.Join(';',steps.Select(s=>s.Handler))
+            string.Join(';', steps.Select(s => s.Handler))
             );
 
         if (steps.Length == 0) throw new NotSupportedException($"Conversion from \"{sourceContentType}\" to \"{destinationContentType}\" is not supported");

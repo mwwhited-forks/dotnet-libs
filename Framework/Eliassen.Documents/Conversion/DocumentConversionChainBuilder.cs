@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Eliassen.Documents;
+namespace Eliassen.Documents.Conversion;
 
 /// <summary>
 /// Represents a builder for constructing document conversion chains.

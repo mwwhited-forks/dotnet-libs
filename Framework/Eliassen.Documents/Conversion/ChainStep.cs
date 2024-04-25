@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Documents;
+﻿namespace Eliassen.Documents.Conversion;
 
 /// <summary>
 /// Represents a step in a document conversion chain.
