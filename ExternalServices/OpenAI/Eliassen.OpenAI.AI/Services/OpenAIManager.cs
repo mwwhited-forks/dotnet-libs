@@ -22,7 +22,7 @@ namespace Eliassen.OpenAI.AI.Services
                     new ChatRequestSystemMessage(promptDetails),
                     // User messages represent current or historical input from the end user
                     new ChatRequestUserMessage(userInput)
-                }
+                } 
             };
 
             Response<ChatCompletions> response;
@@ -35,6 +35,31 @@ namespace Eliassen.OpenAI.AI.Services
             catch (Exception ex)
             {
                 throw;
+            }
+        }
+
+        public async IAsyncEnumerable<string> GetStreamedResponseAsync(string promptDetails, string userInput)
+        {
+            OpenAIClient api = new(_config.Value.APIKey);
+
+            ChatCompletionsOptions chatCompletionsOptions = new()
+            {
+                DeploymentName = _config.Value.DeploymentName,
+                Messages =
+                {
+                    // The system message represents instructions or other guidance about how the assistant should behave
+                    new ChatRequestSystemMessage(promptDetails),
+                    // User messages represent current or historical input from the end user
+                    new ChatRequestUserMessage(userInput)
+                }
+            };
+
+            await foreach (StreamingChatCompletionsUpdate chatUpdate in await api.GetChatCompletionsStreamingAsync(chatCompletionsOptions))
+            {
+                if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
+                {
+                    yield return chatUpdate.ContentUpdate;
+                }
             }
         }
     }
