@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Eliassen.Search.Semantic;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -29,9 +30,8 @@ public static class ServiceCollectionExtensions
         services.Configure<QdrantOptions>(options => configuration.Bind(qdrantOptionSection, options));
         services.TryAddTransient<IQdrantGrpcClientFactory, QdrantGrpcClientFactory>();
         services.TryAddTransient(sp => sp.GetRequiredService<IQdrantGrpcClientFactory>().Create());
-        services.TryAddTransient<ISemanticStoreProviderFactory, SemanticStoreProviderFactory>();
 
-        services.TryAddTransient(sp => sp.GetRequiredService<ISemanticStoreProviderFactory>().Create(false));
+        services.AddTransient<IVectorStoreProviderFactory, QdrantVectorStoreProviderFactory>();
 
         services.TryAddTransient<IPointStructFactory, PointStructFactory>();
 

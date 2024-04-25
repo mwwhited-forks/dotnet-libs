@@ -5,7 +5,6 @@ using Eliassen.MessageQueueing.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System;
 
 namespace Eliassen.Azure.StorageAccount;
 
@@ -55,16 +54,6 @@ public static class ServiceCollectionExtensions
         services.Configure<AzureBlobProviderOptions>(options => configuration.Bind(azureBlobProviderOptionSection, options));
         services.TryAddTransient<IBlobServiceClientFactory, BlobServiceClientFactory>();
         services.TryAddTransient(sp => sp.GetRequiredService<IBlobServiceClientFactory>().Create());
-        services.TryAddTransient<IBlobProviderFactory, BlobProviderFactory>();
-        //TODO: instead of doing this have it be IBlobContainer<T> where T provides details to select container provider and instance
-        services.AddKeyedTransient(
-            BlobProviderFactory.DocumentCollectionKey,
-            (sp, k) => sp.GetRequiredService<IBlobProviderFactory>().Create((k as string) ?? throw new ApplicationException("Missing Key"))
-            );
-        services.AddKeyedTransient(
-            BlobProviderFactory.SummaryCollectionKey,
-            (sp, k) => sp.GetRequiredService<IBlobProviderFactory>().Create((k as string) ?? throw new ApplicationException("Missing Key"))
-            );
 
         services.AddTransient<IBlobContainerProviderFactory, AzureBlobContainerProviderFactory>();
 

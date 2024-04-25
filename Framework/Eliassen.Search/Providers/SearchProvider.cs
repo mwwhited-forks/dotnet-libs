@@ -6,7 +6,7 @@ namespace Eliassen.Search.Providers;
 /// Provides search functionality combining semantic, lexical, and hybrid search approaches.
 /// </summary>
 [Obsolete]
-public class SearchProvider 
+public class SearchProvider
 {
     //private readonly ISearchContent<SearchResultModel> _semantic;
     //private readonly ISearchContent<SearchResultModel> _lexical;

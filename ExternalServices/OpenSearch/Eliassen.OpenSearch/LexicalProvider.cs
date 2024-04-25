@@ -6,7 +6,7 @@ namespace Eliassen.OpenSearch;
 /// Provides functionality for storing and searching lexical content using OpenSearch.
 /// </summary>
 [Obsolete]
-public class LexicalProvider 
+public class LexicalProvider
 {
     //private readonly IOpenSearchLowLevelClient _client;
     //private readonly IOptions<OpenSearchOptions> _config;

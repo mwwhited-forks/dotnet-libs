@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Eliassen.Documents;
+namespace Eliassen.Search;
 
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
 public class VectorStoreAttribute : Attribute

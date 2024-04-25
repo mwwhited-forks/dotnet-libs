@@ -8,7 +8,7 @@ namespace Eliassen.Extensions.IO;
 /// Provides methods for working with files.
 /// </summary>
 public static class FileTools
-{ 
+{
     /// <summary>
     /// Asynchronously splits a file into chunks of specified length and overlap.
     /// </summary>
@@ -24,7 +24,7 @@ public static class FileTools
     {
         using var file = File.OpenRead(filename);
 
-        await foreach(var item in file.SplitStreamAsync(chunkLength, overlap))
+        await foreach (var item in file.SplitStreamAsync(chunkLength, overlap))
             yield return item;
     }
 }

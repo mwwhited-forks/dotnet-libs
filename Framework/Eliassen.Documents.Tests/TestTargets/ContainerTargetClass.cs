@@ -1,4 +1,4 @@
-﻿namespace Eliassen.Documents.Tests.TestClasses;
+﻿namespace Eliassen.Documents.Tests.TestTargets;
 
 public class ContainerTargetClass
 {

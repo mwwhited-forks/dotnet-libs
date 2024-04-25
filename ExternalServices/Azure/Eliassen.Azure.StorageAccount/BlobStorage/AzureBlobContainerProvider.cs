@@ -13,7 +13,7 @@ namespace Eliassen.Azure.StorageAccount.BlobStorage;
 /// <summary>
 /// Represents a provider for storing and searching content in Azure Blob storage.
 /// </summary>
-public class BlobProvider : IBlobContainerProvider
+public class AzureBlobContainerProvider : IBlobContainerProvider
 {
     private readonly BlobContainerClient _blockBlobClient;
     private readonly ILogger _logger;
@@ -21,18 +21,18 @@ public class BlobProvider : IBlobContainerProvider
     public string ContainerName { get; set; }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="BlobProvider"/> class with the specified <paramref name="client"/> and <paramref name="collectionName"/>.
+    /// Initializes a new instance of the <see cref="AzureBlobContainerProvider"/> class with the specified <paramref name="client"/> and <paramref name="collectionName"/>.
     /// </summary>
     /// <param name="client">The BlobServiceClient used to connect to the Azure Blob storage.</param>
     /// <param name="collectionName">The name of the collection in the Azure Blob storage.</param>
     /// <param name="loggerFactory">ILoggerFactory instance.</param>
-    public BlobProvider(
+    public AzureBlobContainerProvider(
         BlobServiceClient client,
         string collectionName,
         ILoggerFactory loggerFactory
         )
     {
-        _logger = loggerFactory.CreateLogger(nameof(BlobProvider) + $"-{collectionName}");
+        _logger = loggerFactory.CreateLogger(nameof(AzureBlobContainerProvider) + $"-{collectionName}");
         ContainerName = collectionName.ToLower();
         _blockBlobClient = client.GetBlobContainerClient(ContainerName);
 #if DEBUG

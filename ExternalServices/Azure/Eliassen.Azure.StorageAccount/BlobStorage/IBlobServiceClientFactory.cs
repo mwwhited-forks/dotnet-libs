@@ -3,7 +3,7 @@
 namespace Eliassen.Azure.StorageAccount.BlobStorage;
 
 /// <summary>
-/// Interface for a factory that creates instances of <see cref="BlobProvider"/>.
+/// Interface for a factory that creates instances of <see cref="AzureBlobContainerProvider"/>.
 /// </summary>
 public interface IBlobServiceClientFactory
 {

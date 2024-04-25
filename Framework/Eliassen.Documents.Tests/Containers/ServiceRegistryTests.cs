@@ -1,4 +1,4 @@
-﻿using Eliassen.Documents.Tests.TestClasses;
+﻿using Eliassen.Documents.Tests.TestTargets;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Eliassen.Search.Semantic;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Eliassen.Search;
 
@@ -14,6 +16,10 @@ public static class ServiceCollectionExtensions
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddSearchServices(this IServiceCollection services)
     {
+        services.TryAddTransient<IVectorStoreProviderFactory, VectorStoreProviderFactory>();
+        services.TryAddTransient<IVectorStoreFactory, VectorStoreFactory>();
+        services.TryAddTransient(typeof(IVectorStore<>), typeof(WrappedVectorStore<>));
+
         return services;
     }
 }

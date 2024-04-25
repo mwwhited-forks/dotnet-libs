@@ -10,7 +10,7 @@ namespace Eliassen.Search.Providers;
 /// Provides functionality to generate summaries for documents.
 /// </summary>
 [Obsolete]
-public class DocumentSummaryGenerationProvider 
+public class DocumentSummaryGenerationProvider
 {
     private const int MAX_LENGTH = 4096; //TODO: should look this up from model.
 
