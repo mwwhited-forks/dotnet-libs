@@ -86,12 +86,6 @@ The modified .
 ## Class: Extensions.IO.FileTools
 Provides methods for working with files. 
 
-### Fields
-
-#### DefaultContextLength
-The default length of context used when splitting files.
-#### DefaultOverlap
-The default overlap between chunks when splitting files.
 ### Methods
 
 
@@ -101,6 +95,50 @@ Asynchronously splits a file into chunks of specified length and overlap.
 
 ##### Parameters
 * *filename:* The path of the file to split.
+* *chunkLength:* The length of each chunk.
+* *overlap:* The overlap between consecutive chunks.
+
+
+
+
+##### Return value
+An asynchronous enumerable sequence of representing the chunks of the file.
+
+
+
+## Class: Extensions.IO.StreamExtensions
+Provides methods for working with streams. 
+
+### Fields
+
+#### DefaultChunkLength
+The default length of context used when splitting files.
+#### DefaultOverlap
+The default overlap between chunks when splitting files.
+### Methods
+
+
+#### CopyOf(System.IO.Stream)
+Create an in memory copy of the provided stream 
+
+
+##### Parameters
+* *stream:* stream to copy
+
+
+
+
+##### Return value
+copy of stream
+
+
+
+#### SplitStreamAsync(System.IO.Stream,System.Int32,System.Int32)
+Asynchronously splits a file into chunks of specified length and overlap. 
+
+
+##### Parameters
+* *stream:* The stream to split.
 * *contextLength:* The length of each chunk.
 * *overlap:* The overlap between consecutive chunks.
 

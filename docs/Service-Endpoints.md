@@ -1,6 +1,6 @@
 # Swagger Description - Eliassen.WebApi
 
-*Version*: 0.1.72.31
+*Version*: 0.1.72.36
 
 ## Endpoints
 
@@ -192,54 +192,6 @@ The example message model.
 
 
 
-### /Search/List
-
-
-Retrieves a list of all available search results.
-
-HTTP Method: *get* \
-Anonymous:   *True*
-
-
-
-
-
-### /Search/SemanticSearch
-
-
-Performs a semantic search with the given query.
-
-HTTP Method: *get* \
-Anonymous:   *True*
-
-
-
-
-
-### /Search/LexicalSearch
-
-
-Performs a lexical search with the given query.
-
-HTTP Method: *get* \
-Anonymous:   *True*
-
-
-
-
-
-### /Search/HybridSearch
-
-
-Performs a hybrid search with the given query.
-
-HTTP Method: *get* \
-Anonymous:   *True*
-
-
-
-
-
 ### /api/TextTemplate/SupportedTemplates
 
 
@@ -308,22 +260,6 @@ Anonymous:   *False*
 | htmlContent | string? | Gets or sets the HTML content of the email message. | 
 | headers | object? | Gets or sets the headers of the email message. | 
 | attachments | array? | Gets or sets the list of attachment references in the email message. | 
-
-
-### Eliassen.Search.Models.SearchResultModel
-
-
-#### Properties
-| Name | Type | other |
-|------|------|-------|
-| score | number | Gets or initializes the score of the search result. | 
-| pathHash | string? | Gets or initializes the hash of the path where the search result was found. | 
-| file | string? | Gets or initializes the name of the file where the search result was found. | 
-| content | string? | Gets or initializes the content of the file where the search result was found. | 
-| type | Eliassen.Search.Models.SearchTypes |  | 
-
-
-### Eliassen.Search.Models.SearchTypes
 
 
 ### Eliassen.System.Text.Templating.FileType

@@ -9,33 +9,15 @@ Contains global constants related to Azure Storage.
 #### MessageProviderKey
 The key associated with the Azure Storage message provider.
 
-## Class: Azure.StorageAccount.BlobStorage.AzureBlobProviderOptions
-Options for configuring Azure Blob storage provider. 
-
-### Properties
-
-#### ConnectionString
-Gets or sets the connection string for Azure Blob storage.
-#### DocumentCollectionName
-Gets or sets the name of the collection for storing documents in Azure Blob storage.
-#### SummaryCollectionName
-Gets or sets the name of the collection for storing document summaries in Azure Blob storage.
-
-## Class: Azure.StorageAccount.BlobStorage.BlobProvider
+## Class: Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider
 Represents a provider for storing and searching content in Azure Blob storage. 
 
-### Fields
-
-#### 
-The key used for document collection.
-#### 
-The key used for summary collection.
 ### Methods
 
 
 #### Constructor
 Initializes a new instance of the 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobProvider*class with the specified 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*class with the specified 
 *client*and 
 *collectionName*. 
 
@@ -63,55 +45,6 @@ A ContentReference object representing the retrieved content.
 
 
 
-#### GetSummaryAsync(System.String)
-Retrieves the summary of the specified file from Azure Blob storage. 
-
-
-##### Parameters
-* *file:* The name of the file to retrieve the summary for.
-
-
-
-
-##### Return value
-A ContentReference object representing the summary content.
-
-
-
-#### QueryAsync(System.String,System.Int32,System.Int32)
-Queries Azure Blob storage for files that match the specified criteria. 
-
-
-##### Parameters
-* *queryString:* The query string to search for.
-* *limit:* The maximum number of results to return.
-* *page:* The page number of results to retrieve.
-
-
-
-
-##### Return value
-An asynchronous enumerable of BlobItem objects representing the search results.
-
-
-
-#### Eliassen#Search#ISearchContent{Azure#Storage#Blobs#Models#BlobItem}#QueryAsync(System.String,System.Int32,System.Int32)
-Queries Azure Blob storage for files that match the specified criteria. 
-
-
-##### Parameters
-* *queryString:* The query string to search for.
-* *limit:* The maximum number of results to return.
-* *page:* The page number of results to retrieve.
-
-
-
-
-##### Return value
-An asynchronous enumerable of BlobItem objects representing the search results.
-
-
-
 #### TryStoreAsync(System.String,System.String,System.String)
 Stores the specified content in Azure Blob storage. 
 
@@ -131,23 +64,22 @@ A boolean value indicating whether the operation was successful.
 
 #### Constructor
 Initializes a new instance of the 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobProviderFactory*class with the specified dependencies. 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*class with the specified dependencies. 
 
 
 ##### Parameters
 * *serviceProvider:* The service provider.
-* *config:* The Azure Blob provider options.
 
 
 
 
 #### 
 Creates a new instance of 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobProvider*based on the specified collection name. 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*based on the specified collection name. 
 
 
 ##### Parameters
-* *collectionName:* The name of the collection.
+* *containerName:* The name of the collection.
 
 
 
@@ -157,38 +89,31 @@ A new instance of .
 
 
 
-## Class: Azure.StorageAccount.BlobStorage.BlobProviderFactory
+## Class: Azure.StorageAccount.BlobStorage.AzureBlobContainerProviderFactory
 Represents a factory for creating instances of 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobProvider*. 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*. 
 
-### Fields
-
-#### DocumentCollectionKey
-The key used for document collection.
-#### SummaryCollectionKey
-The key used for summary collection.
 ### Methods
 
 
 #### Constructor
 Initializes a new instance of the 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobProviderFactory*class with the specified dependencies. 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*class with the specified dependencies. 
 
 
 ##### Parameters
 * *serviceProvider:* The service provider.
-* *config:* The Azure Blob provider options.
 
 
 
 
 #### Create(System.String)
 Creates a new instance of 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobProvider*based on the specified collection name. 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*based on the specified collection name. 
 
 
 ##### Parameters
-* *collectionName:* The name of the collection.
+* *containerName:* The name of the collection.
 
 
 
@@ -197,6 +122,18 @@ Creates a new instance of
 A new instance of .
 
 
+
+## Class: Azure.StorageAccount.BlobStorage.AzureBlobProviderOptions
+Options for configuring Azure Blob storage provider. 
+
+### Properties
+
+#### ConnectionString
+Gets or sets the connection string for Azure Blob storage.
+#### DocumentCollectionName
+Gets or sets the name of the collection for storing documents in Azure Blob storage.
+#### SummaryCollectionName
+Gets or sets the name of the collection for storing document summaries in Azure Blob storage.
 
 ## Class: Azure.StorageAccount.BlobStorage.BlobServiceClientFactory
 Represents a factory for creating instances of 
@@ -226,32 +163,9 @@ A new instance of .
 
 
 
-## Class: Azure.StorageAccount.BlobStorage.IBlobProviderFactory
-Interface for a factory that creates instances of 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobProvider*. 
-
-### Methods
-
-
-#### Create(System.String)
-Creates a new instance of 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobProvider*for the specified collection name. 
-
-
-##### Parameters
-* *collectionName:* The name of the collection.
-
-
-
-
-##### Return value
-A new instance of .
-
-
-
 ## Class: Azure.StorageAccount.BlobStorage.IBlobServiceClientFactory
 Interface for a factory that creates instances of 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobProvider*. 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*. 
 
 ### Methods
 

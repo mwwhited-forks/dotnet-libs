@@ -191,54 +191,6 @@ Always returns true because any content type is supported as a source format.
 
 
 
-## Class: Documents.Depercated.ContentProvider
-Represents a content provider for downloading and summarizing content. 
-
-### Methods
-
-
-#### Constructor
-Initializes a new instance of the 
- *See: T:Eliassen.Documents.Depercated.ContentProvider*class with the specified content and summary providers. 
-
-
-##### Parameters
-* *content:* The provider for retrieving content.
-* *summary:* The provider for retrieving content summaries.
-
-
-
-
-#### DownloadAsync(System.String)
-Downloads the specified content asynchronously. 
-
-
-##### Parameters
-* *file:* The name of the file to download.
-
-
-
-
-##### Return value
-A representing the asynchronous operation. The task result contains the downloaded content reference, or null if the content does not exist.
-
-
-
-#### SummaryAsync(System.String)
-Retrieves a summary of the specified content asynchronously. 
-
-
-##### Parameters
-* *file:* The name of the file to summarize.
-
-
-
-
-##### Return value
-A representing the asynchronous operation. The task result contains the content summary, or null if the content does not exist.
-
-
-
 ## Class: Documents.DocumentTypeTools
 Represents a toolset for managing document types. 
 

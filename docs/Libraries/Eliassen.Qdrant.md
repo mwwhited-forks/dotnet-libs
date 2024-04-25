@@ -82,29 +82,6 @@ A new instance of .
 
 
 
-## Class: Qdrant.ISemanticStoreProviderFactory
-Interface for a factory that creates instances of 
- *See: T:Eliassen.Qdrant.SemanticStoreProvider*. 
-
-### Methods
-
-
-#### Create(System.Boolean)
-Creates a new instance of 
- *See: T:Eliassen.Qdrant.SemanticStoreProvider*. 
-
-
-##### Parameters
-* *forSummary:* A flag indicating whether the provider is for summary or not.
-
-
-
-
-##### Return value
-A new instance of .
-
-
-
 ## Class: Qdrant.PointStructFactory
 Factory for creating instances of 
  *See: T:Qdrant.Client.Grpc.PointStruct*. 
@@ -232,134 +209,37 @@ Gets or sets the URL for Qdrant.
 #### CollectionName
 Gets or sets the collection name for Qdrant.
 
-## Class: Qdrant.SemanticStoreProvider
-Provides storage and search functionality for semantic content. 
+## Class: Qdrant.QdrantVectorStoreProviderFactory
+Represents a factory for creating instances of 
+ *See: T:Eliassen.Qdrant.QdrantVectorStoreProvider*. 
 
 ### Methods
 
 
 #### Constructor
 Initializes a new instance of the 
- *See: T:Eliassen.Qdrant.SemanticStoreProvider*class. 
+ *See: T:Eliassen.Qdrant.QdrantVectorStoreProvider*class with the specified dependencies. 
 
 
 ##### Parameters
-* *vectorStore:* The QdrantGrpcClient instance for accessing vector storage.
-* *embedding:* The embedding provider for generating embeddings.
-* *storeName:* The name of the store.
-* *forSummary:* Indicates whether the provider is for summary.
+* *serviceProvider:* The service provider.
 
 
 
 
-#### QueryAsync(System.String,System.Int32,System.Int32)
-Queries the semantic store asynchronously for search results. 
+#### Create(System.String)
+Creates a new instance of 
+ *See: T:Eliassen.Qdrant.QdrantVectorStoreProvider*based on the specified collection name. 
 
 
 ##### Parameters
-* *queryString:* The search query string.
-* *limit:* The maximum number of results to return.
-* *page:* The page number of results.
+* *containerName:* The name of the collection.
 
 
 
 
 ##### Return value
-An asynchronous enumerable collection of search results.
-
-
-
-#### Eliassen#Search#ISearchContent{Qdrant#Client#Grpc#ScoredPoint}#QueryAsync(System.String,System.Int32,System.Int32)
-Queries the semantic store asynchronously for scored points. 
-
-
-##### Parameters
-* *queryString:* The search query string.
-* *limit:* The maximum number of results to return.
-* *page:* The page number of results.
-
-
-
-
-##### Return value
-An asynchronous enumerable collection of scored points.
-
-
-
-#### TryStoreAsync(System.String,System.String,System.String)
-Stores content in the semantic store asynchronously. 
-
-
-##### Parameters
-* *full:* The full content.
-* *file:* The file name.
-* *pathHash:* The path hash.
-
-
-
-
-##### Return value
-A task representing the asynchronous operation. Returns true if the content is stored successfully, otherwise false.
-
-
-
-#### Constructor
-Initializes a new instance of the 
- *See: T:Eliassen.Qdrant.SemanticStoreProviderFactory*class. 
-
-
-##### Parameters
-* *serviceProvider:* The service provider for creating instances.
-* *options:* The Qdrant options.
-
-
-
-
-#### 
-Creates a new instance of SemanticStoreProvider. 
-
-
-##### Parameters
-* *forSummary:* Indicates whether the provider is for summary.
-
-
-
-
-##### Return value
-A new instance of SemanticStoreProvider.
-
-
-
-## Class: Qdrant.SemanticStoreProviderFactory
-Factory for creating instances of SemanticStoreProvider. 
-
-### Methods
-
-
-#### Constructor
-Initializes a new instance of the 
- *See: T:Eliassen.Qdrant.SemanticStoreProviderFactory*class. 
-
-
-##### Parameters
-* *serviceProvider:* The service provider for creating instances.
-* *options:* The Qdrant options.
-
-
-
-
-#### Create(System.Boolean)
-Creates a new instance of SemanticStoreProvider. 
-
-
-##### Parameters
-* *forSummary:* Indicates whether the provider is for summary.
-
-
-
-
-##### Return value
-A new instance of SemanticStoreProvider.
+A new instance of .
 
 
 
