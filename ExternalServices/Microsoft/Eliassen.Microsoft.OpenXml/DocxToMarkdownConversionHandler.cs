@@ -29,12 +29,14 @@ public class DocxToMarkdownConversionHandler : IDocumentConversionHandler
         if (!SupportedSource(sourceContentType)) throw new NotSupportedException($"Source Content Type \"{sourceContentType}\" is not supported");
         if (!SupportedDestination(destinationContentType)) throw new NotSupportedException($"Source Content Type \"{destinationContentType}\" is not supported");
 
-        var templateStream = GetType().Assembly.GetManifestResourceStream("Eliassen.Microsoft.OpenXml.docx2md.xslt");
+        var templateStream = GetType().Assembly.GetManifestResourceStream("Eliassen.Microsoft.OpenXml.docx2md.xslt")
+            ?? throw new NotSupportedException($"Template \"Eliassen.Microsoft.OpenXml.docx2md.xslt\" is missing"); ;
         var templateReader = XmlReader.Create(templateStream);
 
         var xslt = new XslCompiledTransform(); xslt.Load(templateReader, new XsltSettings(true, true), XmlResolver.ThrowingResolver);
 
         using var doc = WordprocessingDocument.Open(source, false);
+        if (doc.MainDocumentPart == null) return Task.CompletedTask;
         var stream = doc.MainDocumentPart.GetStream();
         var reader = XmlReader.Create(stream, new()
         {

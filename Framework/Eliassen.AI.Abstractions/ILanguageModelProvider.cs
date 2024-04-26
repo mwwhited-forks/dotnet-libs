@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Eliassen.AI;
@@ -21,6 +23,10 @@ public interface ILanguageModelProvider
     /// </summary>
     /// <param name="promptDetails">The details of the prompt.</param>
     /// <param name="userInput">The user input.</param>
+    /// <param name="cancellationToken">The Cancellation Token.</param>
     /// <returns>An asynchronous enumerable of strings representing the streamed response.</returns>
-    IAsyncEnumerable<string> GetStreamedResponseAsync(string promptDetails, string userInput);
+    IAsyncEnumerable<string> GetStreamedResponseAsync(
+        string promptDetails,
+        string userInput, 
+        [EnumeratorCancellation] CancellationToken cancellationToken = default);
 }

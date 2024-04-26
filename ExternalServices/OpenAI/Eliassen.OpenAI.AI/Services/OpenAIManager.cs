@@ -3,6 +3,8 @@ using Azure.AI.OpenAI;
 using Eliassen.AI;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Eliassen.OpenAI.AI.Services;
@@ -28,10 +30,13 @@ public class OpenAIManager(IOptions<OpenAIOptions> config) : ILanguageModelProvi
         return response.Value.Choices[0].Message.Content;
     }
 
-    public async IAsyncEnumerable<string> GetStreamedResponseAsync(string promptDetails, string userInput)
+    public async IAsyncEnumerable<string> GetStreamedResponseAsync(
+        string promptDetails,
+        string userInput,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default
+        )
     {
         OpenAIClient api = new(_config.Value.APIKey);
-
 
         await foreach (var chatUpdate in await api.GetChatCompletionsStreamingAsync(new()
         {
@@ -49,6 +54,8 @@ public class OpenAIManager(IOptions<OpenAIOptions> config) : ILanguageModelProvi
             {
                 yield return chatUpdate.ContentUpdate;
             }
+
+            if (cancellationToken.IsCancellationRequested) { yield break; }
         }
     }
 }

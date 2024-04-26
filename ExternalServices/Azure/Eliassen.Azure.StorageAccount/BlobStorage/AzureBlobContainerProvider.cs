@@ -18,6 +18,9 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
     private readonly BlobContainerClient _blockBlobClient;
     private readonly ILogger _logger;
 
+    /// <summary>
+    /// Container name for this instance
+    /// </summary>
     public string ContainerName { get; set; }
 
     /// <summary>

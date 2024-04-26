@@ -8,13 +8,25 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Eliassen.Qdrant;
+
+/// <summary>
+/// Provider for using Qdrant as a vector store.
+/// </summary>
 public class QdrantVectorStoreProvider : IVectorStoreProvider
 {
     private readonly QdrantGrpcClient _client;
     private readonly string _collectionName = "keys";
 
+    /// <summary>
+    /// current container name
+    /// </summary>
     public string ContainerName { get; set; }
 
+    /// <summary>
+    /// constructor for QdrantVectorStoreProvider
+    /// </summary>
+    /// <param name="client">instance of client</param>
+    /// <param name="containerName">name of container</param>
     public QdrantVectorStoreProvider(
         QdrantGrpcClient client,
         string containerName
@@ -48,6 +60,9 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
         }
     }
 
+    /// <summary>
+    /// Gets or sets the name of the container.
+    /// </summary>
     public async Task<string[]> StoreVectorsAsync(IEnumerable<float[]> embeddings, Dictionary<string, object> metadata)
     {
         await EnsureCollectionExistsAsync(embeddings.First().Length); //TODO: do this better!

@@ -1,6 +1,11 @@
 ﻿using Eliassen.AI;
 using OllamaSharp;
+using OllamaSharp.Models;
+using OllamaSharp.Streamer;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Eliassen.Ollama;
@@ -43,12 +48,41 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
         (await _client.GetCompletion(new()
         {
             Model = _client.SelectedModel,
-            Prompt = $"SYSTEM: {promptDetails}" +
+            Prompt = $"SYSTEM: {promptDetails}" + //TODO: do something smarter here
             $"" +
             $"USER: {userInput}",
         })).Response;
 
-//todo: fix this up
-    public IAsyncEnumerable<string> GetStreamedResponseAsync(string promptDetails, string userInput) => 
-        throw new System.NotImplementedException();
+    /// <summary>
+    /// Gets a streamed response asynchronously based on the provided prompt details and user input.
+    /// </summary>
+    /// <param name="promptDetails">The details of the prompt.</param>
+    /// <param name="userInput">The user input.</param>
+    /// <param name="cancellationToken">The Cancellation Token.</param>
+    /// <returns>An asynchronous enumerable of strings representing the streamed response.</returns>
+    public async IAsyncEnumerable<string> GetStreamedResponseAsync(string promptDetails, string userInput, [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    {
+        //TODO: not sure this works
+        var queue = new ConcurrentQueue<string>();
+        var completed = false;
+
+        var streamer = new ActionResponseStreamer<GenerateCompletionResponseStream>(response => {
+            queue.Enqueue(response.Response);
+            completed = response.Done;
+        });
+        var context = await _client.StreamCompletion(new()
+        {
+            Model = _client.SelectedModel,
+            Prompt = $"SYSTEM: {promptDetails}" + //TODO: do something smarter here
+            $"" +
+            $"USER: {userInput}",
+        }, streamer);
+
+
+        while (!cancellationToken.IsCancellationRequested && !completed)
+        {
+            if (queue.TryDequeue(out var response) && response is not null)
+                yield return response;
+        }
+    } 
 }

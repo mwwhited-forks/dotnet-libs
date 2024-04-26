@@ -2,6 +2,9 @@
 
 namespace Eliassen.Documents.Models;
 
+/// <summary>
+/// Represents a reference to content metadata.
+/// </summary>
 public record ContentMetaDataReference
 {
 
@@ -15,5 +18,8 @@ public record ContentMetaDataReference
     /// </summary>
     public required string FileName { get; init; }
 
+    /// <summary>
+    /// Gets or initializes the metadata associated with the content.
+    /// </summary>
     public Dictionary<string, string>? MetaData { get; init; }
 }
