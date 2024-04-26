@@ -1,5 +1,5 @@
-﻿using Azure.AI.OpenAI;
-using Eliassen.AI;
+﻿using Eliassen.AI;
+using Eliassen.OpenAI.AI.Services;
 using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,14 +19,14 @@ public class OpenAIManagerTests
         var config = new ConfigurationBuilder()
             .AddInMemoryCollection(new Dictionary<string, string?>
             {
-                { "OpenAIClientOptions:APIKey", "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"},
-                { "OpenAIClientOptions:DeploymentName", "gpt-3.5-turbo"},
+                { "OpenAIOptions:APIKey", "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"},
+                { "OpenAIOptions:DeploymentName", "gpt-3.5-turbo"},
             })
             .Build();
 
         var services = new ServiceCollection()
             .AddSingleton(config)
-            .TryAddOpenAIServices(config, nameof(OpenAIClientOptions))
+            .TryAddOpenAIServices(config, nameof(OpenAIOptions))
             .BuildServiceProvider()
             ;
 

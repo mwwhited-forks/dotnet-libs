@@ -2,6 +2,7 @@
 using Eliassen.MailKit.Services;
 using Eliassen.MongoDB.Extensions;
 using Eliassen.Ollama;
+using Eliassen.OpenAI.AI.Services;
 using Eliassen.OpenSearch;
 using Eliassen.Qdrant;
 using Eliassen.SBert;
@@ -48,7 +49,7 @@ public record ExternalExtensionBuilder
     /// <summary>
     /// Gets or sets the configuration section name for OpenAI client options.
     /// </summary>
-    public string OpenAIClientOptionSection { get; init; } = nameof(OpenAIClientOptionSection);
+    public string OpenAIOptionSection { get; init; } = nameof(OpenAIOptions);
 
     /// <summary>
     /// Gets or sets the configuration section name for SentenceEmbeddingOptions.

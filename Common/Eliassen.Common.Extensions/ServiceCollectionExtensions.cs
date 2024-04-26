@@ -1,4 +1,5 @@
-﻿using Eliassen.Azure.StorageAccount;
+﻿using Eliassen.Apache.Tika;
+using Eliassen.Azure.StorageAccount;
 using Eliassen.Keycloak;
 using Eliassen.MailKit;
 using Eliassen.Markdig;
@@ -52,7 +53,7 @@ public static class ServiceCollectionExtensions
         services.TryAddRabbitMQServices();
         services.TryAddMailKitExtensions(configuration, externalBuilder.SmtpConfigurationSection, externalBuilder.ImapConfigurationSection);
 #if DEBUG
-#warning Not feature is not complete and should not be used in production.
+#warning Feature is not complete and should not be used in production.
         services.TryAddApplicationInsightsExtensions();
 #endif
 
@@ -62,13 +63,14 @@ public static class ServiceCollectionExtensions
         if (identityBuilder.IdentityProvider.HasFlag(IdentityProviders.Keycloak))
             services.TryAddKeycloakServices(configuration, identityBuilder.KeycloakIdentityConfigurationSection);
 
-        services.TryAddOpenAIServices(configuration, externalBuilder.OpenAIClientOptionSection);
+        services.TryAddOpenAIServices(configuration, externalBuilder.OpenAIOptionSection);
 
         services.TryAddSbertServices(configuration, externalBuilder.SentenceEmbeddingOptionSection);
         services.TryAddQdrantServices(configuration, externalBuilder.QdrantOptionSection);
         services.TryAddOpenSearchServices(configuration, externalBuilder.OpenSearchOptionSection);
         services.TryAddOllamaServices(configuration, externalBuilder.OllamaApiClientOptionSection);
 
+        services.TryAddApacheTikaServices();
         services.TryAddWkHtmlToPdfServices();
         services.TryAddMarkdigServices();
         services.TryAddMysticMindServices();

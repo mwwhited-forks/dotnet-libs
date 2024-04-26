@@ -96,7 +96,7 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
             Points = { points },
         });
 
-        return Array.Empty<string>();  //TODO: want to return IDs 
+        return [];  //TODO: want to return IDs 
     }
 
     private Value? Convert(object value) =>

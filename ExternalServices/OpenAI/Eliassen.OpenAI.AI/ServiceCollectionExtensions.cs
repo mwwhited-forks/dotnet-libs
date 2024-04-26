@@ -12,16 +12,16 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfiguration configuration,
 #if DEBUG
-        string openAIConfigurationSection
+        string openAIOptionSection
 #else
-        string openAIConfigurationSection = nameof(OpenAIOptions)
+        string openAIOptionSection = nameof(OpenAIOptions)
 #endif
         )
     {
         services.TryAddTransient<ILanguageModelProvider, OpenAIManager>();
         services.TryAddKeyedTransient<ILanguageModelProvider, OpenAIManager>("OPENAPI");
 
-        services.Configure<OpenAIOptions>(options => configuration.Bind(openAIConfigurationSection, options));
+        services.Configure<OpenAIOptions>(options => configuration.Bind(openAIOptionSection, options));
         return services;
     }
 }
