@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Eliassen.Documents;
 
@@ -12,15 +13,36 @@ namespace Eliassen.Documents;
 public class DocumentTypeTools : IDocumentTypeTools
 {
     private readonly IEnumerable<IDocumentType> _types;
+    private readonly IContentTypeDetector? _contentTypeDetector;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentTypeTools"/> class with the specified document types.
     /// </summary>
     /// <param name="types">The collection of document types.</param>
     public DocumentTypeTools(
-        IEnumerable<IDocumentType> types
-        ) => _types = types;
+        IEnumerable<IDocumentType> types,
+        IContentTypeDetector? contentTypeDetector
+        )
+    {
+        _types = types;
+        _contentTypeDetector = contentTypeDetector;
+    }
 
+    /// <summary>
+    /// Scan content to detect content type
+    /// </summary>
+    /// <param name="source">stream</param>
+    /// <returns>content type</returns>
+    public async Task<string?> DetectContentTypeAsync(Stream source)
+    {
+        if (_contentTypeDetector is not null)
+        {
+            return await _contentTypeDetector.DetectContentTypeAsync(source);
+        }
+
+        return GetByFileHeader(source)?.ContentTypes.FirstOrDefault();
+
+    }
     /// <summary>
     /// Retrieves the document type associated with the specified content type.
     /// </summary>

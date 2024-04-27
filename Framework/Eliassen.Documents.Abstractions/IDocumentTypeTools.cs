@@ -1,13 +1,22 @@
 ﻿
 using Eliassen.Documents.Models;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Eliassen.Documents;
+
 /// <summary>
 /// Provides tools for working with document types.
 /// </summary>
 public interface IDocumentTypeTools
 {
+    /// <summary>
+    /// Scan content to detect content type
+    /// </summary>
+    /// <param name="source">stream</param>
+    /// <returns>content type</returns>
+    Task<string?> DetectContentTypeAsync(Stream source);
+
     /// <summary>
     /// Retrieves the document type associated with the specified content type.
     /// </summary>

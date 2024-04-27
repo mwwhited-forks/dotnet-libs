@@ -20,7 +20,8 @@ public static class ServiceCollectionExtensions
     {
         services.TryAddSingleton<IDocumentConversion, DocumentConversion>();
         services.TryAddTransient<IDocumentConversionChainBuilder, DocumentConversionChainBuilder>();
-        services.TryAddTransient<IDocumentConversionHandler, ToTextConversionHandler>();
+
+        services.TryAddSingleton<IDocumentTypeTools, DocumentTypeTools>();
 
         services.TryAddTransient<IBlobContainerProviderFactory, BlobContainerProviderFactory>();
         services.TryAddTransient<IBlobContainerFactory, BlobContainerFactory>();

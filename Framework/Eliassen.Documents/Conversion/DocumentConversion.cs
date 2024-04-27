@@ -13,19 +13,23 @@ namespace Eliassen.Documents.Conversion;
 public class DocumentConversion : IDocumentConversion
 {
     private readonly IDocumentConversionChainBuilder _chain;
+    private readonly IDocumentTypeTools _tools;
     private readonly ILogger _logger;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentConversion"/> class with the specified document conversion chain builder.
     /// </summary>
     /// <param name="chain">The document conversion chain builder.</param>
+    /// <param name="tools">The document type tools.</param>
     /// <param name="logger">The logger.</param>
     public DocumentConversion(
         IDocumentConversionChainBuilder chain,
+        IDocumentTypeTools tools,
         ILogger<DocumentConversion> logger
         )
     {
         _chain = chain;
+        _tools = tools;
         _logger = logger;
     }
 
@@ -39,7 +43,9 @@ public class DocumentConversion : IDocumentConversion
     /// <param name="destination">The destination stream where the converted content will be written.</param>
     /// <param name="destinationContentType">The content type of the converted content.</param>
     /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-    public async Task ConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType)
+    public Task ConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType) =>
+        InternalConvertAsync(source, sourceContentType, destination, destinationContentType, true);
+    internal async Task InternalConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType, bool recurse)
     {
         ArgumentNullException.ThrowIfNull(source, nameof(source));
         ArgumentNullException.ThrowIfNull(sourceContentType, nameof(sourceContentType));
@@ -47,7 +53,11 @@ public class DocumentConversion : IDocumentConversion
         ArgumentNullException.ThrowIfNull(destinationContentType, nameof(destinationContentType));
 
         if (string.Equals(sourceContentType, destinationContentType, StringComparison.OrdinalIgnoreCase))
+        {
+            _logger.LogInformation("Bypass as input and output types match {source} -> {destination}", sourceContentType, destinationContentType);
             await source.CopyToAsync(destination);
+            return;
+        }
 
         ChainStep[] steps;
         if (_cache.TryGetValue((sourceContentType, destinationContentType), out var cached))
@@ -68,8 +78,29 @@ public class DocumentConversion : IDocumentConversion
             string.Join(';', steps.Select(s => s.Handler))
             );
 
-        if (steps.Length == 0) throw new NotSupportedException($"Conversion from \"{sourceContentType}\" to \"{destinationContentType}\" is not supported");
-        else if (steps.Length == 1) await steps[0].Handler.ConvertAsync(source, sourceContentType, destination, destinationContentType);
+        if (steps.Length == 0)
+        {
+            if (recurse)
+            {
+                var detectedType = await _tools.DetectContentTypeAsync(source);
+                if (detectedType is not null && !string.Equals(sourceContentType, detectedType, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    _logger.LogWarning("Provided \"{source}\" but detected \"{detected}\" to try again", sourceContentType, detectedType);
+                    source.Position = 0;
+                    await InternalConvertAsync(source, detectedType, destination, destinationContentType, false);
+                }
+            }
+            else
+            {
+                _logger.LogError("Conversion from \"{sourceContentType}\" to \"{destinationContentType}\" is not supported", sourceContentType, destinationContentType);
+                throw new NotSupportedException($"Conversion from \"{sourceContentType}\" to \"{destinationContentType}\" is not supported");
+            }
+        }
+        else if (steps.Length == 1)
+        {
+            await steps[0].Handler.ConvertAsync(source, sourceContentType, destination, destinationContentType);
+            return;
+        }
         else
         {
             MemoryStream? temp = null;
@@ -82,6 +113,7 @@ public class DocumentConversion : IDocumentConversion
             }
             await (temp ?? source).CopyToAsync(destination);
             destination.Position = 0;
+            return;
         }
     }
 }

@@ -26,9 +26,20 @@ public class IDocumentConversionTests
     [DataRow("HelloWorld.md", "text/markdown", "text/html", ".html")]
     [DataRow("HelloWorld.txt", "text/plain", "text/plain", ".txt")]
     [DataRow("HelloWorld.txt", "unknown/unknown", "text/plain", ".txt")]
+    [DataRow("sample1.docx", "unknown/unknown", "application/pdf", ".pdf")]
+    [DataRow("sample1.docx", "unknown/unknown", "text/markdown", ".md")]
     [DataRow("sample1.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/plain", ".txt")]
     [DataRow("sample1.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/html", ".html")]
     [DataRow("sample1.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/pdf", ".pdf")]
+
+    [DataRow("Sample.pdf", "application/pdf", "application/pdf", ".pdf")]
+    [DataRow("sample2.doc", "application/msword", "application/pdf", ".pdf")]
+    [DataRow("sample2.odt", "application/vnd.oasis.opendocument.text", "application/pdf", ".pdf")]
+    [DataRow("sample3.odt", "application/vnd.oasis.opendocument.text", "application/pdf", ".pdf")]
+
+    [DataRow("sample-2.rtf", "application/rtf", "application/pdf", ".pdf")]
+    [DataRow("accessible_epub_3.epub", "application/epub+zip", "application/pdf", ".pdf")]
+    [DataRow("accessible_epub_3.epub", "unknown/unknown", "application/pdf", ".pdf")]
     public async Task ConvertAsyncTest(string resourceName, string sourceType, string targetType, string extension)
     {
         var config = new ConfigurationBuilder()

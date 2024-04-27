@@ -1,6 +1,8 @@
-﻿using Eliassen.Documents.Conversion;
+﻿using Eliassen.Documents;
+using Eliassen.Documents.Conversion;
 using Eliassen.Documents.Models;
 using Microsoft.Extensions.DependencyInjection;
+using org.apache.tika.parser.epub;
 
 namespace Eliassen.Apache.Tika;
 
@@ -18,10 +20,14 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services
         )
     {
+        services.AddTransient<IContentTypeDetector, TikaContentTypeDetector>();
+
         services.AddTransient<IDocumentConversionHandler, TikaDocToHtmlConversionHandler>();
         services.AddTransient<IDocumentConversionHandler, TikaDocxToHtmlConversionHandler>();
+        services.AddTransient<IDocumentConversionHandler, TikaEpubToHtmlConversionHandler>();
         services.AddTransient<IDocumentConversionHandler, TikaOdtToHtmlConversionHandler>();
         services.AddTransient<IDocumentConversionHandler, TikaPdfToHtmlConversionHandler>();
+        services.AddTransient<IDocumentConversionHandler, TikaRtfToHtmlConversionHandler>();
 
         services.AddTransient<IDocumentType>(_ => new DocumentType
         {
@@ -29,7 +35,7 @@ public static class ServiceCollectionExtensions
             FileHeader = [],
             FileExtensions = [".doc",],
             ContentTypes = [
-                "application/msword",
+                    "application/msword",
                 ],
         });
         services.AddTransient<IDocumentType>(_ => new DocumentType
@@ -49,7 +55,6 @@ public static class ServiceCollectionExtensions
             FileExtensions = [".pdf",],
             ContentTypes = ["application/pdf"],
         });
-
         services.AddTransient<IDocumentType>(_ => new DocumentType
         {
             Name = "Open Office Document",
@@ -57,6 +62,22 @@ public static class ServiceCollectionExtensions
             FileExtensions = [".odt",],
             ContentTypes = ["application/vnd.oasis.opendocument.text"],
         });
+        services.AddTransient<IDocumentType>(_ => new DocumentType
+        {
+            Name = "Electronic publication",
+            FileHeader = [],
+            FileExtensions = [".epub",],
+            ContentTypes = ["application/epub+zip"],
+        });
+        services.AddTransient<IDocumentType>(_ => new DocumentType
+        {
+            Name = "Rich Text Format",
+            FileHeader = [],
+            FileExtensions = [".rtf",],
+            ContentTypes = ["application/rtf"],
+        });
+
+
 
         return services;
     }
