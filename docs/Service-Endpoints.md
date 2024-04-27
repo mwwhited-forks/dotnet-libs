@@ -1,6 +1,6 @@
 # Swagger Description - Eliassen.WebApi
 
-*Version*: 0.1.72.36
+*Version*: 0.1.73.43
 
 ## Endpoints
 
@@ -24,6 +24,21 @@ Retrieves the embedding vector for the given text.
 HTTP Method: *get* \
 Anonymous:   *False*
 
+
+
+
+
+### /api/AI/Streamed
+
+
+Generate an AbstractAI Streamed Response based on the prompt and user input
+
+HTTP Method: *post* \
+Anonymous:   *True*
+
+
+
+Request:     *#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel*
 
 
 

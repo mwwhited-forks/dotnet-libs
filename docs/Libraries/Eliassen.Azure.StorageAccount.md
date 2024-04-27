@@ -12,6 +12,10 @@ The key associated with the Azure Storage message provider.
 ## Class: Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider
 Represents a provider for storing and searching content in Azure Blob storage. 
 
+### Properties
+
+#### ContainerName
+Container name for this instance
 ### Methods
 
 

@@ -189,17 +189,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.MysticMind.Tests",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Examples.Tests", "Examples\Eliassen.Examples.Tests\Eliassen.Examples.Tests.csproj", "{96718D72-7C9D-4001-B41B-BCCB82777B34}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Microsoft.OpenXml", "ExternalServices\Microsoft\Eliassen.Microsoft.OpenXml\Eliassen.Microsoft.OpenXml.csproj", "{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Microsoft.OpenXml.Tests", "ExternalServices\Microsoft\Eliassen.Microsoft.OpenXml.Tests\Eliassen.Microsoft.OpenXml.Tests.csproj", "{6EAF6900-BD05-49FD-A54F-E3D713D1C613}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.OpenAI.AI.Tests", "ExternalServices\OpenAI\Eliassen.OpenAI.AI.Tests\Eliassen.OpenAI.AI.Tests.csproj", "{F536508C-3D16-4ECE-BBBF-867BF4F0D6CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apache", "Apache", "{8A25FE6B-D11D-4CA6-A5A0-4AF71BC6D5B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Apache.Tika", "ExternalServices\Apache\Eliassen.Apache.Tika\Eliassen.Apache.Tika.csproj", "{DF9E49FD-55D8-4F71-874C-AF4DD60F5AC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Apache.Tika", "ExternalServices\Apache\Eliassen.Apache.Tika\Eliassen.Apache.Tika.csproj", "{DF9E49FD-55D8-4F71-874C-AF4DD60F5AC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.Apache.Tika.Tests", "ExternalServices\Apache\Eliassen.Apache.Tika.Tests\Eliassen.Apache.Tika.Tests.csproj", "{96551767-9124-4410-B303-8A29C724155B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.Apache.Tika.Tests", "ExternalServices\Apache\Eliassen.Apache.Tika.Tests\Eliassen.Apache.Tika.Tests.csproj", "{96551767-9124-4410-B303-8A29C724155B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -499,14 +495,6 @@ Global
 		{96718D72-7C9D-4001-B41B-BCCB82777B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96718D72-7C9D-4001-B41B-BCCB82777B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96718D72-7C9D-4001-B41B-BCCB82777B34}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EAF6900-BD05-49FD-A54F-E3D713D1C613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EAF6900-BD05-49FD-A54F-E3D713D1C613}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EAF6900-BD05-49FD-A54F-E3D713D1C613}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EAF6900-BD05-49FD-A54F-E3D713D1C613}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F536508C-3D16-4ECE-BBBF-867BF4F0D6CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F536508C-3D16-4ECE-BBBF-867BF4F0D6CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F536508C-3D16-4ECE-BBBF-867BF4F0D6CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -611,8 +599,6 @@ Global
 		{593AC4EE-DCE1-42DE-A025-8B5273E6A869} = {7B425CA7-7282-41B9-9BF1-82B887E276BF}
 		{F13CF0D3-858A-44E0-BA92-B343911C5994} = {7B425CA7-7282-41B9-9BF1-82B887E276BF}
 		{96718D72-7C9D-4001-B41B-BCCB82777B34} = {B3B21062-BE2B-4DC6-BF6F-D94AF7096A9E}
-		{79DE9D2F-C0DB-4AEA-B36A-AE933A31AA3D} = {71129CCF-1669-468F-A0B3-7A306149C3F5}
-		{6EAF6900-BD05-49FD-A54F-E3D713D1C613} = {71129CCF-1669-468F-A0B3-7A306149C3F5}
 		{F536508C-3D16-4ECE-BBBF-867BF4F0D6CA} = {BBC50FA6-6609-4558-8BDB-D49205D240A0}
 		{8A25FE6B-D11D-4CA6-A5A0-4AF71BC6D5B9} = {23338E7F-E943-4D99-B58C-CFBB7F2F53B2}
 		{DF9E49FD-55D8-4F71-874C-AF4DD60F5AC0} = {8A25FE6B-D11D-4CA6-A5A0-4AF71BC6D5B9}

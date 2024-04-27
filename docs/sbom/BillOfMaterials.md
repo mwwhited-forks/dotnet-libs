@@ -2,8 +2,8 @@
 
 ## Summary 
 
-Application: Eliassen.Libs (0.1.72-dev-ado-HybridSearch.37) \
-Time: 2024-04-25T22:31:23.6431083Z \
+Application: Eliassen.Libs (0.1.73-dev-ado-HybridSearch.45) \
+Time: 2024-04-27T00:51:49.1335272Z \
 Tool: CycloneDX (3.0.5.0). 
 
 ## Components 
@@ -189,50 +189,6 @@ Package URL: pkg:nuget/DnsClient@1.6.1
 DnsClient.NET is a simple yet very powerful and high performance open source library for the .NET Framework to do DNS lookups 
 
 
-### DocumentFormat.OpenXml (3.0.2) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: MIT \
-Reference: [website](https://github.com/dotnet/Open-XML-SDK) \
-Hash: [SHA-512](D521E5E470AE0CA9A00742F43A005CA21CA415190A511D478E3C40E2110B77335422DBFFEFF8283F70169DDBBD0B91AD26E385BE56ED2EB96BFFC7316230A501) \
-Package URL: pkg:nuget/DocumentFormat.OpenXml@3.0.2 
-
-#### Description: 
-
-The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents. It supports scenarios such as:
-
-- High-performance generation of word-processing documents, spreadsheets, and presentations.
-- Populating content in Word files from an XML data source.
-- Splitting up (shredding) a Word or PowerPoint file into multiple files, and combining multiple Word/PowerPoint files into a single file.
-- Extraction of data from Excel documents.
-- Searching and replacing content in Word/PowerPoint using regular expressions.
-- Updating cached data and embedded spreadsheets for charts in Word/PowerPoint.
-- Document modification, such as removing tracked revisions or removing unacceptable content from documents. 
-
-
-### DocumentFormat.OpenXml.Framework (3.0.2) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: MIT \
-Reference: [website](https://github.com/dotnet/Open-XML-SDK) \
-Hash: [SHA-512](E124628D7E7E1C84774BD3F0244C1C96B71C5E19F608C218402D440F9F2AAD102296A0A38F4E6F9FD16DE48CEF0B0D5F6C66DD33A17A4DFAFE08EFB16C3B8AA4) \
-Package URL: pkg:nuget/DocumentFormat.OpenXml.Framework@3.0.2 
-
-#### Description: 
-
-The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents. It supports scenarios such as:
-
-- High-performance generation of word-processing documents, spreadsheets, and presentations.
-- Populating content in Word files from an XML data source.
-- Splitting up (shredding) a Word or PowerPoint file into multiple files, and combining multiple Word/PowerPoint files into a single file.
-- Extraction of data from Excel documents.
-- Searching and replacing content in Word/PowerPoint using regular expressions.
-- Updating cached data and embedded spreadsheets for charts in Word/PowerPoint.
-- Document modification, such as removing tracked revisions or removing unacceptable content from documents. 
-
-
 ### Flurl (3.0.6) 
 
 Author: Todd Menier \
@@ -396,6 +352,328 @@ Package URL: pkg:nuget/HtmlAgilityPack@1.11.57
 #### Description: 
 
 This is an agile HTML parser that builds a read/write DOM and supports plain XPATH or XSLT (you actually don't HAVE to understand XPATH nor XSLT to use it, don't worry...). It is a .NET code library that allows you to parse "out of the web" HTML files. The parser is very tolerant with "real world" malformed HTML. The object model is very similar to what proposes System.Xml, but for HTML documents (or streams). 
+
+
+### IKVM (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](B59B6E5A0D2D06A64DF4B5A83D55DAAF0923DCB0F069ACAB14A9023EEF21B40D92165B941E10C843C287F3B05B90C25E06A490C77EC89D7825BF811ED0B1E78B) \
+Package URL: pkg:nuget/IKVM@8.7.5 
+
+#### Description: 
+
+Java SE 8 Virtual Machine for .NET 
+
+
+### IKVM.Image (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](025293750F14FC30EF03C27FB9462D810C95B7A5CCAC9B90FB16FD62782D549FAD0F59D40ED4DF64F0CBB842ABE030C26A71E177A17922A7318B00BC89EF276A) \
+Package URL: pkg:nuget/IKVM.Image@8.7.5 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.linux-arm (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](F3F0A43A3247CD187E1707088DDCC9D6E3DDFA2C914458A6A82FF971A7509936360501528439B5A8B573695ABBAD297AFC801FAF197BCE8AA2CC9AA5C6B62FAD) \
+Package URL: pkg:nuget/IKVM.Image.runtime.linux-arm@8.7.5 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.linux-arm64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](1DBE7217C4DE2B61316B9F82D569CC253AA6CED858783B824B43D628B610894415D90326AF3F339C85DC2A5F864F40BA4CD9A5CED26D0344D3DC3B8335B72E35) \
+Package URL: pkg:nuget/IKVM.Image.runtime.linux-arm64@8.7.5 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.linux-musl-arm (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](AF691DEB1557E3E83493F68EEEDBDC6DC0217D1A53CB597BB8905B59054F4100BEE834D6F259F536EFE53482A41EBF89F46A0A65951DF1C701EA0489C3916676) \
+Package URL: pkg:nuget/IKVM.Image.runtime.linux-musl-arm@8.7.5 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.linux-musl-arm64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](9873600E8AAFF0BB1E6DD859252B1994BEED1881082B54E22391C166796FCF49AB13BF943BAE95A4F373759E2761DD0606DE86D92D849E0B02A0ADFC13F378B6) \
+Package URL: pkg:nuget/IKVM.Image.runtime.linux-musl-arm64@8.7.5 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.linux-musl-x64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](600A252653113477D0F1D2E68C5957DCDD2BC1B93AE00CCC5EF6CB7E836F99561129BB76A38540EA9102EAA5EF11B86431F0A61BAF602C01FC24B828511BC59F) \
+Package URL: pkg:nuget/IKVM.Image.runtime.linux-musl-x64@8.7.5 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.linux-x64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](0A9522F8F34C8F27C7DCC0EB2DEB639B2DA9ABECDFC2FF1533B1F44597C3803B623460465D470B8CEFA95A1BB24E8DB47441B848F3B4282DA5F9A80D1D5267FF) \
+Package URL: pkg:nuget/IKVM.Image.runtime.linux-x64@8.7.5 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.osx-arm64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](C62F3B54AFA9A71CBB9EC27AFBC3F3C4E92152F7D6966497F2698DCDBAC42A611835DE36557951305E7B696AE7D22EFF4FDD6D84D3D17F71382BE7F803903B35) \
+Package URL: pkg:nuget/IKVM.Image.runtime.osx-arm64@8.7.5 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.osx-x64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](68600DDA14CFE3D2F3C86830FE169405BFAA43EF0E0A2565384D571CAE84DB29AA7E33EC992887EFDCEB63908DA9728BE5037BAAA2517ECEB978FE25CB2EA2BA) \
+Package URL: pkg:nuget/IKVM.Image.runtime.osx-x64@8.7.5 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.win-arm64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](1E1E15E66A7DDC4745A0352CB682B05BF29FD85DB8FFEEA06A90A9D1FC22090C6FA38EC62C4BC3180C26EC3FC28D8465047398D9B2370E0535A29CCD95563EDF) \
+Package URL: pkg:nuget/IKVM.Image.runtime.win-arm64@8.7.5 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.win-x64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](8243F91AF0BE4433B77765EBEB4BC21EDDED272DC2CE2C77480A1A4E5B04539DC943F52889060287579B9A08CC7D6B9CC1A6D09B14A7E5C32F3C9CCC605C8DC7) \
+Package URL: pkg:nuget/IKVM.Image.runtime.win-x64@8.7.5 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.win-x86 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](27252B957BC045D1E202703CDD74F3B08453332CDE50C314421998FD7C3C7491126953FBEE0094772F81EDFC88317E8805C7B0C1E01BA041FE128D7DD52505A7) \
+Package URL: pkg:nuget/IKVM.Image.runtime.win-x86@8.7.5 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Maven.Sdk (1.8.3) 
+
+Author: Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm-maven) \
+Hash: [SHA-512](9967E5FDAD1AE7D5C637998C19CF299EC5E423EE67722CA57816B253D52C7F42E81869A0DBF4B1297ADE96C2166342AB7BAD5B9ECCA9E0768A684589A1EFBE63) \
+Package URL: pkg:nuget/IKVM.Maven.Sdk@1.8.3 
+
+#### Description: 
+
+Java SE 8 Virtual Machine for .NET (Maven SDK) 
+
+
+### IKVM.MSBuild (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](CEFED1FCBCFB5CE1961B21AFE9725BEFAA36241EC57A9F01116E862B218B5F53F5048DC6A5BD17BFD013EA3F94DA26F69164D193DE0CB8D89891615D677CA81E) \
+Package URL: pkg:nuget/IKVM.MSBuild@8.7.5 
+
+#### Description: 
+
+IKVM MSBuild Targets 
+
+
+### IKVM.MSBuild.Tools (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](440B20543926E990A752C21FD32B012B0661B786A6A29BBAB9BCD4EC203FC142033C4C8A917E429BC2A6AE19F289F825C12EAF1592670A8C165333411243BF38) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools@8.7.5 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.linux-arm (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](05B65EAED4FCE98AD51C2624985C30AF84AA3A4D7848E854722CFCDB8C2643C6B2D885B2F660CADF93D7D4310A01CB6E94A757920FABD02296FDFAE94FAAD531) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.linux-arm@8.7.5 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.linux-arm64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](A5836801EBE3608D8D7D841E5FC61B4464ED8196995F76660F98A551624EFE45AF0E1D17D7918BA6B84D11BDFA9FAFCF25E86B0A93602D7424BE44C5B6F04A20) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.linux-arm64@8.7.5 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.linux-x64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](53A2541CA15E0596F0EF594650F3BA3741CC585C032098904DD95C65339BB493BECA1FAF75EDF3432AD99CAA8BF3748E483D4D660BE7294E1A7466D1E3F432C2) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.linux-x64@8.7.5 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.osx-arm64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](7D1B05958611367CE0409B9F653C13CBA3C88EF55541E0A6BD0F5AF3D07C7D3A0282F6C42EAC10F192D7A230659A9773B8FCE31C0C2B143B103EB235CFAD883B) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.osx-arm64@8.7.5 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.osx-x64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](2942DAB62E827EF26DBE16CF63E1D8C7508B579CB6EB41D3D86BF6F9DC79925C265CBDCE330E33126526D7F9332B1771A38725EC5A81E5917252C455AC4480B2) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.osx-x64@8.7.5 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.win-arm64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](B8485BB4BF332AEC74242A6877F8BBCECEA70091299285C4BDDECDAA81AD045B76B4C928C249D77260642A0B6C7B604AFFDE9EC6FDE6A2BDFF5C6D207A6DF24C) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.win-arm64@8.7.5 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.win-x64 (8.7.5) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](2D29DE1C1BA5C993478E48E6C9F0B62C1E6986CD8DBC6824D463ADC80893EB21AB4C2560779C3CD079A4396B500FF8E0690E5E93771E98A540F78BA880B0EF69) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.win-x64@8.7.5 
+
+#### Description: 
+
+IKVM MSBuild Tools 
 
 
 ### JsonDiffPatch.Net (2.3.0) 
@@ -1108,6 +1386,23 @@ Abstractions for dependency injection.
 
 Commonly Used Types:
 Microsoft.Extensions.DependencyInjection.IServiceCollection 
+
+
+### Microsoft.Extensions.DependencyModel (6.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](4222E75931C6E471E40966D3CB47ED73987B1BF9082D6753EF41A0EC6C6011DF654847B540BC67ACCFE24B258FA2EA188BE5C4E4458849AFE7BFF1D376E78789) \
+Package URL: pkg:nuget/Microsoft.Extensions.DependencyModel@6.0.0 
+
+#### Description: 
+
+Abstractions for reading `.deps` files.
+
+Commonly Used Types:
+Microsoft.Extensions.DependencyModel.DependencyContext 
 
 
 ### Microsoft.Extensions.Diagnostics (8.0.0) 
@@ -2110,6 +2405,23 @@ Microsoft.Win32.SystemEvents
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### Microsoft.Win32.SystemEvents (6.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](5E274ACE996C3EBA63099ED5116F9DC39F69F684F7C1E7623C28C3C73988B75C67DFCC929A50A761F0222DF243DD540720A6E588E91DFA784F81BFCE7A893875) \
+Package URL: pkg:nuget/Microsoft.Win32.SystemEvents@6.0.0 
+
+#### Description: 
+
+Provides access to Windows system event notifications.
+
+Commonly Used Types:
+Microsoft.Win32.SystemEvents 
+
+
 ### MimeKit (4.5.0) 
 
 Author: Jeffrey Stedfast \
@@ -2178,6 +2490,34 @@ Package URL: pkg:nuget/MongoDB.Libmongocrypt@1.8.2
 #### Description: 
 
 Libmongocrypt wrapper for the .NET driver. 
+
+
+### Mono.Posix (7.1.0-final.1.21458.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/mono/mono.posix) \
+Hash: [SHA-512](5765DBD7B775C78D31DF319D8DD94136083781855954B973409F2E778D3C5FB350EAA3AEE1CF63C6E7071518468886A3BC3A6DC2B86566F375429F6A6AAF1699) \
+Package URL: pkg:nuget/Mono.Posix@7.1.0-final.1.21458.1 
+
+#### Description: 
+
+Provides functionality for managed code to access Posix/Unix features not accessible via BCL 
+
+
+### Mono.Unix (7.1.0-final.1.21458.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/mono/mono.posix) \
+Hash: [SHA-512](648D476E4AA9D46830E3A83CBADB5016FD3A9006C6FD313CD766E26BCC7664DF4A9D6F73C8DC2C60B9C46A308AED378D885ADA83838E24532CCC9355B06FD755) \
+Package URL: pkg:nuget/Mono.Unix@7.1.0-final.1.21458.1 
+
+#### Description: 
+
+Provides functionality for managed code to access Posix/Unix features not accessible via BCL 
 
 
 ### Moq (4.20.70) 
@@ -2834,6 +3174,29 @@ System.Configuration.ConfigurationManager
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.Data.Odbc (6.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](26795F42B11DBB4797544C65ED6FFF93B3BF631D6C78B3B0DF267A0B2C8AE03CECD1B244E2E5111E17476F811D29C82F470FB42D68714EC16A3385C71443FC41) \
+Package URL: pkg:nuget/System.Data.Odbc@6.0.0 
+
+#### Description: 
+
+Provides a collection of classes used to access an ODBC data source in the managed space
+
+Commonly Used Types:
+System.Data.Odbc.OdbcCommand
+System.Data.Odbc.OdbcConnection
+System.Data.Odbc.OdbcDataReader
+System.Data.Odbc.OdbcDataAdapter
+System.Data.Odbc.OdbcParameter
+System.Data.Odbc.OdbcParameterCollection
+System.Data.Odbc.OdbcTransaction 
+
+
 ### System.Diagnostics.Debug (4.3.0) 
 
 Author: Microsoft \
@@ -3060,6 +3423,30 @@ System.Drawing.Graphics
 System.Drawing.Icon
  
 When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Drawing.Common (6.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](D61F0A3E01C3EAC15F13FC1BA04A2C7CE4EAC956400B2FAA361FECABD3836D49D5BD344F3985EE3D94CDC3F6A72B8E07E423CDB2965B4F5CA2222B5DE32988E4) \
+Package URL: pkg:nuget/System.Drawing.Common@6.0.0 
+
+#### Description: 
+
+Provides access to GDI+ graphics functionality.
+
+Commonly Used Types:
+System.Drawing.Bitmap
+System.Drawing.BitmapData
+System.Drawing.Brush
+System.Drawing.Font
+System.Drawing.Graphics
+System.Drawing.Icon
+
+Unix support is disabled by default. See https://aka.ms/systemdrawingnonwindows for more information. 
 
 
 ### System.Formats.Asn1 (8.0.0) 
@@ -3302,20 +3689,6 @@ Provides non-cryptographic hash algorithms, such as CRC-32.
 Commonly Used Types:
 System.IO.Hashing.Crc32
 System.IO.Hashing.XxHash32 
-
-
-### System.IO.Packaging (8.0.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: MIT \
-Reference: [website](https://dot.net/) \
-Hash: [SHA-512](141585B1465966C7D9A6CEF56100659054CF60330D1637FC76A7FBCEA9616195509081094B93DE3E5E01210EA8E5E90023E66C684392074AAA9B5BAD077FB15E) \
-Package URL: pkg:nuget/System.IO.Packaging@8.0.0 
-
-#### Description: 
-
-Provides classes that support storage of multiple data objects in a single container. 
 
 
 ### System.Linq (4.1.0) 
@@ -4257,6 +4630,23 @@ System.Text.CodePagesEncodingProvider
  
 99ce22c306b07f99ddae60f443d23a983ae78f7b 
 When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Text.Encoding.CodePages (6.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](EC873A95EC517DE2C5A5364ADA30974DDD5E0FAFEF2AD2517609A1900B5059D35757536FD073805001FA68D5B56A3D4647010A96C9EB233B1D172A3B45FBE4A9) \
+Package URL: pkg:nuget/System.Text.Encoding.CodePages@6.0.0 
+
+#### Description: 
+
+Provides support for code-page based encodings, including Windows-1252, Shift-JIS, and GB2312.
+
+Commonly Used Types:
+System.Text.CodePagesEncodingProvider 
 
 
 ### System.Text.Encodings.Web (4.7.2) 

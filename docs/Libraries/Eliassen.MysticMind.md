@@ -1,6 +1,21 @@
 ﻿# Eliassen.MysticMind
 
 
+## Class: MysticMind.ConverterFactory
+Factory for creating converters. 
+
+### Methods
+
+
+#### Build
+Builds a new converter. 
+
+
+##### Return value
+A new instance of the converter.
+
+
+
 ## Class: MysticMind.HtmlToMarkdownConversionHandler
 Converts HTML documents to Markdown format. 
 
@@ -75,6 +90,21 @@ Checks if the specified content type is supported for the source stream.
 
 ##### Return value
 True if the content type is supported; otherwise, false.
+
+
+
+## Class: MysticMind.IConverterFactory
+Interface for a factory that creates converters. 
+
+### Methods
+
+
+#### Build
+Builds a new converter. 
+
+
+##### Return value
+A new instance of the converter.
 
 
 

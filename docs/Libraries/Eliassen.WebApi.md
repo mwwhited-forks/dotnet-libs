@@ -51,6 +51,15 @@ The string response from the LLM
 
 
 
+#### GetStreamedResponseAsync(Eliassen.WebApi.Models.GenerativeAiRequestModel)
+Generate an AbstractAI Streamed Response based on the prompt and user input 
+
+
+##### Return value
+The streamed string responses from the AbstractAI
+
+
+
 #### Embed(System.String)
 Retrieves the embedding vector for the given text. 
 

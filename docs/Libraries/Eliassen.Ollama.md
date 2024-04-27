@@ -195,6 +195,23 @@ A task representing the asynchronous operation. The task result contains the res
 
 
 
+#### GetStreamedResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+Gets a streamed response asynchronously based on the provided prompt details and user input. 
+
+
+##### Parameters
+* *promptDetails:* The details of the prompt.
+* *userInput:* The user input.
+* *cancellationToken:* The Cancellation Token.
+
+
+
+
+##### Return value
+An asynchronous enumerable of strings representing the streamed response.
+
+
+
 ## Class: Ollama.ServiceCollectionExtensions
 Provides extension methods for configuring services related to Ollama. 
 

@@ -1,6 +1,5 @@
 ﻿using org.apache.tika.parser;
 using org.apache.tika.parser.microsoft.ooxml;
-using org.apache.tika.parser.odf;
 
 namespace Eliassen.Apache.Tika;
 

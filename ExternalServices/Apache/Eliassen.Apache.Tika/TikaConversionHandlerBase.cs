@@ -27,7 +27,7 @@ public abstract class TikaConversionHandlerBase : IDocumentConversionHandler
         var output = new ByteArrayOutputStream();
         try
         {
-            Parser().parse(input, Handler(output), new(),new());
+            Parser().parse(input, Handler(output), new(), new());
             destination.Write(output.toByteArray());
         }
         finally

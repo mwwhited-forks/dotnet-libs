@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace Eliassen.Apache.Tika.Tests;
 
 [TestClass]
-public class TikaRtfToHtmlConversionHandlerTests : 
+public class TikaRtfToHtmlConversionHandlerTests :
     TikaToHtmlConversionHandlerBaseTests<TikaRtfToHtmlConversionHandler>
 {
     public required TestContext TestContext { get; set; }

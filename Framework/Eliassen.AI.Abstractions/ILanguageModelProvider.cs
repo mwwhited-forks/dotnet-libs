@@ -27,6 +27,6 @@ public interface ILanguageModelProvider
     /// <returns>An asynchronous enumerable of strings representing the streamed response.</returns>
     IAsyncEnumerable<string> GetStreamedResponseAsync(
         string promptDetails,
-        string userInput, 
+        string userInput,
         [EnumeratorCancellation] CancellationToken cancellationToken = default);
 }

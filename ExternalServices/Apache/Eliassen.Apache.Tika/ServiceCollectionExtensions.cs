@@ -2,7 +2,6 @@
 using Eliassen.Documents.Conversion;
 using Eliassen.Documents.Models;
 using Microsoft.Extensions.DependencyInjection;
-using org.apache.tika.parser.epub;
 
 namespace Eliassen.Apache.Tika;
 
@@ -36,7 +35,7 @@ public static class ServiceCollectionExtensions
             FileExtensions = [".doc",],
             ContentTypes = [
                     "application/msword",
-                ],
+            ],
         });
         services.AddTransient<IDocumentType>(_ => new DocumentType
         {
@@ -46,7 +45,7 @@ public static class ServiceCollectionExtensions
             ContentTypes = [
                 "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                 "application/x-tika-ooxml",
-                ],
+            ],
         });
         services.AddTransient<IDocumentType>(_ => new DocumentType
         {

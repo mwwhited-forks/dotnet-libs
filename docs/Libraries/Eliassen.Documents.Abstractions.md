@@ -1,6 +1,90 @@
 ﻿# Eliassen.Documents.Abstractions
 
 
+## Class: Documents.BlobContainerAttribute
+Configuration attribute for Blob Containers 
+
+### Properties
+
+#### ContainerName
+Blob Container Name
+
+## Class: Documents.Containers.IBlobContainerFactory
+this factory is used to build blob containers by name or type reference 
+
+### Methods
+
+
+#### Create(System.String)
+This is used to create a blob container with the provided name 
+
+
+##### Parameters
+* *containerName:* name of the collection within the blob store
+
+
+
+
+##### Return value
+
+
+
+
+#### Create``1
+This is used to create a blob container by resolving the container name based on the referenced type 
+
+
+##### Return value
+
+
+
+
+## Class: Documents.Containers.IBlobContainerProvider
+Implementation of a blob container for a particular provider type 
+
+### Properties
+
+#### ContainerName
+Name of the related container
+### Methods
+
+
+#### 
+factory method to create a blob container by related name for a particular provider type 
+
+
+##### Parameters
+* *containerName:* name of container
+
+
+
+
+##### Return value
+instance of the blob provider
+
+
+
+## Class: Documents.Containers.IBlobContainerProviderFactory
+Implementation factory for a blob store 
+
+### Methods
+
+
+#### Create(System.String)
+factory method to create a blob container by related name for a particular provider type 
+
+
+##### Parameters
+* *containerName:* name of container
+
+
+
+
+##### Return value
+instance of the blob provider
+
+
+
 ## Class: Documents.Conversion.IDocumentConversionHandler
 Represents a handler for document conversion. 
 
@@ -43,6 +127,102 @@ True if the content type is supported; otherwise, false.
 
 
 
+## Class: Documents.IBlobContainer
+Interface for interacting with blob containers. 
+
+### Methods
+
+
+#### GetContentAsync(System.String)
+Gets the content reference for the specified path. 
+
+
+##### Parameters
+* *path:* The path to the content.
+
+
+
+
+##### Return value
+The content reference, or null if not found.
+
+
+
+#### GetContentMetaDataAsync(System.String)
+Gets the content metadata reference for the specified path. 
+
+
+##### Parameters
+* *path:* The path to the content.
+
+
+
+
+##### Return value
+The content metadata reference, or null if not found.
+
+
+
+#### StoreContentAsync(Eliassen.Documents.Models.ContentReference,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)
+Stores the content with the specified reference, metadata, and overwrite option. 
+
+
+##### Parameters
+* *reference:* The content reference.
+* *metadata:* The metadata to store.
+* *overwrite:* Whether to overwrite the existing content.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
+#### StoreContentMetaDataAsync(Eliassen.Documents.Models.ContentMetaDataReference)
+Stores the content metadata with the specified reference. 
+
+
+##### Parameters
+* *reference:* The content metadata reference.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
+#### QueryContent
+Queries the content metadata. 
+
+
+##### Return value
+A queryable collection of content metadata references.
+
+
+
+#### DeleteContentAsync(System.String)
+Deletes the content at the specified path. 
+
+
+##### Parameters
+* *path:* The path to the content.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
+## Class: Documents.IBlobContainer`1
+Interface for interacting with blob containers. 
+
+
 ## Class: Documents.IDocumentConversion
 Represents a service for document conversion. 
 
@@ -71,6 +251,21 @@ A task representing the asynchronous operation.
 Provides tools for working with document types. 
 
 ### Methods
+
+
+#### DetectContentTypeAsync(System.IO.Stream)
+Scan content to detect content type 
+
+
+##### Parameters
+* *source:* stream
+
+
+
+
+##### Return value
+content type
+
 
 
 #### GetByContentType(System.String)
@@ -117,6 +312,18 @@ Retrieves the document type associated with the content identified by the file h
 The document type associated with the content identified by the file header, or null if no matching document type is found.
 
 
+
+## Class: Documents.Models.ContentMetaDataReference
+Represents a reference to content metadata. 
+
+### Properties
+
+#### ContentType
+Gets or initializes the content type of the content.
+#### FileName
+Gets or initializes the file name associated with the content.
+#### MetaData
+Gets or initializes the metadata associated with the content.
 
 ## Class: Documents.Models.ContentReference
 Represents a content reference containing information about content such as a stream, content type, and file name. 

@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Eliassen.WebApi",
-    "version": "0.1.72.36"
+    "version": "0.1.73.43"
   },
   "paths": {
     "/api/AI": {
@@ -107,6 +107,67 @@
         },
         "x-permissions": {
           "anonymous": false
+        }
+      }
+    },
+    "/api/AI/Streamed": {
+      "post": {
+        "tags": [
+          "AI"
+        ],
+        "summary": "Generate an AbstractAI Streamed Response based on the prompt and user input",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": true
         }
       }
     },

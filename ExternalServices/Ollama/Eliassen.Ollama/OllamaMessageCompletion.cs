@@ -66,7 +66,8 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
         var queue = new ConcurrentQueue<string>();
         var completed = false;
 
-        var streamer = new ActionResponseStreamer<GenerateCompletionResponseStream>(response => {
+        var streamer = new ActionResponseStreamer<GenerateCompletionResponseStream>(response =>
+        {
             queue.Enqueue(response.Response);
             completed = response.Done;
         });
@@ -84,5 +85,5 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
             if (queue.TryDequeue(out var response) && response is not null)
                 yield return response;
         }
-    } 
+    }
 }

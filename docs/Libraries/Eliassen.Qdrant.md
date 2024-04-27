@@ -209,6 +209,58 @@ Gets or sets the URL for Qdrant.
 #### CollectionName
 Gets or sets the collection name for Qdrant.
 
+## Class: Qdrant.QdrantVectorStoreProvider
+Provider for using Qdrant as a vector store. 
+
+### Properties
+
+#### ContainerName
+current container name
+### Methods
+
+
+#### Constructor
+constructor for QdrantVectorStoreProvider 
+
+
+##### Parameters
+* *client:* instance of client
+* *containerName:* name of container
+
+
+
+
+#### StoreVectorsAsync(System.Collections.Generic.IEnumerable{System.Single[]},System.Collections.Generic.Dictionary{System.String,System.Object})
+Gets or sets the name of the container. 
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Qdrant.QdrantVectorStoreProvider*class with the specified dependencies. 
+
+
+##### Parameters
+* *serviceProvider:* The service provider.
+
+
+
+
+#### 
+Creates a new instance of 
+ *See: T:Eliassen.Qdrant.QdrantVectorStoreProvider*based on the specified collection name. 
+
+
+##### Parameters
+* *containerName:* The name of the collection.
+
+
+
+
+##### Return value
+A new instance of .
+
+
+
 ## Class: Qdrant.QdrantVectorStoreProviderFactory
 Represents a factory for creating instances of 
  *See: T:Eliassen.Qdrant.QdrantVectorStoreProvider*. 

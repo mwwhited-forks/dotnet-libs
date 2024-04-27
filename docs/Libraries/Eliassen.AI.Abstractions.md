@@ -33,18 +33,35 @@ Represents a provider for a language model.
 
 
 #### GetResponseAsync(System.String,System.String)
-Retrieves a response from the language model based on the provided prompt details and user input. 
+Gets a response asynchronously based on the provided prompt details and user input. 
 
 
 ##### Parameters
-* *promptDetails:* Details of the prompt or context.
-* *userInput:* The user input or query.
+* *promptDetails:* The details of the prompt.
+* *userInput:* The user input.
 
 
 
 
 ##### Return value
-A task representing the asynchronous operation. The task result contains the response from the language model.
+A task representing the asynchronous operation that returns the response.
+
+
+
+#### GetStreamedResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+Gets a streamed response asynchronously based on the provided prompt details and user input. 
+
+
+##### Parameters
+* *promptDetails:* The details of the prompt.
+* *userInput:* The user input.
+* *cancellationToken:* The Cancellation Token.
+
+
+
+
+##### Return value
+An asynchronous enumerable of strings representing the streamed response.
 
 
 

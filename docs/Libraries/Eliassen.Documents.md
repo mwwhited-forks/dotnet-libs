@@ -26,6 +26,7 @@ Initializes a new instance of the
 
 ##### Parameters
 * *chain:* The document conversion chain builder.
+* *tools:* The document type tools.
 * *logger:* The logger.
 
 
@@ -131,66 +132,6 @@ An array of representing the conversion steps.
 
 
 
-## Class: Documents.Conversion.ToTextConversionHandler
-Represents a conversion handler for converting documents to text format. 
-
-### Properties
-
-#### Destinations
-Array of supported destination content types (text/plain).
-#### Sources
-Array of supported source content types (application/octet-stream).
-### Methods
-
-
-#### ConvertAsync(System.IO.Stream,System.String,System.IO.Stream,System.String)
-Converts the content of the source stream to text format and writes it to the destination stream asynchronously. 
-
-
-##### Parameters
-* *source:* The source stream containing the document content.
-* *sourceContentType:* The content type of the source document.
-* *destination:* The destination stream where the converted text will be written.
-* *destinationContentType:* The content type of the destination format (text).
-
-
-
-
-##### Return value
-A task representing the asynchronous operation.
-
-
-
-#### SupportedDestination(System.String)
-Checks if the provided content type is supported as a destination format (text/plain). 
-
-
-##### Parameters
-* *contentType:* The content type to check.
-
-
-
-
-##### Return value
-True if the content type is supported; otherwise, false.
-
-
-
-#### SupportedSource(System.String)
-Checks if the provided content type is supported as a source format (any content type is supported). 
-
-
-##### Parameters
-* *contentType:* The content type to check.
-
-
-
-
-##### Return value
-Always returns true because any content type is supported as a source format.
-
-
-
 ## Class: Documents.DocumentTypeTools
 Represents a toolset for managing document types. 
 
@@ -205,6 +146,21 @@ Initializes a new instance of the
 ##### Parameters
 * *types:* The collection of document types.
 
+
+
+
+#### DetectContentTypeAsync(System.IO.Stream)
+Scan content to detect content type 
+
+
+##### Parameters
+* *source:* stream
+
+
+
+
+##### Return value
+content type
 
 
 
