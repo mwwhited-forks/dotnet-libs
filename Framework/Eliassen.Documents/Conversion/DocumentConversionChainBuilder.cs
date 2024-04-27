@@ -25,7 +25,6 @@ public class DocumentConversionChainBuilder : IDocumentConversionChainBuilder
     public ChainStep[] Steps(string sourceContentType, string destinationContentType)
     {
         var simple = _handlers
-            .Where(h => h is not ToTextConversionHandler)
             .FirstOrDefault(h => h.SupportedSource(sourceContentType) && h.SupportedDestination(destinationContentType));
         if (simple != null) return [new ChainStep() { Handler = simple, SourceContentType = sourceContentType, DestinationContentType = destinationContentType }];
 
@@ -42,7 +41,6 @@ public class DocumentConversionChainBuilder : IDocumentConversionChainBuilder
         var realPossibles = _handlers
             .Except(parents.Select(p => p.Handler))
             .Where(i => i.SupportedSource(sourceContentType))
-            .OrderBy(h => h is not ToTextConversionHandler ? 0 : 1)
             .ToArray();
         if (realPossibles.Length == 0) yield break;
 
