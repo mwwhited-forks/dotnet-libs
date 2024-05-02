@@ -147,14 +147,15 @@ Controller for handling document-related operations.
 
 #### Constructor
 Initializes a new instance of the 
- *See: T:Eliassen.WebApi.Controllers.DocumentController*class with the specified dependencies. 
+ *See: T:Eliassen.WebApi.Controllers.DocumentController*class. 
 
 
 ##### Parameters
 * *converter:* The document conversion service.
-* *content:* The content provider service.
-* *documentTypes:* The existing type definitions service.
-* *logger:* The logger service.
+* *documentTypes:* The document type tools.
+* *logger:* The logger.
+* *docs:* The blob container for documents.
+* *summary:* The blob container for summaries.
 
 
 
@@ -241,6 +242,14 @@ Document Converter
 ##### Return value
 
 
+
+
+## Class: WebApi.Controllers.DocumentController.Documents
+Represents a container for documents. 
+
+
+## Class: WebApi.Controllers.DocumentController.Summaries
+Represents a container for documents. 
 
 
 ## Class: WebApi.Controllers.MessageQueueingController

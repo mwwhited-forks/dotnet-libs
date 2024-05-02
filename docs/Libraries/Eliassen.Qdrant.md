@@ -234,6 +234,46 @@ constructor for QdrantVectorStoreProvider
 Gets or sets the name of the container. 
 
 
+#### ListAsync
+Finds nearest neighbors for a given vector. 
+
+
+##### Return value
+An asynchronous enumerable collection of search results representing nearest neighbors.
+
+
+
+#### FindNeighborsAsync(System.Single[])
+Finds nearest neighbors for a given vector. 
+
+
+##### Parameters
+* *find:* The vector to search for neighbors.
+
+
+
+
+##### Return value
+An asynchronous enumerable collection of search results representing nearest neighbors.
+
+
+
+#### FindNeighborsAsync(System.Single[],System.String)
+Finds nearest neighbors for a given vector, grouped by a specified field. 
+
+
+##### Parameters
+* *find:* The vector to search for neighbors.
+* *groupBy:* The field to group the results by.
+
+
+
+
+##### Return value
+An asynchronous enumerable collection of search results representing nearest neighbors grouped by the specified field.
+
+
+
 #### Constructor
 Initializes a new instance of the 
  *See: T:Eliassen.Qdrant.QdrantVectorStoreProvider*class with the specified dependencies. 

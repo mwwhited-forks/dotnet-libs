@@ -223,6 +223,27 @@ A task representing the asynchronous operation.
 Interface for interacting with blob containers. 
 
 
+## Class: Documents.IContentTypeDetector
+Represents a contract for detecting content type from a stream. 
+
+### Methods
+
+
+#### DetectContentTypeAsync(System.IO.Stream)
+Asynchronously detects the content type of the provided stream. 
+
+
+##### Parameters
+* *source:* The stream to detect the content type from.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. The task result contains the detected content type as a string, or null if the content type cannot be determined.
+
+
+
 ## Class: Documents.IDocumentConversion
 Represents a service for document conversion. 
 

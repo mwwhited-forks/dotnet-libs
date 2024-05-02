@@ -1,6 +1,211 @@
 ﻿# Eliassen.Documents
 
 
+## Class: Documents.Containers.BlobContainerFactory
+Represents a factory for creating blob containers. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Documents.Containers.BlobContainerFactory*class. 
+
+
+##### Parameters
+* *factory:* The factory used to create blob container providers.
+
+
+
+
+#### Create(System.String)
+Creates a blob container with the specified container name. 
+
+
+##### Parameters
+* *containerName:* The name of the container.
+
+
+
+
+##### Return value
+An instance of .
+
+
+
+#### Create``1
+Creates a blob container with a name derived from the specified type. 
+
+
+##### Return value
+An instance of .
+
+
+
+## Class: Documents.Containers.BlobContainerProviderFactory
+Represents a factory for creating blob container providers. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Documents.Containers.BlobContainerProviderFactory*class. 
+
+
+##### Parameters
+* *serviceProvider:* The service provider used for dependency injection.
+
+
+
+
+#### Create(System.String)
+Creates a blob container provider with the specified container name. 
+
+
+##### Parameters
+* *containerName:* The name of the container.
+
+
+
+
+##### Return value
+An instance of .
+
+
+
+## Class: Documents.Containers.WrappedBlobContainer
+Represents a wrapper for a blob container. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Documents.Containers.WrappedBlobContainer*class. 
+
+
+##### Parameters
+* *wrapped:* The blob container to wrap.
+
+
+
+
+#### DeleteContentAsync(System.String)
+Deletes content asynchronously. 
+
+
+##### Parameters
+* *path:* The path to the content to be deleted.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
+#### GetContentAsync(System.String)
+Retrieves content asynchronously. 
+
+
+##### Parameters
+* *path:* The path to the content to be retrieved.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. The task result contains the reference to the content.
+
+
+
+#### GetContentMetaDataAsync(System.String)
+Retrieves content metadata asynchronously. 
+
+
+##### Parameters
+* *path:* The path to the content.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. The task result contains the metadata reference.
+
+
+
+#### QueryContent
+Queries content metadata. 
+
+
+##### Return value
+An IQueryable representing the content metadata.
+
+
+
+#### StoreContentAsync(Eliassen.Documents.Models.ContentReference,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)
+Stores content asynchronously. 
+
+
+##### Parameters
+* *reference:* The reference to the content.
+* *metadata:* The metadata associated with the content.
+* *overwrite:* Determines whether to overwrite existing content with the same name.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
+#### StoreContentMetaDataAsync(Eliassen.Documents.Models.ContentMetaDataReference)
+Stores content metadata asynchronously. 
+
+
+##### Parameters
+* *reference:* The reference to the content metadata.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. The task result indicates whether the operation was successful.
+
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Documents.Containers.WrappedBlobContainer`1*class. 
+
+
+##### Parameters
+* *factory:* The factory used to create the wrapped blob container.
+
+
+
+
+## Class: Documents.Containers.WrappedBlobContainer`1
+Represents a typed wrapper for a blob container. 
+The type of objects stored in the blob container. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Documents.Containers.WrappedBlobContainer`1*class. 
+
+
+##### Parameters
+* *factory:* The factory used to create the wrapped blob container.
+
+
+
+
 ## Class: Documents.Conversion.ChainStep
 Represents a step in a document conversion chain. 
 
@@ -145,6 +350,7 @@ Initializes a new instance of the
 
 ##### Parameters
 * *types:* The collection of document types.
+* *contentTypeDetector:* The content type detector.
 
 
 

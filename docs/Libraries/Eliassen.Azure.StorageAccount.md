@@ -66,6 +66,77 @@ A boolean value indicating whether the operation was successful.
 
 
 
+#### GetContentMetaDataAsync(System.String)
+Retrieves content metadata asynchronously. 
+
+
+##### Parameters
+* *path:* The path to the content.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. Returns the content metadata if it exists, otherwise returns null.
+
+
+
+#### StoreContentAsync(Eliassen.Documents.Models.ContentReference,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)
+Stores content asynchronously. 
+
+
+##### Parameters
+* *reference:* The reference to the content.
+* *metadata:* The metadata associated with the content.
+* *overwrite:* Determines whether to overwrite existing content with the same name.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
+#### StoreContentMetaDataAsync(Eliassen.Documents.Models.ContentMetaDataReference)
+Stores content metadata asynchronously. 
+
+
+##### Parameters
+* *reference:* The reference to the content metadata.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. Returns true if the metadata is stored successfully, otherwise false.
+
+
+
+#### QueryContent
+Queries content metadata. 
+
+
+##### Return value
+An IQueryable representing the content metadata.
+
+
+
+#### DeleteContentAsync(System.String)
+Deletes content asynchronously. 
+
+
+##### Parameters
+* *path:* The path to the content to be deleted.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
 #### Constructor
 Initializes a new instance of the 
  *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*class with the specified dependencies. 
