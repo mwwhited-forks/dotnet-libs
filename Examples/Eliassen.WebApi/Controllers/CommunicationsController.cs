@@ -3,6 +3,7 @@ using Eliassen.Communications.Services;
 using Eliassen.MessageQueueing;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Eliassen.WebApi.Controllers;
 

@@ -1,4 +1,7 @@
-﻿namespace Eliassen.System.Text.Templating;
+﻿using System;
+using System.IO;
+
+namespace Eliassen.System.Text.Templating;
 
 /// <summary>
 /// Represents the context for a template, including information about the template and target content types, source, and priority.

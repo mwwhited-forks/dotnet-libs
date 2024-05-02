@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.ResponseModel;
+﻿using System.Collections.Generic;
+
+namespace Eliassen.System.ResponseModel;
 
 /// <summary>
 /// Represents an interface for capturing and publishing result messages.

@@ -3,7 +3,7 @@ using Eliassen.System.Net.Http;
 using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.Extensibility;
 
-namespace Eliassen.ApplicationInsights;
+namespace Eliassen.Microsoft.ApplicationInsights.Extensibility;
 
 /// <summary>
 /// Implements an <see cref="ITelemetryProcessor"/> that adds correlation information to telemetry items.
@@ -18,10 +18,7 @@ public class CorrelationInfoTelemetryProcessor : ITelemetryProcessor
     /// <param name="stringAccessor">The accessor for managing correlation information.</param>
     public CorrelationInfoTelemetryProcessor(
         IAccessor<CorrelationInfo> stringAccessor
-        )
-    {
-        _correlationAccessor = stringAccessor;
-    }
+        ) => _correlationAccessor = stringAccessor;
 
     /// <summary>
     /// Processes telemetry items by adding correlation information to the global properties.

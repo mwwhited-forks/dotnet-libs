@@ -1,4 +1,6 @@
-﻿namespace Eliassen.MessageQueueing;
+﻿using System.Threading.Tasks;
+
+namespace Eliassen.MessageQueueing;
 
 /// <summary>
 /// Represents a generic interface for sending messages to a message queue.

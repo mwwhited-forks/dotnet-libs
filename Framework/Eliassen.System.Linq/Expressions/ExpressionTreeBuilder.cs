@@ -549,10 +549,10 @@ public class ExpressionTreeBuilder<TModel>(
         var modelType = typeof(TModel);
 
         expression = modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(FilterParameter))
-            ?.Invoke(null, new object[] { name, value }) as Expression<Func<TModel, bool>>;
+            ?.Invoke(null, [name, value]) as Expression<Func<TModel, bool>>;
 
         expression ??= modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(FilterParameter), typeof(StringComparison))
-            ?.Invoke(null, new object[] { name, value, stringComparison }) as Expression<Func<TModel, bool>>;
+            ?.Invoke(null, [name, value, stringComparison]) as Expression<Func<TModel, bool>>;
 
         if (value.EqualTo != null)
         {
@@ -561,10 +561,10 @@ public class ExpressionTreeBuilder<TModel>(
             if (simple != null)
             {
                 expression = modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(object))
-                    ?.Invoke(null, new object[] { name, simple }) as Expression<Func<TModel, bool>>;
+                    ?.Invoke(null, [name, simple]) as Expression<Func<TModel, bool>>;
 
                 expression ??= modelType.GetStaticMethod(PredicateMap, typeof(string), typeof(object), typeof(StringComparison))
-                    ?.Invoke(null, new object[] { name, simple, stringComparison }) as Expression<Func<TModel, bool>>;
+                    ?.Invoke(null, [name, simple, stringComparison]) as Expression<Func<TModel, bool>>;
             }
         }
 
@@ -594,7 +594,7 @@ public class ExpressionTreeBuilder<TModel>(
             ?.Invoke(null, new[] { name }) as Expression<Func<TModel, object>>;
 
         expression ??= modelType.GetStaticMethod(PropertyMap, typeof(string), typeof(StringComparison))
-            ?.Invoke(null, new object[] { name, stringComparison }) as Expression<Func<TModel, object>>;
+            ?.Invoke(null, [name, stringComparison]) as Expression<Func<TModel, object>>;
 
         expression ??= BuildExpression(
             modelType.GetProperties(ReflectionExtensions.PublicProperties)

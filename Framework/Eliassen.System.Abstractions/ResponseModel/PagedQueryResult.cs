@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.ResponseModel;
+﻿using System.Collections.Generic;
+
+namespace Eliassen.System.ResponseModel;
 
 /// <summary>
 /// Represents the result of a paged query, including information about the current page, total page count,

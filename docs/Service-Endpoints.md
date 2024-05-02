@@ -1,8 +1,47 @@
 # Swagger Description - Eliassen.WebApi
 
-*Version*: 0.1.68.194
+*Version*: 0.1.73.55
 
 ## Endpoints
+
+### /api/AI
+
+
+Generate an LLM Response based on the prompt and user input
+
+HTTP Method: *post* \
+Anonymous:   *True*
+
+
+
+Request:     *#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel*
+
+
+
+
+Retrieves the embedding vector for the given text.
+
+HTTP Method: *get* \
+Anonymous:   *False*
+
+
+
+
+
+### /api/AI/Streamed
+
+
+Generate an AbstractAI Streamed Response based on the prompt and user input
+
+HTTP Method: *post* \
+Anonymous:   *True*
+
+
+
+Request:     *#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel*
+
+
+
 
 ### /api/Communications/public
 
@@ -49,6 +88,90 @@ Anonymous:   *False*
 Request:     *#/components/schemas/Eliassen.Communications.Models.EmailMessageModel*
 
 The email message model.
+
+
+
+### /Document/Download/{file}
+
+
+Downloads the specified file.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Document/Text/{file}
+
+
+Retrieves the text of the specified file.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Document/Html/{file}
+
+
+Retrieves the html of the specified file.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Document/Pdf/{file}
+
+
+Retrieves the pdf of the specified file.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Document/Summary/{file}
+
+
+Retrieves the summary of the specified file.
+
+HTTP Method: *get* \
+Anonymous:   *True*
+
+
+
+
+
+### /Document/Upload/{file}
+
+
+Upload file content
+
+HTTP Method: *post* \
+Anonymous:   *True*
+
+
+
+
+
+### /Document/Convert
+
+
+Document Converter
+
+HTTP Method: *post* \
+Anonymous:   *True*
+
+
 
 
 
@@ -189,6 +312,17 @@ Anonymous:   *False*
 |------|------|-------|
 | input | string? | Gets or sets the input string. Default value is &quot;Default Value&quot;. | 
 | data | System.Text.Json.Nodes.JsonNode |  | 
+
+
+### Eliassen.WebApi.Models.GenerativeAiRequestModel
+
+
+#### Properties
+| Name | Type | other |
+|------|------|-------|
+| promptDetails | string? | Gets or sets the prompt details. | 
+| userInput | string? | Gets or sets the user input. | 
+| apiKey | string? | Gets or sets the input api key to use. | 
 
 
 ### System.Text.Json.Nodes.JsonNode

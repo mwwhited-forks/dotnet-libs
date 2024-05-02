@@ -1,4 +1,6 @@
-﻿namespace Eliassen.Identity;
+﻿using System.Threading.Tasks;
+
+namespace Eliassen.Identity;
 
 /// <summary>
 /// Represents a provider for user management operations.

@@ -20,10 +20,7 @@ public class CorrelationInfoMiddleware
     /// <param name="next">The delegate representing the next middleware in the pipeline.</param>
     public CorrelationInfoMiddleware(
         RequestDelegate next
-        )
-    {
-        _next = next;
-    }
+        ) => _next = next;
 
     /// <summary>
     /// Invokes the middleware to handle correlation information in the HTTP context.

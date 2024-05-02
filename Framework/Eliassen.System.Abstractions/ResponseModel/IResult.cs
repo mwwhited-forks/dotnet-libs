@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.ResponseModel;
+﻿using System.Collections.Generic;
+
+namespace Eliassen.System.ResponseModel;
 
 /// <summary>
 /// Represents a result, which may include a collection of messages.

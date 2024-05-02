@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Linq.Search;
+using System;
 
 namespace Eliassen.System.ComponentModel.Search;
 

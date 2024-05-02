@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>false</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+
+    <NoWarn>1701;1702</NoWarn>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IKVM" Version="8.8.0" />
+    <PackageReference Include="IKVM.Maven.Sdk" Version="1.8.3">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+
+    <MavenReference Include="org.apache.tika:tika-core" Version="2.9.2" />
+    <MavenReference Include="org.apache.tika:tika-parser-pdf-module" Version="2.9.2" />
+    <MavenReference Include="org.apache.tika:tika-parser-microsoft-module" Version="2.9.2" />
+    <MavenReference Include="org.apache.tika:tika-parser-miscoffice-module" Version="2.9.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Eliassen.Apache.Tika.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Eliassen.Documents.Abstractions\Eliassen.Documents.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.ResponseModel;
+using System.Linq;
 
 namespace Eliassen.System.Linq.Search;
 

@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.ComponentModel;
+﻿using System;
+
+namespace Eliassen.System.ComponentModel;
 
 /// <summary>
 /// this attribute tags valid end states for enum based state machines

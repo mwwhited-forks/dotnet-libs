@@ -1,4 +1,6 @@
-﻿namespace Eliassen.Identity;
+﻿using System.Threading.Tasks;
+
+namespace Eliassen.Identity;
 
 /// <summary>
 /// Provides methods for managing user accounts.

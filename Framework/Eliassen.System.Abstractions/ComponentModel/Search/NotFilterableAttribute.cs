@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.ComponentModel.Search;
+﻿using System;
+
+namespace Eliassen.System.ComponentModel.Search;
 
 /// <summary>
 /// Specifies that a property or class should be explicitly excluded from filter selection.

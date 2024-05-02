@@ -16,9 +16,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\Framework\Eliassen.Documents.Abstractions\Eliassen.Documents.Abstractions.csproj" />
+		<ProjectReference Include="..\..\..\Framework\Eliassen.Extensions\Eliassen.Extensions.csproj" />
 		<ProjectReference Include="..\..\..\Framework\Eliassen.MessageQueueing.Abstractions\Eliassen.MessageQueueing.Abstractions.csproj" />
+		<ProjectReference Include="..\..\..\Framework\Eliassen.Search.Abstractions\Eliassen.Search.Abstractions.csproj" />
 		<ProjectReference Include="..\..\..\Framework\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj" />
-		<ProjectReference Include="..\Eliassen.Azure.StorageAccount.Abstractions\Eliassen.Azure.StorageAccount.Abstractions.csproj" />
 	</ItemGroup>
 
 </Project>

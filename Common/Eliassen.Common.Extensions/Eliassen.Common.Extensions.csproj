@@ -19,8 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\ExternalServices\**\*.csproj" />
-
+    <ProjectReference Include="..\..\ExternalServices\**\Eliassen.*.csproj" />
 		<ProjectReference Remove="..\..\ExternalServices\**\*.Tests.csproj" />
 		<ProjectReference Remove="..\..\ExternalServices\**\*.Abstractions.csproj" />
 		<ProjectReference Remove="..\..\ExternalServices\**\*.Hosting.csproj" />

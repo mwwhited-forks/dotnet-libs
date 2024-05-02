@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>false</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <InternalsVisibleTo Include="Eliassen.Documents.Tests" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Eliassen.Documents.Abstractions\Eliassen.Documents.Abstractions.csproj" />
+    <ProjectReference Include="..\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
+  </ItemGroup>
+
+</Project>

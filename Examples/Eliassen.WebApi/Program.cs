@@ -2,6 +2,11 @@
 using Eliassen.Common;
 using Eliassen.Common.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
 
 namespace Eliassen.WebApi;
 
@@ -51,8 +56,8 @@ public static class Program
             },
             hostingBuilder: new()
             {
-                DisableMailKit = skipHosting,
-                DisableMessageQueueing = skipHosting,
+                DisableMailKit = true, //TODO: this is not supported at this time so just skip it ...skipHosting,
+                DisableMessageQueueing = true,  // skipHosting,
             });
 
         // Add services to the container.

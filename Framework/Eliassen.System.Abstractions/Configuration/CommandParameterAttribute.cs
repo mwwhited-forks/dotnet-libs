@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.Configuration;
+﻿using System;
+
+namespace Eliassen.System.Configuration;
 
 /// <summary>
 /// Specifies that a property represents a command parameter.
