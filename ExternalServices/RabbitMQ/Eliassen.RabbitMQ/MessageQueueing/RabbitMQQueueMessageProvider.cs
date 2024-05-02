@@ -55,7 +55,7 @@ public class RabbitMQQueueMessageProvider(
         using (connection)
         using (channel)
         {
-            channel.BasicPublish(exchange: string.Empty, //TODO: I think this is correct
+            channel.BasicPublish(exchange: string.Empty, 
                                  routingKey: queueName,
                                  basicProperties: null,
                                  mandatory: true,

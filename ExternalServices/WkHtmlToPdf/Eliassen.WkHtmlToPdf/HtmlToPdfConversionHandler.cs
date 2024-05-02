@@ -38,7 +38,7 @@ public class HtmlToPdfConversionHandler : IDocumentConversionHandler
         using var reader = new StreamReader(source, leaveOpen: true);
         var html = await reader.ReadToEndAsync();
 
-        //TODO: change this to config stuff
+        //TODO: change this to config stuff or create a conversion context/extension so this can be provided per instance
         var doc = new HtmlToPdfDocument()
         {
             GlobalSettings = {

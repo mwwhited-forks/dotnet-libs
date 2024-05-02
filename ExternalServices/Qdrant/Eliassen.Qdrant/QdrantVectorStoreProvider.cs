@@ -67,7 +67,6 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     {
         await EnsureCollectionExistsAsync(embeddings.First().Length); //TODO: do this better!
 
-        //TODO: clean this up!
         var map = new MapField<string, Value>();
         foreach (var data in metadata)
         {
@@ -96,7 +95,7 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
             Points = { points },
         });
 
-        return [];  //TODO: want to return IDs 
+        return [];  //Note: want to return IDs but its not possible as the actual persistence is out of process.  
     }
 
     private Value? Convert(object value) =>
