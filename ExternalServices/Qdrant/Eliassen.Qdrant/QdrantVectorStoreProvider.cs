@@ -167,6 +167,11 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
             MetaData = Convert(point.Payload),
         };
 
+    /// <summary>
+    /// Finds nearest neighbors for a given vector.
+    /// </summary>
+    /// <param name="find">The vector to search for neighbors.</param>
+    /// <returns>An asynchronous enumerable collection of search results representing nearest neighbors.</returns>
     public async IAsyncEnumerable<SearchResultModel> ListAsync()
     {
         var results = await _client.Points.ScrollAsync(new()
@@ -194,6 +199,12 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
             yield return Convert(item);
     }
 
+    /// <summary>
+    /// Finds nearest neighbors for a given vector, grouped by a specified field.
+    /// </summary>
+    /// <param name="find">The vector to search for neighbors.</param>
+    /// <param name="groupBy">The field to group the results by.</param>
+    /// <returns>An asynchronous enumerable collection of search results representing nearest neighbors grouped by the specified field.</returns>
     public async IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(float[] find, string groupBy)
     {
         var results = await _client.Points.SearchGroupsAsync(new()
@@ -210,128 +221,4 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
         foreach (var item in results.Result.Groups.SelectMany(h => h.Hits))
             yield return Convert(item);
     }
-
-
-    ///// <summary>
-    ///// Stores content in the semantic store asynchronously.
-    ///// </summary>
-    ///// <param name="full">The full content.</param>
-    ///// <param name="file">The file name.</param>
-    ///// <param name="pathHash">The path hash.</param>
-    ///// <returns>A task representing the asynchronous operation. Returns true if the content is stored successfully, otherwise false.</returns>
-    //public async Task<bool> TryStoreAsync(string full, string file, string pathHash)
-    //{
-    //    if ((await _vectoreStore.Points.ScrollAsync(new()
-    //    {
-    //        CollectionName = _collectionName,
-    //        Limit = 1,
-    //        Filter = new Filter
-    //        {
-    //            Must =
-    //                {
-    //                    new Condition
-    //                    {
-    //                        Field = new FieldCondition
-    //                        {
-    //                            Key= "PathHash",
-    //                            Match = new Match
-    //                            {
-    //                                Text = pathHash,
-    //                            }
-    //                        }
-    //                    },
-    //                    new Condition
-    //                    {
-    //                        Field = new FieldCondition
-    //                        {
-    //                            Key= "ContentType",
-    //                            Match = new Match
-    //                            {
-    //                                Text = _forSummary? "Summary": "Content",
-    //                            }
-    //                        }
-    //                    }
-    //                }
-    //        }
-    //    })).Result.Count != 0)
-    //    {
-    //        return false;
-    //    }
-
-    //    // check if file indexed in vector store
-    //    //  if not chunk file and index with embeddings 
-
-    //    Console.WriteLine($"embedding and index -> {file}");
-
-    //    var embeddings = new Collection<PointStruct>();
-
-    //    // generate embedding for file name
-    //    if (!_forSummary)
-    //    {
-    //        var value = await _embedding.GetEmbeddingAsync(file);
-    //        embeddings.Add(new PointStruct
-    //        {
-    //            Id = new PointId { Uuid = Guid.NewGuid().ToString() },
-    //            Payload = {
-    //                        ["File"]= file,
-    //                        ["OriginalFile"]= full,
-    //                        ["PathHash"] = pathHash,
-
-    //                        ["FileName"]= Path.GetFileNameWithoutExtension(file),
-    //                        ["Directory"]= Path.GetDirectoryName(file)??"",
-    //                        ["Extensions"]= Path.GetExtension(file),
-
-    //                        ["Content"] = file,
-    //                        ["ContentType"] = "FileName",
-
-    //                        ["Sequence"] = 0,
-    //                        ["Start"] = 0,
-    //                        ["Length"] = file.Length,
-
-    //                    },
-    //            Vectors = new Vectors()
-    //            {
-    //                Vector = value
-    //            },
-    //        });
-    //    }
-
-    //    //break content and generate embeddings
-    //    await foreach (var chunk in FileTools.SplitFileAsync(full, _embedding.Length, 0))
-    //    {
-    //        var value = await _embedding.GetEmbeddingAsync(chunk.Data);
-    //        embeddings.Add(new PointStruct
-    //        {
-    //            Id = new PointId { Uuid = Guid.NewGuid().ToString() },
-    //            Payload = {
-    //                        ["File"]= file,
-    //                        ["OriginalFile"]= full,
-    //                        ["PathHash"] = pathHash,
-
-    //                        ["FileName"]= Path.GetFileNameWithoutExtension(file),
-    //                        ["Directory"]= Path.GetDirectoryName(file)??"",
-    //                        ["Extensions"]= Path.GetExtension(file),
-
-    //                        ["Content"] = chunk.Data,
-    //                        ["ContentType"] =_forSummary? "Summary": "Content",
-
-    //                        [nameof(chunk.Sequence)] = chunk.Sequence,
-    //                        [nameof(chunk.Start)] = chunk.Start,
-    //                        [nameof(chunk.Length)] = chunk.Length,
-    //                    },
-    //            Vectors = new Vectors()
-    //            {
-    //                Vector = value
-    //            },
-    //        });
-    //    }
-
-    //    await _vectoreStore.Points.UpsertAsync(new()
-    //    {
-    //        CollectionName = _collectionName,
-    //        Points = { embeddings },
-    //    });
-
-    //    return true;
-    //}
 }

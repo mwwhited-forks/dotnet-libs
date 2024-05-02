@@ -64,41 +64,6 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
         };
     }
 
-    ///// <summary>
-    ///// Retrieves the summary of the specified file from Azure Blob storage.
-    ///// </summary>
-    ///// <param name="file">The name of the file to retrieve the summary for.</param>
-    ///// <returns>A ContentReference object representing the summary content.</returns>
-    //public Task<ContentReference?> GetSummaryAsync(string file) => GetContentAsync(file);
-
-    ///// <summary>
-    ///// Queries Azure Blob storage for files that match the specified criteria.
-    ///// </summary>
-    ///// <param name="queryString">The query string to search for.</param>
-    ///// <param name="limit">The maximum number of results to return.</param>
-    ///// <param name="page">The page number of results to retrieve.</param>
-    ///// <returns>An asynchronous enumerable of BlobItem objects representing the search results.</returns>
-    //public IAsyncEnumerable<SearchResultModel> QueryAsync(string? queryString, int limit = 25, int page = 0) =>
-    //    from item in ((ISearchContent<BlobItem>)this).QueryAsync(queryString, limit, page)
-    //    select new SearchResultModel
-    //    {
-    //        Content = "", //TODO: do something else here
-    //        File = item.Metadata["File"],
-    //        PathHash = item.Metadata["PathHash"],
-    //        Score = 1,
-    //        Type = SearchTypes.None,
-    //    };
-
-    ///// <summary>
-    ///// Queries Azure Blob storage for files that match the specified criteria.
-    ///// </summary>
-    ///// <param name="queryString">The query string to search for.</param>
-    ///// <param name="limit">The maximum number of results to return.</param>
-    ///// <param name="page">The page number of results to retrieve.</param>
-    ///// <returns>An asynchronous enumerable of BlobItem objects representing the search results.</returns>
-    //IAsyncEnumerable<BlobItem> ISearchContent<BlobItem>.QueryAsync(string? queryString, int limit = 25, int page = 0) =>
-    //    _blockBlobClient.GetBlobsAsync(); //todo: add query but who really cares
-
     /// <summary>
     /// Stores the specified content in Azure Blob storage.
     /// </summary>
@@ -130,6 +95,11 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
         return false;
     }
 
+    /// <summary>
+    /// Retrieves content metadata asynchronously.
+    /// </summary>
+    /// <param name="path">The path to the content.</param>
+    /// <returns>A task representing the asynchronous operation. Returns the content metadata if it exists, otherwise returns null.</returns>
     public async Task<ContentMetaDataReference?> GetContentMetaDataAsync(string path)
     {
         var blob = _blockBlobClient.GetBlobClient(path);
@@ -144,6 +114,13 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
         };
     }
 
+    /// <summary>
+    /// Stores content asynchronously.
+    /// </summary>
+    /// <param name="reference">The reference to the content.</param>
+    /// <param name="metadata">The metadata associated with the content.</param>
+    /// <param name="overwrite">Determines whether to overwrite existing content with the same name.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
     public async Task StoreContentAsync(
         ContentReference reference,
         IDictionary<string, string>? metadata = null,
@@ -169,6 +146,11 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
         }
     }
 
+    /// <summary>
+    /// Stores content metadata asynchronously.
+    /// </summary>
+    /// <param name="reference">The reference to the content metadata.</param>
+    /// <returns>A task representing the asynchronous operation. Returns true if the metadata is stored successfully, otherwise false.</returns>
     public async Task<bool> StoreContentMetaDataAsync(ContentMetaDataReference reference)
     {
         var blob = _blockBlobClient.GetBlobClient(reference.FileName);
@@ -186,6 +168,10 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
         return true;
     }
 
+    /// <summary>
+    /// Queries content metadata.
+    /// </summary>
+    /// <returns>An IQueryable representing the content metadata.</returns>
     public IQueryable<ContentMetaDataReference> QueryContent()
     {
         //TODO: build a query provider!
@@ -200,6 +186,11 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
         return query.AsQueryable();
     }
 
+    /// <summary>
+    /// Deletes content asynchronously.
+    /// </summary>
+    /// <param name="path">The path to the content to be deleted.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
     public async Task DeleteContentAsync(string path)
     {
         var blob = _blockBlobClient.GetBlobClient(path);

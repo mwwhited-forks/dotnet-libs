@@ -8,10 +8,11 @@
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 
     <NoWarn>1701;1702</NoWarn>
-    <WarningLevel>1</WarningLevel>
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IKVM" Version="8.8.0" />
     <PackageReference Include="IKVM.Maven.Sdk" Version="1.8.3">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
