@@ -170,7 +170,6 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// <summary>
     /// Finds nearest neighbors for a given vector.
     /// </summary>
-    /// <param name="find">The vector to search for neighbors.</param>
     /// <returns>An asynchronous enumerable collection of search results representing nearest neighbors.</returns>
     public async IAsyncEnumerable<SearchResultModel> ListAsync()
     {
@@ -185,6 +184,11 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
             yield return Convert(item);
     }
 
+    /// <summary>
+    /// Finds nearest neighbors for a given vector.
+    /// </summary>
+    /// <param name="find">The vector to search for neighbors.</param>
+    /// <returns>An asynchronous enumerable collection of search results representing nearest neighbors.</returns>
     public async IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(float[] find)
     {
         var results = await _client.Points.SearchAsync(new()

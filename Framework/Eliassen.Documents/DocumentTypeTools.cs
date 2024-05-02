@@ -19,6 +19,7 @@ public class DocumentTypeTools : IDocumentTypeTools
     /// Initializes a new instance of the <see cref="DocumentTypeTools"/> class with the specified document types.
     /// </summary>
     /// <param name="types">The collection of document types.</param>
+    /// <param name="contentTypeDetector">The content type detector.</param>
     public DocumentTypeTools(
         IEnumerable<IDocumentType> types,
         IContentTypeDetector? contentTypeDetector

@@ -19,8 +19,15 @@ namespace Eliassen.WebApi.Controllers;
 [BlobContainer(ContainerName = "docs")]
 public class DocumentController : Controller
 {
+    /// <summary>
+    /// Represents a container for documents.
+    /// </summary>
     [BlobContainer(ContainerName = "docs")]
     public class Documents { }
+
+    /// <summary>
+    /// Represents a container for documents.
+    /// </summary>
     [BlobContainer(ContainerName = "summary")]
     public class Summaries { }
 
@@ -31,12 +38,13 @@ public class DocumentController : Controller
     private readonly IBlobContainer<Summaries> _summary;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="DocumentController"/> class with the specified dependencies.
+    /// Initializes a new instance of the <see cref="DocumentController"/> class.
     /// </summary>
     /// <param name="converter">The document conversion service.</param>
-    /// <param name="content">The content provider service.</param>
-    /// <param name="documentTypes">The existing type definitions service.</param>
-    /// <param name="logger">The logger service.</param>
+    /// <param name="documentTypes">The document type tools.</param>
+    /// <param name="logger">The logger.</param>
+    /// <param name="docs">The blob container for documents.</param>
+    /// <param name="summary">The blob container for summaries.</param>
     public DocumentController(
         IDocumentConversion converter,
         IDocumentTypeTools documentTypes,
