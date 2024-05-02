@@ -1,17 +1,17 @@
 # Summary - Eliassen.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 5/2/2024 - 12:32:30 PM |
-| Coverage date: | 5/2/2024 - 12:28:21 PM - 5/2/2024 - 12:32:16 PM |
+| Generated on: | 5/2/2024 - 5:06:21 PM |
+| Coverage date: | 5/2/2024 - 5:00:28 PM - 5/2/2024 - 5:05:47 PM |
 | Parser: | MultiReport (54x Cobertura, 54x OpenCover) |
 | Assemblies: | 37 |
 | Classes: | 170 |
 | Files: | 167 |
-| **Line coverage:** | 40.1% (1495 of 3728) |
-| Covered lines: | 1495 |
-| Uncovered lines: | 2233 |
-| Coverable lines: | 3728 |
-| Total lines: | 11886 |
+| **Line coverage:** | 39.7% (1482 of 3729) |
+| Covered lines: | 1482 |
+| Uncovered lines: | 2247 |
+| Coverable lines: | 3729 |
+| Total lines: | 11930 |
 | **Branch coverage:** | 35.7% (1269 of 3548) |
 | Covered branches: | 1269 |
 | Total branches: | 3548 |
@@ -104,8 +104,8 @@
 |**Eliassen.Handlebars**|**0**|**81**|**81**|**171**|**0%**|**0**|**84**|**0%**|
 |Eliassen.Handlebars.ServiceCollectionExtensions|0|3|3|29|0%|0|0||
 |Eliassen.Handlebars.Templating.HandlebarsTemplateProvider|0|78|78|142|0%|0|84|0%|
-|**Eliassen.Identity**|**2**|**7**|**9**|**44**|**22.2%**|**0**|**4**|**0%**|
-|Eliassen.Identity.ServiceCollectionExtensions|2|0|2|14|100%|0|0||
+|**Eliassen.Identity**|**2**|**7**|**9**|**53**|**22.2%**|**0**|**4**|**0%**|
+|Eliassen.Identity.ServiceCollectionExtensions|2|0|2|23|100%|0|0||
 |Eliassen.Identity.UserManagementProvider|0|7|7|30|0%|0|4|0%|
 |**Eliassen.Keycloak**|**0**|**8**|**8**|**87**|**0%**|**0**|**0**|****|
 |Eliassen.Keycloak.Identity.ManageKeycloakUser|0|5|5|48|0%|0|0||
@@ -144,9 +144,9 @@
 |Eliassen.Microsoft.ApplicationInsights.Extensibility.CorrelationInfoTelemetryProcessor|0|8|8|36|0%|0|16|0%|
 |Eliassen.Microsoft.ApplicationInsights.Extensibility.UserTelemetryProcessor|0|10|10|42|0%|0|24|0%|
 |Eliassen.Microsoft.ApplicationInsights.ServiceCollectionExtensions|0|3|3|22|0%|0|0||
-|**Eliassen.Microsoft.B2C**|**3**|**93**|**96**|**227**|**3.1%**|**0**|**46**|**0%**|
+|**Eliassen.Microsoft.B2C**|**0**|**96**|**96**|**227**|**0%**|**0**|**46**|**0%**|
 |Eliassen.Microsoft.B2C.Identity.ManageGraphUser|0|93|93|190|0%|0|46|0%|
-|Eliassen.Microsoft.B2C.ServiceCollectionExtensions|3|0|3|37|100%|0|0||
+|Eliassen.Microsoft.B2C.ServiceCollectionExtensions|0|3|3|37|0%|0|0||
 |**Eliassen.MongoDB**|**3**|**82**|**85**|**311**|**3.5%**|**0**|**112**|**0%**|
 |Eliassen.MongoDB.Extensions.BsonObjectIdConvention|0|13|13|42|0%|0|24|0%|
 |Eliassen.MongoDB.Extensions.MongoDatabaseFactory|0|18|18|69|0%|0|0||
@@ -163,9 +163,9 @@
 |Eliassen.Ollama.OllamaApiClientFactory|0|2|2|26|0%|0|0||
 |Eliassen.Ollama.OllamaMessageCompletion|0|31|31|89|0%|0|16|0%|
 |Eliassen.Ollama.ServiceCollectionExtensions|0|9|9|44|0%|0|0||
-|**Eliassen.OpenAI.AI**|**4**|**31**|**35**|**87**|**11.4%**|**0**|**12**|**0%**|
-|Eliassen.OpenAI.AI.ServiceCollectionExtensions|4|0|4|27|100%|0|0||
-|Eliassen.OpenAI.AI.Services.OpenAIManager|0|31|31|60|0%|0|12|0%|
+|**Eliassen.OpenAI.AI**|**0**|**36**|**36**|**122**|**0%**|**0**|**12**|**0%**|
+|Eliassen.OpenAI.AI.ServiceCollectionExtensions|0|4|4|37|0%|0|0||
+|Eliassen.OpenAI.AI.Services.OpenAIManager|0|32|32|85|0%|0|12|0%|
 |**Eliassen.OpenSearch**|**0**|**16**|**16**|**79**|**0%**|**0**|**8**|**0%**|
 |Eliassen.OpenSearch.OpenSearchClientFactory|0|11|11|43|0%|0|8|0%|
 |Eliassen.OpenSearch.ServiceCollectionExtensions|0|5|5|36|0%|0|0||
@@ -180,10 +180,10 @@
 |Eliassen.RabbitMQ.MessageQueueing.QueueClientFactory|0|9|9|36|0%|0|4|0%|
 |Eliassen.RabbitMQ.MessageQueueing.RabbitMQQueueMessageProvider|0|51|51|124|0%|0|28|0%|
 |Eliassen.RabbitMQ.ServiceCollectionEx|8|0|8|40|100%|0|0||
-|**Eliassen.SBert**|**6**|**24**|**30**|**141**|**20%**|**0**|**24**|**0%**|
+|**Eliassen.SBert**|**0**|**30**|**30**|**141**|**0%**|**0**|**24**|**0%**|
 |Eliassen.SBert.SentenceEmbeddingClient|0|16|16|56|0%|0|20|0%|
 |Eliassen.SBert.SentenceEmbeddingProvider|0|6|6|42|0%|0|4|0%|
-|Eliassen.SBert.ServiceCollectionExtensions|6|2|8|43|75%|0|0||
+|Eliassen.SBert.ServiceCollectionExtensions|0|8|8|43|0%|0|0||
 |**Eliassen.Search**|**4**|**42**|**46**|**312**|**8.6%**|**0**|**32**|**0%**|
 |Eliassen.Search.Providers.DocumentSummaryGenerationProvider|0|20|20|73|0%|0|8|0%|
 |Eliassen.Search.Semantic.VectorStoreFactory|0|7|7|40|0%|0|16|0%|

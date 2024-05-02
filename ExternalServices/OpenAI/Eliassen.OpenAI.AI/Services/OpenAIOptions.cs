@@ -1,5 +1,8 @@
 ﻿namespace Eliassen.OpenAI.AI.Services;
 
+/// <summary>
+/// Represents options for configuring the OpenAI service.
+/// </summary>
 public class OpenAIOptions
 {
     /// <summary>

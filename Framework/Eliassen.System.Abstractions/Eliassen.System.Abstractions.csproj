@@ -12,6 +12,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <CodeDocumentation Remove="Readme.System.Abstractions.md" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<InternalsVisibleTo Include="Eliassen.System" />
 		<InternalsVisibleTo Include="Eliassen.System.Tests" />
 		<InternalsVisibleTo Include="Eliassen.System.Linq" />

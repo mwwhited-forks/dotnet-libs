@@ -6,8 +6,18 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Eliassen.OpenAI.AI;
 
+/// <summary>
+/// Provides extension methods for configuring OpenAI services.
+/// </summary>
 public static class ServiceCollectionExtensions
 {
+    /// <summary>
+    /// Tries to add OpenAI-related services to the specified service collection.
+    /// </summary>
+    /// <param name="services">The service collection to which OpenAI services should be added.</param>
+    /// <param name="configuration">The configuration used to bind options.</param>
+    /// <param name="openAIOptionSection">The name of the configuration section containing OpenAI options. Defaults to "OpenAIOptions".</param>
+    /// <returns>The updated service collection.</returns>
     public static IServiceCollection TryAddOpenAIServices(
         this IServiceCollection services,
         IConfiguration configuration,
