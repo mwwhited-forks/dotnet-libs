@@ -2,8 +2,8 @@
 
 ## Summary 
 
-Application: Eliassen.Libs (0.1.73-dev-ado-HybridSearch.45) \
-Time: 2024-04-27T00:51:49.1335272Z \
+Application: Eliassen.Libs (0.1.73-dev-ado-HybridSearch.52) \
+Time: 2024-05-02T14:18:41.0828809Z \
 Tool: CycloneDX (3.0.5.0). 
 
 ## Components 
@@ -77,14 +77,14 @@ Package URL: pkg:nuget/Azure.Core@1.38.0
 This is the implementation of the Azure Client Pipeline 
 
 
-### Azure.Identity (1.11.1) 
+### Azure.Identity (1.11.2) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
-Reference: [website](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity_1.11.1/sdk/identity/Azure.Identity/README.md) \
-Hash: [SHA-512](6ABD8157320712831CC6DF56AA97B2DBAA0FD3BAD1983B916D58BA90FF2A6E895EAA9E641B39789CF11667B6373D06C356D3966BA128A16430FAACB63500369E) \
-Package URL: pkg:nuget/Azure.Identity@1.11.1 
+Reference: [website](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity_1.11.2/sdk/identity/Azure.Identity/README.md) \
+Hash: [SHA-512](692AD9E2C52091CFE94F67DEEC9C45EAF0619F8360CD49C9D5A9F240647B79F5374A13FC379DAE8BB46A39BA283A0C670EC7E6FCFA5828DFDB0B59C723809A37) \
+Package URL: pkg:nuget/Azure.Identity@1.11.2 
 
 #### Description: 
 
@@ -327,13 +327,13 @@ Package URL: pkg:nuget/Handlebars.Net.Helpers.Core@2.4.2.1
 Core functionality for Handlebars.Net.Helpers 
 
 
-### Haukcode.WkHtmlToPdfDotNet (1.5.88) 
+### Haukcode.WkHtmlToPdfDotNet (1.5.90) 
 
 Author: rdvojmoc, HakanL, georgechond94 \
 License: LGPL-3.0-or-later \
 Reference: [website](https://github.com/HakanL/WkHtmlToPdf-DotNet) \
-Hash: [SHA-512](82BA1BD6BB9C36FE21B1BCA8D26DC403E086C39FFD80087AEDC026B87B90B12620DDDD0B978215FA8D83A7364862D51E9DC4C396A42E46B19745DA64B4F38700) \
-Package URL: pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.88 
+Hash: [SHA-512](B9B5A50C685F3139FE5E97E789E11A680D936DF3622D51A62FC9AB665F5B993207EE7C85F25BCDDADFE5EE701E81996B399B18023D540C5CCBB4414101A829D1) \
+Package URL: pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.90 
 
 #### Description: 
 
@@ -690,14 +690,14 @@ Package URL: pkg:nuget/JsonDiffPatch.Net@2.3.0
 JSON object diffs and reversible patching 
 
 
-### Keycloak.Net.Core (1.0.25) 
+### Keycloak.Net.Core (1.0.26) 
 
 Author: Luk Vermeulen, Peter Andersson, Galip Tolga Erdem, Silent Partner Software \
 Copyright: Copyright 2023 by Luk Vermeulen, Peter Andersson, Silent Partner Software. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/silentpartnersoftware/Keycloak.Net) \
-Hash: [SHA-512](70A432DDB91FE4BED15CE0B528D83815BA51215FB92B8F70ED3DDDF4CA4EEE676D3CF6F666BFDB3597CBE7BD33909CB2CB572EE1D98135B1D1D8655CD778A5BB) \
-Package URL: pkg:nuget/Keycloak.Net.Core@1.0.25 
+Hash: [SHA-512](AC3555F0A64A5458372A1105E88E07BDC2434CDF7700FC96FF0B88D8D1EF72BFE53E996553D3BC1D88D2658A15BFB128BBD896ECF2D5B3CA0C0631971B8ECAB9) \
+Package URL: pkg:nuget/Keycloak.Net.Core@1.0.26 
 
 #### Description: 
 
@@ -1898,14 +1898,14 @@ Microsoft.Extensions.Primitives.StringValues
 Microsoft.Extensions.Primitives.StringSegment 
 
 
-### Microsoft.Graph (5.49.0) 
+### Microsoft.Graph (5.50.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://developer.microsoft.com/graph) \
-Hash: [SHA-512](218BC13ED9633864592B51C415B2D7818E24F66AFE7B3EE8B3AA3A68EDCB9DF13F554D8114A20E12AD763CF67CA383707478D8456A276524144CCA98AB099954) \
-Package URL: pkg:nuget/Microsoft.Graph@5.49.0 
+Hash: [SHA-512](52619A3C393EF891AB9FAB4DE7A5619A4F894CD8B8B609970FF0D9ABBCF9B3787CB6CFCDA57D09AA2805D0337350733FF8FDA40C227FD78D8E04B0E8568959F0) \
+Package URL: pkg:nuget/Microsoft.Graph@5.50.0 
 
 #### Description: 
 
@@ -2643,14 +2643,14 @@ Exposes all the OpenSearch API endpoints but leaves you in control of building t
       Comes with built in cluster failover/connection pooling support. 
 
 
-### Qdrant.Client (1.8.0) 
+### Qdrant.Client (1.9.0) 
 
 Author: Qdrant and Contributors \
 Copyright: Qdrant \
 License: Apache-2.0 \
 Reference: [website](https://github.com/qdrant/qdrant-dotnet) \
-Hash: [SHA-512](3D3FF99399E4EFB10F760975529B3C9C539E9820E579BAC4F8D0C2DD74C21427998F9B6E65FFA6BB304C04527BF6479557E6AB868D4C0E24512A1A25471D32BA) \
-Package URL: pkg:nuget/Qdrant.Client@1.8.0 
+Hash: [SHA-512](397AF3B703B05774E0BB056F3809B7F4FC1489244B945BCBE1F7F5C86FC5E5615149CDFE302457C4C1F99C71FABFD6A10C3E8E72AD429FC605E14F32670DF559) \
+Package URL: pkg:nuget/Qdrant.Client@1.9.0 
 
 #### Description: 
 

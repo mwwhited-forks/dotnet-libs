@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:8ddb74a5-1f02-4a35-aeb9-ce58f55beeec" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:3693639b-0196-4f98-859f-1e8a9902dc38" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
   <metadata>
-    <timestamp>2024-04-27T00:51:49.1335272Z</timestamp>
+    <timestamp>2024-05-02T14:18:41.0828809Z</timestamp>
     <tools>
       <tool>
         <vendor>CycloneDX</vendor>
@@ -9,9 +9,9 @@
         <version>3.0.5.0</version>
       </tool>
     </tools>
-    <component type="application" bom-ref="Eliassen.Libs@0.1.73-dev-ado-HybridSearch.45">
+    <component type="application" bom-ref="Eliassen.Libs@0.1.73-dev-ado-HybridSearch.52">
       <name>Eliassen.Libs</name>
-      <version>0.1.73-dev-ado-HybridSearch.45</version>
+      <version>0.1.73-dev-ado-HybridSearch.52</version>
     </component>
   </metadata>
   <components>
@@ -135,14 +135,14 @@
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Azure.Identity@1.11.1">
+    <component type="library" bom-ref="pkg:nuget/Azure.Identity@1.11.2">
       <author>Microsoft</author>
       <name>Azure.Identity</name>
-      <version>1.11.1</version>
+      <version>1.11.2</version>
       <description>This is the implementation of the Azure SDK Client Library for Azure Identity</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">6ABD8157320712831CC6DF56AA97B2DBAA0FD3BAD1983B916D58BA90FF2A6E895EAA9E641B39789CF11667B6373D06C356D3966BA128A16430FAACB63500369E</hash>
+        <hash alg="SHA-512">692AD9E2C52091CFE94F67DEEC9C45EAF0619F8360CD49C9D5A9F240647B79F5374A13FC379DAE8BB46A39BA283A0C670EC7E6FCFA5828DFDB0B59C723809A37</hash>
       </hashes>
       <licenses>
         <license>
@@ -150,10 +150,10 @@
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Azure.Identity@1.11.1</purl>
+      <purl>pkg:nuget/Azure.Identity@1.11.2</purl>
       <externalReferences>
         <reference type="website">
-          <url>https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity_1.11.1/sdk/identity/Azure.Identity/README.md</url>
+          <url>https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity_1.11.2/sdk/identity/Azure.Identity/README.md</url>
         </reference>
         <reference type="vcs">
           <url>https://github.com/Azure/azure-sdk-for-net</url>
@@ -572,21 +572,21 @@
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.88">
+    <component type="library" bom-ref="pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.90">
       <author>rdvojmoc, HakanL, georgechond94</author>
       <name>Haukcode.WkHtmlToPdfDotNet</name>
-      <version>1.5.88</version>
+      <version>1.5.90</version>
       <description>.NET Core P/Invoke wrapper for wkhtmltopdf library that uses Webkit engine to convert HTML pages to PDF.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">82BA1BD6BB9C36FE21B1BCA8D26DC403E086C39FFD80087AEDC026B87B90B12620DDDD0B978215FA8D83A7364862D51E9DC4C396A42E46B19745DA64B4F38700</hash>
+        <hash alg="SHA-512">B9B5A50C685F3139FE5E97E789E11A680D936DF3622D51A62FC9AB665F5B993207EE7C85F25BCDDADFE5EE701E81996B399B18023D540C5CCBB4414101A829D1</hash>
       </hashes>
       <licenses>
         <license>
           <id>LGPL-3.0-or-later</id>
         </license>
       </licenses>
-      <purl>pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.88</purl>
+      <purl>pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.90</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/HakanL/WkHtmlToPdf-DotNet</url>
@@ -1246,14 +1246,14 @@
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Keycloak.Net.Core@1.0.25">
+    <component type="library" bom-ref="pkg:nuget/Keycloak.Net.Core@1.0.26">
       <author>Luk Vermeulen, Peter Andersson, Galip Tolga Erdem, Silent Partner Software</author>
       <name>Keycloak.Net.Core</name>
-      <version>1.0.25</version>
+      <version>1.0.26</version>
       <description>C# client for Keycloak</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">70A432DDB91FE4BED15CE0B528D83815BA51215FB92B8F70ED3DDDF4CA4EEE676D3CF6F666BFDB3597CBE7BD33909CB2CB572EE1D98135B1D1D8655CD778A5BB</hash>
+        <hash alg="SHA-512">AC3555F0A64A5458372A1105E88E07BDC2434CDF7700FC96FF0B88D8D1EF72BFE53E996553D3BC1D88D2658A15BFB128BBD896ECF2D5B3CA0C0631971B8ECAB9</hash>
       </hashes>
       <licenses>
         <license>
@@ -1261,7 +1261,7 @@
         </license>
       </licenses>
       <copyright>Copyright 2023 by Luk Vermeulen, Peter Andersson, Silent Partner Software. All rights reserved.</copyright>
-      <purl>pkg:nuget/Keycloak.Net.Core@1.0.25</purl>
+      <purl>pkg:nuget/Keycloak.Net.Core@1.0.26</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/silentpartnersoftware/Keycloak.Net</url>
@@ -3341,14 +3341,14 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Microsoft.Graph@5.49.0">
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Graph@5.50.0">
       <author>Microsoft</author>
       <name>Microsoft.Graph</name>
-      <version>5.49.0</version>
+      <version>5.50.0</version>
       <description>Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">218BC13ED9633864592B51C415B2D7818E24F66AFE7B3EE8B3AA3A68EDCB9DF13F554D8114A20E12AD763CF67CA383707478D8456A276524144CCA98AB099954</hash>
+        <hash alg="SHA-512">52619A3C393EF891AB9FAB4DE7A5619A4F894CD8B8B609970FF0D9ABBCF9B3787CB6CFCDA57D09AA2805D0337350733FF8FDA40C227FD78D8E04B0E8568959F0</hash>
       </hashes>
       <licenses>
         <license>
@@ -3357,7 +3357,7 @@ Microsoft.Extensions.Primitives.StringSegment</description>
         </license>
       </licenses>
       <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-      <purl>pkg:nuget/Microsoft.Graph@5.49.0</purl>
+      <purl>pkg:nuget/Microsoft.Graph@5.50.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://developer.microsoft.com/graph</url>
@@ -4631,14 +4631,14 @@ Microsoft.Win32.SystemEvents</description>
         </reference>
       </externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:nuget/Qdrant.Client@1.8.0">
+    <component type="library" bom-ref="pkg:nuget/Qdrant.Client@1.9.0">
       <author>Qdrant and Contributors</author>
       <name>Qdrant.Client</name>
-      <version>1.8.0</version>
+      <version>1.9.0</version>
       <description>.NET client for Qdrant vector database</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="SHA-512">3D3FF99399E4EFB10F760975529B3C9C539E9820E579BAC4F8D0C2DD74C21427998F9B6E65FFA6BB304C04527BF6479557E6AB868D4C0E24512A1A25471D32BA</hash>
+        <hash alg="SHA-512">397AF3B703B05774E0BB056F3809B7F4FC1489244B945BCBE1F7F5C86FC5E5615149CDFE302457C4C1F99C71FABFD6A10C3E8E72AD429FC605E14F32670DF559</hash>
       </hashes>
       <licenses>
         <license>
@@ -4646,7 +4646,7 @@ Microsoft.Win32.SystemEvents</description>
         </license>
       </licenses>
       <copyright>Qdrant</copyright>
-      <purl>pkg:nuget/Qdrant.Client@1.8.0</purl>
+      <purl>pkg:nuget/Qdrant.Client@1.9.0</purl>
       <externalReferences>
         <reference type="website">
           <url>https://github.com/qdrant/qdrant-dotnet</url>
@@ -8068,7 +8068,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     </component>
   </components>
   <dependencies>
-    <dependency ref="Eliassen.Libs@0.1.73-dev-ado-HybridSearch.45">
+    <dependency ref="Eliassen.Libs@0.1.73-dev-ado-HybridSearch.52">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.1" />
@@ -8087,16 +8087,16 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Swashbuckle.AspNetCore.SwaggerGen@6.5.0" />
       <dependency ref="pkg:nuget/Azure.Storage.Blobs@12.19.1" />
       <dependency ref="pkg:nuget/Azure.Storage.Queues@12.17.1" />
-      <dependency ref="pkg:nuget/Azure.Identity@1.11.1" />
-      <dependency ref="pkg:nuget/Microsoft.Graph@5.49.0" />
+      <dependency ref="pkg:nuget/Azure.Identity@1.11.2" />
+      <dependency ref="pkg:nuget/Microsoft.Graph@5.50.0" />
       <dependency ref="pkg:nuget/Microsoft.Identity.Client@4.60.3" />
       <dependency ref="pkg:nuget/Azure.AI.OpenAI@1.0.0-beta.16" />
       <dependency ref="pkg:nuget/Handlebars.Net@2.1.6" />
       <dependency ref="pkg:nuget/Handlebars.Net.Extension.Json@1.0.0" />
       <dependency ref="pkg:nuget/Handlebars.Net.Helpers@2.4.2.1" />
-      <dependency ref="pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.88" />
+      <dependency ref="pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.90" />
       <dependency ref="pkg:nuget/IKVM.Maven.Sdk@1.8.3" />
-      <dependency ref="pkg:nuget/Keycloak.Net.Core@1.0.25" />
+      <dependency ref="pkg:nuget/Keycloak.Net.Core@1.0.26" />
       <dependency ref="pkg:nuget/MailKit@4.5.0" />
       <dependency ref="pkg:nuget/Markdig@0.37.0" />
       <dependency ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0" />
@@ -8109,7 +8109,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/MongoDB.Driver@2.25.0" />
       <dependency ref="pkg:nuget/OllamaSharp@1.1.1" />
       <dependency ref="pkg:nuget/OpenSearch.Client@1.7.1" />
-      <dependency ref="pkg:nuget/Qdrant.Client@1.8.0" />
+      <dependency ref="pkg:nuget/Qdrant.Client@1.9.0" />
       <dependency ref="pkg:nuget/RabbitMQ.Client@6.8.1" />
       <dependency ref="pkg:nuget/ReverseMarkdown@4.3.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.CommandLine@8.0.0" />
@@ -8145,7 +8145,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Text.Json@6.0.0" />
       <dependency ref="pkg:nuget/System.Threading.Tasks.Extensions@4.5.4" />
     </dependency>
-    <dependency ref="pkg:nuget/Azure.Identity@1.11.1">
+    <dependency ref="pkg:nuget/Azure.Identity@1.11.2">
       <dependency ref="pkg:nuget/Azure.Core@1.38.0" />
       <dependency ref="pkg:nuget/Microsoft.Identity.Client@4.60.3" />
       <dependency ref="pkg:nuget/Microsoft.Identity.Client.Extensions.Msal@4.60.3" />
@@ -8201,7 +8201,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Handlebars.Net.Helpers.Core@2.4.2.1" />
     </dependency>
     <dependency ref="pkg:nuget/Handlebars.Net@2.1.6" />
-    <dependency ref="pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.88">
+    <dependency ref="pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.90">
       <dependency ref="pkg:nuget/System.Collections.Concurrent@4.3.0" />
       <dependency ref="pkg:nuget/System.Globalization@4.3.0" />
       <dependency ref="pkg:nuget/System.Reflection.TypeExtensions@4.7.0" />
@@ -8269,7 +8269,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <dependency ref="pkg:nuget/JsonDiffPatch.Net@2.3.0">
       <dependency ref="pkg:nuget/Newtonsoft.Json@11.0.1" />
     </dependency>
-    <dependency ref="pkg:nuget/Keycloak.Net.Core@1.0.25">
+    <dependency ref="pkg:nuget/Keycloak.Net.Core@1.0.26">
       <dependency ref="pkg:nuget/Flurl.Http@3.2.4" />
       <dependency ref="pkg:nuget/Microsoft.CSharp@4.7.0" />
       <dependency ref="pkg:nuget/System.Net.Http@4.3.4" />
@@ -8677,7 +8677,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Multipart@1.1.3" />
       <dependency ref="pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.4" />
     </dependency>
-    <dependency ref="pkg:nuget/Microsoft.Graph@5.49.0">
+    <dependency ref="pkg:nuget/Microsoft.Graph@5.50.0">
       <dependency ref="pkg:nuget/Microsoft.Graph.Core@3.1.10" />
     </dependency>
     <dependency ref="pkg:nuget/Microsoft.Identity.Client.Extensions.Msal@4.60.3">
@@ -8819,7 +8819,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Buffers@4.5.1" />
       <dependency ref="pkg:nuget/System.Diagnostics.DiagnosticSource@8.0.0" />
     </dependency>
-    <dependency ref="pkg:nuget/Qdrant.Client@1.8.0">
+    <dependency ref="pkg:nuget/Qdrant.Client@1.9.0">
       <dependency ref="pkg:nuget/Google.Protobuf@3.24.2" />
       <dependency ref="pkg:nuget/Grpc.Net.Client@2.57.0" />
     </dependency>
