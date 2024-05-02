@@ -7,9 +7,9 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-
+    <PackageReadmeFile>Readme.MessageQueueing.Hosting.md</PackageReadmeFile>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
 		<InternalsVisibleTo Include="Eliassen.MessageQueueing.Tests" />
 	</ItemGroup>
