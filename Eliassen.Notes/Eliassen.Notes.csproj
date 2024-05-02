@@ -37,9 +37,5 @@
       <Link>\publish\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </None>
   </ItemGroup>
-  
-  <ItemGroup>
-    <None Remove="C:\Repos\Nucleus\Net.Libs\Scripts\SetupAzurite.bat" />
-  </ItemGroup>
 
 </Project>
