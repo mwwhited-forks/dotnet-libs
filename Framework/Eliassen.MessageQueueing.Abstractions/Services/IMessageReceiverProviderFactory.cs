@@ -1,4 +1,6 @@
-﻿namespace Eliassen.MessageQueueing.Services;
+﻿using System.Collections.Generic;
+
+namespace Eliassen.MessageQueueing.Services;
 
 /// <summary>
 /// Factory for creating instances of <see cref="IMessageReceiverProvider"/>.

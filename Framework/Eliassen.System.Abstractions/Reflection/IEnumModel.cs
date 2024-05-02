@@ -1,4 +1,7 @@
-﻿namespace Eliassen.System.Reflection;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Eliassen.System.Reflection;
 /// <summary>
 /// Represents a generic interface for providing information about an enumeration value.
 /// </summary>

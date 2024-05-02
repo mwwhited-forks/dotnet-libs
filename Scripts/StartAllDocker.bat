@@ -9,6 +9,9 @@ CALL StartSmtp4DevDocker.bat %1
 CALL StartMongoDbDocker.bat %1
 CALL StartKeycloak.bat %1
 
+CALL StartOllama.bat %1
+CALL StartSentenceEmbedding.bat %1
+
 PAUSE
 
 REM smtp4dev

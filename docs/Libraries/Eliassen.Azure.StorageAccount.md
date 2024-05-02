@@ -1,89 +1,257 @@
 ﻿# Eliassen.Azure.StorageAccount
 
 
-## Class: Azure.StorageAccount.BlobStorage.AzureBlobContainerOptions
-Represents the options for configuring an Azure Blob Storage container. 
+## Class: Azure.StorageAccount.AzureStorageGlobals
+Contains global constants related to Azure Storage. 
+
+### Fields
+
+#### MessageProviderKey
+The key associated with the Azure Storage message provider.
+
+## Class: Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider
+Represents a provider for storing and searching content in Azure Blob storage. 
 
 ### Properties
 
 #### ContainerName
-Gets or sets the name of the container. This property is required and specifies the name of the Azure Blob Storage container.
-#### ConnectionString
-Gets or sets the connection string for the Azure Storage account. This property is required and specifies the connection string used to connect to the Azure Storage account.
+Container name for this instance
+### Methods
 
-## Class: Azure.StorageAccount.BlobStorage.BlobContainerProvider
-Implementation of 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.IDocumentProvider*for handling blob containers in Azure Storage. 
+
+#### Constructor
 Initializes a new instance of the 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobContainerProvider*class. 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*class with the specified 
+*client*and 
+*collectionName*. 
+
+
+##### Parameters
+* *client:* The BlobServiceClient used to connect to the Azure Blob storage.
+* *collectionName:* The name of the collection in the Azure Blob storage.
+* *loggerFactory:* ILoggerFactory instance.
+
+
+
+
+#### GetContentAsync(System.String)
+Retrieves the content of the specified file from Azure Blob storage. 
+
+
+##### Parameters
+* *file:* The name of the file to retrieve.
+
+
+
+
+##### Return value
+A ContentReference object representing the retrieved content.
+
+
+
+#### TryStoreAsync(System.String,System.String,System.String)
+Stores the specified content in Azure Blob storage. 
+
+
+##### Parameters
+* *full:* The full path of the content to store.
+* *file:* The name of the file to store.
+* *pathHash:* The hash value of the file path.
+
+
+
+
+##### Return value
+A boolean value indicating whether the operation was successful.
+
+
+
+#### GetContentMetaDataAsync(System.String)
+Retrieves content metadata asynchronously. 
+
+
+##### Parameters
+* *path:* The path to the content.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. Returns the content metadata if it exists, otherwise returns null.
+
+
+
+#### StoreContentAsync(Eliassen.Documents.Models.ContentReference,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)
+Stores content asynchronously. 
+
+
+##### Parameters
+* *reference:* The reference to the content.
+* *metadata:* The metadata associated with the content.
+* *overwrite:* Determines whether to overwrite existing content with the same name.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
+#### StoreContentMetaDataAsync(Eliassen.Documents.Models.ContentMetaDataReference)
+Stores content metadata asynchronously. 
+
+
+##### Parameters
+* *reference:* The reference to the content metadata.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. Returns true if the metadata is stored successfully, otherwise false.
+
+
+
+#### QueryContent
+Queries content metadata. 
+
+
+##### Return value
+An IQueryable representing the content metadata.
+
+
+
+#### DeleteContentAsync(System.String)
+Deletes content asynchronously. 
+
+
+##### Parameters
+* *path:* The path to the content to be deleted.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*class with the specified dependencies. 
+
+
+##### Parameters
+* *serviceProvider:* The service provider.
+
+
+
+
+#### 
+Creates a new instance of 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*based on the specified collection name. 
+
+
+##### Parameters
+* *containerName:* The name of the collection.
+
+
+
+
+##### Return value
+A new instance of .
+
+
+
+## Class: Azure.StorageAccount.BlobStorage.AzureBlobContainerProviderFactory
+Represents a factory for creating instances of 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*. 
 
 ### Methods
 
 
 #### Constructor
-Implementation of 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.IDocumentProvider*for handling blob containers in Azure Storage. 
+Initializes a new instance of the 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*class with the specified dependencies. 
 
 
 ##### Parameters
-* *config:* The configuration.
-* *logger:* The logger.
+* *serviceProvider:* The service provider.
 
 
 
 
-#### ListAsync
-Lists all blobs in the container. 
-
-
-##### Return value
-A list of representing the blobs in the container.
-
-
-
-#### UploadAsync(Eliassen.Azure.StorageAccount.BlobStorage.DocumentModel,System.IO.Stream)
-Uploads a blob to the container. 
+#### Create(System.String)
+Creates a new instance of 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*based on the specified collection name. 
 
 
 ##### Parameters
-* *document:* The document model.
-* *content:* The content stream.
+* *containerName:* The name of the collection.
 
 
 
 
 ##### Return value
-A representing the result of the upload operation.
+A new instance of .
 
 
 
-#### DownloadAsync(System.String)
-Downloads a blob from the container. 
+## Class: Azure.StorageAccount.BlobStorage.AzureBlobProviderOptions
+Options for configuring Azure Blob storage provider. 
+
+### Properties
+
+#### ConnectionString
+Gets or sets the connection string for Azure Blob storage.
+#### DocumentCollectionName
+Gets or sets the name of the collection for storing documents in Azure Blob storage.
+#### SummaryCollectionName
+Gets or sets the name of the collection for storing document summaries in Azure Blob storage.
+
+## Class: Azure.StorageAccount.BlobStorage.BlobServiceClientFactory
+Represents a factory for creating instances of 
+ *See: T:Azure.Storage.Blobs.BlobServiceClient*. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobServiceClientFactory*class with the specified configuration. 
 
 
 ##### Parameters
-* *blobFilename:* The name of the blob.
+* *config:* The Azure Blob provider options.
 
 
 
 
-##### Return value
-A representing the downloaded blob or null if the blob does not exist.
-
-
-
-#### DeleteAsync(System.String)
-Deletes a blob from the container. 
-
-
-##### Parameters
-* *blobFilename:* The name of the blob.
-
-
+#### Create
+Creates a new instance of 
+ *See: T:Azure.Storage.Blobs.BlobServiceClient*. 
 
 
 ##### Return value
-A representing the result of the delete operation.
+A new instance of .
+
+
+
+## Class: Azure.StorageAccount.BlobStorage.IBlobServiceClientFactory
+Interface for a factory that creates instances of 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobContainerProvider*. 
+
+### Methods
+
+
+#### Create
+Creates a new instance of 
+ *See: T:Azure.Storage.Blobs.BlobServiceClient*. 
+
+
+##### Return value
+The created .
 
 
 
@@ -228,7 +396,7 @@ Tries to add Azure Storage services including blob and queue services to the spe
 ##### Parameters
 * *services:* The to add services to.
 * *configuration:* The to add services to.
-* *azureBlobContainerConfigurationSection:* The name for the ConfigurationSectionName.
+* *azureBlobProviderOptionSection:* The name for the ConfigurationSectionName.
 
 
 
@@ -239,14 +407,13 @@ The modified .
 
 
 #### TryAddAzureStorageBlobServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
-Tries to add Azure Storage blob services to the specified 
- *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
+Configures services for Azure Storage Blob. 
 
 
 ##### Parameters
-* *services:* The to add services to.
-* *configuration:* The to add services to.
-* *configurationSection:* The name for the ConfigurationSectionName.
+* *services:* The to add the services to.
+* *configuration:* The to bind Azure Blob Storage options from.
+* *azureBlobProviderOptionSection:* The configuration section name containing Azure Blob Storage options.
 
 
 

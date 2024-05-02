@@ -1,0 +1,44 @@
+﻿using Eliassen.AI;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+
+namespace Eliassen.Ollama;
+
+/// <summary>
+/// Provides extension methods for configuring services related to Ollama.
+/// </summary>
+public static class ServiceCollectionExtensions
+{
+    /// <summary>
+    /// Configures services for Ollama.
+    /// </summary>
+    /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
+    /// <param name="configuration">The configuration containing the Ollama API client options.</param>
+    /// <param name="ollamaApiClientOptionSection">The name of the configuration section containing the Ollama API client options.</param>
+    /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
+    public static IServiceCollection TryAddOllamaServices(
+        this IServiceCollection services,
+        IConfiguration configuration,
+#if DEBUG
+        string ollamaApiClientOptionSection
+#else
+        string ollamaApiClientOptionSection = nameof(OllamaApiClientOptions)
+#endif
+        )
+    {
+        services.TryAddTransient<IOllamaApiClientFactory, OllamaApiClientFactory>();
+        services.TryAddTransient(sp => ActivatorUtilities.CreateInstance<OllamaMessageCompletion>(sp));
+        services.TryAddTransient(sp => sp.GetRequiredService<IOllamaApiClientFactory>().Build());
+
+        services.TryAddTransient<IMessageCompletion, OllamaMessageCompletion>();
+        services.TryAddTransient<ILanguageModelProvider, OllamaMessageCompletion>();
+
+        services.TryAddKeyedTransient<IMessageCompletion, OllamaMessageCompletion>("OLLAMA");
+        services.TryAddKeyedTransient<ILanguageModelProvider, OllamaMessageCompletion>("OLLAMA");
+
+        services.Configure<OllamaApiClientOptions>(options => configuration.Bind(ollamaApiClientOptionSection, options));
+
+        return services;
+    }
+}

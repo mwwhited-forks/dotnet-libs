@@ -12,9 +12,18 @@
 
 	</PropertyGroup>
 
-	<ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\Framework\*.Abstractions\**\ReadMe.*.md" Pack="true">
+      <Link>%(Filename)%(Extension)</Link>
+      <PackagePath>\%(Filename)%(Extension)</PackagePath>
+    </Content>
+    <Content Remove="..\..\Framework\**\*.AspnetCore.*\*.md" />
+    <Content Remove="..\..\Framework\**\*.Hosting\*.md" />
+    <Content Remove="..\..\Framework\**\*.Tests\*.md" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Framework\**\Eliassen.*.Abstractions.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\**\Eliassen.*.Abstractions.csproj" />
 	</ItemGroup>
 
 

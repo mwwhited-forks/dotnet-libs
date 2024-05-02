@@ -2,8 +2,9 @@
 using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Http;
+using System.Linq;
 
-namespace Eliassen.ApplicationInsights;
+namespace Eliassen.Microsoft.ApplicationInsights.Extensibility;
 
 /// <summary>
 /// Telemetry processor that extracts user information from the HTTP context and adds it to telemetry items.
@@ -18,10 +19,7 @@ public class UserTelemetryProcessor : ITelemetryProcessor
     /// <param name="accessor">The accessor for accessing the current HTTP context.</param>
     public UserTelemetryProcessor(
         IHttpContextAccessor accessor
-        )
-    {
-        _accessor = accessor;
-    }
+        ) => _accessor = accessor;
 
     /// <summary>
     /// Processes telemetry items by extracting user information from the HTTP context and adding it to the global properties.

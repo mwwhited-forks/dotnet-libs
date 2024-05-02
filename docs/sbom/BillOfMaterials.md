@@ -2,8 +2,8 @@
 
 ## Summary 
 
-Application: Eliassen.Libs (0.1.69-dev-update-framework.1) \
-Time: 2024-03-14T15:52:02.3461619Z \
+Application: Eliassen.Libs (0.1.73-dev-ado-HybridSearch.56) \
+Time: 2024-05-02T16:32:43.3357893Z \
 Tool: CycloneDX (3.0.5.0). 
 
 ## Components 
@@ -34,6 +34,21 @@ Package URL: pkg:nuget/AWSSDK.SecurityToken@3.7.100.14
 The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources. 
 
 
+### Azure.AI.OpenAI (1.0.0-beta.16) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.OpenAI_1.0.0-beta.16/sdk/openai/Azure.AI.OpenAI/README.md) \
+Hash: [SHA-512](9B71BCDED2CF76860FEAED712AA363B4C66D97790D7AECCD5FD823E851720460FF0F6802DD55945586A149914B7D2F121A987FE117B85E0363FD5E444E33F965) \
+Package URL: pkg:nuget/Azure.AI.OpenAI@1.0.0-beta.16 
+
+#### Description: 
+
+Azure's official .NET library for OpenAI inference that supports Completions, Chat, and Embeddings.
+      Works with Azure OpenAI resources as well as the non-Azure OpenAI endpoint. 
+
+
 ### Azure.Core (1.36.0) 
 
 Author: Microsoft \
@@ -48,28 +63,28 @@ Package URL: pkg:nuget/Azure.Core@1.36.0
 This is the implementation of the Azure Client Pipeline 
 
 
-### Azure.Core (1.37.0) 
+### Azure.Core (1.38.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
-Reference: [website](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Core_1.37.0/sdk/core/Azure.Core/README.md) \
-Hash: [SHA-512](9913C32D99606A4746B87CB90ED0F5838D18A0669F343366686B94C5EA11174A67462A633F12D485E2B38EF03E86439BCEFD4D74795F56E37B718515A85C304E) \
-Package URL: pkg:nuget/Azure.Core@1.37.0 
+Reference: [website](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Core_1.38.0/sdk/core/Azure.Core/README.md) \
+Hash: [SHA-512](83AFDE6A5EAD30ADE441297F981CCC46BE6FFEA39EE46B2B4E985844279A4573C55ECB375A1C923E8C7A3E2E0439A5CA2A2009A46DDBF8C21B41C657662017CE) \
+Package URL: pkg:nuget/Azure.Core@1.38.0 
 
 #### Description: 
 
 This is the implementation of the Azure Client Pipeline 
 
 
-### Azure.Identity (1.10.4) 
+### Azure.Identity (1.11.2) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
-Reference: [website](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity_1.10.4/sdk/identity/Azure.Identity/README.md) \
-Hash: [SHA-512](DFD5870BE96AE6DB39BC771CA300A37504CDFA3B9B2A193CA0903609583EAD92048088179B4F8ADB9B8356F70839BD1C4146C181F5F4927934AC91BA62CA8B4F) \
-Package URL: pkg:nuget/Azure.Identity@1.10.4 
+Reference: [website](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity_1.11.2/sdk/identity/Azure.Identity/README.md) \
+Hash: [SHA-512](692AD9E2C52091CFE94F67DEEC9C45EAF0619F8360CD49C9D5A9F240647B79F5374A13FC379DAE8BB46A39BA283A0C670EC7E6FCFA5828DFDB0B59C723809A37) \
+Package URL: pkg:nuget/Azure.Identity@1.11.2 
 
 #### Description: 
 
@@ -200,14 +215,70 @@ Package URL: pkg:nuget/Flurl.Http@3.2.4
 A fluent, portable, testable HTTP client library. 
 
 
-### Handlebars.Net (2.1.4) 
+### Google.Protobuf (3.24.2) 
+
+Author: Google Inc. \
+Copyright: Copyright 2015, Google Inc. \
+License: BSD-3-Clause \
+Reference: [website](https://github.com/protocolbuffers/protobuf) \
+Hash: [SHA-512](11C8A07FAEFD64D9E268681AE1CC890F0E0C07DDEA7F2CB54DB90E189C1729CB04AABF3FBF9634C34FE70E60A37B55CF69A2692A586E982B115B4834197F790B) \
+Package URL: pkg:nuget/Google.Protobuf@3.24.2 
+
+#### Description: 
+
+C# runtime library for Protocol Buffers - Google's data interchange format. 
+
+
+### Grpc.Core.Api (2.57.0) 
+
+Author: The gRPC Authors \
+Copyright: Copyright 2019 The gRPC Authors \
+License: Apache-2.0 \
+Reference: [website](https://github.com/grpc/grpc-dotnet) \
+Hash: [SHA-512](3180D5611F002ED23B5ABD210751A562CAC15F219AD538EEDFD85F151D596D0D2A3FEF2A148BCEF34E3796E7649B7657BAD69FAF17A48C7BC7C16A5B34FA610D) \
+Package URL: pkg:nuget/Grpc.Core.Api@2.57.0 
+
+#### Description: 
+
+gRPC C# Surface API 
+
+
+### Grpc.Net.Client (2.57.0) 
+
+Author: The gRPC Authors \
+Copyright: Copyright 2019 The gRPC Authors \
+License: Apache-2.0 \
+Reference: [website](https://github.com/grpc/grpc-dotnet) \
+Hash: [SHA-512](E311C35552D1407167621C28BB95DC2DE12D184793E1FB19DAFDD5D2BCF0C027F0452B0AD628357576EB65B892733A71C77885C26750214C22A0FFC0F9C41E3C) \
+Package URL: pkg:nuget/Grpc.Net.Client@2.57.0 
+
+#### Description: 
+
+.NET client for gRPC 
+
+
+### Grpc.Net.Common (2.57.0) 
+
+Author: The gRPC Authors \
+Copyright: Copyright 2019 The gRPC Authors \
+License: Apache-2.0 \
+Reference: [website](https://github.com/grpc/grpc-dotnet) \
+Hash: [SHA-512](30AE93FB69EC008CE333D61EB565F14271B1FB52D4FE12B0B407F1927DB858D862E9BC7A147AEC24F5B708D338CAF450253291DBA553F38B4CA968D2DE8D62A1) \
+Package URL: pkg:nuget/Grpc.Net.Common@2.57.0 
+
+#### Description: 
+
+Infrastructure for common functionality in gRPC 
+
+
+### Handlebars.Net (2.1.6) 
 
 Author: Rex Morgan \
 Copyright: Copyright © 2014-2020 Rex Morgan \
-License: [Unknown - See URL]() \
+License: MIT \
 Reference: [website](https://github.com/Handlebars-Net) \
-Hash: [SHA-512](10D59ABC9E93CAF9A515A2C7CE16795B4E35D804FAD3C21F9D0A615BDC27BAC609502B99737AB48B8542DC2D088DEA53DAB4F4FF1CEA93DBE9E11242F036FCF7) \
-Package URL: pkg:nuget/Handlebars.Net@2.1.4 
+Hash: [SHA-512](013938D08601ECDFCDF4B638FC39AE4BE4485B787BCDFEF372DC4161904AE21A8F8DE55B9F5FCEF28F865EB62A7FCB26B9330F9CB640C901F6DD32E89AE5F29E) \
+Package URL: pkg:nuget/Handlebars.Net@2.1.6 
 
 #### Description: 
 
@@ -228,32 +299,367 @@ Package URL: pkg:nuget/Handlebars.Net.Extension.Json@1.0.0
 System.Text.Json extension for Handlebars.Net 
 
 
-### Handlebars.Net.Helpers (2.4.1.5) 
+### Handlebars.Net.Helpers (2.4.2.1) 
 
 Author: Stef Heyenrath \
-Copyright: Copyright © 2020-2023 Stef Heyenrath \
+Copyright: Copyright © 2020-2024 Stef Heyenrath \
 License: MIT \
 Reference: [website](https://github.com/Handlebars-Net/Handlebars.Net.Helpers) \
-Hash: [SHA-512](4E76087B27BC9CF1F07E4E9AF67AC1A8065CBE359DB8F860D028F421A7B16D43793C039D9A0C73CD23E2278C4C0611E81441E764B389CE603F2EFF0B82A6F70B) \
-Package URL: pkg:nuget/Handlebars.Net.Helpers@2.4.1.5 
+Hash: [SHA-512](1533AE5786DCF34A1540F2E15DD3312A0A3E347014F61AB4BF45704DDC22035541CD956FD2B4A195BF4935A1BE94CEAB18A3EFE5C3C58F35B0E1F1790DEE05CE) \
+Package URL: pkg:nuget/Handlebars.Net.Helpers@2.4.2.1 
 
 #### Description: 
 
 Several Handlebars.Net helpers in the categories: 'Boolean', 'Constants', 'DateTime', 'Path', 'Enumerable', 'Environment', 'Math', 'Regex', 'String' and 'Urls'. 
 
 
-### Handlebars.Net.Helpers.Core (2.4.1.5) 
+### Handlebars.Net.Helpers.Core (2.4.2.1) 
 
 Author: Stef Heyenrath \
-Copyright: Copyright © 2020-2023 Stef Heyenrath \
+Copyright: Copyright © 2020-2024 Stef Heyenrath \
 License: MIT \
 Reference: [website](https://github.com/Handlebars-Net/Handlebars.Net.Helpers) \
-Hash: [SHA-512](25E62908CB9383B5B4EADC5559B920B76BC8C151E9075D1A77604F328B409103211FEB42449386CC885F66CAD0EBCE05CAD3617A27E810CDC207071CC7284F26) \
-Package URL: pkg:nuget/Handlebars.Net.Helpers.Core@2.4.1.5 
+Hash: [SHA-512](64F0DC73214082D33B095A78CDFD8485716EA0D6C9FA2C68659D0BFA7B8E3467778E8BAA41D2141B8AEC27390E3F404A72165300D99194796CBFDB316B2A9D80) \
+Package URL: pkg:nuget/Handlebars.Net.Helpers.Core@2.4.2.1 
 
 #### Description: 
 
 Core functionality for Handlebars.Net.Helpers 
+
+
+### Haukcode.WkHtmlToPdfDotNet (1.5.90) 
+
+Author: rdvojmoc, HakanL, georgechond94 \
+License: LGPL-3.0-or-later \
+Reference: [website](https://github.com/HakanL/WkHtmlToPdf-DotNet) \
+Hash: [SHA-512](B9B5A50C685F3139FE5E97E789E11A680D936DF3622D51A62FC9AB665F5B993207EE7C85F25BCDDADFE5EE701E81996B399B18023D540C5CCBB4414101A829D1) \
+Package URL: pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.90 
+
+#### Description: 
+
+.NET Core P/Invoke wrapper for wkhtmltopdf library that uses Webkit engine to convert HTML pages to PDF. 
+
+
+### HtmlAgilityPack (1.11.57) 
+
+Author: ZZZ Projects,Simon Mourrier,Jeff Klawiter,Stephan Grell \
+Copyright: Copyright © ZZZ Projects Inc. \
+License: [Unknown - See URL](https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE) \
+Reference: [website](http://html-agility-pack.net/) \
+Hash: [SHA-512](1EBB2C9F93EF78A7B577F6B10EB971B41A810E479F73904C0D2F8E2A77CC5F8559F508FC71921F0AB1C7DED423CA12EE9CEF3807A89B0519A195D31DAD340967) \
+Package URL: pkg:nuget/HtmlAgilityPack@1.11.57 
+
+#### Description: 
+
+This is an agile HTML parser that builds a read/write DOM and supports plain XPATH or XSLT (you actually don't HAVE to understand XPATH nor XSLT to use it, don't worry...). It is a .NET code library that allows you to parse "out of the web" HTML files. The parser is very tolerant with "real world" malformed HTML. The object model is very similar to what proposes System.Xml, but for HTML documents (or streams). 
+
+
+### IKVM (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](86F6818CCB937166DE1F2BE94878E8F5173B4B2E4B67667205AA49A7E71DD5D5EDEF08CD1B362C4DD7E356FF3F5EB44094A0977110AABB24D8C64D34D9DA2CAB) \
+Package URL: pkg:nuget/IKVM@8.8.0 
+
+#### Description: 
+
+Java SE 8 Virtual Machine for .NET 
+
+
+### IKVM.Image (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](BD5A244AA37CB1712405A0C4970D3B370890BFC69A35D960F290657F87F4B07109B86CABA129AD21C11D0590550688D0774ECDE881B77E47A55B16A1BBF7735B) \
+Package URL: pkg:nuget/IKVM.Image@8.8.0 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.linux-arm (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](2DC4E219C01424624CB6C3EC1C6BCD62CF340B7BA3E92E7B37D200CCE528C3C3D1264E3DF5B506398508BEA5A6D915D2C781F919059C1A78A11E303018015FEB) \
+Package URL: pkg:nuget/IKVM.Image.runtime.linux-arm@8.8.0 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.linux-arm64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](319336B402C41301614E1244DD09E4E10EEA976B4382A825765C82952B4A7462D8D31832D871C6827E525E3836947C28D4590314AFEA61861A41C2BCF00F926B) \
+Package URL: pkg:nuget/IKVM.Image.runtime.linux-arm64@8.8.0 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.linux-musl-arm (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](CEC1185C1F0B363B87EE2F2CF6B56A8A094E917ABF1E56B6C9835DC0E051F76FC0A79A5227487AE3F7BE883B8C10CCD665513D1CF53FB5B0B7AF2CA23D4022F8) \
+Package URL: pkg:nuget/IKVM.Image.runtime.linux-musl-arm@8.8.0 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.linux-musl-arm64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](C00F82B7E125583F1EA84E76A49D008B17FB8B0C200C1CDF89D00167A480DDB32A8CD625A044D6F4BC7728684F289AC132A266E570A3A7D05D671B59AD1E00A2) \
+Package URL: pkg:nuget/IKVM.Image.runtime.linux-musl-arm64@8.8.0 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.linux-musl-x64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](C6488343DE701DC52349E391969830B32740EC09BB7810C76426A7AB69631E7C3F8D67C7F71504100F298EDB718BE75181DB902DD38133EBD2B703CF2EED58DB) \
+Package URL: pkg:nuget/IKVM.Image.runtime.linux-musl-x64@8.8.0 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.linux-x64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](B011D0A16B7366BFB57BE165FAB8CEB3F8CF79E8F26422EA6CBE071E3641FE522DA885E207F637A9E38DCE4F0D1842E35BA2BB3030FCC75BF62A3EB103843C76) \
+Package URL: pkg:nuget/IKVM.Image.runtime.linux-x64@8.8.0 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.osx-arm64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](3953C3E24413A1CA03420D175AC6A509EAFA7DCE8200BA8C0A79D651654C104A2F0B9BED6B0DBEEFC7726304112F25C5D572C13BCF3408A5DC90C91B115C82E7) \
+Package URL: pkg:nuget/IKVM.Image.runtime.osx-arm64@8.8.0 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.osx-x64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](0EFE55460CB3044DB741D005F1F4C4B2AD64B6669071DEFA9FD32C75E9EA1AC9FEC67381C8489F93F4F921ED9B9246E5D17DA6CD6ED0DCC96EA5BAB1D8B18E15) \
+Package URL: pkg:nuget/IKVM.Image.runtime.osx-x64@8.8.0 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.win-arm64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](A600168F7F512A544EF2FC4E16FBFBBB11D109FB4090F4E97E05CA21FE4B658F5F9BDD5DF1A3429691F658D71AE4706E02C74E8AE17D7245CF37B1B460E1BF3D) \
+Package URL: pkg:nuget/IKVM.Image.runtime.win-arm64@8.8.0 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.win-x64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](F9FF1B6175ED770B8C2B209479FA7D8157AA98A353782DE68316AC6AA6871CC0A7FD368376CB06735B74970F3DDA3E48317B2B161AB082A4196F4D0FA836C844) \
+Package URL: pkg:nuget/IKVM.Image.runtime.win-x64@8.8.0 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.Image.runtime.win-x86 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](0140FC49EE05A456EF32A23B35127CA7C8E9805C170EE782601F1E2DFED02E0B5AEE3B3915641BF2700C579059FC832BD206E35B376B15277281E741A69F4FA9) \
+Package URL: pkg:nuget/IKVM.Image.runtime.win-x86@8.8.0 
+
+#### Description: 
+
+IKVM Runtime Image 
+
+
+### IKVM.MSBuild (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](C480067B71DB4453F8B1F77C9A8EF71B4D6ED056004024B9B13F18468437EA4B4EDB228783BDEACF1C74A9C52EFC409D1A182B84311C4A5E25080B9B3A91210F) \
+Package URL: pkg:nuget/IKVM.MSBuild@8.8.0 
+
+#### Description: 
+
+IKVM MSBuild Targets 
+
+
+### IKVM.MSBuild.Tools (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](32B8FD2D447ABE0FE6F013DFA21AEBDAE1DAC528ECCE73B31150B9F334D674EA1DC4322C0937A1C5DE0D776E37FB6FAEF7A890D6DD8AC4C5471FBA3D1002C143) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools@8.8.0 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.linux-arm (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](72ED95FC3D7F253530AA017DEC2241EAF716B770FB00309543641C61DAECB3DFE168314A9082C73A33137C9B144C0908069EA35C0FD168D3C212EF199241CBE5) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.linux-arm@8.8.0 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.linux-arm64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](D419258B4E3309D795D6C09C2BF5A4FCD9048704FF137F393BBA253FFBF394FC7C65A061E27845F0FEE3CFDA5A0E88BCB884536200DA79333DE2B23718388760) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.linux-arm64@8.8.0 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.linux-x64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](8A5B99D461120B28D33D52C35F8E3A12DFECEEB922941BB916CA7F1BD3AA2B99E40A8151DBDB0F64306C24C11F2489150A192FDDF310E057B741C3EB48722905) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.linux-x64@8.8.0 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.osx-arm64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](E8B6857CD297CB6DB5F08767C8F4DCB974A28B47B1920E92E7602B7711E5544CEC9B3215F0B264F8751853BC322E306DA1824C2025FF4384DBA358689267CE45) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.osx-arm64@8.8.0 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.osx-x64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](87C2FF554F77605FD3A614CF3A7371235A997FF0F955BAB907C89998B5E0A1FFA36F4B13C765C26C03329B425EDE5C5524A0F3494EAD0CD98F035A0375A4A511) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.osx-x64@8.8.0 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.win-arm64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](6263310B0011FC54C8697FC23B5FC77D15099B36A01FC5B05BBE6ECBC38BD3278DEA266BD36A9485374F796D8F347E4626DD89E7B4339AC8B7A699535E38DC55) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.win-arm64@8.8.0 
+
+#### Description: 
+
+IKVM MSBuild Tools 
+
+
+### IKVM.MSBuild.Tools.runtime.win-x64 (8.8.0) 
+
+Author: Jeroen Frijters,Windward Studios,Jerome Haltom,Shad Storhaug \
+Copyright: Copyright © 2024 Jeroen Frijters, Windward Studios, Jerome Haltom, Shad Storhaug \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/ikvmnet/ikvm) \
+Hash: [SHA-512](0144FD27F2CB70C6D02AB34933415FD8703F4B274CCDC3E2795CBA1D312001A175588605949CEE6B6B0D4646FB52439075D88A8B008D31047C6D65A1F1FCFB77) \
+Package URL: pkg:nuget/IKVM.MSBuild.Tools.runtime.win-x64@8.8.0 
+
+#### Description: 
+
+IKVM MSBuild Tools 
 
 
 ### JsonDiffPatch.Net (2.3.0) 
@@ -270,32 +676,46 @@ Package URL: pkg:nuget/JsonDiffPatch.Net@2.3.0
 JSON object diffs and reversible patching 
 
 
-### Keycloak.Net.Core (1.0.22) 
+### Keycloak.Net.Core (1.0.26) 
 
 Author: Luk Vermeulen, Peter Andersson, Galip Tolga Erdem, Silent Partner Software \
 Copyright: Copyright 2023 by Luk Vermeulen, Peter Andersson, Silent Partner Software. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/silentpartnersoftware/Keycloak.Net) \
-Hash: [SHA-512](8E3FA562F7D7DB8E52C0D00FC540AF99E3A74B95AE5CE524AA16B9E0ABCB067B6068A0C60589903149B85A8A9820771081F3C238674A2FD2718F9C4761A328FF) \
-Package URL: pkg:nuget/Keycloak.Net.Core@1.0.22 
+Hash: [SHA-512](AC3555F0A64A5458372A1105E88E07BDC2434CDF7700FC96FF0B88D8D1EF72BFE53E996553D3BC1D88D2658A15BFB128BBD896ECF2D5B3CA0C0631971B8ECAB9) \
+Package URL: pkg:nuget/Keycloak.Net.Core@1.0.26 
 
 #### Description: 
 
 C# client for Keycloak 
 
 
-### MailKit (4.4.0) 
+### MailKit (4.5.0) 
 
 Author: Jeffrey Stedfast \
 Copyright: .NET Foundation and Contributors \
 License: MIT \
 Reference: [website](http://www.mimekit.net/) \
-Hash: [SHA-512](4103A3A7C99BE997654C4CC9F7B1D0910710337099DF34800C1E03C77F9BEBECCE21A42B97678CFDF668F437A6D65090749A29C05740013B3C0D289599EC353C) \
-Package URL: pkg:nuget/MailKit@4.4.0 
+Hash: [SHA-512](D8EEE5797630F32A01A31ECF89BF8DB0E64A0FE699B1D30B865C8202B25FFDF2F7116D9EEC7DD6B448C2B05BAFCCF7D1EC8E63FEA58C28091C900D82FEC62D29) \
+Package URL: pkg:nuget/MailKit@4.5.0 
 
 #### Description: 
 
 An Open Source .NET mail-client library for Windows, Mac, Linux, and mobile platforms such as iOS and Android. 
+
+
+### Markdig (0.37.0) 
+
+Author: Alexandre Mutel \
+Copyright: Alexandre Mutel \
+License: BSD-2-Clause \
+Reference: [website](https://github.com/lunet-io/markdig) \
+Hash: [SHA-512](9CB1CBC18D28582D4D2710AFB983BA3DA3755210D6189D2C48AD106ADAED890BA53C172950B1DCB61CF49A03C9154837E3474311226BBD131011A2B92F8562D2) \
+Package URL: pkg:nuget/Markdig@0.37.0 
+
+#### Description: 
+
+A fast, powerful, CommonMark compliant, extensible Markdown processor for .NET with 20+ builtin extensions (pipetables, footnotes, definition lists... etc.) 
 
 
 ### Microsoft.ApplicationInsights (2.22.0) 
@@ -410,20 +830,20 @@ Package URL: pkg:nuget/Microsoft.ApplicationInsights.WindowsServer.TelemetryChan
 This nuget provides a telemetry channel to Application Insights Windows Server SDK that will preserve telemetry in offline scenarios. This is a dependent package, for the best experience please install the platform specific package. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156 
 
 
-### Microsoft.AspNetCore.Authentication.JwtBearer (8.0.3) 
+### Microsoft.AspNetCore.Authentication.JwtBearer (8.0.4) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://asp.net/) \
-Hash: [SHA-512](002A33F10F28482C45CD96529C39292B1BA19656A62C5936B5AEC23233D38289DF632E4EFF05F224FA2B04A10EC86DC1A872C714EA20EDBA99AD3D5EECD214C1) \
-Package URL: pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.3 
+Hash: [SHA-512](366764AF1CE2255AAA3181DE980AFB0006E64DEF5F88FD67C33FD0A76D2D50B461A01B84607744118406BF671FA9A23A19499CA7D8E37CA04EBCFA582CF704FF) \
+Package URL: pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.4 
 
 #### Description: 
 
 ASP.NET Core middleware that enables an application to receive an OpenID Connect bearer token.
 
-This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/88ec3bc3f37e76fbcc932a25f9f0c1c29fe2b343 
+This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/8486d31e24f30e3fa1809a95699a0adc16f448d7 
 
 
 ### Microsoft.AspNetCore.Hosting (2.1.1) 
@@ -920,6 +1340,23 @@ Package URL: pkg:nuget/Microsoft.Extensions.DependencyInjection@8.0.0
 Default implementation of dependency injection for Microsoft.Extensions.DependencyInjection. 
 
 
+### Microsoft.Extensions.DependencyInjection.Abstractions (8.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](94BC05ED29755109565D9CDFC901087EE1FA08302DDA393106BC9A0BD7384F0DC2B6C2F123C1BD53FCE06BABDBFA845DC6D22A163C4B0646C5251DCC5AEAC282) \
+Package URL: pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.0 
+
+#### Description: 
+
+Abstractions for dependency injection.
+
+Commonly Used Types:
+Microsoft.Extensions.DependencyInjection.IServiceCollection 
+
+
 ### Microsoft.Extensions.DependencyInjection.Abstractions (8.0.1) 
 
 Author: Microsoft \
@@ -935,6 +1372,22 @@ Abstractions for dependency injection.
 
 Commonly Used Types:
 Microsoft.Extensions.DependencyInjection.IServiceCollection 
+
+
+### Microsoft.Extensions.DependencyModel (8.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](4AA0B36BCA0FE3CCEA6E1FF4CFB3B6CF9287BA0E1DA6F5E6E40FF64ADB7DF2C09AAAD3FFBB1FCC3331B3C295591E3E1713B0DFBC6216AB07B78E22EDC3BA46F6) \
+Package URL: pkg:nuget/Microsoft.Extensions.DependencyModel@8.0.0 
+
+#### Description: 
+
+Provides abstractions for reading `.deps` files. When a .NET application is compiled, the SDK generates a JSON manifest file (`&lt;ApplicationName&gt;.deps.json`) that contains information about application dependencies. You can use `Microsoft.Extensions.DependencyModel` to read information from this manifest at run time. This is useful when you want to dynamically compile code (for example, using Roslyn Emit API) referencing the same dependencies as your main application.
+
+By default, the dependency manifest contains information about the application's target framework and runtime dependencies. Set the PreserveCompilationContext project property to `true` to additionally include information about reference assemblies used during compilation. 
 
 
 ### Microsoft.Extensions.Diagnostics (8.0.0) 
@@ -1120,6 +1573,23 @@ Package URL: pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@8.0.0
 #### Description: 
 
 Hosting and startup abstractions for applications. 
+
+
+### Microsoft.Extensions.Http (8.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](C90A6DA21A015CEEB4F8786106B8F1C12FED14EC2F3AC0A58460806208516BE63456E51E4CB5EE0A2F299ED21F09BD03BD60D5E4A651EADF145663C050FDEEF1) \
+Package URL: pkg:nuget/Microsoft.Extensions.Http@8.0.0 
+
+#### Description: 
+
+The HttpClient factory is a pattern for configuring and retrieving named HttpClients in a composable way. The HttpClient factory provides extensibility to plug in DelegatingHandlers that address cross-cutting concerns such as service location, load balancing, and reliability. The default HttpClient factory provides built-in diagnostics and logging and manages the lifetimes of connections in a performant way.
+
+Commonly Used Types:
+System.Net.Http.IHttpClientFactory 
 
 
 ### Microsoft.Extensions.Logging (2.1.1) 
@@ -1413,42 +1883,42 @@ Microsoft.Extensions.Primitives.StringValues
 Microsoft.Extensions.Primitives.StringSegment 
 
 
-### Microsoft.Graph (5.44.0) 
+### Microsoft.Graph (5.50.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://developer.microsoft.com/graph) \
-Hash: [SHA-512](A6E87C89A34BCB2DE84ACDE5413F9E5B8ECF335CCCEC8BEA5DAD60512520783AD849040560DB4ECE75BC9F9115D1BB41DB54BC5ADDDB9716B19CE7771D4E3618) \
-Package URL: pkg:nuget/Microsoft.Graph@5.44.0 
+Hash: [SHA-512](52619A3C393EF891AB9FAB4DE7A5619A4F894CD8B8B609970FF0D9ABBCF9B3787CB6CFCDA57D09AA2805D0337350733FF8FDA40C227FD78D8E04B0E8568959F0) \
+Package URL: pkg:nuget/Microsoft.Graph@5.50.0 
 
 #### Description: 
 
 Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience. 
 
 
-### Microsoft.Graph.Core (3.1.8) 
+### Microsoft.Graph.Core (3.1.10) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://developer.microsoft.com/graph) \
-Hash: [SHA-512](6DE2723FAAD147712B9523D74ED8B4081628C4F0AAA7DFB05220D1453039AFAF17B02A59B7E00D6998CD628BFE819899C54164E9DFB73EB489AB11BB7681CC53) \
-Package URL: pkg:nuget/Microsoft.Graph.Core@3.1.8 
+Hash: [SHA-512](8C103B5C41B490F923EFD959660E83B83C2BEDCB077EAC3CE2271A71720AFE97E165CA95E4098B5F6A5A7527972B01D59AE64C271C13C2210988CCF2C88631BB) \
+Package URL: pkg:nuget/Microsoft.Graph.Core@3.1.10 
 
 #### Description: 
 
 Microsoft Graph Core Client Library implements core functionality used by Microsoft Graph client libraries. 
 
 
-### Microsoft.Identity.Client (4.59.0) 
+### Microsoft.Identity.Client (4.60.3) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://go.microsoft.com/fwlink/?linkid=844761) \
-Hash: [SHA-512](212C8AD6D984B39A9B5D81CD7E4F21706456CD4E486B5D076343C22FCBA39687F66B3887D77BB1F50E6E41273F007D6CA9BBA71C47BF027182EE51AEA7E4A5DA) \
-Package URL: pkg:nuget/Microsoft.Identity.Client@4.59.0 
+Hash: [SHA-512](F5AF88A78A02945168172C71EE03D5FA5B710A2D3D5542C099A00C39C86726F5A43F3063FD72DB5E95C4426BF5D797B7DBD3B12C6AF1DE9B36F117EC6CDC38C7) \
+Package URL: pkg:nuget/Microsoft.Identity.Client@4.60.3 
 
 #### Description: 
 
@@ -1456,42 +1926,42 @@ This package contains the binaries of the Microsoft Authentication Library for .
       MSAL.NET makes it easy to obtain tokens from the Microsoft identity platform for developers (formally Azure AD v2.0) signing-in users with work &amp; school accounts, Microsoft personal accounts, and social identities via Azure AD B2C. These tokens provide access to Microsoft Cloud API and any other API secured by the Microsoft identity platform. This version supports adding authentication functionality to your .NET based clients - .NET, .NET Framework, .NET MAUI, Xamarin iOS, Xamarin Android and UWP 
 
 
-### Microsoft.Identity.Client.Extensions.Msal (4.56.0) 
+### Microsoft.Identity.Client.Extensions.Msal (4.60.3) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://go.microsoft.com/fwlink/?linkid=844761) \
-Hash: [SHA-512](543328E74CCB38328E5834E24FBB6B452917B6C06377C4A199CCDBE025213CAD8B91DE2B9EC621283AE7CC4D2334B96236BF683E3CD699A8DF8345AE7BA2B819) \
-Package URL: pkg:nuget/Microsoft.Identity.Client.Extensions.Msal@4.56.0 
+Hash: [SHA-512](4731F2792D5CB4C9B53ABC6F8D9D223C94F6C2C6B3F91C1072E587A4A0F18568232CA134DEBD8BCBD63F3D8DCE16A33A62ADC3ED0F8D31869853E5F4804EEA7A) \
+Package URL: pkg:nuget/Microsoft.Identity.Client.Extensions.Msal@4.60.3 
 
 #### Description: 
 
 This package contains the public client (desktop) caching to Microsoft Authentication Library for .NET (MSAL.NET) 
 
 
-### Microsoft.IdentityModel.Abstractions (7.3.1) 
+### Microsoft.IdentityModel.Abstractions (7.4.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](BD669AC367CD89BCE859A830040F8B04B2DA20495023C83661A693C3B64928CC6D6811254FF38E94120C9649E4BEA1CB979D95422CAF68757DE212615F6BEB2C) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Abstractions@7.3.1 
+Hash: [SHA-512](84437D69C56E120062C1CC7ED95EFFE4448F642A2D647386147F3477A08874AF0F0E16BF98D9ADDF8BC4B784D3CF38DE5628D5D5839D410760789BE768530333) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Abstractions@7.4.1 
 
 #### Description: 
 
 A package containing thin abstractions for Microsoft.IdentityModel. 
 
 
-### Microsoft.IdentityModel.Abstractions (7.4.0) 
+### Microsoft.IdentityModel.Abstractions (7.5.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](0B3959CF6FA4A315873C83DCEF2993E9EF1838315DD8E1EF5B548722F5D1F30E1A846C5EFA58641841DACB7C5D45625B26E841CBA66675A179874DB11A3DF205) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Abstractions@7.4.0 
+Hash: [SHA-512](327104ECBA7BF3E0B9070189EFB9C62A561C955B10B6C2C8806B61AC820EBDABC0C9A093F705D7667BD798D543EF71BA7356952B09D7CB0616040F3223597B43) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Abstractions@7.5.1 
 
 #### Description: 
 
@@ -1512,42 +1982,42 @@ Package URL: pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.1.2
 Includes types that provide support for creating, serializing and validating JSON Web Tokens. This is a newer, faster version of System.IdentityModel.Tokens.Jwt that has additional functionality. 
 
 
-### Microsoft.IdentityModel.JsonWebTokens (7.3.1) 
+### Microsoft.IdentityModel.JsonWebTokens (7.4.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](63D836FC244E5F2737DDFDAF24D680DEBF73CE7217CC12FD82DECF25844E2A625C6BE8DA7A32517FF5515240FCA5EA4DAB00E2F39B9AA148FC6D64B9DA8473A9) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.3.1 
+Hash: [SHA-512](D4DACD1DB280116DDDA5F546E17817D7F461A36C757570FA5CDE27DB39A309D04DD865310F07F3DD90D8906AA759F2AB7DE8E112A5C2FE7EF96A1DFA6C1B09A5) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.4.1 
 
 #### Description: 
 
 Includes types that provide support for creating, serializing and validating JSON Web Tokens. This is a newer, faster version of System.IdentityModel.Tokens.Jwt that has additional functionality. 
 
 
-### Microsoft.IdentityModel.Logging (7.3.1) 
+### Microsoft.IdentityModel.Logging (7.4.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](4A36BA3F6D7F9E4B05AE7E1D63D93637B135B20B9FE51FD3F3BAF766B2BCF06738DED2F87C300B8004A1AA13375A849AC24DDD129796BE004E4F633E75582D6D) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Logging@7.3.1 
+Hash: [SHA-512](504EABF67E14494CD18C5C6B13CE9C7C957762CF1C6D3DC3A478DB0CEBB496FBEC687BCC57225D15D26918E0A8EB4DF991892C8C2744C0366E9373254E41E0F1) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Logging@7.4.1 
 
 #### Description: 
 
 Includes Event Source based logging support. 
 
 
-### Microsoft.IdentityModel.Logging (7.4.0) 
+### Microsoft.IdentityModel.Logging (7.5.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](1B847761B7B7C6167F2B7BCBD0AE63B387B95280C805FEDF1B90FCC3D1037886A8EF124E9E256A3D3CB030BDFAD8DC38267B033956D93643EACDC08D2742298A) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Logging@7.4.0 
+Hash: [SHA-512](36DEBC343887A64C0DA8C5432429B4BCEE6AA64ECE002375771335E8835F1E3C15244136FEBB11422B06F448CFA341E1D1762D721FFE75872EA98D2E122C0E5D) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Logging@7.5.1 
 
 #### Description: 
 
@@ -1568,14 +2038,14 @@ Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols@7.1.2
 Provides base protocol support for OpenIdConnect and WsFederation. 
 
 
-### Microsoft.IdentityModel.Protocols (7.3.1) 
+### Microsoft.IdentityModel.Protocols (7.4.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](93C47F116FEF8C40BAD013D36F394A78303470C390B5262EF9E5BA6005E7D0EDD73B921D8731B659A1423282D2F465405BFC99F57CB83FD58A41C7ED8A55D798) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols@7.3.1 
+Hash: [SHA-512](19EF6A420095AC01F7A16AB59BB7002CCFCB09665D1768A8202E1323FAED9A948DBC6D2A6B0C1BF71CE5802F5906FD5C2B2C1CB1B6A438767815743AEFFAB59A) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols@7.4.1 
 
 #### Description: 
 
@@ -1596,14 +2066,14 @@ Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.1.2
 Includes types that provide support for OpenIdConnect protocol. 
 
 
-### Microsoft.IdentityModel.Protocols.OpenIdConnect (7.3.1) 
+### Microsoft.IdentityModel.Protocols.OpenIdConnect (7.4.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](D8BF57CC0507769B8759FABF916C598F5065FAA7089F678E90C863A8A54DBDA1861DAA1E0B247EC783DD986389965145AF3F8C8D84749EC0EFB81D69D28A9810) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.3.1 
+Hash: [SHA-512](0665E74DAE97A3FE17DCAE5E7887D43650D4CF043E1EE43393799FC89214F83DFF9F8EB768FF82151A173BC31F6626C0D8AA74E275776FF8130286EA45DED266) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.4.1 
 
 #### Description: 
 
@@ -1624,112 +2094,112 @@ Package URL: pkg:nuget/Microsoft.IdentityModel.Tokens@7.1.2
 Includes types that provide support for SecurityTokens, Cryptographic operations: Signing, Verifying Signatures, Encryption. 
 
 
-### Microsoft.IdentityModel.Tokens (7.3.1) 
+### Microsoft.IdentityModel.Tokens (7.4.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](B607588A670EA8D94585FA1345C9295F6E7177C4E4F53CE18A4177C2ADDECDD012C1368C34E9BF557ED1C017AE5C3A2A7EEFB5EA501467B9805DD21D76926C3B) \
-Package URL: pkg:nuget/Microsoft.IdentityModel.Tokens@7.3.1 
+Hash: [SHA-512](3ED34E127EDA55C2CDB33DB5CFE1B91452D0C7B511B164C91A977401BB4C808718EC0E9CB1593596A446CFCB3F813532D868C1DE2ECF305106D73DFC3DA622F5) \
+Package URL: pkg:nuget/Microsoft.IdentityModel.Tokens@7.4.1 
 
 #### Description: 
 
 Includes types that provide support for SecurityTokens, Cryptographic operations: Signing, Verifying Signatures, Encryption. 
 
 
-### Microsoft.Kiota.Abstractions (1.7.9) 
+### Microsoft.Kiota.Abstractions (1.8.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://aka.ms/kiota/docs) \
-Hash: [SHA-512](3A14908AA9C10FE66208A1D4CF0B954F5B793F7432CD03EE7FED88679784F33980720CF59BFF0DD0A19BA75C6F61689CAD06DA7F508F39203E83704AE8C346B7) \
-Package URL: pkg:nuget/Microsoft.Kiota.Abstractions@1.7.9 
+Hash: [SHA-512](1D3AE4868309C6AD144FDBBF79A27C1B2C564F603AE2B737D5E7B48CDF7B24A0A46C196D2909D2DCE68434D737735CC90630D8BB1F1473D9773E37F47218977C) \
+Package URL: pkg:nuget/Microsoft.Kiota.Abstractions@1.8.0 
 
 #### Description: 
 
 Abstractions library for the Kiota generated SDKs in dotnet. 
 
 
-### Microsoft.Kiota.Authentication.Azure (1.1.3) 
+### Microsoft.Kiota.Authentication.Azure (1.1.4) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://aka.ms/kiota/docs) \
-Hash: [SHA-512](5720529DA69A64A98CAE2D437E835454663B6F7C5B30C1E3786F12DBA14511ABDE1D28758597946B7C88D462BBDA7F3C0DD8310147A21B3C67118F52886B8F70) \
-Package URL: pkg:nuget/Microsoft.Kiota.Authentication.Azure@1.1.3 
+Hash: [SHA-512](5E8BD9CA9C104A94F3497D0D1D3CF418E76C33597009412702A9DB03BE6F8B4BF6152D6DCE7A3784ACADDA930DACC4EACEA542896D6D610C26BBEA28D3323F88) \
+Package URL: pkg:nuget/Microsoft.Kiota.Authentication.Azure@1.1.4 
 
 #### Description: 
 
 Kiota authentication provider implementation with Azure Identity. 
 
 
-### Microsoft.Kiota.Http.HttpClientLibrary (1.3.6) 
+### Microsoft.Kiota.Http.HttpClientLibrary (1.3.8) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://aka.ms/kiota/docs) \
-Hash: [SHA-512](9015133AB1197F84422CFE60898916045BDFEE0CD4C292E5E0A219592E6C65777EF52C2E5002D9F46E2CDD29CE1644F8176E9E5DC8829A5B36CEBAC7BD5FC2E1) \
-Package URL: pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.3.6 
+Hash: [SHA-512](AE47CCAB6BC6777B1D401147305B8AA1B308013555DD958B232A290F8324BF98A9A0109146CA62ED6070E186117032AFBF30E82C24CA2A3E821D3825929B10A5) \
+Package URL: pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.3.8 
 
 #### Description: 
 
 Kiota Http provider implementation for dotnet with HttpClient. 
 
 
-### Microsoft.Kiota.Serialization.Form (1.1.3) 
+### Microsoft.Kiota.Serialization.Form (1.1.5) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://aka.ms/kiota/docs) \
-Hash: [SHA-512](30D30B35290E3CF4736577B94A4C66596E4446356A3EE981706169E79631083B6F3765D07200118807678AFC0A59E2F61B6C3C243D3706FE18ED231510E14FBC) \
-Package URL: pkg:nuget/Microsoft.Kiota.Serialization.Form@1.1.3 
+Hash: [SHA-512](040D8DF1CDE253E78072E7AF74FFE66AC4A7506F4197B118F4BE25BB5B7949B7F68C94D926D1BFDFD02E19C7CDDA83A10A9DA4A3971C9ADA765809A14F67BBBB) \
+Package URL: pkg:nuget/Microsoft.Kiota.Serialization.Form@1.1.5 
 
 #### Description: 
 
 Kiota URI form encoded serialization provider. 
 
 
-### Microsoft.Kiota.Serialization.Json (1.1.5) 
+### Microsoft.Kiota.Serialization.Json (1.2.0) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://aka.ms/kiota/docs) \
-Hash: [SHA-512](8CAED1E53BD6D14A721284E69715C981E7F21B69EB33B23600FED26F6CAF473911E779FC95D26B8175B11B20381E306757EF17BA596CD83E07336679CE06AFAF) \
-Package URL: pkg:nuget/Microsoft.Kiota.Serialization.Json@1.1.5 
+Hash: [SHA-512](87875ACED0726E7CF928F5AB1D1FD1AE04C9A1B4CDE2A595320B7E5D2472CB21D8F552809A7FE217375C9E60CC68C2296211D9865CD598D791F84B343440BF93) \
+Package URL: pkg:nuget/Microsoft.Kiota.Serialization.Json@1.2.0 
 
 #### Description: 
 
 Kiota JSON serialization provider implementation with System.Text.Json. 
 
 
-### Microsoft.Kiota.Serialization.Multipart (1.1.2) 
+### Microsoft.Kiota.Serialization.Multipart (1.1.3) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://aka.ms/kiota/docs) \
-Hash: [SHA-512](0FD6A0214BFC1559799B883F328733CD9BF694A04D02241E8378E73FABF11804774B48FF597AD975DB9C780F399FF3125E52C5C0E76C88B11434678249B96922) \
-Package URL: pkg:nuget/Microsoft.Kiota.Serialization.Multipart@1.1.2 
+Hash: [SHA-512](5EEFE494C815760885C550F990D5BCE5718DAB7E3636A7360DF42D51FC23B8B17BE471F442283E9FBBB97E45E92AE542AC780373B3E696FE5FF72B2D66BE79ED) \
+Package URL: pkg:nuget/Microsoft.Kiota.Serialization.Multipart@1.1.3 
 
 #### Description: 
 
 Kiota Multipart serialization provider implementation. 
 
 
-### Microsoft.Kiota.Serialization.Text (1.1.2) 
+### Microsoft.Kiota.Serialization.Text (1.1.4) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://aka.ms/kiota/docs) \
-Hash: [SHA-512](5AB01F9694BCDFCBBA760FF18A9C1A81B3E67C4A6B96EADC28A26B2ACDB580DB7B3265D63430DF87AE66B21BFD6F39800EF6CC5995BDA222FFB4A8DAF91E4829) \
-Package URL: pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.2 
+Hash: [SHA-512](1CF6BC0EA38E78FD87FA4457D4E6084D675E1220401270CBEAD1C411BA0AE5EE8F5C3C314400BF5BFBCEC9D84228D9DD0AB355801A6BECF67283F1FA17BB7996) \
+Package URL: pkg:nuget/Microsoft.Kiota.Serialization.Text@1.1.4 
 
 #### Description: 
 
@@ -1748,6 +2218,21 @@ Package URL: pkg:nuget/Microsoft.Net.Http.Headers@2.1.1
 #### Description: 
 
 HTTP header parser implementations. 
+
+
+### Microsoft.NETCore.Platforms (1.1.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](9835090F578B5C8CE6527582CD69663506460E9FDC5464FC2B287331C24D9369E57DD1543A865A8BD89D4FCFC569C26BF0DBFCCE102675FDFD1479B9A9652819) \
+Package URL: pkg:nuget/Microsoft.NETCore.Platforms@1.1.1 
+
+#### Description: 
+
+Provides runtime information required to resolve target framework, platform, and runtime specific implementations of .NETCore packages. 
+When using NuGet 3.x this package requires at least version 3.4. 
 
 
 ### Microsoft.NETCore.Platforms (2.1.2) 
@@ -1804,6 +2289,21 @@ License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
 Reference: [website](https://dot.net/) \
 Hash: [SHA-512](1EF033A68688AAB9997EC1C0378ACB1638B4AFB618E533FCAF749D93389737BA94F4A0A94481BECDF701C7E988AE2FE390136A8EAE225887EE60DB45063490FE) \
 Package URL: pkg:nuget/Microsoft.NETCore.Targets@1.1.0 
+
+#### Description: 
+
+Provides supporting infrastructure for portable projects: support identifiers that define framework and runtime for support targets and packages that reference the minimum supported package versions when targeting these. 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### Microsoft.NETCore.Targets (1.1.3) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation.  All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](A71C2AF20D8F61188417929756399914C353AAC8361ABD69BAFFE9475B2A01DB802870066DA0AE27AFB2737A4026C782950503DBD4B651BAE6EE7FD90FBF1D52) \
+Package URL: pkg:nuget/Microsoft.NETCore.Targets@1.1.3 
 
 #### Description: 
 
@@ -1890,56 +2390,73 @@ Microsoft.Win32.SystemEvents
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
-### MimeKit (4.4.0) 
+### Microsoft.Win32.SystemEvents (8.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](25016C508653FBF463C52D8FC3D2773B7C211C2402C4EA7B4AA987FB29C851D3F80C5E7ABBCACE2D4D5E061AE290524E8029AFBC49A37D7E5186FE06AA4609B2) \
+Package URL: pkg:nuget/Microsoft.Win32.SystemEvents@8.0.0 
+
+#### Description: 
+
+Provides access to Windows system event notifications.
+
+Commonly Used Types:
+Microsoft.Win32.SystemEvents 
+
+
+### MimeKit (4.5.0) 
 
 Author: Jeffrey Stedfast \
 Copyright: .NET Foundation and Contributors \
 License: MIT \
 Reference: [website](https://www.mimekit.net/) \
-Hash: [SHA-512](E11DB116C2FBFC303F206A18FE59A9C4915532088369E576638EE442172E996AD2DAB4D145D492EF8C1B44B599425FC79330217ADB85EC671B1D60B0FECEA768) \
-Package URL: pkg:nuget/MimeKit@4.4.0 
+Hash: [SHA-512](FC31BC243C14E0FE586BFD9DE0DF6BC6AC337D26112023A6EC8D3890D81DDB6CBA555C7CF9F0392201C6CC43014BB8795321A7F85CC205CDEBD6AD290038557B) \
+Package URL: pkg:nuget/MimeKit@4.5.0 
 
 #### Description: 
 
 An Open Source library for creating and parsing MIME, S/MIME and PGP messages on desktop and mobile platforms. 
 
 
-### MongoDB.Bson (2.24.0) 
+### MongoDB.Bson (2.25.0) 
 
 Author: MongoDB Inc. \
 Copyright: Copyright © 2010-present MongoDB Inc. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://www.mongodb.com/docs/drivers/csharp/) \
-Hash: [SHA-512](C9E2F4098F5FBF2CC610E8A6FD090E49C3100DB512442D899FD553C93B4F1A0C06AE921009A45704B831F1F7AA5D45388589368F6160EC4CAC85D71A7AFBBB3C) \
-Package URL: pkg:nuget/MongoDB.Bson@2.24.0 
+Hash: [SHA-512](72598D65486F8B6E01AA251029A9644947BE18B898A4ACE1E3367E3A97245D36C1B637293EEFB61CCCDEF695D48F3E559A48E743D7F494E099C00B91D7BBA468) \
+Package URL: pkg:nuget/MongoDB.Bson@2.25.0 
 
 #### Description: 
 
 MongoDB's Official Bson Library. 
 
 
-### MongoDB.Driver (2.24.0) 
+### MongoDB.Driver (2.25.0) 
 
 Author: MongoDB Inc. \
 Copyright: Copyright © 2010-present MongoDB Inc. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://www.mongodb.com/docs/drivers/csharp/) \
-Hash: [SHA-512](C3C0CB95720D7F7DD5C4718B8787E6C8FBA88F2E68B3663CD000242D8347254FFDCEF97D589A0F7181EC08F029E8B8D9023E5EC9315EB36E0E07578897F88576) \
-Package URL: pkg:nuget/MongoDB.Driver@2.24.0 
+Hash: [SHA-512](389EDC59C3138E9B91433B23F7C613D7018AE1C1E0AC33130443058DEAEF3E164BA94CBBDBB4E7995165CF36D687CED187DB43F501CA5DD3337EA650455FBB7C) \
+Package URL: pkg:nuget/MongoDB.Driver@2.25.0 
 
 #### Description: 
 
 Official .NET driver for MongoDB. 
 
 
-### MongoDB.Driver.Core (2.24.0) 
+### MongoDB.Driver.Core (2.25.0) 
 
 Author: MongoDB Inc. \
 Copyright: Copyright © 2010-present MongoDB Inc. \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [website](https://www.mongodb.com/docs/drivers/csharp/) \
-Hash: [SHA-512](98479DB204CC88A903BEA1785D5D46C980577B6193454F20F7380CE98D58545D9228DD0CC93C9D37B4F9F6419FE42D38B32398FE9A77198A213DA739E0FDACEE) \
-Package URL: pkg:nuget/MongoDB.Driver.Core@2.24.0 
+Hash: [SHA-512](BE16867FC9E167F540371DFF4F3255C025DF1F824DFEEC41136F5677A55FF5655B9718C7428432BA11388E5ACA6B82EF4B261943704D38E994CE245FAE0FCC72) \
+Package URL: pkg:nuget/MongoDB.Driver.Core@2.25.0 
 
 #### Description: 
 
@@ -1960,6 +2477,34 @@ Package URL: pkg:nuget/MongoDB.Libmongocrypt@1.8.2
 Libmongocrypt wrapper for the .NET driver. 
 
 
+### Mono.Posix (7.1.0-final.1.21458.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/mono/mono.posix) \
+Hash: [SHA-512](5765DBD7B775C78D31DF319D8DD94136083781855954B973409F2E778D3C5FB350EAA3AEE1CF63C6E7071518468886A3BC3A6DC2B86566F375429F6A6AAF1699) \
+Package URL: pkg:nuget/Mono.Posix@7.1.0-final.1.21458.1 
+
+#### Description: 
+
+Provides functionality for managed code to access Posix/Unix features not accessible via BCL 
+
+
+### Mono.Unix (7.1.0-final.1.21458.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/mono/mono.posix) \
+Hash: [SHA-512](648D476E4AA9D46830E3A83CBADB5016FD3A9006C6FD313CD766E26BCC7664DF4A9D6F73C8DC2C60B9C46A308AED378D885ADA83838E24532CCC9355B06FD755) \
+Package URL: pkg:nuget/Mono.Unix@7.1.0-final.1.21458.1 
+
+#### Description: 
+
+Provides functionality for managed code to access Posix/Unix features not accessible via BCL 
+
+
 ### Moq (4.20.70) 
 
 Author: Daniel Cazzulino, kzu \
@@ -1974,14 +2519,14 @@ Package URL: pkg:nuget/Moq@4.20.70
 Moq is the most popular and friendly mocking framework for .NET. 
 
 
-### MSTest.TestFramework (3.2.2) 
+### MSTest.TestFramework (3.3.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/microsoft/testfx) \
-Hash: [SHA-512](CACD1F844B75541A4E5CB2DF2C222ECF6B8EACFBBF2D438F6B5EA6BCE53BA5180730C8D3314A1405C130EC0B0779D114E67C754EABA9ACD075DC911D907FF96B) \
-Package URL: pkg:nuget/MSTest.TestFramework@3.2.2 
+Hash: [SHA-512](726FD6D6ED76F4060B77C0FDC4A256E50E8AE834E58F492C8AC9A3E6290B4E2E35CD57B8BD629C61A5AA793E24A38B8716B4BD00B3FF7FDBB4A6CDA0CA0E1F61) \
+Package URL: pkg:nuget/MSTest.TestFramework@3.3.1 
 
 #### Description: 
 
@@ -1995,22 +2540,6 @@ MSTest is Microsoft supported Test Framework.
       - .NET 6.0
       - .NET 6.0 Windows.18362+
       - UWP 10.0.16299 
-
-
-### NETStandard.Library (2.0.3) 
-
-Author: Microsoft \
-Copyright: .NET Foundation and Contributors \
-License: [Unknown - See URL](https://github.com/dotnet/standard/blob/master/LICENSE.TXT) \
-Reference: [website](https://dot.net/) \
-Hash: [SHA-512](E78F0CEA69C14895B1B089644077DBCE8631A626055D96522F4D29E061D8BFC3E48AA1419E74FAF265B998612C03F721F5F0CEF4690F824150A5689764DEE601) \
-Package URL: pkg:nuget/NETStandard.Library@2.0.3 
-
-#### Description: 
-
-A set of standard .NET APIs that are prescribed to be used and supported together. 
-18a36291e48808fa7ef2d00a764ceb1ec95645a5 
-When using NuGet 3.x this package requires at least version 3.4. 
 
 
 ### Newtonsoft.Json (11.0.1) 
@@ -2055,6 +2584,64 @@ Package URL: pkg:nuget/Newtonsoft.Json@12.0.2
 Json.NET is a popular high-performance JSON framework for .NET 
 
 
+### OllamaSharp (1.1.1) 
+
+Author: OllamaSharp \
+Copyright: Andreas Wäscher \
+License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
+Reference: [website](https://github.com/awaescher/OllamaSharp) \
+Hash: [SHA-512](EC47C66F6BC37EE97389BC4D231331733C744AC7F5C2ED8B2F43D9C99714E6B1AF5CF4B43C6D5F63BF57433C6B4220903D96926006CAD215F591BA3D796BB6E2) \
+Package URL: pkg:nuget/OllamaSharp@1.1.1 
+
+#### Description: 
+
+This project adds bindings to the Ollama API to include offline LLMs into your .NET apps 
+
+
+### OpenSearch.Client (1.7.1) 
+
+Author: OpenSearch and contributors \
+Copyright: OpenSearch BV \
+License: Apache-2.0 \
+Reference: [website](https://github.com/opensearch-project/opensearch-net) \
+Hash: [SHA-512](62FE2D9AF221AB59D0B867295ECB5325CDBF87C34268C9201EB87A7EFDC8D054B06EA707A202623EF4DA307B3ECF6DAC744FD25165943DFBFC5B84BEC76F6CEB) \
+Package URL: pkg:nuget/OpenSearch.Client@1.7.1 
+
+#### Description: 
+
+Strongly typed interface to OpenSearch. Fluent and classic object initializer mappings of requests and 
+      responses. Uses and exposes OpenSearch.Net. 
+
+
+### OpenSearch.Net (1.7.1) 
+
+Author: OpenSearch and contributors \
+Copyright: OpenSearch BV \
+License: Apache-2.0 \
+Reference: [website](https://github.com/opensearch-project/opensearch-net) \
+Hash: [SHA-512](F28FE104219BE2DF7C38814A43D8EF3BCC57CED1B5126A7C63158402BDBF8F1DEFC619D626BFE91951DE51E9C222679B4D1D513761163CB7263612CD0E70B9E4) \
+Package URL: pkg:nuget/OpenSearch.Net@1.7.1 
+
+#### Description: 
+
+Exposes all the OpenSearch API endpoints but leaves you in control of building the request and response bodies.
+      Comes with built in cluster failover/connection pooling support. 
+
+
+### Qdrant.Client (1.9.0) 
+
+Author: Qdrant and Contributors \
+Copyright: Qdrant \
+License: Apache-2.0 \
+Reference: [website](https://github.com/qdrant/qdrant-dotnet) \
+Hash: [SHA-512](397AF3B703B05774E0BB056F3809B7F4FC1489244B945BCBE1F7F5C86FC5E5615149CDFE302457C4C1F99C71FABFD6A10C3E8E72AD429FC605E14F32670DF559) \
+Package URL: pkg:nuget/Qdrant.Client@1.9.0 
+
+#### Description: 
+
+.NET client for Qdrant vector database 
+
+
 ### RabbitMQ.Client (6.8.1) 
 
 Author: VMware \
@@ -2068,6 +2655,19 @@ Package URL: pkg:nuget/RabbitMQ.Client@6.8.1
 #### Description: 
 
 The RabbitMQ .NET client is the official client library for C# (and, implicitly, other .NET languages) 
+
+
+### ReverseMarkdown (4.3.0) 
+
+Author: Babu Annamalai \
+License: MIT \
+Reference: [website](https://github.com/mysticmind/reversemarkdown-net) \
+Hash: [SHA-512](44B5CC89782C06E0B3375283EF3CEF5BF617F30617A6D2352F032548CDCA9022D83CFF278EBCA3353C3407DD7651C7E8593F5372212E16AA8C821B0B6B0A812D) \
+Package URL: pkg:nuget/ReverseMarkdown@4.3.0 
+
+#### Description: 
+
+ReverseMarkdown is a Html to Markdown converter library in c# 
 
 
 ### runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.2) 
@@ -2327,13 +2927,13 @@ A near-C++ performance implementation of the Snappy compression algorithm for .N
       help of System.Runtime.Instrinsics. 
 
 
-### Std.UriTemplate (0.0.50) 
+### Std.UriTemplate (0.0.55) 
 
 Author: Std.UriTemplate \
 License: [Unknown - See URL](https://aka.ms/deprecateLicenseUrl) \
 Reference: [vcs](https://github.com/std-uritemplate/std-uritemplate) \
-Hash: [SHA-512](BB0E7B11B6305EA2FE76B71ACCFCA7C2311AFD3D0203E8CE7538EFF1478BF4C7B62BCE6192A89C9E639037A80C5788D2D0C7F905ECDF0014C004319BCB9BC1DA) \
-Package URL: pkg:nuget/Std.UriTemplate@0.0.50 
+Hash: [SHA-512](9AB8756E0AFDED6BBD2B02634B07E39BB48444A2974D187D1C4D5FB442949BC1C5FFBF9342952AC012176E0998167E2CE08F23C3A1D6001B783D2C5EFE4A2748) \
+Package URL: pkg:nuget/Std.UriTemplate@0.0.55 
 
 #### Description: 
 
@@ -2446,6 +3046,20 @@ System.Buffers.ArrayPool&lt;T&gt;
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.ClientModel (1.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/Azure/azure-sdk-for-net/blob/System.ClientModel_1.0.0/sdk/core/System.ClientModel/README.md) \
+Hash: [SHA-512](CE630494BD68FB28DD84727FEBB5093CA1F8E7E1FD40416A4D93BA21C3181F6C93C5DE3EB2912F9A65177AC2E2237E45A1A0C6699B033E94BA423FD4A0E3CF6B) \
+Package URL: pkg:nuget/System.ClientModel@1.0.0 
+
+#### Description: 
+
+Contains building blocks for clients that call cloud services. 
+
+
 ### System.Collections (4.3.0) 
 
 Author: Microsoft \
@@ -2543,6 +3157,29 @@ System.Configuration.Configuration
 System.Configuration.ConfigurationManager
  
 When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Data.Odbc (8.0.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](DE86A3C52528FBDA029F6347DA68C058443BF7B750760834C4DA62160CCBA7EE90CE128B272858A7C67C9DF9BA9FCA1DDBE1EB48693DB0C306DAFA142E9FCD39) \
+Package URL: pkg:nuget/System.Data.Odbc@8.0.0 
+
+#### Description: 
+
+Provides a collection of classes used to access an ODBC data source in the managed space
+
+Commonly Used Types:
+System.Data.Odbc.OdbcCommand
+System.Data.Odbc.OdbcConnection
+System.Data.Odbc.OdbcDataReader
+System.Data.Odbc.OdbcDataAdapter
+System.Data.Odbc.OdbcParameter
+System.Data.Odbc.OdbcParameterCollection
+System.Data.Odbc.OdbcTransaction 
 
 
 ### System.Diagnostics.Debug (4.3.0) 
@@ -2773,6 +3410,30 @@ System.Drawing.Icon
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.Drawing.Common (8.0.3) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/winforms) \
+Hash: [SHA-512](A73C49C31EF4C80A9E2817CD1771D76F5DBFC970A39DB272CC8A5E90B7D547EE500E960B259DD15ECAA4F039D1B68C9323372519AAED2C06725179E4B3A2829C) \
+Package URL: pkg:nuget/System.Drawing.Common@8.0.3 
+
+#### Description: 
+
+Provides access to GDI+ graphics functionality.
+
+Commonly Used Types:
+System.Drawing.Bitmap
+System.Drawing.BitmapData
+System.Drawing.Brush
+System.Drawing.Font
+System.Drawing.Graphics
+System.Drawing.Icon
+
+Since .NET 7, non-Windows platforms are not supported, even with the runtime configuration switch. See https://aka.ms/systemdrawingnonwindows for more information. 
+
+
 ### System.Formats.Asn1 (8.0.0) 
 
 Author: Microsoft \
@@ -2881,14 +3542,14 @@ Package URL: pkg:nuget/System.IdentityModel.Tokens.Jwt@7.1.2
 Includes types that provide support for creating, serializing and validating JSON Web Tokens. As of IdentityModel 7x, this is a legacy tool that should be replaced with Microsoft.IdentityModel.JsonWebTokens. 
 
 
-### System.IdentityModel.Tokens.Jwt (7.3.1) 
+### System.IdentityModel.Tokens.Jwt (7.4.1) 
 
 Author: Microsoft \
 Copyright: © Microsoft Corporation. All rights reserved. \
 License: MIT \
 Reference: [website](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) \
-Hash: [SHA-512](DD22B89DE3DEC3967A4D7587DFF9008FA5EFECBE0ED18057EA77D84C42FE27C109BE4FA36D6688A42F5B1B8768546F16D10FBA3A658EF72ED1FD8B0CD774E3A8) \
-Package URL: pkg:nuget/System.IdentityModel.Tokens.Jwt@7.3.1 
+Hash: [SHA-512](F0033C00445F1CB7F0F7C4CCD8C7940BC605D59EE365D95F8FB81DD700CB4BD4A7684A4B303DA9F2EBA0533951A6238D55A20B54E222B0F2D51F7E3F70AE6878) \
+Package URL: pkg:nuget/System.IdentityModel.Tokens.Jwt@7.4.1 
 
 #### Description: 
 
@@ -2955,31 +3616,6 @@ License: MIT \
 Reference: [website](https://github.com/dotnet/corefx) \
 Hash: [SHA-512](7FBB40E2C6762F099D63EADF8695513F3C8DB5ABAA027A14F93BE90A3B55DB9516187450F5AA5578586661EA53835107F60972A23868FEAB2BC5FBE7265BD307) \
 Package URL: pkg:nuget/System.IO.FileSystem.AccessControl@4.7.0 
-
-#### Description: 
-
-Provides types for managing access and audit control lists for files and directories.
-
-Commonly Used Types:
-System.Security.AccessControl.DirectoryObjectSecurity
-System.Security.AccessControl.DirectorySecurity
-System.Security.AccessControl.FileSecurity
-System.Security.AccessControl.FileSystemAccessRule
-System.Security.AccessControl.FileSystemAuditRule
-System.Security.AccessControl.FileSystemRights
-System.Security.AccessControl.FileSystemSecurity
- 
-When using NuGet 3.x this package requires at least version 3.4. 
-
-
-### System.IO.FileSystem.AccessControl (5.0.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation. All rights reserved. \
-License: MIT \
-Reference: [website](https://github.com/dotnet/runtime) \
-Hash: [SHA-512](45A6B5446FAA06612E90974BD7D542D9A1480C0583C0237E8732FFBCEFF1B70A6E12C23792145E7613BD00041BDA26745B83D73008EE71A46DA5C7A40A4568D3) \
-Package URL: pkg:nuget/System.IO.FileSystem.AccessControl@5.0.0 
 
 #### Description: 
 
@@ -3347,6 +3983,26 @@ System.Reflection.MethodImplAttributes
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
+### System.Reflection.TypeExtensions (4.7.0) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: MIT \
+Reference: [website](https://github.com/dotnet/corefx) \
+Hash: [SHA-512](43F7DCCC73B7E7B7EA4E7B503D9052C21B2D1C271916F82A3B006790EFA584CC92DA96010ED5F27D141B94ADD261737C1971CE109CE334CE53AF5DB3A7BDDCE8) \
+Package URL: pkg:nuget/System.Reflection.TypeExtensions@4.7.0 
+
+#### Description: 
+
+Provides extensions methods for System.Type that are designed to be source-compatible with older framework reflection-based APIs.
+
+Commonly Used Types:
+System.Reflection.TypeExtensions
+System.Reflection.BindingFlags
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
 ### System.Resources.ResourceManager (4.3.0) 
 
 Author: Microsoft \
@@ -3377,6 +4033,44 @@ License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
 Reference: [website](https://dot.net/) \
 Hash: [SHA-512](92AB2249F08073CFAFDC4CFBD7DB36D651AD871B8D8BA961006982187DE374BF4A30AF93F15F73B05AF343F7A70CBD484B04D646570587636AE72171EB0714FB) \
 Package URL: pkg:nuget/System.Runtime@4.3.0 
+
+#### Description: 
+
+Provides the fundamental primitives, classes and base classes that define commonly-used value and reference data types, events and event handlers, interfaces, attributes, and exceptions. This packages represents the core package, and provides the minimal set of types required to build a managed application.
+
+Commonly Used Types:
+System.Object
+System.Exception
+System.Int16
+System.Int32
+System.Int64
+System.Enum
+System.String
+System.Char
+System.Boolean
+System.SByte
+System.Byte
+System.DateTime
+System.DateTimeOffset
+System.Single
+System.Double
+System.UInt16
+System.UInt32
+System.UInt64
+System.IDisposable
+System.Uri
+ 
+When using NuGet 3.x this package requires at least version 3.4. 
+
+
+### System.Runtime (4.3.1) 
+
+Author: Microsoft \
+Copyright: © Microsoft Corporation. All rights reserved. \
+License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
+Reference: [website](https://dot.net/) \
+Hash: [SHA-512](025EBD98F0DFCDD0FE6CA18AD8701F07E94D14E1C5AA792ACCD9D42669AF51ED7FA843CAF4CEC48934F8CEEC9C2833F2EDEBF5D71CFC5D580958A3F4866ECD20) \
+Package URL: pkg:nuget/System.Runtime@4.3.1 
 
 #### Description: 
 
@@ -3602,29 +4296,6 @@ System.Security.AccessControl.ObjectSecurity
 When using NuGet 3.x this package requires at least version 3.4. 
 
 
-### System.Security.Claims (4.3.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation.  All rights reserved. \
-License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
-Reference: [website](https://dot.net/) \
-Hash: [SHA-512](AB72B90801F6C051A2B31645448EEBFCA74642B3CFA1D51F80E21A0D0D7AD44D3366DEA139347E2852781B7F3BAE820DF16C3EB188A2C96244DF05394ED72C86) \
-Package URL: pkg:nuget/System.Security.Claims@4.3.0 
-
-#### Description: 
-
-Provides classes that implement claims-based identity in the .NET Framework, including classes that represent claims, claims-based identities, and claims-based principals.
-
-Commonly Used Types:
-System.Security.Principal.GenericIdentity
-System.Security.Claims.Claim
-System.Security.Claims.ClaimsIdentity
-System.Security.Claims.ClaimsPrincipal
-System.Security.Principal.GenericPrincipal
- 
-When using NuGet 3.x this package requires at least version 3.4. 
-
-
 ### System.Security.Cryptography.Algorithms (4.3.0) 
 
 Author: Microsoft \
@@ -3843,27 +4514,6 @@ Package URL: pkg:nuget/System.Security.Permissions@4.7.0
 #### Description: 
 
 Provides types supporting Code Access Security (CAS). 
-When using NuGet 3.x this package requires at least version 3.4. 
-
-
-### System.Security.Principal (4.3.0) 
-
-Author: Microsoft \
-Copyright: © Microsoft Corporation.  All rights reserved. \
-License: [Unknown - See URL](http://go.microsoft.com/fwlink/?LinkId=329770) \
-Reference: [website](https://dot.net/) \
-Hash: [SHA-512](DB8A1ED0D189637D9EF83147550CE5DA890CF6EC189A7D006BA9DE86AB55679E7F025E18BDAED2DC137DDF82A7E6A0131FB4D54D4264831862B1D7C5EE62837E) \
-Package URL: pkg:nuget/System.Security.Principal@4.3.0 
-
-#### Description: 
-
-Provides the base interfaces for principal and identity objects that represents the security context under which code is running.
-
-Commonly Used Types:
-System.Security.Principal.IPrincipal
-System.Security.Principal.IIdentity
-System.Security.Principal.TokenImpersonationLevel
- 
 When using NuGet 3.x this package requires at least version 3.4. 
 
 

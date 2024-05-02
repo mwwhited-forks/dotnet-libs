@@ -1,4 +1,9 @@
-﻿namespace Eliassen.System.Text;
+﻿using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Eliassen.System.Text;
 
 /// <summary>
 /// Interface to identify shared serialization process.  

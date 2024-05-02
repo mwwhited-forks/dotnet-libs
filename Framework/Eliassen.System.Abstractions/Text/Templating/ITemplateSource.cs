@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.Text.Templating;
+﻿using System.Collections.Generic;
+
+namespace Eliassen.System.Text.Templating;
 
 /// <summary>
 /// Represents a source of templates that can be used by a template engine.

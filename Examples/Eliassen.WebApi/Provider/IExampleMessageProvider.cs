@@ -1,4 +1,6 @@
-﻿namespace Eliassen.WebApi.Provider;
+﻿using System.Threading.Tasks;
+
+namespace Eliassen.WebApi.Provider;
 
 /// <summary>
 /// Interface for providing asynchronous operations related to example messages.

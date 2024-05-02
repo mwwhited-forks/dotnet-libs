@@ -1,5 +1,7 @@
 ﻿using Eliassen.MessageQueueing;
 using Eliassen.MessageQueueing.Services;
+using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace Eliassen.WebApi.Provider;
 

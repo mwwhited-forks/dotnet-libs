@@ -1,4 +1,7 @@
-﻿namespace Eliassen.Communications.Models;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Eliassen.Communications.Models;
 
 /// <summary>
 /// Represents a model for SMS messages.

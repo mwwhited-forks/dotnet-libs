@@ -83,6 +83,73 @@ The modified .
 
 
 
+## Class: Extensions.IO.FileTools
+Provides methods for working with files. 
+
+### Methods
+
+
+#### SplitFileAsync(System.String,System.Int32,System.Int32)
+Asynchronously splits a file into chunks of specified length and overlap. 
+
+
+##### Parameters
+* *filename:* The path of the file to split.
+* *chunkLength:* The length of each chunk.
+* *overlap:* The overlap between consecutive chunks.
+
+
+
+
+##### Return value
+An asynchronous enumerable sequence of representing the chunks of the file.
+
+
+
+## Class: Extensions.IO.StreamExtensions
+Provides methods for working with streams. 
+
+### Fields
+
+#### DefaultChunkLength
+The default length of context used when splitting files.
+#### DefaultOverlap
+The default overlap between chunks when splitting files.
+### Methods
+
+
+#### CopyOf(System.IO.Stream)
+Create an in memory copy of the provided stream 
+
+
+##### Parameters
+* *stream:* stream to copy
+
+
+
+
+##### Return value
+copy of stream
+
+
+
+#### SplitStreamAsync(System.IO.Stream,System.Int32,System.Int32)
+Asynchronously splits a file into chunks of specified length and overlap. 
+
+
+##### Parameters
+* *stream:* The stream to split.
+* *contextLength:* The length of each chunk.
+* *overlap:* The overlap between consecutive chunks.
+
+
+
+
+##### Return value
+An asynchronous enumerable sequence of representing the chunks of the file.
+
+
+
 ## Class: Extensions.IO.StreamJsonDeserializeExtensions
 Set of extension method to centralize deserialize of stream using System.Text.Json 
 
@@ -297,6 +364,54 @@ Convert IEnumerable{TModel} to IAsyncEnumerable{TModel}
 
 
 
+#### Select``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,``1})
+Project each element of the source async enumerable sequence into a new form asynchronously. 
+
+
+##### Parameters
+* *items:* The source async enumerable sequence to project.
+* *map:* A transform function to apply to each element.
+
+
+
+
+##### Return value
+An async enumerable sequence whose elements are the result of invoking the transform function on each element of the source.
+
+
+
+#### Select``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+Project each element of the source async enumerable sequence into a new form asynchronously. 
+
+
+##### Parameters
+* *items:* The source async enumerable sequence to project.
+* *map:* A transform function to apply to each element asynchronously.
+
+
+
+
+##### Return value
+An async enumerable sequence whose elements are the result of invoking the transform function on each element of the source.
+
+
+
+#### ToReadOnlyCollectionAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Threading.CancellationToken)
+Converts an async enumerable sequence to a read-only collection asynchronously. 
+
+
+##### Parameters
+* *items:* The source async enumerable sequence to convert.
+* *cancellationToken:* A cancellation token that can be used to cancel the operation.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. The task result contains a read-only collection of elements.
+
+
+
 ## Class: Extensions.Linq.DictionaryExtensions
 Reusable extensions for Generic Dictionaries 
 
@@ -334,6 +449,27 @@ Rebuild dictionary to use a different IEqualityComparer{TKey}
 
 ##### Return value
 
+
+
+
+## Class: Extensions.Linq.EnumerableExtensions
+Provides extension methods for asynchronous enumerables. 
+
+### Methods
+
+
+#### ToSetAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})
+Converts an asynchronous enumerable sequence to a set (IEnumerable{T}) asynchronously. 
+
+
+##### Parameters
+* *items:* The asynchronous enumerable sequence to convert.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. The task result contains the set of elements in the sequence.
 
 
 
@@ -644,4 +780,42 @@ Get singleton instance from IOC container
 
 ##### Return value
 
+
+
+
+## Class: Extensions.StringTools
+Provides utility methods for string manipulation. 
+
+### Methods
+
+
+#### SplitBy(System.String,System.Int32,System.Char)
+Splits the input string into lines of specified length, breaking at the nearest space character. 
+
+
+##### Parameters
+* *input:* The input string to split.
+* *length:* The maximum length of each line (default is 80).
+* *breaker:* The character at which to break lines (default is space).
+
+
+
+
+##### Return value
+An enumerable of strings representing the split lines.
+
+
+
+#### WriteAsLines(System.Collections.Generic.IEnumerable{System.String})
+Concatenates the lines into a single string with newline separators. 
+
+
+##### Parameters
+* *lines:* The lines to concatenate.
+
+
+
+
+##### Return value
+A single string with newline separators.
 

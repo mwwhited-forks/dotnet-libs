@@ -1,4 +1,6 @@
-﻿namespace Eliassen.Communications.Models;
+﻿using System.Collections.Generic;
+
+namespace Eliassen.Communications.Models;
 
 /// <summary>
 /// Represents an email message model.

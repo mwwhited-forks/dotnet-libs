@@ -1,11 +1,19 @@
-﻿using Eliassen.Azure.StorageAccount;
+﻿using Eliassen.Apache.Tika;
+using Eliassen.Azure.StorageAccount;
 using Eliassen.Keycloak;
 using Eliassen.MailKit;
+using Eliassen.Markdig;
 using Eliassen.Microsoft.ApplicationInsights;
 using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB;
+using Eliassen.MysticMind;
+using Eliassen.Ollama;
 using Eliassen.OpenAI.AI;
+using Eliassen.OpenSearch;
+using Eliassen.Qdrant;
 using Eliassen.RabbitMQ;
+using Eliassen.SBert;
+using Eliassen.WkHtmlToPdf;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -40,11 +48,11 @@ public static class ServiceCollectionExtensions
         externalBuilder ??= new();
 
         services.TryAddMongoServices(configuration, externalBuilder.MongoDatabaseConfigurationSection);
-        services.TryAddAzureStorageServices(configuration, externalBuilder.AzureBlobContainerConfigurationSection);
+        services.TryAddAzureStorageServices(configuration, externalBuilder.AzureBlobProviderOptionSection);
         services.TryAddRabbitMQServices();
         services.TryAddMailKitExtensions(configuration, externalBuilder.SmtpConfigurationSection, externalBuilder.ImapConfigurationSection);
 #if DEBUG
-#warning Not feature is not complete and should not be used in production.
+#warning Feature is not complete and should not be used in production.
         services.TryAddApplicationInsightsExtensions();
 #endif
 
@@ -54,7 +62,17 @@ public static class ServiceCollectionExtensions
         if (identityBuilder.IdentityProvider.HasFlag(IdentityProviders.Keycloak))
             services.TryAddKeycloakServices(configuration, identityBuilder.KeycloakIdentityConfigurationSection);
 
-        services.TryAddOpenAIServices(configuration, externalBuilder.OpenAIClientOptions);
+        services.TryAddOpenAIServices(configuration, externalBuilder.OpenAIOptionSection);
+
+        services.TryAddSbertServices(configuration, externalBuilder.SentenceEmbeddingOptionSection);
+        services.TryAddQdrantServices(configuration, externalBuilder.QdrantOptionSection);
+        services.TryAddOpenSearchServices(configuration, externalBuilder.OpenSearchOptionSection);
+        services.TryAddOllamaServices(configuration, externalBuilder.OllamaApiClientOptionSection);
+
+        services.TryAddApacheTikaServices();
+        services.TryAddWkHtmlToPdfServices();
+        services.TryAddMarkdigServices();
+        services.TryAddMysticMindServices();
 
         return services;
     }

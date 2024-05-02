@@ -98,14 +98,14 @@ public class QueryableExtensionsTests
             .Where(mi => mi.Name == nameof(ExecuteByTestFilter))
             .Select(mi => mi.MakeGenericMethod(type))
             .First()
-            .Invoke(this, new object[]
-            {
+            .Invoke(this,
+            [
                 propertyName,
                 expressionOperator,
                 filterValue,
                 expectedRows,
                 expectedKeys
-            });
+            ]);
     }
 
     [TestMethod]
@@ -244,14 +244,14 @@ public class QueryableExtensionsTests
             .Where(mi => mi.Name == nameof(ExecuteByTestSearchTerm))
             .Select(mi => mi.MakeGenericMethod(type))
             .First()
-            .Invoke(this, new object[]
-            {
+            .Invoke(this,
+            [
                 searchTerm,
                 expectedTotalPages,
                 expectedTotalRows,
                 expectedRows,
                 expectedKeys
-            });
+            ]);
 
         //TODO: This test fails because the TestTargetExtendedModel.Modules property is [Searchable]
         //There was an original TODO statement here of 'TODO: nullable array values can not be included in searchable'

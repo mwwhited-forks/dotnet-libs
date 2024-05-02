@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.Reflection;
+﻿using System;
+
+namespace Eliassen.System.Reflection;
 
 /// <summary>
 /// Represents an interface for resolving a <see cref="Type"/>.

@@ -1,6 +1,11 @@
 ﻿using Eliassen.Azure.StorageAccount.BlobStorage;
 using Eliassen.MailKit.Services;
 using Eliassen.MongoDB.Extensions;
+using Eliassen.Ollama;
+using Eliassen.OpenAI.AI.Services;
+using Eliassen.OpenSearch;
+using Eliassen.Qdrant;
+using Eliassen.SBert;
 
 namespace Eliassen.Common.Extensions;
 
@@ -23,7 +28,7 @@ public record ExternalExtensionBuilder
     /// <value>
     /// The configuration section name for Azure Blob Container options. Default is "AzureBlobContainerOptions".
     /// </value>
-    public string AzureBlobContainerConfigurationSection { get; init; } = nameof(AzureBlobContainerOptions);
+    public string AzureBlobProviderOptionSection { get; init; } = nameof(AzureBlobProviderOptions);
 
     /// <summary>
     /// Gets or sets the configuration section name for SMTP client options (MailKit).
@@ -41,5 +46,28 @@ public record ExternalExtensionBuilder
     /// </value>
     public string ImapConfigurationSection { get; init; } = nameof(MailKitImapClientOptions);
 
-    public string OpenAIClientOptions { get; init; } = nameof(OpenAIClientOptions);
+    /// <summary>
+    /// Gets or sets the configuration section name for OpenAI client options.
+    /// </summary>
+    public string OpenAIOptionSection { get; init; } = nameof(OpenAIOptions);
+
+    /// <summary>
+    /// Gets or sets the configuration section name for SentenceEmbeddingOptions.
+    /// </summary>
+    public string SentenceEmbeddingOptionSection { get; init; } = nameof(SentenceEmbeddingOptions);
+
+    /// <summary>
+    /// Gets or sets the configuration section name for Qdrant options.
+    /// </summary>
+    public string QdrantOptionSection { get; init; } = nameof(QdrantOptions);
+
+    /// <summary>
+    /// Gets or sets the configuration section name for OpenSearch options.
+    /// </summary>
+    public string OpenSearchOptionSection { get; init; } = nameof(OpenSearchOptions);
+
+    /// <summary>
+    /// Gets or sets the configuration section name for Ollama Api Client options.
+    /// </summary>
+    public string OllamaApiClientOptionSection { get; init; } = nameof(OllamaApiClientOptions);
 }

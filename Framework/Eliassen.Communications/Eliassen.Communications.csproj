@@ -19,11 +19,4 @@
 		<ProjectReference Include="..\Eliassen.Extensions\Eliassen.Extensions.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Content Update="Readme.Communications.Abstractions.md">
-	    <PackagePath>\docs</PackagePath>
-	    <Pack>true</Pack>
-	  </Content>
-	</ItemGroup>
-
 </Project>

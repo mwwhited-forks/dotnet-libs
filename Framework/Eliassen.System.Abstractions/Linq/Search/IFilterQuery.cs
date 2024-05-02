@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.Linq.Search;
+﻿using System.Collections.Generic;
+
+namespace Eliassen.System.Linq.Search;
 
 /// <summary>
 /// Represents a query with filtering options.

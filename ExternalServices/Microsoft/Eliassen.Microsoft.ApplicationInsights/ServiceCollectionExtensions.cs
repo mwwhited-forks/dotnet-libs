@@ -1,4 +1,4 @@
-﻿using Eliassen.ApplicationInsights;
+﻿using Eliassen.Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Eliassen.Microsoft.ApplicationInsights;

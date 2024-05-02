@@ -1,4 +1,6 @@
-﻿namespace Eliassen.System.Text.Templating;
+﻿using System.Collections.Generic;
+
+namespace Eliassen.System.Text.Templating;
 
 /// <summary>
 /// Provides a collection of file types.

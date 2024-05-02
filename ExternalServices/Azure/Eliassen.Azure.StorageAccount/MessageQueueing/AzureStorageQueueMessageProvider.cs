@@ -35,6 +35,10 @@ public class AzureStorageQueueMessageProvider(
     {
         var client = clientFactory.Create(context.Config);
 
+#if DEBUG
+        client.CreateIfNotExists(); //TODO: should make this a config option
+#endif
+
         var wrapped = new WrappedQueueMessage
         {
             ContentType = "application/json;",
@@ -71,6 +75,11 @@ public class AzureStorageQueueMessageProvider(
         )
     {
         var client = clientFactory.Create(_handlerProvider?.Config ?? throw new ConfigurationMissingException("UNKNOWN"));
+
+#if DEBUG
+        client.CreateIfNotExists(); //TODO: should make this a config option
+#endif
+
         var newCancellationToken = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken).Token;
 
         while (!newCancellationToken.IsCancellationRequested)

@@ -1,4 +1,7 @@
-﻿namespace Eliassen.Identity;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace Eliassen.Identity;
 
 /// <summary>
 /// Represents an identity manager for managing user identities.

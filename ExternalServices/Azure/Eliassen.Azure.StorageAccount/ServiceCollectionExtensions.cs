@@ -1,5 +1,6 @@
 ﻿using Eliassen.Azure.StorageAccount.BlobStorage;
 using Eliassen.Azure.StorageAccount.MessageQueueing;
+using Eliassen.Documents.Containers;
 using Eliassen.MessageQueueing.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,42 +18,45 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add services to.</param>
     /// <param name="configuration">The <see cref="IConfiguration"/> to add services to.</param>
-    /// <param name="azureBlobContainerConfigurationSection">The name for the ConfigurationSectionName.</param>
+    /// <param name="azureBlobProviderOptionSection">The name for the ConfigurationSectionName.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddAzureStorageServices(
         this IServiceCollection services,
         IConfiguration configuration,
 #if DEBUG
-        string azureBlobContainerConfigurationSection
+        string azureBlobProviderOptionSection
 #else
-        string azureBlobContainerConfigurationSection = nameof(AzureBlobContainerOptions)
+        string azureBlobProviderOptionSection = nameof(AzureBlobProviderOptions)
 #endif
         ) =>
         services
-            .TryAddAzureStorageBlobServices(configuration, azureBlobContainerConfigurationSection)
+            .TryAddAzureStorageBlobServices(configuration, azureBlobProviderOptionSection)
             .TryAddAzureStorageQueueServices()
         ;
 
     /// <summary>
-    /// Tries to add Azure Storage blob services to the specified <see cref="IServiceCollection"/>.
+    /// Configures services for Azure Storage Blob.
     /// </summary>
-    /// <param name="services">The <see cref="IServiceCollection"/> to add services to.</param>
-    /// <param name="configuration">The <see cref="IConfiguration"/> to add services to.</param>
-    /// <param name="configurationSection">The name for the ConfigurationSectionName.</param>
+    /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
+    /// <param name="configuration">The <see cref="IConfiguration"/> to bind Azure Blob Storage options from.</param>
+    /// <param name="azureBlobProviderOptionSection">The configuration section name containing Azure Blob Storage options.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddAzureStorageBlobServices(
         this IServiceCollection services,
         IConfiguration configuration,
 #if DEBUG
-        string configurationSection
+        string azureBlobProviderOptionSection
 #else
-        string configurationSection = nameof(AzureBlobContainerOptions)
+        string azureBlobProviderOptionSection = nameof(AzureBlobProviderOptions)
 #endif
         )
     {
-        services.TryAddTransient<IDocumentProvider, BlobContainerProvider>();
+        services.Configure<AzureBlobProviderOptions>(options => configuration.Bind(azureBlobProviderOptionSection, options));
+        services.TryAddTransient<IBlobServiceClientFactory, BlobServiceClientFactory>();
+        services.TryAddTransient(sp => sp.GetRequiredService<IBlobServiceClientFactory>().Create());
 
-        services.Configure<AzureBlobContainerOptions>(options => configuration.Bind(configurationSection, options));
+        services.AddTransient<IBlobContainerProviderFactory, AzureBlobContainerProviderFactory>();
+
         return services;
     }
 

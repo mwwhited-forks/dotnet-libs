@@ -1,4 +1,5 @@
 ﻿using MailKit.Security;
+using System;
 
 namespace Eliassen.MailKit.Services;
 

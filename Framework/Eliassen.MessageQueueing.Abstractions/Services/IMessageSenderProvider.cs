@@ -1,4 +1,6 @@
-﻿namespace Eliassen.MessageQueueing.Services;
+﻿using System.Threading.Tasks;
+
+namespace Eliassen.MessageQueueing.Services;
 
 /// <summary>
 /// Represents a provider for sending messages to a message queue.
