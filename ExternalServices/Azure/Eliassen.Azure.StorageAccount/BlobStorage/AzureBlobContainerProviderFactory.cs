@@ -17,10 +17,7 @@ public class AzureBlobContainerProviderFactory : IBlobContainerProviderFactory
     /// <param name="serviceProvider">The service provider.</param>
     public AzureBlobContainerProviderFactory(
             IServiceProvider serviceProvider
-            )
-    {
-        _serviceProvider = serviceProvider;
-    }
+            ) => _serviceProvider = serviceProvider;
 
     /// <summary>
     /// Creates a new instance of <see cref="AzureBlobContainerProvider"/> based on the specified collection name.

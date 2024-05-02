@@ -77,8 +77,7 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
             Prompt = $"SYSTEM: {promptDetails}" + //TODO: do something smarter here
             $"" +
             $"USER: {userInput}",
-        }, streamer);
-
+        }, streamer, cancellationToken: cancellationToken);
 
         while (!cancellationToken.IsCancellationRequested && !completed)
         {

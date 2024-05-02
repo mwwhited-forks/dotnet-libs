@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Collections.Generic;
 
 namespace Eliassen.Examples.Tests.Documents;
@@ -15,7 +14,7 @@ public class ServiceRegistryTests
 {
     public required TestContext TestContext { get; set; }
 
-    private IServiceProvider ServiceProvider()
+    private ServiceProvider ServiceProvider()
     {
         var config = new ConfigurationBuilder()
             .AddInMemoryCollection(new Dictionary<string, string?>
@@ -47,12 +46,14 @@ public class ServiceRegistryTests
     public void Create_IBlobContainer__ContainerTargetClass_Test()
     {
         var wrapper = ServiceProvider().GetRequiredService<IBlobContainer<ContainerTargetClass>>();
+        Assert.IsNotNull(wrapper);
     }
 
     [TestMethod]
     public void Create_IBlobContainer__ContainerTargetClassWithTag_Test()
     {
         var wrapper = ServiceProvider().GetRequiredService<IBlobContainer<ContainerTargetClassWithTag>>();
+        Assert.IsNotNull(wrapper);
     }
 
 }

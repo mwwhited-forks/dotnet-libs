@@ -37,7 +37,6 @@ public class OllamaApiClientTests
         return client;
     }
 
-
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("http://127.0.0.1:11434", "phi")]

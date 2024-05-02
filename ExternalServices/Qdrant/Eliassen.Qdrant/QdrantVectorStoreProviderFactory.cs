@@ -17,10 +17,7 @@ public class QdrantVectorStoreProviderFactory : IVectorStoreProviderFactory
     /// <param name="serviceProvider">The service provider.</param>
     public QdrantVectorStoreProviderFactory(
             IServiceProvider serviceProvider
-            )
-    {
-        _serviceProvider = serviceProvider;
-    }
+            ) => _serviceProvider = serviceProvider;
 
     /// <summary>
     /// Creates a new instance of <see cref="QdrantVectorStoreProvider"/> based on the specified collection name.

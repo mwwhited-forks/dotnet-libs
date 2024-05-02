@@ -8,12 +8,8 @@
 		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_").Replace(".Abstractions", ""))</RootNamespace>
 		
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-		
+    <PackageReadmeFile>Readme.System.Abstractions.md</PackageReadmeFile>		
 	</PropertyGroup>
-
-	<ItemGroup>
-	  <CodeDocumentation Remove="Readme.System.Abstractions.md" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="Eliassen.System" />

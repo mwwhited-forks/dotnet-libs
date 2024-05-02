@@ -34,16 +34,11 @@ public class DocumentTypeTools : IDocumentTypeTools
     /// </summary>
     /// <param name="source">stream</param>
     /// <returns>content type</returns>
-    public async Task<string?> DetectContentTypeAsync(Stream source)
-    {
-        if (_contentTypeDetector is not null)
-        {
-            return await _contentTypeDetector.DetectContentTypeAsync(source);
-        }
+    public async Task<string?> DetectContentTypeAsync(Stream source)=>
+        _contentTypeDetector is not null
+            ? await _contentTypeDetector.DetectContentTypeAsync(source)
+            : (GetByFileHeader(source)?.ContentTypes.FirstOrDefault());
 
-        return GetByFileHeader(source)?.ContentTypes.FirstOrDefault();
-
-    }
     /// <summary>
     /// Retrieves the document type associated with the specified content type.
     /// </summary>

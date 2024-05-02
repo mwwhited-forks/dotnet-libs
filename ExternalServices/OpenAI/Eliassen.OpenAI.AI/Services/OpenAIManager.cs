@@ -19,10 +19,7 @@ public class OpenAIManager : ILanguageModelProvider
     /// Initializes a new instance of the <see cref="OpenAIManager"/> class.
     /// </summary>
     /// <param name="config">The OpenAI configuration options.</param>
-    public OpenAIManager(IOptions<OpenAIOptions> config)
-    {
-        _config = config;
-    }
+    public OpenAIManager(IOptions<OpenAIOptions> config) => _config = config;
 
     /// <summary>
     /// Gets a response asynchronously based on the provided prompt details and user input.
@@ -72,7 +69,7 @@ public class OpenAIManager : ILanguageModelProvider
                 // User messages represent current or historical input from the end user
                 new ChatRequestUserMessage(userInput)
             }
-        }))
+        },cancellationToken: cancellationToken))
         {
             if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
             {
