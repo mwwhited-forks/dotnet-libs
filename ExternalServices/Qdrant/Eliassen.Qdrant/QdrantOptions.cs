@@ -14,4 +14,9 @@ public class QdrantOptions
     /// Gets or sets the collection name for Qdrant.
     /// </summary>
     public required string CollectionName { get; set; }
+
+    /// <summary>
+    /// is this is true the system will create the collection if not exists
+    /// </summary>
+    public bool EnsureCollectionExists { get; set; } = false;
 }

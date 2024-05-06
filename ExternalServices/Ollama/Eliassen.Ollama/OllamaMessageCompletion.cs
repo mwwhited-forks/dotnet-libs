@@ -44,7 +44,8 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
     /// <param name="promptDetails">Details of the prompt or context.</param>
     /// <param name="userInput">The user input or query.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the response from the language model.</returns>
-    public async Task<string> GetResponseAsync(string promptDetails, string userInput) => //TODO:should probably build a custom model but this works for now
+    public async Task<string> GetResponseAsync(string promptDetails, string userInput) =>
+        //TODO:should probably build a custom model but this works for now
         (await _client.GetCompletion(new()
         {
             Model = _client.SelectedModel,

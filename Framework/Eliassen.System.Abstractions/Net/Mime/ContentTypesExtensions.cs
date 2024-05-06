@@ -31,6 +31,17 @@ public static class ContentTypesExtensions
         /// Represents the content type for Markdown.
         /// </summary>
         public const string Markdown = "text/markdown";
+
+        /// <summary>
+        /// Represents the content type for Yaml.
+        /// </summary>
+        public const string Yaml = "text/yaml";
+
+
+        /// <summary>
+        /// Represents the content type for Plain text.
+        /// </summary>
+        public const string Plain = "text/plain";
     }
 
     /// <summary>
