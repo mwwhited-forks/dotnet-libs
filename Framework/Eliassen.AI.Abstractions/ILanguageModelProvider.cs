@@ -37,8 +37,12 @@ public interface ILanguageModelProvider
     /// <param name="assistantConfinment">The confinment of the AI Assistant</param>
     /// <param name="systemInteractions">The previous generated responses by the AI</param>
     /// <param name="userInput">The user input including any previous messages in the chat</param>
+    /// <param name="cancellationToken">The Cancellation Token.</param>
     /// <returns>A task representing the asynchronous operation that returns the response.</returns>
-    Task<string> GetContextResponseAsync(string assistantConfinment, List<string> systemInteractions, List<string> userInput);
+    IAsyncEnumerable<string> GetContextResponseAsync(string assistantConfinment, 
+        List<string> systemInteractions, 
+        List<string> userInput,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Gets the embeddded response for the data provided.

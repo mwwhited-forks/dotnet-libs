@@ -62,7 +62,10 @@ public class OpenAIManager(IOptions<OpenAIOptions> config) : ILanguageModelProvi
         }
     }
 
-    public async Task<string> GetContextResponseAsync(string assistantConfinment, List<string> systemInteractions, List<string> userInput)
+    public async IAsyncEnumerable<string> GetContextResponseAsync(string assistantConfinment,
+        List<string> systemInteractions, 
+        List<string> userInput, 
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         OpenAIClient api = new(_config.Value.APIKey);
         var request = new ChatCompletionsOptions
@@ -84,9 +87,15 @@ public class OpenAIManager(IOptions<OpenAIOptions> config) : ILanguageModelProvi
             request.Messages.Add(new ChatRequestUserMessage(input));
         }
 
-        var response = await api.GetChatCompletionsAsync(request);
+        await foreach (var chatUpdate in await api.GetChatCompletionsStreamingAsync(request))
+        {
+            if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
+            {
+                yield return chatUpdate.ContentUpdate;
+            }
 
-        return response.Value.Choices[0].Message.Content;
+            if (cancellationToken.IsCancellationRequested) { yield break; }
+        }
     }
 
     public async Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data)

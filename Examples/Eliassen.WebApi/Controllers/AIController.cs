@@ -69,8 +69,13 @@ public class AIController : ControllerBase
     /// <returns>The string response from the LLM</returns>
     [HttpPost("Context")]
     [AllowAnonymous]
-    public async Task<string> GetContextResponseAsync([FromBody] GenAiContextRequestModel model) =>
-        await _llmProvider.GetContextResponseAsync(model.AssistantConfinment, model.PromptDetails, model.UserInput);
+    public async IAsyncEnumerable<string> GetContextResponseAsync([FromBody] GenAiContextRequestModel model)
+    {
+        await foreach (var response in _llmProvider.GetContextResponseAsync(model.AssistantConfinment, model.PromptDetails, model.UserInput))
+        {
+            yield return response;
+        };
+    }
 
     /// <summary>
     /// Generate embeddings
