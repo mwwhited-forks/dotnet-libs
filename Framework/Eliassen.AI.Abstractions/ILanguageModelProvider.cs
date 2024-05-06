@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -33,8 +34,16 @@ public interface ILanguageModelProvider
     /// <summary>
     /// Gets a response asynchronously based on the provided prompt details and user input.
     /// </summary>
-    /// <param name="promptDetails">The details of the prompt including previous generated responses by the AI</param>
+    /// <param name="assistantConfinment">The confinment of the AI Assistant</param>
+    /// <param name="systemInteractions">The previous generated responses by the AI</param>
     /// <param name="userInput">The user input including any previous messages in the chat</param>
     /// <returns>A task representing the asynchronous operation that returns the response.</returns>
-    Task<string> GetContextResponseAsync(List<string> promptDetails, List<string> userInput);
+    Task<string> GetContextResponseAsync(string assistantConfinment, List<string> systemInteractions, List<string> userInput);
+
+    /// <summary>
+    /// Gets the embeddded response for the data provided.
+    /// </summary>
+    /// <param name="data">The data to be embedded there is a token limit of 2048 tokens.</param>
+    /// <returns>Float array with the embedding data</returns>
+    Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data);
 }

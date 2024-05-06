@@ -10,6 +10,11 @@ public class GenAiContextRequestModel
     /// <summary>
     /// Gets or sets the prompt details.
     /// </summary>
+    public required string AssistantConfinment { get; set; }
+
+    /// <summary>
+    /// Gets or sets the prompt details.
+    /// </summary>
     public required List<string> PromptDetails { get; set; }
 
     /// <summary>

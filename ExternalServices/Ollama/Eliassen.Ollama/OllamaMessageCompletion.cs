@@ -2,6 +2,7 @@
 using OllamaSharp;
 using OllamaSharp.Models;
 using OllamaSharp.Streamer;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -85,5 +86,17 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
             if (queue.TryDequeue(out var response) && response is not null)
                 yield return response;
         }
+    }
+
+    public async Task<string> GetContextResponseAsync(string assistantConfinment, List<string> systemInteractions, List<string> userInput)
+    {
+        return "";
+    }
+
+    public async Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data)
+    {
+        float value = float.Parse("-0.1");
+        ReadOnlyMemory<float> result = new float[] { value }.AsMemory();
+        return result;
     }
 }

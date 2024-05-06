@@ -2,6 +2,7 @@
 using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -66,8 +67,17 @@ public class AIController : ControllerBase
     /// Generate an LLM Response based on the prompt and user input
     /// </summary>
     /// <returns>The string response from the LLM</returns>
-    [HttpPost]
+    [HttpPost("Context")]
     [AllowAnonymous]
     public async Task<string> GetContextResponseAsync([FromBody] GenAiContextRequestModel model) =>
-        await _llmProvider.GetContextResponseAsync(model.PromptDetails, model.UserInput);
+        await _llmProvider.GetContextResponseAsync(model.AssistantConfinment, model.PromptDetails, model.UserInput);
+
+    /// <summary>
+    /// Generate embeddings
+    /// </summary>
+    /// <returns>The float response from the LLM</returns>
+    [HttpPost("Embeddings")]
+    [AllowAnonymous]
+    public async Task<ReadOnlyMemory<float>> GenerateEmbeddingsAsync([FromBody] GenerativeAiRequestModel model) =>
+        await _llmProvider.GetEmbeddedResponseAsync(model.UserInput);
 }
