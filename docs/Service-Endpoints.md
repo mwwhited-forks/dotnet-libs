@@ -1,6 +1,6 @@
 # Swagger Description - Eliassen.WebApi
 
-*Version*: 0.1.74.1
+*Version*: 0.1.74.4
 
 ## Endpoints
 
