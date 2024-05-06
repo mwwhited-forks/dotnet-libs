@@ -61,4 +61,13 @@ public class AIController : ControllerBase
     /// <returns>The embedding vector.</returns>
     [HttpGet]
     public async Task<float[]> Embed(string text) => await _embedding.GetEmbeddingAsync(text);
+
+    /// <summary>
+    /// Generate an LLM Response based on the prompt and user input
+    /// </summary>
+    /// <returns>The string response from the LLM</returns>
+    [HttpPost]
+    [AllowAnonymous]
+    public async Task<string> GetContextResponseAsync([FromBody] GenAiContextRequestModel model) =>
+        await _llmProvider.GetContextResponseAsync(model.PromptDetails, model.UserInput);
 }

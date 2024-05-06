@@ -29,4 +29,12 @@ public interface ILanguageModelProvider
         string promptDetails,
         string userInput,
         [EnumeratorCancellation] CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Gets a response asynchronously based on the provided prompt details and user input.
+    /// </summary>
+    /// <param name="promptDetails">The details of the prompt including previous generated responses by the AI</param>
+    /// <param name="userInput">The user input including any previous messages in the chat</param>
+    /// <returns>A task representing the asynchronous operation that returns the response.</returns>
+    Task<string> GetContextResponseAsync(List<string> promptDetails, List<string> userInput);
 }

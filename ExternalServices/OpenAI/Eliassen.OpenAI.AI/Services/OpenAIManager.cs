@@ -57,4 +57,29 @@ public class OpenAIManager(IOptions<OpenAIOptions> config) : ILanguageModelProvi
             if (cancellationToken.IsCancellationRequested) { yield break; }
         }
     }
+
+    public async Task<string> GetContextResponseAsync(List<string> promptDetails, List<string> userInput)
+    {
+        OpenAIClient api = new(_config.Value.APIKey);
+        var request = new ChatCompletionsOptions
+        {
+            DeploymentName = _config.Value.DeploymentName
+        };
+
+        // Add system messages
+        foreach (var detail in promptDetails)
+        {
+            request.Messages.Add(new ChatRequestSystemMessage(detail));
+        }
+
+        // Add user messages
+        foreach (var input in userInput)
+        {
+            request.Messages.Add(new ChatRequestUserMessage(input));
+        }
+
+        var response = await api.GetChatCompletionsAsync(request);
+
+        return response.Value.Choices[0].Message.Content;
+    }
 }
