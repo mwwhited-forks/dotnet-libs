@@ -12,7 +12,6 @@ using System.Collections.Generic;
 
 namespace Eliassen.Examples.Tests.Text;
 
-
 [TestClass]
 public class ISerializerTests
 {
@@ -92,6 +91,6 @@ public class ISerializerTests
         /// <summary>
         /// example property
         /// </summary>
-        public string Prop1 { get; set; }
+        public required string Prop1 { get; set; }
     }
 }

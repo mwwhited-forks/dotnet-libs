@@ -69,7 +69,7 @@ public class OpenAIManager : ILanguageModelProvider
                 // User messages represent current or historical input from the end user
                 new ChatRequestUserMessage(userInput)
             }
-        },cancellationToken: cancellationToken))
+        }, cancellationToken: cancellationToken))
         {
             if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
             {

@@ -25,7 +25,7 @@ public class SkipMemberOnNullExpressionVisitor : ExpressionVisitor, IPostBuildEx
                      node);
                 return exp;
             }
-            else if (node.Method.IsStatic && node.Object == null && node.Arguments.Count > 0) 
+            else if (node.Method.IsStatic && node.Object == null && node.Arguments.Count > 0)
             {
                 var arg = base.Visit(node.Arguments[0]);
                 var exp = Expression.AndAlso(
@@ -54,7 +54,7 @@ public class SkipMemberOnNullExpressionVisitor : ExpressionVisitor, IPostBuildEx
 
         if (body is MethodCallExpression method)
         {
-            if (!method.Method.IsStatic && method.Object != null) 
+            if (!method.Method.IsStatic && method.Object != null)
             {
                 return Expression.Lambda(
                     Expression.AndAlso(

@@ -55,7 +55,6 @@ public class SkipMemberOnNullExpressionVisitorTests
         this.TestContext.AddResult(queryResults);
     }
 
-
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
     public void NullableCollectionQueryTest_Element()

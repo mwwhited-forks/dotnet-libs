@@ -37,7 +37,6 @@ public static class ContentTypesExtensions
         /// </summary>
         public const string Yaml = "text/yaml";
 
-
         /// <summary>
         /// Represents the content type for Plain text.
         /// </summary>

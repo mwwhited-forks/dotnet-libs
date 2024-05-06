@@ -3,7 +3,6 @@ using Azure.Storage.Blobs.Models;
 using Eliassen.Documents.Containers;
 using Eliassen.Documents.Models;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

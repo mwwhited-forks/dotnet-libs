@@ -89,7 +89,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
     public ValueTask<T?> DeserializeAsync<T>(Stream stream, CancellationToken cancellationToken = default) =>
-        new ValueTask<T?>(Deserialize<T>(stream));
+        new(Deserialize<T>(stream));
 
     /// <summary>
     /// convert stream into object
@@ -99,7 +99,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
     public ValueTask<object?> DeserializeAsync(Stream stream, Type type, CancellationToken cancellationToken = default) =>
-        new ValueTask<object?>(Deserialize(stream, type));
+        new(Deserialize(stream, type));
 
     /// <summary>
     /// convert the object based on the type definition

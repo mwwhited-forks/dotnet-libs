@@ -34,7 +34,7 @@ public class DocumentTypeTools : IDocumentTypeTools
     /// </summary>
     /// <param name="source">stream</param>
     /// <returns>content type</returns>
-    public async Task<string?> DetectContentTypeAsync(Stream source)=>
+    public async Task<string?> DetectContentTypeAsync(Stream source) =>
         _contentTypeDetector is not null
             ? await _contentTypeDetector.DetectContentTypeAsync(source)
             : (GetByFileHeader(source)?.ContentTypes.FirstOrDefault());

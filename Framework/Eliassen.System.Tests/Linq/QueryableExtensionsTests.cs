@@ -282,7 +282,6 @@ public class QueryableExtensionsTests
         var queryResults = QueryBuilder.Execute(rawData, query);
         this.TestContext.AddResult(queryResults);
 
-
         if (queryResults is IPagedQueryResult<TestTargetModel> pagedResults)
         {
             var resultKeys = string.Join(',', pagedResults.Rows.Select(i => i?.GetKeyValue()));
