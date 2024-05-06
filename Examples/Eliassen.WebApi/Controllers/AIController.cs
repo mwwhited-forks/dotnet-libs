@@ -71,7 +71,7 @@ public class AIController : ControllerBase
     [AllowAnonymous]
     public async IAsyncEnumerable<string> GetContextResponseAsync([FromBody] GenAiContextRequestModel model)
     {
-        await foreach (var response in _llmProvider.GetContextResponseAsync(model.AssistantConfinment, model.PromptDetails, model.UserInput))
+        await foreach (var response in _llmProvider.GetStreamedContextResponseAsync(model.AssistantConfinment, model.PromptDetails, model.UserInput))
         {
             yield return response;
         };

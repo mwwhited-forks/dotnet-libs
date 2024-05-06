@@ -62,7 +62,7 @@ public class OpenAIManager(IOptions<OpenAIOptions> config) : ILanguageModelProvi
         }
     }
 
-    public async IAsyncEnumerable<string> GetContextResponseAsync(string assistantConfinment,
+    public async IAsyncEnumerable<string> GetStreamedContextResponseAsync(string assistantConfinment,
         List<string> systemInteractions, 
         List<string> userInput, 
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
