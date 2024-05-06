@@ -88,9 +88,9 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
         }
     }
 
-    public async Task<string> GetContextResponseAsync(string assistantConfinment, List<string> systemInteractions, List<string> userInput)
+    public async IAsyncEnumerable<string> GetContextResponseAsync(string assistantConfinment, List<string> systemInteractions, List<string> userInput)
     {
-        return "";
+        yield return "";
     }
 
     public async Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data)
