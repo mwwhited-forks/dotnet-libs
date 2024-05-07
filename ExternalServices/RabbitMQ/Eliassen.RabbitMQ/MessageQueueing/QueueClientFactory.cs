@@ -24,7 +24,6 @@ public class QueueClientFactory : IQueueClientFactory
         var factory = new ConnectionFactory()
         {
             HostName = config[nameof(ConnectionFactory.HostName)],
-
         };
         var connection = factory.CreateConnection();
         var model = connection.CreateModel();

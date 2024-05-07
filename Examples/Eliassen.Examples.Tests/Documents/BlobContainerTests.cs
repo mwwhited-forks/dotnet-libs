@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,7 +17,7 @@ public class BlobContainerTests
 {
     public required TestContext TestContext { get; set; }
 
-    private IServiceProvider ServiceProvider()
+    private ServiceProvider ServiceProvider()
     {
         var config = new ConfigurationBuilder()
             .AddInMemoryCollection(new Dictionary<string, string?>
@@ -67,12 +66,15 @@ public class BlobContainerTests
                 });
 
         var result = await wrapper.GetContentMetaDataAsync("helloWorld.txt");
+
+        this.TestContext.AddResult(result);
     }
 
     [TestMethod]
     public void Create_IBlobContainer__Summary_Test()
     {
         var wrapper = ServiceProvider().GetRequiredService<IBlobContainer<Summary>>();
+        Assert.IsNotNull(wrapper);
     }
 
     [TestMethod]

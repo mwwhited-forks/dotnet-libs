@@ -208,6 +208,8 @@ Options for configuring Qdrant.
 Gets or sets the URL for Qdrant.
 #### CollectionName
 Gets or sets the collection name for Qdrant.
+#### EnsureCollectionExists
+is this is true the system will create the collection if not exists
 
 ## Class: Qdrant.QdrantVectorStoreProvider
 Provider for using Qdrant as a vector store. 
@@ -225,6 +227,7 @@ constructor for QdrantVectorStoreProvider
 
 ##### Parameters
 * *client:* instance of client
+* *options:* configuration options for Qdrant
 * *containerName:* name of container
 
 

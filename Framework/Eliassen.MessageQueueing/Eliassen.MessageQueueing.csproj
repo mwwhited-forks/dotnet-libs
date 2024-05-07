@@ -8,7 +8,9 @@
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 
+    <PackageReadmeFile>Readme.MessageQueueing.md</PackageReadmeFile>
 	</PropertyGroup>
+
 	<ItemGroup>
 		<InternalsVisibleTo Include="Eliassen.MessageQueueing.Tests" />
 	</ItemGroup>

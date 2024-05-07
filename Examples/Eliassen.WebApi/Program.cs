@@ -56,6 +56,7 @@ public static class Program
             },
             hostingBuilder: new()
             {
+                //TODO: add a run profile that disable hosting
                 DisableMailKit = true, //TODO: this is not supported at this time so just skip it ...skipHosting,
                 DisableMessageQueueing = true,  // skipHosting,
             });

@@ -37,7 +37,7 @@ public class InProcessMessageProvider(
         {
             ContentType = "application/json;",
             PayloadType = message.GetType().AssemblyQualifiedName ?? throw new NotSupportedException(),
-            CorrelationId = context.CorrelationId ?? Guid.NewGuid().ToString(), //TODO: do this better
+            CorrelationId = context.CorrelationId ?? Guid.NewGuid().ToString(), //TODO: do this better such has having a id generation interface that can be replaced
             Payload = message,
             Properties = context.Headers,
         };
