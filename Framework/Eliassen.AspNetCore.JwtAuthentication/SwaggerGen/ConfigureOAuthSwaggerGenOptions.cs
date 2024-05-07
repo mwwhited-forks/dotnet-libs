@@ -1,6 +1,7 @@
 ﻿using Eliassen.System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
@@ -15,10 +16,15 @@ namespace Eliassen.AspNetCore.JwtAuthentication.SwaggerGen;
 /// Initializes a new instance of the <see cref="ConfigureOAuthSwaggerGenOptions"/> class.
 /// </remarks>
 /// <param name="config">The OAuth2 Swagger options.</param>
+/// <param name="logger">Logger</param>
 public class ConfigureOAuthSwaggerGenOptions(
-    IOptions<OAuth2SwaggerOptions> config
+    IOptions<OAuth2SwaggerOptions> config,
+    ILogger<ConfigureOAuthSwaggerGenOptions> logger
     ) : IConfigureOptions<SwaggerGenOptions>
 {
+    private readonly IOptions<OAuth2SwaggerOptions> _config = config;
+    private readonly ILogger _logger = logger;
+
     /// <summary>
     /// Gets the OAuth2 scopes.
     /// </summary>
@@ -27,9 +33,9 @@ public class ConfigureOAuthSwaggerGenOptions(
     {
         var scopes = new Dictionary<string, string>();
 
-        if (!string.IsNullOrWhiteSpace(config.Value.UserReadApiClaim))
+        if (!string.IsNullOrWhiteSpace(_config.Value.UserReadApiClaim))
         {
-            scopes.Add(config.Value.UserReadApiClaim, nameof(config.Value.UserReadApiClaim));
+            scopes.Add(_config.Value.UserReadApiClaim, nameof(_config.Value.UserReadApiClaim));
         }
 
         return scopes;
@@ -41,6 +47,17 @@ public class ConfigureOAuthSwaggerGenOptions(
     /// <param name="options">The SwaggerGen options to configure.</param>
     public void Configure(SwaggerGenOptions options)
     {
+        if (string.IsNullOrEmpty(_config.Value.AuthorizationUrl))
+        {
+            _logger.LogWarning($"ConfigureOAuthSwaggerGenOptions:AuthorizationUrl is not configured");
+            return;
+        }
+        if (string.IsNullOrEmpty(_config.Value.TokenUrl))
+        {
+            _logger.LogWarning($"ConfigureOAuthSwaggerGenOptions:TokenUrl is not configured");
+            return;
+        }
+
         options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
         {
             Type = SecuritySchemeType.OAuth2,
@@ -52,8 +69,10 @@ public class ConfigureOAuthSwaggerGenOptions(
                 Implicit = new OpenApiOAuthFlow()
                 {
                     Scopes = GetScopes(),
-                    AuthorizationUrl = new Uri(config.Value.AuthorizationUrl ?? throw new ConfigurationMissingException($"{nameof(OAuth2SwaggerOptions)}:{nameof(config.Value.AuthorizationUrl)}")),
-                    TokenUrl = new Uri(config.Value.TokenUrl ?? throw new ConfigurationMissingException($"{nameof(OAuth2SwaggerOptions)}:{nameof(config.Value.TokenUrl)}")),
+                    AuthorizationUrl = new Uri(_config.Value.AuthorizationUrl ??
+                        throw new ConfigurationMissingException($"{nameof(OAuth2SwaggerOptions)}:{nameof(_config.Value.AuthorizationUrl)}")),
+                    TokenUrl = new Uri(_config.Value.TokenUrl ??
+                        throw new ConfigurationMissingException($"{nameof(OAuth2SwaggerOptions)}:{nameof(_config.Value.TokenUrl)}")),
                 },
             }
         });
