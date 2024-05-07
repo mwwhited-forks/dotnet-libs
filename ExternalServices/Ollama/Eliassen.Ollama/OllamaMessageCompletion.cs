@@ -102,4 +102,12 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
         ReadOnlyMemory<float> result = new float[] { value }.AsMemory();
         return result;
     }
+
+    public Task<string> GetContextResponseAsync(string assistantConfinment,
+        List<string> systemInteractions,
+        List<string> userInput)
+    {
+        return Task.FromResult("");
+    }
+
 }

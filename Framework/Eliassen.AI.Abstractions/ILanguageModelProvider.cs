@@ -50,4 +50,15 @@ public interface ILanguageModelProvider
     /// <param name="data">The data to be embedded there is a token limit of 2048 tokens.</param>
     /// <returns>Float array with the embedding data</returns>
     Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data);
+
+    /// <summary>
+    /// Gets a response asynchronously based on the provided prompt details and user input.
+    /// </summary>
+    /// <param name="assistantConfinment">The confinment of the AI Assistant</param>
+    /// <param name="systemInteractions">The previous generated responses by the AI</param>
+    /// <param name="userInput">The user input including any previous messages in the chat</param>
+    /// <returns>A task representing the asynchronous operation that returns the response.</returns>
+    Task<string> GetContextResponseAsync(string assistantConfinment,
+        List<string> systemInteractions,
+        List<string> userInput);
 }
