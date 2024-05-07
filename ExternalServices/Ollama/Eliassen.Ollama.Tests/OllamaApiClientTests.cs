@@ -1,4 +1,5 @@
-﻿using Eliassen.TestUtilities;
+﻿using Eliassen.Extensions;
+using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -6,6 +7,7 @@ using OllamaSharp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -90,14 +92,14 @@ public class OllamaApiClientTests
 
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
-    [DataRow("http://127.0.0.1:11434", "phi")]
-    public async Task GetCompletionTest(string hostName, string model)
+    [DataRow("http://127.0.0.1:11434", "phi", "Create a hello world script for windows command prompt")]
+    public async Task GetCompletionTest(string hostName, string model, string prompt)
     {
         var client = Build(hostName, model);
         var embedding = await client.GetCompletion(new()
         {
             Model = model,
-            Prompt = "Create a hello world script for windows command prompt",
+            Prompt = prompt,
         });
 
         this.TestContext.WriteLine(embedding.Response);
@@ -105,17 +107,52 @@ public class OllamaApiClientTests
 
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
-    [DataRow("http://127.0.0.1:11434", "phi")]
-    public async Task ListModelsTest(string hostName, string model)
+    [DataRow("http://192.168.1.170:11434", "llava:7b", "describe the image", "LadyDancingWithDog.jpg")]
+    [DataRow("http://192.168.1.170:11434", "llava:7b", "describe the image", "RobotsTalking.jpg")]
+    [DataRow("http://192.168.1.170:11434", "llama2:7b", "describe the image", "LadyDancingWithDog.jpg")]
+    [DataRow("http://192.168.1.170:11434", "llama2:7b", "describe the image", "RobotsTalking.jpg")]
+    [DataRow("http://192.168.1.170:11434", "mistral:instruct", "describe the image", "LadyDancingWithDog.jpg")]
+    [DataRow("http://192.168.1.170:11434", "mistral:instruct", "describe the image", "RobotsTalking.jpg")]
+    [DataRow("http://192.168.1.170:11434", "phi", "describe the image", "LadyDancingWithDog.jpg")]
+    [DataRow("http://192.168.1.170:11434", "phi", "describe the image", "RobotsTalking.jpg")]
+    public async Task GetCompletionWithImageTest(string hostName, string model, string prompt, string imageName)
     {
+        using var img = this.GetType().Assembly.GetManifestResourceStream($"Eliassen.Ollama.Tests.TestData.{imageName}")!;
+        using var ms = new MemoryStream();
+        img.CopyTo(ms);
+
+        var base54 = Convert.ToBase64String(ms.ToArray());
+
         var client = Build(hostName, model);
+        var embedding = await client.GetCompletion(new()
+        {
+            Model = model,
+            Prompt = prompt,
+            Images = [base54],
+        });
+
+        this.TestContext.WriteLine(
+            string.Join(
+                Environment.NewLine,
+                embedding.Response.SplitBy(50)
+                ));
+    }
+
+    [TestCategory(TestCategories.DevLocal)]
+    [DataTestMethod]
+    //[DataRow("http://127.0.0.1:11434")]
+    [DataRow("http://192.168.1.170:11434")]
+    public async Task ListModelsTest(string hostName)
+    {
+        var client = Build(hostName, "");
         foreach (var localModel in await client.ListLocalModels())
             this.TestContext.WriteLine($"model: {localModel.Name}");
     }
 
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
-    [DataRow("http://127.0.0.1:11434", "phi")]
+    //[DataRow("http://127.0.0.1:11434", "phi")]
+    [DataRow("http://192.168.1.170:11434", "llava:7b")]
     public async Task PullModelTest(string hostName, string model)
     {
         var client = Build(hostName, model);

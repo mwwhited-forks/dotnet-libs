@@ -21,6 +21,8 @@ public class OpenAIManager : ILanguageModelProvider
     /// <param name="config">The OpenAI configuration options.</param>
     public OpenAIManager(IOptions<OpenAIOptions> config) => _config = config;
 
+    public int Length { get; }
+
     /// <summary>
     /// Gets a response asynchronously based on the provided prompt details and user input.
     /// </summary>
