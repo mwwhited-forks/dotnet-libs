@@ -94,7 +94,6 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
     /// <returns>An asynchronous enumerable of strings representing the streamed response.</returns>
     public async IAsyncEnumerable<string> GetStreamedResponseAsync(string promptDetails, string userInput, [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        //TODO: not sure this works
         var queue = new ConcurrentQueue<string>();
         var completed = false;
 
@@ -109,12 +108,16 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
             Prompt = $"SYSTEM: {promptDetails}" + //TODO: do something smarter here
             $"" +
             $"USER: {userInput}",
+            Stream = true,
         }, streamer, cancellationToken: cancellationToken);
 
-        while (!cancellationToken.IsCancellationRequested && !completed)
+        while (!cancellationToken.IsCancellationRequested)
         {
             if (queue.TryDequeue(out var response) && response is not null)
                 yield return response;
+
+            if (queue.IsEmpty && completed)
+                break;
         }
     }
 }

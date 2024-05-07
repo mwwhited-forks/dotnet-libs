@@ -1,5 +1,4 @@
 ﻿using Eliassen.AI;
-using Eliassen.AI.Models;
 using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

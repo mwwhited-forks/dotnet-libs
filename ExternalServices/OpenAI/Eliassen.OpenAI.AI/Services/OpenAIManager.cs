@@ -13,15 +13,13 @@ namespace Eliassen.OpenAI.AI.Services;
 /// </summary>
 public class OpenAIManager : ILanguageModelProvider
 {
-    private readonly IOptions<OpenAIOptions> _config;
+    private readonly IOptions<OpenAIClientOptions> _config;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="OpenAIManager"/> class.
     /// </summary>
     /// <param name="config">The OpenAI configuration options.</param>
-    public OpenAIManager(IOptions<OpenAIOptions> config) => _config = config;
-
-    public int Length { get; }
+    public OpenAIManager(IOptions<OpenAIClientOptions> config) => _config = config;
 
     /// <summary>
     /// Gets a response asynchronously based on the provided prompt details and user input.

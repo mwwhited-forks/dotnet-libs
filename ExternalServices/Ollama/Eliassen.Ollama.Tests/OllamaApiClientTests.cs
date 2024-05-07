@@ -92,7 +92,9 @@ public class OllamaApiClientTests
 
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
-    [DataRow("http://127.0.0.1:11434", "phi", "Create a hello world script for windows command prompt")]
+    //[DataRow("http://127.0.0.1:11434", "phi", "Create a hello world script for windows command prompt")]
+    [DataRow("http://192.168.1.170:11434", "llama2:7b", "tell me a story about a cat")]
+
     public async Task GetCompletionTest(string hostName, string model, string prompt)
     {
         var client = Build(hostName, model);
@@ -100,21 +102,39 @@ public class OllamaApiClientTests
         {
             Model = model,
             Prompt = prompt,
+
+            Options = new OllamaSharp.Models.RequestOptions
+            {
+                Seed = 12312542,
+
+                TopK = 100,
+                TopP = 2,
+
+                Temperature = 1f,
+            },
         });
 
-        this.TestContext.WriteLine(embedding.Response);
+        this.TestContext.AddResult(embedding);
+
+        this.TestContext.WriteLine(
+            string.Join(
+                Environment.NewLine,
+                embedding.Response.SplitBy(50)
+                ));
     }
 
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("http://192.168.1.170:11434", "llava:7b", "describe the image", "LadyDancingWithDog.jpg")]
     [DataRow("http://192.168.1.170:11434", "llava:7b", "describe the image", "RobotsTalking.jpg")]
-    [DataRow("http://192.168.1.170:11434", "llama2:7b", "describe the image", "LadyDancingWithDog.jpg")]
-    [DataRow("http://192.168.1.170:11434", "llama2:7b", "describe the image", "RobotsTalking.jpg")]
-    [DataRow("http://192.168.1.170:11434", "mistral:instruct", "describe the image", "LadyDancingWithDog.jpg")]
-    [DataRow("http://192.168.1.170:11434", "mistral:instruct", "describe the image", "RobotsTalking.jpg")]
-    [DataRow("http://192.168.1.170:11434", "phi", "describe the image", "LadyDancingWithDog.jpg")]
-    [DataRow("http://192.168.1.170:11434", "phi", "describe the image", "RobotsTalking.jpg")]
+    [DataRow("http://192.168.1.170:11434", "llava:7b", "describe the image and what color are the characters", "RobotsTalking.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "llama3:8b", "describe the image", "LadyDancingWithDog.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "llama2:7b", "describe the image", "LadyDancingWithDog.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "llama2:7b", "describe the image", "RobotsTalking.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "mistral:instruct", "describe the image", "LadyDancingWithDog.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "mistral:instruct", "describe the image", "RobotsTalking.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "phi", "describe the image", "LadyDancingWithDog.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "phi", "describe the image", "RobotsTalking.jpg")]
     public async Task GetCompletionWithImageTest(string hostName, string model, string prompt, string imageName)
     {
         using var img = this.GetType().Assembly.GetManifestResourceStream($"Eliassen.Ollama.Tests.TestData.{imageName}")!;
@@ -129,6 +149,9 @@ public class OllamaApiClientTests
             Model = model,
             Prompt = prompt,
             Images = [base54],
+            Options = new OllamaSharp.Models.RequestOptions
+            {
+            },
         });
 
         this.TestContext.WriteLine(
@@ -152,7 +175,8 @@ public class OllamaApiClientTests
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     //[DataRow("http://127.0.0.1:11434", "phi")]
-    [DataRow("http://192.168.1.170:11434", "llava:7b")]
+    //[DataRow("http://192.168.1.170:11434", "llava:7b")]
+    [DataRow("http://192.168.1.170:11434", "llama3:8b")]
     public async Task PullModelTest(string hostName, string model)
     {
         var client = Build(hostName, model);

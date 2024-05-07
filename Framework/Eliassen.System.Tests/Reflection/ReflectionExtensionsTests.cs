@@ -1,4 +1,5 @@
 ﻿using Eliassen.Extensions.Reflection;
+using Eliassen.System.ResponseModel;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -9,6 +10,8 @@ namespace Eliassen.System.Tests.Reflection;
 [TestClass]
 public class ReflectionExtensionsTests
 {
+    public required TestContext TestContext { get; set; }
+
     public static IEnumerable<object?[]> MakeSafeTestData() => new[]
     {
         new object?[]{typeof(string), "Hello World", "Hello World" },
@@ -58,7 +61,9 @@ public class ReflectionExtensionsTests
     [DynamicData(nameof(MakeSafeTestData), DynamicDataSourceType.Method)]
     public void MakeSafeTest(Type? type, object? input, object? expected)
     {
-        var result = ReflectionExtensions.MakeSafe(type, input);
+        var capture = new CaptureResultMessage();
+
+        var result = ReflectionExtensions.MakeSafe(type, input, capture);
 
         if (expected is not string && expected is Array expectedCollection && result is Array resultCollection)
         {
@@ -68,6 +73,9 @@ public class ReflectionExtensionsTests
         {
             Assert.AreEqual(expected, result);
         }
+
+        foreach(var item in capture.Capture())
+            this.TestContext.WriteLine(item.ToString());
     }
 
     public static IEnumerable<object?[]> MakeSafeArrayTestData() => new[]
@@ -82,8 +90,13 @@ public class ReflectionExtensionsTests
     [DynamicData(nameof(MakeSafeArrayTestData), DynamicDataSourceType.Method)]
     public void MakeSafeArrayTest(Type? type, Array? input, Array? expected)
     {
-        var result = (Array?)ReflectionExtensions.MakeSafeArray(type, input);
+        var capture = new CaptureResultMessage();
+
+        var result = (Array?)ReflectionExtensions.MakeSafeArray(type, input, capture);
         CollectionAssert.AreEquivalent(expected, result);
+
+        foreach (var item in capture.Capture())
+            this.TestContext.WriteLine(item.ToString());
     }
 
     public static IEnumerable<object?[]> TryParseTestData() => new[]
@@ -116,9 +129,14 @@ public class ReflectionExtensionsTests
     [DynamicData(nameof(TryParseTestData), DynamicDataSourceType.Method)]
     public void TryParseTest(Type? type, string? input, bool passed, object? expected)
     {
-        var output = ReflectionExtensions.TryParse(type, input, out var result);
+        var capture = new CaptureResultMessage();
+
+        var output = ReflectionExtensions.TryParse(type, input, out var result, capture);
         Assert.AreEqual(passed, output);
         Assert.AreEqual(expected, result);
+
+        foreach (var item in capture.Capture())
+            this.TestContext.WriteLine(item.ToString());
     }
 
     [DataTestMethod]

@@ -166,7 +166,7 @@ public class ExpressionTreeBuilder<TModel>(
                 }
                 else
                 {
-                    var safeArray = unwrapped.Type.MakeSafeArray((Array)queryParameter);
+                    var safeArray = unwrapped.Type.MakeSafeArray((Array)queryParameter, messages);
                     if (safeArray != null)
                     {
                         var recursive = BuildPredicate(scope, expression, expressionOperator, safeArray, isSearchTerm);
@@ -262,7 +262,7 @@ public class ExpressionTreeBuilder<TModel>(
                     }
                 }
             }
-            else if (unwrapped.Type.TryParse(queryString, out var value))
+            else if (unwrapped.Type.TryParse(queryString, out var value, messages))
             {
                 _messages.Publish(new ResultMessage
                 {
