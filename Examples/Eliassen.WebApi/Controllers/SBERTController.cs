@@ -31,5 +31,6 @@ public class SBERTController : ControllerBase
     /// <param name="text">The text for which to retrieve the embedding vector.</param>
     /// <returns>The embedding vector.</returns>
     [HttpGet]
-    public async Task<float[]> Embed(string text) => await _embedding.GetEmbeddingAsync(text);
+    public async Task<float[]> Embed(string text, string? model = default) => 
+        await _embedding.GetEmbeddingAsync(text, model);
 }

@@ -64,9 +64,11 @@ public class OllamaController : ControllerBase
     /// Retrieves the embedding vector for the given text.
     /// </summary>
     /// <param name="text">The text for which to retrieve the embedding vector.</param>
+    /// <param name="model">The model for which to retrieve the embedding vector.</param>
     /// <returns>The embedding vector.</returns>
     [HttpGet]
-    public async Task<float[]> Embed(string text) => await _embedding.GetEmbeddingAsync(text);
+    public async Task<float[]> Embed(string text, string? model = default) =>
+        await _embedding.GetEmbeddingAsync(text, model);
 
     /// <summary>
     /// executes a completion request
@@ -74,6 +76,6 @@ public class OllamaController : ControllerBase
     /// <param name="model">completion request</param>
     /// <returns>completion result</returns>
     [HttpPost("Completion")]
-    public async Task<CompletionResponse> Completion([FromBody] CompletionRequest model) => 
+    public async Task<CompletionResponse> Completion([FromBody] CompletionRequest model) =>
         await _completion.GetCompletionAsync(model);
 }

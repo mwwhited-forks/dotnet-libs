@@ -42,6 +42,8 @@ public class OllamaApiClientTests
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("http://127.0.0.1:11434", "phi")]
+    [DataRow("http://192.168.1.170:11434", "phi3")]
+    [DataRow("http://192.168.1.170:11434", "all-minilm")]
     public async Task GenerateEmbeddingsDoubleTest(string hostName, string model)
     {
         var client = Build(hostName, model);
@@ -51,6 +53,10 @@ public class OllamaApiClientTests
             Prompt = "Hello World!",
         });
 
+
+        this.TestContext.WriteLine($"hostName: {hostName}");
+        this.TestContext.WriteLine($"model: {model}");
+        this.TestContext.WriteLine($"Length: {embedding.Embedding.Length}");
         this.TestContext.WriteLine(string.Join(", ", embedding.Embedding));
     }
 
@@ -125,16 +131,30 @@ public class OllamaApiClientTests
 
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
-    [DataRow("http://192.168.1.170:11434", "llava:7b", "describe the image", "LadyDancingWithDog.jpg")]
-    [DataRow("http://192.168.1.170:11434", "llava:7b", "describe the image", "RobotsTalking.jpg")]
-    [DataRow("http://192.168.1.170:11434", "llava:7b", "describe the image and what color are the characters", "RobotsTalking.jpg")]
-    //[DataRow("http://192.168.1.170:11434", "llama3:8b", "describe the image", "LadyDancingWithDog.jpg")]
-    //[DataRow("http://192.168.1.170:11434", "llama2:7b", "describe the image", "LadyDancingWithDog.jpg")]
-    //[DataRow("http://192.168.1.170:11434", "llama2:7b", "describe the image", "RobotsTalking.jpg")]
-    //[DataRow("http://192.168.1.170:11434", "mistral:instruct", "describe the image", "LadyDancingWithDog.jpg")]
-    //[DataRow("http://192.168.1.170:11434", "mistral:instruct", "describe the image", "RobotsTalking.jpg")]
-    //[DataRow("http://192.168.1.170:11434", "phi", "describe the image", "LadyDancingWithDog.jpg")]
-    //[DataRow("http://192.168.1.170:11434", "phi", "describe the image", "RobotsTalking.jpg")]
+    //[DataRow("http://127.0.0.1:11434", "llava-phi3", "describe the image", "LadyDancingWithDog.jpg")]
+    //[DataRow("http://127.0.0.1:11434", "llava-phi3", "describe the image", "RobotsTalking.jpg")]
+
+    //[DataRow("http://192.168.1.170:11434", "llava:7b", "describe the image", "LadyDancingWithDog.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "llava:7b", "describe the image", "RobotsTalking.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "llava:7b", "describe the image in less than 10 words", "RobotsTalking.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "llava:7b", "describe the image and what color are the characters", "RobotsTalking.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "llava:7b", "list items found in this image as json", "LadyDancingWithDog.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "llava:7b", "what is the left robot doing with its left hand", "RobotsTalking.jpg")]
+
+    [DataRow("http://192.168.1.170:11434", "llava-phi3", "describe the image", "LadyDancingWithDog.jpg")]
+    [DataRow("http://192.168.1.170:11434", "llava-phi3", "describe the image", "RobotsTalking.jpg")]
+    [DataRow("http://192.168.1.170:11434", "llava-phi3", "describe the image in less than 10 words", "RobotsTalking.jpg")]
+    [DataRow("http://192.168.1.170:11434", "llava-phi3", "describe the image and what color are the characters", "RobotsTalking.jpg")]
+    [DataRow("http://192.168.1.170:11434", "llava-phi3", "list items found in this image as json", "LadyDancingWithDog.jpg")]
+    [DataRow("http://192.168.1.170:11434", "llava-phi3", "what is the left robot doing with its left hand", "RobotsTalking.jpg")]
+
+    //[DataRow("http://192.168.1.170:11434", "bakllava", "describe the image", "LadyDancingWithDog.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "bakllava", "describe the image", "RobotsTalking.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "bakllava", "describe the image in less than 10 words", "RobotsTalking.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "bakllava", "describe the image and what color are the characters", "RobotsTalking.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "bakllava", "list items found in this image as json", "LadyDancingWithDog.jpg")]
+    //[DataRow("http://192.168.1.170:11434", "bakllava", "what is the left robot doing with its left hand", "RobotsTalking.jpg")]
+
     public async Task GetCompletionWithImageTest(string hostName, string model, string prompt, string imageName)
     {
         using var img = this.GetType().Assembly.GetManifestResourceStream($"Eliassen.Ollama.Tests.TestData.{imageName}")!;
@@ -142,6 +162,18 @@ public class OllamaApiClientTests
         img.CopyTo(ms);
 
         var base54 = Convert.ToBase64String(ms.ToArray());
+
+
+        this.TestContext.WriteLine($"hostName: {hostName}");
+        this.TestContext.WriteLine($"model: {model}");
+        this.TestContext.WriteLine($"prompt: {prompt}");
+        this.TestContext.WriteLine($"imageName: {imageName}");
+
+        //this.TestContext.WriteLine(new string('-', 80));
+        //this.TestContext.WriteLine(string.Join(
+        //        Environment.NewLine,
+        //        base54.SplitBy(80)
+        //        ));
 
         var client = Build(hostName, model);
         var embedding = await client.GetCompletion(new()
@@ -154,29 +186,46 @@ public class OllamaApiClientTests
             },
         });
 
+        this.TestContext.WriteLine(new string('-', 80));
         this.TestContext.WriteLine(
             string.Join(
                 Environment.NewLine,
-                embedding.Response.SplitBy(50)
+                embedding.Response.SplitBy(80)
                 ));
     }
 
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
-    //[DataRow("http://127.0.0.1:11434")]
+    [DataRow("http://127.0.0.1:11434")]
     [DataRow("http://192.168.1.170:11434")]
     public async Task ListModelsTest(string hostName)
     {
         var client = Build(hostName, "");
         foreach (var localModel in await client.ListLocalModels())
-            this.TestContext.WriteLine($"model: {localModel.Name}");
+            this.TestContext.WriteLine($"model: {localModel.Name} - {localModel.Size:#,##0} ({localModel.Digest})");
     }
 
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     //[DataRow("http://127.0.0.1:11434", "phi")]
-    //[DataRow("http://192.168.1.170:11434", "llava:7b")]
+    [DataRow("http://127.0.0.1:11434", "phi3")]
+    [DataRow("http://127.0.0.1:11434", "llava-phi3")]
+    [DataRow("http://127.0.0.1:11434", "all-minilm")]
+
+    [DataRow("http://192.168.1.170:11434", "llava-phi3")]
+    //[DataRow("http://192.168.1.170:11434", "llava-llama3")]
+    [DataRow("http://192.168.1.170:11434", "bakllava")]
+    //[DataRow("http://192.168.1.170:11434", "llava:13b")]
+    [DataRow("http://192.168.1.170:11434", "llava:7b")]
+
+    //[DataRow("http://192.168.1.170:11434", "phi")]
+    [DataRow("http://192.168.1.170:11434", "phi3")]
     [DataRow("http://192.168.1.170:11434", "llama3:8b")]
+    [DataRow("http://192.168.1.170:11434", "llama2:7b")]
+    //[DataRow("http://192.168.1.170:11434", "llama2:13b")]
+    [DataRow("http://192.168.1.170:11434", "dolphin-llama3")]
+
+    [DataRow("http://192.168.1.170:11434", "all-minilm")]
     public async Task PullModelTest(string hostName, string model)
     {
         var client = Build(hostName, model);
@@ -185,9 +234,36 @@ public class OllamaApiClientTests
         {
             if (ps.Percent != last)
             {
-                Debug.WriteLine($"{model}: Pulled: {ps.Percent}%");
+                Debug.WriteLine($"{model}: Pulled: {ps.Percent}% / {ps.Status} / {ps.Total:#,##0}");
                 last = ps.Percent;
             }
         });
+    }
+
+    [TestCategory(TestCategories.DevLocal)]
+    [DataTestMethod]
+    //[DataRow("http://127.0.0.1:11434", "phi")]
+    //[DataRow("http://127.0.0.1:11434", "phi3")]
+    //[DataRow("http://127.0.0.1:11434", "llava-phi3")]
+    //[DataRow("http://127.0.0.1:11434", "all-minilm")]
+
+    //[DataRow("http://192.168.1.170:11434", "llava-phi3")]
+    [DataRow("http://192.168.1.170:11434", "llava-llama3")]
+    //[DataRow("http://192.168.1.170:11434", "bakllava")]
+    [DataRow("http://192.168.1.170:11434", "llava:13b")]
+    //[DataRow("http://192.168.1.170:11434", "llava:7b")]
+
+    [DataRow("http://192.168.1.170:11434", "phi")]
+    //[DataRow("http://192.168.1.170:11434", "phi3")]
+    //[DataRow("http://192.168.1.170:11434", "llama3:8b")]
+    //[DataRow("http://192.168.1.170:11434", "llama2:7b")]
+    [DataRow("http://192.168.1.170:11434", "llama2:13b")]
+    //[DataRow("http://192.168.1.170:11434", "dolphin-llama3")]
+
+    [DataRow("http://192.168.1.170:11434", "all-minilm")]
+    public async Task DeleteModel(string hostName, string model)
+    {
+        var client = Build(hostName, model);
+        await client.DeleteModel(model);
     }
 }

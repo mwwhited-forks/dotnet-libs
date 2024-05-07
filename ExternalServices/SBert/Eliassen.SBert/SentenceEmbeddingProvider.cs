@@ -31,12 +31,20 @@ public class SentenceEmbeddingProvider : IEmbeddingProvider
     /// <summary>
     /// Gets the length of the embeddings.
     /// </summary>
-    public int Length => _length ??= GetEmbeddingAsync("hello world").Result.Length;
+    public int Length => _length ??= GetEmbeddingAsync("hello world",null).Result.Length;
 
     /// <summary>
     /// Gets the embedding for the given content asynchronously.
     /// </summary>
     /// <param name="content">The content for which to obtain the embedding.</param>
+    /// <param name="model">The model for which to obtain the embedding.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the embedding as an array of floats.</returns>
-    public Task<float[]> GetEmbeddingAsync(string content) => _client.GetEmbeddingAsync(content);
+    public Task<float[]> GetEmbeddingAsync(
+        string content,
+#if DEBUG
+        string? model
+#else
+        string? model = default
+#endif
+        ) => _client.GetEmbeddingAsync(content);
 }

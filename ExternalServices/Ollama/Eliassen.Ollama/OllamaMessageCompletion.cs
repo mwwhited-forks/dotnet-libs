@@ -33,11 +33,28 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
         _mapper = mapper;
     }
 
+    private int? _length;
     /// <summary>
     /// Gets the length of the embeddings.
     /// </summary>
-    public int Length =>
-        _client.GetEmbeddingSingle("Hello world!", _client.SelectedModel).Length;
+    public int Length => _length ??= GetEmbeddingAsync("hello world", null).Result.Length;
+
+    /// <summary>
+    /// Retrieves the embedding vector for the given content.
+    /// </summary>
+    /// <param name="content">The content for which to retrieve the embedding.</param>
+    /// <param name="model">The model for which to retrieve the embedding.</param>
+    /// <returns>A task representing the asynchronous operation. The task result contains the 
+    /// embedding vector as an array of single-precision floats.</returns>
+    public async Task<float[]> GetEmbeddingAsync(
+        string content,
+#if DEBUG
+        string? model
+#else
+        string? model = default
+#endif
+        ) =>
+        await _client.GetEmbeddingSingleAsync(content, model ?? _client.SelectedModel);
 
     /// <summary>
     /// Generates a completion for the given prompt using the specified model.
@@ -59,15 +76,6 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
     /// <returns>Resulting response object</returns>
     public async Task<CompletionResponse> GetCompletionAsync(CompletionRequest model) =>
         _mapper.Map(await _client.GetCompletion(_mapper.Map(model)));
-
-    /// <summary>
-    /// Retrieves the embedding vector for the given content.
-    /// </summary>
-    /// <param name="content">The content for which to retrieve the embedding.</param>
-    /// <returns>A task representing the asynchronous operation. The task result contains the 
-    /// embedding vector as an array of single-precision floats.</returns>
-    public async Task<float[]> GetEmbeddingAsync(string content) =>
-        await _client.GetEmbeddingSingleAsync(content, _client.SelectedModel);
 
     /// <summary>
     /// Retrieves a response from the language model based on the provided prompt details and user input.
