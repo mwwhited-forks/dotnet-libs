@@ -88,7 +88,7 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
         }
     }
 
-    public async IAsyncEnumerable<string> GetContextResponseAsync(string assistantConfinment,
+    public async IAsyncEnumerable<string> GetStreamedContextResponseAsync(string assistantConfinment,
         List<string> systemInteractions,
         List<string> userInput,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
