@@ -6,7 +6,6 @@ using Eliassen.System.Tests.Linq.TestTargets;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text.Json;
@@ -17,29 +16,6 @@ namespace Eliassen.System.Tests.Linq;
 public class QueryableExtensionsTests
 {
     public required TestContext TestContext { get; set; }
-
-    private readonly static Dictionary<Type, ConstructorInfo> _cache = [];
-    private static ConstructorInfo Constructor<T>()
-    {
-        if (_cache.TryGetValue(typeof(T), out var constructor)) return constructor;
-        _cache.Add(typeof(T), typeof(T).GetConstructor([typeof(int)])
-            ?? throw new NotSupportedException($"No Constructor(int) found")
-            );
-        return _cache.TryGetValue(typeof(T), out constructor) ? constructor : throw new NotSupportedException($"No Constructor(int) found");
-    }
-
-    private static T Factory<T>(int index) => (T)Constructor<T>().Invoke([index]);
-
-    private static IQueryable<T> GetTestData<T>(int seed) =>
-        Enumerable.Range(seed, QueryBuilder.DefaultPageSize * 100)
-                  .Select(Factory<T>)
-                  .AsQueryable();
-
-    private static IQueryable GetTestData(Type type, int seed) =>
-        (typeof(QueryableExtensionsTests)
-        .GetMethod(nameof(GetTestData), 1, [typeof(int)])
-        ?.Invoke(null, null) as IQueryable)
-        ?? throw new NotSupportedException($"No GetTestData<> Found");
 
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
@@ -141,7 +117,7 @@ public class QueryableExtensionsTests
         query = JsonSerializer.Deserialize<SearchQuery>(queryJson, Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer.DefaultOptions) ?? query;
 
         this.TestContext.AddResult(query);
-        var rawData = GetTestData<T>(typeof(T) == typeof(TestTargetExtendedModel) ? -1 : 0);
+        var rawData = TestDataBuilder.GetTestData<T>(typeof(T) == typeof(TestTargetExtendedModel) ? -1 : 0);
         this.TestContext.AddResult(rawData);
         var queryResults = QueryBuilder.Execute(rawData, query, default, default, capture);
         this.TestContext.AddResult(queryResults);
@@ -178,7 +154,7 @@ public class QueryableExtensionsTests
             }
         };
         this.TestContext.AddResult(query);
-        var queryResults = QueryBuilder.Execute(GetTestData<TestTargetExtendedModel>(0), query, default, default, capture);
+        var queryResults = QueryBuilder.Execute(TestDataBuilder.GetTestData<TestTargetExtendedModel>(0), query, default, default, capture);
         this.TestContext.AddResult(queryResults);
 
         var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
@@ -252,7 +228,7 @@ public class QueryableExtensionsTests
             SearchTerm = searchTerm,
         };
         this.TestContext.AddResult(query);
-        var rawData = GetTestData<T>(0);
+        var rawData = TestDataBuilder.GetTestData<T>(0);
         this.TestContext.AddResult(rawData);
         var queryResults = QueryBuilder.Execute(
             rawData,
@@ -289,7 +265,7 @@ public class QueryableExtensionsTests
             PageSize = pageSize,
         };
         this.TestContext.AddResult(query);
-        var rawData = GetTestData<TestTargetModel>(0);
+        var rawData = TestDataBuilder.GetTestData<TestTargetModel>(0);
         this.TestContext.AddResult(rawData);
         var queryResults = QueryBuilder.Execute(rawData, query, default, default, capture);
         this.TestContext.AddResult(queryResults);
@@ -337,7 +313,7 @@ public class QueryableExtensionsTests
             }
         };
         this.TestContext.AddResult(query);
-        var queryResults = QueryBuilder.Execute(GetTestData<TestTargetModel>(0), query, default, default, capture);
+        var queryResults = QueryBuilder.Execute(TestDataBuilder.GetTestData<TestTargetModel>(0), query, default, default, capture);
         this.TestContext.AddResult(queryResults);
 
         var results = queryResults as IPagedQueryResult<TestTargetModel>;
@@ -365,7 +341,7 @@ public class QueryableExtensionsTests
             }
         };
         this.TestContext.AddResult(query);
-        var queryResults = QueryBuilder.Execute((IQueryable)GetTestData<TestTargetModel>(0), query, default, default, capture);
+        var queryResults = QueryBuilder.Execute((IQueryable)TestDataBuilder.GetTestData<TestTargetModel>(0), query, default, default, capture);
         this.TestContext.AddResult(queryResults);
 
         var results = queryResults as IPagedQueryResult;
@@ -374,6 +350,5 @@ public class QueryableExtensionsTests
         foreach (var item in capture.Capture())
             this.TestContext.WriteLine(item.ToString());
     }
-
 
 }

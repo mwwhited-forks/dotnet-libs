@@ -30,7 +30,7 @@ public abstract class QueryBuilder
     /// <param name="searchQuery">The search query parameters.</param>
     /// <param name="postBuildVisitors">Optional post-build expression visitors.</param>
     /// <param name="logger">Optional logger for logging messages.</param>
-    /// <param name="messages">Optional message capture for result messages.</param>
+    /// <param name="capture">Optional message capture for result messages.</param>
     /// <returns>The result of the query execution.</returns>
     public static IQueryResult Execute(
         IQueryable query,
@@ -38,11 +38,11 @@ public abstract class QueryBuilder
 #if DEBUG
         IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors,
         ILogger<QueryBuilder>? logger,
-        ICaptureResultMessage? messages
+        ICaptureResultMessage? capture
 #else
         IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
         ILogger<QueryBuilder>? logger = null,
-        ICaptureResultMessage? messages = null
+        ICaptureResultMessage? capture = null
 #endif
         )
     {
@@ -63,7 +63,7 @@ public abstract class QueryBuilder
             throw new NotSupportedException($"{query.GetType()} is not supported");
 
         var method = methodSignature.MakeGenericMethod(query.ElementType);
-        var result = method.Invoke(null, [query, searchQuery, postBuildVisitors, logger, messages]) ??
+        var result = method.Invoke(null, [query, searchQuery, postBuildVisitors, logger, capture]) ??
             throw new NotSupportedException($"{query.GetType()} is not supported");
         var paged = (IQueryResult)result;
         return paged;
@@ -81,7 +81,7 @@ public abstract class QueryBuilder
     /// <param name="searchQuery">The search query parameters.</param>
     /// <param name="postBuildVisitors">Optional post-build expression visitors.</param>
     /// <param name="logger">Optional logger for logging messages.</param>
-    /// <param name="messages">Optional message capture for result messages.</param>
+    /// <param name="capture">Optional message capture for result messages.</param>
     /// <returns>The result of the typed query execution.</returns>
     public static IQueryResult<TModel> Execute<TModel>(
         IQueryable<TModel> query,
@@ -89,11 +89,11 @@ public abstract class QueryBuilder
 #if DEBUG
         IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors,
         ILogger<QueryBuilder>? logger,
-        ICaptureResultMessage? messages
+        ICaptureResultMessage? capture
 #else
         IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
         ILogger<QueryBuilder>? logger = null,
-        ICaptureResultMessage? messages = null
+        ICaptureResultMessage? capture = null
 #endif
         ) =>
         new QueryBuilder<TModel>(
@@ -101,7 +101,7 @@ public abstract class QueryBuilder
             new ExpressionTreeBuilder<TModel>(),
             postBuildVisitors,
             logger,
-            messages
+            capture
             ).ExecuteBy(query, searchQuery);
 
     /// <summary>
@@ -141,17 +141,17 @@ public class QueryBuilder<TModel>(
 #if DEBUG
         IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors,
         ILogger<QueryBuilder>? logger,
-        ICaptureResultMessage? messages
+        ICaptureResultMessage? capture
 #else
         IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
         ILogger<QueryBuilder>? logger = null,
-        ICaptureResultMessage? messages = null
+        ICaptureResultMessage? capture = null
 #endif
         ) : QueryBuilder, IQueryBuilder<TModel>
 {
     private readonly IEnumerable<IPostBuildExpressionVisitor> _postBuildVisitors = postBuildVisitors ?? [];
     private readonly ILogger _logger = logger ?? new ConsoleLogger<QueryBuilder>();
-    private readonly ICaptureResultMessage _messages = messages ?? CaptureResultMessage.Default;
+    private readonly ICaptureResultMessage _capture = capture ?? CaptureResultMessage.Default;
 
     /// <summary>
     /// Composes and executes a query build from ISearchTermQuery, IFilterQuery, ISortQuery, IPageQuery.
@@ -179,7 +179,7 @@ public class QueryBuilder<TModel>(
             _logger.LogInformation($"Execute : {{{nameof(query)}}}", ordered.ToString());
             return new QueryResult<TModel>(ordered)
             {
-                Messages = _messages.Capture(),
+                Messages = _capture.Capture(),
             };
         }
     }
@@ -197,7 +197,7 @@ public class QueryBuilder<TModel>(
     public IQueryResult ExecuteBy(IQueryable query, ISearchQuery searchQuery) =>
         ExecuteBy((query as IQueryable<TModel>) ?? throw new NotSupportedException(), searchQuery);
 
-    private IOrderedQueryable<TModel> BuildFrom(
+    internal IOrderedQueryable<TModel> BuildFrom(
         IQueryable<TModel> query,
         ISearchQuery searchQuery,
         StringComparison stringComparison
@@ -217,7 +217,7 @@ public class QueryBuilder<TModel>(
 
         if (query.ToString() == filtered.ToString())
         {
-            _messages.Publish(new ResultMessage
+            _capture.Publish(new ResultMessage
             {
                 Level = MessageLevels.Warning,
                 Message = SearchQuery.Messages.NoSearchQueryFilter,
@@ -246,7 +246,7 @@ public class QueryBuilder<TModel>(
         return sorted;
     }
 
-    private PagedQueryResult<TModel> PageBy(
+    internal PagedQueryResult<TModel> PageBy(
         IOrderedQueryable<TModel> query,
         IPageQuery? pager
         )
@@ -277,12 +277,12 @@ public class QueryBuilder<TModel>(
             items: rows
             )
         {
-            Messages = _messages.Capture(),
+            Messages = _capture.Capture(),
         };
         return result;
     }
 
-    private IQueryable<TModel> SearchBy(
+    internal IQueryable<TModel> SearchBy(
         IQueryable<TModel> query,
         ISearchTermQuery? search,
         StringComparison stringComparison,
@@ -300,7 +300,7 @@ public class QueryBuilder<TModel>(
         return query;
     }
 
-    private IQueryable<TModel> FilterBy(
+    internal IQueryable<TModel> FilterBy(
         IQueryable<TModel> query,
         IFilterQuery? filter,
         StringComparison stringComparison
@@ -318,7 +318,7 @@ public class QueryBuilder<TModel>(
                 }
                 else
                 {
-                    _messages.Publish(new ResultMessage
+                    _capture.Publish(new ResultMessage
                     {
                         Message = SearchQuery.Messages.NoPropertyFilter,
                         MessageCode = SearchQuery.Messages.NoPropertyFilterCode,
@@ -332,7 +332,7 @@ public class QueryBuilder<TModel>(
         return query;
     }
 
-    private IOrderedQueryable<TModel> SortBy(
+    internal IOrderedQueryable<TModel> SortBy(
         IQueryable<TModel> query,
         ISortQuery? sortBy,
         StringComparison keyStringComparer
