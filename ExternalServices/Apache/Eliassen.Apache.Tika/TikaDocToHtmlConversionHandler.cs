@@ -17,5 +17,5 @@ public class TikaDocToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
     /// <summary>
     /// Gets an array of supported source content types for conversion.
     /// </summary>
-    public override string[] Sources => ["application/msword"];
+    public override string[] Sources => ["application/msword", "application/x-tika-msoffice"];
 }

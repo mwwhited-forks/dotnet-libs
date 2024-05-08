@@ -74,6 +74,7 @@ public static class ServiceCollectionExtensions
         services.TryAddKeyedTransient<IMessageReceiverProvider, AzureStorageQueueMessageProvider>(AzureStorageGlobals.MessageProviderKey);
 
         services.TryAddTransient<IQueueClientFactory, QueueClientFactory>();
+        services.TryAddTransient<IAzureStorageQueueMapper, AzureStorageQueueMapper>();
 
         return services;
     }
