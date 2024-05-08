@@ -13,7 +13,7 @@ public interface IAzureStorageQueueMapper
     /// </summary>
     /// <param name="configuration">The configuration containing information about whether to ensure the queue exists.</param>
     /// <returns>True if the queue exists or should be ensured to exist; otherwise, false.</returns>
-    bool EnsureQueueExists(IConfigurationSection configuration);
+    bool EnsureQueueExists(IConfiguration configuration);
 
     /// <summary>
     /// Wraps the provided message and message context into a <see cref="WrappedQueueMessage"/>.
@@ -28,5 +28,5 @@ public interface IAzureStorageQueueMapper
     /// </summary>
     /// <param name="configuration">The configuration containing the wait delay value.</param>
     /// <returns>The wait delay value, in milliseconds.</returns>
-    int WaitDelay(IConfigurationSection configuration);
+    int WaitDelay(IConfiguration configuration);
 }

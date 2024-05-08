@@ -346,4 +346,34 @@ public class QueryableExtensionsTests
         foreach (var item in capture.Capture())
             this.TestContext.WriteLine(item.ToString());
     }
+
+    [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
+    [DataRow(nameof(TestTargetModel.Name), OrderDirections.Descending, "999,998,997,996,995,994,993,992,991,990")]
+    [DataRow("name", OrderDirections.Descending, "999,998,997,996,995,994,993,992,991,990")]
+    [DataRow("NAME", OrderDirections.Descending, "999,998,997,996,995,994,993,992,991,990")]
+    [DataRow(nameof(TestTargetModel.Name), OrderDirections.Ascending, "0,1,10,100,101,102,103,104,105,106")]
+    public void ExecuteTest_Sort(string fieldName, OrderDirections direction, string expected)
+    {
+        var capture = new CaptureResultMessage();
+
+        var query = new SearchQuery
+        {
+            OrderBy = new()
+            {
+                { fieldName, direction }
+            }
+        };
+        this.TestContext.AddResult(query);
+        var queryResults = QueryBuilder.Execute((IQueryable)GetTestData<TestTargetModel>(0), query, default, default, capture);
+        this.TestContext.AddResult(queryResults);
+
+        var results = queryResults as IPagedQueryResult;
+        Assert.IsNotNull(results);
+        Assert.AreEqual(expected, string.Join(',', results.Rows.Cast<TestTargetModel>().Select(i => i.Index)));
+        foreach (var item in capture.Capture())
+            this.TestContext.WriteLine(item.ToString());
+    }
+
+
 }

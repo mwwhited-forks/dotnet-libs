@@ -30,7 +30,7 @@ public class AzureStorageQueueMapper : IAzureStorageQueueMapper
     /// </summary>
     /// <param name="configuration">The configuration containing information about whether to ensure the queue exists.</param>
     /// <returns>True if the queue exists or should be ensured to exist; otherwise, false.</returns>
-    public bool EnsureQueueExists(IConfigurationSection configuration) =>
+    public bool EnsureQueueExists(IConfiguration configuration) =>
         bool.TryParse(configuration["EnsureQueueExists"], out var result) && result;
 
     /// <summary>
@@ -38,6 +38,6 @@ public class AzureStorageQueueMapper : IAzureStorageQueueMapper
     /// </summary>
     /// <param name="configuration">The configuration containing the wait delay value.</param>
     /// <returns>The wait delay value, in milliseconds.</returns>
-    public int WaitDelay(IConfigurationSection configuration) =>
+    public int WaitDelay(IConfiguration configuration) =>
         int.TryParse(configuration["WaitDelay"], out var result) ? result : 1000;
 }
