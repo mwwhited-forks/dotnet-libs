@@ -14,7 +14,7 @@ Tries to add OpenAI-related services to the specified service collection.
 ##### Parameters
 * *services:* The service collection to which OpenAI services should be added.
 * *configuration:* The configuration used to bind options.
-* *openAIOptionSection:* The name of the configuration section containing OpenAI options. Defaults to "OpenAIOptions".
+* *openAIOptionSection:* The name of the configuration section containing OpenAI options. Defaults to "OpenAIClientOptions".
 
 
 
@@ -23,6 +23,16 @@ Tries to add OpenAI-related services to the specified service collection.
 The updated service collection.
 
 
+
+## Class: OpenAI.AI.Services.OpenAIClientOptions
+Represents options for configuring the OpenAI service. 
+
+### Properties
+
+#### APIKey
+Gets or sets the APIKey to be used.
+#### DeploymentName
+Gets or sets the deployment model to be used for the text generation.
 
 ## Class: OpenAI.AI.Services.OpenAIManager
 Provides methods for interacting with the OpenAI language model. 
@@ -72,14 +82,3 @@ Gets a streamed response asynchronously based on the provided prompt details and
 ##### Return value
 An asynchronous enumerable of response messages.
 
-
-
-## Class: OpenAI.AI.Services.OpenAIOptions
-Represents options for configuring the OpenAI service. 
-
-### Properties
-
-#### APIKey
-Gets or sets the APIKey to be used.
-#### DeploymentName
-Gets or sets the deployment model to be used for the text generation.

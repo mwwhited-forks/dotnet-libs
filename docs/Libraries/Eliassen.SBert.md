@@ -114,12 +114,13 @@ Initializes a new instance of the
 
 
 
-#### GetEmbeddingAsync(System.String)
+#### GetEmbeddingAsync(System.String,System.String)
 Gets the embedding for the given content asynchronously. 
 
 
 ##### Parameters
 * *content:* The content for which to obtain the embedding.
+* *model:* The model for which to obtain the embedding.
 
 
 

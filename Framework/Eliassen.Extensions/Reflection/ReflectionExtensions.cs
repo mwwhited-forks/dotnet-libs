@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.ComponentModel;
+using Eliassen.System.ResponseModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 using System.Text.Json;
+using static System.Reflection.BindingFlags;
 
 namespace Eliassen.Extensions.Reflection;
 
@@ -17,15 +19,15 @@ public static class ReflectionExtensions
     /// <summary>
     /// flag combination to select public instance properties
     /// </summary>
-    public const BindingFlags PublicProperties = BindingFlags.GetProperty | BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase;
+    public const BindingFlags PublicProperties = GetProperty | Public | Instance | IgnoreCase;
     /// <summary>
     /// flag combination to select public static methods
     /// </summary>
-    public const BindingFlags PublicStaticMethod = BindingFlags.Static | BindingFlags.Public | BindingFlags.InvokeMethod | BindingFlags.IgnoreCase;
+    public const BindingFlags PublicStaticMethod = Static | Public | InvokeMethod | IgnoreCase;
     /// <summary>
     /// flag combination to select public instance methods
     /// </summary>
-    public const BindingFlags PublicInstanceMethod = BindingFlags.Instance | BindingFlags.Public | BindingFlags.InvokeMethod | BindingFlags.IgnoreCase;
+    public const BindingFlags PublicInstanceMethod = Instance | Public | InvokeMethod | IgnoreCase;
 
     /// <summary>
     /// lookup key values for provided entity 
@@ -42,11 +44,22 @@ public static class ReflectionExtensions
     /// <summary>
     /// safely create new array for a given element type.
     /// </summary>
-    /// <param name="type"></param>
-    /// <param name="inputs"></param>
+    /// <param name="type">target conversion type</param>
+    /// <param name="inputs">source value</param>
+    /// <param name="capture">capture message</param>
     /// <returns></returns>
-    public static object? MakeSafeArray(this Type? type, Array? inputs)
+    public static object? MakeSafeArray(
+        this Type? type,
+        Array? inputs,
+#if DEBUG
+        ICaptureResultMessage? capture
+#else
+        ICaptureResultMessage? capture = null
+#endif
+        )
     {
+        capture ??= CaptureResultMessage.Default;
+
         if (type == null || inputs == null)
         {
             return default;
@@ -55,7 +68,7 @@ public static class ReflectionExtensions
         var results = new List<object>();
         foreach (var input in inputs)
         {
-            var value = type.MakeSafe(input);
+            var value = type.MakeSafe(input, capture);
             if (value != null)
             {
                 results.Add(value);
@@ -71,18 +84,29 @@ public static class ReflectionExtensions
     /// <summary>
     /// Make safe will try to convert input to target type as best as possible.
     /// </summary>
-    /// <param name="type"></param>
-    /// <param name="input"></param>
+    /// <param name="type">target conversion type</param>
+    /// <param name="input">source value</param>
+    /// <param name="capture">capture message</param>
     /// <returns></returns>
-    public static object? MakeSafe(this Type? type, object? input)
+    public static object? MakeSafe(
+        this Type? type,
+        object? input,
+#if DEBUG
+        ICaptureResultMessage? capture
+#else
+        ICaptureResultMessage? capture = null
+#endif
+        )
     {
+        capture ??= CaptureResultMessage.Default;
+
         if (type == null || input == null)
             return default;
         else if (type.IsInstanceOfType(input))
             return input;
         else if (input is string inputString)
         {
-            if (type.TryParse(inputString, out var parsed) && parsed != null)
+            if (type.TryParse(inputString, out var parsed, capture) && parsed != null)
             {
                 return parsed;
             }
@@ -92,22 +116,27 @@ public static class ReflectionExtensions
                 {
                     return Convert.FromBase64String(inputString);
                 }
-                catch
+                catch (Exception ex)
                 {
                     //Intentional
+                    capture?.Publish(new ResultMessage
+                    {
+                        Level = MessageLevels.Warning,
+                        Message = ex.Message,
+                    });
                 }
             }
         }
         else if (type.IsEnum && input is int enumInt)
         {
             var enumName = Enum.GetName(type, enumInt);
-            var enumValue = type.MakeSafe(enumName);
+            var enumValue = type.MakeSafe(enumName, capture);
             return enumValue ?? default;
         }
         else if (input.GetType().IsValueType && type == typeof(string))
             return input.ToString();
         else if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>))
-            return type.GetGenericArguments()[0].MakeSafe(input);
+            return type.GetGenericArguments()[0].MakeSafe(input, capture);
 
         try
         {
@@ -134,9 +163,14 @@ public static class ReflectionExtensions
                 }
             }
         }
-        catch
+        catch (Exception ex)
         {
-            //TODO: should probably do something smarter
+            //Intentional
+            capture?.Publish(new ResultMessage
+            {
+                Level = MessageLevels.Warning,
+                Message = ex.Message,
+            });
         }
 
         return default;
@@ -145,12 +179,24 @@ public static class ReflectionExtensions
     /// <summary>
     /// Use best possible match for parsing to provided type
     /// </summary>
-    /// <param name="type"></param>
-    /// <param name="toParse"></param>
-    /// <param name="parsed"></param>
+    /// <param name="type">target conversion type</param>
+    /// <param name="toParse">source value</param>
+    /// <param name="parsed">output value</param>
+    /// <param name="capture">capture message</param>
     /// <returns></returns>
-    public static bool TryParse(this Type? type, string? toParse, out object? parsed)
+    public static bool TryParse(
+        this Type? type,
+        string? toParse,
+        out object? parsed,
+#if DEBUG
+        ICaptureResultMessage? capture
+#else
+        ICaptureResultMessage? capture = null
+#endif
+        )
     {
+        capture ??= CaptureResultMessage.Default;
+
         if (type == null || string.IsNullOrWhiteSpace(toParse))
         {
             parsed = default;
@@ -197,15 +243,20 @@ public static class ReflectionExtensions
                     return true;
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 //Intentional
+                capture?.Publish(new ResultMessage
+                {
+                    Level = MessageLevels.Warning,
+                    Message = ex.Message,
+                });
             }
         }
 
         if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>))
         {
-            if (type.GetGenericArguments()[0].TryParse(toParse, out var value))
+            if (type.GetGenericArguments()[0].TryParse(toParse, out var value, capture))
             {
                 parsed = value;
                 return true;

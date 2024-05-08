@@ -1,4 +1,5 @@
 ﻿using Eliassen.AI;
+using Eliassen.AI.Models;
 using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,19 +14,27 @@ namespace Eliassen.WebApi.Controllers;
 /// </summary>
 [Route("api/[controller]")]
 [ApiController]
-public class AIController : ControllerBase
+public class OllamaController : ControllerBase
 {
     private readonly ILanguageModelProvider _llmProvider;
+    private readonly IMessageCompletion _completion;
+    private readonly IEmbeddingProvider _embedding;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AIController"/> class with the specified dependencies.
     /// </summary>
     /// <param name="llmProvider">The language model provider.</param>
-    public AIController(
-        [FromKeyedServices("OPENAPI")] ILanguageModelProvider llmProvider
+    /// <param name="completion">The completion provider.</param>
+    /// <param name="embedding">The embedding provider.</param>
+    public OllamaController(
+        [FromKeyedServices("OLLAMA")] ILanguageModelProvider llmProvider,
+        [FromKeyedServices("OLLAMA")] IMessageCompletion completion,
+        [FromKeyedServices("OLLAMA")] IEmbeddingProvider embedding
         )
     {
         _llmProvider = llmProvider;
+        _completion = completion;
+        _embedding = embedding;
     }
 
     /// <summary>
@@ -50,4 +59,23 @@ public class AIController : ControllerBase
             yield return response;
         };
     }
+
+    /// <summary>
+    /// Retrieves the embedding vector for the given text.
+    /// </summary>
+    /// <param name="text">The text for which to retrieve the embedding vector.</param>
+    /// <param name="model">The model for which to retrieve the embedding vector.</param>
+    /// <returns>The embedding vector.</returns>
+    [HttpGet]
+    public async Task<float[]> Embed(string text, string? model = default) =>
+        await _embedding.GetEmbeddingAsync(text, model);
+
+    /// <summary>
+    /// executes a completion request
+    /// </summary>
+    /// <param name="model">completion request</param>
+    /// <returns>completion result</returns>
+    [HttpPost("Completion")]
+    public async Task<CompletionResponse> Completion([FromBody] CompletionRequest model) =>
+        await _completion.GetCompletionAsync(model);
 }

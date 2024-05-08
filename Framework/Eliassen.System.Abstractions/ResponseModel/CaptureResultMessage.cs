@@ -1,5 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Eliassen.System.ResponseModel;
 
@@ -41,10 +42,10 @@ public class CaptureResultMessage : ICaptureResultMessage
         return captured;
     }
 
-    private static ICaptureResultMessage? _default;
+    private readonly static AsyncLocal<ICaptureResultMessage?> _default = new();
 
     /// <summary>
     /// Default instance for CaptureResultMessage
     /// </summary>
-    public static ICaptureResultMessage Default => _default ??= new CaptureResultMessage();
+    public static ICaptureResultMessage Default => _default.Value ??= new CaptureResultMessage();
 }

@@ -16,7 +16,7 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The service collection to which OpenAI services should be added.</param>
     /// <param name="configuration">The configuration used to bind options.</param>
-    /// <param name="openAIOptionSection">The name of the configuration section containing OpenAI options. Defaults to "OpenAIOptions".</param>
+    /// <param name="openAIOptionSection">The name of the configuration section containing OpenAI options. Defaults to "OpenAIClientOptions".</param>
     /// <returns>The updated service collection.</returns>
     public static IServiceCollection TryAddOpenAIServices(
         this IServiceCollection services,
@@ -24,14 +24,18 @@ public static class ServiceCollectionExtensions
 #if DEBUG
         string openAIOptionSection
 #else
-        string openAIOptionSection = nameof(OpenAIOptions)
+        string openAIOptionSection = nameof(OpenAIClientOptions)
 #endif
         )
     {
         services.TryAddTransient<ILanguageModelProvider, OpenAIManager>();
         services.TryAddKeyedTransient<ILanguageModelProvider, OpenAIManager>("OPENAPI");
 
-        services.Configure<OpenAIOptions>(options => configuration.Bind(openAIOptionSection, options));
+        //TODO: could map in support
+        //services.TryAddKeyedTransient<IMessageCompletion, OpenAIManager>("OPENAPI");
+        //services.TryAddKeyedTransient<IEmbeddingProvider, OpenAIManager>("OPENAPI");
+
+        services.Configure<OpenAIClientOptions>(options => configuration.Bind(openAIOptionSection, options));
         return services;
     }
 }

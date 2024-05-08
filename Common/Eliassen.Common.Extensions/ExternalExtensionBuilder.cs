@@ -49,7 +49,7 @@ public record ExternalExtensionBuilder
     /// <summary>
     /// Gets or sets the configuration section name for OpenAI client options.
     /// </summary>
-    public string OpenAIOptionSection { get; init; } = nameof(OpenAIOptions);
+    public string OpenAIClientOptionsSection { get; init; } = nameof(OpenAIClientOptions);
 
     /// <summary>
     /// Gets or sets the configuration section name for SentenceEmbeddingOptions.

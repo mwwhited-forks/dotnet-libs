@@ -126,11 +126,13 @@ public class QueryableExtensionsTests
 
     private void ExecuteByTestFilter<T>(string propertyName, Operators expressionOperator, object? filterValue, int expectedRows, string expectedKeys)
     {
+        var capture = new CaptureResultMessage();
+
         var query = new SearchQuery
         {
             Filter = new()
             {
-                { propertyName, expressionOperator.AsFilter(filterValue ) }
+                { propertyName, expressionOperator.AsFilter(filterValue, capture) }
             }
         };
 
@@ -141,7 +143,7 @@ public class QueryableExtensionsTests
         this.TestContext.AddResult(query);
         var rawData = GetTestData<T>(typeof(T) == typeof(TestTargetExtendedModel) ? -1 : 0);
         this.TestContext.AddResult(rawData);
-        var queryResults = QueryBuilder.Execute(rawData, query);
+        var queryResults = QueryBuilder.Execute(rawData, query, default, default, capture);
         this.TestContext.AddResult(queryResults);
 
         var results = queryResults as IPagedQueryResult<T>;
@@ -152,12 +154,17 @@ public class QueryableExtensionsTests
         Assert.AreEqual(expectedRows, results.Rows.Count);
         if (expectedKeys != null)
             Assert.AreEqual(expectedKeys, resultKeys);
+
+        foreach (var item in capture.Capture())
+            this.TestContext?.WriteLine(item.ToString());
     }
 
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
     public void ExecuteByTest_Filter_Range_Bounds()
     {
+        var capture = new CaptureResultMessage();
+
         var query = new SearchQuery
         {
             Filter =
@@ -171,13 +178,16 @@ public class QueryableExtensionsTests
             }
         };
         this.TestContext.AddResult(query);
-        var queryResults = QueryBuilder.Execute(GetTestData<TestTargetExtendedModel>(0), query);
+        var queryResults = QueryBuilder.Execute(GetTestData<TestTargetExtendedModel>(0), query, default, default, capture);
         this.TestContext.AddResult(queryResults);
 
         var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
         Assert.IsNotNull(results);
 
         Assert.AreEqual(5, results.TotalRowCount);
+
+        foreach (var item in capture.Capture())
+            this.TestContext.WriteLine(item.ToString());
     }
 
     [TestMethod]
@@ -271,6 +281,8 @@ public class QueryableExtensionsTests
     [DataRow(1, -1, null, null, null, 1000, null)]
     public void ExecuteByTest_Page(int currentPage, int pageSize, int? expectedTotalPages, int? expectedTotalRows, int? expectedPageNumber, int expectedRows, string? expectedKeys)
     {
+        var capture = new CaptureResultMessage();
+
         var query = new SearchQuery
         {
             CurrentPage = currentPage,
@@ -279,7 +291,7 @@ public class QueryableExtensionsTests
         this.TestContext.AddResult(query);
         var rawData = GetTestData<TestTargetModel>(0);
         this.TestContext.AddResult(rawData);
-        var queryResults = QueryBuilder.Execute(rawData, query);
+        var queryResults = QueryBuilder.Execute(rawData, query, default, default, capture);
         this.TestContext.AddResult(queryResults);
 
         if (queryResults is IPagedQueryResult<TestTargetModel> pagedResults)
@@ -302,6 +314,9 @@ public class QueryableExtensionsTests
         {
             Assert.Fail("Not supported");
         }
+
+        foreach (var item in capture.Capture())
+            this.TestContext?.WriteLine(item.ToString());
     }
 
     [DataTestMethod]
@@ -312,6 +327,8 @@ public class QueryableExtensionsTests
     [DataRow(nameof(TestTargetModel.Name), OrderDirections.Ascending, "0,1,10,100,101,102,103,104,105,106")]
     public void ExecuteByTest_Sort(string fieldName, OrderDirections direction, string expected)
     {
+        var capture = new CaptureResultMessage();
+
         var query = new SearchQuery
         {
             OrderBy = new()
@@ -320,11 +337,13 @@ public class QueryableExtensionsTests
             }
         };
         this.TestContext.AddResult(query);
-        var queryResults = QueryBuilder.Execute(GetTestData<TestTargetModel>(0), query);
+        var queryResults = QueryBuilder.Execute(GetTestData<TestTargetModel>(0), query, default, default, capture);
         this.TestContext.AddResult(queryResults);
 
         var results = queryResults as IPagedQueryResult<TestTargetModel>;
         Assert.IsNotNull(results);
         Assert.AreEqual(expected, string.Join(',', results.Rows.Select(i => i.Index)));
+        foreach (var item in capture.Capture())
+            this.TestContext.WriteLine(item.ToString());
     }
 }

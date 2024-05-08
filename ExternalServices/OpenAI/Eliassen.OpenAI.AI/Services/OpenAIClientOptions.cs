@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents options for configuring the OpenAI service.
 /// </summary>
-public class OpenAIOptions
+public class OpenAIClientOptions
 {
     /// <summary>
     /// Gets or sets the APIKey to be used.
