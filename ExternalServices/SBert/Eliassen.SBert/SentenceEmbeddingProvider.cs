@@ -31,7 +31,7 @@ public class SentenceEmbeddingProvider : IEmbeddingProvider
     /// <summary>
     /// Gets the length of the embeddings.
     /// </summary>
-    public int Length => _length ??= GetEmbeddingAsync("hello world",null).Result.Length;
+    public int Length => _length ??= GetEmbeddingAsync("hello world", null).Result.Length;
 
     /// <summary>
     /// Gets the embedding for the given content asynchronously.

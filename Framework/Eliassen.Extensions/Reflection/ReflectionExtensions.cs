@@ -122,7 +122,7 @@ public static class ReflectionExtensions
                     capture?.Publish(new ResultMessage
                     {
                         Level = MessageLevels.Warning,
-                        Message = ex.Message,                        
+                        Message = ex.Message,
                     });
                 }
             }

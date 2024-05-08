@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Eliassen.WebApi",
-    "version": "0.1.74.4"
+    "version": "0.1.75.3"
   },
   "paths": {
     "/api/AI": {
@@ -54,59 +54,6 @@
         },
         "x-permissions": {
           "anonymous": true
-        }
-      },
-      "get": {
-        "tags": [
-          "AI"
-        ],
-        "summary": "Retrieves the embedding vector for the given text.",
-        "parameters": [
-          {
-            "name": "text",
-            "in": "query",
-            "description": "The text for which to retrieve the embedding vector.",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "number",
-                    "format": "float"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "number",
-                    "format": "float"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "number",
-                    "format": "float"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-permissions": {
-          "anonymous": false
         }
       }
     },
@@ -857,6 +804,280 @@
         }
       }
     },
+    "/api/Ollama": {
+      "post": {
+        "tags": [
+          "Ollama"
+        ],
+        "summary": "Generate an LLM Response based on the prompt and user input",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": true
+        }
+      },
+      "get": {
+        "tags": [
+          "Ollama"
+        ],
+        "summary": "Retrieves the embedding vector for the given text.",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "description": "The text for which to retrieve the embedding vector.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "format": "float"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "format": "float"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "format": "float"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": false
+        }
+      }
+    },
+    "/api/Ollama/Streamed": {
+      "post": {
+        "tags": [
+          "Ollama"
+        ],
+        "summary": "Generate an AbstractAI Streamed Response based on the prompt and user input",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": true
+        }
+      }
+    },
+    "/api/Ollama/Completion": {
+      "post": {
+        "tags": [
+          "Ollama"
+        ],
+        "summary": "executes a completion request",
+        "requestBody": {
+          "description": "completion request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.AI.Models.CompletionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.AI.Models.CompletionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eliassen.AI.Models.CompletionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Eliassen.AI.Models.CompletionResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Eliassen.AI.Models.CompletionResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Eliassen.AI.Models.CompletionResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": false
+        }
+      }
+    },
+    "/api/SBERT": {
+      "get": {
+        "tags": [
+          "SBERT"
+        ],
+        "summary": "Retrieves the embedding vector for the given text.",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "description": "The text for which to retrieve the embedding vector.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "format": "float"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "format": "float"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "format": "float"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-permissions": {
+          "anonymous": false
+        }
+      }
+    },
     "/api/TextTemplate/SupportedTemplates": {
       "post": {
         "tags": [
@@ -990,6 +1211,71 @@
   },
   "components": {
     "schemas": {
+      "Eliassen.AI.Models.CompletionRequest": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "Gets or initializes the model for the completion request.",
+            "nullable": true
+          },
+          "context": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "description": "Gets or initializes the context for the completion request.",
+            "nullable": true
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Gets or initializes the images for the completion request.",
+            "nullable": true
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Gets or initializes the prompt for the completion request.",
+            "nullable": true
+          },
+          "system": {
+            "type": "string",
+            "description": "Gets or initializes the system for the completion request.",
+            "nullable": true
+          },
+          "template": {
+            "type": "string",
+            "description": "Gets or initializes the template for the completion request.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a completion request."
+      },
+      "Eliassen.AI.Models.CompletionResponse": {
+        "type": "object",
+        "properties": {
+          "context": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "description": "Gets or sets the context for the completion response.",
+            "nullable": true
+          },
+          "response": {
+            "type": "string",
+            "description": "Gets or sets the response generated by the completion process.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a completion response."
+      },
       "Eliassen.Communications.Models.AttachmentReferenceModel": {
         "type": "object",
         "properties": {
@@ -1174,11 +1460,6 @@
             "type": "string",
             "description": "Gets or sets the user input.",
             "nullable": true
-          },
-          "apiKey": {
-            "type": "string",
-            "description": "Gets or sets the input api key to use.",
-            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -1208,26 +1489,6 @@
         },
         "additionalProperties": false
       }
-    },
-    "securitySchemes": {
-      "oauth2": {
-        "type": "oauth2",
-        "description": "oauth2 authentication",
-        "flows": {
-          "implicit": {
-            "authorizationUrl": "https://lightwellnucleusdev.b2clogin.com/lightwellnucleusdev.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_NucAcc_Signin",
-            "tokenUrl": "https://lightwellnucleusdev.b2clogin.com/lightwellnucleusdev.onmicrosoft.com/oauth2/v2.0/token?p=B2C_1_NucAcc_Signin",
-            "scopes": {
-              "https://lightwellnucleusdev.onmicrosoft.com/user.read/read": "UserReadApiClaim"
-            }
-          }
-        }
-      }
     }
-  },
-  "security": [
-    {
-      "oauth2": [ ]
-    }
-  ]
+  }
 }

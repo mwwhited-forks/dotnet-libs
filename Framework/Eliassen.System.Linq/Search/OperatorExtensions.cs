@@ -7,7 +7,7 @@ namespace Eliassen.System.Linq.Search;
 internal static class OperatorExtensions
 {
     public static FilterParameter AsFilter(
-        this Operators expressionOperator, 
+        this Operators expressionOperator,
         object? value,
 #if DEBUG
         ICaptureResultMessage? messages
@@ -19,7 +19,7 @@ internal static class OperatorExtensions
 
     public static FilterParameter And(
         this FilterParameter filter,
-        Operators expressionOperator, 
+        Operators expressionOperator,
         object? value,
 #if DEBUG
         ICaptureResultMessage? messages

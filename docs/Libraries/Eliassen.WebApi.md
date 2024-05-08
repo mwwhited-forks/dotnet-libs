@@ -37,7 +37,6 @@ Initializes a new instance of the
 
 ##### Parameters
 * *llmProvider:* The language model provider.
-* *embedding:* The embedding provider.
 
 
 
@@ -57,21 +56,6 @@ Generate an AbstractAI Streamed Response based on the prompt and user input
 
 ##### Return value
 The streamed string responses from the AbstractAI
-
-
-
-#### Embed(System.String)
-Retrieves the embedding vector for the given text. 
-
-
-##### Parameters
-* *text:* The text for which to retrieve the embedding vector.
-
-
-
-
-##### Return value
-The embedding vector.
 
 
 
@@ -302,6 +286,106 @@ A task representing the asynchronous operation and containing a string result.
 
 
 
+## Class: WebApi.Controllers.OllamaController
+Controller for AI-related operations. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.WebApi.Controllers.AIController*class with the specified dependencies. 
+
+
+##### Parameters
+* *llmProvider:* The language model provider.
+* *completion:* The completion provider.
+* *embedding:* The embedding provider.
+
+
+
+
+#### GetResponseAsync(Eliassen.WebApi.Models.GenerativeAiRequestModel)
+Generate an LLM Response based on the prompt and user input 
+
+
+##### Return value
+The string response from the LLM
+
+
+
+#### GetStreamedResponseAsync(Eliassen.WebApi.Models.GenerativeAiRequestModel)
+Generate an AbstractAI Streamed Response based on the prompt and user input 
+
+
+##### Return value
+The streamed string responses from the AbstractAI
+
+
+
+#### Embed(System.String,System.String)
+Retrieves the embedding vector for the given text. 
+
+
+##### Parameters
+* *text:* The text for which to retrieve the embedding vector.
+* *model:* The model for which to retrieve the embedding vector.
+
+
+
+
+##### Return value
+The embedding vector.
+
+
+
+#### Completion(Eliassen.AI.Models.CompletionRequest)
+executes a completion request 
+
+
+##### Parameters
+* *model:* completion request
+
+
+
+
+##### Return value
+completion result
+
+
+
+## Class: WebApi.Controllers.SBERTController
+Controller for AI-related operations. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.WebApi.Controllers.AIController*class with the specified dependencies. 
+
+
+##### Parameters
+* *embedding:* The embedding provider.
+
+
+
+
+#### Embed(System.String,System.String)
+Retrieves the embedding vector for the given text. 
+
+
+##### Parameters
+* *text:* The text for which to retrieve the embedding vector.
+
+
+
+
+##### Return value
+The embedding vector.
+
+
+
 ## Class: WebApi.Controllers.SearchController
 Controller for handling search operations. 
 
@@ -418,8 +502,6 @@ Represents the model used for generating AI responses.
 Gets or sets the prompt details.
 #### UserInput
 Gets or sets the user input.
-#### ApiKey
-Gets or sets the input api key to use.
 
 ## Class: WebApi.Program
 primary entry point 

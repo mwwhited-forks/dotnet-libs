@@ -74,7 +74,7 @@ public class ReflectionExtensionsTests
             Assert.AreEqual(expected, result);
         }
 
-        foreach(var item in capture.Capture())
+        foreach (var item in capture.Capture())
             this.TestContext.WriteLine(item.ToString());
     }
 

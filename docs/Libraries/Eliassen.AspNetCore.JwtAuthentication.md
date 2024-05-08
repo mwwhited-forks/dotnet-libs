@@ -89,6 +89,7 @@ Configures SwaggerGen options for OAuth2 authentication.
 
 ##### Parameters
 * *config:* The OAuth2 Swagger options.
+* *logger:* Logger
 
 
 
@@ -125,7 +126,8 @@ Configures SwaggerUI options for OAuth authentication.
 
 
 ##### Parameters
-* *jwtBearer:* The JwtBearer options.
+* *options:* The JwtBearer options.
+* *logger:* The logger options.
 
 
 
