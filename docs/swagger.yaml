@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Eliassen.WebApi
-  version: 0.1.75.3
+  version: 0.1.75.8
 paths:
   /api/AI:
     post:
@@ -539,6 +539,11 @@ paths:
           description: The text for which to retrieve the embedding vector.
           schema:
             type: string
+        - name: model
+          in: query
+          description: The model for which to retrieve the embedding vector.
+          schema:
+            type: string
       responses:
         '200':
           description: Success
@@ -641,6 +646,10 @@ paths:
         - name: text
           in: query
           description: The text for which to retrieve the embedding vector.
+          schema:
+            type: string
+        - name: model
+          in: query
           schema:
             type: string
       responses:

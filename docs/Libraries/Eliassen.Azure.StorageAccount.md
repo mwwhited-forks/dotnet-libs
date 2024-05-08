@@ -238,6 +238,59 @@ The created .
 
 
 
+## Class: Azure.StorageAccount.MessageQueueing.AzureStorageQueueMapper
+Provides functionality to map objects to and from Azure Storage Queue messages. 
+
+### Methods
+
+
+#### Wrap(System.Object,Eliassen.MessageQueueing.Services.IMessageContext)
+Wraps the provided message and message context into a 
+ *See: T:Eliassen.MessageQueueing.Services.WrappedQueueMessage*. 
+
+
+##### Parameters
+* *message:* The message object to wrap.
+* *context:* The message context.
+
+
+
+
+##### Return value
+A wrapped queue message.
+
+
+
+#### EnsureQueueExists(Microsoft.Extensions.Configuration.IConfiguration)
+Ensures that the Azure Storage Queue exists based on the provided configuration. 
+
+
+##### Parameters
+* *configuration:* The configuration containing information about whether to ensure the queue exists.
+
+
+
+
+##### Return value
+True if the queue exists or should be ensured to exist; otherwise, false.
+
+
+
+#### WaitDelay(Microsoft.Extensions.Configuration.IConfiguration)
+Retrieves the wait delay value from the provided configuration. 
+
+
+##### Parameters
+* *configuration:* The configuration containing the wait delay value.
+
+
+
+
+##### Return value
+The wait delay value, in milliseconds.
+
+
+
 ## Class: Azure.StorageAccount.MessageQueueing.AzureStorageQueueMessageProvider
 Provides functionality for sending and receiving messages using Azure Storage Queues. 
 Initializes a new instance of the 
@@ -253,6 +306,7 @@ Provides functionality for sending and receiving messages using Azure Storage Qu
 ##### Parameters
 * *serializer:* The JSON serializer for message serialization and deserialization.
 * *clientFactory:* The factory for creating Azure Storage Queue clients.
+* *mapper:* The model mapper for Azure Storage Queues.
 * *logger:* The logger for logging messages.
 
 
@@ -301,6 +355,59 @@ Runs the message receiver asynchronously, continuously listening for incoming me
 
 ##### Return value
 A task representing the asynchronous operation.
+
+
+
+## Class: Azure.StorageAccount.MessageQueueing.IAzureStorageQueueMapper
+Provides functionality to map objects to and from Azure Storage Queue messages. 
+
+### Methods
+
+
+#### EnsureQueueExists(Microsoft.Extensions.Configuration.IConfiguration)
+Ensures that the Azure Storage Queue exists based on the provided configuration. 
+
+
+##### Parameters
+* *configuration:* The configuration containing information about whether to ensure the queue exists.
+
+
+
+
+##### Return value
+True if the queue exists or should be ensured to exist; otherwise, false.
+
+
+
+#### Wrap(System.Object,Eliassen.MessageQueueing.Services.IMessageContext)
+Wraps the provided message and message context into a 
+ *See: T:Eliassen.MessageQueueing.Services.WrappedQueueMessage*. 
+
+
+##### Parameters
+* *message:* The message object to wrap.
+* *context:* The message context.
+
+
+
+
+##### Return value
+A wrapped queue message.
+
+
+
+#### WaitDelay(Microsoft.Extensions.Configuration.IConfiguration)
+Retrieves the wait delay value from the provided configuration. 
+
+
+##### Parameters
+* *configuration:* The configuration containing the wait delay value.
+
+
+
+
+##### Return value
+The wait delay value, in milliseconds.
 
 
 

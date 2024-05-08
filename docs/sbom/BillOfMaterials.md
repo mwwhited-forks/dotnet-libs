@@ -2,8 +2,8 @@
 
 ## Summary 
 
-Application: Eliassen.Libs (0.1.75-dev-ado-AddLlavaAndLLMContextSupport.5) \
-Time: 2024-05-07T23:07:33.4632886Z \
+Application: Eliassen.Libs (0.1.76-dev-ado-ImproveTestingCoverage.2) \
+Time: 2024-05-08T17:49:11.3389239Z \
 Tool: CycloneDX (3.0.5.0). 
 
 ## Components 
