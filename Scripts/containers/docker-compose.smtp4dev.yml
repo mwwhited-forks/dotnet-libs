@@ -1,0 +1,9 @@
+name: smtp4dev
+services:
+    smtp4dev:
+        ports:
+            - 7777:80
+            - 25:25
+            - 143:143
+            - 110:110
+        image: rnwood/smtp4dev
