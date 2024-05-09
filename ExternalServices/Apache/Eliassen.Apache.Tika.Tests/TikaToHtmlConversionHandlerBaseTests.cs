@@ -33,7 +33,7 @@ public abstract class TikaToHtmlConversionHandlerBaseTests<T>
             .BuildServiceProvider()
             ;
 
-        var converter = (IDocumentConversionHandler)ActivatorUtilities.CreateInstance<T>(serviceProvider);
+        var converter = (IDocumentConversionHandler)ActivatorUtilities.CreateInstance<T>(serviceProvider)!;
 
         var resource = GetType().Assembly.GetManifestResourceNames().FirstOrDefault(l => l.EndsWith($".{resourceName}"))
             ?? throw new ApplicationException($"missing .{resourceName} resource");

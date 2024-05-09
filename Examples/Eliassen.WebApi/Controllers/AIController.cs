@@ -2,7 +2,7 @@
 using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
+using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -16,20 +16,16 @@ namespace Eliassen.WebApi.Controllers;
 public class AIController : ControllerBase
 {
     private readonly ILanguageModelProvider _llmProvider;
-    private readonly IEmbeddingProvider _embedding;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AIController"/> class with the specified dependencies.
     /// </summary>
     /// <param name="llmProvider">The language model provider.</param>
-    /// <param name="embedding">The embedding provider.</param>
     public AIController(
-        ILanguageModelProvider llmProvider,
-        IEmbeddingProvider embedding
+        [FromKeyedServices("OPENAPI")] ILanguageModelProvider llmProvider
         )
     {
         _llmProvider = llmProvider;
-        _embedding = embedding;
     }
 
     /// <summary>

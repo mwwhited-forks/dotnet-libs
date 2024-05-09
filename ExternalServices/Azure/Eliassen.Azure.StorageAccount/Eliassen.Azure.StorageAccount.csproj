@@ -4,8 +4,10 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-	</PropertyGroup>
 
+    <PackageReadmeFile>Readme.Azure.StorageAccount.md</PackageReadmeFile>
+	</PropertyGroup>
+  
 	<ItemGroup>
 		<PackageReference Include="Azure.Storage.Blobs" Version="12.19.1" />
 		<PackageReference Include="Azure.Storage.Queues" Version="12.17.1" />

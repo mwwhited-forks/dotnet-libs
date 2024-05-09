@@ -156,6 +156,42 @@ If expression is an instance method then modify the expression to ensure a
 
 
 
+## Class: System.Linq.Expressions.SkipMemberOnNullExpressionVisitor
+Represents a visitor for expression trees that skips member access when encountering null values. 
+
+### Methods
+
+
+#### VisitMethodCall(System.Linq.Expressions.MethodCallExpression)
+Visits the method call expression node and modifies it to skip member access if the target object is null. 
+
+
+##### Parameters
+* *node:* The method call expression to visit.
+
+
+
+
+##### Return value
+The modified expression.
+
+
+
+#### VisitLambda``1(System.Linq.Expressions.Expression{``0})
+Visits the method call expression node and modifies it to skip member access if the target object is null. 
+
+
+##### Parameters
+* *node:* The method call expression to visit.
+
+
+
+
+##### Return value
+The modified expression.
+
+
+
 ## Class: System.Linq.Expressions.StringComparisonReplacementExpressionVisitor
 Expression visitor to replace string functions with the matching functions that end with a StringComparison parameter 
 

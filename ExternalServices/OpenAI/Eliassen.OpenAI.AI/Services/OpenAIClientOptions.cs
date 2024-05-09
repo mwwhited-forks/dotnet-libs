@@ -1,6 +1,9 @@
 ﻿namespace Eliassen.OpenAI.AI.Services;
 
-public class OpenAIOptions
+/// <summary>
+/// Represents options for configuring the OpenAI service.
+/// </summary>
+public class OpenAIClientOptions
 {
     /// <summary>
     /// Gets or sets the APIKey to be used.

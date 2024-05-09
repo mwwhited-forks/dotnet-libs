@@ -14,7 +14,7 @@ Gets or sets the configuration section name for Azure Blob Container options. Th
 Gets or sets the configuration section name for SMTP client options (MailKit). The configuration section name for SMTP client options (MailKit). Default is "MailKitSmtpClientOptions".
 #### ImapConfigurationSection
 Gets or sets the configuration section name for IMAP client options (MailKit). The configuration section name for IMAP client options (MailKit). Default is "MailKitImapClientOptions".
-#### OpenAIOptionSection
+#### OpenAIClientOptionsSection
 Gets or sets the configuration section name for OpenAI client options.
 #### SentenceEmbeddingOptionSection
 Gets or sets the configuration section name for SentenceEmbeddingOptions.

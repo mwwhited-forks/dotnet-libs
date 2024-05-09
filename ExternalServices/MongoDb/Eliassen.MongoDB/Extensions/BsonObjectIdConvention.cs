@@ -36,7 +36,7 @@ public class BsonObjectIdConvention : ConventionBase, IMemberMapConvention
             new BsonIdAttribute().Apply(memberMap);
             new BsonRepresentationAttribute(BsonType.ObjectId).Apply(memberMap);
 
-            //TODO: might want this ... new BsonIgnoreIfDefaultAttribute(true).Apply(memberMap);
+            //TODO: might want this ... new BsonIgnoreIfDefaultAttribute(true).Apply(memberMap); or have a way for this to be injectable
         }
     }
 }

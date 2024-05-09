@@ -502,13 +502,14 @@ lookup key values for provided entity
 
 
 
-#### MakeSafeArray(System.Type,System.Array)
+#### MakeSafeArray(System.Type,System.Array,Eliassen.System.ResponseModel.ICaptureResultMessage)
 safely create new array for a given element type. 
 
 
 ##### Parameters
-* *type:* 
-* *inputs:* 
+* *type:* target conversion type
+* *inputs:* source value
+* *capture:* capture message
 
 
 
@@ -518,13 +519,14 @@ safely create new array for a given element type.
 
 
 
-#### MakeSafe(System.Type,System.Object)
+#### MakeSafe(System.Type,System.Object,Eliassen.System.ResponseModel.ICaptureResultMessage)
 Make safe will try to convert input to target type as best as possible. 
 
 
 ##### Parameters
-* *type:* 
-* *input:* 
+* *type:* target conversion type
+* *input:* source value
+* *capture:* capture message
 
 
 
@@ -534,14 +536,15 @@ Make safe will try to convert input to target type as best as possible.
 
 
 
-#### TryParse(System.Type,System.String,System.Object@)
+#### TryParse(System.Type,System.String,System.Object@,Eliassen.System.ResponseModel.ICaptureResultMessage)
 Use best possible match for parsing to provided type 
 
 
 ##### Parameters
-* *type:* 
-* *toParse:* 
-* *parsed:* 
+* *type:* target conversion type
+* *toParse:* source value
+* *parsed:* output value
+* *capture:* capture message
 
 
 

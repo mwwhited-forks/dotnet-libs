@@ -23,8 +23,6 @@ namespace Eliassen.Handlebars.Templating;
 /// <param name="log">The logger instance.</param>
 public class HandlebarsTemplateProvider(IHash hash, IEnumerable<IHelpersRegistry> helpersRegistry, ILogger<HandlebarsTemplateProvider> log) : ITemplateProvider
 {
-    //TODO: change the way the content types are registered
-
     private readonly ILogger _log = log;
 
     /// <summary>

@@ -146,11 +146,6 @@ public class ExpressionTreeBuilder<TModel>(
 
         if (expressionOperator == Operators.InSet)
         {
-            if (isSearchTerm)
-            {
-
-            }
-
             if (queryParameterType.IsArray) //TODO: should support IEnumerable<> as well
             {
                 var elementType = queryParameterType.GetElementType();
@@ -171,7 +166,7 @@ public class ExpressionTreeBuilder<TModel>(
                 }
                 else
                 {
-                    var safeArray = unwrapped.Type.MakeSafeArray((Array)queryParameter);
+                    var safeArray = unwrapped.Type.MakeSafeArray((Array)queryParameter, messages);
                     if (safeArray != null)
                     {
                         var recursive = BuildPredicate(scope, expression, expressionOperator, safeArray, isSearchTerm);
@@ -229,9 +224,11 @@ public class ExpressionTreeBuilder<TModel>(
                             queryString
                             )
                     };
-                    if (method == null) throw new NotSupportedException("Method not defined");
-
-                    //  TODO: make null safe
+                    if (method == null)
+                    {
+                        //  TODO: make null safe
+                        throw new NotSupportedException("Method not defined");
+                    }
 
                     if (isElementSet)
                     {
@@ -265,7 +262,7 @@ public class ExpressionTreeBuilder<TModel>(
                     }
                 }
             }
-            else if (unwrapped.Type.TryParse(queryString, out var value))
+            else if (unwrapped.Type.TryParse(queryString, out var value, messages))
             {
                 _messages.Publish(new ResultMessage
                 {
@@ -289,7 +286,6 @@ public class ExpressionTreeBuilder<TModel>(
             }
         }
 
-        //TODO: if target is a set
         if (queryParameter != null && unwrapped.Type.IsAssignableFrom(queryParameter.GetType()))
         {
             //TODO: needs to be a bit more creative.  type casting not supported

@@ -16,7 +16,7 @@ namespace Eliassen.System.Tests.Linq;
 [TestClass]
 public class QueryableExtensionsTests
 {
-    public TestContext? TestContext { get; set; }
+    public required TestContext TestContext { get; set; }
 
     private readonly static Dictionary<Type, ConstructorInfo> _cache = [];
     private static ConstructorInfo Constructor<T>()
@@ -124,14 +124,15 @@ public class QueryableExtensionsTests
         ExecuteByTestFilter<TestTargetExtendedModel>(TestTargetExtendedModel.Module, Operators.EqualTo, filterValue, 10, "3,4,5,6,7,8,9,10,11,12");
     }
 
-
     private void ExecuteByTestFilter<T>(string propertyName, Operators expressionOperator, object? filterValue, int expectedRows, string expectedKeys)
     {
+        var capture = new CaptureResultMessage();
+
         var query = new SearchQuery
         {
             Filter = new()
             {
-                { propertyName, expressionOperator.AsFilter(filterValue ) }
+                { propertyName, expressionOperator.AsFilter(filterValue, capture) }
             }
         };
 
@@ -142,7 +143,7 @@ public class QueryableExtensionsTests
         this.TestContext.AddResult(query);
         var rawData = GetTestData<T>(typeof(T) == typeof(TestTargetExtendedModel) ? -1 : 0);
         this.TestContext.AddResult(rawData);
-        var queryResults = QueryBuilder.Execute(rawData, query);
+        var queryResults = QueryBuilder.Execute(rawData, query, default, default, capture);
         this.TestContext.AddResult(queryResults);
 
         var results = queryResults as IPagedQueryResult<T>;
@@ -153,12 +154,17 @@ public class QueryableExtensionsTests
         Assert.AreEqual(expectedRows, results.Rows.Count);
         if (expectedKeys != null)
             Assert.AreEqual(expectedKeys, resultKeys);
+
+        foreach (var item in capture.Capture())
+            this.TestContext?.WriteLine(item.ToString());
     }
 
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
     public void ExecuteByTest_Filter_Range_Bounds()
     {
+        var capture = new CaptureResultMessage();
+
         var query = new SearchQuery
         {
             Filter =
@@ -172,73 +178,59 @@ public class QueryableExtensionsTests
             }
         };
         this.TestContext.AddResult(query);
-        var queryResults = QueryBuilder.Execute(GetTestData<TestTargetExtendedModel>(0), query);
+        var queryResults = QueryBuilder.Execute(GetTestData<TestTargetExtendedModel>(0), query, default, default, capture);
         this.TestContext.AddResult(queryResults);
 
         var results = queryResults as IPagedQueryResult<TestTargetExtendedModel>;
         Assert.IsNotNull(results);
 
         Assert.AreEqual(5, results.TotalRowCount);
+
+        foreach (var item in capture.Capture())
+            this.TestContext.WriteLine(item.ToString());
+    }
+
+    [TestMethod]
+    [TestCategory(TestCategories.Unit)]
+    public void NullableCollectionQueryTest()
+    {
+        // <>f__AnonymousType0`1[System.String[]][].Where(n => n.Items.Any(child => ((child != null) AndAlso child.Equals("Hello")))).OrderBy(_ => 0)
+        // <>f__AnonymousType0`1[System.String[]][].Where(n => n.Items.Any(child => child.Equals("Hello"))).OrderBy(_ => 0)
+        // <>f__AnonymousType0`1[System.String[]][].Where(i => ((i.Items != null) AndAlso i.Items.Any(child => child.Equals("Hello"))))
+
+        var query = new SearchQuery
+        {
+            SearchTerm = "Hello",
+        };
+        this.TestContext.AddResult(query);
+
+        var rawData = new[]
+        {
+             new {Items= (string[]?)["Hello"] , Name=(string?)""},
+             new {Items= (string[]?)[] , Name=(string?)"" },
+             new {Items= (string[]?)null  , Name=(string?)""},
+             new {Items= (string[]?)[]  , Name=(string?)null},
+             
+            // new {Items= (string[]?)[]},
+             //new {Name=(string?)null},
+        }.AsQueryable();
+        this.TestContext.AddResult(rawData);
+
+        var queryResults = QueryBuilder.Execute(rawData, query, new SkipMemberOnNullExpressionVisitor());
+        this.TestContext.AddResult(queryResults);
     }
 
     [DataTestMethod]
     [TestCategory(TestCategories.Unit)]
-    //[DataRow(typeof(TestTargetModel), "Name3", 1, 1, 1, "3")]
-    //[DataRow(typeof(TestTargetModel), "Name3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38")]
-    //[DataRow(typeof(TestTargetModel), "*3", 10, 100, 10, "3,13,23,33,43,53,63,73,83,93")]
-    //[DataRow(typeof(TestTargetModel), "*e3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38")]
+    [DataRow(typeof(TestTargetModel), "Name3", 1, 1, 1, "3")]
+    [DataRow(typeof(TestTargetModel), "Name3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38")]
+    [DataRow(typeof(TestTargetModel), "*3", 10, 100, 10, "3,13,23,33,43,53,63,73,83,93")]
+    [DataRow(typeof(TestTargetModel), "*e3*", 12, 111, 10, "3,30,31,32,33,34,35,36,37,38")]
     [DataRow(typeof(TestTargetExtendedModel), "FName0999 LName0001", 1, 1, 1, "1")]
     public void ExecuteByTest_SearchTerm(Type type, string searchTerm, int expectedTotalPages, int expectedTotalRows, int expectedRows, string expectedKeys)
     {
         /*
-(
-	(
-		(
-			(
-				(
-					(
-						(
-							(
-								(
-									(n.FName + " ")
-									 + n.LName
-								) != null
-							) AndAlso (
-								(n.FName + " ")
-								 + n.LName
-							).Equals("FName0999 LName0001")
-						) OrElse (
-							(
-								(
-									(n.LName + " ")
-									 + n.FName
-								) != null
-							) AndAlso (
-								(n.LName + " ")
-								 + n.FName
-							).Equals("FName0999 LName0001")
-						)
-					) OrElse (
-						(n.FName != null) 
-						AndAlso n.FName.Equals("FName0999 LName0001")
-					)
-				) OrElse (
-					(n.LName != null)
-					 AndAlso n.LName.Equals("FName0999 LName0001")
-				)
-			) OrElse (
-				(n.Email != null)
-				 AndAlso n.Email.Equals("FName0999 LName0001")
-			)
-		) OrElse (
-			(n.May != null)
-			 AndAlso n.May.Equals("FName0999 LName0001")
-		)
-        --- > this next line is the problem
-	) OrElse n.Modules.Any(child => ((child != null) AndAlso child.Equals("FName0999 LName0001"))))).OrderBy(n => Convert(n.Index, Object))
-        */
-
-#warning fix this unit test
+         */
         this.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
             .Where(mi => mi.IsGenericMethod)
             .Where(mi => mi.Name == nameof(ExecuteByTestSearchTerm))
@@ -252,10 +244,6 @@ public class QueryableExtensionsTests
                 expectedRows,
                 expectedKeys
             ]);
-
-        //TODO: This test fails because the TestTargetExtendedModel.Modules property is [Searchable]
-        //There was an original TODO statement here of 'TODO: nullable array values can not be included in searchable'
-        //This has been commented out so that NDM-54 can be completed but this test must be restored to working order.
     }
     private void ExecuteByTestSearchTerm<T>(string searchTerm, int expectedTotalPages, int expectedTotalRows, int expectedRows, string expectedKeys)
     {
@@ -266,7 +254,12 @@ public class QueryableExtensionsTests
         this.TestContext.AddResult(query);
         var rawData = GetTestData<T>(0);
         this.TestContext.AddResult(rawData);
-        var queryResults = QueryBuilder.Execute(rawData, query, new SkipInstanceMethodOnNullExpressionVisitor());
+        var queryResults = QueryBuilder.Execute(
+            rawData,
+            query,
+            new SkipMemberOnNullExpressionVisitor(),
+            new SkipInstanceMethodOnNullExpressionVisitor()
+            );
         this.TestContext.AddResult(queryResults);
         var results = queryResults as IPagedQueryResult<T>;
         Assert.IsNotNull(results);
@@ -288,6 +281,8 @@ public class QueryableExtensionsTests
     [DataRow(1, -1, null, null, null, 1000, null)]
     public void ExecuteByTest_Page(int currentPage, int pageSize, int? expectedTotalPages, int? expectedTotalRows, int? expectedPageNumber, int expectedRows, string? expectedKeys)
     {
+        var capture = new CaptureResultMessage();
+
         var query = new SearchQuery
         {
             CurrentPage = currentPage,
@@ -296,9 +291,8 @@ public class QueryableExtensionsTests
         this.TestContext.AddResult(query);
         var rawData = GetTestData<TestTargetModel>(0);
         this.TestContext.AddResult(rawData);
-        var queryResults = QueryBuilder.Execute(rawData, query);
+        var queryResults = QueryBuilder.Execute(rawData, query, default, default, capture);
         this.TestContext.AddResult(queryResults);
-
 
         if (queryResults is IPagedQueryResult<TestTargetModel> pagedResults)
         {
@@ -320,6 +314,9 @@ public class QueryableExtensionsTests
         {
             Assert.Fail("Not supported");
         }
+
+        foreach (var item in capture.Capture())
+            this.TestContext?.WriteLine(item.ToString());
     }
 
     [DataTestMethod]
@@ -330,6 +327,8 @@ public class QueryableExtensionsTests
     [DataRow(nameof(TestTargetModel.Name), OrderDirections.Ascending, "0,1,10,100,101,102,103,104,105,106")]
     public void ExecuteByTest_Sort(string fieldName, OrderDirections direction, string expected)
     {
+        var capture = new CaptureResultMessage();
+
         var query = new SearchQuery
         {
             OrderBy = new()
@@ -338,11 +337,13 @@ public class QueryableExtensionsTests
             }
         };
         this.TestContext.AddResult(query);
-        var queryResults = QueryBuilder.Execute(GetTestData<TestTargetModel>(0), query);
+        var queryResults = QueryBuilder.Execute(GetTestData<TestTargetModel>(0), query, default, default, capture);
         this.TestContext.AddResult(queryResults);
 
         var results = queryResults as IPagedQueryResult<TestTargetModel>;
         Assert.IsNotNull(results);
         Assert.AreEqual(expected, string.Join(',', results.Rows.Select(i => i.Index)));
+        foreach (var item in capture.Capture())
+            this.TestContext.WriteLine(item.ToString());
     }
 }

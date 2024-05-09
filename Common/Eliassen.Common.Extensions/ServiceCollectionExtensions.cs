@@ -62,7 +62,7 @@ public static class ServiceCollectionExtensions
         if (identityBuilder.IdentityProvider.HasFlag(IdentityProviders.Keycloak))
             services.TryAddKeycloakServices(configuration, identityBuilder.KeycloakIdentityConfigurationSection);
 
-        services.TryAddOpenAIServices(configuration, externalBuilder.OpenAIOptionSection);
+        services.TryAddOpenAIServices(configuration, externalBuilder.OpenAIClientOptionsSection);
 
         services.TryAddSbertServices(configuration, externalBuilder.SentenceEmbeddingOptionSection);
         services.TryAddQdrantServices(configuration, externalBuilder.QdrantOptionSection);

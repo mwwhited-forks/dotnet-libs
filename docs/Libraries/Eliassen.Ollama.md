@@ -16,6 +16,46 @@ An instance of the OllamaApiClient.
 
 
 
+## Class: Ollama.IOllamaModelMapper
+Represents a mapper interface for llama models. 
+
+### Methods
+
+
+#### Map(Eliassen.AI.Models.CompletionRequest)
+Maps a 
+ *See: T:Eliassen.AI.Models.CompletionRequest*model to a 
+ *See: T:OllamaSharp.Models.GenerateCompletionRequest*object. 
+
+
+##### Parameters
+* *request:* The completion request model to map.
+
+
+
+
+##### Return value
+A generated completion request object.
+
+
+
+#### Map(OllamaSharp.ConversationContextWithResponse)
+Maps a 
+ *See: T:OllamaSharp.ConversationContextWithResponse*object to a 
+ *See: T:Eliassen.AI.Models.CompletionResponse*object. 
+
+
+##### Parameters
+* *response:* The conversation context with response to map.
+
+
+
+
+##### Return value
+A completion response object.
+
+
+
 ## Class: Ollama.OllamaApiClientExtensions
 Provides extension methods for the 
  *See: T:OllamaSharp.OllamaApiClient*class. 
@@ -149,6 +189,10 @@ Gets or initializes the default model to use with the Ollama API.
 ## Class: Ollama.OllamaMessageCompletion
 Represents a class responsible for generating message completions using the Ollama API. 
 
+### Properties
+
+#### Length
+Gets the length of the embeddings.
 ### Methods
 
 
@@ -159,7 +203,24 @@ Initializes a new instance of the
 
 ##### Parameters
 * *client:* The OllamaApiClient instance used for communication with the Ollama API.
+* *mapper:* Model mapper for Ollama request/response.
 
+
+
+
+#### GetEmbeddingAsync(System.String,System.String)
+Retrieves the embedding vector for the given content. 
+
+
+##### Parameters
+* *content:* The content for which to retrieve the embedding.
+* *model:* The model for which to retrieve the embedding.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. The task result contains the embedding vector as an array of single-precision floats.
 
 
 
@@ -176,6 +237,21 @@ Generates a completion for the given prompt using the specified model.
 
 ##### Return value
 A task representing the asynchronous operation. The task result contains the completion response.
+
+
+
+#### GetCompletionAsync(Eliassen.AI.Models.CompletionRequest)
+Retrieves a completion for the given prompt from the specified model. 
+
+
+##### Parameters
+* *model:* Completion request model
+
+
+
+
+##### Return value
+Resulting response object
 
 
 
@@ -209,6 +285,46 @@ Gets a streamed response asynchronously based on the provided prompt details and
 
 ##### Return value
 An asynchronous enumerable of strings representing the streamed response.
+
+
+
+## Class: Ollama.OllamaModelMapper
+Represents a mapper interface for llama models. 
+
+### Methods
+
+
+#### Map(Eliassen.AI.Models.CompletionRequest)
+Maps a 
+ *See: T:Eliassen.AI.Models.CompletionRequest*model to a 
+ *See: T:OllamaSharp.Models.GenerateCompletionRequest*object. 
+
+
+##### Parameters
+* *request:* The completion request model to map.
+
+
+
+
+##### Return value
+A generated completion request object.
+
+
+
+#### Map(OllamaSharp.ConversationContextWithResponse)
+Maps a 
+ *See: T:OllamaSharp.ConversationContextWithResponse*object to a 
+ *See: T:Eliassen.AI.Models.CompletionResponse*object. 
+
+
+##### Parameters
+* *response:* The conversation context with response to map.
+
+
+
+
+##### Return value
+A completion response object.
 
 
 

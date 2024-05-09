@@ -8,6 +8,8 @@
 
 		<PackAsTool>true</PackAsTool>
 		<ToolCommandName>templateengine</ToolCommandName>
+
+    <PackageReadmeFile>Readme.TemplateEngine.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -29,12 +31,6 @@
 		<None Update="*.xslt">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Update="Documentation.md.xslt">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
 	</ItemGroup>
 
 </Project>

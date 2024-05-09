@@ -65,37 +65,6 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
     }
 
     /// <summary>
-    /// Stores the specified content in Azure Blob storage.
-    /// </summary>
-    /// <param name="full">The full path of the content to store.</param>
-    /// <param name="file">The name of the file to store.</param>
-    /// <param name="pathHash">The hash value of the file path.</param>
-    /// <returns>A boolean value indicating whether the operation was successful.</returns>
-    public async Task<bool> TryStoreAsync(string full, string file, string pathHash) //TODO: change this to use streams and take a metadata collection
-    {
-        var blob = _blockBlobClient.GetBlobClient(file);
-        if (!await blob.ExistsAsync())
-        {
-            // Check if file exists in blob store
-            //  If not exist upload
-            _logger.LogInformation("upload -> {file}", file);
-            _ = await blob.UploadAsync(full, overwrite: false);
-
-            // https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-properties-metadata
-            await blob.SetMetadataAsync(new Dictionary<string, string>
-            {
-                ["File"] = file,
-                ["OriginalFile"] = full,
-                ["PathHash"] = pathHash,
-            });
-
-            return true;
-        }
-
-        return false;
-    }
-
-    /// <summary>
     /// Retrieves content metadata asynchronously.
     /// </summary>
     /// <param name="path">The path to the content.</param>

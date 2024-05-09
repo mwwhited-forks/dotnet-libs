@@ -18,13 +18,12 @@ public class TestTargetExtendedModel
 
     public const string FC = nameof(FC);
     public const string Module = nameof(Module);
-    //public const string UserStatus = nameof(UserStatus);
 
     public TestTargetExtendedModel(int index)
     {
         Index = index;
         FName = $"{nameof(FName)}{1000 - index:0000}";
-        LName = $"{nameof(LName)}{index:0000}";
+        LName = (index % 5 == 0) ? null : $"{nameof(LName)}{index:0000}";
         Email = $"{nameof(Email)}{index:0000}@domain.com";
         May = (index % 3 == 0) ? "" :
               (index % 5 == 0) ? null :
@@ -42,16 +41,18 @@ public class TestTargetExtendedModel
     [DefaultSort]
     public int Index { get; set; }
     [Searchable]
-    public string FName { get; set; }
+    public required string FName { get; set; }
     [Searchable]
-    public string LName { get; set; }
+    public string? LName { get; set; }
     [Searchable]
-    public string Email { get; set; }
+    public required string Email { get; set; }
     [Searchable]
     public string? May { get; set; }
 
     [Searchable]
     public string[]? Modules { get; set; }
+    [Searchable]
+    public string[]? NullModules { get; set; }
 
     [Searchable]
     public DateTime Date { get; set; }
@@ -67,6 +68,7 @@ public class TestTargetExtendedModel
             _ => null
         };
 
+#pragma warning disable CS8604 // Possible null reference argument.
     public static Expression<Func<TestTargetExtendedModel, bool>>? PredicateMap(string key, object value) =>
         key switch
         {
@@ -75,5 +77,6 @@ public class TestTargetExtendedModel
             FC => e => e.FName.Contains(value.ToString()),
             _ => null
         };
+#pragma warning restore CS8604 // Possible null reference argument.
 
 }

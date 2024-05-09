@@ -2,7 +2,7 @@
 
 ## Summary
 
-This one reference add the direct Eliassen features for the Shared Framework excluding 
+This one reference adds the direct Eliassen features for the Common Framework excluding 
 ASP.Net Core and Third Party Extensions.  This functionality and more is included in the 
 `Eliassen.Common.Complete` library
 

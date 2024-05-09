@@ -8,6 +8,7 @@
 
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 
+    <PackageReadmeFile>Readme.Documents.md</PackageReadmeFile>
   </PropertyGroup>
   
   <ItemGroup>

@@ -49,23 +49,6 @@ A ContentReference object representing the retrieved content.
 
 
 
-#### TryStoreAsync(System.String,System.String,System.String)
-Stores the specified content in Azure Blob storage. 
-
-
-##### Parameters
-* *full:* The full path of the content to store.
-* *file:* The name of the file to store.
-* *pathHash:* The hash value of the file path.
-
-
-
-
-##### Return value
-A boolean value indicating whether the operation was successful.
-
-
-
 #### GetContentMetaDataAsync(System.String)
 Retrieves content metadata asynchronously. 
 

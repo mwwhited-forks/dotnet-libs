@@ -19,10 +19,7 @@ public class SentenceEmbeddingClient : ISentenceEmbeddingClient
     /// <param name="httpClient">The HttpClient.</param>
     public SentenceEmbeddingClient(
         HttpClient httpClient
-        )
-    {
-        _httpClient = httpClient;
-    }
+        ) => _httpClient = httpClient;
 
     /// <summary>
     /// Retrieves the embedding vector for the given input as an array of single-precision floats.
