@@ -18,17 +18,17 @@ namespace Eliassen.System.Linq.Expressions;
 /// </summary>
 /// <typeparam name="TModel">The type of the data model.</typeparam>
 /// <param name="logger">Optional logger for logging messages.</param>
-/// <param name="messages">Optional result message capturer.</param>
+/// <param name="capture">Optional result message capturer.</param>
 public class ExpressionTreeBuilder<TModel>(
     ILogger<ExpressionTreeBuilder<TModel>>? logger = null,
-    ICaptureResultMessage? messages = null
+    ICaptureResultMessage? capture = null
         ) : IExpressionTreeBuilder<TModel>
 {
     private const string PropertyMap = nameof(PropertyMap);
     private const string PredicateMap = nameof(PredicateMap);
 
     private readonly ILogger _logger = logger ?? new ConsoleLogger<ExpressionTreeBuilder<TModel>>();
-    private readonly ICaptureResultMessage _messages = messages ?? CaptureResultMessage.Default;
+    private readonly ICaptureResultMessage _capture = capture ?? CaptureResultMessage.Default;
 
     /// <summary>
     /// Gets the predicate expression based on the provided parameters.
@@ -166,7 +166,7 @@ public class ExpressionTreeBuilder<TModel>(
                 }
                 else
                 {
-                    var safeArray = unwrapped.Type.MakeSafeArray((Array)queryParameter, messages);
+                    var safeArray = unwrapped.Type.MakeSafeArray((Array)queryParameter, _capture);
                     if (safeArray != null)
                     {
                         var recursive = BuildPredicate(scope, expression, expressionOperator, safeArray, isSearchTerm);
@@ -262,9 +262,9 @@ public class ExpressionTreeBuilder<TModel>(
                     }
                 }
             }
-            else if (unwrapped.Type.TryParse(queryString, out var value, messages))
+            else if (unwrapped.Type.TryParse(queryString, out var value, _capture))
             {
-                _messages.Publish(new ResultMessage
+                _capture.Publish(new ResultMessage
                 {
                     Message = FilterParameterMessages.ParsedInput,
                     MessageCode = FilterParameterMessages.ParsedInputCode,
@@ -299,7 +299,7 @@ public class ExpressionTreeBuilder<TModel>(
         {
             if (!isSearchTerm)
             {
-                _messages.Publish(new ResultMessage
+                _capture.Publish(new ResultMessage
                 {
                     Message = FilterParameterMessages.UnableToMapFilter,
                     MessageCode = FilterParameterMessages.UnableToMapFilterCode,

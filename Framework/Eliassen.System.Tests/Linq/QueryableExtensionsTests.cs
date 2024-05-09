@@ -108,7 +108,12 @@ public class QueryableExtensionsTests
         {
             Filter = new()
             {
-                { propertyName, expressionOperator.AsFilter(filterValue, capture) }
+                { propertyName, expressionOperator.AsFilter(filterValue, capture) },
+                { "Doesn't Exist", expressionOperator.AsFilter(filterValue, capture) }
+            },
+            OrderBy = new()
+            {
+                { "Doesn't Exist", OrderDirections.Ascending }
             }
         };
 
