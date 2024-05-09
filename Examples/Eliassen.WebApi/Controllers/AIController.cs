@@ -3,6 +3,7 @@ using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -50,14 +51,6 @@ public class AIController : ControllerBase
             yield return response;
         };
     }
-
-    /// <summary>
-    /// Retrieves the embedding vector for the given text.
-    /// </summary>
-    /// <param name="text">The text for which to retrieve the embedding vector.</param>
-    /// <returns>The embedding vector.</returns>
-    [HttpGet]
-    public async Task<float[]> Embed(string text) => await _embedding.GetEmbeddingAsync(text);
 
     /// <summary>
     /// Generate an LLM Response based on the prompt and user input
