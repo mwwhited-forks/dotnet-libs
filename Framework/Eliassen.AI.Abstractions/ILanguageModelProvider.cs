@@ -9,7 +9,7 @@ namespace Eliassen.AI;
 /// <summary>
 /// Represents a provider for a language model.
 /// </summary>
-public interface ILanguageModelProvider : IEmbeddingProvider
+public interface ILanguageModelProvider
 {
     /// <summary>
     /// Gets a response asynchronously based on the provided prompt details and user input.
