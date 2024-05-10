@@ -8,5 +8,5 @@ public interface IVectorStoreProvider : IVectorStore
     /// <summary>
     /// Gets or sets the name of the container.
     /// </summary>
-    string ContainerName { get; set; }
+    string CollectionName { get; set; }
 }

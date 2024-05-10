@@ -1,5 +1,8 @@
-﻿using Eliassen.Common;
+﻿using com.sun.org.apache.bcel.@internal.generic;
+using Eliassen.Common;
 using Eliassen.Documents;
+using Eliassen.Documents.Containers;
+using Eliassen.Documents.Models;
 using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +16,7 @@ using System.Threading.Tasks;
 namespace Eliassen.Examples.Tests.Documents;
 
 [TestClass]
-public class BlobContainerTests
+public class IBlobContainerTests
 {
     public required TestContext TestContext { get; set; }
 
@@ -46,6 +49,7 @@ public class BlobContainerTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     public async Task Create_IBlobContainer__Docs_Test()
     {
         var wrapper = ServiceProvider().GetRequiredService<IBlobContainer<Docs>>();
@@ -71,6 +75,7 @@ public class BlobContainerTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     public void Create_IBlobContainer__Summary_Test()
     {
         var wrapper = ServiceProvider().GetRequiredService<IBlobContainer<Summary>>();
@@ -78,6 +83,7 @@ public class BlobContainerTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     public void Create_IBlobContainer__Summary_List_Test()
     {
         var wrapper = ServiceProvider().GetRequiredService<IBlobContainer<Summary>>();
@@ -85,7 +91,55 @@ public class BlobContainerTests
         this.TestContext.AddResult(items);
     }
 
+
+    [TestMethod]
+    public void Test()
+    {
+        var config = new ConfigurationBuilder()
+            .AddInMemoryCollection(new Dictionary<string, string?>
+            {
+                {"AzureBlobProviderOptions:ConnectionString","DefaultEndpointsProtocol=https;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://192.168.1.170:10000/devstoreaccount1;" },
+            })
+            .Build()
+            ;
+        var serviceProvider = new ServiceCollection()
+            .AddLogging(builder => builder
+                .AddConsole()
+                .AddDebug()
+                .SetMinimumLevel(LogLevel.Trace)
+                )
+            .AddTransient<IBlobContainerProviderFactory, TestBlobFactory>()
+            .TryAllCommonExtensions(config,
+                systemBuilder: new(),
+                aspNetBuilder: new(),
+                jwtBuilder: new(),
+                identityBuilder: new(),
+                externalBuilder: new(),
+                hostingBuilder: new()
+                )
+            .BuildServiceProvider()
+            ;
+
+        var converter = serviceProvider.GetRequiredService<IBlobContainer<Docs>>();
+
+    }
+
     public class Docs { }
     public class Summary { }
+
+    public class TestBlobFactory : IBlobContainerProviderFactory
+    {
+        public IBlobContainerProvider? Create(string containerName) => new TestBlobContainer();
+    }
+    public class TestBlobContainer : IBlobContainerProvider
+    {
+        public string ContainerName { get; set; }
+        public Task DeleteContentAsync(string path) => throw new global::System.NotImplementedException();
+        public Task<ContentReference?> GetContentAsync(string path) => throw new global::System.NotImplementedException();
+        public Task<ContentMetaDataReference?> GetContentMetaDataAsync(string path) => throw new global::System.NotImplementedException();
+        public IQueryable<ContentMetaDataReference> QueryContent() => throw new global::System.NotImplementedException();
+        public Task StoreContentAsync(ContentReference reference, Dictionary<string, string>? metadata = null, bool overwrite = false) => throw new global::System.NotImplementedException();
+        public Task<bool> StoreContentMetaDataAsync(ContentMetaDataReference reference) => throw new global::System.NotImplementedException();
+    }
 
 }

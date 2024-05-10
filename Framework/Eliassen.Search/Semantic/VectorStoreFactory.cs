@@ -1,4 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Reflection;
 
 namespace Eliassen.Search.Semantic;
@@ -8,23 +12,40 @@ namespace Eliassen.Search.Semantic;
 /// </summary>
 public class VectorStoreFactory : IVectorStoreFactory
 {
-    private readonly IVectorStoreProviderFactory _factory;
+    private readonly IServiceProvider _serviceProvider;
+    private readonly IEnumerable<IVectorStoreProviderFactory> _factories;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="VectorStoreFactory"/> class.
     /// </summary>
-    /// <param name="factory">The factory to create vector store provider.</param>
+    /// <param name="factories">The factory used to create blob container providers.</param>
+    /// <param name="serviceProvider">The IOC Service Provider.</param>
     public VectorStoreFactory(
-        IVectorStoreProviderFactory factory
-        ) => _factory = factory;
+         IServiceProvider serviceProvider,
+        IEnumerable<IVectorStoreProviderFactory> factories
+        )
+    {
+        _serviceProvider = serviceProvider;
+        _factories = factories;
+    }
 
     /// <summary>
-    /// Creates a vector store based on the specified container name.
+    /// Creates a vector store based on the specified collection name.
     /// </summary>
-    /// <param name="containerName">The name of the container.</param>
+    /// <param name="collectionName">The name of the collection.</param>
     /// <returns>The created vector store.</returns>
-    public virtual IVectorStore Create(string containerName) =>
-       new WrappedVectorStore(_factory.Create(containerName));
+    public virtual IVectorStore Create(string collectionName)
+    {
+        var provider = _serviceProvider.GetKeyedService<IVectorStoreProvider>(collectionName);
+
+        provider ??= _factories.Select(i => i.Create(collectionName))
+                               .FirstOrDefault(i => i != null);
+
+        provider ??= _serviceProvider.GetRequiredService<IVectorStoreProvider>();
+
+        provider.CollectionName = collectionName;
+        return provider;
+    }
 
     /// <summary>
     /// Creates a vector store based on the specified type.
@@ -32,9 +53,10 @@ public class VectorStoreFactory : IVectorStoreFactory
     /// <typeparam name="T">The type for which the vector store is created.</typeparam>
     /// <returns>The created vector store.</returns>
     public IVectorStore Create<T>() =>
-        Create(
-            typeof(T).GetCustomAttribute<VectorStoreAttribute>()?.ContainerName ??
-            typeof(T).GetCustomAttribute<TableAttribute>()?.Name ??
-            typeof(T).Name
-            );
+            new WrappedVectorStore<T>(
+            Create(
+                typeof(T).GetCustomAttribute<VectorStoreAttribute>()?.CollectionName ??
+                typeof(T).GetCustomAttribute<TableAttribute>()?.Name ??
+                typeof(T).Name
+                ));
 }

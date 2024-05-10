@@ -23,7 +23,6 @@ public static class ServiceCollectionExtensions
 
         services.TryAddSingleton<IDocumentTypeTools, DocumentTypeTools>();
 
-        services.TryAddTransient<IBlobContainerProviderFactory, BlobContainerProviderFactory>();
         services.TryAddTransient<IBlobContainerFactory, BlobContainerFactory>();
         services.TryAddTransient(typeof(IBlobContainer<>), typeof(WrappedBlobContainer<>));
 

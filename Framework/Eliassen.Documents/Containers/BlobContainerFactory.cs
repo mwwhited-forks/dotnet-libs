@@ -1,4 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Reflection;
 
 namespace Eliassen.Documents.Containers;
@@ -8,33 +12,51 @@ namespace Eliassen.Documents.Containers;
 /// </summary>
 public class BlobContainerFactory : IBlobContainerFactory
 {
-    private readonly IBlobContainerProviderFactory _factory;
+    private readonly IServiceProvider _serviceProvider;
+    private readonly IEnumerable<IBlobContainerProviderFactory> _factories;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BlobContainerFactory"/> class.
     /// </summary>
-    /// <param name="factory">The factory used to create blob container providers.</param>
+    /// <param name="factories">The factory used to create blob container providers.</param>
     public BlobContainerFactory(
-        IBlobContainerProviderFactory factory
-        ) => _factory = factory;
+         IServiceProvider serviceProvider,
+        IEnumerable<IBlobContainerProviderFactory> factories
+        )
+    {
+        _serviceProvider = serviceProvider;
+        _factories = factories;
+    }
 
     /// <summary>
     /// Creates a blob container with the specified container name.
     /// </summary>
     /// <param name="containerName">The name of the container.</param>
     /// <returns>An instance of <see cref="IBlobContainer"/>.</returns>
-    public virtual IBlobContainer Create(string containerName) =>
-       new WrappedBlobContainer(_factory.Create(containerName));
+    public virtual IBlobContainer Create(string containerName)
+    {
+        var provider = _serviceProvider.GetKeyedService<IBlobContainerProvider>(containerName);
+
+        provider ??= _factories.Select(i => i.Create(containerName))
+                               .FirstOrDefault(i => i != null);
+
+        provider ??= _serviceProvider.GetRequiredService<IBlobContainerProvider>();
+
+        provider.ContainerName = containerName;
+
+        return provider;
+    }
 
     /// <summary>
     /// Creates a blob container with a name derived from the specified type.
     /// </summary>
     /// <typeparam name="T">The type used to derive the container name.</typeparam>
     /// <returns>An instance of <see cref="IBlobContainer"/>.</returns>
-    public virtual IBlobContainer Create<T>() =>
+    public virtual IBlobContainer<T> Create<T>() =>
+        new WrappedBlobContainer<T>(
         Create(
             typeof(T).GetCustomAttribute<BlobContainerAttribute>()?.ContainerName ??
             typeof(T).GetCustomAttribute<TableAttribute>()?.Name ??
             typeof(T).Name
-            );
+            ));
 }

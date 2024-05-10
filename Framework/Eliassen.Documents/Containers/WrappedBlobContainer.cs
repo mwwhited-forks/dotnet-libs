@@ -1,4 +1,5 @@
 ﻿using Eliassen.Documents.Models;
+using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,17 +9,22 @@ namespace Eliassen.Documents.Containers;
 /// <summary>
 /// Represents a wrapper for a blob container.
 /// </summary>
-public class WrappedBlobContainer : IBlobContainer
+public class WrappedBlobContainer<T> : IBlobContainer<T>
 {
     private readonly IBlobContainer _wrapped;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="WrappedBlobContainer"/> class.
+    /// Initializes a new instance of the <see cref="IBlobContainer"/> class.
     /// </summary>
-    /// <param name="wrapped">The blob container to wrap.</param>
+    /// <param name="factory">The blob container factory to wrap.</param>
+    [ActivatorUtilitiesConstructor]
     public WrappedBlobContainer(
-        IBlobContainer wrapped
-        ) => _wrapped = wrapped;
+        IBlobContainerFactory factory
+        ) : this(factory.Create<T>()) { }
+
+    internal WrappedBlobContainer(
+        IBlobContainer wrapper
+        ) => _wrapped = wrapper;
 
     /// <summary>
     /// Deletes content asynchronously.
@@ -72,17 +78,4 @@ public class WrappedBlobContainer : IBlobContainer
     /// <returns>A task representing the asynchronous operation. The task result indicates whether the operation was successful.</returns>
     public Task<bool> StoreContentMetaDataAsync(ContentMetaDataReference reference) =>
         _wrapped.StoreContentMetaDataAsync(reference);
-}
-
-/// <summary>
-/// Represents a typed wrapper for a blob container.
-/// </summary>
-/// <typeparam name="T">The type of objects stored in the blob container.</typeparam>
-public class WrappedBlobContainer<T> : WrappedBlobContainer, IBlobContainer<T>
-{
-    /// <summary>
-    /// Initializes a new instance of the <see cref="WrappedBlobContainer{T}"/> class.
-    /// </summary>
-    /// <param name="factory">The factory used to create the wrapped blob container.</param>
-    public WrappedBlobContainer(IBlobContainerFactory factory) : base(factory.Create<T>()) { }
 }

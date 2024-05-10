@@ -22,7 +22,7 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// <summary>
     /// current container name
     /// </summary>
-    public string ContainerName { get; set; }
+    public string CollectionName { get; set; }
 
     /// <summary>
     /// constructor for QdrantVectorStoreProvider
@@ -38,7 +38,7 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     {
         _client = client;
         _options = options;
-        ContainerName = _collectionName = containerName;
+        CollectionName = _collectionName = containerName;
     }
 
     //TODO: this should be done a different way
