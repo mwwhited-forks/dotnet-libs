@@ -92,7 +92,7 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
     /// <returns>A task representing the asynchronous operation.</returns>
     public async Task StoreContentAsync(
         ContentReference reference,
-        IDictionary<string, string>? metadata = null,
+        Dictionary<string, string>? metadata = null,
         bool overwrite = false
         )
     {

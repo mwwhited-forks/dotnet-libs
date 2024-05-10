@@ -38,7 +38,7 @@ public class ExpressionTreeBuilder<TModel>(
     /// <param name="stringComparison">The string comparison method.</param>
     /// <param name="isSearchTerm">Flag indicating if the value is a search term.</param>
     /// <returns>The predicate expression or null if not found.</returns>
-    public Expression<Func<TModel, bool>>? GetPredicateExpression(
+    public virtual Expression<Func<TModel, bool>>? GetPredicateExpression(
         string name,
         FilterParameter value,
         StringComparison stringComparison,
@@ -53,7 +53,7 @@ public class ExpressionTreeBuilder<TModel>(
     /// <param name="stringComparison">The string comparison method.</param>
     /// <param name="isSearchTerm">Flag indicating if the value is a search term.</param>
     /// <returns>The combined predicate expression or null if not applicable.</returns>
-    public Expression<Func<TModel, bool>>? BuildExpression(object? queryParameter, StringComparison stringComparison, bool isSearchTerm) =>
+    public virtual Expression<Func<TModel, bool>>? BuildExpression(object? queryParameter, StringComparison stringComparison, bool isSearchTerm) =>
         ExpressionExtensions.OrElse(
             from searchExpression in GetSearchableExpressions(stringComparison)
             let builtExpression = BuildPredicate(
@@ -353,14 +353,14 @@ public class ExpressionTreeBuilder<TModel>(
     /// Builds the expressions for the properties in the data model.
     /// </summary>
     /// <returns>The dictionary containing property names and their corresponding expressions.</returns>
-    public IReadOnlyDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions() =>
+    public virtual IReadOnlyDictionary<string, Expression<Func<TModel, object>>> PropertyExpressions() =>
         new Dictionary<string, Expression<Func<TModel, object>>>(BuildExpressions(), StringComparer.InvariantCultureIgnoreCase);
 
     /// <summary>
     /// Gets the searchable property names in the data model.
     /// </summary>
     /// <returns>The collection of searchable property names.</returns>
-    public IReadOnlyCollection<string> GetSearchablePropertyNames()
+    public virtual IReadOnlyCollection<string> GetSearchablePropertyNames()
     {
         var modelType = typeof(TModel);
 
@@ -396,7 +396,7 @@ public class ExpressionTreeBuilder<TModel>(
     /// Gets the sortable property names in the data model.
     /// </summary>
     /// <returns>The collection of sortable property names.</returns>
-    public IReadOnlyCollection<string> GetSortablePropertyNames()
+    public virtual IReadOnlyCollection<string> GetSortablePropertyNames()
     {
         var modelType = typeof(TModel);
 
@@ -426,7 +426,7 @@ public class ExpressionTreeBuilder<TModel>(
     /// Gets the filterable property names in the data model.
     /// </summary>
     /// <returns>The collection of filterable property names.</returns>
-    public IReadOnlyCollection<string> GetFilterablePropertyNames()
+    public virtual IReadOnlyCollection<string> GetFilterablePropertyNames()
     {
         var modelType = typeof(TModel);
 
@@ -464,7 +464,7 @@ public class ExpressionTreeBuilder<TModel>(
     /// Returns the default sort order based on attributes.
     /// </summary>
     /// <returns>The default sort order as a collection of column names and directions.</returns>
-    public IReadOnlyCollection<(string column, OrderDirections direction)> DefaultSortOrder() =>
+    public virtual IReadOnlyCollection<(string column, OrderDirections direction)> DefaultSortOrder() =>
         (
             from attribute in typeof(TModel).GetCustomAttributes<DefaultSortAttribute>()
             where !string.IsNullOrWhiteSpace(attribute.TargetName)

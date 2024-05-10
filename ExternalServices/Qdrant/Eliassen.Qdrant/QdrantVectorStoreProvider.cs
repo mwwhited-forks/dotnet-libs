@@ -68,7 +68,7 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// <summary>
     /// Gets or sets the name of the container.
     /// </summary>
-    public async Task<string[]> StoreVectorsAsync(IEnumerable<float[]> embeddings, Dictionary<string, object> metadata)
+    public virtual async Task<string[]> StoreVectorsAsync(IEnumerable<float[]> embeddings, Dictionary<string, object> metadata)
     {
         if (_options.Value.EnsureCollectionExists)
             await EnsureCollectionExistsAsync(embeddings.First().Length);
@@ -176,7 +176,7 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// Finds nearest neighbors for a given vector.
     /// </summary>
     /// <returns>An asynchronous enumerable collection of search results representing nearest neighbors.</returns>
-    public async IAsyncEnumerable<SearchResultModel> ListAsync()
+    public virtual async IAsyncEnumerable<SearchResultModel> ListAsync()
     {
         var results = await _client.Points.ScrollAsync(new()
         {
@@ -194,7 +194,7 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// </summary>
     /// <param name="find">The vector to search for neighbors.</param>
     /// <returns>An asynchronous enumerable collection of search results representing nearest neighbors.</returns>
-    public async IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(float[] find)
+    public virtual async IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(float[] find)
     {
         var results = await _client.Points.SearchAsync(new()
         {
@@ -214,7 +214,7 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// <param name="find">The vector to search for neighbors.</param>
     /// <param name="groupBy">The field to group the results by.</param>
     /// <returns>An asynchronous enumerable collection of search results representing nearest neighbors grouped by the specified field.</returns>
-    public async IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(float[] find, string groupBy)
+    public virtual async IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(float[] find, string groupBy)
     {
         var results = await _client.Points.SearchGroupsAsync(new()
         {

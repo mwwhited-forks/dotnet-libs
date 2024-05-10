@@ -63,7 +63,7 @@ public class MessagePropertyResolver(IConfiguration configuration) : IMessagePro
     /// <returns>
     /// A tuple containing the safe configuration section, simple target name, simple message name, and the configuration path.
     /// </returns>
-    public (IConfigurationSection? configurationSection, string simpleTargetName, string simpleMessageName, string? configPath) ConfigurationSafe(Type channelType, Type messageType)
+    public virtual (IConfigurationSection? configurationSection, string simpleTargetName, string simpleMessageName, string? configPath) ConfigurationSafe(Type channelType, Type messageType)
     {
         var (config, simpleTargetName, simpleMessageName, _) = RootConfiguration(channelType, messageType);
         var selected = config?.GetSection("Config") ?? config;

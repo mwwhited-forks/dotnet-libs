@@ -31,7 +31,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <summary>
     /// Gets the content type used for XML serialization.
     /// </summary>
-    public string ContentType => DefaultContentType;
+    public virtual string ContentType => DefaultContentType;
 
     /// <summary>
     /// convert stream into object
@@ -39,7 +39,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <typeparam name="T">template model to deserialize</typeparam>
     /// <param name="stream"></param>
     /// <returns></returns>
-    public T? Deserialize<T>(Stream stream) =>
+    public virtual T? Deserialize<T>(Stream stream) =>
         (T?)new XmlSerializer(typeof(T)).Deserialize(stream);
 
     /// <summary>
@@ -48,7 +48,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="stream"></param>
     /// <param name="type">template model to deserialize</param>
     /// <returns></returns>
-    public object? Deserialize(Stream stream, Type type) =>
+    public virtual object? Deserialize(Stream stream, Type type) =>
         new XmlSerializer(type).Deserialize(stream);
 
     /// <summary>
@@ -57,7 +57,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <typeparam name="T">template model to deserialize</typeparam>
     /// <param name="input"></param>
     /// <returns></returns>
-    public T? Deserialize<T>(string input)
+    public virtual T? Deserialize<T>(string input)
     {
         using var ms = new MemoryStream();
         using var writer = new StreamWriter(ms) { AutoFlush = true };
@@ -72,7 +72,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="input"></param>
     /// <param name="type">template model to deserialize</param>
     /// <returns></returns>
-    public object? Deserialize(string input, Type type)
+    public virtual object? Deserialize(string input, Type type)
     {
         using var ms = new MemoryStream();
         using var writer = new StreamWriter(ms) { AutoFlush = true };
@@ -88,7 +88,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="stream"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public ValueTask<T?> DeserializeAsync<T>(Stream stream, CancellationToken cancellationToken = default) =>
+    public virtual ValueTask<T?> DeserializeAsync<T>(Stream stream, CancellationToken cancellationToken = default) =>
         new(Deserialize<T>(stream));
 
     /// <summary>
@@ -98,7 +98,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="type">template model to deserialize</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public ValueTask<object?> DeserializeAsync(Stream stream, Type type, CancellationToken cancellationToken = default) =>
+    public virtual ValueTask<object?> DeserializeAsync(Stream stream, Type type, CancellationToken cancellationToken = default) =>
         new(Deserialize(stream, type));
 
     /// <summary>
@@ -107,7 +107,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="obj">object to serialize</param>
     /// <param name="type">template model to serialize</param>
     /// <returns></returns>
-    public string Serialize(object? obj, Type type)
+    public virtual string Serialize(object? obj, Type type)
     {
         var xml = new XmlSerializer(type);
 
@@ -126,7 +126,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <typeparam name="T">template model to serialize</typeparam>
     /// <param name="obj">object to serialize</param>
     /// <returns></returns>
-    public string Serialize<T>(T obj)
+    public virtual string Serialize<T>(T obj)
     {
         if (obj == null) throw new ArgumentNullException(nameof(obj));
         var xml = new XmlSerializer(obj.GetType());
@@ -148,7 +148,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="stream"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public async Task SerializeAsync(object? obj, Type type, Stream stream, CancellationToken cancellationToken = default)
+    public virtual async Task SerializeAsync(object? obj, Type type, Stream stream, CancellationToken cancellationToken = default)
     {
         var xml = new XmlSerializer(type);
         using var writer = XmlWriter.Create(stream, new XmlWriterSettings
@@ -166,7 +166,7 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="stream"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public async Task SerializeAsync<T>(T obj, Stream stream, CancellationToken cancellationToken = default)
+    public virtual async Task SerializeAsync<T>(T obj, Stream stream, CancellationToken cancellationToken = default)
     {
         if (obj == null) throw new ArgumentNullException(nameof(obj));
         var xml = new XmlSerializer(obj.GetType());

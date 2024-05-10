@@ -41,7 +41,7 @@ public class MessageHandlerProvider(
     /// </summary>
     /// <param name="handlers">The collection of message handlers.</param>
     /// <returns>The current instance of <see cref="IMessageHandlerProvider"/>.</returns>
-    public IMessageHandlerProvider SetHandlers(IEnumerable<IMessageQueueHandler> handlers)
+    public virtual IMessageHandlerProvider SetHandlers(IEnumerable<IMessageQueueHandler> handlers)
     {
         foreach (var handler in handlers)
             _handlers.Add(handler);
@@ -53,7 +53,7 @@ public class MessageHandlerProvider(
     /// </summary>
     /// <param name="channelType">The type of the message channel.</param>
     /// <returns>The current instance of <see cref="IMessageHandlerProvider"/>.</returns>
-    public IMessageHandlerProvider SetChannelType(Type channelType)
+    public virtual IMessageHandlerProvider SetChannelType(Type channelType)
     {
         _channelType = channelType;
         return this;
@@ -64,7 +64,7 @@ public class MessageHandlerProvider(
     /// </summary>
     /// <param name="config">The configuration section.</param>
     /// <returns>The current instance of <see cref="IMessageHandlerProvider"/>.</returns>
-    public IMessageHandlerProvider SetConfig(IConfigurationSection config)
+    public virtual IMessageHandlerProvider SetConfig(IConfigurationSection config)
     {
         _config = config ?? throw new ApplicationException($"Missing Configuration");
         return this;
@@ -76,7 +76,7 @@ public class MessageHandlerProvider(
     /// <param name="message">The queue message to handle.</param>
     /// <param name="messageId">The ID of the message.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
-    public async Task HandleAsync(IQueueMessage message, string messageId)
+    public virtual async Task HandleAsync(IQueueMessage message, string messageId)
     {
         if (message != null)
         {

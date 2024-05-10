@@ -29,7 +29,7 @@ public class MessageReceiverProviderFactory(
     /// Creates instances of <see cref="IMessageReceiverProvider"/> based on configured message handlers.
     /// </summary>
     /// <returns>An enumerable collection of <see cref="IMessageReceiverProvider"/>.</returns>
-    public IEnumerable<IMessageReceiverProvider> Create()
+    public virtual IEnumerable<IMessageReceiverProvider> Create()
     {
         var handlersByChannel = from handler in handlers
 

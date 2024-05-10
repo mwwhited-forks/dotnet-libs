@@ -23,7 +23,7 @@ public class BlobContainerFactory : IBlobContainerFactory
     /// </summary>
     /// <param name="containerName">The name of the container.</param>
     /// <returns>An instance of <see cref="IBlobContainer"/>.</returns>
-    public IBlobContainer Create(string containerName) =>
+    public virtual IBlobContainer Create(string containerName) =>
        new WrappedBlobContainer(_factory.Create(containerName));
 
     /// <summary>
@@ -31,7 +31,7 @@ public class BlobContainerFactory : IBlobContainerFactory
     /// </summary>
     /// <typeparam name="T">The type used to derive the container name.</typeparam>
     /// <returns>An instance of <see cref="IBlobContainer"/>.</returns>
-    public IBlobContainer Create<T>() =>
+    public virtual IBlobContainer Create<T>() =>
         Create(
             typeof(T).GetCustomAttribute<BlobContainerAttribute>()?.ContainerName ??
             typeof(T).GetCustomAttribute<TableAttribute>()?.Name ??

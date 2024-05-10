@@ -24,6 +24,6 @@ public class AzureBlobContainerProviderFactory : IBlobContainerProviderFactory
     /// </summary>
     /// <param name="containerName">The name of the collection.</param>
     /// <returns>A new instance of <see cref="AzureBlobContainerProvider"/>.</returns>
-    public IBlobContainerProvider Create(string containerName) =>
+    public IBlobContainerProvider? Create(string containerName) =>
         ActivatorUtilities.CreateInstance<AzureBlobContainerProvider>(_serviceProvider, containerName);
 }

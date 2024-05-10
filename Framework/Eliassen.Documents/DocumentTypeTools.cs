@@ -34,7 +34,7 @@ public class DocumentTypeTools : IDocumentTypeTools
     /// </summary>
     /// <param name="source">stream</param>
     /// <returns>content type</returns>
-    public async Task<string?> DetectContentTypeAsync(Stream source) =>
+    public virtual async Task<string?> DetectContentTypeAsync(Stream source) =>
         _contentTypeDetector is not null
             ? await _contentTypeDetector.DetectContentTypeAsync(source)
             : (GetByFileHeader(source)?.ContentTypes.FirstOrDefault());
@@ -44,7 +44,7 @@ public class DocumentTypeTools : IDocumentTypeTools
     /// </summary>
     /// <param name="contentType">The content type to search for.</param>
     /// <returns>The document type associated with the content type, if found; otherwise, null.</returns>
-    public IDocumentType? GetByContentType(string contentType) =>
+    public virtual IDocumentType? GetByContentType(string contentType) =>
         _types.FirstOrDefault(t => t.ContentTypes.Any(i => string.Equals(i, contentType, StringComparison.OrdinalIgnoreCase)));
 
     /// <summary>
@@ -52,7 +52,7 @@ public class DocumentTypeTools : IDocumentTypeTools
     /// </summary>
     /// <param name="fileExtension">The file extension to search for.</param>
     /// <returns>The document type associated with the file extension, if found; otherwise, null.</returns>
-    public IDocumentType? GetByFileExtension(string fileExtension) =>
+    public virtual IDocumentType? GetByFileExtension(string fileExtension) =>
         _types.FirstOrDefault(t => t.FileExtensions.Any(i => string.Equals(i, fileExtension, StringComparison.OrdinalIgnoreCase)));
 
     /// <summary>
@@ -60,7 +60,7 @@ public class DocumentTypeTools : IDocumentTypeTools
     /// </summary>
     /// <param name="stream">The stream containing the file header.</param>
     /// <returns>The document type associated with the file header, if found; otherwise, null.</returns>
-    public IDocumentType? GetByFileHeader(Stream stream)
+    public virtual IDocumentType? GetByFileHeader(Stream stream)
     {
         var maxRead = _types.Max(t => t.FileHeader.Length);
         if (maxRead > 0)

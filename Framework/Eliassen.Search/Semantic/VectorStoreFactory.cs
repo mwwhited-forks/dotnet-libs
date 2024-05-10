@@ -23,7 +23,7 @@ public class VectorStoreFactory : IVectorStoreFactory
     /// </summary>
     /// <param name="containerName">The name of the container.</param>
     /// <returns>The created vector store.</returns>
-    public IVectorStore Create(string containerName) =>
+    public virtual IVectorStore Create(string containerName) =>
        new WrappedVectorStore(_factory.Create(containerName));
 
     /// <summary>

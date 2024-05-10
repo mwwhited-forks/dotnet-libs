@@ -23,7 +23,7 @@ public class VectorStoreProviderFactory : IVectorStoreProviderFactory
     /// </summary>
     /// <param name="containerName">The name of the container.</param>
     /// <returns>An instance of <see cref="IVectorStoreProvider"/>.</returns>
-    public IVectorStoreProvider Create(string containerName)
+    public virtual IVectorStoreProvider Create(string containerName)
     {
         var provider = _serviceProvider.GetKeyedService<IVectorStoreProvider>(containerName);
 

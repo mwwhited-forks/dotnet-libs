@@ -5,6 +5,7 @@ services:
       service: azurite
     networks:
       - backend
+
   keycloak:
     extends:
       file: docker-compose.keycloak.yml
@@ -55,6 +56,13 @@ services:
       service: ollama
     networks:
       - backend
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
 
   qdrant:
     extends:

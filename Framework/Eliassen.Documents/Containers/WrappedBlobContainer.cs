@@ -60,7 +60,7 @@ public class WrappedBlobContainer : IBlobContainer
     /// <returns>A task representing the asynchronous operation.</returns>
     public Task StoreContentAsync(
         ContentReference reference,
-        IDictionary<string, string>? metadata = null,
+        Dictionary<string, string>? metadata = null,
         bool overwrite = false
         ) =>
         _wrapped.StoreContentAsync(reference, metadata, overwrite);

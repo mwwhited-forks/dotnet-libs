@@ -23,7 +23,7 @@ public class BlobContainerProviderFactory : IBlobContainerProviderFactory
     /// </summary>
     /// <param name="containerName">The name of the container.</param>
     /// <returns>An instance of <see cref="IBlobContainerProvider"/>.</returns>
-    public IBlobContainerProvider Create(string containerName)
+    public IBlobContainerProvider? Create(string containerName)
     {
         var provider = _serviceProvider.GetKeyedService<IBlobContainerProvider>(containerName);
 

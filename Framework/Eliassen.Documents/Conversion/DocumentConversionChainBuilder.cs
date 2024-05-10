@@ -22,7 +22,7 @@ public class DocumentConversionChainBuilder : IDocumentConversionChainBuilder
     /// <param name="sourceContentType">The content type of the source document.</param>
     /// <param name="destinationContentType">The desired content type of the converted document.</param>
     /// <returns>An array of ChainStep objects representing the conversion steps.</returns>
-    public ChainStep[] Steps(string sourceContentType, string destinationContentType)
+    public virtual ChainStep[] Steps(string sourceContentType, string destinationContentType)
     {
         var simple = _handlers
             .FirstOrDefault(h => h.SupportedSource(sourceContentType) && h.SupportedDestination(destinationContentType));

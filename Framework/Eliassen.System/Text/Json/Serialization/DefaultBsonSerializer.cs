@@ -13,7 +13,7 @@ public class DefaultBsonSerializer : DefaultJsonSerializer, IBsonSerializer
     /// <summary>
     /// Gets the content type for BSON, which is "application/json".
     /// </summary>
-    public new string ContentType => DefaultContentType;
+    public override string ContentType => DefaultContentType;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DefaultBsonSerializer"/> class.
