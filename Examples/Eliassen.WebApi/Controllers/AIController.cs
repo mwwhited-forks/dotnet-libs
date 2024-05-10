@@ -3,6 +3,7 @@ using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -22,7 +23,7 @@ public class AIController : ControllerBase
     /// </summary>
     /// <param name="llmProvider">The language model provider.</param>
     public AIController(
-        [FromKeyedServices("OPENAPI")] ILanguageModelProvider llmProvider
+        [FromKeyedServices("OPENAI")] ILanguageModelProvider llmProvider
         )
     {
         _llmProvider = llmProvider;
@@ -50,4 +51,27 @@ public class AIController : ControllerBase
             yield return response;
         };
     }
+
+    /// <summary>
+    /// Generate an LLM Response based on the prompt and user input
+    /// </summary>
+    /// <returns>The string response from the LLM</returns>
+    [HttpPost("Context")]
+    [AllowAnonymous]
+    public async IAsyncEnumerable<string> GetContextResponseAsync([FromBody] GenAiContextRequestModel model)
+    {
+        await foreach (var response in _llmProvider.GetStreamedContextResponseAsync(model.AssistantConfinment, model.PromptDetails, model.UserInput))
+        {
+            yield return response;
+        };
+    }
+
+    /// <summary>
+    /// Generate embeddings
+    /// </summary>
+    /// <returns>The float response from the LLM</returns>
+    [HttpPost("Embeddings")]
+    [AllowAnonymous]
+    public async Task<ReadOnlyMemory<float>> GenerateEmbeddingsAsync([FromBody] GenerativeAiRequestModel model) =>
+        await _llmProvider.GetEmbeddedResponseAsync(model.UserInput);
 }
