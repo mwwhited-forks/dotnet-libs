@@ -3,6 +3,7 @@ using Eliassen.AI.Models;
 using OllamaSharp;
 using OllamaSharp.Models;
 using OllamaSharp.Streamer;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -128,4 +129,27 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
                 break;
         }
     }
+
+    public async IAsyncEnumerable<string> GetStreamedContextResponseAsync(string assistantConfinment,
+        List<string> systemInteractions,
+        List<string> userInput,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    {
+        yield return "";
+    }
+
+    public async Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data)
+    {
+        float value = float.Parse("-0.1");
+        ReadOnlyMemory<float> result = new float[] { value }.AsMemory();
+        return result;
+    }
+
+    public Task<string> GetContextResponseAsync(string assistantConfinment,
+        List<string> systemInteractions,
+        List<string> userInput)
+    {
+        return Task.FromResult("");
+    }
+
 }

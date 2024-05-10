@@ -1,10 +1,13 @@
-﻿using Azure.AI.OpenAI;
+﻿using Azure;
+using Azure.AI.OpenAI;
 using Eliassen.AI;
 using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
+using SharpToken;
 
 namespace Eliassen.OpenAI.AI.Services;
 
@@ -14,6 +17,7 @@ namespace Eliassen.OpenAI.AI.Services;
 public class OpenAIManager : ILanguageModelProvider
 {
     private readonly IOptions<OpenAIClientOptions> _config;
+    private const int MaxTokenLength = 2048;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="OpenAIManager"/> class.
@@ -78,5 +82,94 @@ public class OpenAIManager : ILanguageModelProvider
 
             if (cancellationToken.IsCancellationRequested) { yield break; }
         }
+    }
+
+    public async IAsyncEnumerable<string> GetStreamedContextResponseAsync(string assistantConfinment,
+        List<string> systemInteractions, 
+        List<string> userInput, 
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    {
+        OpenAIClient api = new(_config.Value.APIKey);
+        var request = new ChatCompletionsOptions
+        {
+            DeploymentName = _config.Value.DeploymentName
+        };
+
+        request.Messages.Add(new ChatRequestAssistantMessage(assistantConfinment));
+
+        // Add system messages
+        foreach (var detail in systemInteractions)
+        {
+            request.Messages.Add(new ChatRequestSystemMessage(detail));
+        }
+
+        // Add user messages
+        foreach (var input in userInput)
+        {
+            request.Messages.Add(new ChatRequestUserMessage(input));
+        }
+
+        await foreach (var chatUpdate in await api.GetChatCompletionsStreamingAsync(request))
+        {
+            if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
+            {
+                yield return chatUpdate.ContentUpdate;
+            }
+
+            if (cancellationToken.IsCancellationRequested) { yield break; }
+        }
+    }
+
+    public async Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data)
+    {
+        var encoding = GptEncoding.GetEncoding("cl100k_base");
+        var count = encoding.CountTokens(data);
+
+        if(count > MaxTokenLength)
+        {
+            throw new Exception($"Data Exceeded Token Limit of {MaxTokenLength} tokens");
+        }
+
+        OpenAIClient api = new(_config.Value.APIKey);
+
+        EmbeddingsOptions embeddingsOptions = new()
+        {
+            DeploymentName = _config.Value.EmbeddingModel,
+            Input = { data },
+        };
+
+        Response<Embeddings> response = await api.GetEmbeddingsAsync(embeddingsOptions);
+
+        EmbeddingItem item = response.Value.Data[0];
+        return item.Embedding;
+    }
+
+    public async Task<string> GetContextResponseAsync(string assistantConfinment,
+        List<string> systemInteractions,
+        List<string> userInput)
+    {
+        OpenAIClient api = new(_config.Value.APIKey);
+        var request = new ChatCompletionsOptions
+        {
+            DeploymentName = _config.Value.DeploymentName
+        };
+
+        request.Messages.Add(new ChatRequestAssistantMessage(assistantConfinment));
+
+        // Add system messages
+        foreach (var detail in systemInteractions)
+        {
+            request.Messages.Add(new ChatRequestSystemMessage(detail));
+        }
+
+        // Add user messages
+        foreach (var input in userInput)
+        {
+            request.Messages.Add(new ChatRequestUserMessage(input));
+        }
+
+        var response = await api.GetChatCompletionsAsync(request);
+
+        return response.Value.Choices[0].Message.Content;
     }
 }
