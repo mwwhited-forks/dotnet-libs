@@ -90,7 +90,6 @@ public class IBlobContainerTests
         this.TestContext.AddResult(items);
     }
 
-
     [TestMethod]
     public void Test()
     {
@@ -128,11 +127,14 @@ public class IBlobContainerTests
 
     public class TestBlobFactory : IBlobContainerProviderFactory
     {
-        public IBlobContainerProvider? Create(string containerName) => new TestBlobContainer();
+        public IBlobContainerProvider? Create(string containerName) => new TestBlobContainer()
+        {
+            ContainerName = containerName,
+        };
     }
     public class TestBlobContainer : IBlobContainerProvider
     {
-        public string ContainerName { get; set; }
+        public required string ContainerName { get; set; }
         public Task DeleteContentAsync(string path) => throw new global::System.NotImplementedException();
         public Task<ContentReference?> GetContentAsync(string path) => throw new global::System.NotImplementedException();
         public Task<ContentMetaDataReference?> GetContentMetaDataAsync(string path) => throw new global::System.NotImplementedException();

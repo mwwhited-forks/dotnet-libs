@@ -10,7 +10,7 @@ public class GenAiContextRequestModel
     /// <summary>
     /// Gets or sets the prompt details.
     /// </summary>
-    public required string AssistantConfinment { get; set; }
+    public required string AssistantConfinment { get; set; }//TODO: is this spelled right?
 
     /// <summary>
     /// Gets or sets the prompt details.

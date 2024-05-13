@@ -10,7 +10,7 @@ public class TikaDocToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
     public TikaDocToHtmlConversionHandler(
         IApacheTikaClient client,
         ILogger<TikaDocToHtmlConversionHandler> logger
-            ):base(client, logger)
+            ) : base(client, logger)
     {
     }
 

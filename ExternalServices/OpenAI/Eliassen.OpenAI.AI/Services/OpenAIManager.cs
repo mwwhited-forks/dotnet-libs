@@ -109,7 +109,7 @@ public class OpenAIManager : ILanguageModelProvider
             request.Messages.Add(new ChatRequestUserMessage(input));
         }
 
-        await foreach (var chatUpdate in await api.GetChatCompletionsStreamingAsync(request))
+        await foreach (var chatUpdate in await api.GetChatCompletionsStreamingAsync(request, cancellationToken))
         {
             if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
             {

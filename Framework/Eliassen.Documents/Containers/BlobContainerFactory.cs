@@ -18,9 +18,10 @@ public class BlobContainerFactory : IBlobContainerFactory
     /// <summary>
     /// Initializes a new instance of the <see cref="BlobContainerFactory"/> class.
     /// </summary>
+    /// <param name="serviceProvider">The IOC Service provider.</param>
     /// <param name="factories">The factory used to create blob container providers.</param>
     public BlobContainerFactory(
-         IServiceProvider serviceProvider,
+        IServiceProvider serviceProvider,
         IEnumerable<IBlobContainerProviderFactory> factories
         )
     {

@@ -27,7 +27,6 @@ public class AzureBlobContainerProviderFactory : IBlobContainerProviderFactory
         _options = options;
     }
 
-
     /// <summary>
     /// Creates a new instance of <see cref="AzureBlobContainerProvider"/> based on the specified collection name.
     /// </summary>

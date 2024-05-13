@@ -10,12 +10,12 @@ using System;
 namespace Eliassen.Apache.Tika;
 
 /// <summary>
-/// Provides extension methods for configuring services related to Markdig.
+/// Provides extension methods for configuring services related to Apache - Tika.
 /// </summary>
 public static class ServiceCollectionExtensions
 {
     /// <summary>
-    /// Configures services for Markdig.
+    /// Configures services for Apache - Tika.
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
@@ -30,7 +30,7 @@ public static class ServiceCollectionExtensions
         )
     {
         var url = configuration.GetSection(apacheTikaClientOptionSection)?["Url"];
-        if ( url == null )
+        if (url == null)
         {
             return services;
         }

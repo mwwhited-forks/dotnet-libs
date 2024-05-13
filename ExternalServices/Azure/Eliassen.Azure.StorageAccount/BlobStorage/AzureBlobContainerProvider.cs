@@ -45,7 +45,6 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
         _options = options;
     }
 
-
     private async Task EnsureContainerExistsAsync()
     {
         if (_options.Value.EnsureContainerExists)

@@ -53,7 +53,7 @@ public class QueryBuilderTests
 
         var sortBuilder = mock.Create<ISortBuilder<TestTargetModel>>();
         var expressionBuilder = mock.Create<IExpressionTreeBuilder<TestTargetModel>>();
-        var postBuildVisitors = new IPostBuildExpressionVisitor[0];
+        var postBuildVisitors = Array.Empty<IPostBuildExpressionVisitor>();
 
         sortBuilder.Setup(s => s.SortBy(
             It.IsAny<IQueryable<TestTargetModel>>(),
@@ -69,7 +69,7 @@ public class QueryBuilderTests
             )).Returns(_ => true);
 
         expressionBuilder.Setup(s => s.GetPredicateExpression(
-            It.Is<string>(o=>o == nameof(TestTargetModel.Name)),
+            It.Is<string>(o => o == nameof(TestTargetModel.Name)),
             It.IsAny<FilterParameter>(),
             It.IsAny<StringComparison>(),
             It.Is<bool>(o => !o)
@@ -90,10 +90,8 @@ public class QueryBuilderTests
             capture: capture
             );
 
-
         // Test
         var result = queryBuilder.ExecuteBy(queryable, query);
-
 
         foreach (var item in capture.Capture())
             TestContext.WriteLine(item.ToString());

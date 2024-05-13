@@ -8,7 +8,7 @@ namespace Eliassen.TestUtilities;
 /// </summary>
 public static class TestLogger
 {
-    private static AsyncLocal<ILoggerFactory> _factory = new();
+    private readonly static AsyncLocal<ILoggerFactory> _factory = new();
 
     /// <summary>
     /// Gets the logger factory instance.

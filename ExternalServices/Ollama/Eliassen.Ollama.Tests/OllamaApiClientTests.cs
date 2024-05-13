@@ -53,7 +53,6 @@ public class OllamaApiClientTests
             Prompt = "Hello World!",
         });
 
-
         this.TestContext.WriteLine($"hostName: {hostName}");
         this.TestContext.WriteLine($"model: {model}");
         this.TestContext.WriteLine($"Length: {embedding.Embedding.Length}");
@@ -162,7 +161,6 @@ public class OllamaApiClientTests
         img.CopyTo(ms);
 
         var base54 = Convert.ToBase64String(ms.ToArray());
-
 
         this.TestContext.WriteLine($"hostName: {hostName}");
         this.TestContext.WriteLine($"model: {model}");

@@ -40,8 +40,8 @@ public interface ILanguageModelProvider
     /// <param name="userInput">The user input including any previous messages in the chat</param>
     /// <param name="cancellationToken">The Cancellation Token.</param>
     /// <returns>A task representing the asynchronous operation that returns the response.</returns>
-    IAsyncEnumerable<string> GetStreamedContextResponseAsync(string assistantConfinment, 
-        List<string> systemInteractions, 
+    IAsyncEnumerable<string> GetStreamedContextResponseAsync(string assistantConfinment,
+        List<string> systemInteractions,
         List<string> userInput,
         [EnumeratorCancellation] CancellationToken cancellationToken = default);
 
