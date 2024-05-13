@@ -74,4 +74,13 @@ public class AIController : ControllerBase
     [AllowAnonymous]
     public async Task<ReadOnlyMemory<float>> GenerateEmbeddingsAsync([FromBody] GenerativeAiRequestModel model) =>
         await _llmProvider.GetEmbeddedResponseAsync(model.UserInput);
+
+    /// <summary>
+    /// Testing Rag endpoint for context
+    /// </summary>
+    /// <returns>The float response from the LLM</returns>
+    [HttpPost("RaggedAnne")]
+    [AllowAnonymous]
+    public async Task<string> GetRAGResponseAsync([FromBody] GenerativeAiRequestModel model) =>
+        await _llmProvider.GetRAGResponseAsync(model.PromptDetails, model.Data, model.UserInput);
 }

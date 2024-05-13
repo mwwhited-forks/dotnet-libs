@@ -84,7 +84,7 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
     /// <param name="promptDetails">Details of the prompt or context.</param>
     /// <param name="userInput">The user input or query.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the response from the language model.</returns>
-    public async Task<string> GetResponseAsync(string promptDetails, string userInput) =>
+    public async Task<string> GetResponseAsync(string promptDetails, string userInput, [EnumeratorCancellation] CancellationToken cancellationToken = default) =>
         //TODO:should probably build a custom model but this works for now
         (await _client.GetCompletion(new()
         {
@@ -138,7 +138,7 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
         yield return "";
     }
 
-    public async Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data)
+    public async Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data, [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         float value = float.Parse("-0.1");
         ReadOnlyMemory<float> result = new float[] { value }.AsMemory();
@@ -147,9 +147,29 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
 
     public Task<string> GetContextResponseAsync(string assistantConfinment,
         List<string> systemInteractions,
-        List<string> userInput)
+        List<string> userInput,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         return Task.FromResult("");
     }
+
+    /// <summary>
+    /// Retrieves a response from the language model based on the provided prompt details and user input.
+    /// </summary>
+    /// <param name="promptDetails">Details of the prompt or context.</param>
+    /// <param name="userInput">The user input or query.</param>
+    /// <returns>A task representing the asynchronous operation. The task result contains the response from the language model.</returns>
+    public async Task<string> GetRAGResponseAsync(string assistantConfinment,
+        string ragData,
+        string userInput,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default) =>
+        //TODO:should probably build a custom model but this works for now
+        (await _client.GetCompletion(new()
+        {
+            Model = _client.SelectedModel,
+            Prompt = $"SYSTEM: {assistantConfinment}" + //TODO: do something smarter here
+            $"" +
+            $"USER: {userInput}",
+        })).Response;
 
 }
