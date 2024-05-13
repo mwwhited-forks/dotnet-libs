@@ -6,7 +6,7 @@ namespace Eliassen.Apache.Tika.Tests;
 
 [TestClass]
 public class TikaDocxToHtmlConversionHandlerTests :
-    TikaToHtmlConversionHandlerBaseTests<TikaDocxToHtmlConversionHandler>
+    TikaToHtmlConversionHandlerTestsBase<TikaDocxToHtmlConversionHandler>
 {
     public required TestContext TestContext { get; set; }
 
@@ -16,5 +16,16 @@ public class TikaDocxToHtmlConversionHandlerTests :
     [DataRow("sample4.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/html", ".html")]
 
     public async Task ConvertAsyncTest(string resourceName, string sourceType, string targetType, string ext) =>
-        await ConvertAsyncTest(resourceName, sourceType, targetType, ext, TestContext);
+        await ConvertAsyncTestHarness(resourceName, sourceType, targetType, ext, TestContext);
+
+    [TestCategory(TestCategories.Unit)]
+    [DataTestMethod]
+    [DataRow("application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/html")]
+    [DataRow("application/x-tika-ooxml", "text/html")]
+    [DataRow("application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/xhtml")]
+    [DataRow("application/x-tika-ooxml", "text/xhtml")]
+    [DataRow("application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/xhtml+xml")]
+    [DataRow("application/x-tika-ooxml", "text/xhtml+xml")]
+    public async Task ConvertAsyncTest(string sourceContentType, string destinationContentType) =>
+        await ConvertAsyncTestHarness(sourceContentType, destinationContentType);
 }

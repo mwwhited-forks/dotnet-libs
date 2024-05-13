@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Apache.Tika.Tests;
 
-public abstract class TikaToHtmlConversionHandlerBaseTests<T>
+public abstract class TikaToHtmlConversionHandlerTestsBase<T>
 {
-    public async Task ConvertAsyncTest(
+    public async Task ConvertAsyncTestHarness(
         string resourceName,
         string sourceType,
         string targetType,
@@ -58,5 +59,26 @@ public abstract class TikaToHtmlConversionHandlerBaseTests<T>
         testContext.AddResult(pdfStream, fileName: Path.ChangeExtension(resourceName, ext));
 
         Assert.IsTrue(pdfStream.Length > 240);
+    }
+
+    public async Task ConvertAsyncTestHarness(string sourceContentType, string destinationContentType)
+    {
+        var source = new MemoryStream();
+        var destination = new MemoryStream();
+
+        var mockRepo = new MockRepository(MockBehavior.Strict);
+        var mockClient = mockRepo.Create<IApacheTikaClient>();
+
+        mockClient
+            .Setup(s => s.ConvertAsync(source, sourceContentType, destination, destinationContentType))
+            .Returns(Task.CompletedTask);
+
+        var handler = new TikaDocToHtmlConversionHandler(
+            mockClient.Object,
+            TestLogger.CreateLogger<TikaDocToHtmlConversionHandler>()
+            );
+        await handler.ConvertAsync(source, sourceContentType, destination, destinationContentType);
+
+        mockRepo.VerifyAll();
     }
 }

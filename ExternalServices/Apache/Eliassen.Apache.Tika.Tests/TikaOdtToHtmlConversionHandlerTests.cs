@@ -6,7 +6,7 @@ namespace Eliassen.Apache.Tika.Tests;
 
 [TestClass]
 public class TikaOdtToHtmlConversionHandlerTests :
-    TikaToHtmlConversionHandlerBaseTests<TikaOdtToHtmlConversionHandler>
+    TikaToHtmlConversionHandlerTestsBase<TikaOdtToHtmlConversionHandler>
 {
     public required TestContext TestContext { get; set; }
 
@@ -15,5 +15,13 @@ public class TikaOdtToHtmlConversionHandlerTests :
     [DataRow("sample2.odt", "application/vnd.oasis.opendocument.text", "text/html", ".html")]
     [DataRow("sample3.odt", "application/vnd.oasis.opendocument.text", "text/html", ".html")]
     public async Task ConvertAsyncTest(string resourceName, string sourceType, string targetType, string ext) =>
-        await ConvertAsyncTest(resourceName, sourceType, targetType, ext, TestContext);
+        await ConvertAsyncTestHarness(resourceName, sourceType, targetType, ext, TestContext);
+
+    [TestCategory(TestCategories.Unit)]
+    [DataTestMethod]
+    [DataRow("application/vnd.oasis.opendocument.text", "text/html")]
+    [DataRow("application/vnd.oasis.opendocument.text", "text/xhtml")]
+    [DataRow("application/vnd.oasis.opendocument.text", "text/xhtml+xml")]
+    public async Task ConvertAsyncTest(string sourceContentType, string destinationContentType) =>
+        await ConvertAsyncTestHarness(sourceContentType, destinationContentType);
 }

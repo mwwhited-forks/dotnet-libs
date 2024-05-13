@@ -6,7 +6,7 @@ namespace Eliassen.Apache.Tika.Tests;
 
 [TestClass]
 public class TikaRtfToHtmlConversionHandlerTests :
-    TikaToHtmlConversionHandlerBaseTests<TikaRtfToHtmlConversionHandler>
+    TikaToHtmlConversionHandlerTestsBase<TikaRtfToHtmlConversionHandler>
 {
     public required TestContext TestContext { get; set; }
 
@@ -16,5 +16,13 @@ public class TikaRtfToHtmlConversionHandlerTests :
     [DataRow("sample-2.rtf", "application/rtf", "text/html", ".html")]
     [DataRow("sample-3.rtf", "application/rtf", "text/html", ".html")]
     public async Task ConvertAsyncTest(string resourceName, string sourceType, string targetType, string ext) =>
-        await ConvertAsyncTest(resourceName, sourceType, targetType, ext, TestContext);
+        await ConvertAsyncTestHarness(resourceName, sourceType, targetType, ext, TestContext);
+
+    [TestCategory(TestCategories.Unit)]
+    [DataTestMethod]
+    [DataRow("application/rtf", "text/html")]
+    [DataRow("application/rtf", "text/xhtml")]
+    [DataRow("application/rtf", "text/xhtml+xml")]
+    public async Task ConvertAsyncTest(string sourceContentType, string destinationContentType) =>
+        await ConvertAsyncTestHarness(sourceContentType, destinationContentType);
 }

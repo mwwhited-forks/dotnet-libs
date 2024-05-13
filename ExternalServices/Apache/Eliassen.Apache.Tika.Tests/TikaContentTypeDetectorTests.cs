@@ -1,8 +1,10 @@
 ﻿using Eliassen.TestUtilities;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Eliassen.Apache.Tika.Tests;
@@ -12,6 +14,29 @@ public class TikaContentTypeDetectorTests
 {
     public required TestContext TestContext { get; set; }
 
+    [TestCategory(TestCategories.Unit)]
+    [TestMethod]
+    public async Task DetectContentTypeAsyncTest()
+    {
+        var stream = new MemoryStream();
+        var expectedContentType = "fake/type";
+
+        var mockRepo = new MockRepository(MockBehavior.Strict);
+        var mockClient = mockRepo.Create<IApacheTikaClient>();
+
+        mockClient.Setup(s => s.DetectStreamAsync(stream)).Returns(ValueTask.FromResult(expectedContentType));
+
+        var detector = new TikaContentTypeDetector(
+            mockClient.Object,
+            TestLogger.CreateLogger<TikaContentTypeDetector>()
+            );
+        var contentType = await detector.DetectContentTypeAsync(stream);
+
+        Assert.AreEqual(expectedContentType, contentType);
+
+        mockRepo.VerifyAll();
+    }
+
     [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("accessible_epub_3.epub", "application/epub+zip")]
@@ -20,7 +45,7 @@ public class TikaContentTypeDetectorTests
     [DataRow("sample-1.rtf", "application/rtf")]
     [DataRow("sample2.doc", "application/msword")]
     [DataRow("sample2.odt", "application/vnd.oasis.opendocument.text")]
-    public async Task DetectContentTypeAsyncTest(string resourceName, string expectedContentType)
+    public async Task DevLocalDetectContentTypeAsyncTest(string resourceName, string expectedContentType)
     {
         using var stream = this.GetType().Assembly.GetManifestResourceStream($"Eliassen.Apache.Tika.Tests.TestData.{resourceName}")
             ?? throw new NotSupportedException($"Not found {resourceName}");
