@@ -17,7 +17,7 @@ public class MessageReceiverProviderFactoryTests
 
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
-    public void Tests()
+    public void CreateTest()
     {
         var config = new ConfigurationBuilder()
             .Build();
