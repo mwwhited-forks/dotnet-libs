@@ -6,4 +6,4 @@ services:
       dockerfile: DockerFile.sbert
       context: .
     ports: 
-      - "5080:5000"
+      - 5080:5000

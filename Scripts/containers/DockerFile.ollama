@@ -1,0 +1,12 @@
+FROM ollama/ollama
+
+# ENV BASE_MODEL=phi
+ENV BASE_MODEL=llava-phi3
+
+COPY ./ollama/run-ollama.sh /tmp/run-ollama.sh
+
+WORKDIR /tmp
+
+RUN chmod +x run-ollama.sh \
+    && ./run-ollama.sh
+EXPOSE 11434

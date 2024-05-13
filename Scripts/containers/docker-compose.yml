@@ -95,6 +95,16 @@ services:
       - frontend
       - backend
 
+  open-webui:
+    extends:
+      file: docker-compose.open-webui.yml
+      service: open-webui
+    depends_on:
+      - ollama
+    networks:
+      - frontend
+      - backend
+
 networks:
   frontend:
     driver: bridge

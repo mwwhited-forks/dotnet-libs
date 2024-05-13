@@ -1,8 +1,14 @@
 # Example Endpoints and Port Numbers
 
-## Summary
+## Web Links
 
-This is a list of IP Ports and Mapped Endpoints used by the example applications
+* [Open-WebUI (Ollama)](http://localhost:3000/)
+* [Qdrant](http://localhost:6333/dashboard)
+* [SMTP4DEV](http://localhost:7777/)
+* [Keycloak](http://localhost:8081/)
+* [Apache - Tika](http://localhost:9998/)
+
+## Port List
 
 | Service        | protocol | port  | 
 |----------------|----------|-------|
@@ -10,8 +16,9 @@ This is a list of IP Ports and Mapped Endpoints used by the example applications
 | smtp4dev       | imap     |   143 |
 | smtp4dev       | pop3     |   110 |
 | sql-server     | tcp      |  1433 |
+| open-webui     | http     |  3000 |
 | sbert          | tcp      |  5080 |
-| paradedb       | tcp      |  5432 | 
+| paradedb       | tcp      |  5432 | eliassen-libs-dev-paradedb-1:5432
 | RabbitMQ       | tcp      |  5672 |
 | qdrant         | http     |  6333 |
 | qdrant         | grpc     |  6334 |
