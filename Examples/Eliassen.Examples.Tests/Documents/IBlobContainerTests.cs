@@ -1,5 +1,4 @@
-﻿using com.sun.org.apache.bcel.@internal.generic;
-using Eliassen.Common;
+﻿using Eliassen.Common;
 using Eliassen.Documents;
 using Eliassen.Documents.Containers;
 using Eliassen.Documents.Models;

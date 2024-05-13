@@ -10,7 +10,7 @@ public class TikaDocToHtmlConversionHandlerTests :
 {
     public required TestContext TestContext { get; set; }
 
-    [TestCategory(TestCategories.Unit)]
+    [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("sample2.doc", "application/msword", "text/html", ".html")]
     public async Task ConvertAsyncTest(string resourceName, string sourceType, string targetType, string ext) =>

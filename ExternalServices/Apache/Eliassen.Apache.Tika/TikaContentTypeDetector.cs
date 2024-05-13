@@ -1,6 +1,9 @@
 ﻿using Eliassen.Documents;
-using java.io;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Diagnostics;
 using System.IO;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Eliassen.Apache.Tika;
@@ -10,6 +13,18 @@ namespace Eliassen.Apache.Tika;
 /// </summary>
 public class TikaContentTypeDetector : IContentTypeDetector
 {
+    private readonly IApacheTikaClient _client;
+    private readonly ILogger _logger;
+
+    public TikaContentTypeDetector(
+        IApacheTikaClient client,
+        ILogger<TikaContentTypeDetector> logger
+            )
+    {
+        _client = client;
+        _logger = logger;
+    }
+
     /// <summary>
     /// Asynchronously detects the content type of the provided stream using Apache Tika.
     /// </summary>
@@ -18,16 +33,6 @@ public class TikaContentTypeDetector : IContentTypeDetector
     /// A <see cref="Task{TResult}"/> representing the asynchronous operation. The task result
     /// contains the detected content type as a string, or <c>null</c> if the content type cannot be determined.
     /// </returns>
-    public async Task<string?> DetectContentTypeAsync(Stream source)
-    {
-        var ms = new MemoryStream();
-        await source.CopyToAsync(ms);
-        ms.Position = 0;
-
-        var input = new ByteArrayInputStream(ms.ToArray());
-
-        var tika = new org.apache.tika.Tika();
-        var contentType = tika.detect(input);
-        return contentType;
-    }
+    public async Task<string?> DetectContentTypeAsync(Stream source) =>
+        await _client.DetectStreamAsync(source);
 }

@@ -1,6 +1,4 @@
-﻿using java.io;
-using org.apache.tika.sax;
-using org.xml.sax;
+﻿using Microsoft.Extensions.Logging;
 
 namespace Eliassen.Apache.Tika;
 
@@ -9,12 +7,12 @@ namespace Eliassen.Apache.Tika;
 /// </summary>
 public abstract class TikaToHtmlConversionBaseHandler : TikaConversionHandlerBase
 {
-    /// <summary>
-    /// Gets the content handler instance used for document conversion to HTML.
-    /// </summary>
-    /// <param name="output">The output stream for the converted HTML.</param>
-    /// <returns>The content handler instance.</returns>
-    protected override ContentHandler Handler(OutputStream output) => new ToHTMLContentHandler(output, "UTF-8");
+    protected TikaToHtmlConversionBaseHandler(
+        IApacheTikaClient client,
+        ILogger logger
+            ) : base(client, logger)
+    {
+    }
 
     /// <summary>
     /// Gets an array of supported destination content types for conversion.

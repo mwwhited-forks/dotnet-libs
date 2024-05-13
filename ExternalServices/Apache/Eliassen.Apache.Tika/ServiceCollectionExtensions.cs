@@ -1,7 +1,11 @@
 ﻿using Eliassen.Documents;
 using Eliassen.Documents.Conversion;
 using Eliassen.Documents.Models;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Options;
+using System;
 
 namespace Eliassen.Apache.Tika;
 
@@ -16,9 +20,29 @@ public static class ServiceCollectionExtensions
     /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddApacheTikaServices(
-        this IServiceCollection services
+        this IServiceCollection services,
+    IConfiguration configuration,
+#if DEBUG
+    string apacheTikaClientOptionSection
+#else
+        string apacheTikaClientOptionSection = nameof(ApacheTikaClientOptions)
+#endif
         )
     {
+        var url = configuration.GetSection(apacheTikaClientOptionSection)?["Url"];
+        if ( url == null )
+        {
+            return services;
+        }
+
+        services.Configure<ApacheTikaClientOptions>(options => configuration.Bind(apacheTikaClientOptionSection, options));
+
+        services.AddHttpClient<IApacheTikaClient, ApacheTikaClient>((sp, http) =>
+        {
+            var options = sp.GetRequiredService<IOptions<ApacheTikaClientOptions>>();
+            http.BaseAddress = new Uri(options.Value.Url);
+        });
+
         services.AddTransient<IContentTypeDetector, TikaContentTypeDetector>();
 
         services.AddTransient<IDocumentConversionHandler, TikaDocToHtmlConversionHandler>();
@@ -75,8 +99,6 @@ public static class ServiceCollectionExtensions
             FileExtensions = [".rtf",],
             ContentTypes = ["application/rtf"],
         });
-
-
 
         return services;
     }

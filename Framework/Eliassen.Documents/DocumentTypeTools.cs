@@ -22,7 +22,7 @@ public class DocumentTypeTools : IDocumentTypeTools
     /// <param name="contentTypeDetector">The content type detector.</param>
     public DocumentTypeTools(
         IEnumerable<IDocumentType> types,
-        IContentTypeDetector? contentTypeDetector
+        IContentTypeDetector? contentTypeDetector = null
         )
     {
         _types = types;

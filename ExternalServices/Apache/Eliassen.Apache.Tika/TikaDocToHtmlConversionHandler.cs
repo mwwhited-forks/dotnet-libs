@@ -1,5 +1,4 @@
-﻿using org.apache.tika.parser;
-using org.apache.tika.parser.microsoft;
+﻿using Microsoft.Extensions.Logging;
 
 namespace Eliassen.Apache.Tika;
 
@@ -8,11 +7,12 @@ namespace Eliassen.Apache.Tika;
 /// </summary>
 public class TikaDocToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
 {
-    /// <summary>
-    /// Gets the parser instance used for document conversion.
-    /// </summary>
-    /// <returns>The parser instance for Microsoft Office documents.</returns>
-    protected override Parser Parser() => new OfficeParser();
+    public TikaDocToHtmlConversionHandler(
+        IApacheTikaClient client,
+        ILogger<TikaDocToHtmlConversionHandler> logger
+            ):base(client, logger)
+    {
+    }
 
     /// <summary>
     /// Gets an array of supported source content types for conversion.

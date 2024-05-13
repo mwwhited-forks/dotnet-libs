@@ -10,7 +10,7 @@ public class TikaDocxToHtmlConversionHandlerTests :
 {
     public required TestContext TestContext { get; set; }
 
-    [TestCategory(TestCategories.Unit)]
+    [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("sample1.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/html", ".html")]
     [DataRow("sample4.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/html", ".html")]
