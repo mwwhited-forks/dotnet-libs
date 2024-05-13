@@ -17,5 +17,5 @@ public interface IBlobContainerFactory
     /// </summary>
     /// <typeparam name="T">Owning type reference</typeparam>
     /// <returns></returns>
-    IBlobContainer Create<T>();
+    IBlobContainer<T> Create<T>();
 }

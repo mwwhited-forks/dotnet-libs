@@ -14,6 +14,6 @@ public class Sha512Hash : IHash
     /// </summary>
     /// <param name="value">The input value to be hashed.</param>
     /// <returns>The Base64 encoded SHA512 hash of the input value.</returns>
-    public string GetHash(string value) =>
+    public virtual string GetHash(string value) =>
         Convert.ToBase64String(SHA512.HashData(Encoding.UTF8.GetBytes(value)));
 }

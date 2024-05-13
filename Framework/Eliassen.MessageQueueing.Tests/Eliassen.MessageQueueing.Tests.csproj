@@ -11,6 +11,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+		<PackageReference Include="Moq" Version="4.20.70" />
 		<PackageReference Include="MSTest.TestAdapter" Version="3.3.1" />
 		<PackageReference Include="MSTest.TestFramework" Version="3.3.1" />
 		<PackageReference Include="coverlet.collector" Version="6.0.2">
@@ -21,6 +22,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Eliassen.Extensions\Eliassen.Extensions.csproj" />
+		<ProjectReference Include="..\Eliassen.MessageQueueing.Hosting\Eliassen.MessageQueueing.Hosting.csproj" />
 		<ProjectReference Include="..\Eliassen.MessageQueueing\Eliassen.MessageQueueing.csproj" />
 		<ProjectReference Include="..\Eliassen.System\Eliassen.System.csproj" />
 		<ProjectReference Include="..\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />

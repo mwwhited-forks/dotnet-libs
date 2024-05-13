@@ -52,7 +52,7 @@ public static class ServiceCollectionExtensions
         )
     {
         services.Configure<AzureBlobProviderOptions>(options => configuration.Bind(azureBlobProviderOptionSection, options));
-        services.TryAddTransient<IBlobServiceClientFactory, BlobServiceClientFactory>();
+        services.TryAddTransient<IBlobServiceClientFactory, AzureBlobServiceClientFactory>();
         services.TryAddTransient(sp => sp.GetRequiredService<IBlobServiceClientFactory>().Create());
 
         services.AddTransient<IBlobContainerProviderFactory, AzureBlobContainerProviderFactory>();
@@ -74,6 +74,7 @@ public static class ServiceCollectionExtensions
         services.TryAddKeyedTransient<IMessageReceiverProvider, AzureStorageQueueMessageProvider>(AzureStorageGlobals.MessageProviderKey);
 
         services.TryAddTransient<IQueueClientFactory, QueueClientFactory>();
+        services.TryAddTransient<IAzureStorageQueueMapper, AzureStorageQueueMapper>();
 
         return services;
     }

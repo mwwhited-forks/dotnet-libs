@@ -10,7 +10,7 @@ public class TikaOdtToHtmlConversionHandlerTests :
 {
     public required TestContext TestContext { get; set; }
 
-    [TestCategory(TestCategories.Unit)]
+    [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("sample2.odt", "application/vnd.oasis.opendocument.text", "text/html", ".html")]
     [DataRow("sample3.odt", "application/vnd.oasis.opendocument.text", "text/html", ".html")]

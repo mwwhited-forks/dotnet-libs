@@ -1,25 +1,36 @@
 # Example Endpoints and Port Numbers
 
-## Summary
+## Web Links
 
-This is a list of IP Ports and Mapped Endpoints used by the example applications
+* [Open-WebUI (Ollama)](http://localhost:3000/)
+* [Qdrant](http://localhost:6333/dashboard)
+* [SMTP4DEV](http://localhost:7777/)
+* [Keycloak](http://localhost:8081/)
+* [Apache - Tika](http://localhost:9998/)
 
-* Example WebAPI (Test ASP.Net Core Server)
-  * [http](http://localhost:5276) - 5276
-  * [https](https://localhost:7276) - 7276
-* Azurite (Azure Storage Emulator)
-  * [Blob Endpoint](=http://127.0.0.1:10000/devstoreaccount1) - 10000
-  * [Queue Endpoint](http://127.0.0.1:10001/devstoreaccount1) - 10001
-  * [Table Endpoint](http://127.0.0.1:10002/devstoreaccount1) - 10002
-* MongoDB
-  * localhost:27017
-* RabbitMQ
-  * localhost:5672
-  * localhost:15672
-* smtp4dev (Development Email Server)
-  * [Portal](http://localhost:7777) - localhost:7777
-  * SMTP - localhost:25
-  * IMAP - localhost:143
-  * POP3 - localhost:110
-* SQL Server (Microsoft SQL)
-  * localhost:1433
+## Port List
+
+| Service        | protocol | port  | 
+|----------------|----------|-------|
+| smtp4dev       | smtp     |    25 |
+| smtp4dev       | imap     |   143 |
+| smtp4dev       | pop3     |   110 |
+| sql-server     | tcp      |  1433 |
+| open-webui     | http     |  3000 |
+| sbert          | tcp      |  5080 |
+| paradedb       | tcp      |  5432 | eliassen-libs-dev-paradedb-1:5432
+| RabbitMQ       | tcp      |  5672 |
+| qdrant         | http     |  6333 |
+| qdrant         | grpc     |  6334 |
+| smtp4dev       | http     |  7777 |
+| Keycloak       | http     |  8081 |
+| PG Admin       | http     |  8082 |
+| OpenSearch     | http     |  9200 |
+| OpenSearch     | http     |  9600 |
+| Apache Tika    | http     |  9998 |
+| Azurite        | http     | 10000 |
+| Azurite        | http     | 10001 |
+| Azurite        | http     | 10002 |
+| ollama         | http     | 11434 |
+| RabbitMQ       | tcp      | 15672 |
+| MongoDB        | tcp      | 27017 |

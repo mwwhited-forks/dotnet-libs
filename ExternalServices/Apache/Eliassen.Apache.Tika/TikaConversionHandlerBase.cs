@@ -1,5 +1,5 @@
 ﻿using Eliassen.Documents.Conversion;
-using java.io;
+using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
 using System.Linq;
@@ -12,18 +12,17 @@ namespace Eliassen.Apache.Tika;
 /// </summary>
 public abstract class TikaConversionHandlerBase : IDocumentConversionHandler
 {
-    /// <summary>
-    /// Gets the parser instance used for document conversion.
-    /// </summary>
-    /// <returns>The parser instance.</returns>
-    protected abstract org.apache.tika.parser.Parser Parser();
+    private readonly IApacheTikaClient _client;
+    private readonly ILogger _logger;
 
-    /// <summary>
-    /// Gets the content handler instance used for document conversion.
-    /// </summary>
-    /// <param name="output">The output stream for the converted document.</param>
-    /// <returns>The content handler instance.</returns>
-    protected abstract org.xml.sax.ContentHandler Handler(OutputStream output);
+    protected TikaConversionHandlerBase(
+        IApacheTikaClient client,
+        ILogger logger
+            )
+    {
+        _client = client;
+        _logger = logger;
+    }
 
     /// <summary>
     /// Gets an array of supported destination content types for conversion.
@@ -50,24 +49,7 @@ public abstract class TikaConversionHandlerBase : IDocumentConversionHandler
         if (!SupportedSource(sourceContentType)) throw new NotSupportedException($"Source Content Type \"{sourceContentType}\" is not supported");
         if (!SupportedDestination(destinationContentType)) throw new NotSupportedException($"Source Content Type \"{destinationContentType}\" is not supported");
 
-        var ms = new MemoryStream();
-        await source.CopyToAsync(ms);
-        ms.Position = 0;
-
-        var input = new ByteArrayInputStream(ms.ToArray());
-        var output = new ByteArrayOutputStream();
-        try
-        {
-            Parser().parse(input, Handler(output), new(), new());
-            destination.Write(output.toByteArray());
-        }
-        finally
-        {
-            input.close();
-            output.close();
-        }
-
-        destination.Position = 0;
+        await _client.ConvertAsync(source, sourceContentType, destination, destinationContentType);
     }
 
     /// <summary>

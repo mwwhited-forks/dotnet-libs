@@ -48,7 +48,7 @@ public class DefaultJsonSerializer(JsonSerializerOptions? options = null) : IJso
     /// <summary>
     /// Gets the content type for JSON.
     /// </summary>
-    public string ContentType => DefaultContentType;
+    public virtual string ContentType => DefaultContentType;
 
     /// <summary>
     /// The JSON serializer options.
@@ -117,6 +117,6 @@ public class DefaultJsonSerializer(JsonSerializerOptions? options = null) : IJso
     /// </summary>
     /// <param name="propertyName">The property name to convert.</param>
     /// <returns>The converted property name.</returns>
-    public string AsPropertyName(string propertyName) =>
+    public virtual string AsPropertyName(string propertyName) =>
         (_options.PropertyNamingPolicy ?? JsonNamingPolicy.CamelCase).ConvertName(propertyName);
 }

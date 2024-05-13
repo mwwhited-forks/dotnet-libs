@@ -20,5 +20,5 @@ public class QdrantGrpcClientFactory : IQdrantGrpcClientFactory
     /// Creates a new instance of the Qdrant gRPC client.
     /// </summary>
     /// <returns>A new instance of the Qdrant gRPC client.</returns>
-    public QdrantGrpcClient Create() => new(QdrantChannel.ForAddress(_options.Value.Url));
+    public virtual QdrantGrpcClient Create() => new(QdrantChannel.ForAddress(_options.Value.Url));
 }

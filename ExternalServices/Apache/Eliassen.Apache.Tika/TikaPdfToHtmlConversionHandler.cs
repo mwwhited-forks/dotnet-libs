@@ -1,5 +1,4 @@
-﻿using org.apache.tika.parser;
-using org.apache.tika.parser.pdf;
+﻿using Microsoft.Extensions.Logging;
 
 namespace Eliassen.Apache.Tika;
 
@@ -8,11 +7,12 @@ namespace Eliassen.Apache.Tika;
 /// </summary>
 public class TikaPdfToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
 {
-    /// <summary>
-    /// Gets the parser instance used for document conversion.
-    /// </summary>
-    /// <returns>The parser instance for PDF documents.</returns>
-    protected override Parser Parser() => new PDFParser();
+    public TikaPdfToHtmlConversionHandler(
+        IApacheTikaClient client,
+        ILogger<TikaPdfToHtmlConversionHandler> logger
+            ) : base(client, logger)
+    {
+    }
 
     /// <summary>
     /// Gets an array of supported source content types for conversion.

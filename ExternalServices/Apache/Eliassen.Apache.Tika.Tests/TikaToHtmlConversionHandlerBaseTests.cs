@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -22,6 +23,10 @@ public abstract class TikaToHtmlConversionHandlerBaseTests<T>
         )
     {
         var config = new ConfigurationBuilder()
+            .AddInMemoryCollection(new Dictionary<string, string?>
+            {
+                { "ApacheTikaClientOptions:Url","http://127.0.0.1:9998"}
+            })
             .Build();
         var serviceProvider = new ServiceCollection()
             .AddLogging(builder => builder
@@ -29,7 +34,7 @@ public abstract class TikaToHtmlConversionHandlerBaseTests<T>
                 .AddDebug()
                 .SetMinimumLevel(LogLevel.Trace)
                 )
-            .TryAddApacheTikaServices()
+            .TryAddApacheTikaServices(config, nameof(ApacheTikaClientOptions))
             .BuildServiceProvider()
             ;
 

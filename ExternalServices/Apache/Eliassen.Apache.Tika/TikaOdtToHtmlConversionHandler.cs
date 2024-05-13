@@ -1,5 +1,4 @@
-﻿using org.apache.tika.parser;
-using org.apache.tika.parser.odf;
+﻿using Microsoft.Extensions.Logging;
 
 namespace Eliassen.Apache.Tika;
 
@@ -9,11 +8,12 @@ namespace Eliassen.Apache.Tika;
 /// </summary>
 public class TikaOdtToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
 {
-    /// <summary>
-    /// Gets the parser instance used for document conversion.
-    /// </summary>
-    /// <returns>The parser instance for OpenDocument Text (ODT) documents.</returns>
-    protected override Parser Parser() => new OpenDocumentParser();
+    public TikaOdtToHtmlConversionHandler(
+        IApacheTikaClient client,
+        ILogger<TikaOdtToHtmlConversionHandler> logger
+            ) : base(client, logger)
+    {
+    }
 
     /// <summary>
     /// Gets an array of supported source content types for conversion.

@@ -16,7 +16,6 @@ public static class ServiceCollectionExtensions
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddSearchServices(this IServiceCollection services)
     {
-        services.TryAddTransient<IVectorStoreProviderFactory, VectorStoreProviderFactory>();
         services.TryAddTransient<IVectorStoreFactory, VectorStoreFactory>();
         services.TryAddTransient(typeof(IVectorStore<>), typeof(WrappedVectorStore<>));
 

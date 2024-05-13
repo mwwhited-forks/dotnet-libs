@@ -43,7 +43,7 @@ public class DocumentConversion : IDocumentConversion
     /// <param name="destination">The destination stream where the converted content will be written.</param>
     /// <param name="destinationContentType">The content type of the converted content.</param>
     /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-    public Task ConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType) =>
+    public virtual Task ConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType) =>
         InternalConvertAsync(source, sourceContentType, destination, destinationContentType, true);
     internal async Task InternalConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType, bool recurse)
     {

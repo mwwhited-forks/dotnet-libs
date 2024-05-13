@@ -163,7 +163,7 @@ The content metadata reference, or null if not found.
 
 
 
-#### StoreContentAsync(Eliassen.Documents.Models.ContentReference,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)
+#### StoreContentAsync(Eliassen.Documents.Models.ContentReference,System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean)
 Stores the content with the specified reference, metadata, and overwrite option. 
 
 

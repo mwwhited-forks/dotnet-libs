@@ -10,7 +10,7 @@ public class TikaRtfToHtmlConversionHandlerTests :
 {
     public required TestContext TestContext { get; set; }
 
-    [TestCategory(TestCategories.Unit)]
+    [TestCategory(TestCategories.DevLocal)]
     [DataTestMethod]
     [DataRow("sample-1.rtf", "application/rtf", "text/html", ".html")]
     [DataRow("sample-2.rtf", "application/rtf", "text/html", ".html")]

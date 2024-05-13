@@ -24,7 +24,7 @@ public class XsltTemplateProvider : ITemplateProvider
     /// 
     /// application/xslt+xml
     /// </summary>
-    public IReadOnlyCollection<string> SupportedContentTypes { get; } = new[]
+    public virtual IReadOnlyCollection<string> SupportedContentTypes { get; } = new[]
     {
          ContentTypesExtensions.Application.XSLT,
     };
@@ -34,7 +34,7 @@ public class XsltTemplateProvider : ITemplateProvider
     /// </summary>
     /// <param name="context">The template context.</param>
     /// <returns><c>true</c> if the template processing can be applied; otherwise, <c>false</c>.</returns>
-    public bool CanApply(ITemplateContext context) =>
+    public virtual bool CanApply(ITemplateContext context) =>
         SupportedContentTypes.Any(type => string.Equals(context.TemplateContentType, type, StringComparison.InvariantCultureIgnoreCase));
 
     /// <summary>
@@ -45,7 +45,7 @@ public class XsltTemplateProvider : ITemplateProvider
     /// <param name="data">The data to apply to the template.</param>
     /// <param name="target">The stream where the result will be written.</param>
     /// <returns>A task representing the asynchronous operation, indicating whether the application was successful.</returns>
-    public async Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target)
+    public virtual async Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target)
     {
         using var readStream = context.OpenTemplate(context);
 

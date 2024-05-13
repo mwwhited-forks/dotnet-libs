@@ -1,0 +1,85 @@
+﻿using Eliassen.Azure.StorageAccount.MessageQueueing;
+using Eliassen.MessageQueueing.Services;
+using Eliassen.TestUtilities;
+using Microsoft.Extensions.Configuration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+
+namespace Eliassen.Azure.StorageAccount.Tests.MessageQueueing;
+
+[TestClass]
+public class AzureStorageQueueMapperTests
+{
+    public required TestContext TestContext { get; set; }
+
+    [TestCategory(TestCategories.Unit)]
+    [DataTestMethod]
+    [DataRow(null, 1000)]
+    [DataRow("100", 100)]
+    [DataRow("5000", 5000)]
+    public void WaitDelayTest(string? input, int expected)
+    {
+        var mapper = new AzureStorageQueueMapper();
+
+        var config = new ConfigurationBuilder()
+            .AddInMemoryCollection(new Dictionary<string, string?>
+            {
+                {"WaitDelay", input }
+            })
+            .Build();
+
+        var result = mapper.WaitDelay(config);
+        Assert.AreEqual(expected, result);
+    }
+
+    [TestCategory(TestCategories.Unit)]
+    [DataTestMethod]
+    [DataRow(null, false)]
+    [DataRow("false", false)]
+    [DataRow("False", false)]
+    [DataRow("True", true)]
+    [DataRow("true", true)]
+    public void EnsureQueueExistsTest(string? input, bool expected)
+    {
+        var mapper = new AzureStorageQueueMapper();
+
+        var config = new ConfigurationBuilder()
+            .AddInMemoryCollection(new Dictionary<string, string?>
+            {
+                {"EnsureQueueExists", input }
+            })
+            .Build();
+
+        var result = mapper.EnsureQueueExists(config);
+        Assert.AreEqual(expected, result);
+    }
+
+    [TestCategory(TestCategories.Unit)]
+    [TestMethod]
+    public void WrapTest()
+    {
+        var message = new TestMessage();
+
+        var messageContext = new MessageContext()
+        {
+            CorrelationId = "HelloWorld!",
+            Headers ={
+                ["Name1"] = "Header1"
+            }
+        };
+
+        var mapper = new AzureStorageQueueMapper();
+        var result = mapper.Wrap(message, messageContext);
+
+        var type = Type.GetType(result.PayloadType);
+
+        Assert.IsTrue(type?.IsInstanceOfType(message) ?? false);
+        Assert.AreEqual("HelloWorld!", result.CorrelationId);
+        Assert.AreEqual("Header1", result.Properties["Name1"]);
+    }
+
+    public class TestMessage
+    {
+    }
+}

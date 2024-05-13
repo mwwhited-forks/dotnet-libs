@@ -100,11 +100,11 @@ Interface for creating instances of IVectorStore.
 
 
 #### Create(System.String)
-Creates a new instance of IVectorStore with the specified container name. 
+Creates a new instance of IVectorStore with the specified collection name. 
 
 
 ##### Parameters
-* *containerName:* The name of the container.
+* *collectionName:* The name of the collection.
 
 
 
@@ -128,7 +128,7 @@ Interface for a vector store provider that implements IVectorStore.
 
 ### Properties
 
-#### ContainerName
+#### CollectionName
 Gets or sets the name of the container.
 ### Methods
 
@@ -175,5 +175,5 @@ Attribute for specifying the container name for a vector store.
 This attribute can be applied to a class that implements IVectorStore.
 ### Properties
 
-#### ContainerName
+#### CollectionName
 Gets or sets the name of the container.

@@ -11,12 +11,7 @@ public class AzureBlobProviderOptions
     public required string ConnectionString { get; set; }
 
     /// <summary>
-    /// Gets or sets the name of the collection for storing documents in Azure Blob storage.
+    /// if true the system will create a container if not exists
     /// </summary>
-    public required string DocumentCollectionName { get; set; }
-
-    /// <summary>
-    /// Gets or sets the name of the collection for storing document summaries in Azure Blob storage.
-    /// </summary>
-    public required string SummaryCollectionName { get; set; }
+    public bool EnsureContainerExists { get; set; }
 }

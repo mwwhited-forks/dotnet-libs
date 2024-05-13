@@ -34,7 +34,7 @@ public class MessageSender<TChannel>(
     /// <param name="message">The message to be sent.</param>
     /// <param name="correlationId">The correlation ID associated with the message (optional).</param>
     /// <returns>The ID of the sent message.</returns>
-    public async Task<string> SendAsync(
+    public virtual async Task<string> SendAsync(
         object message,
         string? correlationId = default
     )

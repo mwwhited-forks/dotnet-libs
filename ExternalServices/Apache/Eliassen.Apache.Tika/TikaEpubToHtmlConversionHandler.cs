@@ -1,15 +1,15 @@
-﻿using org.apache.tika.parser;
-using org.apache.tika.parser.epub;
+﻿using Microsoft.Extensions.Logging;
 
 namespace Eliassen.Apache.Tika;
 
 public class TikaEpubToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
 {
-    /// <summary>
-    /// Gets the parser instance used for document conversion.
-    /// </summary>
-    /// <returns>The parser instance for EPUB documents.</returns>
-    protected override Parser Parser() => new EpubParser();
+    public TikaEpubToHtmlConversionHandler(
+        IApacheTikaClient client,
+        ILogger<TikaEpubToHtmlConversionHandler> logger
+            ) : base(client, logger)
+    {
+    }
 
     /// <summary>
     /// Gets an array of supported source content types for conversion.

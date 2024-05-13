@@ -42,7 +42,7 @@ public class DocumentSummaryGenerationProvider
     /// </summary>
     /// <param name="content">The content for which to generate a summary.</param>
     /// <returns>A summary of the content.</returns>
-    public async Task<string> GenerateSummaryAsync(string content)
+    public virtual async Task<string> GenerateSummaryAsync(string content)
     {
         // if (content.Length < MAX_LENGTH) return content;
 

@@ -1,5 +1,4 @@
-﻿using org.apache.tika.parser;
-using org.apache.tika.parser.microsoft.ooxml;
+﻿using Microsoft.Extensions.Logging;
 
 namespace Eliassen.Apache.Tika;
 
@@ -8,11 +7,12 @@ namespace Eliassen.Apache.Tika;
 /// </summary>
 public class TikaDocxToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
 {
-    /// <summary>
-    /// Gets the parser instance used for document conversion.
-    /// </summary>
-    /// <returns>The parser instance for Office Open XML documents (DOCX).</returns>
-    protected override Parser Parser() => new OOXMLParser();
+    public TikaDocxToHtmlConversionHandler(
+        IApacheTikaClient client,
+        ILogger<TikaDocxToHtmlConversionHandler> logger
+            ) : base(client, logger)
+    {
+    }
 
     /// <summary>
     /// Gets an array of supported source content types for conversion.
