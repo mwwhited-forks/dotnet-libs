@@ -13,7 +13,7 @@ Initializes a new instance of the
 
 
 ##### Parameters
-* *factory:* The factory used to create blob container providers.
+* *factories:* The factory used to create blob container providers.
 
 
 
@@ -42,39 +42,7 @@ An instance of .
 
 
 
-## Class: Documents.Containers.BlobContainerProviderFactory
-Represents a factory for creating blob container providers. 
-
-### Methods
-
-
-#### Constructor
-Initializes a new instance of the 
- *See: T:Eliassen.Documents.Containers.BlobContainerProviderFactory*class. 
-
-
-##### Parameters
-* *serviceProvider:* The service provider used for dependency injection.
-
-
-
-
-#### Create(System.String)
-Creates a blob container provider with the specified container name. 
-
-
-##### Parameters
-* *containerName:* The name of the container.
-
-
-
-
-##### Return value
-An instance of .
-
-
-
-## Class: Documents.Containers.WrappedBlobContainer
+## Class: Documents.Containers.WrappedBlobContainer`1
 Represents a wrapper for a blob container. 
 
 ### Methods
@@ -82,11 +50,11 @@ Represents a wrapper for a blob container.
 
 #### Constructor
 Initializes a new instance of the 
- *See: T:Eliassen.Documents.Containers.WrappedBlobContainer*class. 
+ *See: T:Eliassen.Documents.IBlobContainer*class. 
 
 
 ##### Parameters
-* *wrapped:* The blob container to wrap.
+* *factory:* The blob container factory to wrap.
 
 
 
@@ -145,7 +113,7 @@ An IQueryable representing the content metadata.
 
 
 
-#### StoreContentAsync(Eliassen.Documents.Models.ContentReference,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)
+#### StoreContentAsync(Eliassen.Documents.Models.ContentReference,System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean)
 Stores content asynchronously. 
 
 
@@ -174,35 +142,6 @@ Stores content metadata asynchronously.
 
 ##### Return value
 A task representing the asynchronous operation. The task result indicates whether the operation was successful.
-
-
-
-#### Constructor
-Initializes a new instance of the 
- *See: T:Eliassen.Documents.Containers.WrappedBlobContainer`1*class. 
-
-
-##### Parameters
-* *factory:* The factory used to create the wrapped blob container.
-
-
-
-
-## Class: Documents.Containers.WrappedBlobContainer`1
-Represents a typed wrapper for a blob container. 
-The type of objects stored in the blob container. 
-
-### Methods
-
-
-#### Constructor
-Initializes a new instance of the 
- *See: T:Eliassen.Documents.Containers.WrappedBlobContainer`1*class. 
-
-
-##### Parameters
-* *factory:* The factory used to create the wrapped blob container.
-
 
 
 

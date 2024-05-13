@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Eliassen.WebApi
-  version: 0.1.75.8
+  version: 0.1.77.13
 paths:
   /api/AI:
     post:
@@ -69,6 +69,74 @@ paths:
                 type: array
                 items:
                   type: string
+      x-permissions:
+        anonymous: true
+  /api/AI/Context:
+    post:
+      tags:
+        - AI
+      summary: Generate an LLM Response based on the prompt and user input
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Eliassen.WebApi.Models.GenAiContextRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Eliassen.WebApi.Models.GenAiContextRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Eliassen.WebApi.Models.GenAiContextRequestModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  type: string
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+            text/json:
+              schema:
+                type: array
+                items:
+                  type: string
+      x-permissions:
+        anonymous: true
+  /api/AI/Embeddings:
+    post:
+      tags:
+        - AI
+      summary: Generate embeddings
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/System.ReadOnlyMemory-System.Single'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/System.ReadOnlyMemory-System.Single'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/System.ReadOnlyMemory-System.Single'
       x-permissions:
         anonymous: true
   /api/Communications/public:
@@ -648,10 +716,6 @@ paths:
           description: The text for which to retrieve the embedding vector.
           schema:
             type: string
-        - name: model
-          in: query
-          schema:
-            type: string
       responses:
         '200':
           description: Success
@@ -940,6 +1004,27 @@ components:
           $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNode'
       additionalProperties: false
       description: Represents an example message model.
+    Eliassen.WebApi.Models.GenAiContextRequestModel:
+      type: object
+      properties:
+        assistantConfinment:
+          type: string
+          description: Gets or sets the prompt details.
+          nullable: true
+        promptDetails:
+          type: array
+          items:
+            type: string
+          description: Gets or sets the prompt details.
+          nullable: true
+        userInput:
+          type: array
+          items:
+            type: string
+          description: Gets or sets the user input.
+          nullable: true
+      additionalProperties: false
+      description: Represents the model used for generating AI responses.
     Eliassen.WebApi.Models.GenerativeAiRequestModel:
       type: object
       properties:
@@ -953,6 +1038,30 @@ components:
           nullable: true
       additionalProperties: false
       description: Represents the model used for generating AI responses.
+    System.ReadOnlyMemory-System.Single:
+      type: object
+      properties:
+        length:
+          type: integer
+          format: int32
+          readOnly: true
+        isEmpty:
+          type: boolean
+          readOnly: true
+        span:
+          $ref: '#/components/schemas/System.ReadOnlySpan-System.Single'
+      additionalProperties: false
+    System.ReadOnlySpan-System.Single:
+      type: object
+      properties:
+        length:
+          type: integer
+          format: int32
+          readOnly: true
+        isEmpty:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
     System.Text.Json.Nodes.JsonNode:
       type: object
       properties:

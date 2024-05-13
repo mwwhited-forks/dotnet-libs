@@ -66,6 +66,56 @@ An asynchronous enumerable of strings representing the streamed response.
 
 
 
+#### GetStreamedContextResponseAsync(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Threading.CancellationToken)
+Gets a response asynchronously based on the provided prompt details and user input. 
+
+
+##### Parameters
+* *assistantConfinment:* The confinment of the AI Assistant
+* *systemInteractions:* The previous generated responses by the AI
+* *userInput:* The user input including any previous messages in the chat
+* *cancellationToken:* The Cancellation Token.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation that returns the response.
+
+
+
+#### GetEmbeddedResponseAsync(System.String)
+Gets the embeddded response for the data provided. 
+
+
+##### Parameters
+* *data:* The data to be embedded there is a token limit of 2048 tokens.
+
+
+
+
+##### Return value
+Float array with the embedding data
+
+
+
+#### GetContextResponseAsync(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
+Gets a response asynchronously based on the provided prompt details and user input. 
+
+
+##### Parameters
+* *assistantConfinment:* The confinment of the AI Assistant
+* *systemInteractions:* The previous generated responses by the AI
+* *userInput:* The user input including any previous messages in the chat
+
+
+
+
+##### Return value
+A task representing the asynchronous operation that returns the response.
+
+
+
 ## Class: AI.IMessageCompletion
 Represents a provider for message completion. 
 

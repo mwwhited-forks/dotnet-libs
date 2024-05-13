@@ -50,7 +50,7 @@ Provides functionality for building and managing expression trees dynamically in
 
 ##### Parameters
 * *logger:* Optional logger for logging messages.
-* *messages:* Optional result message capturer.
+* *capture:* Optional result message capturer.
 
 
 
@@ -273,7 +273,7 @@ Composes and executes a query build from ISearchTermQuery, IFilterQuery, ISortQu
 * *searchQuery:* The search query parameters.
 * *postBuildVisitors:* Optional post-build expression visitors.
 * *logger:* Optional logger for logging messages.
-* *messages:* Optional message capture for result messages.
+* *capture:* Optional message capture for result messages.
 
 
 
@@ -292,7 +292,7 @@ Composes and executes a typed query build from ISearchTermQuery, IFilterQuery, I
 * *searchQuery:* The search query parameters.
 * *postBuildVisitors:* Optional post-build expression visitors.
 * *logger:* Optional logger for logging messages.
-* *messages:* Optional message capture for result messages.
+* *capture:* Optional message capture for result messages.
 
 
 

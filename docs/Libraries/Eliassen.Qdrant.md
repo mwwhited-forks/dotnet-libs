@@ -216,7 +216,7 @@ Provider for using Qdrant as a vector store.
 
 ### Properties
 
-#### ContainerName
+#### CollectionName
 current container name
 ### Methods
 

@@ -7,7 +7,7 @@ Provides extension methods for configuring services related to Markdig.
 ### Methods
 
 
-#### TryAddApacheTikaServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+#### TryAddApacheTikaServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
 Configures services for Markdig. 
 
 
@@ -53,30 +53,6 @@ Gets an array of supported destination content types for conversion.
 #### Sources
 Gets an array of supported source content types for conversion.
 ### Methods
-
-
-#### Parser
-Gets the parser instance used for document conversion. 
-
-
-##### Return value
-The parser instance.
-
-
-
-#### Handler(java.io.OutputStream)
-Gets the content handler instance used for document conversion. 
-
-
-##### Parameters
-* *output:* The output stream for the converted document.
-
-
-
-
-##### Return value
-The content handler instance.
-
 
 
 #### ConvertAsync(System.IO.Stream,System.String,System.IO.Stream,System.String)
@@ -136,17 +112,6 @@ Provides functionality to convert Microsoft Word documents to HTML using Apache 
 
 #### Sources
 Gets an array of supported source content types for conversion.
-### Methods
-
-
-#### Parser
-Gets the parser instance used for document conversion. 
-
-
-##### Return value
-The parser instance for Microsoft Office documents.
-
-
 
 ## Class: Apache.Tika.TikaDocxToHtmlConversionHandler
 Provides functionality to convert Microsoft Word (DOCX) documents to HTML using Apache Tika. 
@@ -155,17 +120,6 @@ Provides functionality to convert Microsoft Word (DOCX) documents to HTML using 
 
 #### Sources
 Gets an array of supported source content types for conversion.
-### Methods
-
-
-#### Parser
-Gets the parser instance used for document conversion. 
-
-
-##### Return value
-The parser instance for Office Open XML documents (DOCX).
-
-
 
 ## Class: Apache.Tika.TikaOdtToHtmlConversionHandler
 Provides functionality to convert OpenDocument Text (ODT) documents to HTML using Apache Tika. 
@@ -174,17 +128,6 @@ Provides functionality to convert OpenDocument Text (ODT) documents to HTML usin
 
 #### Sources
 Gets an array of supported source content types for conversion.
-### Methods
-
-
-#### Parser
-Gets the parser instance used for document conversion. 
-
-
-##### Return value
-The parser instance for OpenDocument Text (ODT) documents.
-
-
 
 ## Class: Apache.Tika.TikaPdfToHtmlConversionHandler
 Provides functionality to convert PDF documents to HTML using Apache Tika. 
@@ -193,17 +136,6 @@ Provides functionality to convert PDF documents to HTML using Apache Tika.
 
 #### Sources
 Gets an array of supported source content types for conversion.
-### Methods
-
-
-#### Parser
-Gets the parser instance used for document conversion. 
-
-
-##### Return value
-The parser instance for PDF documents.
-
-
 
 ## Class: Apache.Tika.TikaRtfToHtmlConversionHandler
 Provides functionality to convert Rich Text Format (RTF) documents to HTML using Apache Tika. 
@@ -212,17 +144,6 @@ Provides functionality to convert Rich Text Format (RTF) documents to HTML using
 
 #### Sources
 Gets an array of supported source content types for conversion.
-### Methods
-
-
-#### Parser
-Gets the parser instance used for document conversion. 
-
-
-##### Return value
-The parser instance for Rich Text Format (RTF) documents.
-
-
 
 ## Class: Apache.Tika.TikaToHtmlConversionBaseHandler
 Provides a base class for handlers that convert documents to HTML using Apache Tika. 
@@ -231,19 +152,3 @@ Provides a base class for handlers that convert documents to HTML using Apache T
 
 #### Destinations
 Gets an array of supported destination content types for conversion.
-### Methods
-
-
-#### Handler(java.io.OutputStream)
-Gets the content handler instance used for document conversion to HTML. 
-
-
-##### Parameters
-* *output:* The output stream for the converted HTML.
-
-
-
-
-##### Return value
-The content handler instance.
-

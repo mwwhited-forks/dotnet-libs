@@ -1,6 +1,6 @@
 # Swagger Description - Eliassen.WebApi
 
-*Version*: 0.1.75.8
+*Version*: 0.1.77.13
 
 ## Endpoints
 
@@ -33,6 +33,38 @@ Request:     *#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestMod
 
 
 
+
+### /api/AI/Context
+
+
+Generate an LLM Response based on the prompt and user input
+
+HTTP Method: *post* \
+Anonymous:   *True*
+
+
+
+Request:     *#/components/schemas/Eliassen.WebApi.Models.GenAiContextRequestModel*
+
+
+
+
+### /api/AI/Embeddings
+
+
+Generate embeddings
+
+HTTP Method: *post* \
+Anonymous:   *True*
+
+
+
+Request:     *#/components/schemas/Eliassen.WebApi.Models.GenerativeAiRequestModel*
+
+
+
+
+Response: #/components/schemas/System.ReadOnlyMemory-System.Single
 
 ### /api/Communications/public
 
@@ -398,6 +430,17 @@ Anonymous:   *False*
 | data | System.Text.Json.Nodes.JsonNode |  | 
 
 
+### Eliassen.WebApi.Models.GenAiContextRequestModel
+
+
+#### Properties
+| Name | Type | other |
+|------|------|-------|
+| assistantConfinment | string? | Gets or sets the prompt details. | 
+| promptDetails | string[]? | Gets or sets the prompt details. | 
+| userInput | string[]? | Gets or sets the user input. | 
+
+
 ### Eliassen.WebApi.Models.GenerativeAiRequestModel
 
 
@@ -406,6 +449,27 @@ Anonymous:   *False*
 |------|------|-------|
 | promptDetails | string? | Gets or sets the prompt details. | 
 | userInput | string? | Gets or sets the user input. | 
+
+
+### System.ReadOnlyMemory-System.Single
+
+
+#### Properties
+| Name | Type | other |
+|------|------|-------|
+| length | integer |  | 
+| isEmpty | boolean |  | 
+| span | System.ReadOnlySpan-System.Single |  | 
+
+
+### System.ReadOnlySpan-System.Single
+
+
+#### Properties
+| Name | Type | other |
+|------|------|-------|
+| length | integer |  | 
+| isEmpty | boolean |  | 
 
 
 ### System.Text.Json.Nodes.JsonNode

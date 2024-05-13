@@ -59,6 +59,24 @@ The streamed string responses from the AbstractAI
 
 
 
+#### GetContextResponseAsync(Eliassen.WebApi.Models.GenAiContextRequestModel)
+Generate an LLM Response based on the prompt and user input 
+
+
+##### Return value
+The string response from the LLM
+
+
+
+#### GenerateEmbeddingsAsync(Eliassen.WebApi.Models.GenerativeAiRequestModel)
+Generate embeddings 
+
+
+##### Return value
+The float response from the LLM
+
+
+
 ## Class: WebApi.Controllers.CommunicationsController
 Controller for handling communication-related operations, such as sending emails and messages to a queue. 
 
@@ -371,7 +389,7 @@ Initializes a new instance of the
 
 
 
-#### Embed(System.String,System.String)
+#### Embed(System.String)
 Retrieves the embedding vector for the given text. 
 
 
@@ -492,6 +510,18 @@ Represents an example message model.
 Gets or sets the input string. Default value is "Default Value".
 #### Data
 Gets or sets the JSON data associated with the message.
+
+## Class: WebApi.Models.GenAiContextRequestModel
+Represents the model used for generating AI responses. 
+
+### Properties
+
+#### AssistantConfinment
+Gets or sets the prompt details.
+#### PromptDetails
+Gets or sets the prompt details.
+#### UserInput
+Gets or sets the user input.
 
 ## Class: WebApi.Models.GenerativeAiRequestModel
 Represents the model used for generating AI responses. 

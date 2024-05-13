@@ -29,6 +29,7 @@ Initializes a new instance of the
 ##### Parameters
 * *client:* The BlobServiceClient used to connect to the Azure Blob storage.
 * *collectionName:* The name of the collection in the Azure Blob storage.
+* *options:* The configuration options to the azure container service.
 * *loggerFactory:* ILoggerFactory instance.
 
 
@@ -64,7 +65,7 @@ A task representing the asynchronous operation. Returns the content metadata if 
 
 
 
-#### StoreContentAsync(Eliassen.Documents.Models.ContentReference,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)
+#### StoreContentAsync(Eliassen.Documents.Models.ContentReference,System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean)
 Stores content asynchronously. 
 
 
@@ -127,6 +128,7 @@ Initializes a new instance of the
 
 ##### Parameters
 * *serviceProvider:* The service provider.
+* *options:* The service configurations.
 
 
 
@@ -161,6 +163,7 @@ Initializes a new instance of the
 
 ##### Parameters
 * *serviceProvider:* The service provider.
+* *options:* The service configurations.
 
 
 
@@ -188,12 +191,10 @@ Options for configuring Azure Blob storage provider.
 
 #### ConnectionString
 Gets or sets the connection string for Azure Blob storage.
-#### DocumentCollectionName
-Gets or sets the name of the collection for storing documents in Azure Blob storage.
-#### SummaryCollectionName
-Gets or sets the name of the collection for storing document summaries in Azure Blob storage.
+#### EnsureContainerExists
+if true the system will create a container if not exists
 
-## Class: Azure.StorageAccount.BlobStorage.BlobServiceClientFactory
+## Class: Azure.StorageAccount.BlobStorage.AzureBlobServiceClientFactory
 Represents a factory for creating instances of 
  *See: T:Azure.Storage.Blobs.BlobServiceClient*. 
 
@@ -202,7 +203,7 @@ Represents a factory for creating instances of
 
 #### Constructor
 Initializes a new instance of the 
- *See: T:Eliassen.Azure.StorageAccount.BlobStorage.BlobServiceClientFactory*class with the specified configuration. 
+ *See: T:Eliassen.Azure.StorageAccount.BlobStorage.AzureBlobServiceClientFactory*class with the specified configuration. 
 
 
 ##### Parameters

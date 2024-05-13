@@ -55,17 +55,18 @@ Initializes a new instance of the
 
 
 ##### Parameters
-* *factory:* The factory to create vector store provider.
+* *factories:* The factory used to create blob container providers.
+* *serviceProvider:* The IOC Service Provider.
 
 
 
 
 #### Create(System.String)
-Creates a vector store based on the specified container name. 
+Creates a vector store based on the specified collection name. 
 
 
 ##### Parameters
-* *containerName:* The name of the container.
+* *collectionName:* The name of the collection.
 
 
 
@@ -84,39 +85,7 @@ The created vector store.
 
 
 
-## Class: Search.Semantic.VectorStoreProviderFactory
-Represents a factory for creating vector store providers. 
-
-### Methods
-
-
-#### Constructor
-Initializes a new instance of the 
- *See: T:Eliassen.Search.Semantic.VectorStoreProviderFactory*class. 
-
-
-##### Parameters
-* *serviceProvider:* The service provider used for dependency injection.
-
-
-
-
-#### Create(System.String)
-Creates a vector store provider with the specified container name. 
-
-
-##### Parameters
-* *containerName:* The name of the container.
-
-
-
-
-##### Return value
-An instance of .
-
-
-
-## Class: Search.Semantic.WrappedVectorStore
+## Class: Search.Semantic.WrappedVectorStore`1
 Represents a vector store that wraps another vector store. 
 
 ### Methods
@@ -124,7 +93,7 @@ Represents a vector store that wraps another vector store.
 
 #### Constructor
 Initializes a new instance of the 
- *See: T:Eliassen.Search.Semantic.WrappedVectorStore*class. 
+ *See: !:WrappedVectorStore*class. 
 
 
 ##### Parameters
@@ -186,35 +155,6 @@ Stores vectors asynchronously along with their associated metadata.
 
 ##### Return value
 A task representing the asynchronous operation. The task result contains the IDs of the stored vectors.
-
-
-
-#### Constructor
-Initializes a new instance of the 
- *See: T:Eliassen.Search.Semantic.WrappedVectorStore`1*class. 
-
-
-##### Parameters
-* *factory:* The factory used to create the wrapped vector store.
-
-
-
-
-## Class: Search.Semantic.WrappedVectorStore`1
-Represents a typed vector store that wraps another vector store. 
-The type of objects stored in the vector store. 
-
-### Methods
-
-
-#### Constructor
-Initializes a new instance of the 
- *See: T:Eliassen.Search.Semantic.WrappedVectorStore`1*class. 
-
-
-##### Parameters
-* *factory:* The factory used to create the wrapped vector store.
-
 
 
 
