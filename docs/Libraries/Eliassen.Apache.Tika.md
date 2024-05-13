@@ -2,13 +2,13 @@
 
 
 ## Class: Apache.Tika.ServiceCollectionExtensions
-Provides extension methods for configuring services related to Markdig. 
+Provides extension methods for configuring services related to Apache - Tika. 
 
 ### Methods
 
 
 #### TryAddApacheTikaServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
-Configures services for Markdig. 
+Configures services for Apache - Tika. 
 
 
 ##### Parameters

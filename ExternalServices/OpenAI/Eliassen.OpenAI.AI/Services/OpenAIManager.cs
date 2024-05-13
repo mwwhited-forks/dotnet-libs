@@ -2,12 +2,12 @@
 using Azure.AI.OpenAI;
 using Eliassen.AI;
 using Microsoft.Extensions.Options;
+using SharpToken;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
-using SharpToken;
 
 namespace Eliassen.OpenAI.AI.Services;
 
@@ -85,8 +85,8 @@ public class OpenAIManager : ILanguageModelProvider
     }
 
     public async IAsyncEnumerable<string> GetStreamedContextResponseAsync(string assistantConfinment,
-        List<string> systemInteractions, 
-        List<string> userInput, 
+        List<string> systemInteractions,
+        List<string> userInput,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         OpenAIClient api = new(_config.Value.APIKey);
@@ -125,7 +125,7 @@ public class OpenAIManager : ILanguageModelProvider
         var encoding = GptEncoding.GetEncoding("cl100k_base");
         var count = encoding.CountTokens(data);
 
-        if(count > MaxTokenLength)
+        if (count > MaxTokenLength)
         {
             throw new Exception($"Data Exceeded Token Limit of {MaxTokenLength} tokens");
         }
