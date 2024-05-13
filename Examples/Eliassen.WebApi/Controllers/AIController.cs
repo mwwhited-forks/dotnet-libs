@@ -2,6 +2,8 @@
 using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -15,20 +17,16 @@ namespace Eliassen.WebApi.Controllers;
 public class AIController : ControllerBase
 {
     private readonly ILanguageModelProvider _llmProvider;
-    private readonly IEmbeddingProvider _embedding;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AIController"/> class with the specified dependencies.
     /// </summary>
     /// <param name="llmProvider">The language model provider.</param>
-    /// <param name="embedding">The embedding provider.</param>
     public AIController(
-        ILanguageModelProvider llmProvider,
-        IEmbeddingProvider embedding
+        [FromKeyedServices("OPENAI")] ILanguageModelProvider llmProvider
         )
     {
         _llmProvider = llmProvider;
-        _embedding = embedding;
     }
 
     /// <summary>
@@ -55,10 +53,25 @@ public class AIController : ControllerBase
     }
 
     /// <summary>
-    /// Retrieves the embedding vector for the given text.
+    /// Generate an LLM Response based on the prompt and user input
     /// </summary>
-    /// <param name="text">The text for which to retrieve the embedding vector.</param>
-    /// <returns>The embedding vector.</returns>
-    [HttpGet]
-    public async Task<float[]> Embed(string text) => await _embedding.GetEmbeddingAsync(text);
+    /// <returns>The string response from the LLM</returns>
+    [HttpPost("Context")]
+    [AllowAnonymous]
+    public async IAsyncEnumerable<string> GetContextResponseAsync([FromBody] GenAiContextRequestModel model)
+    {
+        await foreach (var response in _llmProvider.GetStreamedContextResponseAsync(model.AssistantConfinment, model.PromptDetails, model.UserInput))
+        {
+            yield return response;
+        };
+    }
+
+    /// <summary>
+    /// Generate embeddings
+    /// </summary>
+    /// <returns>The float response from the LLM</returns>
+    [HttpPost("Embeddings")]
+    [AllowAnonymous]
+    public async Task<ReadOnlyMemory<float>> GenerateEmbeddingsAsync([FromBody] GenerativeAiRequestModel model) =>
+        await _llmProvider.GetEmbeddedResponseAsync(model.UserInput);
 }

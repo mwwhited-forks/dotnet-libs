@@ -786,6 +786,10 @@ Represents the content type for calendar data.
 Represents the content type for HTML.
 #### Text.Markdown
 Represents the content type for Markdown.
+#### Text.Yaml
+Represents the content type for Yaml.
+#### Text.Plain
+Represents the content type for Plain text.
 #### Application.XSLT
 Represents the content type for XSLT (XML Stylesheet Language Transformations).
 
@@ -802,6 +806,10 @@ Represents the content type for calendar data.
 Represents the content type for HTML.
 #### Markdown
 Represents the content type for Markdown.
+#### Yaml
+Represents the content type for Yaml.
+#### Plain
+Represents the content type for Plain text.
 
 ## Class: System.Net.Mime.ContentTypesExtensions.Application
 Represents application-based content types. 

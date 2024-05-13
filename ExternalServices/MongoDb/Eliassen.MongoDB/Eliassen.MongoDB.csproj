@@ -5,6 +5,7 @@
 		<ImplicitUsings>false</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageReadmeFile>Readme.MongoDB.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>

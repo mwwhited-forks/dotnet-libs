@@ -35,9 +35,16 @@ public abstract class QueryBuilder
     public static IQueryResult Execute(
         IQueryable query,
         ISearchQuery searchQuery,
+#if DEBUG
+        IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors,
+        ILogger<QueryBuilder>? logger,
+        ICaptureResultMessage? messages
+#else
         IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
         ILogger<QueryBuilder>? logger = null,
-        ICaptureResultMessage? messages = null)
+        ICaptureResultMessage? messages = null
+#endif
+        )
     {
         var queryType = Type.MakeGenericSignatureType(typeof(IQueryable<>), Type.MakeGenericMethodParameter(0)) ??
             throw new NotSupportedException($"{query.GetType()} is not supported");
@@ -79,9 +86,16 @@ public abstract class QueryBuilder
     public static IQueryResult<TModel> Execute<TModel>(
         IQueryable<TModel> query,
         ISearchQuery searchQuery,
+#if DEBUG
+        IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors,
+        ILogger<QueryBuilder>? logger,
+        ICaptureResultMessage? messages
+#else
         IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
         ILogger<QueryBuilder>? logger = null,
-        ICaptureResultMessage? messages = null) =>
+        ICaptureResultMessage? messages = null
+#endif
+        ) =>
         new QueryBuilder<TModel>(
             new SortBuilder<TModel>(),
             new ExpressionTreeBuilder<TModel>(),
@@ -124,9 +138,15 @@ public abstract class QueryBuilder
 public class QueryBuilder<TModel>(
     ISortBuilder<TModel> sortBuilder,
     IExpressionTreeBuilder<TModel> expressionBuilder,
-    IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
-    ILogger<QueryBuilder>? logger = null,
-    ICaptureResultMessage? messages = null
+#if DEBUG
+        IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors,
+        ILogger<QueryBuilder>? logger,
+        ICaptureResultMessage? messages
+#else
+        IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors = null,
+        ILogger<QueryBuilder>? logger = null,
+        ICaptureResultMessage? messages = null
+#endif
         ) : QueryBuilder, IQueryBuilder<TModel>
 {
     private readonly IEnumerable<IPostBuildExpressionVisitor> _postBuildVisitors = postBuildVisitors ?? [];
@@ -318,7 +338,6 @@ public class QueryBuilder<TModel>(
         StringComparison keyStringComparer
         )
     {
-
         ArgumentNullException.ThrowIfNull(query, nameof(query));
 
         query = sortBy != null ? sortBuilder.SortBy(query, sortBy, expressionBuilder, keyStringComparer) : query;

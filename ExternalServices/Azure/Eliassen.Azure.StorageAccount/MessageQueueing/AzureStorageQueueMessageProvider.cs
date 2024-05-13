@@ -36,7 +36,7 @@ public class AzureStorageQueueMessageProvider(
         var client = clientFactory.Create(context.Config);
 
 #if DEBUG
-        client.CreateIfNotExists(); //TODO: should make this a config option
+        client.CreateIfNotExists(); //TODO: should make this a config option or have someway to detect queues from the application
 #endif
 
         var wrapped = new WrappedQueueMessage
@@ -77,7 +77,7 @@ public class AzureStorageQueueMessageProvider(
         var client = clientFactory.Create(_handlerProvider?.Config ?? throw new ConfigurationMissingException("UNKNOWN"));
 
 #if DEBUG
-        client.CreateIfNotExists(); //TODO: should make this a config option
+        client.CreateIfNotExists(cancellationToken: cancellationToken); //TODO: should make this a config option
 #endif
 
         var newCancellationToken = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken).Token;

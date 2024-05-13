@@ -1,6 +1,9 @@
 ﻿namespace Eliassen.OpenAI.AI.Services;
 
-public class OpenAIOptions
+/// <summary>
+/// Represents options for configuring the OpenAI service.
+/// </summary>
+public class OpenAIClientOptions
 {
     /// <summary>
     /// Gets or sets the APIKey to be used.
@@ -11,4 +14,9 @@ public class OpenAIOptions
     /// Gets or sets the deployment model to be used for the text generation.
     /// </summary>
     public required string DeploymentName { get; set; }
+
+    /// <summary>
+    /// Gets or sets the deployment model to be used for the embedding generation.
+    /// </summary>
+    public required string EmbeddingModel { get; set; }
 }

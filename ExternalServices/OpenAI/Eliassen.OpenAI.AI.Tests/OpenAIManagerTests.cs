@@ -26,7 +26,7 @@ public class OpenAIManagerTests
 
         var services = new ServiceCollection()
             .AddSingleton(config)
-            .TryAddOpenAIServices(config, nameof(OpenAIOptions))
+            .TryAddOpenAIServices(config, nameof(OpenAIClientOptions))
             .BuildServiceProvider()
             ;
 

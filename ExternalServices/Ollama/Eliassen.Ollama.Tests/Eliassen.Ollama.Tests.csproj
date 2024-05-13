@@ -10,6 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="TestData\*.*" />
+    <EmbeddedResource Include="TestData\*.*" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,6 +28,10 @@
     <ProjectReference Include="..\..\..\Framework\Eliassen.Extensions\Eliassen.Extensions.csproj" />
     <ProjectReference Include="..\..\..\Framework\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
     <ProjectReference Include="..\Eliassen.Ollama\Eliassen.Ollama.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TestData\" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using OllamaSharp;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -66,12 +67,7 @@ public static class OllamaApiClientExtensions
         )
     {
         var doubles = await client.GetEmbeddingDoubleAsync(text, modelName);
-        var floats = new float[doubles.Length * 2];
-        for (var i = 0; i < doubles.Length; i++)
-        {
-            floats[i * 2] = (float)doubles[i];
-            floats[i * 2 + 1] = (float)(doubles[i] * 10000000 - (float)doubles[i] * 10000000);
-        }
+        var floats = Array.ConvertAll(doubles, Convert.ToSingle);
         return floats;
     }
 

@@ -28,7 +28,8 @@ public static class Program
         services.AddApplicationServices();
 
         var identityProvider = Enum.TryParse<IdentityProviders>(
-            Environment.GetEnvironmentVariable("IDENTITY_PROVIDER"), ignoreCase: true, out var ip) ? ip : IdentityProviders.AzureB2C;
+            Environment.GetEnvironmentVariable("IDENTITY_PROVIDER"), ignoreCase: true, out var ip) ? ip :
+            IdentityProviders.None;
         var authProvider = identityProvider != IdentityProviders.None ? $"{identityProvider}:" : "";
         var skipHosting = bool.TryParse(Environment.GetEnvironmentVariable("SWAGGER_ONLY"), out var ret) && ret;
 
@@ -41,6 +42,7 @@ public static class Program
             aspNetBuilder: new()
             {
                 RequireApplicationUserId = false,
+                RequireAuthenticatedByDefault = identityProvider != IdentityProviders.None,
             },
             jwtBuilder: new()
             {
@@ -56,6 +58,7 @@ public static class Program
             },
             hostingBuilder: new()
             {
+                //TODO: add a run profile that disable hosting
                 DisableMailKit = true, //TODO: this is not supported at this time so just skip it ...skipHosting,
                 DisableMessageQueueing = true,  // skipHosting,
             });

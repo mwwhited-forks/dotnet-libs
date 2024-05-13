@@ -17,6 +17,7 @@ public class ServiceRegistryTests
             .BuildServiceProvider();
 
         var wrapper = services.GetRequiredService<IBlobContainer<ContainerTargetClass>>();
+        Assert.IsNotNull(wrapper);
     }
 
     [TestMethod]
@@ -27,5 +28,6 @@ public class ServiceRegistryTests
             .BuildServiceProvider();
 
         var wrapper = services.GetKeyedService<IBlobContainer>("TestName");
+        Assert.IsNotNull(wrapper);
     }
 }

@@ -147,12 +147,11 @@ public static class ServiceCollectionExtensions
 
         services.AddTransient<ITemplateProvider, XsltTemplateProvider>();
 
-        //TODO: change these content types to .\Framework\Eliassen.System\Net\Mime\ContentTypes.cs
-        services.AddTransient<IFileType>(_ => new FileType { Extension = ".md", ContentType = "text/markdown", IsTemplateType = false });
-        services.AddTransient<IFileType>(_ => new FileType { Extension = ".yaml", ContentType = "text/yaml", IsTemplateType = false });
+        services.AddTransient<IFileType>(_ => new FileType { Extension = ".md", ContentType = ContentTypesExtensions.Text.Markdown, IsTemplateType = false });
+        services.AddTransient<IFileType>(_ => new FileType { Extension = ".yaml", ContentType = ContentTypesExtensions.Text.Yaml, IsTemplateType = false });
 
-        services.AddTransient<IFileType>(_ => new FileType { Extension = ".html", ContentType = "text/html", IsTemplateType = false });
-        services.AddTransient<IFileType>(_ => new FileType { Extension = ".txt", ContentType = "text/plain", IsTemplateType = false });
+        services.AddTransient<IFileType>(_ => new FileType { Extension = ".html", ContentType = ContentTypesExtensions.Text.Html, IsTemplateType = false });
+        services.AddTransient<IFileType>(_ => new FileType { Extension = ".txt", ContentType = ContentTypesExtensions.Text.Plain, IsTemplateType = false });
         services.AddTransient<IFileType>(_ => new FileType { Extension = ".json", ContentType = DefaultJsonSerializer.DefaultContentType, IsTemplateType = false });
         services.AddTransient<IFileType>(_ => new FileType { Extension = ".xml", ContentType = DefaultXmlSerializer.DefaultContentType, IsTemplateType = false });
 

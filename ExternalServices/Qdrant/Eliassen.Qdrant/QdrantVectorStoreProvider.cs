@@ -1,6 +1,7 @@
 ﻿using Eliassen.Search.Models;
 using Eliassen.Search.Semantic;
 using Google.Protobuf.Collections;
+using Microsoft.Extensions.Options;
 using Qdrant.Client.Grpc;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,8 @@ namespace Eliassen.Qdrant;
 public class QdrantVectorStoreProvider : IVectorStoreProvider
 {
     private readonly QdrantGrpcClient _client;
-    private readonly string _collectionName = "keys";
+    private readonly string _collectionName;
+    private readonly IOptions<QdrantOptions> _options;
 
     /// <summary>
     /// current container name
@@ -26,14 +28,17 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// constructor for QdrantVectorStoreProvider
     /// </summary>
     /// <param name="client">instance of client</param>
+    /// <param name="options">configuration options for Qdrant</param>
     /// <param name="containerName">name of container</param>
     public QdrantVectorStoreProvider(
         QdrantGrpcClient client,
+        IOptions<QdrantOptions> options,
         string containerName
         )
     {
         _client = client;
-        ContainerName = containerName;
+        _options = options;
+        ContainerName = _collectionName = containerName;
     }
 
     //TODO: this should be done a different way
@@ -65,9 +70,9 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// </summary>
     public async Task<string[]> StoreVectorsAsync(IEnumerable<float[]> embeddings, Dictionary<string, object> metadata)
     {
-        await EnsureCollectionExistsAsync(embeddings.First().Length); //TODO: do this better!
+        if (_options.Value.EnsureCollectionExists)
+            await EnsureCollectionExistsAsync(embeddings.First().Length);
 
-        //TODO: clean this up!
         var map = new MapField<string, Value>();
         foreach (var data in metadata)
         {
@@ -96,7 +101,7 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
             Points = { points },
         });
 
-        return [];  //TODO: want to return IDs 
+        return [];  //Note: want to return IDs but its not possible as the actual persistence is out of process.  
     }
 
     private Value? Convert(object value) =>
@@ -132,10 +137,10 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
             Value.KindOneofCase.StringValue => value.StringValue,
             Value.KindOneofCase.IntegerValue => value.IntegerValue,
             Value.KindOneofCase.DoubleValue => value.DoubleValue,
-            Value.KindOneofCase.ListValue => value.ListValue.Values, //TODO: fix this?
+            Value.KindOneofCase.ListValue => value.ListValue.Values,
             Value.KindOneofCase.NullValue => null,
             Value.KindOneofCase.None => null,
-            Value.KindOneofCase.StructValue => value.StructValue, //TODO: fix this?
+            Value.KindOneofCase.StructValue => value.StructValue,
             _ => throw new NotSupportedException($"{value.KindCase}"),
         };
 

@@ -2,27 +2,16 @@
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace Eliassen.System.Text.Xml.Serialization;
-
-#warning TODO: finish this serializer
 
 /// <summary>
 /// Default XmlSerializer, 
 /// </summary>
 public class DefaultXmlSerializer : IXmlSerializer
 {
-    //public static JsonSerializerOptions DefaultOptions => new JsonSerializerOptions
-    //{
-    //    WriteIndented = true,
-    //    PropertyNameCaseInsensitive = true,
-    //    IgnoreReadOnlyFields = true,
-    //    IgnoreReadOnlyProperties = true,
-    //    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-    //};
-    //private JsonSerializerOptions _options;
-
     /// <summary>
     /// Initializes a new instance of the <see cref="DefaultXmlSerializer"/> class.
     /// </summary>
@@ -68,7 +57,14 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <typeparam name="T">template model to deserialize</typeparam>
     /// <param name="input"></param>
     /// <returns></returns>
-    public T? Deserialize<T>(string input) => throw new NotImplementedException();
+    public T? Deserialize<T>(string input)
+    {
+        using var ms = new MemoryStream();
+        using var writer = new StreamWriter(ms) { AutoFlush = true };
+        writer.Write(input);
+        ms.Position = 0;
+        return Deserialize<T>(ms);
+    }
 
     /// <summary>
     /// convert stream into object
@@ -76,7 +72,14 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="input"></param>
     /// <param name="type">template model to deserialize</param>
     /// <returns></returns>
-    public object? Deserialize(string input, Type type) => throw new NotImplementedException();
+    public object? Deserialize(string input, Type type)
+    {
+        using var ms = new MemoryStream();
+        using var writer = new StreamWriter(ms) { AutoFlush = true };
+        writer.Write(input);
+        ms.Position = 0;
+        return Deserialize(ms, type);
+    }
 
     /// <summary>
     /// convert stream into object
@@ -85,7 +88,8 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="stream"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public ValueTask<T?> DeserializeAsync<T>(Stream stream, CancellationToken cancellationToken = default) => throw new NotImplementedException();
+    public ValueTask<T?> DeserializeAsync<T>(Stream stream, CancellationToken cancellationToken = default) =>
+        new(Deserialize<T>(stream));
 
     /// <summary>
     /// convert stream into object
@@ -94,7 +98,8 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="type">template model to deserialize</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public ValueTask<object?> DeserializeAsync(Stream stream, Type type, CancellationToken cancellationToken = default) => throw new NotImplementedException();
+    public ValueTask<object?> DeserializeAsync(Stream stream, Type type, CancellationToken cancellationToken = default) =>
+        new(Deserialize(stream, type));
 
     /// <summary>
     /// convert the object based on the type definition
@@ -102,7 +107,18 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="obj">object to serialize</param>
     /// <param name="type">template model to serialize</param>
     /// <returns></returns>
-    public string Serialize(object? obj, Type type) => throw new NotImplementedException();
+    public string Serialize(object? obj, Type type)
+    {
+        var xml = new XmlSerializer(type);
+
+        using var ms = new MemoryStream();
+        using var writer = XmlWriter.Create(ms);
+        xml.Serialize(writer, obj);
+        ms.Position = 0;
+        using var reader = new StreamReader(ms);
+        var read = reader.ReadToEnd();
+        return read;
+    }
 
     /// <summary>
     /// convert the object based on the type definition
@@ -110,7 +126,19 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <typeparam name="T">template model to serialize</typeparam>
     /// <param name="obj">object to serialize</param>
     /// <returns></returns>
-    public string Serialize<T>(T obj) => throw new NotImplementedException();
+    public string Serialize<T>(T obj)
+    {
+        if (obj == null) throw new ArgumentNullException(nameof(obj));
+        var xml = new XmlSerializer(obj.GetType());
+
+        using var ms = new MemoryStream();
+        using var writer = XmlWriter.Create(ms);
+        xml.Serialize(writer, obj);
+        ms.Position = 0;
+        using var reader = new StreamReader(ms);
+        var read = reader.ReadToEnd();
+        return read;
+    }
 
     /// <summary>
     /// convert the object based on the type definition
@@ -120,7 +148,16 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="stream"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public Task SerializeAsync(object? obj, Type type, Stream stream, CancellationToken cancellationToken = default) => throw new NotImplementedException();
+    public async Task SerializeAsync(object? obj, Type type, Stream stream, CancellationToken cancellationToken = default)
+    {
+        var xml = new XmlSerializer(type);
+        using var writer = XmlWriter.Create(stream, new XmlWriterSettings
+        {
+            CloseOutput = false,
+        });
+        xml.Serialize(writer, obj);
+        await writer.FlushAsync();
+    }
 
     /// <summary>
     /// convert the object based on the type definition
@@ -129,5 +166,15 @@ public class DefaultXmlSerializer : IXmlSerializer
     /// <param name="stream"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public Task SerializeAsync<T>(T obj, Stream stream, CancellationToken cancellationToken = default) => throw new NotImplementedException();
+    public async Task SerializeAsync<T>(T obj, Stream stream, CancellationToken cancellationToken = default)
+    {
+        if (obj == null) throw new ArgumentNullException(nameof(obj));
+        var xml = new XmlSerializer(obj.GetType());
+        using var writer = XmlWriter.Create(stream, new XmlWriterSettings
+        {
+            CloseOutput = false,
+        });
+        xml.Serialize(writer, obj);
+        await writer.FlushAsync();
+    }
 }

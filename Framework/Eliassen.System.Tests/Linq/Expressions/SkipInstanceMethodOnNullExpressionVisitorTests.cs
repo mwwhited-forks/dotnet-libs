@@ -33,5 +33,4 @@ public class SkipInstanceMethodOnNullExpressionVisitorTests
         TestContext.WriteLine($"{nameof(result)}: {result}");
         Assert.AreEqual(expected, result);
     }
-
 }

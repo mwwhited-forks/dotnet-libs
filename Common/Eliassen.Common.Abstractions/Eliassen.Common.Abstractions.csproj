@@ -10,6 +10,8 @@
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 
+    <PackageReadmeFile>Readme.Common.Abstractions.md</PackageReadmeFile>
+
 	</PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +27,5 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\**\Eliassen.*.Abstractions.csproj" />
 	</ItemGroup>
-
 
 </Project>

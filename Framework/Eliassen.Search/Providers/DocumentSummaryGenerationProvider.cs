@@ -12,7 +12,7 @@ namespace Eliassen.Search.Providers;
 [Obsolete]
 public class DocumentSummaryGenerationProvider
 {
-    private const int MAX_LENGTH = 4096; //TODO: should look this up from model.
+    private const int MAX_LENGTH = 4096;
 
     private readonly IMessageCompletion _messageCompletion;
     private readonly string _modelName;

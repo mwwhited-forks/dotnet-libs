@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace Eliassen.Identity;
 
@@ -10,9 +11,11 @@ namespace Eliassen.Identity;
 /// </remarks>
 /// <param name="user">The user manager for managing graph users.</param>
 public class UserManagementProvider(
-    IIdentityManager user
+    IIdentityManager? user = null
     ) : IUserManagementProvider
 {
+    private readonly IIdentityManager? _user = user;
+
     /// <summary>
     /// Creates a new user account asynchronously.
     /// </summary>
@@ -20,7 +23,9 @@ public class UserManagementProvider(
     /// <returns>A task representing the asynchronous operation. The result is a model containing the created user's information.</returns>
     public async Task<UserCreatedModel> CreateAccountAsync(UserCreateModel model)
     {
-        var (objectid, password) = await user.CreateIdentityUserAsync(model.EmailAddress, model.FirstName, model.LastName);
+        if (_user == null) throw new NotSupportedException($"No identity management provider registered");
+
+        var (objectid, password) = await _user.CreateIdentityUserAsync(model.EmailAddress, model.FirstName, model.LastName);
         return new UserCreatedModel
         {
             Password = password ?? "",
