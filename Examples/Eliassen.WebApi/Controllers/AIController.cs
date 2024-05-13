@@ -23,7 +23,7 @@ public class AIController : ControllerBase
     /// </summary>
     /// <param name="llmProvider">The language model provider.</param>
     public AIController(
-        [FromKeyedServices("OPENAPI")] ILanguageModelProvider llmProvider
+        [FromKeyedServices("OPENAI")] ILanguageModelProvider llmProvider
         )
     {
         _llmProvider = llmProvider;
