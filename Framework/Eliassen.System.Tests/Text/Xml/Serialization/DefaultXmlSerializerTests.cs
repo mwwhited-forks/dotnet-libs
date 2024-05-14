@@ -1,12 +1,7 @@
 ﻿using Eliassen.System.Text.Xml.Serialization;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Eliassen.System.Tests.Text.Xml.Serialization;
@@ -61,7 +56,6 @@ public class DefaultXmlSerializerTests
         var result = serializer.Deserialize<TestTarget>(ms);
         Assert.AreEqual("value1", result?.Prop1);
     }
-
 
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
@@ -148,7 +142,7 @@ public class DefaultXmlSerializerTests
 
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
-    public async Task ContentTypeTest()
+    public void ContentTypeTest()
     {
         var serializer = new DefaultXmlSerializer();
         Assert.AreEqual("text/xml", serializer.ContentType);

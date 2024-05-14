@@ -20,7 +20,6 @@ public class DateNowHelperDescriptor : HelperDescriptorBase
         IDateTimeProvider date
         ) => _date = date;
 
-
     /// <summary>
     /// Gets the name of the helper.
     /// </summary>

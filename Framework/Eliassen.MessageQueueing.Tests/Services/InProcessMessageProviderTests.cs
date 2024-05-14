@@ -36,7 +36,6 @@ public class InProcessMessageProviderTests
 
         provider.SetHandlerProvider(mockHandler.Object);
 
-
         var correlationId = await provider.SendAsync(message, context);
         Assert.IsNotNull(correlationId);
         context.CorrelationId = correlationId;

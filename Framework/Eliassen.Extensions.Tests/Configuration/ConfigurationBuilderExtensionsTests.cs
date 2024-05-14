@@ -13,7 +13,7 @@ public class ConfigurationBuilderExtensionsTests
 
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
-    public void AddInMemoryCollectionTest_KvP()
+    public void AddInMemoryCollectionTest_KeyValuePair()
     {
         var config = new ConfigurationBuilder()
             .AddInMemoryCollection(new Dictionary<string, string?>
@@ -26,7 +26,6 @@ public class ConfigurationBuilderExtensionsTests
 
         Assert.AreEqual("world", result);
     }
-
 
     [TestMethod]
     [TestCategory(TestCategories.Unit)]

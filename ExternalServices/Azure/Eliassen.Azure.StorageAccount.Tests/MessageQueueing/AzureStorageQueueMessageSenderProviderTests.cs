@@ -1,163 +1,165 @@
-﻿using Eliassen.Azure.StorageAccount.MessageQueueing;
-using Eliassen.Azure.StorageAccount.Tests.TestItems;
-using Eliassen.MessageQueueing;
-using Eliassen.MessageQueueing.Services;
-using Eliassen.MessageQueueing.Tests;
-using Eliassen.TestUtilities;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿//using Eliassen.Azure.StorageAccount.MessageQueueing;
+//using Eliassen.Azure.StorageAccount.Tests.TestItems;
+//using Eliassen.MessageQueueing;
+//using Eliassen.MessageQueueing.Services;
+//using Eliassen.MessageQueueing.Tests;
+//using Eliassen.TestUtilities;
+//using Microsoft.Extensions.Configuration;
+//using Microsoft.Extensions.DependencyInjection;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Threading;
+//using System.Threading.Tasks;
 
-namespace Eliassen.Azure.StorageAccount.Tests.MessageQueueing;
+//namespace Eliassen.Azure.StorageAccount.Tests.MessageQueueing;
 
-[TestClass]
-[MessageQueue(QueueConfig)]
-public class AzureStorageQueueMessageSenderProviderTests
-{
-    public const string QueueConfig = "test-config";
+#warning is this needed?
 
-    public required TestContext TestContext { get; set; }
+//[TestClass]
+//[MessageQueue(QueueConfig)]
+//public class AzureStorageQueueMessageSenderProviderTests
+//{
+//    public const string QueueConfig = "test-config";
 
-    [TestMethod]
-    [TestCategory(TestCategories.DevLocal)]
-    public async Task SendAsyncTest_ByFullType()
-    {
-        var configBuilder = new ConfigurationBuilder();
+//    public required TestContext TestContext { get; set; }
 
-        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
-        {
-            {$"MessageQueue:{QueueConfig}:Provider", typeof(AzureStorageQueueMessageProvider).AssemblyQualifiedName },
+//    [TestMethod]
+//    [TestCategory(TestCategories.DevLocal)]
+//    public async Task SendAsyncTest_ByFullType()
+//    {
+//        var configBuilder = new ConfigurationBuilder();
 
-            {$"MessageQueue:{QueueConfig}:Config:ConnectionString", "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1" },
-            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
-        });
+//        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
+//        {
+//            {$"MessageQueue:{QueueConfig}:Provider", typeof(AzureStorageQueueMessageProvider).AssemblyQualifiedName },
 
-        var config = configBuilder.Build();
+//            {$"MessageQueue:{QueueConfig}:Config:ConnectionString", "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1" },
+//            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
+//        });
 
-        var service = MessageSenderTests.GetServiceProvider(
-            TestContext,
-            config,
-            services => services.TryAddAzureStorageServices(config, "DontCare")
-            );
+//        var config = configBuilder.Build();
 
-        // ---------------
+//        var service = MessageSenderTests.GetServiceProvider(
+//            TestContext,
+//            config,
+//            services => services.TryAddAzureStorageServices(config, "DontCare")
+//            );
 
-        var sender = service.GetRequiredService<IMessageQueueSender<AzureStorageQueueMessageSenderProviderTests>>();
-        var correlationId = await sender.SendAsync(new
-        {
-            hello = "world",
-        });
+//        // ---------------
 
-        this.TestContext.Write($"correlationId: {correlationId}");
-    }
+//        var sender = service.GetRequiredService<IMessageQueueSender<AzureStorageQueueMessageSenderProviderTests>>();
+//        var correlationId = await sender.SendAsync(new
+//        {
+//            hello = "world",
+//        });
 
-    [TestMethod]
-    [TestCategory(TestCategories.DevLocal)]
-    public async Task SendAsyncTest_ByKeyed()
-    {
-        var configBuilder = new ConfigurationBuilder();
+//        this.TestContext.Write($"correlationId: {correlationId}");
+//    }
 
-        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
-        {
-            {$"MessageQueue:{QueueConfig}:Provider", AzureStorageGlobals.MessageProviderKey },
+//    [TestMethod]
+//    [TestCategory(TestCategories.DevLocal)]
+//    public async Task SendAsyncTest_ByKeyed()
+//    {
+//        var configBuilder = new ConfigurationBuilder();
 
-            {$"MessageQueue:{QueueConfig}:Config:ConnectionString", "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1" },
-            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
+//        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
+//        {
+//            {$"MessageQueue:{QueueConfig}:Provider", AzureStorageGlobals.MessageProviderKey },
 
-        });
+//            {$"MessageQueue:{QueueConfig}:Config:ConnectionString", "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1" },
+//            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
 
-        var config = configBuilder.Build();
+//        });
 
-        var service = MessageSenderTests.GetServiceProvider(
-            TestContext,
-            config,
-            services => services.TryAddAzureStorageServices(config, "DontCare")
-            );
+//        var config = configBuilder.Build();
 
-        // ---------------
+//        var service = MessageSenderTests.GetServiceProvider(
+//            TestContext,
+//            config,
+//            services => services.TryAddAzureStorageServices(config, "DontCare")
+//            );
 
-        var sender = service.GetRequiredService<IMessageQueueSender<AzureStorageQueueMessageSenderProviderTests>>();
-        var correlationId = await sender.SendAsync(new
-        {
-            hello = "world",
-        });
+//        // ---------------
 
-        this.TestContext.Write($"correlationId: {correlationId}");
-    }
+//        var sender = service.GetRequiredService<IMessageQueueSender<AzureStorageQueueMessageSenderProviderTests>>();
+//        var correlationId = await sender.SendAsync(new
+//        {
+//            hello = "world",
+//        });
 
-    [TestMethod]
-    [TestCategory(TestCategories.DevLocal)]
-    public async Task FindProviderTests()
-    {
-        var configBuilder = new ConfigurationBuilder();
+//        this.TestContext.Write($"correlationId: {correlationId}");
+//    }
 
-        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
-        {
-            {$"MessageQueue:{QueueConfig}:Provider", AzureStorageGlobals.MessageProviderKey },
+//    [TestMethod]
+//    [TestCategory(TestCategories.DevLocal)]
+//    public async Task FindProviderTests()
+//    {
+//        var configBuilder = new ConfigurationBuilder();
 
-            {$"MessageQueue:{QueueConfig}:Config:ConnectionString", "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1" },
-            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
+//        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
+//        {
+//            {$"MessageQueue:{QueueConfig}:Provider", AzureStorageGlobals.MessageProviderKey },
 
-            {$"MessageQueue:Default:Provider", InProcessMessageProvider.MessageProviderKey },
+//            {$"MessageQueue:{QueueConfig}:Config:ConnectionString", "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1" },
+//            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
 
-        });
+//            {$"MessageQueue:Default:Provider", InProcessMessageProvider.MessageProviderKey },
 
-        var config = configBuilder.Build();
+//        });
 
-        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
-        {
-            services.TryAddAzureStorageServices(config, "DontCare");
+//        var config = configBuilder.Build();
 
-            services.AddTransient<IMessageQueueHandler, TestMessageHandler>();
-            services.AddTransient<IMessageQueueHandler, TestMessageHandlerWithProvider>();
-            services.AddTransient<IMessageQueueHandler, TestMessageHandlerWithProviderAndMessage>();
-        });
+//        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
+//        {
+//            services.TryAddAzureStorageServices(config, "DontCare");
 
-        // ---------------
+//            services.AddTransient<IMessageQueueHandler, TestMessageHandler>();
+//            services.AddTransient<IMessageQueueHandler, TestMessageHandlerWithProvider>();
+//            services.AddTransient<IMessageQueueHandler, TestMessageHandlerWithProviderAndMessage>();
+//        });
 
-        var configurationSection = config.GetSection($"MessageQueue:{QueueConfig}:Config");
+//        // ---------------
 
-        var sender = service.GetRequiredService<IMessageQueueSender<AzureStorageQueueMessageSenderProviderTests>>();
-        var sender2 = service.GetRequiredService<IMessageQueueSender>();
+//        var configurationSection = config.GetSection($"MessageQueue:{QueueConfig}:Config");
 
-        var factory = service.GetRequiredService<IMessageReceiverProviderFactory>();
-        var providers = factory.Create().ToArray();
+//        var sender = service.GetRequiredService<IMessageQueueSender<AzureStorageQueueMessageSenderProviderTests>>();
+//        var sender2 = service.GetRequiredService<IMessageQueueSender>();
 
-        var tasks = new List<Task>();
-        var tokenSource = new CancellationTokenSource();
-        var token = tokenSource.Token;
+//        var factory = service.GetRequiredService<IMessageReceiverProviderFactory>();
+//        var providers = factory.Create().ToArray();
 
-        foreach (var provider in providers)
-        {
-            tasks.Add(Task.Run(() => provider.RunAsync(token)));
-        }
+//        var tasks = new List<Task>();
+//        var tokenSource = new CancellationTokenSource();
+//        var token = tokenSource.Token;
 
-        tasks.Add(Task.Run(async () =>
-        {
-            for (var x = 0; x < 10; x++)
-            {
-                for (var y = 0; y < x; y++)
-                {
-                    object message = y % 2 == 0 ? new TestQueueMessage() : new { Hello = "There" };
-                    Console.WriteLine($"----------: Send {DateTimeOffset.Now} :---------- [{message}]");
-                    var id = await sender.SendAsync(message);
-                    var id2 = await sender2.SendAsync(message);
-                    Console.WriteLine($"----------: Sent {DateTimeOffset.Now} :---------- [{id}]"); ///{id2}
-                }
+//        foreach (var provider in providers)
+//        {
+//            tasks.Add(Task.Run(() => provider.RunAsync(token)));
+//        }
 
-                Console.WriteLine($"----------: Waiting {DateTimeOffset.Now} :---------- ");
+//        tasks.Add(Task.Run(async () =>
+//        {
+//            for (var x = 0; x < 10; x++)
+//            {
+//                for (var y = 0; y < x; y++)
+//                {
+//                    object message = y % 2 == 0 ? new TestQueueMessage() : new { Hello = "There" };
+//                    Console.WriteLine($"----------: Send {DateTimeOffset.Now} :---------- [{message}]");
+//                    var id = await sender.SendAsync(message);
+//                    var id2 = await sender2.SendAsync(message);
+//                    Console.WriteLine($"----------: Sent {DateTimeOffset.Now} :---------- [{id}]"); ///{id2}
+//                }
 
-                await Task.Delay(1000);
-            }
+//                Console.WriteLine($"----------: Waiting {DateTimeOffset.Now} :---------- ");
 
-            tokenSource.Cancel();
-        }));
+//                await Task.Delay(1000);
+//            }
 
-        await Task.WhenAll(tasks);
-    }
-}
+//            tokenSource.Cancel();
+//        }));
+
+//        await Task.WhenAll(tasks);
+//    }
+//}

@@ -7,7 +7,6 @@ namespace Eliassen.Handlebars.Helpers;
 /// <summary>
 /// Base class for helper descriptors.
 /// </summary>
-/// <typeparam name="HelperOptions">The type of options for the helper.</typeparam>
 public abstract class HelperDescriptorBase : IHelperDescriptor<HelperOptions>
 {
     /// <summary>

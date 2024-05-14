@@ -58,7 +58,6 @@ public class DocumentSummaryGenerationProvider
         if (x <= 1)
             return sb.ToString();
         var final = await GetCompletionAsync(_modelName, _promptTemplate, sb.ToString());
-        //TODO: consider doing something better here for really long text
         return final;
     }
 

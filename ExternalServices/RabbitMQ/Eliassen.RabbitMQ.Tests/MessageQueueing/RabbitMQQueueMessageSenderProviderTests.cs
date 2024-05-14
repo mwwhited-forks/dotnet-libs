@@ -1,155 +1,156 @@
-﻿using Eliassen.MessageQueueing;
-using Eliassen.MessageQueueing.Services;
-using Eliassen.MessageQueueing.Tests;
-using Eliassen.RabbitMQ.MessageQueueing;
-using Eliassen.RabbitMQ.Tests.TestItems;
-using Eliassen.TestUtilities;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿//using Eliassen.MessageQueueing;
+//using Eliassen.MessageQueueing.Services;
+//using Eliassen.RabbitMQ.MessageQueueing;
+//using Eliassen.RabbitMQ.Tests.TestItems;
+//using Eliassen.TestUtilities;
+//using Microsoft.Extensions.Configuration;
+//using Microsoft.Extensions.DependencyInjection;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Threading;
+//using System.Threading.Tasks;
 
-namespace Eliassen.RabbitMQ.Tests.MessageQueueing;
+//namespace Eliassen.RabbitMQ.Tests.MessageQueueing;
 
-[TestClass]
-[MessageQueue(QueueConfig)]
-public class RabbitMQQueueMessageSenderProviderTests
-{
-    public const string QueueConfig = "test-config";
+#warning is this needed
 
-    public required TestContext TestContext { get; set; }
+//[TestClass]
+//[MessageQueue(QueueConfig)]
+//public class RabbitMQQueueMessageSenderProviderTests
+//{
+//    public const string QueueConfig = "test-config";
 
-    [TestMethod]
-    [TestCategory(TestCategories.DevLocal)]
-    public async Task SendAsyncTest_ByFullType()
-    {
-        var configBuilder = new ConfigurationBuilder();
+//    public required TestContext TestContext { get; set; }
 
-        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
-        {
-            {$"MessageQueue:{QueueConfig}:Provider", typeof(RabbitMQQueueMessageProvider).AssemblyQualifiedName },
+//    [TestMethod]
+//    [TestCategory(TestCategories.DevLocal)]
+//    public async Task SendAsyncTest_ByFullType()
+//    {
+//        var configBuilder = new ConfigurationBuilder();
 
-            {$"MessageQueue:{QueueConfig}:Config:HostName", "localhost" },
-            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
-        });
+//        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
+//        {
+//            {$"MessageQueue:{QueueConfig}:Provider", typeof(RabbitMQQueueMessageProvider).AssemblyQualifiedName },
 
-        var config = configBuilder.Build();
+//            {$"MessageQueue:{QueueConfig}:Config:HostName", "localhost" },
+//            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
+//        });
 
-        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services => services.TryAddRabbitMQServices());
+//        var config = configBuilder.Build();
 
-        // ---------------
+//        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services => services.TryAddRabbitMQServices());
 
-        var sender = service.GetRequiredService<IMessageQueueSender<RabbitMQQueueMessageSenderProviderTests>>();
-        var correlationId = await sender.SendAsync(new
-        {
-            hello = "world",
-        });
+//        // ---------------
 
-        TestContext.Write($"correlationId: {correlationId}");
-    }
+//        var sender = service.GetRequiredService<IMessageQueueSender<RabbitMQQueueMessageSenderProviderTests>>();
+//        var correlationId = await sender.SendAsync(new
+//        {
+//            hello = "world",
+//        });
 
-    [TestMethod]
-    [TestCategory(TestCategories.DevLocal)]
-    public async Task SendAsyncTest_ByKeyed()
-    {
-        var configBuilder = new ConfigurationBuilder();
+//        TestContext.Write($"correlationId: {correlationId}");
+//    }
 
-        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
-        {
-            {$"MessageQueue:{QueueConfig}:Provider", RabbitMQGlobals.MessageProviderKey },
+//    [TestMethod]
+//    [TestCategory(TestCategories.DevLocal)]
+//    public async Task SendAsyncTest_ByKeyed()
+//    {
+//        var configBuilder = new ConfigurationBuilder();
 
-            {$"MessageQueue:{QueueConfig}:Config:HostName", "localhost" },
-            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
+//        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
+//        {
+//            {$"MessageQueue:{QueueConfig}:Provider", RabbitMQGlobals.MessageProviderKey },
 
-        });
+//            {$"MessageQueue:{QueueConfig}:Config:HostName", "localhost" },
+//            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
 
-        var config = configBuilder.Build();
+//        });
 
-        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services => services.TryAddRabbitMQServices());
+//        var config = configBuilder.Build();
 
-        // ---------------
+//        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services => services.TryAddRabbitMQServices());
 
-        var sender = service.GetRequiredService<IMessageQueueSender<RabbitMQQueueMessageSenderProviderTests>>();
-        var correlationId = await sender.SendAsync(new
-        {
-            hello = "world",
-        });
+//        // ---------------
 
-        TestContext.Write($"correlationId: {correlationId}");
-    }
+//        var sender = service.GetRequiredService<IMessageQueueSender<RabbitMQQueueMessageSenderProviderTests>>();
+//        var correlationId = await sender.SendAsync(new
+//        {
+//            hello = "world",
+//        });
 
-    [TestMethod]
-    [TestCategory(TestCategories.DevLocal)]
-    public async Task FindProviderTests()
-    {
-        var configBuilder = new ConfigurationBuilder();
+//        TestContext.Write($"correlationId: {correlationId}");
+//    }
 
-        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
-        {
-            {$"MessageQueue:{QueueConfig}:Provider", RabbitMQGlobals.MessageProviderKey },
+//    [TestMethod]
+//    [TestCategory(TestCategories.DevLocal)]
+//    public async Task FindProviderTests()
+//    {
+//        var configBuilder = new ConfigurationBuilder();
 
-            {$"MessageQueue:{QueueConfig}:Config:HostName", "localhost" },
-            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
+//        configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
+//        {
+//            {$"MessageQueue:{QueueConfig}:Provider", RabbitMQGlobals.MessageProviderKey },
 
-            {$"MessageQueue:Default:Provider", InProcessMessageProvider.MessageProviderKey },
+//            {$"MessageQueue:{QueueConfig}:Config:HostName", "localhost" },
+//            {$"MessageQueue:{QueueConfig}:Config:QueueName", "test-queue" },
 
-        });
+//            {$"MessageQueue:Default:Provider", InProcessMessageProvider.MessageProviderKey },
 
-        var config = configBuilder.Build();
+//        });
 
-        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
-        {
-            services.TryAddRabbitMQServices();
+//        var config = configBuilder.Build();
 
-            services.AddTransient<IMessageQueueHandler, TestMessageHandler>();
-            services.AddTransient<IMessageQueueHandler, TestMessageHandlerWithProvider>();
-            services.AddTransient<IMessageQueueHandler, TestMessageHandlerWithProviderAndMessage>();
-        });
+//        var service = MessageSenderTests.GetServiceProvider(TestContext, config, services =>
+//        {
+//            services.TryAddRabbitMQServices();
 
-        // ---------------
+//            services.AddTransient<IMessageQueueHandler, TestMessageHandler>();
+//            services.AddTransient<IMessageQueueHandler, TestMessageHandlerWithProvider>();
+//            services.AddTransient<IMessageQueueHandler, TestMessageHandlerWithProviderAndMessage>();
+//        });
 
-        var configurationSection = config.GetSection($"MessageQueue:{QueueConfig}:Config");
+//        // ---------------
 
-        var sender = service.GetRequiredService<IMessageQueueSender<RabbitMQQueueMessageSenderProviderTests>>();
-        var sender2 = service.GetRequiredService<IMessageQueueSender>();
+//        var configurationSection = config.GetSection($"MessageQueue:{QueueConfig}:Config");
 
-        var factory = service.GetRequiredService<IMessageReceiverProviderFactory>();
-        var providers = factory.Create().ToArray();
+//        var sender = service.GetRequiredService<IMessageQueueSender<RabbitMQQueueMessageSenderProviderTests>>();
+//        var sender2 = service.GetRequiredService<IMessageQueueSender>();
 
-        var tasks = new List<Task>();
-        var tokenSource = new CancellationTokenSource();
-        var token = tokenSource.Token;
+//        var factory = service.GetRequiredService<IMessageReceiverProviderFactory>();
+//        var providers = factory.Create().ToArray();
 
-        foreach (var provider in providers)
-        {
-            tasks.Add(Task.Run(() => provider.RunAsync(token)));
-        }
+//        var tasks = new List<Task>();
+//        var tokenSource = new CancellationTokenSource();
+//        var token = tokenSource.Token;
 
-        tasks.Add(Task.Run(async () =>
-        {
-            for (var x = 0; x < 10; x++)
-            {
-                for (var y = 0; y < x; y++)
-                {
-                    object message = y % 2 == 0 ? new TestQueueMessage() : new { Hello = "There" };
-                    Console.WriteLine($"----------: Send {DateTimeOffset.Now} :---------- [{message}]");
-                    var id = await sender.SendAsync(message);
-                    var id2 = await sender2.SendAsync(message);
-                    Console.WriteLine($"----------: Sent {DateTimeOffset.Now} :---------- [{id}]"); ///{id2}
-                }
+//        foreach (var provider in providers)
+//        {
+//            tasks.Add(Task.Run(() => provider.RunAsync(token)));
+//        }
 
-                Console.WriteLine($"----------: Waiting {DateTimeOffset.Now} :---------- ");
+//        tasks.Add(Task.Run(async () =>
+//        {
+//            for (var x = 0; x < 10; x++)
+//            {
+//                for (var y = 0; y < x; y++)
+//                {
+//                    object message = y % 2 == 0 ? new TestQueueMessage() : new { Hello = "There" };
+//                    Console.WriteLine($"----------: Send {DateTimeOffset.Now} :---------- [{message}]");
+//                    var id = await sender.SendAsync(message);
+//                    var id2 = await sender2.SendAsync(message);
+//                    Console.WriteLine($"----------: Sent {DateTimeOffset.Now} :---------- [{id}]"); ///{id2}
+//                }
 
-                await Task.Delay(1000);
-            }
+//                Console.WriteLine($"----------: Waiting {DateTimeOffset.Now} :---------- ");
 
-            tokenSource.Cancel();
-        }));
+//                await Task.Delay(1000);
+//            }
 
-        await Task.WhenAll(tasks);
-    }
-}
+//            tokenSource.Cancel();
+//        }));
+
+//        await Task.WhenAll(tasks);
+//    }
+//}

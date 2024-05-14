@@ -20,10 +20,7 @@ public class SBERTController : ControllerBase
     /// <param name="embedding">The embedding provider.</param>
     public SBERTController(
         [FromKeyedServices("SBERT")] IEmbeddingProvider embedding
-        )
-    {
-        _embedding = embedding;
-    }
+        ) => _embedding = embedding;
 
     /// <summary>
     /// Retrieves the embedding vector for the given text.

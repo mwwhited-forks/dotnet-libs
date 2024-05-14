@@ -92,7 +92,6 @@ public class MimeMessageFactory(
         received.CcAddresses.AddRange(message.Cc.Cast<InternetAddress>().Select(a => a.ToString()));
         received.BccAddresses.AddRange(message.Bcc.Cast<InternetAddress>().Select(a => a.ToString()));
 
-        //TODO: might need to group these
         foreach (var header in message.Headers)
         {
             received.Headers.Add(header.Field, header.Value);

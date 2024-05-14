@@ -162,7 +162,6 @@ public static class ServiceCollectionExtensions
         return services;
     }
 
-
     /// <summary>
     /// Add support for type providers
     /// </summary>

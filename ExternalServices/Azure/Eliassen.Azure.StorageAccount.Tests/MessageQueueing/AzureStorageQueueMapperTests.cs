@@ -79,6 +79,26 @@ public class AzureStorageQueueMapperTests
         Assert.AreEqual("Header1", result.Properties["Name1"]);
     }
 
+    public class MessageContext : IMessageContext
+    {
+        public object? this[string key]{
+            get => Headers[key];
+            set => Headers[key] = value;
+        }
+
+        public string? OriginMessageId { get; }
+        public string? CorrelationId { get; set; }
+        public string? RequestId { get; }
+        public string? SentId { get; set; }
+        public string? ChannelType { get; }
+        public string? MessageType { get; }
+        public DateTimeOffset? SentAt { get; }
+        public string? SentBy { get; }
+        public string? SentFrom { get; }
+        public Dictionary<string, object?> Headers { get; } = [];
+        public IConfigurationSection Config { get; }
+    }
+
     public class TestMessage
     {
     }

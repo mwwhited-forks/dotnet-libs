@@ -142,7 +142,6 @@ public class WrappedBlobContainerTests
         mockrepo.VerifyAll();
     }
 
-
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
     public void QueryContentTest()
