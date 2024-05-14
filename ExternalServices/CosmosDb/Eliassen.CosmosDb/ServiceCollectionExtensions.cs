@@ -24,7 +24,7 @@ public static class ServiceCollectionExtensions
 #if DEBUG
         string cosmosDatabaseConfigurationSection
 #else
-        string openAIOptionSection = nameof(OpenAIClientOptions)
+        string cosmosDatabaseConfigurationSection = nameof(CosmosDbClientOptions)
 #endif
         )
     {
