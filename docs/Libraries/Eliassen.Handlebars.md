@@ -159,6 +159,48 @@ Initializes a new instance of the
 
 
 
+## Class: Handlebars.Helpers.StateStore
+Represents a thread-local store for maintaining state. 
+
+### Properties
+
+#### Item(System.String)
+Gets or sets the value associated with the specified key. The key of the value to get or set.The value associated with the specified key.
+### Methods
+
+
+#### TryAdd(System.String,System.Object)
+Tries to add the specified key and value to the state store. 
+
+
+##### Parameters
+* *key:* The key of the value to add.
+* *value:* The value to add.
+
+
+
+
+##### Return value
+True if the key and value were added successfully; otherwise, false.
+
+
+
+#### TryGetValue(System.String,System.Object@)
+Tries to retrieve the value associated with the specified key from the state store. 
+
+
+##### Parameters
+* *key:* The key of the value to retrieve.
+* *value:* When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the value parameter.
+
+
+
+
+##### Return value
+True if the state store contains an element with the specified key; otherwise, false.
+
+
+
 ## Class: Handlebars.Helpers.StringReplaceHelperDescriptor
 Represents a descriptor for a Handlebars helper that performs string replacement. 
 

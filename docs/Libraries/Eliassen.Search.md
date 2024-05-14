@@ -92,12 +92,11 @@ Represents a vector store that wraps another vector store.
 
 
 #### Constructor
-Initializes a new instance of the 
- *See: !:WrappedVectorStore*class. 
+Initializes a new instance 
 
 
 ##### Parameters
-* *wrapped:* The vector store to wrap.
+* *factory:* The vector store to wrap.
 
 
 
