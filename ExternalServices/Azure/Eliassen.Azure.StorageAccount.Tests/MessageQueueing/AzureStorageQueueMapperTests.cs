@@ -81,7 +81,8 @@ public class AzureStorageQueueMapperTests
 
     public class MessageContext : IMessageContext
     {
-        public object? this[string key]{
+        public object? this[string key]
+        {
             get => Headers[key];
             set => Headers[key] = value;
         }

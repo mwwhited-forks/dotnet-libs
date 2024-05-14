@@ -9,7 +9,7 @@ This is a set of extension configurations for ASP.Net Core
 
 #### UseAspNetCoreExtensionMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)
 Add custom middleware to ASP.Net to support these extensions 
- *See: T:Eliassen.AspNetCore.Mvc.Middleware.CultureInfoMiddleware* *See: T:Eliassen.AspNetCore.Mvc.Middleware.SearchQueryMiddleware*
+ *See: T:Eliassen.AspNetCore.Mvc.Middleware.CorrelationInfoMiddleware* *See: T:Eliassen.AspNetCore.Mvc.Middleware.CultureInfoMiddleware* *See: T:Eliassen.AspNetCore.Mvc.Middleware.SearchQueryMiddleware*
 
 ##### Parameters
 * *builder:* 
@@ -249,19 +249,20 @@ A task representing the asynchronous operation.
 
 
 ## Class: AspNetCore.Mvc.Middleware.SearchQueryMiddleware
-ASP.Net MVC Middlware to enable IQueryable{T} responses from Controller Actions 
+ASP.Net MVC Middleware to enable IQueryable{T} responses from Controller Actions 
 
 ### Methods
 
 
 #### Constructor
-ASP.Net MVC Middlware to enable IQueryable{T} responses from Controller Actions 
+ASP.Net MVC Middleware to enable IQueryable{T} responses from Controller Actions 
 
 
 ##### Parameters
 * *next:* The next middleware in the pipeline.
 * *log:* The logger for logging information.
 * *searchQuery:* The accessor for the search query.
+* *builder:* The builder for search model.
 
 
 
@@ -312,6 +313,271 @@ generate a property to provide the required permissions
 * *writer:* 
 * *specVersion:* 
 
+
+
+
+## Class: AspNetCore.Mvc.Providers.SearchQuery.ISearchModelBuilder
+Builds search models based on the incoming HTTP context. 
+
+### Methods
+
+
+#### GetModelAsync``1(Microsoft.AspNetCore.Http.HttpContext,System.String)
+Gets the search model asynchronously from the provided HTTP context. 
+
+
+##### Parameters
+* *context:* The HTTP context containing the model data.
+* *modelName:* The name of the model in the context.
+
+
+
+
+##### Return value
+A tuple indicating whether the search is successful and the retrieved model.
+
+
+
+## Class: AspNetCore.Mvc.Providers.SearchQuery.ISearchModelMapper
+Maps search-related model information from the HTTP context. 
+
+### Methods
+
+
+#### GetControllerActionDescriptor(Microsoft.AspNetCore.Http.HttpContext)
+Retrieves the controller action descriptor from the provided HTTP context. 
+
+
+##### Parameters
+* *context:* The HTTP context.
+
+
+
+
+##### Return value
+The controller action descriptor if found; otherwise, null.
+
+
+
+#### GetActionContext(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor)
+Creates an action context from the provided HTTP context and controller action descriptor. 
+
+
+##### Parameters
+* *context:* The HTTP context.
+* *descriptor:* The controller action descriptor.
+
+
+
+
+##### Return value
+The created action context if both parameters are valid; otherwise, null.
+
+
+
+#### GetControllerContext(Microsoft.AspNetCore.Mvc.ActionContext)
+Creates a controller context from the provided action context. 
+
+
+##### Parameters
+* *context:* The action context.
+
+
+
+
+##### Return value
+The created controller context if the action context is valid; otherwise, null.
+
+
+
+#### GetRequestType(Microsoft.AspNetCore.Http.HttpContext)
+Determines the type of request based on the provided HTTP context. 
+
+
+##### Parameters
+* *context:* The HTTP context.
+
+
+
+
+##### Return value
+The type of request.
+
+
+
+#### GetBindingType(Eliassen.AspNetCore.Mvc.Providers.SearchQuery.RequestType)
+Retrieves the binding type metadata based on the request type. 
+
+
+##### Parameters
+* *requestType:* The type of request.
+
+
+
+
+##### Return value
+The binding type metadata.
+
+
+
+#### GetValueProviderAsync(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Mvc.ControllerContext,Eliassen.AspNetCore.Mvc.Providers.SearchQuery.RequestType)
+Retrieves the value provider asynchronously based on the request type. 
+
+
+##### Parameters
+* *context:* The HTTP context.
+* *controllerContext:* The controller context.
+* *requestType:* The type of request.
+
+
+
+
+##### Return value
+The value provider.
+
+
+
+## Class: AspNetCore.Mvc.Providers.SearchQuery.RequestType
+Represents the type of HTTP request. 
+
+### Fields
+
+#### Query
+Indicates a request with JSON data.
+#### Json
+Indicates a request with JSON data.
+#### Form
+Indicates a request with form data.
+
+## Class: AspNetCore.Mvc.Providers.SearchQuery.SearchModelBuilder
+Builds search models based on the incoming HTTP context. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.AspNetCore.Mvc.Providers.SearchQuery.SearchModelBuilder*class. 
+
+
+##### Parameters
+* *mapper:* The search model mapper.
+
+
+
+
+#### GetModelAsync``1(Microsoft.AspNetCore.Http.HttpContext,System.String)
+Gets the search model asynchronously from the provided HTTP context. 
+
+
+##### Parameters
+* *context:* The HTTP context containing the model data.
+* *modelName:* The name of the model in the context.
+
+
+
+
+##### Return value
+A tuple indicating whether the search is successful and the retrieved model.
+
+
+
+## Class: AspNetCore.Mvc.Providers.SearchQuery.SearchModelMapper
+Maps search-related model information from the HTTP context. 
+
+### Methods
+
+
+#### GetControllerActionDescriptor(Microsoft.AspNetCore.Http.HttpContext)
+Retrieves the controller action descriptor from the provided HTTP context. 
+
+
+##### Parameters
+* *context:* The HTTP context.
+
+
+
+
+##### Return value
+The controller action descriptor if found; otherwise, null.
+
+
+
+#### GetActionContext(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor)
+Creates an action context from the provided HTTP context and controller action descriptor. 
+
+
+##### Parameters
+* *context:* The HTTP context.
+* *descriptor:* The controller action descriptor.
+
+
+
+
+##### Return value
+The created action context if both parameters are valid; otherwise, null.
+
+
+
+#### GetControllerContext(Microsoft.AspNetCore.Mvc.ActionContext)
+Creates a controller context from the provided action context. 
+
+
+##### Parameters
+* *context:* The action context.
+
+
+
+
+##### Return value
+The created controller context if the action context is valid; otherwise, null.
+
+
+
+#### GetRequestType(Microsoft.AspNetCore.Http.HttpContext)
+Determines the type of request based on the provided HTTP context. 
+
+
+##### Parameters
+* *context:* The HTTP context.
+
+
+
+
+##### Return value
+The type of request.
+
+
+
+#### GetBindingType(Eliassen.AspNetCore.Mvc.Providers.SearchQuery.RequestType)
+Retrieves the binding type metadata based on the request type. 
+
+
+##### Parameters
+* *requestType:* The type of request.
+
+
+
+
+##### Return value
+The binding type metadata.
+
+
+
+#### GetValueProviderAsync(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Mvc.ControllerContext,Eliassen.AspNetCore.Mvc.Providers.SearchQuery.RequestType)
+Retrieves the value provider asynchronously based on the request type. 
+
+
+##### Parameters
+* *context:* The HTTP context.
+* *controllerContext:* The controller context.
+* *requestType:* The type of request.
+
+
+
+
+##### Return value
+The value provider.
 
 
 

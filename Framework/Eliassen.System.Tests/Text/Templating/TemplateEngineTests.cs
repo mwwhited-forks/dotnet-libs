@@ -68,7 +68,7 @@ public class TemplateEngineTests
         var mockContext = mockRepo.Create<ITemplateContext>();
 
         mockSource.Setup(s => s.Get(templateName)).Returns([mockContext.Object]);
-        mockContext.Setup(s=>s.Priority).Returns(0);
+        mockContext.Setup(s => s.Priority).Returns(0);
         mockProvider.Setup(s => s.CanApply(mockContext.Object)).Returns(true);
         mockProvider.Setup(s => s.ApplyAsync(
             It.Is<ITemplateContext>(v => v == mockContext.Object),

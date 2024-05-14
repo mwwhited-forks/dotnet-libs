@@ -27,8 +27,8 @@ public class SearchQueryMiddleware
     /// <param name="builder">The builder for search model.</param>
     public SearchQueryMiddleware(
         RequestDelegate next,
-        ILogger<SearchQueryMiddleware> log, 
-        IAccessor<ISearchQuery> searchQuery, 
+        ILogger<SearchQueryMiddleware> log,
+        IAccessor<ISearchQuery> searchQuery,
         ISearchModelBuilder builder
         )
     {

@@ -95,7 +95,6 @@ Initializes a new instance of the
 
 ## Class: Handlebars.Helpers.HelperDescriptorBase
 Base class for helper descriptors. 
-The type of options for the helper. 
 
 ### Properties
 
