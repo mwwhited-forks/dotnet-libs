@@ -54,7 +54,7 @@ public interface ILanguageModelProvider
     /// <param name="data">The data to be embedded there is a token limit of 2048 tokens.</param>    
     /// <param name="cancellationToken">The Cancellation Token.</param>
     /// <returns>Float array with the embedding data</returns>
-    Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data, [EnumeratorCancellation] CancellationToken cancellationToken = default);
+    Task<float[]> GetEmbeddedResponseAsync(string data, [EnumeratorCancellation] CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Gets a response asynchronously based on the provided prompt details and user input.

@@ -121,7 +121,7 @@ public class OpenAIManager : ILanguageModelProvider
         }
     }
 
-    public async Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data, 
+    public async Task<float[]> GetEmbeddedResponseAsync(string data, 
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         var encoding = GptEncoding.GetEncoding("cl100k_base");
@@ -141,9 +141,9 @@ public class OpenAIManager : ILanguageModelProvider
         };
 
         Response<Embeddings> response = await api.GetEmbeddingsAsync(embeddingsOptions, cancellationToken);
-
         EmbeddingItem item = response.Value.Data[0];
-        return item.Embedding;
+
+        return item.Embedding.ToArray();
     }
 
     public async Task<string> GetContextResponseAsync(string assistantConfinment,

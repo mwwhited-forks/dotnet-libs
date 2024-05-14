@@ -15,7 +15,7 @@ namespace Eliassen.Ollama;
 /// <summary>
 /// Represents a class responsible for generating message completions using the Ollama API.
 /// </summary>
-public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvider, IEmbeddingProvider
+public class OllamaMessageCompletion : IMessageCompletion, IEmbeddingProvider
 {
     private readonly OllamaApiClient _client;
     private readonly IOllamaModelMapper _mapper;

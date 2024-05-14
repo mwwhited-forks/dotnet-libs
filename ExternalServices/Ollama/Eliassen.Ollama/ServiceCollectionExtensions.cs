@@ -33,11 +33,11 @@ public static class ServiceCollectionExtensions
         services.TryAddTransient(sp => sp.GetRequiredService<IOllamaApiClientFactory>().Build());
 
         services.TryAddTransient<IMessageCompletion, OllamaMessageCompletion>();
-        services.TryAddTransient<ILanguageModelProvider, OllamaMessageCompletion>();
+        //services.TryAddTransient<ILanguageModelProvider, OllamaMessageCompletion>();
         services.TryAddTransient<IEmbeddingProvider, OllamaMessageCompletion>();
 
         services.TryAddKeyedTransient<IMessageCompletion, OllamaMessageCompletion>("OLLAMA");
-        services.TryAddKeyedTransient<ILanguageModelProvider, OllamaMessageCompletion>("OLLAMA");
+        //services.TryAddKeyedTransient<ILanguageModelProvider, OllamaMessageCompletion>("OLLAMA");
         services.TryAddKeyedTransient<IEmbeddingProvider, OllamaMessageCompletion>("OLLAMA");
 
         services.Configure<OllamaApiClientOptions>(options => configuration.Bind(ollamaApiClientOptionSection, options));
