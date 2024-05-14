@@ -331,4 +331,61 @@ public class HandlebarsTemplateProviderTests
 
         mockRepo.VerifyAll();
     }
+
+    [TestMethod]
+    [TestCategory(TestCategories.Unit)]
+    public async Task ApplyAsyncTest_WithStringReplace()
+    {
+        var data = new
+        {
+            input = "How are you today?",
+            target = "today",
+            replacement = "feeling",
+        };
+        var source = new MemoryStream();
+        var writer = new StreamWriter(source, leaveOpen: true)
+        {
+            AutoFlush = true,
+        };
+
+        writer.Write("String Replace: {{str-replace input target replacement}}");
+        source.Position = 0;
+        var dest = new MemoryStream();
+        var reader = new StreamReader(dest);
+
+        var mockRepo = new MockRepository(MockBehavior.Strict);
+        var mockSource = mockRepo.Create<ITemplateSource>(MockBehavior.Loose);
+
+        var context = new TemplateContext
+        {
+            OpenTemplate = _ => source,
+            TemplateName = "testName",
+            TemplateContentType = ContentTypesExtensions.Text.HandlebarsTemplate,
+            TemplateFileExtension = ".hbs",
+            TargetContentType = ContentTypesExtensions.Text.Markdown,
+            TargetFileExtension = ".md",
+            TemplateReference = "TestReference",
+            TemplateSource = mockSource.Object,
+        };
+
+        var provider = new HandlebarsTemplateProvider(
+            [], [], [
+                new StringReplaceHelperDescriptor(),
+            ],
+            TestLogger.CreateLogger<HandlebarsTemplateProvider>()
+            );
+
+        var result = await provider.ApplyAsync(context, data, dest);
+
+        dest.Position = 0;
+        var read = reader.ReadToEnd();
+
+        this.TestContext.WriteLine(read);
+
+        Assert.IsTrue(result);
+        Assert.AreEqual("String Replace: How are you feeling?", read);
+
+        mockRepo.VerifyAll();
+
+    }
 }
