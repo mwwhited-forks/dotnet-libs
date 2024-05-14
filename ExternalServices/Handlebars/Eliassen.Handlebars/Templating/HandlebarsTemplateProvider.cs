@@ -3,6 +3,7 @@ using Eliassen.System.Security.Cryptography;
 using Eliassen.System.Text.Templating;
 using HandlebarsDotNet;
 using HandlebarsDotNet.Extension.Json;
+using HandlebarsDotNet.Helpers;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,16 @@ namespace Eliassen.Handlebars.Templating;
 /// <remarks>
 /// Initializes a new instance of the <see cref="HandlebarsTemplateProvider"/> class.
 /// </remarks>
-/// <param name="hash">The hash provider.</param>
 /// <param name="helpersRegistry">The collection of helpers registries.</param>
+/// <param name="blockHelperDescriptors">The collection of helpers registries.</param>
+/// <param name="helperDescriptors">The collection of helpers registries.</param>
 /// <param name="log">The logger instance.</param>
-public class HandlebarsTemplateProvider(IHash hash, IEnumerable<IHelpersRegistry> helpersRegistry, ILogger<HandlebarsTemplateProvider> log) : ITemplateProvider
+public class HandlebarsTemplateProvider(
+    IEnumerable<IHelpersRegistry> helpersRegistry,
+    IEnumerable<IHelperDescriptor<BlockHelperOptions>> blockHelperDescriptors,
+    IEnumerable<IHelperDescriptor<HelperOptions>> helperDescriptors,
+    ILogger<HandlebarsTemplateProvider> log
+    ) : ITemplateProvider
 {
     private readonly ILogger _log = log;
 
@@ -68,62 +75,14 @@ public class HandlebarsTemplateProvider(IHash hash, IEnumerable<IHelpersRegistry
             }
         }
 
-        //TODO: These should be abstracted out to the IoC container
-        handlebar.RegisterHelper("date_now", (output, context, arguments) =>
+        foreach (var helper in blockHelperDescriptors)
         {
-            var format = arguments.FirstOrDefault() as string;
-            if (string.IsNullOrWhiteSpace(format))
-            {
-                output.WriteSafeString(DateTimeOffset.Now);
-            }
-            else
-            {
-                output.WriteSafeString(DateTimeOffset.Now.ToString(format));
-            }
-        });
-        handlebar.RegisterHelper("guid_new", (output, context, arguments) => output.WriteSafeString(Guid.NewGuid()));
-        handlebar.RegisterHelper("hash", (output, context, arguments) =>
+            handlebar.RegisterHelper(helper);
+        }
+        foreach (var helper in helperDescriptors)
         {
-            var arg = arguments[0];
-            var result = hash.GetHash(arg?.ToString() ?? "");
-            output.WriteSafeString(result);
-        });
-        handlebar.RegisterHelper("log", (output, context, arguments) =>
-        {
-            _log.LogInformation($"{{message}}", string.Join(' ', arguments));
-            return null;
-        });
-
-        var dictionary = new Dictionary<string, object>();
-        handlebar.RegisterHelper("set", (output, context, arguments) =>
-        {
-            var key = arguments.ElementAtOrDefault(0)?.ToString();
-            var value = arguments.ElementAtOrDefault(1);
-            _log.LogDebug($"set: {{{nameof(key)}}}", key);
-            if (!string.IsNullOrWhiteSpace(key) && !dictionary.TryAdd(key, value ?? ""))
-            {
-                dictionary[key] = value ?? "";
-            }
-        });
-        handlebar.RegisterHelper("get", (output, context, arguments) =>
-        {
-            var key = arguments.ElementAtOrDefault(0)?.ToString();
-            _log.LogDebug($"get: {{{nameof(key)}}}", key);
-            if (!string.IsNullOrWhiteSpace(key) && dictionary.TryGetValue(key, out var value))
-            {
-                output.Write(value);
-            }
-        });
-        handlebar.RegisterHelper("str-replace", (output, context, arguments) =>
-        {
-            var input = arguments.ElementAtOrDefault(0)?.ToString();
-            var find = arguments.ElementAtOrDefault(1)?.ToString();
-            var replacement = arguments.ElementAtOrDefault(2)?.ToString();
-            if (!string.IsNullOrWhiteSpace(input) && !string.IsNullOrWhiteSpace(find))
-            {
-                output.Write(input.Replace(find, replacement ?? ""));
-            }
-        });
+            handlebar.RegisterHelper(helper);
+        }
 
         using var template = context.OpenTemplate(context);
         var reader = new StreamReader(template);
