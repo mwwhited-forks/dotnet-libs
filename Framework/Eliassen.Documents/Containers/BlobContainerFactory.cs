@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,19 +15,23 @@ public class BlobContainerFactory : IBlobContainerFactory
 {
     private readonly IServiceProvider _serviceProvider;
     private readonly IEnumerable<IBlobContainerProviderFactory> _factories;
+    private readonly ILogger _logger;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BlobContainerFactory"/> class.
     /// </summary>
     /// <param name="serviceProvider">The IOC Service provider.</param>
     /// <param name="factories">The factory used to create blob container providers.</param>
+    /// <param name="logger">The logger for this service.</param>
     public BlobContainerFactory(
         IServiceProvider serviceProvider,
-        IEnumerable<IBlobContainerProviderFactory> factories
+        IEnumerable<IBlobContainerProviderFactory> factories,
+        ILogger<BlobContainerFactory> logger
         )
     {
         _serviceProvider = serviceProvider;
         _factories = factories;
+        _logger = logger;
     }
 
     /// <summary>
@@ -44,6 +49,8 @@ public class BlobContainerFactory : IBlobContainerFactory
         provider ??= _serviceProvider.GetRequiredService<IBlobContainerProvider>();
 
         provider.ContainerName = containerName;
+
+        _logger.LogInformation("Container: {containerName} -> {type}", containerName, provider.GetType());
 
         return provider;
     }
