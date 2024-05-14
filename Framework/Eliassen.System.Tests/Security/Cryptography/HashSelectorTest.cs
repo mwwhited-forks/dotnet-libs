@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Security.Cryptography;
+using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -12,6 +13,7 @@ public class HashSelectorTest
     public required TestContext TestContext { get; set; }
 
     [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
     [DataRow(HashTypes.Md5, typeof(Md5Hash))]
     [DataRow(HashTypes.Sha256, typeof(Sha256Hash))]
     [DataRow(HashTypes.Sha512, typeof(Sha512Hash))]
@@ -31,6 +33,7 @@ public class HashSelectorTest
     }
 
     [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
     [DataRow(HashTypes.Md5, typeof(Md5Hash))]
     [DataRow(HashTypes.Sha256, typeof(Sha256Hash))]
     [DataRow(HashTypes.Sha512, typeof(Sha512Hash))]

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Eliassen.TestUtilities;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenSearch.Net;
 using System;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ public class OpenSearchTests
     }
 
     [DataTestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     [DataRow(storeName)]
     [DataRow("summary")]
     public async Task CreateIndexTest(string indexName)
@@ -49,6 +51,7 @@ public class OpenSearchTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     public async Task SearchIndexTest()
     {
         //var id = Guid.NewGuid().ToString();

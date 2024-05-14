@@ -315,7 +315,7 @@ public class HandlebarsTemplateProviderTests
             [], [], [
                 new GetHelperDescriptor(TestLogger.CreateLogger<GetHelperDescriptor>()),
                 new SetHelperDescriptor(TestLogger.CreateLogger<SetHelperDescriptor>()),
-                ],
+            ],
             TestLogger.CreateLogger<HandlebarsTemplateProvider>()
             );
 

@@ -1,5 +1,6 @@
 ﻿using Eliassen.MongoDB.Extensions;
 using Eliassen.System;
+using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -13,6 +14,7 @@ namespace Eliassen.MongoDB.Tests;
 public class MongoDBTests
 {
     [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     public void TestMethod1()
     {
         var configBuilder = new ConfigurationBuilder()
@@ -81,6 +83,7 @@ public class MongoDBTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     public void TestMethod2()
     {
         var configBuilder = new ConfigurationBuilder()

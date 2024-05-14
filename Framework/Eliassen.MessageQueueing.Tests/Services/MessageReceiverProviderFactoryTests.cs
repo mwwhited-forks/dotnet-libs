@@ -51,7 +51,7 @@ public class MessageReceiverProviderFactoryTests
         mockPropertyResolver.Setup(s => s.ProviderSafe(It.IsAny<Type>(), It.IsAny<Type>())).Returns(safeProvider);
         mockPropertyResolver.Setup(s => s.ConfigurationSafe(It.IsAny<Type>(), It.IsAny<Type>())).Returns(safeConfig);
 
-        mockReceiverProvider.Setup(s=>s.SetHandlerProvider(mockHandlerProvider.Object)).Returns(mockReceiverProvider.Object);
+        mockReceiverProvider.Setup(s => s.SetHandlerProvider(mockHandlerProvider.Object)).Returns(mockReceiverProvider.Object);
 
         var factory = new MessageReceiverProviderFactory(
             [mockHandler.Object],

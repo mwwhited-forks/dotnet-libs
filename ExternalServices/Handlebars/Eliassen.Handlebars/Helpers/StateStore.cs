@@ -41,6 +41,6 @@ public class StateStore
     /// <param name="key">The key of the value to retrieve.</param>
     /// <param name="value">When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the value parameter.</param>
     /// <returns>True if the state store contains an element with the specified key; otherwise, false.</returns>
-    public bool TryGetValue(string key, out object? value) => 
+    public bool TryGetValue(string key, out object? value) =>
         Store.TryGetValue(key, out value);
 }

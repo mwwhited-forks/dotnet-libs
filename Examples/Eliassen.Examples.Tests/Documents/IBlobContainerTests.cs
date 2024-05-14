@@ -91,6 +91,7 @@ public class IBlobContainerTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     public void Test()
     {
         var config = new ConfigurationBuilder()

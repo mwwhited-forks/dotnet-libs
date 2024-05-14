@@ -1,7 +1,6 @@
 ﻿using Eliassen.System.Providers;
 using HandlebarsDotNet;
 using HandlebarsDotNet.PathStructure;
-using System;
 
 namespace Eliassen.Handlebars.Helpers;
 

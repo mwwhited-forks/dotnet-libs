@@ -27,7 +27,7 @@ public class CommandLineTests
     [TestCategory(TestCategories.Unit)]
     public void AddParametersTests()
     {
-        var dict = new Dictionary<string,string>().AddParameters<TestHarness>();
+        var dict = new Dictionary<string, string>().AddParameters<TestHarness>();
 
         Assert.IsTrue(dict.TryGetValue($"--{nameof(TestHarness.Prop1)}", out var prop1));
         Assert.IsTrue(dict.TryGetValue($"--{nameof(TestHarness.Prop2)}", out var prop2));

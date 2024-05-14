@@ -1,4 +1,5 @@
 ﻿using Eliassen.Documents.Tests.TestTargets;
+using Eliassen.TestUtilities;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -10,6 +11,7 @@ public class ServiceRegistryTests
     public required TestContext TestContext { get; set; }
 
     [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     public void Create_IBlobContainer__ContainerTargetClass_Test()
     {
         var services = new ServiceCollection()
@@ -21,6 +23,7 @@ public class ServiceRegistryTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     public void Create_IBlobContainer__Keyed_Test()
     {
         var services = new ServiceCollection()

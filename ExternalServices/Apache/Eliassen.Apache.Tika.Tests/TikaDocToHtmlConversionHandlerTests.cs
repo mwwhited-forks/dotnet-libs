@@ -1,8 +1,5 @@
 ﻿using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using System.IO;
-using System.Security.AccessControl;
 using System.Threading.Tasks;
 
 namespace Eliassen.Apache.Tika.Tests;
