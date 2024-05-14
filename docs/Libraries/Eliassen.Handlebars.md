@@ -1,6 +1,174 @@
 ﻿# Eliassen.Handlebars
 
 
+## Class: Handlebars.Helpers.DateNowHelperDescriptor
+Descriptor for a Handlebars helper that provides the current date and time. 
+
+### Properties
+
+#### Name
+Gets the name of the helper.
+#### Helper
+Gets the Handlebars helper associated with this descriptor.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Handlebars.Helpers.DateNowHelperDescriptor*class. 
+
+
+##### Parameters
+* *date:* The Date provider.
+
+
+
+
+## Class: Handlebars.Helpers.GetHelperDescriptor
+Represents a descriptor for a Handlebars helper that retrieves a value from a state store. 
+
+### Properties
+
+#### Name
+Gets the name of the helper.
+#### Helper
+Gets the Handlebars helper associated with this descriptor. This method retrieves the value associated with the specified key from the state store and writes it to the output.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Handlebars.Helpers.GetHelperDescriptor*class. 
+
+
+##### Parameters
+* *log:* The logger used for logging get operations.
+
+
+
+
+## Class: Handlebars.Helpers.GuidNewHelperDescriptor
+Descriptor for a Handlebars helper that generates a new GUID. 
+
+### Properties
+
+#### Name
+Gets the name of the helper.
+#### Helper
+Gets the Handlebars helper associated with this descriptor.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Handlebars.Helpers.GuidNewHelperDescriptor*class. 
+
+
+##### Parameters
+* *guid:* The GUID provider.
+
+
+
+
+## Class: Handlebars.Helpers.HashHelperDescriptor
+Represents a descriptor for a Handlebars helper that calculates the hash of a given string. 
+
+### Properties
+
+#### Name
+Gets the name of the helper. This property returns the name of the Handlebars helper, which is "hash".
+#### Helper
+Gets the Handlebars helper associated with this descriptor. This property returns a Handlebars helper function that calculates the hash of a given string using the provided hash provider.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Handlebars.Helpers.HashHelperDescriptor*class. 
+
+
+##### Parameters
+* *hash:* The hash provider.
+
+
+
+
+## Class: Handlebars.Helpers.HelperDescriptorBase
+Base class for helper descriptors. 
+The type of options for the helper. 
+
+### Properties
+
+#### Helper
+Gets the Handlebars helper associated with this descriptor. This property should return the Handlebars helper implementation.
+#### Name
+Gets the name of the helper.
+### Methods
+
+
+#### Invoke(HandlebarsDotNet.HelperOptions@,HandlebarsDotNet.Context@,HandlebarsDotNet.Arguments@)
+Invokes the helper with the specified options, context, and arguments. 
+
+
+##### Parameters
+* *options:* The options for the helper.
+* *context:* The context in which the helper is being executed.
+* *arguments:* The arguments passed to the helper.
+
+
+
+
+##### Return value
+The result of invoking the helper.
+
+
+
+#### Invoke(HandlebarsDotNet.EncodedTextWriter@,HandlebarsDotNet.HelperOptions@,HandlebarsDotNet.Context@,HandlebarsDotNet.Arguments@)
+Invokes the helper and writes the result to the output. 
+
+
+##### Parameters
+* *output:* The output writer.
+* *options:* The options for the helper.
+* *context:* The context in which the helper is being executed.
+* *arguments:* The arguments passed to the helper.
+
+
+
+
+## Class: Handlebars.Helpers.SetHelperDescriptor
+Represents a descriptor for a Handlebars helper that sets a value in a state store. 
+
+### Properties
+
+#### Name
+Gets the name of the helper.
+#### Helper
+Gets the Handlebars helper associated with this descriptor.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Handlebars.Helpers.SetHelperDescriptor*class. 
+
+
+##### Parameters
+* *log:* The logger for logging set operations.
+
+
+
+
+## Class: Handlebars.Helpers.StringReplaceHelperDescriptor
+Represents a descriptor for a Handlebars helper that performs string replacement. 
+
+### Properties
+
+#### Name
+Gets the name of the helper.
+#### Helper
+Gets the Handlebars helper associated with this descriptor. This helper performs string replacement on the input string using the specified find and replacement strings.
+
 ## Class: Handlebars.ServiceCollectionExtensions
 Provides extension methods for configuring services related to Handlebars templates in the 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 
@@ -41,8 +209,9 @@ Provides Handlebars template processing functionality.
 
 
 ##### Parameters
-* *hash:* The hash provider.
 * *helpersRegistry:* The collection of helpers registries.
+* *blockHelperDescriptors:* The collection of helpers registries.
+* *helperDescriptors:* The collection of helpers registries.
 * *log:* The logger instance.
 
 

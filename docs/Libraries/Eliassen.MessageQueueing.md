@@ -310,52 +310,6 @@ Provides handling of queue messages by coordinating multiple
 
 
 
-#### SetHandlers(System.Collections.Generic.IEnumerable{Eliassen.MessageQueueing.IMessageQueueHandler})
-Sets the collection of 
- *See: T:Eliassen.MessageQueueing.IMessageQueueHandler*instances that will handle the messages. 
-
-
-##### Parameters
-* *handlers:* The collection of message handlers.
-
-
-
-
-##### Return value
-The current instance of .
-
-
-
-#### SetChannelType(System.Type)
-Sets the type of the message channel associated with the handler. 
-
-
-##### Parameters
-* *channelType:* The type of the message channel.
-
-
-
-
-##### Return value
-The current instance of .
-
-
-
-#### SetConfig(Microsoft.Extensions.Configuration.IConfigurationSection)
-Sets the configuration section associated with the message handler. 
-
-
-##### Parameters
-* *config:* The configuration section.
-
-
-
-
-##### Return value
-The current instance of .
-
-
-
 #### HandleAsync(Eliassen.MessageQueueing.Services.IQueueMessage,System.String)
 Handles the specified queue message by invoking each registered message handler. 
 

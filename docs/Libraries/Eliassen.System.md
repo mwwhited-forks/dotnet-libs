@@ -1,6 +1,35 @@
 ﻿# Eliassen.System
 
 
+## Class: System.Providers.DateTimeProvider
+Provides date and time functionality. 
+
+### Properties
+
+#### Now
+Gets the current local date and time. This property returns the current local date and time.
+#### UtcNow
+Gets the current Coordinated Universal Time (UTC) date and time. This property returns the current Coordinated Universal Time (UTC) date and time.
+
+## Class: System.Providers.GuidProvider
+Represents a provider for generating and handling GUIDs. 
+
+### Properties
+
+#### Empty
+Gets an empty GUID. This property returns a GUID with all bits set to zero.
+### Methods
+
+
+#### NewGuid
+Generates a new GUID. 
+
+
+##### Return value
+A new GUID.
+
+
+
 ## Class: System.Security.Cryptography.HashTypes
 Specifies different types of hash algorithms. 
 
@@ -139,6 +168,21 @@ Add support for shared Templating
 * *services:* 
 * *configuration:* The to add services to.
 * *configurationSection:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### TryAddProviders(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Add support for type providers 
+
+
+##### Parameters
+* *services:* 
 
 
 

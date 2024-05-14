@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:8e32b97b-d02e-498e-a0c4-35d8f8ce23c2" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:a1444981-f35c-45dc-af66-5d2dab4a1036" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
   <metadata>
-    <timestamp>2024-05-13T21:39:41.5427305Z</timestamp>
+    <timestamp>2024-05-14T15:34:24.5500552Z</timestamp>
     <tools>
       <tool>
         <vendor>CycloneDX</vendor>
@@ -9,9 +9,9 @@
         <version>3.0.6.0</version>
       </tool>
     </tools>
-    <component type="application" bom-ref="Eliassen.Libs@0.1.77-dev-ado-ImproveTestingCoverage.15">
+    <component type="application" bom-ref="Eliassen.Libs@0.1.78-dev-ado-ImproveTestingCoverage.5">
       <name>Eliassen.Libs</name>
-      <version>0.1.77-dev-ado-ImproveTestingCoverage.15</version>
+      <version>0.1.78-dev-ado-ImproveTestingCoverage.5</version>
     </component>
   </metadata>
   <components>
@@ -7292,7 +7292,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     </component>
   </components>
   <dependencies>
-    <dependency ref="Eliassen.Libs@0.1.77-dev-ado-ImproveTestingCoverage.15">
+    <dependency ref="Eliassen.Libs@0.1.78-dev-ado-ImproveTestingCoverage.5">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.1" />
