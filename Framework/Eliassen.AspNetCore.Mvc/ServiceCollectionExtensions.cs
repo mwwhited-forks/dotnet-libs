@@ -110,6 +110,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<FormFileOperationFilter>>();
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
+        services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, HealthCheckSwaggerGenEntpointOptions>();
         services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
         services.AddControllers(opt => opt.Conventions.Add(new ApiNamespaceControllerModelConvention()));
         return services;

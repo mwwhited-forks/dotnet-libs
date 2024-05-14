@@ -1,11 +1,15 @@
-﻿using Eliassen.Documents.Conversion;
+﻿using Eliassen;
+using Eliassen.Apache;
+using Eliassen.Apache.Tika;
+using Eliassen.Apache.Tika.Handlers;
+using Eliassen.Documents.Conversion;
 using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Eliassen.Apache.Tika;
+namespace Eliassen.Apache.Tika.Handlers;
 
 /// <summary>
 /// Provides a base class for document conversion handlers using Apache Tika.

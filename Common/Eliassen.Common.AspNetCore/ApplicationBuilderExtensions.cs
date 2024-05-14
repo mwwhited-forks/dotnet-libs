@@ -13,6 +13,19 @@ public static class ApplicationBuilderExtensions
     /// </summary>
     /// <param name="builder">The <see cref="IApplicationBuilder"/> instance.</param>
     /// <returns>The updated <see cref="IApplicationBuilder"/> instance.</returns>
-    public static IApplicationBuilder UseCommonAspNetCoreMiddleware(this IApplicationBuilder builder) =>
-        builder.UseAspNetCoreExtensionMiddleware();
+    public static IApplicationBuilder UseCommonAspNetCoreMiddleware(
+        this IApplicationBuilder builder,
+#if DEBUG
+        MiddlewareExtensionBuilder? middlewareBuilder
+#else
+        MiddlewareExtensionBuilder? middlewareBuilder = default
+#endif
+        )
+    {
+        middlewareBuilder ??= new();
+        builder.UseAspNetCoreExtensionMiddleware(
+            healthCheckPath: middlewareBuilder.HealthCheckPath
+        );
+        return builder;
+    }
 }

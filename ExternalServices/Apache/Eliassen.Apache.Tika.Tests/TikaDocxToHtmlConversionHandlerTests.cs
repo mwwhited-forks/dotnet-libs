@@ -1,4 +1,5 @@
-﻿using Eliassen.TestUtilities;
+﻿using Eliassen.Apache.Tika.Handlers;
+using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 

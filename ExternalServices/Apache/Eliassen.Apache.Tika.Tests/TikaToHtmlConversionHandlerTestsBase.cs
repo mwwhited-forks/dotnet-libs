@@ -1,4 +1,5 @@
-﻿using Eliassen.Documents.Conversion;
+﻿using Eliassen.Apache.Tika.Handlers;
+using Eliassen.Documents.Conversion;
 using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

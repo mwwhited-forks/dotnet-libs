@@ -1,4 +1,8 @@
-﻿using Eliassen.Documents;
+﻿using Eliassen;
+using Eliassen.Apache;
+using Eliassen.Apache.Tika;
+using Eliassen.Apache.Tika.Detectors;
+using Eliassen.Documents;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Diagnostics;
@@ -6,7 +10,7 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Eliassen.Apache.Tika;
+namespace Eliassen.Apache.Tika.Detectors;
 
 /// <summary>
 /// Provides functionality to detect the content type of a stream using Apache Tika.
