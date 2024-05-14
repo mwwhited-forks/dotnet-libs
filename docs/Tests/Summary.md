@@ -1,17 +1,17 @@
 # Summary - Eliassen.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 5/14/2024 - 12:14:48 PM |
-| Coverage date: | 5/14/2024 - 12:11:05 PM - 5/14/2024 - 12:14:31 PM |
-| Parser: | MultiReport (54x Cobertura, 54x OpenCover) |
+| Generated on: | 5/14/2024 - 2:26:49 PM |
+| Coverage date: | 5/14/2024 - 2:23:17 PM - 5/14/2024 - 2:26:33 PM |
+| Parser: | MultiReport (53x Cobertura, 54x OpenCover) |
 | Assemblies: | 37 |
 | Classes: | 184 |
 | Files: | 183 |
-| **Line coverage:** | 44.1% (1813 of 4104) |
-| Covered lines: | 1813 |
-| Uncovered lines: | 2291 |
-| Coverable lines: | 4104 |
-| Total lines: | 12907 |
+| **Line coverage:** | 44.7% (1836 of 4106) |
+| Covered lines: | 1836 |
+| Uncovered lines: | 2270 |
+| Coverable lines: | 4106 |
+| Total lines: | 12914 |
 | **Branch coverage:** | 41.9% (1553 of 3704) |
 | Covered branches: | 1553 |
 | Total branches: | 3704 |
@@ -79,9 +79,9 @@
 |**Eliassen.Communications.MessageQueueing**|**2**|**5**|**7**|**69**|**28.5%**|**0**|**8**|**0%**|
 |Eliassen.Communications.MessageQueueing.EmailMessageHandler|0|5|5|46|0%|0|8|0%|
 |Eliassen.Communications.MessageQueueing.ServiceCollectionExtensions|2|0|2|23|100%|0|0||
-|**Eliassen.Documents**|**104**|**50**|**154**|**485**|**67.5%**|**62**|**132**|**46.9%**|
-|Eliassen.Documents.Containers.BlobContainerFactory|0|15|15|63|0%|0|24|0%|
-|Eliassen.Documents.Containers.WrappedBlobContainer`1|0|8|8|81|0%|0|0||
+|**Eliassen.Documents**|**112**|**44**|**156**|**492**|**71.7%**|**62**|**132**|**46.9%**|
+|Eliassen.Documents.Containers.BlobContainerFactory|0|17|17|70|0%|0|24|0%|
+|Eliassen.Documents.Containers.WrappedBlobContainer`1|8|0|8|81|100%|0|0||
 |Eliassen.Documents.Conversion.DocumentConversion|36|10|46|120|78.2%|22|36|61.1%|
 |Eliassen.Documents.Conversion.DocumentConversionChainBuilder|38|0|38|86|100%|40|44|90.9%|
 |Eliassen.Documents.DocumentTypeTools|3|17|20|83|15%|0|28|0%|
@@ -117,8 +117,8 @@
 |**Eliassen.Keycloak**|**0**|**8**|**8**|**87**|**0%**|**0**|**0**|****|
 |Eliassen.Keycloak.Identity.ManageKeycloakUser|0|5|5|48|0%|0|0||
 |Eliassen.Keycloak.ServiceCollectionExtensions|0|3|3|39|0%|0|0||
-|**Eliassen.MailKit**|**0**|**76**|**76**|**280**|**0%**|**0**|**60**|**0%**|
-|Eliassen.MailKit.ServiceCollectionExtensions|0|7|7|46|0%|0|0||
+|**Eliassen.MailKit**|**7**|**69**|**76**|**280**|**9.2%**|**0**|**60**|**0%**|
+|Eliassen.MailKit.ServiceCollectionExtensions|7|0|7|46|100%|0|0||
 |Eliassen.MailKit.Services.ImapClientFactory|0|8|8|42|0%|0|12|0%|
 |Eliassen.MailKit.Services.MailKitProvider|0|12|12|47|0%|0|4|0%|
 |Eliassen.MailKit.Services.MimeMessageFactory|0|41|41|104|0%|0|32|0%|
@@ -188,10 +188,10 @@
 |Eliassen.Qdrant.QdrantVectorStoreProvider|0|138|138|233|0%|0|132|0%|
 |Eliassen.Qdrant.QdrantVectorStoreProviderFactory|0|2|2|29|0%|0|0||
 |Eliassen.Qdrant.ServiceCollectionExtensions|0|6|6|40|0%|0|0||
-|**Eliassen.RabbitMQ**|**0**|**67**|**67**|**199**|**0%**|**0**|**32**|**0%**|
+|**Eliassen.RabbitMQ**|**8**|**59**|**67**|**199**|**11.9%**|**0**|**32**|**0%**|
 |Eliassen.RabbitMQ.MessageQueueing.QueueClientFactory|0|8|8|35|0%|0|4|0%|
 |Eliassen.RabbitMQ.MessageQueueing.RabbitMQQueueMessageProvider|0|51|51|124|0%|0|28|0%|
-|Eliassen.RabbitMQ.ServiceCollectionEx|0|8|8|40|0%|0|0||
+|Eliassen.RabbitMQ.ServiceCollectionEx|8|0|8|40|100%|0|0||
 |**Eliassen.SBert**|**0**|**30**|**30**|**147**|**0%**|**0**|**24**|**0%**|
 |Eliassen.SBert.SentenceEmbeddingClient|0|15|15|53|0%|0|20|0%|
 |Eliassen.SBert.SentenceEmbeddingProvider|0|6|6|50|0%|0|4|0%|

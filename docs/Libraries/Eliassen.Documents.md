@@ -15,6 +15,7 @@ Initializes a new instance of the
 ##### Parameters
 * *serviceProvider:* The IOC Service provider.
 * *factories:* The factory used to create blob container providers.
+* *logger:* The logger for this service.
 
 
 
