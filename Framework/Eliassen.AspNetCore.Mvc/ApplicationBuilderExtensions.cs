@@ -10,7 +10,8 @@ public static class ApplicationBuilderExtensions
 {
     /// <summary>
     /// Add custom middleware to ASP.Net to support these extensions
-    /// <see cref="CultureInfoMiddleware"/>
+    /// <see cref="CorrelationInfoMiddleware"/>
+    /// <see cref="CultureInfoMiddleware"/> 
     /// <see cref="SearchQueryMiddleware"/> 
     /// </summary>
     /// <param name="builder"></param>

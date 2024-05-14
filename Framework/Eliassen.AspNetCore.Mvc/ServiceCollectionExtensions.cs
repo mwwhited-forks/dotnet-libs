@@ -1,5 +1,6 @@
 ﻿using Eliassen.AspNetCore.Mvc.Authorization;
 using Eliassen.AspNetCore.Mvc.Filters;
+using Eliassen.AspNetCore.Mvc.Providers.SearchQuery;
 using Eliassen.AspNetCore.Mvc.SwaggerGen;
 using Eliassen.Extensions;
 using Eliassen.System.Linq;
@@ -125,6 +126,9 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IConfigureOptions<MvcOptions>, AddMvcFilterOptions<SearchQueryResultFilter>>();
         services.AddAccessor<ISearchQuery>();
         services.TryAddSingleton<SearchQueryResultFilter>();
+        services.TryAddSingleton<ISearchModelMapper, SearchModelMapper>();
+        services.TryAddSingleton<ISearchModelBuilder, SearchModelBuilder>();
+
         services.TryAddSearchQueryExtensions();
 
         return services;
