@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Eliassen.TestUtilities;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Eliassen.Extensions.Tests;
 
@@ -7,6 +8,7 @@ public class StringToolsTests
 {
     public required TestContext TestContext { get; set; }
 
+    [TestCategory(TestCategories.Unit)]
     [DataTestMethod]
     [DataRow("abcdefghijklmnop", @"abcdefghij
 klmnop")]
