@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace Eliassen.Handlebars.Helpers;
 
-// <summary>
+/// <summary>
 /// Represents a thread-local store for maintaining state.
 /// </summary>
 public class StateStore

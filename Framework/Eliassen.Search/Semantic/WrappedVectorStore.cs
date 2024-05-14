@@ -13,9 +13,9 @@ public class WrappedVectorStore<T> : IVectorStore<T>
     private readonly IVectorStore _wrapped;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="WrappedVectorStore"/> class.
+    /// Initializes a new instance
     /// </summary>
-    /// <param name="wrapped">The vector store to wrap.</param>
+    /// <param name="factory">The vector store to wrap.</param>
     [ActivatorUtilitiesConstructor]
     public WrappedVectorStore(
         IVectorStoreFactory factory
