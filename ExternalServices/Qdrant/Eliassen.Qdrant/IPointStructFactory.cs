@@ -18,7 +18,7 @@ public interface IPointStructFactory
     /// <param name="fileInfo">Information about the file.</param>
     /// <param name="vector">Vector representation of the content chunk.</param>
     /// <returns>A new instance of <see cref="PointStruct"/> representing a file chunk.</returns>
-    PointStruct CreateFileChunk(FileMetaData metadata, ContentChunk chunk, FileInfo fileInfo, float[] vector);
+    PointStruct CreateFileChunk(FileMetaData metadata, ContentChunk chunk, FileInfo fileInfo, ReadOnlyMemory<float> vector);
 
     /// <summary>
     /// Creates a new instance of <see cref="PointStruct"/> for a question.
@@ -28,7 +28,7 @@ public interface IPointStructFactory
     /// <param name="vector">Vector representation of the question.</param>
     /// <param name="type">Optional type of the question.</param>
     /// <returns>A new instance of <see cref="PointStruct"/> representing a question.</returns>
-    PointStruct CreateQuestion(Guid uuid, string question, float[] vector, string? type = null);
+    PointStruct CreateQuestion(Guid uuid, string question, ReadOnlyMemory<float> vector, string? type = null);
 
     /// <summary>
     /// Creates a new instance of <see cref="PointStruct"/> for a service reference.
@@ -38,5 +38,5 @@ public interface IPointStructFactory
     /// <param name="description">Description of the service.</param>
     /// <param name="vector">Vector representation of the service reference.</param>
     /// <returns>A new instance of <see cref="PointStruct"/> representing a service reference.</returns>
-    PointStruct CreateServiceReference(Guid uuid, Type serviceType, string description, float[] vector);
+    PointStruct CreateServiceReference(Guid uuid, Type serviceType, string description, ReadOnlyMemory<float> vector);
 }
