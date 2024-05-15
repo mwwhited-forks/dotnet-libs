@@ -10,7 +10,7 @@ namespace Eliassen.SBert;
 /// </summary>
 public class SbertHealthCheck : IHealthCheck
 {
-    private ISentenceEmbeddingClient _client;
+    private readonly ISentenceEmbeddingClient _client;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SbertHealthCheck"/> class.
@@ -33,7 +33,7 @@ public class SbertHealthCheck : IHealthCheck
         try
         {
             var result = await _client.GetHealthAsync();
-            return HealthCheckResult.Healthy(description: $"Loaded models: {result}");
+            return HealthCheckResult.Healthy(description: result);
         }
         catch (Exception ex)
         {

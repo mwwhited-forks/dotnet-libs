@@ -18,7 +18,7 @@ public class SmtpClientFactory(
     /// Creates a new instance of the SmtpClient class and configures it based on the provided options.
     /// </summary>
     /// <returns>An asynchronous task that represents the creation of the SmtpClient instance.</returns>
-    public async Task<SmtpClient> CreateAsync()
+    public async Task<ISmtpClient> CreateAsync()
     {
         var client = new SmtpClient();
 

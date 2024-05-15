@@ -12,7 +12,7 @@ namespace Eliassen.Ollama;
 /// </summary>
 public class OllamaHealthCheck : IHealthCheck
 {
-    private IOllamaApiClient _client;
+    private readonly IOllamaApiClient _client;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="OllamaHealthCheck"/> class.

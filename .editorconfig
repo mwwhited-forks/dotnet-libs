@@ -133,7 +133,7 @@ vsspell_ignored_words_framework=Searchable|Accessor|queueing|Auth|Templating|mon
 vsspell_ignored_words_application=Dto|Blog|Vlog|Blogs|Admin|Dataloader|Cli|Bcc|Cc|Sms|Imap|Sha|Keycloak
 vsspell_ignored_words_eliassen=Eliassen|Nucleus
 vsspell_ignored_words_extensions=qdrant|Qdrant|Sbert|SBert|sbert|ollama|Ollama|Markdig|Grpc|llm
-vsspell_ignored_words_apps=Pdf|uuid|Uuid|metadata|Tika|Docx|Odt|Epub|Rtf|Utc
+vsspell_ignored_words_apps=Pdf|uuid|Uuid|metadata|Tika|Docx|Odt|Epub|Rtf|Utc|Mailkit
 
 dotnet_diagnostic.CA1822.severity = none # Mark members as static
 dotnet_diagnostic.IDE0042.severity = none # Deconstruct variable declaration

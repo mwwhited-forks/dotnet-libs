@@ -4,6 +4,7 @@ using Eliassen.MailKit.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using System;
 
 namespace Eliassen.MailKit;
 
@@ -31,15 +32,33 @@ public static class ServiceCollectionExtensions
 #endif
         )
     {
-        services.TryAddTransient<ICommunicationSender<EmailMessageModel>, MailKitProvider>();
+        var smtp = configuration.GetSection(smtpConfigurationSection)?[nameof(MailKitSmtpClientOptions.Uri)] ??
+                   configuration.GetSection(smtpConfigurationSection)?[nameof(MailKitSmtpClientOptions.Host)];
+
+        var imap = configuration.GetSection(imapConfigurationSection)?[nameof(MailKitImapClientOptions.Uri)] ??
+                   configuration.GetSection(imapConfigurationSection)?[nameof(MailKitImapClientOptions.Host)];
+
+        if (string.IsNullOrWhiteSpace(smtp) && string.IsNullOrWhiteSpace(imap))
+        {
+            return services;
+        }
 
         services.TryAddTransient<IMimeMessageFactory, MimeMessageFactory>();
 
-        services.TryAddTransient<ISmtpClientFactory, SmtpClientFactory>();
-        services.Configure<MailKitSmtpClientOptions>(options => configuration.Bind(smtpConfigurationSection, options));
+        if (!string.IsNullOrWhiteSpace(smtp))
+        {
+            services.AddHealthChecks().AddCheck<MailkitSmtpHealthCheck>("mailkit-smtp");
+            services.TryAddTransient<ICommunicationSender<EmailMessageModel>, MailKitProvider>();
+            services.TryAddTransient<ISmtpClientFactory, SmtpClientFactory>();
+            services.Configure<MailKitSmtpClientOptions>(options => configuration.Bind(smtpConfigurationSection, options));
+        }
 
-        services.TryAddTransient<IImapClientFactory, ImapClientFactory>();
-        services.Configure<MailKitImapClientOptions>(options => configuration.Bind(imapConfigurationSection, options));
+        if (!string.IsNullOrWhiteSpace(imap))
+        {
+            services.AddHealthChecks().AddCheck<MailkitImapHealthCheck>("mailkit-imap");
+            services.TryAddTransient<IImapClientFactory, ImapClientFactory>();
+            services.Configure<MailKitImapClientOptions>(options => configuration.Bind(imapConfigurationSection, options));
+        }
 
         return services;
     }

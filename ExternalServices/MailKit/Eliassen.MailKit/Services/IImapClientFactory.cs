@@ -12,5 +12,5 @@ public interface IImapClientFactory
     /// Creates a new instance of <see cref="ImapClient"/>.
     /// </summary>
     /// <returns>A task that represents the asynchronous operation and contains the created <see cref="ImapClient"/>.</returns>
-    Task<ImapClient> CreateAsync();
+    Task<IImapClient> CreateAsync();
 }
