@@ -47,7 +47,7 @@ public static class OllamaApiClientExtensions
     /// <param name="text">The text for which the embedding is requested.</param>
     /// <param name="modelName">The name of the model to use for embedding.</param>
     /// <returns>The embedding as an array of floats.</returns>
-    public static float[] GetEmbeddingSingle(
+    public static ReadOnlyMemory<float> GetEmbeddingSingle(
         this OllamaApiClient client,
         string text,
         string modelName) =>
@@ -60,14 +60,14 @@ public static class OllamaApiClientExtensions
     /// <param name="text">The text for which the embedding is requested.</param>
     /// <param name="modelName">The name of the model to use for embedding.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the embedding as an array of floats.</returns>
-    public static async Task<float[]> GetEmbeddingSingleAsync(
+    public static async Task<ReadOnlyMemory<float>> GetEmbeddingSingleAsync(
         this OllamaApiClient client,
         string text,
         string modelName
         )
     {
         var doubles = await client.GetEmbeddingDoubleAsync(text, modelName);
-        var floats = Array.ConvertAll(doubles, Convert.ToSingle);
+        var floats = Array.ConvertAll(doubles.ToArray(), Convert.ToSingle);
         return floats;
     }
 
@@ -78,7 +78,7 @@ public static class OllamaApiClientExtensions
     /// <param name="text">The text for which the embedding is requested.</param>
     /// <param name="modelName">The name of the model to use for embedding.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the embedding as an array of doubles.</returns>
-    public static async Task<double[]> GetEmbeddingDoubleAsync(
+    public static async Task<ReadOnlyMemory<double>> GetEmbeddingDoubleAsync(
         this OllamaApiClient client,
         string text,
         string modelName) =>
@@ -91,7 +91,7 @@ public static class OllamaApiClientExtensions
     /// <param name="text">The text for which the embedding is requested.</param>
     /// <param name="modelName">The name of the model to use for embedding.</param>
     /// <returns>The embedding as an array of doubles.</returns>
-    public static double[] GetEmbeddingDouble(
+    public static ReadOnlyMemory<double> GetEmbeddingDouble(
         this OllamaApiClient client,
         string text,
         string modelName) =>

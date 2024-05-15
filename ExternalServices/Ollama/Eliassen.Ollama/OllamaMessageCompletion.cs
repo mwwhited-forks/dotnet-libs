@@ -3,6 +3,7 @@ using Eliassen.AI.Models;
 using OllamaSharp;
 using OllamaSharp.Models;
 using OllamaSharp.Streamer;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -46,7 +47,7 @@ public class OllamaMessageCompletion : IMessageCompletion, IEmbeddingProvider
     /// <param name="model">The model for which to retrieve the embedding.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the 
     /// embedding vector as an array of single-precision floats.</returns>
-    public async Task<float[]> GetEmbeddingAsync(
+    public async Task<ReadOnlyMemory<float>> GetEmbeddingAsync(
         string content,
 #if DEBUG
         string? model
@@ -75,7 +76,7 @@ public class OllamaMessageCompletion : IMessageCompletion, IEmbeddingProvider
     /// <param name="model">Completion request model</param>
     /// <returns>Resulting response object</returns>
     public async Task<CompletionResponse> GetCompletionAsync(CompletionRequest model) =>
-        _mapper.Map(await _client.GetCompletion(_mapper.Map(model)));
+        _mapper.Map(await _client.GetCompletion(_mapper.Map(model with { Model = model.Model ?? _client.SelectedModel })));
 
     /// <summary>
     /// Retrieves a response from the language model based on the provided prompt details and user input.

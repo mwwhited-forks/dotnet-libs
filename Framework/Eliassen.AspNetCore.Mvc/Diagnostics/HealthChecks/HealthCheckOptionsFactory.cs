@@ -7,8 +7,15 @@ using System.Text.Json;
 
 namespace Eliassen.AspNetCore.Mvc.Diagnostics.HealthChecks;
 
+/// <summary>
+/// Factory class for creating health check options.
+/// </summary>
 public class HealthCheckOptionsFactory
 {
+    /// <summary>
+    /// Creates and configures a new instance of <see cref="HealthCheckOptions"/>.
+    /// </summary>
+    /// <returns>The configured <see cref="HealthCheckOptions"/> instance.</returns>
     public static HealthCheckOptions Create() =>
         new()
         {
@@ -18,6 +25,10 @@ public class HealthCheckOptionsFactory
             {
                 // https://blog.kritner.com/2020/12/04/prettifying-healthchecks/
                 context.Response.ContentType = "application/json; charset=utf-8";
+
+                //TODO: make it so unauthenticated only gets the "status"
+                //TODO: authenticates should get result list without descriptions
+                //TODO: special claim gets descriptions, data and errors
 
                 var options = new JsonWriterOptions
                 {

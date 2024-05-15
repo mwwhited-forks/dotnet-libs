@@ -43,6 +43,8 @@ public static class ServiceCollectionExtensions
     {
         builder ??= new();
 
+        services.AddHealthChecks();
+
         services.TryAddCommonOpenApiExtensions();
         services.TryAddAspNetCoreSearchQuery();
 
@@ -110,7 +112,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<FormFileOperationFilter>>();
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
-        services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, HealthCheckSwaggerGenEntpointOptions>();
+        services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, HealthCheckSwaggerGenEndpointOptions>();
         services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
         services.AddControllers(opt => opt.Conventions.Add(new ApiNamespaceControllerModelConvention()));
         return services;
