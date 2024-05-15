@@ -135,12 +135,12 @@ steps:
       --output .\Cobertura.coverage 
       --output-format cobertura
      
-- task: PublishCodeCoverageResults@1
+- task: PublishCodeCoverageResults@2
   displayName: 'Publish Coverage Reports'
   inputs:
     codeCoverageTool: 'cobertura'
     summaryFileLocation: $(TestResultsPath)\Cobertura.coverage
-    failIfCoverageEmpty: false 
+    failIfCoverageEmpty: true 
     
 - task: DotNetCoreCLI@2
   displayName: Package to Staging directory
