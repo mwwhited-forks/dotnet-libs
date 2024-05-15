@@ -2,7 +2,7 @@
 using System;
 using System.Text.Json.Serialization;
 
-namespace Eliassen.System.Tests.Text.Json.TestTargets;
+namespace Eliassen.System.Tests.TestTargets;
 
 public class TestDateProperty
 {

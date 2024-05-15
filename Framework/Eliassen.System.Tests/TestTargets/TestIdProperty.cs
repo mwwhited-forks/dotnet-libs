@@ -1,7 +1,7 @@
 ﻿using Eliassen.System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Eliassen.System.Tests.Text.Json.TestTargets;
+namespace Eliassen.System.Tests.TestTargets;
 
 public class TestIdProperty
 {

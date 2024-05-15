@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Eliassen.System.Tests.Text.Json;
+namespace Eliassen.System.Tests.TestTargets;
 
 public class TargetModel
 {

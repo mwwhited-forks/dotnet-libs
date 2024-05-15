@@ -1,10 +1,12 @@
 ﻿using Eliassen.System.Net.Mime;
 using Eliassen.System.Text.Json;
+using Eliassen.System.Text.Xml.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
@@ -19,6 +21,16 @@ namespace Eliassen.System.Text.Templating;
 /// </summary>
 public class XsltTemplateProvider : ITemplateProvider
 {
+    private readonly IXmlSerializer _xmlSerializer;
+
+    public XsltTemplateProvider(
+        IXmlSerializer xmlSerializer
+        )
+    {
+        _xmlSerializer = xmlSerializer;
+    }
+
+
     /// <summary>
     /// Gets the collection of supported content types by the template provider.
     /// 
@@ -70,7 +82,7 @@ public class XsltTemplateProvider : ITemplateProvider
         return true;
     }
 
-    private static async Task<IXPathNavigable> GetNavigatorAsync(object data)
+    private async Task<IXPathNavigable> GetNavigatorAsync(object data)
     {
         if (data is IXPathNavigable navigable)
         {
@@ -78,7 +90,11 @@ public class XsltTemplateProvider : ITemplateProvider
         }
         else if (data is JsonDocument jsonDocument)
         {
-            data = jsonDocument.RootElement;
+            data = JsonNode.Parse(jsonDocument.RootElement.ToString());
+        }
+        else if (data is JsonElement jsonElement)
+        {
+            data = JsonNode.Parse(jsonElement.ToString());
         }
         else if (data is XmlDocument xmlDocument)
         {
@@ -89,17 +105,16 @@ public class XsltTemplateProvider : ITemplateProvider
             return XDocument.CreateNavigator();
         }
 
-        if (data is JsonElement jsonElement)
+        if (data is JsonNode jsonNode)
         {
-            var built = jsonElement.ToXmlDocument();
+            var built = jsonNode.ToXFragment();
             var builtNavigator = built?.CreateNavigator();
             if (builtNavigator != null)
                 return builtNavigator;
         }
 
-        var serializer = new global::System.Xml.Serialization.XmlSerializer(data.GetType());
         using var xml = new MemoryStream();
-        serializer.Serialize(xml, data);
+        await _xmlSerializer.SerializeAsync(data, data.GetType(), xml);
         xml.Position = 0;
         var document = await XDocument.LoadAsync(xml, LoadOptions.None, CancellationToken.None);
         var navigator = document.CreateNavigator();
