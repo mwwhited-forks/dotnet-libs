@@ -47,7 +47,8 @@ public class ApacheTikaClient : IApacheTikaClient
         destination.Position = 0;
     }
 
-    public async Task<string> GetHelloAsync(){
+    public async Task<string> GetHelloAsync()
+    {
         var response = await _httpClient.GetAsync("/tika");
         var result = await response.Content.ReadAsStringAsync();
         return result;

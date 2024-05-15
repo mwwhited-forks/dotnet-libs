@@ -18,14 +18,14 @@ public class OllamaModelMapper : IOllamaModelMapper
     {
         return new()
         {
-            Model = request.Model,
-            Context = request.Context,
+            Model = request.Model!,
+            Context = request.Context!,
 
-            Prompt = request.Prompt,
-            System = request.System,
-            Template = request.Template,
+            Prompt = request.Prompt!,
+            System = request.System!,
+            Template = request.Template!,
 
-            Images = request.Images,
+            Images = request.Images ?? [],
         };
     }
 

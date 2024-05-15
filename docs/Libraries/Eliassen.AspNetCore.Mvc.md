@@ -7,12 +7,13 @@ This is a set of extension configurations for ASP.Net Core
 ### Methods
 
 
-#### UseAspNetCoreExtensionMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+#### UseAspNetCoreExtensionMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String)
 Add custom middleware to ASP.Net to support these extensions 
  *See: T:Eliassen.AspNetCore.Mvc.Middleware.CorrelationInfoMiddleware* *See: T:Eliassen.AspNetCore.Mvc.Middleware.CultureInfoMiddleware* *See: T:Eliassen.AspNetCore.Mvc.Middleware.SearchQueryMiddleware*
 
 ##### Parameters
 * *builder:* 
+* *healthCheckPath:* 
 
 
 
@@ -92,6 +93,22 @@ Initializes a new instance of the
 ##### Parameters
 * *requireApplicationUserId:* Specifies whether the application user ID is required for authorization.
 
+
+
+
+## Class: AspNetCore.Mvc.Diagnostics.HealthChecks.HealthCheckOptionsFactory
+Factory class for creating health check options. 
+
+### Methods
+
+
+#### Create
+Creates and configures a new instance of 
+ *See: T:Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions*. 
+
+
+##### Return value
+The configured instance.
 
 
 
@@ -750,5 +767,43 @@ Applies the convention to the specified controller model.
 
 ##### Parameters
 * *controller:* The controller model to apply the convention to.
+
+
+
+
+## Class: AspNetCore.Mvc.SwaggerGen.HealthChecksDocumentFilter
+Represents a document filter for health checks in the OpenAPI document. 
+
+### Fields
+
+#### HealthCheckEndpoint
+The endpoint for health check.
+### Methods
+
+
+#### Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)
+Applies the health check filter to the OpenAPI document. 
+
+
+##### Parameters
+* *openApiDocument:* The OpenAPI document to which the filter is applied.
+* *context:* The context for the document filter.
+
+
+
+
+## Class: AspNetCore.Mvc.SwaggerGen.HealthCheckSwaggerGenEndpointOptions
+Represents configuration options for SwaggerGen related to health check endpoints. 
+
+### Methods
+
+
+#### Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)
+Configures SwaggerGen options to use the 
+ *See: T:Eliassen.AspNetCore.Mvc.SwaggerGen.HealthChecksDocumentFilter*for filtering documents. 
+
+
+##### Parameters
+* *options:* The SwaggerGen options to configure.
 
 

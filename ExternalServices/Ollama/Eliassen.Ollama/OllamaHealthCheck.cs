@@ -1,9 +1,9 @@
-﻿using System.Threading.Tasks;
-using System.Threading;
-using System;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
+﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
 using OllamaSharp;
+using System;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Eliassen.Ollama;
 

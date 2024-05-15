@@ -7,12 +7,13 @@ Provides extension methods for configuring common ASP.NET Core middleware.
 ### Methods
 
 
-#### UseCommonAspNetCoreMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+#### UseCommonAspNetCoreMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder,Eliassen.Common.AspNetCore.MiddlewareExtensionBuilder)
 Adds common ASP.NET Core middleware to the specified application builder. 
 
 
 ##### Parameters
 * *builder:* The instance.
+* *middlewareBuilder:* The instance.
 
 
 
@@ -21,6 +22,14 @@ Adds common ASP.NET Core middleware to the specified application builder.
 The updated instance.
 
 
+
+## Class: Common.AspNetCore.MiddlewareExtensionBuilder
+Represents a builder for configuring middleware extensions. 
+
+### Properties
+
+#### HealthCheckPath
+Gets or initializes the path for health checks.
 
 ## Class: Common.AspNetCore.ServiceCollectionExtensions
 Provides extension methods for configuring common ASP.NET Core extensions in the 

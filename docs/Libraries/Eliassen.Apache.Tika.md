@@ -1,28 +1,7 @@
 ﻿# Eliassen.Apache.Tika
 
 
-## Class: Apache.Tika.ServiceCollectionExtensions
-Provides extension methods for configuring services related to Apache - Tika. 
-
-### Methods
-
-
-#### TryAddApacheTikaServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
-Configures services for Apache - Tika. 
-
-
-##### Parameters
-* *services:* The to add the services to.
-
-
-
-
-##### Return value
-The modified .
-
-
-
-## Class: Apache.Tika.TikaContentTypeDetector
+## Class: Apache.Tika.Detectors.TikaContentTypeDetector
 Provides functionality to detect the content type of a stream using Apache Tika. 
 
 ### Methods
@@ -43,7 +22,7 @@ A representing the asynchronous operation. The task result contains the detected
 
 
 
-## Class: Apache.Tika.TikaConversionHandlerBase
+## Class: Apache.Tika.Handlers.TikaConversionHandlerBase
 Provides a base class for document conversion handlers using Apache Tika. 
 
 ### Properties
@@ -105,7 +84,7 @@ true if the content type is supported; otherwise, false.
 
 
 
-## Class: Apache.Tika.TikaDocToHtmlConversionHandler
+## Class: Apache.Tika.Handlers.TikaDocToHtmlConversionHandler
 Provides functionality to convert Microsoft Word documents to HTML using Apache Tika. 
 
 ### Properties
@@ -113,7 +92,7 @@ Provides functionality to convert Microsoft Word documents to HTML using Apache 
 #### Sources
 Gets an array of supported source content types for conversion.
 
-## Class: Apache.Tika.TikaDocxToHtmlConversionHandler
+## Class: Apache.Tika.Handlers.TikaDocxToHtmlConversionHandler
 Provides functionality to convert Microsoft Word (DOCX) documents to HTML using Apache Tika. 
 
 ### Properties
@@ -121,7 +100,7 @@ Provides functionality to convert Microsoft Word (DOCX) documents to HTML using 
 #### Sources
 Gets an array of supported source content types for conversion.
 
-## Class: Apache.Tika.TikaOdtToHtmlConversionHandler
+## Class: Apache.Tika.Handlers.TikaOdtToHtmlConversionHandler
 Provides functionality to convert OpenDocument Text (ODT) documents to HTML using Apache Tika. 
 
 ### Properties
@@ -129,7 +108,7 @@ Provides functionality to convert OpenDocument Text (ODT) documents to HTML usin
 #### Sources
 Gets an array of supported source content types for conversion.
 
-## Class: Apache.Tika.TikaPdfToHtmlConversionHandler
+## Class: Apache.Tika.Handlers.TikaPdfToHtmlConversionHandler
 Provides functionality to convert PDF documents to HTML using Apache Tika. 
 
 ### Properties
@@ -137,7 +116,7 @@ Provides functionality to convert PDF documents to HTML using Apache Tika.
 #### Sources
 Gets an array of supported source content types for conversion.
 
-## Class: Apache.Tika.TikaRtfToHtmlConversionHandler
+## Class: Apache.Tika.Handlers.TikaRtfToHtmlConversionHandler
 Provides functionality to convert Rich Text Format (RTF) documents to HTML using Apache Tika. 
 
 ### Properties
@@ -145,10 +124,30 @@ Provides functionality to convert Rich Text Format (RTF) documents to HTML using
 #### Sources
 Gets an array of supported source content types for conversion.
 
-## Class: Apache.Tika.TikaToHtmlConversionBaseHandler
+## Class: Apache.Tika.Handlers.TikaToHtmlConversionBaseHandler
 Provides a base class for handlers that convert documents to HTML using Apache Tika. 
 
 ### Properties
 
 #### Destinations
 Gets an array of supported destination content types for conversion.
+
+## Class: Apache.Tika.ServiceCollectionExtensions
+Provides extension methods for configuring services related to Apache - Tika. 
+
+### Methods
+
+
+#### TryAddApacheTikaServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
+Configures services for Apache - Tika. 
+
+
+##### Parameters
+* *services:* The to add the services to.
+
+
+
+
+##### Return value
+The modified .
+
