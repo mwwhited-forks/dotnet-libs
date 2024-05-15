@@ -21,4 +21,10 @@ public interface ISentenceEmbeddingClient
     /// <param name="input">The input sentence to generate the embedding for.</param>
     /// <returns>An array of double-precision floating-point numbers representing the embedding of the input sentence.</returns>
     Task<ReadOnlyMemory<double>> GetEmbeddingDoubleAsync(string input);
+
+    /// <summary>
+    /// Check the health status of the sentence embedding service
+    /// </summary>
+    /// <returns></returns>
+    Task<string> GetHealthAsync();
 }

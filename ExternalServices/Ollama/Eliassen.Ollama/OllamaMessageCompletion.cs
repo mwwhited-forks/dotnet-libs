@@ -17,7 +17,7 @@ namespace Eliassen.Ollama;
 /// </summary>
 public class OllamaMessageCompletion : IMessageCompletion, IEmbeddingProvider
 {
-    private readonly OllamaApiClient _client;
+    private readonly IOllamaApiClient _client;
     private readonly IOllamaModelMapper _mapper;
 
     /// <summary>
@@ -26,7 +26,7 @@ public class OllamaMessageCompletion : IMessageCompletion, IEmbeddingProvider
     /// <param name="client">The OllamaApiClient instance used for communication with the Ollama API.</param>
     /// <param name="mapper">Model mapper for Ollama request/response.</param>
     public OllamaMessageCompletion(
-        OllamaApiClient client,
+        IOllamaApiClient client,
         IOllamaModelMapper mapper
         )
     {

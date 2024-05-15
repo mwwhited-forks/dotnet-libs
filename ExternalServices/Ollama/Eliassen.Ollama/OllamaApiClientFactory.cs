@@ -22,5 +22,5 @@ public class OllamaApiClientFactory : IOllamaApiClientFactory
     /// Builds a new instance of the <see cref="OllamaApiClient"/> with the specified host.
     /// </summary>
     /// <returns>A new instance of the <see cref="OllamaApiClient"/>.</returns>
-    public OllamaApiClient Build() => new(_options.Value.Url, _options.Value.DefaultModel);
+    public IOllamaApiClient Build() => new OllamaApiClient(_options.Value.Url, _options.Value.DefaultModel);
 }

@@ -45,17 +45,24 @@ public class HealthCheckOptionsFactory
                     {
                         writer.WriteStartObject(entry.Key);
                         writer.WriteString("status", entry.Value.Status.ToString());
-                        writer.WriteString("description", entry.Value.Description);
 
-                        writer.WriteStartObject("data");
-                        foreach (var item in entry.Value.Data)
+                        if (entry.Value.Description is not null)
+                            writer.WriteString("description", entry.Value.Description);
+
+                        if (entry.Value.Data is not null && entry.Value.Data.Count > 0)
                         {
-                            writer.WritePropertyName(item.Key);
-                            JsonSerializer.Serialize(writer, item.Value, item.Value?.GetType() ?? typeof(object));
+                            writer.WriteStartObject("data");
+                            foreach (var item in entry.Value.Data)
+                            {
+                                writer.WritePropertyName(item.Key);
+                                JsonSerializer.Serialize(writer, item.Value, item.Value?.GetType() ?? typeof(object));
+                            }
+                            writer.WriteEndObject();
                         }
-                        writer.WriteEndObject();
 
-                        writer.WriteString("exception", entry.Value.Exception?.Message);
+                        if (entry.Value.Exception?.Message is not null)
+                            writer.WriteString("exception", entry.Value.Exception?.Message);
+
                         writer.WriteEndObject();
                     }
                     writer.WriteEndObject();

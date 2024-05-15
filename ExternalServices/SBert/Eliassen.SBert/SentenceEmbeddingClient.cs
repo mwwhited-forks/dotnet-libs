@@ -51,4 +51,15 @@ public class SentenceEmbeddingClient : ISentenceEmbeddingClient
         var floats = array?.OfType<JsonNode>().Select(i => (double)i).ToArray();
         return floats ?? [];
     }
+
+    /// <summary>
+    /// Check the health status of the sentence embedding service
+    /// </summary>
+    /// <returns></returns>
+    public async Task<string> GetHealthAsync()
+    {
+        var results = await _httpClient.GetAsync($"/health");
+        var response = await results.Content.ReadAsStringAsync();
+        return response;
+    }
 }

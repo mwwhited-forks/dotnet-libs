@@ -26,15 +26,15 @@ public static class ServiceCollectionExtensions
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddApacheTikaServices(
         this IServiceCollection services,
-    IConfiguration configuration,
+        IConfiguration configuration,
 #if DEBUG
-    string apacheTikaClientOptionSection
+        string apacheTikaClientOptionSection
 #else
         string apacheTikaClientOptionSection = nameof(ApacheTikaClientOptions)
 #endif
         )
     {
-        var url = configuration.GetSection(apacheTikaClientOptionSection)?["Url"];
+        var url = configuration.GetSection(apacheTikaClientOptionSection)?[nameof(ApacheTikaClientOptions.Url)];
         if (url == null)
         {
             return services;
