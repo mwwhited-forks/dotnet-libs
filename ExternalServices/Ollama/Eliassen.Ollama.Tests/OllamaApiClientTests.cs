@@ -18,7 +18,7 @@ public class OllamaApiClientTests
 {
     public required TestContext TestContext { get; set; }
 
-    private OllamaApiClient Build(string url, string model)
+    private IOllamaApiClient Build(string url, string model)
     {
         var config = new ConfigurationBuilder()
             .AddInMemoryCollection(new Dictionary<string, string?>
