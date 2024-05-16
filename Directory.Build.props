@@ -20,6 +20,25 @@
     <RunSettingsFilePath>$(SolutionDir).runsettings</RunSettingsFilePath>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <!--https://www.meziantou.net/the-roslyn-analyzers-i-use.htm-->
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <AnalysisLevel>latest</AnalysisLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--https://www.meziantou.net/the-roslyn-analyzers-i-use.htm-->
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Meziantou.Analyzer" Version="2.0.150">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
   <PropertyGroup Condition="Exists('$(SolutionDir)LICENSE')">
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
