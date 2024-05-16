@@ -21,7 +21,7 @@ public class XFragment : IList<XNode>, IXPathNavigable
     /// Initializes a new instance of the <see cref="XFragment"/> class with the specified fragment.
     /// </summary>
     /// <param name="fragment">The fragment to initialize the instance with.</param>
-    public XFragment(XFragment fragment) :this(fragment._nodes) { }
+    public XFragment(XFragment fragment) : this(fragment._nodes) { }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="XFragment"/> class with the specified nodes.
@@ -129,7 +129,7 @@ public class XFragment : IList<XNode>, IXPathNavigable
     /// Returns an enumerator that iterates through the collection of XML nodes.
     /// </summary>
     /// <returns>An enumerator that can be used to iterate through the collection of XML nodes.</returns>
-    public IEnumerator<XNode> GetEnumerator() => 
+    public IEnumerator<XNode> GetEnumerator() =>
         (_nodes ?? Enumerable.Empty<XNode>()).Where(n => n != null).GetEnumerator();
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

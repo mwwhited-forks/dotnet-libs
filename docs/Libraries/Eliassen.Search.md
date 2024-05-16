@@ -101,7 +101,7 @@ Initializes a new instance
 
 
 
-#### FindNeighborsAsync(System.Single[])
+#### FindNeighborsAsync(System.ReadOnlyMemory{System.Single})
 Finds nearest neighbors asynchronously based on the specified vector. 
 
 
@@ -116,7 +116,7 @@ An asynchronous enumerable collection of search results representing nearest nei
 
 
 
-#### FindNeighborsAsync(System.Single[],System.String)
+#### FindNeighborsAsync(System.ReadOnlyMemory{System.Single},System.String)
 Finds nearest neighbors asynchronously based on the specified vector and groups the results by a specified field. 
 
 
@@ -141,7 +141,7 @@ An asynchronous enumerable collection of search results.
 
 
 
-#### StoreVectorsAsync(System.Collections.Generic.IEnumerable{System.Single[]},System.Collections.Generic.Dictionary{System.String,System.Object})
+#### StoreVectorsAsync(System.Collections.Generic.IEnumerable{System.ReadOnlyMemory{System.Single}},System.Collections.Generic.Dictionary{System.String,System.Object})
 Stores vectors asynchronously along with their associated metadata. 
 
 

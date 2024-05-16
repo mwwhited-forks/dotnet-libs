@@ -8,7 +8,7 @@ Interface for a factory that creates instances of
 ### Methods
 
 
-#### CreateFileChunk(Eliassen.System.IO.FileMetaData,Eliassen.System.IO.ContentChunk,System.IO.FileInfo,System.Single[])
+#### CreateFileChunk(Eliassen.System.IO.FileMetaData,Eliassen.System.IO.ContentChunk,System.IO.FileInfo,System.ReadOnlyMemory{System.Single})
 Creates a new instance of 
  *See: T:Qdrant.Client.Grpc.PointStruct*for a file chunk. 
 
@@ -27,7 +27,7 @@ A new instance of representing a file chunk.
 
 
 
-#### CreateQuestion(System.Guid,System.String,System.Single[],System.String)
+#### CreateQuestion(System.Guid,System.String,System.ReadOnlyMemory{System.Single},System.String)
 Creates a new instance of 
  *See: T:Qdrant.Client.Grpc.PointStruct*for a question. 
 
@@ -46,7 +46,7 @@ A new instance of representing a question.
 
 
 
-#### CreateServiceReference(System.Guid,System.Type,System.String,System.Single[])
+#### CreateServiceReference(System.Guid,System.Type,System.String,System.ReadOnlyMemory{System.Single})
 Creates a new instance of 
  *See: T:Qdrant.Client.Grpc.PointStruct*for a service reference. 
 
@@ -93,7 +93,7 @@ Represents the constant value indicating service instance type.
 ### Methods
 
 
-#### CreateFileChunk(Eliassen.System.IO.FileMetaData,Eliassen.System.IO.ContentChunk,System.IO.FileInfo,System.Single[])
+#### CreateFileChunk(Eliassen.System.IO.FileMetaData,Eliassen.System.IO.ContentChunk,System.IO.FileInfo,System.ReadOnlyMemory{System.Single})
 Creates a 
  *See: T:Qdrant.Client.Grpc.PointStruct*instance representing a file chunk. 
 
@@ -112,7 +112,7 @@ The created .
 
 
 
-#### CreateServiceReference(System.Guid,System.Type,System.String,System.Single[])
+#### CreateServiceReference(System.Guid,System.Type,System.String,System.ReadOnlyMemory{System.Single})
 Creates a 
  *See: T:Qdrant.Client.Grpc.PointStruct*instance representing a service reference. 
 
@@ -131,7 +131,7 @@ The created .
 
 
 
-#### CreateQuestion(System.Guid,System.String,System.Single[],System.String)
+#### CreateQuestion(System.Guid,System.String,System.ReadOnlyMemory{System.Single},System.String)
 Creates a 
  *See: T:Qdrant.Client.Grpc.PointStruct*instance representing a question. 
 
@@ -233,7 +233,7 @@ constructor for QdrantVectorStoreProvider
 
 
 
-#### StoreVectorsAsync(System.Collections.Generic.IEnumerable{System.Single[]},System.Collections.Generic.Dictionary{System.String,System.Object})
+#### StoreVectorsAsync(System.Collections.Generic.IEnumerable{System.ReadOnlyMemory{System.Single}},System.Collections.Generic.Dictionary{System.String,System.Object})
 Gets or sets the name of the container. 
 
 
@@ -246,7 +246,7 @@ An asynchronous enumerable collection of search results representing nearest nei
 
 
 
-#### FindNeighborsAsync(System.Single[])
+#### FindNeighborsAsync(System.ReadOnlyMemory{System.Single})
 Finds nearest neighbors for a given vector. 
 
 
@@ -261,7 +261,7 @@ An asynchronous enumerable collection of search results representing nearest nei
 
 
 
-#### FindNeighborsAsync(System.Single[],System.String)
+#### FindNeighborsAsync(System.ReadOnlyMemory{System.Single},System.String)
 Finds nearest neighbors for a given vector, grouped by a specified field. 
 
 

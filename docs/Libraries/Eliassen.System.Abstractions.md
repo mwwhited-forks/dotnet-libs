@@ -356,6 +356,40 @@ Initializes a new instance of the
 
 
 
+## Class: System.IO.ITempFile
+temp file handle 
+
+### Properties
+
+#### FilePath
+path to temp file
+### Methods
+
+
+#### 
+Get a managed temporary file. ITempFile will be deleted when disposed. 
+
+
+##### Return value
+
+
+
+
+## Class: System.IO.ITempFileFactory
+this is a provider for managed temp files 
+
+### Methods
+
+
+#### GetTempFile
+Get a managed temporary file. ITempFile will be deleted when disposed. 
+
+
+##### Return value
+
+
+
+
 ## Class: System.Linq.Expressions.IExpressionTreeBuilder
 Represents a builder for constructing expression trees used in querying and filtering. 
 

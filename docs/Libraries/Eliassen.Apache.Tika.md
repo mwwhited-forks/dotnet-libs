@@ -1,6 +1,14 @@
 ﻿# Eliassen.Apache.Tika
 
 
+## Class: Apache.Tika.ApacheTikaClientOptions
+Represents options for configuring the Apache Tika client. 
+
+### Properties
+
+#### Url
+Gets or sets the URL of the Apache Tika server.
+
 ## Class: Apache.Tika.Detectors.TikaContentTypeDetector
 Provides functionality to detect the content type of a stream using Apache Tika. 
 
@@ -91,6 +99,19 @@ Provides functionality to convert Microsoft Word documents to HTML using Apache 
 
 #### Sources
 Gets an array of supported source content types for conversion.
+### Methods
+
+
+#### Constructor
+Constructor to convert Microsoft Word documents to HTML using Apache Tika. 
+
+
+##### Parameters
+* *client:* client interface
+* *logger:* system logger
+
+
+
 
 ## Class: Apache.Tika.Handlers.TikaDocxToHtmlConversionHandler
 Provides functionality to convert Microsoft Word (DOCX) documents to HTML using Apache Tika. 
@@ -99,6 +120,41 @@ Provides functionality to convert Microsoft Word (DOCX) documents to HTML using 
 
 #### Sources
 Gets an array of supported source content types for conversion.
+### Methods
+
+
+#### Constructor
+Constructor to convert Microsoft Word (DOCX) documents to HTML using Apache Tika. 
+
+
+##### Parameters
+* *client:* client interface
+* *logger:* system logger
+
+
+
+
+## Class: Apache.Tika.Handlers.TikaEpubToHtmlConversionHandler
+Represents a handler for converting EPUB files to HTML using Apache Tika. 
+
+### Properties
+
+#### Sources
+Gets an array of supported source content types for conversion.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Apache.Tika.Handlers.TikaEpubToHtmlConversionHandler*class. 
+
+
+##### Parameters
+* *client:* The Apache Tika client used for conversion.
+* *logger:* The logger for logging conversion activities.
+
+
+
 
 ## Class: Apache.Tika.Handlers.TikaOdtToHtmlConversionHandler
 Provides functionality to convert OpenDocument Text (ODT) documents to HTML using Apache Tika. 
@@ -107,6 +163,19 @@ Provides functionality to convert OpenDocument Text (ODT) documents to HTML usin
 
 #### Sources
 Gets an array of supported source content types for conversion.
+### Methods
+
+
+#### Constructor
+Constructor to convert OpenDocument Text (ODT) documents to HTML using Apache Tika. 
+
+
+##### Parameters
+* *client:* client interface
+* *logger:* system logger
+
+
+
 
 ## Class: Apache.Tika.Handlers.TikaPdfToHtmlConversionHandler
 Provides functionality to convert PDF documents to HTML using Apache Tika. 
@@ -115,6 +184,19 @@ Provides functionality to convert PDF documents to HTML using Apache Tika.
 
 #### Sources
 Gets an array of supported source content types for conversion.
+### Methods
+
+
+#### Constructor
+Constructor to convert Adobe PDF documents to HTML using Apache Tika. 
+
+
+##### Parameters
+* *client:* client interface
+* *logger:* system logger
+
+
+
 
 ## Class: Apache.Tika.Handlers.TikaRtfToHtmlConversionHandler
 Provides functionality to convert Rich Text Format (RTF) documents to HTML using Apache Tika. 
@@ -123,6 +205,19 @@ Provides functionality to convert Rich Text Format (RTF) documents to HTML using
 
 #### Sources
 Gets an array of supported source content types for conversion.
+### Methods
+
+
+#### Constructor
+Constructor to convert Rich Text Format (RTF) documents to HTML using Apache Tika. 
+
+
+##### Parameters
+* *client:* client interface
+* *logger:* system logger
+
+
+
 
 ## Class: Apache.Tika.Handlers.TikaToHtmlConversionBaseHandler
 Provides a base class for handlers that convert documents to HTML using Apache Tika. 
@@ -131,6 +226,19 @@ Provides a base class for handlers that convert documents to HTML using Apache T
 
 #### Destinations
 Gets an array of supported destination content types for conversion.
+### Methods
+
+
+#### Constructor
+Constructor to convert handler documents to HTML using Apache Tika. 
+
+
+##### Parameters
+* *client:* client interface
+* *logger:* system logger
+
+
+
 
 ## Class: Apache.Tika.ServiceCollectionExtensions
 Provides extension methods for configuring services related to Apache - Tika. 
