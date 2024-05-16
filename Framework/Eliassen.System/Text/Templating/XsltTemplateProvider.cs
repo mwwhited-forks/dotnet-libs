@@ -23,6 +23,10 @@ public class XsltTemplateProvider : ITemplateProvider
 {
     private readonly IXmlSerializer _xmlSerializer;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="XsltTemplateProvider"/> class with the specified XML serializer.
+    /// </summary>
+    /// <param name="xmlSerializer">The XML serializer to be used by the provider.</param>
     public XsltTemplateProvider(
         IXmlSerializer xmlSerializer
         ) => _xmlSerializer = xmlSerializer;

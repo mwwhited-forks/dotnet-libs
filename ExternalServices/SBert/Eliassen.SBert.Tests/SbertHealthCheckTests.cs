@@ -1,13 +1,16 @@
-﻿using Eliassen.TestUtilities;
+﻿using Eliassen.SBert;
+using Eliassen.TestUtilities;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace Eliassen.Apache.Tika.Tests;
+namespace Eliassen.Ollama.Tests;
 
 [TestClass]
-public class ApacheTikaHealthCheckTests
+public class SbertHealthCheckTests
 {
     public required TestContext TestContext { get; set; }
 
@@ -18,24 +21,24 @@ public class ApacheTikaHealthCheckTests
         var context = new HealthCheckContext();
 
         var mockRepo = new MockRepository(MockBehavior.Strict);
-        var mockClient = mockRepo.Create<IApacheTikaClient>();
+        var mockClient = mockRepo.Create<ISentenceEmbeddingClient>();
 
-        mockClient.Setup(s => s.GetHelloAsync()).Returns(Task.FromResult("From Test"));
+        mockClient.Setup(s => s.GetHealthAsync()).Returns(Task.FromResult("From tests"));
 
-        var check = new ApacheTikaHealthCheck(mockClient.Object);
+        var check = new SbertHealthCheck(mockClient.Object);
 
         var result = await check.CheckHealthAsync(context);
 
-        this.TestContext.WriteLine($"Status: {result.Status}");
-        this.TestContext.WriteLine($"Description: {result.Description}");
-        this.TestContext.WriteLine($"Exception: {result.Exception}");
+        TestContext.WriteLine($"Status: {result.Status}");
+        TestContext.WriteLine($"Description: {result.Description}");
+        TestContext.WriteLine($"Exception: {result.Exception}");
 
         if (result.Data != null)
         {
-            this.TestContext.WriteLine($"Data:");
+            TestContext.WriteLine($"Data:");
             foreach (var item in result.Data)
             {
-                this.TestContext.WriteLine($"\t{item.Key}: {item.Value}");
+                TestContext.WriteLine($"\t{item.Key}: {item.Value}");
             }
         }
 
@@ -51,22 +54,21 @@ public class ApacheTikaHealthCheckTests
         var context = new HealthCheckContext();
 
         var mockRepo = new MockRepository(MockBehavior.Strict);
-        var mockClient = mockRepo.Create<IApacheTikaClient>();
+        var mockClient = mockRepo.Create<ISentenceEmbeddingClient>();
 
-        var check = new ApacheTikaHealthCheck(mockClient.Object);
-
+        var check = new SbertHealthCheck(mockClient.Object);
         var result = await check.CheckHealthAsync(context);
 
-        this.TestContext.WriteLine($"Status: {result.Status}");
-        this.TestContext.WriteLine($"Description: {result.Description}");
-        this.TestContext.WriteLine($"Exception: {result.Exception}");
+        TestContext.WriteLine($"Status: {result.Status}");
+        TestContext.WriteLine($"Description: {result.Description}");
+        TestContext.WriteLine($"Exception: {result.Exception}");
 
         if (result.Data != null)
         {
-            this.TestContext.WriteLine($"Data:");
+            TestContext.WriteLine($"Data:");
             foreach (var item in result.Data)
             {
-                this.TestContext.WriteLine($"\t{item.Key}: {item.Value}");
+                TestContext.WriteLine($"\t{item.Key}: {item.Value}");
             }
         }
 

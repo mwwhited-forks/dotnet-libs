@@ -1,4 +1,5 @@
 ﻿using Eliassen.MessageQueueing.Services;
+using Eliassen.MessageQueueing.Tests.TestItems;
 using Eliassen.System.Text.Json.Serialization;
 using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;

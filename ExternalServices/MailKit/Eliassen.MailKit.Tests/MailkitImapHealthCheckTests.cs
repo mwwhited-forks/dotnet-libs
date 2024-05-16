@@ -1,13 +1,15 @@
-﻿using Eliassen.TestUtilities;
+﻿using Eliassen.MailKit.Services;
+using Eliassen.TestUtilities;
+using MailKit.Net.Imap;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Threading.Tasks;
 
-namespace Eliassen.Apache.Tika.Tests;
+namespace Eliassen.MailKit.Tests;
 
 [TestClass]
-public class ApacheTikaHealthCheckTests
+public class MailkitImapHealthCheckTests
 {
     public required TestContext TestContext { get; set; }
 
@@ -18,11 +20,13 @@ public class ApacheTikaHealthCheckTests
         var context = new HealthCheckContext();
 
         var mockRepo = new MockRepository(MockBehavior.Strict);
-        var mockClient = mockRepo.Create<IApacheTikaClient>();
+        var mockClientFactory = mockRepo.Create<IImapClientFactory>();
+        var mockClient = mockRepo.Create<IImapClient>();
 
-        mockClient.Setup(s => s.GetHelloAsync()).Returns(Task.FromResult("From Test"));
+        mockClientFactory.Setup(s => s.CreateAsync()).Returns(Task.FromResult(mockClient.Object));
+        mockClient.Setup(s => s.Dispose());
 
-        var check = new ApacheTikaHealthCheck(mockClient.Object);
+        var check = new MailkitImapHealthCheck(mockClientFactory.Object);
 
         var result = await check.CheckHealthAsync(context);
 
@@ -51,9 +55,9 @@ public class ApacheTikaHealthCheckTests
         var context = new HealthCheckContext();
 
         var mockRepo = new MockRepository(MockBehavior.Strict);
-        var mockClient = mockRepo.Create<IApacheTikaClient>();
+        var mockClientFactory = mockRepo.Create<IImapClientFactory>();
 
-        var check = new ApacheTikaHealthCheck(mockClient.Object);
+        var check = new MailkitImapHealthCheck(mockClientFactory.Object);
 
         var result = await check.CheckHealthAsync(context);
 

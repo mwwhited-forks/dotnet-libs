@@ -1,4 +1,5 @@
 ﻿using Eliassen.MessageQueueing.Services;
+using Eliassen.MessageQueueing.Tests.TestItems;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
