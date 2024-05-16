@@ -130,7 +130,7 @@ public static class TestContextExtensions
         else if (value is XFragment || value is XmlReader)
         {
             var xFragment = value as XFragment;
-            xFragment ??= new XFragment(value as XmlReader);
+            xFragment ??= new XFragment((XmlReader)value);
 
             var file = changeExtension(composedFileName, ".xml");
             var ms = new MemoryStream();

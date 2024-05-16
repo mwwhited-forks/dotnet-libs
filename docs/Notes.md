@@ -38,3 +38,9 @@
   "spring"
 ]
 ```
+
+## Additional Code Analyzers
+
+* Meziantou.Analyzer
+  * [Blog](https://www.meziantou.net/the-roslyn-analyzers-i-use.htm)
+  * [github](https://github.com/meziantou/Meziantou.Analyzer)

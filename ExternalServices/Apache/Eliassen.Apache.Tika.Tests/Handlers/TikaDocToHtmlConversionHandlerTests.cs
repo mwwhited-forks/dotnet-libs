@@ -3,7 +3,7 @@ using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 
-namespace Eliassen.Apache.Tika.Tests;
+namespace Eliassen.Apache.Tika.Tests.Handlers;
 
 [TestClass]
 public class TikaDocToHtmlConversionHandlerTests :

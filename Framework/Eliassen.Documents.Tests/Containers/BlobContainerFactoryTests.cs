@@ -13,6 +13,7 @@ public class BlobContainerFactoryTests
     public required TestContext TestContext { get; set; }
 
     [TestMethod]
+    [TestCategory(TestCategories.Unit)]
     public void CreateTest_Named_Keyed()
     {
         var testName = "container target";
@@ -34,6 +35,7 @@ public class BlobContainerFactoryTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.Unit)]
     public void CreateTest_Named_Factory()
     {
         var testName = "container target";
@@ -56,6 +58,7 @@ public class BlobContainerFactoryTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.Unit)]
     public void CreateTest_NoTag()
     {
         var mockRepo = new MockRepository(MockBehavior.Strict);
@@ -74,6 +77,7 @@ public class BlobContainerFactoryTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.Unit)]
     public void CreateTest_TableTag()
     {
         var mockRepo = new MockRepository(MockBehavior.Strict);
@@ -92,6 +96,7 @@ public class BlobContainerFactoryTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.Unit)]
     public void CreateTest_ContainerTag()
     {
         var mockRepo = new MockRepository(MockBehavior.Strict);

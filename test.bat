@@ -87,7 +87,8 @@ REM TODO: fix this https://github.com/danielpalme/ReportGenerator/wiki/Integrati
 reportgenerator "-reports:.\TestResults\**\coverage.*.xml" "-targetDir:.\TestResults\Coverage\Reports" -reportTypes:Html;HtmlSummary;Cobertura;MarkdownSummary "-title:%TestProject% - (%Configuration%)"
 
 IF '%DO_NOT_START%'=='' (
-START .\TestResults\Coverage\Reports\summary.html
+REM START .\TestResults\Coverage\Reports\summary.html
+START .\TestResults\Coverage\Reports\index.html
 START .\TestResults\Cobertura.coverage
 REM START %LATEST_TEST_RESULTS_TRX%
 )

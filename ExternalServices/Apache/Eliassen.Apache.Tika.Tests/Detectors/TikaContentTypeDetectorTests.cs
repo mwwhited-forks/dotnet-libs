@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Eliassen.Apache.Tika.Tests;
+namespace Eliassen.Apache.Tika.Tests.Detectors;
 
 [TestClass]
 public class TikaContentTypeDetectorTests

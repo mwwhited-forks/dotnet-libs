@@ -12,7 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Eliassen.Apache.Tika.Tests;
+namespace Eliassen.Apache.Tika.Tests.Handlers;
 
 public abstract class TikaToHtmlConversionHandlerTestsBase<T>
 {

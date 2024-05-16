@@ -1,6 +1,7 @@
 ﻿using Eliassen.AI;
 using Eliassen.Extensions;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,7 @@ namespace Eliassen.Search.Providers;
 /// Provides functionality to generate summaries for documents.
 /// </summary>
 [Obsolete]
+[ExcludeFromCodeCoverage]
 public class DocumentSummaryGenerationProvider
 {
     private const int MAX_LENGTH = 4096;
