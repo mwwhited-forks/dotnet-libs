@@ -90,11 +90,11 @@ public class XsltTemplateProvider : ITemplateProvider
         }
         else if (data is JsonDocument jsonDocument)
         {
-            data = JsonNode.Parse(jsonDocument.RootElement.ToString());
+            data = JsonNode.Parse(jsonDocument.RootElement.ToString()!)!;
         }
         else if (data is JsonElement jsonElement)
         {
-            data = JsonNode.Parse(jsonElement.ToString());
+            data = JsonNode.Parse(jsonElement.ToString()!)!;
         }
         else if (data is XmlDocument xmlDocument)
         {
@@ -114,7 +114,7 @@ public class XsltTemplateProvider : ITemplateProvider
         }
 
         using var xml = new MemoryStream();
-        await _xmlSerializer.SerializeAsync(data, data.GetType(), xml);
+        await _xmlSerializer.SerializeAsync(data, data!.GetType(), xml);
         xml.Position = 0;
         var document = await XDocument.LoadAsync(xml, LoadOptions.None, CancellationToken.None);
         var navigator = document.CreateNavigator();

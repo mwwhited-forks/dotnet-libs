@@ -13,17 +13,30 @@ namespace Eliassen.System.Text.Json;
 /// </summary>
 public static class JsonNodeExtensions
 {
+    /// <summary>
+    /// Converts a JsonObject to an XFragment.
+    /// </summary>
+    /// <param name="json">The JsonObject to convert.</param>
+    /// <param name="rootName">The root name for the resulting XML element.</param>
+    /// <returns>An XFragment representing the JsonObject.</returns>
     public static XFragment? ToXFragment(this JsonObject? json, string? rootName = default) =>
         json switch
         {
             null => null,
-            _ => new XFragment(new XElement(rootName ?? "x", ToXNodesInternal(json)))
+            _ => new XFragment(new XElement(rootName ?? "x", ToXNodesInternal(json!)))
         };
+
+    /// <summary>
+    /// Converts a JsonArray to an XFragment.
+    /// </summary>
+    /// <param name="json">The JsonArray to convert.</param>
+    /// <param name="rootName">The root name for the resulting XML element.</param>
+    /// <returns>An XFragment representing the JsonArray.</returns>
     public static XFragment? ToXFragment(this JsonArray? json, string? rootName = default) =>
         json switch
         {
             null => null,
-            _ => new XFragment(new XElement(rootName ?? "x", ToXNodesInternal(json)))
+            _ => new XFragment(new XElement(rootName ?? "x", ToXNodesInternal(json!)))
         };
 
     private static IEnumerable<object> ToXNodesInternal(IEnumerable<JsonNode> nodes) =>
@@ -33,14 +46,14 @@ public static class JsonNodeExtensions
        where k != JsonValueKind.Null
        where k != JsonValueKind.Undefined
        select k == JsonValueKind.Object ?
-        (object)s.AsObject().ToXFragment("i") :
+        (object?)s.AsObject().ToXFragment("i") :
         new XElement("i", s.ToXFragment())
        ;
 
-    private static IEnumerable<object> ToXNodesInternal(IEnumerable<KeyValuePair<string, JsonNode>> nodes) =>
+    private static IEnumerable<object?> ToXNodesInternal(IEnumerable<KeyValuePair<string, JsonNode>> nodes) =>
         nodes.Select(ToXNodeInternal);
 
-    private static object ToXNodeInternal(KeyValuePair<string, JsonNode> e) =>
+    private static object? ToXNodeInternal(KeyValuePair<string, JsonNode> e) =>
         e.Value.GetValueKind() switch
         {
             JsonValueKind.Number => new XAttribute(e.Key, e.Value.GetValue<double>()),
@@ -52,6 +65,12 @@ public static class JsonNodeExtensions
             _ => throw new NotSupportedException()
         };
 
+    /// <summary>
+    /// Converts a JsonNode to an XFragment.
+    /// </summary>
+    /// <param name="json">The JsonNode to convert.</param>
+    /// <param name="rootName">The root name for the resulting XML element.</param>
+    /// <returns>An XFragment representing the JsonNode.</returns>
     public static XFragment? ToXFragment(this JsonNode? json, string? rootName = default) =>
         json?.GetValueKind() switch
         {
