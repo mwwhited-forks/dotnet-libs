@@ -43,9 +43,9 @@ public class OpenSearchTests
             Body = "World!"
         }));
 
-        this.TestContext.WriteLine($"HttpStatusCode: {result.HttpStatusCode}");
-        this.TestContext.WriteLine($"DebugInformation: {result.DebugInformation}");
-        this.TestContext.WriteLine($"Body: {result.Body}");
+        TestContext.WriteLine($"HttpStatusCode: {result.HttpStatusCode}");
+        TestContext.WriteLine($"DebugInformation: {result.DebugInformation}");
+        TestContext.WriteLine($"Body: {result.Body}");
 
         Assert.IsTrue(result.Success);
     }
@@ -71,9 +71,9 @@ public class OpenSearchTests
                 }
             }));
 
-        this.TestContext.WriteLine($"HttpStatusCode: {result.HttpStatusCode}");
-        this.TestContext.WriteLine($"DebugInformation: {result.DebugInformation}");
-        this.TestContext.WriteLine($"Body: {result.Body}");
+        TestContext.WriteLine($"HttpStatusCode: {result.HttpStatusCode}");
+        TestContext.WriteLine($"DebugInformation: {result.DebugInformation}");
+        TestContext.WriteLine($"Body: {result.Body}");
 
         Assert.IsTrue(result.Success);
     }

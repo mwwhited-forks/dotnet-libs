@@ -48,7 +48,7 @@ public class TikaContentTypeDetectorTests
     [DataRow("sample2.odt", "application/vnd.oasis.opendocument.text")]
     public async Task DevLocalDetectContentTypeAsyncTest(string resourceName, string expectedContentType)
     {
-        using var stream = this.GetType().Assembly.GetManifestResourceStream($"Eliassen.Apache.Tika.Tests.TestData.{resourceName}")
+        using var stream = GetType().Assembly.GetManifestResourceStream($"Eliassen.Apache.Tika.Tests.TestData.{resourceName}")
             ?? throw new NotSupportedException($"Not found {resourceName}");
 
         var serviceProvider = ApacheTikaTestHarness.GetServiceProvider(new Dictionary<string, string?>()

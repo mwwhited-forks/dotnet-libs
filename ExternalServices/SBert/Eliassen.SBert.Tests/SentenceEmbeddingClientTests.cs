@@ -36,7 +36,7 @@ public class SentenceEmbeddingClientTests
     {
         var client = BuildClient(url);
         var embedding = await client.GetEmbeddingAsync(message);
-        this.TestContext.WriteLine(string.Join(';', embedding));
+        TestContext.WriteLine(string.Join(';', embedding));
     }
 
     [DataTestMethod, TestCategory(TestCategories.DevLocal)]
@@ -45,9 +45,9 @@ public class SentenceEmbeddingClientTests
     {
         var client = BuildClient(url);
 
-        var resource = this.GetType().Assembly.GetManifestResourceNames().FirstOrDefault(l => l.EndsWith(".Sentences.txt"))
+        var resource = GetType().Assembly.GetManifestResourceNames().FirstOrDefault(l => l.EndsWith(".Sentences.txt"))
             ?? throw new ApplicationException("missing .sentences.txt resource");
-        using var stream = this.GetType().Assembly.GetManifestResourceStream(resource)
+        using var stream = GetType().Assembly.GetManifestResourceStream(resource)
             ?? throw new ApplicationException("missing .sentences.txt resource");
         using var reader = new StreamReader(stream);
 
@@ -64,7 +64,7 @@ public class SentenceEmbeddingClientTests
                 var section = parts[0].Trim();
                 var segment = parts[1].Trim();
 
-                this.TestContext.WriteLine(line);
+                TestContext.WriteLine(line);
 
                 //var embedding = await client.GetEmbeddingAsync(segment);
                 var embedding = await client.GetEmbeddingDoubleAsync(segment);
@@ -73,7 +73,7 @@ public class SentenceEmbeddingClientTests
             }
             catch (Exception ex)
             {
-                this.TestContext.WriteLine($"ERROR: \"{line}\" -> {ex.Message}");
+                TestContext.WriteLine($"ERROR: \"{line}\" -> {ex.Message}");
             }
         }
 
@@ -94,7 +94,7 @@ public class SentenceEmbeddingClientTests
                        VectorMagnitudeB = vmb,
                    };
 
-        this.TestContext.AddResult(
+        TestContext.AddResult(
             each.Select(i => string.Join('\t',
             i.A,
             i.B,
@@ -107,12 +107,12 @@ public class SentenceEmbeddingClientTests
             )).ToArray(), fileName: "Results.txt"
             );
 
-        this.TestContext.AddResult(
+        TestContext.AddResult(
             dict.Select(i => string.Join('\t', i.Key, Convert.ToBase64String(i.Value.ToArray().Select(i => BitConverter.GetBytes(i)).SelectMany(i => i).ToArray()))),
             fileName: "Embeddings.txt"
             );
 
-        this.TestContext.AddResult(
+        TestContext.AddResult(
             dict.Select(i => string.Join('\t', new object[] { i.Key }.Concat(i.Value.ToArray().Select(i => (object)i)))),
             fileName: "EmbeddingsD.txt"
             );

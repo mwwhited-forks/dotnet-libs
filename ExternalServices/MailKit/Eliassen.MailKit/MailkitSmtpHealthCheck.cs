@@ -11,7 +11,7 @@ namespace Eliassen.MailKit;
 /// </summary>
 public class MailkitSmtpHealthCheck : IHealthCheck
 {
-    private ISmtpClientFactory _client;
+    private readonly ISmtpClientFactory _client;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MailkitSmtpHealthCheck"/> class.

@@ -40,7 +40,7 @@ public class OllamaMessageCompletionTests
     {
         var client = Build<IMessageCompletion>(hostName, model);
         var embedding = await client.GetCompletionAsync(model, prompt);
-        this.TestContext.WriteLine(embedding);
+        TestContext.WriteLine(embedding);
 
         Assert.IsFalse(string.IsNullOrWhiteSpace(embedding));
     }
@@ -52,7 +52,7 @@ public class OllamaMessageCompletionTests
     {
         var client = Build<ILanguageModelProvider>(hostName, model);
         var embedding = await client.GetResponseAsync(prompt, input);
-        this.TestContext.WriteLine(embedding);
+        TestContext.WriteLine(embedding);
 
         Assert.IsFalse(string.IsNullOrWhiteSpace(embedding));
     }

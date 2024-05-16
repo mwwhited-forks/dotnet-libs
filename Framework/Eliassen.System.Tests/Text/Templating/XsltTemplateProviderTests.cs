@@ -8,7 +8,6 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
-using static System.Net.WebRequestMethods;
 
 namespace Eliassen.System.Tests.Text.Templating;
 
@@ -91,7 +90,7 @@ public class XsltTemplateProviderTests
         ms.Position = 0;
         var reader = XmlReader.Create(ms);
 
-        this.TestContext.AddResult(reader);
+        TestContext.AddResult(reader);
 
         Assert.IsTrue(result);
         mockRepo.VerifyAll();

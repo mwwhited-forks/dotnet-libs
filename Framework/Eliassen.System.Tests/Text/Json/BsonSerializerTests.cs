@@ -24,6 +24,6 @@ public class BsonSerializerTests
         var model = new TargetModel();
         var json = JsonSerializer.Serialize(model, model.GetType(), GetOptions());
 
-        this.TestContext.WriteLine(json);
+        TestContext.WriteLine(json);
     }
 }

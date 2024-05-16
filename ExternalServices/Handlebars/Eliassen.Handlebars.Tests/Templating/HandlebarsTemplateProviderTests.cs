@@ -59,7 +59,7 @@ public class HandlebarsTemplateProviderTests
         dest.Position = 0;
         var read = reader.ReadToEnd();
 
-        this.TestContext.WriteLine(read);
+        TestContext.WriteLine(read);
 
         Assert.IsTrue(result);
         Assert.AreEqual("Hello World!", read);
@@ -111,7 +111,7 @@ public class HandlebarsTemplateProviderTests
         dest.Position = 0;
         var read = reader.ReadToEnd();
 
-        this.TestContext.WriteLine(read);
+        TestContext.WriteLine(read);
 
         Assert.IsTrue(result);
         Assert.AreEqual("Now: 2/3/0001 4:05:06 AM +05:00", read);
@@ -163,7 +163,7 @@ public class HandlebarsTemplateProviderTests
         dest.Position = 0;
         var read = reader.ReadToEnd();
 
-        this.TestContext.WriteLine(read);
+        TestContext.WriteLine(read);
 
         Assert.IsTrue(result);
         Assert.AreEqual("Today: 0001-02-03", read);
@@ -216,7 +216,7 @@ public class HandlebarsTemplateProviderTests
         dest.Position = 0;
         var read = reader.ReadToEnd();
 
-        this.TestContext.WriteLine(read);
+        TestContext.WriteLine(read);
 
         Assert.IsTrue(result);
         Assert.AreEqual("Guid :8847d0e5-1eca-4075-b0c1-e6bd606439d0", read);
@@ -270,7 +270,7 @@ public class HandlebarsTemplateProviderTests
         dest.Position = 0;
         var read = reader.ReadToEnd();
 
-        this.TestContext.WriteLine(read);
+        TestContext.WriteLine(read);
 
         Assert.IsTrue(result);
         Assert.AreEqual("Hash: FakeHash", read);
@@ -324,7 +324,7 @@ public class HandlebarsTemplateProviderTests
         dest.Position = 0;
         var read = reader.ReadToEnd();
 
-        this.TestContext.WriteLine(read);
+        TestContext.WriteLine(read);
 
         Assert.IsTrue(result);
         Assert.AreEqual("Capture:  -> Output: hello!", read);
@@ -380,7 +380,7 @@ public class HandlebarsTemplateProviderTests
         dest.Position = 0;
         var read = reader.ReadToEnd();
 
-        this.TestContext.WriteLine(read);
+        TestContext.WriteLine(read);
 
         Assert.IsTrue(result);
         Assert.AreEqual("String Replace: How are you feeling?", read);

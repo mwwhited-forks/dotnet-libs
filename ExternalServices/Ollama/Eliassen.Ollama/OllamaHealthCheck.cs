@@ -34,7 +34,7 @@ public class OllamaHealthCheck : IHealthCheck
     {
         try
         {
-            var result = await _client.ListLocalModels();
+            var result = await _client.ListLocalModels(cancellationToken);
             return HealthCheckResult.Healthy(description: $"Loaded models: {string.Join("; ", result.Select(m => m.Name))}");
         }
         catch (Exception ex)

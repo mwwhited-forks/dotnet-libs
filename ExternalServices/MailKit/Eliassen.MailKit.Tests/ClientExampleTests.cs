@@ -67,7 +67,7 @@ public class ClientExampleTests
             }.ToMessageBody(),
         });
 
-        this.TestContext.WriteLine($"Sent: {result}");
+        TestContext.WriteLine($"Sent: {result}");
     }
 
     [DataTestMethod]
@@ -122,16 +122,16 @@ public class ClientExampleTests
 
         foreach (var @namespace in namespaces)
         {
-            this.TestContext.WriteLine($"Namespace: {@namespace.Group}: \"{@namespace.Namespace.Path}\" [{@namespace.Namespace.DirectorySeparator}]");
+            TestContext.WriteLine($"Namespace: {@namespace.Group}: \"{@namespace.Namespace.Path}\" [{@namespace.Namespace.DirectorySeparator}]");
 
             foreach (var folder in await client.GetFoldersAsync(@namespace.Namespace))
             {
-                this.TestContext.WriteLine($"Folder: {folder.Name} ({folder.Id})");
+                TestContext.WriteLine($"Folder: {folder.Name} ({folder.Id})");
                 await folder.OpenAsync(FolderAccess.ReadOnly);
 
                 foreach (var item in folder)
                 {
-                    this.TestContext.WriteLine($@"Message> 
+                    TestContext.WriteLine($@"Message> 
 From:    {string.Join(';', item.From.Cast<InternetAddress>())} 
 To:      {string.Join(';', item.To.Cast<InternetAddress>())}
 Subject: {item.Subject}

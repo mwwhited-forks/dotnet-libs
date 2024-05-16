@@ -29,7 +29,7 @@ public class MessageReceiverHostTests
             .Returns(Task.CompletedTask)
             .Callback(async () =>
             {
-                this.TestContext.WriteLine("Ran Child!");
+                TestContext.WriteLine("Ran Child!");
                 await cancellationTokenSourceBlocker.CancelAsync();
                 await Task.Delay(100);
             })
@@ -49,7 +49,7 @@ public class MessageReceiverHostTests
             var spinCount = 0;
             while (!cancellationTokenSourceBlocker.IsCancellationRequested)
             {
-                this.TestContext.WriteLine($"Spin! : {spinCount++}");
+                TestContext.WriteLine($"Spin! : {spinCount++}");
                 await Task.Yield();
             }
             await host.StopAsync(cancellationTokenSource.Token);

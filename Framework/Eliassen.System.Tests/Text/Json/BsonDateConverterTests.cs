@@ -22,12 +22,12 @@ public class BsonDateConverterTests
             Nullable = expected,
         });
 
-        this.TestContext.AddResult(result, fileName: "result.json");
+        TestContext.AddResult(result, fileName: "result.json");
 
         var document = JsonDocument.Parse(result);
         var selected = document.RootElement.GetProperty("Nullable").GetProperty("$date").GetString() ??
             throw new NotSupportedException();
-        this.TestContext.WriteLine(selected);
+        TestContext.WriteLine(selected);
 
         var parsed = DateTimeOffset.Parse(selected);
         Assert.AreEqual(expected, parsed);
@@ -44,12 +44,12 @@ public class BsonDateConverterTests
             Value = expected,
         });
 
-        this.TestContext.AddResult(result, fileName: "result.json");
+        TestContext.AddResult(result, fileName: "result.json");
 
         var document = JsonDocument.Parse(result);
         var selected = document.RootElement.GetProperty("Value").GetProperty("$date").GetString() ??
             throw new NotSupportedException();
-        this.TestContext.WriteLine(selected);
+        TestContext.WriteLine(selected);
 
         var parsed = DateTimeOffset.Parse(selected);
         Assert.AreEqual(expected, parsed);
@@ -61,9 +61,9 @@ public class BsonDateConverterTests
     [DataRow(@"{""Nullable"":null,""Value"":{""$date"":""2023-07-05T14:17:05.2315812-04:00""}}", null)]
     public void DeserializeTest_Nullable(string input, string? expected)
     {
-        this.TestContext.AddResult(input, fileName: "input.json");
+        TestContext.AddResult(input, fileName: "input.json");
         var result = JsonSerializer.Deserialize<TestDateProperty>(input);
-        this.TestContext.AddResult(result, fileName: "result.json");
+        TestContext.AddResult(result, fileName: "result.json");
 
         var parsed = expected == null ? (DateTimeOffset?)null : DateTimeOffset.Parse(expected);
         Assert.AreEqual(parsed, result?.Nullable);
@@ -75,9 +75,9 @@ public class BsonDateConverterTests
     [DataRow(@"{""Nullable"":null,""Value"":{""$date"":""2023-07-05T14:17:05.2315812-04:00""}}", "2023-07-05T14:17:05.2315812-04:00")]
     public void DeserializeTest_Value(string input, string? expected)
     {
-        this.TestContext.AddResult(input, fileName: "input.json");
+        TestContext.AddResult(input, fileName: "input.json");
         var result = JsonSerializer.Deserialize<TestDateProperty>(input);
-        this.TestContext.AddResult(result, fileName: "result.json");
+        TestContext.AddResult(result, fileName: "result.json");
 
         var parsed = expected == null ? (DateTimeOffset?)null : DateTimeOffset.Parse(expected);
         Assert.AreEqual(parsed, result?.Value);

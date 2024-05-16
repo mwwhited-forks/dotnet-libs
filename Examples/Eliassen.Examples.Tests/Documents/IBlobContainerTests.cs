@@ -70,7 +70,7 @@ public class IBlobContainerTests
 
         var result = await wrapper.GetContentMetaDataAsync("helloWorld.txt");
 
-        this.TestContext.AddResult(result);
+        TestContext.AddResult(result);
     }
 
     [TestMethod]
@@ -87,7 +87,7 @@ public class IBlobContainerTests
     {
         var wrapper = ServiceProvider().GetRequiredService<IBlobContainer<Summary>>();
         var items = wrapper.QueryContent().ToArray();
-        this.TestContext.AddResult(items);
+        TestContext.AddResult(items);
     }
 
     [TestMethod]

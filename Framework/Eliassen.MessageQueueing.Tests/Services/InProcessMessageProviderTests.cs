@@ -26,7 +26,7 @@ public class InProcessMessageProviderTests
                    .Returns(Task.CompletedTask)
                    .Callback(() =>
                    {
-                       this.TestContext.WriteLine("Handler Called!");
+                       TestContext.WriteLine("Handler Called!");
                        cancellationTokenSource.Cancel();
                    });
 

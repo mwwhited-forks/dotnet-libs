@@ -57,11 +57,11 @@ public class ManageGraphUserIntegrationTests
 
         foreach (var item in result)
         {
-            this.TestContext.WriteLine($"item: {item.FirstName} {item.LastName} ({item.UserName})");
+            TestContext.WriteLine($"item: {item.FirstName} {item.LastName} ({item.UserName})");
         }
 
-        this.TestContext.WriteLine($"emailAddress: {emailAddress}");
-        this.TestContext.WriteLine($"result: {result}");
+        TestContext.WriteLine($"emailAddress: {emailAddress}");
+        TestContext.WriteLine($"result: {result}");
 
         // Assert
         foreach (var customer in result.ToArray())
@@ -88,8 +88,8 @@ public class ManageGraphUserIntegrationTests
             firstName: "Matthew",
         lastName: "Whited");
 
-        this.TestContext.WriteLine($"emailAddress: {emailAddress}");
-        this.TestContext.WriteLine($"result: {result}");
+        TestContext.WriteLine($"emailAddress: {emailAddress}");
+        TestContext.WriteLine($"result: {result}");
 
         // Assert
         Assert.AreNotEqual(Guid.Empty.ToString(), result.objectId);

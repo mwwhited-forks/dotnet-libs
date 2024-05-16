@@ -92,7 +92,7 @@ public class DefaultXmlSerializerTests
         var serializer = new DefaultXmlSerializer();
         var result = serializer.Serialize(obj, typeof(TestTarget));
         Assert.IsNotNull(result);
-        this.TestContext.WriteLine(result);
+        TestContext.WriteLine(result);
     }
 
     [TestMethod]
@@ -103,7 +103,7 @@ public class DefaultXmlSerializerTests
         var serializer = new DefaultXmlSerializer();
         var result = serializer.Serialize(obj);
         Assert.IsNotNull(result);
-        this.TestContext.WriteLine(result);
+        TestContext.WriteLine(result);
     }
 
     [TestMethod]
@@ -120,7 +120,7 @@ public class DefaultXmlSerializerTests
         var reader = new StreamReader(ms);
         var read = await reader.ReadToEndAsync();
 
-        this.TestContext.WriteLine(read);
+        TestContext.WriteLine(read);
     }
 
     [TestMethod]
@@ -137,7 +137,7 @@ public class DefaultXmlSerializerTests
         var reader = new StreamReader(ms);
         var read = await reader.ReadToEndAsync();
 
-        this.TestContext.WriteLine(read);
+        TestContext.WriteLine(read);
     }
 
     [TestMethod]

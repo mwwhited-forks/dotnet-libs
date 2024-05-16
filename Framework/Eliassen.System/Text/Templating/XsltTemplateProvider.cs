@@ -25,11 +25,7 @@ public class XsltTemplateProvider : ITemplateProvider
 
     public XsltTemplateProvider(
         IXmlSerializer xmlSerializer
-        )
-    {
-        _xmlSerializer = xmlSerializer;
-    }
-
+        ) => _xmlSerializer = xmlSerializer;
 
     /// <summary>
     /// Gets the collection of supported content types by the template provider.

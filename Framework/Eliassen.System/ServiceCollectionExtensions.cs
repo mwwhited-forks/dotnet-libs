@@ -1,4 +1,5 @@
-﻿using Eliassen.System.Linq;
+﻿using Eliassen.System.IO;
+using Eliassen.System.Linq;
 using Eliassen.System.Net.Mime;
 using Eliassen.System.Providers;
 using Eliassen.System.Security.Cryptography;
@@ -173,6 +174,8 @@ public static class ServiceCollectionExtensions
     {
         services.TryAddSingleton<IDateTimeProvider, DateTimeProvider>();
         services.TryAddSingleton<IGuidProvider, GuidProvider>();
+
+        services.TryAddSingleton<ITempFileFactory, TempFileFactory>();
 
         return services;
     }

@@ -30,7 +30,7 @@ public class MessageHandlerProviderTests
         var mockMessageQueueHandler = mockRepo.Create<IMessageQueueHandler>();
         var mockContext = mockRepo.Create<IMessageContext>();
 
-        mockContextFactory.Setup(s => s.Create(this.GetType(), mockMessage.Object, configSection)).Returns(mockContext.Object);
+        mockContextFactory.Setup(s => s.Create(GetType(), mockMessage.Object, configSection)).Returns(mockContext.Object);
         mockMessage.Setup(s => s.PayloadType).Returns((string?)null);
         mockMessage.Setup(s => s.Payload).Returns(payload);
         mockContext.SetupSet(s => s.SentId = messageId);
@@ -45,7 +45,7 @@ public class MessageHandlerProviderTests
         var @internal = provider as IMessageHandlerProviderWrapped;
 
         @internal.SetConfig(configSection);
-        @internal.SetChannelType(this.GetType());
+        @internal.SetChannelType(GetType());
         @internal.SetHandlers([mockMessageQueueHandler.Object]);
 
         await provider.HandleAsync(mockMessage.Object, messageId);

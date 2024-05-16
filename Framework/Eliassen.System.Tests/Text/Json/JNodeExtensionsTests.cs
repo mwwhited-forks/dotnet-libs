@@ -19,10 +19,10 @@ public class JNodeExtensionsTests
         var xml = json.ToXFragment();
         Assert.IsNotNull(xml);
 
-        this.TestContext.WriteLine(jsonText);
-        this.TestContext.WriteLine(new string('=', 40));
-        this.TestContext.WriteLine(xml);
-        this.TestContext.AddResult(xml);
+        TestContext.WriteLine(jsonText);
+        TestContext.WriteLine(new string('=', 40));
+        TestContext.WriteLine(xml);
+        TestContext.AddResult(xml);
     }
 
     [TestMethod]
@@ -34,10 +34,10 @@ public class JNodeExtensionsTests
         var xml = json.ToXFragment();
         Assert.IsNotNull(xml);
 
-        this.TestContext.WriteLine(jsonText);
-        this.TestContext.WriteLine(new string('=', 40));
-        this.TestContext.WriteLine(xml);
-        this.TestContext.AddResult(xml);
+        TestContext.WriteLine(jsonText);
+        TestContext.WriteLine(new string('=', 40));
+        TestContext.WriteLine(xml);
+        TestContext.AddResult(xml);
     }
 
     [TestMethod]
@@ -50,10 +50,10 @@ public class JNodeExtensionsTests
         var xml = json.ToXFragment();
         Assert.IsNotNull(xml);
 
-        this.TestContext.WriteLine(jsonText);
-        this.TestContext.WriteLine(new string('=', 40));
-        this.TestContext.WriteLine(xml);
-        this.TestContext.AddResult(xml);
+        TestContext.WriteLine(jsonText);
+        TestContext.WriteLine(new string('=', 40));
+        TestContext.WriteLine(xml);
+        TestContext.AddResult(xml);
     }
 
     [TestMethod]
@@ -65,10 +65,10 @@ public class JNodeExtensionsTests
         var xml = json.ToXFragment();
         Assert.IsNotNull(xml);
 
-        this.TestContext.WriteLine(jsonText);
-        this.TestContext.WriteLine(new string('=', 40));
-        this.TestContext.WriteLine(xml);
-        this.TestContext.AddResult(xml);
+        TestContext.WriteLine(jsonText);
+        TestContext.WriteLine(new string('=', 40));
+        TestContext.WriteLine(xml);
+        TestContext.AddResult(xml);
     }
 
     [TestMethod]
@@ -96,9 +96,9 @@ public class JNodeExtensionsTests
         var xml = json.ToXFragment();
         Assert.IsNotNull(xml);
 
-        this.TestContext.WriteLine(jsonText);
-        this.TestContext.WriteLine(new string('=', 40));
-        this.TestContext.WriteLine(xml);
-        this.TestContext.AddResult(xml);
+        TestContext.WriteLine(jsonText);
+        TestContext.WriteLine(new string('=', 40));
+        TestContext.WriteLine(xml);
+        TestContext.AddResult(xml);
     }
 }
