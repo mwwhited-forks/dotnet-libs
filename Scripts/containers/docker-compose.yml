@@ -105,6 +105,20 @@ services:
       - frontend
       - backend
 
+  localstack:
+    extends:
+      file: docker-compose.localstack.yml
+      service: localstack
+    networks:
+      - backend
+
+  opensearch:
+    extends:
+      file: docker-compose.opensearch.yml
+      service: opensearch
+    networks:
+      - backend
+
 networks:
   frontend:
     driver: bridge
