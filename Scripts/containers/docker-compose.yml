@@ -12,6 +12,13 @@ services:
       service: keycloak
     networks:
       - frontend
+      - backend      
+
+  apache-tika:
+    extends:
+      file: docker-compose.apache-tika.yml
+      service: apache-tika
+    networks:
       - backend
 
   mongodb:
@@ -47,6 +54,15 @@ services:
     extends:
       file: docker-compose.sbert.yml
       service: sbert
+    # deploy:
+    #   # mode: replicated
+    #   # replicas: 6
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
     networks:
       - backend
 
@@ -64,17 +80,20 @@ services:
     #           count: 1
     #           capabilities: [gpu]
 
+  open-webui:
+    extends:
+      file: docker-compose.open-webui.yml
+      service: open-webui
+    depends_on:
+      - ollama
+    networks:
+      - frontend
+      - backend
+
   qdrant:
     extends:
       file: docker-compose.qdrant.yml
       service: qdrant
-    networks:
-      - backend
-
-  apache-tika:
-    extends:
-      file: docker-compose.apache-tika.yml
-      service: apache-tika
     networks:
       - backend
 
@@ -91,16 +110,6 @@ services:
       service: pgadmin
     depends_on:
       - paradedb
-    networks:
-      - frontend
-      - backend
-
-  open-webui:
-    extends:
-      file: docker-compose.open-webui.yml
-      service: open-webui
-    depends_on:
-      - ollama
     networks:
       - frontend
       - backend
@@ -128,3 +137,11 @@ networks:
 volumes:
     mongodb-data:
     keycloak-data:
+    smtp4dev-data:
+    rabbitmq-data:
+    azurite-data:
+    qdrant-storage:
+    qdrant-snapshots:
+    sqlserver-data:
+    opensearch-data:
+    paradedb-data:
