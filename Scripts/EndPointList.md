@@ -36,16 +36,35 @@
 | smtp4dev       | http     |       7777 |
 | Keycloak       | http     |       8081 |
 | PG Admin       | http     |       8082 |
-| OpenSearch     | http     |       9200 |
-| OpenSearch     | http     |       9600 |
-| Apache Tika    | http     |       9998 |
-| Azurite        | http     |      10000 |
-| Azurite        | http     |      10001 |
-| Azurite        | http     |      10002 |
-| ollama         | http     |      11434 | eliassen-libs-dev-ollama-1:11434
+| Kafka          | tcp      |       9092 |
+| Kafka          | tcp      |       9094 |
+| OpenSearch     | tcp      |       9200 |
+| OpenSearch     | tcp      |       9600 |
+| Apache Tika    | tcp      |       9998 |
+| Azurite        | tcp      |      10000 |
+| Azurite        | tcp      |      10001 |
+| Azurite        | tcp      |      10002 |
+| ollama         | tcp      |      11434 | eliassen-libs-dev-ollama-1:11434
 | RabbitMQ       | tcp      |      15672 |
 | MongoDB        | tcp      |      27017 |
 
+## Supported Systems
 
-            - 4566:4566
-            - 4510-4559:4510-4559
+- Databases
+  - Relational
+    - Postgresql / ParadeDB
+  - Vector Store
+    - Qdrant
+  - Document Database
+    - Azure CosmosDB
+    - MongoDB
+- Blob Storage
+  - 
+- Telemetry
+  - [OpenTelemetry](https://opentelemetry.io/)
+  - Metric Collection
+    - [Prometheus](https://prometheus.io/docs/introduction/overview/)
+  - Tracing
+    - [Jaeger](https://www.jaegertracing.io/)
+  - Dashboard
+    - [Grafana](https://grafana.com/)

@@ -19,3 +19,22 @@ pip install --user awscli-local
 ```env
 SET PATH=%PATH%;%USERPROFILE%\AppData\Roaming\Python\Python312\Scripts
 ```
+
+
+## Additional Tools
+
+### Kompose
+
+Convert docker compose files into kubernetes
+
+#### Install
+
+```shell
+winget install Kubernetes.kompose
+```
+
+#### Execute
+
+````shell
+kompose convert --verbose --chart --out .\k8s
+````

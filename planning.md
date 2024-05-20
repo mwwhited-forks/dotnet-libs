@@ -1,11 +1,16 @@
 % Complete	Task Name	Notes
 0%	Template	
-50%	Framework	
-0%	   Application logging and Request Tracing	
-0%	      Add Logging Integration and Context support for Application Insights	
-0%	      Add Logging Integration and Context support for Prometheus	
+49%	Framework	
+0%	   Telemetry	
+0%	      Add Logging Integration and Context support for Application Insights	https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-overview?tabs=aspnetcore#opentelemetry
+0%	      Add Logging Integration and Context support for OpenTelemetry	Prometheus for metrics collection, Grafana for creating a dashboard, and Jaeger
 0%	      Add HTTP Client Factory to support to enable Context carry though	
 0%	      Add Context to Message Queueing	
+0%	      Extensions	
+0%	         Metrics	https://learn.microsoft.com/en-us/dotnet/core/diagnostics/built-in-metrics-diagnostics#microsoftextensionsdiagnosticshealthchecks
+0%	         Event Counters	https://learn.microsoft.com/en-us/dotnet/core/diagnostics/event-counters
+0%	         Tracing	
+0%	         Logging	
 77%	   Document Services	
 91%	      Conversion	
 100%	         Chaining	
@@ -173,8 +178,19 @@
 50%	      Procedural Data Generation	needs back ported from older framework
 0%	   Retired Abstractions	These were in the older shared framework, may have value and could be backported
 0%	      Address Geolocation	
+0%	         US Census	
+0%	         Bing Maps	
+0%	         Google Maps	
 0%	      Accounts Billable	
+0%	         Bill.com	
 0%	      Entity Framework	
+0%	         SQL Server Extensions	
+0%	            Extended Properties Query Support	
+0%	            Extensions to Tag tables with extended properties show related entity	
+0%	            Improved deterministic naming for constraints and indexes	
+0%	            Migration builder to add database with extended property of related version number	
+0%	            Migration extension to support classification and masking	replacement for inmemory database to test relation queries against data from embedded resources. Allowed deterministic unit testing against DBContext
+0%	         Embedded Resource Database	
 0%	      Caching	
 0%	         Common abstraction for caching	
 0%	         Implmentations	
@@ -189,16 +205,16 @@
 25%	      Data Loader - Mongo	needs migrated from nucleus and made more normalized
 50%	      DACPAC Merge/Compiler	needs migrated from older framework
 50%	      PackMan - Nuget Update automation tool	needs migrated from older framework.
-        
-        supports shared/pinned versions and support for multi-targeting 
+                
+                supports shared/pinned versions and support for multi-targeting 
 23%	Testing 	
 0%	   Integration Testing	
 45%	   Unit Testing	
-71%	Container Services	
+64%	Container Services	
 0%	   Docker Registry	
 0%	      Docker Hub	
 0%	      Azure Docker Registry	
-88%	   Docker Templates	
+76%	   Docker Templates	
 100%	      Apache Tika	
 100%	      Azurite	
 100%	      Keycloak	
@@ -212,10 +228,14 @@
 100%	      Sbert	
 100%	      SMTP4dev	
 100%	      Microsoft SQL Server	
-0%	      Kafka	
+100%	      Kafka + Kraft (no zookeeper)	
 0%	      Cosmos DB Emulator	HYPERLINK "https://learn.microsoft.com/en-us/azure/cosmos-db/how-to-develop-emulator?tabs=docker-linux%2Ccsharp&pivots=api-nosql"Use the emulator for development and CI - Azure Cosmos DB | Microsoft Learn 
 100%	      OpenSearch	
 100%	      LocalStack	
+0%	      Prometheus	https://prometheus.io/docs/introduction/overview/
+0%	      Jaeger	https://www.jaegertracing.io/
+0%	      Grafana	https://grafana.com/
+0%	      PlantUML	
 0%	   Kubernetes	
 0%	      Scale to zero	
 0%	      Help Chart templates	
@@ -227,11 +247,12 @@
 100%	   Swagger/OpenAPI - JSON	
 100%	   Swagger/OpenAPI - YAML	
 25%	   SonarQube	Had working locally could enable and add to pipeline but requires deploy instance
-100%	Scripts	
-100%	   Local	
+86%	Scripts	
+75%	   Local	
 100%	      Build	
 100%	      Unit Test	
 100%	      Generation Documentation	
+0%	      docker-compose to k8s	https://kompose.io/ https://skaffold.dev/
 100%	   Pipelines	
 100%	      Azure DevOps Gated Build	
 100%	      Azure DevOps Deployment	
@@ -260,3 +281,47 @@
 0%	   Application Runtimes	
 0%	      DAPR	https://dapr.io/
 0%	      Istio	https://istio.io/latest/about/service-mesh/
+0%	Application Platform	
+0%	   Modular	
+0%	   Identity Access Management	
+0%	      Authentication	
+0%	      Authorization	
+0%	      User Management	
+0%	      Module / Roles mapping	
+0%	      Roles / Rights mapping	
+0%	      User / Roles mapping	
+0%	   User Profile	
+0%	      Details	
+0%	      Contact	
+0%	      Avatar	
+0%	      Notification Preferences	
+0%	      Messaging Preferences	
+0%	      Language/Culture Preference	
+0%	   Application Notifications	
+0%	      Toast	
+0%	      Snackbar	
+0%	      Banner	
+0%	      Notification Editior	
+0%	   Messaging	
+0%	      In App	
+0%	      Email	
+0%	      SMS	
+0%	      Chat	
+0%	         Slack	
+0%	         Teams	
+0%	   Scheduler	
+0%	      Events	
+0%	      Calendar	
+0%	   Event Processing	
+0%	      Publish	
+0%	      Subscription	
+0%	   Components	
+0%	      Searchable Grids	
+0%	         Data Export	
+0%	      Dashboard	
+0%	         Analytics	
+0%	      Reports	
+0%	   Chatbot	
+0%	      Knowledge base	
+0%	      Enhanced Language Model	
+0%	      Dataloader	
