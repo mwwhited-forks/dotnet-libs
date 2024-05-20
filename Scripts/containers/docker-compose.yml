@@ -12,6 +12,13 @@ services:
       service: keycloak
     networks:
       - frontend
+      - backend      
+
+  apache-tika:
+    extends:
+      file: docker-compose.apache-tika.yml
+      service: apache-tika
+    networks:
       - backend
 
   mongodb:
@@ -47,6 +54,15 @@ services:
     extends:
       file: docker-compose.sbert.yml
       service: sbert
+    # deploy:
+    #   # mode: replicated
+    #   # replicas: 6
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
     networks:
       - backend
 
@@ -64,17 +80,20 @@ services:
     #           count: 1
     #           capabilities: [gpu]
 
+  open-webui:
+    extends:
+      file: docker-compose.open-webui.yml
+      service: open-webui
+    depends_on:
+      - ollama
+    networks:
+      - frontend
+      - backend
+
   qdrant:
     extends:
       file: docker-compose.qdrant.yml
       service: qdrant
-    networks:
-      - backend
-
-  apache-tika:
-    extends:
-      file: docker-compose.apache-tika.yml
-      service: apache-tika
     networks:
       - backend
 
@@ -95,14 +114,25 @@ services:
       - frontend
       - backend
 
-  open-webui:
+  localstack:
     extends:
-      file: docker-compose.open-webui.yml
-      service: open-webui
-    depends_on:
-      - ollama
+      file: docker-compose.localstack.yml
+      service: localstack
     networks:
-      - frontend
+      - backend
+
+  opensearch:
+    extends:
+      file: docker-compose.opensearch.yml
+      service: opensearch
+    networks:
+      - backend
+
+  kafka:
+    extends:
+      file: docker-compose.kafka.yml
+      service: kafka
+    networks:
       - backend
 
 networks:
@@ -110,3 +140,16 @@ networks:
     driver: bridge
   backend:
     driver: bridge
+
+volumes:
+    mongodb-data:
+    keycloak-data:
+    smtp4dev-data:
+    rabbitmq-data:
+    azurite-data:
+    qdrant-storage:
+    qdrant-snapshots:
+    sqlserver-data:
+    opensearch-data:
+    paradedb-data:
+    kafka-data:

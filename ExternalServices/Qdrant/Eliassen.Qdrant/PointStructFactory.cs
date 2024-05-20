@@ -23,7 +23,7 @@ public class PointStructFactory : IPointStructFactory
     /// <param name="fileInfo">Information about the file.</param>
     /// <param name="vector">The vector representing the file chunk.</param>
     /// <returns>The created <see cref="PointStruct"/>.</returns>
-    public virtual PointStruct CreateFileChunk(FileMetaData metaData, ContentChunk chunk, FileInfo fileInfo, float[] vector) =>
+    public virtual PointStruct CreateFileChunk(FileMetaData metaData, ContentChunk chunk, FileInfo fileInfo, ReadOnlyMemory<float> vector) =>
         new()
         {
             Id = new() { Uuid = metaData.Uuid },
@@ -45,7 +45,7 @@ public class PointStructFactory : IPointStructFactory
                 [$"file_{nameof(fileInfo.Extension)}"] =fileInfo.Extension,
             },
 
-            Vectors = new Vectors { Vector = vector, }
+            Vectors = new Vectors { Vector = vector.ToArray(), }
         };
 
     /// <summary>
@@ -60,7 +60,7 @@ public class PointStructFactory : IPointStructFactory
         Guid uuid,
         Type serviceType,
         string description,
-        float[] vector
+        ReadOnlyMemory<float> vector
         ) =>
         new()
         {
@@ -77,7 +77,7 @@ public class PointStructFactory : IPointStructFactory
                     ["type"]= ServiceInstanceType,
             },
 
-            Vectors = new Vectors { Vector = vector, }
+            Vectors = new Vectors { Vector = vector.ToArray(), }
         };
 
     /// <summary>
@@ -91,7 +91,7 @@ public class PointStructFactory : IPointStructFactory
     public virtual PointStruct CreateQuestion(
         Guid uuid,
         string question,
-        float[] vector,
+        ReadOnlyMemory<float> vector,
         string? type = null
         ) =>
         new()
@@ -105,6 +105,6 @@ public class PointStructFactory : IPointStructFactory
                 ["type"]= type ?? nameof(question),
             },
 
-            Vectors = new Vectors { Vector = vector, }
+            Vectors = new Vectors { Vector = vector.ToArray(), }
         };
 }

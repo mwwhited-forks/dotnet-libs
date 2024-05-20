@@ -14,6 +14,20 @@ namespace Eliassen.Extensions.Linq;
 public static class AsyncEnumerableExtensions
 {
     /// <summary>
+    /// Converts an asynchronous enumerable sequence to a set (IEnumerable{T}) asynchronously.
+    /// </summary>
+    /// <typeparam name="T">The type of elements in the sequence.</typeparam>
+    /// <param name="items">The asynchronous enumerable sequence to convert.</param>
+    /// <returns>A task representing the asynchronous operation. The task result contains the set of elements in the sequence.</returns>
+    public static async Task<List<T>> ToListAsync<T>(this IAsyncEnumerable<T> items)
+    {
+        var result = new List<T>();
+        await foreach (var item in items)
+            result.Add(item);
+        return result;
+    }
+
+    /// <summary>
     /// Process IQueryable{T} to a List{T} as async
     /// </summary>
     /// <typeparam name="TModel"></typeparam>
@@ -159,4 +173,14 @@ public static class AsyncEnumerableExtensions
             collection.Add(item);
         return collection;
     }
+
+    /// <summary>
+    /// Converts an asynchronous enumerable sequence to a set (IEnumerable{T}) asynchronously.
+    /// </summary>
+    /// <typeparam name="T">The type of elements in the sequence.</typeparam>
+    /// <param name="items">The asynchronous enumerable sequence to convert.</param>
+    /// <returns>A task representing the asynchronous operation. The task result contains the set of elements in the sequence.</returns>
+    [Obsolete($"change to .{nameof(ToListAsync)}()", error: true)]
+    public static async Task<IEnumerable<T>> ToSetAsync<T>(this IAsyncEnumerable<T> items) =>
+        await items.ToListAsync();
 }

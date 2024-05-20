@@ -46,4 +46,11 @@ public class ApacheTikaClient : IApacheTikaClient
         stream.CopyTo(destination);
         destination.Position = 0;
     }
+
+    public async Task<string> GetHelloAsync()
+    {
+        var response = await _httpClient.GetAsync("/tika");
+        var result = await response.Content.ReadAsStringAsync();
+        return result;
+    }
 }

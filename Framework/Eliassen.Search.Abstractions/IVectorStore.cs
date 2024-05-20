@@ -1,4 +1,5 @@
 ﻿using Eliassen.Search.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ public interface IVectorStore
     /// <param name="embeddings">The embeddings to store.</param>
     /// <param name="metadata">The metadata to store.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
-    Task<string[]> StoreVectorsAsync(IEnumerable<float[]> embeddings, Dictionary<string, object> metadata);
+    Task<string[]> StoreVectorsAsync(IEnumerable<ReadOnlyMemory<float>> embeddings, Dictionary<string, object> metadata);
 
     /// <summary>
     /// Lists the stored vectors.
@@ -28,7 +29,7 @@ public interface IVectorStore
     /// </summary>
     /// <param name="find">The vector to find neighbors for.</param>
     /// <returns>A sequence of search result models.</returns>
-    IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(float[] find);
+    IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(ReadOnlyMemory<float> find);
 
     /// <summary>
     /// Finds the neighbors of the specified vector, grouped by the specified key.
@@ -36,7 +37,7 @@ public interface IVectorStore
     /// <param name="find">The vector to find neighbors for.</param>
     /// <param name="groupBy">The key to group the results by.</param>
     /// <returns>A sequence of search result models.</returns>
-    IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(float[] find, string groupBy);
+    IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(ReadOnlyMemory<float> find, string groupBy);
 }
 
 /// <summary>

@@ -1,6 +1,7 @@
 ﻿using Eliassen.Common;
 using Eliassen.Documents;
 using Eliassen.Examples.Tests.TestTargets;
+using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -43,6 +44,7 @@ public class ServiceRegistryTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     public void Create_IBlobContainer__ContainerTargetClass_Test()
     {
         var wrapper = ServiceProvider().GetRequiredService<IBlobContainer<ContainerTargetClass>>();
@@ -50,6 +52,7 @@ public class ServiceRegistryTests
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     public void Create_IBlobContainer__ContainerTargetClassWithTag_Test()
     {
         var wrapper = ServiceProvider().GetRequiredService<IBlobContainer<ContainerTargetClassWithTag>>();

@@ -8,13 +8,14 @@ Provides extension methods for configuring common middleware on the
 ### Methods
 
 
-#### UseAllCommonMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+#### UseAllCommonMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder,Eliassen.Common.AspNetCore.MiddlewareExtensionBuilder)
 Configures all common middleware on the specified 
  *See: T:Microsoft.AspNetCore.Builder.IApplicationBuilder*. 
 
 
 ##### Parameters
 * *builder:* The instance.
+* *middlewareBuilder:* The instance.
 
 
 

@@ -27,6 +27,13 @@ public static class ServiceCollectionExtensions
 #endif
         )
     {
+        var url = configuration.GetSection(ollamaApiClientOptionSection)?[nameof(OllamaApiClientOptions.Url)];
+        if (url == null)
+        {
+            return services;
+        }
+        services.AddHealthChecks().AddCheck<OllamaHealthCheck>("ollama");
+
         services.TryAddTransient<IOllamaApiClientFactory, OllamaApiClientFactory>();
         services.TryAddTransient<IOllamaModelMapper, OllamaModelMapper>();
         services.TryAddTransient(sp => ActivatorUtilities.CreateInstance<OllamaMessageCompletion>(sp));

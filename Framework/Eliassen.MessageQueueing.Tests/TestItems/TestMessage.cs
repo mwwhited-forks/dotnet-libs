@@ -1,4 +1,4 @@
-﻿namespace Eliassen.MessageQueueing.Tests.Services;
+﻿namespace Eliassen.MessageQueueing.Tests.TestItems;
 
 public class TestMessage
 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 
 namespace Eliassen.System.Text.Templating;
@@ -6,6 +7,7 @@ namespace Eliassen.System.Text.Templating;
 /// <summary>
 /// Represents the context of a template, providing information about the template and its processing.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public record TemplateContext : ITemplateContext
 {
     /// <summary>

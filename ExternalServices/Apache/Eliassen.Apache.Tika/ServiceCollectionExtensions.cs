@@ -1,11 +1,16 @@
-﻿using Eliassen.Documents;
+﻿using Eliassen.Apache.Tika.Detectors;
+using Eliassen.Apache.Tika.Handlers;
+using Eliassen.Documents;
 using Eliassen.Documents.Conversion;
 using Eliassen.Documents.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Options;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Eliassen.Apache.Tika;
 
@@ -21,19 +26,20 @@ public static class ServiceCollectionExtensions
     /// <returns>The modified <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection TryAddApacheTikaServices(
         this IServiceCollection services,
-    IConfiguration configuration,
+        IConfiguration configuration,
 #if DEBUG
-    string apacheTikaClientOptionSection
+        string apacheTikaClientOptionSection
 #else
         string apacheTikaClientOptionSection = nameof(ApacheTikaClientOptions)
 #endif
         )
     {
-        var url = configuration.GetSection(apacheTikaClientOptionSection)?["Url"];
+        var url = configuration.GetSection(apacheTikaClientOptionSection)?[nameof(ApacheTikaClientOptions.Url)];
         if (url == null)
         {
             return services;
         }
+        services.AddHealthChecks().AddCheck<ApacheTikaHealthCheck>("apache-tika");
 
         services.Configure<ApacheTikaClientOptions>(options => configuration.Bind(apacheTikaClientOptionSection, options));
 

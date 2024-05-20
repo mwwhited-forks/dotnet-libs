@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace Eliassen.AI;
 
@@ -18,7 +19,7 @@ public interface IEmbeddingProvider
     /// <param name="content">The content for which to retrieve the embedding.</param>
     /// <param name="model">The model for which to retrieve the embedding.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the embedding vector as an array of single-precision floats.</returns>
-    Task<float[]> GetEmbeddingAsync(
+    Task<ReadOnlyMemory<float>> GetEmbeddingAsync(
         string content,
 #if DEBUG
         string? model

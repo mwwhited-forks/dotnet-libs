@@ -63,7 +63,7 @@ Provides extension methods for the
 ### Methods
 
 
-#### EnsureModelExistsAsync(OllamaSharp.OllamaApiClient,System.String,Microsoft.Extensions.Logging.ILogger)
+#### EnsureModelExistsAsync(OllamaSharp.IOllamaApiClient,System.String,Microsoft.Extensions.Logging.ILogger)
 Ensures that the specified model exists in the Ollama API client. If the model does not exist locally, it is copied from the 'llama2' model. 
 
 
@@ -80,7 +80,7 @@ The Ollama API client.
 
 
 
-#### GetEmbeddingSingle(OllamaSharp.OllamaApiClient,System.String,System.String)
+#### GetEmbeddingSingle(OllamaSharp.IOllamaApiClient,System.String,System.String)
 Synchronously retrieves the embedding for the specified text using the specified model. 
 
 
@@ -97,7 +97,7 @@ The embedding as an array of floats.
 
 
 
-#### GetEmbeddingSingleAsync(OllamaSharp.OllamaApiClient,System.String,System.String)
+#### GetEmbeddingSingleAsync(OllamaSharp.IOllamaApiClient,System.String,System.String)
 Asynchronously retrieves the embedding for the specified text using the specified model. 
 
 
@@ -114,7 +114,7 @@ A task representing the asynchronous operation. The task result contains the emb
 
 
 
-#### GetEmbeddingDoubleAsync(OllamaSharp.OllamaApiClient,System.String,System.String)
+#### GetEmbeddingDoubleAsync(OllamaSharp.IOllamaApiClient,System.String,System.String)
 Asynchronously retrieves the embedding for the specified text using the specified model. 
 
 
@@ -131,7 +131,7 @@ A task representing the asynchronous operation. The task result contains the emb
 
 
 
-#### GetEmbeddingDouble(OllamaSharp.OllamaApiClient,System.String,System.String)
+#### GetEmbeddingDouble(OllamaSharp.IOllamaApiClient,System.String,System.String)
 Synchronously retrieves the embedding for the specified text using the specified model. 
 
 
@@ -185,6 +185,39 @@ Represents the configuration options for the Ollama API client.
 Gets or initializes the URL of the Ollama API.
 #### DefaultModel
 Gets or initializes the default model to use with the Ollama API.
+
+## Class: Ollama.OllamaHealthCheck
+Represents a health check implementation for the Ollama service. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Ollama.OllamaHealthCheck*class. 
+
+
+##### Parameters
+* *client:* The Ollama API client used for health checks.
+
+
+
+
+#### CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)
+Checks the health of the Ollama service asynchronously. 
+
+
+##### Parameters
+* *context:* The health check context.
+* *cancellationToken:* The cancellation token.
+
+
+
+
+##### Return value
+A task representing the asynchronous health check operation.
+
+
 
 ## Class: Ollama.OllamaMessageCompletion
 Represents a class responsible for generating message completions using the Ollama API. 

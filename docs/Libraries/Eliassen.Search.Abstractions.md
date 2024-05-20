@@ -7,7 +7,7 @@ Interface for storing and querying vectors.
 ### Methods
 
 
-#### StoreVectorsAsync(System.Collections.Generic.IEnumerable{System.Single[]},System.Collections.Generic.Dictionary{System.String,System.Object})
+#### StoreVectorsAsync(System.Collections.Generic.IEnumerable{System.ReadOnlyMemory{System.Single}},System.Collections.Generic.Dictionary{System.String,System.Object})
 Stores the specified embeddings and metadata. 
 
 
@@ -32,7 +32,7 @@ A sequence of search result models.
 
 
 
-#### FindNeighborsAsync(System.Single[])
+#### FindNeighborsAsync(System.ReadOnlyMemory{System.Single})
 Finds the neighbors of the specified vector. 
 
 
@@ -47,7 +47,7 @@ A sequence of search result models.
 
 
 
-#### FindNeighborsAsync(System.Single[],System.String)
+#### FindNeighborsAsync(System.ReadOnlyMemory{System.Single},System.String)
 Finds the neighbors of the specified vector, grouped by the specified key. 
 
 

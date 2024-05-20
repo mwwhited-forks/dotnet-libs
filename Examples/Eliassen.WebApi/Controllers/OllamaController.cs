@@ -4,6 +4,7 @@ using Eliassen.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -67,7 +68,7 @@ public class OllamaController : ControllerBase
     /// <param name="model">The model for which to retrieve the embedding vector.</param>
     /// <returns>The embedding vector.</returns>
     [HttpGet]
-    public async Task<float[]> Embed(string text, string? model = default) =>
+    public async Task<ReadOnlyMemory<float>> Embed(string text, string? model = default) =>
         await _embedding.GetEmbeddingAsync(text, model);
 
     /// <summary>

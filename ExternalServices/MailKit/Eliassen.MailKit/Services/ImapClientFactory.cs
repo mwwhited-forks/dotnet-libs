@@ -19,7 +19,7 @@ public class ImapClientFactory(
     /// Creates a new instance of the ImapClient class and configures it based on the provided options.
     /// </summary>
     /// <returns>An asynchronous task that represents the creation of the ImapClient instance.</returns>
-    public async Task<ImapClient> CreateAsync()
+    public async Task<IImapClient> CreateAsync()
     {
         var client = new ImapClient();
 

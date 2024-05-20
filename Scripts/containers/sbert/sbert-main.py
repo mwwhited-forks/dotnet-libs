@@ -24,7 +24,7 @@ def encode_text(texts):
 
 @app.route('/v1/embeddings', methods=['POST'])
 def get_embeddings():
-    # print("POST /v1/embeddings")
+    print("POST /v1/embeddings")
     content = request.json
     text_input = content['input']
     model_name = content.get('model', model_name_arg)
@@ -52,7 +52,7 @@ def get_embeddings():
 
 @app.route('/generate-embedding', methods=['GET'])
 def generate_embedding():
-    # print("GET /generate-embedding")
+    print("GET /generate-embedding")
     query = request.args.get('query')
     
     # Encode the query
@@ -62,13 +62,18 @@ def generate_embedding():
 
 @app.route('/generate-embeddings', methods=['POST'])
 def generate_multiple_embeddings():
-    # print("POST /generate-embeddings")
+    print("POST /generate-embeddings")
     texts = request.json
     
     # Encode the multiple texts
     embeddings_list = encode_text(texts)
 
     return jsonify(embeddings=embeddings_list)
+    
+@app.route('/health', methods=['GET'])
+def health():
+    print("GET /health")
+    return f"SBERT Model: {model_name_arg}"
 
 if __name__ == '__main__':
     from waitress import serve

@@ -18,7 +18,7 @@ public class OllamaApiClientTests
 {
     public required TestContext TestContext { get; set; }
 
-    private OllamaApiClient Build(string url, string model)
+    private IOllamaApiClient Build(string url, string model)
     {
         var config = new ConfigurationBuilder()
             .AddInMemoryCollection(new Dictionary<string, string?>
@@ -53,10 +53,10 @@ public class OllamaApiClientTests
             Prompt = "Hello World!",
         });
 
-        this.TestContext.WriteLine($"hostName: {hostName}");
-        this.TestContext.WriteLine($"model: {model}");
-        this.TestContext.WriteLine($"Length: {embedding.Embedding.Length}");
-        this.TestContext.WriteLine(string.Join(", ", embedding.Embedding));
+        TestContext.WriteLine($"hostName: {hostName}");
+        TestContext.WriteLine($"model: {model}");
+        TestContext.WriteLine($"Length: {embedding.Embedding.Length}");
+        TestContext.WriteLine(string.Join(", ", embedding.Embedding));
     }
 
     [TestCategory(TestCategories.DevLocal)]
@@ -71,7 +71,7 @@ public class OllamaApiClientTests
             Prompt = "Hello World!",
         });
 
-        this.TestContext.WriteLine(string.Join(", ", Array.ConvertAll(embedding.Embedding, Convert.ToSingle)));
+        TestContext.WriteLine(string.Join(", ", Array.ConvertAll(embedding.Embedding, Convert.ToSingle)));
     }
 
     [TestCategory(TestCategories.DevLocal)]
@@ -86,7 +86,7 @@ public class OllamaApiClientTests
             Prompt = "Hello World!",
         });
 
-        this.TestContext.WriteLine(
+        TestContext.WriteLine(
             string.Join(", ",
             Array.ConvertAll(embedding.Embedding, d => new[] {
                     (float)d,
@@ -119,9 +119,9 @@ public class OllamaApiClientTests
             },
         });
 
-        this.TestContext.AddResult(embedding);
+        TestContext.AddResult(embedding);
 
-        this.TestContext.WriteLine(
+        TestContext.WriteLine(
             string.Join(
                 Environment.NewLine,
                 embedding.Response.SplitBy(50)
@@ -156,16 +156,16 @@ public class OllamaApiClientTests
 
     public async Task GetCompletionWithImageTest(string hostName, string model, string prompt, string imageName)
     {
-        using var img = this.GetType().Assembly.GetManifestResourceStream($"Eliassen.Ollama.Tests.TestData.{imageName}")!;
+        using var img = GetType().Assembly.GetManifestResourceStream($"Eliassen.Ollama.Tests.TestData.{imageName}")!;
         using var ms = new MemoryStream();
         img.CopyTo(ms);
 
         var base54 = Convert.ToBase64String(ms.ToArray());
 
-        this.TestContext.WriteLine($"hostName: {hostName}");
-        this.TestContext.WriteLine($"model: {model}");
-        this.TestContext.WriteLine($"prompt: {prompt}");
-        this.TestContext.WriteLine($"imageName: {imageName}");
+        TestContext.WriteLine($"hostName: {hostName}");
+        TestContext.WriteLine($"model: {model}");
+        TestContext.WriteLine($"prompt: {prompt}");
+        TestContext.WriteLine($"imageName: {imageName}");
 
         //this.TestContext.WriteLine(new string('-', 80));
         //this.TestContext.WriteLine(string.Join(
@@ -184,8 +184,8 @@ public class OllamaApiClientTests
             },
         });
 
-        this.TestContext.WriteLine(new string('-', 80));
-        this.TestContext.WriteLine(
+        TestContext.WriteLine(new string('-', 80));
+        TestContext.WriteLine(
             string.Join(
                 Environment.NewLine,
                 embedding.Response.SplitBy(80)
@@ -200,7 +200,7 @@ public class OllamaApiClientTests
     {
         var client = Build(hostName, "");
         foreach (var localModel in await client.ListLocalModels())
-            this.TestContext.WriteLine($"model: {localModel.Name} - {localModel.Size:#,##0} ({localModel.Digest})");
+            TestContext.WriteLine($"model: {localModel.Name} - {localModel.Size:#,##0} ({localModel.Digest})");
     }
 
     [TestCategory(TestCategories.DevLocal)]

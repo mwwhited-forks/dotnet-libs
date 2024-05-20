@@ -8,7 +8,7 @@ public record CompletionRequest
     /// <summary>
     /// Gets or initializes the model for the completion request.
     /// </summary>
-    public required string Model { get; init; }
+    public string? Model { get; init; }
 
     /// <summary>
     /// Gets or initializes the context for the completion request.

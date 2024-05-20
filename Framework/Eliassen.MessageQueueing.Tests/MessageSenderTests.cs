@@ -44,7 +44,7 @@ public class MessageSenderTests
             hello = "world",
         });
 
-        this.TestContext.Write($"correlationId: {correlationId}");
+        TestContext.Write($"correlationId: {correlationId}");
     }
 
     [TestMethod]
@@ -71,7 +71,7 @@ public class MessageSenderTests
             hello = "world",
         });
 
-        this.TestContext.Write($"correlationId: {correlationId}");
+        TestContext.Write($"correlationId: {correlationId}");
 
         Assert.Fail("you should not get here!");
     }
@@ -99,7 +99,7 @@ public class MessageSenderTests
             hello = "world",
         });
 
-        this.TestContext.Write($"correlationId: {correlationId}");
+        TestContext.Write($"correlationId: {correlationId}");
     }
 
     public static IServiceProvider GetServiceProvider(TestContext testContext, IConfiguration config, Action<IServiceCollection>? update = default)

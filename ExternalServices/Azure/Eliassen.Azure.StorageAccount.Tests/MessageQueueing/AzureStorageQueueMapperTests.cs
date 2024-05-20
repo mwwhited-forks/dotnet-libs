@@ -79,6 +79,29 @@ public class AzureStorageQueueMapperTests
         Assert.AreEqual("Header1", result.Properties["Name1"]);
     }
 
+    public class MessageContext : IMessageContext
+    {
+        public object? this[string key]
+        {
+            get => Headers[key];
+            set => Headers[key] = value;
+        }
+
+        public string? OriginMessageId { get; }
+        public string? CorrelationId { get; set; }
+        public string? RequestId { get; }
+        public string? SentId { get; set; }
+        public string? ChannelType { get; }
+        public string? MessageType { get; }
+        public DateTimeOffset? SentAt { get; }
+        public string? SentBy { get; }
+        public string? SentFrom { get; }
+        public Dictionary<string, object?> Headers { get; } = [];
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        public IConfigurationSection Config { get; }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+    }
+
     public class TestMessage
     {
     }

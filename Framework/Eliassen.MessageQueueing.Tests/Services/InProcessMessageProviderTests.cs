@@ -1,4 +1,5 @@
 ﻿using Eliassen.MessageQueueing.Services;
+using Eliassen.MessageQueueing.Tests.TestItems;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -26,7 +27,7 @@ public class InProcessMessageProviderTests
                    .Returns(Task.CompletedTask)
                    .Callback(() =>
                    {
-                       this.TestContext.WriteLine("Handler Called!");
+                       TestContext.WriteLine("Handler Called!");
                        cancellationTokenSource.Cancel();
                    });
 
@@ -35,7 +36,6 @@ public class InProcessMessageProviderTests
             );
 
         provider.SetHandlerProvider(mockHandler.Object);
-
 
         var correlationId = await provider.SendAsync(message, context);
         Assert.IsNotNull(correlationId);

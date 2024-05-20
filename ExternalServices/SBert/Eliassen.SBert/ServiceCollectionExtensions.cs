@@ -29,6 +29,13 @@ public static class ServiceCollectionExtensions
 #endif
         )
     {
+        var url = configuration.GetSection(sentenceEmbeddingOptionSection)?[nameof(SentenceEmbeddingOptions.Url)];
+        if (url == null)
+        {
+            return services;
+        }
+        services.AddHealthChecks().AddCheck<SbertHealthCheck>("sbert");
+
         services.Configure<SentenceEmbeddingOptions>(options => configuration.Bind(sentenceEmbeddingOptionSection, options));
         services.TryAddTransient<IEmbeddingProvider, SentenceEmbeddingProvider>();
         services.TryAddKeyedTransient<IEmbeddingProvider, SentenceEmbeddingProvider>("SBERT");

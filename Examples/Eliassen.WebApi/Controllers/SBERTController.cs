@@ -1,6 +1,7 @@
 ﻿using Eliassen.AI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Threading.Tasks;
 
 namespace Eliassen.WebApi.Controllers;
@@ -20,10 +21,7 @@ public class SBERTController : ControllerBase
     /// <param name="embedding">The embedding provider.</param>
     public SBERTController(
         [FromKeyedServices("SBERT")] IEmbeddingProvider embedding
-        )
-    {
-        _embedding = embedding;
-    }
+        ) => _embedding = embedding;
 
     /// <summary>
     /// Retrieves the embedding vector for the given text.
@@ -31,6 +29,6 @@ public class SBERTController : ControllerBase
     /// <param name="text">The text for which to retrieve the embedding vector.</param>
     /// <returns>The embedding vector.</returns>
     [HttpGet]
-    public async Task<float[]> Embed(string text) =>
+    public async Task<ReadOnlyMemory<float>> Embed(string text) =>
         await _embedding.GetEmbeddingAsync(text, default);
 }

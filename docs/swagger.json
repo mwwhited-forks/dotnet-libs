@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Eliassen.WebApi",
-    "version": "0.1.77.13"
+    "version": "0.2.1.29"
   },
   "paths": {
     "/api/AI": {
@@ -32,7 +32,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -84,7 +84,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -145,7 +145,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -206,7 +206,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -259,7 +259,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -312,7 +312,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -365,7 +365,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -409,7 +409,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -459,7 +459,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -509,7 +509,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -559,7 +559,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -609,7 +609,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -678,22 +678,7 @@
                 }
               },
               "encoding": {
-                "ContentType": {
-                  "style": "form"
-                },
-                "ContentDisposition": {
-                  "style": "form"
-                },
-                "Headers": {
-                  "style": "form"
-                },
-                "Length": {
-                  "style": "form"
-                },
-                "Name": {
-                  "style": "form"
-                },
-                "FileName": {
+                "content": {
                   "style": "form"
                 }
               }
@@ -702,7 +687,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "OK"
           },
           "400": {
             "description": "Bad Request"
@@ -753,22 +738,7 @@
                 }
               },
               "encoding": {
-                "ContentType": {
-                  "style": "form"
-                },
-                "ContentDisposition": {
-                  "style": "form"
-                },
-                "Headers": {
-                  "style": "form"
-                },
-                "Length": {
-                  "style": "form"
-                },
-                "Name": {
-                  "style": "form"
-                },
-                "FileName": {
+                "content": {
                   "style": "form"
                 }
               }
@@ -777,7 +747,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "OK"
           },
           "400": {
             "description": "Bad Request"
@@ -829,7 +799,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -892,7 +862,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -944,7 +914,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -993,33 +963,21 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "number",
-                    "format": "float"
-                  }
+                  "$ref": "#/components/schemas/System.ReadOnlyMemory-System.Single"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "number",
-                    "format": "float"
-                  }
+                  "$ref": "#/components/schemas/System.ReadOnlyMemory-System.Single"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "number",
-                    "format": "float"
-                  }
+                  "$ref": "#/components/schemas/System.ReadOnlyMemory-System.Single"
                 }
               }
             }
@@ -1057,7 +1015,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1119,7 +1077,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1162,33 +1120,21 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "number",
-                    "format": "float"
-                  }
+                  "$ref": "#/components/schemas/System.ReadOnlyMemory-System.Single"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "number",
-                    "format": "float"
-                  }
+                  "$ref": "#/components/schemas/System.ReadOnlyMemory-System.Single"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "number",
-                    "format": "float"
-                  }
+                  "$ref": "#/components/schemas/System.ReadOnlyMemory-System.Single"
                 }
               }
             }
@@ -1207,7 +1153,7 @@
         "summary": "Gets the list of supported template file types.",
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1279,7 +1225,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "OK"
           }
         },
         "x-permissions": {
@@ -1295,7 +1241,7 @@
         "summary": "Gets the claims associated with the current user.",
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1328,11 +1274,41 @@
           "anonymous": false
         }
       }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "ApiHealth"
+        ],
+        "responses": {
+          "200": {
+            "description": null,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "errors": {
+                      "type": "array"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
       "Eliassen.AI.Models.CompletionRequest": {
+        "required": [
+          "prompt"
+        ],
         "type": "object",
         "properties": {
           "model": {
@@ -1358,9 +1334,9 @@
             "nullable": true
           },
           "prompt": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets or initializes the prompt for the completion request.",
-            "nullable": true
+            "description": "Gets or initializes the prompt for the completion request."
           },
           "system": {
             "type": "string",
@@ -1377,6 +1353,10 @@
         "description": "Represents a completion request."
       },
       "Eliassen.AI.Models.CompletionResponse": {
+        "required": [
+          "context",
+          "response"
+        ],
         "type": "object",
         "properties": {
           "context": {
@@ -1385,30 +1365,33 @@
               "type": "integer",
               "format": "int64"
             },
-            "description": "Gets or sets the context for the completion response.",
-            "nullable": true
+            "description": "Gets or sets the context for the completion response."
           },
           "response": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets or sets the response generated by the completion process.",
-            "nullable": true
+            "description": "Gets or sets the response generated by the completion process."
           }
         },
         "additionalProperties": false,
         "description": "Represents a completion response."
       },
       "Eliassen.Communications.Models.AttachmentReferenceModel": {
+        "required": [
+          "containerName",
+          "documentKey"
+        ],
         "type": "object",
         "properties": {
           "containerName": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets the name of the container where the attachment is stored.",
-            "nullable": true
+            "description": "Gets the name of the container where the attachment is stored."
           },
           "documentKey": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets the key or identifier of the document associated with the attachment.",
-            "nullable": true
+            "description": "Gets the key or identifier of the document associated with the attachment."
           }
         },
         "additionalProperties": false,
@@ -1487,17 +1470,21 @@
         "description": "Represents an email message model."
       },
       "Eliassen.System.Text.Templating.FileType": {
+        "required": [
+          "contentType",
+          "extension"
+        ],
         "type": "object",
         "properties": {
           "extension": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets or sets the file extension associated with the file type.",
-            "nullable": true
+            "description": "Gets or sets the file extension associated with the file type."
           },
           "contentType": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets or sets the content type associated with the file type.",
-            "nullable": true
+            "description": "Gets or sets the content type associated with the file type."
           },
           "isTemplateType": {
             "type": "boolean",
@@ -1508,32 +1495,39 @@
         "description": "Represents a file type, providing information about the file extension, content type, and whether it is a template type."
       },
       "Eliassen.WebApi.Models.ClaimModel": {
+        "required": [
+          "issuer",
+          "originalIssuer",
+          "type",
+          "value",
+          "valueType"
+        ],
         "type": "object",
         "properties": {
           "issuer": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets or sets the issuer of the claim.",
-            "nullable": true
+            "description": "Gets or sets the issuer of the claim."
           },
           "value": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets or sets the value of the claim.",
-            "nullable": true
+            "description": "Gets or sets the value of the claim."
           },
           "valueType": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets or sets the value type of the claim.",
-            "nullable": true
+            "description": "Gets or sets the value type of the claim."
           },
           "type": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets or sets the type of the claim.",
-            "nullable": true
+            "description": "Gets or sets the type of the claim."
           },
           "originalIssuer": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets or sets the original issuer of the claim.",
-            "nullable": true
+            "description": "Gets or sets the original issuer of the claim."
           },
           "subjectName": {
             "type": "string",
@@ -1570,45 +1564,52 @@
         "description": "Represents an example message model."
       },
       "Eliassen.WebApi.Models.GenAiContextRequestModel": {
+        "required": [
+          "assistantConfinment",
+          "promptDetails",
+          "userInput"
+        ],
         "type": "object",
         "properties": {
           "assistantConfinment": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets or sets the prompt details.",
-            "nullable": true
+            "description": "Gets or sets the prompt details."
           },
           "promptDetails": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Gets or sets the prompt details.",
-            "nullable": true
+            "description": "Gets or sets the prompt details."
           },
           "userInput": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Gets or sets the user input.",
-            "nullable": true
+            "description": "Gets or sets the user input."
           }
         },
         "additionalProperties": false,
         "description": "Represents the model used for generating AI responses."
       },
       "Eliassen.WebApi.Models.GenerativeAiRequestModel": {
+        "required": [
+          "promptDetails",
+          "userInput"
+        ],
         "type": "object",
         "properties": {
           "promptDetails": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets or sets the prompt details.",
-            "nullable": true
+            "description": "Gets or sets the prompt details."
           },
           "userInput": {
+            "minLength": 1,
             "type": "string",
-            "description": "Gets or sets the user input.",
-            "nullable": true
+            "description": "Gets or sets the user input."
           }
         },
         "additionalProperties": false,

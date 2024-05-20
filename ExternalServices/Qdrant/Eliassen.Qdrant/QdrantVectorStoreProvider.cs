@@ -68,7 +68,7 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// <summary>
     /// Gets or sets the name of the container.
     /// </summary>
-    public virtual async Task<string[]> StoreVectorsAsync(IEnumerable<float[]> embeddings, Dictionary<string, object> metadata)
+    public virtual async Task<string[]> StoreVectorsAsync(IEnumerable<ReadOnlyMemory<float>> embeddings, Dictionary<string, object> metadata)
     {
         if (_options.Value.EnsureCollectionExists)
             await EnsureCollectionExistsAsync(embeddings.First().Length);
@@ -91,7 +91,7 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
                          },
                          Vectors = new Vectors()
                          {
-                             Vector = embedding
+                             Vector = embedding.ToArray(),
                          },
                      };
 
@@ -194,13 +194,13 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// </summary>
     /// <param name="find">The vector to search for neighbors.</param>
     /// <returns>An asynchronous enumerable collection of search results representing nearest neighbors.</returns>
-    public virtual async IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(float[] find)
+    public virtual async IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(ReadOnlyMemory<float> find)
     {
         var results = await _client.Points.SearchAsync(new()
         {
             CollectionName = _collectionName,
             Limit = (uint)1000,
-            Vector = { find },
+            Vector = { find.ToArray() },
             WithPayload = true,
             //  WithVectors = true,
         });
@@ -214,13 +214,13 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// <param name="find">The vector to search for neighbors.</param>
     /// <param name="groupBy">The field to group the results by.</param>
     /// <returns>An asynchronous enumerable collection of search results representing nearest neighbors grouped by the specified field.</returns>
-    public virtual async IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(float[] find, string groupBy)
+    public virtual async IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(ReadOnlyMemory<float> find, string groupBy)
     {
         var results = await _client.Points.SearchGroupsAsync(new()
         {
             CollectionName = _collectionName,
             Limit = (uint)1000,
-            Vector = { find },
+            Vector = { find.ToArray() },
             WithPayload = true,
             // WithVectors = true,
 
