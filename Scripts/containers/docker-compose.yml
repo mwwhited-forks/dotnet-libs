@@ -128,6 +128,13 @@ services:
     networks:
       - backend
 
+  kafka:
+    extends:
+      file: docker-compose.kafka.yml
+      service: kafka
+    networks:
+      - backend
+
 networks:
   frontend:
     driver: bridge
@@ -145,3 +152,4 @@ volumes:
     sqlserver-data:
     opensearch-data:
     paradedb-data:
+    kafka-data:
