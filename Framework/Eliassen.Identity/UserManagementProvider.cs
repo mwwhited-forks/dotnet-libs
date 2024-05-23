@@ -21,7 +21,7 @@ public class UserManagementProvider(
     /// </summary>
     /// <param name="model">The model containing user information for account creation.</param>
     /// <returns>A task representing the asynchronous operation. The result is a model containing the created user's information.</returns>
-    public async Task<UserCreatedModel> CreateAccountAsync(UserCreateModel model)
+    public virtual async Task<UserCreatedModel> CreateAccountAsync(UserCreateModel model)
     {
         if (_user == null) throw new NotSupportedException($"No identity management provider registered");
 

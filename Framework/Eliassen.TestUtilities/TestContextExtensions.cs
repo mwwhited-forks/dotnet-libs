@@ -1,5 +1,6 @@
 ﻿using Eliassen.Extensions.Reflection;
 using Eliassen.System.Text.Json.Serialization;
+using Eliassen.System.Text.Xml.Linq;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -11,8 +12,11 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Eliassen.TestUtilities;
 
@@ -121,6 +125,54 @@ public static class TestContextExtensions
         {
             var file = changeExtension(composedFileName, ".bin");
             AddResultFile(context, file, data, out outFile);
+            context.WriteLine($"{file}: Attached");
+        }
+        else if (value is XFragment || value is XmlReader)
+        {
+            var xFragment = value as XFragment;
+            xFragment ??= new XFragment((XmlReader)value);
+
+            var file = changeExtension(composedFileName, ".xml");
+            var ms = new MemoryStream();
+            var writer = XmlWriter.Create(ms, new XmlWriterSettings
+            {
+                CloseOutput = false,
+                ConformanceLevel = ConformanceLevel.Fragment,
+                Indent = true,
+                NewLineHandling = NewLineHandling.Replace,
+                OmitXmlDeclaration = true,
+            });
+            foreach (var xNode in xFragment)
+                xNode.WriteTo(writer);
+            writer.Flush();
+            AddResultFile(context, file, ms.ToArray(), out outFile);
+            context.WriteLine($"{file}: Attached");
+        }
+        else if (value is XNode xNode)
+        {
+            var file = changeExtension(composedFileName, ".xml");
+            var ms = new MemoryStream();
+            var writer = XmlWriter.Create(ms, new XmlWriterSettings
+            {
+                CloseOutput = false,
+                ConformanceLevel = ConformanceLevel.Fragment,
+                Indent = true,
+                NewLineHandling = NewLineHandling.Replace,
+                OmitXmlDeclaration = true,
+            });
+            xNode.WriteTo(writer);
+            writer.Flush();
+            AddResultFile(context, file, ms.ToArray(), out outFile);
+            context.WriteLine($"{file}: Attached");
+        }
+        else if (value is JsonNode jsonNode)
+        {
+            var file = changeExtension(composedFileName, ".xml");
+            var ms = new MemoryStream();
+            var writer = new Utf8JsonWriter(ms, new JsonWriterOptions { Indented = true, });
+            jsonNode.WriteTo(writer);
+            writer.Flush();
+            AddResultFile(context, file, ms.ToArray(), out outFile);
             context.WriteLine($"{file}: Attached");
         }
         else if (value is Stream stream)

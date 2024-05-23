@@ -69,7 +69,8 @@ public static class ServiceCollectionExtensions
         services.TryAddOpenSearchServices(configuration, externalBuilder.OpenSearchOptionSection);
         services.TryAddOllamaServices(configuration, externalBuilder.OllamaApiClientOptionSection);
 
-        services.TryAddApacheTikaServices();
+        services.TryAddApacheTikaServices(configuration, externalBuilder.ApacheTikaClientOptionSection);
+
         services.TryAddWkHtmlToPdfServices();
         services.TryAddMarkdigServices();
         services.TryAddMysticMindServices();

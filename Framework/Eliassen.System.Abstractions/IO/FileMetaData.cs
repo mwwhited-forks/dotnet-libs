@@ -1,9 +1,11 @@
-﻿namespace Eliassen.System.IO;
+﻿using System;
+
+namespace Eliassen.System.IO;
 
 /// <summary>
 /// Represents metadata associated with a file.
 /// </summary>
-public record FileMetaData
+public readonly ref struct FileMetaData
 {
     /// <summary>
     /// Gets the universally unique identifier (UUID) of the file.
@@ -18,7 +20,7 @@ public record FileMetaData
     /// <summary>
     /// Gets the hash value of the file.
     /// </summary>
-    public byte[] Hash { get; init; }
+    public ReadOnlySpan<byte> Hash { get; init; }
 
     /// <summary>
     /// Gets the base path of the file.
@@ -32,7 +34,7 @@ public record FileMetaData
     /// <param name="path">The path of the file.</param>
     /// <param name="hash">The hash value of the file.</param>
     /// <param name="basePath">The base path of the file.</param>
-    public FileMetaData(string uuid, string path, byte[] hash, string basePath)
+    public FileMetaData(string uuid, string path, ReadOnlySpan<byte> hash, string basePath)
     {
         Uuid = uuid;
         Path = path;

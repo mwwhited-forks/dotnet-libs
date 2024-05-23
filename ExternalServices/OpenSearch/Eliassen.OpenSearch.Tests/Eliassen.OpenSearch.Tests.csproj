@@ -26,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Framework\Eliassen.AI.Abstractions\Eliassen.AI.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\Framework\Eliassen.Extensions\Eliassen.Extensions.csproj" />
+    <ProjectReference Include="..\..\..\Framework\Eliassen.TestUtilities\Eliassen.TestUtilities.csproj" />
     <ProjectReference Include="..\Eliassen.OpenSearch\Eliassen.OpenSearch.csproj" />
   </ItemGroup>
 

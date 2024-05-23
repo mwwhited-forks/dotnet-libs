@@ -1,5 +1,7 @@
-﻿using Eliassen.System.Linq;
+﻿using Eliassen.System.IO;
+using Eliassen.System.Linq;
 using Eliassen.System.Net.Mime;
+using Eliassen.System.Providers;
 using Eliassen.System.Security.Cryptography;
 using Eliassen.System.Text;
 using Eliassen.System.Text.Json.Serialization;
@@ -38,6 +40,7 @@ public static class ServiceCollectionExtensions
         services.TryTemplatingExtensions(config, builder.FileTemplatingConfigurationSection);
         services.TrySecurityExtensions(builder.DefaultHashType);
         services.TrySerializerExtensions(builder.DefaultSerializerType);
+        services.TryAddProviders();
         ;
         return services;
     }
@@ -156,6 +159,23 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IFileType>(_ => new FileType { Extension = ".xml", ContentType = DefaultXmlSerializer.DefaultContentType, IsTemplateType = false });
 
         services.AddTransient<IFileType>(_ => new FileType { Extension = ".xslt", ContentType = ContentTypesExtensions.Application.XSLT, IsTemplateType = true });
+
+        return services;
+    }
+
+    /// <summary>
+    /// Add support for type providers
+    /// </summary>
+    /// <param name="services"></param>
+    /// <returns></returns>
+    public static IServiceCollection TryAddProviders(
+        this IServiceCollection services
+        )
+    {
+        services.TryAddSingleton<IDateTimeProvider, DateTimeProvider>();
+        services.TryAddSingleton<IGuidProvider, GuidProvider>();
+
+        services.TryAddSingleton<ITempFileFactory, TempFileFactory>();
 
         return services;
     }

@@ -300,6 +300,21 @@ Extensions to add async support to existing IEnumerable{T}
 ### Methods
 
 
+#### ToListAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})
+Converts an asynchronous enumerable sequence to a set (IEnumerable{T}) asynchronously. 
+
+
+##### Parameters
+* *items:* The asynchronous enumerable sequence to convert.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. The task result contains the set of elements in the sequence.
+
+
+
 #### ToListAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)
 Process IQueryable{T} to a List{T} as async 
 
@@ -412,6 +427,21 @@ A task representing the asynchronous operation. The task result contains a read-
 
 
 
+#### ToSetAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})
+Converts an asynchronous enumerable sequence to a set (IEnumerable{T}) asynchronously. 
+
+
+##### Parameters
+* *items:* The asynchronous enumerable sequence to convert.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation. The task result contains the set of elements in the sequence.
+
+
+
 ## Class: Extensions.Linq.DictionaryExtensions
 Reusable extensions for Generic Dictionaries 
 
@@ -449,27 +479,6 @@ Rebuild dictionary to use a different IEqualityComparer{TKey}
 
 ##### Return value
 
-
-
-
-## Class: Extensions.Linq.EnumerableExtensions
-Provides extension methods for asynchronous enumerables. 
-
-### Methods
-
-
-#### ToSetAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})
-Converts an asynchronous enumerable sequence to a set (IEnumerable{T}) asynchronously. 
-
-
-##### Parameters
-* *items:* The asynchronous enumerable sequence to convert.
-
-
-
-
-##### Return value
-A task representing the asynchronous operation. The task result contains the set of elements in the sequence.
 
 
 

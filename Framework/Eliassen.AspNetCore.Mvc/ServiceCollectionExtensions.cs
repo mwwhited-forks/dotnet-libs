@@ -1,5 +1,6 @@
 ﻿using Eliassen.AspNetCore.Mvc.Authorization;
 using Eliassen.AspNetCore.Mvc.Filters;
+using Eliassen.AspNetCore.Mvc.Providers.SearchQuery;
 using Eliassen.AspNetCore.Mvc.SwaggerGen;
 using Eliassen.Extensions;
 using Eliassen.System.Linq;
@@ -41,6 +42,8 @@ public static class ServiceCollectionExtensions
     )
     {
         builder ??= new();
+
+        services.AddHealthChecks();
 
         services.TryAddCommonOpenApiExtensions();
         services.TryAddAspNetCoreSearchQuery();
@@ -109,6 +112,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<FormFileOperationFilter>>();
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AdditionalSwaggerGenEndpointsOptions>();
+        services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, HealthCheckSwaggerGenEndpointOptions>();
         services.AddSingleton<IConfigureOptions<SwaggerUIOptions>, AdditionalSwaggerUIEndpointsOptions>();
         services.AddControllers(opt => opt.Conventions.Add(new ApiNamespaceControllerModelConvention()));
         return services;
@@ -125,6 +129,9 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IConfigureOptions<MvcOptions>, AddMvcFilterOptions<SearchQueryResultFilter>>();
         services.AddAccessor<ISearchQuery>();
         services.TryAddSingleton<SearchQueryResultFilter>();
+        services.TryAddSingleton<ISearchModelMapper, SearchModelMapper>();
+        services.TryAddSingleton<ISearchModelBuilder, SearchModelBuilder>();
+
         services.TryAddSearchQueryExtensions();
 
         return services;

@@ -44,7 +44,7 @@ public class OpenAIManagerTests
         var provider = Provider();
         var result = await provider.GetResponseAsync(prompt, user);
 
-        this.TestContext.WriteLine(result);
+        TestContext.WriteLine(result);
         Assert.IsTrue(!string.IsNullOrWhiteSpace(result));
     }
 }

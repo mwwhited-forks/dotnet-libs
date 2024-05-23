@@ -33,9 +33,9 @@ public class HtmlToPdfConversionHandlerTests
 
         var converter = ActivatorUtilities.CreateInstance<HtmlToPdfConversionHandler>(serviceProvider);
 
-        var resource = this.GetType().Assembly.GetManifestResourceNames().FirstOrDefault(l => l.EndsWith($".{resourceName}"))
+        var resource = GetType().Assembly.GetManifestResourceNames().FirstOrDefault(l => l.EndsWith($".{resourceName}"))
             ?? throw new ApplicationException($"missing .{resourceName} resource");
-        using var stream = this.GetType().Assembly.GetManifestResourceStream(resource)
+        using var stream = GetType().Assembly.GetManifestResourceStream(resource)
             ?? throw new ApplicationException($"missing .{resourceName} resource");
 
         using var htmlStream = new MemoryStream();
@@ -46,7 +46,7 @@ public class HtmlToPdfConversionHandlerTests
         await converter.ConvertAsync(htmlStream, sourceType, pdfStream, targetType);
         pdfStream.Position = 0;
 
-        this.TestContext.WriteLine($"Content Length: {pdfStream.Length}");
+        TestContext.WriteLine($"Content Length: {pdfStream.Length}");
 
         TestContext.AddResult(pdfStream, fileName: Path.ChangeExtension(resourceName, ".pdf"));
 

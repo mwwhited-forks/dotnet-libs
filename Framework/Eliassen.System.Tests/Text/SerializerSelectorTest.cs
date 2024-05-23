@@ -1,6 +1,7 @@
 ﻿using Eliassen.System.Text;
 using Eliassen.System.Text.Json.Serialization;
 using Eliassen.System.Text.Xml.Serialization;
+using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -14,6 +15,7 @@ public class SerializerSelectorTest
     public required TestContext TestContext { get; set; }
 
     [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
     [DataRow(SerializerTypes.Json, typeof(DefaultJsonSerializer))]
     [DataRow(SerializerTypes.Bson, typeof(DefaultBsonSerializer))]
     [DataRow(SerializerTypes.Xml, typeof(DefaultXmlSerializer))]
@@ -33,6 +35,7 @@ public class SerializerSelectorTest
     }
 
     [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
     [DataRow(SerializerTypes.Json, typeof(DefaultJsonSerializer))]
     [DataRow(SerializerTypes.Bson, typeof(DefaultBsonSerializer))]
     [DataRow(SerializerTypes.Xml, typeof(DefaultXmlSerializer))]

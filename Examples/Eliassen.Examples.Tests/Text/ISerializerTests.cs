@@ -49,7 +49,7 @@ public class ISerializerTests
     {
         var serviceProvider = CreateProvider();
         var service = serviceProvider.GetRequiredService<ISerializer>();
-        this.TestContext.WriteLine($"{service.GetType()}");
+        TestContext.WriteLine($"{service.GetType()}");
         Assert.IsInstanceOfType<DefaultJsonSerializer>(service);
     }
 
@@ -62,7 +62,7 @@ public class ISerializerTests
     {
         var serviceProvider = CreateProvider();
         var service = serviceProvider.GetRequiredKeyedService<ISerializer>(key);
-        this.TestContext.WriteLine($"{service.GetType()}");
+        TestContext.WriteLine($"{service.GetType()}");
         Assert.IsInstanceOfType(service, expected);
     }
 
@@ -78,8 +78,8 @@ public class ISerializerTests
 
         var result = service.Serialize(new TestObject { Prop1 = "Hello World" });
 
-        this.TestContext.WriteLine($"{service.GetType()}");
-        this.TestContext.AddResult(result, fileName: $"Result{ext}");
+        TestContext.WriteLine($"{service.GetType()}");
+        TestContext.AddResult(result, fileName: $"Result{ext}");
         Assert.IsInstanceOfType(service, expected);
     }
 

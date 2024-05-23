@@ -10,5 +10,5 @@ public interface IBlobContainerProviderFactory
     /// </summary>
     /// <param name="containerName">name of container</param>
     /// <returns>instance of the blob provider</returns>
-    IBlobContainerProvider Create(string containerName);
+    IBlobContainerProvider? Create(string containerName);
 }

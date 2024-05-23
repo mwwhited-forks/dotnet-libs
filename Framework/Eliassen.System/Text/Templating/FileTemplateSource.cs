@@ -24,7 +24,7 @@ public class FileTemplateSource(
     /// </summary>
     /// <param name="templateName"></param>
     /// <returns></returns>
-    public IEnumerable<ITemplateContext> Get(string templateName)
+    public virtual IEnumerable<ITemplateContext> Get(string templateName)
     {
         var sandbox = string.IsNullOrWhiteSpace(_settings.SandboxPath) ? null : Path.GetFullPath(_settings.SandboxPath + "/");
 

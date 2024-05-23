@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Eliassen.OpenSearch;
 
@@ -6,6 +7,7 @@ namespace Eliassen.OpenSearch;
 /// Provides functionality for storing and searching lexical content using OpenSearch.
 /// </summary>
 [Obsolete]
+[ExcludeFromCodeCoverage]
 public class LexicalProvider
 {
     //private readonly IOpenSearchLowLevelClient _client;

@@ -77,7 +77,7 @@ public class MessageContextFactory(
     /// <param name="message">The queue message.</param>
     /// <param name="configuration">The configuration section.</param>
     /// <returns>A new instance of <see cref="IMessageContext"/>.</returns>
-    public IMessageContext Create(Type channelType, IQueueMessage message, IConfigurationSection configuration)
+    public virtual IMessageContext Create(Type channelType, IQueueMessage message, IConfigurationSection configuration)
     {
         var context = ActivatorUtilities.CreateInstance<MessageContext>(serviceProvider);
 

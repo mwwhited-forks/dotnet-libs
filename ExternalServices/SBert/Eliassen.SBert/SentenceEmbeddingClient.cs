@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -26,14 +27,14 @@ public class SentenceEmbeddingClient : ISentenceEmbeddingClient
     /// </summary>
     /// <param name="input">The input text.</param>
     /// <returns>An array of single-precision floats representing the embedding.</returns>
-    public async Task<float[]> GetEmbeddingAsync(string input)
+    public async Task<ReadOnlyMemory<float>> GetEmbeddingAsync(string input)
     {
         var results = await _httpClient.GetAsync($"/generate-embedding?query={input}");
         var json = await results.Content.ReadAsStringAsync();
         var node = JsonSerializer.Deserialize<JsonNode>(json);
         var array = (JsonArray?)node?["embedding"];
-        var floats = array?.OfType<JsonNode>().Select(i => (float)i).ToArray();
-        return floats ?? [];
+        ReadOnlyMemory<float> floats = array?.OfType<JsonNode>().Select(i => (float)i).ToArray();
+        return floats;
     }
 
     /// <summary>
@@ -41,7 +42,7 @@ public class SentenceEmbeddingClient : ISentenceEmbeddingClient
     /// </summary>
     /// <param name="input">The input text.</param>
     /// <returns>An array of double-precision floats representing the embedding.</returns>
-    public async Task<double[]> GetEmbeddingDoubleAsync(string input)
+    public async Task<ReadOnlyMemory<double>> GetEmbeddingDoubleAsync(string input)
     {
         var results = await _httpClient.GetAsync($"/generate-embedding?query={input}");
         var json = await results.Content.ReadAsStringAsync();
@@ -49,5 +50,16 @@ public class SentenceEmbeddingClient : ISentenceEmbeddingClient
         var array = (JsonArray?)node?["embedding"];
         var floats = array?.OfType<JsonNode>().Select(i => (double)i).ToArray();
         return floats ?? [];
+    }
+
+    /// <summary>
+    /// Check the health status of the sentence embedding service
+    /// </summary>
+    /// <returns></returns>
+    public async Task<string> GetHealthAsync()
+    {
+        var results = await _httpClient.GetAsync($"/health");
+        var response = await results.Content.ReadAsStringAsync();
+        return response;
     }
 }

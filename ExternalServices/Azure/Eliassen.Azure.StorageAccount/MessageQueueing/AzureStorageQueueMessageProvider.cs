@@ -16,14 +16,17 @@ namespace Eliassen.Azure.StorageAccount.MessageQueueing;
 /// </remark>
 /// <param name="serializer">The JSON serializer for message serialization and deserialization.</param>
 /// <param name="clientFactory">The factory for creating Azure Storage Queue clients.</param>
+/// <param name="mapper">The model mapper for Azure Storage Queues.</param>
 /// <param name="logger">The logger for logging messages.</param>
 public class AzureStorageQueueMessageProvider(
     IJsonSerializer serializer,
     IQueueClientFactory clientFactory,
+    IAzureStorageQueueMapper mapper,
     ILogger<AzureStorageQueueMessageProvider> logger
         ) : IMessageSenderProvider, IMessageReceiverProvider
 {
     private IMessageHandlerProvider? _handlerProvider;
+    private readonly IAzureStorageQueueMapper _mapper = mapper;
 
     /// <summary>
     /// Sends a message asynchronously to an Azure Storage Queue.
@@ -35,18 +38,10 @@ public class AzureStorageQueueMessageProvider(
     {
         var client = clientFactory.Create(context.Config);
 
-#if DEBUG
-        client.CreateIfNotExists(); //TODO: should make this a config option or have someway to detect queues from the application
-#endif
+        if (_mapper.EnsureQueueExists(context.Config))
+            client.CreateIfNotExists();
 
-        var wrapped = new WrappedQueueMessage
-        {
-            ContentType = "application/json;",
-            PayloadType = message.GetType().AssemblyQualifiedName ?? throw new NotSupportedException(),
-            CorrelationId = context.CorrelationId ?? "",
-            Payload = message,
-            Properties = context.Headers,
-        };
+        var wrapped = _mapper.Wrap(message, context);
 
         var serialized = serializer.Serialize(wrapped);
         var result = await client.SendMessageAsync(serialized);
@@ -76,9 +71,11 @@ public class AzureStorageQueueMessageProvider(
     {
         var client = clientFactory.Create(_handlerProvider?.Config ?? throw new ConfigurationMissingException("UNKNOWN"));
 
-#if DEBUG
-        client.CreateIfNotExists(cancellationToken: cancellationToken); //TODO: should make this a config option
-#endif
+        if (!client.Exists(cancellationToken))
+        {
+            logger.LogWarning("Queue {queueName} does not exist", client.Name);
+            return;
+        }
 
         var newCancellationToken = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken).Token;
 
@@ -89,7 +86,7 @@ public class AzureStorageQueueMessageProvider(
             if (message?.Value == null)
             {
                 logger.LogInformation($"Nothing Received waiting");
-                await Task.Delay(1000, cancellationToken);  //TODO: this should be configurable
+                await Task.Delay(_mapper.WaitDelay(_handlerProvider.Config), cancellationToken);
                 continue;
             }
 

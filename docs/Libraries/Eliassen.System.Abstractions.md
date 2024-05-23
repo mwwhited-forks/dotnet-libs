@@ -356,6 +356,40 @@ Initializes a new instance of the
 
 
 
+## Class: System.IO.ITempFile
+temp file handle 
+
+### Properties
+
+#### FilePath
+path to temp file
+### Methods
+
+
+#### 
+Get a managed temporary file. ITempFile will be deleted when disposed. 
+
+
+##### Return value
+
+
+
+
+## Class: System.IO.ITempFileFactory
+this is a provider for managed temp files 
+
+### Methods
+
+
+#### GetTempFile
+Get a managed temporary file. ITempFile will be deleted when disposed. 
+
+
+##### Return value
+
+
+
+
 ## Class: System.Linq.Expressions.IExpressionTreeBuilder
 Represents a builder for constructing expression trees used in querying and filtering. 
 
@@ -818,6 +852,35 @@ Represents application-based content types.
 
 #### XSLT
 Represents the content type for XSLT (XML Stylesheet Language Transformations).
+
+## Class: System.Providers.IDateTimeProvider
+Provides date and time functionality. 
+
+### Properties
+
+#### Now
+Gets the current local date and time. This property returns the current local date and time.
+#### UtcNow
+Gets the current Coordinated Universal Time (UTC) date and time. This property returns the current Coordinated Universal Time (UTC) date and time.
+
+## Class: System.Providers.IGuidProvider
+Represents a provider for generating and handling GUIDs. 
+
+### Properties
+
+#### Empty
+Gets an empty GUID. This property returns a GUID with all bits set to zero.
+### Methods
+
+
+#### NewGuid
+Generates a new GUID. 
+
+
+##### Return value
+A new GUID.
+
+
 
 ## Class: System.Reflection.EnumExtensions
 Provides extension methods for working with enumerations. 

@@ -36,7 +36,7 @@ public class SentenceEmbeddingClientTests
     {
         var client = BuildClient(url);
         var embedding = await client.GetEmbeddingAsync(message);
-        this.TestContext.WriteLine(string.Join(';', embedding));
+        TestContext.WriteLine(string.Join(';', embedding));
     }
 
     [DataTestMethod, TestCategory(TestCategories.DevLocal)]
@@ -45,13 +45,13 @@ public class SentenceEmbeddingClientTests
     {
         var client = BuildClient(url);
 
-        var resource = this.GetType().Assembly.GetManifestResourceNames().FirstOrDefault(l => l.EndsWith(".Sentences.txt"))
+        var resource = GetType().Assembly.GetManifestResourceNames().FirstOrDefault(l => l.EndsWith(".Sentences.txt"))
             ?? throw new ApplicationException("missing .sentences.txt resource");
-        using var stream = this.GetType().Assembly.GetManifestResourceStream(resource)
+        using var stream = GetType().Assembly.GetManifestResourceStream(resource)
             ?? throw new ApplicationException("missing .sentences.txt resource");
         using var reader = new StreamReader(stream);
 
-        var dict = new Dictionary<string, double[]>();
+        var dict = new Dictionary<string, ReadOnlyMemory<double>>();
 
         while (!reader.EndOfStream)
         {
@@ -64,7 +64,7 @@ public class SentenceEmbeddingClientTests
                 var section = parts[0].Trim();
                 var segment = parts[1].Trim();
 
-                this.TestContext.WriteLine(line);
+                TestContext.WriteLine(line);
 
                 //var embedding = await client.GetEmbeddingAsync(segment);
                 var embedding = await client.GetEmbeddingDoubleAsync(segment);
@@ -73,28 +73,28 @@ public class SentenceEmbeddingClientTests
             }
             catch (Exception ex)
             {
-                this.TestContext.WriteLine($"ERROR: \"{line}\" -> {ex.Message}");
+                TestContext.WriteLine($"ERROR: \"{line}\" -> {ex.Message}");
             }
         }
 
         var each = from a in dict
                    from b in dict
-                   let dotproduct = a.Value.Zip(b.Value).Select(i => i.First * i.Second).Sum()
-                   let vma = Math.Sqrt(a.Value.Select(i => i * i).Sum())
-                   let vmb = Math.Sqrt(b.Value.Select(i => i * i).Sum())
+                   let dotproduct = a.Value.ToArray().Zip(b.Value.ToArray()).Select(i => i.First * i.Second).Sum()
+                   let vma = Math.Sqrt(a.Value.ToArray().Select(i => i * i).Sum())
+                   let vmb = Math.Sqrt(b.Value.ToArray().Select(i => i * i).Sum())
                    select new
                    {
                        A = a.Key,
                        B = b.Key,
                        Dotproduct = dotproduct,
                        ConsineSimilarity = dotproduct / (vma * vmb),
-                       EuclideanDistance = Math.Sqrt(a.Value.Zip(b.Value).Select(i => Math.Pow(i.First - i.Second, 2)).Sum()),
-                       ManhattanDistance = a.Value.Zip(b.Value).Select(i => Math.Abs(i.First - i.Second)).Sum(),
+                       EuclideanDistance = Math.Sqrt(a.Value.ToArray().Zip(b.Value.ToArray()).Select(i => Math.Pow(i.First - i.Second, 2)).Sum()),
+                       ManhattanDistance = a.Value.ToArray().Zip(b.Value.ToArray()).Select(i => Math.Abs(i.First - i.Second)).Sum(),
                        VectorMagnitudeA = vma,
                        VectorMagnitudeB = vmb,
                    };
 
-        this.TestContext.AddResult(
+        TestContext.AddResult(
             each.Select(i => string.Join('\t',
             i.A,
             i.B,
@@ -107,13 +107,13 @@ public class SentenceEmbeddingClientTests
             )).ToArray(), fileName: "Results.txt"
             );
 
-        this.TestContext.AddResult(
-            dict.Select(i => string.Join('\t', i.Key, Convert.ToBase64String(i.Value.Select(i => BitConverter.GetBytes(i)).SelectMany(i => i).ToArray()))),
+        TestContext.AddResult(
+            dict.Select(i => string.Join('\t', i.Key, Convert.ToBase64String(i.Value.ToArray().Select(i => BitConverter.GetBytes(i)).SelectMany(i => i).ToArray()))),
             fileName: "Embeddings.txt"
             );
 
-        this.TestContext.AddResult(
-            dict.Select(i => string.Join('\t', new object[] { i.Key }.Concat(i.Value.Select(i => (object)i)))),
+        TestContext.AddResult(
+            dict.Select(i => string.Join('\t', new object[] { i.Key }.Concat(i.Value.ToArray().Select(i => (object)i)))),
             fileName: "EmbeddingsD.txt"
             );
     }

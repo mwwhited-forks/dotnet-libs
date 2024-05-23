@@ -63,7 +63,7 @@ Gets or sets the port number of the OpenSearch server.
 #### IndexName
 Gets or sets the index name used for OpenSearch operations.
 #### UserName
-Gets or sets the password for authentication (if required).
+Gets or sets the username for authentication (if required).
 #### Password
 Gets or sets the password for authentication (if required).
 

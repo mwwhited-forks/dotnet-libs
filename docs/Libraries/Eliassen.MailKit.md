@@ -1,6 +1,72 @@
 ﻿# Eliassen.MailKit
 
 
+## Class: MailKit.MailkitImapHealthCheck
+Represents a health check implementation for checking the connection status of a MailKit IMAP client. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.MailKit.MailkitImapHealthCheck*class. 
+
+
+##### Parameters
+* *client:* The MailKit IMAP client used for health checks.
+
+
+
+
+#### CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)
+Checks the health of the MailKit IMAP client asynchronously. 
+
+
+##### Parameters
+* *context:* The health check context.
+* *cancellationToken:* The cancellation token.
+
+
+
+
+##### Return value
+A task representing the asynchronous health check operation.
+
+
+
+## Class: MailKit.MailkitSmtpHealthCheck
+Represents a health check implementation for checking the connection status of a MailKit SMTP client. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.MailKit.MailkitSmtpHealthCheck*class. 
+
+
+##### Parameters
+* *client:* The MailKit SMTP client used for health checks.
+
+
+
+
+#### CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)
+Checks the health of the MailKit SMTP client asynchronously. 
+
+
+##### Parameters
+* *context:* The health check context.
+* *cancellationToken:* The cancellation token.
+
+
+
+
+##### Return value
+A task representing the asynchronous health check operation.
+
+
+
 ## Class: MailKit.ServiceCollectionExtensions
 Extensions for adding MailKit services to the 
  *See: T:Microsoft.Extensions.DependencyInjection.IServiceCollection*. 

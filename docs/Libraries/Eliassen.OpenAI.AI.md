@@ -33,6 +33,8 @@ Represents options for configuring the OpenAI service.
 Gets or sets the APIKey to be used.
 #### DeploymentName
 Gets or sets the deployment model to be used for the text generation.
+#### EmbeddingModel
+Gets or sets the deployment model to be used for the embedding generation.
 
 ## Class: OpenAI.AI.Services.OpenAIManager
 Provides methods for interacting with the OpenAI language model. 

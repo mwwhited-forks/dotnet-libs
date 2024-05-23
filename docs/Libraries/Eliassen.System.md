@@ -1,6 +1,99 @@
 ﻿# Eliassen.System
 
 
+## Class: System.IO.TempFileFactory
+Represents a factory for creating temporary files. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.System.IO.TempFileFactory*class. 
+
+
+##### Parameters
+* *serviceProvider:* The service provider used for creating instances.
+
+
+
+
+#### GetTempFile
+Creates a new temporary file. 
+
+
+##### Return value
+A temporary file.
+
+
+
+## Class: System.IO.TempFileHandle
+Represents a handle for managing temporary files. 
+
+### Properties
+
+#### FilePath
+Gets the path of the temporary file.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.System.IO.TempFileHandle*class. 
+
+
+##### Parameters
+* *logger:* The logger used for logging operations.
+
+
+
+
+#### ToString
+Returns the path of the temporary file. 
+
+
+##### Return value
+The path of the temporary file.
+
+
+
+#### Finalize
+Releases the resources used by the temporary file. 
+
+
+#### Dispose
+Releases the resources used by the temporary file. 
+
+
+## Class: System.Providers.DateTimeProvider
+Provides date and time functionality. 
+
+### Properties
+
+#### Now
+Gets the current local date and time. This property returns the current local date and time.
+#### UtcNow
+Gets the current Coordinated Universal Time (UTC) date and time. This property returns the current Coordinated Universal Time (UTC) date and time.
+
+## Class: System.Providers.GuidProvider
+Represents a provider for generating and handling GUIDs. 
+
+### Properties
+
+#### Empty
+Gets an empty GUID. This property returns a GUID with all bits set to zero.
+### Methods
+
+
+#### NewGuid
+Generates a new GUID. 
+
+
+##### Return value
+A new GUID.
+
+
+
 ## Class: System.Security.Cryptography.HashTypes
 Specifies different types of hash algorithms. 
 
@@ -139,6 +232,21 @@ Add support for shared Templating
 * *services:* 
 * *configuration:* The to add services to.
 * *configurationSection:* 
+
+
+
+
+##### Return value
+
+
+
+
+#### TryAddProviders(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+Add support for type providers 
+
+
+##### Parameters
+* *services:* 
 
 
 
@@ -362,25 +470,57 @@ Writes the JSON representation of a
 
 
 
-## Class: System.Text.Json.JsonDocumentExtensions
+## Class: System.Text.Json.JsonNodeExtensions
 shared extension methods for System.Text.Json 
 
 ### Methods
 
 
-#### ToXmlDocument(System.Text.Json.JsonElement,System.String)
-Convert System.Test.Json.JsonDocument to System.Xml.XmlDocument 
+#### ToXFragment(System.Text.Json.Nodes.JsonObject,System.String)
+Converts a JsonObject to an XFragment. 
 
 
 ##### Parameters
-* *json:* 
-* *rootName:* 
+* *json:* The JsonObject to convert.
+* *rootName:* The root name for the resulting XML element.
 
 
 
 
 ##### Return value
+An XFragment representing the JsonObject.
 
+
+
+#### ToXFragment(System.Text.Json.Nodes.JsonArray,System.String)
+Converts a JsonArray to an XFragment. 
+
+
+##### Parameters
+* *json:* The JsonArray to convert.
+* *rootName:* The root name for the resulting XML element.
+
+
+
+
+##### Return value
+An XFragment representing the JsonArray.
+
+
+
+#### ToXFragment(System.Text.Json.Nodes.JsonNode,System.String)
+Converts a JsonNode to an XFragment. 
+
+
+##### Parameters
+* *json:* The JsonNode to convert.
+* *rootName:* The root name for the resulting XML element.
+
+
+
+
+##### Return value
+An XFragment representing the JsonNode.
 
 
 
@@ -696,6 +836,17 @@ Gets the collection of supported content types by the template provider. applica
 ### Methods
 
 
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.System.Text.Templating.XsltTemplateProvider*class with the specified XML serializer. 
+
+
+##### Parameters
+* *xmlSerializer:* The XML serializer to be used by the provider.
+
+
+
+
 #### CanApply(Eliassen.System.Text.Templating.ITemplateContext)
 Determines whether this template provider can apply template processing to the given context. 
 
@@ -725,6 +876,279 @@ Applies the XSLT template associated with the specified context, using the provi
 
 ##### Return value
 A task representing the asynchronous operation, indicating whether the application was successful.
+
+
+
+## Class: System.Text.Xml.Linq.XFragment
+Represents a fragment of XML nodes with additional functionality for manipulation and conversion. 
+
+### Properties
+
+#### Count
+Gets the number of elements contained in the collection of XML nodes.
+#### IsReadOnly
+Gets a value indicating whether the collection of XML nodes is read-only.
+#### Item(System.Int32)
+Gets or sets the XML node at the specified index. The zero-based index of the XML node to get or set.The XML node at the specified index.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.System.Text.Xml.Linq.XFragment*class with the specified fragment. 
+
+
+##### Parameters
+* *fragment:* The fragment to initialize the instance with.
+
+
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.System.Text.Xml.Linq.XFragment*class with the specified nodes. 
+
+
+##### Parameters
+* *nodes:* The nodes to initialize the instance with.
+
+
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.System.Text.Xml.Linq.XFragment*class with the specified nodes. 
+
+
+##### Parameters
+* *nodes:* The nodes to initialize the instance with.
+
+
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.System.Text.Xml.Linq.XFragment*class with the specified nodes. 
+
+
+##### Parameters
+* *node:* The nodes to initialize the instance with.
+* *nodes:* The nodes to initialize the instance with.
+
+
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.System.Text.Xml.Linq.XFragment*class with the specified XML string. 
+
+
+##### Parameters
+* *xml:* The XML string to initialize the instance with.
+
+
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.System.Text.Xml.Linq.XFragment*class with the specified XML reader. 
+
+
+##### Parameters
+* *xmlReader:* The XML reader to initialize the instance with.
+
+
+
+
+#### ToString
+Returns the XML string representation of the fragment. 
+
+
+##### Return value
+The XML string representation of the fragment.
+
+
+
+#### CreateReader
+Creates an XML reader for the fragment. 
+
+
+##### Return value
+An XML reader for the fragment.
+
+
+
+#### Parse(System.String)
+Parses the specified XML string into an 
+ *See: T:Eliassen.System.Text.Xml.Linq.XFragment*instance. 
+
+
+##### Parameters
+* *xml:* The XML string to parse.
+
+
+
+
+##### Return value
+An instance representing the parsed XML string.
+
+
+
+#### Parse(System.Xml.XmlReader)
+Parses the XML content from the specified reader into an 
+ *See: T:Eliassen.System.Text.Xml.Linq.XFragment*instance. 
+
+
+##### Parameters
+* *xmlReader:* The XML reader containing the XML content to parse.
+
+
+
+
+##### Return value
+An instance representing the parsed XML content.
+
+
+
+#### GetEnumerator
+Returns an enumerator that iterates through the collection of XML nodes. 
+
+
+##### Return value
+An enumerator that can be used to iterate through the collection of XML nodes.
+
+
+
+#### CreateNavigator
+Creates an XPath navigator for navigating the fragment. 
+
+
+##### Return value
+An XPath navigator for navigating the fragment.
+
+
+
+#### IndexOf(System.Xml.Linq.XNode)
+Determines the index of a specific XML node in the collection. 
+
+
+##### Parameters
+* *item:* The XML node to locate in the collection.
+
+
+
+
+##### Return value
+The zero-based index of the XML node within the collection, if found; otherwise, -1.
+
+
+
+#### Insert(System.Int32,System.Xml.Linq.XNode)
+Inserts an XML node into the collection at the specified index. 
+
+
+##### Parameters
+* *index:* The zero-based index at which the XML node should be inserted.
+* *item:* The XML node to insert into the collection.
+
+
+
+
+#### RemoveAt(System.Int32)
+Removes the XML node at the specified index from the collection. 
+
+
+##### Parameters
+* *index:* The zero-based index of the XML node to remove.
+
+
+
+
+#### Add(System.Xml.Linq.XNode)
+Adds an XML node to the end of the collection. 
+
+
+##### Parameters
+* *item:* The XML node to add to the collection.
+
+
+
+
+#### Clear
+Removes all XML nodes from the collection. 
+
+
+#### Contains(System.Xml.Linq.XNode)
+Determines whether the collection contains a specific XML node. 
+
+
+##### Parameters
+* *item:* The XML node to locate in the collection.
+
+
+
+
+##### Return value
+true if the XML node is found in the collection; otherwise, false.
+
+
+
+#### CopyTo(System.Xml.Linq.XNode[],System.Int32)
+Copies the elements of the collection to an array, starting at a particular index. 
+
+
+##### Parameters
+* *array:* The one-dimensional array that is the destination of the elements copied from the collection.
+* *arrayIndex:* The zero-based index in the array at which copying begins.
+
+
+
+
+#### Remove(System.Xml.Linq.XNode)
+Removes the first occurrence of a specific XML node from the collection. 
+
+
+##### Parameters
+* *item:* The XML node to remove from the collection.
+
+
+
+
+##### Return value
+true if the XML node was successfully removed from the collection; otherwise, false.
+
+
+
+#### op_Implicit(System.String)~Eliassen.System.Text.Xml.Linq.XFragment
+Implicitly converts a string to an 
+ *See: T:Eliassen.System.Text.Xml.Linq.XFragment*instance. 
+
+
+##### Parameters
+* *xml:* The XML string to convert.
+
+
+
+
+#### op_Implicit(Eliassen.System.Text.Xml.Linq.XFragment)~System.String
+Implicitly converts an 
+ *See: T:Eliassen.System.Text.Xml.Linq.XFragment*instance to a string. 
+
+
+##### Parameters
+* *fragment:* The instance to convert.
+
+
+
+
+#### op_Implicit(System.Xml.Linq.XNode[])~Eliassen.System.Text.Xml.Linq.XFragment
+Implicitly converts an array of XML nodes to an 
+ *See: T:Eliassen.System.Text.Xml.Linq.XFragment*instance. 
+
+
+##### Parameters
+* *nodes:* The array of XML nodes to convert.
+
 
 
 

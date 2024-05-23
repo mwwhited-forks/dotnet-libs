@@ -31,7 +31,7 @@ public class InProcessMessageProvider(
     /// <param name="message">The message to send.</param>
     /// <param name="context">The message context.</param>
     /// <returns>A task representing the asynchronous operation and returning the correlation ID.</returns>
-    public Task<string?> SendAsync(object message, IMessageContext context)
+    public virtual Task<string?> SendAsync(object message, IMessageContext context)
     {
         var wrapped = new WrappedQueueMessage
         {
@@ -51,7 +51,7 @@ public class InProcessMessageProvider(
     /// </summary>
     /// <param name="handlerProvider">The message handler provider.</param>
     /// <returns>The current instance of the message receiver provider.</returns>
-    public IMessageReceiverProvider SetHandlerProvider(IMessageHandlerProvider handlerProvider)
+    public virtual IMessageReceiverProvider SetHandlerProvider(IMessageHandlerProvider handlerProvider)
     {
         _handlerProvider = handlerProvider;
         return this;
@@ -62,7 +62,7 @@ public class InProcessMessageProvider(
     /// </summary>
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
-    public async Task RunAsync(CancellationToken cancellationToken = default)
+    public virtual async Task RunAsync(CancellationToken cancellationToken = default)
     {
         var newCancellationToken = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken).Token;
 
