@@ -29,7 +29,7 @@ public static class ServiceCollectionExtensions
         )
     {
         services.TryAddTransient<ILanguageModelProvider, OpenAIManager>();
-        services.TryAddKeyedTransient<ILanguageModelProvider, OpenAIManager>("OPENAPI");
+        services.TryAddKeyedTransient<ILanguageModelProvider, OpenAIManager>("OPENAI");
 
         //TODO: could map in support
         //services.TryAddKeyedTransient<IMessageCompletion, OpenAIManager>("OPENAPI");

@@ -84,7 +84,7 @@ public class OllamaMessageCompletion : IMessageCompletion, IEmbeddingProvider
     /// <param name="promptDetails">Details of the prompt or context.</param>
     /// <param name="userInput">The user input or query.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the response from the language model.</returns>
-    public async Task<string> GetResponseAsync(string promptDetails, string userInput) =>
+    public async Task<string> GetResponseAsync(string promptDetails, string userInput, [EnumeratorCancellation] CancellationToken cancellationToken = default) =>
         //TODO:should probably build a custom model but this works for now
         (await _client.GetCompletion(new()
         {

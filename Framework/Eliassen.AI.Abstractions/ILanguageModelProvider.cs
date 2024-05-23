@@ -16,8 +16,11 @@ public interface ILanguageModelProvider
     /// </summary>
     /// <param name="promptDetails">The details of the prompt.</param>
     /// <param name="userInput">The user input.</param>
+    /// <param name="cancellationToken">The Cancellation Token.</param>
     /// <returns>A task representing the asynchronous operation that returns the response.</returns>
-    Task<string> GetResponseAsync(string promptDetails, string userInput);
+    Task<string> GetResponseAsync(string promptDetails, 
+        string userInput, 
+        [EnumeratorCancellation] CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Gets a streamed response asynchronously based on the provided prompt details and user input.
@@ -48,9 +51,10 @@ public interface ILanguageModelProvider
     /// <summary>
     /// Gets the embeddded response for the data provided.
     /// </summary>
-    /// <param name="data">The data to be embedded there is a token limit of 2048 tokens.</param>
+    /// <param name="data">The data to be embedded there is a token limit of 2048 tokens.</param>    
+    /// <param name="cancellationToken">The Cancellation Token.</param>
     /// <returns>Float array with the embedding data</returns>
-    Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data);
+    Task<float[]> GetEmbeddedResponseAsync(string data, [EnumeratorCancellation] CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Gets a response asynchronously based on the provided prompt details and user input.
@@ -58,8 +62,23 @@ public interface ILanguageModelProvider
     /// <param name="assistantConfinment">The confinment of the AI Assistant</param>
     /// <param name="systemInteractions">The previous generated responses by the AI</param>
     /// <param name="userInput">The user input including any previous messages in the chat</param>
+    /// <param name="cancellationToken">The Cancellation Token.</param>
     /// <returns>A task representing the asynchronous operation that returns the response.</returns>
     Task<string> GetContextResponseAsync(string assistantConfinment,
         List<string> systemInteractions,
-        List<string> userInput);
+        List<string> userInput, 
+        [EnumeratorCancellation] CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Gets a response asynchronously based on the provided prompt details and user input.
+    /// </summary>    
+    /// <param name="assistantConfinment">The confinment of the AI Assistant</param>
+    /// <param name="ragData">The data to restirct the response</param>
+    /// <param name="userInput">The user input.</param>
+    /// <param name="cancellationToken">The Cancellation Token.</param>
+    /// <returns>A task representing the asynchronous operation that returns the response.</returns>
+    Task<string> GetRAGResponseAsync(string assistantConfinment,
+        string ragData,
+        string userInput,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default);
 }
