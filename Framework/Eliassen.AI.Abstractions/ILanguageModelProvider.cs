@@ -71,8 +71,9 @@ public interface ILanguageModelProvider
 
     /// <summary>
     /// Gets a response asynchronously based on the provided prompt details and user input.
-    /// </summary>
-    /// <param name="ragData">The details of the prompt.</param>
+    /// </summary>    
+    /// <param name="assistantConfinment">The confinment of the AI Assistant</param>
+    /// <param name="ragData">The data to restirct the response</param>
     /// <param name="userInput">The user input.</param>
     /// <param name="cancellationToken">The Cancellation Token.</param>
     /// <returns>A task representing the asynchronous operation that returns the response.</returns>
