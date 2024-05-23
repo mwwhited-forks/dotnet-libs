@@ -15,9 +15,9 @@ namespace Eliassen.Ollama;
 /// <summary>
 /// Represents a class responsible for generating message completions using the Ollama API.
 /// </summary>
-public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvider, IEmbeddingProvider
+public class OllamaMessageCompletion : IMessageCompletion, IEmbeddingProvider
 {
-    private readonly OllamaApiClient _client;
+    private readonly IOllamaApiClient _client;
     private readonly IOllamaModelMapper _mapper;
 
     /// <summary>
@@ -26,7 +26,7 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
     /// <param name="client">The OllamaApiClient instance used for communication with the Ollama API.</param>
     /// <param name="mapper">Model mapper for Ollama request/response.</param>
     public OllamaMessageCompletion(
-        OllamaApiClient client,
+        IOllamaApiClient client,
         IOllamaModelMapper mapper
         )
     {
@@ -47,7 +47,7 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
     /// <param name="model">The model for which to retrieve the embedding.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the 
     /// embedding vector as an array of single-precision floats.</returns>
-    public async Task<float[]> GetEmbeddingAsync(
+    public async Task<ReadOnlyMemory<float>> GetEmbeddingAsync(
         string content,
 #if DEBUG
         string? model
@@ -76,7 +76,7 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
     /// <param name="model">Completion request model</param>
     /// <returns>Resulting response object</returns>
     public async Task<CompletionResponse> GetCompletionAsync(CompletionRequest model) =>
-        _mapper.Map(await _client.GetCompletion(_mapper.Map(model)));
+        _mapper.Map(await _client.GetCompletion(_mapper.Map(model with { Model = model.Model ?? _client.SelectedModel })));
 
     /// <summary>
     /// Retrieves a response from the language model based on the provided prompt details and user input.
@@ -129,27 +129,4 @@ public class OllamaMessageCompletion : IMessageCompletion, ILanguageModelProvide
                 break;
         }
     }
-
-    public async IAsyncEnumerable<string> GetStreamedContextResponseAsync(string assistantConfinment,
-        List<string> systemInteractions,
-        List<string> userInput,
-        [EnumeratorCancellation] CancellationToken cancellationToken = default)
-    {
-        yield return "";
-    }
-
-    public async Task<ReadOnlyMemory<float>> GetEmbeddedResponseAsync(string data)
-    {
-        float value = float.Parse("-0.1");
-        ReadOnlyMemory<float> result = new float[] { value }.AsMemory();
-        return result;
-    }
-
-    public Task<string> GetContextResponseAsync(string assistantConfinment,
-        List<string> systemInteractions,
-        List<string> userInput)
-    {
-        return Task.FromResult("");
-    }
-
 }

@@ -19,7 +19,7 @@ public class SkipMemberOnNullExpressionVisitorTests
         {
             SearchTerm = "Hello",
         };
-        this.TestContext.AddResult(query);
+        TestContext.AddResult(query);
 
         var rawData = new[]
         {
@@ -28,10 +28,10 @@ public class SkipMemberOnNullExpressionVisitorTests
             new {Items= (string[]?)null  , Name=(string?)""},
             new {Items= (string[]?)[]  , Name=(string?)null},
         }.AsQueryable();
-        this.TestContext.AddResult(rawData);
+        TestContext.AddResult(rawData);
 
         var queryResults = QueryBuilder.Execute(rawData, query, new SkipMemberOnNullExpressionVisitor());
-        this.TestContext.AddResult(queryResults);
+        TestContext.AddResult(queryResults);
     }
 
     [TestMethod]
@@ -42,17 +42,17 @@ public class SkipMemberOnNullExpressionVisitorTests
         {
             SearchTerm = "Hello",
         };
-        this.TestContext.AddResult(query);
+        TestContext.AddResult(query);
 
         var rawData = new[]
         {
                 new {Items= (string[]?)[]},
                  //new {Name=(string?)null},
         }.AsQueryable();
-        this.TestContext.AddResult(rawData);
+        TestContext.AddResult(rawData);
 
         var queryResults = QueryBuilder.Execute(rawData, query, new SkipMemberOnNullExpressionVisitor());
-        this.TestContext.AddResult(queryResults);
+        TestContext.AddResult(queryResults);
     }
 
     [TestMethod]
@@ -63,15 +63,15 @@ public class SkipMemberOnNullExpressionVisitorTests
         {
             SearchTerm = "Hello",
         };
-        this.TestContext.AddResult(query);
+        TestContext.AddResult(query);
 
         var rawData = new[]
         {
              new {Name=(string?)null},
         }.AsQueryable();
-        this.TestContext.AddResult(rawData);
+        TestContext.AddResult(rawData);
 
         var queryResults = QueryBuilder.Execute(rawData, query, new SkipMemberOnNullExpressionVisitor());
-        this.TestContext.AddResult(queryResults);
+        TestContext.AddResult(queryResults);
     }
 }

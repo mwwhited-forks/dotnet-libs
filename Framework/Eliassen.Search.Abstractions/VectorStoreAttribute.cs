@@ -14,5 +14,5 @@ public class VectorStoreAttribute : Attribute
     /// <summary>
     /// Gets or sets the name of the container.
     /// </summary>
-    public string? ContainerName { get; set; }
+    public string? CollectionName { get; set; }
 }

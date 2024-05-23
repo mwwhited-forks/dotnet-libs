@@ -8,7 +8,7 @@ public class OpenSearchOptions
     /// <summary>
     /// Gets or sets the hostname of the OpenSearch server.
     /// </summary>
-    public required string HostName { get; set; } = "localhost";
+    public required string HostName { get; set; }
     /// <summary>
     /// Gets or sets the port number of the OpenSearch server.
     /// </summary>
@@ -16,10 +16,10 @@ public class OpenSearchOptions
     /// <summary>
     /// Gets or sets the index name used for OpenSearch operations.
     /// </summary>
-    public required string IndexName { get; set; } = "default";
+    public required string IndexName { get; set; }
 
     /// <summary>
-    /// Gets or sets the password for authentication (if required).
+    /// Gets or sets the username for authentication (if required).
     /// </summary>
     public string? UserName { get; set; }
     /// <summary>

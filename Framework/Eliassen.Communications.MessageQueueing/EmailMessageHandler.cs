@@ -28,7 +28,7 @@ public class EmailMessageHandler(
     /// <param name="message">The email message to handle.</param>
     /// <param name="context">The message context.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
-    public Task HandleAsync(EmailMessageModel message, IMessageContext context)
+    public virtual Task HandleAsync(EmailMessageModel message, IMessageContext context)
     {
         message.ReferenceId ??= context.CorrelationId;
         _logger.LogInformation("Sending {subject} for {from} [{id}]", message.Subject, message.FromAddress, message.ReferenceId);
@@ -41,5 +41,6 @@ public class EmailMessageHandler(
     /// <param name="message">The message to handle.</param>
     /// <param name="context">The message context.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
-    public Task HandleAsync(object message, IMessageContext context) => message is EmailMessageModel messageModel ? HandleAsync(messageModel, context) : Task.CompletedTask;
+    public virtual Task HandleAsync(object message, IMessageContext context) =>
+        message is EmailMessageModel messageModel ? HandleAsync(messageModel, context) : Task.CompletedTask;
 }

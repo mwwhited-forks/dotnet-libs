@@ -1,6 +1,7 @@
 ﻿using Eliassen.AI;
 using Eliassen.Extensions;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,7 @@ namespace Eliassen.Search.Providers;
 /// Provides functionality to generate summaries for documents.
 /// </summary>
 [Obsolete]
+[ExcludeFromCodeCoverage]
 public class DocumentSummaryGenerationProvider
 {
     private const int MAX_LENGTH = 4096;
@@ -42,7 +44,7 @@ public class DocumentSummaryGenerationProvider
     /// </summary>
     /// <param name="content">The content for which to generate a summary.</param>
     /// <returns>A summary of the content.</returns>
-    public async Task<string> GenerateSummaryAsync(string content)
+    public virtual async Task<string> GenerateSummaryAsync(string content)
     {
         // if (content.Length < MAX_LENGTH) return content;
 
@@ -58,7 +60,6 @@ public class DocumentSummaryGenerationProvider
         if (x <= 1)
             return sb.ToString();
         var final = await GetCompletionAsync(_modelName, _promptTemplate, sb.ToString());
-        //TODO: consider doing something better here for really long text
         return final;
     }
 

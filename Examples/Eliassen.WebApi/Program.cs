@@ -85,7 +85,10 @@ public static class Program
 
         app.UseHttpsRedirection();
 
-        app.UseAllCommonMiddleware();
+        app.UseAllCommonMiddleware(
+            middlewareBuilder: new()
+            {
+            });
 
         app.UseAuthentication();
         app.UseAuthorization();

@@ -12,7 +12,21 @@ public static class ApplicationBuilderExtensions
     /// Adds common ASP.NET Core middleware to the specified application builder.
     /// </summary>
     /// <param name="builder">The <see cref="IApplicationBuilder"/> instance.</param>
+    /// <param name="middlewareBuilder">The <see cref="MiddlewareExtensionBuilder"/> instance.</param>
     /// <returns>The updated <see cref="IApplicationBuilder"/> instance.</returns>
-    public static IApplicationBuilder UseCommonAspNetCoreMiddleware(this IApplicationBuilder builder) =>
-        builder.UseAspNetCoreExtensionMiddleware();
+    public static IApplicationBuilder UseCommonAspNetCoreMiddleware(
+        this IApplicationBuilder builder,
+#if DEBUG
+        MiddlewareExtensionBuilder? middlewareBuilder
+#else
+        MiddlewareExtensionBuilder? middlewareBuilder = default
+#endif
+        )
+    {
+        middlewareBuilder ??= new();
+        builder.UseAspNetCoreExtensionMiddleware(
+            healthCheckPath: middlewareBuilder.HealthCheckPath
+        );
+        return builder;
+    }
 }

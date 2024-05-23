@@ -7,7 +7,7 @@ Interface for storing and querying vectors.
 ### Methods
 
 
-#### StoreVectorsAsync(System.Collections.Generic.IEnumerable{System.Single[]},System.Collections.Generic.Dictionary{System.String,System.Object})
+#### StoreVectorsAsync(System.Collections.Generic.IEnumerable{System.ReadOnlyMemory{System.Single}},System.Collections.Generic.Dictionary{System.String,System.Object})
 Stores the specified embeddings and metadata. 
 
 
@@ -32,7 +32,7 @@ A sequence of search result models.
 
 
 
-#### FindNeighborsAsync(System.Single[])
+#### FindNeighborsAsync(System.ReadOnlyMemory{System.Single})
 Finds the neighbors of the specified vector. 
 
 
@@ -47,7 +47,7 @@ A sequence of search result models.
 
 
 
-#### FindNeighborsAsync(System.Single[],System.String)
+#### FindNeighborsAsync(System.ReadOnlyMemory{System.Single},System.String)
 Finds the neighbors of the specified vector, grouped by the specified key. 
 
 
@@ -100,11 +100,11 @@ Interface for creating instances of IVectorStore.
 
 
 #### Create(System.String)
-Creates a new instance of IVectorStore with the specified container name. 
+Creates a new instance of IVectorStore with the specified collection name. 
 
 
 ##### Parameters
-* *containerName:* The name of the container.
+* *collectionName:* The name of the collection.
 
 
 
@@ -128,7 +128,7 @@ Interface for a vector store provider that implements IVectorStore.
 
 ### Properties
 
-#### ContainerName
+#### CollectionName
 Gets or sets the name of the container.
 ### Methods
 
@@ -175,5 +175,5 @@ Attribute for specifying the container name for a vector store.
 This attribute can be applied to a class that implements IVectorStore.
 ### Properties
 
-#### ContainerName
+#### CollectionName
 Gets or sets the name of the container.

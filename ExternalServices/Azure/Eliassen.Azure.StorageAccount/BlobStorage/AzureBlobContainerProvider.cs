@@ -3,6 +3,7 @@ using Azure.Storage.Blobs.Models;
 using Eliassen.Documents.Containers;
 using Eliassen.Documents.Models;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace Eliassen.Azure.StorageAccount.BlobStorage;
 public class AzureBlobContainerProvider : IBlobContainerProvider
 {
     private readonly BlobContainerClient _blockBlobClient;
+    private readonly IOptions<AzureBlobProviderOptions> _options;
     private readonly ILogger _logger;
 
     /// <summary>
@@ -28,19 +30,25 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
     /// </summary>
     /// <param name="client">The BlobServiceClient used to connect to the Azure Blob storage.</param>
     /// <param name="collectionName">The name of the collection in the Azure Blob storage.</param>
+    /// <param name="options">The configuration options to the azure container service.</param>
     /// <param name="loggerFactory">ILoggerFactory instance.</param>
     public AzureBlobContainerProvider(
         BlobServiceClient client,
         string collectionName,
+        IOptions<AzureBlobProviderOptions> options,
         ILoggerFactory loggerFactory
         )
     {
         _logger = loggerFactory.CreateLogger(nameof(AzureBlobContainerProvider) + $"-{collectionName}");
         ContainerName = collectionName.ToLower();
         _blockBlobClient = client.GetBlobContainerClient(ContainerName);
-#if DEBUG
-        _blockBlobClient.CreateIfNotExists(); //TODO: should make this a config option and make config injectable like queues
-#endif
+        _options = options;
+    }
+
+    private async Task EnsureContainerExistsAsync()
+    {
+        if (_options.Value.EnsureContainerExists)
+            await _blockBlobClient.CreateIfNotExistsAsync();
     }
 
     /// <summary>
@@ -50,6 +58,7 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
     /// <returns>A ContentReference object representing the retrieved content.</returns>
     public async Task<ContentReference?> GetContentAsync(string file)
     {
+        await EnsureContainerExistsAsync();
         var blob = _blockBlobClient.GetBlobClient(file);
 
         if (!await blob.ExistsAsync())
@@ -71,6 +80,7 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
     /// <returns>A task representing the asynchronous operation. Returns the content metadata if it exists, otherwise returns null.</returns>
     public async Task<ContentMetaDataReference?> GetContentMetaDataAsync(string path)
     {
+        await EnsureContainerExistsAsync();
         var blob = _blockBlobClient.GetBlobClient(path);
         if (!await blob.ExistsAsync()) return null;
 
@@ -92,10 +102,11 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
     /// <returns>A task representing the asynchronous operation.</returns>
     public async Task StoreContentAsync(
         ContentReference reference,
-        IDictionary<string, string>? metadata = null,
+        Dictionary<string, string>? metadata = null,
         bool overwrite = false
         )
     {
+        await EnsureContainerExistsAsync();
         var blob = _blockBlobClient.GetBlobClient(reference.FileName);
 
         _logger.LogInformation("upload -> {file}", reference.FileName);
@@ -122,6 +133,7 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
     /// <returns>A task representing the asynchronous operation. Returns true if the metadata is stored successfully, otherwise false.</returns>
     public async Task<bool> StoreContentMetaDataAsync(ContentMetaDataReference reference)
     {
+        await EnsureContainerExistsAsync();
         var blob = _blockBlobClient.GetBlobClient(reference.FileName);
         if (!await blob.ExistsAsync()) return false;
 
@@ -143,6 +155,7 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
     /// <returns>An IQueryable representing the content metadata.</returns>
     public IQueryable<ContentMetaDataReference> QueryContent()
     {
+        EnsureContainerExistsAsync().GetAwaiter().GetResult();
         //TODO: build a query provider!
         var query = from p in _blockBlobClient.GetBlobs().AsPages()
                     from b in p.Values
@@ -162,6 +175,7 @@ public class AzureBlobContainerProvider : IBlobContainerProvider
     /// <returns>A task representing the asynchronous operation.</returns>
     public async Task DeleteContentAsync(string path)
     {
+        await EnsureContainerExistsAsync();
         var blob = _blockBlobClient.GetBlobClient(path);
         await blob.DeleteIfExistsAsync();
     }

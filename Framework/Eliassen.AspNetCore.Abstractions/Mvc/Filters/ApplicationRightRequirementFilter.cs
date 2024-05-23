@@ -17,7 +17,7 @@ public class ApplicationRightRequirementFilter(string[] rights) : IAuthorization
     /// Ensure that current authenticated user matches as least one requested right
     /// </summary>
     /// <param name="context"></param>
-    public void OnAuthorization(AuthorizationFilterContext context)
+    public virtual void OnAuthorization(AuthorizationFilterContext context)
     {
         var userAuthenticated = context.HttpContext.User.Identity?.IsAuthenticated;
         var userRights = context.HttpContext.User.GetClaimValues(CommonClaims.ApplicationRight);

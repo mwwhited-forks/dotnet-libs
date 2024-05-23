@@ -23,7 +23,7 @@ public class OpenSearchClientFactory : IOpenSearchClientFactory
     /// Creates a new instance of the <see cref="IOpenSearchLowLevelClient"/>.
     /// </summary>
     /// <returns>A new instance of the <see cref="IOpenSearchLowLevelClient"/>.</returns>
-    public IOpenSearchLowLevelClient Create()
+    public virtual IOpenSearchLowLevelClient Create()
     {
         var connection = new ConnectionConfiguration(
                 new Uri($"http://{_config.Value.HostName}:{_config.Value.Port}")

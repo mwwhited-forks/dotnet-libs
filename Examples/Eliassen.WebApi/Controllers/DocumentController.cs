@@ -158,8 +158,10 @@ public class DocumentController : Controller
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> Upload([FromForm] IFormFile content, string file, string? sourceContentType = null)
+    public async Task<IActionResult> Upload(IFormFile content, string file, string? sourceContentType = null)
     {
+        //Note: https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads
+
         await Task.Yield();
         _logger.LogDebug("Start Upload");
         if (ModelState.IsValid)
@@ -189,8 +191,9 @@ public class DocumentController : Controller
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> Convert([FromForm] IFormFile content, string targetContentType, string? sourceContentType = null)
+    public async Task<IActionResult> Convert(IFormFile content, string targetContentType, string? sourceContentType = null)
     {
+        // https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads
         using var source = new MemoryStream();
         await content.CopyToAsync(source);
         source.Position = 0;

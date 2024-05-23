@@ -37,6 +37,48 @@ An array of double-precision floating-point numbers representing the embedding o
 
 
 
+#### GetHealthAsync
+Check the health status of the sentence embedding service 
+
+
+##### Return value
+
+
+
+
+## Class: SBert.SbertHealthCheck
+Represents a health check implementation for SBERT (Sentence-BERT) service. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.SBert.SbertHealthCheck*class. 
+
+
+##### Parameters
+* *client:* The SBERT client used for health checks.
+
+
+
+
+#### CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)
+Checks the health of the SBERT service asynchronously. 
+
+
+##### Parameters
+* *context:* The health check context.
+* *cancellationToken:* The cancellation token.
+
+
+
+
+##### Return value
+A task representing the asynchronous health check operation.
+
+
+
 ## Class: SBert.SentenceEmbeddingClient
 Client for interacting with SBert. 
 
@@ -81,6 +123,15 @@ Retrieves the embedding vector for the given input as an array of double-precisi
 
 ##### Return value
 An array of double-precision floats representing the embedding.
+
+
+
+#### GetHealthAsync
+Check the health status of the sentence embedding service 
+
+
+##### Return value
+
 
 
 

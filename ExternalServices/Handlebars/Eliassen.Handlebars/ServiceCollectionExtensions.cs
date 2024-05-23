@@ -1,6 +1,9 @@
-﻿using Eliassen.Handlebars.Templating;
+﻿using Eliassen.Handlebars.Helpers;
+using Eliassen.Handlebars.Templating;
 using Eliassen.System.Net.Mime;
 using Eliassen.System.Text.Templating;
+using HandlebarsDotNet;
+using HandlebarsDotNet.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Eliassen.Handlebars;
@@ -23,6 +26,13 @@ public static class ServiceCollectionExtensions
 
         // Add a transient service for FileType with default values for Handlebars templates.
         services.AddTransient<IFileType>(_ => new FileType { Extension = ".hbs", ContentType = ContentTypesExtensions.Text.HandlebarsTemplate, IsTemplateType = true });
+
+        services.AddTransient<IHelperDescriptor<HelperOptions>, DateNowHelperDescriptor>();
+        services.AddTransient<IHelperDescriptor<HelperOptions>, GetHelperDescriptor>();
+        services.AddTransient<IHelperDescriptor<HelperOptions>, GuidNewHelperDescriptor>();
+        services.AddTransient<IHelperDescriptor<HelperOptions>, HashHelperDescriptor>();
+        services.AddTransient<IHelperDescriptor<HelperOptions>, SetHelperDescriptor>();
+        services.AddTransient<IHelperDescriptor<HelperOptions>, StringReplaceHelperDescriptor>();
 
         return services;
     }

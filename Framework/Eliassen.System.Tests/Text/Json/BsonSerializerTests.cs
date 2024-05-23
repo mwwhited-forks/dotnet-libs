@@ -1,4 +1,5 @@
-﻿using Eliassen.System.Text.Json;
+﻿using Eliassen.System.Tests.TestTargets;
+using Eliassen.System.Text.Json;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.Json;
@@ -23,6 +24,6 @@ public class BsonSerializerTests
         var model = new TargetModel();
         var json = JsonSerializer.Serialize(model, model.GetType(), GetOptions());
 
-        this.TestContext.WriteLine(json);
+        TestContext.WriteLine(json);
     }
 }

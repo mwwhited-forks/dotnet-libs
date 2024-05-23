@@ -1,4 +1,4 @@
-﻿using Eliassen.System.Tests.Text.Json.TestTargets;
+﻿using Eliassen.System.Tests.TestTargets;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.Json;
@@ -21,11 +21,11 @@ public class BsonIdConverterTests
             ProjectId = expected,
         });
 
-        this.TestContext.AddResult(result, fileName: "result.json");
+        TestContext.AddResult(result, fileName: "result.json");
 
         var document = JsonDocument.Parse(result);
         var selected = document.RootElement.GetProperty("_id").GetProperty("$oid").GetString();
-        this.TestContext.WriteLine(selected);
+        TestContext.WriteLine(selected);
 
         Assert.AreEqual(expected, selected);
     }
@@ -36,9 +36,9 @@ public class BsonIdConverterTests
     [DataRow(@"{""_id"":""Hello World""}", "Hello World")]
     public void DeserializeTest(string input, string expected)
     {
-        this.TestContext.AddResult(input, fileName: "input.json");
+        TestContext.AddResult(input, fileName: "input.json");
         var result = JsonSerializer.Deserialize<TestIdProperty>(input);
-        this.TestContext.AddResult(result, fileName: "result.json");
+        TestContext.AddResult(result, fileName: "result.json");
         Assert.AreEqual(expected, result?.ProjectId);
     }
 }

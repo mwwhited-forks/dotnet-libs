@@ -75,7 +75,7 @@ public class ReflectionExtensionsTests
         }
 
         foreach (var item in capture.Capture())
-            this.TestContext.WriteLine(item.ToString());
+            TestContext.WriteLine(item.ToString());
     }
 
     public static IEnumerable<object?[]> MakeSafeArrayTestData() => new[]
@@ -96,7 +96,7 @@ public class ReflectionExtensionsTests
         CollectionAssert.AreEquivalent(expected, result);
 
         foreach (var item in capture.Capture())
-            this.TestContext.WriteLine(item.ToString());
+            TestContext.WriteLine(item.ToString());
     }
 
     public static IEnumerable<object?[]> TryParseTestData() => new[]
@@ -136,7 +136,7 @@ public class ReflectionExtensionsTests
         Assert.AreEqual(expected, result);
 
         foreach (var item in capture.Capture())
-            this.TestContext.WriteLine(item.ToString());
+            TestContext.WriteLine(item.ToString());
     }
 
     [DataTestMethod]

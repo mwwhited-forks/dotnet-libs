@@ -125,3 +125,22 @@ get current type from test context
 * *System.InvalidOperationException:* 
 
 
+
+
+## Class: TestUtilities.TestLogger
+Provides functionality for creating logger instances for testing purposes. 
+
+### Properties
+
+#### Factory
+Gets the logger factory instance.
+### Methods
+
+
+#### CreateLogger``1
+Creates a logger instance for the specified type. 
+
+
+##### Return value
+A logger instance for the specified type.
+

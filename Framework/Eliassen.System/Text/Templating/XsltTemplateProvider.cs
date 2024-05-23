@@ -1,10 +1,12 @@
 ﻿using Eliassen.System.Net.Mime;
 using Eliassen.System.Text.Json;
+using Eliassen.System.Text.Xml.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
@@ -19,12 +21,22 @@ namespace Eliassen.System.Text.Templating;
 /// </summary>
 public class XsltTemplateProvider : ITemplateProvider
 {
+    private readonly IXmlSerializer _xmlSerializer;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="XsltTemplateProvider"/> class with the specified XML serializer.
+    /// </summary>
+    /// <param name="xmlSerializer">The XML serializer to be used by the provider.</param>
+    public XsltTemplateProvider(
+        IXmlSerializer xmlSerializer
+        ) => _xmlSerializer = xmlSerializer;
+
     /// <summary>
     /// Gets the collection of supported content types by the template provider.
     /// 
     /// application/xslt+xml
     /// </summary>
-    public IReadOnlyCollection<string> SupportedContentTypes { get; } = new[]
+    public virtual IReadOnlyCollection<string> SupportedContentTypes { get; } = new[]
     {
          ContentTypesExtensions.Application.XSLT,
     };
@@ -34,7 +46,7 @@ public class XsltTemplateProvider : ITemplateProvider
     /// </summary>
     /// <param name="context">The template context.</param>
     /// <returns><c>true</c> if the template processing can be applied; otherwise, <c>false</c>.</returns>
-    public bool CanApply(ITemplateContext context) =>
+    public virtual bool CanApply(ITemplateContext context) =>
         SupportedContentTypes.Any(type => string.Equals(context.TemplateContentType, type, StringComparison.InvariantCultureIgnoreCase));
 
     /// <summary>
@@ -45,7 +57,7 @@ public class XsltTemplateProvider : ITemplateProvider
     /// <param name="data">The data to apply to the template.</param>
     /// <param name="target">The stream where the result will be written.</param>
     /// <returns>A task representing the asynchronous operation, indicating whether the application was successful.</returns>
-    public async Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target)
+    public virtual async Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target)
     {
         using var readStream = context.OpenTemplate(context);
 
@@ -70,7 +82,7 @@ public class XsltTemplateProvider : ITemplateProvider
         return true;
     }
 
-    private static async Task<IXPathNavigable> GetNavigatorAsync(object data)
+    private async Task<IXPathNavigable> GetNavigatorAsync(object data)
     {
         if (data is IXPathNavigable navigable)
         {
@@ -78,7 +90,11 @@ public class XsltTemplateProvider : ITemplateProvider
         }
         else if (data is JsonDocument jsonDocument)
         {
-            data = jsonDocument.RootElement;
+            data = JsonNode.Parse(jsonDocument.RootElement.ToString()!)!;
+        }
+        else if (data is JsonElement jsonElement)
+        {
+            data = JsonNode.Parse(jsonElement.ToString()!)!;
         }
         else if (data is XmlDocument xmlDocument)
         {
@@ -89,17 +105,16 @@ public class XsltTemplateProvider : ITemplateProvider
             return XDocument.CreateNavigator();
         }
 
-        if (data is JsonElement jsonElement)
+        if (data is JsonNode jsonNode)
         {
-            var built = jsonElement.ToXmlDocument();
+            var built = jsonNode.ToXFragment();
             var builtNavigator = built?.CreateNavigator();
             if (builtNavigator != null)
                 return builtNavigator;
         }
 
-        var serializer = new global::System.Xml.Serialization.XmlSerializer(data.GetType());
         using var xml = new MemoryStream();
-        serializer.Serialize(xml, data);
+        await _xmlSerializer.SerializeAsync(data, data!.GetType(), xml);
         xml.Position = 0;
         var document = await XDocument.LoadAsync(xml, LoadOptions.None, CancellationToken.None);
         var navigator = document.CreateNavigator();

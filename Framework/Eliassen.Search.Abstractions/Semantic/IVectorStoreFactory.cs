@@ -6,11 +6,11 @@
 public interface IVectorStoreFactory
 {
     /// <summary>
-    /// Creates a new instance of IVectorStore with the specified container name.
+    /// Creates a new instance of IVectorStore with the specified collection name.
     /// </summary>
-    /// <param name="containerName">The name of the container.</param>
+    /// <param name="collectionName">The name of the collection.</param>
     /// <returns>A new instance of IVectorStore.</returns>
-    IVectorStore Create(string containerName);
+    IVectorStore Create(string collectionName);
 
     /// <summary>
     /// Creates a new instance of IVectorStore of the specified type.

@@ -20,7 +20,6 @@ public class QueueClientFactory : IQueueClientFactory
     /// </exception>
     public (IConnection connection, IModel channel, string queueName) Create(IConfigurationSection config)
     {
-        //TODO: create a builder to convert the config to ConnectionFactory properties
         var factory = new ConnectionFactory()
         {
             HostName = config[nameof(ConnectionFactory.HostName)],

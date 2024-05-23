@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Eliassen.Search.Providers;
 
@@ -6,6 +7,7 @@ namespace Eliassen.Search.Providers;
 /// Represents a hybrid provider that combines results from lexical and semantic search providers.
 /// </summary>
 [Obsolete]
+[ExcludeFromCodeCoverage]
 public class HybridProvider
 {
     //private readonly ISearchContent<SearchResultModel> _lexicalProvider;

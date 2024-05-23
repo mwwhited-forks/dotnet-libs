@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Eliassen.TestUtilities;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenSearch.Net;
 using System;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ public class OpenSearchTests
     }
 
     [DataTestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     [DataRow(storeName)]
     [DataRow("summary")]
     public async Task CreateIndexTest(string indexName)
@@ -41,14 +43,15 @@ public class OpenSearchTests
             Body = "World!"
         }));
 
-        this.TestContext.WriteLine($"HttpStatusCode: {result.HttpStatusCode}");
-        this.TestContext.WriteLine($"DebugInformation: {result.DebugInformation}");
-        this.TestContext.WriteLine($"Body: {result.Body}");
+        TestContext.WriteLine($"HttpStatusCode: {result.HttpStatusCode}");
+        TestContext.WriteLine($"DebugInformation: {result.DebugInformation}");
+        TestContext.WriteLine($"Body: {result.Body}");
 
         Assert.IsTrue(result.Success);
     }
 
     [TestMethod]
+    [TestCategory(TestCategories.DevLocal)]
     public async Task SearchIndexTest()
     {
         //var id = Guid.NewGuid().ToString();
@@ -68,9 +71,9 @@ public class OpenSearchTests
                 }
             }));
 
-        this.TestContext.WriteLine($"HttpStatusCode: {result.HttpStatusCode}");
-        this.TestContext.WriteLine($"DebugInformation: {result.DebugInformation}");
-        this.TestContext.WriteLine($"Body: {result.Body}");
+        TestContext.WriteLine($"HttpStatusCode: {result.HttpStatusCode}");
+        TestContext.WriteLine($"DebugInformation: {result.DebugInformation}");
+        TestContext.WriteLine($"Body: {result.Body}");
 
         Assert.IsTrue(result.Success);
     }

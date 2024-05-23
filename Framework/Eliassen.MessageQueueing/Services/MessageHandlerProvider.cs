@@ -21,7 +21,7 @@ public class MessageHandlerProvider(
     IJsonSerializer serializer,
     IMessageContextFactory context,
     ILogger<MessageHandlerProvider> logger
-        ) : IMessageHandlerProvider
+        ) : IMessageHandlerProvider, IMessageHandlerProviderWrapped
 {
     private readonly ISerializer _serializer = serializer;
     private readonly IMessageContextFactory _context = context;
@@ -37,46 +37,12 @@ public class MessageHandlerProvider(
     public IConfigurationSection Config => _config ?? throw new ApplicationException($"Missing Configuration");
 
     /// <summary>
-    /// Sets the collection of <see cref="IMessageQueueHandler"/> instances that will handle the messages.
-    /// </summary>
-    /// <param name="handlers">The collection of message handlers.</param>
-    /// <returns>The current instance of <see cref="IMessageHandlerProvider"/>.</returns>
-    public IMessageHandlerProvider SetHandlers(IEnumerable<IMessageQueueHandler> handlers)
-    {
-        foreach (var handler in handlers)
-            _handlers.Add(handler);
-        return this;
-    }
-
-    /// <summary>
-    /// Sets the type of the message channel associated with the handler.
-    /// </summary>
-    /// <param name="channelType">The type of the message channel.</param>
-    /// <returns>The current instance of <see cref="IMessageHandlerProvider"/>.</returns>
-    public IMessageHandlerProvider SetChannelType(Type channelType)
-    {
-        _channelType = channelType;
-        return this;
-    }
-
-    /// <summary>
-    /// Sets the configuration section associated with the message handler.
-    /// </summary>
-    /// <param name="config">The configuration section.</param>
-    /// <returns>The current instance of <see cref="IMessageHandlerProvider"/>.</returns>
-    public IMessageHandlerProvider SetConfig(IConfigurationSection config)
-    {
-        _config = config ?? throw new ApplicationException($"Missing Configuration");
-        return this;
-    }
-
-    /// <summary>
     /// Handles the specified queue message by invoking each registered message handler.
     /// </summary>
     /// <param name="message">The queue message to handle.</param>
     /// <param name="messageId">The ID of the message.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
-    public async Task HandleAsync(IQueueMessage message, string messageId)
+    public virtual async Task HandleAsync(IQueueMessage message, string messageId)
     {
         if (message != null)
         {
@@ -109,4 +75,24 @@ public class MessageHandlerProvider(
             _logger.LogWarning($"Nothing to handle");
         }
     }
+
+    IMessageHandlerProviderWrapped IMessageHandlerProviderWrapped.SetHandlers(IEnumerable<IMessageQueueHandler> handlers)
+    {
+        foreach (var handler in handlers)
+            _handlers.Add(handler);
+        return this;
+    }
+
+    IMessageHandlerProviderWrapped IMessageHandlerProviderWrapped.SetChannelType(Type channelType)
+    {
+        _channelType = channelType;
+        return this;
+    }
+
+    IMessageHandlerProviderWrapped IMessageHandlerProviderWrapped.SetConfig(IConfigurationSection config)
+    {
+        _config = config ?? throw new ApplicationException($"Missing Configuration");
+        return this;
+    }
+
 }

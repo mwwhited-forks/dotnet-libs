@@ -11,5 +11,5 @@ public interface IOllamaApiClientFactory
     /// Builds an instance of the OllamaApiClient for the specified host.
     /// </summary>
     /// <returns>An instance of the OllamaApiClient.</returns>
-    OllamaApiClient Build();
+    IOllamaApiClient Build();
 }

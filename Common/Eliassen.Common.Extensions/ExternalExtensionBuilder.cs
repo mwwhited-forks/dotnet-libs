@@ -1,4 +1,5 @@
-﻿using Eliassen.Azure.StorageAccount.BlobStorage;
+﻿using Eliassen.Apache.Tika;
+using Eliassen.Azure.StorageAccount.BlobStorage;
 using Eliassen.MailKit.Services;
 using Eliassen.MongoDB.Extensions;
 using Eliassen.Ollama;
@@ -70,4 +71,9 @@ public record ExternalExtensionBuilder
     /// Gets or sets the configuration section name for Ollama Api Client options.
     /// </summary>
     public string OllamaApiClientOptionSection { get; init; } = nameof(OllamaApiClientOptions);
+
+    /// <summary>
+    /// gets or sets the configuration section name of Apache Tika Client options.
+    /// </summary>
+    public string ApacheTikaClientOptionSection { get; init; } = nameof(ApacheTikaClientOptions);
 }

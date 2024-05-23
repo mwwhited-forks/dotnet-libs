@@ -29,7 +29,7 @@ public class MessageReceiverProviderFactory(
     /// Creates instances of <see cref="IMessageReceiverProvider"/> based on configured message handlers.
     /// </summary>
     /// <returns>An enumerable collection of <see cref="IMessageReceiverProvider"/>.</returns>
-    public IEnumerable<IMessageReceiverProvider> Create()
+    public virtual IEnumerable<IMessageReceiverProvider> Create()
     {
         var handlersByChannel = from handler in handlers
 
@@ -84,10 +84,15 @@ public class MessageReceiverProviderFactory(
                 continue;
             }
 
-            var handler = serviceProvider.GetRequiredService<IMessageHandlerProvider>()
+            var handler = serviceProvider.GetRequiredService<IMessageHandlerProvider>();
+
+            if (handler is IMessageHandlerProviderWrapped wrapped)
+            {
+                wrapped
                 .SetHandlers(handlers)
                 .SetChannelType(item.Key.channelType)
                 .SetConfig(config ?? throw new ApplicationException($"Missing Configuration"));
+            }
 
             receiver.SetHandlerProvider(handler);
 

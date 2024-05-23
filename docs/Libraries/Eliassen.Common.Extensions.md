@@ -24,6 +24,8 @@ Gets or sets the configuration section name for Qdrant options.
 Gets or sets the configuration section name for OpenSearch options.
 #### OllamaApiClientOptionSection
 Gets or sets the configuration section name for Ollama Api Client options.
+#### ApacheTikaClientOptionSection
+gets or sets the configuration section name of Apache Tika Client options.
 
 ## Class: Common.Extensions.IdentityExtensionBuilder
 Represents a builder for configuring identity extensions. 

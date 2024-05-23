@@ -10,21 +10,21 @@ internal static class OperatorExtensions
         this Operators expressionOperator,
         object? value,
 #if DEBUG
-        ICaptureResultMessage? messages
+        ICaptureResultMessage? capture
 #else
-        ICaptureResultMessage? messages = null
+        ICaptureResultMessage? capture = null
 #endif
         ) =>
-        new FilterParameter().And(expressionOperator, value, messages);
+        new FilterParameter().And(expressionOperator, value, capture);
 
     public static FilterParameter And(
         this FilterParameter filter,
         Operators expressionOperator,
         object? value,
 #if DEBUG
-        ICaptureResultMessage? messages
+        ICaptureResultMessage? capture
 #else
-        ICaptureResultMessage? messages = null
+        ICaptureResultMessage? capture = null
 #endif
         ) =>
         expressionOperator switch
@@ -37,7 +37,7 @@ internal static class OperatorExtensions
             Operators.GreaterThan => filter with { GreaterThan = value },
             Operators.GreaterThanOrEqualTo => filter with { GreaterThanOrEqualTo = value },
 
-            Operators.InSet => filter with { InSet = (object[]?)typeof(object).MakeSafeArray((Array?)value, messages) },
+            Operators.InSet => filter with { InSet = (object[]?)typeof(object).MakeSafeArray((Array?)value, capture) },
 
             _ => throw new NotSupportedException($"{expressionOperator} is not supported"),
         };

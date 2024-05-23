@@ -1,28 +1,15 @@
 ﻿# Eliassen.Apache.Tika
 
 
-## Class: Apache.Tika.ServiceCollectionExtensions
-Provides extension methods for configuring services related to Markdig. 
+## Class: Apache.Tika.ApacheTikaClientOptions
+Represents options for configuring the Apache Tika client. 
 
-### Methods
+### Properties
 
+#### Url
+Gets or sets the URL of the Apache Tika server.
 
-#### TryAddApacheTikaServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-Configures services for Markdig. 
-
-
-##### Parameters
-* *services:* The to add the services to.
-
-
-
-
-##### Return value
-The modified .
-
-
-
-## Class: Apache.Tika.TikaContentTypeDetector
+## Class: Apache.Tika.Detectors.TikaContentTypeDetector
 Provides functionality to detect the content type of a stream using Apache Tika. 
 
 ### Methods
@@ -43,7 +30,7 @@ A representing the asynchronous operation. The task result contains the detected
 
 
 
-## Class: Apache.Tika.TikaConversionHandlerBase
+## Class: Apache.Tika.Handlers.TikaConversionHandlerBase
 Provides a base class for document conversion handlers using Apache Tika. 
 
 ### Properties
@@ -53,30 +40,6 @@ Gets an array of supported destination content types for conversion.
 #### Sources
 Gets an array of supported source content types for conversion.
 ### Methods
-
-
-#### Parser
-Gets the parser instance used for document conversion. 
-
-
-##### Return value
-The parser instance.
-
-
-
-#### Handler(java.io.OutputStream)
-Gets the content handler instance used for document conversion. 
-
-
-##### Parameters
-* *output:* The output stream for the converted document.
-
-
-
-
-##### Return value
-The content handler instance.
-
 
 
 #### ConvertAsync(System.IO.Stream,System.String,System.IO.Stream,System.String)
@@ -129,7 +92,7 @@ true if the content type is supported; otherwise, false.
 
 
 
-## Class: Apache.Tika.TikaDocToHtmlConversionHandler
+## Class: Apache.Tika.Handlers.TikaDocToHtmlConversionHandler
 Provides functionality to convert Microsoft Word documents to HTML using Apache Tika. 
 
 ### Properties
@@ -139,16 +102,18 @@ Gets an array of supported source content types for conversion.
 ### Methods
 
 
-#### Parser
-Gets the parser instance used for document conversion. 
+#### Constructor
+Constructor to convert Microsoft Word documents to HTML using Apache Tika. 
 
 
-##### Return value
-The parser instance for Microsoft Office documents.
+##### Parameters
+* *client:* client interface
+* *logger:* system logger
 
 
 
-## Class: Apache.Tika.TikaDocxToHtmlConversionHandler
+
+## Class: Apache.Tika.Handlers.TikaDocxToHtmlConversionHandler
 Provides functionality to convert Microsoft Word (DOCX) documents to HTML using Apache Tika. 
 
 ### Properties
@@ -158,16 +123,40 @@ Gets an array of supported source content types for conversion.
 ### Methods
 
 
-#### Parser
-Gets the parser instance used for document conversion. 
+#### Constructor
+Constructor to convert Microsoft Word (DOCX) documents to HTML using Apache Tika. 
 
 
-##### Return value
-The parser instance for Office Open XML documents (DOCX).
+##### Parameters
+* *client:* client interface
+* *logger:* system logger
 
 
 
-## Class: Apache.Tika.TikaOdtToHtmlConversionHandler
+
+## Class: Apache.Tika.Handlers.TikaEpubToHtmlConversionHandler
+Represents a handler for converting EPUB files to HTML using Apache Tika. 
+
+### Properties
+
+#### Sources
+Gets an array of supported source content types for conversion.
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.Apache.Tika.Handlers.TikaEpubToHtmlConversionHandler*class. 
+
+
+##### Parameters
+* *client:* The Apache Tika client used for conversion.
+* *logger:* The logger for logging conversion activities.
+
+
+
+
+## Class: Apache.Tika.Handlers.TikaOdtToHtmlConversionHandler
 Provides functionality to convert OpenDocument Text (ODT) documents to HTML using Apache Tika. 
 
 ### Properties
@@ -177,16 +166,18 @@ Gets an array of supported source content types for conversion.
 ### Methods
 
 
-#### Parser
-Gets the parser instance used for document conversion. 
+#### Constructor
+Constructor to convert OpenDocument Text (ODT) documents to HTML using Apache Tika. 
 
 
-##### Return value
-The parser instance for OpenDocument Text (ODT) documents.
+##### Parameters
+* *client:* client interface
+* *logger:* system logger
 
 
 
-## Class: Apache.Tika.TikaPdfToHtmlConversionHandler
+
+## Class: Apache.Tika.Handlers.TikaPdfToHtmlConversionHandler
 Provides functionality to convert PDF documents to HTML using Apache Tika. 
 
 ### Properties
@@ -196,16 +187,18 @@ Gets an array of supported source content types for conversion.
 ### Methods
 
 
-#### Parser
-Gets the parser instance used for document conversion. 
+#### Constructor
+Constructor to convert Adobe PDF documents to HTML using Apache Tika. 
 
 
-##### Return value
-The parser instance for PDF documents.
+##### Parameters
+* *client:* client interface
+* *logger:* system logger
 
 
 
-## Class: Apache.Tika.TikaRtfToHtmlConversionHandler
+
+## Class: Apache.Tika.Handlers.TikaRtfToHtmlConversionHandler
 Provides functionality to convert Rich Text Format (RTF) documents to HTML using Apache Tika. 
 
 ### Properties
@@ -215,16 +208,18 @@ Gets an array of supported source content types for conversion.
 ### Methods
 
 
-#### Parser
-Gets the parser instance used for document conversion. 
+#### Constructor
+Constructor to convert Rich Text Format (RTF) documents to HTML using Apache Tika. 
 
 
-##### Return value
-The parser instance for Rich Text Format (RTF) documents.
+##### Parameters
+* *client:* client interface
+* *logger:* system logger
 
 
 
-## Class: Apache.Tika.TikaToHtmlConversionBaseHandler
+
+## Class: Apache.Tika.Handlers.TikaToHtmlConversionBaseHandler
 Provides a base class for handlers that convert documents to HTML using Apache Tika. 
 
 ### Properties
@@ -234,16 +229,33 @@ Gets an array of supported destination content types for conversion.
 ### Methods
 
 
-#### Handler(java.io.OutputStream)
-Gets the content handler instance used for document conversion to HTML. 
+#### Constructor
+Constructor to convert handler documents to HTML using Apache Tika. 
 
 
 ##### Parameters
-* *output:* The output stream for the converted HTML.
+* *client:* client interface
+* *logger:* system logger
+
+
+
+
+## Class: Apache.Tika.ServiceCollectionExtensions
+Provides extension methods for configuring services related to Apache - Tika. 
+
+### Methods
+
+
+#### TryAddApacheTikaServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
+Configures services for Apache - Tika. 
+
+
+##### Parameters
+* *services:* The to add the services to.
 
 
 
 
 ##### Return value
-The content handler instance.
+The modified .
 

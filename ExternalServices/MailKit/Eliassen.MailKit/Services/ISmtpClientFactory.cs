@@ -12,5 +12,5 @@ public interface ISmtpClientFactory
     /// Creates a new instance of <see cref="SmtpClient"/>.
     /// </summary>
     /// <returns>A task that represents the asynchronous operation and contains the created <see cref="SmtpClient"/>.</returns>
-    Task<SmtpClient> CreateAsync();
+    Task<ISmtpClient> CreateAsync();
 }

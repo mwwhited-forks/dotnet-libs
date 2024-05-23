@@ -272,6 +272,57 @@ A task representing the asynchronous operation.
 
 
 
+#### 
+Sets the collection of message queue handlers for the provider. 
+
+
+##### Parameters
+* *handlers:* The collection of message queue handlers.
+
+
+
+
+##### Return value
+The updated message handler provider.
+
+
+
+#### 
+Sets the type of the message channel for the provider. 
+
+
+##### Parameters
+* *channelType:* The type of the message channel.
+
+
+
+
+##### Return value
+The updated message handler provider.
+
+
+
+#### 
+Sets the configuration section for the provider. 
+
+
+##### Parameters
+* *config:* The configuration section.
+
+
+
+
+##### Return value
+The updated message handler provider.
+
+
+
+## Class: MessageQueueing.Services.IMessageHandlerProviderWrapped
+Provides a internal extensions for mechanism for handling queue messages. 
+
+### Methods
+
+
 #### SetHandlers(System.Collections.Generic.IEnumerable{Eliassen.MessageQueueing.IMessageQueueHandler})
 Sets the collection of message queue handlers for the provider. 
 

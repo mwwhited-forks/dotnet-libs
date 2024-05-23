@@ -19,8 +19,8 @@ public static class OllamaApiClientExtensions
     /// <param name="modelName">The name of the model to ensure exists.</param>
     /// <param name="logger">The logger instance for logging information.</param>
     /// <returns>The Ollama API client.</returns>
-    public static async Task<OllamaApiClient> EnsureModelExistsAsync(
-        this OllamaApiClient ollama,
+    public static async Task<IOllamaApiClient> EnsureModelExistsAsync(
+        this IOllamaApiClient ollama,
         string modelName,
         ILogger logger
         )
@@ -47,8 +47,8 @@ public static class OllamaApiClientExtensions
     /// <param name="text">The text for which the embedding is requested.</param>
     /// <param name="modelName">The name of the model to use for embedding.</param>
     /// <returns>The embedding as an array of floats.</returns>
-    public static float[] GetEmbeddingSingle(
-        this OllamaApiClient client,
+    public static ReadOnlyMemory<float> GetEmbeddingSingle(
+        this IOllamaApiClient client,
         string text,
         string modelName) =>
                 client.GetEmbeddingSingleAsync(text, modelName).Result;
@@ -60,14 +60,14 @@ public static class OllamaApiClientExtensions
     /// <param name="text">The text for which the embedding is requested.</param>
     /// <param name="modelName">The name of the model to use for embedding.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the embedding as an array of floats.</returns>
-    public static async Task<float[]> GetEmbeddingSingleAsync(
-        this OllamaApiClient client,
+    public static async Task<ReadOnlyMemory<float>> GetEmbeddingSingleAsync(
+        this IOllamaApiClient client,
         string text,
         string modelName
         )
     {
         var doubles = await client.GetEmbeddingDoubleAsync(text, modelName);
-        var floats = Array.ConvertAll(doubles, Convert.ToSingle);
+        var floats = Array.ConvertAll(doubles.ToArray(), Convert.ToSingle);
         return floats;
     }
 
@@ -78,8 +78,8 @@ public static class OllamaApiClientExtensions
     /// <param name="text">The text for which the embedding is requested.</param>
     /// <param name="modelName">The name of the model to use for embedding.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the embedding as an array of doubles.</returns>
-    public static async Task<double[]> GetEmbeddingDoubleAsync(
-        this OllamaApiClient client,
+    public static async Task<ReadOnlyMemory<double>> GetEmbeddingDoubleAsync(
+        this IOllamaApiClient client,
         string text,
         string modelName) =>
             (await client.GenerateEmbeddings(new() { Model = modelName, Prompt = text })).Embedding;
@@ -91,8 +91,8 @@ public static class OllamaApiClientExtensions
     /// <param name="text">The text for which the embedding is requested.</param>
     /// <param name="modelName">The name of the model to use for embedding.</param>
     /// <returns>The embedding as an array of doubles.</returns>
-    public static double[] GetEmbeddingDouble(
-        this OllamaApiClient client,
+    public static ReadOnlyMemory<double> GetEmbeddingDouble(
+        this IOllamaApiClient client,
         string text,
         string modelName) =>
             client.GetEmbeddingDoubleAsync(text, modelName).Result;

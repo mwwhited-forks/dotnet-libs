@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Eliassen.WebApi.Controllers;
 
@@ -10,6 +11,7 @@ namespace Eliassen.WebApi.Controllers;
 [AllowAnonymous]
 [Route("[Controller]/[Action]")]
 [Obsolete]
+[ExcludeFromCodeCoverage]
 public class SearchController : Controller
 {
     //private readonly ISearchProvider _search;
