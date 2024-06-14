@@ -2,6 +2,7 @@
 using Azure.AI.OpenAI;
 using Eliassen.AI;
 using Eliassen.AI.Models;
+using Eliassen.OpenAI.AI.Models;
 using Microsoft.Extensions.Options;
 using SharpToken;
 using System;
@@ -40,7 +41,7 @@ public class OpenAIManager : ILanguageModelProvider
         OpenAIClient api = new(_config.Value.APIKey);
         var response = await api.GetChatCompletionsAsync(new()
         {
-            DeploymentName = _config.Value.DeploymentName,
+            DeploymentName = _config.Value.Model,
             Messages =
                 {
                     // The system message represents instructions or other guidance about how the assistant should behave
@@ -68,7 +69,7 @@ public class OpenAIManager : ILanguageModelProvider
 
         await foreach (var chatUpdate in await api.GetChatCompletionsStreamingAsync(new()
         {
-            DeploymentName = _config.Value.DeploymentName,
+            DeploymentName = _config.Value.Model,
             Messages =
             {
                 // The system message represents instructions or other guidance about how the assistant should behave
@@ -95,7 +96,7 @@ public class OpenAIManager : ILanguageModelProvider
         OpenAIClient api = new(_config.Value.APIKey);
         var request = new ChatCompletionsOptions
         {
-            DeploymentName = _config.Value.DeploymentName
+            DeploymentName = _config.Value.Model
         };
 
         request.Messages.Add(new ChatRequestAssistantMessage(assistantConfinment));
@@ -156,7 +157,7 @@ public class OpenAIManager : ILanguageModelProvider
         OpenAIClient api = new(_config.Value.APIKey);
         var request = new ChatCompletionsOptions
         {
-            DeploymentName = _config.Value.DeploymentName
+            DeploymentName = _config.Value.Model
         };
 
         request.Messages.Add(new ChatRequestAssistantMessage(assistantConfinment));
@@ -194,7 +195,7 @@ public class OpenAIManager : ILanguageModelProvider
         OpenAIClient api = new(_config.Value.APIKey);
         var response = await api.GetChatCompletionsAsync(new()
         {
-            DeploymentName = _config.Value.DeploymentName,
+            DeploymentName = _config.Value.Model,
             Messages =
                 {
                     new ChatRequestAssistantMessage(assistantConfinment),
@@ -223,7 +224,7 @@ public class OpenAIManager : ILanguageModelProvider
         OpenAIClient api = new(_config.Value.APIKey);
         var request = new ChatCompletionsOptions
         {
-            DeploymentName = _config.Value.DeploymentName
+            DeploymentName = _config.Value.Model
         };
 
         StringBuilder aiData = new();
