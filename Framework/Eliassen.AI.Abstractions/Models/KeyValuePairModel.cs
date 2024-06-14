@@ -1,4 +1,4 @@
-﻿namespace Eliassen.OpenAI.AI.Models;
+﻿namespace Eliassen.AI.Models;
 
 /// <summary>
 /// Base level KeyValuePairModel class

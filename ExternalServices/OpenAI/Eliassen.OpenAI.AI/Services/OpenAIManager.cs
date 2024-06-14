@@ -1,6 +1,7 @@
 ﻿using Azure;
 using Azure.AI.OpenAI;
 using Eliassen.AI;
+using Eliassen.AI.Models;
 using Eliassen.OpenAI.AI.Models;
 using Microsoft.Extensions.Options;
 using SharpToken;

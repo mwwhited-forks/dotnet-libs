@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Eliassen.OpenAI.AI.Models;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
@@ -90,7 +90,7 @@ public interface ILanguageModelProvider
     /// <param name="systemInteractions">The system input.</param>
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the generated response.</returns>
-    IAsyncEnumerable<string> GetRAGResponseCitiationsAsync(List<string> ragData,
+    IAsyncEnumerable<string> GetRAGResponseCitiationsAsync(List<KeyValuePairModel> ragData,
         List<string> systemInteractions,
         List<string> userInput,
         [EnumeratorCancellation] CancellationToken cancellationToken = default);
