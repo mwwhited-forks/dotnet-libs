@@ -81,4 +81,17 @@ public interface ILanguageModelProvider
         string ragData,
         string userInput,
         [EnumeratorCancellation] CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Gets a response asynchronously based on the ragData and userInput
+    /// </summary>
+    /// <param name="ragData">The details of the prompt.</param>
+    /// <param name="userInput">The user input.</param>
+    /// <param name="systemInteractions">The system input.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>A task representing the asynchronous operation. The task result contains the generated response.</returns>
+    IAsyncEnumerable<string> GetRAGResponseCitiationsAsync(List<string> ragData,
+        List<string> systemInteractions,
+        List<string> userInput,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default);
 }

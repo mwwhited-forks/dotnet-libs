@@ -182,6 +182,7 @@ public class OpenAIManager : ILanguageModelProvider
     /// <param name="assistantConfinment">The details of the prompt.</param>
     /// <param name="ragData">The details of the prompt.</param>
     /// <param name="userInput">The user input.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the generated response.</returns>
     public async Task<string> GetRAGResponseAsync(string assistantConfinment,
         string ragData,
@@ -202,5 +203,49 @@ public class OpenAIManager : ILanguageModelProvider
                 }
         }, cancellationToken);
         return response.Value.Choices[0].Message.Content;
+    }
+
+    /// <summary>
+    /// Gets a response asynchronously based on the ragData and userInput
+    /// </summary>
+    /// <param name="ragData">The details of the prompt.</param>
+    /// <param name="userInput">The user input.</param>
+    /// <param name="systemInteractions">The system input.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>A task representing the asynchronous operation. The task result contains the generated response.</returns>
+    public async IAsyncEnumerable<string> GetRAGResponseCitiationsAsync(List<string> ragData,
+        List<string> systemInteractions,
+        List<string> userInput,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    {
+        OpenAIClient api = new(_config.Value.APIKey);
+        var request = new ChatCompletionsOptions
+        {
+            DeploymentName = _config.Value.DeploymentName
+        };
+
+        request.Messages.Add(new ChatRequestSystemMessage($"With the content from a file thats passed in, you can only respond within its context. content: {ragData}, also when using the information provide citiations in your response using the documentId"));
+
+        // Add system messages
+        foreach (var detail in systemInteractions)
+        {
+            request.Messages.Add(new ChatRequestSystemMessage(detail));
+        }
+
+        // Add user messages
+        foreach (var input in userInput)
+        {
+            request.Messages.Add(new ChatRequestUserMessage(input));
+        }
+
+        await foreach (var chatUpdate in await api.GetChatCompletionsStreamingAsync(request, cancellationToken))
+        {
+            if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
+            {
+                yield return chatUpdate.ContentUpdate;
+            }
+
+            if (cancellationToken.IsCancellationRequested) { yield break; }
+        }
     }
 }
