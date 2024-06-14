@@ -6,6 +6,7 @@ using SharpToken;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -224,7 +225,14 @@ public class OpenAIManager : ILanguageModelProvider
             DeploymentName = _config.Value.DeploymentName
         };
 
-        request.Messages.Add(new ChatRequestSystemMessage($"With the content from a file thats passed in, you can only respond within its context. content: {ragData}, also when using the information provide citiations in your response using the documentId"));
+        StringBuilder aiData = new();
+
+        foreach (var detail in ragData)
+        {
+            aiData.Append(detail);
+        }
+
+        request.Messages.Add(new ChatRequestSystemMessage($"With the content from a file thats passed in, you can only respond within its context. content: {aiData.ToString()}, also when using the information provide citiations in your response using the documentId for each unique piece of information"));
 
         // Add system messages
         foreach (var detail in systemInteractions)
