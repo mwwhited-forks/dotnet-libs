@@ -1,6 +1,7 @@
 ﻿using Azure;
 using Azure.AI.OpenAI;
 using Eliassen.AI;
+using Eliassen.OpenAI.AI.Models;
 using Microsoft.Extensions.Options;
 using SharpToken;
 using System;
@@ -214,7 +215,7 @@ public class OpenAIManager : ILanguageModelProvider
     /// <param name="systemInteractions">The system input.</param>
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the generated response.</returns>
-    public async IAsyncEnumerable<string> GetRAGResponseCitiationsAsync(List<string> ragData,
+    public async IAsyncEnumerable<string> GetRAGResponseCitiationsAsync(List<KeyValuePairModel> ragData,
         List<string> systemInteractions,
         List<string> userInput,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
@@ -226,13 +227,18 @@ public class OpenAIManager : ILanguageModelProvider
         };
 
         StringBuilder aiData = new();
+        StringBuilder aiKey = new();
 
         foreach (var detail in ragData)
         {
-            aiData.Append(detail);
+            aiData.Append(detail.Value);
+            aiKey.Append(detail.Key);
         }
 
-        request.Messages.Add(new ChatRequestSystemMessage($"With the content from a file thats passed in, you can only respond within its context. content: {aiData.ToString()}, also when using the information provide citiations in your response using the documentId for each unique piece of information"));
+        request.Messages.Add(new ChatRequestSystemMessage($"" +
+            $"With the content from a file thats passed in, you can only respond within its context. content: {aiData.ToString()}, " +
+            $"also when using the information provide citiations in your response " +
+            $"using the ${aiKey.ToString()} for each unique piece of information in markdown so its cliclable"));
 
         // Add system messages
         foreach (var detail in systemInteractions)
