@@ -231,14 +231,15 @@ public class OpenAIManager : ILanguageModelProvider
 
         foreach (var detail in ragData)
         {
-            aiData.Append(detail.Value);
+            aiData.Append("CIT_ID:"+ detail.Key + ", "+detail.Value);
             aiKey.Append(detail.Key);
         }
 
         request.Messages.Add(new ChatRequestSystemMessage($"" +
             $"With the content from a file thats passed in, you can only respond within its context. content: {aiData.ToString()}, " +
             $"also when using the information provide citiations in your response " +
-            $"using the ${aiKey.ToString()} for each unique piece of information in markdown so its cliclable"));
+            $"using the relevant CIT_ID: for each unique piece of information in markdown so its cliclable"));
+        //$"using the ${aiKey.ToString()} for each unique piece of information in markdown so its cliclable"));
 
         // Add system messages
         foreach (var detail in systemInteractions)
