@@ -227,19 +227,15 @@ public class OpenAIManager : ILanguageModelProvider
         };
 
         StringBuilder aiData = new();
-        StringBuilder aiKey = new();
 
         foreach (var detail in ragData)
         {
             aiData.Append("[cit"+ detail.Key + "], "+detail.Value);
-            aiKey.Append(detail.Key);
         }
 
-        request.Messages.Add(new ChatRequestSystemMessage($"" +
-            $"With the content from a file thats passed in, you can only respond within its context. content: {aiData.ToString()}, " +
-            $"also when using the information provide citiations in your response " +
-            $"using the relevant [cit] for each unique piece of information."));
-        //$"using the ${aiKey.ToString()} for each unique piece of information in markdown so its cliclable"));
+        Console.Write(aiData.ToString());
+
+        request.Messages.Add(new ChatRequestSystemMessage($"With the content from a file thats passed in, you can only respond within its context. content: {aiData.ToString()}"));
 
         // Add system messages
         foreach (var detail in systemInteractions)
