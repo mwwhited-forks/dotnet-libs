@@ -233,9 +233,10 @@ public class OpenAIManager : ILanguageModelProvider
             aiData.Append("[cit"+ detail.Key + "], "+detail.Value);
         }
 
-        Console.Write(aiData.ToString());
-
-        request.Messages.Add(new ChatRequestSystemMessage($"With the content from a file thats passed in, you can only respond within its context. content: {aiData.ToString()}"));
+        request.Messages.Add(new ChatRequestSystemMessage($"" +
+            $"With the content from a file thats passed in, you can only respond within its context. content: {aiData.ToString()}, " +
+            $"also when using the information provide citiations in your response " +
+            $"using the relevant [cit] for each relevant piece of information that you used to create the response."));
 
         // Add system messages
         foreach (var detail in systemInteractions)
