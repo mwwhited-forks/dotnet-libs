@@ -208,16 +208,14 @@ public class OpenAIManager : ILanguageModelProvider
     }
 
     /// <summary>
-    /// Gets a response asynchronously based on the ragData and userInput
+    /// Gets a response asynchronously based on the ragData and userQuery
     /// </summary>
     /// <param name="ragData">The details of the prompt.</param>
-    /// <param name="userInput">The user input.</param>
-    /// <param name="systemInteractions">The system input.</param>
+    /// <param name="userQuery">The userQuery</param>
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the generated response.</returns>
     public async IAsyncEnumerable<string> GetRAGResponseCitiationsAsync(List<KeyValuePairModel> ragData,
-        List<string> systemInteractions,
-        List<string> userInput,
+        string userQuery,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         OpenAIClient api = new(_config.Value.APIKey);
@@ -236,20 +234,10 @@ public class OpenAIManager : ILanguageModelProvider
         request.Messages.Add(new ChatRequestSystemMessage($"" +
             $"With the content from a file thats passed in, you can only respond within its context. content: {aiData.ToString()}, " +
             $"also when using the information provide citiations in your response " +
-            $"using the relevant [cit] for each relevant piece of information that you used to create the response."));
-
-        // Add system messages
-        foreach (var detail in systemInteractions)
-        {
-            request.Messages.Add(new ChatRequestSystemMessage(detail));
-        }
-
-        // Add user messages
-        foreach (var input in userInput)
-        {
-            request.Messages.Add(new ChatRequestUserMessage(input));
-        }
-
+            $"using the relevant [cit] for each unique piece of information."));
+        
+        request.Messages.Add(new ChatRequestUserMessage(userQuery));
+        
         await foreach (var chatUpdate in await api.GetChatCompletionsStreamingAsync(request, cancellationToken))
         {
             if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))

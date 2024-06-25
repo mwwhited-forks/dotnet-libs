@@ -19,9 +19,4 @@ public class OpenAIClientOptions
     /// Gets or sets the deployment model to be used for the embedding generation.
     /// </summary>
     public required string EmbeddingModel { get; set; }
-
-    /// <summary>
-    /// Gets or sets the deployment model to be used for the embedding generation.
-    /// </summary>
-    public required string URL { get; set; }
 }
