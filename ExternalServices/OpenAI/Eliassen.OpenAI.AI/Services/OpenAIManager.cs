@@ -234,7 +234,8 @@ public class OpenAIManager : ILanguageModelProvider
         request.Messages.Add(new ChatRequestSystemMessage($"" +
             $"With the content from a file thats passed in, you can only respond within its context. content: {aiData.ToString()}, " +
             $"also when using the information provide citiations in your response " +
-            $"using the relevant [cit] for each unique piece of information."));
+            $"using the relevant [cit] for each unique piece of information." + 
+            $"if no content is provided do not answer the question and ask the user to provide a file."));
         
         request.Messages.Add(new ChatRequestUserMessage(userQuery));
         
