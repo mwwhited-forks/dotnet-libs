@@ -1,11 +1,13 @@
 ﻿using Azure;
 using Azure.AI.OpenAI;
 using Eliassen.AI;
+using Eliassen.AI.Models;
 using Microsoft.Extensions.Options;
 using SharpToken;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -38,7 +40,7 @@ public class OpenAIManager : ILanguageModelProvider
         OpenAIClient api = new(_config.Value.APIKey);
         var response = await api.GetChatCompletionsAsync(new()
         {
-            DeploymentName = _config.Value.DeploymentName,
+            DeploymentName = _config.Value.Model,
             Messages =
                 {
                     // The system message represents instructions or other guidance about how the assistant should behave
@@ -66,7 +68,7 @@ public class OpenAIManager : ILanguageModelProvider
 
         await foreach (var chatUpdate in await api.GetChatCompletionsStreamingAsync(new()
         {
-            DeploymentName = _config.Value.DeploymentName,
+            DeploymentName = _config.Value.Model,
             Messages =
             {
                 // The system message represents instructions or other guidance about how the assistant should behave
@@ -93,7 +95,7 @@ public class OpenAIManager : ILanguageModelProvider
         OpenAIClient api = new(_config.Value.APIKey);
         var request = new ChatCompletionsOptions
         {
-            DeploymentName = _config.Value.DeploymentName
+            DeploymentName = _config.Value.Model
         };
 
         request.Messages.Add(new ChatRequestAssistantMessage(assistantConfinment));
@@ -154,7 +156,7 @@ public class OpenAIManager : ILanguageModelProvider
         OpenAIClient api = new(_config.Value.APIKey);
         var request = new ChatCompletionsOptions
         {
-            DeploymentName = _config.Value.DeploymentName
+            DeploymentName = _config.Value.Model
         };
 
         request.Messages.Add(new ChatRequestAssistantMessage(assistantConfinment));
@@ -182,6 +184,7 @@ public class OpenAIManager : ILanguageModelProvider
     /// <param name="assistantConfinment">The details of the prompt.</param>
     /// <param name="ragData">The details of the prompt.</param>
     /// <param name="userInput">The user input.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the generated response.</returns>
     public async Task<string> GetRAGResponseAsync(string assistantConfinment,
         string ragData,
@@ -191,7 +194,7 @@ public class OpenAIManager : ILanguageModelProvider
         OpenAIClient api = new(_config.Value.APIKey);
         var response = await api.GetChatCompletionsAsync(new()
         {
-            DeploymentName = _config.Value.DeploymentName,
+            DeploymentName = _config.Value.Model,
             Messages =
                 {
                     new ChatRequestAssistantMessage(assistantConfinment),
@@ -202,5 +205,48 @@ public class OpenAIManager : ILanguageModelProvider
                 }
         }, cancellationToken);
         return response.Value.Choices[0].Message.Content;
+    }
+
+    /// <summary>
+    /// Gets a response asynchronously based on the ragData and userQuery
+    /// </summary>
+    /// <param name="ragData">The details of the prompt.</param>
+    /// <param name="userQuery">The userQuery</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>A task representing the asynchronous operation. The task result contains the generated response.</returns>
+    public async IAsyncEnumerable<string> GetRAGResponseCitiationsAsync(List<KeyValuePairModel> ragData,
+        string userQuery,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    {
+        OpenAIClient api = new(_config.Value.APIKey);
+        var request = new ChatCompletionsOptions
+        {
+            DeploymentName = _config.Value.Model
+        };
+
+        StringBuilder aiData = new();
+
+        foreach (var detail in ragData)
+        {
+            aiData.Append("[cit"+ detail.Key + "], "+detail.Value);
+        }
+
+        request.Messages.Add(new ChatRequestSystemMessage($"" +
+            $"With the content from a file thats passed in, you can only respond within its context. content: {aiData.ToString()}, " +
+            $"also when using the information provide citiations in your response " +
+            $"using the relevant [cit] for each unique piece of information." + 
+            $"if no content is provided do not answer the question and ask the user to provide a file."));
+        
+        request.Messages.Add(new ChatRequestUserMessage(userQuery));
+        
+        await foreach (var chatUpdate in await api.GetChatCompletionsStreamingAsync(request, cancellationToken))
+        {
+            if (!string.IsNullOrEmpty(chatUpdate.ContentUpdate))
+            {
+                yield return chatUpdate.ContentUpdate;
+            }
+
+            if (cancellationToken.IsCancellationRequested) { yield break; }
+        }
     }
 }
