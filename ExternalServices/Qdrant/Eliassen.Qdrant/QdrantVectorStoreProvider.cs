@@ -68,32 +68,51 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// <summary>
     /// Gets or sets the name of the container.
     /// </summary>
-    public virtual async Task<string[]> StoreVectorsAsync(IEnumerable<ReadOnlyMemory<float>> embeddings, Dictionary<string, object> metadata)
+    public virtual async Task<string[]> StoreVectorsAsync(
+        IEnumerable<ReadOnlyMemory<float>> embeddings,
+        Dictionary<string, object> metadata
+        ) =>
+        await StoreVectorsAsync(embeddings.Select(e => (e, new Dictionary<string, object>())), metadata);
+
+    /// <summary>
+    /// Gets or sets the name of the container.
+    /// </summary>
+    public async Task<string[]> StoreVectorsAsync(
+        IEnumerable<(ReadOnlyMemory<float> embedding, Dictionary<string, object> metadata)> items, 
+        Dictionary<string, object> metadata
+        )
     {
         if (_options.Value.EnsureCollectionExists)
-            await EnsureCollectionExistsAsync(embeddings.First().Length);
+            await EnsureCollectionExistsAsync(items.First().embedding.Length);
 
-        var map = new MapField<string, Value>();
-        foreach (var data in metadata)
+        List<PointStruct> points = [];
+
+        foreach (var item in items)
         {
-            var value = Convert(data.Value);
-            if (value != null)
-                map[data.Key] = value;
+            var map = new MapField<string, Value>();
+            foreach (var data in metadata.Concat(item.metadata))
+            {
+                var value = Convert(data.Value);
+                if (value != null)
+                    map[data.Key] = value;
+            }
+
+            var point = new PointStruct
+            {
+                Id = new PointId { Uuid = Guid.NewGuid().ToString() },
+                Payload =
+                {
+                     map
+                },
+                Vectors = new Vectors()
+                {
+                    Vector = item.embedding.ToArray(),
+                },
+            };
+
+            points.Add(point);
         }
 
-        var points = from embedding in embeddings
-                     select new PointStruct
-                     {
-                         Id = new PointId { Uuid = Guid.NewGuid().ToString() },
-                         Payload =
-                         {
-                              map
-                         },
-                         Vectors = new Vectors()
-                         {
-                             Vector = embedding.ToArray(),
-                         },
-                     };
 
         var response = await _client.Points.UpsertAsync(new()
         {
