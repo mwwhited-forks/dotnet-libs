@@ -128,6 +128,14 @@ services:
     networks:
       - backend
 
+  opensearch-dashboards:
+    extends:
+      file: docker-compose.opensearch-dashboards.yml
+      service: opensearch-dashboards
+    networks:
+      - frontend
+      - backend
+
   kafka:
     extends:
       file: docker-compose.kafka.yml
