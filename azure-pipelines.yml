@@ -174,7 +174,7 @@ steps:
   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) 
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/Packages/*.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: '5f757354-fbf9-4fe2-9464-d0b4a3d8aabd/68967c6e-0e04-43b3-90ed-0933cbac5a61'
 
