@@ -47,6 +47,8 @@ public class ConfigureOAuthSwaggerGenOptions(
     /// <param name="options">The SwaggerGen options to configure.</param>
     public void Configure(SwaggerGenOptions options)
     {
+        //TODO: consider getting from oauth ./.well-known/openid-configuration if not set
+
         if (string.IsNullOrEmpty(_config.Value.AuthorizationUrl))
         {
             _logger.LogWarning($"ConfigureOAuthSwaggerGenOptions:AuthorizationUrl is not configured");

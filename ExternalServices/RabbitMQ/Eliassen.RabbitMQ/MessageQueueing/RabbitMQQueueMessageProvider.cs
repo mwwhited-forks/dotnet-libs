@@ -111,6 +111,7 @@ public class RabbitMQQueueMessageProvider(
 
             };
 
+            channel.QueueDeclare(queue: queueName, exclusive: false);
             channel.BasicConsume(queue: queueName,
                                  autoAck: true,
                                  consumer: consumer);

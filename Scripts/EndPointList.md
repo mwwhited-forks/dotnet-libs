@@ -19,34 +19,35 @@
 
 ## Port List
 
-| Service        | Protocol | Port       | 
-|----------------|----------|------------|
-| smtp4dev       | smtp     |         25 |
-| smtp4dev       | imap     |        143 |
-| smtp4dev       | pop3     |        110 |
-| sql-server     | tcp      |       1433 |
-| open-webui     | http     |       3000 |
-| localstack     | tcp      |       4566 |
-| localstack     | tcp      |  4510-4559 |
-| sbert          | tcp      |       5080 |
-| paradedb       | tcp      |       5432 | eliassen-libs-dev-paradedb-1:5432
-| RabbitMQ       | tcp      |       5672 |
-| qdrant         | http     |       6333 |
-| qdrant         | grpc     |       6334 |
-| smtp4dev       | http     |       7777 |
-| Keycloak       | http     |       8081 |
-| PG Admin       | http     |       8082 |
-| Kafka          | tcp      |       9092 |
-| Kafka          | tcp      |       9094 |
-| OpenSearch     | tcp      |       9200 |
-| OpenSearch     | tcp      |       9600 |
-| Apache Tika    | tcp      |       9998 |
-| Azurite        | tcp      |      10000 |
-| Azurite        | tcp      |      10001 |
-| Azurite        | tcp      |      10002 |
-| ollama         | tcp      |      11434 | eliassen-libs-dev-ollama-1:11434
-| RabbitMQ       | tcp      |      15672 |
-| MongoDB        | tcp      |      27017 |
+| Service                  | Protocol | Port       | 
+|--------------------------|----------|------------|
+| smtp4dev                 | smtp     |         25 |
+| smtp4dev                 | imap     |        143 |
+| smtp4dev                 | pop3     |        110 |
+| sql-server               | tcp      |       1433 |
+| open-webui               | http     |       3000 |
+| localstack               | tcp      |       4566 |
+| localstack               | tcp      |  4510-4559 |
+| sbert                    | tcp      |       5080 |
+| paradedb                 | tcp      |       5432 | eliassen-libs-dev-paradedb-1:5432
+| OpenSearch-dashboards    | http     |       5601 |
+| RabbitMQ                 | tcp      |       5672 |
+| qdrant                   | http     |       6333 |
+| qdrant                   | grpc     |       6334 |
+| smtp4dev                 | http     |       7777 |
+| Keycloak                 | http     |       8081 |
+| PG Admin                 | http     |       8082 |
+| Kafka                    | tcp      |       9092 |
+| Kafka                    | tcp      |       9094 |
+| OpenSearch               | tcp      |       9200 |
+| OpenSearch               | tcp      |       9600 |
+| Apache Tika              | tcp      |       9998 |
+| Azurite                  | tcp      |      10000 |
+| Azurite                  | tcp      |      10001 |
+| Azurite                  | tcp      |      10002 |
+| ollama                   | tcp      |      11434 | eliassen-libs-dev-ollama-1:11434
+| RabbitMQ                 | tcp      |      15672 |
+| MongoDB                  | tcp      |      27017 |
 
 ## Supported Systems
 
