@@ -8,11 +8,6 @@ namespace Eliassen.AspNetCore.Mvc.Authorization;
 public record UserAuthorizationRequirement : IAuthorizationRequirement
 {
     /// <summary>
-    /// The default value indicating whether the application user ID is required for authorization.
-    /// </summary>
-    public const bool RequireApplicationUserIdDefault = true;
-
-    /// <summary>
     /// The default value indicating whether authentication is required for authorization.
     /// </summary>
     public const bool RequireAuthenticatedByDefault = true;
@@ -21,7 +16,7 @@ public record UserAuthorizationRequirement : IAuthorizationRequirement
     /// Initializes a new instance of the <see cref="UserAuthorizationRequirement"/> class.
     /// </summary>
     /// <param name="requireApplicationUserId">Specifies whether the application user ID is required for authorization.</param>
-    public UserAuthorizationRequirement(bool requireApplicationUserId = RequireApplicationUserIdDefault) => RequireApplicationUserId = requireApplicationUserId;
+    public UserAuthorizationRequirement(bool requireApplicationUserId) => RequireApplicationUserId = requireApplicationUserId;
 
     /// <summary>
     /// Gets a value indicating whether the application user ID is required for authorization.

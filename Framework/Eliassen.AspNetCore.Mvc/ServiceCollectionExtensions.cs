@@ -63,7 +63,7 @@ public static class ServiceCollectionExtensions
         if (builder.RequireAuthenticatedByDefault)
         {
             services.AddRequireAuthenticatedUser(
-                builder.RequireAuthenticatedByDefault,
+                builder.RequireApplicationUserId,
                 builder.AuthorizationPolicyBuilder
                 );
         }
