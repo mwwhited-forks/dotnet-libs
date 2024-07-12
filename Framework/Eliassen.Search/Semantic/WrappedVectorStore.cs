@@ -58,4 +58,14 @@ public class WrappedVectorStore<T> : IVectorStore<T>
     /// <returns>A task representing the asynchronous operation. The task result contains the IDs of the stored vectors.</returns>
     public Task<string[]> StoreVectorsAsync(IEnumerable<ReadOnlyMemory<float>> embeddings, Dictionary<string, object> metadata) =>
         _wrapped.StoreVectorsAsync(embeddings, metadata);
+
+
+    /// <summary>
+    /// Stores the specified embeddings and metadata.
+    /// </summary>
+    /// <param name="items">The embeddings to store.</param>
+    /// <param name="metadata">The metadata to store.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
+    public Task<string[]> StoreVectorsAsync(IEnumerable<(ReadOnlyMemory<float> embedding, Dictionary<string, object> metadata)> items, Dictionary<string, object> metadata) =>
+        _wrapped.StoreVectorsAsync(items, metadata);
 }

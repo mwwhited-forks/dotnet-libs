@@ -80,8 +80,13 @@ public static class ServiceCollectionExtensions
     /// <returns>The modified service collection.</returns>
     public static IServiceCollection AddRequireAuthenticatedUser(
         this IServiceCollection services,
+#if DEBUG
+        bool requireApplicationUserId,
+        Action<AuthorizationPolicyBuilder>? authorizationPolicyBuilder
+#else
         bool requireApplicationUserId = UserAuthorizationRequirement.RequireApplicationUserIdDefault,
         Action<AuthorizationPolicyBuilder>? authorizationPolicyBuilder = null
+#endif
     )
     {
         // Adding the UserAuthorizationHandler that connects B2C Bearer tokens to internal users

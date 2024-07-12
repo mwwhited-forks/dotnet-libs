@@ -73,8 +73,16 @@ public class AzureStorageQueueMessageProvider(
 
         if (!client.Exists(cancellationToken))
         {
-            logger.LogWarning("Queue {queueName} does not exist", client.Name);
-            return;
+            if (_mapper.EnsureQueueExists(_handlerProvider.Config))
+            {
+                logger.LogWarning("Creating {queueName} as it does not exist", client.Name);
+                client.CreateIfNotExists();
+            }
+            else
+            {
+                logger.LogError("Queue {queueName} does not exist", client.Name);
+                throw new NotSupportedException($"Queue {client.Name} does not exist");
+            }
         }
 
         var newCancellationToken = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken).Token;
