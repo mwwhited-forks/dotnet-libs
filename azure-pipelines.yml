@@ -23,8 +23,6 @@ variables:
     value: '**/*.sln'
   - name: buildPlatform
     value: 'Any CPU'
-  - name: nugetRepository
-    value: 'https://pkgs.dev.azure.com/lightwellinc-clouddev/Lightwell-Nucleus/_packaging/Eliassen.Nucleus.Net.Libs/nuget/v3/index.json'
     
 steps:
 - checkout: self
@@ -162,10 +160,23 @@ steps:
     nuGetFeedType: internal
     includeNuGetOrg: true
 
-- script: |
-        dotnet nuget push --skip-duplicate --source $(nugetRepository) --api-key az $(Build.ArtifactStagingDirectory)\Packages\*.nupkg
+- task: DotNetCoreCLI@2
+  displayName: 'NuGet Push Public Packages'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) 
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/Packages/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '516f1723-c97e-4ef6-b17b-6cbe411c02c6'
+
+- task: DotNetCoreCLI@2
   displayName: 'NuGet Push Packages'
   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) 
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/Packages/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '5f757354-fbf9-4fe2-9464-d0b4a3d8aabd/68967c6e-0e04-43b3-90ed-0933cbac5a61'
 
 - task: PublishSymbols@2
   displayName: 'Publish Symbols'
