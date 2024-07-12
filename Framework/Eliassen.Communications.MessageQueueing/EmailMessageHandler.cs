@@ -15,12 +15,30 @@ namespace Eliassen.Communications.MessageQueueing;
 /// </remarks>
 /// <param name="email">The communication sender for email messages.</param>
 /// <param name="logger">The logger.</param>
-public class EmailMessageHandler(
-    ICommunicationSender<EmailMessageModel> email,
-    ILogger<EmailMessageHandler> logger
-    ) : IMessageQueueHandler<EmailMessageModel, EmailMessageModel>
+public class EmailMessageHandler : IMessageQueueHandler<EmailMessageModel, EmailMessageModel>
 {
-    private readonly ILogger _logger = logger;
+    private readonly ILogger _logger;
+    private readonly ICommunicationSender<EmailMessageModel>? _email;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="EmailMessageHandler"/> class.
+    /// </summary>
+    /// <param name="email">The communication sender for email messages.</param>
+    /// <param name="logger">The logger.</param>
+    public EmailMessageHandler(
+        ILogger<EmailMessageHandler> logger,
+        ICommunicationSender<EmailMessageModel>? email = null
+    )
+    {
+        _logger = logger;
+
+        if (email == null)
+        {
+            _logger.LogWarning($"No provider for type {nameof(ICommunicationSender<EmailMessageModel>)}");
+        }
+        _email = email;
+    }
+
 
     /// <summary>
     /// Handles the specified email message asynchronously.
@@ -30,9 +48,21 @@ public class EmailMessageHandler(
     /// <returns>A task representing the asynchronous operation.</returns>
     public virtual Task HandleAsync(EmailMessageModel message, IMessageContext context)
     {
+        if (_email == null)
+        {
+            //TODO: updated process to support not handing events
+            _logger.LogError(
+                $"No provider for type {nameof(ICommunicationSender<EmailMessageModel>)}. Unable to send {{subject}} for {{from}} [{{id}}] as provider is not configured",
+                message.Subject,
+                message.FromAddress,
+                message.ReferenceId
+                );
+            return Task.CompletedTask;
+        }
+
         message.ReferenceId ??= context.CorrelationId;
         _logger.LogInformation("Sending {subject} for {from} [{id}]", message.Subject, message.FromAddress, message.ReferenceId);
-        return email.SendAsync(message);
+        return _email.SendAsync(message);
     }
 
     /// <summary>
