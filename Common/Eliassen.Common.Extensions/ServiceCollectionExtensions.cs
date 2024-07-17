@@ -8,6 +8,7 @@ using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB;
 using Eliassen.MysticMind;
 using Eliassen.Ollama;
+using Eliassen.GroqCloud;
 using Eliassen.OpenAI.AI;
 using Eliassen.OpenSearch;
 using Eliassen.Qdrant;
@@ -66,8 +67,10 @@ public static class ServiceCollectionExtensions
 
         services.TryAddSbertServices(configuration, externalBuilder.SentenceEmbeddingOptionSection);
         services.TryAddQdrantServices(configuration, externalBuilder.QdrantOptionSection);
+
         services.TryAddOpenSearchServices(configuration, externalBuilder.OpenSearchOptionSection);
         services.TryAddOllamaServices(configuration, externalBuilder.OllamaApiClientOptionSection);
+        services.TryAddGroqCloudServices(configuration, externalBuilder.GroqCloudApiClientOptionSection);
 
         services.TryAddApacheTikaServices(configuration, externalBuilder.ApacheTikaClientOptionSection);
 
