@@ -17,6 +17,7 @@ using Eliassen.SBert;
 using Eliassen.WkHtmlToPdf;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Eliassen.Handlebars;
 
 namespace Eliassen.Common.Extensions;
 
@@ -76,6 +77,7 @@ public static class ServiceCollectionExtensions
 
         services.TryAddWkHtmlToPdfServices();
         services.TryAddMarkdigServices();
+        services.TryAddHandlebarServices();
         services.TryAddMysticMindServices();
 
         return services;

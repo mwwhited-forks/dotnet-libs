@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    },
+    "Documentation - Framework": {
+      "commandName": "Project",
+      "commandLineArgs": "--input $(SolutionDir)Framework\r\n--output $(SolutionDir)docs\\generated\\Framework\r\n--file-template-path $(SolutionDir)docs\\prompts\r\n--template Documentation.md\r\n--include-prompt true"
+    }
+  }
+}

@@ -7,9 +7,9 @@
     <Nullable>enable</Nullable>
 
     <PackAsTool>true</PackAsTool>
-    <ToolCommandName>templateengine</ToolCommandName>
+    <ToolCommandName>file-rag</ToolCommandName>
 
-    <PackageReadmeFile>Readme.TemplateEngine.md</PackageReadmeFile>
+    <PackageReadmeFile>Readme.FileRagEngine.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,9 +24,6 @@
 
   <ItemGroup>
     <None Update="*.hbs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="*.xslt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
