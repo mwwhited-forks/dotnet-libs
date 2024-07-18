@@ -58,7 +58,8 @@ public class FileRagEngineService : IHostedService
         {
             var realative = Path.GetFullPath(directory).Replace(inputPath + "\\", "");
 
-            if (new[] { "bin", "obj" }.Contains(Path.GetFileName(directory)))
+            if (new[] { @"\bin\", @"\obj\" }.Any(i => directory.Contains(i, StringComparison.OrdinalIgnoreCase)) ||
+                new[] { @"\bin", @"\obj" }.Any(i => directory.EndsWith(i, StringComparison.OrdinalIgnoreCase)))
             {
                 _log.LogWarning("skip path: {directory}", directory);
                 continue;
@@ -68,7 +69,13 @@ public class FileRagEngineService : IHostedService
 
             var outFolder = Path.Combine(outputPath, realative);
 
-            var files = Directory.GetFiles(directory);
+            var files = (from file in Directory.GetFiles(directory)
+                         let ext = Path.GetExtension(file).ToUpper() //TODO: do something smarter
+                         where !new[] {
+                             ".PDF", ".DLL", ".EXE", ".PNG", ".GIF", ".JPG", ".ZIP", ".GZ", ".EPUB", ".RTF", ".DOC", ".DOCX" ,
+                             ".V2", ".DACPAC", ".BACPAC"
+                         }.Any(i => i == ext)
+                         select file).ToArray();
 
             if (!files.Any())
             {

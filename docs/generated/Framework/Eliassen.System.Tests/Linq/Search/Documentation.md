@@ -1,7 +1,7 @@
 **QueryBuilderTests.cs Documentation**
 
 ### Class Diagram in PlantUML
-```
+```plantuml
 @startuml
 class QueryBuilderTests {
   - TestContext: TestContext
@@ -77,7 +77,7 @@ public class QueryBuilderTests
 The `QueryBuilderTests` class contains a single test method `ExecuteByTest_IQueryable()` that tests the `QueryBuilder<T>` class.
 
 ### ExecuteByTest_IQueryable Method
-```
+```csharp
 [TestMethod]
 [TestCategory(TestCategories.Unit)]
 public void ExecuteByTest_IQueryable()

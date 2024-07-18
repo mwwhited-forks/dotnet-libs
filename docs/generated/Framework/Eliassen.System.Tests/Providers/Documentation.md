@@ -1,7 +1,7 @@
 **DateTimeProviderTests.cs Documentation**
 
 ### Class Diagram
-```
+```plantuml
 @startuml
 class DateTimeProvider {
   - datetime UnixEpoch
@@ -51,7 +51,7 @@ The `TestContext` class is used to store information about the test, such as the
 **GuidProviderTests.cs Documentation**
 
 ### Class Diagram
-```
+```plantuml
 @startuml
 class GuidProvider {
   - guid EmptyGuid
