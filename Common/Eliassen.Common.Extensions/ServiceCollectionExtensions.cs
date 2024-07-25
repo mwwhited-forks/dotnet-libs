@@ -8,7 +8,6 @@ using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB;
 using Eliassen.MysticMind;
 using Eliassen.Ollama;
-using Eliassen.OpenAI.AI;
 using Eliassen.OpenSearch;
 using Eliassen.Qdrant;
 using Eliassen.RabbitMQ;
@@ -61,8 +60,6 @@ public static class ServiceCollectionExtensions
 
         if (identityBuilder.IdentityProvider.HasFlag(IdentityProviders.Keycloak))
             services.TryAddKeycloakServices(configuration, identityBuilder.KeycloakIdentityConfigurationSection);
-
-        services.TryAddOpenAIServices(configuration, externalBuilder.OpenAIClientOptionsSection);
 
         services.TryAddSbertServices(configuration, externalBuilder.SentenceEmbeddingOptionSection);
         services.TryAddQdrantServices(configuration, externalBuilder.QdrantOptionSection);
