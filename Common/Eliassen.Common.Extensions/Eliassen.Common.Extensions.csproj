@@ -30,7 +30,6 @@
     <ProjectReference Include="..\..\ExternalServices\MongoDb\Eliassen.MongoDB\Eliassen.MongoDB.csproj" />
     <ProjectReference Include="..\..\ExternalServices\MysticMind\Eliassen.MysticMind\Eliassen.MysticMind.csproj" />
     <ProjectReference Include="..\..\ExternalServices\Ollama\Eliassen.Ollama\Eliassen.Ollama.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\OpenAI\Eliassen.OpenAI.AI\Eliassen.OpenAI.AI.csproj" />
     <ProjectReference Include="..\..\ExternalServices\OpenSearch\Eliassen.OpenSearch\Eliassen.OpenSearch.csproj" />
     <ProjectReference Include="..\..\ExternalServices\Qdrant\Eliassen.Qdrant\Eliassen.Qdrant.csproj" />
     <ProjectReference Include="..\..\ExternalServices\RabbitMQ\Eliassen.RabbitMQ\Eliassen.RabbitMQ.csproj" />
