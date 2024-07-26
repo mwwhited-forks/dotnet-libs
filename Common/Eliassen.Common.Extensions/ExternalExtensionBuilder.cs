@@ -4,7 +4,6 @@ using Eliassen.GroqCloud;
 using Eliassen.MailKit.Services;
 using Eliassen.MongoDB.Extensions;
 using Eliassen.Ollama;
-using Eliassen.OpenAI.AI.Services;
 using Eliassen.OpenSearch;
 using Eliassen.Qdrant;
 using Eliassen.SBert;
@@ -47,11 +46,6 @@ public record ExternalExtensionBuilder
     /// The configuration section name for IMAP client options (MailKit). Default is "MailKitImapClientOptions".
     /// </value>
     public string ImapConfigurationSection { get; init; } = nameof(MailKitImapClientOptions);
-
-    /// <summary>
-    /// Gets or sets the configuration section name for OpenAI client options.
-    /// </summary>
-    public string OpenAIClientOptionsSection { get; init; } = nameof(OpenAIClientOptions);
 
     /// <summary>
     /// Gets or sets the configuration section name for SentenceEmbeddingOptions.
