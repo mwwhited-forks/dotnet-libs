@@ -5,15 +5,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Microsoft.Graph.Models;
-using OllamaSharp;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace Eliassen.FileRagEngine.Cli;
 
@@ -54,6 +52,9 @@ public class FileRagEngineService : IHostedService
 
         // scan directories from application
         var directories = Directory.GetDirectories(inputPath, "*.*", SearchOption.AllDirectories);
+
+        var exceptions = new List<Exception>();
+
         foreach (var directory in directories)
         {
             var realative = Path.GetFullPath(directory).Replace(inputPath + "\\", "");
@@ -73,7 +74,7 @@ public class FileRagEngineService : IHostedService
                          let ext = Path.GetExtension(file).ToUpper() //TODO: do something smarter
                          where !new[] {
                              ".PDF", ".DLL", ".EXE", ".PNG", ".GIF", ".JPG", ".ZIP", ".GZ", ".EPUB", ".RTF", ".DOC", ".DOCX" ,
-                             ".V2", ".DACPAC", ".BACPAC"
+                             ".V2", ".DACPAC", ".BACPAC", ".SCMP", ".BIN", ".SVG", ".ICO",
                          }.Any(i => i == ext)
                          select file).ToArray();
 
@@ -90,37 +91,61 @@ public class FileRagEngineService : IHostedService
 
             if (!File.Exists(responseFileContent))
             {
-                var data = new { files = files.Select(file => new { name = Path.GetFileName(file), content = File.ReadAllText(file) }).ToArray(), };
-
-                // per folder generate a prompt using handlebars
-                _log.LogInformation("generate prompt: {directory}", directory);
-
-                using var promptStream = new MemoryStream();
-                var templateContext = await _engine.ApplyAsync(_settings.Value.Template, data, promptStream);
-                promptStream.Position = 0;
-                var promptReader = new StreamReader(promptStream);
-
-                if (_settings.Value.IncludePrompt)
+                var length = 5;
+                for (var x = 0; x < files.Length; x += length)
                 {
-                    await File.WriteAllBytesAsync(promptFile, promptStream.ToArray());
-                }
+                    var realResponseFileContent = x == 0 ? responseFileContent : Path.ChangeExtension(responseFileContent, $".{x}" + Path.GetExtension(responseFileContent));
 
-                // post prompt to ollama
-                _log.LogInformation("request completion: {directory}", directory);
-                var response = await client.GetCompletionAsync(new() { Prompt = promptReader.ReadToEnd() });
+                    try
+                    {
+                        var data = new
+                        {
+                            files = files.Skip(x).Take(length).Select(file => new { name = Path.GetFileName(file), content = File.ReadAllText(file) }).ToArray(),
+                        };
 
-                // capture response from ollama
-                _log.LogInformation("write files: {directory}", directory);
-                await File.WriteAllTextAsync(responseFileContent, response.Response);
+                        // per folder generate a prompt using handlebars
+                        _log.LogInformation("generate prompt: {directory}", directory);
 
-                if (_settings.Value.IncludeRawOutput)
-                {
-                    using var responseStream = File.Create(responseFile);
-                    await JsonSerializer.SerializeAsync(responseStream, response);
-                    await responseStream.FlushAsync();
+                        using var promptStream = new MemoryStream();
+                        var templateContext = await _engine.ApplyAsync(_settings.Value.Template, data, promptStream);
+                        promptStream.Position = 0;
+                        var promptReader = new StreamReader(promptStream);
+
+                        if (_settings.Value.IncludePrompt)
+                        {
+                            var realPromptFile = x == 0 ? promptFile : Path.ChangeExtension(promptFile, $".{x}" + Path.GetExtension(promptFile));
+                            await File.WriteAllBytesAsync(realPromptFile, promptStream.ToArray());
+                        }
+
+                        // post prompt to ollama
+                        _log.LogInformation("request completion: {directory}", directory);
+                        var response = await client.GetCompletionAsync(new() { Prompt = promptReader.ReadToEnd() });
+
+                        // capture response from ollama
+                        _log.LogInformation("write files: {directory}", directory);
+                        await File.WriteAllTextAsync(realResponseFileContent, response.Response);
+
+                        if (_settings.Value.IncludeRawOutput)
+                        {
+                            using var responseStream = File.Create(responseFile);
+                            await JsonSerializer.SerializeAsync(responseStream, response);
+                            await responseStream.FlushAsync();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        _log.LogError("ERROR: {directory} ({x}) -> {error}", directory, x, ex.Message);
+                        _log.LogDebug("Exception: {exception}", ex);
+
+                        var errorFile = Path.ChangeExtension(realResponseFileContent, ".error" + Path.GetExtension(responseFileContent));
+                        await File.WriteAllTextAsync(errorFile, ex.ToString());
+                        exceptions.Add(ex);
+                    }
                 }
             }
         }
+        if (exceptions.Any())
+            throw new AggregateException(exceptions);
     }
 
     private IMessageCompletion GetProvider() => _settings.Value.LanguageModelType switch
