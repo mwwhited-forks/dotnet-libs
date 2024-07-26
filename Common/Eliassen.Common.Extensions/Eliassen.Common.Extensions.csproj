@@ -19,23 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-    <ProjectReference Include="..\..\ExternalServices\Apache\Eliassen.Apache.Tika\Eliassen.Apache.Tika.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\Azure\Eliassen.Azure.StorageAccount\Eliassen.Azure.StorageAccount.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\Handlebars\Eliassen.Handlebars\Eliassen.Handlebars.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\Keycloak\Eliassen.Keycloak\Eliassen.Keycloak.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\MailKit\Eliassen.MailKit\Eliassen.MailKit.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\Markdig\Eliassen.Markdig\Eliassen.Markdig.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\Microsoft\Eliassen.Microsoft.ApplicationInsights\Eliassen.Microsoft.ApplicationInsights.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\Microsoft\Eliassen.Microsoft.B2C\Eliassen.Microsoft.B2C.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\MongoDb\Eliassen.MongoDB\Eliassen.MongoDB.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\MysticMind\Eliassen.MysticMind\Eliassen.MysticMind.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\Ollama\Eliassen.Ollama\Eliassen.Ollama.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\OpenAI\Eliassen.OpenAI.AI\Eliassen.OpenAI.AI.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\OpenSearch\Eliassen.OpenSearch\Eliassen.OpenSearch.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\Qdrant\Eliassen.Qdrant\Eliassen.Qdrant.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\RabbitMQ\Eliassen.RabbitMQ\Eliassen.RabbitMQ.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\SBert\Eliassen.SBert\Eliassen.SBert.csproj" />
-    <ProjectReference Include="..\..\ExternalServices\WkHtmlToPdf\Eliassen.WkHtmlToPdf\Eliassen.WkHtmlToPdf.csproj" />
+    <ProjectReference Include="..\..\ExternalServices\**\*.csproj" />
 		<ProjectReference Remove="..\..\ExternalServices\**\*.Tests.csproj" />
 		<ProjectReference Remove="..\..\ExternalServices\**\*.Abstractions.csproj" />
 		<ProjectReference Remove="..\..\ExternalServices\**\*.Hosting.csproj" />

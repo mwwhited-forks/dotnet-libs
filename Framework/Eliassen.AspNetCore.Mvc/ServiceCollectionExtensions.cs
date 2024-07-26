@@ -63,7 +63,7 @@ public static class ServiceCollectionExtensions
         if (builder.RequireAuthenticatedByDefault)
         {
             services.AddRequireAuthenticatedUser(
-                builder.RequireAuthenticatedByDefault,
+                builder.RequireApplicationUserId,
                 builder.AuthorizationPolicyBuilder
                 );
         }
@@ -84,7 +84,7 @@ public static class ServiceCollectionExtensions
         bool requireApplicationUserId,
         Action<AuthorizationPolicyBuilder>? authorizationPolicyBuilder
 #else
-        bool requireApplicationUserId = UserAuthorizationRequirement.RequireApplicationUserIdDefault,
+        bool requireApplicationUserId = true, //TODO: fix this too
         Action<AuthorizationPolicyBuilder>? authorizationPolicyBuilder = null
 #endif
     )

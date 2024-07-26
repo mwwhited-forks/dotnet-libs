@@ -36,7 +36,7 @@ public class UserAuthorizationHandler(ILogger<UserAuthorizationHandler> logger) 
         var userName = user.GetClaimValue(CommonClaims.ObjectId, CommonClaims.ObjectIdentifier, CommonClaims.NameIdentifier)?.value;
 
         // If the application has extended the user id claim, it should be provided as well
-        var userId = user.GetClaimValue(CommonClaims.UserId)?.value;
+        var userId = user.GetClaimValue(CommonClaims.UserId)?.value; //TODO: maybe this should be injected in a different way such as making this a configurable claim and if not configured then not required.
 
         var isAuthorized = !string.IsNullOrWhiteSpace(userName);
 

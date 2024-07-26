@@ -1,9 +1,9 @@
 ﻿using Eliassen.Apache.Tika;
 using Eliassen.Azure.StorageAccount.BlobStorage;
+using Eliassen.GroqCloud;
 using Eliassen.MailKit.Services;
 using Eliassen.MongoDB.Extensions;
 using Eliassen.Ollama;
-using Eliassen.OpenAI.AI.Services;
 using Eliassen.OpenSearch;
 using Eliassen.Qdrant;
 using Eliassen.SBert;
@@ -48,11 +48,6 @@ public record ExternalExtensionBuilder
     public string ImapConfigurationSection { get; init; } = nameof(MailKitImapClientOptions);
 
     /// <summary>
-    /// Gets or sets the configuration section name for OpenAI client options.
-    /// </summary>
-    public string OpenAIClientOptionsSection { get; init; } = nameof(OpenAIClientOptions);
-
-    /// <summary>
     /// Gets or sets the configuration section name for SentenceEmbeddingOptions.
     /// </summary>
     public string SentenceEmbeddingOptionSection { get; init; } = nameof(SentenceEmbeddingOptions);
@@ -71,6 +66,11 @@ public record ExternalExtensionBuilder
     /// Gets or sets the configuration section name for Ollama Api Client options.
     /// </summary>
     public string OllamaApiClientOptionSection { get; init; } = nameof(OllamaApiClientOptions);
+
+    /// <summary>
+    /// Gets or sets the configuration section name for  GroqCloud Api Client options.
+    /// </summary>
+    public string GroqCloudApiClientOptionSection { get; init; } = nameof(GroqCloudApiClientOptions);
 
     /// <summary>
     /// gets or sets the configuration section name of Apache Tika Client options.

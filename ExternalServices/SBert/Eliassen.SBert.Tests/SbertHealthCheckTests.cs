@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Threading.Tasks;
 
-namespace Eliassen.Ollama.Tests;
+namespace Eliassen.SBert.Tests;
 
 [TestClass]
 public class SbertHealthCheckTests

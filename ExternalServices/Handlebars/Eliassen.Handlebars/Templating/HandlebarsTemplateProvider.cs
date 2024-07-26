@@ -58,8 +58,13 @@ public class HandlebarsTemplateProvider(
     /// <returns>A task representing the asynchronous operation. The task result is <c>true</c> if successful, <c>false</c> otherwise.</returns>
     public async Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target)
     {
+        var config = new HandlebarsConfiguration()
+        {
+            NoEscape = true, //TODO: make this configurable
+        };
+
         // https://github.com/Handlebars-Net/Handlebars.Net
-        var handlebar = HandlebarsDotNet.Handlebars.Create();
+        var handlebar = HandlebarsDotNet.Handlebars.Create(config);
         handlebar.Configuration.UseJson();
 
         foreach (var item in helpersRegistry ?? [])
