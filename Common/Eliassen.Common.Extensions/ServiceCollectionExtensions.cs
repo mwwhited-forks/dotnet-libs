@@ -8,6 +8,7 @@ using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB;
 using Eliassen.MysticMind;
 using Eliassen.Ollama;
+using Eliassen.GroqCloud;
 using Eliassen.OpenSearch;
 using Eliassen.Qdrant;
 using Eliassen.RabbitMQ;
@@ -15,6 +16,7 @@ using Eliassen.SBert;
 using Eliassen.WkHtmlToPdf;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Eliassen.Handlebars;
 
 namespace Eliassen.Common.Extensions;
 
@@ -63,13 +65,16 @@ public static class ServiceCollectionExtensions
 
         services.TryAddSbertServices(configuration, externalBuilder.SentenceEmbeddingOptionSection);
         services.TryAddQdrantServices(configuration, externalBuilder.QdrantOptionSection);
+
         services.TryAddOpenSearchServices(configuration, externalBuilder.OpenSearchOptionSection);
         services.TryAddOllamaServices(configuration, externalBuilder.OllamaApiClientOptionSection);
+        services.TryAddGroqCloudServices(configuration, externalBuilder.GroqCloudApiClientOptionSection);
 
         services.TryAddApacheTikaServices(configuration, externalBuilder.ApacheTikaClientOptionSection);
 
         services.TryAddWkHtmlToPdfServices();
         services.TryAddMarkdigServices();
+        services.TryAddHandlebarServices();
         services.TryAddMysticMindServices();
 
         return services;

@@ -66,7 +66,9 @@ public static class Program
         // Add services to the container.
         services.AddLogging(builder => builder
             .AddConsole()
+#if DEBUG
             .SetMinimumLevel(LogLevel.Debug)
+#endif
         );
 
         builder.Services.AddControllers();

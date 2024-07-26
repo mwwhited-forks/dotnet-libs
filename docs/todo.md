@@ -7,3 +7,5 @@
   - [ ] urls 
   - [ ] timeouts
   - [ ] ...
+- [ ] Error handling middleware with correlation 
+    - [ ]  return original location of error
