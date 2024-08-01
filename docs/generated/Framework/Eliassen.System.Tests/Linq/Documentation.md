@@ -1,85 +1,93 @@
-**Executable UML Class Diagram**
+**QueryableExtensionsTests Documentation**
+============================================
 
-Here is a generated PlantUML class diagram for the provided code:
+### Overview
+
+This documentation provides an overview of the `QueryableExtensionsTests` class, which contains various test methods for testing queryable extensions.
+
+### Class Diagram
+
 ```plantuml
 @startuml
 class QueryableExtensionsTests {
   - TestContext: TestContext
-  - ExecuteByTest_Filter(Type, string, Operators, object, int, string)
-  - ExecuteByTest_Filter_Range_Bounds()
-  - ExecuteByTest_SearchTerm(string, int, int, int, string)
-  - ExecuteByTest_Page(int, int, int?, int?, int?, int, string?)
-  - ExecuteByTest_Sort(string, OrderDirections, string)
-}
-
-class TestContext {
-  - AddResult(SearchQuery)
-  - AddResult(IQueryable)
-  - WriteLine(string)
-}
-
-class SearchQuery {
-  - SearchTerm: string
-  - OrderBy: OrderBy
-  - Filter: Filter
-}
-
-class OrderBy {
-  - OrderedFields: List<OrderByField>
-}
-
-class OrderByField {
-  - fieldName: string
-  - direction: OrderDirections
-}
-
-class Filter {
-  - FilterClauses: List<FilterClause>
-}
-
-class FilterClause {
-  - PropertyName: string
-  - Operator: Operators
-  - Value: object
-}
-
-class TestDataBuilder {
-  + GetTestData<T>(int)
-  + GetTestData(Type, int)
-}
-
-class TestTargetModel {
-  + Index: int
-  + Name: string
-}
-
-class TestTargetExtendedModel {
-  + Date: DateTime
-  + FName: string
-  + DateNullable: DateTime?
-}
-
-class QueryBuilder {
-  + Execute(IQueryable, SearchQuery, object, object, CaptureResultMessage)
-  + DefaultPageSize: int
-}
-
-class CaptureResultMessage {
-  - Capture: List<string>
+  + ExecuteByTest_Filter(Type type, string propertyName, Operators expressionOperator, object filterValue, int expectedRows, string expectedKeys)
+  + ExecuteByTest_Filter_JsonElement()
+  + ExecuteByTest_Filter_JsonElement_Nested()
+  + ExecuteByTestFilter<T>(string propertyName, Operators expressionOperator, object? filterValue, int expectedRows, string expectedKeys)
+  + ExecuteByTest_SearchTerm(Type type, string searchTerm, int expectedTotalPages, int expectedTotalRows, int expectedRows, string expectedKeys)
+  + ExecuteByTest_Page(int currentPage, int pageSize, int? expectedTotalPages, int? expectedTotalRows, int? expectedPageNumber, int expectedRows, string expectedKeys)
+  + ExecuteByTest_Sort(string fieldName, OrderDirections direction, string expected)
 }
 
 @enduml
 ```
-**Note**: This diagram is generated based on the provided code and might not be 100% accurate. Some information, such as the `TestContext` and `CaptureResultMessage` classes, might not be fully represented.
 
-**Explanation**:
+### Component Model
 
-The diagram shows the relationships between the classes in the code. The `QueryableExtensionsTests` class contains several methods that test various aspects of the `QueryBuilder` class. The `TestContext` class is used to add results and write lines to the console. The `SearchQuery` class represents a search query, containing a search term, order by clause, and filter clause.
+```plantuml
+@startuml
+component QueryableExtensionsTests {
+  [TestClass]
+  QueryableExtensionsTests
+  -- TestContext
+  component TestContext {
+    -- TestMethods
+  }
+  -- IDataTestMethod
+  ExecuteByTest_Filter
+  ExecuteByTest_Filter_JsonElement
+  ExecuteByTest_Filter_JsonElement_Nested
+  ExecuteByTestFilter
+  ExecuteByTest_SearchTerm
+  ExecuteByTest_Page
+  ExecuteByTest_Sort
+}
 
-The `OrderBy` class represents the order by clause, which contains a list of ordered fields. Each `OrderByField` has a property name and direction. The `Filter` class represents the filter clause, which contains a list of filter clauses. Each `FilterClause` has a property name, operator, and value.
+@enduml
+```
 
-The `TestDataBuilder` class is used to create test data, and the `TestTargetModel` and `TestTargetExtendedModel` classes are examples of the data being queried.
+### Sequence Diagram
 
-The `QueryBuilder` class is the core class responsible for executing queries. It takes an `IQueryable` object and a `SearchQuery` object as input and returns a result. The `DefaultPageSize` variable is used to set the default page size for queries.
+```plantuml
+@startuml
+ participant QueryableExtensionsTests as "QueryableExtensionsTests"
+ participant TestContext as "TestContext"
+ participant TestDataBuilder as "TestDataBuilder"
 
-The `CaptureResultMessage` class is used to capture the results of queries and write them to the console.
+ note "Constructor" as "ctor"
+ QueryableExtensionsTests->TestDataBuilder: GetTestData<T>(seed)
+
+ note "Factory" as "fact"
+ QueryableExtensionsTests->TestDataBuilder: Factory<T>(index)
+
+ note "AsQueryable" as "asq"
+ QueryableExtensionsTests->TestDataBuilder: AsQueryable<T>()
+
+ QueryableExtensionsTests->TestContext: ExecuteByTest_Filter
+ TestContext->TestDataBuilder: GetTestData<T>(seed)
+ TestDataBuilder->Query: AsQueryable<T>()
+ QueryableExtensionsTests->TestContext: ExecuteByTest_Filter
+
+ QueryableExtensionsTests->TestContext: ExecuteByTest_Filter_JsonElement
+ TestContext->TestDataBuilder: GetTestData<T>(seed)
+ TestDataBuilder->Query: AsQueryable<T>()
+ QueryableExtensionsTests->TestContext: ExecuteByTest_Filter_JsonElement
+
+ QueryableExtensionsTests->TestContext: ExecuteByTest_SearchTerm
+ TestContext->TestDataBuilder: GetTestData<T>(seed)
+ TestDataBuilder->Query: AsQueryable<T>()
+ QueryableExtensionsTests->TestContext: ExecuteByTest_SearchTerm
+
+ QueryableExtensionsTests->TestContext: ExecuteByTest_Page
+ TestContext->TestDataBuilder: GetTestData<T>(seed)
+ TestDataBuilder->Query: AsQueryable<T>()
+ QueryableExtensionsTests->TestContext: ExecuteByTest_Page
+
+ QueryableExtensionsTests->TestContext: ExecuteByTest_Sort
+ TestContext->TestDataBuilder: GetTestData<T>(seed)
+ TestDataBuilder->Query: AsQueryable<T>()
+ QueryableExtensionsTests->TestContext: ExecuteByTest_Sort
+
+@enduml
+```

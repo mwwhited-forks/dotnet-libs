@@ -1,37 +1,80 @@
-Here is the documentation for the source code files:
+# Eliassen.Extensions.Tests Documentation
 
-**Eliassen.Extensions.Tests.csproj**
+## Overview
 
-* This is a .NET Core project file for a test project.
-* The project targets .NET 8.0.
-* The `ImplicitUsings` property is set to `false`, which means that all using statements must be explicitly included in the code.
-* The `Nullable` property is set to `enable`, which allows Nullable Reference Types (NRTs) in the project.
-* The `IsPackable` property is set to `false`, which means that this project cannot be packed into a NuGet package.
-* The `IsTestProject` property is set to `true`, which indicates that this project is a test project.
+The Eliassen.Extensions.Tests project is a test suite for Eliassen.Extensions, a set of string manipulation tools. This documentation provides an overview of the project's structure and functionality.
 
-**StringToolsTests.cs**
+### Test Project Setup
 
-* This is a test class in the `Eliassen.Extensions.Tests` namespace, which is responsible for testing the `StringTools` class.
-* The test class consists of a single test method, `Test`, which takes two parameters: `input` and `expected`.
-* The `input` parameter is a string that is to be processed by the `StringTools` class, while the `expected` parameter is the expected output of the processing.
-* The test method uses the `SplitBy` and `WriteAsLines` methods of the `StringTools` class to process the input string, and then asserts that the result is equal to the expected output using the `Assert.AreEqual` method.
-* The test method is decorated with attributes from the `Microsoft.VisualStudio.TestTools.UnitTesting` namespace, including `TestClass`, `TestCategory`, `DataTestMethod`, and `DataRow`. These attributes indicate that this test class is a unit test, that it belongs to the "Unit" test category, and that it uses data-driven testing to test multiple inputs and expected outputs.
+The project uses the Microsoft.NET.Test.Sdk NuGet package to manage test execution. It also includes references to Eliassen.Extensions and Eliassen.TestUtilities, which provide additional utility methods for testing.
 
-Here is a Class Diagram generated using PlantUML:
-```
+### StringToolsTests Class Diagram (```plantuml```)
+```plantuml
 @startuml
 class StringToolsTests {
-  -private TestContext testContext
-  -TestContext get_testContext()
-  -void Test(string input, string expected)
+  - testContext: TestContext
+  - Test(input: string, expected: string)
 }
 
-class StringTools {
-  -string SplitBy(int length)
-  -string WriteAsLines()
+class TestContext {
+  - TestContext(): this() {}
+  + executeTest()
 }
 
-StringToolsTests --* StringTools
+class DataRow {
+  - input: string
+  - expected: string
+}
+
+StringToolsTests ..> TestContext
+TestContext ..> DataRow
+DataRow ..> StringToolsTests
 @enduml
 ```
-This diagram shows the relationships between the `StringToolsTests` class and the `StringTools` class. The `StringToolsTests` class has a private field `testContext` and a method `Test` that takes two parameters, `input` and `expected`. The `StringTools` class has two methods, `SplitBy` and `WriteAsLines`, which are called by the `Test` method in the `StringToolsTests` class.
+```
+
+### StringToolsTests Class
+
+The `StringToolsTests` class contains a single test method `Test`, which is parameterized using data attributes. The test method takes two parameters: `input` and `expected`. The `input` parameter is the string to be manipulated, and the `expected` parameter is the expected result of the manipulation.
+
+The test method uses the `SplitBy` method to split the `input` string into multiple strings, each with a maximum length of 10 characters. The `WriteAsLines` method is then used to write the resulting strings as a multi-line string. The method then asserts that the resulting string is equal to the `expected` parameter.
+
+### Sequence Diagram (```plantuml```)
+```plantuml
+@startuml
+actor tester
+boundary StringToolsTests
+note "Input string"
+note "Expected result"
+activate tester
+tester ->> StringToolsTests: Test(input, expected)
+activate StringToolsTests
+StringToolsTests ->>+ input: SplitBy(10)
+deactivate input
+StringToolsTests ->>+ output: WriteAsLines()
+deactivate output
+StringToolsTests ->> tester: Assert.AreEqual(expected, output)
+deactivate StringToolsTests
+tester ->> StringToolsTests: tearDown
+deactivate tester
+@enduml
+```
+```
+
+### Test Method Behavior
+
+The test method has different behavior depending on the operating system. On Windows, it splits the input string using the `SplitBy` method and writes the resulting strings as a multi-line string using the `WriteAsLines` method. On other operating systems, it checks if the input string is empty or not, and returns a boolean value indicating whether the input string is not empty.
+
+### Test Data
+
+The test method is parameterized with several data attributes, each representing a test case. The test cases cover a range of input strings and expected results, including:
+
+* A string with multiple lines of text
+* A string with a single line of text
+* An empty string
+* A string with a single character
+* A string with multiple characters
+
+### Conclusion
+
+The Eliassen.Extensions.Tests project provides a robust test suite for the Eliassen.Extensions library. The `StringToolsTests` class contains a single test method that is parameterized with data attributes, and covers a range of test cases. The project uses the Microsoft.NET.Test.Sdk NuGet package to manage test execution, and includes references to Eliassen.Extensions and Eliassen.TestUtilities.

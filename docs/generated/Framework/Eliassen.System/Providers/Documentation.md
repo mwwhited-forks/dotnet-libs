@@ -1,71 +1,114 @@
-Here is the documentation for the given source code files:
+# Eliassen.System.Providers Documentation
 
-**DateTimeProvider.cs**
+## Overview
 
-**Class Diagram:**
+The Eliassen.System.Providers namespace contains two provider classes: `DateTimeProvider` and `GuidProvider`. These classes provide functionality for working with dates and times, and for generating and handling GUIDs.
+
+### Class Diagram
+
 ```plantuml
 @startuml
-class DateTimeProvider {
-  +Now: DateTimeOffset
-  +UtcNow: DateTimeOffset
+class DateTimeProvider implements IDateTimeProvider {
+  -Now: DateTimeOffset
+  -UtcNow: DateTimeOffset
 }
-@enduml
-```
-**Class Documentation:**
 
-The `DateTimeProvider` class is a simple provider class that provides date and time functionality. It implements the `IDateTimeProvider` interface and provides two properties: `Now` and `UtcNow`.
-
-* `Now`: This property returns the current local date and time.
-* `UtcNow`: This property returns the current Coordinated Universal Time (UTC) date and time.
-
-**GuidProvider.cs**
-
-**Class Diagram:**
-```plantuml
-@startuml
-class GuidProvider {
-  +Empty: Guid
-  +NewGuid: Guid
+class GuidProvider implements IGuidProvider {
+  -Empty: Guid
+  -NewGuid: Guid
 }
-@enduml
-```
-**Class Documentation:**
 
-The `GuidProvider` class is a provider class that represents a provider for generating and handling GUIDs. It implements the `IGuidProvider` interface and provides two properties: `Empty` and `NewGuid`.
-
-* `Empty`: This property returns a GUID with all bits set to zero.
-* `NewGuid`: This method generates a new GUID.
-
-**IGuidProvider Interface**
-```plantuml
-@startuml
-interface IGuidProvider {
-  +Empty: Guid
-  +NewGuid: Guid
-}
-@enduml
-```
-**Interface Documentation:**
-
-The `IGuidProvider` interface defines two methods: `Empty` and `NewGuid`. These methods are used to return or generate GUIDs.
-
-* `Empty`: This method returns a GUID with all bits set to zero.
-* `NewGuid`: This method generates a new GUID.
-
-**IDateTimeProvider Interface**
-```plantuml
-@startuml
 interface IDateTimeProvider {
-  +Now: DateTimeOffset
-  +UtcNow: DateTimeOffset
+  Now(): DateTimeOffset
+  UtcNow(): DateTimeOffset
 }
+
+interface IGuidProvider {
+  Empty(): Guid
+  NewGuid(): Guid
+}
+
+(DateTimeProvider) -- IDateTimeProvider
+(GuidProvider) -- IGuidProvider
 @enduml
 ```
-**Interface Documentation:**
 
-The `IDateTimeProvider` interface defines two properties: `Now` and `UtcNow`. These properties are used to return the current date and time.
+### DateTimeProvider Class
 
-* `Now`: This property returns the current local date and time.
-* `UtcNow`: This property returns the current Coordinated Universal Time (UTC) date and time.
+The `DateTimeProvider` class provides methods for getting the current local date and time, as well as the current Coordinated Universal Time (UTC) date and time.
 
-Note: The diagrams are generated using PlantUML, a simple and intuitive language for creating UML diagrams. The diagrams above represent a simple class diagram for each class, showing the properties and methods of each class.
+#### Class Documentation
+
+```csharp
+/// <summary>
+/// Provides date and time functionality.
+/// </summary>
+public class DateTimeProvider : IDateTimeProvider
+{
+    /// <summary>
+    /// Gets the current local date and time.
+    /// </summary>
+    /// <remarks>
+    /// This property returns the current local date and time.
+    /// </remarks>
+    public DateTimeOffset Now => DateTimeOffset.Now;
+
+    /// <summary>
+    /// Gets the current Coordinated Universal Time (UTC) date and time.
+    /// </summary>
+    /// <remarks>
+    /// This property returns the current Coordinated Universal Time (UTC) date and time.
+    /// </remarks>
+    public DateTimeOffset UtcNow => DateTimeOffset.UtcNow;
+}
+```
+
+### GuidProvider Class
+
+The `GuidProvider` class provides methods for generating and handling GUIDs.
+
+#### Class Documentation
+
+```csharp
+/// <summary>
+/// Represents a provider for generating and handling GUIDs.
+/// </summary>
+public class GuidProvider : IGuidProvider
+{
+    /// <summary>
+    /// Gets an empty GUID.
+    /// </summary>
+    /// <remarks>
+    /// This property returns a GUID with all bits set to zero.
+    /// </remarks>
+    public Guid Empty => Guid.Empty;
+
+    /// <summary>
+    /// Generates a new GUID.
+    /// </summary>
+    /// <returns>A new GUID.</returns>
+    public Guid NewGuid() => Guid.NewGuid();
+}
+```
+
+### Sequence Diagram
+
+```plantuml
+@startuml
+sequenceDiagram
+    participant DateTimeProvider as dp
+    participant GuidProvider as gp
+    participant Caller as c
+
+    c->>dp: Get current local date and time
+    dp->>dp: Now
+    dp->>c: Now
+    c->>gp: Get empty GUID
+    gp->>gp: Empty
+    gp->>c: Empty
+    c->>gp: Generate new GUID
+    gp->>gp: NewGuid()
+    gp->>c: NewGuid
+    note right: Caller uses DateTimeProvider to get the current local date and time and GuidProvider to get an empty GUID and generate a new GUID.
+@enduml
+```

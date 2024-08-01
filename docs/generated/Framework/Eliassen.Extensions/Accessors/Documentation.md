@@ -1,57 +1,62 @@
-Here is the documentation for the `Accessor.cs` file, along with a class diagram in PlantUML:
+# Eliassen.System.Accessors Documentation
 
-**Accessor.cs**
+## Accessor Class
 
-**Class Diagram:**
+### Overview
 
+The `Accessor<T>` class represents an accessor for a value of type `T`. It provides a way to get and set the value associated with the accessor.
+
+### Class Diagram
 ```plantuml
 @startuml
 class Accessor<T> {
   - Value: T?
-  + Value: T? get set
-  -- IAccessor<T>
+  + Value: T? get; set;
 }
-
-interface IAccessor<T> {
-  + Value: T? get set
-}
-
-class AsyncLocal<T> {
-  - Value: T?
-}
-
-Accessor<T] --|> IAccessor<T>
-Accessor<T] -- down -- AsyncLocal<T>
+Accessor<T> implements IAccessor<T>
 @enduml
 ```
+### Component Model
+```plantuml
+@startuml
+component Accessor {
+  * Value
+}
+Accessor ..> IAccessor<T>
+@enduml
+```
+### Sequence Diagram
 
-**Code Documentation:**
+Here is an example sequence diagram showing how the `Accessor<T>` class is used:
+```plantuml
+@startuml
+actor User
+participant Accessor
+participant TargetSystem
 
-**Accessor.cs**
+note over Accessor "Get value"
+Accessor -> TargetSystem: GetValue()
+TargetSystem -> Accessor: T?
+Accessor -> User: T?
+note over Accessor "Set value"
+User -> Accessor: T?
+Accessor -> TargetSystem: SetValue(T)
+note over Accessor "Get value again"
+Accessor -> User: T?
+@enduml
+```
+### Code Explanation
 
-The `Accessor<T>` class represents an accessor for a value of type `<typeparamref name="T"/>`. It implements the `IAccessor<T>` interface and provides a simple way to access and modify the value associated with the accessor.
+The `Accessor<T>` class is implemented as an internal class in the `Eliassen.Extensions.Accessors` namespace.
 
-**Properties:**
+The class has a private readonly field `_local` of type `AsyncLocal<T?>` which is used to store the value associated with the accessor.
 
-* `Value`: Gets or sets the value associated with this accessor.
+The `Value` property gets or sets the value associated with the accessor. This property is implemented using the getter and setter methods of the `_local` field.
 
-**Constructors:**
+The `Accessor<T>` class implements the `IAccessor<T>` interface, which defines the contract for accessing values of type `T`.
 
-None.
+### Note
 
-**Methods:**
+The `Accessor<T>` class is designed to work with asynchronous code, and the `_local` field uses the `AsyncLocal<T>` class from the .NET framework to store the value. This allows the accessor to be used in asynchronous methods and ensure that the value is accessed and set correctly.
 
-None.
-
-**Implemented Interfaces:**
-
-* `IAccessor<T>`: Provides a simple way to access and modify the value associated with the accessor.
-
-**Dependencies:**
-
-* `AsyncLocal<T?>`: A private field that stores the value associated with the accessor.
-
-**Notes:**
-
-* This class is internal and can only be accessed from within the Eliassen.Extensions.Accessors namespace.
-* The `Value` property uses an `AsyncLocal<T?>` to store and retrieve the value associated with the accessor. This allows the accessor to be thread-safe and to maintain its state across async operations.
+It is worth noting that the `Accessor<T>` class is an internal class and is not intended to be used directly from outside the `Eliassen.Extensions.Accessors` namespace. It is intended to be used by other classes and methods within the assembly.

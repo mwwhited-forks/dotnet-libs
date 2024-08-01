@@ -1,111 +1,107 @@
-Here is the documentation for the source code files:
+Here is the documentation for the provided source code in Markdown format:
 
-**BsonDateTimeOffsetConverter.cs**
+# Eliassen.System.Text.Json
 
-* Purpose: Provides a custom converter for System.Text.Json to support BSON datetimeoffset types.
-* Methods:
-	+ `CanConvert`: Determines whether the converter can convert the specified type.
-	+ `Read`: Reads the JSON representation of a datetimeoffset object.
-	+ `Write`: Writes the JSON representation of a datetimeoffset object.
-* Notes: This converter supports converting between bson datetimeoffset and DateTime/DateTimeOffset types.
+This namespace provides custom JSON converters for System.Text.Json in .NET Core.
 
-**Class Diagram:**
+## BsonDateTimeOffsetConverter
+
+The `BsonDateTimeOffsetConverter` class is a custom JSON converter that supports converting between JSON and BSON DateTimeOffset types.
 ```plantuml
 @startuml
 class BsonDateTimeOffsetConverter {
-  - CanConvert(Type typeToConvert)
-  - Read(Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-  - Write(Utf8JsonWriter writer, object value, JsonSerializerOptions options)
+  + CanConvert(Type): bool
+  + Read(Utf8JsonReader, Type, JsonSerializerOptions): object
+  + Write(Utf8JsonWriter, object, JsonSerializerOptions): void
 }
-
 @enduml
 ```
-**BsonIdConverter.cs**
+### CanConvert
 
-* Purpose: Provides a custom converter for System.Text.Json to support BSON objectid types.
-* Methods:
-	+ `Read`: Reads the JSON representation of an objectid object.
-	+ `Write`: Writes the JSON representation of an objectid object.
-* Notes: This converter supports converting between bson objectid and string/object types.
+The `CanConvert` method determines whether this converter can convert the specified type. It returns `true` if the converter can convert the specified type; otherwise, it returns `false`.
 
-**Class Diagram:**
+### Read
+
+The `Read` method reads the JSON representation of an object and converts it to a BSON DateTimeOffset type.
+
+### Write
+
+The `Write` method writes the JSON representation of a BSON DateTimeOffset type to a Utf8JsonWriter.
+
+## BsonIdConverter
+
+The `BsonIdConverter` class is a custom JSON converter that supports converting between JSON and BSON ObjectID types.
 ```plantuml
 @startuml
 class BsonIdConverter {
-  - Read(Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-  - Write(Utf8JsonWriter writer, object value, JsonSerializerOptions options)
+  + Read(Utf8JsonReader, Type, JsonSerializerOptions): string?
+  + Write(Utf8JsonWriter, string, JsonSerializerOptions): void
 }
-
 @enduml
 ```
-**BsonTypeInfoResolver.cs**
+### Read
 
-* Purpose: Provides a custom type info resolver for System.Text.Json to support BSON types.
-* Methods:
-	+ `GetTypeInfo`: Gets the JSON type information for the specified type.
-* Notes: This converter supports resolving type information for BSON types.
+The `Read` method reads the JSON representation of an object and converts it to a BSON ObjectID type.
 
-**Class Diagram:**
+### Write
+
+The `Write` method writes the JSON representation of a BSON ObjectID type to a Utf8JsonWriter.
+
+## BsonTypeInfoResolver
+
+The `BsonTypeInfoResolver` class is a custom JSON type information resolver that provides JSON type information for BSON types during serialization.
 ```plantuml
 @startuml
 class BsonTypeInfoResolver {
-  - GetTypeInfo(Type type, JsonSerializerOptions options)
+  + GetTypeInfo(Type, JsonSerializerOptions): JsonTypeInfo
 }
-
 @enduml
 ```
-**ConfigurationJsonConverter.cs**
+### GetTypeInfo
 
-* Purpose: Provides a custom converter for System.Text.Json to support IConfiguration types.
-* Methods:
-	+ `Read`: Reads the JSON representation of an IConfiguration object.
-	+ `Write`: Writes the JSON representation of an IConfiguration object.
-* Notes: This converter supports converting between IConfiguration and JSON types.
+The `GetTypeInfo` method gets the JSON type information for the specified type during BSON serialization.
 
-**Class Diagram:**
+## ConfigurationJsonConverter
+
+The `ConfigurationJsonConverter` class is a custom JSON converter that supports serializing and deserializing IConfiguration instances.
 ```plantuml
 @startuml
 class ConfigurationJsonConverter {
-  - Read(Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-  - Write(Utf8JsonWriter writer, object value, JsonSerializerOptions options)
+  + Read(Utf8JsonReader, Type, JsonSerializerOptions): IConfig?
+  + Write(Utf8JsonWriter, IConfig, JsonSerializerOptions): void
 }
-
 @enduml
 ```
-**DictionaryStringObjectJsonConverter.cs**
+### Read
 
-* Purpose: Provides a custom converter for System.Text.Json to support dictionaries with string keys and object values.
-* Methods:
-	+ `CanConvert`: Determines whether the converter can convert the specified type.
-	+ `Read`: Reads the JSON representation of a dictionary.
-	+ `Write`: Writes the JSON representation of a dictionary.
-* Notes: This converter supports converting between dictionaries and JSON types.
+The `Read` method reads the JSON representation of an IConfiguration instance and converts it to a IConfiguration type.
 
-**Class Diagram:**
+### Write
+
+The `Write` method writes the JSON representation of an IConfiguration instance to a Utf8JsonWriter.
+
+## DictionaryStringObjectJsonConverter
+
+The `DictionaryStringObjectJsonConverter` class is a custom JSON converter that supports serializing and deserializing dictionaries with string keys and object values.
 ```plantuml
 @startuml
 class DictionaryStringObjectJsonConverter {
-  - CanConvert(Type typeToConvert)
-  - Read(Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-  - Write(Utf8JsonWriter writer, object value, JsonSerializerOptions options)
+  + CanConvert(Type): bool
+  + Read(Utf8JsonReader, Type, JsonSerializerOptions): Dictionary<string, object?>
+  + Write(Utf8JsonWriter, Dictionary<string, object?>, JsonSerializerOptions): void
 }
-
 @enduml
 ```
-**JsonNodeExtensions.cs**
+### CanConvert
 
-* Purpose: Provides extension methods for System.Text.Json nodes.
-* Methods:
-	+ `ToXFragment`: Converts a JsonNode to an XFragment.
-* Notes: This converter supports converting between JsonNode and XFragment types.
+The `CanConvert` method determines whether this converter can convert the specified type. It returns `true` if the converter can convert the specified type; otherwise, it returns `false`.
 
-**Class Diagram:**
-```plantuml
-@startuml
-class JsonNodeExtensions {
-  - ToXFragment(JsonNode json, string? rootName)
-}
+### Read
 
-@enduml
-```
-Note: The class diagrams are generated using PlantUML syntax, and they may not perfectly represent the actual source code.
+The `Read` method reads the JSON representation of a dictionary with string keys and object values and converts it to a dictionary type.
+
+### Write
+
+The `Write` method writes the JSON representation of a dictionary with string keys and object values to a Utf8JsonWriter.
+
+Note: The PlantUML diagrams provide a visual representation of the classes, methods, and their relationships.

@@ -1,16 +1,27 @@
-Here is the documentation for the source code files:
+Here is the documentation for the source code in Markdown format:
 
 **EnumExtensionsTests.cs**
+=====================
 
-This class contains tests for the `EnumExtensions` class.
+This test class contains tests for the `EnumExtensions` class, which provides extensions for working with enums.
 
-**Class Diagram:**
+### TestCases
+------------
+
+* `AsModelsTest`: Tests the `AsModels` method, which converts an enum to an array of `EnumModel` objects.
+* `AsModelsTest2`: Tests the `AsModels` method with a custom enum.
+* `ToEnumTest`: Tests the `ToEnum` method, which converts a string to an enum value.
+* `TryParseTest`: Tests the `TryParse` method, which attempts to parse a string to an enum value.
+
+### Class Diagram
+----------------
 
 ```plantuml
 @startuml
 class EnumExtensions {
-  + AsModels<T>()
-  + ToEnum<T>(string)
+  - AsModels(Enum) -> [EnumModel][]
+  - ToEnum(string) -> Enum
+  - TryParse(string) -> bool, Enum
 }
 
 class EnumModel {
@@ -25,106 +36,109 @@ class EnumModel {
   - PossibleNames: string[]
 }
 
-EnumExtensions --* EnumModel
-
 @enduml
 ```
 
-**Methods:**
+### Component Model
+-------------------
 
-* `AsModels<T>()`: Converts an enum to a list of `EnumModel` objects.
-* `ToEnum<T>(string)`: Converts a string to an enum value of type `T`.
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-plantUML/master/C4_Container.puml
 
-**Tests:**
+Container "System" {
+  Container "EnumExtensions" {
+    Artifact "AsModels"
+    Artifact "ToEnum"
+    Artifact "TryParse"
+  }
+}
 
-* `AsModelsTest()`: Tests the `AsModels<T>()` method with the `AttributeTargets` enum.
-* `AsModelsTest2()`: Tests the `AsModels<T>()` method with a custom enum.
-* `ToEnumTest(string, TestEnum?)`: Tests the `ToEnum<T>(string)` method with various input strings.
+Container "EnumModel" {
+  Artifact "Id"
+  Artifact "Name"
+  Artifact "Code"
+  Artifact "Description"
+  Artifact "Order"
+  Artifact "Value"
+  Artifact "IsEndState"
+  Artifact "IsExcludeFromUnique"
+  Artifact "PossibleNames"
+}
+@enduml
+```
 
 **ReflectionExtensionsTests.cs**
+=============================
 
-This class contains tests for the `ReflectionExtensions` class.
+This test class contains tests for the `ReflectionExtensions` class, which provides extensions for working with .NET types.
 
-**Class Diagram:**
+### TestCases
+------------
+
+* `MakeSafeTest`: Tests the `MakeSafe` method, which converts a type and its value to a safe type.
+* `MakeSafeArrayTest`: Tests the `MakeSafeArray` method, which converts an array to a safe array.
+* `TryParseTest`: Tests the `TryParse` method, which attempts to parse a value to a type.
+
+### Class Diagram
+----------------
 
 ```plantuml
 @startuml
 class ReflectionExtensions {
-  + MakeSafe<T>(Type, object)
-  + MakeSafeArray<T>(Type, Array)
-  + TryParse<T>(Type, string, out object)
+  - MakeSafe(Type, object) -> object
+  - MakeSafeArray(Type, Array) -> Array
+  - TryParse(Type, string) -> bool, object
 }
-
-class CaptureResultMessage {
-  - Capture(): List<string>
-}
-
-class Type {
-  - ShortName: string
-}
-
-Type --* CaptureResultMessage
 
 @enduml
 ```
 
-**Methods:**
+### Component Model
+-------------------
 
-* `MakeSafe<T>(Type, object)`: Converts an object to a safe value of type `T`.
-* `MakeSafeArray<T>(Type, Array)`: Converts an array to a safe array of type `T`.
-* `TryParse<T>(Type, string, out object)`: Tries to parse a string to an object of type `T`.
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-plantUML/master/C4_Container.puml
 
-**Tests:**
-
-* `MakeSafeTest(Type, object, object)`: Tests the `MakeSafe<T>(Type, object)` method with various input types and objects.
-* `MakeSafeArrayTest(Type, Array, Array)`: Tests the `MakeSafeArray<T>(Type, Array)` method with various input types and arrays.
-* `TryParseTest(Type, string, bool, object)`: Tests the `TryParse<T>(Type, string, out object)` method with various input types and strings.
+Container "System" {
+  Container "ReflectionExtensions" {
+    Artifact "MakeSafe"
+    Artifact "MakeSafeArray"
+    Artifact "TryParse"
+  }
+}
+@enduml
+```
 
 **ResourceExtensionsTests.cs**
+=============================
 
-This class contains tests for the `ResourceExtensions` class.
+This test class contains tests for the `ResourceExtensions` class, which provides extensions for working with resources.
 
-**Class Diagram:**
+### TestCases
+------------
+
+* `GetResourceAsStringAsyncTest`: Tests the `GetResourceAsStringAsync` method, which reads a resource as a string.
+* `GetResourceStreamTest`: Tests the `GetResourceStream` method, which reads a resource as a stream.
+* `GetResourceStreamTest_ByType`: Tests the `GetResourceStream` method with a type parameter.
+* `GetResourceStreamTest_NotFound`: Tests the `GetResourceStream` method with a non-existent resource.
+* `GetResourceFromJsonAsyncTest`: Tests the `GetResourceFromJsonAsync` method, which reads a JSON resource asynchronously.
+* `GetResourceFromJsonAsyncTest_NotFound`: Tests the `GetResourceFromJsonAsync` method with a non-existent resource.
+* `GetResourceFromXmlAsyncTest`: Tests the `GetResourceFromXmlAsync` method, which reads an XML resource asynchronously.
+* `GetResourceFromJsonTest`: Tests the `GetResourceFromJson` method, which reads a JSON resource synchronously.
+* `GetResourceFromJsonTest_NotFound`: Tests the `GetResourceFromJson` method with a non-existent resource.
+* `GetResourceFromXmlTest`: Tests the `GetResourceFromXml` method, which reads an XML resource synchronously.
+
+### Class Diagram
+----------------
 
 ```plantuml
 @startuml
 class ResourceExtensions {
-  + GetResourceAsStream(string)
-  + GetResourceAsStringAsync(string)
-  + GetResourceFromJson<T>(string)
-  + GetResourceFromXml<T>(string)
-}
-
-class Type {
-  - GetResourceAsStream(string)
-  - GetResourceAsStringAsync(string)
-  - GetResourceFromJson<T>(string)
-  - GetResourceFromXml<T>(string)
-}
-
-Type --* ResourceExtensions
-
-@enduml
-```
-
-**Methods:**
-
-* `GetResourceAsStream(string)`: Returns a stream for the specified resource.
-* `GetResourceAsStringAsync(string)`: Returns the contents of the specified resource as a string.
-* `GetResourceFromJson<T>(string)`: Deserializes the contents of the specified resource to an object of type `T`.
-* `GetResourceFromXml<T>(string)`: Deserializes the contents of the specified resource to an object of type `T`.
-
-**Tests:**
-
-* `GetResourceAsStringAsyncTest()`: Tests the `GetResourceAsStringAsync(string)` method.
-* `GetResourceStreamTest()`: Tests the `GetResourceAsStream(string)` method.
-* `GetResourceStreamTest_ByType()`: Tests the `GetResourceAsStream(string)` method with a type parameter.
-* `GetResourceStreamTest_NotFound()`: Tests the `GetResourceAsStream(string)` method with a non-existent resource.
-* `GetResourceFromJsonAsyncTest()`: Tests the `GetResourceFromJson<T>(string)` method with a JSON file.
-* `GetResourceFromJsonAsyncTest_NotFound()`: Tests the `GetResourceFromJson<T>(string)` method with a non-existent resource.
-* `GetResourceFromXmlAsyncTest()`: Tests the `GetResourceFromXml<T>(string)` method with an XML file.
-* `GetResourceFromJsonTest()`: Tests the `GetResourceFromJson<T>(string)` method with a JSON file.
-* `GetResourceFromJsonTest_NotFound()`: Tests the `GetResourceFromJson<T>(string)` method with a non-existent resource.
-* `GetResourceFromXmlTest()`: Tests the `GetResourceFromXml<T>(string)` method with an XML file.
-
-Note: The class diagrams are generated using Plant
+  - GetResourceAsString(string) -> string
+  - GetResourceStream(string) -> Stream
+  - GetResourceFromJsonAsync(string) -> JsonConvert
+  - GetResourceFromJson(string) -> JsonConvert
+  - GetResourceFromXmlAsync(string) -> XmlSerialize
+  - GetResourceFromXml(string) -> XmlSerialize

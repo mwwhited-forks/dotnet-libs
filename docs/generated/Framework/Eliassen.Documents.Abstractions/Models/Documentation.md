@@ -1,117 +1,104 @@
-Here is the documentation for the provided source code files:
+# Eliassen Documents Models Documentation
 
-**ContentMetaDataReference.cs**
+## Overview
 
-Summary:
-Represents a reference to content metadata.
+The Eliassen Documents Models library provides a set of classes and interfaces for representing and working with documents and their associated metadata.
 
-Description:
-This class represents a reference to content metadata, which includes the content type, file name, and optional metadata.
+### Class Diagram
 
-Properties:
-
-* `ContentType`: Gets or initializes the content type of the content.
-* `FileName`: Gets or initializes the file name associated with the content.
-* `MetaData`: Gets or initializes the metadata associated with the content (optional).
-
-**ContentReference.cs**
-
-Summary:
-Represents a content reference containing information about content such as a stream, content type, and file name.
-
-Description:
-This class represents a content reference, which contains information about the content, including a stream, content type, and file name.
-
-Properties:
-
-* `Content`: Gets or initializes the content stream.
-* `ContentType`: Gets or initializes the content type.
-* `FileName`: Gets or initializes the file name associated with the content.
-
-**DocumentType.cs**
-
-Summary:
-Represents a document type, including its name, supported content types, file extensions, and file header.
-
-Description:
-This class represents a document type, which includes its name, supported content types, file extensions, and file header. It also implements the `IDocumentType` interface.
-
-Properties:
-
-* `Name`: Gets or sets the name of the document type.
-* `ContentTypes`: Gets or sets the MIME content types supported by this document type.
-* `FileExtensions`: Gets or sets the file extensions commonly associated with this document type.
-* `FileHeader`: Gets or sets the unique byte sequence at the beginning of files of this type.
-
-**IDocumentType.cs**
-
-Summary:
-Represents a document type.
-
-Description:
-This interface represents a document type, which includes its name, supported content types, file extensions, and file header.
-
-Properties:
-
-* `Name`: Gets the name of the document type.
-* `ContentTypes`: Gets the supported content types for documents of this type.
-* `FileExtensions`: Gets the supported file extensions for documents of this type.
-* `FileHeader`: Gets the file header bytes that identify documents of this type.
-
-**Class Diagrams**
-
-Here are the class diagrams generated using Plant UML:
-
-```
+```plantuml
 @startuml
 class ContentMetaDataReference {
-  - Content-Type: string
-  - File-Name: string
-  - Meta-Data: Dictionary<string, string>?
+  -ContentType: required string
+  -FileName: required string
+  -MetaData: Dictionary<string, string>?
 }
 
 class ContentReference {
-  - Content: Stream
-  - Content-Type: string
-  - File-Name: string
+  -Content: required Stream
+  -ContentType: required string
+  -FileName: required string
 }
 
-class DocumentType {
-  - Name: string
-  - Content-Types: string[]
-  - File-Extensions: string[]
-  - File-Header: byte[]
+class DocumentType implements IDocumentType {
+  -Name: required string
+  -ContentTypes: required string[]
+  -FileExtensions: required string[]
+  -FileHeader: required byte[]
 }
 
 interface IDocumentType {
-  - Name: string
-  - Content-Types: string[]
-  - File-Extensions: string[]
-  - File-Header: byte[]
+  -Name: string
+  -ContentTypes: string[]
+  -FileExtensions: string[]
+  -FileHeader: byte[]
 }
-
-ContentMetaDataReference --* ContentReference
-DocumentType --* IDocumentType
 @enduml
 ```
 
-```
+### Component Model
+
+The Eliassen Documents Models library consists of several components that work together to provide a comprehensive solution for working with documents and their metadata.
+
+#### Content MetaData Reference
+
+The `ContentMetaDataReference` class represents a reference to content metadata, including the content type, file name, and associated metadata.
+
+#### Content Reference
+
+The `ContentReference` class represents a content reference, which contains information about the content, including the content type, file name, and a stream representing the content.
+
+#### Document Type
+
+The `DocumentType` class represents a document type, which includes its name, supported content types, file extensions, and file header.
+
+#### IDocumentType Interface
+
+The `IDocumentType` interface defines the common properties and methods that all document types must implement.
+
+### Sequence Diagram
+
+```plantuml
 @startuml
-class DocumentType implements IDocumentType {
-  - Name: string
-  - Content-Types: string[]
-  - File-Extensions: string[]
-  - File-Header: byte[]
-}
+participant "Application"
+participant "DocumentType"
+participant "ContentReference"
+participant "ContentMetaDataReference"
 
-class ContentReference {
-  - Content: Stream
-  - Content-Type: string
-  - File-Name: string
-}
+Note right: Initialize DocumentType
+DocumentType ->> Application: GetDocumentType("example")
+Note right: Get DocumentType
+Application ->> DocumentType: GetDocumentType("example")
+DocumentType ->> Application: Got DocumentType
 
-ContentReference --* DocumentType
+Note right: Create ContentReference
+Application ->> DocumentType: CreateContentReference()
+DocumentType ->> Application: ContentReference Created
+
+Note right: Create ContentMetaDataReference
+Application ->> DocumentType: CreateContentMetaDataReference()
+DocumentType ->> Application: ContentMetaDataReference Created
+
+Note right: Use ContentReference and ContentMetaDataReference
+Application ->> DocumentType: UseContentReferenceAndMetaData()
+DocumentType ->> Application: Document used successfully
 @enduml
 ```
 
-These diagrams show the relationships between the classes and interfaces. The first diagram shows the inheritance relationship between `DocumentType` and `IDocumentType`, as well as the reference relationship between `ContentMetaDataReference` and `ContentReference`. The second diagram shows the reference relationship between `ContentReference` and `DocumentType`.
+This sequence diagram shows the steps involved in initializing a document type, creating a content reference, creating a content metadata reference, and using the content reference and metadata reference to work with a document.
+
+### Code Explanation
+
+The Eliassen Documents Models library provides a set of classes and interfaces that allow developers to work with documents and their associated metadata. The `ContentMetaDataReference` class represents a reference to content metadata, including the content type, file name, and associated metadata. The `ContentReference` class represents a content reference, which contains information about the content, including the content type, file name, and a stream representing the content. The `DocumentType` class represents a document type, which includes its name, supported content types, file extensions, and file header. The `IDocumentType` interface defines the common properties and methods that all document types must implement.
+
+### Benefits
+
+The Eliassen Documents Models library provides several benefits, including:
+
+* A clear and consistent way of representing and working with documents and their associated metadata
+* A set of reusable classes and interfaces that can be used across multiple applications
+* Simplified development and maintenance of document-oriented applications
+
+### Conclusion
+
+The Eliassen Documents Models library provides a comprehensive set of classes and interfaces for working with documents and their associated metadata. The library includes a set of reusable classes and interfaces that can be used across multiple applications, simplifying development and maintenance of document-oriented applications.

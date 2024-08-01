@@ -1,93 +1,153 @@
-Here is the documentation for the source code files with class diagrams in Plant UML:
+Here is the documentation for the source code in Markdown format:
 
-**CorrelationInfoMiddleware.cs**
+# Middleware Documentation
 
-Class Diagram:
-```dot
+This documentation covers three middleware classes: `CorrelationInfoMiddleware`, `CultureInfoMiddleware`, and `SearchQueryMiddleware`. Each middleware is designed to perform a specific task to enhance the functionality of an ASP.NET Core MVC application.
+
+## CorrelationInfoMiddleware
+
+The `CorrelationInfoMiddleware` class is responsible for handling correlation information in HTTP requests and responses. It provides a way to capture and store correlation identifiers (IDs) and request IDs in the HTTP context.
+
+### Class Diagram
+```plantuml
 @startuml
 class CorrelationInfoMiddleware {
-  - _next: RequestDelegate
-  - logger: ILogger<CorrelationInfoMiddleware>
-  - correlationAccessor: IAccessor<CorrelationInfo>
+    - private readonly RequestDelegate _next
+    - private CorrelationInfo _correlationAccessor
 }
 
-CorrelationInfoMiddleware -> RequestDelegate
-CorrelationInfoMiddleware -> ILogger<CorrelationInfoMiddleware>
-CorrelationInfoMiddleware -> IAccessor<CorrelationInfo>
+CorrelationInfoMiddleware -> RequestDelegate: _next
+CorrelationInfoMiddleware -> CorrelationInfo: _correlationAccessor
 @enduml
 ```
 
-Summary:
+### Invoke Method
+The `Invoke` method is the entry point for the middleware. It is responsible for processing the request and response correlation IDs.
 
-The `CorrelationInfoMiddleware` class is a middleware for handling correlation information in HTTP requests and responses. It takes three parameters: `_next`, `logger`, and `correlationAccessor`.
+### Component Model
+```plantuml
+@startuml
+component CorrelationInfoMiddleware {
+    (RequestDelegate) next
+    (CorrelationInfo) correlationAccessor
+    (ILogger) logger
+}
 
-Methodology:
+CorrelationInfoMiddleware ->> next: Invoke
+CorrelationInfoMiddleware ->> correlationAccessor: Get/set correlation ID
+CorrelationInfoMiddleware ->> logger: Log correlation ID
+@enduml
+```
 
-*   The `Invoke` method is called to process the HTTP context.
-*   It sets the correlation ID and request ID in the `correlationAccessor` object.
-*   It logs a message indicating the correlation ID and request ID.
-*   The `OnStarting` event is triggered to add the correlation ID and request ID to the response headers.
-*   It calls the `_next` delegate to continue processing the request.
+### Sequence Diagram
+```plantuml
+@startuml
+actor Client
+client ->> CorrelationInfoMiddleware: Request
+CorrelationInfoMiddleware ->> correlationAccessor: Get/set correlation ID
+CorrelationInfoMiddleware ->> logger: Log correlation ID
+CorrelationInfoMiddleware ->> Client: Response
+@enduml
+```
 
-**CultureInfoMiddleware.cs**
+## CultureInfoMiddleware
 
-Class Diagram:
-```dot
+The `CultureInfoMiddleware` class is responsible for detecting and setting the language/culture from the HTTP request and response headers.
+
+### Class Diagram
+```plantuml
 @startuml
 class CultureInfoMiddleware {
-  - next: RequestDelegate
-  - logger: ILogger<CultureInfoMiddleware>
-  - cultureInfoAccessor: IAccessor<CultureInfo>
+    - private readonly RequestDelegate _next
+    - private CultureInfo? _cultureInfo
+    - private IAccessor<CultureInfo> _cultureInfoAccessor
 }
 
-CultureInfoMiddleware -> RequestDelegate
-CultureInfoMiddleware -> ILogger<CultureInfoMiddleware>
-CultureInfoMiddleware -> IAccessor<CultureInfo>
+CultureInfoMiddleware -> RequestDelegate: _next
+CultureInfoMiddleware -> CultureInfo: _cultureInfo
+CultureInfoMiddleware -> IAccessor<CultureInfo>: _cultureInfoAccessor
 @enduml
 ```
 
-Summary:
+### Invoke Method
+The `Invoke` method is the entry point for the middleware. It is responsible for processing the request and response culture information.
 
-The `CultureInfoMiddleware` class is a custom middleware to detect the language/culture from the HTTP request header and assign it to the response header.
+### Component Model
+```plantuml
+@startuml
+component CultureInfoMiddleware {
+    (RequestDelegate) next
+    (CultureInfo) cultureInfo
+    (ILogger) logger
+}
 
-Methodology:
+CultureInfoMiddleware ->> next: Invoke
+CultureInfoMiddleware ->> cultureInfo: Get/set culture
+CultureInfoMiddleware ->> logger: Log culture
+@enduml
+```
 
-*   The `Invoke` method is called to process the HTTP context.
-*   It detects the language/culture from the `Accept-Language` header.
-*   It sets the culture to the value from the header or to the default culture if no value is found.
-*   It logs a message indicating the detected culture.
-*   The `OnStarting` event is triggered to add the culture to the response headers.
-*   It calls the `next` delegate to continue processing the request.
+### Sequence Diagram
+```plantuml
+@startuml
+actor Client
+client ->> CultureInfoMiddleware: Request
+CultureInfoMiddleware ->> cultureInfo: Get/set culture
+CultureInfoMiddleware ->> logger: Log culture
+CultureInfoMiddleware ->> Client: Response
+@enduml
+```
 
-**SearchQueryMiddleware.cs**
+## SearchQueryMiddleware
 
-Class Diagram:
-```dot
+The `SearchQueryMiddleware` class is responsible for enabling IQueryable responses from Controller Actions.
+
+### Class Diagram
+```plantuml
 @startuml
 class SearchQueryMiddleware {
-  - next: RequestDelegate
-  - logger: ILogger<SearchQueryMiddleware>
-  - searchQueryAccessor: IAccessor<ISearchQuery>
-  - modelBuilder: ISearchModelBuilder
+    - private readonly RequestDelegate _next
+    - private ILogger _logger
+    - private IAccessor<ISearchQuery> _searchQueryAccessor
+    - private ISearchModelBuilder _builder
 }
 
-SearchQueryMiddleware -> RequestDelegate
-SearchQueryMiddleware -> ILogger<SearchQueryMiddleware>
-SearchQueryMiddleware -> IAccessor<ISearchQuery>
-SearchQueryMiddleware -> ISearchModelBuilder
+SearchQueryMiddleware -> RequestDelegate: _next
+SearchQueryMiddleware -> ILogger: _logger
+SearchQueryMiddleware -> IAccessor<ISearchQuery>: _searchQueryAccessor
+SearchQueryMiddleware -> ISearchModelBuilder: _builder
 @enduml
 ```
 
-Summary:
+### InvokeAsync Method
+The `InvokeAsync` method is the entry point for the middleware. It is responsible for processing the request and setting the search query.
 
-The `SearchQueryMiddleware` class is a middleware to enable IQueryable responses from controller actions.
+### Component Model
+```plantuml
+@startuml
+component SearchQueryMiddleware {
+    (RequestDelegate) next
+    (ILogger) logger
+    (IAccessor<ISearchQuery>) searchQueryAccessor
+    (ISearchModelBuilder) builder
+}
 
-Methodology:
+SearchQueryMiddleware ->> next: InvokeAsync
+SearchQueryMiddleware ->> logger: Log error
+SearchQueryMiddleware ->> searchQueryAccessor: Set search query
+SearchQueryMiddleware ->> builder: Get model
+@enduml
+```
 
-*   The `InvokeAsync` method is called to handle the request.
-*   It checks if the request is a search query and binds the search model if it is.
-*   It logs a message indicating the search query.
-*   It sets the search query to the accessor.
-*   It calls the `next` delegate to continue processing the request.
+### Sequence Diagram
+```plantuml
+@startuml
+actor Client
+client ->> SearchQueryMiddleware: Request
+SearchQueryMiddleware ->> builder: Get model
+SearchQueryMiddleware ->> logger: Log error
+SearchQueryMiddleware ->> client: Response
+@enduml
+```
 
-Note: These diagrams are generated using the Plant UML syntax, and they represent the classes and their relationships.
+I hope this documentation helps to provide a comprehensive understanding of the middleware classes and their functionality.

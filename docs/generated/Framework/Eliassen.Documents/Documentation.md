@@ -1,48 +1,88 @@
-**DocumentTypeTools.cs**
+# Eliassen.Documents
 
-Class Diagram:
+## Overview
+
+The Eliassen.Documents library provides functionality for managing documents, including storage, conversion, and type detection. It offers classes and factories for creating and interacting with blob containers, document conversion services, and document type tools. These components enable developers to store, convert, and identify document types in their applications.
+
+### Component Model
+
 ```plantuml
 @startuml
+class BlobContainerFactory {
+  - BlobContainer: BlobContainer
+}
+class DocumentConversion {
+  - DocumentConversionChainBuilder: DocumentConversionChainBuilder
+}
 class DocumentTypeTools {
-  + _types: IEnumerable<IDocumentType>
-  + _contentTypeDetector: IContentTypeDetector?
-  
-  + DetectContentTypeAsync(Stream) : Task<string?>
-  + GetByContentType(string) : IDocumentType?
-  + GetByFileExtension(string) : IDocumentType?
-  + GetByFileHeader(Stream) : IDocumentType?
+  - IDocumentType: IDocumentType
 }
-
-interface IDocumentType {
-  + Name: string
-  + FileHeader: byte[]
-  + FileExtensions: string[]
-  + ContentTypes: string[]
+class ServiceCollectionExtensions {
+  - TryAddDocumentServices: IServiceCollection
 }
-
-interface IContentTypeDetector {
-  + DetectContentTypeAsync(Stream) : Task<string?>
-}
+BlobContainerFactory ..> DocumentConversion
+DocumentConversion ..> DocumentTypeTools
+DocumentTypeTools ..> ServiceCollectionExtensions
 @enduml
 ```
-**Summary:**
-The `DocumentTypeTools` class provides a set of tools for managing document types. It allows for detecting the content type of a stream, retrieving document types by content type, file extension, or file header, and scanning a stream to detect the content type.
 
-**Methods:**
+## Source Files
 
-* `DetectContentTypeAsync(Stream)`: Scans the stream to detect the content type.
-* `GetByContentType(string)`: Retrieves the document type associated with the specified content type.
-* `GetByFileExtension(string)`: Retrieves the document type associated with the specified file extension.
-* `GetByFileHeader(Stream)`: Retrieves the document type associated with the specified file header.
+### DocumentTypeTools.cs
 
-**Properties:**
+The `DocumentTypeTools` class is responsible for managing document types. It provides methods for detecting the content type of a document, retrieving a document type based on a content type, file extension, or file header, and associating a document type with a blob container.
 
-* `_types`: A collection of document types.
-* `_contentTypeDetector`: An optional content type detector.
+```csharp
+public class DocumentTypeTools : IDocumentTypeTools
+{
+    private readonly IEnumerable<IDocumentType> _types;
+    private readonly IContentTypeDetector? _contentTypeDetector;
 
-**Eliassen.Documents.csproj**
+    public DocumentTypeTools(IEnumerable<IDocumentType> types, IContentTypeDetector? contentTypeDetector = null)
+    {
+        _types = types;
+        _contentTypeDetector = contentTypeDetector;
+    }
 
-Project File:
+    public virtual async Task<string?>
+      DetectContentTypeAsync(Stream source) =>
+        _contentTypeDetector is not null
+          ? await _contentTypeDetector.DetectContentTypeAsync(source)
+          : (GetByFileHeader(source)?.ContentTypes.FirstOrDefault());
+
+    public virtual IDocumentType? GetByContentType(string contentType) =>
+      _types.FirstOrDefault(t => t.ContentTypes.Any(i => string.Equals(i, contentType, StringComparison.OrdinalIgnoreCase)));
+
+    public virtual IDocumentType? GetByFileExtension(string fileExtension) =>
+      _types.FirstOrDefault(t => t.FileExtensions.Any(i => string.Equals(i, fileExtension, StringComparison.OrdinalIgnoreCase)));
+
+    public virtual IDocumentType? GetByFileHeader(Stream stream)
+    {
+        var maxRead = _types.Max(t => t.FileHeader.Length);
+        if (maxRead > 0)
+        {
+            var p = stream.Position;
+
+            Span<byte> temp = new byte[maxRead];
+            var possible = _types.Where(t => t.FileHeader.Length > 0);
+            stream.Read(temp);
+
+            foreach (var t in possible.Where(t => t.FileHeader.Length > 0))
+                if (temp.StartsWith(t.FileHeader))
+                    return t;
+
+            stream.Position = 0;
+        }
+
+        return default;
+    }
+}
+```
+
+### Eliassen.Documents.csproj
+
+The `Eliassen.Documents.csproj` file is the project file for the Eliassen.Documents library. It specifies the target framework as .NET 8.0, and includes references to other projects and packages.
+
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
@@ -50,8 +90,8 @@ Project File:
     <ImplicitUsings>false</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <PackageReadmeFile>Readme.Documents.md</PackageReadmeFile>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="Eliassen.Documents.Tests" />
@@ -62,14 +102,13 @@ Project File:
   </ItemGroup>
 </Project>
 ```
-**Summary:**
-This is a project file for the Eliassen.Documents library. It specifies the target framework, explicit namespace imports, and generates documentation and assembly information.
 
-**Readme.Documents.md**
+### Readme.Documents.md
 
-Documentation:
+The `Readme.Documents.md` file provides an overview of the Eliassen.Documents library, including its key classes and features.
+
 ```markdown
-# Eliassen/Documents
+# Eliassen.Documents
 
 ## Overview
 
@@ -77,11 +116,11 @@ The Eliassen.Documents library provides functionality for managing documents, in
 
 ## Key Classes and Features
 
-* **BlobContainerFactory**: Creates blob containers for storing documents.
-* **DocumentConversion**: Performs document conversion from one format to another.
-* **DocumentConversionChainBuilder**: Constructs document conversion chains.
-* **DocumentTypeTools**: Provides tools for managing document types, including content type detection.
-* **ServiceCollectionExtensions**: Extension methods for configuring document-related services in dependency injection.
+- **BlobContainerFactory**: Creates blob containers for storing documents.
+- **DocumentConversion**: Performs document conversion from one format to another.
+- **DocumentConversionChainBuilder**: Constructs document conversion chains.
+- **DocumentTypeTools**: Provides tools for managing document types, including content type detection.
+- **ServiceCollectionExtensions**: Extension methods for configuring document-related services in dependency injection.
 
 ## Usage Example
 
@@ -92,53 +131,4 @@ using Eliassen.Documents.Conversion;
 using Eliassen.Documents.DocumentTypeTools;
 
 // Initialize document conversion chain builder
-var conversionChainBuilder = new DocumentConversionChainBuilder();
-
-// Add document conversion steps for converting from PDF to Word
-var steps = conversionChainBuilder.Steps("application/pdf", "application/msword");
-
-// Initialize document conversion service
-var documentConversion = new DocumentConversion(conversionChainBuilder);
-
-// Perform document conversion asynchronously
-await documentConversion.ConvertAsync(sourceStream, "application/pdf", destinationStream, "application/msword");
-```
-
-**Summary:**
-This is a brief overview of the Eliassen.Documents library, highlighting its key classes and features, as well as a simple usage example.
-
-**ServiceCollectionExtensions.cs**
-
-Class Diagram:
-```plantuml
-@startuml
-class ServiceCollectionExtensions {
-  + TryAddDocumentServices(IServiceCollection) : IServiceCollection
-}
-
-interface IServiceCollection {
-  + TryAddSingleton<T>(T) : IServiceCollection
-  + TryAddTransient<T>(T) : IServiceCollection
-}
-
-class DocumentConversion : DocumentConversion
-{
-  + ChainBuilder: DocumentConversionChainBuilder
-}
-
-class DocumentConversionChainBuilder : DocumentConversionChainBuilder
-{
-  + Steps(string, string) : Ienumerable<IDocumentConversionStep>
-}
-
-interface IContentTypeDetector {
-  + DetectContentTypeAsync(Stream) : Task<string?>
-}
-@enduml
-```
-**Summary:**
-The `ServiceCollectionExtensions` class provides extension methods for configuring document-related services in the ServiceCollection.
-
-**Methods:**
-
-* `TryAddDocumentServices(IServiceCollection)`:
+var conversionChainBuilder = new

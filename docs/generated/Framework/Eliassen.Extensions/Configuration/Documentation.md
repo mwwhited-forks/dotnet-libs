@@ -1,119 +1,63 @@
-Here is the documentation for the provided source code files, including class diagrams in PlantUML:
+Here is the documentation for the source code in Markdown format:
 
-**CommandLine.cs**
+# Eliassen.Extensions.Configuration
 
-```csharp
-using Eliassen.System.Configuration;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+## CommandLine Class
 
-namespace Eliassen.Extensions.Configuration;
-
-/// <summary>
-/// builder pattern for command parameter arguments
-/// </summary>
-public static class CommandLine
-{
-    // ...
-
-    /// <summary>
-    /// add additional configurable parameters
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="items"></param>
-    /// <returns></returns>
-    public static IDictionary<string, string> AddParameters<T>(this IDictionary<string, string> items) =>
-        items.Concat(BuildParameters<T>())
-             .GroupBy(i => i.Key, Comparer)
-             .ToDictionary(i => i.Key, i => i.First().Value, Comparer)
-        ;
-
-    /// <summary>
-    /// entry point or defining configurable parameters
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <returns></returns>
-    public static IDictionary<string, string> BuildParameters<T>()
-    {
-        // ...
-    }
-}
-```
-
-**Class Diagram ( CommandLine.cs )**
+The `CommandLine` class is a builder pattern implementation that helps in defining and adding configurable parameters.
 
 ```plantuml
 @startuml
 class CommandLine {
-  - id: string
-  - Comparer: StringComparer
-  + AddParameters<T>(items: IDictionary<string, string>): IDictionary<string, string>
-  + BuildParameters<T>(): IDictionary<string, string>
+  -StringComparer Comparer
+  +IDictionary<string, string> AddParameters<T>(IDictionary<string, string> items)
+  +IDictionary<string, string> BuildParameters<T>()
 }
 @enduml
 ```
 
-**ConfigurationBuilderExtensions.cs**
+The `AddParameters` method adds additional configurable parameters to a dictionary.
 
-```csharp
-using Eliassen.Extensions.Configuration;
-using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
-using System.Linq;
+The `BuildParameters` method defines configurable parameters.
 
-namespace Eliassen.Extensions.Configuration;
+## ConfigurationBuilderExtensions Class
 
-/// <summary>
-/// Extension methods for adding in-memory collections to the <see cref="IConfigurationBuilder"/>.
-/// </summary>
-public static class ConfigurationBuilderExtensions
-{
-    // ...
-
-    /// <summary>
-    /// Adds an in-memory collection to the <see cref="IConfigurationBuilder"/> using the specified initial data.
-    /// </summary>
-    /// <param name="configurationBuilder">The <see cref="IConfigurationBuilder"/> to add the in-memory collection to.</param>
-    /// <param name="initialData">The initial data to populate the in-memory collection.</param>
-    /// <returns>The modified <see cref="IConfigurationBuilder"/>.</returns>
-    public static IConfigurationBuilder AddInMemoryCollection(
-        this IConfigurationBuilder configurationBuilder,
-        IEnumerable<(string key, string? value)> initialData) =>
-        configurationBuilder.AddInMemoryCollection(
-            initialData
-            .GroupBy(i => i.key)
-            .ToDictionary(i => i.Key, i => i.First().value)
-        );
-
-    /// <summary>
-    /// Adds an in-memory collection to the <see cref="IConfigurationBuilder"/> using the specified initial data.
-    /// </summary>
-    /// <param name="configurationBuilder">The <see cref="IConfigurationBuilder"/> to add the in-memory collection to.</param>
-    /// <param name="item">The first item of the in-memory collection.</param>
-    /// <param name="initialData">Additional initial data to populate the in-memory collection.</param>
-    /// <returns>The modified <see cref="IConfigurationBuilder"/>.</returns>
-    public static IConfigurationBuilder AddInMemoryCollection(
-        this IConfigurationBuilder configurationBuilder,
-        (string key, string? value) item,
-        params (string key, string? value)[] initialData) =>
-        configurationBuilder.AddInMemoryCollection(
-            new[] { item }.Concat(initialData)
-        );
-}
-```
-
-**Class Diagram ( ConfigurationBuilderExtensions.cs )**
+The `ConfigurationBuilderExtensions` class provides extension methods for adding in-memory collections to the `IConfigurationBuilder`.
 
 ```plantuml
 @startuml
 class ConfigurationBuilderExtensions {
-  - configurationBuilder: IConfigurationBuilder
-  + AddInMemoryCollection(initialData: IEnumerable<(string, string?)>): IConfigurationBuilder
-  + AddInMemoryCollection(item: (string, string?), initialData: params (string, string?)[]): IConfigurationBuilder
+  +IConfigurationBuilder AddInMemoryCollection IConfigurationBuilder, IEnumerable<(string key, string? value)>
+  +IConfigurationBuilder AddInMemoryCollection IConfigurationBuilder, (string key, string? value), params (string key, string? value)[]
 }
 @enduml
 ```
 
-Note: The PlantUML diagrams are included as separate images ( CommandLine.png and ConfigurationBuilderExtensions.png ) for simplicity. You can use the PlantUML syntax to generate the diagrams programmatically if needed.
+The `AddInMemoryCollection` method adds an in-memory collection to the `IConfigurationBuilder` using the specified initial data.
+
+### Methods
+
+The `AddInMemoryCollection` method has two overloads:
+
+* The first overload takes an `IConfigurationBuilder` and an `IEnumerable<(string key, string? value)>` as parameters, grouping the data by key and adding it to the in-memory collection.
+* The second overload takes an `IConfigurationBuilder`, a `(string key, string? value)` tuple, and optional additional `(string key, string? value)` tuples as parameters, concatenating the data and adding it to the in-memory collection.
+
+### Sequence Diagram
+
+```plantuml
+@startuml
+participant "ConfigurationBuilder" as cb
+participant "ConfigurationBuilderExtensions" as cbe
+note "Initial data" as intData
+
+cb ->> cbe : AddInMemoryCollection(intData)
+alt is default
+  cbe ->> cb : AddInMemoryCollection(initialData)
+else is overload
+  cbe ->> cb : AddInMemoryCollection(item, initialData...)
+end
+cb ->> cb : Build in-memory collection
+@enduml
+```
+
+This sequence diagram shows the interaction between the `ConfigurationBuilder` and the `ConfigurationBuilderExtensions` classes when adding an in-memory collection using the `AddInMemoryCollection` method.

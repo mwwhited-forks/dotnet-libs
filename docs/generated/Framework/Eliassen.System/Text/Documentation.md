@@ -1,36 +1,47 @@
-**Documentation for Eliassen.System.Text.SerializerTypes.cs**
+# Eliassen.System.Text - SerializerTypes
 
-**Overview**
-The `SerializerTypes` enum specifies different types of serialization formats used in the Eliassen.System.Text namespace.
+## Overview
 
-**Description**
-The `SerializerTypes` enum defines three types of serialization formats: JSON, BSON (Binary JSON), and XML. These formats can be used to serialize and deserialize data between different systems or formats.
+The `Eliassen.System.Text` namespace contains a single enum class called `SerializerTypes`, which specifies different types of serialization formats.
 
-**Enum Members**
+## Class Diagram
 
-| Member | Description |
-| --- | --- |
-| Json | Represents the JSON serialization format. |
-| Bson | Represents the BSON (Binary JSON) serialization format. |
-| Xml | Represents the XML serialization format. |
-
-**Class Diagram (PlantUML)**
 ```plantuml
 @startuml
-enum SerializerTypes {
-    Json
-    Bson
-    Xml
+class SerializerTypes {
+  - enum type
+  - Json
+  - Bson
+  - Xml
 }
-
 @enduml
 ```
-This diagram shows the `SerializerTypes` enum with its three members: `Json`, `Bson`, and `Xml`.
 
-**Benefits**
+## Description
 
-* Provides a clear and concise way to specify different serialization formats.
-* Allows for easy switching between different serialization formats.
-* Enables better error handling and debugging by providing specific type identifiers.
+The `SerializerTypes` enum class defines three constants that represent different serialization formats:
 
-**Notes**
+* `Json`: Represents the JSON serialization format.
+* `Bson`: Represents the BSON (Binary JSON) serialization format.
+* `Xml`: Represents the XML serialization format.
+
+## Usage
+
+The `SerializerTypes` enum class can be used in code to specify the desired serialization format. For example:
+```csharp
+SerializerTypes serializerType = SerializerTypes.Json;
+```
+## Class Diagram (Expanded)
+
+```plantuml
+@startuml
+class SerializerTypes {
+  - enum type
+  - Json
+  - Bson
+  - Xml
+}
+@enduml
+```
+
+Note: The expanded class diagram shows the explicit relationships between the `SerializerTypes` enum and its underlying data types.

@@ -1,62 +1,83 @@
-**Eliassen.Identity Documentation**
-
-**Class Diagrams**
-
-Using PlantUML, the class diagrams can be generated as follows:
-
-```plantuml
-@startuml
-class UserManagementProvider {
-  - IIdentityManager user
-  + CreateAccountAsync(UserCreateModel)
-}
-
-class ServiceCollectionExtensions {
-  + TryAddIdentityServices(IServiceCollection, IConfiguration)
-}
-
-class UserCreateModel {
-  - EmailAddress
-  - FirstName
-  - LastName
-}
-
-class UserCreatedModel {
-  - Password
-  - Username
-}
-
-UserManagementProvider --* IIdentityManager
-ServiceCollectionExtensions --* UserManagementProvider
-UserCreateModel --* UserCreatedModel
-
-@enduml
+Here is the documentation for the source code in Markdown format:
 ```
-
-**Readme.Identity.md**
-
 # Eliassen.Identity
+=====================
 
-This documentation provides information on the Eliassen.Identity project, which provides services for user management.
+## Class: Identity.UserManagementProvider
+--------------------------------------
 
-**Class: Identity.UserManagementProvider**
-
-The `UserManagementProvider` class represents a provider for user management operations. It provides a method `CreateAccountAsync` to create a new user account asynchronously.
+Represents a provider for user management operations.
 
 ### Methods
 
 #### Constructor
+Initializes a new instance of the class. Represents a provider for user management operations.
 
-The constructor initializes a new instance of the class, representing a provider for user management operations. It takes an optional parameter `user`, which is the user manager for managing graph users.
+##### Parameters
+* *user:* The user manager for managing graph users.
 
-#### CreateAccountAsync
+#### CreateAccountAsync(Eliassen.Identity.UserCreateModel)
+Creates a new user account asynchronously.
 
-This method creates a new user account asynchronously. It takes a `UserCreateModel` object as a parameter, which contains the user information for account creation. The method returns a task representing the asynchronous operation, with the result being a `UserCreatedModel` object containing the created user's information.
+##### Parameters
+* *model:* The model containing user information for account creation.
 
-**ServiceCollectionExtensions.cs**
+##### Return value
+A task representing the asynchronous operation. The result is a model containing the created user's information.
 
-This file contains a static class `ServiceCollectionExtensions` that provides extension methods for adding identity-related services to the service collection. The `TryAddIdentityServices` method adds the necessary services to the specified service collection using the provided configuration.
+### Class Diagram
+```plantuml
+@startuml
+interface IIdentityManager
++ createIdentityUserAsync(email: string, firstName: string, lastName: string): (objectId: string, password: string)
 
-**UserManagementProvider.cs**
+class UserManagementProvider implements IUserManagementProvider
++ UserManagementProvider(IIdentityManager? user = null)
++ createAccountAsync(UserCreateModel model): Task<UserCreatedModel>
+  - dependency IIdentityManager
+enduml
+```
 
-This file contains the `UserManagementProvider` class, which implements the `IUserManagementProvider` interface. It provides a single method `CreateAccountAsync` to create a new user account asynchronously. This method takes a `UserCreateModel` object as a parameter and returns a `UserCreatedModel` object containing the created user's information. If no identity management provider is registered, the method throws a `NotSupportedException`.
+## ServiceCollectionExtensions.cs
+---------------------------
+
+Provides extension methods for adding identity-related services to the service collection.
+```plantuml
+@startuml
+class ServiceCollectionExtensions
++ TryAddIdentityServices(IServiceCollection services, IConfiguration configuration): IServiceCollection
+  - dependency Microsoft.Extensions.DependencyInjection
+  - dependency Microsoft.Extensions.Configuration
+enduml
+```
+
+## UserManagementProvider.cs
+---------------------------
+
+Represents a provider for user management operations.
+```plantuml
+@startuml
+class UserManagementProvider implements IUserManagementProvider
++ UserManagementProvider(IIdentityManager? user = null)
+  - dependency IIdentityManager
+
++ createAccountAsync(UserCreateModel model): Task<UserCreatedModel>
+  - call IIdentityManager.createIdentityUserAsync(email, firstName, lastName)
+enduml
+```
+
+## Sequence Diagram
+```plantuml
+@startuml
+actor User
+participant UserManagementProvider as UP
+participant IIdentityManager as IDM
+
+note "User requests new account creation" as n1
+
+UP->IDM: CreateIdentityUserAsync(email, firstName, lastName)
+IDM->UP: (objectId, password)
+UP->User: newly created user's information
+enduml
+```
+Note: The class diagram shows the relationships between the classes and interfaces, while the sequence diagram shows the interactions between the classes and participants. The ServiceCollectionExtensions class is not shown in the sequence diagram as it is only a utility class that adds services to the service collection.

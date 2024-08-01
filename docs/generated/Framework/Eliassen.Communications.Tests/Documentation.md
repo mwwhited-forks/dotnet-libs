@@ -1,48 +1,65 @@
-Here is the documentation for the `Eliassen.Communications.Tests.csproj` file:
+# Eliassen Communications Tests Documentation
 
-**Project Information**
+## Project Structure
 
-* Project Name: Eliassen Communications Tests
-* Project Type: Test Project
-* Target Framework: .NET 8.0
-* Implicit Usings: False
-* Nullable: Enabled
-* Packable: False
-* Test Project: True
+The `Eliassen.Communications.Tests` project is a .NET Core 8 project that contains test cases for the `Eliassen.Communications` project.
 
-**NuGet Packages**
+### Class Diagram
 
-* Microsoft.NET.Test.Sdk (version 17.10.0)
-* MSTest.TestAdapter (version 3.4.3)
-* MSTest.TestFramework (version 3.4.3)
-* coverlet.collector (version 6.0.2)
-
-**Project References**
-
-* Eliassen.Communications (project reference)
-* Eliassen.System (project reference)
-* Eliassen.TestUtilities (project reference)
-
-**Class Diagram (PlantUML)**
-
-[elassen-communications-tests.puml]
 ```plantuml
 @startuml
-class EliassenCommunicationsTests {
-  - tests*: TestSuite
-  - references*: EliassenCommunications
-  - references*: EliassenSystem
-  - references*: EliassenTestUtilities
+class CommunicationsTests {
+  -testProject : boolean
+  -projectReferences : ProjectReference[]
 }
 
-class TestSuite {
-  + RunTests()
+class ProjectReference {
+  -project : Project
+  -references : Reference[]
 }
 
-EliassenCommunicationsTests --* TestSuite
-EliassenCommunicationsTests --* EliassenCommunications
-EliassenCommunicationsTests --* EliassenSystem
-EliassenCommunicationsTests --* EliassenTestUtilities
+class Reference {
+  -path : string
+}
+
+CommunicationsTests --* ProjectReference
+ProjectReference --* Reference
 @enduml
 ```
-**Note:** The PlantUML code generates a simple class diagram showing the relationships between the `EliassenCommunicationsTests` class, `TestSuite` class, and the project references. Additionally, it does not include any detailed information about the classes or methods, but rather provides an overall view of the project's structure.
+
+### Component Model
+
+The `Eliassen.Communications.Tests` project consists of the following components:
+
+* `CommunicationsTests`: This is the main test class that contains all the test methods.
+* `ProjectReference`: This is an inner class that represents a project reference.
+* `Reference`: This is an inner class that represents a reference to another project.
+
+### Sequence Diagram
+
+```plantuml
+@startuml
+participant "CommunicationsTests" as test
+participant "ProjectReference" as reference
+participant "Reference" as ref
+
+note "Test execution"
+alt isTestRunning
+  test -> reference: GetProjectReference()
+  reference -> ref: GetReferencePath()
+  test -> ref: ExecuteReference()
+end
+@enduml
+```
+
+## Configuration
+
+The project has the following configuration options:
+
+* `TargetFramework`: The target framework version for the project, which is set to `net8.0`.
+* `ImplicitUsings`: Set to `false` to disable implicit usings.
+* `Nullable`: Set to `enable` to enable nullable reference types.
+* `IsPackable`: Set to `false` to prevent the project from being packed.
+* `IsTestProject`: Set to `true` to indicate that this is a test project.
+* `PackageReferences`: References to external packages, including Microsoft.NET.Test.Sdk, MSTest.TestAdapter, and MSTest.TestFramework.
+* `ProjectReferences`: References to other projects in the solution, including `Eliassen.Communications` and `Eliassen.System`.

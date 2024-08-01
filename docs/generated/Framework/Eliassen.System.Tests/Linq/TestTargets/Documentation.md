@@ -1,199 +1,85 @@
-Here is the documentation for the provided source code files, including class diagrams in PlantUML:
+# Documentation for Eliassen.System.Tests.Linq.TestTargets
 
-**TestTarget2Model:**
+## Overview
 
-```csharp
-[Searchable("Fake")]
-public class TestTarget2Model
-{
-    [Key]
-    [NotSortable]
-    public int Index { get; set; }
+This project contains test models for the Eliassen System, a LINQ-based search system. The models are used to test the search functionality and other features of the system.
 
-    [Searchable]
-    public string Name { get; set; } = default!;
+## Classes
 
-    [NotFilterable]
-    public string Email { get; set; } = default!;
-}
-```
+### TestTarget2Model
 
-Class Diagram:
 ```plantuml
 @startuml
 class TestTarget2Model {
-  Index: int [Key][NotSortable]
-  Name: string [Searchable]
-  Email: string [NotFilterable]
+    - int Index [key, not sortable]
+    - string Name [searchable]
+    - string Email [not filterable]
 }
-
 @enduml
 ```
 
-**TestTarget3Model:**
+The TestTarget2Model class represents a basic model with a primary key, a searchable string property, and a non-filterable string property.
 
-```csharp
-public class TestTarget3Model
-{
-    [Key]
-    [NotSearchable]
-    public int Index { get; set; }
+### TestTarget3Model
 
-    [NotSortable]
-    public string Name { get; set; } = default!;
-
-    [NotFilterable]
-    public string Email { get; set; } = default!;
-}
-```
-
-Class Diagram:
 ```plantuml
 @startuml
 class TestTarget3Model {
-  Index: int [Key][NotSearchable]
-  Name: string [NotSortable]
-  Email: string [NotFilterable]
+    - int Index [key, not searchable]
+    - string Name [not sortable]
+    - string Email [not filterable]
 }
-
 @enduml
 ```
 
-**TestTargetExtendedModel:**
+The TestTarget3Model class represents a basic model with a primary key, but with a non-searchable property and a non-sortable property.
 
-```csharp
-[Searchable(FirstNameLastName, LastNameFirstName)]
-public class TestTargetExtendedModel
-{
-    public static readonly DateTime BaseDate = new(2020, 1, 1);
+### TestTargetExtendedModel
 
-    public TestTargetExtendedModel(int index)
-    {
-        // ... constructor code ...
-    }
-
-    [Key]
-    public int Index { get; set; }
-
-    [Searchable]
-    public required string FName { get; set; }
-
-    [Searchable]
-    public string? LName { get; set; }
-
-    [Searchable]
-    public required string Email { get; set; }
-
-    [Searchable]
-    public string? May { get; set; }
-
-    [Searchable]
-    public string[]? Modules { get; set; }
-
-    [Searchable]
-    public string[]? NullModules { get; set; }
-
-    [Searchable]
-    public DateTime Date { get; set; }
-
-    public DateTime? DateTimeNullable { get; set; }
-    public DateTimeOffset? DateTimeOffsetNullable { get; set; }
-
-    public static Expression<Func<TestTargetExtendedModel, object>>? PropertyMap(string key)
-    {
-        // ... PropertyMap code ...
-    }
-
-    public static Expression<Func<TestTargetExtendedModel, bool>>? PredicateMap(string key, object value)
-    {
-        // ... PredicateMap code ...
-    }
-}
-```
-
-Class Diagram:
 ```plantuml
 @startuml
 class TestTargetExtendedModel {
-  Index: int [Key]
-  FName: string [Searchable]
-  LName: string [Searchable]
-  Email: string [Searchable]
-  May: string [Searchable]
-  Modules: string[] [Searchable]
-  NullModules: string[] [Searchable]
-  Date: DateTime [Searchable]
-  DateTimeNullable: DateTime? [Searchable]
-  DateTimeOffsetNullable: DateTimeOffset? [Searchable]
-
-  PropertyMap: Expression<Func<TestTargetExtendedModel, object>>?
-  PredicateMap: Expression<Func<TestTargetExtendedModel, bool>>?
+    - int Index [key, default sort]
+    - string FName [required, searchable]
+    - string? LName [searchable]
+    - string Email [required, searchable]
+    - string? May [searchable]
+    - string[]? Modules [searchable]
+    - string[]? NullModules [searchable]
+    - DateTime Date [searchable]
+    - DateTime? DateTimeNullable [searchable]
+    - DateTimeOffset? DateTimeOffsetNullable [searchable]
 }
-
 @enduml
 ```
 
-**TestTargetModel:**
+The TestTargetExtendedModel class represents a more advanced model with multiple searchable properties, including a required property, a nullable property, and an array property. It also includes two date and time properties with nullable types.
 
-```csharp
-public class TestTargetModel
-{
-    public TestTargetModel(int index)
-    {
-        Index = index;
-        Name = $"{nameof(Name)}{index}";
-        Email = $"{nameof(Email)}{index:000}@domain.com";
-    }
+### TestTargetModel
 
-    [Key]
-    public int Index { get; set; }
-
-    public string Name { get; set; }
-
-    public string Email { get; set; }
-}
-```
-
-Class Diagram:
 ```plantuml
 @startuml
 class TestTargetModel {
-  Index: int [Key]
-  Name: string
-  Email: string
+    - int Index [key]
+    - string Name
+    - string Email
 }
-
 @enduml
 ```
 
-**TestTargetWithInnerArrayModel:**
+The TestTargetModel class represents a basic model with a primary key and two simple properties.
 
-```csharp
-public class TestTargetWithInnerArrayModel
-{
-    public TestTargetWithInnerArrayModel(int index)
-    {
-        Index = index;
-        Name = $"{nameof(Name)}{index}";
-        Email = $"{nameof(Email)}{index:000}@domain.com";
-        Children = Enumerable.Range(index / 100 % 10, index % 10).Select(i => $"Child{i:000}").ToArray();
-    }
+### TestTargetWithInnerArrayModel
 
-    [Key]
-    public int Index { get; set; }
-
-    public string Name { get; set; }
-
-    public string Email { get; set; }
-
-    public string[] Children { get; set; }
-}
-```
-
-Class Diagram:
 ```plantuml
 @startuml
 class TestTargetWithInnerArrayModel {
-  Index: int [Key]
-  Name: string
-  Email:
+    - int Index [key]
+    - string Name
+    - string Email
+    - string[] Children
+}
+@enduml
+```
+
+The TestTargetWithInnerArrayModel class represents a model with an array property that contains inner strings.

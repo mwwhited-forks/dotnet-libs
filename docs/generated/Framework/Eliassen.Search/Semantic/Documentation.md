@@ -1,98 +1,99 @@
-Here is the documentation for the provided source code files, including class diagrams in Plant UML:
+## Overview
+The Eliassen.Search.Semantic namespace contains classes and interfaces for working with vector stores. A vector store is a data structure that stores and retrieves vectors (dense numerical representations) associated with metadata.
 
-**VectorStoreFactory.cs**
+## Classes and Interfaces
+### VectorStoreFactory
+The `VectorStoreFactory` class is responsible for creating instances of `IVectorStore` based on a specified collection name or type. It uses dependency injection to resolve the underlying provider for the vector store.
 
-**Class Diagram**
+### WrappedVectorStore
+The `WrappedVectorStore<T>` class is a wrapper around an `IVectorStore` instance. It provides a way to wrap an existing vector store with additional functionality. The `WrappedVectorStore` class implements the `IVectorStore<T>` interface.
 
-```
+### IVectorStore
+The `IVectorStore<T>` interface defines the methods for working with a vector store. The methods include:
+
+* `FindNeighborsAsync(ReadOnlyMemory<float> find)`: Finds nearest neighbors asynchronously based on the specified vector.
+* `FindNeighborsAsync(ReadOnlyMemory<float> find, string groupBy)`: Finds nearest neighbors asynchronously based on the specified vector and groups the results by a specified field.
+* `ListAsync()`: Retrieves all items asynchronously.
+* `StoreVectorsAsync(IEnumerable<ReadOnlyMemory<float>> embeddings, Dictionary<string, object> metadata)`: Stores vectors asynchronously along with their associated metadata.
+* `StoreVectorsAsync(IEnumerable<(ReadOnlyMemory<float> embedding, Dictionary<string, object> metadata)> items, Dictionary<string, object> metadata)`: Stores the specified embeddings and metadata.
+
+## UML Diagrams
+
+### Class Diagram
+```plantuml
 @startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/CClassDiagram/trunk/CClassDiagram.puml
+
 class VectorStoreFactory {
-    - private readonly IServiceProvider _serviceProvider
-    - private readonly IEnumerable<IVectorStoreProviderFactory> _factories
+  - _serviceProvider: IServiceProvider
+  - _factories: IEnumerable<IVectorStoreProviderFactory>
 
-    + VectorStoreFactory(IServiceProvider, IEnumerable<IVectorStoreProviderFactory>)
-    + IVectorStore Create(string)
-    + IVectorStore Create<T>()
+  -+ Create(string collectionName): IVectorStore
+  -+ Create<T>() : IVectorStore
 }
 
-class IVectorStoreFactory {
-    + IVectorStore Create(string)
-    + IVectorStore Create<T>()
-}
-
-interface IVectorStoreProviderFactory {
-    IVectorStoreProvider Create(string)
-}
-
-interface IVectorStore {
-    // methods
-}
-
-@enduml
-```
-
-**Summary**
-
-The `VectorStoreFactory` class is responsible for creating instances of `IVectorStore` based on a given collection name or type. It uses an IOC container (`IServiceProvider`) to resolve instances of `IVectorStoreProvider` and create vector stores.
-
-**Properties and Methods**
-
-* `IVectorStoreFactory Create(string collectionName)`: Creates a vector store based on the specified collection name.
-* `IVectorStore Create<T>()`: Creates a vector store based on the specified type.
-
-**WrappedVectorStore.cs**
-
-**Class Diagram**
-
-```
-@startuml
 class WrappedVectorStore<T> {
-    - private readonly IVectorStore _wrapped
+  - _wrapped: IVectorStore
 
-    + WrappedVectorStore(IVectorStoreFactory)
-    + WrappedVectorStore(IVectorStore)
-    + IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(ReadOnlyMemory<float>)
-    + IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(ReadOnlyMemory<float>, string)
-    + IAsyncEnumerable<SearchResultModel> ListAsync()
-    + Task<string[]> StoreVectorsAsync(IEnumerable<ReadOnlyMemory<float>>, Dictionary<string, object>)
-    + Task<string[]> StoreVectorsAsync(IEnumerable<(ReadOnlyMemory<float>, Dictionary<string, object>)>, Dictionary<string, object>)
+  -+ FindNeighborsAsync(ReadOnlyMemory<float> find): IAsyncEnumerable<SearchResultModel>
+  -+ FindNeighborsAsync(ReadOnlyMemory<float> find, string groupBy): IAsyncEnumerable<SearchResultModel>
+  -+ ListAsync(): IAsyncEnumerable<SearchResultModel>
+  -+ StoreVectorsAsync(IEnumerable<ReadOnlyMemory<float>> embeddings, Dictionary<string, object> metadata): Task<string[]>
+  -+ StoreVectorsAsync(IEnumerable<(ReadOnlyMemory<float> embedding, Dictionary<string, object> metadata)> items, Dictionary<string, object> metadata): Task<string[]>
 }
 
-class IVectorStore {
-    // methods
-}
-
-class IVectorStore<T> {
-    // methods
-}
-
-interface IVectorStoreProvider {
-    // methods
-}
-
-interface IVectorStoreFactory {
-    IVectorStore Create(string)
-}
-
-class SearchResultModel {
-    // properties
+interface IVectorStore<T> {
+  -+ FindNeighborsAsync(ReadOnlyMemory<float> find): IAsyncEnumerable<SearchResultModel>
+  -+ FindNeighborsAsync(ReadOnlyMemory<float> find, string groupBy): IAsyncEnumerable<SearchResultModel>
+  -+ ListAsync(): IAsyncEnumerable<SearchResultModel>
+  -+ StoreVectorsAsync(IEnumerable<ReadOnlyMemory<float>> embeddings, Dictionary<string, object> metadata): Task<string[]>
+  -+ StoreVectorsAsync(IEnumerable<(ReadOnlyMemory<float> embedding, Dictionary<string, object> metadata)> items, Dictionary<string, object> metadata): Task<string[]>
 }
 
 @enduml
 ```
 
-**Summary**
+### Component Model
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/CComponentModel/trunk/CComponentModel.puml
 
-The `WrappedVectorStore<T>` class is a wrapper around another `IVectorStore` instance, providing a simpler interface for accessing the underlying vector store.
+class DataPortal {
+  - _vectorStoreFactory: VectorStoreFactory
+}
 
-**Properties and Methods**
+class SearchService {
+  - _wrappedVectorStore: WrappedVectorStore<T>
+}
+```
 
-* `WrappedVectorStore(IVectorStoreFactory)`: Constructor that creates a new instance of the wrapped vector store using the factory.
-* `WrappedVectorStore(IVectorStore)`: Constructor that creates a new instance of the wrapped vector store using an existing instance.
-* `IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(ReadOnlyMemory<float>)`: Finds nearest neighbors asynchronously based on the specified vector.
-* `IAsyncEnumerable<SearchResultModel> FindNeighborsAsync(ReadOnlyMemory<float>, string)`: Finds nearest neighbors asynchronously based on the specified vector and groups the results by a specified field.
-* `IAsyncEnumerable<SearchResultModel> ListAsync()`: Retrieves all items asynchronously.
-* `Task<string[]> StoreVectorsAsync(IEnumerable<ReadOnlyMemory<float>>, Dictionary<string, object>)`: Stores vectors asynchronously along with their associated metadata.
-* `Task<string[]> StoreVectorsAsync(IEnumerable<(ReadOnlyMemory<float>, Dictionary<string, object>)>, Dictionary<string, object>)`: Stores the specified embeddings and metadata.
+### Sequence Diagram
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/CSequenceDiagram/trunk/CSequenceDiagram.puml
 
-Note that these class diagrams assume that `IVectorStore`, `IVectorStore<T>`, and `IVectorStoreProvider` are interfaces, while `IVectorStoreFactory` is an interface or abstract class. The actual implementation details may vary depending on the specific use case.
+actor User
+participant DataPortal as DP
+participant SearchService as SS
+participant WrappedVectorStore as WVS
+
+activate User
+
+User ->> DP: Find nearest neighbors
+DP ->> WVS: Find nearest neighbors
+WVS ->> DP: SearchResultModel
+DP ->> User: SearchResultModel
+
+User ->> DP: List all
+DP ->> WVS: List all
+WVS ->> DP: SearchResultModel
+DP ->> User: SearchResultModel
+
+User ->> DP: Store vectors
+DP ->> WVS: Store vectors
+WVS ->> DP: string[]
+DP ->> User: string[]
+
+deactivate User
+@enduml
+```

@@ -1,49 +1,44 @@
-Here is the documentation for the `TestModel.cs` file, including a class diagram in PlantUML:
+**Documentation for TestModel.cs**
 
-**Class Documentation**
+**Overview**
 
-### TestModel
-
-The `TestModel` class is a simple test model used to demonstrate reflection functionality.
-
-**Namespace:** Eliassen.System.Tests.Reflection.TestTargets
-
-**Class Description:**
-
-This class represents a basic test model with a single required property named `Property`.
+The `TestModel` class is a simple example of a .NET class used for testing reflection capabilities in the Eliassen.System.Tests.Reflection namespace.
 
 **Class Diagram**
-
 ```plantuml
 @startuml
 class TestModel {
-  -string Property
+  -Property: string (required)
+  +get_Property(): string
+  +set_Property(value: string)
 }
-
 @enduml
 ```
+**Class Description**
 
-### Class Members
+The `TestModel` class has a single property `Property` which is a required string. The class also has getter and setter methods for the property.
 
-#### Property
+**Properties**
 
-| Member Type | Name | Description |
-| --- | --- | --- |
-| Public | Property | A required string property |
+* `Property`: A required string property with getter and setter methods.
 
-### Notes
-
-The `TestModel` class is designed to be a simple test model for reflection testing purposes. The `Property` property is required and can only be of type `string`.
-
-**Source Code**
-
-```csharp
-namespace Eliassen.System.Tests.Reflection.TestTargets;
-
-public class TestModel
-{
-    public required string Property { get; set; }
-}
+**Sequence Diagram**
+```plantuml
+@startuml
+actor TestUser
+participant TestModel as tm
+activate TestUser
+TestUser->>tm: Get Property
+tm->>TestUser: Property value
+TestUser->>tm: Set Property
+tm->>TestUser: Property set success
+deactivate TestUser
+@enduml
 ```
+**Sequence Diagram Description**
 
-This documentation provides a clear and concise overview of the `TestModel` class, including its namespace, description, class diagram, and member details. The PlantUML class diagram provides a visual representation of the class's structure and relationships.
+The sequence diagram shows a simple interaction between a `TestUser` and a `TestModel` instance. The `TestUser` first requests the value of the `Property` using the getter method. The `TestModel` instance then returns the property value to the `TestUser`. Next, the `TestUser` sets a new value for the `Property` using the setter method. Finally, the `TestModel` instance confirms the successful property value update.
+
+**Conclusion**
+
+The `TestModel` class is a simple example of a .NET class used for testing reflection capabilities. It has a single required string property with getter and setter methods, and can be used as a target for testing reflection operations.

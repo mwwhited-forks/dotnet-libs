@@ -1,78 +1,94 @@
-Here is the documentation for each of the source code files, including class diagrams in PlantUML:
+# Eliassen Communications Models Documentation
 
-**AttachmentReferenceModel.cs**
+This documentation outlines the classes and models used to represent email and SMS messages, attachments, and other relevant data in the Eliassen Communications system.
 
-This class represents a model for referencing attachments.
+## Class Diagram
 
-[PlantUML]:
-```
+```plantuml
 @startuml
 class AttachmentReferenceModel {
   - ContainerName: string
   - DocumentKey: string
 }
 
-@enduml
-```
-
-**EmailMessageModel.cs**
-
-This class represents an email message model.
-
-[PlantUML]:
-```
-@startuml
 class EmailMessageModel {
-  - ReferenceId: string
-  - FromAddress: string
-  - ToAddresses: List<string>
-  - CcAddresses: List<string>
-  - BccAddresses: List<string>
-  - Subject: string
-  - TextContent: string
-  - HtmlContent: string
-  - Headers: Dictionary<string, string>
-  - Attachments: List<AttachmentReferenceModel>
+  + ReferenceId: string?
+  + FromAddress: string?
+  + ToAddresses: List<string>
+  + CcAddresses: List<string>
+  + BccAddresses: List<string>
+  + Subject: string?
+  + TextContent: string?
+  + HtmlContent: string?
+  + Headers: Dictionary<string, string>
+  + Attachments: List<AttachmentReferenceModel>
 }
 
-@enduml
-```
-
-**ReceivedEmailMessageModel.cs**
-
-This class represents inbound email messages.
-
-[PlantUML]:
-```
-@startuml
 class ReceivedEmailMessageModel extends EmailMessageModel {
-  - Server: string
-  - Path: string
+  + Server: string
+  + Path: string?
 }
 
-@enduml
-```
-
-**SmsMessageModel.cs**
-
-This class represents a model for SMS messages.
-
-[PlantUML]:
-```
-@startuml
 class SmsMessageModel {
-  - From: string
-  - To: string
-  - RequestId: Guid
-  - Body: string
-  - Headers: Dictionary<string, object>
+  + From: string?
+  + To: string?
+  + RequestId: Guid
+  + Body: string?
+  + Headers: Dictionary<string, object>
 }
 
 @enduml
 ```
 
-Here is the overall summary for the documentation:
+## Component Model
 
-These classes represent different types of communication models in the Eliassen Communications system. The `AttachmentReferenceModel` class represents a model for referencing attachments, while the `EmailMessageModel` class represents an email message model. The `ReceivedEmailMessageModel` class extends the `EmailMessageModel` and adds additional properties related to inbound email messages. The `SmsMessageModel` class represents a model for SMS messages.
+The Eliassen Communications system consists of several components, including:
 
-Note: The PlantUML diagrams are formatted using Markdown syntax, with the `@startuml` and `@enduml` commands defining the boundaries of the UML diagram. The classes and their properties are defined using the `class` keyword, with properties listed inside curly braces.
+* **Email Processing**: responsible for processing inbound and outbound email messages
+* **SMS Processing**: responsible for processing inbound and outbound SMS messages
+* **Attachment Management**: responsible for managing attachments associated with email and SMS messages
+* **Message Storage**: responsible for storing and retrieving email and SMS messages
+
+These components interact with each other to provide a comprehensive communication solution.
+
+## Sequence Diagram
+
+The following sequence diagram illustrates the flow of an email message from sending to receiving:
+```plantuml
+@startuml
+participant Sender as "Email Client"
+participant EmailServer as "Email Server"
+participant InboundProcessor as "Inbound Processor"
+participant MessageStorage as "Message Storage"
+participant ReceivedEmailMessageModel as "Received Email Message Model"
+
+Sender ->> EmailServer: Send Email
+EmailServer ->> InboundProcessor: Process Email
+InboundProcessor ->> MessageStorage: Store Email
+MessageStorage ->> ReceivedEmailMessageModel: Retrieve Email
+ReceivedEmailMessageModel ->> InboundProcessor: Update Email Status
+InboundProcessor ->> Receiver: Deliver Email
+
+@enduml
+```
+
+The following sequence diagram illustrates the flow of an SMS message from sending to receiving:
+```plantuml
+@startuml
+participant Sender as "SMS Client"
+participant SMSServer as "SMS Server"
+participant InboundProcessor as "Inbound Processor"
+participant MessageStorage as "Message Storage"
+participant ReceivedSmsMessageModel as "Received SMS Message Model"
+
+Sender ->> SMSServer: Send SMS
+SMSServer ->> InboundProcessor: Process SMS
+InboundProcessor ->> MessageStorage: Store SMS
+MessageStorage ->> ReceivedSmsMessageModel: Retrieve SMS
+ReceivedSmsMessageModel ->> InboundProcessor: Update SMS Status
+InboundProcessor ->> Receiver: Deliver SMS
+
+@enduml
+```
+
+The Eliassen Communications system provides a robust and scalable solution for managing email and SMS messages. The system's components work together to ensure that messages are correctly processed, stored, and delivered to the intended recipients.

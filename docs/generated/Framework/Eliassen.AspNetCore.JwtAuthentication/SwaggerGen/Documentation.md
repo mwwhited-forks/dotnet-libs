@@ -1,68 +1,93 @@
-Here is the documentation for the provided source code files, including class diagrams in PlantUML:
+# Configuration Options for Swagger in OAuth2 Authentication
 
-**ConfigureOAuthSwaggerGenOptions.cs**
+This documentation provides an overview of the configuration options for Swagger in OAuth2 authentication.
 
-* **Class Diagram (in PlantUML)**
+## Swagger OAuth2 Configuration Options
+
+### `ConfigureOAuthSwaggerGenOptions`
+
+The `ConfigureOAuthSwaggerGenOptions` class is responsible for configuring SwaggerGen options for OAuth2 authentication.
+
+#### Class Diagram
 
 ```plantuml
 @startuml
 class ConfigureOAuthSwaggerGenOptions {
-  - config: IOptions<OAuth2SwaggerOptions>
-  - logger: ILogger<ConfigureOAuthSwaggerGenOptions>
-  - _config: IOptions<OAuth2SwaggerOptions>
-  - _logger: ILogger
-
-  + GetScopes(): Dictionary<string, string>
-  + Configure(options: SwaggerGenOptions): void
+  - IOptions<OAuth2SwaggerOptions> config
+  - ILogger<ConfigureOAuthSwaggerGenOptions> logger
+  - Dictionary<string, string> GetScopes()
+  - void Configure(SwaggerGenOptions options)
 }
-
 @enduml
 ```
 
-* **Class Description**: `ConfigureOAuthSwaggerGenOptions` is a class that configures SwaggerGen options for OAuth2 authentication.
-* **Methods**: `GetScopes` returns a dictionary of OAuth2 scopes, and `Configure` configures the SwaggerGen options to use OAuth2 authentication.
+### `GetScopes`
 
-**ConfigureOAuthSwaggerUIOptions.cs**
+The `GetScopes` method retrieves the OAuth2 scopes that are required for Swagger.
 
-* **Class Diagram (in PlantUML)**
+### `Configure`
 
-```plantuml
-@startuml
-class ConfigureOAuthSwaggerUIOptions {
-  - options: IOptions<JwtBearerOptions>
-  - logger: ILogger<ConfigureOAuthSwaggerUIOptions>
-  - _options: IOptions<JwtBearerOptions>
-  - _logger: ILogger
+The `Configure` method is used to configure SwaggerGen options for OAuth2 authentication. It sets the security definition and security requirement for Swagger.
 
-  + Configure(options: SwaggerUIOptions): void
-}
+### `OAuth2SwaggerOptions`
 
-@enduml
-```
+The `OAuth2SwaggerOptions` class represents the options for configuring OAuth2 in Swagger.
 
-* **Class Description**: `ConfigureOAuthSwaggerUIOptions` is a class that configures SwaggerUI options for OAuth authentication.
-* **Methods**: `Configure` configures the SwaggerUI options to use OAuth authentication.
-
-**OAuth2SwaggerOptions.cs**
-
-* **Class Diagram (in PlantUML)**
+#### Class Diagram
 
 ```plantuml
 @startuml
 class OAuth2SwaggerOptions {
-  - UserReadApiClaim: string
-  - AuthorizationUrl: string
-  - TokenUrl: string
-
-  + UserReadApiClaim: string
-  + AuthorizationUrl: string
-  + TokenUrl: string
+  - string UserReadApiClaim
+  - string AuthorizationUrl
+  - string TokenUrl
 }
-
 @enduml
 ```
 
-* **Class Description**: `OAuth2SwaggerOptions` is a class that represents the options for configuring OAuth2 in Swagger.
-* **Properties**: `UserReadApiClaim` specifies the claim that Swagger will use to determine the authenticated user's API access, `AuthorizationUrl` specifies the URL for the authorization endpoint, and `TokenUrl` specifies the URL for the token endpoint.
+### `ConfigureOAuthSwaggerUIOptions`
 
- Please note that the PlantUML diagrams are a simplified representation of the classes and their relationships.
+The `ConfigureOAuthSwaggerUIOptions` class is responsible for configuring SwaggerUI options for OAuth authentication.
+
+#### Class Diagram
+
+```plantuml
+@startuml
+class ConfigureOAuthSwaggerUIOptions {
+  - IOptions<JwtBearerOptions> options
+  - ILogger<ConfigureOAuthSwaggerUIOptions> logger
+  - void Configure(SwaggerUIOptions options)
+}
+@enduml
+```
+
+### `Configure`
+
+The `Configure` method is used to configure SwaggerUI options for OAuth authentication. It sets the OAuth client ID, uses parameter-less code challenge, and sets the scope separator.
+
+## Sequence Diagram
+
+The sequence diagram below shows the interaction between the `ConfigureOAuthSwaggerGenOptions` and `ConfigureOAuthSwaggerUIOptions` classes:
+
+```plantuml
+@startuml
+sequenceDiagram
+    participant SwaggerGenOptions as "SwaggerGenOptions"
+    participant ConfigureOAuthSwaggerGenOptions as "ConfigureOAuthSwaggerGenOptions"
+    participant OAuth2SwaggerOptions as "OAuth2SwaggerOptions"
+    participant SwaggerUIOptions as "SwaggerUIOptions"
+    participant ConfigureOAuthSwaggerUIOptions as "ConfigureOAuthSwaggerUIOptions"
+    note as "OAuth2 configuration" over ConfigureOAuthSwaggerGenOptions, OAuth2SwaggerOptions
+
+    SwaggerGenOptions->>ConfigureOAuthSwaggerGenOptions: Configure
+    ConfigureOAuthSwaggerGenOptions->>OAuth2SwaggerOptions: GetScopes
+    OAuth2SwaggerOptions->>ConfigureOAuthSwaggerGenOptions: SecurityDefinition
+    ConfigureOAuthSwaggerGenOptions->>SwaggerGenOptions: Configure
+
+    SwaggerUIOptions->>ConfigureOAuthSwaggerUIOptions: Configure
+    ConfigureOAuthSwaggerUIOptions->>JwtBearerOptions: GetOAuthClientId
+    ConfigureOAuthSwaggerUIOptions->>SwaggerUIOptions: Configure
+endonuml
+```
+
+This sequence diagram shows how the `ConfigureOAuthSwaggerGenOptions` class configures the SwaggerGen options for OAuth2 authentication, and how the `ConfigureOAuthSwaggerUIOptions` class configures the SwaggerUI options for OAuth authentication.

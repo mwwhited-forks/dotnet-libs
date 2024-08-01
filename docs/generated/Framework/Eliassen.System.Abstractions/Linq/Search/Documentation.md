@@ -1,41 +1,46 @@
-Here is the documentation for the given source code files along with the class diagrams in PlantUML:
+Here is the documentation for the source code in Markdown format:
 
-**FilterParameter.cs**
+# Eliassen System Linq Search
+
+## Overview
+
+The Eliassen System Linq Search library provides a set of classes and interfaces for building and executing queries with search parameters. The library includes classes for filtering, sorting, and paginating data, as well as converting filter parameters to strings.
+
+## Classes
+
+### FilterParameter
 
 ```plantuml
 @startuml
 class FilterParameter {
-  - equal: object?
-  - notEqual: object?
-  - inSet: object[]?
-  - greaterThan: object?
-  - greaterThanOrEqualTo: object?
-  - lessThan: object?
-  - lessThanOrEqualTo: object?
-  - ToString(): string
+  - EqualTo: object?
+  - NotEqualTo: object?
+  - InSet: object[]?
+  - GreaterThan: object?
+  - GreaterThanOrEqualTo: object?
+  - LessThan: object?
+  - LessThanOrEqualTo: object?
 }
+
 @enduml
 ```
 
-**Documentation:**
+The `FilterParameter` class represents a filter parameter with various properties for filtering data. The properties include `EqualTo`, `NotEqualTo`, `InSet`, `GreaterThan`, `GreaterThanOrEqualTo`, `LessThan`, and `LessThanOrEqualTo`.
 
-The `FilterParameter` class is a record that represents a filter parameter for a search query. It has several properties for filtering, sorting, and inclusive/exclusive criteria: `EqualTo`, `NotEqualTo`, `InSet`, `GreaterThan`, `GreaterThanOrEqualTo`, `LessThan`, and `LessThanOrEqualTo`. The `ToString` method provides a string representation of the filter parameter.
-
-**IFilterQuery.cs**
+### IFilterQuery
 
 ```plantuml
 @startuml
 interface IFilterQuery {
   - Filter: IDictionary<string, FilterParameter>?
 }
+
 @enduml
 ```
 
-**Documentation:**
+The `IFilterQuery` interface represents a query with filtering options. The `Filter` property returns a dictionary of filter parameters.
 
-The `IFilterQuery` interface defines a method `Filter` that returns a dictionary of filter parameters for a search query. The filter parameters are used to filter the search results based on various criteria.
-
-**IPageQuery.cs**
+### IPageQuery
 
 ```plantuml
 @startuml
@@ -44,101 +49,64 @@ interface IPageQuery {
   - PageSize: int
   - ExcludePageCount: bool
 }
+
 @enduml
 ```
 
-**Documentation:**
+The `IPageQuery` interface represents a page query for paginating results. The `CurrentPage`, `PageSize`, and `ExcludePageCount` properties provide information about the current page and the size of each page.
 
-The `IPageQuery` interface defines three properties: `CurrentPage`, `PageSize`, and `ExcludePageCount`. `CurrentPage` specifies the current page number, `PageSize` specifies the number of items per page, and `ExcludePageCount` indicates whether to exclude the total page count from the result.
-
-**IQueryBuilder.cs**
+### IQueryBuilder
 
 ```plantuml
 @startuml
 interface IQueryBuilder {
-  - ExecuteBy(IQueryable, ISearchQuery): IQueryResult
+  - ExecuteBy(query: IQueryable, searchQuery: ISearchQuery): IQueryResult
 }
-@enduml
-```
 
-**Documentation:**
-
-The `IQueryBuilder` interface defines a method `ExecuteBy` that executes a query using the specified query and search query. The `ExecuteBy` method returns an `IQueryResult` object.
-
-**IQueryBuilder<TModel>.cs**
-
-```plantuml
-@startuml
 interface IQueryBuilder<TModel> {
-  - ExecuteBy(IQueryable<TModel>, ISearchQuery): IQueryResult<TModel>
+  - ExecuteBy(query: IQueryable<TModel>, searchQuery: ISearchQuery): IQueryResult<TModel>
 }
+
 @enduml
 ```
 
-**Documentation:**
+The `IQueryBuilder` interface represents a query builder for executing queries with search parameters. There are two versions of the interface: a generic version that can be used with any type, and a typed version that is used with a specific type.
 
-The `IQueryBuilder<TModel>` interface defines a method `ExecuteBy` that executes a query using the specified typed query and search query. The `ExecuteBy` method returns an `IQueryResult<TModel>` object.
-
-**ISearchQuery.cs**
+### ISearchQuery
 
 ```plantuml
 @startuml
 interface ISearchQuery {
-  - IFilterQuery
-  - IPageQuery
-  - ISortQuery
+  - PageQuery: IPageQuery
+  - SortQuery: ISortQuery
+  - SearchTermQuery: ISearchTermQuery
+  - FilterQuery: IFilterQuery
 }
+
+interface ISearchQuery<TModel> {
+}
+
 @enduml
 ```
 
-**Documentation:**
+The `ISearchQuery` interface represents a query object that combines page, sort, search term, and filter criteria for searching data. The generic version of the interface can be used with any type, and the typed version is used with a specific type.
 
-The `ISearchQuery` interface defines a union of three interfaces: `IFilterQuery`, `IPageQuery`, and `ISortQuery`. The `ISearchQuery` interface is used to combine filtering, sorting, and page options for a search query.
-
-**ISortQuery.cs**
+## Sequence Diagram
 
 ```plantuml
 @startuml
-interface ISortQuery {
-  - OrderBy: IDictionary<string, OrderDirections>
-}
+sequenceDiagram
+    participant QueryBuilder as "QueryBuilder"
+    participant QuerySample as "QuerySample"
+    participant SearchQuery as "SearchQuery"
+
+    QueryBuilder->>QuerySample: Retrieve data
+    QueryBuilder->>SearchQuery: Get search query
+    SearchQuery->>QueryBuilder: Execute query
+    QueryBuilder->>QuerySample: Retrieve filtered data
+
+    note overwrite: "The QueryBuilder uses the SearchQuery to filter the data."
 @enduml
 ```
 
-**Documentation:**
-
-The `ISortQuery` interface defines a method `OrderBy` that returns a dictionary of sorting options for a search query. The sorting options are used to sort the search results based on various criteria.
-
-**ISortBuilder.cs**
-
-```plantuml
-@startuml
-interface ISortBuilder<TModel> {
-  - SortBy(IQueryable<TModel>, ISortQuery, IExpressionTreeBuilder<TModel>, StringComparison): IOrderedQueryable<TModel>
-}
-@enduml
-```
-
-**Documentation:**
-
-The `ISortBuilder<TModel>` interface defines a method `SortBy` that sorts a specified query based on the provided sort criteria. The `SortBy` method returns an `IOrderedQueryable<TModel>` object.
-
-**SearchQuery.cs**
-
-```plantuml
-@startuml
-class SearchQuery {
-  - CurrentPage: int
-  - PageSize: int
-  - ExcludePageCount: bool
-  - SearchTerm: string?
-  - Filter: Dictionary<string, FilterParameter>
-  - OrderBy: Dictionary<string, OrderDirections>
-  - ToString(): string
-}
-@enduml
-```
-
-**Documentation:**
-
-The `SearchQuery` class is a record that encapsulates a search query with filtering, sorting, and page options. It has properties for the current page number, page size, and exclude page count, as well as a search term and filter parameters. The `ToString` method provides a string representation of the search query.
+This sequence diagram shows how the QueryBuilder uses the SearchQuery to filter data. The QueryBuilder retrieves data from a sample query, gets the search query, executes the query, and retrieves the filtered data.
