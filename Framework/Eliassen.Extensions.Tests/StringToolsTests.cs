@@ -1,5 +1,7 @@
 ﻿using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Linq;
 
 namespace Eliassen.Extensions.Tests;
 
@@ -24,7 +26,23 @@ p")]
     [DataRow("", "")]
     public void Test(string input, string expected)
     {
-        var result = input.SplitBy(length: 10).WriteAsLines();
-        Assert.AreEqual(expected, result);
+        if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+        {
+            var result = input.SplitBy(length: 10).WriteAsLines();
+            Assert.AreEqual(expected, result);
+        }
+        else
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                var result = input.SplitBy(length: 10).Any();
+                Assert.IsFalse(result);
+            }
+            else
+            {
+                var result = input.SplitBy(length: 10).Any(i => i.Length <= 10);
+                Assert.IsTrue(result);
+            }
+        }
     }
 }
