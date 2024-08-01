@@ -1,34 +1,60 @@
-**CommandParameterAttribute Class Documentation**
+# Documentation for Eliassen.System.Configuration
 
-**Namespace:** Eliassen.System.Configuration
+## CommandParameterAttribute
 
-**Class:** CommandParameterAttribute
+### Overview
 
-**Purpose:** Specifies that a property represents a command parameter.
+The `CommandParameterAttribute` is an attribute used to specify that a property represents a command parameter.
 
-**Attributes:**
-
-* `[AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]`
-
-**Methods:**
-
-* `public string? Short { get; set; }`: Gets or sets the short representation of the command parameter.
-* `public string? Value { get; set; }`: Gets or sets the value of the command parameter.
-* `public override object TypeId => this;`: Gets a unique identifier for this attribute.
-
-**PlantUML Class Diagram:**
+### Class Diagram
 ```plantuml
 @startuml
 class CommandParameterAttribute {
-  -short: string?
-  -value: string?
-  +TypeId: object
+  - short: string?
+  - value: string?
+  - type: object
 }
-
-CommandParameterAttribute --* Property
-
 @enduml
 ```
-This class represents a custom attribute that can be applied to properties to specify that they represent command parameters. The attribute has three properties: `Short` for the short representation of the command parameter, `Value` for the value of the command parameter, and `TypeId` for getting a unique identifier for the attribute. The attribute is designed to be used with properties, and it inherits from the `Attribute` class.
+### Description
 
-Note: The `Property` class is not defined in the provided code, but it is assumed to be a class that represents a property.
+The `CommandParameterAttribute` is an attribute that can be applied to a property in a class. It indicates that the property represents a command parameter.
+
+### Properties
+
+#### Short
+
+* Type: `string?`
+* Gets or sets the short representation of the command parameter.
+
+#### Value
+
+* Type: `string?`
+* Gets or sets the value of the command parameter.
+
+#### TypeId
+
+* Type: `object`
+* Gets a unique identifier for this attribute.
+
+### Example
+```csharp
+public class MyCommand {
+  [CommandParameter]
+  public string MyParameter { get; set; }
+}
+```
+### Sequence Diagram
+```plantuml
+@startuml
+actor User
+participant CommandExecutor
+participant MyCommand
+
+User ->> CommandExecutor: execute
+CommandExecutor ->> MyCommand: getMyParameter
+MyCommand ->> CommandExecutor: MyParameter
+CommandExecutor ->> User: result
+@enduml
+```
+This sequence diagram illustrates the interaction between the user, the command executor, and the `MyCommand` class. The `CommandParameterAttribute` is used to specify that the `MyParameter` property represents a command parameter.

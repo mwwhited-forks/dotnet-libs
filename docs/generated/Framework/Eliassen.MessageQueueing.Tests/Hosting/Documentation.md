@@ -1,79 +1,130 @@
-**MessageReceiverHostTests Documentation**
+# Message Receiver Host Tests
 
-**Class Diagram**
+## Overview
+
+The `MessageReceiverHostTests` class contains unit tests for the `MessageReceiverHost` class, which is responsible for hosting message receivers and managing their lifecycle.
+
+## Class Diagram
 
 ```plantuml
 @startuml
-class MessageReceiverHostTests {
-  -testContext: TestContext
-  -StartStopTest: void
-}
-
-class TestContext {
-  +WriteLine: void
-}
-
-class CancellationTokenSource {
-  +CancelAsync: Task
-}
-
-class CancellationTokenSourceBlocker {
-  +CancelAsync: Task
-}
-
-class MockRepository {
-  +Create: IMessageType
-  +Create: IMessageType
-}
-
-class IMessageReceiverProviderFactory {
-  +Create: IMessageReceiverProvider
+class MessageReceiverHost {
+  -TestLogger: Logger
+  -MessageReceiverProviderFactory: IMessageReceiverProviderFactory
+  + StartAsync(CancellationToken)
+  + StopAsync(CancellationToken)
 }
 
 class IMessageReceiverProvider {
-  +RunAsync: Task
+  - CancellationToken: CancellationToken
+  + RunAsync(CancellationToken)
 }
 
-class MessageReceiverHost {
-  +StartAsync: Task
-  +StopAsync: Task
-  +TestLogger: TestLogger<MessageReceiverHost>
-}
-
-class TestLogger {
-  +CreateLogger: Logger<MessageReceiverHost>
+class IMessageReceiverProviderFactory {
+  + Create(): IMessageReceiverProvider
 }
 
 @enduml
 ```
 
-**Class Description**
+## Component Model
 
-The `MessageReceiverHostTests` class is a unit test class that tests the `MessageReceiverHost` class. It contains a single test method `StartStopTest` that tests the start and stop functionality of the `MessageReceiverHost`.
+```plantuml
+@startuml
+component MessageReceiverHost {
+  database TestLogger[*]
+  database IMessageReceiverProvider[*]
+  database IMessageReceiverProviderFactory[*]
+}
+@enduml
+```
 
-The `MessageReceiverHost` class is the class under test, which manages the start and stop of message receivers. It has a `StartAsync` method that starts the message receivers, and a `StopAsync` method that stops them.
+## Sequence Diagram
 
-The `IMessageReceiverProviderFactory` interface is responsible for creating instances of `IMessageReceiverProvider`. The `IMessageReceiverProvider` interface defines the `RunAsync` method that runs the message receiver.
+```plantuml
+@startuml
+sequenceDiagram
+actor User as "User"
+participant MessageReceiverHost as "Host"
+participant TestLogger as "Logger"
+participant IMessageReceiverProviderFactory as "Factory"
+participant IMessageReceiverProvider as "Receiver"
 
-The `CancellationTokenSource` class is used to cancel the message receiver after a certain interval.
+User->>Host: StartAsync(cancellationTokenSource.Token)
+Host->>Factory: Create()
+Factory->>Receiver: Return
+Host->>Receiver: RunAsync(cancellationTokenSource.Token)
+Receiver->>Host: RanChild!
+Receiver->>Logger: Log message
+Receiver->>User: Spin! { spinCount++ }
+User->>Host: StopAsync(cancellationTokenSource.Token)
+Host->>Receiver: Stop()
+@enduml
+```
 
-The `TestContext` class is used to write log messages during the test execution.
+## Code
 
-**Method Description**
+```csharp
+using Eliassen.MessageQueueing.Hosting;
+using Eliassen.MessageQueueing.Services;
+using Eliassen.TestUtilities;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using System.Threading;
+using System.Threading.Tasks;
 
-The `StartStopTest` method tests the start and stop functionality of the `MessageReceiverHost` class.
+namespace Eliassen.MessageQueueing.Tests.Hosting
+{
+    [TestClass]
+    public class MessageReceiverHostTests
+    {
+        public required TestContext TestContext { get; set; }
 
-1. It creates a `CancellationTokenSource` and a `CancellationTokenSourceBlocker` to cancel the message receiver after a certain interval.
-2. It creates a `MockRepository` to create instances of `IMessageReceiverProvider` and `IMessageReceiverProviderFactory`.
-3. It creates a `MessageReceiverHost` instance and sets up the `IMessageReceiverProviderFactory` and `IMessageReceiverProvider` mocks.
-4. It starts the message receiver using the `StartAsync` method.
-5. It waits for the message receiver to run using a loop that checks for cancellation.
-6. It stops the message receiver using the `StopAsync` method.
-7. It verifies that all mock expectations were met.
+        [TestMethod]
+        [TestCategory(TestCategories.Unit)]
+        public async Task StartStopTest()
+        {
+            // Arrange
+            var cancellationTokenSourceBlocker = new CancellationTokenSource();
+            var cancellationTokenSource = new CancellationTokenSource();
 
-**Notes**
+            var mockRepo = new MockRepository(MockBehavior.Strict);
+            var mockReceiverProviderFactory = mockRepo.Create<IMessageReceiverProviderFactory>();
+            var mockReceiverProvider = mockRepo.Create<IMessageReceiverProvider>();
 
-* The test uses the `TestContext` class to write log messages during the test execution.
-* The test uses the `CancellationTokenSource` class to cancel the message receiver after a certain interval.
-* The test uses the `MockRepository` class to create instances of `IMessageReceiverProvider` and `IMessageReceiverProviderFactory`.
-* The test verifies that all mock expectations were met using the `VerifyAll` method.
+            mockReceiverProvider
+                .Setup(s => s.RunAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask)
+                .Callback(async () =>
+                {
+                    TestContext.WriteLine("Ran Child!");
+                    await cancellationTokenSourceBlocker.CancelAsync();
+                    await Task.Delay(100);
+                });
+            mockReceiverProviderFactory
+                .Setup(s => s.Create())
+                .Returns(mockReceiverProvider.Object);
+
+            // Act
+            using (var host = new MessageReceiverHost(
+                TestLogger.CreateLogger<MessageReceiverHost>(),
+                mockReceiverProviderFactory.Object
+              ))
+            {
+                await host.StartAsync(cancellationTokenSource.Token);
+
+                var spinCount = 0;
+                while (!cancellationTokenSourceBlocker.IsCancellationRequested)
+                {
+                    TestContext.WriteLine($"Spin! : {spinCount++}");
+                    await Task.Yield();
+                }
+                await host.StopAsync(cancellationTokenSource.Token);
+            }
+
+            // Assert
+            mockRepo.VerifyAll();
+        }
+    }
+}
+```

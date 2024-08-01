@@ -1,76 +1,80 @@
-Here is the documentation for the provided source code files:
+Here is the documentation for the source code in Markdown format, with class diagrams, component models, and sequence diagrams in PlantUML:
 
 **SerializerSelectorTest.cs**
 
-This file contains a unit test class called `SerializerSelectorTest` that tests the `SerializerSelector` class.
+### Introduction
 
-**Class Diagram:**
+This is a unit test for the `SerializerSelector` class in Eliassen.System.Text. The class is responsible for selecting a serializer to use for serialization and deserialization operations.
 
-Here is the class diagram for the `SerializerSelectorTest` class using PlantUML:
+### Class Diagram
+
 ```plantuml
 @startuml
-class Serializer {
-  - serializerType: SerializerTypes
+class SerializerSelector {
+    - name: String
+    - serializers: Dictionary<String, Type>
+    - serializer: ISerializer
+
+    + selectSerializer(type: String)
+    + getSerializer(type: String)
 }
 
 class ISerializer {
-  + serialize(SomeType): string
+    + serialize(object: Object)
+    + deserialize(string: String)
 }
 
-class DefaultJsonSerializer {
-  + serialize(SomeType): string
-}
-
-class DefaultBsonSerializer {
-  + serialize(SomeType): string
-}
-
-class DefaultXmlSerializer {
-  + serialize(SomeType): string
-}
-
-class Provider {
-  + GetService(Type): object
-}
-
-class ServiceCollection {
-  + AddTransient(IConfiguration): void
-  + TryAddSystemExtensions(IConfiguration, object): void
-  + BuildServiceProvider(): ServiceProvider
-}
-
-class ServiceProvider {
-  + GetRequiredService(Type): object
-  + GetRequiredKeyedService(Type, object): object
-}
-
-class ConfigurationBuilder {
-  + Build(): IConfiguration
-}
-
-class IConfiguration {
-  + readonly ConfigurationRoot: ConfigurationRoot
-}
-
-class ConfigurationRoot {
-  + Data: Dictionary<string, object>
-}
-
-class SerializerSelectorTest {
-  - TestContext: TestContext
-  
-  + DefaultSerializerTest(SerializerTypes, Type): void
-  + KeyedSerializerTest(object, Type): void
-}
-
+SerializerSelector --|> ISerializer
 @enduml
 ```
-**Description:**
 
-The `SerializerSelectorTest` class contains two test methods: `DefaultSerializerTest` and `KeyedSerializerTest`. These tests verify that the `SerializerSelector` class can correctly select the appropriate serializer based on the `SerializerTypes` enum and a string key.
+### Component Model
 
-In the `DefaultSerializerTest`, the test method tests that the serializer is correctly selected when a `SerializerTypes` enum value is provided. In the `KeyedSerializerTest`, the test method tests that the serializer is correctly selected when a string key is provided.
+```plantuml
+@startuml
+component SerializerSelectorTest {
+  heart SerializerSelector
+  heart ISerializer
+  use ConfigurationBuilder
+  use ServiceCollection
+  use IComparer<String>
+  use Dictionary<String, Type>
+}
 
-The tests use the `Microsoft.Extensions.DependencyInjection` namespace to create a service collection and build a provider. They then use the provider to resolve an instance of the `ISerializer` interface, which is implemented by the `DefaultJsonSerializer`, `DefaultBsonSerializer`, and `DefaultXmlSerializer` classes.
+ SerializerSelectorTest --|> SerializerSelector
+SerializerSelectorTest --|> ISerializer
+@enduml
+```
 
-**Note:** The `SerializerTypes` enum and the `ISerializer` interface are not shown in the class diagram, as they are not part of the provided source code.
+### Sequence Diagram
+
+```plantuml
+@startuml
+sequenceDiagram
+ participant SerializerSelectorTest as ts
+ participant ConfigurationBuilder as cb
+ participant ServiceCollection as sc
+ participant IComparer as ic
+ participant Dictionary as dic
+
+ ts->>cb: Create configuration builder
+ cb->>sc: Add transient configuration
+ sc->>ts: Build service provider
+ ts->>sc: Get required service
+ sc->>ts: Get serializer
+ ts->>sc: Get keyed service
+ sc->>ts: Get serializer by key
+@enduml
+```
+
+### Code Description
+
+The `SerializerSelectorTest` class contains two test methods: `DefaultSerializerTest` and `KeyedSerializerTest`. These tests verify that the `SerializerSelector` class correctly selects a serializer based on its type (e.g., JSON, BSON, XML) and a custom key.
+
+In `DefaultSerializerTest`, the test sets up a configuration and a service provider, and then uses the `TryAddSystemExtensions` method to add serializer extensions to the provider. It then gets an instance of the `ISerializer` interface from the provider and verifies that it is of the expected type based on the default serializer type.
+
+In `KeyedSerializerTest`, the test sets up a configuration and a service provider, and then uses the `TryAddSystemExtensions` method to add serializer extensions to the provider. It then gets an instance of the `ISerializer` interface from the provider using the `GetRequiredKeyedService` method and verifies that it is of the expected type based on the custom key.
+
+### Notes
+
+The `SerializerSelector` class uses a dictionary to store serializer types, where the key is a string (e.g., "JSON") and the value is a type (e.g., `DefaultJsonSerializer`). The class uses this dictionary to select a serializer based on the provided type or key. The `ISerializer` interface defines methods for serialization and deserialization operations.

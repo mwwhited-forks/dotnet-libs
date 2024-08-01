@@ -1,31 +1,39 @@
-Here is the documentation for the `TestTarget.cs` file, including a class diagram in PlantUML:
+**TestTarget.cs Documentation**
 
-**Class Documentation:**
+### Description
 
-**TestTarget Class**
+The `TestTarget` class is a simple test class used to demonstrate LINQ expression testing. It has two properties: `Nullable` and `NotNullable`, both of which are of type `DateTime` with a nullable and non-nullable aspect, respectively.
 
-Namespace: Eliassen.System.Tests.Linq.Expressions.TestTargets
+### Class Diagram
 
-Summary:
-The `TestTarget` class is a test target class used for testing LINQ expressions.
-
-Properties:
-
-* **Nullable**: A nullable `DateTime` property that can be null.
-* **NotNullable**: A non-nullable `DateTime` property that must always have a value.
-
-**Class Diagram (PlantUML):**
 ```plantuml
 @startuml
 class TestTarget {
-  - Nullable: DateTime?
-  - NotNullable: DateTime
+  -Nullable DateTime?
+  -NotNullable DateTime
 }
 @enduml
 ```
 
-**Diagram Explanation:**
+### Component Model
 
-The class diagram shows the `TestTarget` class with two properties: `Nullable` and `NotNullable`. The `Nullable` property is a nullable `DateTime` property, represented by a question mark (`?`) in the type notation. The `NotNullable` property is a non-nullable `DateTime` property, represented by the absence of a question mark.
+There is no component model for this class, as it is a simple test class and does not interact with any other components or systems.
 
-This diagram provides a simple and concise representation of the `TestTarget` class structure, making it easier to understand the relationships and properties of the class.
+### Sequence Diagram
+
+```plantuml
+@startuml
+participant TestTarget as tt
+note "Call to TestTarget's property or method" as note
+sequenceDiagram
+    participant tt->>note: Get or set Nullable or NotNullable
+    note->>tt: Returns or sets the value
+    alt Nullable
+        note->>tt: Returns DateTime?
+    else
+        note->>tt: Returns DateTime
+    end
+@enduml
+```
+
+This sequence diagram outlines the interaction with the `TestTarget` class, showing how a caller can get or set the `Nullable` or `.NotNullabl`e properties. The diagram also highlights the fact that the `Nullable` property returns a `DateTime?` (a nullable DateTime), while the `NotNullable` property returns a non-nullable `DateTime`.

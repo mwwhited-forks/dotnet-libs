@@ -1,45 +1,62 @@
-Here is the documentation for the `IXmlSerializer.cs` file:
+# Eliassen.System.Text.Xml.Serialization Documentation
 
-**Class Diagram:**
+## Introduction
+
+The `Eliassen.System.Text.Xml.Serialization` namespace provides a set of classes and interfaces for XML serialization. This documentation covers the `IXmlSerializer` interface and its implementation.
+
+## Interface: `IXmlSerializer`
+
+### Purpose
+
+The `IXmlSerializer` interface is used to identify a shared XML serialization process.
+
+### Methods
+
+None
+
+### Properties
+
+None
+
+### Notes
+
+The `IXmlSerializer` interface inherits from the `ISerializer` interface.
+
+### Class Diagram
 
 ```plantuml
 @startuml
-class IXmlSerializer implements ISerializer {
-  - int operationId
+interface IXmlSerializer {
+  -ISerializer
 }
+interface ISerializer
 @enduml
 ```
 
-**Documentation:**
+### Component Model
 
-**Namespace:** Eliassen.System.Text.Xml.Serialization
+The `IXmlSerializer` interface is a small, thin layer on top of the `ISerializer` interface.
 
-**Interface:** IXmlSerializer
+### Sequence Diagram
 
-**Summary:** Interface to identify shared XML serialization process.
+No sequence diagrams are available for this interface, as it does not have any methods.
 
-**Description:** This interface defines a shared XML serialization process, providing a common interface for applications to interact with. It implements the ISerializer interface.
+## Next Steps
 
-**Properties and Methods:**
+To implement the `IXmlSerializer` interface, you will need to create a class that inherits from it. This class can then be used to serialize and deserialize XML data.
 
-* None (empty interface)
+Note: This documentation is a work in progress and will be updated as more information becomes available.
 
-**Interface Hierarchy:**
+## File: `IXmlSerializer.cs`
 
-* Implements: ISerializer
+```csharp
+using System;
+using Eliassen.System.Text.Xml.Serialization;
 
-**Notes:**
-
-* This interface serves as a base for other interfaces that require XML serialization capabilities.
-* Implementing classes must provide a way to serialize and deserialize XML data.
-
-**Version History:**
-
-* 1.0: Initial release
-
-**Copyright and License:**
-
-* Copyright (c) [Year] [Company/Author]
-* Licensed under [License name]
-
-Please note that since this is an empty interface, there are no specific details to document, but the class diagram provides a visual representation of the interface's relationship with the ISerializer interface.
+namespace Eliassen.System.Text.Xml.Serialization
+{
+    public interface IXmlSerializer : ISerializer
+    {
+    }
+}
+```

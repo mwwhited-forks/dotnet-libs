@@ -1,166 +1,118 @@
-Here is the documentation for the given source code files, including class diagrams in PlantUML.
+## Message Queueing Service
 
-**IMessageContext.cs**
+### Overview
 
-This interface represents the context of a message being processed in a message queue.
+The Eliassen Message Queueing Service is a .NET Core library that provides a mechanism for handling queue messages. It supports multiple message channels (e.g., RabbitMQ, Azure Service Bus) and provides a range of features for message processing, such as message routing, error handling, and configuration.
+
+### Interfaces
+
+#### IMessageContext
+
+Represents the context of a message being processed in a message queue.
+
+* `OriginMessageId`: Gets the origin message identifier.
+* `CorrelationId`: Gets or sets the correlation identifier.
+* `RequestId`: Gets the request identifier.
+* `SentId`: Gets or sets the sent identifier.
+* `ChannelType`: Gets the type of the channel.
+* `MessageType`: Gets the type of the message.
+* `SentAt`: Gets the timestamp when the message was sent.
+* `SentBy`: Gets the entity that sent the message.
+* `SentFrom`: Gets the entity from which the message was sent.
+* `Headers`: Gets the collection of headers associated with the message.
+* `Config`: Gets the configuration section associated with the message context.
+
+#### IMessageContextFactory
+
+Factory for creating instances of `IMessageContext`.
+
+* `Create`: Creates a new instance of `IMessageContext` with the specified parameters.
+* `Create` (overloaded): Creates a new instance of `IMessageContext` for the given channel and message.
+
+#### IMessageHandlerProvider
+
+Provides a mechanism for handling queue messages.
+
+* `HandleAsync`: Handles the specified queue message with the given message identifier.
+* `Config`: Gets the configuration section associated with the message handler provider.
+
+#### IMessageHandlerProviderWrapped
+
+Internal interface for wrapping `IMessageHandlerProvider`.
+
+* `SetHandlers`: Sets the collection of message queue handlers for the provider.
+* `SetChannelType`: Sets the type of the message channel for the provider.
+* `SetConfig`: Sets the configuration section for the provider.
+
+#### IMessagePropertyResolver
+
+Resolves properties related to message handling.
+
+* `ProviderSafe`: Retrieves provider information for the specified message channel and message types.
+* `Provider`: Retrieves the provider key for the specified message channel and message types.
+* `MessageId`: Retrieves the message ID for the specified message channel, message type, and optional original message ID.
+* `GenerateId`: Generates a unique ID for the specified message channel and message types.
+* `ConfigurationSafe`: Retrieves configuration information for the specified message channel and message types.
+* `Configuration`: Retrieves the configuration section for the specified message channel and message types.
+
+### Class Diagram
 
 ```plantuml
 @startuml
 interface IMessageContext {
-  + string? OriginMessageId { get; }
-  + string? CorrelationId { get; set; }
-  + string? RequestId { get; }
-  + string? SentId { get; }
-  + string? ChannelType { get; }
-  + string? MessageType { get; }
-  + DateTimeOffset? SentAt { get; }
-  + string? SentBy { get; }
-  + string? SentFrom { get; }
-  + object? this[string key] { get; set; }
-  + Dictionary<string, object?> Headers { get; }
-  + IConfigurationSection Config { get; }
+  - originMessageId: string
+  - correlationId: string
+  - requestId: string
+  - sentId: string
+  - channelType: string
+  - messageType: string
+  - sentAt: DateTimeOffset
+  - sentBy: string
+  - sentFrom: string
+  - headers: Dictionary<string,object?>
+  - config: IConfigurationSection
 }
-@enduml
-```
-
-**IMessageContextFactory.cs**
-
-This interface provides a factory for creating instances of `IMessageContext`.
-
-```plantuml
-@startuml
 interface IMessageContextFactory {
-  + IMessageContext Create(Type channelType, Type messageType, string? originMessageId, string correlationId, string requestId, IConfigurationSection configuration, MethodBase? caller = default, int callerLine = default, string? callerFile = default);
-  + IMessageContext Create(Type channelType, IQueueMessage message, IConfigurationSection configuration);
+  + create(channelType: Type, messageType: Type, originMessageId: string, correlationId: string, requestId: string, config: IConfigurationSection): IMessageContext
+  + create(channelType: Type, message: IQueueMessage, config: IConfigurationSection): IMessageContext
 }
-@enduml
-```
-
-**IMessageHandlerProvider.cs**
-
-This interface provides a mechanism for handling queue messages.
-
-```plantuml
-@startuml
 interface IMessageHandlerProvider {
-  + Task HandleAsync(IQueueMessage message, string messageId);
-  + IConfigurationSection Config { get; }
+  + handleAsync(message: IQueueMessage, messageId: string): Task
+  + config: IConfigurationSection
 }
-@enduml
-```
-
-**IMessageHandlerProviderWrapped.cs**
-
-This interface provides internal extensions for mechanism for handling queue messages.
-
-```plantuml
-@startuml
 interface IMessageHandlerProviderWrapped {
-  + IMessageHandlerProviderWrapped SetHandlers(IEnumerable<IMessageQueueHandler> handlers);
-  + IMessageHandlerProviderWrapped SetChannelType(Type channelType);
-  + IMessageHandlerProviderWrapped SetConfig(IConfigurationSection config);
+  + setHandlers(handlers: IEnumerable<IMessageQueueHandler>)
+  + setChannelType(channelType: Type)
+  + setConfig(config: IConfigurationSection)
 }
-@enduml
-```
-
-**IMessagePropertyResolver.cs**
-
-This interface resolves properties related to message handling, such as provider, message ID, and configuration.
-
-```plantuml
-@startuml
 interface IMessagePropertyResolver {
-  + (string? providerKey, string simpleTargetName, string simpleMessageName, string? configPath) ProviderSafe(Type channelType, Type messageType);
-  + string Provider(Type channelType, Type messageType);
-  + string MessageId(Type channelType, Type messageType, string? messageId);
-  + string GenerateId(Type channelType, Type messageType);
-  + (IConfigurationSection? configurationSection, string simpleTargetName, string simpleMessageName, string? configPath) ConfigurationSafe(Type channelType, Type messageType);
-  + IConfigurationSection Configuration(Type channelType, Type messageType);
+  + providerSafe(channelType: Type, messageType: Type): (string, string, string, string?)
+  + provider(channelType: Type, messageType: Type): string
+  + messageId(channelType: Type, messageType: Type, messageId: string?): string
+  + generateId(channelType: Type, messageType: Type): string
+  + configurationSafe(channelType: Type, messageType: Type): (IConfigurationSection, string, string, string?)
+  + configuration(channelType: Type, messageType: Type): IConfigurationSection
 }
 @enduml
 ```
 
-**IMessageReceiverProvider.cs**
-
-This interface provides functionality for receiving messages from a message queue.
+### Sequence Diagram
 
 ```plantuml
 @startuml
-interface IMessageReceiverProvider {
-  + IMessageReceiverProvider SetHandlerProvider(IMessageHandlerProvider handlerProvider);
-  + Task RunAsync(CancellationToken cancellationToken = default);
-}
-@enduml
-```
+sequenceDiagram
+    participant IMQueueingService as "IMQueueingService"
+    participant IMessageContextFactory as "IMessageContextFactory"
+    participant IMessageHandlerContext as "IMessageHandlerContext"
+    participant IMessageQueueHandler as "IMessageQueueHandler"
 
-**IMessageReceiverProviderFactory.cs**
-
-This interface provides a factory for creating instances of `IMessageReceiverProvider`.
-
-```plantuml
-@startuml
-interface IMessageReceiverProviderFactory {
-  + IEnumerable<IMessageReceiverProvider> Create();
-}
-@enduml
-```
-
-**IMessageSenderProvider.cs**
-
-This interface represents a provider for sending messages to a message queue.
-
-```plantuml
-@startuml
-interface IMessageSenderProvider {
-  + Task<string?> SendAsync(object message, IMessageContext context);
-}
-@enduml
-```
-
-**IMessageSenderProviderFactory.cs**
-
-This interface provides a factory for creating instances of `IMessageSenderProvider`.
-
-```plantuml
-@startuml
-interface IMessageSenderProviderFactory {
-  + IMessageSenderProvider Sender(Type channelType, Type messageType);
-}
-@enduml
-```
-
-**IQueueMessage.cs**
-
-This interface represents a message within a message queue.
-
-```plantuml
-@startuml
-interface IQueueMessage {
-  + string ContentType { get; }
-  + string? CorrelationId { get; }
-  + object Payload { get; }
-  + string? PayloadType { get; }
-  + Dictionary<string, object?> Properties { get; }
-}
-@enduml
-```
-
-**WrappedQueueMessage.cs**
-
-This class represents a wrapped queue message.
-
-```plantuml
-@startuml
-class WrappedQueueMessage implements IQueueMessage {
-  - string _contentType
-  - string _correlationId
-  - object _payload
-  - string _payloadType
-  - Dictionary<string, object?> _properties
-  
-  + WrappedQueueMessage {ContentType = _contentType, CorrelationId = _correlationId, Payload = _payload, PayloadType = _payloadType, Properties = _properties}
-}
-@enduml
-```
-
-Please note that this documentation is generated based on the
+    note "Create message context"
+    IMQueueingService->>IMessageContextFactory: Create message context
+    IMMessageContextFactory->>IMessageHandlerContext: Create
+    note "Create message handler"
+    IMMessageHandlerContext->>IMMessageQueueHandler: Create
+    note "Handle message"
+    IMMessageQueueHandler->>IMMessageHandlerContext: Handle
+    IMMessageHandlerContext->>IMQueueingService: Handle
+    note "Dispose message handler"
+    IMMessageHandlerContext

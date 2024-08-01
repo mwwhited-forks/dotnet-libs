@@ -1,6 +1,8 @@
-Here is the documentation for the provided source code files, including class diagrams in PlantUML:
+Here is the documentation for the source code in Markdown format:
 
-**IBsonSerializer.cs**
+# Eliassen.System.Text.Json.Serialization
+
+### IBsonSerializer.cs
 
 ```csharp
 namespace Eliassen.System.Text.Json.Serialization;
@@ -13,20 +15,7 @@ public interface IBsonSerializer : ISerializer
 }
 ```
 
-* Interface: `IBsonSerializer`
-* Summary: Identifies the shared BSON serialization process
-* Is-a relationship: `ISerializer`
-
-PlantUML class diagram:
-```plantuml
-@startuml
-interface "IBsonSerializer" {
-  -"ISerializer" aserializer
-}
-@enduml
-```
-
-**IJsonSerializer.cs**
+### IJsonSerializer.cs
 
 ```csharp
 namespace Eliassen.System.Text.Json.Serialization;
@@ -45,22 +34,7 @@ public interface IJsonSerializer : ISerializer
 }
 ```
 
-* Interface: `IJsonSerializer`
-* Summary: Represents the shared JSON serialization process
-* Methods: `AsPropertyName` (converts property name)
-* Is-a relationship: `ISerializer`
-
-PlantUML class diagram:
-```plantuml
-@startuml
-interface "IJsonSerializer" {
-  +string AsPropertyName(string propertyName)
-  -"ISerializer" aserializer
-}
-@enduml
-```
-
-**JsonStringEnumConverterEx.cs**
+### JsonStringEnumConverterEx.cs
 
 ```csharp
 using Eliassen.System.Reflection;
@@ -76,26 +50,106 @@ namespace Eliassen.System.Text.Json.Serialization;
 /// <typeparam name="TEnum">The enum type to convert.</typeparam>
 public class JsonStringEnumConverterEx<TEnum> : JsonConverter<TEnum> where TEnum : struct, Enum
 {
-    // ...
+    /// <summary>
+    /// Reads the JSON representation of the enum value and converts it to the specified enum type.
+    /// </summary>
+    /// <param name="reader">The JSON reader.</param>
+    /// <param name="typeToConvert">The type of the object to convert.</param>
+    /// <param name="options">The serializer options.</param>
+    /// <returns>The deserialized enum value.</returns>
+    public override TEnum Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        var type = reader.TokenType;
+        if (type == JsonTokenType.String)
+        {
+            var value = reader.GetString();
+            var enumValue = value.ToEnum<TEnum>();
+            return enumValue ?? default;
+        }
+        else if (type == JsonTokenType.Number)
+        {
+            var value = reader.GetInt32();
+            var enumValue = value.ToEnum<TEnum>();
+            return enumValue;
+        }
+
+        return default;
+    }
+
+    /// <summary>
+    /// Writes the JSON representation of the enum value.
+    /// </summary>
+    /// <param name="writer">The JSON writer.</param>
+    /// <param name="value">The enum value to serialize.</param>
+    /// <param name="options">The serializer options.</param>
+    public override void Write(Utf8JsonWriter writer, TEnum value, JsonSerializerOptions options) => writer.WriteStringValue(EnumExtensions.AsString<TEnum>(value));
 }
 ```
 
-* Class: `JsonStringEnumConverterEx<TEnum>` (custom JSON converter for enums)
-* Type parameters: `TEnum` (enum type to convert)
-* Summary: Serializes and deserializes enums as strings or numbers
-* Inheritance: `JsonConverter<TEnum>`
-* Is-a relationship: `JsonConverter<TEnum>`
+### UML Diagrams
 
-PlantUML class diagram:
 ```plantuml
 @startuml
-class "JsonStringEnumConverterEx" {
-  -"<TEnum> enumType"
-  +TEnum Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-  +void Write(Utf8JsonWriter writer, TEnum value, JsonSerializerOptions options)
-  <.. JsonConverter<TEnum>
+interface ISerializer {
+  - serialize(object value)
+  - deserialize(string json, Type type)
 }
+
+interface IBsonSerializer extends ISerializer {
+}
+
+interface IJsonSerializer extends ISerializer {
+  + AsPropertyName(string propertyName)
+}
+
+class JsonStringEnumConverterEx<TEnum> {
+  + Read(Utf8JsonReader reader, Type type, JsonSerializerOptions options) returns TEnum
+  + Write(Utf8JsonWriter writer, TEnum value, JsonSerializerOptions options)
+}
+
+TEnum ->+ JsonStringEnumConverterEx<TEnum>
+IBsonSerializer --extends-- ISerializer
+IJsonSerializer --extends-- ISerializer
+@JsonStringEnumConverterEx<TEnum> --implements-- JsonConverter<TEnum>
 @enduml
 ```
 
-Note: The PlantUML diagrams are displayed in a simplified format to illustrate the relationships between classes and interfaces. For a more detailed representation, please refer to the original PlantUML code.
+This class diagram shows the relationships between the interfaces and classes in the Eliassen.System.Text.Json.Serialization namespace.
+
+```plantuml
+@startuml
+component "Eliassen.System.Text.Json.Serialization" as serializer {
+  interface ISerializer
+  interface IBsonSerializer
+  interface IJsonSerializer
+  class JsonStringEnumConverterEx<TEnum>
+}
+
+component "User Code" as user {
+  .. ISerializer
+  .. IBsonSerializer
+  .. IJsonSerializer
+}
+
+serializer ->> user: uses
+@enduml
+```
+
+This component diagram shows the components and their relationships. The "Eliassen.System.Text.Json.Serialization" component is the layer of code that provides the serialization and deserialization functionality, while the "User Code" component is the user's code that uses this functionality.
+
+```plantuml
+@startuml
+ participant "Serializer" as serializer
+ participant "Reader" as reader
+ participant "Writer" as writer
+ participant "Options" as options
+
+ serializer ->> reader: Read
+ reader ->> writer: Write
+ writer ->> options: GetOptions
+ writer <- options: Write
+ options -->> serializer: GetOptions
+@enduml
+```
+
+This sequence diagram shows the interactions between the serializer, reader, writer, and options in the Eliassen.System.Text.Json.Serialization namespace. The serializer uses the reader to read the JSON data, and then

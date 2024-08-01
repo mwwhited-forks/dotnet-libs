@@ -1,46 +1,63 @@
-Here is the documentation for the source code files:
+## Documentation for Eliassen.Documents.Tests.TestTargets
 
-**ContainerTargetClass.cs**
+### Overview
 
-**Class Diagram:**
+This documentation provides an overview of the source code files in the Eliassen.Documents.Tests.TestTargets namespace. The main classes defined in these files are `ContainerTargetClass` and `ContainerTargetClassWithTag`, which represent two different variants of a container target class.
+
+### ContainerTargetClass
+
+#### Class Diagram
 ```plantuml
 @startuml
 class ContainerTargetClass {
+  -name: string
 }
+
 @enduml
 ```
-**Documentation:**
+The `ContainerTargetClass` class is a simple class with no attributes or methods. It is intended to serve as a base class for more complex container target classes.
 
-The `ContainerTargetClass` class is a simple container class that does not have any specific functionality. It is a placeholder object that is used to test other classes or methods.
+### ContainerTargetClassWithTag
 
-**Attributes:** None
-
-**Methods:** None
-
-**ContainerTargetClassWithTag.cs**
-
-**Class Diagram:**
+#### Class Diagram
 ```plantuml
 @startuml
-class ContainerTargetClassWithTag {
-  - ContainerName: string
+class ContainerTargetClassWithTag extends ContainerTargetClass {
+  -BlobContainer: string
+  +[BLOB_CONTAINER] ContainerName: string
 }
-[BlobContainer(ContainerName = "TargetContainer")]
-ContainerTargetClassWithTag
+
 @enduml
 ```
-**Documentation:**
+The `ContainerTargetClassWithTag` class extends the `ContainerTargetClass` and adds a `BlobContainer` attribute, which is annotated with the `[BlobContainer]` attribute. This attribute is used to specify the container name for the blob storage.
 
-The `ContainerTargetClassWithTag` class is a subclass of `ContainerTargetClass` that has a single attribute `ContainerName` and is decorated with a `BlobContainer` attribute.
+#### Component Model
+```plantuml
+@startuml
+component "ContainerTargetClassWithTag" {
+  .. ContainerTargetClassWithTag ..
+  BlobStorageContainer "ContainerName"
+}
 
-**Attributes:**
+@enduml
+```
+The `BlobStorageContainer` is a component that represents the blob storage container. The `ContainerTargetClassWithTag` class is a component that extends the `ContainerTargetClass` and adds a reference to the `BlobStorageContainer`.
 
-* `ContainerName`: a string that represents the name of the container.
+#### Sequence Diagram
+```plantuml
+@startuml
+actor User
+participant "ContainerTargetClassWithTag" as ctt
+note "CreateContainer"
+ctt->>+: BlobStorage: CreateContainer(ContainerName)
 
-**Methods:** None
+note "StoreBlob"
+ctt->>+: BlobStorage: StoreBlob(Blob, ContainerName)
 
-**Notes:**
+@enduml
+```
+The sequence diagram shows the interaction between the `ContainerTargetClassWithTag` class and the `BlobStorage` class. The `CreateContainer` and `StoreBlob` methods are called on the `BlobStorage` class to create a new container and store a blob in the container, respectively.
 
-The `BlobContainer` attribute is used to specify the name of the container that this class is associated with. The `ContainerName` attribute is used to set the name of the container.
+## Conclusion
 
-I hope this meets your requirements! Let me know if you need any further assistance.
+In conclusion, the Eliassen.Documents.Tests.TestTargets namespace contains two classes, `ContainerTargetClass` and `ContainerTargetClassWithTag`, which represent two different variants of a container target class. The `ContainerTargetClassWithTag` class extends the `ContainerTargetClass` and adds a `BlobContainer` attribute, which is used to specify the container name for the blob storage.

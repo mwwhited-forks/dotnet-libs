@@ -1,37 +1,50 @@
-**Eliassen.AspNetCore.JwtAuthentication Package Documentation**
+Here is the documentation for the source code in Markdown format:
+
+**Eliassen.AspNetCore.JwtAuthentication**
+=====================================
 
 **Summary**
-This package provides extension methods for configuring JWT Bearer authentication and SwaggerGen services in ASP.NET Core.
+--------
 
-**Getting Started**
+This assembly contains methods for configuring JWT Bearer authentication for ASP.Net Core and SwaggerGen (OpenAPI3).
 
-To use this package, follow these steps:
+**Getting started**
+-----------------
 
-1. Add a reference to the `Eliassen.AspNetCore.JwtAuthentication` package in your project.
-2. Add the following namespaces to your IOC registation code:
+To use these extensions, first add a reference to the `Eliassen.AspNetCore.JwtAuthentication` package in your project. Then, add the following namespaces to your IOC registration code:
+
 ```csharp
 using Eliassen.AspNetCore.JwtAuthentication;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 ```
-3. Configure your JWT Bearer authentication and SwaggerGen services in your `IServiceCollection` using the extension methods:
+
+Next, configure your JWT Bearer authentication and SwaggerGen services in your `IServiceCollection` using the extension methods:
+
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.TryAddJwtBearerServices(configuration);
 }
 ```
+
 where `configuration` is your `IConfiguration` instance.
 
+These extensions will configure JWT Bearer authentication and add SwaggerGen services for OAuth2 using the configuration sections specified in the `JwtBearerOptions` and `OAuth2SwaggerOptions` classes.
+
 **Configuration**
+----------------
 
 The JWT Bearer authentication configuration is specified in the `JwtBearerOptions` class. The OAuth2SwaggerOptions class specifies the configuration for SwaggerGen services for OAuth2.
 
-The configuration for JWT Bearer authentication is specified in the `jwtBearerConfigurationSection` parameter of the `TryAddJwtBearerAuthentication` method. The configuration for SwaggerGen services for OAuth2 is specified in the `oAuth2SwaggerConfigurationSection` parameter of the `TryAddJwtBearerSwaggerGen` method.
+The configuration for JWT Bearer authentication is specified in the `jwtBearerConfigurationSection` parameter of the TryAddJwtBearerAuthentication method. The configuration for SwaggerGen services for OAuth2 is specified in the `oAuth2SwaggerConfigurationSection` parameter of the TryAddJwtBearerSwaggerGen method.
 
-**Example**
+By default, the `JwtBearerDefaults.AuthenticationScheme` and `OAuth2SwaggerOptions.DefaultScheme` values are used for the default authentication scheme and the default scheme for SwaggerGen services, respectively.
 
-Here is an example of how to use the extension methods to configure JWT Bearer authentication and SwaggerGen services in an ASP.NET Core 8.0 project:
+### Example
+
+Here is an example of how to use the extension methods to configure JWT Bearer authentication and SwaggerGen services in an ASP.NET 8.0 project:
+
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -45,48 +58,77 @@ public void ConfigureServices(IServiceCollection services)
     });
 }
 ```
-This code adds the JWT Bearer authentication and SwaggerGen services to the `IServiceCollection` using the `TryAddJwtBearerServices` method. It also adds a Swagger documentation for an API with version 1.
 
-**Class Diagrams**
+This code adds the JwtBearerAuthentication and SwaggerGen services to the `IServiceCollection` using the TryAddJwtBearerServices method. It also adds a Swagger documentation for an API with a version 1.
 
 ```plantuml
 @startuml
-class JwtExtensionBuilder {
-  - defaultSchema: string
-  - jwtBearerConfigurationSection: string
-  - oAuth2SwaggerConfigurationSection: string
-}
+interface IJwtBearerAuthentication
+- authOptions: JwtBearerOptions
+endinterface
 
-class JwtBearerOptions {
-  - DefaultScheme: string
-  - ConfigurationSection: string
-}
+interface IConfigureOptions<SwaggerUIOptions>
+- options: ConfigureOAuthSwaggerUIOptions
+endinterface
 
-class OAuth2SwaggerOptions {
-  - DefaultScheme: string
-  - ConfigurationSection: string
-}
+interface IConfigureOptions<SwaggerGenOptions>
+- options: ConfigureOAuthSwaggerGenOptions
+endinterface
 
-class ServiceCollectionExtensions {
-  - TryAddJwtBearerServices: IServiceCollection
-  - TryAddJwtBearerAuthentication: IServiceCollection
-  - TryAddJwtBearerSwaggerGen: IServiceCollection
-}
+class SwaggerGenOptions
+    <<interface>>
+endclass
 
-Svc -> JWTBearerOptions: configuration
-Svc -> OAuth2SwaggerOptions: configuration
+class OAuth2SwaggerOptions
+    <<interface>>
+endclass
 
-.JWTBearerOptions ..> .OAuth2SwaggerOptions
+class JwtBearerOptions
+    <<interface>>
+endclass
 
+class SwaggerUIOptions
+    <<interface>>
+endclass
+
+class ConfigureOAuthSwaggerUIOptions
+    <<class>>
+endclass
+
+class ConfigureOAuthSwaggerGenOptions
+    <<class>>
+endclass
+
+class JwtExtensionBuilder
+    <<record>>
+endclass
+
+Eliassen.AspNetCore.JwtAuthentication -> IJwtBearerAuthentication
+Eliassen.AspNetCore.JwtAuthentication -> IConfigureOptions<SwaggerUIOptions>
+Eliassen.AspNetCore.JwtAuthentication -> IConfigureOptions<SwaggerGenOptions>
+IJwtBearerAuthentication -> JwtBearerOptions
+IConfigureOptions<SwaggerUIOptions> -> ConfigureOAuthSwaggerUIOptions
+IConfigureOptions<SwaggerGenOptions> -> ConfigureOAuthSwaggerGenOptions
+SwaggerGenOptions -> OAuth2SwaggerOptions
+JwtBearerOptions -> SwaggerUIOptions
 @enduml
 ```
 
-**Notes**
+```plantuml
+@startuml
+interface IServiceCollection
+- TryAddJwtBearerServices(config: IConfiguration): IServiceCollection
+- TryAddJwtBearerAuthentication(config: IConfiguration, defaultScheme: string, configurationSection: string): IServiceCollection
+- TryAddJwtBearerSwaggerGen(config: IConfiguration, configurationSection: string): IServiceCollection
+endinterface
 
-* The `JwtExtensionBuilder` class is a builder for configuring JWT extensions.
-* The `JwtBearerOptions` class represents the configuration for JWT Bearer authentication.
-* The `OAuth2SwaggerOptions` class represents the configuration for SwaggerGen services for OAuth2.
-* The `ServiceCollectionExtensions` class provides extension methods for configuring JWT Bearer authentication and SwaggerGen services in `IServiceCollection`.
-* The `TryAddJwtBearerServices` method adds JWT Bearer authentication and SwaggerGen services to the `IServiceCollection`.
-* The `TryAddJwtBearerAuthentication` method adds JWT Bearer authentication services to the `IServiceCollection`.
-* The `TryAddJwtBearerSwaggerGen` method adds SwaggerGen services for OAuth2 to the `IServiceCollection`.
+class ServiceCollectionExtensions
+    <<class>>
+endclass
+
+ServiceCollectionExtensions -> IServiceCollection
+IServiceCollection -> TryAddJwtBearerServices
+IServiceCollection -> TryAddJwtBearerAuthentication
+IServiceCollection -> TryAddJwtBearerSwaggerGen
+@enduml
+```

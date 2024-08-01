@@ -1,82 +1,73 @@
-Here is the documentation for the source code files, including class diagrams in PlantUML:
+**Documentation for Eliassen Search**
 
-**SearchResultModel.cs**
-```csharp
-/// <summary>
-/// Represents a search result model containing information about a search result.
-/// </summary>
-public record SearchResultModel
-{
-    /// <summary>
-    /// Gets or initializes the score of the search result.
-    /// </summary>
-    public required float Score { get; init; }
+**Overview**
 
-    /// <summary>
-    /// Gets or initializes the item's id value.
-    /// </summary>
-    public required string ItemId { get; init; }
+The Eliassen Search system is a search engine that allows users to search for various types of data. The system is designed to provide a comprehensive search solution that can handle different types of searches.
 
-    /// <summary>
-    /// Gets or initializes the item's metadata.
-    /// </summary>
-    public Dictionary<string, object>? MetaData { get; init; }
-}
-```
-**Class Diagram:**
-```plantuml
+**Search Result Model**
+
+### Class Diagram
+
+````plantuml
 @startuml
 class SearchResultModel {
-  - score: float
-  - itemId: string
-  - meta_data: Dictionary<string, object>?
+  - score: float (required)
+  - item_id: string (required)
+  - meta_data: Dictionary<string, object> (optional)
 }
+
 @enduml
 ```
-**Description:**
-The `SearchResultModel` class represents a search result model containing information about a search result. It has three properties: `Score`, `ItemId`, and `MetaData`. `Score` is a required float value representing the score of the search result. `ItemId` is a required string value representing the item's ID. `MetaData` is an optional dictionary of key-value pairs representing the item's metadata.
 
-**SearchTypes.cs**
-```csharp
-/// <summary>
-/// Specifies the types of search.
-/// </summary>
-[Flags]
-public enum SearchTypes
-{
-    /// <summary>
-    /// Indicates no specific search type.
-    /// </summary>
-    None,
 
-    /// <summary>
-    /// Indicates a semantic search type.
-    /// </summary>
-    Semantic = 1,
+**Description**
 
-    /// <summary>
-    /// Indicates a lexical search type.
-    /// </summary>
-    Lexical = 2,
+The `SearchResultModel` class represents a search result model containing information about a search result. It has three properties:
 
-    /// <summary>
-    /// Indicates a hybrid search type combining semantic and lexical searches.
-    /// </summary>
-    Hybrid = 3,
-}
-```
-**Class Diagram:**
-```plantuml
+* `Score`: The score of the search result. This property is required.
+* `ItemId`: The item's id value. This property is required.
+* `MetaData`: The item's metadata. This property is optional and can be null.
+
+**SearchTypes**
+
+### Enum Diagram
+
+````plantuml
 @startuml
 enum SearchTypes {
   None
-  Semantic
-  Lexical
-  Hybrid
+  Semantic = 1
+  Lexical = 2
+  Hybrid = 3
 }
 @enduml
 ```
-**Description:**
-The `SearchTypes` enum specifies the types of search. It has four values: `None`, `Semantic`, `Lexical`, and `Hybrid`. `None` indicates no specific search type. `Semantic` represents a semantic search type. `Lexical` represents a lexical search type. `Hybrid` represents a hybrid search type combining semantic and lexical searches.
 
-Note: The class diagrams are generated using PlantUML, a popular plant-UML parsing and rendering tool. The output is in a simple text-based format that can be pasted into any text editor or Markdown file.
+
+**Description**
+
+The `SearchTypes` enum specifies the types of search. It has four values:
+
+* `None`: Indicates no specific search type.
+* `Semantic`: Indicates a semantic search type.
+* `Lexical`: Indicates a lexical search type.
+* `Hybrid`: Indicates a hybrid search type combining semantic and lexical searches.
+
+**Sequence Diagram**
+
+````plantuml
+@startuml
+participant User
+participant EliassenSearch
+note "User searches for data"
+User -> EliassenSearch: search query
+EliassenSearch -> User: search results
+@enduml
+```
+
+
+**Description**
+
+The sequence diagram shows the interaction between the user and the Eliassen Search system. The user sends a search query to the system, and the system returns the search results.
+
+Note: This is a simple sequence diagram and can be extended to show more details about the search process.

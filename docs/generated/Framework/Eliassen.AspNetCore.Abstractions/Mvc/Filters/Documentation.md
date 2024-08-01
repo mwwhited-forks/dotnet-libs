@@ -1,63 +1,99 @@
-**ApplicationRightAttribute.cs Documentation**
+Here is the documentation for the provided source code:
 
-### Class Diagram (PlantUML)
+**ApplicationRightAttribute**
+
+### Overview
+
+The `ApplicationRightAttribute` is a custom attribute used in ASP.NET Core web applications to declare the required rights for an endpoint. This attribute ensures that at least one of the declared rights is assigned to the user to access the endpoint.
+
+### Syntax
+
+```csharp
+[ApplicationRightAttribute("right1", "right2", ...)]
+public class MyController : Controller
+{
+    // Controller methods
+}
+```
+
+### Properties
+
+* `Rights`: A list of required rights for the endpoint.
+
+### Constructors
+
+* `ApplicationRightAttribute(params string[] rights)`: Declares the required rights for the endpoint.
+
+### Diagrams
 
 ```plantuml
 @startuml
 class ApplicationRightAttribute {
-  -Rights: string[]
-  +ApplicationRightAttribute(string[] rights)
-  -Rights: get
+  - Rights: string[]
 }
+ApplicationRightAttribute ..> TypeFilterAttribute
 @enduml
 ```
 
-### Description
+**ApplicationRightRequirementFilter**
 
-The `ApplicationRightAttribute` class is a custom attribute used to declare required application rights for an endpoint. It inherits from `TypeFilterAttribute` and uses the `ApplicationRightRequirementFilter` filter to enforce the required rights.
+### Overview
 
-### Constructor
+The `ApplicationRightRequirementFilter` is an authorization filter that compares the application rights of the current user to the rights required by an endpoint.
 
-The constructor takes a variable number of strings representing the required application rights. The `Rights` property is set to this list of strings.
+### Syntax
+
+```csharp
+[ApplicationRightRequirementFilter("right1", "right2", ...)]
+public class MyController : Controller
+{
+    // Controller methods
+}
+```
 
 ### Properties
 
-* `Rights`: Gets the list of required application rights.
+* `_rights`: A list of required rights for the endpoint.
 
-### Summary
+### Methods
 
-At least one of these declared rights must be assigned to the user to access this point.
+* `OnAuthorization(AuthorizationFilterContext context)`: Ensures that the current authenticated user matches at least one of the requested rights.
 
-**ApplicationRightRequirementFilter.cs Documentation**
-
-### Class Diagram (PlantUML)
+### Diagrams
 
 ```plantuml
 @startuml
 class ApplicationRightRequirementFilter {
-  -_rights: IReadOnlyList<string>
-  -ApplicationRightRequirementFilter(string[] rights)
-  +OnAuthorization(AuthorizationFilterContext context)
-  +Any(IEnumerable<string> items)
+  - _rights: IReadOnlyList<string>
 }
+ApplicationRightRequirementFilter ..> IAuthorizationFilter
 @enduml
 ```
 
-### Description
+**Sequence Diagram**
 
-The `ApplicationRightRequirementFilter` class is an authorization filter that ensures the current authenticated user has at least one of the required application rights.
+```plantuml
+@startuml
+actor User
+participant "Endpoint" as ep
+participant "Filter" as flt
+participant "Controller" as ctrl
 
-### Constructor
+note left
+User requests access to endpoint
+end note
 
-The constructor takes an array of strings representing the required application rights. The `_rights` property is set to this list of strings.
+User -> ep: Request Access
+ep -> flt: OnAuthorization
+flt ->> User: Check User Rights
+User ->> flt: Return User Rights
+flt -> ep: Check Rights
+ep ->> flt: Check Permissions
+flt ->> User: No Permission
+User ->> ep: Forbidden
+flt ->> ep: Allow
+ep ->> User: Access Granted
+@enduml
+```
 
-### Methods
-
-* `OnAuthorization(AuthorizationFilterContext context)`: Ensures that the current authenticated user matches at least one requested right. If the user is not authenticated or does not have the required rights, a `ForbidResult` is returned.
-* `Any(IEnumerable<string> items)`: Checks if any of the items in the provided collection match the required rights.
-
-### Summary
-
-Authorization filter to compared application rights for user to rights required by endpoint.
-
-Note: The `AuthorizationFilterContext` class is not shown in the class diagram as it is from the `Microsoft.AspNetCore.Mvc.Filters` namespace and is not part of the provided code.
+This sequence diagram illustrates the interaction between the user, the endpoint, the filter, and the controller. It shows how the filter checks the user's rights and returns the result to the endpoint, which then decides whether to grant or deny access.

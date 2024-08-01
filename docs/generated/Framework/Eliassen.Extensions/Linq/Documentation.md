@@ -1,56 +1,157 @@
-Here is a partial documentation for the provided source code files:
+Here is the documentation for the source code in Markdown format:
 
-**AsyncEnumerableExtensions.cs**
+# AsyncEnumerableExtensions
 
-This class provides extensions to add asynchronous support to existing `IEnumerable<T>`.
+## Overview
 
-| Method | Description |
-| --- | --- |
-| `ToListAsync<T>` | Converts an asynchronous enumerable sequence to a list asynchronously. |
-| `ToListAsync<TModel>` | Processes an `IQueryable<TModel>` to a list asynchronously. |
-| `AsEnumerableAsync<TModel>` | Converts an `IAsyncEnumerable<TModel>` to a task that returns an enumerable sequence. |
-| `AsAsyncEnumerable<TModel>` | Converts a task that returns an enumerable sequence to an `IAsyncEnumerable<TModel>`. |
-| `Select<T, TResult>` | Projects each element of the source asynchronous enumerable sequence into a new form asynchronously. |
-| `ToReadOnlyCollectionAsync<T>` | Converts an asynchronous enumerable sequence to a read-only collection asynchronously. |
-| `ToSetAsync<T>` | Converts an asynchronous enumerable sequence to a set asynchronously (obsolete). |
+The `AsyncEnumerableExtensions` class provides various extensions to add async support to existing IEnumerable{T} APIs. These extensions make it easier to work with asynchronous enumerable sequences, allowing developers to write more efficient and scalable code.
 
-**Class Diagram (in PlantUML)**
-
+## Class Diagram
 ```plantuml
 @startuml
 class AsyncEnumerableExtensions {
-  - IAsyncEnumerableExtensions<T> ToListAsync<T>(IAsyncEnumerable<T> items)
-  - IAsyncEnumerableExtensions<TModel> ToListAsync<TModel>(IQueryable<TModel> source)
-  - IAsyncEnumerableExtensions<TModel> AsEnumerableAsync<TModel>(IAsyncEnumerable<TModel> items)
-  - IAsyncEnumerableExtensions<TModel> AsAsyncEnumerable<TModel>(Task<IEnumerable<TModel>> items)
-  - IAsyncEnumerableExtensions<T> Select<T, TResult>(IAsyncEnumerable<T> items, Func<T, TResult> map)
-  - IAsyncEnumerableExtensions<T> Select<T, TResult>(IAsyncEnumerable<T> items, Func<T, Task<TResult>> map)
-  - IAsyncEnumerableExtensions<T> ToReadOnlyCollectionAsync<T>(IAsyncEnumerable<T> items)
-  - IAsyncEnumerableExtensions<T> ToSetAsync<T>(IAsyncEnumerable<T> items)
+  - IAsyncEnumerableExtensions<T> ToListAsync(IAsyncEnumerable<T> items)
+  - IAsyncEnumerableExtensions<T> ToListAsync(IQueryable<T> source, CancellationToken cancellationToken = default)
+  - IAsyncEnumerableExtensions<T> AsEnumerableAsync(IAsyncEnumerable<T> items, CancellationToken token = default)
+  - IAsyncEnumerableExtensions<T> AsToListAsync(IQueryable<T> source, CancellationToken cancellationToken = default)
+  - IAsyncEnumerableExtensions<T> Select(IAsyncEnumerable<T> items, Func<T, TResult> map)
+  - IAsyncEnumerableExtensions<T> Select(IAsyncEnumerable<T> items, Func<T, Task<TResult>> map)
+  - IAsyncEnumerableExtensions<T> ToReadOnlyCollectionAsync(IAsyncEnumerable<T> items, CancellationToken cancellationToken = default)
+  - IAsyncEnumerableExtensions<T> ToSetAsync(IAsyncEnumerable<T> items)
 }
 
 @enduml
 ```
 
-**DictionaryExtensions.cs**
+## AsEnumerableAsync
 
-This class provides reusable extensions for generic dictionaries.
+### Overview
 
-| Method | Description |
-| --- | --- |
-| `TryGetValue<TKey, TValue>` | Extends the `TryGetValue` method to allow using a different `IEqualityComparer<TKey>`. |
-| `ChangeComparer<TKey, TValue>` | Rebuilds a dictionary to use a different `IEqualityComparer<TKey>`. |
+The `AsEnumerableAsync` method converts an `IAsyncEnumerable<T>` to an `IEnumerable<T>` asynchronously.
 
-**Class Diagram (in PlantUML)**
+### Parameters
 
+* `items`: The `IAsyncEnumerable<T>` to convert.
+* `token`: The cancellation token to use for the conversion.
+
+### Returns
+
+* An `IEnumerable<T>` containing the elements of the input `IAsyncEnumerable<T>`.
+
+[Sequence Diagram for AsEnumerableAsync]
+```plantuml
+@startuml
+sequenceDiagram
+    participant CL as Caller
+    participant AE as AsyncEnumerable
+    participant IE as Enumerable
+
+    CL->>AE: AsEnumerableAsync(items, token)
+    AE->>IE: FOREACH item in items
+    IE->>CL: item
+    CL->>AE: if token.IsCancellationRequested
+    AE->>CL: BREAK
+    AE->>CL: FOREACH item in items
+    AE->>CL: yield return item
+    CL->>AE: foreach item in items
+    AE->>IE: FOREACH item in items
+    IE->>CL: item
+    CL->>AE: if token.IsCancellationRequested
+    AE->>CL: BREAK
+    AE->>CL: FOREACH item in items
+    AE->>CL: yield return item
+    CL->>AE: foreach item in items
+
+@enduml
+```
+
+## Select
+
+### Overview
+
+The `Select` method projects each element of the input `IAsyncEnumerable<T>` into a new form asynchronously.
+
+### Parameters
+
+* `items`: The `IAsyncEnumerable<T>` to project.
+* `map`: The transformation function to apply to each element.
+
+### Returns
+
+* An `IAsyncEnumerable<TResult>` containing the projected elements.
+
+[Sequence Diagram for Select]
+```plantuml
+@startuml
+sequenceDiagram
+    participant CL as Caller
+    participant AE as AsyncEnumerable
+    participant IE as Enumerable
+
+    CL->>AE: Select(items, map)
+    AE->>IE: FOREACH item in items
+    IE->>CL: map(item)
+    CL->>AE: yield return map(item)
+    AE->>CL: foreach item in items
+
+@enduml
+```
+
+## ToListAsync
+
+### Overview
+
+The `ToListAsync` method converts an `IAsyncEnumerable<T>` to a list asynchronously.
+
+### Parameters
+
+* `items`: The `IAsyncEnumerable<T>` to convert.
+
+### Returns
+
+* A `List<T>` containing the elements of the input `IAsyncEnumerable<T>`.
+
+## DictionaryExtensions
+
+### Overview
+
+The `DictionaryExtensions` class provides various extensions for generic dictionaries.
+
+### Class Diagram
 ```plantuml
 @startuml
 class DictionaryExtensions {
-  - IEqualityComparer<TKey> TryGetValue<TKey, TValue>(IDictionary<TKey, TValue> dictionary, TKey key, out TValue? value, IEqualityComparer<TKey> comparer)
-  - IEqualityComparer<TKey> ChangeComparer<TKey, TValue>(IDictionary<TKey, TValue> dictionary, IEqualityComparer<TKey> comparer)
+  - Dictionary<TKey, TValue>.ChangeComparer(IEqualityComparer<TKey> comparer)
+  - Dictionary<TKey, TValue>.TryGetValue(TKey key, out TValue? value, IEqualityComparer<TKey> comparer)
 }
 
 @enduml
 ```
 
-Please note that the class diagrams are simplified and do not include all the necessary details (e.g., method parameters, return types, etc.). They are intended to provide a high-level overview of the classes and their relationships.
+## ChangeComparer
+
+### Overview
+
+The `ChangeComparer` method rebuilds a dictionary to use a different `IEqualityComparer{TKey}`.
+
+### Parameters
+
+* `dictionary`: The dictionary to rebuild.
+* `comparer`: The new `IEqualityComparer{TKey>` to use.
+
+### Returns
+
+* A new dictionary with the same elements as the input dictionary, but using the new comparer.
+
+## TryGetValue
+
+### Overview
+
+The `TryGetValue` method extends the `IDictionary<TKey, TValue>.TryGetValue` method to allow for using a different `IEqualityComparer{TKey}`.
+
+### Parameters
+
+* `dictionary`: The dictionary to use.
+* `key`: The key to look up.
+* `value`: The output parameter to receive the value.
+* `comparer`: The comparer to use for

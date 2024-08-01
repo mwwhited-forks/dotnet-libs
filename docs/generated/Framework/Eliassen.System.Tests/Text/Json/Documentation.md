@@ -1,86 +1,181 @@
-Here is the documentation for the provided source code files:
+# Eliassen.System.Text.Json Tests
 
-**BsonDateConverterTests.cs**
+This document provides an overview of the tests for the Eliassen.System.Text.Json library.
 
-This is a unit test class for the `BsonDateConverter` class, which is responsible for serializing and deserializing `DateTimeOffset` values to and from JSON.
+## BsonDateConverterTests
 
-Class Diagram:
+This test class covers the serialization and deserialization of dates using the BsonDateConverter.
+
+### Serialize Tests
+
+* `SerializeTest_Nullable`: Tests the serialization of a nullable date property.
+* `SerializeTest_Value`: Tests the serialization of a non-nullable date property.
+
+### Deserialize Tests
+
+* `DeserializeTest_Nullable`: Tests the deserialization of a nullable date property.
+* `DeserializeTest_Value`: Tests the deserialization of a non-nullable date property.
+
 ```plantuml
 @startuml
 class BsonDateConverterTests {
-  - private TestContext testContext
-  + SerializeTest_Nullable()
-  + SerializeTest_Value()
-  + DeserializeTest_Nullable(string input, string? expected)
-  + DeserializeTest_Value(string input, string? expected)
+  - testContext: TestContext
+  - serializeTest_Nullable: TestMethod
+  - serializeTest_Value: TestMethod
+  - deserializeTest_Nullable: DataTestMethod
+  - deserializeTest_Value: DataTestMethod
 }
 @enduml
 ```
-Methods:
 
-* `SerializeTest_Nullable()`: Tests the serialization of a nullable `DateTimeOffset` value to JSON.
-* `SerializeTest_Value()`: Tests the serialization of a non-nullable `DateTimeOffset` value to JSON.
-* `DeserializeTest_Nullable(string input, string? expected)`: Tests the deserialization of a nullable `DateTimeOffset` value from JSON.
-* `DeserializeTest_Value(string input, string? expected)`: Tests the deserialization of a non-nullable `DateTimeOffset` value from JSON.
+```plantuml
+@startuml
+class TestDateProperty {
+  - Nullable: DateTimeOffset?
+  - Value: DateTimeOffset
+}
+@enduml
+```
 
-**BsonIdConverterTests.cs**
+### Sequence Diagram
 
-This is a unit test class for the `BsonIdConverter` class, which is responsible for serializing and deserializing `string` values to and from JSON.
+```plantuml
+@startuml
+actor Tester
+participant "Eliassen.System.Text.Json" as Json
+participant "System.Text.Json" as JsonSerializer
+participant "BsonDateConverter" as Converter
+sequenceDiagram
+  note left: SerializeTest_Nullable
+  Tester..>Json: Serialize
+  Json..>JsonSerializer: Serialize
+  JsonSerializer..>Converter: Serialize
+  Converter..>Json: Serialize
+  note right: Serailize
+  alt deserialize
+    note left: DeserializeTest_Nullable
+    Tester..>Json: Deserialize
+    Json..>JsonSerializer: Deserialize
+    JsonSerializer..>Converter: Deserialize
+    Converter..>Json: Deserialize
+  end
+@enduml
+```
 
-Class Diagram:
+## BsonIdConverterTests
+
+This test class covers the serialization and deserialization of IDs using the BsonIdConverter.
+
+### Serialize Test
+
+* `SerializeTest`: Tests the serialization of an ID property.
+
+### Deserialize Tests
+
+* `DeserializeTest`: Tests the deserialization of an ID property.
+
 ```plantuml
 @startuml
 class BsonIdConverterTests {
-  - private TestContext testContext
-  + SerializeTest()
-  + DeserializeTest(string input, string expected)
+  - testContext: TestContext
+  - serializeTest: TestMethod
+  - deserializeTest: DataTestMethod
 }
 @enduml
 ```
-Methods:
 
-* `SerializeTest()`: Tests the serialization of a `string` value to JSON.
-* `DeserializeTest(string input, string expected)`: Tests the deserialization of a `string` value from JSON.
+```plantuml
+class TestIdProperty {
+  - ProjectId: string
+}
+@enduml
+```
 
-**BsonSerializerTests.cs**
+### Sequence Diagram
 
-This is a unit test class for the `BsonSerializer` class, which is responsible for serializing and deserializing objects to and from JSON.
+```plantuml
+@startuml
+actor Tester
+participant "Eliassen.System.Text.Json" as Json
+participant "System.Text.Json" as JsonSerializer
+participant "BsonIdConverter" as Converter
+sequenceDiagram
+  note left: SerializeTest
+  Tester..>Json: Serialize
+  Json..>JsonSerializer: Serialize
+  JsonSerializer..>Converter: Serialize
+  Converter..>Json: Serialize
+  note right: Serialize
+  alt deserialize
+    note left: DeserializeTest
+    Tester..>Json: Deserialize
+    Json..>JsonSerializer: Deserialize
+    JsonSerializer..>Converter: Deserialize
+    Converter..>Json: Deserialize
+  end
+@enduml
+```
 
-Class Diagram:
+## BsonSerializerTests
+
+This test class covers the serialization of a target model using the BsonSerializer.
+
+### Test
+
+* `Test`: Tests the serialization of a target model.
+
 ```plantuml
 @startuml
 class BsonSerializerTests {
-  - private TestContext testContext
-  - private JsonSerializerOptions options
-  + Test()
+  - testContext: TestContext
+  - test: TestMethod
 }
 @enduml
 ```
-Methods:
 
-* `Test()`: Tests the serialization and deserialization of an object using the `BsonSerializer`.
+```plantuml
+class TargetModel {
+  - // properties
+}
+@enduml
+```
 
-**JNodeExtensionsTests.cs**
+### Sequence Diagram
 
-This is a unit test class for the `JNodeExtensions` class, which provides methods for converting `JsonNode` objects to and from other formats.
+```plantuml
+@startuml
+actor Tester
+participant "Eliassen.System.Text.Json" as Json
+participant "System.Text.Json" as JsonSerializer
+sequenceDiagram
+  note left: Test
+  Tester..>Json: Serialize
+  Json..>JsonSerializer: Serialize
+  JsonSerializer..>Json: Serialize
+  note right: Serialize
+@enduml
+```
 
-Class Diagram:
+## JNodeExtensionsTests
+
+This test class covers the `ToXFragment` method of the `JNodeExtensions` class.
+
+### ToXNode Tests
+
+* `ToXNodeTest_Simple`: Tests the serialization of a simple JSON node.
+* `ToXNodeTest_Number`: Tests the serialization of a number JSON node.
+* `ToXNodeTest_String`: Tests the serialization of a string JSON node.
+* `ToXNodeTest_Array`: Tests the serialization of an array JSON node.
+* `ToXNodeTest_Complex`: Tests the serialization of a complex JSON node.
+
 ```plantuml
 @startuml
 class JNodeExtensionsTests {
-  - private TestContext testContext
-  + ToXNodeTest_Simple()
-  + ToXNodeTest_Number()
-  + ToXNodeTest_String()
-  + ToXNodeTest_Array()
-  + ToXNodeTest_Complex()
+  - testContext: TestContext
+  - toXNodeTest_Simple: TestMethod
+  - toXNodeTest_Number: TestMethod
+  - toXNodeTest_String: TestMethod
+  - toXNodeTest_Array: TestMethod
+  - toXNodeTest_Complex: TestMethod
 }
 @enduml
-```
-Methods:
-
-* `ToXNodeTest_Simple()`: Tests the conversion of a simple JSON object to XML.
-* `ToXNodeTest_Number()`: Tests the conversion of a number JSON value to XML.
-* `ToXNodeTest_String()`: Tests the conversion of a string JSON value to XML.
-* `ToXNodeTest_Array()`: Tests the conversion of an array JSON value to XML.
-* `ToXNodeTest_Complex()`: Tests the conversion of a complex JSON object to XML.

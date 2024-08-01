@@ -1,116 +1,104 @@
-Here is the documentation for the provided source code files, including class diagrams in PlantUML:
+Here is the markdown documentation for the source code:
 
-**FileTemplateSourceTests.cs**
+**Eliassen.System.Text.Templating**
 
-```csharp
-[TestClass]
-public class FileTemplateSourceTests
-{
-    // ...
+Eliassen.System.Text.Templating is a .NET library that provides functionality for text templating and XML to HTML transformation.
 
-    [TestMethod]
-    [TestCategory(TestCategories.Unit)]
-    public void GetTest()
-    {
-        // ...
-    }
-}
-```
+**Classes**
 
-Class Diagram:
+### FileTemplateSourceTests
+
+```FileTemplateSourceTests.cs```
+
+This class contains unit tests for the `FileTemplateSource` class.
+
 ```plantuml
 @startuml
 class FileTemplateSourceTests {
-    - TestContext: required
-    - GetTest(): void
+  - testMethod: GetTest()
+  - testMethod: GetAllTest()
 }
 @enduml
 ```
 
-**TemplateEngineTests.cs**
+### FileTemplateSource
 
-```csharp
-[TestClass]
-public class TemplateEngineTests
-{
-    // ...
+The `FileTemplateSource` class is responsible for retrieving file templates from a file system.
 
-    [TestMethod]
-    [TestCategory(TestCategories.Unit)]
-    public void GetAllTest()
-    {
-        // ...
-    }
+### TemplateEngineTests
 
-    [TestMethod]
-    [TestCategory(TestCategories.Unit)]
-    public void GetTest()
-    {
-        // ...
-    }
+```TemplateEngineTests.cs```
 
-    [TestMethod]
-    [TestCategory(TestCategories.Unit)]
-    public async Task ApplyAsyncTest_StringData_and_StringDataStream()
-    {
-        // ...
-    }
+This class contains unit tests for the `TemplateEngine` class.
 
-    [TestMethod]
-    [TestCategory(TestCategories.Unit)]
-    public async Task ApplyAsyncTest_ContextData_and_ContextDataStream()
-    {
-        // ...
-    }
-}
-```
-
-Class Diagram:
 ```plantuml
 @startuml
 class TemplateEngineTests {
-    - TestContext: required
-    - GetAllTest(): void
-    - GetTest(): void
-    - ApplyAsyncTest_StringData_and_StringDataStream(): Task
-    - ApplyAsyncTest_ContextData_and_ContextDataStream(): Task
+  - testMethod: GetAllTest()
+  - testMethod: GetTest()
+  - testMethod: ApplyAsyncTest()
+  - testMethod: ApplyAsyncTest_ContextData_and_ContextDataStream()
 }
 @enduml
 ```
 
-**XsltTemplateProviderTests.cs**
+### TemplateEngine
 
-```csharp
-[TestClass]
-public class XsltTemplateProviderTests
-{
-    // ...
+The `TemplateEngine` class is responsible for applying templates to data.
 
-    [TestMethod]
-    [TestCategory(TestCategories.Unit)]
-    public void CanApplyTest()
-    {
-        // ...
-    }
+### XsltTemplateProviderTests
 
-    [TestMethod]
-    [TestCategory(TestCategories.Unit)]
-    public async Task ApplyAsyncTest()
-    {
-        // ...
-    }
-}
-```
+```XsltTemplateProviderTests.cs```
 
-Class Diagram:
+This class contains unit tests for the `XsltTemplateProvider` class.
+
 ```plantuml
 @startuml
 class XsltTemplateProviderTests {
-    - TestContext: required
-    - CanApplyTest(): void
-    - ApplyAsyncTest(): Task
+  - testMethod: CanApplyTest()
+  - testMethod: ApplyAsyncTest()
 }
 @enduml
 ```
 
-Note: The above class diagrams are simplified and do not show all the methods and properties in the classes. They are intended to provide a high-level overview of the classes and their relationships.
+### XsltTemplateProvider
+
+The `XsltTemplateProvider` class is responsible for applying XSLT templates to data.
+
+**Sequence Diagram**
+
+Here is a sequence diagram showing the interaction between the `TemplateEngine` and the `XsltTemplateProvider` classes:
+```plantuml
+@startuml
+sequenceDiagram
+participant TemplateEngine as TE
+participant XsltTemplateProvider as XTP
+
+TE->>XTP: Get XSLT template
+XTP->>TE: XSLT template
+TE->>XTP: Apply XSLT template to data
+XTP->>TE: Processed output
+TE->>XTP: Release resources
+XTP->>TE: Resources released
+@enduml
+```
+
+**Component Model**
+
+Here is a component model showing the relationships between the different classes:
+```plantuml
+@startuml
+component Eliassen.System.Text.Templating "Templating Library"
+component FileTemplateSource "File Template Source"
+component TemplateEngine "Template Engine"
+component XsltTemplateProvider "XSLT Template Provider"
+
+FileTemplateSource ..> TemplateEngine
+TemplateEngine ..> XsltTemplateProvider
+Eliassen.System.Text.Templating ..> FileTemplateSource
+Eliassen.System.Text.Templating ..> TemplateEngine
+Eliassen.System.Text.Templating ..> XsltTemplateProvider
+@enduml
+```
+
+I hope this helps! Let me know if you have any questions or need further clarification.

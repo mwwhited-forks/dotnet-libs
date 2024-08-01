@@ -1,35 +1,59 @@
-Here is the documentation for the `ICommunicationSender` interface and its UML class diagram:
+**Documentation for Eliassen.Communications.Services**
 
-**Interface Documentation**
+### ICommunicationSender Interface
 
-**Name**: `ICommunicationSender<TMessageType>`
+This interface represents an abstract contract for sending communication messages of a specified type. It provides a method for asynchronously sending a message and returning its unique identifier.
 
-**Namespace**: `Eliassen.Communications.Services`
+#### Interface Definition
 
-**Summary**: Represents an interface for sending communication messages of a specified type.
+```ICommunicationSender.cs
+using System.Threading.Tasks;
 
-**Description**: This interface defines a contract for sending communication messages of a specific type. The interface is generic, allowing the type of message to be determined by the implementing class.
+namespace Eliassen.Communities.Services;
 
-**Methods**:
+/// <summary>
+/// Represents an interface for sending communication messages of a specified type.
+/// <see href="https://eliassenps.atlassian.net/browse/NIT-12">NIT-12</see>
+/// <see href="https://eliassenps.atlassian.net/browse/NDM-368">NDM-368</see>
+/// <see href="https://eliassenps.atlassian.net/browse/NDM-366">NDM-366</see>
+/// </summary>
+/// <typeparam name="TMessageType">The type of the communication message.</typeparam>
+public interface ICommunicationSender<TMessageType>
+{
+    /// <summary>
+    /// Asynchronously sends the specified communication message.
+    /// </summary>
+    /// <param name="message">The communication message to send.</param>
+    /// <returns>A task representing the asynchronous operation. The result is the unique identifier associated with the sent message.</returns>
+    Task<string> SendAsync(TMessageType message);
+}
+```
 
-* `SendAsync(TMessageType message)`: Asynchronously sends the specified communication message. Returns a task representing the asynchronous operation, which includes the unique identifier associated with the sent message.
+### Class Diagram
 
-**References**:
-
-* <https://eliassenps.atlassian.net/browse/NIT-12>
-* <https://eliassenps.atlassian.net/browse/NDM-368>
-* <https://eliassenps.atlassian.net/browse/NDM-366>
-
-**UML Class Diagram**
 ```plantuml
 @startuml
-interface "ICommunicationSender<TMessageType>" {
-  - SendAsync(TMessageType message): Task<string>
+interface "ICommunicationSender" {
+  -[#166DCB] Task<string> SendAsync(TMessageType message)
 }
-
 @enduml
 ```
 
-This UML class diagram represents the `ICommunicationSender` interface with a single method, `SendAsync`, which takes a message of type `TMessageType` and returns a task representing the asynchronous operation. The `<TMessageType>` parameter is denoted by the angle brackets in the interface name.
+### Component Model
 
-Note that since this is an interface, it does not have any attributes or private members. The focus is on defining the contract for sending communication messages.
+The `ICommunicationSender` interface is a key component in the Eliassen.Communications.Services namespace, enabling communication message sending functionality.
+
+### Sequence Diagram
+
+```plantuml
+@startuml
+participant "Client" as c
+participant "CommunicationSender" as s
+
+c ->> s: SendAsync(TMessageType)
+s ->> s: Send message
+s ->> c: Unique identifier
+@enduml
+```
+
+In this sequence diagram, the client initiates a request to send a communication message using the `SendAsync` method. The `CommunicationSender` component sends the message and returns a unique identifier associated with the sent message to the client.

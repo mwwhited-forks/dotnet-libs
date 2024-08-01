@@ -1,87 +1,150 @@
-I've generated the documentation for the provided source code files. Here is the documentation for each file:
+Here is the documentation for the provided source code in Markdown format:
 
-**ConsoleLogger.cs**
+**Eliassen.System.Linq**
 
-This is a C# class that implements the `ILogger<T>` interface. It provides a logger that writes log messages to the console. The `Log` method is used to log messages with different log levels.
+The Eliassen.System.Linq library provides a collection of LINQ/Query extensions that simplify query expressions to a simple, serializable model.
 
-[UML Class Diagram](https://plantuml.com/plantuml/png/SoWkKi8mAKlsBbJ8R5RgRB4vQv7jGRjyVpD0R6LQy3Ht3lKh6x6fOjWxKAA_)
+**Design Goals and Use Cases**
 
-**Design.DynamicSearchFilter.md**
+* Create a query model that allows for an easy-to-follow and reusable pattern
+* Data selection patterns
+* Multiple field sorting with the ability to select direction and priority order
+* Data paging with the ability to change page size or disable paging to return all rows
+* Make it easy to implement for developers
 
-This is a document that describes the design and concept of the dynamic search filter. It provides an overview of the system, its architecture, and its features.
+**Technical Requirements**
 
-[UML Class Diagram (SearchQuery and related classes)](https://plantuml.com/plantuml/png/TgkSkFe6Am8BbJ8R5RgRB4vQv7jGRjyVpD0R6LQy3Ht3lKh6x6fOjWxKsKo)
+* Define Query Request Model
+* Define Paged Result Models
+* Define Patterns for Filter
+* Define Wild card expressions
+* Define Patterns for Sort Order
+* Define Patterns for Paging Request
+* Extend ASP.Net Middleware to intercept and extend `IQueryable<T>` returns from Controller/Actions
+* Extend OpenAPI to present notes on available fields for request and response
+* Create Expression Tree based framework to convert request models into LINQ queries
+* HTTP Request type and formatting is detected from the related `Method` and `Content-Type`
 
-**Eliassen.System.Linq.csproj**
+**Architecture**
 
-This is a .NET project file that includes references to other projects and libraries.
-
-[UML Class Diagram (none)]
-
-**Readme.System.Linq.md**
-
-This is a document that provides a summary of the Eliassen.System.Linq library and its features.
-
-[UML Class Diagram (none)]
-
-**SearchQueryMiddleware.md**
-
-This document describes the SearchQueryMiddleware, which is a middleware that enables searching, filtering, sorting, and paging of data. It provides an overview of the system, its architecture, and its features.
-
-[UML Class Diagram (SearchQuery and related classes)](https://plantuml.com/plantuml/png/TgkSkFe6Am8BbJ8R5RgRB4vQv7jGRjyVpD0R6LQy3Ht3lKh6x6fOjWxKsKo)
-
-**ServiceCollectionExtensions.cs**
-
-This is a C# class that provides extension methods for the `IServiceCollection` interface. These extensions enable the addition of search query extensions to the service collection.
-
-[UML Class Diagram (none)]
-
-Here are the UML class diagrams generated for each file:
-
-**SearchQuery and related classes**
+### HTTP Data Query
 
 ```plantuml
-@startuml
-class SearchQuery {
-  + CurrentPage : integer
-  + PageSize : integer
-  + ExcludePageCount : boolean
-  + SearchTerm : string
-  + Filter : Dictionary<string, FilterParameter>
-  + OrderBy : Dictionary<string, OrderDirections>
-}
+title Query Process
 
-class FilterParameter {
-  + EqualTo {eq} : object 
-  + NotEqualTo {neq} : object
-  + InSet {in} : object[]
-  + GreaterThan {gt} : object
-  + GreaterThanOrEqualTo {gte} : object
-  + LessThan {lt} : object
-  + LessThanOrEqualTo {lte} : object
-}
-
-class OrderDirections {
-  + Ascending {asc}
-  + Descending {desc}
-}
-
-SearchQuery ..> FilterParameter
-SearchQuery ..> OrderDirections
-@enduml
+User -> WebApi: Send Query Request
+activate WebApi
+  WebApi -> Middleware: Detect Action Return
+  activate Middleware
+    alt return is IQueryable
+      Middleware -> Middleware : Store Request
+      Middleware -> Action : Get Query Return
+      activate Action
+      return IQueryable
+      Middleware -> QueryBuilder : Compose Query
+      activate QueryBuilder
+      return PagedResult      
+    end
+  return PagedResult
+return PagedResult
 ```
 
-**ConsoleLogger**
+**API Template**
 
-```plantuml
-@startuml
-class ConsoleLogger {
-  + BeginScope<TState>(TState state) : IDisposable?
-  + Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
+### Query
+
+**Models**
+
+### Request
+
+* `CurrentPage`: the current page number
+* `PageSize`: the number of records per page
+* `ExcludePageCount`: a boolean value indicating whether to exclude page count from the result set
+* `SearchTerm`: the search term to use in the query
+* `Filter`: a dictionary of filter parameters
+* `OrderBy`: a dictionary of order by parameters
+
+### Response
+
+* `Rows`: an array of data rows
+
+**Technical Considerations**
+
+### Security
+
+Authentication and authorization follow standard ASP.Net MVC configurations.
+
+### Performance
+
+To improve performance, queries will be composed by LINQ to the related query provider allowing for data server processing including.
+
+**Examples**
+
+### Data Model
+
+Here is an example data model that has been annotated with some of the attributes:
+```csharp
+[Searchable(FirstNameLastName)]
+[Searchable(LastNameFirstName)]
+[Filterable(Module)]
+[Filterable(UserStatus)]
+[SearchTermDefault(SearchTermDefaults.StartsWith)]
+public class User
+{
+    public const string FirstNameLastName = nameof(FirstNameLastName);
+    public const string LastNameFirstName = nameof(LastNameFirstName);
+    public const string Module = nameof(Module);
+    public const string UserStatus = nameof(UserStatus);
+
+    public string? UserId { get; set; }
+    public string? UserName { get; set; }
+
+    [Searchable]
+    [DefaultSort(priority: 2, order: OrderDirections.Ascending)]
+    public string? EmailAddress { get; set; }
+
+    [Searchable]
+    [DefaultSort(priority: 1, order: OrderDirections.Ascending)]
+    public string? FirstName { get; set; }
+
+    [Searchable]
+    [DefaultSort(priority: 0, order: OrderDirections.Ascending)]
+    public string? LastName { get; set; }
+
+    public bool Active { get; set; }
+
+    public List<UserModule>? UserModules { get; set; }
+
+    public DateTimeOffset? CreatedOn { get; set; }
+
+    public static Expression<Func<User, object>>? PropertyMap(string key) =>
+        key switch
+        {
+            FirstNameLastName => e => e.FirstName + " " + e.LastName,
+            LastNameFirstName => e => e.LastName + " " + e.FirstName,
+            _ => null
+        };
+
+    public static Expression<Func<User, bool>>? PredicateMap(string key, object value) =>
+        key switch
+        {
+            Module => e => e.UserModules.Any(um => um.Code.Equals(value)),
+            UserStatus => e => value.Equals("-1") || e.Active == value.Equals("1"),
+            _ => null
+        };
 }
-
-ConsoleLogger ..> IDisposable
-@enduml
 ```
+**Maps**
 
-Note: The UML class diagrams are generated using PlantUML syntax.
+* `PropertyMap`: a static method that returns an expression that maps a property to a composite property
+* `PredicateMap`: a static method that returns an expression that maps a predicate to a filtered result
+
+**Post Build Visitors**
+
+* `IPostBuildExpressionVisitor`: an interface that allows for modifying the expression tree before the query is executed
+* `StringComparisonReplacementExpressionVisitor`: a visitor that replaces string functions with their `StringCompare` equivalents
+
+**Search Query Intercept**
+
+* `ISearchQueryIntercept`: an interface that allows for intercepting and modifying the SearchQuery
+* `UnquoteAttribute`: an attribute that removes quotes from the beginning and end of

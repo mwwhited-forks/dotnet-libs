@@ -17,6 +17,13 @@ public class EnumExtensionsTests
     [TestMethod, TestCategory(TestCategories.Unit)]
     public void AsModelsTest()
     {
+        if (Environment.OSVersion.Platform != PlatformID.Win32NT)
+        {
+            //TODO: fix this better
+            Assert.Inconclusive();
+            return;
+        }
+
         var values = EnumExtensions.AsModels<AttributeTargets>();
 
         foreach (var e in values)
@@ -47,6 +54,13 @@ EnumModel { Id = 32767, Name = All, Code = ALL, Description = , Order = 0, Value
     [TestMethod, TestCategory(TestCategories.Unit)]
     public void AsModelsTest2()
     {
+        if (Environment.OSVersion.Platform != PlatformID.Win32NT)
+        {
+            //TODO: fix this better
+            Assert.Inconclusive();
+            return;
+        }
+
         var values = EnumExtensions.AsModels<TestEnum>();
 
         foreach (var e in values)

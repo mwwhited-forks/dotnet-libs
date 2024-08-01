@@ -1,16 +1,34 @@
-Here is the documentation and PlantUML class diagrams for the provided source code files:
+Here is the documentation for the source code in markdown format, including PlantUML diagrams.
 
-**ContentChunk.cs**
+**Overview**
 
-* **Summary**: Represents a chunk of content along with metadata.
-* **Description**: This class represents a chunk of content along with its sequence number, starting position, and length within the original content.
-* **Properties**:
-	+ `Data`: Gets the data of the content chunk.
-	+ `Sequence`: Gets the sequence number of the chunk within the original content.
-	+ `Start`: Gets the starting position of the chunk within the original content.
-	+ `Length`: Gets the length of the chunk.
-* **Constructor**: Initializes a new instance of the `ContentChunk` class with the specified `data`, `sequence`, `start`, and `length`.
+This library provides a set of classes and interfaces for working with temporary files in a managed environment. It includes classes for representing file metadata, content chunks, and temp files, as well as interfaces for creating and managing temp files.
 
+**Classes**
+
+### ContentChunk
+
+```ContentChunk.cs
+namespace Eliassen.System.IO;
+
+public record ContentChunk
+{
+    public string Data { get; }
+    public int Sequence { get; }
+    public long Start { get; }
+    public int Length { get; }
+
+    public ContentChunk(string data, int sequence, long start, int length)
+    {
+        Data = data;
+        Sequence = sequence;
+        Start = start;
+        Length = length;
+    }
+}
+```
+
+**Class Diagram**
 ```plantuml
 @startuml
 class ContentChunk {
@@ -18,67 +36,109 @@ class ContentChunk {
   - Sequence: int
   - Start: long
   - Length: int
-  + ContentChunk(string, int, long, int)
+  ContentChunk(string, int, long, int)
 }
-
 @enduml
 ```
 
-**FileMetaData.cs**
+### FileMetaData
 
-* **Summary**: Represents metadata associated with a file.
-* **Description**: This record represents metadata associated with a file, including its UUID, path, hash value, and base path.
-* **Properties**:
-	+ `Uuid`: Gets the universally unique identifier (UUID) of the file.
-	+ `Path`: Gets the path of the file.
-	+ `Hash`: Gets the hash value of the file.
-	+ `BasePath`: Gets the base path of the file.
-* **Constructor**: Initializes a new instance of the `FileMetaData` record with the specified `uuid`, `path`, `hash`, and `basePath`.
+```FileMetaData.cs
+using System;
 
+namespace Eliassen.System.IO;
+
+public readonly ref struct FileMetaData
+{
+    public string Uuid { get; init; }
+    public string Path { get; init; }
+    public ReadOnlySpan<byte> Hash { get; init; }
+    public string BasePath { get; init; }
+
+    public FileMetaData(string uuid, string path, ReadOnlySpan<byte> hash, string basePath)
+    {
+        Uuid = uuid;
+        Path = path;
+        Hash = hash;
+        BasePath = basePath;
+    }
+}
+```
+
+**Class Diagram**
 ```plantuml
 @startuml
-record FileMetaData {
+class FileMetaData {
   - Uuid: string
   - Path: string
   - Hash: ReadOnlySpan<byte>
   - BasePath: string
-  + FileMetaData(string, string, ReadOnlySpan<byte>, string)
+  FileMetaData(string, string, ReadOnlySpan<byte>, string)
 }
-
 @enduml
 ```
 
-**ITempFile.cs**
+### ITempFile
 
-* **Summary**: Temp file handle.
-* **Description**: This interface represents a handle for a temporary file, which will be deleted when disposed.
-* **Properties**:
-	+ `FilePath`: Gets the path to the temporary file.
+```ITempFile.cs
+using System;
 
+namespace Eliassen.System.IO;
+
+public interface ITempFile : IDisposable
+{
+    string FilePath { get; }
+}
+```
+
+**Interface Diagram**
 ```plantuml
 @startuml
 interface ITempFile {
-  - FilePath: string
-  + Dispose()
+  string FilePath()
+  void Dispose()
 }
-
 @enduml
 ```
 
-**ITempFileFactory.cs**
+### ITempFileFactory
 
-* **Summary**: This is a provider for managed temp files.
-* **Description**: This interface represents a factory for creating managed temporary files, which will be deleted when disposed.
-* **Methods**:
-	+ `GetTempFile()`: Gets a managed temporary file.
+```ITempFileFactory.cs
+namespace Eliassen.System.IO;
 
+public interface ITempFileFactory
+{
+    ITempFile GetTempFile();
+}
+```
+
+**Interface Diagram**
 ```plantuml
 @startuml
 interface ITempFileFactory {
-  + GetTempFile(): ITempFile
+  ITempFile GetTempFile()
 }
-
 @enduml
 ```
 
-Note: The `ITempFile` interface has a `Dispose()` method, which is not shown in the code snippet provided. It is assumed that this method will be implemented by the implementing class to dispose of the temporary file.
+**Sequence Diagram**
+
+```plantuml
+@startuml
+participant FS as "File System"
+participant Factory as "ITempFileFactory"
+participant TempFile as "ITempFile"
+
+note left
+  Get a managed temporary file from the factory
+  The file will be deleted when disposed
+note right
+  Use the temp file
+
+FS -> Factory: GetTempFile()
+Factory ->> TempFile: ITempFile
+TempFile ->> FS: Temp file operations
+@enduml
+```
+
+This sequence diagram shows how a client can use the `ITempFileFactory` to get a managed temporary file, which will be deleted when disposed. The temp file can then be used for temp file operations, such as reading and writing.

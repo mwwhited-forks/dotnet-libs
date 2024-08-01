@@ -1,103 +1,147 @@
-Here is the documentation for the provided source code files, including class diagrams in PlantUML:
+Here is the documentation for the provided code in Markdown format:
 
-**FileTemplateSource.cs**
+**System.Text.Templating**
+======================
 
-This class is responsible for accessing templates from the file system.
+The System.Text.Templating namespace provides a set of classes and interfaces for working with templates and template engines.
 
+### FileTemplateSource
+-------------------
+
+The `FileTemplateSource` class is responsible for looking up templates from a file system.
+
+**Class Diagram**
 ```plantuml
 @startuml
-class ITemplateSource {
-    - ITemplateContext Get(string templateName)
+class FileTemplateSource {
+  - IOptions<FileTemplatingOptions> settings
+  - IEnumerable<IFileType> fileTypes
+  - ILogger<FileTemplateSource> logger
+
+  + Get(string templateName)
 }
 
-class FileTemplateSource(I_TemplateSource) {
-    - FileTemplatingOptions _settings
-    - IEnumerable<IFileType> _fileTypes
-    - ILogger _logger
-
-    - ITemplateContext Get(string templateName)
-}
 @enduml
 ```
+**Description**
 
-**FileTemplatingOptions.cs**
+The `FileTemplateSource` class takes an instance of `IOptions<FileTemplatingOptions>`, an instance of `IEnumerable<IFileType>`, and an instance of `ILogger<FileTemplateSource>` as constructor parameters. The `Get` method is used to look up templates from the file system and returns a collection of `ITemplateContext` objects.
 
-This class holds configuration settings for the file templating engine.
+### FileTemplatingOptions
+----------------------
 
+The `FileTemplatingOptions` class is used to configure the file templating engine.
+
+**Class Diagram**
 ```plantuml
 @startuml
-class IOptions<FileTemplatingOptions> {
-    - string TemplatePath
-    - string? SandboxPath
-    - int Priority
+class FileTemplatingOptions {
+  - string TemplatePath
+  - string? SandboxPath
+  - int Priority
+
+  + [CommandParameter] TemplatePath
+  + [CommandParameter] SandboxPath
+  + [CommandParameter] Priority
 }
+
 @enduml
 ```
+**Description**
 
-**TemplateContext.cs**
+The `FileTemplatingOptions` class provides three properties:
 
-This class represents the context of a template, providing information about the template and its processing.
+* `TemplatePath`: the path to the template files
+* `SandboxPath`: the path to the sandbox directory
+* `Priority`: the priority of the template
 
+These properties can be set using command-line parameters.
+
+### TemplateContext
+-----------------
+
+The `TemplateContext` class represents the context of a template.
+
+**Class Diagram**
 ```plantuml
 @startuml
-class ITemplateContext {
-    - string TemplateName
-    - string TemplateContentType
-    - string TemplateFileExtension
-    - ITemplateSource TemplateSource
-    - string TemplateReference
-    - Func<ITemplateContext, Stream> OpenTemplate
-    - string TargetContentType
-    - string TargetFileExtension
-    - int Priority
+class TemplateContext implements ITemplateContext {
+  - string TemplateName
+  - string TemplateContentType
+  - string TemplateFileExtension
+  - ITemplateSource TemplateSource
+  - string TemplateReference
+  - Func<ITemplateContext, Stream> OpenTemplate
+  - string TargetContentType
+  - string TargetFileExtension
+  - int Priority
+
+  + ToString()
 }
 
-class TemplateContext(ITemplateContext) {
-    - override string ToString()
-}
 @enduml
 ```
+**Description**
 
-**TemplateEngine.cs**
+The `TemplateContext` class provides several properties:
 
-This class generates a templating engine that tries to use the best match for source and provider.
+* `TemplateName`: the name of the template
+* `TemplateContentType`: the content type of the template
+* `TemplateFileExtension`: the file extension of the template
+* `TemplateSource`: the source of the template
+* `TemplateReference`: the reference identifier of the template
+* `OpenTemplate`: a function to open the template as a stream
+* `TargetContentType`: the content type of the target
+* `TargetFileExtension`: the file extension of the target
+* `Priority`: the priority of the template
 
+The `ToString` method is used to return a string representation of the template context.
+
+### TemplateEngine
+-----------------
+
+The `TemplateEngine` class is responsible for applying templates to data.
+
+**Class Diagram**
 ```plantuml
 @startuml
-class ITemplateEngine {
-    - ITemplateContext? ApplyAsync(string templateName, object data, Stream target)
-    - ITemplateContext? ApplyAsync(ITemplateContext context, object data, Stream target)
-    - string? ApplyAsync(string templateName, object data)
-    - string? ApplyAsync(ITemplateContext context, object data)
-    - ITemplateContext? Get(string templateName)
-    - IEnumerable<ITemplateContext> GetAll(string templateName)
+class TemplateEngine implements ITemplateEngine {
+  - IEnumerable<ITemplateSource> sources
+  - IEnumerable<ITemplateProvider> providers
+  - ILogger<TemplateEngine> logger
+
+  + ApplyAsync(string templateName, object data, Stream target)
+  + ApplyAsync(ITemplateContext context, object data, Stream target)
+  + ApplyAsync(string templateName, object data)
+  + ApplyAsync(ITemplateContext context, object data)
+  + Get(string templateName)
+  + GetAll(string templateName)
 }
 
-class TemplateEngine(ITemplateEngine) {
-    - IEnumerable<ITemplateSource> sources
-    - IEnumerable<ITemplateProvider> providers
-    - ILogger logger
-}
 @enduml
 ```
+**Description**
 
-**XsltTemplateProvider.cs**
+The `TemplateEngine` class takes an instance of `IEnumerable<ITemplateSource>`, an instance of `IEnumerable<ITemplateProvider>`, and an instance of `ILogger<TemplateEngine>` as constructor parameters. The `ApplyAsync` method is used to apply a template to data and returns a task representing the asynchronous operation. The `Get` and `GetAll` methods are used to retrieve template contexts.
 
-This class provides template processing using XSLT (eXtensible Stylesheet Language Transformations).
+### XsltTemplateProvider
+-----------------------
 
+The `XsltTemplateProvider` class is responsible for processing XSLT templates.
+
+**Class Diagram**
 ```plantuml
 @startuml
-class ITemplateProvider {
-    - IReadOnlyCollection<string> SupportedContentTypes
-    - bool CanApply(ITemplateContext context)
-    - Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target)
+class XsltTemplateProvider implements ITemplateProvider {
+  - IXmlSerializer xmlSerializer
+
+  + SupportedContentTypes
+  + CanApply(ITemplateContext context)
+  + ApplyAsync(ITemplateContext context, object data, Stream target)
 }
 
-class XsltTemplateProvider(ITemplateProvider) {
-    - IXmlSerializer _xmlSerializer
-    - Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target)
-}
 @enduml
 ```
+**Description**
 
-Please note that some classes have been omitted from the PlantUML diagrams for brevity. Additionally, the diagrams are only a visual representation of the classes and do not include method implementations or other details.
+The `XsltTemplateProvider` class takes an instance of `IXmlSerializer` as constructor parameter. The `SupportedContentTypes` property returns a collection of supported content types. The `CanApply` method is used to determine whether the template provider can apply template processing to the given context. The `ApplyAsync` method is used to apply the XSLT template associated with the specified context to the provided data and writes the result to the target stream

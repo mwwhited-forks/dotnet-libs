@@ -1,84 +1,101 @@
-**Class Diagrams**
+# Eliassen.Search.Semantic Documentation
 
-We can generate the class diagrams using PlantUML code. Here is the PlantUML code for the classes:
+## Overview
 
+The Eliassen.Search.Semantic namespace provides a set of interfaces for creating and working with vector stores.
+
+## IVectorStoreFactory
+
+### Class Diagram
 ```plantuml
 @startuml
-interface "IVectorStoreFactory" {
+interface IVectorStoreFactory {
   - IVectorStore Create(string collectionName)
-  - IVectorStore Create<T>()
+  - <T> IVectorStore Create<T>()
 }
-
-interface "IVectorStoreProvider" {
-  - string CollectionName {get; set}
-}
-
-interface "IVectorStoreProviderFactory" {
-  - IVectorStoreProvider Create(string containerName)
-}
-
 @enduml
 ```
 
-**Class Documentation**
+### Description
 
-**IVectorStoreFactory.cs**
+The `IVectorStoreFactory` interface provides a way to create instances of `IVectorStore` with the specified collection name or type.
 
-```markdown
-# IVectorStoreFactory
+### Methods
 
-The `IVectorStoreFactory` interface provides a way to create instances of `IVectorStore`.
+* `Create(string collectionName)`: Creates a new instance of `IVectorStore` with the specified collection name.
+* `Create<T>()`: Creates a new instance of `IVectorStore` of the specified type.
 
-## Create
+### Usage
 
-### Create a new instance of IVectorStore with a specified collection name
+To use the `IVectorStoreFactory` interface, create an instance of a concrete implementation, such as `VectorStoreFactory`, and call the `Create` method to obtain an instance of `IVectorStore`.
 
-* Parameters: `collectionName` - The name of the collection.
-* Returns: A new instance of `IVectorStore`.
+## IVectorStoreProvider
 
-### Create a new instance of IVectorStore of a specified type
-
-* Type parameters: `T` - The type of `IVectorStore` to create.
-* Returns: A new instance of `IVectorStore` of the specified type.
-
-## See Also
-
-* [IVectorStore](IVectorStore.md)
+### Class Diagram
+```plantuml
+@startuml
+interface IVectorStoreProvider extends IVectorStore {
+  - string CollectionName { get; set; }
+}
+@enduml
 ```
 
-**IVectorStoreProvider.cs**
+### Description
 
-```markdown
-# IVectorStoreProvider
+The `IVectorStoreProvider` interface extends `IVectorStore` and provides a way to get or set the name of the container.
 
-The `IVectorStoreProvider` interface provides a way to interact with a vector store that implements `IVectorStore`.
+### Properties
 
-## Properties
+* `CollectionName`: Gets or sets the name of the container.
 
-### CollectionName
+### Usage
 
-Gets or sets the name of the container.
+To use the `IVectorStoreProvider` interface, implement the interface in a concrete class, such as `VectorStoreProvider`, and provide the `CollectionName` property.
 
-* Type: `string`
+## IVectorStoreProviderFactory
+
+### Class Diagram
+```plantuml
+@startuml
+interface IVectorStoreProviderFactory {
+  - IVectorStoreProvider Create(string containerName)
+}
+@enduml
 ```
 
-**IVectorStoreProviderFactory.cs**
+### Description
 
-```markdown
-# IVectorStoreProviderFactory
+The `IVectorStoreProviderFactory` interface provides a way to create instances of `IVectorStoreProvider` with the specified container name.
 
-The `IVectorStoreProviderFactory` interface provides a way to create instances of `IVectorStoreProvider`.
+### Methods
 
-## Create
+* `Create(string containerName)`: Creates a new instance of `IVectorStoreProvider` with the specified container name.
 
-### Create a new instance of IVectorStoreProvider with a specified container name
+### Usage
 
-* Parameters: `containerName` - The name of the container.
-* Returns: A new instance of `IVectorStoreProvider`.
+To use the `IVectorStoreProviderFactory` interface, create an instance of a concrete implementation, such as `VectorStoreProviderFactory`, and call the `Create` method to obtain an instance of `IVectorStoreProvider`.
 
-## See Also
+## Sequence Diagram
+```plantuml
+@startuml
+actor "Client"
+participant "IVectorStoreProviderFactory"
+participant "IVectorStoreProvider"
 
-* [IVectorStoreProvider](IVectorStoreProvider.md)
+note "Request create vector store"
+Client->IVectorStoreProviderFactory: Create(string containerName)
+
+note "Create vector store provider"
+IVectorStoreProviderFactory->IVectorStoreProvider: Create(string containerName)
+
+note "Return vector store provider"
+IVectorStoreProvider->Client: IVectorStoreProvider
+
+note "Use vector store provider"
+Client->IVectorStoreProvider: Get or set collection name
+@enduml
 ```
 
-Note: I've generated the documentation based on the code provided, assuming that the interfaces are part of a larger system and will have more functionality added to them. The documentation provides a brief summary of each class, its properties and methods, and any relevant information. The class diagrams provide a visual representation of the relationships between the classes.
+### Description
+
+This sequence diagram shows the interaction between the client, `IVectorStoreProviderFactory`, and `IVectorStoreProvider`. The client requests a vector store provider from the factory, which creates an instance and returns it to the client. The client can then use the provider to get or set the collection name.

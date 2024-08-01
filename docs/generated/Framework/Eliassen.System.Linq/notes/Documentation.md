@@ -1,194 +1,124 @@
-Here is the documentation for the provided source code files, including class diagrams in PlantUML:
+Here is the documentation for the source code in Markdown format, with PlantUML diagrams where reasonable.
 
-**CaseSensitiveSearch.json and DateTimeOffsetQuery.json**
+**Source Files**
 
-These JSON objects represent filters for a search query. They have the following properties:
+### CaseSensitiveSearch.json
 
-* `currentPage`: The current page number (0-based index).
-* `filter`: An object that defines the filter criteria.
-* `orderBy`: An object that defines the sorting criteria.
+CaseSensitiveSearch.json is a JSON file that defines a search query with a filter that matches the `FirstName` field with the value "jim*" (i.e., starts with "jim").
 
-Class Diagram:
+```json
+{
+  "currentPage": 0,
+  "filter": {
+    "FirstName": {
+      "eq": "jim*"
+    }
+  },
+  "orderBy": {}
+}
+```
+
+### DateTimeOffsetQuery.json
+
+DateTimeOffsetQuery.json is a JSON file that defines a search query with a filter that matches the `CreatedOn` field with dates less than 2023-05-23, and orders the results by `CreatedOn`.
+
+```json
+{
+  "currentPage": 0,
+  "filter": {
+    "CreatedOn": {
+      "lt": "2023-05-23"
+    }
+  },
+  "orderBy": {
+    "CreatedOn": 0
+  }
+}
+```
+
+### mongoquery.md
+
+mongoquery.md is a MongoDB query that performs the following operations:
+
+1. Adds a new field `FixedUp` to the result set, which is calculated by adding an offset value to the `createdOn` field.
+2. Projects the result set to include the `UserId`, `UserName`, `EmailAddress`, `FirstName`, `LastName`, `Active`, and `UserModules` fields.
+3. Applies a condition to the `UserModules` field to only include non-null values.
+4. Maps the `UserModules` field to include an array of objects, each containing the `Code`, `Name`, and `Roles` fields.
+5. Applies a condition to the `Roles` field to only include non-null values.
+6. Maps the `Roles` field to include an array of objects, each containing the `Code`, `Name`, and `Rights` fields.
+7. Applies a condition to the `Rights` field to only include non-null values.
+8. Maps the `Rights` field to include an array of objects, each containing the `Name` and `Code` fields.
+9. Sorts the result set by `LastName`, `FirstName`, and `EmailAddress`.
+10. Skips the first 0 elements and limits the result set to 10 elements.
+
+Here is the PlantUML diagram for the query:
 ```plantuml
 @startuml
-class CaseSensitiveSearch {
-  - currentPage: int
-  - filter: Filter
-  - orderBy: OrderBy
+class User {
+  UserId: string
+  UserName: string
+  EmailAddress: string
+  FirstName: string
+  LastName: string
+  Active: boolean
+  CreatedOn: date
+  UserModules: array[Module]
 }
-
-class Filter {
-  - eq: string
+class Module {
+  Code: string
+  Name: string
+  Roles: array[Role]
 }
-
-class OrderBy {
-  - property: string
-  - direction: string
+class Role {
+  Code: string
+  Name: string
+  Rights: array[Right]
 }
-
-CaseSensitiveSearch --* Filter
-CaseSensitiveSearch --* OrderBy
+class Right {
+  Name: string
+  Code: string
+}
+User --* Module
+Module --* Role
+Role --* Right
 @enduml
 ```
-**mongoquery.md**
 
-This is a MongoDB query that uses various aggregation operators to manipulate the data. It includes the following stages:
+### PagedResult.json
 
-* `$addFields`: Adds a new field to the documents.
-* `$project`: Projects the fields to include in the output.
-* `$match`: Filters the documents based on a condition.
-* `$sort`: Sorts the documents based on a field.
-* `$skip`: Skips the specified number of documents.
-* `$limit`: Limits the number of documents to return.
+PagedResult.json is a JSON file that defines a paged result set with the following properties:
 
-Class Diagram:
-```plantuml
-@startuml
-class MongoDBQuery {
-  - addFields: AddFields
-  - project: Project
-  - match: Match
-  - sort: Sort
-  - skip: Skip
-  - limit: Limit
-}
+* `CurrentPage`: The current page number (0-based index).
+* `TotalPageCount`: The total number of possible pages.
+* `TotalRowCount`: The total row count based on the predicate before paging.
+* `Rows`: An array of objects that match the query filter and projection.
 
-class AddFields {
-  - field: string
-  - expression: string
-}
-
-class Project {
-  - fields: string[]
-}
-
-class Match {
-  - condition: string
-}
-
-class Sort {
-  - field: string
-  - direction: string
-}
-
-class Skip {
-  - amount: int
-}
-
-class Limit {
-  - amount: int
-}
-
-MongoDBQuery --* AddFields
-MongoDBQuery --* Project
-MongoDBQuery --* Match
-MongoDBQuery --* Sort
-MongoDBQuery --* Skip
-MongoDBQuery --* Limit
-@enduml
-```
-**PagedResult.json**
-
-This JSON object represents a paged result set. It has the following properties:
-
-* `currentPage`: The current page number (0-based index).
-* `TotalPageCount`: The total number of pages.
-* `TotalRowCount`: The total number of rows.
-* `Rows`: An array of objects that represent the paged result set.
-
-Class Diagram:
+Here is the PlantUML diagram for the PagedResult.json structure:
 ```plantuml
 @startuml
 class PagedResult {
-  - currentPage: int
-  - TotalPageCount: int
-  - TotalRowCount: int
-  - Rows: object[]
+  CurrentPage: int
+  TotalPageCount: int
+  TotalRowCount: int
+  Rows: array[object]
 }
-
-PagedResult --* object[] Rows
 @enduml
 ```
-**queryexamples.bat**
 
-This is a batch script that demonstrates how to use the search query API. It includes the following examples:
+### queryexamples.bat
 
-* Unfiltered search.
-* Search with a filter term.
-* Search with a case-insensitive filter term.
-* Search with a paginated result set.
+queryexamples.bat is a batch file that demonstrates how to use the API to perform various queries, such as:
 
-Class Diagram:
-```plantuml
-@startuml
-class QueryExamples {
-  - unfiltered: string
-  - searchTerm: string
-  - caseInsensitive: string
-  - paginated: string
-}
+* Unfiltered query
+* Search query with a specific term
+* Search query with a case-sensitive term
+* Search query with a page number and page size
 
-QueryExamples --* string unfiltered
-QueryExamples --* string searchTerm
-QueryExamples --* string caseInsensitive
-QueryExamples --* string paginated
-@enduml
-```
-**SearchByObjectId.json**
+Here are the queries:
 
-This JSON object represents a search query that filters by object ID. It has the following properties:
+* Unfiltered query: `curl https://localhost:7192/api/users`
+* Search query with a specific term: `curl https://localhost:7192/api/users?SearchTerm=Allen`
+* Search query with a case-sensitive term: `curl https://localhost:7192/api/users?SearchTerm=Ji*`
+* Search query with a page number and page size: `curl https://localhost:7192/api/users?CurrentPage=1&PageSize=20`
 
-* `filter`: An object that defines the filter criteria.
-
-Class Diagram:
-```plantuml
-@startuml
-class SearchByObjectId {
-  - filter: Filter
-}
-
-class Filter {
-  - userId: string
-}
-
-SearchByObjectId --* Filter
-@enduml
-```
-**SearchQuery.json**
-
-This JSON object represents a search query. It has the following properties:
-
-* `currentPage`: The current page number (0-based index).
-* `PageSize`: The number of rows per page.
-* `ExcludePageCount`: A boolean that indicates whether to exclude the page count.
-* `SearchTerm`: The search term that defines the filter criteria.
-* `Filter`: An object that defines the filter criteria.
-* `OrderBy`: An object that defines the sorting criteria.
-
-Class Diagram:
-```plantuml
-@startuml
-class SearchQuery {
-  - currentPage: int
-  - PageSize: int
-  - ExcludePageCount: boolean
-  - SearchTerm: string
-  - Filter: Filter
-  - OrderBy: OrderBy
-}
-
-class Filter {
-  - property1: string
-  - property2: string
-}
-
-class OrderBy {
-  - property: string
-  - direction: string
-}
-
-SearchQuery --* Filter
-SearchQuery --* OrderBy
-@enduml
-```
-Note that the class diagrams are simplifications of the actual code and are intended to provide a high-level overview of the relationships between
+I hope this documentation helps! Let me know if you have any further requests.

@@ -1,129 +1,98 @@
-**Documentation**
+Here is the documentation for the provided source code in markdown format.
 
-**InProcessMessageProvider Class**
+**Message Queueing Service**
+==========================
 
-The `InProcessMessageProvider` class is a message provider that can send and receive messages in-process. It implements both `IMessageSenderProvider` and `IMessageReceiverProvider` interfaces.
+### Class Diagram
+```plantuml
+@startuml
+class InProcessMessageProvider {
+  - logger: ILogger<InProcessMessageProvider>
+  - _handlerProvider: IMessageHandlerProvider?
+  - _queue: ConcurrentQueue<WrappedQueueMessage>
+  + SendAsync(object, IMessageContext)
+  + SetHandlerProvider(IMessageHandlerProvider)
+  + RunAsync(CancellationToken)
+}
 
-**Constructors**
+class IMessageHandlerProvider {
+  + HandleAsync(IQueueMessage, string)
+}
 
-* `InProcessMessageProvider(ILogger<InProcessMessageProvider> logger)`: Initializes a new instance of the `InProcessMessageProvider` class with the specified logger.
+class IMessageQueueHandler {
+  + HandleAsync(object, IMessageContext)
+}
 
-**Properties**
+class MessageContext {
+  - OriginMessageId: string?
+  - CorrelationId: string?
+  - RequestId: string?
+  - SentId: string?
+  - ChannelType: string?
+  - MessageType: string?
+  - SentAt: DateTimeOffset?
+  - SentBy: string?
+  - SentFrom: string?
+  - Headers: Dictionary<string, object?>
+}
 
-* `MessageProviderKey`: Gets the key associated with the in-process message provider.
+class MessageHandlerProvider {
+  - serializer: IJsonSerializer
+  - context: IMessageContextFactory
+  - logger: ILogger<MessageHandlerProvider>
+  - _handlers: ConcurrentBag<IMessageQueueHandler>
+  + HandleAsync(IQueueMessage, string)
+  + SetHandlers(IEnumerable<IMessageQueueHandler>)
+  + SetChannelType(Type)
+  + SetConfig(IConfigurationSection)
+}
 
-**Methods**
+class MessagePropertyResolver {
+  - configuration: IConfiguration
+  + Configuration(Type, Type)
+  + Provider(Type, Type)
+  + MessageId(Type, Type, string?)
+  + ProviderSafe(Type, Type)
+  + ConfigurationSafe(Type, Type)
+}
+@enduml
+```
 
-* `SendAsync(object message, IMessageContext context)`: Sends a message asynchronously using the specified context.
-* `SetHandlerProvider(IMessageHandlerProvider handlerProvider)`: Sets the message handler provider.
-* `RunAsync(CancellationToken cancellationToken)`: Runs the in-process message provider asynchronously.
+### Components
+#### In-Process Message Provider
+The `InProcessMessageProvider` class is responsible for sending and receiving messages in an in-process message queue. It implements both `IMessageSenderProvider` and `IMessageReceiverProvider` interfaces.
 
-**MessageContext Class**
+* `SendAsync(object, IMessageContext)`: Sends a message asynchronously.
+* `SetHandlerProvider(IMessageHandlerProvider)`: Sets the message handler provider.
+* `RunAsync(CancellationToken)`: Runs the in-process message provider asynchronously.
 
+#### Message Handler Provider
+The `MessageHandlerProvider` class provides handling of queue messages by coordinating multiple `IMessageQueueHandler` instances.
+
+* `HandleAsync(IQueueMessage, string)`: Handles the specified queue message by invoking each registered message handler.
+* `SetHandlers(IEnumerable<IMessageQueueHandler>)`: Sets the message handlers.
+* `SetChannelType(Type)`: Sets the channel type.
+* `SetConfig(IConfigurationSection)`: Sets the configuration section.
+
+#### Message Context
 The `MessageContext` class represents the context associated with a message, including metadata and headers.
-
-**Constructors**
-
-* `MessageContext()`: Initializes a new instance of the `MessageContext` class with default values.
-
-**Properties**
 
 * `OriginMessageId`: Gets or sets the origin message ID.
 * `CorrelationId`: Gets or sets the correlation ID.
 * `RequestId`: Gets or sets the request ID.
 * `SentId`: Gets or sets the sent ID.
-* `ChannelType`: Gets or sets the type of the message channel.
-* `MessageType`: Gets or sets the type of the message.
-* `Headers`: Gets the headers associated with the message context.
-* `Config`: Gets the configuration section associated with the message context.
+* `ChannelType`: Gets or sets the channel type.
+* `MessageType`: Gets or sets the message type.
+* `SentAt`: Gets or sets the timestamp when the message was sent.
+* `SentBy`: Gets or sets the entity that sent the message.
+* `SentFrom`: Gets or sets the origin from where the message was sent.
+* `Headers`: Gets or sets the headers associated with the message context.
 
-**MessageContextFactory Class**
+#### Message Property Resolver
+The `MessagePropertyResolver` class provides a utility for resolving properties related to message queue handling.
 
-The `MessageContextFactory` class is a factory for creating instances of `IMessageContext`.
-
-**Constructors**
-
-* `MessageContextFactory(IServiceProvider serviceProvider, ClaimsPrincipal? user)`: Initializes a new instance of the `MessageContextFactory` class with the specified service provider and user.
-
-**Methods**
-
-* `Create(Type channelType, IQueueMessage message, IConfigurationSection configuration)`: Creates a new instance of `IMessageContext` with the specified parameters.
-
-**MessageHandlerProvider Class**
-
-The `MessageHandlerProvider` class coordinates multiple `IMessageQueueHandler` instances to handle queue messages.
-
-**Constructors**
-
-* `MessageHandlerProvider(IJsonSerializer serializer, IMessageContextFactory context, ILogger<MessageHandlerProvider> logger)`: Initializes a new instance of the `MessageHandlerProvider` class with the specified serializer, context factory, and logger.
-
-**Properties**
-
-* `Config`: Gets the configuration section associated with the message handler.
-
-**Methods**
-
-* `HandleAsync(IQueueMessage message, string correlationId)`: Handles the specified queue message by invoking each registered message handler.
-
-**MessagePropertyResolver Class**
-
-The `MessagePropertyResolver` class is used to resolve message properties, such as IDs and provider keys.
-
-**Constructors**
-
-* `MessagePropertyResolver(IConfiguration configuration)`: Initializes a new instance of the `MessagePropertyResolver` class with the specified configuration.
-
-**Methods**
-
-* `Configuration(Type channelType, Type messageType)`: Retrieves the configuration section associated with the message channel and type.
-* `Provider(Type channelType, Type messageType)`: Retrieves the provider key associated with the message channel and type.
-
-**MessageReceiverProviderFactory Class**
-
-The `MessageReceiverProviderFactory` class creates instances of `IMessageReceiverProvider` based on configured message handlers.
-
-**Constructors**
-
-* `MessageReceiverProviderFactory(IEnumerable<IMessageQueueHandler> handlers, IMessagePropertyResolver resolver, IServiceProvider serviceProvider, ILogger<MessageReceiverProviderFactory> logger)`: Initializes a new instance of the `MessageReceiverProviderFactory` class with the specified handlers, resolver, service provider, and logger.
-
-**Methods**
-
-* `Create()`: Creates instances of `IMessageReceiverProvider` based on configured message handlers.
-
-**MessageSenderProviderFactory Class**
-
-The `MessageSenderProviderFactory` class creates instances of `IMessageSenderProvider` based on channel and message types.
-
-**Constructors**
-
-* `MessageSenderProviderFactory(IServiceProvider serviceProvider, IMessagePropertyResolver resolver)`: Initializes a new instance of the `MessageSenderProviderFactory` class with the specified service provider and resolver.
-
-**Methods**
-
-* `Sender(Type channelType, Type messageType)`: Creates an instance of `IMessageSenderProvider` based on the specified channel and message types.
-
-**Class Diagram**
-
-```plantuml
-@startuml
-class IMetaService {
-  + IMessageContext Create(Type channelType, IQueueMessage message, IConfigurationSection configuration)
-  + IMessageHandlerProvider SetHandlerProvider(IMessageHandlerProvider handlerProvider)
-}
-
-class MessageContextFactory {
-  + IMetaService Create(Type channelType, IQueueMessage message, IConfigurationSection configuration)
-}
-
-class IMessageHandlerProvider {
-  + void HandleAsync(IQueueMessage message, string correlationId)
-}
-
-class MessageHandlerProvider {
-  + IMessageHandlerProvider SetHandlers(IEnumerable<IMessageQueueHandler> handlers)
-  + IMessageHandlerProvider SetChannelType(Type channelType)
-  + IMessageHandlerProvider SetConfig(IConfigurationSection config)
-}
-
-class MessagePropertyResolver {
-  + IConfigurationSection Configuration(Type channel
+* `Configuration(Type, Type)`: Retrieves the safe configuration section along with simple target and message names.
+* `Provider(Type, Type)`: Retrieves the provider key along with simple target and message names.
+* `MessageId(Type, Type, string?)`: Resolves the message ID, generating a new one if not provided.
+* `ProviderSafe(Type, Type)`: Retrieves the safe provider information along with simple target and message names.
+* `ConfigurationSafe(Type, Type)`: Retrieves the safe configuration section along with simple target and message names.

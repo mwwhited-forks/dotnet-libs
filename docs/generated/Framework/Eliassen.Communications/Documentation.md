@@ -1,100 +1,109 @@
-Here is the documentation for the source code files, including class diagrams in PlantUML:
+Here is the documentation for the source code in Markdown format.
 
-**Eliassen.Communications.csproj**
+**Eliassen.Communications Library**
+============================
 
-The `Eliassen.Communications.csproj` file is a project file for a .NET Core 8.0 project. It specifies the project's properties and dependencies.
+**Overview**
+----------
 
-### Properties
+The Eliassen Communications libraries are designed to provide an abstraction for asynchronously sending messages over dedicated channels such as Email and SMS.
 
-* `TargetFramework`: The target framework for the project is .NET Core 8.0.
-* `ImplicitUsings`: Implicit usings are disabled.
-* `Nullable`: All types in the project are nullable.
-* `GenerateDocumentationFile`: Documentation files will be generated for the project.
-* `PackageReadmeFile`: The README file for the package is `Readme.Communications.md`.
-* `GenerateAssemblyInfo`: Assembly information files will be generated.
+**Example**
+--------
 
-### Dependencies
+The `ICommunicationSender<>` interface provides a means to interact with various channel providers. Example channels are hosted for `EmailMessageModel` and `SmsMessageModel`.
 
-* `Eliassen.Communications.Abstractions`: References the `Eliassen.Communications.Abstractions` project.
-* `Eliassen.Extensions`: References the `Eliassen.Extensions` project.
-
-### Class Diagram
-
-Here is the class diagram for the project:
-```plantuml
+**Class Diagram**
+`````plantuml
 @startuml
-class ICommunicationSender<T> {
-  - SendAsync(T message): Task<string>
-}
-
 class EmailMessageModel {
-  // properties
+  - messageBody: string
+  - subject: string
 }
 
 class SmsMessageModel {
-  // properties
+  - messageBody: string
 }
 
-class ExampleClass {
-  - email: ICommunicationSender<EmailMessageModel>
-
-  ExampleClass(ICommunicationSender<EmailMessageModel> email)
-
-  async Task<string> SendAsync(EmailMessageModel message) {
-    await email.SendAsync(message)
-  }
+interface ICommunicationSender<T> {
+  SendAsync(T message): Task<string>
 }
+
+class EmailCommunicationSender implements ICommunicationSender<EmailMessageModel> {
+  # implementation
+}
+
+class SmsCommunicationSender implements ICommunicationSender<SmsMessageModel> {
+  # implementation
+}
+
+EmailMessageModel --* ICommunicationSender<EmailMessageModel>
+SmsMessageModel --* ICommunicationSender<SmsMessageModel>
 
 @enduml
-```
+`````
+
+**Components**
+------------
+
+**Eliassen.Communications**
+
+* `ICommunicationSender<>`: Interface for sending messages asynchronously over various channels.
+* `EmailCommunicationSender`: Class implementing `ICommunicationSender<>` for sending Email messages.
+* `SmsCommunicationSender`: Class implementing `ICommunicationSender<>` for sending SMS messages.
+
+**ServiceCollectionExtensions**
+---------------------------
+
+**Overview**
+----------
+
+The `ServiceCollectionExtensions` class provides extension methods for configuring communication services in `IServiceCollection`.
+
+**Sequence Diagram**
+`````plantuml
+@startuml
+participant User as user
+participant ServiceCollection as services
+participant ICommunicationSender as sender
+
+user -> services: AddCommunicationServices()
+
+sender -> services: TryAddCommunicationsServices()
+
+user -> sender: GetCommunicationSender()
+
+sender -> user: CommunicationSender
+@enduml
+`````
+
 **Readme.Communications.md**
+---------------------------
 
-The `Readme.Communications.md` file contains a summary of the Eliassen Communications libraries.
+```markdown
+# Eliassen.Communications
 
-### Summary
+## Summary
 
-The Eliassen Communications libraries are an abstraction designed to asynchronously send messages over a dedicated channel, such as Email and SMS.
+The Eliassen Communications libraries are an abstraction designed to asynchronously send 
+messages over a dedicated channel such as Email and SMS
 
 ### Example
 
-The `ICommunicationSender<T>` interface is provided as a means to interact with various channel providers. Example channels are hosted for `EmailMessageModel` and `SmsMessageModel`.
+The `ICommunicationSender<>` interface is provided as a means to interact with various 
+channel providers.  Example channels are hosted for `EmailMessageModel` and `SmsMessageModel`
 
 ```csharp
-// Include ICommunicationSender<EmailMessageModel> in your service class
-public class ExampleClass {
-  - email: ICommunicationSender<EmailMessageModel>
+//Include ICommunicationSender<EmailMessageModel> in your service class
 
-  ExampleClass(ICommunicationSender<EmailMessageModel> email)
-
-  async Task<string> SendAsync(EmailMessageModel message) {
-    await email.SendAsync(message)
-  }
+public class ExampleClass (
+    ICommunicationSender<EmailMessageModel> email
+    )
+{
+    public async Task<string> SendAsync(EmailMessageModel message) =>
+        await email.SendAsync(message);
 }
 ```
-**ServiceCollectionExtensions.cs**
-
-The `ServiceCollectionExtensions` class contains extension methods for configuring communication services in an `IServiceCollection`.
-
-### Summary
-
-Extension methods for configuring communication services in `IServiceCollection`.
-
-### Method
-
-* `TryAddCommunicationsServices`: Adds communication-related services to the specified `IServiceCollection`. Returns the modified `IServiceCollection`.
-
-### Class Diagram
-
-Here is the class diagram for the `ServiceCollectionExtensions` class:
-```plantuml
-@startuml
-class ServiceCollectionExtensions {
-  + TryAddCommunicationsServices(IServiceCollection services): IServiceCollection
-}
-
-class IServiceCollection {
-  // methods
-}
-
-@enduml
 ```
+
+Let me know if you need any further changes!

@@ -1,84 +1,104 @@
-Here is the documentation for the provided source code files, including class diagrams generated using PlantUML:
+Here is the documentation for the provided source code:
 
-**Eliassen.MessageQueueing.Hosting.csproj**
+**README.md**
 
-This is a .NET Core project file for Eliassen.MessageQueueing.Hosting. It references various libraries and projects, including Eliassen.MessageQueueing#abstractions, Eliassen.System#abstractions, and Eliassen.System.
+# Eliassen.MessageQueueing.Hosting
 
-**MessageReceiverHost.cs**
+This is a .NET Core library that provides a hosted service for starting and stopping message receivers based on the configured providers. It's designed to be used with Microsoft.Extensions.Hosting and Microsoft.Extensions.Logging.
 
-This class is a hosted service responsible for starting and stopping message receivers based on the configured providers.
+**MessageReceiverHost**
 
-**Class Diagram:**
+The `MessageReceiverHost` class is responsible for starting and stopping message receivers based on the configured providers. It's implemented as a hosted service and provides methods for starting and stopping the service.
 
+### Methods
+
+#### Constructor
+
+Initializes a new instance of the `MessageReceiverHost` class.
+
+##### Parameters
+
+* `logger`: The logger.
+* `factory`: The message receiver provider factory.
+
+#### Dispose
+
+Disposes of the resources used by the `MessageReceiverHost`.
+
+#### Dispose(bool)
+
+Disposes of the resources used by the `MessageReceiverHost`.
+
+##### Parameters
+
+* `disposing`
+
+#### StartAsync(CancellationToken)
+
+Starts the message receiver host.
+
+##### Parameters
+
+* `cancellationToken`: The cancellation token.
+
+##### Return value
+
+A task representing the start operation.
+
+#### StopAsync(CancellationToken)
+
+Stops the message receiver host.
+
+##### Parameters
+
+* `cancellationToken`: The cancellation token.
+
+##### Return value
+
+A task representing the stop operation.
+
+**Sequence Diagram**
+```plantuml
+@startuml
+sequenceDiagram
+  participant Host as "Host"
+  participant MessageReceiverHost as "MessageReceiverHost"
+  participant IMessageReceiverProvider as "IMessageReceiverProvider"
+  participant IMessageReceiverProviderFactory as "IMessageReceiverProviderFactory"
+  note "Start" as start
+  Host->>MessageReceiverHost: Start
+  MessageReceiverHost->>IMessageReceiverProviderFactory: Create
+  IMessageReceiverProviderFactory->>IMessageReceiverProvider[]
+  MessageReceiverHost->>IMessageReceiverProvider[]: Start
+  note "Stop" as stop
+  Host->>MessageReceiverHost: Stop
+  MessageReceiverHost->>IMessageReceiverProvider[]: Stop
+@enduml
+```
+**Class Diagram**
 ```plantuml
 @startuml
 class MessageReceiverHost {
-  - logger: ILogger
-  - factory: IMessageReceiverProviderFactory
-  - tasks: List<Task>
-  - tokenSource: CancellationTokenSource
-  - disposed: Boolean
-
-  + StartAsync(CancellationToken cancellationToken)
-  + StopAsync(CancellationToken cancellationToken)
-  + Dispose()
-  + Dispose(Boolean disposing)
+  -logger: ILogger<MessageReceiverHost>
+  -factory: IMessageReceiverProviderFactory
+  -_tasks: List<Task>
+  -_tokenSource: CancellationTokenSource
+  -_disposed: bool
 }
-
-class ILogger {
-  + LogInformation(String message)
-  + LogError(String message, Exception ex)
-  + LogDebug(String message, String debugMessage)
-}
-
-class IMessageReceiverProviderFactory {
-  + Create()
-}
-
 class IMessageReceiverProvider {
-  + RunAsync(CancellationToken cancellationToken)
+  -RunAsync(CancellationToken): Task
 }
-
-MessageReceiverHost -impl-> IMessageReceiverProviderFactory
-ILogger -impl-> MessageReceiverHost
-IMessageReceiverProvider -impl-> MessageReceiverHost
-IMessageReceiverProvider -impl-> IMessageReceiverProviderFactory
+class IMessageReceiverProviderFactory {
+  +Create(): IMessageReceiverProvider[]
+}
 @enduml
 ```
+**How to use**
 
-**Description:**
-
-The `MessageReceiverHost` class has properties for the logger, factory, tasks, token source, and disposed state. It has methods for starting, stopping, and disposing of the message receiver host.
-
-The `Dispose` method disposes of unmanaged resources and sets the `disposed` state to true. The `StartAsync` method starts the message receiver host by creating and starting tasks for each provider. The `StopAsync` method stops the message receiver host by canceling the token source and waiting for all tasks to complete. The `Dispose(Boolean disposing)` method disposes of managed and unmanaged resources.
-
-**Readme.MessageQueueing.Hosting.md**
-
-This is a Markdown file providing documentation for the Eliassen.MessageQueueing.Hosting project. It includes information on the `MessageReceiverHost` class and its methods.
-
-**ServiceCollectionExtensions.cs**
-
-This class provides extension methods for configuring IoC (Inversion of Control) services to support all Message Queueing within this library.
-
-**Class Diagram:**
-
-```plantuml
-@startuml
-class ServiceCollectionExtensions {
-  + TryAddMessageQueueingHosting(IServiceCollection services)
-}
-
-class IServiceCollection {
-  + AddHostedService(Type type)
-}
-
-ServiceCollectionExtensions -impl-> IServiceCollection
-(IServiceCollection) -impl-> MessageReceiverHost
-@enduml
+To use the `MessageReceiverHost` class, you'll need to add the following lines to your `Startup.cs` file in the `ConfigureServices` method:
+```csharp
+services.TryAddMessageQueueingHosting();
 ```
+This will add the `MessageReceiverHost` to the service collection and configure it to start and stop the message receivers based on the configured providers.
 
-**Description:**
-
-The `ServiceCollectionExtensions` class has a single method, `TryAddMessageQueueingHosting`, which adds IOC configurations to support all Message Queueing within this library. This method returns the `IServiceCollection` instance.
-
-The `IServiceCollection` class represents the service collection, which is used to configure and build a service provider instance. The `AddHostedService` method adds a hosted service to the service collection.
+Note: The `MessageReceiverHost` class is designed to be used with Microsoft.Extensions.Hosting and Microsoft.Extensions.Logging.

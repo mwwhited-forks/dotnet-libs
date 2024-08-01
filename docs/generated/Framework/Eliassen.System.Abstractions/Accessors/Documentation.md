@@ -1,45 +1,72 @@
-**IAccessor.cs Documentation**
+Here is the documentation for the source code in Markdown format:
 
-**Class Diagram**
+# Eliassen.System.Accessors
+
+## IAccessor<T> Interface
+
+The `IAccessor<T>` interface is a type that allows for an instance to be bound to an async context.
+
+### Interface Definition
+
+```csharp
+namespace Eliassen.System.Accessors;
+
+public interface IAccessor<T>
+{
+    /// <summary>
+    /// Accessible value
+    /// </summary>
+    T? Value { get; set; }
+}
+```
+
+### Components and Interfaces
 
 ```plantuml
 @startuml
-interface "IAccessor[T]" {
-    -T? Value
+interface "IAccessor<T>" {
+  - T? value
 }
 
 @enduml
 ```
 
-**API Documentation**
+### Class Diagram
 
-**IAccessor<T> Interface**
+```plantuml
+@startuml
+class IAccessor<T> {
+  - T? value
+}
 
-The `IAccessor<T>` interface is a type that allows for an instance to be bound to an async context.
+@enduml
+```
+
+### Sequence Diagram
+
+A sequence diagram illustrating the usage of the `IAccessor<T>` interface would show the following:
+
+```plantuml
+@startuml
+actor "Caller"
+actor "Accessor"
+
+Accessor ->> Value: set
+Value ->> Caller: Value
+Caller ->> Accessor: get
+Accessor ->> Value: Value
+sequenceDiagram
+@enduml
+```
+
+The `IAccessor<T>` interface is designed to be used in scenarios where an instance needs to be bound to an async context. The interface provides a single property `Value` which can be set and get.
+
+The `Value` property is of type `T?` which is a nullable value type. This allows for scenarios where the value is not present.
+
+The following sections will be added as the source code grows:
 
 ### Properties
 
-#### `Value`
+### Methods
 
-* Type: `T?`
-* Get/set: `get`; `set`
-* Description: The accessible value.
-
-### Summary
-
-The `IAccessor<T>` interface provides a way to access a value of type `T` asynchronously. The interface is designed to be implemented by any class that needs to provide access to a value that can be updated or retrieved asynchronously.
-
-### Notes
-
-The `IAccessor<T>` interface is commonly used in scenarios where a value needs to be accessed or updated asynchronously, such as in a background thread or in response to an event. The interface provides a simple and consistent way to access the value, making it easier to write code that is decoupled and maintainable.
-
-### Example
-
-```csharp
-public class MyAccessor : IAccessor<int>
-{
-    public int? Value { get; set; }
-}
-```
-
-In this example, the `MyAccessor` class implements the `IAccessor<int>` interface, providing a property called `Value` that can be used to get or set the value of type `int`.
+### Events
