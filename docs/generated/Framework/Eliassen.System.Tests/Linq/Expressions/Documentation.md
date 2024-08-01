@@ -1,110 +1,158 @@
-Here is the generated documentation for the source code files:
+# Expression Tree Builders and Visitors
 
-**ExpressionTreeBuilderTests.cs**
+## Expression Tree Builders
 
-This test class contains a set of unit tests for the ExpressionTreeBuilder class. The tests cover different scenarios and verify the correctness of the methods.
+The Expression Tree Builders are used to analyze and manipulate LINQ expressions at runtime. They provide a way to transform and optimize LINQ expressions, making them more efficient and easier to understand.
 
 ### Class Diagram
 
 ```plantuml
 @startuml
+class ExpressionTreeBuilderTests {
+    - TestContext: TestContext
+    - GetFilterablePropertyNamesTest: method
+    - GetSearchablePropertyNamesTest: method
+    - GetSortablePropertyNamesTest: method
+}
+
+class ExpressionTreeBuilder<T> {
+    - GetFilterablePropertyNames: method
+    - GetSearchablePropertyNames: method
+    - GetSortablePropertyNames: method
+}
+
 class TestContext {
-    TestContext() : TestContext(null)
-    TestContext(TContext context) : TestContext(context)
+    - WriteLine: method
+    - AddResult: method
 }
-class ExpressionTreeBuilder {
-    ExpressionTreeBuilder(TModel model)
-    GetFilterablePropertyNames()
-    GetSearchablePropertyNames()
-    GetSortablePropertyNames()
-}
-class TestTargetModel
-class TestTarget2Model
-class TestTarget3Model
+
+ExpressionTreeBuilderTests --* ExpressionTreeBuilder<T>
+ExpressionTreeBuilder<T> --* TestContext
 @enduml
 ```
 
-**SkipInstanceMethodOnNullExpressionVisitorTests.cs**
+### Expression Tree Builders Model
 
-This test class contains a set of unit tests for the SkipInstanceMethodOnNullExpressionVisitor class. The tests cover different scenarios and verify the correctness of the visitor's implementation.
+The Expression Tree Builders have three methods:
+
+1. `GetFilterablePropertyNames`: Returns a list of filterable property names for the given type.
+2. `GetSearchablePropertyNames`: Returns a list of searchable property names for the given type.
+3. `GetSortablePropertyNames`: Returns a list of sortable property names for the given type.
+
+### Sequence Diagram
+
+```plantuml
+@startuml
+participant "ExpressionTreeBuilderTests"
+participant "ExpressionTreeBuilder<T>"
+participant "TestContext"
+
+note "GetFilterablePropertyNamesTest" as note1
+note1: Call ExpressionTreeBuilder<T>.GetFilterablePropertyNames() and assert result
+
+note "GetSearchablePropertyNamesTest" as note2
+note2: Call ExpressionTreeBuilder<T>.GetSearchablePropertyNames() and assert result
+
+note "GetSortablePropertyNamesTest" as note3
+note3: Call ExpressionTreeBuilder<T>.GetSortablePropertyNames() and assert result
+
+ExpressionTreeBuilderTests -> ExpressionTreeBuilder<T>: Create new instance
+ExpressionTreeBuilder<T> -> TestContext: Get filterable property names
+ExpressionTreeBuilder<T> -> TestContext: Get searchable property names
+ExpressionTreeBuilder<T> -> TestContext: Get sortable property names
+TestContext -> ExpressionTreeBuilderTests: Return result
+@enduml
+```
+
+## Visitors
+
+The Visitors are used to analyze and transform LINQ expressions at runtime. They provide a way to add custom logic to LINQ expressions, making them more flexible and reusable.
 
 ### Class Diagram
 
 ```plantuml
 @startuml
-class TestContext {
-    TestContext() : TestContext(null)
-    TestContext(TContext context) : TestContext(context)
-}
 class SkipInstanceMethodOnNullExpressionVisitor {
-    Visit(Expression expression)
+    - Visit: method
 }
-class LambdaExpression
-class Test {
-    Test()
-    Compile()
-    DynamicInvoke(object input)
-}
-@enduml
-```
 
-**SkipMemberOnNullExpressionVisitorTests.cs**
-
-This test class contains a set of unit tests for the SkipMemberOnNullExpressionVisitor class. The tests cover different scenarios and verify the correctness of the visitor's implementation.
-
-### Class Diagram
-
-```plantuml
-@startuml
-class TestContext {
-    TestContext() : TestContext(null)
-    TestContext(TContext context) : TestContext(context)
-}
 class SkipMemberOnNullExpressionVisitor {
-    Visit(Expression expression)
+    - Visit: method
 }
-class QueryBuilder {
-    Execute(IQueryable rawData, SearchQuery query, SkipMemberOnNullExpressionVisitor visitor)
+
+class StringComparisonReplacementExpressionVisitor {
+    - Visit: method
 }
-class SearchQuery {
-    SearchTerm
+
+class LambdaExpression {
+    - Compile: method
 }
-class IDataProvider {
-    AddResult(object result)
-}
-class TestTarget {
-    Name
-    Items
-}
+
+SkipInstanceMethodOnNullExpressionVisitor --* LambdaExpression
+SkipMemberOnNullExpressionVisitor --* LambdaExpression
+StringComparisonReplacementExpressionVisitor --* LambdaExpression
+LambdaExpression --* Expression<TDelegate>
 @enduml
 ```
 
-**StringComparisonReplacementExpressionVisitorTests.cs**
+### Visitor Model
 
-This test class contains a set of unit tests for the StringComparisonReplacementExpressionVisitor class. The tests cover different scenarios and verify the correctness of the visitor's implementation.
+The Visitors have one method:
 
-### Class Diagram
+1. `Visit`: Visits the given LINQ expression and transforms it according to the visitor's logic.
+
+### Sequence Diagram
 
 ```plantuml
 @startuml
-class TestContext {
-    TestContext() : TestContext(null)
-    TestContext(TContext context) : TestContext(context)
-}
-class StringComparisonReplacementExpressionVisitor {
-    Visit(Expression expression)
-}
-class LambdaExpression
-class Test {
-    Test()
-    Compile()
-    DynamicInvoke(string input)
-}
-class Expression<TDelegate> {
-    Compile()
-}
-class Delegate
+participant "SkipInstanceMethodOnNullExpressionVisitor"
+participant "SkipMemberOnNullExpressionVisitor"
+participant "StringComparisonReplacementExpressionVisitor"
+participant "LambdaExpression"
+participant "Expression<TDelegate>"
+
+note "VisitTest" as note1
+note1: Call SkipInstanceMethodOnNullExpressionVisitor.Visit() and assert result
+
+note "VisitTest" as note2
+note2: Call SkipMemberOnNullExpressionVisitor.Visit() and assert result
+
+note "VisitTest" as note3
+note3: Call StringComparisonReplacementExpressionVisitor.Visit() and assert result
+
+SkipInstanceMethodOnNullExpressionVisitor -> LambdaExpression: Visit
+SkipMemberOnNullExpressionVisitor -> LambdaExpression: Visit
+StringComparisonReplacementExpressionVisitor -> LambdaExpression: Visit
+LambdaExpression -> Expression<TDelegate>: Compile
+Expression<TDelegate> -> SkipInstanceMethodOnNullExpressionVisitor: Execute
+Expression<TDelegate> -> SkipMemberOnNullExpressionVisitor: Execute
+Expression<TDelegate> -> StringComparisonReplacementExpressionVisitor: Execute
 @enduml
 ```
 
-Note that the class diagrams are simplified and do not show all the methods and properties of the classes. They are intended to provide a general overview of the classes and their relationships.
+## Tests
+
+The tests for the Expression Tree Builders and Visitors are implemented using the Microsoft.VisualStudio.TestTools.UnitTesting framework.
+
+### Expression Tree Builders Tests
+
+```markdown
+### Class: ExpressionTreeBuilderTests
+
+* Method: GetFilterablePropertyNamesTest
+	+ Tests GetFilterablePropertyNames method for different types
+* Method: GetSearchablePropertyNamesTest
+	+ Tests GetSearchablePropertyNames method for different types
+* Method: GetSortablePropertyNamesTest
+	+ Tests GetSortablePropertyNames method for different types
+```
+
+### Visitors Tests
+
+```markdown
+### Class: SkipInstanceMethodOnNullExpressionVisitorTests
+
+* Method: VisitTest
+	+ Tests SkipInstanceMethodOnNullExpressionVisitor.Visit method for different inputs
+	+ Asserts result and expected result
+

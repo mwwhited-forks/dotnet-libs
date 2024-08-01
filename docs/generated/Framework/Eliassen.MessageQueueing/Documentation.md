@@ -1,98 +1,101 @@
-**Documentation for Eliassen.MessageQueueing.csproj**
+**MessageQueueing Documentation**
 
-Eliassen.MessageQueueing is a .NET Core 8.0 library that provides a message queuing system for sending and receiving messages. The source code consists of classes and interfaces that provide functionality for message queuing and processing.
+**Introduction**
+===============
 
-**Classes and Interfaces**
+The MessageQueueing library provides a set of services for sending and receiving messages through a communication channel. This library is designed to be flexible and configurable, allowing users to customize the behavior and functionality of the message handling process.
 
-* **MessageSender<TChannel>**: Represents a message sender for a specific communication channel (TChannel).
-* **IMessageQueueSender<TChannel>**: Interface for IMessageSender<TChannel>.
-* **MessageContext**: Represents the context associated with a message, including metadata and headers.
-* **MessageContextFactory**: Factory for creating instances of MessageContext.
-* **IMessageContextFactory**: Interface for MessageContextFactory.
-* **MessageSenderProviderFactory**: Factory for creating instances of MessageSenderProvider.
-* **IMessageSenderProviderFactory**: Interface for MessageSenderProviderFactory.
-* **MessagePropertyResolver**: Utility class for resolving properties related to message queue handling.
-* **IMessagePropertyResolver**: Interface for MessagePropertyResolver.
-* **MessageHandlerProvider**: Provides handling of queue messages by coordinating multiple IMessageQueueHandler instances.
-* **IMessageHandlerProvider**: Interface for MessageHandlerProvider.
-* **MessageReceiverProviderFactory**: Factory for creating instances of MessageReceiverProvider.
-* **IMessageReceiverProviderFactory**: Interface for MessageReceiverProviderFactory.
+**Overview**
+==========
 
-**Methods**
+The MessageQueueing library consists of the following components:
 
-* **SendAsync(object, string)**: Sends a message asynchronously to the specified communication channel.
-* **TryAddMessageQueueingServices(IServiceCollection)**: Configures services for Message Queueing within this library.
+* `MessageSender<TChannel>`: A message sender that sends messages asynchronously to a specific communication channel.
+* `ServiceCollectionExtensions`: Extension methods for configuring IoC services for Message Queueing.
+* `MessageContext`: The context associated with a message, including metadata and headers.
+* `MessageContextFactory`: Factory for creating instances of `MessageContext`.
+* `MessageHandlerProvider`: Provides handling of queue messages by coordinating multiple `IMessageQueueHandler` instances.
+* `MessagePropertyResolver`: Utility class for resolving properties related to message queue handling.
+* `MessageReceiverProviderFactory`: Factory for creating instances of `IMessageReceiverProvider` based on configured message handlers.
+* `MessageSenderProviderFactory`: Factory for creating instances of `IMessageSenderProvider` based on channel and message types.
 
-**Class Diagram in Plant UML**
+**Class Diagram**
+================
 
 ```plantuml
 @startuml
 class MessageSender<TChannel> {
-  - IMessageContextFactory context
-  - IMessageSenderProviderFactory provider
-  - ILogger<TChannel> logger
-  + SendAsync(object message, string correlationId)
-}
-
-class IMessageQueueSender<TChannel> {
-  + SendAsync(object message, string correlationId)
+  - context: IMessageContextFactory
+  - provider: IMessageSenderProviderFactory
+  - resolver: IMessagePropertyResolver
+  - logger: ILogger<TChannel>
 }
 
 class MessageContext {
-  - metadata: string
-  - headers: Dictionary<string, string>
+  - metadata: Map<String, String>
+  - headers: Map<String, String>
 }
 
 class MessageContextFactory {
-  + Create<TChannel>(MessageContext, object, string, string, string, ILogger<TChannel>)
-}
-
-class IMessageContextFactory {
-  + Create(MessageContext)
-}
-
-class MessageSenderProviderFactory {
-  + Create<TChannel>(MessageSenderProvider)
-}
-
-class IMessageSenderProviderFactory {
-  + Create(MessageSenderProvider)
-}
-
-class MessagePropertyResolver {
-  + Resolve(string target, string message, string correlationId)
-}
-
-class IMessagePropertyResolver {
-  + Resolve(string target, string message, string correlationId)
+  + Create(targetType, messageType, originMessageId, correlationId, requestId, callerMethod, lineNumber, callerPath): MessageContext
 }
 
 class MessageHandlerProvider {
-  + Handle(Message message, string correlationId)
+  + Handle(message): void
 }
 
-class IMessageHandlerProvider {
-  + Handle(Message message, string correlationId)
+class MessagePropertyResolver {
+  + ResolveMessageType(targetType, messageType): String
 }
 
 class MessageReceiverProviderFactory {
-  + Create(MessageReceiverProvider)
+  + Create(targetType, messageType): IMessageReceiverProvider
 }
 
-class IMessageReceiverProviderFactory {
-  + Create(MessageReceiverProvider)
+class MessageSenderProviderFactory {
+  + Create(targetType, messageType): IMessageSenderProvider
 }
 
+class InProcessMessageProvider {
+  + handle(message): void
+  - MessageProviderKey: String
+}
 @enduml
 ```
-This class diagram shows the relationships between the classes and interfaces in the Eliassen.MessageQueueing library. It includes the MessageSender class and its interfaces, as well as other classes and interfaces that support message queuing and processing.
 
-**Readme.MessageQueueing.md**
+**ServiceCollectionExtensions**
+-----------------------------
 
-The Readme.MessageQueueing.md file provides a brief overview of the Eliassen.MessageQueueing library, including its purpose, methods, and fields.
+The `ServiceCollectionExtensions` class provides extension methods for configuring IoC services for Message Queueing within the library. The `TryAddMessageQueueingServices` method adds IOC configurations to support all Message Queueing within this library.
 
-**ServiceCollectionExtensions.cs**
+**Sequence Diagram**
+-------------------
 
-The ServiceCollectionExtensions.cs file provides extension methods for configuring IoC (Inversion of Control) services to support all Message Queueing within this library. The `TryAddMessageQueueingServices` method configures services for Message Queueing and returns the modified service collection.
+```plantuml
+@startuml
+sequenceDiagram
+    participant Sender as "MessageSender<TChannel>"
+    participant Receiver as "MessageReceiver"
+    participant Context as "MessageContext"
+    participant Resolver as "MessagePropertyResolver"
 
-I hope this documentation helps to provide a clear understanding of the Eliassen.MessageQueueing library and its functionality.
+    note "Create message context" as "context"
+    Sender->>Context: Create(targetType, messageType, originMessageId, correlationId, requestId, callerMethod, lineNumber, callerPath)
+    alt "Send message"
+        Sender->>Resolver: ResolveMessageType(targetType, messageType)
+        Resolver->>Context: Set metadata and headers
+        Sender->>Receiver: Send(message, Context)
+        Receiver->>Sender: SentId
+    else "Error handling"
+        Sender->>Resolver: Get error message
+        Resolver->>Context: Set error metadata and headers
+        Sender->>Receiver: Error handling(message, Context)
+        Receiver->>Sender: Error handling message
+    end
+@enduml
+```
+
+**Conclusion**
+==========
+
+The MessageQueueing library provides a set of services for sending and receiving messages through a communication channel. The library is designed to be flexible and configurable, allowing users to customize the behavior and functionality of the message handling process. The provided documentation includes a class diagram, sequence diagram, and component model to help users understand the architecture and functionality of the library.

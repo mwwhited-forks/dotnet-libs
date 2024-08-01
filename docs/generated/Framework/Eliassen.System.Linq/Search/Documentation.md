@@ -1,74 +1,161 @@
-Here is the documentation for the provided source code files:
+**Documentation**
 
-**OperatorExtensions.cs**
+### Source Files
 
-This static class provides extensions for the `Operators` enum, allowing for the creation of `FilterParameter` instances based on the enum values.
+The following source files are part of the documentation:
 
-**Operators.cs**
+1. `OperatorExtensions.cs`
+2. `Operators.cs`
+3. `QueryBuilder.cs`
+4. `SortBuilder.cs`
 
-This enum represents the available operators for building search queries.
-
-**QueryBuilder.cs**
-
-This abstract class provides a base implementation for building and executing queries based on search, filter, sort, and page criteria.
-
-**Constructor**
-
-`public QueryBuilder<TModel>(ISortBuilder<TModel> sortBuilder, IExpressionTreeBuilder<TModel> expressionBuilder, IEnumerable<IPostBuildExpressionVisitor>? postBuildVisitors, ILogger<QueryBuilder>? logger, ICaptureResultMessage? capture)`
-
-This constructor takes in various dependencies necessary for building and executing queries.
-
-**Methods**
-
-* `Execute(IQueryable query, ISearchQuery searchQuery)`: This method executes the query based on the provided search query.
-* `ExecuteBy(IQueryable<TModel> query, ISearchQuery searchQuery)`: This method executes the query and returns a typed result.
-* `BuildFrom(IQueryable<TModel> query, ISearchQuery searchQuery, StringComparison stringComparison)`: This method builds a query expression based on the provided search query.
-* `PageBy(IOrderedQueryable<TModel> query, IPageQuery? pager)`: This method paginates the query results based on the provided pager settings.
-* `SearchBy(IQueryable<TModel> query, ISearchTermQuery? search, StringComparison stringComparison, bool isSearchTerm)`: This method applies search terms to the query.
-* `FilterBy(IQueryable<TModel> query, IFilterQuery? filter, StringComparison stringComparison)`: This method applies filter criteria to the query.
-* `SortBy(IQueryable<TModel> query, ISortQuery? sortBy, StringComparison keyStringComparer)`: This method applies sorting criteria to the query.
-
-**SortBuilder.cs**
-
-This class provides a builder for sorting `IQueryable` instances based on a provided sort query.
-
-**Constructor**
-
-`public SortBuilder<TModel>(ILogger<SortBuilder<TModel>>? logger = null, ICaptureResultMessage? messages = null)`
-
-This constructor takes in logger and message capturer dependencies.
-
-**Methods**
-
-* `SortBy(IQueryable<TModel> query, ISortQuery searchRequest, IExpressionTreeBuilder<TModel> treeBuilder, StringComparison stringComparison)`: This method sorts the query based on the provided sort query.
-
-**Class Diagrams (PlantUML)**
-
-Here is a class diagram for the `QueryBuilder` and `SortBuilder` classes:
+### Class Diagram
 
 ```plantuml
 @startuml
-class QueryBuilder {
-  + Execute(IQueryable query, ISearchQuery searchQuery)
-  + ExecuteBy(IQueryable<TModel> query, ISearchQuery searchQuery)
-  + BuildFrom(IQueryable<TModel> query, ISearchQuery searchQuery, StringComparison stringComparison)
-  + PageBy(IOrderedQueryable<TModel> query, IPageQuery? pager)
-  + SearchBy(IQueryable<TModel> query, ISearchTermQuery? search, StringComparison stringComparison, bool isSearchTerm)
-  + FilterBy(IQueryable<TModel> query, IFilterQuery? filter, StringComparison stringComparison)
-  + SortBy(IQueryable<TModel> query, ISortQuery? sortBy, StringComparison keyStringComparer)
+class QueryBuilder<TModel> {
+    - ISortBuilder<TModel> sortBuilder
+    - IExpressionTreeBuilder<TModel> expressionBuilder
+    - IEnumerable<IPostBuildExpressionVisitor> postBuildVisitors
+    - ILogger logger
+    - ICaptureResultMessage capture
+
+    Execute(IQueryable query, ISearchQuery searchQuery)
+    ExecuteBy(IQueryable query, ISearchQuery searchQuery)
+    BuildFrom(IQueryable query, ISearchQuery searchQuery, StringComparison stringComparison)
+    PageBy(IOrderedQueryable query, IPageQuery pager)
 }
 
-class SortBuilder {
-  + SortBy(IQueryable<TModel> query, ISortQuery searchRequest, IExpressionTreeBuilder<TModel> treeBuilder, StringComparison stringComparison)
+class ISortBuilder<TModel> {
+    + SortBy(IQueryable query, ISortQuery sortBy, IExpressionTreeBuilder<TModel>, StringComparison stringComparison)
 }
 
-Query Builder --* Sort Builder
-IQueryable  --* Query Builder
-IQueryable<TModel> --* Query Builder
-ISearchQuery --* Query Builder
-ISortQuery  --* Sort Builder
-IExpressionTreeBuilder<TModel> --* Sort Builder
+class QueryBuilder<TModel> {
+    - ISortBuilder<TModel> sortBuilder
+    - IExpressionTreeBuilder<TModel> expressionBuilder
+    - IEnumerable<IPostBuildExpressionVisitor> postBuildVisitors
+    - ILogger logger
+    - ICaptureResultMessage capture
+
+    Execute(IQueryable query, ISearchQuery searchQuery)
+    ExecuteBy(IQueryable query, ISearchQuery searchQuery)
+    BuildFrom(IQueryable query, ISearchQuery searchQuery, StringComparison stringComparison)
+    PageBy(IOrderedQueryable query, IPageQuery pager)
+}
+
+class ISortQuery {
+    + OrderBy
+}
+
+class ISearchQuery {
+    + SearchTerm
+}
+
+class IExpressionTreeBuilder<TModel> {
+    + BuildExpression(string searchTerm, StringComparison stringComparison, bool isSearchTerm)
+}
+
+class IPostBuildExpressionVisitor {
+    + Visit(Expression expression)
+}
 
 @enduml
 ```
-This diagram shows the relationships between the `QueryBuilder` and `SortBuilder` classes, as well as their dependencies on other interfaces and classes.
+
+### Component Model
+
+The component model is a high-level representation of the system, showing how the different components interact with each other.
+
+```plantuml
+@startuml
+class System(Library) {
+  + QueryBuilder
+  + ISortBuilder
+}
+
+class QueryBuilder {
+  + Execute(IQueryable query, ISearchQuery searchQuery)
+  - SortBuilder
+  - ExpressionTreeBuilder
+  - PostBuildVisitors
+  - Logger
+  - CaptureResultMessage
+
+  - IOrderedQueryable<TModel> ExecuteBy(IQueryable query, ISearchQuery searchQuery)
+  - IOrderedQueryable<TModel> BuildFrom(IQueryable query, ISearchQuery searchQuery, StringComparison stringComparison)
+  - PagedQueryResult<TModel> PageBy(IOrderedQueryable query, IPageQuery pager)
+}
+
+class ISortBuilder {
+  + SortBy(IQueryable query, ISortQuery sortBy, IExpressionTreeBuilder<TModel>, StringComparison stringComparison)
+}
+
+class IExpressionTreeBuilder<TModel> {
+  + BuildExpression(string searchTerm, StringComparison stringComparison, bool isSearchTerm)
+}
+
+class IPostBuildExpressionVisitor {
+  + Visit(Expression expression)
+}
+
+@enduml
+```
+
+### Sequence Diagram
+
+The sequence diagram shows the interaction between the components when a query is executed.
+
+```plantuml
+@startuml
+actor Searcher
+participant QueryBuilder as QB
+participant ISortBuilder as SB
+participant IExpressionTreeBuilder as E
+participant IPostBuildExpressionVisitor as P
+participant System(Library) as System
+
+note "Searcher sends a query to QueryBuilder" as n1
+Searcher -> QB: Execute(IQueryable query, ISearchQuery searchQuery)
+
+note "QueryBuilder sends a sort query to ISortBuilder" as n2
+QB -> SB: SortBy(IQueryable query, ISortQuery sortBy, E, StringComparison stringComparison)
+
+note "ISortBuilder sends a sorted query to QueryBuilder" as n3
+SB -> QB: IOrderedQueryable query
+
+note "QueryBuilder executes the query and sends the result to the System" as n4
+QB -> System: IOrderedQueryable query
+
+note "System sends the result back to the Searcher" as n5
+System -> Searcher: IOrderedQueryable query
+@enduml
+```
+
+### Code Comments
+
+The code comments provide additional information about the purpose of each method, class, and interface.
+
+**OperatorExtensions.cs**
+
+```csharp
+// Provides extension methods for working with operators
+
+public static class OperatorExtensions
+{
+    // AsFilter method converts an operator to a filter parameter
+    public static FilterParameter AsFilter(this Operators expressionOperator, object? value, ICaptureResultMessage? capture)
+    {
+        // Switch statement to handle different operators
+        switch (expressionOperator)
+        {
+            case Operators.EqualTo:
+                // Return a filter parameter with an equal to value
+                return new FilterParameter().And(expressionOperator, value, capture);
+            // ...
+        }
+    }
+
+    // And method combines two filter parameters
+    public static FilterParameter And(this FilterParameter filter, Operators expressionOperator, object? value, ICaptureResultMessage? capture)
+    {
+        // Switch statement to

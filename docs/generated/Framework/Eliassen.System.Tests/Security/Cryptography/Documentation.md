@@ -1,95 +1,176 @@
-Here is the documentation for the provided source code files, including class diagrams in PlantUML:
+Here is the documentation in Markdown format:
 
-**HashSelectorTest.cs**
+# Eliassen.System.Security.Cryptography
 
-The `HashSelectorTest` class is a test class that tests the `HashSelector` class. It uses the `System.Security.Cryptography` namespace and the `Microsoft.Extensions.DependencyInjection` namespace.
+## Overview
 
-**Class Diagram:**
+The Eliassen.System.Security.Cryptography namespace provides various hash functions for cryptographic purposes. This documentation covers the source code and tests for the HashSelector, Md5Hash, Sha256Hash, and Sha512Hash classes.
+
+## HashSelector
+
+The HashSelector class is responsible for selecting the correct hash function based on the `DefaultHashType` configuration setting.
+
+### HashSelectorTest
+
+The `HashSelectorTest` class contains unit tests for the HashSelector class.
+
+```plain
+[TestClass]
+public class HashSelectorTest
+{
+    public required TestContext TestContext { get; set; }
+
+    [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
+    [DataRow(HashTypes.Md5, typeof(Md5Hash))]
+    [DataRow(HashTypes.Sha256, typeof(Sha256Hash))]
+    [DataRow(HashTypes.Sha512, typeof(Sha512Hash))]
+    public void DefaultHashTest(HashTypes targetType, Type expectedType)
+    {
+        // ...
+    }
+
+    [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
+    [DataRow(HashTypes.Md5, typeof(Md5Hash))]
+    [DataRow(HashTypes.Sha256, typeof(Sha256Hash))]
+    [DataRow(HashTypes.Sha512, typeof(Sha512Hash))]
+    [DataRow("MD5", typeof(Md5Hash))]
+    [DataRow("SHA256", typeof(Sha256Hash))]
+    [DataRow("SHA512", typeof(Sha512Hash))]
+    public void KeyedHashTest(object targetSerializerType, Type expectedType)
+    {
+        // ...
+    }
+}
+```
+
+### Class Diagram (PlantUML)
 
 ```plantuml
 @startuml
-class HashSelectorTest {
-  -TestContext: TestContext
-  +DefaultHashTest(HashTypes targetType, Type expectedType)
-  +KeyedHashTest(object targetSerializerType, Type expectedType)
+class HashSelector {
+  - config: IConfiguration
+  - services: ServiceCollection
+
+  + DefaultHashTest()
+  + KeyedHashTest()
 }
 
 class IConfiguration {
-  +GetService<T>()
-}
-
-class IHash {
-  +GetHash(string input)
 }
 
 class ServiceCollection {
-  +AddTransient<IConfiguration>(_ => config)
-  +TryAddSystemExtensions(config, new())
-  +BuildServiceProvider()
 }
 
-class ServiceProvider {
-  +GetRequiredService<T>()
+class IHash {
+}
+
+class Md5Hash implements IHash {
+}
+
+class Sha256Hash implements IHash {
+}
+
+class Sha512Hash implements IHash {
 }
 
 @enduml
 ```
 
-**Md5HashTests.cs**
+## Md5Hash
 
-The `Md5HashTests` class is a test class that tests the `Md5Hash` class. It uses the `Eliassen.System.Security.Cryptography` namespace and the `Microsoft.VisualStudio.TestTools.UnitTesting` namespace.
+The Md5Hash class provides an implementation of the MD5 hash function.
 
-**Class Diagram:**
+### Md5HashTests
+
+The `Md5HashTests` class contains unit tests for the Md5Hash class.
+
+```plain
+[TestClass]
+public class Md5HashTests
+{
+    public required TestContext TestContext { get; set; }
+
+    [DataTestMethod]
+    [TestCategory(TestCategories.Unit)]
+    [DataRow("Hello World!", "7Qdih1MuhjZehB6Sv8UNjA==")]
+    [DataRow("hello world", "XrY7u+Ae7tCTyyK7j1rNww==")]
+    public void GetHash(string input, string expected)
+    {
+        var hash = new Md5Hash();
+        var hashed = hash.GetHash(input);
+        TestContext.WriteLine($"\"{input}\" => \"{hashed}\"");
+        Assert.AreEqual(expected, hashed);
+    }
+}
+```
+
+### Sequence Diagram (PlantUML)
 
 ```plantuml
 @startuml
-class Md5HashTests {
-  -TestContext: TestContext
-  +GetHash(string input, string expected)
-}
+actor User
+participant Md5Hash as Hash
+participant TestContext as TestContext
 
-class Md5Hash {
-  +GetHash(string input)
-}
+User -> Hash: GetHash(input)
+Hash -> Hash: Compute MD5 hash
+Hash -> TestContext: hashed
+
+TestContext -> User: hashed
+
 @enduml
 ```
 
-**Sha256HashTests.cs**
+## Sha256Hash and Sha512Hash
 
-The `Sha256HashTests` class is a test class that tests the `Sha256Hash` class. It uses the `Eliassen.System.Security.Cryptography` namespace and the `Microsoft.VisualStudio.TestTools.UnitTesting` namespace.
+The Sha256Hash and Sha512Hash classes provide implementations of the SHA256 and SHA512 hash functions, respectively.
 
-**Class Diagram:**
+### Sha256HashTests and Sha512HashTests
+
+The `Sha256HashTests` and `Sha512HashTests` classes contain unit tests for the Sha256Hash and Sha512Hash classes, respectively.
+
+Here is the documentation for Sha256Hash and Sha512Hash:
+
+### Sha256Hash
+
+The Sha256Hash class provides an implementation of the SHA256 hash function.
+
+### Sha512Hash
+
+The Sha512Hash class provides an implementation of the SHA512 hash function.
+
+These classes have the same structure and behavior as the Md5Hash class, with the difference being the hash function implemented.
+
+### Sequence Diagrams (PlantUML)
 
 ```plantuml
 @startuml
-class Sha256HashTests {
-  -TestContext: TestContext
-  +GetHash(string input, string expected)
-}
+actor User
+participant Sha256Hash as Hash
+participant TestContext as TestContext
 
-class Sha256Hash {
-  +GetHash(string input)
-}
+User -> Hash: GetHash(input)
+Hash -> Hash: Compute SHA256 hash
+Hash -> TestContext: hashed
+
+TestContext -> User: hashed
+
 @enduml
-```
 
-**Sha512HashTests.cs**
-
-The `Sha512HashTests` class is a test class that tests the `Sha512Hash` class. It uses the `Eliassen.System.Security.Cryptography` namespace and the `Microsoft.VisualStudio.TestTools.UnitTesting` namespace.
-
-**Class Diagram:**
-
-```plantuml
 @startuml
-class Sha512HashTests {
-  -TestContext: TestContext
-  +GetHash(string input, string expected)
-}
+actor User
+participant Sha512Hash as Hash
+participant TestContext as TestContext
 
-class Sha512Hash {
-  +GetHash(string input)
-}
+User -> Hash: GetHash(input)
+Hash -> Hash: Compute SHA512 hash
+Hash -> TestContext: hashed
+
+TestContext -> User: hashed
+
 @enduml
 ```
 
-Note: The `HashSelectorTest` class is not included in the class diagram as it is a test class and does not have any dependencies on other classes.
+I hope this documentation meets your requirements. Let me know if there's anything else I can help you with!

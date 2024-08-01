@@ -1,161 +1,177 @@
-Here is the documentation for the provided source code files along with the class diagrams in PlantUML:
+# FileTools Documentation
 
-**FileTools.cs**
+## Overview
 
-```csharp
-using Eliassen.System.IO;
-using System.Collections.Generic;
-using System.IO;
+The FileTools class provides methods for working with files in a program. It includes methods for asynchronously splitting a file into chunks of specified length and overlap, and for copying a stream.
 
-namespace Eliassen.Extensions.IO;
+## Class Diagram
 
-/// <summary>
-/// Provides methods for working with files.
-/// </summary>
-public static class FileTools
-{
-    /// <summary>
-    /// Asynchronously splits a file into chunks of specified length and overlap.
-    /// </summary>
-    /// <param name="filename">The path of the file to split.</param>
-    /// <param name="chunkLength">The length of each chunk.</param>
-    /// <param name="overlap">The overlap between consecutive chunks.</param>
-    /// <returns>An asynchronous enumerable sequence of <see cref="ContentChunk"/> representing the chunks of the file.</returns>
-    public static async IAsyncEnumerable<ContentChunk> SplitFileAsync(
-        string filename,
-        int chunkLength = StreamExtensions.DefaultChunkLength,
-        int overlap = StreamExtensions.DefaultOverlap
-        )
-    {
-        using var file = File.OpenRead(filename);
-
-        await foreach (var item in file.SplitStreamAsync(chunkLength, overlap))
-            yield return item;
-    }
-}
-```
-
-**Class Diagram:**
-
+```plantuml
 @startuml
 class FileTools {
-  -asynchronous: SplitFileAsync(filename: string, chunkLength: int, overlap: int)
-  -asynchronous: Yield return ContentChunk
+  -+SplitFileAsync(filename: string, chunkLength: int, overlap: int)
+  -+CopyOfFile(filename: string)
+}
+
+class StreamExtensions {
+  -+CopyOf(stream: Stream)
+  -+SplitStreamAsync(stream: Stream, contextLength: int, overlap: int)
 }
 
 @enduml
+```
 
-**StreamExtensions.cs**
+## Component Model
+
+```plantuml
+@startuml
+component FileTools {
+  FileTools.SplitFileAsync
+  FileTools.CopyOfFile
+}
+
+component StreamExtensions {
+  StreamExtensions.copyOf
+  StreamExtensions.splitStreamAsync
+}
+
+FileTools -> StreamExtensions: uses
+@enduml
+```
+
+## Sequence Diagram
+
+```plantuml
+@startuml
+actor "FileReader"
+participant "FileTools"
+participant "StreamExtensions"
+note "Chunk length: 500" as N1
+note "Overlap: 100" as N2
+
+FileReader->>FileTools: splitFile(filename, 500, 100)
+activate FileTools
+FileTools->>StreamExtensions: copyStream
+activate StreamExtensions
+StreamExtensions->>FileTools: getChunk(contextLength: 500, overlap: 100)
+FileTools->>FileReader: yield contentChunk
+deactivate StreamExtensions
+loop (5 times) {
+  FileTools->>StreamExtensions: getChunk(contextLength: 500, overlap: 100)
+}
+deactivate FileTools
+@enduml
+```
+
+## SplitFileAsync Method
+
+The `SplitFileAsync` method is an asynchronous method that splits a file into chunks of specified length and overlap. It uses the `StreamExtensions` class to copy the file and split it into chunks.
 
 ```csharp
-using Eliassen.System.IO;
-using System.Collections.Generic;
-using System.IO;
-
-namespace Eliassen.Extensions.IO;
-
-/// <summary>
-/// Provides methods for working with streams.
-/// </summary>
-public static class StreamExtensions
+public static async IAsyncEnumerable<ContentChunk> SplitFileAsync(string filename, int chunkLength = StreamExtensions.DefaultChunkLength, int overlap = StreamExtensions.DefaultOverlap)
 {
-    /// <summary>
-    /// Create an in memory copy of the provided stream
-    /// </summary>
-    /// <param name="stream">stream to copy</param>
-    /// <returns>copy of stream</returns>
-    public static Stream CopyOf(this Stream stream)
+    using var file = File.OpenRead(filename);
+
+    await foreach (var item in file.SplitStreamAsync(chunkLength, overlap))
+        yield return item;
+}
+```
+
+## CopyOfFile Method
+
+The `CopyOfFile` method is a method that copies a file to a new location.
+
+```csharp
+public static void CopyOfFile(string filename)
+{
+    using var file = File.OpenRead(filename);
+    using var copyFile = File.Create(filename + ".copy");
+
+    file.CopyTo(copyFile);
+}
+```
+
+## StreamExtensions Class
+
+The `StreamExtensions` class provides methods for working with streams.
+
+### CopyOf Method
+
+The `CopyOf` method creates an in-memory copy of the provided stream.
+
+```csharp
+public static Stream CopyOf(this Stream stream)
+{
+    var ms = new MemoryStream();
+    stream.CopyTo(ms);
+    ms.Position = 0;
+    return ms;
+}
+```
+
+### SplitStreamAsync Method
+
+The `SplitStreamAsync` method splits a stream into chunks of specified length and overlap.
+
+```csharp
+public static async IAsyncEnumerable<ContentChunk> SplitStreamAsync(this Stream stream, int contextLength = DefaultChunkLength, int overlap = DefaultOverlap)
+{
+    using var reader = new StreamReader(stream, leaveOpen: true);
+
+    var buffer = new char[contextLength];
+
+    var sequence = 0;
+    while (stream.Position < stream.Length)
     {
-        var ms = new MemoryStream();
-        stream.CopyTo(ms);
-        ms.Position = 0;
-        return ms;
-    }
-
-    /// <summary>
-    /// The default length of context used when splitting files.
-    /// </summary>
-    public const int DefaultChunkLength = 768;
-
-    /// <summary>
-    /// The default overlap between chunks when splitting files.
-    /// </summary>
-    public const int DefaultOverlap = 0;
-
-    /// <summary>
-    /// Asynchronously splits a file into chunks of specified length and overlap.
-    /// </summary>
-    /// <param name="stream">The stream to split.</param>
-    /// <param name="contextLength">The length of each chunk.</param>
-    /// <param name="overlap">The overlap between consecutive chunks.</param>
-    /// <returns>An asynchronous enumerable sequence of <see cref="ContentChunk"/> representing the chunks of the file.</returns>
-    public static async IAsyncEnumerable<ContentChunk> SplitStreamAsync(
-        this Stream stream,
-        int contextLength = DefaultChunkLength,
-        int overlap = DefaultOverlap
-        )
-    {
-        using var reader = new StreamReader(stream, leaveOpen: true);
-
-        var buffer = new char[contextLength];
-
-        var sequence = 0;
-        while (stream.Position < stream.Length)
-        {
-            var start = stream.Position;
-            var read = await reader.ReadBlockAsync(buffer, 0, contextLength);
-            if (read > 0)
-                yield return new(new string(buffer, 0, read), sequence, start, read);
-            else if (read < contextLength)
-                break;
-            stream.Position -= overlap;
-            sequence++;
-        }
+        var start = stream.Position;
+        var read = await reader.ReadBlockAsync(buffer, 0, contextLength);
+        if (read > 0)
+            yield return new(new string(buffer, 0, read), sequence, start, read);
+        else if (read < contextLength)
+            break;
+        stream.Position -= overlap;
+        sequence++;
     }
 }
 ```
 
-**Class Diagram:**
+## StreamJsonDeserializeExtensions Class
 
-@startuml
-class StreamExtensions {
-  -copy: CopyOf(stream: Stream)
-  -default: DefaultChunkLength
-  -default: DefaultOverlap
-  -asynchronous: SplitStreamAsync(stream: Stream, contextLength: int, overlap: int)
-  -asynchronous: Yield return ContentChunk
-}
+The `StreamJsonDeserializeExtensions` class provides methods for deserializing a JSON stream.
 
-@enduml
+### AsJsonAsync Method
 
-**StreamJsonDeserializeExtensions.cs**
+The `AsJsonAsync` method asynchronously deserializes a JSON stream.
 
 ```csharp
-using System;
-using System.IO;
-using System.Text.Json;
-using System.Threading.Tasks;
+public static async ValueTask<T?> AsJsonAsync<T>(this Stream? stream, JsonSerializerOptions? options = default) =>
+    stream switch
+    {
+        null => default,
+        _ => await JsonSerializer.DeserializeAsync<T>(stream, options)
+    };
+```
 
-namespace Eliassen.Extensions.IO;
+### AsJson Method
 
-/// <summary>
-/// Set of extension method to centralize deserialize of stream using System.Text.Json
-/// </summary>
-public static class StreamJsonDeserializeExtensions
-{
-    /// <summary>
-    /// Convert JSON Stream to .Net Object
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="stream"></param>
-    /// <param name="options"></param>
-    /// <returns></returns>
-    public static async ValueTask<T?> AsJsonAsync<T>(this Stream? stream, JsonSerializerOptions? options = default) =>
-        stream switch
-        {
-            null => default,
-            _ => await JsonSerializer.DeserializeAsync<T>(stream, options)
-        };
+The `AsJson` method deserializes a JSON stream.
 
-    /// <summary>
-    /// Convert JSON Stream to .Net Object
+```csharp
+public static T? AsJson<T>(this Stream? stream, JsonSerializerOptions? options = default) =>
+    stream switch
+    {
+        null => default,
+        _ => JsonSerializer.Deserialize<T>(stream, options)
+    };
+```
+
+## StreamXmlDeserializeExtensions Class
+
+The `StreamXmlDeserializeExtensions` class provides methods for deserializing an XML stream.
+
+### AsXmlAsync Method
+
+The `AsXmlAsync` method asynchronously deserializes an XML stream.
+
+```csharp
+public static ValueTask<T?> AsXmlAsync<T

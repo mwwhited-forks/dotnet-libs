@@ -1,85 +1,79 @@
-Here is the documentation for the provided source code files, including class diagrams in PlantUML:
+Here is the documentation for the source code in Markdown format, including class diagrams, component models, and sequence diagrams in Plant UML:
 
-**TargetModel.cs**
+## Introduction
 
-**Class Diagram:**
+This documentation provides an overview of the provided source code, including the design and architecture of the classes and their relationships.
 
+## Classes
+
+### TargetModel
 ```plantuml
 @startuml
 class TargetModel {
-  - string TargetId
-  - DateTimeOffset DateTimeOffset
-  - DateTime DateTime
-  - DateTimeOffset? DateTimeOffsetNullable
-  - DateTime? DateTimeNullable
+  - TargetId: string
+  - DateTimeOffset: DateTimeOffset
+  - DateTime: DateTime
+  - DateTimeOffsetNullable: DateTimeOffset?
+  - DateTimeNullable: DateTime?
 }
 @enduml
 ```
+The `TargetModel` class is a simple data transfer object (DTO) that contains various properties that are used to store and retrieve data. The class includes properties for a unique target ID, a date/time offset, a date, and nullable versions of these properties.
 
-**Class Description:**
-
-The `TargetModel` class is used to represent a target model for testing purposes. It contains properties for a target ID, a date time offset, a date time, a nullable date time offset, and a nullable date time. These properties can be used to test various scenarios related to date and time data types.
-
-**Properties:**
-
-* `TargetId`: A string property representing the target ID of the model. It is initialized with a random GUID string.
-* `DateOffset`: A date time offset property representing the date time offset of the model. It is initialized with the current date time.
-* `DateTime`: A date time property representing the date time of the model. It is initialized with the current date time.
-* `DateOffsetNullable`: A nullable date time offset property representing the date time offset of the model. It is initialized with the current date time.
-* `DateTimeNullable`: A nullable date time property representing the date time of the model. It is initialized with the current date time.
-
-**TestDateProperty.cs**
-
-**Class Diagram:**
-
+### TestDateProperty
 ```plantuml
 @startuml
 class TestDateProperty {
-  - DateTimeOffset? Nullable
-  - DateTimeOffset Value
+  - Nullable: DateTimeOffset?
+  - Value: DateTimeOffset
 }
 @enduml
 ```
+The `TestDateProperty` class is a test property that uses a JSON converter to serialize and deserialize `DateTimeOffset` values.
 
-**Class Description:**
-
-The `TestDateProperty` class is used to test date properties with JSON serialization and deserialization. It contains two properties: `Nullable` and `Value`, both of which are of type `DateTimeOffset`.
-
-**Properties:**
-
-* `Nullable`: A nullable date time offset property that can be serialized and deserialized with JSON.
-* `Value`: A date time offset property that can be serialized and deserialized with JSON.
-
-**Attributes:**
-
-The class uses two attributes:
-
-* `[JsonConverter(typeof(BsonDateTimeOffsetConverter))]`: Indicates that the `Nullable` and `Value` properties should be converted to and from BSON date time offsets using the `BsonDateTimeOffsetConverter` converter.
-* `[JsonConverter(typeof(BsonDateTimeOffsetConverter))]`: Indicates that the `Nullable` and `Value` properties should be converted to and from BSON date time offsets using the `BsonDateTimeOffsetConverter` converter.
-
-**TestIdProperty.cs**
-
-**Class Diagram:**
-
+### TestIdProperty
 ```plantuml
 @startuml
 class TestIdProperty {
-  - string? ProjectId
+  - ProjectId: string?
 }
 @enduml
 ```
+The `TestIdProperty` class is a test property that uses a JSON converter to serialize and deserialize a `string` value, which is intended to be used as a MongoDB ID.
 
-**Class Description:**
+## Component Model
 
-The `TestIdProperty` class is used to test ID properties with JSON serialization and deserialization. It contains a single property: `ProjectId`, which is of type `string`.
+The component model shows the relationships between the classes:
+```plantuml
+@startuml
+class TargetModel
+class TestDateProperty
+class TestIdProperty
 
-**Properties:**
+TargetModel *-- TestDateProperty
+TargetModel *-- TestIdProperty
+TestDateProperty ..> BsonDateTimeOffsetConverter
+TestIdProperty ..> BsonIdConverter
+@enduml
+```
+In this component model, we can see that the `TargetModel` class uses the `TestDateProperty` and `TestIdProperty` classes. The `TestDateProperty` and `TestIdProperty` classes use JSON converters (`BsonDateTimeOffsetConverter` and `BsonIdConverter`, respectively) to serialize and deserialize data.
 
-* `ProjectId`: A nullable string property that can be serialized and deserialized with JSON.
+## Sequence Diagram
 
-**Attributes:**
+The sequence diagram shows an example of how these classes might be used:
+```plantuml
+@startuml
+participant TargetModel as tm
+participant TestDateProperty as tdp
+participant TestIdProperty as tip
 
-The class uses two attributes:
+note "Create TargetModel\nand set properties" as n1
+tm ->> tdp: Serialize date property
+tm ->> tip: Serialize ID property
 
-* `[JsonPropertyName("_id")]`: Indicates that the `ProjectId` property should be serialized and deserialized with the name "_id" instead of "ProjectId".
-* `[JsonConverter(typeof(BsonIdConverter))]`: Indicates that the `ProjectId` property should be converted to and from BSON ID using the `BsonIdConverter` converter.
+note "Get serialized data" as n2
+tdp ->> tm: Serialized date property
+tip ->> tm: Serialized ID property
+@enduml
+```
+In this sequence diagram, we see that a `TargetModel` instance is created and its properties are set. The `TargetModel` instance then uses the `TestDateProperty` and `TestIdProperty` classes to serialize its properties. Finally, the `TargetModel` instance retrieves the serialized data from the `TestDateProperty` and `TestIdProperty` classes.

@@ -1,122 +1,127 @@
-**QueryBuilderTests.cs Documentation**
+**QueryBuilderTests Documentation**
 
-### Class Diagram in PlantUML
+**Overview**
+===============
+
+This document provides an overview of the `QueryBuilderTests` class and its associated source code. The class is responsible for testing the functionality of the `QueryBuilder` class, which is used to execute queries on a data source.
+
+**Class Diagram**
+================
+
 ```plantuml
 @startuml
 class QueryBuilderTests {
   - TestContext: TestContext
-  - TestMethod: ExecuteByTest_IQueryable()
-  - Variable: queryable: IQueryable<TestTargetModel>
-  - Variable: query: SearchQuery
-  - Variable: sortBuilder: ISortBuilder<TestTargetModel>
-  - Variable: expressionBuilder: IExpressionTreeBuilder<TestTargetModel>
-  - Variable: postBuildVisitors: IPostBuildExpressionVisitor[]
-  - Variable: capture: CaptureResultMessage
-  - Variable: mock: MockRepository
-  - Variable: result: object
+  + ExecuteByTest_IQueryable()
 }
 
-class SearchQuery {
-  - SearchTerm: string
-  - Filter: Filter[]
-  - OrderBy: OrderBy[]
+class QueryBuilder {
+  + ExecuteBy(IQueryable<T>, SearchQuery query)
 }
 
-class Filter {
-  - Field: string
-  - FilterParameter: FilterParameter
+class TestTargetModel {
+  - Name: string
+  - Email: string
 }
 
-class FilterParameter {
-  - EqualTo: string
+interface ISortBuilder<T> {
+  IQueryable<T> SortBy(IQueryable<T>, ISortQuery query, IExpressionTreeBuilder<T>, StringComparison comparison)
 }
 
-class OrderBy {
-  - Field: string
-  - OrderDirection: OrderDirections
+interface IExpressionTreeBuilder<T> {
+  Expression<Func<T, bool>> BuildExpression(object searchCriteria, StringComparison comparison, bool ignoreCase)
+  Expression<Func<T, bool>>? GetPredicateExpression(string property, FilterParameter filter, StringComparison comparison, bool negated)
 }
 
-class OrderDirections {
-  - Descending
-  - Ascending
-}
-
-class ISortBuilder<T> {
-  - SortBy(IQueryable<T>, ISortQuery, IExpressionTreeBuilder<T>, StringComparison): IQueryable<T>
-}
-
-class IExpressionTreeBuilder<T> {
-  - BuildExpression(object, StringComparison, bool): bool
-  - GetPredicateExpression(string, FilterParameter, StringComparison, bool): Expression<Func<T, bool>>
-}
-
-class IPostBuildExpressionVisitor {
-  - Visit(object): void
-}
-
-class CaptureResultMessage {
-  - Capture(): string[]
-}
-
-class TestLogger<T> {
-  - CreateLogger(): ILogger
-}
-
-class ILogger {
-  - Log(string): void
+interface IQueryBuilder<T> {
+  IQueryable<T> ExecuteBy(IQueryable<T>, SearchQuery query)
 }
 
 @enduml
 ```
-### Method Documentation
 
-```csharp
-[TestClass]
-public class QueryBuilderTests
+**Component Model**
+================
+
+```plantuml
+@startuml
+component "QueryBuilderTests" {
+  component "QueryBuilder"
+  component "TestTargetModel"
+}
+
+component "QueryBuilder" {
+  interface "ISortBuilder"
+  interface "IExpressionTreeBuilder"
+}
+
+component "ISortBuilder" {
+  operation "SortBy"
+}
+
+component "IExpressionTreeBuilder" {
+  operation "BuildExpression"
+  operation "GetPredicateExpression"
+}
+
+component "TestTargetModel" {
+  attribute "Name"
+  attribute "Email"
+}
+
+@enduml
 ```
-The `QueryBuilderTests` class contains a single test method `ExecuteByTest_IQueryable()` that tests the `QueryBuilder<T>` class.
 
-### ExecuteByTest_IQueryable Method
-```csharp
-[TestMethod]
-[TestCategory(TestCategories.Unit)]
-public void ExecuteByTest_IQueryable()
+**Sequence Diagram**
+================
+
+```plantuml
+@startuml
+actor "QueryBuilderTests"
+ participant "QueryBuilder"
+ participant "ISortBuilder"
+ participant "IExpressionTreeBuilder"
+ participant "SearchQuery"
+ participant "TestDataBuilder"
+ participant "TestContext"
+
+QueryBuildTests ->> QueryBuilder : ExecuteBy(IQueryable<T>, SearchQuery query)
+QueryBuilder ->> ISortBuilder : SortBy(IQueryable<T>, ISortQuery query, IExpressionTreeBuilder<T>, StringComparison comparison)
+ISortBuilder ->> IExpressionTreeBuilder : BuildExpression
+IExpressionTreeBuilder ->> QueryBuilder : BuildExpression
+QueryBuilder ->> TestContext : Write
+
+@enduml
 ```
-The `ExecuteByTest_IQueryable` method tests the `QueryBuilder<T>` class by creating a `SearchQuery` object and executing it using the `QueryBuilder<T>` class. The method checks the results of the query and asserts that the `CaptureResultMessage` object contains the expected output.
 
-### Variables and Properties
+**Test Description**
+--------------------
 
-| Variable/Property | Description |
-| --- | --- |
-| `queryable` | The IQueryable instance to be used for testing. |
-| `query` | The SearchQuery instance to be used for testing. |
-| `sortBuilder` | The ISortBuilder instance to be used for testing. |
-| `expressionBuilder` | The IExpressionTreeBuilder instance to be used for testing. |
-| `postBuildVisitors` | The IPostBuildExpressionVisitor array to be used for testing. |
-| `capture` | The CaptureResultMessage instance to capture the query results. |
-| `mock` | The MockRepository instance to create mock objects. |
-| `result` | The result of the executed query. |
+The `ExecuteByTest_IQueryable` method tests the `QueryBuilder` class by executing a query on a test data source. The test data source is created using the `TestDataBuilder` class, which generates a list of `TestTargetModel` objects. The query is defined in the `SearchQuery` class, which contains the search term, filter, and order by criteria.
 
-### Mocked Objects
+The test method sets up the query builder and executes the query using the `ExecuteBy` method. The query result is then checked to ensure it is not null. The test also captures any logging messages and writes them to the console.
 
-The following objects are mocked:
+**Test Context**
+----------------
 
-* `sortBuilder`: Mocked using Moq to return the expected result for the `SortBy` method.
-* `expressionBuilder`: Mocked using Moq to return the expected result for the `BuildExpression` and `GetPredicateExpression` methods.
-* `logger`: Mocked using Moq to create a TestLogger object.
+The `TestContext` class is used to provide context for the test. It contains methods for writing output to the console and for capturing logging messages.
 
-### Test Logic
+**Test Categories**
+-------------------
 
-1. Create a `SearchQuery` object with the expected filter and order by expressions.
-2. Create a `QueryBuilder<T>` object with the mocked `sortBuilder`, `expressionBuilder`, and `logger` objects.
-3. Execute the query using the `QueryBuilder<T>` object and capture the result using the `capture` object.
-4. Assert that the `result` object is not null.
-5. Assert that the `capture` object contains the expected output.
+The test is categorized as a unit test and belongs to the "Unit" category.
 
-### Notes
+**Dependences**
+--------------
 
-* The `SortBy` method is mocked to return the expected result for the `queryable` instance.
-* The `BuildExpression` method is mocked to return a boolean value indicating whether the expression is valid.
-* The `GetPredicateExpression` method is mocked to return an expression that filters the `TestTargetModel` instances based on the `Name` and `DoesntExist` properties.
-* The `CaptureResultMessage` object is used to capture the query results and assert their correctness.
-* The `TestLogger` object is used to create a logger instance that logs the query execution results.
+The `QueryBuilderTests` class depends on the following classes and interfaces:
+
+* Eliassen.System.Linq.Expressions
+* Eliassen.System.Linq.Search
+* Eliassen.System.ResponseModel
+* Eliassen.System.Tests.Linq.TestTargets
+* Eliassen.TestUtilities
+* Microsoft.VisualStudio.TestTools.UnitTesting
+* Moq
+* System.Linq
+* System.Linq.Expressions

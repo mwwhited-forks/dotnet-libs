@@ -1,93 +1,71 @@
-**Eliassen.Communications.Abstractions Documentation**
+Here is the documentation for the source code in Markdown format:
 
-**Summary**
+**Eliassen.Communications.Abstractions**
 
-The Eliassen Communications libraries provide an abstraction layer for asynchronously sending messages over a dedicated channel, such as Email and SMS.
+### Summary
 
-**Namespace**
+The Eliassen Communications libraries are an abstraction designed to asynchronously send messages over a dedicated channel such as Email and SMS.
 
-Eliassen.Communications
+### Components
 
-**Classes**
+The following components are part of the Eliassen.Communications.Abstractions library:
 
-### ICommunicationSender<T>
+#### `ICommunicationSender<TMessage>`
 
-#### Description
-
-The `ICommunicationSender<T>` interface is used to interact with various channel providers, such as email and SMS.
-
-#### Methods
-
-* `SendAsync(T message)`: Sends a message asynchronously over the specified channel.
-
-### EmailMessageModel
-
-#### Description
-
-Represents an email message model.
-
-### SmsMessageModel
-
-#### Description
-
-Represents an SMS message model.
+The `ICommunicationSender<TMessage>` interface is provided as a means to interact with various channel providers. Example channels are hosted for `EmailMessageModel` and `SmsMessageModel`.
 
 **Class Diagram**
-
 ```plantuml
 @startuml
-class ICommunicationSender<T> {
-  - SendAsync(T message): Task<string>
+class ICommunicationSender<TMessage> {
+  - sendAsync(TMessage message): Task<string>
 }
 
-class EmailMessageModel
+class EmailMessageModel {
+  // Attributes and methods
+}
 
-class SmsMessageModel
+class SmsMessageModel {
+  // Attributes and methods
+}
 
-ICommunicationSender<T] --|> EmailMessageModel
-ICommunicationSender<T] --|> SmsMessageModel
+ICommunicationSender<TMessage] <|-- EmailMessageModel
+ICommunicationSender<TMessage] <|-- SmsMessageModel
+@enduml
+```
+#### `ExampleClass`
+
+```csharp
+//Include ICommunicationSender<EmailMessageModel> in your service class
+
+public class ExampleClass (
+    ICommunicationSender<EmailMessageModel> email
+    )
+{
+    public async Task<string> SendAsync(EmailMessageModel message) =>
+        await email.SendAsync(message);
+}
+```
+### How to Use
+
+To use the Eliassen.Communications.Abstractions library, you need to reference the `Microsoft.Extensions.Configuration.Abstractions` NuGet package and include the `ICommunicationSender<TMessage>` interface in your service class.
+
+**Sequence Diagram**
+```plantuml
+@startuml
+autonumber
+
+participant "ExampleClass" as example
+participant "ICommunicationSender<EmailMessageModel>" as sender
+
+example -> sender: SendAsync(emailMessageModel)
+sender ->> smtpServer: SendAsync(emailMessageModel)
+smtpServer ->> example: SendCompleted(emailMessageModel)
 
 @enduml
 ```
+### Contact
 
-**Example**
+For more information about the Eliassen Communications libraries, please refer to the [Eliassen Communications website](https://www.eliassen.com/communications).
 
-To use the `ICommunicationSender<T>` interface, include it in your service class and inject an instance of the desired channel provider.
-
-```csharp
-public class ExampleClass : IExampleService
-{
-    private readonly ICommunicationSender<EmailMessageModel> _email;
-
-    public ExampleClass(ICommunicationSender<EmailMessageModel> email)
-    {
-        _email = email;
-    }
-
-    public async Task<string> SendAsync(EmailMessageModel message)
-    {
-        return await _email.SendAsync(message);
-    }
-}
-```
-
-**Dependencies**
-
-* Microsoft.Extensions.Configuration.Abstractions (version 8.0.0)
-
-**Used Assemblies**
-
-* Eliassen.Communications
-* Eliassen.Communications.Tests
-
-**Authors**
-
-* [Your Name]
-
-**License**
-
-* [Your License]
-
-**Readme**
-
-The `Readme.md` file is located in the root directory of the project and provides a general overview of the Eliassen Communications libraries.
+I hope this helps! Let me know if you have any further questions.

@@ -1,51 +1,63 @@
-Here is the documentation for the `StreamExtensionsTests.cs` file, including a class diagram in PlantUML:
+# StreamExtensionsTests
 
-**Class Diagram**
+## Overview
+
+This test class is used to test the `Eliassen.Extensions.IO` namespace, specifically the `StreamExtensions` class. The class provides extensions methods for working with streams in .NET.
+
+## Tests
+
+### CopyOfTest
+
+This test method checks whether the `CopyOf` method correctly creates a new stream that is a copy of the original stream.
 
 ```plantuml
 @startuml
 class StreamExtensionsTests {
   - TestContext: TestContext
   + CopyOfTest()
-  + SplitStreamAsyncTest()
 }
 
-class TestContext {
-  + [abstract] string TestName
-}
+@TestContext extends TestContext
 
-class TestCategory {
-  + string Name
-}
+@startstate TestContext
+@endstate
 
-@enduml
+start
+Activating StreamExtensionsTests
+ activates TestContext
+while StreamExtensionsTests.CopyOfTest
+```plantuml
+
+```md
+### Sequence Diagram
+
+participant StreamExtensionsTests
+participant TestContext
+participant StreamExtensions
+participant MemoryStream
+
+note right of StreamExtensionsTests: StreamExtensionsTests class
+note right of TestContext: TestContext instance
+note left of StreamExtensions: StreamExtensions class
+note left of MemoryStream: MemoryStream instance
+
+StreamExtensionsTests ->> TestContext: GetTestContext
+ activate TestContext
+TestContext ->> StreamExtensions: CopyOf
+ activate StreamExtensions
+StreamExtensions ->> MemoryStream: Copy
+ activate MemoryStream
+MemoryStream ->> StreamExtensions: Length
+ activate StreamExtensions
+StreamExtensions ->> TestExtensions: AreEqual(ms.Length, ms2.Length)
+ activate TestExtensions
+TestExtensions ->> StreamExtensions: AreNotEqual(ms, ms2)
+ activate StreamExtensions
+
+StreamExtensionsTests ->> test outcome: passing or failing
+ deactivate TestExtensions
+ deactivate MemoryStream
+ deactivate StreamExtensions
+ deactivate TestContext
+ deactivate StreamExtensionsTests
 ```
-
-**Class Documentation**
-
-The `StreamExtensionsTests` class is a unit test class that tests the `StreamExtensions` class, which is part of the `Eliassen.Extensions.IO` namespace. This class contains two test methods: `CopyOfTest` and `SplitStreamAsyncTest`.
-
-**CopyOfTest**
-
-This test method tests the `CopyOf` method, which creates a copy of a Stream. The test creates two Memory Streams, `ms` and `ms2`, and uses the `CopyOf` method to create a copy of `ms`. The test asserts that the two streams are not equal, but have the same length.
-
-**SplitStreamAsyncTest**
-
-This test method tests the `SplitStreamAsync` method, which splits a Stream into chunks. The test creates a Memory Stream `ms` and uses the `SplitStreamAsync` method to split it into chunks. The test asserts that the number of chunks is equal to the expected value (3, which is set by the `DefaultChunkLength` property in the `StreamExtensions` class).
-
-**TestContext**
-
-The `TestContext` class is an abstract class that represents a test context. It contains a property `TestName` which is an abstract property that must be implemented by any derived class.
-
-**TestCategory**
-
-The `TestCategory` class represents a test category. It contains a property `Name` which represents the name of the category.
-
-**Test Methods**
-
-The `StreamExtensionsTests` class contains two test methods:
-
-* `CopyOfTest`: Tests the `CopyOf` method.
-* `SplitStreamAsyncTest`: Tests the `SplitStreamAsync` method.
-
-These test methods are marked with the `[TestMethod]` attribute, which indicates that they are test methods. They are also marked with the `[TestCategory]` attribute, which specifies the category of the test (Unit).

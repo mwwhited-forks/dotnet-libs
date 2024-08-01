@@ -1,92 +1,106 @@
-Here is the documentation for the source code files you provided, including class diagrams in PlantUML.
+Here is the documentation for the provided source code in Markdown format, including PlantUML diagrams:
 
-**Eliassen.MessageQueueing.Abstractions.csproj**
+## Overview
 
-This is a .NET Core project file that defines the configurations and dependencies for the Eliassen.MessageQueueing.Abstractions library.
+The Eliassen.MessageQueueing.Abstractions library provides a comprehensive abstraction layer for interacting with message queues in .NET applications. It offers interfaces and classes for handling messages, sending messages, and receiving messages from various message queues. These abstractions enable developers to decouple their application logic from specific message queue implementations, facilitating easier testing, extensibility, and maintenance.
 
-**Class Diagram for Eliassen.MessageQueueing.Abstractions.csproj**
-
-```plantuml
-@startuml
-class Project {
-  - PropertyGroup
-  - ItemGroup
-}
-@enduml
-```
-
-**IMessageQueueHandler.cs**
-
-This interface defines the generic contract for handling messages from a message queue.
-
-**Class Diagram for IMessageQueueHandler.cs**
-
+## Class Diagram
 ```plantuml
 @startuml
 class IMessageQueueHandler {
-  + HandleAsync(message: object, context: IMessageContext): Task
+  - HandleAsync(object message, IMessageContext context): Task
 }
 
-interface IMessageQueueHandler<TChannel> {
-  + HandleAsync(message: object, context: IMessageContext): Task
+class IMessageQueueHandler<TChannel> extends IMessageQueueHandler {
+  - HandleAsync(TMessage message, IMessageContext context): Task
 }
 
-interface IMessageQueueHandler<TChannel, TMessage> {
-  + HandleAsync(message: TMessage, context: IMessageContext): Task
+class IMessageQueueHandler<TChannel, TMessage> extends IMessageQueueHandler<TChannel> {
+  - HandleAsync(TMessage message, IMessageContext context): Task
 }
 
-@enduml
-```
-
-**IMessageQueueSender.cs**
-
-This interface defines the generic contract for sending messages to a message queue.
-
-**Class Diagram for IMessageQueueSender.cs**
-
-```plantuml
-@startuml
 class IMessageQueueSender {
-  + SendAsync(message: object, messageId: string?): Task<string>
+  - SendAsync(object message, string? messageId = default): Task<string>
 }
 
-interface IMessageQueueSender<TChannel> {
-  + SendAsync(message: object, messageId: string?): Task<string>
+class IMessageQueueSender<TChannel> extends IMessageQueueSender {
+  - SendAsync(object message, string? messageId = default): Task<string>
 }
 
-@enduml
-```
-
-**MessageQueueAttribute.cs**
-
-This class attribute is used to mark a class as a message queue handler and provide configuration options.
-
-**Class Diagram for MessageQueueAttribute.cs**
-
-```plantuml
-@startuml
 class MessageQueueAttribute {
-  + SimpleName
-  + TypeId
+  - SimpleName: string?
 }
 @enduml
 ```
 
-**Readme.MessageQueueing.Abstractions.md**
-
-This is the README file for the Eliassen.MessageQueueing.Abstractions library, providing an overview, key features, getting started, and usage examples.
-
-**Class Diagram for Readme.MessageQueueing.Abstractions.md**
-
+## Component Model
 ```plantuml
 @startuml
-class READMEFile {
-  - Overview
-  - Key Features
-  - Getting Started
-  - Usage Example
+component MessageQueueing {
+  (IMessageQueueHandler)
+  (IMessageQueueSender)
+  (MessageQueueAttribute)
 }
+
+MessageQueueing..>IMessageQueueHandler
+MessageQueueing..>IMessageQueueSender
+IMessageQueueHandler..>MessageQueueAttribute
+IMessageQueueSender..>MessageQueueAttribute
 @enduml
 ```
 
-Note: The class diagrams are generated using PlantUML and may not reflect the exact implementation details of the source code.
+## Sequence Diagram
+```plantuml
+@startuml
+participant Handler as H
+participant Sender as S
+participant Queue as Q
+
+H->S: SendAsync(message, messageId)
+S->Q: Send(message, messageId)
+Q->H: HandleAsync(message, context)
+note right: Handle message
+@enduml
+```
+
+## Readme
+
+```text
+# Eliassen.MessageQueueing.Abstractions
+
+## Overview
+
+The Eliassen.MessageQueueing.Abstractions library provides a comprehensive abstraction layer for interacting with message queues in .NET applications. It offers interfaces and classes for handling messages, sending messages, and receiving messages from various message queues. These abstractions enable developers to decouple their application logic from specific message queue implementations, facilitating easier testing, extensibility, and maintenance.
+
+## Key Features
+
+- **Message Handling**: Provides generic interfaces for handling messages from message queues, allowing for flexible message processing logic.
+- **Message Sending**: Offers generic interfaces for sending messages to message queues, supporting asynchronous message transmission.
+- **Message Context**: Defines a message context interface to encapsulate metadata associated with messages, such as origin message ID, correlation ID, and message type.
+- **Extensibility**: Enables developers to implement custom message queue handlers, senders, and receivers, supporting a wide range of message queue systems.
+- **Configurability**: Allows for configuration-based setup of message queue providers, handlers, and senders, facilitating easy integration with different messaging platforms.
+- **Ease of Testing**: Facilitates unit testing by providing interfaces that can be easily mocked or stubbed, allowing for isolated testing of message handling and sending logic.
+
+## Getting Started
+
+To use Eliassen.MessageQueueing.Abstractions in your .NET project, simply install the library via NuGet Package Manager:
+
+```
+dotnet add package Eliassen.MessageQueueing.Abstractions
+
+## Usage Example
+
+Here's a simple example demonstrating how to handle messages from a message queue using Eliassen.MessageQueueing.Abstractions:
+
+```csharp
+using Eliassen.MessageQueueing.Abstractions;
+
+public class MyMessageHandler : IMessageQueueHandler
+{
+    public async Task HandleAsync(object message, IMessageContext context)
+    {
+        // Custom message handling logic
+        await Task.CompletedTask;
+    }
+}
+```

@@ -1,136 +1,60 @@
-Here is the documentation for the provided source code files:
+**Claims Library Documentation**
+=============================
 
-**ClaimsPrincipalExtensions.cs**
+**Overview**
+---------
 
-Namespace: Eliassen.System.Security.Claims
+The Claims Library is a set of classes and constants used to manage claims on a `ClaimsPrincipal` object.
 
-Summary: Extensions to manage Claim on ClaimsPrincipal
+### ClaimsPrincipalExtensions
 
-### Methods
+#### Description
 
-#### GetAllClaims(this ClaimsPrincipal principal)
+`ClaimsPrincipalExtensions` is a static class that provides extension methods for managing claims on a `ClaimsPrincipal` object.
 
-**Sumary**: Iterate all Claim for provided ClaimsPrincipal
+#### Methods
 
-**Returns**: IEnumerable(Claim)
+* `GetAllClaims(this ClaimsPrincipal principal)`: Returns an enumerable collection of all claims for the provided `ClaimsPrincipal`.
+* `GetClaimValues(this ClaimsPrincipal principal, params string[] claims)`: Returns an enumerable collection of claims that match the provided claim types, with their corresponding values.
+* `GetClaimValue(this ClaimsPrincipal principal, params string[] claims)`: Returns the first claim that matches the provided claim types, with its corresponding value.
 
-Parameters:
+### CommonClaims
 
-* `principal`: ClaimsPrincipal
+#### Description
 
-#### GetClaimValues(this ClaimsPrincipal principal, params string[] claims)
+`CommonClaims` is a static class that contains constants for common claims used in authentication.
 
-**Summary**: Get for matched Claim on ClaimsPrincipal
+#### Constants
 
-**Returns**: IEnumerable<(string, string)>
+* `UserId`: Represents the claim for user ID.
+* `Culture`: Represents the claim for user culture.
+* `ExtendedProperties`: Represents the claim for extended properties.
+* `ApplicationRight`: Represents the claim for application rights.
+* `ObjectId`: Represents the claim for object ID.
+* `ObjectIdentifier`: Represents the claim for object identifier.
+* `NameIdentifier`: Represents the claim for name identifier.
 
-Parameters:
-
-* `principal`: ClaimsPrincipal
-* `claims`: params string[] claims
-
-#### GetClaimValue(this ClaimsPrincipal principal, params string[] claims)
-
-**Summary**: Get first matched Claim on ClaimsPrincipal
-
-**Returns**: (string, string)?
-
-Parameters:
-
-* `principal`: ClaimsPrincipal
-* `claims`: params string[] claims
-
-### Class Diagram (PlantUML)
-
+**Class Diagram**
+~~~~~~~~~~~~~~~
 ```plantuml
 @startuml
 class ClaimsPrincipalExtensions {
-  - getAllClaims(ClaimsPrincipal)
-  - getClaimValues(ClaimsPrincipal, string[])
-  - getClaimValue(ClaimsPrincipal, string[])
+  -getAllClaims(ClaimsPrincipal): IEnumerable<Claim>
+  -getClaimValues(ClaimsPrincipal, string[]): IEnumerable<(string, string)>
+  -getClaimValue(ClaimsPrincipal, string[]): (string, string)?
 }
 
-class ClaimsPrincipal {
-  - Identities
-}
-
-class Claim {
-  - Type
-  - Value
-}
-
-ClaimsPrincipal --* Identities
-Identities --* Claims
-Claims -- Claim
-Claim --* ClaimsPrincipalExtensions
-@enduml
-```
-
-**CommonClaims.cs**
-
-Namespace: Eliassen.System.Security.Claims
-
-Summary: Contains constants for common claims used in authentication
-
-### Constants
-
-#### UserId
-
-Summary: Represents the claim for user ID
-
-Value: "app__user_id"
-
-#### Culture
-
-Summary: Represents the claim for user culture
-
-Value: "app__user_culture"
-
-#### ExtendedProperties
-
-Summary: Represents the claim for extended properties
-
-Value: "app__extended_property"
-
-#### ApplicationRight
-
-Summary: Represents the claim for application rights
-
-Value: "app__application_right"
-
-#### ObjectId
-
-Summary: Represents the claim for object ID
-
-Value: "objectid"
-
-#### ObjectIdentifier
-
-Summary: Represents the claim for object identifier
-
-Value: "http://schemas.microsoft.com/identity/claims/objectidentifier"
-
-#### NameIdentifier
-
-Summary: Represents the claim for name identifier
-
-Value: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
-
-### Class Diagram (PlantUML)
-
-```plantuml
-@startuml
 class CommonClaims {
-  - UserId
-  - Culture
-  - ExtendedProperties
-  - ApplicationRight
-  - ObjectId
-  - ObjectIdentifier
-  - NameIdentifier
+  +UserId: string
+  +Culture: string
+  +ExtendedProperties: string
+  +ApplicationRight: string
+  +ObjectId: string
+  +ObjectIdentifier: string
+  +NameIdentifier: string
 }
 
-@enduml
+ClaimsPrincipalExtensions --* ClaimsPrincipal
+ClaimsPrincipal --* Claim
+Claim --* string
 ```
-
-Note: The class diagrams are created using PlantUML syntax.

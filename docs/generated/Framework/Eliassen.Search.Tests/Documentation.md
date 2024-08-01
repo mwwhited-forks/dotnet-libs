@@ -1,70 +1,67 @@
-**Project Documentation**
+# Eliassen.Search.Tests Documentation
 
-**Project Name:** Eliassen.Search.Tests
+## Overview
 
-**Description:** This is a .NET 8.0 test project used to test the Eliassen.Search library.
+The Eliassen.Search.Tests is a .NET Standard test project that provides integration and unit tests for the Eliassen.Search library.
 
-**Project Settings:**
-
-* Target Framework: net8.0
-* Implicit Usings: false
-* Nullable: enabled
-* IsPackable: false
-* IsTestProject: true
-
-**Dependencies:**
-
-* Microsoft.NET.Test.Sdk (version 17.10.0)
-* MSTest.TestAdapter (version 3.4.3)
-* MSTest.TestFramework (version 3.4.3)
-* coverlet.collector (version 6.0.2)
-
-**References:**
-
-* Eliassen.Search (project reference)
-* Eliassen.TestUtilities (project reference)
-
-**Class Diagram**
+### Class Diagram
 
 ```plantuml
 @startuml
-class EliassenSearchTests {
-
-  +EliassenSearch search
-  +TestUtility utility
-
-  - TestSearchIndex()
-  - TestSearchQuery()
-  - TestSearchResult()
-
+class TestProject {
+  -/tests: List<TestClass>
+  -projectReferences: List<Library>
 }
 
-class EliassenSearch {
-  +searchIndex()
-  - SearchQuery(query: string)
-  - SearchResult(result: any)
+class TestClass {
+  -tests: List<TestMethod>
+  -testMethods: List<TestMethod>
 }
 
-class TestUtility {
-  + dummyMethod()
+class TestMethod {
+  -testMethod: String
+  -testResult: boolean
 }
 
+class Library {
+  -name: String
+  -version: String
+}
+
+TestProject --* TestClass
+TestClass --* TestMethod
+TestMethod --* TestMethod
+Library --* TestProject
 @enduml
 ```
 
-**Class Description:**
+## Files
 
-* EliassenSearchTests: This is the main test class that tests the Eliassen.Search library.
-* EliassenSearch: This is the class that provides the search functionality.
-* TestUtility: This is a utility class used in the testing of the Eliassen.Search library.
+### `Eliassen.Search.Tests.csproj`
 
-**Method Descriptions:**
+This is the project file for the Eliassen.Search.Tests test project. It defines the project settings and references the necessary libraries and projects.
 
-* TestSearchIndex(): Tests the search index functionality.
-* TestSearchQuery(): Tests the search query functionality.
-* TestSearchResult(): Tests the search result functionality.
-* SearchQuery(query: string): Perform a search query using the search index.
-* SearchResult(result: any): Return the search result.
-* dummyMethod(): A dummy method used in testing.
+```md
+**Eliassen.Search.Tests.csproj**
 
-Note: The class diagram is a simplified representation of the classes and their relationships. The actual classes and methods may have more properties, methods, and complexity.
+This file defines the project settings for the Eliassen.Search.Tests test project.
+
+* `TargetFramework`: The target framework for the project is set to `net8.0`.
+* `ImplicitUsings`: Implicit usings are disabled to ensure explicit usage of namespaces.
+* `Nullable`: Nullable reference types are enabled to ensure type safety.
+* `IsPackable`: The project is not packable, as it is a test project.
+* `IsTestProject`: The project is marked as a test project.
+
+The project also references the following packages:
+
+* `Microsoft.NET.Test.Sdk`: The Microsoft.NET.Test.Sdk package provides the test runner.
+* `MSTest.TestAdapter`: The MSTest.TestAdapter package provides the test adapter for running MSTests.
+* `MSTest.TestFramework`: The MSTest.TestFramework package provides the test framework for writing tests.
+* `coverlet.collector`: The coverlet.collector package provides the coverage collector for measuring test coverage.
+
+The project also references the following projects:
+
+* `Eliassen.Search`: The Eliassen.Search project provides the library being tested.
+* `Eliassen.TestUtilities`: The Eliassen.TestUtilities project provides utility classes for testing.
+
+```

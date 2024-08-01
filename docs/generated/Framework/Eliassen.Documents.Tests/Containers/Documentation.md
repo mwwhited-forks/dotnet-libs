@@ -1,106 +1,129 @@
-Here is the documentation for the source code files:
+Here is the documentation for the source code in Markdown format, with PlantUML diagrams and sequence diagrams:
 
-**BlobContainerFactoryTests.cs**
+**BlobContainerFactoryTests**
+================================
 
-This unit test class tests the `BlobContainerFactory` class, which is responsible for creating instances of `IBlobContainer<T>`.
+This test class tests the `BlobContainerFactory` class, which is responsible for creating instances of `IBlobContainer<T>`.
 
-**Public Methods**
-
-* `CreateTest_Named_Keyed`: Tests creating a `IBlobContainer<T>` instance using a named provider.
-* `CreateTest_Named_Factory`: Tests creating a `IBlobContainer<T>` instance using a factory provider.
-* `CreateTest_NoTag`: Tests creating a `IBlobContainer<T>` instance without a tag.
-* `CreateTest_TableTag`: Tests creating a `IBlobContainer<T>` instance with a table tag.
-* `CreateTest_ContainerTag`: Tests creating a `IBlobContainer<T>` instance with a container tag.
-
-**Class Diagram**
-
-Please refer to the PlantUML class diagram below:
+### Class Diagram
 ```plantuml
 @startuml
 class BlobContainerFactory {
-  -factory: IBlobContainerProviderFactory
+  - IBlobContainerFactory factory
+  - ServiceProvider serviceProvider
+  - TestLogger logger
 
-  +Create<T>(name: string): IBlobContainer<T>
-}
-
-class IBlobContainerProviderFactory {
-  +Create(name: string): IBlobContainerProvider
-}
-
-class IBlobContainerProvider {
-  +CreateContentAsync(path: string): Task<ContentReference?>
-  +GetContentAsync(path: string): Task<ContentReference?>
-  +StoreContentAsync(data: ContentReference, dict: Dictionary<string, string>, overwrite: bool): Task
-  +QueryContent(): IQueryable<ContentMetaDataReference>
+  + Create(T) : IBlobContainer<T>
 }
 
 class IBlobContainer<T> {
-  +CreateContentAsync(path: string): Task<ContentReference?>
-  +GetContentAsync(path: string): Task<ContentReference?>
-  +StoreContentAsync(data: ContentReference, dict: Dictionary<string, string>, overwrite: bool): Task
-  +QueryContent(): IQueryable<ContentMetaDataReference>
+  + DeleteContentAsync(string) : Task
+  + GetContentAsync(string) : Task<ContentReference?>
+  + GetContentMetaDataAsync(string) : Task<ContentMetaDataReference?>
+  + StoreContentAsync(ContentReference, Dictionary<string, string>, bool) : Task
 }
 
 @enduml
 ```
-**ServiceRegistryTests.cs**
+### Test Methods
+The following test methods test the `BlobContainerFactory` class:
+* `CreateTest_Named_Keyed`: Tests the creation of a BlobContainer instance with a named keyed provider.
+* `CreateTest_Named_Factory`: Tests the creation of a BlobContainer instance with a named provider and a factory.
+* `CreateTest_NoTag`: Tests the creation of a BlobContainer instance with a no-tag provider.
+* `CreateTest_TableTag`: Tests the creation of a BlobContainer instance with a table-tag provider.
+* `CreateTest_ContainerTag`: Tests the creation of a BlobContainer instance with a container-tag provider.
 
-This unit test class tests the `ServiceRegistry` class, which is responsible for registering services.
+### Sequence Diagram
+```plantuml
+@startuml
+ participant "BlobContainerFactory" as factory
+ participant "ServiceProvider" as serviceProvider
+ participant "IBlobContainerProvider" as provider
 
-**Public Methods**
+ sequenceDiagram
+    note left:Facts
+        factory creates provider with serviceProvider
+    note right:BlobContainerFactory
 
-* `Create_IBlobContainer__ContainerTargetClass_Test`: Tests registering an `IBlobContainer` instance for the `ContainerTargetClass` type.
-* `Create_IBlobContainer__Keyed_Test`: Tests registering an `IBlobContainer` instance using a key.
+    factory->>serviceProvider: Get service
+    serviceProvider->>provider: Provider instance
+    factory->>provider: Create BlobContainer
+    provider->>factory: BlobContainer instance
+    note right:CreateBlobContainer
 
-**WrappedBlobContainerTests.cs**
+    factory->>provider: Create BlobContainer with parameters
+    provider->>factory: BlobContainer instance
+    note right:CreateBlobContainer parameters
+end
+@enduml
+```
 
-This unit test class tests the `WrappedBlobContainer` class, which is a wrapper around an `IBlobContainer<T>` instance.
+**ServiceRegistryTests**
+=====================
 
-**Public Methods**
+This test class tests the `ServiceRegistry` class, which is responsible for registering services in the ASP.NET Core DI container.
 
-* `DeleteContentAsyncTest`: Tests deleting content using the `DeleteContentAsync` method.
-* `GetContentAsyncTest`: Tests getting content using the `GetContentAsync` method.
-* `GetContentMetaDataAsyncTest`: Tests getting content metadata using the `GetContentMetaDataAsync` method.
-* `StoreContentAsyncTest`: Tests storing content using the `StoreContentAsync` method.
-* `StoreContentMetaDataAsyncTest`: Tests storing content metadata using the `StoreContentMetaDataAsync` method.
-* `QueryContentTest`: Tests querying content using the `QueryContent` method.
+### Test Methods
+The following test methods test the `ServiceRegistry` class:
+* `Create_IBlobContainer__ContainerTargetClass_Test`: Tests the creation of an `IBlobContainer<ContainerTargetClass>` instance.
+* `Create_IBlobContainer__Keyed_Test`: Tests the creation of an `IBlobContainer` instance with a keyed provider.
 
-**Class Diagram**
+### Class Diagram
+```plantuml
+@startuml
+class ServiceRegistry {
+  + TryAddDocumentServices()
+  + BuildServiceProvider()
+}
 
-Please refer to the PlantUML class diagram below:
+class IBlobContainer<T> {
+  + DeleteContentAsync(string) : Task
+  + GetContentAsync(string) : Task<ContentReference?>
+  + GetContentMetaDataAsync(string) : Task<ContentMetaDataReference?>
+  + StoreContentAsync(ContentReference, Dictionary<string, string>, bool) : Task
+}
+
+class ContainerTargetClass {
+  # BlobContainerAttribute
+}
+
+@enduml
+```
+
+**WrappedBlobContainerTests**
+==========================
+
+This test class tests the `WrappedBlobContainer` class, which is a wrapper around an `IBlobContainer<T>` instance.
+
+### Test Methods
+The following test methods test the `WrappedBlobContainer` class:
+* `DeleteContentAsyncTest`: Tests the deletion of content using the `DeleteContentAsync` method.
+* `GetContentAsyncTest`: Tests the retrieval of content using the `GetContentAsync` method.
+* `GetContentMetaDataAsyncTest`: Tests the retrieval of content metadata using the `GetContentMetaDataAsync` method.
+* `StoreContentMetaDataAsyncTest`: Tests the storage of content metadata using the `StoreContentMetaDataAsync` method.
+* `StoreContentAsyncTest`: Tests the storage of content using the `StoreContentAsync` method.
+* `QueryContentTest`: Tests the querying of content using the `QueryContent` method.
+
+### Class Diagram
 ```plantuml
 @startuml
 class WrappedBlobContainer<T> {
-  -factory: IBlobContainerProviderFactory
+  - IBlobContainerFactory factory
+  - IBlobContainer<T> container
 
-  +CreateContentAsync(path: string): Task<ContentReference?>
-  +GetContentAsync(path: string): Task<ContentReference?>
-  +StoreContentAsync(data: ContentReference, dict: Dictionary<string, string>, overwrite: bool): Task
-  +QueryContent(): IQueryable<ContentMetaDataReference>
+  + DeleteContentAsync(string) : Task
+  + GetContentAsync(string) : Task<ContentReference?>
+  + GetContentMetaDataAsync(string) : Task<ContentMetaDataReference?>
+  + StoreContentAsync(ContentReference, Dictionary<string, string>, bool) : Task
+  + QueryContent() : IQueryable<ContentMetaDataReference>
 }
 
-class IBlobContainerProviderFactory {
-  +Create(create: IBlobContainerProvider)
+class IBlobContainerFactory {
+  + Create(T) : IBlobContainer<T>
 }
 
-class IBlobContainerProvider {
-  +CreateContentAsync(path: string): Task<ContentReference?>
-  +GetContentAsync(path: string): Task<ContentReference?>
-  +StoreContentAsync(data: ContentReference, dict: Dictionary<string, string>, overwrite: bool): Task
-  +QueryContent(): IQueryable<ContentMetaDataReference>
-}
-
-class ContentReference {
-  -Content: MemoryStream
-  -FileName: string
-  -ContentType: string
-}
-
-class ContentMetaDataReference {
-  -FileName: string
-  -ContentType: string
-}
-
-@enduml
-```
-Note: The class diagrams are generated using PlantUML and may not be 100% accurate.
+class IBlobContainer<T> {
+  + DeleteContentAsync(string) : Task
+  + GetContentAsync(string) : Task<ContentReference?>
+  + GetContentMetaDataAsync(string) : Task<ContentMetaDataReference?>
+  + StoreContentAsync(ContentReference, Dictionary<string, string

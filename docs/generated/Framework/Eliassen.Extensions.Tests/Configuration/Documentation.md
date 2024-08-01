@@ -1,98 +1,88 @@
-Here is the documentation for the `CommandLineTests.cs` and `ConfigurationBuilderExtensionsTests.cs` files, including class diagrams in PlantUML:
+Here is the documentation for the provided source code:
 
-**CommandLineTests.cs**
+**README.md**
 
-### Purpose
+## Introduction
 
-The `CommandLineTests` class contains unit tests for the `Eliassen.Extensions.Configuration` library, specifically for the `CommandLine` class and its related methods.
+This repository contains test code for the `Eliassen.Extensions.Configuration` NuGet package. The tests are written in C# and utilize the `Microsoft.VisualStudio.TestTools.UnitTesting` framework.
 
-### Classes
+## Projects
 
-#### `CommandLineTests`
+### CommandLineTests
 
-*   Extends `TestClass` from `Microsoft.VisualStudio.TestTools.UnitTesting`
-*   Contains two test methods:
-    *   `BuildParametersTests`: Tests the `BuildParameters` method of the `CommandLine` class.
-    *   `AddParametersTests`: Tests the `AddParameters` method of the `CommandLine` class.
+This project contains tests for the `CommandLine` class, which is used to build and add parameters to a configuration dictionary.
 
-#### `TestHarness`
+**Classes**
 
-*   A simple class that contains two properties, `Prop1` and `Prop2`, which are used as test values.
+* `CommandLineTests`: Contains tests for the `CommandLine` class.
+* `TestHarness`: A simple class used to test the `CommandLine` class.
 
-### Methods
+**Methods**
 
-#### `BuildParametersTests`
+* `BuildParametersTests`: Tests the `BuildParameters` method of the `CommandLine` class.
+* `AddParametersTests`: Tests the `AddParameters` method of the `CommandLine` class.
 
-*   Tests the `BuildParameters` method of the `CommandLine` class, which takes an instance of `TestHarness` as a parameter.
-*   Verifies that the method returns a dictionary with the correct key-value pairs.
+### ConfigurationBuilderExtensionsTests
 
-#### `AddParametersTests`
+This project contains tests for the `ConfigurationBuilderExtensions` class, which provides methods for adding in-memory collections to a configuration builder.
 
-*   Tests the `AddParameters` method of the `CommandLine` class, which takes an instance of `TestHarness` as a parameter.
-*   Verifies that the method returns a dictionary with the correct key-value pairs.
+**Classes**
 
-### Class Diagram in PlantUML
+* `ConfigurationBuilderExtensionsTests`: Contains tests for the `ConfigurationBuilderExtensions` class.
 
-```
+**Methods**
+
+* `AddInMemoryCollectionTest_KeyValuePair`: Tests the `AddInMemoryCollection` method with a dictionary of key-value pairs.
+* `AddInMemoryCollectionTest_Tuple`: Tests the `AddInMemoryCollection` method with a tuple of key-value pairs.
+
+**Class Diagram**
+
+```plantuml
 @startuml
 class CommandLineTests {
-  - testContext: TestContext
+  - TestContext testContext
   + BuildParametersTests()
   + AddParametersTests()
 }
 
 class TestHarness {
-  - Prop1: string?
-  - Prop2: string?
+  - string? Prop1
+  - string? Prop2
 }
 
-CommandLineTests -> TestHarness: uses
-@enduml
-```
-
-**ConfigurationBuilderExtensionsTests.cs**
-
-### Purpose
-
-The `ConfigurationBuilderExtensionsTests` class contains unit tests for the `Eliassen.Extensions.Configuration` library, specifically for the `AddInMemoryCollection` extension method of the `ConfigurationBuilder` class.
-
-### Classes
-
-#### `ConfigurationBuilderExtensionsTests`
-
-*   Extends `TestClass` from `Microsoft.VisualStudio.TestTools.UnitTesting`
-*   Contains two test methods:
-    *   `AddInMemoryCollectionTest_KeyValuePair`: Tests the `AddInMemoryCollection` method with a dictionary.
-    *   `AddInMemoryCollectionTest_Tuple`: Tests the `AddInMemoryCollection` method with a tuple.
-
-### Methods
-
-#### `AddInMemoryCollectionTest_KeyValuePair`
-
-*   Tests the `AddInMemoryCollection` method with a dictionary containing a single key-value pair.
-*   Verifies that the method returns a `ConfigurationBuilder` instance with the correct settings.
-
-#### `AddInMemoryCollectionTest_Tuple`
-
-*   Tests the `AddInMemoryCollection` method with a tuple containing a key and a value.
-*   Verifies that the method returns a `ConfigurationBuilder` instance with the correct settings.
-
-### Class Diagram in PlantUML
-
-```
-@startuml
 class ConfigurationBuilderExtensionsTests {
-  - testContext: TestContext
+  - TestContext testContext
   + AddInMemoryCollectionTest_KeyValuePair()
   + AddInMemoryCollectionTest_Tuple()
 }
 
 class ConfigurationBuilder {
-  + AddInMemoryCollection(Dictionary<string, string>): ConfigurationBuilder
+  - { Dictionary<string, string> inmemoryCollection }
+  + AddInMemoryCollection(Dictionary<string, string> collection)
 }
 
-ConfigurationBuilderExtensionsTests -> ConfigurationBuilder: uses
 @enduml
 ```
 
-Note: The class diagrams are simplified and only show the essential relationships between the classes.
+**Sequence Diagram**
+
+```plantuml
+@startuml
+sequenceDiagram
+    participant CommandLineTests as\Tests
+    participant ConfigurationBuilder as\ConfigBuilder
+    Tests->>ConfigBuilder: Build()
+    ConfigBuilder->>ConfigBuilder: AddInMemoryCollection(new Dictionary<string, string>{["Hello"]="world"})
+    ConfigBuilder->>ConfigBuilder: Build()
+    Tests->>ConfigBuilder: Get("Hello")
+    ConfigBuilder->>Tests: "world"
+
+    Tests->>ConfigBuilder: Build()
+    ConfigBuilder->>ConfigBuilder: AddInMemoryCollection(("Hello", "world"))
+    ConfigBuilder->>ConfigBuilder: Build()
+    Tests->>ConfigBuilder: Get("Hello")
+    ConfigBuilder->>Tests: "world"
+@enduml
+```
+
+I hope this documentation helps to provide a clear understanding of the source code! Let me know if you have any questions or need further clarification.

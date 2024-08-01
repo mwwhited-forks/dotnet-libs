@@ -1,92 +1,84 @@
-**DocumentSummaryGenerationProvider Class Diagram**
+Here is the documentation for the provided source code in Markdown format:
 
-Class diagram for DocumentSummaryGenerationProvider:
-```
+# Document Summary Generation Provider
+## Overview
+The `DocumentSummaryGenerationProvider` is a class that provides functionality to generate summaries for documents asynchronously.
+
+### Class Diagram
+```plantuml
 @startuml
 class DocumentSummaryGenerationProvider {
-  - MessageCompletion _messageCompletion
-  - string _modelName
-  - string _promptTemplate
-  + GenerateSummaryAsync(string content)
-  + GetCompletionAsync(string modelName, string promptTemplate, string content)
-}
+  - _messageCompletion: IMessageCompletion
+  - _modelName: string
+  - _promptTemplate: string
 
+  + GenerateSummaryAsync(string content): Task<string>
+  + GetCompletionAsync(string modelName, string promptTemplate, string content): Task<string>
+}
 @enduml
 ```
+## Hybrid Search Provider
+## Overview
+The `HybridSearchProvider` is a class that represents a hybrid search provider that combines results from lexical and semantic search providers.
 
-**HybridProvider Class Diagram**
-
-Class diagram for HybridProvider:
-```
+### Class Diagram
+```plantuml
 @startuml
-class HybridProvider {
-  //+ QueryAsync(string? queryString, int limit = 25, int page = 0)
-  //+ ISearchContent<SearchResultModel> _lexicalProvider
-  //+ ISearchContent<SearchResultModel> _semanticStoreProvider
-}
+class HybridSearchProvider {
+  //private readonly ISearchContent<SearchResultModel> _lexicalProvider;
+  //private readonly ISearchContent<SearchResultModel> _semanticStoreProvider;
 
+  + QueryAsync(string? queryString, int limit = 25, int page = 0): IAsyncEnumerable<SearchResultModel>
+}
 @enduml
 ```
+## Search Provider
+## Overview
+The `SearchProvider` is a class that provides search functionality combining semantic, lexical, and hybrid search approaches.
 
-**SearchProvider Class Diagram**
-
-Class diagram for SearchProvider:
-```
+### Class Diagram
+```plantuml
 @startuml
 class SearchProvider {
-  //+ ISearchContent<SearchResultModel> _semantic
-  //+ ISearchContent<SearchResultModel> _lexical
-  //+ ISearchContent<SearchResultModel> _hybrid
-  //+ IEmbeddingProvider _embedding
-  //+ ISearchContent<SearchResultModel> _contentStore
-  + ListAsync()
-  + EmbedAsync(string text)
-  + SemanticSearchAsync(string? query, int limit)
-  + LexicalSearchAsync(string? query, int limit)
-  + HybridSearchAsync(string? query, int limit)
-}
+  //private readonly ISearchContent<SearchResultModel> _semantic;
+  //private readonly ISearchContent<SearchResultModel> _lexical;
+  //private readonly ISearchContent<SearchResultModel> _hybrid;
+  //private readonly IEmbeddingProvider _embedding;
+  //private readonly ISearchContent<SearchResultModel> _contentStore;
 
+  + ListAsync(): Task<IEnumerable<SearchResultModel>>
+  + EmbedAsync(string text): Task<float[]>
+  + SemanticSearchAsync(string? query, int limit): Task<IEnumerable<SearchResultModel>>
+  + LexicalSearchAsync(string? query, int limit): Task<IEnumerable<SearchResultModel>>
+  + HybridSearchAsync(string? query, int limit): Task<IEnumerable<SearchResultModel>>
+}
 @enduml
 ```
+## Component Model
+### Document Summary Generation Provider
+The `DocumentSummaryGenerationProvider` class is responsible for generating summaries for documents asynchronously. It uses the `IMessageCompletion` interface to generate the summary.
 
-**Class Diagram for the entire solution**
+### Hybrid Search Provider
+The `HybridSearchProvider` class is responsible for combining results from lexical and semantic search providers. It uses the `ISearchContent<SearchResultModel>` interface to query the providers.
 
-Here is the class diagram for the entire solution:
-```
+### Search Provider
+The `SearchProvider` class is responsible for providing search functionality combining semantic, lexical, and hybrid search approaches. It uses the `ISearchContent<SearchResultModel>` interface to query the providers and the `IEmbeddingProvider` interface to generate embeddings.
+
+### Sequence Diagram
+```plantuml
 @startuml
-class DocumentSummaryGenerationProvider {
-  - MessageCompletion _messageCompletion
-  - string _modelName
-  - string _promptTemplate
-  + GenerateSummaryAsync(string content)
-  + GetCompletionAsync(string modelName, string promptTemplate, string content)
-}
-
-class HybridProvider {
-  //+ QueryAsync(string? queryString, int limit = 25, int page = 0)
-  //+ ISearchContent<SearchResultModel> _lexicalProvider
-  //+ ISearchContent<SearchResultModel> _semanticStoreProvider
-}
-
-class SearchProvider {
-  //+ ISearchContent<SearchResultModel> _semantic
-  //+ ISearchContent<SearchResultModel> _lexical
-  //+ ISearchContent<SearchResultModel> _hybrid
-  //+ IEmbeddingProvider _embedding
-  //+ ISearchContent<SearchResultModel> _contentStore
-  + ListAsync()
-  + EmbedAsync(string text)
-  + SemanticSearchAsync(string? query, int limit)
-  + LexicalSearchAsync(string? query, int limit)
-  + HybridSearchAsync(string? query, int limit)
-}
-
-SearchProvider --* DocumentSummaryGenerationProvider
-SearchProvider --* HybridProvider
-
-note "SearchProvider uses DocumentSummaryGenerationProvider"
-note "SearchProvider uses HybridProvider"
-
+sequenceDiagram
+  participant Provider as "Document Summary Generation Provider"
+  participant Query as "Search Query"
+  participant Metadata as "Metadata Provider"
+  note "Generate summary for document"
+  Provider->>Metadata: Get content for document
+  Metadata->>Query: Get metadata for content
+  Query->>Provider: Get summary for document
+  alt summary generation
+    Provider->>Query: Generate summary
+    Query->>Provider: Get summary
+  end
 @enduml
 ```
-This class diagram shows the relationships between the classes in the solution. The `SearchProvider` class uses the `DocumentSummaryGenerationProvider` class to generate summaries and the `HybridProvider` class to perform hybrid search queries.
+Note that the above sequence diagram is a simplified representation of the workflow and may not capture all the possible scenarios.

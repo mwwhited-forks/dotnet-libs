@@ -1,65 +1,106 @@
-Here is the documentation for the provided source code files, including class diagrams in PlantUML:
-
 **ReflectionExtensions.cs**
+==========================
 
-This class provides various extension methods for reflection and common patterns.
+### Class Diagram
 
-**Class Diagram:**
 ```plantuml
 @startuml
 class ReflectionExtensions {
-  - GetKeyValue(this object item) : object?
-  - MakeSafeArray(this Type? type, Array? inputs, ICaptureResultMessage? capture) : object?
-  - MakeSafe(this Type? type, object? input, ICaptureResultMessage? capture) : object?
-  - TryParse(this Type? type, string? toParse, out object? parsed, ICaptureResultMessage? capture) : bool
-  - GetShortTypeName(this Type type) : string
-  - GetAttributes(this Type type) : IEnumerable<Attribute>
-  - GetAttributes<TAttribute>(this Type type) : IEnumerable<TAttribute>
-  - GetPropertiesByAttribute<TAttribute>(this Type type) : IEnumerable<PropertyDescriptor>
-  - GetStaticMethod(this Type type, string methodName, params Type[] parameterTypes) : MethodInfo?
-  - GetInstanceMethod(this Type type, string methodName, params Type[] parameterTypes) : MethodInfo?
-  - GetParametersTypes(this MethodInfo method) : IEnumerable<Type>
+  - publicKeyValue
+  - publicKeyStaticMethod
+  - publicKeyInstanceMethod
+  - GetKeyValue(object:object) as method
+  - MakeSafeArray(Type:Type, Array:object) as method
+  - TryParse(Type:Type, string:object) as method
+  - GetShortTypeName(Type:Type) as method
+  - GetAttributes(Type:Type) as method
+  - GetPropertiesByAttribute(Type:Type, TAttribute:TAttribute) as method
+  - GetStaticMethod(Type:Type, string:methodname, Type[]:parameterTypes) as method
+  - GetInstanceMethod(Type:Type, string:methodname, Type[]:parameterTypes) as method
+  - GetParametersTypes(MethodInfo:method) as method
 }
 
 @enduml
 ```
-**Method Descriptions:**
 
-* `GetKeyValue(this object item)`: Returns a lookup key value for the provided entity.
-* `MakeSafeArray(this Type? type, Array? inputs, ICaptureResultMessage? capture)`: Safely creates a new array for a given element type.
-* `MakeSafe(this Type? type, object? input, ICaptureResultMessage? capture)`: Makes an attempt to convert an input to a target type as best as possible.
-* `TryParse(this Type? type, string? toParse, out object? parsed, ICaptureResultMessage? capture)`: Tries to parse a string to an object using the best possible match for the provided type.
-* `GetShortTypeName(this Type type)`: Returns the type name with full namespace and assembly name.
-* `GetAttributes(this Type type)`: Returns all attributes for a type.
-* `GetAttributes<TAttribute>(this Type type)`: Returns all attributes of a specific type.
-* `GetPropertiesByAttribute<TAttribute>(this Type type)`: Returns all properties with a specified attribute.
-* `GetStaticMethod(this Type type, string methodName, params Type[] parameterTypes)`: Gets a static method.
-* `GetInstanceMethod(this Type type, string methodName, params Type[] parameterTypes)`: Gets an instance method.
-* `GetParametersTypes(this MethodInfo method)`: Returns the parameters types for a method.
+### Sequence Diagram
+
+```plantuml
+@startuml
+sequenceDiagram
+    participant ReflectionExtensions as "ReflectionExtensions"
+    participant Object as "Object"
+    participant Type as "Type"
+    participant MethodInfo as "MethodInfo"
+    ReflectionExtensions->>Object: GetKeyValue(object item)
+    Object->>Type: GetType()
+    Type->>ReflectionExtensions: GetProperties()
+    ReflectionExtensions->>Type: GetPropertiesByAttribute(TAttribute attribute)
+    Type->>ReflectionExtensions: GetProperties()
+    ReflectionExtensions->>MethodInfo: GetStaticMethod(Type type, string methodName, Type[] parameterTypes)
+    MethodInfo->>ReflectionExtensions: GetParameters()
+    ReflectionExtensions->>MethodInfo: GetParametersTypes()
+    Type->>ReflectionExtensions: GetInstanceMethod(Type type, string methodName, Type[] parameterTypes)
+    MethodInfo->>ReflectionExtensions: GetParameters()
+    ReflectionExtensions->>MethodInfo: GetParametersTypes()
+    Object->>Type: GetResourceStream(resourceName)
+    Type->>ReflectionExtensions: GetResourceStream(resourceName)
+    ReflectionExtensions->>Type: GetResourceStream(resourceName)
+    Type->>Object: GetResourceStream(resourceName)
+    ReflectionExtensions->>Assembly: GetResourceStream(resourceName)
+
+@enduml
+```
+
+### Description
+
+The `ReflectionExtensions` class provides a set of extension methods for the `Type` and `MethodInfo` types, which can be used to reflect on the properties and methods of an object. The class includes methods for getting the key value of an object, creating a safe array from a given element type, parsing a string to a specific type, and getting the short type name of a type. Additionally, it provides methods for getting the attributes and properties of a type, as well as the parameters of a method.
+
+The `TryParse` method attempts to parse a string to a specific type, and returns a `bool` indicating whether the parse was successful. The `MakeSafeArray` method creates a new array from a given element type, and attempts to convert each element of the input array to the specified type. The `GetShortTypeName` method returns the short type name of a type, including the namespace and assembly name.
 
 **ResourceExtensions.cs**
+==========================
 
-This class provides various extension methods for embedded resources.
+### Class Diagram
 
-**Class Diagram:**
 ```plantuml
 @startuml
 class ResourceExtensions {
-  - GetResourceStream(this object? context, string resourceName) : Stream?
-  - GetResourceStream(this Type? type, string resourceName) : Stream?
-  - GetResourceStream(this Assembly assembly, string resourceName) : Stream?
-  - GetResourceAsStringAsync(this object? context, string resourceName) : Task<string?>
-  - GetResourceAsString(this object context, string resourceName) : string?
+  - GetResourceStream(object:object, string:resourceName) as method
+  - GetResourceStream(Type:type, string:resourceName) as method
+  - GetResourceStream(Assembly:assembly, string:resourceName) as method
+  - GetResourceAsStringAsync(object:object, string:resourceName) as method
+  - GetResourceAsStringAsync(Type:type, string:resourceName) as method
+  - GetResourceAsStringAsync(IResolveType:resolve, string:resourceName) as method
+  - GetResourceAsString(object:object, string:resourceName) as method
 }
 
 @enduml
 ```
-**Method Descriptions:**
 
-* `GetResourceStream(this object? context, string resourceName)`: Looks up a resource stream based on the filename relative to the scope of the context.
-* `GetResourceStream(this Type? type, string resourceName)`: Looks up a resource stream based on the filename relative to the scope of a type.
-* `GetResourceStream(this Assembly assembly, string resourceName)`: Looks up a resource stream based on the filename relative to the scope of an assembly.
-* `GetResourceAsStringAsync(this object? context, string resourceName)`: Looks up the content of a resource as a string.
-* `GetResourceAsString(this object context, string resourceName)`: Looks up the content of a resource as a string.
+### Sequence Diagram
 
-Note: The PlantUML diagrams are generated based on the public method signatures and do not include any implementation details.
+```plantuml
+@startuml
+sequenceDiagram
+    participant ResourceExtensions as "ResourceExtensions"
+    participant Object as "Object"
+    participant Type as "Type"
+    participant Assembly as "Assembly"
+    Object->>ResourceExtensions: GetResourceStream(resourceName)
+    Type->>ResourceExtensions: GetResourceStream(resourceName)
+    Assembly->>ResourceExtensions: GetResourceStream(resourceName)
+    Object->>ResourceExtensions: GetResourceAsStringAsync(resourceName)
+    Type->>ResourceExtensions: GetResourceAsStringAsync(resourceName)
+    IResolveType->>ResourceExtensions: GetResourceAsStringAsync(resourceName)
+    Object->>ResourceExtensions: GetResourceAsString(resourceName)
+    Type->>ResourceExtensions: GetResourceAsString(resourceName)
+
+@enduml
+```
+
+### Description
+
+The `ResourceExtensions` class provides a set of extension methods for getting and reading the contents of embedded resources. The class includes methods for getting the resource stream for a given object, type, or assembly, and for reading the contents of the resource as a string.
+
+The `GetResourceStream` method returns the stream for a given resource name, which can be an embedded resource, a file resource, or an assembly resource. The `GetResourceAsStringAsync` method reads the contents of the

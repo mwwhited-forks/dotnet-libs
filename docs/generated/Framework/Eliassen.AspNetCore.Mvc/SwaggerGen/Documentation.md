@@ -1,225 +1,104 @@
-Here is the documentation for each of the source code files, along with class diagrams in PlantUML:
+**Documentation for Eliassen.AspNetCore.Mvc.SwaggerGen**
 
-**AdditionalSwaggerGenEndpointsOptions.cs**
+**Overview**
 
-This class provides additional configuration options for SwaggerGen. It allows you to:
+The Eliassen.AspNetCore.Mvc.SwaggerGen namespace provides additional functionality for SwaggerGen and SwaggerUI in ASP.NET MVC applications. It includes classes for configuring SwaggerGen options, registering filters, and extending the functionality of SwaggerUI.
 
-* Present permissions and application versions
-* Include XML documentation comments
-* Configure SwaggerGen to use a custom schema ID resolver
+**Classes and Interfaces**
 
-Class Diagram:
+### AdditionalSwaggerGenEndpointsOptions.cs
+
+This class extends the `SwaggerGenOptions` class to provide additional features for SwaggerGen, such as presenting permissions, application versions, and XML documentation.
+
+**Sequence Diagram**
+
 ```plantuml
 @startuml
-class AdditionalSwaggerGenEndpointsOptions {
-  - IActionDescriptorCollectionProvider provider
-  - ILogger<AdditionalSwaggerGenEndpointsOptions> log
-  - IEnumerable<IVersionProvider> versions
-  ~Configure(SwaggerGenOptions options)
-}
-
-class SwaggerGenOptions {
-  - OpenApiInfo OpenApiInfo
-  - OpenApiDocument OpenApiDocument
-  - bool CustomSchemaIds
-}
-
-class OpenApiInfo {
-  - string Title
-  - string Version
-  - string Description
-}
-
+class SwaggerGenOptions
+class AdditionalSwaggerGenEndpointsOptions
+class ILogger
+class IVersionProvider
+ AdditionalSwaggerGenEndpointsOptions --|> SwaggerGenOptions
+ SwaggerGenOptions ..> ILogger
+ SwaggerGenOptions ..> IVersionProvider
+logger ..> log message
 @enduml
 ```
-**AdditionalSwaggerUIEndpointsOptions.cs**
 
-This class provides additional configuration options for SwaggerUI. It allows you to:
+### AdditionalSwaggerUIEndpointsOptions.cs
 
-* Group controller actions by assembly
+This class extends the `SwaggerUIOptions` class to provide additional features for SwaggerUI, such as grouping controller/actions by assembly.
 
-Class Diagram:
+**Sequence Diagram**
+
 ```plantuml
 @startuml
-class AdditionalSwaggerUIEndpointsOptions {
-  - IActionDescriptorCollectionProvider provider
-  ~Configure(SwaggerUIOptions options)
-}
-
-class SwaggerUIOptions {
-  - string SwaggerEndpoint
-  - bool ShowExtensions
-}
-
-class SwaggerEndpoint {
-  - string Path
-  - string Description
-}
+class SwaggerUIOptions
+class AdditionalSwaggerUIEndpointsOptions
+class IActionDescriptorCollectionProvider
+ AdditionalSwaggerUIEndpointsOptions --|> SwaggerUIOptions
+ SwaggerUIOptions ..> IActionDescriptorCollectionProvider
+provider --|> provider_ActionDescriptors
 @enduml
 ```
-**AddMvcFilterOptions.cs**
 
-This class allows you to add additional ASP.NET MVC filters. It is used to register filters with the MVC options.
+### AddMvcFilterOptions.cs
 
-Class Diagram:
+This class provides a way to register additional ASP.NET MVC filters.
+
+**Class Diagram**
+
 ```plantuml
 @startuml
-class AddMvcFilterOptions<TFilter> {
-  - TFilter
-  ~Configure(MvcOptions options)
-}
-
-class MvcOptions {
-  - IFilterMetadata Filters
-}
-
-class IFilterMetadata {
-  --filter metadata attributes
-}
-
+class MvcOptions
+class AddMvcFilterOptions
+class TFilter
+MvcOptions ..> AddMvcFilterOptions
+AddMvcFilterOptions ..> TFilter
 @enduml
 ```
-**AddOperationFilterOptions.cs**
 
-This class allows you to add additional operation filters. It is used to register filters with the SwaggerGen options.
+### AddOperationFilterOptions.cs
 
-Class Diagram:
+This class provides a way to register additional operation filters for SwaggerGen.
+
+**Class Diagram**
+
 ```plantuml
 @startuml
-class AddOperationFilterOptions<T> {
-  - T
-  ~Configure(SwaggerGenOptions options)
-}
-
-class SwaggerGenOptions {
-  - IOperationFilter OperationFilters
-}
-
-class IOperationFilter {
-  -filter metadata attributes
-}
-
+class SwaggerGenOptions
+class AddOperationFilterOptions
+class T
+SwaggerGenOptions ..> AddOperationFilterOptions
+AddOperationFilterOptions ..> T
 @enduml
 ```
-**AddSchemaFilterOptions.cs**
 
-This class allows you to add additional schema filters. It is used to register filters with the SwaggerGen options.
+### AddSchemaFilterOptions.cs
 
-Class Diagram:
+This class provides a way to register additional schema filters for SwaggerGen.
+
+**Class Diagram**
+
 ```plantuml
 @startuml
-class AddSchemaFilterOptions<T> {
-  - T
-  ~Configure(SwaggerGenOptions options)
-}
-
-class SwaggerGenOptions {
-  - ISchemaFilter SchemaFilters
-}
-
-class ISchemaFilter {
-  -filter metadata attributes
-}
-
+class SwaggerGenOptions
+class AddSchemaFilterOptions
+class T
+SwaggerGenOptions ..> AddSchemaFilterOptions
+AddSchemaFilterOptions ..> T
 @enduml
 ```
-**ApiNamespaceControllerModelConvention.cs**
 
-This class provides a convention for SwaggerGen to use the assembly name as the group name for controller actions.
+**Components**
 
-Class Diagram:
-```plantuml
-@startuml
-class ApiNamespaceControllerModelConvention {
-  ~Apply(ControllerModel controller)
-}
+* **SwaggerGen**: The SwaggerGen component is responsible for generating Swagger documentation for ASP.NET MVC applications.
+* **SwaggerUI**: The SwaggerUI component provides a user interface for interacting with Swagger documentation.
+* ** ILogger**: The ILogger interface provides a way to log messages from the SwaggerGen and SwaggerUI components.
+* **IVersionProvider**: The IVersionProvider interface provides a way to retrieve application versions.
 
-class ControllerModel {
-  - string ApiExplorer.GroupName
-}
+**System Design**
 
-class IControllerModelConvention {
-  ~Apply(ControllerModel controller)
-}
+The Eliassen.AspNetCore.Mvc.SwaggerGen namespace is designed to be extensible and flexible. It provides a way to register additional filters and configure SwaggerGen and SwaggerUI options to meet specific requirements.
 
-@enduml
-```
-**HealthChecksDocumentFilter.cs**
-
-This class provides a document filter for health checks in the OpenAPI document.
-
-Class Diagram:
-```plantuml
-@startuml
-class HealthChecksDocumentFilter {
-  ~Apply(OpenApiDocument openApiDocument, DocumentFilterContext context)
-}
-
-class OpenApiDocument {
-  - OpenApiPathItem Paths
-}
-
-class DocumentFilterContext {
-  - OpenApiDocument OpenApiDocument
-  - OpenApiPathItem CurrentPathItem
-}
-
-class OpenApiPathItem {
-  - OpenApiOperation Operations
-}
-
-class OpenApiOperation {
-  - OpenApiTag Tags
-  - OpenApiResponse Responses
-  - string HttpMethod
-  - string Path
-}
-
-class OpenApiTag {
-  - string Name
-}
-
-class OpenApiResponse {
-  - OpenApiMediaType Response
-}
-
-class OpenApiMediaType {
-  - OpenApiSchema Schema
-}
-
-class OpenApiSchema {
-  - Type Type
-  - Dictionary<string, OpenApiSchema> AdditionalProperties
-}
-@enduml
-```
-**HealthCheckSwaggerGenEndpointOptions.cs**
-
-This class provides configuration options for SwaggerGen related to health check endpoints.
-
-Class Diagram:
-```plantuml
-@startuml
-class HealthCheckSwaggerGenEndpointOptions {
-  ~Configure(SwaggerGenOptions options)
-}
-
-class SwaggerGenOptions {
-  - IDocumentFilter DocumentFilters
-}
-
-class IDocumentFilter {
-  ~Apply(OpenApiDocument openApiDocument, DocumentFilterContext context)
-}
-
-class OpenApiDocument {
-  - OpenApiPathItem Paths
-}
-
-class DocumentFilterContext {
-  - OpenApiDocument OpenApiDocument
-  - OpenApiPathItem CurrentPathItem
-}
-@enduml
-```
-Please note that these class diagrams only represent the relationships between the classes and do not include the implementation details of the methods.
+The classes in this namespace are designed to work together to provide a comprehensive solution for generating Swagger documentation and providing a user interface for interacting with that documentation.

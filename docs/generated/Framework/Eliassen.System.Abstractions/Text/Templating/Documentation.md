@@ -1,138 +1,131 @@
-Here is the documentation for the provided source code files:
+**Introduction**
+===============
 
-**FileType.cs**
-```csharp
-namespace Eliassen.System.Text.Templating;
+This documentation describes the source code of the Eliassen System Text Templating library, which provides a template engine for generating content based on templates. The library defines several interfaces, classes, and methods for managing file types, template contexts, and template engines.
 
-public record FileType : IFileType
-{
-    public required string Extension { get; set; }
-    public required string ContentType { get; set; }
-    public bool IsTemplateType { get; set; }
-}
-```
-**IFileType.cs**
-```csharp
-namespace Eliassen.System.Text.Templating;
+**Overview of Interfaces**
+-------------------------
 
-public interface IFileType
-{
-    string Extension { get; }
-    string ContentType { get; }
-    bool IsTemplateType { get; }
-}
-```
-**IFileTypeProvider.cs**
-```csharp
-namespace Eliassen.System.Text.Templating;
+### IFileType
 
-public interface IFileTypeProvider
-{
-    IReadOnlyCollection<IFileType> Types { get; }
-}
-```
-**ITemplateContext.cs**
-```csharp
-namespace Eliassen.System.Text.Templating;
+The `IFileType` interface defines a set of properties that describe a file type, including its extension, content type, and whether it is a template type.
 
-public interface ITemplateContext
-{
-    string TemplateName { get; }
-    string TemplateContentType { get; }
-    string TemplateFileExtension { get; }
-    ITemplateSource TemplateSource { get; }
-    string TemplateReference { get; }
-    Func<ITemplateContext, Stream> OpenTemplate { get; }
-    string TargetContentType { get; }
-    string TargetFileExtension { get; }
-    int Priority { get; }
-}
-```
-**ITemplateEngine.cs**
-```csharp
-namespace Eliassen.System.Text.Templating;
+### IFileTypeProvider
 
-public interface ITemplateEngine
-{
-    ITemplateContext? Get(string templateName);
-    IEnumerable<ITemplateContext> GetAll(string templateName);
-    Task<ITemplateContext?> ApplyAsync(string templateName, object data, Stream target);
-    Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target);
-    Task<string?> ApplyAsync(string templateName, object data);
-    Task<string?> ApplyAsync(ITemplateContext context, object data);
-}
-```
-**ITemplateProvider.cs**
-```csharp
-namespace Eliassen.System.Text.Templating;
+The `IFileTypeProvider` interface provides a collection of `IFileType` objects.
 
-public interface ITemplateProvider
-{
-    IReadOnlyCollection<string> SupportedContentTypes { get; }
-    bool CanApply(ITemplateContext context);
-    Task<bool> ApplyAsync(ITemplateContext context, object data, Stream target);
-}
-```
-**ITemplateSource.cs**
-```csharp
-namespace Eliassen.System.Text.Templating;
+### ITemplateContext
 
-public interface ITemplateSource
-{
-    IEnumerable<ITemplateContext> Get(string templateName);
-}
-```
-**Class Diagrams in Plant UML**
+The `ITemplateContext` interface represents the context for a template, including information about the template and target content types, source, and priority.
 
-Here is the class diagram for the provided source code files:
+### ITemplateEngine
+
+The `ITemplateEngine` interface defines methods for managing templates, including getting and applying templates, and writing results to a stream or returning as a string.
+
+**Class Diagram**
+----------------
+
 ```plantuml
 @startuml
-class FileType implements IFileType {
+class IFileType {
   - extension: string
   - contentType: string
   - isTemplateType: bool
 }
 
-class IFileType {
-  + extension: string
-  + contentType: string
-  + isTemplateType: bool
-}
-
 class IFileTypeProvider {
-  + types: IReadOnlyCollection<IFileType>
+  + Types: IReadOnlyCollection<IFileType>
 }
 
 class ITemplateContext {
-  + templateName: string
-  + templateContentType: string
-  + templateFileExtension: string
-  + templateSource: ITemplateSource
-  + templateReference: string
-  + openTemplate: Func<ITemplateContext, Stream>
-  + targetContentType: string
-  + targetFileExtension: string
-  + priority: int
+  - templateName: string
+  - templateContentType: string
+  - templateFileExtension: string
+  - templateSource: ITemplateSource
+  - templateReference: string
+  - openTemplate: Func<ITemplateContext, Stream>
+  - targetContentType: string
+  - targetFileExtension: string
+  - priority: int
 }
 
 class ITemplateEngine {
-  + get: ITemplateContext?
-  + getAll: IEnumerable<ITemplateContext>
-  + applyAsync: Task<ITemplateContext?>
-  + applyAsync: Task<bool>
-  + applyAsync: Task<string?>
+  + Get(templateName: string): ITemplateContext?
+  + GetAll(templateName: string): IEnumerable<ITemplateContext>
+  + ApplyAsync(templateName: string, data: object, target: Stream): Task<ITemplateContext?>
+  + ApplyAsync(context: ITemplateContext, data: object, target: Stream): Task<bool>
+  + ApplyAsync(templateName: string, data: object): Task<string?>
+  + ApplyAsync(context: ITemplateContext, data: object): Task<string?>
 }
-
-class ITemplateProvider {
-  + supportedContentTypes: IReadOnlyCollection<string>
-  + canApply: bool
-  + applyAsync: Task<bool>
-}
-
-class ITemplateSource {
-  + get: IEnumerable<ITemplateContext>
-}
-
 @enduml
 ```
-The class diagram shows the relationships between the classes `FileType`, `IFileType`, `IFileTypeProvider`, `ITemplateContext`, `ITemplateEngine`, `ITemplateProvider`, and `ITemplateSource`.
+
+**Sequence Diagram - Applying a Template**
+----------------------------------------
+
+```plantuml
+@startuml
+title Applying a Template
+
+ participant "Template Engine" as TE
+ participant "Data" as D
+ participant "Stream" as S
+
+ note left
+ Apply template with name "{templateName}" using data {data}
+ end note
+
+ TE ->> D: Get data
+ D ->> TE: Data
+ TE ->> S: Get stream
+ TE ->> TE: Open template
+ S ->> TE: Write result
+
+ TE ->> D: Apply template to data
+ D ->> TE: Data and template context
+ TE ->> S: Write result
+ note right
+ Async operation
+ end note
+
+ S ->> TE: Stream result
+ TE ->> S: Continue writing
+ TE ->> TE: Apply template asynchronous
+ TE ->> S: Result to stream
+ TE ->> D: async boolean
+ D ->> TE: boolean
+ TE ->> S: Result to stream
+ note right
+ Async operation
+ end note
+
+ TE ->> D: Get name and data
+ D ->> TE: Name and data
+ TE ->> TE: Get template context
+ TE ->> S: Get stream
+ TE ->> TE: Open template
+ S ->> TE: Write result
+
+ TE ->> D: Get template context and data
+ D ->> TE: Template context and data
+ TE ->> S: Write result
+ TE ->> D: async boolean
+ D ->> TE: boolean
+ TE ->> S: Result to stream
+ note right
+ Async operation
+ end note
+@enduml
+```
+
+**Component Model**
+-----------------
+
+The Eliassen System Text Templating library consists of the following components:
+
+* `IFileType`: represents a file type
+* `IFileTypeProvider`: provides a collection of `IFileType` objects
+* `ITemplateContext`: represents a template context
+* `ITemplateEngine`: manages templates
+
+These components interact with each other through interfaces and methods to provide a template engine for generating content based on templates.

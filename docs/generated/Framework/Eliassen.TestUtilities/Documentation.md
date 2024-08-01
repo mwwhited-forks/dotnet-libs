@@ -1,111 +1,139 @@
-Here is the documentation for the source code files:
+# Eliassen Test Utilities Documentation
 
-**Eliassen.TestUtilities.csproj**
+## Overview
 
-This is a Visual Studio project file for the Eliassen.TestUtilities library. It specifies the project's targets, dependencies, and configurations.
+Eliassen Test Utilities is a library of extension methods and utility classes designed to improve unit testing capabilities within .NET projects. This documentation provides an overview of the library's features, usage, and technical details.
 
-**Readme.TestUtilities.md**
+### Features
 
-This is the README file for the Eliassen.TestUtilities library. It provides an overview of the library's features and functionalities.
+* **TestContext Extensions**: Provides a set of extension methods for the `TestContext` class, allowing you to easily add test results, such as files or JSON objects, to the test results.
+* **Test Data Deserialization**: Offers a method to deserialize test data from embedded resources.
+* **Logger instances creation**: Provides a mechanism for creating logger instances for testing purposes.
 
-**TestCategories.cs**
+### Components
 
-This class defines a set of common test categories that can be used to organize and group tests.
+#### TestContextExtensions
 
-**TestContextExtensions.cs**
+The `TestContextExtensions` class contains methods for adding test results to the test results directory. These methods can be used to attach files, such as binary data or text files, to the test results.
 
-This static class provides extensions to the `TestContext` class, which is used to customize the behavior of the unit tests.
+1. `AddResult`: Adds a result to the test results directory.
+2. `AddResultFile`: Adds a file to the test results directory.
+3. `GetTestData`: Deserializes test data from embedded resources.
+4. `GetTestDataAsync`: Asynchronous version of `GetTestData`.
+5. `GetQualifiedTestName`: Retrieves a simplified name for the executing test.
+6. `GetTestRunResultFiles`: Retrieves a list of files in the test results directory.
+7. `ResolveTestType`: Retrieves the current type from the test context.
 
-**GetTestData**
+#### TestLogger
 
-This method retrieves test data from embedded resources and deserializes it into a specified type.
+The `TestLogger` class provides a mechanism for creating logger instances for testing purposes.
 
-**GetTestDataAsync**
+1. `Factory`: Retrieves the logger factory instance.
+2. `CreateLogger<T>`: Creates a logger instance for the specified type.
 
-This is an asynchronous version of the `GetTestData` method.
-
-**AddResult**
-
-This method adds a result to the test results for a given test run.
-
-**AddResultFile**
-
-This method adds a file to the test results for a given test run.
-
-**GetQualifiedTestName**
-
-This method returns a simplified name for the executing test.
-
-**GetTestRunResultFiles**
-
-This method returns a list of files that have been added to the test results for the current test run.
-
-**ResolveTestType**
-
-This method returns the current type from the test context.
-
-**Class Diagram**
-
-Here is a class diagram for the Eliassen.TestUtilities library using PlantUML:
+### Class Diagram
 ```plantuml
 @startuml
-class TestContext {
-  - results: List<TestResult>
-  - tests: List<Test>
-  - testRunResultsDirectory: String
-  - fullyQualifiedTestClassName: String
-  - testName: String
+class TestContextExtensions {
+  - addResult(object value)
+  - addResultFile(string fileName, byte[] content)
+  - getTestData(Type type, string target)
+  - getTestDataAsync(Type type, string target)
+  - getQualifiedTestName()
+  - getTestRunResultFiles()
+  - resolveTestType()
 }
 
-class Test {
-  - name: String
-  - result: TestResult
-}
-
-class TestResult {
-  - result: Any
-  - testCase: Test
-}
-
-class TestLogger {
+class LoggerFactory {
   + CreateLogger<T>()
-  + Factory: ILoggerFactory
 }
 
-class TestCategories {
-  - Unit: String
-  - Simulate: String
-  - Integration: String
-  - DevLocal: String
+class ILoggerFactory {
+  + CreateLogger<T>()
 }
 
-TestContext --* Test
-Test --* TestResult
-TestLogger --* ILoggerFactory
-TestCategories --* String
+class ILogger<T> {
+  + Debug(string message)
+  + Error(string message)
+  + Warning(string message)
+  ...
+}
+
 @enduml
 ```
-This diagram shows the relationships between the classes in the Eliassen.TestUtilities library, including the `TestContext` class, the `Test` class, the `TestResult` class, the `TestLogger` class, and the `TestCategories` class.
-
-**TestLogger.cs**
-
-This class provides functionality for creating logger instances for testing purposes.
-
-**CreateLogger**
-
-This method creates a logger instance for the specified type.
-
-**Class Diagram**
-
-Here is a class diagram for the TestLogger class using PlantUML:
+### Component Model
 ```plantuml
 @startuml
-class TestLogger {
-  + CreateLogger<T>()
-  + Factory: ILoggerFactory
+component TestContextExtensions {
+  [...]
 }
 
-TestLogger --> test: Logger
+component LoggerFactory {
+  [...]
+}
+
+component ILoggerFactory {
+  [...]
+}
+
+component ILogger<T> {
+  [...]
+}
+
+@TestContextExtensions ->+ LoggerFactory
+@LoggerFactory ->+ ILoggerFactory
+@ILoggerFactory ->+ ILogger<T>
 @enduml
 ```
-This diagram shows the relationships between the classes in the TestLogger class, including the `TestLogger` class and the `ILoggerFactory` class.
+### Sequence Diagram
+```plantuml
+@startuml
+actor TestContext
+actor Logger
+
+sequence TestContext GetsLogger
+  TestContext -> Logger: CreateLogger<T>()
+  Logger -> TestContext: ILogger<T>
+
+sequence TestLoggerExtensions
+  TestLoggerExtentions -> TestContext: AddResult(object value)
+  TestContext -> TestLoggerExtentions: AddResult(object value)
+
+sequence TestContextExtensions
+  TestContextExtensions -> TestContext: GetTestData(Type type, string target)
+  TestContext <- TestContextExtensions: object?
+
+sequence TestDataDeserialization
+  TestContext -> TestContextExtensions: getTestDataAsync(Type type, string target)
+  TestContextExtensions -> TestContext: async Task<object?>
+
+@enduml
+```
+### Technical Details
+
+* The `TestContextExtensions` class is designed to be used with the `TestContext` class, which is part of the MSTest framework.
+* The `LoggerFactory` class is used to create logger instances for testing purposes.
+* The `ILogger<T>` interface defines the methods for logging messages.
+* The `CreateLogger<T>` method creates a logger instance for the specified type.
+
+### Usage
+
+To use the Eliassen Test Utilities library, you need to add a reference to the `Eliassen.TestUtilities` NuGet package in your project. Then, you can use the extension methods and utility classes provided by the library.
+
+Here is an example of how to use the `AddResult` method:
+```csharp
+[TestClass]
+public class MyTest
+{
+    [TestMethod]
+    public void MyTestMethod()
+    {
+        using (var context = new TestContext())
+        {
+            var result = MyMethodUnderTest();
+            context.AddResult(result);
+        }
+    }
+}
+```
+This documentation provides a comprehensive overview of the Eliassen Test Utilities library. For more information, please refer to the source code and the NuGet package documentation.

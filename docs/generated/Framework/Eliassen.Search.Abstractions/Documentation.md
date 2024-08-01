@@ -1,49 +1,152 @@
-Here is the documentation for the source code files:
+Here is the documentation for the source code:
 
-**Eliassen.Search.Abstractions.csproj**
+# Eliassen.Search.Abstractions
 
-This is a .NET Core project file that defines the Abstractions project for the Eliassen.Search library. The project targets .NET 8.0 and includes references to Microsoft.Extensions.Configuration.Abstractions and InternalsVisibleTo attributes to allow internal access to classes in the Eliassen.Search namespace.
+Eliassen.Search.Abstractions provides interfaces and models for storing and querying vectors efficiently. Here's a breakdown of its key components:
 
-**IVectorStore.cs**
+## IVectorStore
 
-This is an interface that defines the contract for storing and querying vectors. It provides several methods for storing vectors and metadata, listing stored vectors, finding neighbors of a specified vector, and finding neighbors of a specified vector grouped by a key. The interface is generic and can be extended to work with any type of data.
+Interface for storing and querying vectors.
 
-**PlantUML Class Diagram**
+### Methods
 
-```
+* `StoreVectorsAsync`: Stores embeddings and metadata.
+* `ListAsync`: Lists stored vectors.
+* `FindNeighborsAsync`: Finds neighbors of a specified vector.
+* `FindNeighborsAsync`: Finds neighbors of a specified vector, grouped by a key.
+
+## IVectorStore`1
+
+Generic interface for storing and querying vectors.
+
+## SearchResultModel
+
+Represents a search result model containing information about a search result.
+
+### Properties
+
+* `Score`: The score of the search result.
+* `ItemId`: The item's ID value.
+* `MetaData`: The item's metadata.
+
+## SearchTypes
+
+Specifies types of search.
+
+## IVectorStoreFactory
+
+Interface for creating instances of IVectorStore.
+
+### Methods
+
+* `Create`: Creates a new instance of IVectorStore with the specified container name.
+* `Create``1`: Creates a new instance of IVectorStore of the specified type.
+
+## IVectorStoreProvider
+
+Interface for a vector store provider that implements IVectorStore.
+
+### Properties
+
+* `ContainerName`: The name of the container.
+
+### Methods
+
+* `Create`: Creates a new instance of IVectorStoreProvider with the specified container name.
+
+## IVectorStoreProviderFactory
+
+Interface for creating instances of IVectorStoreProvider.
+
+### Methods
+
+* `Create`: Creates a new instance of IVectorStoreProvider with the specified container name.
+
+## VectorStoreAttribute
+
+Attribute for specifying the container name for a vector store.
+
+### Properties
+
+* `ContainerName`: The name of the container.
+
+This attribute can be applied to a class that implements IVectorStore.
+
+```plantuml
 @startuml
 class IVectorStore {
-  - storeVectorsAsync(IEnumerable<ReadOnlyMemory<float>>, Dictionary<string, object>)
-  - storeVectorsAsync(IEnumerable<(ReadOnlyMemory<float>, Dictionary<string, object>)>, Dictionary<string, object>)
-  - listAsync()
-  - findNeighborsAsync(ReadOnlyMemory<float>)
-  - findNeighborsAsync(ReadOnlyMemory<float>, string)
+  + StoreVectorsAsync(embeddings, metadata) : Task<string[]>
+  + ListAsync() : IAsyncEnumerable<SearchResultModel>
+  + FindNeighborsAsync(find) : IAsyncEnumerable<SearchResultModel>
+  + FindNeighborsAsync(find, groupBy) : IAsyncEnumerable<SearchResultModel>
 }
 
 class IVectorStore<T> {
-  .. IVectorStore
+  + StoreVectorsAsync(embeddings, metadata) : Task<string[]>
+  + ListAsync() : IAsyncEnumerable<SearchResultModel>
+  + FindNeighborsAsync(find) : IAsyncEnumerable<SearchResultModel>
+  + FindNeighborsAsync(find, groupBy) : IAsyncEnumerable<SearchResultModel>
 }
 
-@enduml
-```
+interface IVectorStoreProvider {
+  + ContainerName : string
+  + Create() : IVectorStore
+}
 
-**Readme.Search.Abstractions.md**
+interface IVectorStoreProviderFactory {
+  + Create() : IVectorStoreProvider
+}
 
-This is a README file for the Abstractions project of the Eliassen.Search library. It provides an overview of the library and its components, including the IVectorStore interface, which defines the contract for storing and querying vectors. It also mentions other interfaces and classes, such as IVectorStoreFactory, IVectorStoreProvider, VectorStoreAttribute, and SearchResultModel.
-
-**VectorStoreAttribute.cs**
-
-This is an attribute that can be applied to a class that implements IVectorStore. It provides a way to specify the name of the container for the vector store. The attribute is marked with the [AttributeUsage] attribute to indicate that it can only be applied to classes and can only be applied once.
-
-**PlantUML Class Diagram**
-
-```
-@startuml
 class VectorStoreAttribute {
-  - Get/Set CollectionName
+  - ContainerName : string
 }
+
+IVectorStore --* IVectorStoreProvider
+IVectorStoreProvider --* IVectorStoreFactory
+IVectorStoreFactory --* IVectorStoreProvider
+VectorStoreAttribute --* IVectorStore
 
 @enduml
 ```
 
-Note: The above class diagrams are created using PlantUML, a popular tool for generating diagrams from plain text. The class diagrams show the relationships between the classes and interfaces in the Eliassen.Search library.
+```plantuml
+@startuml
+sequenceDiagram
+participant IVectorStore as "IS"
+participant IVectorStoreProvider as "ISP"
+participant IVectorStoreFactory as "ISPF"
+participant SearchResultModel as "SRM"
+
+note "Store Vector" as "1"
+IS ->> ISP: StoreVectorsAsync(embeddings, metadata)
+ISP ->> ISPF: Create
+ISPF ->> IS: IVectorStore
+
+note "List Vectors" as "2"
+IS ->> ISP: ListAsync()
+ISP ->> IS: IAsyncEnumerable<SearchResultModel>
+
+note "Find Neighbors" as "3"
+IS ->> ISP: FindNeighborsAsync(find)
+ISP ->> IS: IAsyncEnumerable<SearchResultModel>
+
+note "Find Neighbors (grouped)" as "4"
+IS ->> ISP: FindNeighborsAsync(find, groupBy)
+ISP ->> IS: IAsyncEnumerable<SearchResultModel>
+
+@enduml
+```
+
+### Component Model
+
+The Eliassen.Search.Abstractions assembly contains the following components:
+
+* `IVectorStore`: The main interface for storing and querying vectors.
+* `IVectorStore` generic: A generic version of `IVectorStore` for working with vectors of specific types.
+* `SearchResultModel`: Represents a search result model containing information about a search result.
+* `IVectorStoreFactory`: An interface for creating instances of `IVectorStore`.
+* `IVectorStoreProvider`: An interface for a vector store provider that implements `IVectorStore`.
+* `IVectorStoreProviderFactory`: An interface for creating instances of `IVectorStoreProvider`.
+* `VectorStoreAttribute`: An attribute for specifying the container name for a vector store.
+
+These components work together to provide a robust framework for vector storage and querying, facilitating efficient retrieval and manipulation of vector data.

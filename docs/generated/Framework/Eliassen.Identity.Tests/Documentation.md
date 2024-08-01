@@ -1,56 +1,46 @@
-**Documentation for Eliassen.Identity.Tests.csproj**
+# Eliassen.Identity.Tests Documentation
 
-**Overview**
-----------
+## Purpose
 
-Eliassen.Identity.Tests.csproj is a test project for the Eliassen.Identity library, designed to test the features and functionality of the project.
+This project is a test suite for the Eliassen.Identity library, designed to verify the functionality and behavior of the library's components.
 
-**Configuration**
-----------------
+## Project Structure
 
-The project is configured to use the Microsoft.NET.Framework v8.0, with implicit usings disabled and nullable annotations enabled.
+The project contains the following files and folders:
 
-**Packages**
-------------
+* `Eliassen.Identity.Tests.csproj`: The project file for the test suite, which contains references to the Eliassen.Identity library and the necessary test frameworks.
+* `Test Classes`: A folder containing test classes that correspond to the different components of the Eliassen.Identity library.
 
-The project references the following NuGet packages:
+## Dependencies
 
-* Microsoft.NET.Test.Sdk v17.10.0
-* MSTest.TestAdapter v3.4.3
-* MSTest.TestFramework v3.4.3
-* Coverlet.collector v6.0.2
+The project depends on the following packages:
 
-**Project Reference**
-----------------------
+* Microsoft.NET.Test.Sdk (version 17.10.0)
+* MSTest.TestAdapter (version 3.4.3)
+* MSTest.TestFramework (version 3.4.3)
+* coverlet.collector (version 6.0.2)
 
-The project references the Eliassen.Identity.csproj project, located in the parent directory.
+## Architecture
 
-**Class Diagram (in PlantUML)**
---------------------------------
+The project follows a test-driven development (TDD) approach, where the tests are written first and then the code is implemented to meet the requirements specified in the tests.
 
+The project has the following components:
+
+* `Eliassen.Identity`: A separate project containing the Eliassen.Identity library
+* `Eliassen.Identity.Tests`: This project, which contains the test suite for the Eliassen.Identity library
+
+The following class diagram shows the relationships between the components:
 ```plantuml
 @startuml
-class TestProject {
-  -+testProjectReference: Eliassen.Identity
-  -+testFramework: MSTest.TestFramework
-  -+ testAdapter: MSTest.TestAdapter
-  -+collector: Coverlet.collector
+class Eliassen_Identity {
+  - is a library that provides identity-related functionality
 }
 
-class PackageReference {
-  -+name: string
-  -+version: string
+class Eliassen_Identity_Tests {
+  - contains tests for the Eliassen_Identity library
+  -
 }
 
-class ProjectReference {
-  -+projectName: string
-  -+projectFile: string
-}
-
-TestProject --* PackageReference
-TestProject --* ProjectReference
-
+Eliassen_Identity_Tests -- depends_on -> Eliassen_Identity
 @enduml
 ```
-
-This class diagram shows the relationships between the classes in the Eliassen.Identity.Tests.csproj project. The TestProject class represents the project itself, and it has references to the Eliassen.Identity project, the MSTest.TestFramework and MSTest.TestAdapter NuGet packages, and the Coverlet.collector NuGet package. The PackageReference and ProjectReference classes are used to represent the NuGet packages and project references, respectively.

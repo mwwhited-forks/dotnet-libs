@@ -1,72 +1,78 @@
-Here is the generated documentation for the two source code files:
+# AsyncEnumerableExtensionsTests and DictionaryExtensionsTests Documentation
 
-**AsyncEnumerableExtensionsTests.cs**
+## Overview
 
-### Class Description
-
-The `AsyncEnumerableExtensionsTests` class tests the `AsyncEnumerableExtensions` class, which provides extensions methods for working with asynchronous enumerable collections.
+This documentation provides an overview of the `AsyncEnumerableExtensionsTests` and `DictionaryExtensionsTests` classes, including their functionality, testing methods, and usage.
 
 ### Class Diagram
 
-[plantuml]
-```
+```plantuml
 @startuml
 class AsyncEnumerableExtensionsTests {
-  +TestContext: TestContext { get; set; }
-  +CreateTestData: async IAsyncEnumerable<string>
-  +ToListAsyncTest: async Task
+  -required TestContext testContext;
+  -IAsyncEnumerable<string> createTestData();
+  -Task.ToListAsync();
 }
 
-AsyncEnumerableExtensionsTests ..> TestContext
-AsyncEnumerableExtensionsTests ..> CreateTestData
-AsyncEnumerableExtensionsTests ..> ToListAsyncTest
-@enduml
-```
-### Methods
-
-#### `CreateTestData`
-
-* `async IAsyncEnumerable<string> CreateTestData()`
-	+ Creates an asynchronous enumerable collection of strings.
-
-#### `ToListAsyncTest`
-
-* `async Task ToListAsyncTest()`
-	+ Tests the `ToListAsync` method by creating a test data collection and verifying its count.
-
-### Remarks
-
-This class provides unit tests for the `AsyncEnumerableExtensions` class, ensuring that its methods behave as expected.
-
-**DictionaryExtensionsTests.cs**
-
-### Class Description
-
-The `DictionaryExtensionsTests` class tests the `DictionaryExtensions` class, which provides extension methods for working with dictionaries.
-
-### Class Diagram
-
-[plantuml]
-```
-@startuml
 class DictionaryExtensionsTests {
-  +TestContext: TestContext { get; set; }
-  +TryGetValueTest: void
+  -required TestContext testContext;
+  -Dictionary<string, string> tryGetValue();
 }
 
-DictionaryExtensionsTests ..> TestContext
-DictionaryExtensionsTests ..> TryGetValueTest
+AsyncEnumerableExtensionsTests --* IAsyncEnumerable<string>
+DictionaryExtensionsTests --* Dictionary<string, string>
 @enduml
 ```
-### Methods
 
-#### `TryGetValueTest`
+### Component Model
 
-* `void TryGetValueTest()`
-	+ Tests the `TryGetValue` method by creating a test dictionary and verifying its behavior.
+```
+AsyncEnumerableExtensions
+|- AsyncEnumerableExtensionsTests
+  |- ToListAsyncTest
+  |- CreateTestData
 
-### Remarks
+DictionaryExtensions
+|- DictionaryExtensionsTests
+  |- TryGetValueTest
+```
 
-This class provides unit tests for the `DictionaryExtensions` class, ensuring that its methods behave as expected.
+### Sequence Diagram
 
-Note: I used the `+` symbol to indicate associations between classes, and the `..>` symbol to indicate compositions. I also used a simple syntax to describe the methods and their parameters. You can customize the PlantUML syntax to fit your needs.
+```plantuml
+@startuml
+actor TestRunner
+AsyncEnumerableExtensionsTests tester = new AsyncEnumerableExtensionsTests();
+DictionaryExtensionsTests dictTest = new DictionaryExtensionsTests();
+
+TestRunner->tester: run ToListAsyncTest()
+alt passed {
+  tester->CreateTestData: createTestData()
+  tester->TestContext: assert equal 10
+}
+note "CreateTestData"
+
+TestRunner->dictTest: run TryGetValueTest()
+alt passed {
+  dictTest->dict: set dict
+  dictTest->dict: TryGetValue
+  dictTest->TestContext: assert true
+  dictTest->TestContext: assert equal "world"
+}
+note "TryGetValue"
+@enduml
+```
+
+### Description
+
+The `AsyncEnumerableExtensionsTests` class provides a set of tests for the `AsyncEnumerableExtensions` class, including the `ToListAsync` method. The `CreateTestData` method generates an `IAsyncEnumerable<string>` that yields a sequence of strings.
+
+The `DictionaryExtensionsTests` class provides a set of tests for the `DictionaryExtensions` class, including the `TryGetValue` method. The `TryGetValueTest` method tests the `TryGetValue` method with a dictionary and a key.
+
+### Testing
+
+Both classes use the `Microsoft.VisualStudio.TestTools.UnitTesting` framework to write unit tests. The `AsyncEnumerableExtensionsTests` class uses the `ToListAsync` method to test the `ToListAsync` method, while the `DictionaryExtensionsTests` class uses the `TryGetValue` method to test the `TryGetValue` method.
+
+### Conclusion
+
+The `AsyncEnumerableExtensionsTests` and `DictionaryExtensionsTests` classes provide a set of tests for the `AsyncEnumerableExtensions` and `DictionaryExtensions` classes, respectively. The tests cover the functionality of the classes and identify potential issues early in the development process.

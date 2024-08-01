@@ -1,57 +1,60 @@
-**Documentation for Eliassen.Documents.Tests.csproj**
+**Eliassen.Documents.Tests**
+===============
 
-### File Description
+**Introduction**
 
-This is a .NET Core test project that contains tests for the Eliassen.Documents library. It is configured to use the MSTest framework and the Coverlet collector for code coverage reporting.
+The Eliassen.Documents.Tests project is a test project for the Eliassen.Documents library, written in C# and targeting .NET 8.0. This project is used to test the functionality of the library and ensure that it is working as expected.
 
-### Class Diagram (PlantUML)
+**Class Diagram**
 
 ```plantuml
 @startuml
-class Project {
-  - targetFramework: string
-  - implicitUsings: bool
-  - nullable: bool
-  - isPackable: bool
-  - isTestProject: bool
+class TestProject {
+    - projectReference: Eliassen.Documents.Eliassen.Documents
 }
 
-class PackageReference {
-  - include: string
-  - privateAssets: bool
-  - includeAssets: string
+class EliassenDocuments {
+    - method1()
+    - method2()
 }
 
-class ItemGroup {
-  - packageReferences: PackageReference[]
-  - projectReferences: ProjectReference[]
-}
-
-class ProjectReference {
-  - include: string
-  - project: string
-}
-
-Eliassen.Documents.Tests -> Project: inherits
-Project -> ProjectReference: contains
-ItemGroup -> PackageReference: contains
-ItemGroup -> ProjectReference: contains
+TestProject ..> EliassenDocuments
 @enduml
 ```
 
-### Description of Classes
+**Properties**
 
-* `Project`: Represents the test project. It has properties for the target framework, implicit usings, nullable settings, and test project status.
-* `PackageReference`: Represents a package reference in the project. It has properties for the package include, private assets, and include assets.
-* `ItemGroup`: Represents a group of items in the project. It contains a collection of package references and project references.
-* `ProjectReference`: Represents a project reference in the item group. It has a property for the referenced project.
+The project has the following properties:
 
-### Description of Relationships
+* `TargetFramework`: set to `net8.0`, indicating the target framework for the project.
+* `ImplicitUsings`: set to `false`, indicating that implicit usings are disabled for the project.
+* `Nullable`: set to `enable`, indicating that nullable references are enabled for the project.
+* `IsPackable`: set to `false`, indicating that the project is not packable.
+* `IsTestProject`: set to `true`, indicating that the project is a test project.
 
-* The `Project` class inherits from the `Microsoft.NET.Sdk` framework.
-* The `ItemGroup` class contains a collection of `PackageReference` and `ProjectReference` objects.
-* The `ProjectReference` class is contained within the `ItemGroup` class.
+**Packages**
 
-### Code Coverage
+The project references the following packages:
 
-The project uses the Coverlet collector to report code coverage. The `PackageReference` for Coverlet includes the required assets and private assets for the collector to function correctly.
+* `coverlet.collector`: version 6.0.2, used for code coverage analysis.
+* `Microsoft.NET.Test.Sdk`: version 17.10.0, used as the test framework.
+* `MSTest.TestAdapter`: version 3.4.3, used as the test adapter.
+* `MSTest.TestFramework`: version 3.4.3, used as the test framework.
+
+**Project Reference**
+
+The project references the `Eliassen.Documents` project, which is located in the `..\Eliassen.Documents` directory.
+
+**Sequence Diagram**
+
+```plantuml
+@startuml
+participant TestRunner as tr
+participant EliassenDocuments as ed
+
+tr->>ed: Run tests
+ed->>tr: Report test results
+@enduml
+```
+
+In this sequence diagram, the `TestRunner` participant runs the tests against the `EliassenDocuments` participant, which reports the test results back to the `TestRunner`.

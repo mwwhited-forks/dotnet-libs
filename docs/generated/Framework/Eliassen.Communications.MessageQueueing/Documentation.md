@@ -1,110 +1,105 @@
-Here is the documentation for the `Eliassen.Communications.MessageQueueing` project, including class diagrams in Plant UML.
+**Eliassen.Communications.MessageQueueing**
 
-**Project Overview**
+### Description
 
-The `Eliassen.Communications.MessageQueueing` project is a module that facilitates message queueing for communication-related tasks. It provides a mechanism for handling and sending email messages asynchronously.
+Eliassen.Communications.MessageQueueing is a module designed to facilitate message queueing for communication-related tasks. It provides a robust and scalable solution for sending and handling email messages asynchronously.
 
-**Class Diagram**
+### Components
 
-Here is the class diagram for the `Eliassen.Communications.MessageQueueing` project:
-```
+#### EmailMessageHandler
+
+This class represents a message handler tailored for handling and sending email messages asynchronously.
+
+**Methods**
+
+* **Constructor**: Initializes a new instance of the EmailMessageHandler class.
+* **HandleAsync(EmailMessageModel, IMessageContext)**: Handles the specified email message asynchronously.
+* **HandleAsync(Object, IMessageContext)**: Handles the specified message asynchronously.
+
+```plantuml
 @startuml
 class EmailMessageHandler {
-  -logger: ILogger
-  -email: ICommunicationSender<EmailMessageModel>
-  -message: EmailMessageModel
-  -context: IMessageContext
-
-  +HandleAsync(EmailMessageModel, IMessageContext)
-  +HandleAsync(object, IMessageContext)
+    - logger: ILogger
+    - email: ICommunicationSender<EmailMessageModel>?
 }
-
-class ICommunicationSender<T> {
-  +SendAsync(T)
-}
-
-class ILogger {
-  +LogInformation(string)
-  +LogWarning(string)
-  +LogError(string)
-}
-
-class IMessageContext {
-  +CorrelationId: string
-}
-
-class EmailMessageModel {
-  -Subject: string
-  -FromAddress: string
-  -ReferenceId: string
-}
-
-class IMessageTypeHandler<TIn, TOut> {
-  +HandleAsync(TIn, IMessageContext)
-}
-
-Eliassen_Communications_MessageQueueing -> ICommunicationSender<EmailMessageModel>
-EmailMessageHandler -> ILogger
-EmailMessageHandler -> ICommunicationSender<EmailMessageModel>
-EmailMessageModel -> IMessageContext
+EmailMessageHandler --> IMessageQueueHandler
+IMessageQueueHandler --> EmailMessageHandler
+@enduml
 ```
-**Classes**
 
-### EmailMessageHandler
+#### ServiceCollectionExtensions
 
-The `EmailMessageHandler` class represents a message handler tailored for handling and sending email messages asynchronously.
-
-**Methods**
-
-* `HandleAsync(EmailMessageModel, IMessageContext)`: Handles the specified email message asynchronously.
-* `HandleAsync(object, IMessageContext)`: Handles the specified message asynchronously.
-
-### ICommunicationSender<T>
-
-The `ICommunicationSender<T>` interface represents a communication sender for sending objects of type `T`.
+This class provides extension methods for configuring communication queue services within the application.
 
 **Methods**
 
-* `SendAsync(T)`: Sends the specified object asynchronously.
+* **TryAddCommunicationQueueServices**: Attempts to add communication queue services to the specified service collection.
 
-### ILogger
+```plantuml
+@startuml
+class ServiceCollectionExtensions {
+    + TryAddCommunicationQueueServices(services: IServiceCollection)
+}
+ServiceCollectionExtensions -> IServiceCollection
+@enduml
+```
 
-The `ILogger` interface represents a logger for logging messages to the console or a file.
+### Sequence Diagram
 
-**Methods**
+Here is a sequence diagram illustrating the communication between the EmailMessageHandler and the ICommunicationSender.
 
-* `LogInformation(string)`: Logs an information message.
-* `LogWarning(string)`: Logs a warning message.
-* `LogError(string)`: Logs an error message.
+```plantuml
+@startuml
+participant "EmailMessageHandler"
+participant "ICommunicationSender"
+note left: Email message to be sent
+EmailMessageHandler ->> ICommunicationSender: SendAsync(message)
+ICommunicationSender ->> EmailMessageHandler: Sent successfully
+@enduml
+```
 
-### IMessageContext
+### Class Diagram
 
-The `IMessageContext` interface represents a message context for storing information about the currently processed message.
+Here is a class diagram illustrating the relationships between the EmailMessageHandler and other classes.
 
-**Properties**
+```plantuml
+@startuml
+class EmailMessageHandler {
+    - logger: ILogger
+    - email: ICommunicationSender<EmailMessageModel>?
+}
+class ICommunicationSender<T> {
+}
+class IMessageQueueHandler {
+    + HandleAsync<T>(message: T, context: IMessageContext)
+}
+EmailMessageHandler --> IMessageQueueHandler
+IMessageQueueHandler --> ICommunicationSender
+@enduml
+```
 
-* `CorrelationId: string`: The correlation ID for the message.
+**README FILE**
 
-### EmailMessageModel
+# Eliassen.Communications.MessageQueueing
 
-The `EmailMessageModel` class represents an email message model.
+Eliassen.Communications.MessageQueueing is a module designed to facilitate message queueing for communication-related tasks. Let's delve into its components:
 
-**Properties**
+## EmailMessageHandler
 
-* `Subject: string`: The subject of the email message.
-* `FromAddress: string`: The from address of the email message.
-* `ReferenceId: string`: The reference ID of the email message.
+This class represents a message handler tailored for handling and sending email messages asynchronously.
 
-**Service Collection Extensions**
+### Methods
 
-The `ServiceCollectionExtensions` class provides extension methods for configuring communication queue services within the application.
+* **Constructor**: Initializes a new instance of the EmailMessageHandler class.
+* **HandleAsync(EmailMessageModel, IMessageContext)**: Handles the specified email message asynchronously.
+* **HandleAsync(Object, IMessageContext)**: Handles the specified message asynchronously.
 
-**Methods**
+## ServiceCollectionExtensions
 
-* `TryAddCommunicationQueueServices(IServiceCollection)`: Tries to add communication queue services to the specified service collection.
+This class provides extension methods for configuring communication queue services within the application.
 
-**Readme**
+### Methods
 
-The `Readme` file provides an overview of the `Eliassen.Communications.MessageQueueing` project, including its components and functionality.
+* **TryAddCommunicationQueueServices**: Attempts to add communication queue services to the specified service collection.
 
-I hope this documentation helps! Let me know if you have any further requests.
+Eliassen.Communications.MessageQueueing offers streamlined functionality for integrating email message handling into message queueing systems, enhancing communication workflows within applications.

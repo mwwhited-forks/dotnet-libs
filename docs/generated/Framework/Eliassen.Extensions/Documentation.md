@@ -1,33 +1,31 @@
-Here is the documentation for the Eliassen.Extensions project:
+**Eliassen.Extensions Documentation**
 
-**Eliassen.Extensions Namespace**
+### Overview
 
 The Eliassen.Extensions namespace provides a collection of extension methods and utility classes for common tasks such as accessing values, configuration, file operations, stream manipulation, reflection, and string manipulation.
 
-**Key Classes and Extensions**
+### Key Classes and Extensions
 
-* **Accessor<T>**: A class that represents an accessor for a value of type T, providing a property to get or set the associated value.
-* **CommandLine**: A class that provides a builder pattern for command parameter arguments, with methods for adding and building configurable parameters.
-* **ConfigurationBuilderExtensions**: A set of extension methods for building and configuring an instance of `IConfigurationBuilder`.
-* **FileTools**: A set of methods for working with files, including asynchronous splitting of files into chunks.
-* **StreamExtensions**: A set of methods for working with streams, including creating an in-memory copy of a stream and splitting a stream into chunks.
-* **StreamJsonDeserializeExtensions**: A set of extension methods for deserializing JSON streams using System.Text.Json.
-* **StreamXmlDeserializeExtensions**: A set of extension methods for deserializing XML streams using System.Xml.
-* **AsyncEnumerableExtensions**: A set of extensions to add async support to existing `IEnumerable<T>`, including methods for converting async enumerable sequences to lists and sets.
-* **DictionaryExtensions**: A set of reusable extensions for generic dictionaries, including methods for getting values with a custom comparer and changing the dictionary comparer.
-* **EnumerableExtensions**: A set of extension methods for asynchronous enumerables, including methods for converting async enumerable sequences to sets.
-* **ReflectionExtensions**: A set of extensions for reflection and common patterns, including methods for getting method parameters, attributes, and static or instance methods.
-* **ResourceExtensions**: A set of extension methods for working with embedded resources, including methods for getting resource streams and content as strings.
-* **ServiceCollectionExtensions**: A set of extension methods for the `IServiceCollection` interface, including methods for registering accessor types and getting singleton instances from the IOC container.
-* **StringTools**: A set of utility methods for string manipulation, including methods for splitting strings into lines and concatenating lines with newline separators.
+* **Accessor<T>**: Represents an accessor for a value of type T, providing a property to get or set the associated value.
+* **CommandLine**: Provides a builder pattern for command parameter arguments, with methods for adding and building configurable parameters.
+* **ConfigurationBuilderExtensions**: Extension methods for adding in-memory collections to the IConfigurationBuilder, allowing the addition of initial data.
+* **FileTools**: Provides methods for working with files, including asynchronous splitting of files into chunks.
+* **StreamExtensions**: Provides methods for working with streams, including creating an in-memory copy of a stream and splitting a stream into chunks.
+* **StreamJsonDeserializeExtensions**: Extension methods for deserializing JSON streams using System.Text.Json.
+* **StreamXmlDeserializeExtensions**: Extension methods for deserializing XML streams using System.Xml.
+* **AsyncEnumerableExtensions**: Extensions to add async support to existing IEnumerable<T>, including methods for converting async enumerable sequences to lists and sets.
+* **DictionaryExtensions**: Reusable extensions for generic dictionaries, including methods for getting values with a custom comparer and changing the dictionary comparer.
+* **EnumerableExtensions**: Provides extension methods for asynchronous enumerables, such as converting async enumerable sequences to sets.
+* **ReflectionExtensions**: Extensions for reflection and common patterns, including methods for getting method parameters, attributes, and static or instance methods.
+* **ResourceExtensions**: Extension methods for working with embedded resources, including methods for getting resource streams and content as strings.
+* **ServiceCollectionExtensions**: Suggested IOC configurations, including methods for registering accessor types and getting singleton instances from the IOC container.
+* **StringTools**: Provides utility methods for string manipulation, such as splitting strings into lines and concatenating lines with newline separators.
 
-**Getting Started**
+### Getting Started
 
-To use the Eliassen.Extensions namespace, simply include the namespace in your project and start using the provided classes and extensions in your code.
+The Eliassen.Extensions namespace offers a wide range of utility classes and extension methods to streamline common development tasks. Simply include the namespace in your project and start using the provided classes and extensions in your code.
 
-**Example Usage**
-
-Here are some examples of using the various classes and extensions in the Eliassen.Extensions namespace:
+### Example Usage
 
 ```csharp
 // Example of using StreamExtensions to split a file into chunks
@@ -52,52 +50,83 @@ var input = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 var lines = input.SplitBy(20); // Split into lines of max 20 characters
 ```
 
-**Class Diagrams**
+### Diagrams
 
-Here are the class diagrams for the Eliassen.Extensions namespace using PlantUML:
-
-```
+**Component Model**
+```plantuml
 @startuml
 class Accessor<T> {
-    +getValue(): T
-    +setValue(value: T): void
+  +T Value
+  - getter: T GetValue()
+  - setter: void SetValue(T value)
 }
+
 class CommandLine {
-    +addParameter(name: string, value: string): void
-    +build(): CommandLine
+  +AddCommand(string commandName, string description)
+  +AddOption(string optionName, string description)
+  +Build()
 }
+
 class ConfigurationBuilderExtensions {
-    +addInMemoryCollection<T>(collection: T): IConfigurationBuilder
+  +AddCollection<T>(string name, T collection)
 }
+
 class FileTools {
-    +splitFile(filename: string, chunkLength: int): void
+  +SplitFileAsync(string filename, int chunkLength, int overlap)
 }
+
 class StreamExtensions {
-    +createInMemoryCopy(stream: Stream): Stream
-    +splitStream(stream: Stream, chunkLength: int): void
+  +SplitStreamAsync(Stream stream, int chunkLength, int overlap)
 }
+
 class StreamJsonDeserializeExtensions {
-    +deserializeJson(stream: Stream): T
+  +DeserializeAsync<T>(Stream stream)
 }
-class StreamXmlDeserializeExtensions {
-    +deserializeXml(stream: Stream): T
-}
+
 class AsyncEnumerableExtensions {
-    +toList<T>( enumerable: AsyncEnumerable<T>): List<T>
-    +toSet<T>(enumerable: AsyncEnumerable<T>): Set<T>
+  +ToListAsync<T>(IEnumerable<T> enumerable)
 }
+
 class DictionaryExtensions {
-    +getWithCustomComparer<TKey, TValue>(dictionary: Dictionary<TKey, TValue>, key: TKey, comparer: IEqualityComparer<TKey>): TValue
-    +changeComparer<TKey, TValue>(dictionary: Dictionary<TKey, TValue>, comparer: IEqualityComparer<TKey>): void
+  +GetValue<T>(Dictionary<string, T> dictionary, string key)
 }
+
 class EnumerableExtensions {
-    +toList<T>( enumerable: IEnumerable<T>): List<T>
-    +toSet<T>(enumerable: IEnumerable<T>): Set<T>
+  +ToSetAsync<T>(IEnumerable<T> enumerable)
 }
-class ReflectionExtensions {
-    +getParameterTypes(methodInfo: MethodInfo): Type[]
-    +getAttribute(attributeType: Type, attribute: object): object
-}
-class ResourceExtensions {
-    +getResourceStream(resourceName: string): Stream
-    +getResourceContent(resourceName:
+
+@enduml
+```
+
+**Sequence Diagram**
+```plantuml
+@startuml
+participant "Client"
+participant "Accessor"
+participant "CommandLine"
+participant "ConfigurationBuilder"
+participant "FileTools"
+participant "StreamExtensions"
+participant "StreamJsonDeserializeExtensions"
+participant "AsyncEnumerableExtensions"
+participant "DictionaryExtensions"
+participant "EnumerableExtensions"
+
+note "get settings from configuration"
+Client ->> CommandLine: GetSettings()
+CommandLine ->> ConfigurationBuilder: GetSettings()
+ConfigurationBuilder ->> Accessor: GetSettings()
+Accessor ->> Client: Settings
+
+note "get value from accessor"
+Client ->> Accessor: GetValue(T)
+Accessor ->> Client: Value
+
+note "split file into chunks"
+Client ->> FileTools: SplitFileAsync(filename, chunkLength, overlap)
+FileTools ->> StreamExtensions: SplitStreamAsync(stream, chunkLength, overlap)
+StreamExtensions ->> Client: Chunk
+
+note "deserialize chunk"
+Client ->> StreamJsonDeserializeExtensions: DeserializeAsync<T>(stream)
+StreamJsonDeserializeExtensions ->> Client: Deserialized

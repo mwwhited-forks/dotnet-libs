@@ -1,64 +1,87 @@
-Here is the documentation for the source code files:
+Here is the documentation for the source code in Markdown format:
 
-**MessageQueueing.Tests.csproj**
 
-This is a test project for the Eliassen.MessageQueueing namespace. It is built using the Microsoft.NET.Sdk and targets the .NET 8.0 framework.
+**Message Queueing Tests**
+=====================
 
-The project includes several dependencies, including Microsoft.NET.Test.Sdk, Moq, MSTest.TestAdapter, and MSTest.TestFramework. It also includes references to other Eliassen projects, including Eliassen.Extensions, Eliassen.MessageQueueing.Hosting, Eliassen.MessageQueueing, and Eliassen.TestUtilities.
+This documentation covers the source code for the `MessageSenderTests` class in the `Eliassen.MessageQueueing.Tests` project.
 
-**MessageSenderTests.cs**
 
-This is a test class that tests the Eliassen.MessageQueueing.Services.IMessageQueueSender service. The class has three test methods:
+**Files**
+--------
 
-1. `SendAsyncTest_ByFullType()`: Tests sending a message using the full type name.
-2. `SendAsyncTest_Error()`: Tests sending a message that throws an exception.
-3. `SendAsyncTest_ByKeyed()`: Tests sending a message using a keyed provider.
+* `Eliassen.MessageQueueing.Tests.csproj`: The project file for the `Eliassen.MessageQueueing.Tests` project.
+* `MessageSenderTests.cs`: The source file for the `MessageSenderTests` class.
 
-Each test method sets up a test context and configures the service provider using the `GetServiceProvider` method. The method then uses the service provider to create an instance of the `IMessageQueueSender` service and sends a message using the `SendAsync` method.
 
-**Class Diagrams in PlantUML**
-
-Here is the class diagram for the Eliassen.MessageQueueing namespace:
-```plantuml
+**Class Diagram**
+````plantuml
 @startuml
-class IMsertClient {
-  -messageQueueSender: IMessageQueueSender
+class MessageSenderTests {
+  - testContext: TestContext
+  - serviceProvider: IServiceProvider
+  
+  + SendAsyncTest_ByFullType()
+  + SendAsyncTest_Error()
+  + SendAsyncTest_ByKeied()
+  
+  + TestContext
+  + ServiceCollection
+  + ClaimsPrincipal
+  + IAccessor
 }
-
-class MsertClient {
-  -messageQueueSender: IMessageQueueSender
-}
-
-class IMessageQueueSender {
-  - SendAsync(message: )
-}
-
-class IKeyedTransient<IMessageSenderProvider>
-  -value: IMessageSenderProvider
-}
-
-class TestMessageSenderProvider {
-  - ProviderName: string
-}
-
-class TestExceptionMessageSenderProvider {
-  - ProviderName: string
-}
-
-Eliassen.MessageQueueing namespace {
-  -IMessageQueueSender
-  -IMertClient
-  -IMessageQueueSender
-}
-
 @enduml
-```
-This diagram shows the relationships between the classes in the Eliassen.MessageQueueing namespace. It includes the following elements:
+````
+**Component Model**
+````plantuml
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-Model/master/C4_Context.puml
 
-* `IMsgQueueSender`: the interface for sending messages
-* `MsertClient`: a client that sends messages
-* `IKeyedTransient`: an interface for keyed transient dependencies
-* `TestMessageSenderProvider`: a test provider for sending messages
-* `TestExceptionMessageSenderProvider`: a test provider for throwing exceptions
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-Model/master/C4_Component.puml
 
-Note that this is a simplified diagram and may not include all the elements and relationships present in the actual codebase.
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-Model/master/C4_System.puml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-Model/master/C4_Dependency.puml
+
+System_Boundary(message_queueing_system) {
+  Component(message_queueing_service) {
+    Component(message_sender)
+    Component(provider_integration)
+  }
+  Component(test_utilities)
+  Component(extensions)
+  Component(system_extensions)
+}
+
+Provider_Integration_Boundary(provider_integration) {
+  Dependency(provider_integration, message_sender)
+  Dependency(provider_integration, system_extensions)
+}
+@enduml
+````
+**Sequence Diagram**
+````plantuml
+@startuml
+sequenceDiagram
+participant MessageSenderTests as ms
+participant ServiceProvider as sp
+participant MessageQueueSender as mq
+participant ClaimsPrincipal as cp
+participant Logger as logger
+ ms->>sp: GetServiceProvider
+ sp->>ms: ServiceProvider
+ ms->>mq: GetRequiredService
+ mq->>cp: GetClaimsPrincipal
+ cp->>logger: Log
+ logger->>ms: Logged
+end
+@enduml
+````
+**Description**
+This is a set of tests for the `Eliassen.MessageQueueing` library. The `MessageSenderTests` class provides three test methods: `SendAsyncTest_ByFullType`, `SendAsyncTest_Error`, and `SendAsyncTest_ByKeyed`. Each test method sends a message using a different method and verifies the result.
+
+The `GetServiceProvider` method is used to create a service provider instance that is used to resolve dependencies.
+
+The `MessageSender` is an interface that defines a method `SendAsync` that sends a message. The `provider_integration` is a component that provides the implementation for the `MessageSender`.
+
+In the sequence diagram, the `MessageSenderTests` class uses the `GetServiceProvider` method to get a service provider instance, which is then used to resolve the `MessageQueueSender` and `ClaimsPrincipal` instances. The `MessageQueueSender` instance sends a message to the `provider_integration` component, which logs the message.

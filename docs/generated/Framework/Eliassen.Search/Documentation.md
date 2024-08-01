@@ -1,128 +1,133 @@
-**Documentation for Eliassen.Search**
+Here is the documentation for the source code:
 
-**Class Diagram**
+# Eliassen.Search
+================
 
-Below is the class diagram for the Eliassen.Search namespace, generated using PlantUML:
+## Overview
+-----------
 
+Eliassen.Search is a .NET library that provides various search-related functionalities, including summary generation, search providers, and vector store management.
+
+## Document Summary Generation Provider
+------------------------------------
+
+The Document Summary Generation Provider is responsible for generating summaries for documents asynchronously. It uses a combination of lexical and semantic search techniques to extract relevant information from the documents.
+
+### Component Diagram
 ```plantuml
 @startuml
-class ServiceCollectionExtensions {
-  - IServiceCollection services
-}
+extend Component "Document Summary Generation Provider" as dsg
+extend Component "Lexical Search" as lex
+extend Component "Semantic Search" as sem
 
-class IVectorStoreFactory {
-  + vectorStoreFactory(): IVectorStoreFactory
-}
-
-class IVectorStore<T> {
-  + IVectorStore(T storage)
-}
-
-class WrappedVectorStore<T> {
-  - IVectorStore<T> wrappedStore
-  + WrappedVectorStore(IVectorStore<T> wrappedStore)
-}
-
-class VectorStoreFactory {
-  + IVectorStoreFactory()
-  + Create<T>(T storage): IVectorStore<T>
-}
-
-class SemanticSearchProvider {
-  + SemanticSearchProvider()
-}
-
-class HybridSearchProvider {
-  + HybridSearchProvider()
-}
-
-class IntegratedSearchProvider {
-  + IntegratedSearchProvider()
-}
-
-class DocumentSummaryGenerator {
-  + DocumentSummaryGenerator()
-  + GenerateSummary(AsyncReturnType asyncReturnType=async): SummaryResult
-}
-
-Eliassen.Search --* ServiceCollectionExtensions
-Eliassen.Search --* IVectorStoreFactory
-Eliassen.Search --* IVectorStore<T>
-Eliassen.Search --* WrappedVectorStore<T>
-Eliassen.Search --* VectorStoreFactory
-Eliassen.Search --* SemanticSearchProvider
-Eliassen.Search --* HybridSearchProvider
-Eliassen.Search --* IntegratedSearchProvider
-Eliassen.Search --* DocumentSummaryGenerator
+dsg --> lex
+dsg --> sem
 @enduml
 ```
+## Hybrid Search Provider
+-------------------------
 
-**Documentation for ServiceCollectionExtensions.cs**
+The Hybrid Search Provider combines the results from lexical and semantic search providers to provide more accurate search results.
 
-**ServiceCollectionExtensions**
+### Sequence Diagram
+```plantuml
+@startuml
+actor "User" as user
+extend Class "Hybrid Search Provider" as hybrid
 
-Provides extension methods for configuring search-related services.
+user ->> hybrid: Search query
+hybrid ->> lex: Search query
+hybrid ->> sem: Search query
+lex --> hybrid: Lexical search results
+sem --> hybrid: Semantic search results
+hybrid --> user: Hybrid search results
+@enduml
+```
+## Search Provider
+-----------------
 
-**TryAddSearchServices**
+The Search Provider combines semantic, lexical, and hybrid search approaches to provide comprehensive search results.
 
-Configures services for search functionality.
+### Class Diagram
+```plantuml
+@startuml
+class "Search Provider" {
+  - semanticSearchProvider: ISemanticSearchProvider
+  - lexicalSearchProvider: ILexicalSearchProvider
+  - hybridSearchProvider: IHybridSearchProvider
+  semanticSearchProvider: search(query)
+  lexicalSearchProvider: search(query)
+  hybridSearchProvider: search(query)
+  search(query): returns combined search results
+}
+@enduml
+```
+## Vector Store Factory
+------------------------
 
-* **Parameters:** `services` - The IServiceCollection to add the services to.
-* **Returns:** The modified IServiceCollection.
+The Vector Store Factory creates vector stores based on specified containers or types.
 
-This method adds the following services to the IServiceCollection:
+### Component Diagram
+```plantuml
+@startuml
+extend Component "Vector Store Factory" as vsf
+extend Component "Vector Store" as vs
 
-* `IVectorStoreFactory`: Creates vector stores based on specified containers or types.
-* `IVectorStore<T>`: Creates a wrapped vector store to provide additional functionality.
+vsf --+> vs
+@enduml
+```
+## Vector Store Provider Factory
+--------------------------------
 
-The `TryAddTransient` method is used to add the services, which allows for lazy evaluation of the services.
+The Vector Store Provider Factory creates vector store providers for dependency injection.
 
-**IVectorStoreFactory**
+### Class Diagram
+```plantuml
+@startuml
+class "Vector Store Provider Factory" {
+  - provider: IVectorStoreProvider
+  provider: CreateVectorStoreProvider(containerOrType): IVectorStoreProvider
+}
+@enduml
+```
+## Wrapped Vector Store
+------------------------
 
-Interface that defines the factory method for creating vector stores.
+The Wrapped Vector Store wraps another vector store to provide additional functionality.
 
-**IVectorStore<T>**
+### Class Diagram
+```plantuml
+@startuml
+class "Wrapped Vector Store" {
+  - innerVectorStore: IVectorStore
+  + GetInnerVectorStore(): IVectorStore
+  + PutInnerVectorStore(IVectorStore): void
+}
+@enduml
+```
+## Service Collection Extensions
+-----------------------------
 
-Interface that defines the vector store functionality.
+The Service Collection Extensions class provides extension methods for configuring search-related services for dependency injection.
 
-**WrappedVectorStore<T>**
+### Code
+```csharp
+using Eliassen.Search.Semantic;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
-Wraps another vector store to provide additional functionality.
+namespace Eliassen.Search
+{
+    public static class ServiceCollectionExtensions
+    {
+        public static IServiceCollection TryAddSearchServices(this IServiceCollection services)
+        {
+            services.TryAddTransient<IVectorStoreFactory, VectorStoreFactory>();
+            services.TryAddTransient(typeof(IVectorStore<>), typeof(WrappedVectorStore<>));
 
-**VectorStoreFactory**
-
-Creates vector stores based on specified containers or types.
-
-**SemanticSearchProvider**
-
-Search provider that uses semantic search.
-
-**HybridSearchProvider**
-
-Search provider that combines results from lexical and semantic search providers.
-
-**IntegratedSearchProvider**
-
-Search provider that combines semantic, lexical, and hybrid search approaches.
-
-**DocumentSummaryGenerator**
-
-Generates summaries for documents asynchronously.
-
-Each of these classes has its own documentation, but I will not repeat it here as it is not directly related to the ServiceCollectionExtensions class.
-
-**Readme/Search.md**
-
-The Readme/Search.md file provides a summary of the Eliassen.Search namespace, including an overview of the document summary generation provider, hybrid provider, search provider, vector store factory, vector store provider factory, wrapped vector store, and service collection extensions.
-
-The Eliassen.Search namespace provides a set of classes and interfaces that enable search functionality. The namespace is designed to be modular, allowing for easy extension and modification of the search functionality.
-
-The classes and interfaces in the Eliassen.Search namespace work together to provide a comprehensive search solution. The semantic search provider uses semantic search to find relevant documents, while the hybrid search provider combines results from lexical and semantic search providers. The integrated search provider combines semantic, lexical, and hybrid search approaches to provide a comprehensive search solution.
-
-The vector store factory creates vector stores based on specified containers or types, while the vector store provider factory creates vector store providers for dependency injection. The wrapped vector store wraps another vector store to provide additional functionality.
-
-The document summary generator generates summaries for documents asynchronously.
-
-The service collection extensions provide a way to configure search-related services for dependency injection.
-
-Overall, the Eliassen.Search namespace provides a powerful and flexible search solution that can be easily integrated into other applications.
+            return services;
+        }
+    }
+}
+```
+I hope this documentation helps to provide a clear understanding of the Eliassen.Search library!

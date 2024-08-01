@@ -1,65 +1,69 @@
-Here is the documentation for the `ContentTypesExtensions` source code file, including a class diagram in PlantUML:
+## Content Types Extensions Documentation
 
-**Class Documentation**
+### Introduction
 
-Namespace: Eliassen.System.Net.Mime
+The `ContentTypesExtensions` class provides a set of constants representing various content types. These constants are grouped into two categories: `Text` and `Application`.
 
-Class: ContentTypesExtensions
-
-**Summary**
-
-Provides constants representing various content types.
-
-**Class Diagram (PlantUML)**
-
+### Class Diagram
 ```plantuml
 @startuml
 class ContentTypesExtensions {
-  -+ Text
-  -+ Application
+  - Text (static class)
+  - Application (static class)
 }
 class Text {
-  + HandlebarsTemplate
-  + Calendar
-  + Html
-  + Markdown
-  + Yaml
-  + Plain
+  + HandlebarsTemplate (const string)
+  + Calendar (const string)
+  + Html (const string)
+  + Markdown (const string)
+  + Yaml (const string)
+  + Plain (const string)
 }
 class Application {
-  + XSLT
+  + XSLT (const string)
 }
 @enduml
 ```
 
-**Class Hierarchy**
+### Description
 
-* `ContentTypesExtensions` (static class)
-	+ `Text` (static class)
-		- `HandlebarsTemplate`
-		- `Calendar`
-		- `Html`
-		- `Markdown`
-		- `Yaml`
-		- `Plain`
-	+ `Application` (static class)
-		- `XSLT`
+The `ContentTypesExtensions` class is a static class that provides a way to represent various content types. The class is divided into two categories: `Text` and `Application`.
 
-**Description**
+The `Text` class represents text-based content types. It includes the following constants:
 
-The `ContentTypesExtensions` class provides a collection of constants representing various content types. The class is divided into two static classes: `Text` and `Application`. The `Text` class contains constants for text-based content types, while the `Application` class contains constants for application-based content types.
+* `HandlebarsTemplate`: The content type for Handlebars templates.
+* `Calendar`: The content type for calendar data.
+* `Html`: The content type for HTML.
+* `Markdown`: The content type for Markdown.
+* `Yaml`: The content type for Yaml.
+* `Plain`: The content type for plain text.
 
-**Constants**
+The `Application` class represents application-based content types. It includes the following constant:
 
-* `HandlebarsTemplate`: Represents the content type for Handlebars templates.
-* `Calendar`: Represents the content type for calendar data.
-* `Html`: Represents the content type for HTML.
-* `Markdown`: Represents the content type for Markdown.
-* `Yaml`: Represents the content type for Yaml.
-* `Plain`: Represents the content type for Plain text.
-* `XSLT`: Represents the content type for XSLT (XML Stylesheet Language Transformations).
+* `XSLT`: The content type for XSLT (XML Stylesheet Language Transformations).
 
-**Notes**
+### Sequence Diagram
+```plantuml
+@startuml
+participant ContentTypesExtensions
+participant Client
+Note right: Client asks for content type
+ContentTypesExtensions ->> Client: HandlebarsTemplate
+Note right: Client asks for content type
+ContentTypesExtensions ->> Client: XSLT
+@enduml
+```
 
-* The constants are represented as static strings.
-* The class is designed to provide a centralized location for content type constants, making it easier to maintain and update the content types.
+### Usage
+
+To use the `ContentTypesExtensions` class, you can access the constants directly from the class. For example:
+```csharp
+string contentType = ContentTypesExtensions.Text.HandlebarsTemplate;
+```
+### Change Log
+
+* Version 1.0: Initial implementation.
+
+### Copyright and License
+
+The `ContentTypesExtensions` class is copyright (c) 2023 by Eliassen. It is licensed under the MIT License.

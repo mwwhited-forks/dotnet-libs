@@ -1,195 +1,96 @@
-Here is the documentation for the source code files, including class diagrams in PlantUML:
+**Search Attribute Documentation**
+=============================
 
-**DefaultSortAttribute.cs**
+**Overview**
+-----------
 
-```plaintext
-**Class Diagram**
+This documentation provides an overview of the search attributes used in the Eliassen System Composition library. These attributes provide a way to customize the search functionality by specifying which properties or classes can be used for sorting, filtering, and other search operations.
 
-@startuml
-class DefaultSortAttribute {
-    - targetName: string?
-    - priority: int
-    - order: OrderDirections
-}
-@enduml
-```
+**Attributes**
+-------------
 
-**Summary**
+### DefaultSortAttribute
 
-The `DefaultSortAttribute` class is used to specify default sort options for an entity. It allows the user to specify the property name to use for mapping, the sort column position priority, and the direction to order the mapped column.
+The `DefaultSortAttribute` is used to specify the default sort order for an entity. This attribute can be applied to properties or classes.
 
-**Properties**
+**Constructors**
 
-* `TargetName`: The property name to use for mapping.
-* `Priority`: The sort column position priority.
-* `Order`: The direction to order the mapped column.
-
-**Methods**
-
-* `DefaultSortAttribute(string? targetName = default, int priority = default, OrderDirections order = OrderDirections.Ascending)` : Initializes a new instance of the `DefaultSortAttribute` class.
-
-**FilterableAttribute.cs**
-
-```plaintext
-**Class Diagram**
-
-@startuml
-class FilterableAttribute {
-    - targetName: string
-}
-@enduml
-```
-
-**Summary**
-
-The `FilterableAttribute` class is used to allow tagging entity classes to enumerate filterable fields/properties. It provides a way to specify the target name for filtering.
+* `DefaultSortAttribute(string? targetName = default, int priority = default, OrderDirections order = OrderDirections.Ascending)`: Initializes a new instance of the `DefaultSortAttribute` class with the specified `targetName`, `priority`, and `order`.
+* `DefaultSortAttribute()`: Initializes a new instance of the `DefaultSortAttribute` class with default values.
 
 **Properties**
 
-* `TargetName`: The target name for filtering.
+* `TargetName`: Gets the property name to use for mapping.
+* `Priority`: Gets the sort column position priority.
+* `Order`: Gets the direction to order this mapped column.
 
-**Methods**
+### FilterableAttribute
 
-* `FilterableAttribute(string targetName)` : Initializes a new instance of the `FilterableAttribute` class.
-* `FilterableAttribute()` : Initializes a new instance of the `FilterableAttribute` class with no target name.
+The `FilterableAttribute` is used to specify which properties or classes can be used for filtering.
 
-**IgnoreStringComparisonReplacementAttribute.cs**
+**Constructors**
 
-```plaintext
-**Class Diagram**
+* `FilterableAttribute(string targetName)`: Initializes a new instance of the `FilterableAttribute` class with the specified `targetName`.
+* `FilterableAttribute()`: Initializes a new instance of the `FilterableAttribute` class with a default target name.
 
-@startuml
-class IgnoreStringComparisonReplacementAttribute {
-}
-@enduml
-```
+**Properties**
 
-**Summary**
+* `TargetName`: Gets the column mapping override.
 
-The `IgnoreStringComparisonReplacementAttribute` class is used to exclude a property from string comparison replacement.
+### IgnoreStringComparisonReplacementAttribute
 
-**Methods**
+The `IgnoreStringComparisonReplacementAttribute` is used to exclude properties from string comparison replacement visitors.
 
-* None
+**Constructors**
 
-**ISearchQueryIntercept.cs**
+* No constructors.
 
-```plaintext
-**Class Diagram**
+### ISearchQueryIntercept
 
-@startuml
-interface ISearchQueryIntercept {
-    - Intercept(ISearchQuery searchQuery): ISearchQuery
-}
-@enduml
-```
-
-**Summary**
-
-The `ISearchQueryIntercept` interface provides an entry point to commonly intercept and override search definitions.
+The `ISearchQueryIntercept` interface provides a way to intercept and override search queries.
 
 **Methods**
 
 * `Intercept(ISearchQuery searchQuery)`: Modifies or passes through the search query before processing.
 
-**NotFilterableAttribute.cs**
+### NotFilterableAttribute
 
-```plaintext
+The `NotFilterableAttribute` is used to specify which properties or classes should be explicitly excluded from filter selection.
+
+**Constructors**
+
+* `NotFilterableAttribute(string targetName)`: Initializes a new instance of the `NotFilterableAttribute` class with the specified `targetName`.
+* `NotFilterableAttribute()`: Initializes a new instance of the `NotFilterableAttribute` class with a default target name.
+
+**Properties**
+
+* `TargetName`: Gets the target name to be excluded from filter selection.
+
 **Class Diagram**
-
+```
+```plantuml
 @startuml
+class DefaultSortAttribute {
+  - TargetName: string?
+  - Priority: int
+  - Order: OrderDirections
+}
+
+class FilterableAttribute {
+  - TargetName: string?
+}
+
+class IgnoreStringComparisonReplacementAttribute {
+  - No properties
+}
+
+interface ISearchQueryIntercept {
+  - intercept(ISearchQuery searchQuery): ISearchQuery
+}
+
 class NotFilterableAttribute {
-    - targetName: string?
+  - TargetName: string?
 }
+
 @enduml
-```
-
-**Summary**
-
-The `NotFilterableAttribute` class is used to specify that a property or class should be explicitly excluded from filter selection.
-
-**Properties**
-
-* `TargetName`: The target name to be excluded from filter selection.
-
-**Methods**
-
-* `NotFilterableAttribute(string targetName)` : Initializes a new instance of the `NotFilterableAttribute` class.
-* `NotFilterableAttribute()` : Initializes a new instance of the `NotFilterableAttribute` class with no target name.
-
-**NotSearchableAttribute.cs**
-
-```plaintext
-**Class Diagram**
-
-@startuml
-class NotSearchableAttribute {
-    - targetName: string?
-}
-@enduml
-```
-
-**Summary**
-
-The `NotSearchableAttribute` class is used to explicitly exclude properties from search.
-
-**Properties**
-
-* `TargetName`: The target name required only if this is used on a class.
-
-**Methods**
-
-* `NotSearchableAttribute(string targetName)` : Initializes a new instance of the `NotSearchableAttribute` class.
-* `NotSearchableAttribute()` : Initializes a new instance of the `NotSearchableAttribute` class with no target name.
-
-**NotSortableAttribute.cs**
-
-```plaintext
-**Class Diagram**
-
-@startuml
-class NotSortableAttribute {
-    - targetName: string?
-}
-@enduml
-```
-
-**Summary**
-
-The `NotSortableAttribute` class is used to specify that a property or class should not be sortable.
-
-**Properties**
-
-* `TargetName`: The name of the target property that should not be sortable.
-
-**Methods**
-
-* `NotSortableAttribute(string targetName)` : Initializes a new instance of the `NotSortableAttribute` class.
-* `NotSortableAttribute()` : Initializes a new instance of the `NotSortableAttribute` class with no target name.
-
-**SearchableAttribute.cs**
-
-```plaintext
-**Class Diagram**
-
-@startuml
-class SearchableAttribute {
-    - targetName: string?
-}
-@enduml
-```
-
-**Summary**
-
-The `SearchableAttribute` class is used to include a field to be searchable for the "SearchTerm".
-
-**Properties**
-
-* `TargetName`: The target name required only if this is used on a class.
-
-**Methods**
-
-* `SearchableAttribute(string targetName)` : Initializes a new instance of the `SearchableAttribute` class.
-* `SearchableAttribute()` : Initializes a new instance of the `SearchableAttribute` class with no target name.
-
-**SearchTermDefaultAttribute.cs
+`````

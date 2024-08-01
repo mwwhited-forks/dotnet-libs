@@ -1,69 +1,87 @@
-Here is the documentation and class diagrams for the provided source code files using PlantUML:
+Here is the documentation for the source code in Markdown format:
 
-**BlobContainerFactory Class Diagram:**
+**BlobContainerFactory**
+======================
+
+**Overview**
+-----------
+
+The `BlobContainerFactory` is a class that provides a way to create instances of `IBlobContainer` based on a specified container name.
+
+**Constructor**
+-------------
 
 ```plantuml
 @startuml
-class IBlobContainerFactory {
-  - IBlobContainer Create(string containerName)
-  - IBlobContainer<T> Create<T>()
-}
-
 class BlobContainerFactory {
-  - IServiceProvider _serviceProvider
-  - IEnumerable<IBlobContainerProviderFactory> _factories
-  - ILogger _logger
-  + Create(string containerName)
-  + Create<T>()
+  - _serviceProvider: IServiceProvider
+  - _factories: IEnumerable<IBlobContainerProviderFactory>
+  - _logger: ILogger
 }
-
-IBlobContainerFactory <|-- BlobContainerFactory
-
+BlobContainerFactory -> IServiceProvider: serviceProvider
+BlobContainerFactory -> IEnumerable<IBlobContainerProviderFactory>: factories
+BlobContainerFactory -> ILogger: logger
 @enduml
 ```
 
-**WrappedBlobContainer Class Diagram:**
+**Create**
+---------
+
+The `Create` method creates a blob container with the specified container name.
+
+**Create** Sequence Diagram
+-------------------------
 
 ```plantuml
 @startuml
-class IBlobContainer<T> {
-  - Task DeleteContentAsync(string path)
-  - Task<ContentReference?> GetContentAsync(string path)
-  - Task<ContentMetaDataReference?> GetContentMetaDataAsync(string path)
-  - IQueryable<ContentMetaDataReference> QueryContent()
-  - Task StoreContentAsync(ContentReference reference, dictionary<string, string>? metadata = null, bool overwrite = false)
-  - Task<bool> StoreContentMetaDataAsync(ContentMetaDataReference reference)
-}
-
-class WrappedBlobContainer<T> {
-  - internal IQueryable _wrapped
-  + WrappedBlobContainer(IBlobContainerFactory factory)
-  + WrappedBlobContainer(IBlobContainer wrapper)
-}
-
-IBlobContainer<T> <|-- WrappedBlobContainer<T>
-
+sequenceDiagram
+    participant BlobContainerFactory as factory
+    participant IBlobContainerProvider as provider
+    note left: Service provider
+    factory->>provider: Get keyed service
+    alt provider exists
+        provider->>factory: Obtain provider
+    else
+        factory->>factories: Select creator
+        alt creator exists
+            creator->>factory: Create provider
+        else
+            factory->>IServiceProvider: Get required service
+    end
+    factory->>provider: Set container name
+    factory->>logger: Log information
+    note right: Return provider
 @enduml
 ```
 
-**Documentation:**
+**WrappedBlobContainer**
+------------------------
 
-**BlobContainerFactory Class:**
+**Overview**
+-----------
 
-The `BlobContainerFactory` class is responsible for creating instances of `IBlobContainer` interfaces. It takes an `IServiceProvider`, an `IEnumerable<IBlobContainerProviderFactory>` and an `ILogger` in its constructor.
+The `WrappedBlobContainer` is a class that wraps an instance of `IBlobContainer` and provides a way to interact with it.
 
-The `Create` method creates an instance of `IBlobContainer` using the provided container name. It first checks if the container already exists in the service provider, then checks if any of the factory objects can create a container with the provided name. If none of these options work, it uses the default container provider.
+**Constructor**
+-------------
 
-The `Create<T>` method creates an instance of `IBlobContainer<T>` by calling the `Create` method with the type name.
+```plantuml
+@startuml
+class WrappedBlobContainer<T> {
+  - _wrapped: IBlobContainer
+}
+WrappedBlobContainer<T> -> IBlobContainer: wrapped
+@enduml
+```
 
-**WrappedBlobContainer Class:**
+**Methods**
+---------
 
-The `WrappedBlobContainer<T>` class is a wrapper around an instance of `IBlobContainer<T>`. It takes an `IBlobContainerFactory` in its constructor, which is used to create the underlying container.
+*   **DeleteContentAsync**: Deletes content asynchronously.
+*   **GetContentAsync**: Retrieves content asynchronously.
+*   **GetContentMetaDataAsync**: Retrieves content metadata asynchronously.
+*   **QueryContent**: Queries content metadata.
+*   **StoreContentAsync**: Stores content asynchronously.
+*   **StoreContentMetaDataAsync**: Stores content metadata asynchronously.
 
-All the methods in `WrappedBlobContainer<T>` delegate to the underlying container. The constructor takes an `IBlobContainerFactory` which is used to create the underlying container.
-
-Each of the methods in `WrappedBlobContainer<T>` delegates to the underlying `IBlobContainer<T>`. If an underlying implementation is not available, it will throw a `NullReferenceException`.
-
-**Note:** The `ActivatorUtilitiesConstructor` attribute on the `WrappedBlobContainer` constructor is used to indicate that this constructor is special and should be used when creating instances of this class.
-
-I hope this helps! Let me know if you have any further questions.
+I hope this documentation meets your requirements. Let me know if you need any further modifications.

@@ -1,78 +1,178 @@
-Here is the documentation for the source code files, including class diagrams in PlantUML:
+Here is the documentation for the provided source code in Markdown format:
 
-**InProcessMessageProviderTests.cs**
+# Eliassen.MessageQueueing.Services Tests
 
-Class Diagram:
+## Overview
+
+This section provides documentation for the unit tests of the Eliassen.MessageQueueing.Services namespace.
+
+### InProcessMessageProviderTests
+
+```InProcessMessageProviderTests.cs
+```
+
+The `InProcessMessageProviderTests` class contains the unit tests for the `InProcessMessageProvider` class. This class is responsible for sending and processing messages in-process.
+
+#### InOutTest
+
+The `InOutTest` method tests the `SendAsync` method of the `InProcessMessageProvider` class. It sets up a mock handler and a message context, and then sends a message and verifies that it is processed correctly.
+
+### Class Diagram
+
 ```plantuml
 @startuml
-class InProcessMessageProviderTests {
-  - TestContext: TestContext
-  - message: IQueueMessage
-  - context: MessageContext
-  - cancellationTokenSource: CancellationTokenSource
-  - mockRepo: MockRepository
-  - mockHandler: IMessageHandlerProvider
-
-  InOutTest() {
-    ...
-  }
+class InProcessMessageProvider {
+    - TestLogger testLogger
+    - IMessageHandlerProvider handlerProvider
 }
+InProcessMessageProvider --* IMessageHandlerProvider
+InProcessMessageProvider --* TestLogger
 @enduml
 ```
-Description:
-This file contains a test class for the `InProcessMessageProvider` class. The test class uses the `TestContext` class to set up and tear down tests. It uses the `Moq` library to mock the `IMessageHandlerProvider` interface. The test class sends a message using the `InProcessMessageProvider` and verifies that the handler is called using the mocked `IMessageHandlerProvider`.
 
-**MessageHandlerProviderTests.cs**
+### Component Model
 
-Class Diagram:
 ```plantuml
 @startuml
-class MessageHandlerProviderTests {
-  - TestContext: TestContext
-  - messageId: string
-  - payload: TestMessage
-  - configBuilder: ConfigurationBuilder
-  - configSection: IConfigurationSection
-  - mockRepo: MockRepository
-  - mockSerializer: IJsonSerializer
-  - mockContextFactory: IMessageContextFactory
-  - mockMessage: IQueueMessage
-  - mockMessageQueueHandler: IMessageQueueHandler
-  - mockContext: IMessageContext
+component process_message_provider
+component message_handler_provider
+component test_logger
 
-  HandleAsyncTest() {
-    ...
-  }
-}
+process_message_provider --|> InProcessMessageProvider
+message_handler_provider --|> IMessageHandlerProvider
+test_logger --|> TestLogger
 @enduml
 ```
-Description:
-This file contains a test class for the `MessageHandlerProvider` class. The test class uses the `TestContext` class to set up and tear down tests. It uses the `Moq` library to mock several interfaces, including `IJsonSerializer`, `IMessageContextFactory`, `IQueueMessage`, `IMessageQueueHandler`, and `IMessageContext`. The test class verifies that the `HandleAsync` method is called correctly using the mocked interfaces.
 
-**MessageReceiverProviderFactoryTests.cs**
+### Sequence Diagram
 
-Class Diagram:
 ```plantuml
 @startuml
-class MessageReceiverProviderFactoryTests {
-  - TestContext: TestContext
-  - safeProvider: SafeProvider
-  - safeConfig: SafeConfig
-  - mockRepo: MockRepository
-  - mockHandler: IMessageQueueHandler
-  - mockPropertyResolver: IMessagePropertyResolver
-  - mockReceiverProvider: IMessageReceiverProvider
-  - mockHandlerProvider: IMessageHandlerProvider
-  - services: ServiceCollection
-  - serviceProvider: IServiceProvider
+participant InProcessMessageProvider as ipmp
+participant IMessageHandlerProvider as imhp
+participant TestLogger as tl
 
-  CreateTest() {
-    ...
-  }
-}
+note "Setup handler provider" as n1
+imhp/plugin_inProcessMessageProvider:setHandlerProvider(ipmp)
+
+note "Send message" as n2
+ipmp/sendAsync(message:TestMessage):correlationId
+
+note "Handle message" as n3
+imhp/handleAsync(message:TestMessage):completedTask
+
+note "Run" as n4
+ipmp/runAsync(cancellationToken: CancellationToken):completedTask
 @enduml
 ```
-Description:
-This file contains a test class for the `MessageReceiverProviderFactory` class. The test class uses the `TestContext` class to set up and tear down tests. It uses the `Moq` library to mock several interfaces, including `IMessageQueueHandler`, `IMessagePropertyResolver`, `IMessageReceiverProvider`, and `IMessageHandlerProvider`. The test class verifies that the `Create` method returns a list of `IMessageReceiverProviders` using the mocked interfaces.
 
-Note: The class diagrams are generated using PlantUML and are intended to provide a visual representation of the relationships between classes in the source code files.
+## MessageHandlerProviderTests
+
+```MessageHandlerProviderTests.cs
+```
+
+The `MessageHandlerProviderTests` class contains the unit tests for the `MessageHandlerProvider` class. This class is responsible for providing message handlers.
+
+### HandleAsyncTest
+
+The `HandleAsyncTest` method tests the `HandleAsync` method of the `MessageHandlerProvider` class. It sets up a mock serializer, context factory, and message queue handler, and then handles a message and verifies that it is processed correctly.
+
+### Class Diagram
+
+```plantuml
+@startuml
+class MessageHandlerProvider {
+    - IJsonSerializer jsonSerializer
+    - IMessageContextFactory contextFactory
+}
+MessageHandlerProvider --* IJsonSerializer
+MessageHandlerProvider --* IMessageContextFactory
+@enduml
+```
+
+### Component Model
+
+```plantuml
+@startuml
+component message_handler_provider
+component json_serializer
+component message_context_factory
+
+message_handler_provider --|> MessageHandlerProvider
+json_serializer --|> IJsonSerializer
+message_context_factory --|> IMessageContextFactory
+@enduml
+```
+
+### Sequence Diagram
+
+```plantuml
+@startuml
+participant MessageHandlerProvider as mhp
+participant IJsonSerializer as js
+participant IMessageContextFactory as icf
+participant IQueueMessage as im
+
+note "Create context" as n1
+icf/create(message: IQueueMessage):messageContext
+
+note "Handle message" as n2
+mhp/handleAsync(message: IQueueMessage, correlationId: string):completedTask
+
+note "Serialize" as n3
+js/serialize(message: IQueueMessage):serializedMessage
+
+note "Process message" as n4
+icf/setMessageContext(im, messageContext)
+
+@enduml
+```
+
+## MessageReceiverProviderFactoryTests
+
+```MessageReceiverProviderFactoryTests.cs
+```
+
+The `MessageReceiverProviderFactoryTests` class contains the unit tests for the `MessageReceiverProviderFactory` class. This class is responsible for creating message receiver providers.
+
+### CreateTest
+
+The `CreateTest` method tests the `Create` method of the `MessageReceiverProviderFactory` class. It sets up a mock handler, property resolver, and receiver provider, and then creates a message receiver provider and verifies that it is created correctly.
+
+### Class Diagram
+
+```plantuml
+@startuml
+class MessageReceiverProviderFactory {
+    - IMessageQueueHandler handler
+    - IMessagePropertyResolver propertyResolver
+    - ServiceCollection serviceCollection
+}
+MessageReceiverProviderFactory --* IMessageQueueHandler
+MessageReceiverProviderFactory --* IMessagePropertyResolver
+MessageReceiverProviderFactory --* ServiceCollection
+@enduml
+```
+
+### Component Model
+
+```plantuml
+@startuml
+component message_receiver_provider_factory
+component message_queue_handler
+component message_property_resolver
+component service_collection
+
+message_receiver_provider_factory --|> MessageReceiverProviderFactory
+message_queue_handler --|> IMessageQueueHandler
+message_property_resolver --|> IMessagePropertyResolver
+service_collection --|> ServiceCollection
+@enduml
+```
+
+### Sequence Diagram
+
+```plantuml
+@startuml
+participant MessageReceiverProviderFactory as mrpf
+participant

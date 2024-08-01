@@ -1,48 +1,74 @@
-Here is the documentation for the provided source code files, including a class diagram in PlantUML:
+# Eliassen System Tests Documentation
+### Project Description
 
-**Documentation:**
+The Eliassen System Tests project is a .NET Core test project that contains unit tests for the Eliassen System and Test Utilities projects. This project uses the Microsoft.NET.Test.Sdk, Moq, and MSTest.TestAdapter and MSTest.TestFramework libraries for testing and coverage analysis.
 
-**Eliassen.System.Tests.csproj**
-
-This is a .NET Core project file for a test project named "Eliassen.System.Tests". The project targets .NET 8.0 and uses the Microsoft.NET.Sdk framework. It includes multiple NuGet package references, including Microsoft.NET.Test.Sdk, Moq, MSTest.TestAdapter, and MSTest.TestFramework.
-
-**NuGet Packages:**
-
-* Microsoft.NET.Test.Sdk (version 17.10.0): A base class library for testing .NET applications.
-* Moq (version 4.20.70): A library for creating mock objects for unit testing.
-* MSTest.TestAdapter (version 3.4.3): A test adapter for running MSTest tests in Visual Studio.
-* MSTest.TestFramework (version 3.4.3): A test framework for creating and running MSTest tests.
-* coverlet.collector (version 6.0.2): A package for collecting coverage metrics for .NET applications.
-
-**Project References:**
-
-* Eliassen.System.csproj: A project reference to the main Eliassen.System project.
-* Eliassen.TestUtilities.csproj: A project reference to the Eliassen.TestUtilities project.
-
-**Class Diagram:**
-
-Here is a class diagram for the Eliassen.System.Tests project using PlantUML:
-```
+### Class Diagram
+```plantuml
 @startuml
-class EliassenSystemTests {
-  - tests: List&lt;Test&gt;
-  + RunAllTests(): void
-  + RunTest(Test test): void
+class TestProject {
+  - testFrameworks: MSTest.TestFramework
+  - testAdapters: MSTest.TestAdapter
+  - dependencies: Eliassen.System, Eliassen.TestUtilities
 }
 
-interface Test {
-  + Run(): void
+class Eliassen_System {
+  - dependencies: 
 }
 
-class MyTest : Test {
-  - myProperty: string
-  + Run(): void
+class Eliassen_TestUtilities {
+  - dependencies: 
 }
 
-EliassenSystemTests --* Test
-Test --* MyTest
+TestProject --|> MSTest.TestFramework
+MSTest.TestFramework --|> MSTest.TestAdapter
+MSTest.TestAdapter -->| Eliassen_System
+Eliassen_System --|> Eliassen_TestUtilities
 @enduml
 ```
-The class diagram shows the EliassenSystemTests class, which has a list of tests and methods to run all tests or a single test. The Test interface is implemented by the MyTest class, which has a single method to run the test. The classes are related through associations, showing the relationships between the classes.
 
-Note: As the project does not contain any actual source code files, the class diagram is hypothetical and represents the expected relationships between classes based on the project file.
+### Component Model
+```plantuml
+@startuml
+!include ./TestProject.puml
+
+composite TestProject {
+ [*] TestProject
+  <-- Dependency >| MSTest.TestFramework
+  <-- Dependency >| MSTest.TestAdapter
+  <-- Dependency >| Eliassen.System
+  <-- Dependency >| Eliassen.TestUtilities
+}
+@enduml
+```
+
+### Sequence Diagram
+```plantuml
+@startuml
+actor User
+ participant Tester1 as Tester
+ participant Eliassen_System as System
+ participant Eliassen_TestUtilities as Utilities
+
+ sequenceDiagram
+  User->>Tester: Run Tests
+  Tester->>System: Get System Under Test
+  System->>Tester: Initialize Tests
+  Tester->>Utilities: Get Utilities Under Test
+  Utilities->>Tester: Initialize Tests
+  Tester->>System: Run System Tests
+  System->>Tester: Run Tests Complete
+  Tester->>User: Tests Report
+  User->>Tester: Receive Tests Report
+
+@enduml
+```
+
+### csproj File Documentation
+The `Eliassen.System.Tests.csproj` file is the project file for the Eliassen System Tests project.
+
+The file uses the `Microsoft.NET.Sdk` as its SDK, and sets the target framework to .NET 8.0. It disables implicit usings and enables nullable reference types.
+
+The file also references several NuGet packages, including `Microsoft.NET.Test.Sdk`, `Moq`, `MSTest.TestAdapter`, `MSTest.TestFramework`, and `coverlet.collector`.
+
+Finally, the file references two other project files: `Eliassen.System.csproj` and `Eliassen.TestUtilities.csproj`, which are the projects that the tests are written against.
