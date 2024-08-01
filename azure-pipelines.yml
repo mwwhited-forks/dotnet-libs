@@ -25,10 +25,10 @@ variables:
     value: 'Any CPU'
     
 steps:
-# - checkout: self
-#   clean: true
-#   persistCredentials: true
-#   fetchDepth: 0
+- checkout: self
+  clean: true
+  persistCredentials: true
+  fetchDepth: 0
 
 - task: UseDotNet@2
   displayName: 'Install .Net 8.0 SDK'
