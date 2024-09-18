@@ -82,7 +82,7 @@ public static class OllamaApiClientExtensions
         this IOllamaApiClient client,
         string text,
         string modelName) =>
-            (await client.GenerateEmbeddings(new() { Model = modelName, Prompt = text })).Embedding;
+            (await client.GenerateEmbeddings(new() { Model = modelName, Input = [text] })).Embeddings.First();
 
     /// <summary>
     /// Synchronously retrieves the embedding for the specified text using the specified model.

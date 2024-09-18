@@ -50,13 +50,13 @@ public class OllamaApiClientTests
         var embedding = await client.GenerateEmbeddings(new()
         {
             Model = model,
-            Prompt = "Hello World!",
+            Input = ["Hello World!"],
         });
 
         TestContext.WriteLine($"hostName: {hostName}");
         TestContext.WriteLine($"model: {model}");
-        TestContext.WriteLine($"Length: {embedding.Embedding.Length}");
-        TestContext.WriteLine(string.Join(", ", embedding.Embedding));
+        TestContext.WriteLine($"Length: {embedding.Embeddings[0].Length}");
+        TestContext.WriteLine(string.Join(", ", embedding.Embeddings[0]));
     }
 
     [TestCategory(TestCategories.DevLocal)]
@@ -68,10 +68,10 @@ public class OllamaApiClientTests
         var embedding = await client.GenerateEmbeddings(new()
         {
             Model = model,
-            Prompt = "Hello World!",
+            Input = ["Hello World!"],
         });
 
-        TestContext.WriteLine(string.Join(", ", Array.ConvertAll(embedding.Embedding, Convert.ToSingle)));
+        TestContext.WriteLine(string.Join(", ", Array.ConvertAll(embedding.Embeddings[0], Convert.ToSingle)));
     }
 
     [TestCategory(TestCategories.DevLocal)]
@@ -83,12 +83,12 @@ public class OllamaApiClientTests
         var embedding = await client.GenerateEmbeddings(new()
         {
             Model = model,
-            Prompt = "Hello World!",
+            Input = ["Hello World!"],
         });
 
         TestContext.WriteLine(
             string.Join(", ",
-            Array.ConvertAll(embedding.Embedding, d => new[] {
+            Array.ConvertAll(embedding.Embeddings[0], d => new[] {
                     (float)d,
                     (float)(d * 10000000 - (float)d * 10000000)
                 }).SelectMany(i => i)
