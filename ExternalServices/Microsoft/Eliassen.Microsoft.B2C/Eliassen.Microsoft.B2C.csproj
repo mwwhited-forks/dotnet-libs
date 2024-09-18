@@ -20,14 +20,21 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
-    <PackageReference Include="Microsoft.Graph" Version="5.56.0" />
+    <PackageReference Include="Microsoft.Graph" Version="5.58.0" />
     <PackageReference Include="Azure.Identity" Version="1.12.0" />
-    <PackageReference Include="Microsoft.Identity.Client" Version="4.61.3" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.64.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Framework\Eliassen.Identity.Abstractions\Eliassen.Identity.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\Framework\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="GitVersion.MsBuild" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
