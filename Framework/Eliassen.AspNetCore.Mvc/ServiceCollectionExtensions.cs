@@ -4,6 +4,7 @@ using Eliassen.AspNetCore.Mvc.Providers.SearchQuery;
 using Eliassen.AspNetCore.Mvc.SwaggerGen;
 using Eliassen.Extensions;
 using Eliassen.System.Linq;
+using Eliassen.System.Linq.Expressions;
 using Eliassen.System.Linq.Search;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -128,7 +129,14 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The service collection to which Search Query extensions should be added.</param>
     /// <returns>The modified service collection.</returns>
-    public static IServiceCollection TryAddAspNetCoreSearchQuery(this IServiceCollection services)
+    public static IServiceCollection TryAddAspNetCoreSearchQuery(
+        this IServiceCollection services,
+#if DEBUG
+        StringCasing stringCasing
+#else
+        StringCasing stringCasing = StringCasing.Default
+#endif
+        )
     {
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<SearchQueryOperationFilter>>();
         services.AddSingleton<IConfigureOptions<MvcOptions>, AddMvcFilterOptions<SearchQueryResultFilter>>();
@@ -137,7 +145,7 @@ public static class ServiceCollectionExtensions
         services.TryAddSingleton<ISearchModelMapper, SearchModelMapper>();
         services.TryAddSingleton<ISearchModelBuilder, SearchModelBuilder>();
 
-        services.TryAddSearchQueryExtensions();
+        services.TryAddSearchQueryExtensions(stringCasing);
 
         return services;
     }

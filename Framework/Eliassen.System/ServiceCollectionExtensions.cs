@@ -36,7 +36,7 @@ public static class ServiceCollectionExtensions
         )
     {
         builder ??= new();
-        services.TryAddSearchQueryExtensions();
+        services.TryAddSearchQueryExtensions(builder.StringCasingOrder);
         services.TryTemplatingExtensions(config, builder.FileTemplatingConfigurationSection);
         services.TrySecurityExtensions(builder.DefaultHashType);
         services.TrySerializerExtensions(builder.DefaultSerializerType);

@@ -10,4 +10,5 @@ public class TestCollection
 
     public string? Value1 { get; set; }
     public DateTimeOffset Date { get; internal set; }
+    public string? Value2 { get; set; }
 }

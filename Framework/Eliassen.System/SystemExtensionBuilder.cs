@@ -1,4 +1,5 @@
-﻿using Eliassen.System.Security.Cryptography;
+﻿using Eliassen.System.Linq.Expressions;
+using Eliassen.System.Security.Cryptography;
 using Eliassen.System.Text;
 using Eliassen.System.Text.Templating;
 
@@ -32,4 +33,9 @@ public record SystemExtensionBuilder
     /// The default serializer type. The default value is <see cref="SerializerTypes.Json"/>.
     /// </value>
     public SerializerTypes DefaultSerializerType { get; init; } = SerializerTypes.Json;
+
+    /// <summary>
+    /// Get or sets the default string casing order
+    /// </summary>
+    public StringCasing StringCasingOrder { get; init; } = StringCasing.Default;
 }
