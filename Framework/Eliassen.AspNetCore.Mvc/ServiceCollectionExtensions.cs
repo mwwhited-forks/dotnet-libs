@@ -130,12 +130,7 @@ public static class ServiceCollectionExtensions
     /// <param name="services">The service collection to which Search Query extensions should be added.</param>
     /// <returns>The modified service collection.</returns>
     public static IServiceCollection TryAddAspNetCoreSearchQuery(
-        this IServiceCollection services,
-#if DEBUG
-        StringCasing stringCasing
-#else
-        StringCasing stringCasing = StringCasing.Default
-#endif
+        this IServiceCollection services
         )
     {
         services.AddSingleton<IConfigureOptions<SwaggerGenOptions>, AddOperationFilterOptions<SearchQueryOperationFilter>>();
@@ -144,9 +139,6 @@ public static class ServiceCollectionExtensions
         services.TryAddSingleton<SearchQueryResultFilter>();
         services.TryAddSingleton<ISearchModelMapper, SearchModelMapper>();
         services.TryAddSingleton<ISearchModelBuilder, SearchModelBuilder>();
-
-        services.TryAddSearchQueryExtensions(stringCasing);
-
         return services;
     }
 }

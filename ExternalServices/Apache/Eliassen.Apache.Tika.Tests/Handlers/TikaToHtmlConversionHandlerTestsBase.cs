@@ -3,6 +3,7 @@ using Eliassen.Documents.Conversion;
 using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -14,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Eliassen.Apache.Tika.Tests.Handlers;
 
-public abstract class TikaToHtmlConversionHandlerTestsBase<T>
+public abstract class TikaToHtmlConversionHandlerTestsBase<T> where T : IDocumentConversionHandler
 {
     public async Task ConvertAsyncTestHarness(
         string resourceName,
@@ -74,10 +75,18 @@ public abstract class TikaToHtmlConversionHandlerTestsBase<T>
             .Setup(s => s.ConvertAsync(source, sourceContentType, destination, destinationContentType))
             .Returns(Task.CompletedTask);
 
-        var handler = new TikaDocToHtmlConversionHandler(
-            mockClient.Object,
-            TestLogger.CreateLogger<TikaDocToHtmlConversionHandler>()
-            );
+        var serviceProvider = new ServiceCollection()
+            .AddLogging(builder => builder
+                .AddConsole()
+                .AddDebug()
+                .SetMinimumLevel(LogLevel.Trace)
+                )
+            .AddTransient(_ => mockClient.Object)
+            .BuildServiceProvider()
+            ;
+
+        var handler = ActivatorUtilities.CreateInstance<T>(serviceProvider);
+
         await handler.ConvertAsync(source, sourceContentType, destination, destinationContentType);
 
         mockRepo.VerifyAll();
