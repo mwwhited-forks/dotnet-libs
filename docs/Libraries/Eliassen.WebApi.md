@@ -77,6 +77,15 @@ The float response from the LLM
 
 
 
+#### GetRAGResponseAsync(Eliassen.WebApi.Models.GenerativeAiRequestModel)
+Testing Rag endpoint for context 
+
+
+##### Return value
+The float response from the LLM
+
+
+
 ## Class: WebApi.Controllers.CommunicationsController
 Controller for handling communication-related operations, such as sending emails and messages to a queue. 
 
@@ -252,6 +261,38 @@ Represents a container for documents.
 
 ## Class: WebApi.Controllers.DocumentController.Summaries
 Represents a container for documents. 
+
+
+## Class: WebApi.Controllers.GroqCloudController
+Controller for AI-related operations. 
+
+### Methods
+
+
+#### Constructor
+Initializes a new instance of the 
+ *See: T:Eliassen.WebApi.Controllers.AIController*class with the specified dependencies. 
+
+
+##### Parameters
+* *completion:* The completion provider.
+
+
+
+
+#### Completion(Eliassen.AI.Models.CompletionRequest)
+executes a completion request 
+
+
+##### Parameters
+* *model:* completion request
+
+
+
+
+##### Return value
+completion result
+
 
 
 ## Class: WebApi.Controllers.MessageQueueingController
@@ -529,6 +570,8 @@ Represents the model used for generating AI responses.
 ### Properties
 
 #### PromptDetails
+Gets or sets the prompt details.
+#### Data
 Gets or sets the prompt details.
 #### UserInput
 Gets or sets the user input.

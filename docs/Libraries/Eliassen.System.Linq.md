@@ -192,6 +192,18 @@ The modified expression.
 
 
 
+## Class: System.Linq.Expressions.StringCasing
+Specifies the string casing options for use in sorting and expression transformations. 
+
+### Fields
+
+#### Default
+Use the default string casing (no transformation).
+#### Upper
+Transform strings to uppercase.
+#### Lower
+Transform strings to lowercase.
+
 ## Class: System.Linq.Expressions.StringComparisonReplacementExpressionVisitor
 Expression visitor to replace string functions with the matching functions that end with a StringComparison parameter 
 
@@ -229,6 +241,40 @@ Replace `string.Xyz(string)` with `string.Xyz(string, StringComparison)`
 
 ##### Return value
 
+
+
+
+## Class: System.Linq.Expressions.StringOrderReplacementExpressionVisitor
+A custom expression visitor that replaces string casing in OrderBy expressions within LINQ queries based on the specified 
+ *See: T:Eliassen.System.Linq.Expressions.StringCasing*. 
+
+### Methods
+
+
+#### Constructor
+A custom expression visitor that replaces string casing in OrderBy expressions within LINQ queries based on the specified 
+ *See: T:Eliassen.System.Linq.Expressions.StringCasing*. 
+
+
+##### Parameters
+* *stringCasing:* Determines whether to convert strings to uppercase or lowercase in sorting operations.
+* *logger:* Optional logger to capture debug information.
+
+
+
+
+#### VisitMethodCall(System.Linq.Expressions.MethodCallExpression)
+Visits method call expressions, rewriting them to adjust string casing for order-by operations in LINQ queries. 
+
+
+##### Parameters
+* *node:* The method call expression being visited.
+
+
+
+
+##### Return value
+The modified expression if applicable, otherwise the original expression.
 
 
 
@@ -441,12 +487,13 @@ Suggested IOC configurations
 ### Methods
 
 
-#### TryAddSearchQueryExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+#### TryAddSearchQueryExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Eliassen.System.Linq.Expressions.StringCasing)
 Add support for shared SearchQuery Extensions 
 
 
 ##### Parameters
 * *services:* 
+* *stringCasing:* Force ordinal casing for sort
 
 
 

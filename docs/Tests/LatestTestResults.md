@@ -8,7 +8,7 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0117046
+  * Duration: 00:00:00.0169160
   * Outcome: Passed
 
 
@@ -32,7 +32,7 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0047808
+  * Duration: 00:00:00.0080784
   * Outcome: Passed
 
 
@@ -44,7 +44,7 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0039935
+  * Duration: 00:00:00.0079674
   * Outcome: Passed
 
 
@@ -56,7 +56,7 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0061516
+  * Duration: 00:00:00.0035146
   * Outcome: Passed
 
 
@@ -68,14 +68,14 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0033166
+  * Duration: 00:00:00.0025798
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-C:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240520T183937_14500\In\DESKTOP-3FN5V33\test-file.txt
+c:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240920T102924_31680\In\DESKTOP-3FN5V33\test-file.txt
 
 ## Test Name: AddResultTest_Json
 
@@ -85,14 +85,14 @@ C:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240520T183937_14500\In\DE
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0220871
+  * Duration: 00:00:00.3298618
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-JObject-TextContextExtensionsTests_AddResultTest_Json(190)-638518271784320119.json: Attached
+JObject-TextContextExtensionsTests_AddResultTest_Json(190)-638624249663398520.json: Attached
 
 ## Test Name: AddResultTest_Lines
 
@@ -102,14 +102,14 @@ JObject-TextContextExtensionsTests_AddResultTest_Json(190)-638518271784320119.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0072172
+  * Duration: 00:00:00.0050741
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String[]-TextContextExtensionsTests_AddResultTest_Lines(70)-638518271783648154.txt: Attached
+String[]-TextContextExtensionsTests_AddResultTest_Lines(70)-638624249662825492.txt: Attached
 
 ## Test Name: AddResultTest_Object
 
@@ -119,14 +119,14 @@ String[]-TextContextExtensionsTests_AddResultTest_Lines(70)-638518271783648154.t
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.5586893
+  * Duration: 00:00:00.9866010
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestData-TextContextExtensionsTests_AddResultTest_Object(30)-638518271782009753.json: Attached
+TestData-TextContextExtensionsTests_AddResultTest_Object(30)-638624249657674204.json: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameAndChangeExtension
 
@@ -136,14 +136,14 @@ TestData-TextContextExtensionsTests_AddResultTest_Object(30)-638518271782009753.
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0054288
+  * Duration: 00:00:00.0052334
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndChangeExtension(130)-638518271784040383.html: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndChangeExtension(130)-638624249663192795.html: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameAndExtension
 
@@ -153,14 +153,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndChan
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0084185
+  * Duration: 00:00:00.0058412
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndExtension(110)-638518271783932375.txt: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndExtension(110)-638624249663077727.txt: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameNoExtension
 
@@ -170,14 +170,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndExte
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0165358
+  * Duration: 00:00:00.0104992
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameNoExtension(90)-638518271783744381.json: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameNoExtension(90)-638624249662952754.json: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameRemoveExtension
 
@@ -187,14 +187,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameNoExten
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0052675
+  * Duration: 00:00:00.0045928
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameRemoveExtension(150)-638518271784116589: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameRemoveExtension(150)-638624249663263191: Attached
 
 ## Test Name: AddResultTest_Stream
 
@@ -204,14 +204,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameRemoveE
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0084821
+  * Duration: 00:00:00.0041339
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-MemoryStream-TextContextExtensionsTests_AddResultTest_Stream(170)-638518271784192937.bin: Attached
+MemoryStream-TextContextExtensionsTests_AddResultTest_Stream(170)-638624249663327538.bin: Attached
 
 ## Test Name: AddResultTest_String
 
@@ -221,14 +221,14 @@ MemoryStream-TextContextExtensionsTests_AddResultTest_Stream(170)-63851827178419
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0060902
+  * Duration: 00:00:00.0335575
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-TextContextExtensionsTests_AddResultTest_String(50)-638518271783545316.txt: Attached
+String-TextContextExtensionsTests_AddResultTest_String(50)-638624249662458095.txt: Attached
 
 ## Test Name: AddResultTest_ValueOutFile
 
@@ -238,15 +238,15 @@ String-TextContextExtensionsTests_AddResultTest_String(50)-638518271783545316.tx
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0133328
+  * Duration: 00:00:00.0046837
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638518271785711208.json: Attached
-C:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240520T183937_14500\In\DESKTOP-3FN5V33\TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638518271785711208.json
+TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638624249666733773.json: Attached
+c:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240920T102924_31680\In\DESKTOP-3FN5V33\TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638624249666733773.json
 
 ## Test Name: ApplyAsyncTest
 
@@ -256,17 +256,14 @@ C:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240520T183937_14500\In\DE
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1512988
+  * Duration: 00:00:00.0634099
   * Outcome: Passed
 
 
 ### Standard Out
 
-info
-
-
 TestContext Messages:
-XmlTextReaderImpl-XsltTemplateProviderTests_ApplyAsyncTest(93)-638518271804757720.xml: Attached
+XmlTextReaderImpl-XsltTemplateProviderTests_ApplyAsyncTest(93)-638624249152666655.xml: Attached
 
 ## Test Name: ApplyAsyncTest_ContextData_and_ContextDataStream
 
@@ -276,13 +273,9 @@ XmlTextReaderImpl-XsltTemplateProviderTests_ApplyAsyncTest(93)-63851827180475772
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0137176
+  * Duration: 00:00:00.0045034
   * Outcome: Passed
 
-
-### Standard Out
-
-info
 
 ## Test Name: ApplyAsyncTest_Simple
 
@@ -292,7 +285,7 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:01.4940772
+  * Duration: 00:00:01.1256484
   * Outcome: Passed
 
 
@@ -309,14 +302,16 @@ Hello World!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0582770
+  * Duration: 00:00:00.0182053
   * Outcome: Passed
 
 
 ### Standard Out
 
-: Eliassen.System.Text.Templating.FileTemplateSource[0]
-      Search for tmpis1dfq in "C:\Users\MWhited\AppData\Local\Temp"
+info: Eliassen.System.Text.Templating.TemplateEngine[0]
+      Apply test template => { }
+info: Eliassen.System.Text.Templating.TemplateEngine[0]
+      Applied test template => (Mock<ITemplateContext:3>.Object, Mock<ITemplateProvider:1>.Object)
 
 ## Test Name: ApplyAsyncTest_WithDate
 
@@ -326,7 +321,7 @@ Hello World!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1650728
+  * Duration: 00:00:00.1606115
   * Outcome: Passed
 
 
@@ -343,7 +338,7 @@ Now: 2/3/0001 4:05:06 AM +05:00
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0591378
+  * Duration: 00:00:00.0309824
   * Outcome: Passed
 
 
@@ -360,7 +355,7 @@ Today: 0001-02-03
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0383642
+  * Duration: 00:00:00.0285557
   * Outcome: Passed
 
 
@@ -377,7 +372,7 @@ Capture:  -> Output: hello!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0419759
+  * Duration: 00:00:00.0117963
   * Outcome: Passed
 
 
@@ -394,7 +389,7 @@ Guid :8847d0e5-1eca-4075-b0c1-e6bd606439d0
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0355069
+  * Duration: 00:00:00.0263486
   * Outcome: Passed
 
 
@@ -411,7 +406,7 @@ Hash: FakeHash
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0940878
+  * Duration: 00:00:00.0279316
   * Outcome: Passed
 
 
@@ -435,7 +430,7 @@ String Replace: How are you feeling?
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0202512
+  * Duration: 00:00:00.0135296
   * Outcome: Passed
 
 
@@ -467,7 +462,7 @@ EnumModel { Id = 32767, Name = All, Code = ALL, Description = , Order = 0, Value
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0243769
+  * Duration: 00:00:00.0059134
   * Outcome: Passed
 
 
@@ -490,7 +485,7 @@ EnumModel { Id = 32, Name = test name, Code = test short, Description = test dis
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0046218
+  * Duration: 00:00:00.0064368
   * Outcome: Passed
 
 
@@ -502,14 +497,144 @@ EnumModel { Id = 32, Name = test name, Code = test short, Description = test dis
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0156673
+  * Duration: 00:00:00.0079526
+  * Outcome: Passed
+
+
+## Test Name: CheckHealthAsyncTest_Degraded
+
+* Name: CheckHealthAsyncTest_Degraded
+* Test Class: Eliassen.Ollama.Tests.OllamaHealthCheckTests
+  * Method: CheckHealthAsyncTest_Degraded
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0148899
   * Outcome: Passed
 
 
 ### Standard Out
 
-: Eliassen.System.IO.TempFileHandle[0]
-      Deleting C:\Users\MWhited\AppData\Local\Temp\tmpis1dfq.tmp
+TestContext Messages:
+Status: Degraded
+Description: 
+Exception: Moq.MockException: IOllamaApiClient.ListLocalModels(CancellationToken) invocation failed with mock behavior Strict.
+All invocations on the mock must have a corresponding setup.
+   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 182
+   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
+   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 107
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.IOllamaApiClientProxy.ListLocalModels(CancellationToken cancellationToken)
+   at Eliassen.Ollama.OllamaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in c:\Repos\Nucleus\Net.Libs\ExternalServices\Ollama\Eliassen.Ollama\OllamaHealthCheck.cs:line 37
+Data:
+
+## Test Name: CheckHealthAsyncTest_Degraded
+
+* Name: CheckHealthAsyncTest_Degraded
+* Test Class: Eliassen.Apache.Tika.Tests.ApacheTikaHealthCheckTests
+  * Method: CheckHealthAsyncTest_Degraded
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0785083
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Degraded
+Description: 
+Exception: Moq.MockException: IApacheTikaClient.GetHelloAsync() invocation failed with mock behavior Strict.
+All invocations on the mock must have a corresponding setup.
+   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 182
+   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
+   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 107
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.IApacheTikaClientProxy.GetHelloAsync()
+   at Eliassen.Apache.Tika.ApacheTikaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in c:\Repos\Nucleus\Net.Libs\ExternalServices\Apache\Eliassen.Apache.Tika\ApacheTikaHealthCheck.cs:line 31
+Data:
+
+## Test Name: CheckHealthAsyncTest_Degraded
+
+* Name: CheckHealthAsyncTest_Degraded
+* Test Class: Eliassen.MailKit.Tests.MailkitImapHealthCheckTests
+  * Method: CheckHealthAsyncTest_Degraded
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0691720
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Degraded
+Description: 
+Exception: Moq.MockException: IImapClientFactory.CreateAsync() invocation failed with mock behavior Strict.
+All invocations on the mock must have a corresponding setup.
+   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 182
+   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
+   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 107
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.IImapClientFactoryProxy.CreateAsync()
+   at Eliassen.MailKit.MailkitImapHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in c:\Repos\Nucleus\Net.Libs\ExternalServices\MailKit\Eliassen.MailKit\MailkitImapHealthCheck.cs:line 36
+Data:
+
+## Test Name: CheckHealthAsyncTest_Degraded
+
+* Name: CheckHealthAsyncTest_Degraded
+* Test Class: Eliassen.MailKit.Tests.MailkitSmtpHealthCheckTests
+  * Method: CheckHealthAsyncTest_Degraded
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0032043
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Degraded
+Description: 
+Exception: Moq.MockException: ISmtpClientFactory.CreateAsync() invocation failed with mock behavior Strict.
+All invocations on the mock must have a corresponding setup.
+   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 182
+   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
+   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 107
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.ISmtpClientFactoryProxy.CreateAsync()
+   at Eliassen.MailKit.MailkitSmtpHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in c:\Repos\Nucleus\Net.Libs\ExternalServices\MailKit\Eliassen.MailKit\MailkitSmtpHealthCheck.cs:line 36
+Data:
+
+## Test Name: CheckHealthAsyncTest_Degraded
+
+* Name: CheckHealthAsyncTest_Degraded
+* Test Class: Eliassen.SBert.Tests.SbertHealthCheckTests
+  * Method: CheckHealthAsyncTest_Degraded
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0539138
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Degraded
+Description: 
+Exception: Moq.MockException: ISentenceEmbeddingClient.GetHealthAsync() invocation failed with mock behavior Strict.
+All invocations on the mock must have a corresponding setup.
+   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 182
+   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
+   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 107
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.ISentenceEmbeddingClientProxy.GetHealthAsync()
+   at Eliassen.SBert.SbertHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in c:\Repos\Nucleus\Net.Libs\ExternalServices\SBert\Eliassen.SBert\SbertHealthCheck.cs:line 35
+Data:
 
 ## Test Name: CheckHealthAsyncTest_Degraded
 
@@ -538,112 +663,104 @@ All invocations on the mock must have a corresponding setup.
    at Eliassen.SBert.SbertHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in C:\Repos\Nucleus\Net.Libs\ExternalServices\SBert\Eliassen.SBert\SbertHealthCheck.cs:line 35
 Data:
 
-## Test Name: CheckHealthAsyncTest_Degraded
+## Test Name: CheckHealthAsyncTest_Healthy
 
-* Name: CheckHealthAsyncTest_Degraded
-* Test Class: Eliassen.Apache.Tika.Tests.ApacheTikaHealthCheckTests
-  * Method: CheckHealthAsyncTest_Degraded
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0417116
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-Status: Degraded
-Description: 
-Exception: Moq.MockException: IApacheTikaClient.GetHelloAsync() invocation failed with mock behavior Strict.
-All invocations on the mock must have a corresponding setup.
-   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 434
-   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
-   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 218
-   at Castle.DynamicProxy.AbstractInvocation.Proceed()
-   at Castle.Proxies.IApacheTikaClientProxy.GetHelloAsync()
-   at Eliassen.Apache.Tika.ApacheTikaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in C:\Repos\Nucleus\Net.Libs\ExternalServices\Apache\Eliassen.Apache.Tika\ApacheTikaHealthCheck.cs:line 31
-Data:
-
-## Test Name: CheckHealthAsyncTest_Degraded
-
-* Name: CheckHealthAsyncTest_Degraded
-* Test Class: Eliassen.MailKit.Tests.MailkitSmtpHealthCheckTests
-  * Method: CheckHealthAsyncTest_Degraded
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0017562
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-Status: Degraded
-Description: 
-Exception: Moq.MockException: ISmtpClientFactory.CreateAsync() invocation failed with mock behavior Strict.
-All invocations on the mock must have a corresponding setup.
-   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 434
-   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
-   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 218
-   at Castle.DynamicProxy.AbstractInvocation.Proceed()
-   at Castle.Proxies.ISmtpClientFactoryProxy.CreateAsync()
-   at Eliassen.MailKit.MailkitSmtpHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in C:\Repos\Nucleus\Net.Libs\ExternalServices\MailKit\Eliassen.MailKit\MailkitSmtpHealthCheck.cs:line 36
-Data:
-
-## Test Name: CheckHealthAsyncTest_Degraded
-
-* Name: CheckHealthAsyncTest_Degraded
-* Test Class: Eliassen.MailKit.Tests.MailkitImapHealthCheckTests
-  * Method: CheckHealthAsyncTest_Degraded
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0204380
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-Status: Degraded
-Description: 
-Exception: Moq.MockException: IImapClientFactory.CreateAsync() invocation failed with mock behavior Strict.
-All invocations on the mock must have a corresponding setup.
-   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 434
-   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
-   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 218
-   at Castle.DynamicProxy.AbstractInvocation.Proceed()
-   at Castle.Proxies.IImapClientFactoryProxy.CreateAsync()
-   at Eliassen.MailKit.MailkitImapHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in C:\Repos\Nucleus\Net.Libs\ExternalServices\MailKit\Eliassen.MailKit\MailkitImapHealthCheck.cs:line 36
-Data:
-
-## Test Name: CheckHealthAsyncTest_Degraded
-
-* Name: CheckHealthAsyncTest_Degraded
+* Name: CheckHealthAsyncTest_Healthy
 * Test Class: Eliassen.Ollama.Tests.OllamaHealthCheckTests
-  * Method: CheckHealthAsyncTest_Degraded
+  * Method: CheckHealthAsyncTest_Healthy
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0263541
+  * Duration: 00:00:00.1872186
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-Status: Degraded
-Description: 
-Exception: Moq.MockException: IOllamaApiClient.ListLocalModels(CancellationToken) invocation failed with mock behavior Strict.
-All invocations on the mock must have a corresponding setup.
-   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 434
-   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
-   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 218
-   at Castle.DynamicProxy.AbstractInvocation.Proceed()
-   at Castle.Proxies.IOllamaApiClientProxy.ListLocalModels(CancellationToken cancellationToken)
-   at Eliassen.Ollama.OllamaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in C:\Repos\Nucleus\Net.Libs\ExternalServices\Ollama\Eliassen.Ollama\OllamaHealthCheck.cs:line 37
+Status: Healthy
+Description: Loaded models: 
+Exception: 
+Data:
+
+## Test Name: CheckHealthAsyncTest_Healthy
+
+* Name: CheckHealthAsyncTest_Healthy
+* Test Class: Eliassen.Apache.Tika.Tests.ApacheTikaHealthCheckTests
+  * Method: CheckHealthAsyncTest_Healthy
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.8877978
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Healthy
+Description: From Test
+Exception: 
+Data:
+
+## Test Name: CheckHealthAsyncTest_Healthy
+
+* Name: CheckHealthAsyncTest_Healthy
+* Test Class: Eliassen.MailKit.Tests.MailkitImapHealthCheckTests
+  * Method: CheckHealthAsyncTest_Healthy
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:01.2998960
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Healthy
+Description: Connected
+Exception: 
+Data:
+
+## Test Name: CheckHealthAsyncTest_Healthy
+
+* Name: CheckHealthAsyncTest_Healthy
+* Test Class: Eliassen.MailKit.Tests.MailkitSmtpHealthCheckTests
+  * Method: CheckHealthAsyncTest_Healthy
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0514371
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Healthy
+Description: Connected
+Exception: 
+Data:
+
+## Test Name: CheckHealthAsyncTest_Healthy
+
+* Name: CheckHealthAsyncTest_Healthy
+* Test Class: Eliassen.SBert.Tests.SbertHealthCheckTests
+  * Method: CheckHealthAsyncTest_Healthy
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:04.6792541
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Healthy
+Description: From tests
+Exception: 
 Data:
 
 ## Test Name: CheckHealthAsyncTest_Healthy
@@ -666,86 +783,6 @@ Description: From tests
 Exception: 
 Data:
 
-## Test Name: CheckHealthAsyncTest_Healthy
-
-* Name: CheckHealthAsyncTest_Healthy
-* Test Class: Eliassen.Apache.Tika.Tests.ApacheTikaHealthCheckTests
-  * Method: CheckHealthAsyncTest_Healthy
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.3030351
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-Status: Healthy
-Description: From Test
-Exception: 
-Data:
-
-## Test Name: CheckHealthAsyncTest_Healthy
-
-* Name: CheckHealthAsyncTest_Healthy
-* Test Class: Eliassen.MailKit.Tests.MailkitSmtpHealthCheckTests
-  * Method: CheckHealthAsyncTest_Healthy
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0192621
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-Status: Healthy
-Description: Connected
-Exception: 
-Data:
-
-## Test Name: CheckHealthAsyncTest_Healthy
-
-* Name: CheckHealthAsyncTest_Healthy
-* Test Class: Eliassen.MailKit.Tests.MailkitImapHealthCheckTests
-  * Method: CheckHealthAsyncTest_Healthy
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.3200771
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-Status: Healthy
-Description: Connected
-Exception: 
-Data:
-
-## Test Name: CheckHealthAsyncTest_Healthy
-
-* Name: CheckHealthAsyncTest_Healthy
-* Test Class: Eliassen.Ollama.Tests.OllamaHealthCheckTests
-  * Method: CheckHealthAsyncTest_Healthy
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.3397613
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-Status: Healthy
-Description: Loaded models: 
-Exception: 
-Data:
-
 ## Test Name: ContentTypeTest
 
 * Name: ContentTypeTest
@@ -754,9 +791,773 @@ Data:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001952
+  * Duration: 00:00:00.0002117
   * Outcome: Passed
 
+
+## Test Name: ConvertAsyncTest ("application/epub+zip","text/html")
+
+* Name: ConvertAsyncTest ("application/epub+zip","text/html")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaEpubToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1449213
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/epub+zip","text/xhtml")
+
+* Name: ConvertAsyncTest ("application/epub+zip","text/xhtml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaEpubToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1012594
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/epub+zip","text/xhtml+xml")
+
+* Name: ConvertAsyncTest ("application/epub+zip","text/xhtml+xml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaEpubToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1039247
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/msword","text/html")
+
+* Name: ConvertAsyncTest (application/msword,text/html)
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.5800242
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/msword","text/xhtml")
+
+* Name: ConvertAsyncTest (application/msword,text/xhtml)
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1481063
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/msword","text/xhtml+xml")
+
+* Name: ConvertAsyncTest (application/msword,text/xhtml+xml)
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0125622
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/pdf","text/html")
+
+* Name: ConvertAsyncTest ("application/pdf","text/html")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaPdfToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1305961
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/pdf","text/xhtml")
+
+* Name: ConvertAsyncTest ("application/pdf","text/xhtml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaPdfToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0205066
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/pdf","text/xhtml+xml")
+
+* Name: ConvertAsyncTest ("application/pdf","text/xhtml+xml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaPdfToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0336537
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/rtf","text/html")
+
+* Name: ConvertAsyncTest ("application/rtf","text/html")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaRtfToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0976520
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/rtf","text/xhtml")
+
+* Name: ConvertAsyncTest ("application/rtf","text/xhtml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaRtfToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0613747
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/rtf","text/xhtml+xml")
+
+* Name: ConvertAsyncTest ("application/rtf","text/xhtml+xml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaRtfToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0060254
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/vnd.oasis.opendocument.text","text/html")
+
+* Name: ConvertAsyncTest ("application/vnd.oasis.opendocument.text","text/html")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaOdtToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0156795
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/vnd.oasis.opendocument.text","text/xhtml")
+
+* Name: ConvertAsyncTest ("application/vnd.oasis.opendocument.text","text/xhtml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaOdtToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0098353
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/vnd.oasis.opendocument.text","text/xhtml+xml")
+
+* Name: ConvertAsyncTest ("application/vnd.oasis.opendocument.text","text/xhtml+xml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaOdtToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0651693
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/html")
+
+* Name: ConvertAsyncTest ("application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/html")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocxToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1104402
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/xhtml")
+
+* Name: ConvertAsyncTest ("application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/xhtml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocxToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0044098
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/xhtml+xml")
+
+* Name: ConvertAsyncTest ("application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/xhtml+xml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocxToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1128263
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/x-tika-msoffice","text/html")
+
+* Name: ConvertAsyncTest (application/x-tika-msoffice,text/html)
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1418114
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/x-tika-msoffice","text/xhtml")
+
+* Name: ConvertAsyncTest (application/x-tika-msoffice,text/xhtml)
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0058372
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/x-tika-msoffice","text/xhtml+xml")
+
+* Name: ConvertAsyncTest (application/x-tika-msoffice,text/xhtml+xml)
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1218849
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/x-tika-ooxml","text/html")
+
+* Name: ConvertAsyncTest ("application/x-tika-ooxml","text/html")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocxToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0144530
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/x-tika-ooxml","text/xhtml")
+
+* Name: ConvertAsyncTest ("application/x-tika-ooxml","text/xhtml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocxToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0442353
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/x-tika-ooxml","text/xhtml+xml")
+
+* Name: ConvertAsyncTest ("application/x-tika-ooxml","text/xhtml+xml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocxToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0643737
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/html","application/pdf")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/html,application/pdf)
+* Test Class: Eliassen.WkHtmlToPdf.Tests.HtmlToPdfConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:02.5944216
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 19949
+HelloWorld-HtmlToPdfConversionHandlerTests_ConvertAsyncTest(58)-638624248953441347.pdf: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/html","text/markdown")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/html,text/markdown)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.8597672
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624250172081652.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/html","text/plain")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/html,text/plain)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0119038
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624250172586276.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/html","text/x-markdown",".md")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/html,text/x-markdown,.md)
+* Test Class: Eliassen.Examples.Tests.Documents.IDocumentConversionTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0760190
+  * Outcome: Passed
+
+
+### Standard Out
+
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Build chain text/html -> text/x-markdown
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Chain text/html -> text/x-markdown [Eliassen.MysticMind.HtmlToMarkdownConversionHandler]
+
+
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-IDocumentConversionTests_InternalConvertAsyncTest(100)-638624251132293713.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/html","text/x-markdown")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/html,text/x-markdown)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0060357
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624250172690058.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml","application/pdf")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml,application/pdf)
+* Test Class: Eliassen.WkHtmlToPdf.Tests.HtmlToPdfConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.5162188
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 19949
+HelloWorld-HtmlToPdfConversionHandlerTests_ConvertAsyncTest(58)-638624248958952803.pdf: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml","text/markdown")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml,text/markdown)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0110406
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624250172772132.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml","text/plain")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml,text/plain)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0070519
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624250172907409.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml","text/x-markdown")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml,text/x-markdown)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0078935
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624250173004031.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml+xml","application/pdf")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml+xml,application/pdf)
+* Test Class: Eliassen.WkHtmlToPdf.Tests.HtmlToPdfConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.7198815
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 19949
+HelloWorld-HtmlToPdfConversionHandlerTests_ConvertAsyncTest(58)-638624248966189419.pdf: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml+xml","text/markdown")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml+xml,text/markdown)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0142721
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624250173195676.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml+xml","text/plain")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml+xml,text/plain)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0101923
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624250173359703.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml+xml","text/x-markdown")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml+xml,text/x-markdown)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0062179
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624250173485759.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/markdown","text/html",".html")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/markdown,text/html,.html)
+* Test Class: Eliassen.Examples.Tests.Documents.IDocumentConversionTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0415872
+  * Outcome: Passed
+
+
+### Standard Out
+
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Build chain text/markdown -> text/html
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Chain text/markdown -> text/html [Eliassen.Markdig.MarkdownToHtmlConversionHandler]
+
+
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-IDocumentConversionTests_InternalConvertAsyncTest(100)-638624251133153244.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/markdown","text/html")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/markdown,text/html)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:02.4349679
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624250331023157.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/markdown","text/xhtml")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/markdown,text/xhtml)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0192122
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624250333192395.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/markdown","text/xhtml+xml")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/markdown,text/xhtml+xml)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0086554
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624250333649294.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/plain","text/html")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/plain,text/html)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0234011
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624250332504625.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/plain","text/xhtml")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/plain,text/xhtml)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0132649
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624250333334039.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/plain","text/xhtml+xml")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/plain,text/xhtml+xml)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0104258
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624250333770239.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/x-markdown","text/html")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/x-markdown,text/html)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0418990
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624250332695460.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/x-markdown","text/xhtml")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/x-markdown,text/xhtml)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0096825
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624250333526924.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/x-markdown","text/xhtml+xml")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/x-markdown,text/xhtml+xml)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0101872
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624250333883824.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.txt","text/plain","text/html",".html")
+
+* Name: ConvertAsyncTest (HelloWorld.txt,text/plain,text/html,.html)
+* Test Class: Eliassen.Examples.Tests.Documents.IDocumentConversionTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0415001
+  * Outcome: Passed
+
+
+### Standard Out
+
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Build chain text/plain -> text/html
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Chain text/plain -> text/html [Eliassen.Markdig.MarkdownToHtmlConversionHandler]
+
+
+
+TestContext Messages:
+Content Length: 34
+HelloWorld-IDocumentConversionTests_InternalConvertAsyncTest(100)-638624251132719777.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.txt","text/plain","text/plain",".txt")
+
+* Name: ConvertAsyncTest (HelloWorld.txt,text/plain,text/plain,.txt)
+* Test Class: Eliassen.Examples.Tests.Documents.IDocumentConversionTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0046842
+  * Outcome: Passed
+
+
+### Standard Out
+
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Bypass as input and output types match text/plain -> text/plain
+
+
+
+TestContext Messages:
+Content Length: 26
+HelloWorld-IDocumentConversionTests_InternalConvertAsyncTest(100)-638624251133257959.txt: Attached
 
 ## Test Name: ConvertAsyncTest (accessible_epub_3.epub,application/epub+zip,application/pdf,.pdf)
 
@@ -2015,7 +2816,7 @@ sample4-DocxToMarkdownConversionHandlerTests_ConvertAsyncTest(50)-63849666448203
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012952
+  * Duration: 00:00:00.0019808
   * Outcome: Passed
 
 
@@ -2027,16 +2828,9 @@ sample4-DocxToMarkdownConversionHandlerTests_ConvertAsyncTest(50)-63849666448203
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0101396
+  * Duration: 00:00:00.0140894
   * Outcome: Passed
 
-
-### Standard Out
-
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: test message id
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: test message id
 
 ## Test Name: CreateTest_ContainerTag
 
@@ -2046,14 +2840,9 @@ info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003967
+  * Duration: 00:00:00.0006524
   * Outcome: Passed
 
-
-### Standard Out
-
-info: Eliassen.Documents.Containers.BlobContainerFactory[0]
-      Container: table -> Castle.Proxies.IBlobContainerProviderProxy
 
 ## Test Name: CreateTest_Named_Factory
 
@@ -2063,7 +2852,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0199204
+  * Duration: 00:00:00.0351183
   * Outcome: Passed
 
 
@@ -2080,7 +2869,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.3515646
+  * Duration: 00:00:00.6138868
   * Outcome: Passed
 
 
@@ -2097,9 +2886,14 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012402
+  * Duration: 00:00:00.0021698
   * Outcome: Passed
 
+
+### Standard Out
+
+info: Eliassen.Documents.Containers.BlobContainerFactory[0]
+      Container: NoTag -> Castle.Proxies.IBlobContainerProviderProxy
 
 ## Test Name: CreateTest_TableTag
 
@@ -2109,14 +2903,14 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003292
+  * Duration: 00:00:00.0006436
   * Outcome: Passed
 
 
 ### Standard Out
 
 info: Eliassen.Documents.Containers.BlobContainerFactory[0]
-      Container: NoTag -> Castle.Proxies.IBlobContainerProviderProxy
+      Container: table -> Castle.Proxies.IBlobContainerProviderProxy
 
 ## Test Name: DefaultHashTest (Md5,Eliassen.System.Security.Cryptography.Md5Hash)
 
@@ -2126,7 +2920,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0013560
+  * Duration: 00:00:00.0006737
   * Outcome: Passed
 
 
@@ -2138,7 +2932,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012855
+  * Duration: 00:00:00.0005476
   * Outcome: Passed
 
 
@@ -2150,7 +2944,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006858
+  * Duration: 00:00:00.0003612
   * Outcome: Passed
 
 
@@ -2162,7 +2956,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0011794
+  * Duration: 00:00:00.0002800
   * Outcome: Passed
 
 
@@ -2174,7 +2968,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0082161
+  * Duration: 00:00:00.0043458
   * Outcome: Passed
 
 
@@ -2186,7 +2980,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1393227
+  * Duration: 00:00:00.0407031
   * Outcome: Passed
 
 
@@ -2198,7 +2992,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0307025
+  * Duration: 00:00:00.0003958
   * Outcome: Passed
 
 
@@ -2210,7 +3004,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:03.0731917
+  * Duration: 00:00:03.0629133
   * Outcome: Passed
 
 
@@ -2227,7 +3021,7 @@ Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0072592
+  * Duration: 00:00:00.0140814
   * Outcome: Passed
 
 
@@ -2244,7 +3038,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012620
+  * Duration: 00:00:00.0006089
   * Outcome: Passed
 
 
@@ -2256,9 +3050,45 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0011887
+  * Duration: 00:00:00.0005489
   * Outcome: Passed
 
+
+## Test Name: DeserializeTest ("{"_id":"Hello World"}","Hello World")
+
+* Name: DeserializeTest ({"_id":"Hello World"},Hello World)
+* Test Class: Eliassen.System.Tests.Text.Json.BsonIdConverterTests
+  * Method: DeserializeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0052078
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+input-BsonIdConverterTests_DeserializeTest(39)-638624249153673053.json: Attached
+result-BsonIdConverterTests_DeserializeTest(41)-638624249153692223.json: Attached
+
+## Test Name: DeserializeTest ("{"_id":{"$oid":"Hello World"}}","Hello World")
+
+* Name: DeserializeTest ({"_id":{"$oid":"Hello World"}},Hello World)
+* Test Class: Eliassen.System.Tests.Text.Json.BsonIdConverterTests
+  * Method: DeserializeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0062740
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+input-BsonIdConverterTests_DeserializeTest(39)-638624249153604213.json: Attached
+result-BsonIdConverterTests_DeserializeTest(41)-638624249153635508.json: Attached
 
 ## Test Name: DeserializeTest ({"_id":"Hello World"},Hello World)
 
@@ -2295,6 +3125,42 @@ result-BsonIdConverterTests_DeserializeTest(41)-638518271807486534.json: Attache
 TestContext Messages:
 input-BsonIdConverterTests_DeserializeTest(39)-638518271807074658.json: Attached
 result-BsonIdConverterTests_DeserializeTest(41)-638518271807123999.json: Attached
+
+## Test Name: DeserializeTest_Nullable ("{"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}}","2023-07-05T14:16:32.2015217-04:00")
+
+* Name: DeserializeTest_Nullable ({"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}},2023-07-05T14:16:32.2015217-04:00)
+* Test Class: Eliassen.System.Tests.Text.Json.BsonDateConverterTests
+  * Method: DeserializeTest_Nullable
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0110326
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+input-BsonDateConverterTests_DeserializeTest_Nullable(64)-638624249153237285.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638624249153296154.json: Attached
+
+## Test Name: DeserializeTest_Nullable ("{"Nullable":null,"Value":{"$date":"2023-07-05T14:17:05.2315812-04:00"}}",null)
+
+* Name: DeserializeTest_Nullable ({"Nullable":null,"Value":{"$date":"2023-07-05T14:17:05.2315812-04:00"}},)
+* Test Class: Eliassen.System.Tests.Text.Json.BsonDateConverterTests
+  * Method: DeserializeTest_Nullable
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0046416
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+input-BsonDateConverterTests_DeserializeTest_Nullable(64)-638624249153354871.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638624249153374901.json: Attached
 
 ## Test Name: DeserializeTest_Nullable ({"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}},2023-07-05T14:16:32.2015217-04:00)
 
@@ -2343,7 +3209,7 @@ result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638518271806450281.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004490
+  * Duration: 00:00:00.0001686
   * Outcome: Passed
 
 
@@ -2355,7 +3221,7 @@ result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638518271806450281.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006316
+  * Duration: 00:00:00.0003408
   * Outcome: Passed
 
 
@@ -2367,7 +3233,7 @@ result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638518271806450281.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0025123
+  * Duration: 00:00:00.0011789
   * Outcome: Passed
 
 
@@ -2379,9 +3245,45 @@ result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638518271806450281.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0548407
+  * Duration: 00:00:00.0320709
   * Outcome: Passed
 
+
+## Test Name: DeserializeTest_Value ("{"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}}","0001-01-01T00:00:00+00:00")
+
+* Name: DeserializeTest_Value ({"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}},0001-01-01T00:00:00+00:00)
+* Test Class: Eliassen.System.Tests.Text.Json.BsonDateConverterTests
+  * Method: DeserializeTest_Value
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0049137
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+input-BsonDateConverterTests_DeserializeTest_Value(78)-638624249153412205.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Value(80)-638624249153433093.json: Attached
+
+## Test Name: DeserializeTest_Value ("{"Nullable":null,"Value":{"$date":"2023-07-05T14:17:05.2315812-04:00"}}","2023-07-05T14:17:05.2315812-04:00")
+
+* Name: DeserializeTest_Value ({"Nullable":null,"Value":{"$date":"2023-07-05T14:17:05.2315812-04:00"}},2023-07-05T14:17:05.2315812-04:00)
+* Test Class: Eliassen.System.Tests.Text.Json.BsonDateConverterTests
+  * Method: DeserializeTest_Value
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0057618
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+input-BsonDateConverterTests_DeserializeTest_Value(78)-638624249153471857.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Value(80)-638624249153496992.json: Attached
 
 ## Test Name: DeserializeTest_Value ({"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}},0001-01-01T00:00:00+00:00)
 
@@ -2432,7 +3334,7 @@ result-BsonDateConverterTests_DeserializeTest_Value(80)-638518271806910607.json:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0301940
+  * Duration: 00:00:00.1719552
   * Outcome: Passed
 
 
@@ -2528,7 +3430,7 @@ result-BsonDateConverterTests_DeserializeTest_Value(80)-638518271806910607.json:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0011811
+  * Duration: 00:00:00.0013019
   * Outcome: Passed
 
 
@@ -2541,6 +3443,54 @@ result-BsonDateConverterTests_DeserializeTest_Value(80)-638518271806910607.json:
   * Unit
 * Details: 
   * Duration: 00:00:00.0012415
+  * Outcome: Passed
+
+
+## Test Name: EnsureQueueExistsTest ("false",False)
+
+* Name: EnsureQueueExistsTest (false,False)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: EnsureQueueExistsTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0004931
+  * Outcome: Passed
+
+
+## Test Name: EnsureQueueExistsTest ("False",False)
+
+* Name: EnsureQueueExistsTest (False,False)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: EnsureQueueExistsTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000371
+  * Outcome: Passed
+
+
+## Test Name: EnsureQueueExistsTest ("true",True)
+
+* Name: EnsureQueueExistsTest (true,True)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: EnsureQueueExistsTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000209
+  * Outcome: Passed
+
+
+## Test Name: EnsureQueueExistsTest ("True",True)
+
+* Name: EnsureQueueExistsTest (True,True)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: EnsureQueueExistsTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000222
   * Outcome: Passed
 
 
@@ -2568,6 +3518,18 @@ result-BsonDateConverterTests_DeserializeTest_Value(80)-638518271806910607.json:
   * Outcome: Passed
 
 
+## Test Name: EnsureQueueExistsTest (null,False)
+
+* Name: EnsureQueueExistsTest (,False)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: EnsureQueueExistsTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0013243
+  * Outcome: Passed
+
+
 ## Test Name: EnsureQueueExistsTest (true,True)
 
 * Name: EnsureQueueExistsTest (true,True)
@@ -2591,6 +3553,654 @@ result-BsonDateConverterTests_DeserializeTest_Value(80)-638518271806910607.json:
   * Duration: 00:00:00.0000341
   * Outcome: Passed
 
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",GreaterThan,"3/1/2020",10,"3,4,5,6,7,8,9,10,11,12")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.4049272
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: GreaterThan: 3/1/2020
+	F:Doesn't Exist: GreaterThan: 3/1/2020
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date > 3/1/2020 12:00:00 AM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249166224847.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249166279526.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249170154664.json: Attached
+resultKeys: 3,4,5,6,7,8,9,10,11,12
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	3/1/2020 parsed to 03/01/2020 00:00:00 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => GreaterThan: 3/1/2020
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",GreaterThanOrEqualTo,"3/1/2020",10,"2,3,4,5,6,7,8,9,10,11")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.3751590
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: GreaterThanOrEqualTo: 3/1/2020
+	F:Doesn't Exist: GreaterThanOrEqualTo: 3/1/2020
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date >= 3/1/2020 12:00:00 AM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249170294348.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249170330843.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249173906342.json: Attached
+resultKeys: 2,3,4,5,6,7,8,9,10,11
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	3/1/2020 parsed to 03/01/2020 00:00:00 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => GreaterThanOrEqualTo: 3/1/2020
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",LessThan,"2020-03-01",3,"-1,0,1")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1600611
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: LessThan: 2020-03-01
+	F:Doesn't Exist: LessThan: 2020-03-01
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date < 3/1/2020 12:00:00 AM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249176053303.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249176086032.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249177565644.json: Attached
+resultKeys: -1,0,1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	2020-03-01 parsed to 03/01/2020 00:00:00 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 2020-03-01
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",LessThan,"2020-03-01T01:01:01.4356493+02:00",3,"-1,0,1")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1443343
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: LessThan: 2020-03-01T01:01:01.4356493+02:00
+	F:Doesn't Exist: LessThan: 2020-03-01T01:01:01.4356493+02:00
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date < 2/29/2020 6:01:01 PM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249179088386.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249179120294.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249180436096.json: Attached
+resultKeys: -1,0,1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	2020-03-01T01:01:01.4356493+02:00 parsed to 02/29/2020 18:01:01 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 2020-03-01T01:01:01.4356493+02:00
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",LessThan,"2020-03-01T01:01:01",4,"-1,0,1,2")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1440669
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: LessThan: 2020-03-01T01:01:01
+	F:Doesn't Exist: LessThan: 2020-03-01T01:01:01
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date < 3/1/2020 1:01:01 AM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249177664095.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249177691749.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249179018119.json: Attached
+resultKeys: -1,0,1,2
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	2020-03-01T01:01:01 parsed to 03/01/2020 01:01:01 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 2020-03-01T01:01:01
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",LessThan,"3/1/2020",3,"-1,0,1")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.2010485
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: LessThan: 3/1/2020
+	F:Doesn't Exist: LessThan: 3/1/2020
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date < 3/1/2020 12:00:00 AM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249174046252.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249174079308.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249175952587.json: Attached
+resultKeys: -1,0,1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	3/1/2020 parsed to 03/01/2020 00:00:00 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 3/1/2020
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",LessThanOrEqualTo,"3/1/2020",4,"-1,0,1,2")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1014825
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: LessThanOrEqualTo: 3/1/2020
+	F:Doesn't Exist: LessThanOrEqualTo: 3/1/2020
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date <= 3/1/2020 12:00:00 AM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249183044943.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249183092041.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249183988330.json: Attached
+resultKeys: -1,0,1,2
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	3/1/2020 parsed to 03/01/2020 00:00:00 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThanOrEqualTo: 3/1/2020
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"DateTimeNullable",LessThan,"2020-03-01T01:01:01.4356493+02:00",2,"0,1")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1483467
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:DateTimeNullable: LessThan: 2020-03-01T01:01:01.4356493+02:00
+	F:Doesn't Exist: LessThan: 2020-03-01T01:01:01.4356493+02:00
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.DateTimeNullable < Convert(2/29/2020 6:01:01 PM, Nullable`1))).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249180550669.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249180587175.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249181926240.json: Attached
+resultKeys: 0,1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	2020-03-01T01:01:01.4356493+02:00 parsed to 02/29/2020 18:01:01 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 2020-03-01T01:01:01.4356493+02:00
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"DateTimeOffsetNullable",LessThan,"2020-03-01T01:01:01.4356493+02:00",2,"0,1")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1026884
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:DateTimeOffsetNullable: LessThan: 2020-03-01T01:01:01.4356493+02:00
+	F:Doesn't Exist: LessThan: 2020-03-01T01:01:01.4356493+02:00
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.DateTimeOffsetNullable < Convert(3/1/2020 1:01:01 AM +02:00, Nullable`1))).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249182035334.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249182068446.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249182981402.json: Attached
+resultKeys: 0,1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	2020-03-01T01:01:01.4356493+02:00 parsed to 03/01/2020 01:01:01 +02:00 (System.DateTimeOffset)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 2020-03-01T01:01:01.4356493+02:00
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"FC",EqualTo,"ame1",2,"-1,0")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1186822
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:FC: EqualTo: ame1
+	F:Doesn't Exist: EqualTo: ame1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(e => e.FName.Contains(value(Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel+<>c__DisplayClass47_0).value.ToString())).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249184060267.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249184088057.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249185179730.json: Attached
+resultKeys: -1,0
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: ame1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"May",EqualTo,"!",10,"-1,1,2,4,5,7,8,10,11,13")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1406404
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:May: EqualTo: !
+	F:Doesn't Exist: EqualTo: !
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.May != "")).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249190664570.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249190688945.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249191995847.json: Attached
+resultKeys: -1,1,2,4,5,7,8,10,11,13
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: !
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"May",EqualTo,"",10,"0,3,6,9,12,15,18,21,24,27")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1887378
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:May: EqualTo:
+	F:Doesn't Exist: EqualTo:
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.May == "")).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249186795027.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249186837075.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249188568158.json: Attached
+resultKeys: 0,3,6,9,12,15,18,21,24,27
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo:
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"May",NotEqualTo,"!",10,"-1,1,2,4,5,7,8,10,11,13")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.2147636
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:May: NotEqualTo: !
+	F:Doesn't Exist: NotEqualTo: !
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.May != "")).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249192068532.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249192091392.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249194127659.json: Attached
+resultKeys: -1,1,2,4,5,7,8,10,11,13
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo: !
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"May",NotEqualTo,"",10,"-1,1,2,4,5,7,8,10,11,13")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.2013322
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:May: NotEqualTo:
+	F:Doesn't Exist: NotEqualTo:
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.May != "")).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249188650017.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249188677583.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249190563106.json: Attached
+resultKeys: -1,1,2,4,5,7,8,10,11,13
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo:
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,Date,GreaterThan,3/1/2020,10,3,4,5,6,7,8,9,10,11,12)
 
@@ -3239,6 +4849,1168 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:W
 	No filter mapped for property: Doesn't Exist => NotEqualTo: !
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
 	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"index",EqualTo,"!1",10,"0,2,3,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0353833
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:index: EqualTo: !1
+	F:Doesn't Exist: EqualTo: !1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index != 1)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249160312823.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249160347337.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249160593266.json: Attached
+resultKeys: 0,2,3,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	1 parsed to 1 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: !1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",EqualTo,"!1",10,"0,2,3,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1768607
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: EqualTo: !1
+	F:Doesn't Exist: EqualTo: !1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index != 1)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249159214940.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249159332854.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249160121724.json: Attached
+resultKeys: 0,2,3,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	1 parsed to 1 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: !1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"InDeX",EqualTo,"!1",10,"0,2,3,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0230556
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:InDeX: EqualTo: !1
+	F:Doesn't Exist: EqualTo: !1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index != 1)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249160885731.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249160924713.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249161052853.json: Attached
+resultKeys: 0,2,3,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	1 parsed to 1 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: !1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"INDEX",EqualTo,"!1",10,"0,2,3,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0222561
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:INDEX: EqualTo: !1
+	F:Doesn't Exist: EqualTo: !1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index != 1)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249160660469.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249160695109.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249160815816.json: Attached
+resultKeys: 0,2,3,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	1 parsed to 1 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: !1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",EqualTo,"0",1,"0")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0277883
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: EqualTo: 0
+	F:Doesn't Exist: EqualTo: 0
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index == 0)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249163248539.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249163290225.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249163444865.json: Attached
+resultKeys: 0
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	0 parsed to 0 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: 0
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",EqualTo,0,1,"0")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0349818
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: EqualTo: 0
+	F:Doesn't Exist: EqualTo: 0
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index == 0)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249163585191.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249163637940.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249163795191.json: Attached
+resultKeys: 0
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	0 parsed to 0 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: 0
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",EqualTo,1,1,"1")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0261731
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: EqualTo: 1
+	F:Doesn't Exist: EqualTo: 1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index == 1)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249161146644.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249161186881.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249161317748.json: Attached
+resultKeys: 1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	1 parsed to 1 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: 1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",GreaterThan,995,4,"996,997,998,999")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0258275
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: GreaterThan: 995
+	F:Doesn't Exist: GreaterThan: 995
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index > 995)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249162726769.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249162768743.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249162900761.json: Attached
+resultKeys: 996,997,998,999
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	995 parsed to 995 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => GreaterThan: 995
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",GreaterThanOrEqualTo,995,5,"995,996,997,998,999")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0268818
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: GreaterThanOrEqualTo: 995
+	F:Doesn't Exist: GreaterThanOrEqualTo: 995
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index >= 995)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249162987080.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249163027994.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249163178679.json: Attached
+resultKeys: 995,996,997,998,999
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	995 parsed to 995 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => GreaterThanOrEqualTo: 995
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",InSet,[1,2,3],3,"1,2,3")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0247528
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: InSet: 1; 2; 3
+	F:Doesn't Exist: InSet: 1; 2; 3
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => value(System.Int32[]).Contains(n.Index)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249161815571.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249161840893.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249162001542.json: Attached
+resultKeys: 1,2,3
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => InSet: 1; 2; 3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",LessThan,"5",5,"0,1,2,3,4")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0191043
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: LessThan: 5
+	F:Doesn't Exist: LessThan: 5
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index < 5)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249162294425.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249162320467.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249162434968.json: Attached
+resultKeys: 0,1,2,3,4
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	5 parsed to 5 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 5
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",LessThan,5,5,"0,1,2,3,4")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0232980
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: LessThan: 5
+	F:Doesn't Exist: LessThan: 5
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index < 5)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249162086425.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249162118462.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249162239636.json: Attached
+resultKeys: 0,1,2,3,4
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	5 parsed to 5 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 5
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",LessThanOrEqualTo,"5",6,"0,1,2,3,4,5")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0220681
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: LessThanOrEqualTo: 5
+	F:Doesn't Exist: LessThanOrEqualTo: 5
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index <= 5)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249162496745.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249162529661.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249162650722.json: Attached
+resultKeys: 0,1,2,3,4,5
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	5 parsed to 5 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThanOrEqualTo: 5
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",NotEqualTo,1,10,"0,2,3,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0259142
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: NotEqualTo: 1
+	F:Doesn't Exist: NotEqualTo: 1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index != 1)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249165981863.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249166019884.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249166160288.json: Attached
+resultKeys: 0,2,3,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	1 parsed to 1 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo: 1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",EqualTo,"",0,"")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0189885
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo:
+	F:Doesn't Exist: EqualTo:
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Name == "")).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249185834068.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249185862399.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249185941619.json: Attached
+resultKeys:
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo:
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",EqualTo,"*",10,"0,1,2,3,4,5,6,7,8,9")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0240032
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo: *
+	F:Doesn't Exist: EqualTo: *
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249186513777.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249186547385.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249186670053.json: Attached
+resultKeys: 0,1,2,3,4,5,6,7,8,9
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Name => EqualTo: *
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: *
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo: *
+	F:Doesn't Exist: EqualTo: *
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",EqualTo,"*03",9,"103,203,303,403,503,603,703,803,903")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0276720
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo: *03
+	F:Doesn't Exist: EqualTo: *03
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => n.Name.EndsWith("03")).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249164283490.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249164322846.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249164481040.json: Attached
+resultKeys: 103,203,303,403,503,603,703,803,903
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: *03
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",EqualTo,"*e2*",10,"2,20,21,22,23,24,25,26,27,28")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0276113
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo: *e2*
+	F:Doesn't Exist: EqualTo: *e2*
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => n.Name.Contains("e2")).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249164556341.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249164598095.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249164760251.json: Attached
+resultKeys: 2,20,21,22,23,24,25,26,27,28
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: *e2*
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",EqualTo,"Name1*",10,"1,10,11,12,13,14,15,16,17,18")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0276861
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo: Name1*
+	F:Doesn't Exist: EqualTo: Name1*
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => n.Name.StartsWith("Name1")).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249164832514.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249164874187.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249165025767.json: Attached
+resultKeys: 1,10,11,12,13,14,15,16,17,18
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: Name1*
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",EqualTo,"Name3",1,"3")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0245296
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo: Name3
+	F:Doesn't Exist: EqualTo: Name3
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => n.Name.Equals("Name3")).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249161381558.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249161414278.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249161558555.json: Attached
+resultKeys: 3
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: Name3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",InSet,["Name1","Name2","Name3"],3,"1,2,3")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0191039
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: InSet: Name1; Name2; Name3
+	F:Doesn't Exist: InSet: Name1; Name2; Name3
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => value(System.String[]).Contains(n.Name)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249161623515.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249161653161.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249161755723.json: Attached
+resultKeys: 1,2,3
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => InSet: Name1; Name2; Name3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",NotEqualTo,"",10,"0,1,2,3,4,5,6,7,8,9")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0486213
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: NotEqualTo:
+	F:Doesn't Exist: NotEqualTo:
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Name != "")).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249186018035.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249186139651.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249186423723.json: Attached
+resultKeys: 0,1,2,3,4,5,6,7,8,9
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo:
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",NotEqualTo,"*3",10,"0,1,2,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0255301
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: NotEqualTo: *3
+	F:Doesn't Exist: NotEqualTo: *3
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => Not(n.Name.EndsWith("3"))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249165113888.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249165151998.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249165293543.json: Attached
+resultKeys: 0,1,2,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo: *3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",NotEqualTo,"*e2*",10,"0,1,3,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0309780
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: NotEqualTo: *e2*
+	F:Doesn't Exist: NotEqualTo: *e2*
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => Not(n.Name.Contains("e2"))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249165372665.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249165419948.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249165596699.json: Attached
+resultKeys: 0,1,3,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo: *e2*
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",NotEqualTo,"Name1*",10,"0,2,3,4,5,6,7,8,9,20")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0286558
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: NotEqualTo: Name1*
+	F:Doesn't Exist: NotEqualTo: Name1*
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => Not(n.Name.StartsWith("Name1"))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249165678459.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249165716919.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249165885679.json: Attached
+resultKeys: 0,2,3,4,5,6,7,8,9,20
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo: Name1*
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,index,EqualTo,!1,10,0,2,3,4,5,6,7,8,9,10)
 
@@ -4308,6 +7080,51 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
 	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
 
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel,"Children",EqualTo,"*001",10,"2,3,4,5,6,7,8,9,12,13")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0292210
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Children: EqualTo: *001
+	F:Doesn't Exist: EqualTo: *001
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel].Where(n => n.Children.Any(child => child.EndsWith("001"))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249185249931.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249185275782.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249185463956.json: Attached
+resultKeys: 2,3,4,5,6,7,8,9,12,13
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: *001
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel
+
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel,Children,EqualTo,*001,10,2,3,4,5,6,7,8,9,12,13)
 
 * Name: ExecuteByTest_Filter
@@ -4352,6 +7169,51 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 	Could not use properties: Doesn't Exist as they are not on the model
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel]]:Warning:>
 	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel,"Children",EqualTo,"*001",10,"2,3,4,5,6,7,8,9,12,13")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0292323
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Children: EqualTo: *001
+	F:Doesn't Exist: EqualTo: *001
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel].Where(n => n.Children.Any(child => child.EndsWith("001"))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249185533092.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249185556326.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249185757541.json: Attached
+resultKeys: 2,3,4,5,6,7,8,9,12,13
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: *001
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel,Children,EqualTo,*001,10,2,3,4,5,6,7,8,9,12,13)
 
@@ -4406,7 +7268,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.2362446
+  * Duration: 00:00:00.0226897
   * Outcome: Passed
 
 
@@ -4429,9 +7291,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638518271921026252.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638518271921460377.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638518271922375774.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249194436973.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249194462647.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249194588540.json: Attached
 resultKeys: 3
 
 ### Standard Error
@@ -4451,7 +7313,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:01.1888753
+  * Duration: 00:00:00.2847069
   * Outcome: Passed
 
 
@@ -4476,9 +7338,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638518271922710224.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638518271922748660.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638518271933762721.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624249194817943.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624249194860392.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624249197577480.json: Attached
 resultKeys: 3,4,5,6,7,8,9,10,11,12
 
 ### Standard Error
@@ -4496,7 +7358,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.2198927
+  * Duration: 00:00:00.0869388
   * Outcome: Passed
 
 
@@ -4518,8 +7380,8 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(161)-638518271934599401.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(163)-638518271936736347.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(161)-638624249197669717.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(163)-638624249198474176.json: Attached
 
 ### Standard Error
 
@@ -4536,9 +7398,69 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expression
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0424468
+  * Duration: 00:00:00.0355121
   * Outcome: Passed
 
+
+### Standard Out
+
+info: Eliassen.System.Linq.Search.QueryBuilder[0]
+      Build query for CurrentPage: 0
+      PageSize: 0
+      ExcludePageCount: False
+      SearchTerm: Search For
+      	F:Name: EqualTo: Name1
+      	F:DoesntExist: EqualTo: DoesntExistValue
+      	S:Name: Descending
+      	S:Email: Descending
+      	S:DoesntExist: Ascending
+      
+warn: Eliassen.System.Linq.Search.QueryBuilder[0]
+      No filter mapped for property: DoesntExist => EqualTo: DoesntExistValue
+info: Eliassen.System.Linq.Search.QueryBuilder[0]
+      Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Cast().OrderBy(_ => 1).Skip(0).Take(10)
+
+## Test Name: ExecuteByTest_Page (0,0,100,1000,0,10,"0,1,2,3,4,5,6,7,8,9")
+
+* Name: ExecuteByTest_Page (0,0,100,1000,0,10,0,1,2,3,4,5,6,7,8,9)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Page
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0316914
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(272)-638624249203430429.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(274)-638624249203475144.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(276)-638624249203644031.json: Attached
+resultKeys: 0,1,2,3,4,5,6,7,8,9
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
 
 ## Test Name: ExecuteByTest_Page (0,0,100,1000,0,10,0,1,2,3,4,5,6,7,8,9)
 
@@ -4576,6 +7498,48 @@ resultKeys: 0,1,2,3,4,5,6,7,8,9
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
 	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
 PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Page (0,1,1000,1000,0,1,"0")
+
+* Name: ExecuteByTest_Page (0,1,1000,1000,0,1,0)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Page
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0301959
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 1
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(_ => 0).Skip(0).Take(1)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(272)-638624249203768846.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(274)-638624249203823046.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(276)-638624249203976322.json: Attached
+resultKeys: 0
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 1
 ExcludePageCount: False
 SearchTerm: (null)
 
@@ -4665,6 +7629,89 @@ SearchTerm: (null)
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
 	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
 
+## Test Name: ExecuteByTest_Page (1,-1,null,null,null,1000,null)
+
+* Name: ExecuteByTest_Page (1,-1,,,,1000,)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Page
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0260018
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 1
+PageSize: -1
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute : System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(_ => 0)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(272)-638624249204355523.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(274)-638624249204405244.json: Attached
+QueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(276)-638624249204539712.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 1
+PageSize: -1
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Page (1,1,1000,1000,1,1,"1")
+
+* Name: ExecuteByTest_Page (1,1,1000,1000,1,1,1)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Page
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0236957
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 1
+PageSize: 1
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(_ => 0).Skip(1).Take(1)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(272)-638624249204092322.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(274)-638624249204133311.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(276)-638624249204282110.json: Attached
+resultKeys: 1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 1
+PageSize: 1
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
 ## Test Name: ExecuteByTest_Page (1,1,1000,1000,1,1,1)
 
 * Name: ExecuteByTest_Page (1,1,1000,1000,1,1,1)
@@ -4707,6 +7754,39 @@ SearchTerm: (null)
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
 	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
 
+## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"FName0999 LName0001",1,1,1,"1")
+
+* Name: ExecuteByTest_SearchTerm
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_SearchTerm
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.3064128
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for SearchQuery { CurrentPage = 0, PageSize = 0, ExcludePageCount = False, SearchTerm = FName0999 LName0001, Filter = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.FilterParameter], OrderBy = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.OrderDirections] }
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipMemberOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => ((n != null) AndAlso (((((((((((n.FName + " ") + n.LName) != null) AndAlso ((((n.FName + " ") + n.LName) != null) AndAlso ((n.FName + " ") + n.LName).Equals("FName0999 LName0001"))) OrElse ((((n.LName + " ") + n.FName) != null) AndAlso ((((n.LName + " ") + n.FName) != null) AndAlso ((n.LName + " ") + n.FName).Equals("FName0999 LName0001")))) OrElse ((n.FName != null) AndAlso ((n.FName != null) AndAlso n.FName.Equals("FName0999 LName0001")))) OrElse ((n.LName != null) AndAlso ((n.LName != null) AndAlso n.LName.Equals("FName0999 LName0001")))) OrElse ((n.Email != null) AndAlso ((n.Email != null) AndAlso n.Email.Equals("FName0999 LName0001")))) OrElse ((n.May != null) AndAlso ((n.May != null) AndAlso n.May.Equals("FName0999 LName0001")))) OrElse ((n.Modules != null) AndAlso n.Modules.Any(child => ((child != null) AndAlso child.Equals("FName0999 LName0001"))))) OrElse ((n.NullModules != null) AndAlso n.NullModules.Any(child => ((child != null) AndAlso child.Equals("FName0999 LName0001"))))))).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(235)-638624249200279696.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(237)-638624249200322366.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(244)-638624249203285348.json: Attached
+resultKeys: 1
+
 ## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,FName0999 LName0001,1,1,1,1)
 
 * Name: ExecuteByTest_SearchTerm
@@ -4739,6 +7819,150 @@ SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(235)-638518271943
 EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(237)-638518271943887738.json: Attached
 PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(244)-638518271952351816.json: Attached
 resultKeys: 1
+
+## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"*3",10,100,10,"3,13,23,33,43,53,63,73,83,93")
+
+* Name: ExecuteByTest_SearchTerm
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_SearchTerm
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0276106
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for SearchQuery { CurrentPage = 0, PageSize = 0, ExcludePageCount = False, SearchTerm = *3, Filter = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.FilterParameter], OrderBy = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.OrderDirections] }
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipMemberOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => ((n != null) AndAlso (((n.Name != null) AndAlso ((n.Name != null) AndAlso n.Name.EndsWith("3"))) OrElse ((n.Email != null) AndAlso ((n.Email != null) AndAlso n.Email.EndsWith("3")))))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(235)-638624249199721611.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(237)-638624249199757184.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(244)-638624249199940465.json: Attached
+resultKeys: 3,13,23,33,43,53,63,73,83,93
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"*e3*",12,111,10,"3,30,31,32,33,34,35,36,37,38")
+
+* Name: ExecuteByTest_SearchTerm
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_SearchTerm
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0276262
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for SearchQuery { CurrentPage = 0, PageSize = 0, ExcludePageCount = False, SearchTerm = *e3*, Filter = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.FilterParameter], OrderBy = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.OrderDirections] }
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipMemberOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => ((n != null) AndAlso (((n.Name != null) AndAlso ((n.Name != null) AndAlso n.Name.Contains("e3"))) OrElse ((n.Email != null) AndAlso ((n.Email != null) AndAlso n.Email.Contains("e3")))))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(235)-638624249199999273.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(237)-638624249200049234.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(244)-638624249200227776.json: Attached
+resultKeys: 3,30,31,32,33,34,35,36,37,38
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name3",1,1,1,"3")
+
+* Name: ExecuteByTest_SearchTerm
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_SearchTerm
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0304532
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for SearchQuery { CurrentPage = 0, PageSize = 0, ExcludePageCount = False, SearchTerm = Name3, Filter = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.FilterParameter], OrderBy = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.OrderDirections] }
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipMemberOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => ((n != null) AndAlso (((n.Name != null) AndAlso ((n.Name != null) AndAlso n.Name.Equals("Name3"))) OrElse ((n.Email != null) AndAlso ((n.Email != null) AndAlso n.Email.Equals("Name3")))))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(235)-638624249199138816.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(237)-638624249199192552.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(244)-638624249199367505.json: Attached
+resultKeys: 3
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name3*",12,111,10,"3,30,31,32,33,34,35,36,37,38")
+
+* Name: ExecuteByTest_SearchTerm
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_SearchTerm
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0295729
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for SearchQuery { CurrentPage = 0, PageSize = 0, ExcludePageCount = False, SearchTerm = Name3*, Filter = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.FilterParameter], OrderBy = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.OrderDirections] }
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipMemberOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => ((n != null) AndAlso (((n.Name != null) AndAlso ((n.Name != null) AndAlso n.Name.StartsWith("Name3"))) OrElse ((n.Email != null) AndAlso ((n.Email != null) AndAlso n.Email.StartsWith("Name3")))))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(235)-638624249199431354.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(237)-638624249199469441.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(244)-638624249199658034.json: Attached
+resultKeys: 3,30,31,32,33,34,35,36,37,38
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
 
 ## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,*3,10,100,10,3,13,23,33,43,53,63,73,83,93)
 
@@ -4883,6 +8107,162 @@ resultKeys: 3,30,31,32,33,34,35,36,37,38
 
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
 	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Sort ("Name",Ascending,"0,1,10,100,101,102,103,104,105,106")
+
+* Name: ExecuteByTest_Sort (Name,Ascending,0,1,10,100,101,102,103,104,105,106)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0150326
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(320)-638624249205232967.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(322)-638624249205332856.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Ascending
+
+## Test Name: ExecuteByTest_Sort ("name",Descending,"999,998,997,996,995,994,993,992,991,990")
+
+* Name: ExecuteByTest_Sort (name,Descending,999,998,997,996,995,994,993,992,991,990)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0196530
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:name: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(320)-638624249204862841.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(322)-638624249204986994.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:name: Descending
+
+## Test Name: ExecuteByTest_Sort ("Name",Descending,"999,998,997,996,995,994,993,992,991,990")
+
+* Name: ExecuteByTest_Sort (Name,Descending,999,998,997,996,995,994,993,992,991,990)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0178891
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(320)-638624249204646923.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(322)-638624249204751542.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Descending
+
+## Test Name: ExecuteByTest_Sort ("NAME",Descending,"999,998,997,996,995,994,993,992,991,990")
+
+* Name: ExecuteByTest_Sort (NAME,Descending,999,998,997,996,995,994,993,992,991,990)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0149120
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:NAME: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(320)-638624249205059895.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(322)-638624249205149293.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:NAME: Descending
 
 ## Test Name: ExecuteByTest_Sort (Name,Ascending,0,1,10,100,101,102,103,104,105,106)
 
@@ -7692,6 +11072,162 @@ ExcludePageCount: False
 SearchTerm: (null)
 	S:NAME: Descending
 
+## Test Name: ExecuteTest_Sort ("Name",Ascending,"0,1,10,100,101,102,103,104,105,106")
+
+* Name: ExecuteTest_Sort ("Name",Ascending,"0,1,10,100,101,102,103,104,105,106")
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0160572
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteTest_Sort(348)-638624249205962105.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteTest_Sort(350)-638624249206072971.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Ascending
+
+## Test Name: ExecuteTest_Sort ("name",Descending,"999,998,997,996,995,994,993,992,991,990")
+
+* Name: ExecuteTest_Sort ("name",Descending,"999,998,997,996,995,994,993,992,991,990")
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0147737
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:name: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteTest_Sort(348)-638624249205644132.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteTest_Sort(350)-638624249205745288.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:name: Descending
+
+## Test Name: ExecuteTest_Sort ("Name",Descending,"999,998,997,996,995,994,993,992,991,990")
+
+* Name: ExecuteTest_Sort ("Name",Descending,"999,998,997,996,995,994,993,992,991,990")
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0165763
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteTest_Sort(348)-638624249205469766.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteTest_Sort(350)-638624249205578039.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Descending
+
+## Test Name: ExecuteTest_Sort ("NAME",Descending,"999,998,997,996,995,994,993,992,991,990")
+
+* Name: ExecuteTest_Sort ("NAME",Descending,"999,998,997,996,995,994,993,992,991,990")
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0138324
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:NAME: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteTest_Sort(348)-638624249205808554.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteTest_Sort(350)-638624249205905548.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:NAME: Descending
+
 ## Test Name: ExecuteTest_Sort (Name,Ascending,0,1,10,100,101,102,103,104,105,106)
 
 * Name: ExecuteTest_Sort (Name,Ascending,0,1,10,100,101,102,103,104,105,106)
@@ -8324,7 +11860,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0408665
+  * Duration: 00:00:00.0170817
   * Outcome: Passed
 
 
@@ -8336,7 +11872,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0027489
+  * Duration: 00:00:00.0045650
   * Outcome: Passed
 
 
@@ -8348,7 +11884,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0020575
+  * Duration: 00:00:00.0053914
   * Outcome: Passed
 
 
@@ -8360,7 +11896,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012419
+  * Duration: 00:00:00.0010313
   * Outcome: Passed
 
 
@@ -8372,7 +11908,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009552
+  * Duration: 00:00:00.0004378
   * Outcome: Passed
 
 
@@ -8384,9 +11920,111 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0036194
+  * Duration: 00:00:00.0030389
   * Outcome: Passed
 
+
+## Test Name: GetHash ("Hello World!","7Qdih1MuhjZehB6Sv8UNjA==")
+
+* Name: GetHash (Hello World!,7Qdih1MuhjZehB6Sv8UNjA==)
+* Test Class: Eliassen.System.Tests.Security.Cryptography.Md5HashTests
+  * Method: GetHash
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0017822
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+"Hello World!" => "7Qdih1MuhjZehB6Sv8UNjA=="
+
+## Test Name: GetHash ("Hello World!","f4OxZX/x/FO5LcGBSKHWXfwtSx+j1ncoSt3SABJtkGk=")
+
+* Name: GetHash (Hello World!,f4OxZX/x/FO5LcGBSKHWXfwtSx+j1ncoSt3SABJtkGk=)
+* Test Class: Eliassen.System.Tests.Security.Cryptography.Sha256HashTests
+  * Method: GetHash
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0009125
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+"Hello World!" => "f4OxZX/x/FO5LcGBSKHWXfwtSx+j1ncoSt3SABJtkGk="
+
+## Test Name: GetHash ("Hello World!","hhhE1nBOhXP+w02WfiC8/vPUJM9IvgTm3AjyvVjHKXQzcQFerYkcw88cnTS0kmS1EHUbH/nlN5N7xGtdb/TsyA==")
+
+* Name: GetHash (Hello World!,hhhE1nBOhXP+w02WfiC8/vPUJM9IvgTm3AjyvVjHKXQzcQFerYkcw88cnTS0kmS1EHUbH/nlN5N7xGtdb/TsyA==)
+* Test Class: Eliassen.System.Tests.Security.Cryptography.Sha512HashTests
+  * Method: GetHash
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0010584
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+"Hello World!" => "hhhE1nBOhXP+w02WfiC8/vPUJM9IvgTm3AjyvVjHKXQzcQFerYkcw88cnTS0kmS1EHUbH/nlN5N7xGtdb/TsyA=="
+
+## Test Name: GetHash ("hello world","MJ7MSJwS1utMxA9QyQLytNDtd+5RGnx6m808qG1M2G+YndNbxf9JlnDaNCVbRbDP2DDoH2Bdz33FVC6TrpzXbw==")
+
+* Name: GetHash (hello world,MJ7MSJwS1utMxA9QyQLytNDtd+5RGnx6m808qG1M2G+YndNbxf9JlnDaNCVbRbDP2DDoH2Bdz33FVC6TrpzXbw==)
+* Test Class: Eliassen.System.Tests.Security.Cryptography.Sha512HashTests
+  * Method: GetHash
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0004984
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+"hello world" => "MJ7MSJwS1utMxA9QyQLytNDtd+5RGnx6m808qG1M2G+YndNbxf9JlnDaNCVbRbDP2DDoH2Bdz33FVC6TrpzXbw=="
+
+## Test Name: GetHash ("hello world","uU0nuZNNPgilLlLX2n2r+sSE7+N6U4DukIj3rOLvzek=")
+
+* Name: GetHash (hello world,uU0nuZNNPgilLlLX2n2r+sSE7+N6U4DukIj3rOLvzek=)
+* Test Class: Eliassen.System.Tests.Security.Cryptography.Sha256HashTests
+  * Method: GetHash
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0005609
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+"hello world" => "uU0nuZNNPgilLlLX2n2r+sSE7+N6U4DukIj3rOLvzek="
+
+## Test Name: GetHash ("hello world","XrY7u+Ae7tCTyyK7j1rNww==")
+
+* Name: GetHash (hello world,XrY7u+Ae7tCTyyK7j1rNww==)
+* Test Class: Eliassen.System.Tests.Security.Cryptography.Md5HashTests
+  * Method: GetHash
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0005562
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+"hello world" => "XrY7u+Ae7tCTyyK7j1rNww=="
 
 ## Test Name: GetHash (hello world,MJ7MSJwS1utMxA9QyQLytNDtd+5RGnx6m808qG1M2G+YndNbxf9JlnDaNCVbRbDP2DDoH2Bdz33FVC6TrpzXbw==)
 
@@ -8532,7 +12170,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0032056
+  * Duration: 00:00:00.0014046
   * Outcome: Passed
 
 
@@ -8544,7 +12182,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0090193
+  * Duration: 00:00:00.0068410
   * Outcome: Passed
 
 
@@ -8556,7 +12194,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009315
+  * Duration: 00:00:00.0316568
   * Outcome: Passed
 
 
@@ -8568,7 +12206,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005481
+  * Duration: 00:00:00.0004315
   * Outcome: Passed
 
 
@@ -8580,7 +12218,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001589
+  * Duration: 00:00:00.0001271
   * Outcome: Passed
 
 
@@ -8592,7 +12230,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0530328
+  * Duration: 00:00:00.0082316
   * Outcome: Passed
 
 
@@ -8604,7 +12242,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0103368
+  * Duration: 00:00:00.0065252
   * Outcome: Passed
 
 
@@ -8616,7 +12254,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004466
+  * Duration: 00:00:00.0003583
   * Outcome: Passed
 
 
@@ -8628,7 +12266,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003601
+  * Duration: 00:00:00.0001931
   * Outcome: Passed
 
 
@@ -8640,7 +12278,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004251
+  * Duration: 00:00:00.0002503
   * Outcome: Passed
 
 
@@ -8652,7 +12290,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005564
+  * Duration: 00:00:00.0007266
   * Outcome: Passed
 
 
@@ -8664,7 +12302,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0007177
+  * Duration: 00:00:00.0006954
   * Outcome: Passed
 
 
@@ -8676,27 +12314,21 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003977
+  * Duration: 00:00:00.0001754
   * Outcome: Passed
 
 
-### Standard Out
+## Test Name: GetShortTypeNameTests (Eliassen.System.Tests.Reflection.ReflectionExtensionsTests,"Eliassen.System.Tests.Reflection.ReflectionExtensionsTests, Eliassen.System.Tests")
 
-info: Eliassen.System.Linq.Search.QueryBuilder[0]
-      Build query for CurrentPage: 0
-      PageSize: 0
-      ExcludePageCount: False
-      SearchTerm: Search For
-      	F:Name: EqualTo: Name1
-      	F:DoesntExist: EqualTo: DoesntExistValue
-      	S:Name: Descending
-      	S:Email: Descending
-      	S:DoesntExist: Ascending
-      
-warn: Eliassen.System.Linq.Search.QueryBuilder[0]
-      No filter mapped for property: DoesntExist => EqualTo: DoesntExistValue
-info: Eliassen.System.Linq.Search.QueryBuilder[0]
-      Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Cast().OrderBy(_ => 1).Skip(0).Take(10)
+* Name: GetShortTypeNameTests
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: GetShortTypeNameTests
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002457
+  * Outcome: Passed
+
 
 ## Test Name: GetShortTypeNameTests (Eliassen.System.Tests.Reflection.ReflectionExtensionsTests,Eliassen.System.Tests.Reflection.ReflectionExtensionsTests, Eliassen.System.Tests)
 
@@ -8707,6 +12339,18 @@ info: Eliassen.System.Linq.Search.QueryBuilder[0]
   * Unit
 * Details: 
   * Duration: 00:00:00.0003104
+  * Outcome: Passed
+
+
+## Test Name: GetShortTypeNameTests (System.String,"System.String, System.Private.CoreLib")
+
+* Name: GetShortTypeNameTests
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: GetShortTypeNameTests
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0003836
   * Outcome: Passed
 
 
@@ -8730,7 +12374,7 @@ info: Eliassen.System.Linq.Search.QueryBuilder[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0010980
+  * Duration: 00:00:00.0006250
   * Outcome: Passed
 
 
@@ -8742,7 +12386,7 @@ info: Eliassen.System.Linq.Search.QueryBuilder[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003807
+  * Duration: 00:00:00.0005476
   * Outcome: Passed
 
 
@@ -8754,7 +12398,19 @@ info: Eliassen.System.Linq.Search.QueryBuilder[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0031117
+  * Duration: 00:00:00.0054222
+  * Outcome: Passed
+
+
+## Test Name: GetTest
+
+* Name: GetTest
+* Test Class: Eliassen.System.Tests.Text.Templating.TemplateEngineTests
+  * Method: GetTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0062998
   * Outcome: Passed
 
 
@@ -8766,30 +12422,21 @@ info: Eliassen.System.Linq.Search.QueryBuilder[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.6981604
+  * Duration: 00:00:00.4063868
   * Outcome: Passed
 
 
 ### Standard Out
+
+info: Eliassen.System.Text.Templating.FileTemplateSource[0]
+      Search for tmps3ypad in "C:\Users\MWhited\AppData\Local\Temp"
+info: Eliassen.System.IO.TempFileHandle[0]
+      Deleting C:\Users\MWhited\AppData\Local\Temp\tmps3ypad.tmp
+
+
 
 TestContext Messages:
-Temp File: C:\Users\MWhited\AppData\Local\Temp\tmpis1dfq.tmp
-
-## Test Name: GetTest
-
-* Name: GetTest
-* Test Class: Eliassen.System.Tests.Text.Templating.TemplateEngineTests
-  * Method: GetTest
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0083535
-  * Outcome: Passed
-
-
-### Standard Out
-
-info
+Temp File: C:\Users\MWhited\AppData\Local\Temp\tmps3ypad.tmp
 
 ## Test Name: GetTestDataAsyncTest
 
@@ -8799,7 +12446,7 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.8862562
+  * Duration: 00:00:01.6417624
   * Outcome: Passed
 
 
@@ -8811,7 +12458,7 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0087050
+  * Duration: 00:00:00.0100068
   * Outcome: Passed
 
 
@@ -8823,7 +12470,7 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0082856
+  * Duration: 00:00:00.0052595
   * Outcome: Passed
 
 
@@ -8835,7 +12482,7 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0084258
+  * Duration: 00:00:00.0918161
   * Outcome: Passed
 
 
@@ -8847,9 +12494,16 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0279427
+  * Duration: 00:00:00.0374125
   * Outcome: Passed
 
+
+### Standard Out
+
+info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
+      Handle: test message id
+info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
+      Handled: test message id
 
 ## Test Name: InOutTest
 
@@ -8859,21 +12513,55 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0906941
+  * Duration: 00:00:00.1231430
   * Outcome: Passed
 
 
 ### Standard Out
 
-info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sent: [(null) -> c120b643-0344-4e75-9de3-a27140c3879a] => ((null))
 info: Eliassen.MessageQueueing.Services.InProcessMessageProvider[0]
-      Dequeue: 54aa0492-26af-4397-be6c-99f1700fec39
+      Dequeue: 3914a01d-aca0-4ee4-a308-7007ac44edb9
 
 
 
 TestContext Messages:
 Handler Called!
+
+## Test Name: KeyedHashTest ("MD5",Eliassen.System.Security.Cryptography.Md5Hash)
+
+* Name: KeyedHashTest
+* Test Class: Eliassen.System.Tests.Security.Cryptography.HashSelectorTest
+  * Method: KeyedHashTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001728
+  * Outcome: Passed
+
+
+## Test Name: KeyedHashTest ("SHA256",Eliassen.System.Security.Cryptography.Sha256Hash)
+
+* Name: KeyedHashTest
+* Test Class: Eliassen.System.Tests.Security.Cryptography.HashSelectorTest
+  * Method: KeyedHashTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001315
+  * Outcome: Passed
+
+
+## Test Name: KeyedHashTest ("SHA512",Eliassen.System.Security.Cryptography.Sha512Hash)
+
+* Name: KeyedHashTest
+* Test Class: Eliassen.System.Tests.Security.Cryptography.HashSelectorTest
+  * Method: KeyedHashTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001198
+  * Outcome: Passed
+
 
 ## Test Name: KeyedHashTest (Md5,Eliassen.System.Security.Cryptography.Md5Hash)
 
@@ -8883,7 +12571,7 @@ Handler Called!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006993
+  * Duration: 00:00:00.0004033
   * Outcome: Passed
 
 
@@ -8907,7 +12595,7 @@ Handler Called!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0152983
+  * Duration: 00:00:00.0003018
   * Outcome: Passed
 
 
@@ -8931,7 +12619,7 @@ Handler Called!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004590
+  * Duration: 00:00:00.0000685
   * Outcome: Passed
 
 
@@ -8947,6 +12635,42 @@ Handler Called!
   * Outcome: Passed
 
 
+## Test Name: KeyedSerializerTest ("BSON",Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer)
+
+* Name: KeyedSerializerTest
+* Test Class: Eliassen.System.Tests.Text.SerializerSelectorTest
+  * Method: KeyedSerializerTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000545
+  * Outcome: Passed
+
+
+## Test Name: KeyedSerializerTest ("JSON",Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer)
+
+* Name: KeyedSerializerTest
+* Test Class: Eliassen.System.Tests.Text.SerializerSelectorTest
+  * Method: KeyedSerializerTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000614
+  * Outcome: Passed
+
+
+## Test Name: KeyedSerializerTest ("XML",Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer)
+
+* Name: KeyedSerializerTest
+* Test Class: Eliassen.System.Tests.Text.SerializerSelectorTest
+  * Method: KeyedSerializerTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000512
+  * Outcome: Passed
+
+
 ## Test Name: KeyedSerializerTest (Bson,Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer)
 
 * Name: KeyedSerializerTest
@@ -8955,7 +12679,7 @@ Handler Called!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003875
+  * Duration: 00:00:00.0002522
   * Outcome: Passed
 
 
@@ -8979,7 +12703,7 @@ Handler Called!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005786
+  * Duration: 00:00:00.0004031
   * Outcome: Passed
 
 
@@ -9003,7 +12727,7 @@ Handler Called!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001201
+  * Duration: 00:00:00.0001068
   * Outcome: Passed
 
 
@@ -9018,6 +12742,57 @@ Handler Called!
   * Duration: 00:00:00.0002171
   * Outcome: Passed
 
+
+## Test Name: KeyedSerializerTests ("BSON",Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer)
+
+* Name: KeyedSerializerTests
+* Test Class: Eliassen.Examples.Tests.Text.ISerializerTests
+  * Method: KeyedSerializerTests
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0044759
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer
+
+## Test Name: KeyedSerializerTests ("JSON",Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer)
+
+* Name: KeyedSerializerTests
+* Test Class: Eliassen.Examples.Tests.Text.ISerializerTests
+  * Method: KeyedSerializerTests
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0013805
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer
+
+## Test Name: KeyedSerializerTests ("XML",Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer)
+
+* Name: KeyedSerializerTests
+* Test Class: Eliassen.Examples.Tests.Text.ISerializerTests
+  * Method: KeyedSerializerTests
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0008961
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer
 
 ## Test Name: KeyedSerializerTests (BSON,Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer)
 
@@ -9069,6 +12844,60 @@ Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer
 
 TestContext Messages:
 Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer
+
+## Test Name: KeyedSerializerTests_Value ("BSON",Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer,".bson")
+
+* Name: KeyedSerializerTests_Value
+* Test Class: Eliassen.Examples.Tests.Text.ISerializerTests
+  * Method: KeyedSerializerTests_Value
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0081720
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer
+Result-ISerializerTests_KeyedSerializerTests_Value(82)-638624251131504715.bson: Attached
+
+## Test Name: KeyedSerializerTests_Value ("JSON",Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer,".json")
+
+* Name: KeyedSerializerTests_Value
+* Test Class: Eliassen.Examples.Tests.Text.ISerializerTests
+  * Method: KeyedSerializerTests_Value
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0977008
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer
+Result-ISerializerTests_KeyedSerializerTests_Value(82)-638624251131133303.json: Attached
+
+## Test Name: KeyedSerializerTests_Value ("XML",Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer,".xml")
+
+* Name: KeyedSerializerTests_Value
+* Test Class: Eliassen.Examples.Tests.Text.ISerializerTests
+  * Method: KeyedSerializerTests_Value
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0258890
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer
+Result-ISerializerTests_KeyedSerializerTests_Value(82)-638624251131413537.xml: Attached
 
 ## Test Name: KeyedSerializerTests_Value (BSON,Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer,.bson)
 
@@ -9124,6 +12953,18 @@ TestContext Messages:
 Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer
 Result-ISerializerTests_KeyedSerializerTests_Value(82)-638518273184271212.xml: Attached
 
+## Test Name: MakeSafeArrayTest (System.Decimal,[1,2.3,2.4,"1.2"],[1,2.3,2.4,1.2])
+
+* Name: MakeSafeArrayTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeArrayTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001593
+  * Outcome: Passed
+
+
 ## Test Name: MakeSafeArrayTest (System.Decimal,System.Object[],System.Decimal[])
 
 * Name: MakeSafeArrayTest
@@ -9133,6 +12974,30 @@ Result-ISerializerTests_KeyedSerializerTests_Value(82)-638518273184271212.xml: A
   * Unit
 * Details: 
   * Duration: 00:00:00.0002721
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeArrayTest (System.String,["Hello World",1],["Hello World","1"])
+
+* Name: MakeSafeArrayTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeArrayTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0013871
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeArrayTest (System.String,[],[])
+
+* Name: MakeSafeArrayTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeArrayTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0003139
   * Outcome: Passed
 
 
@@ -9148,6 +13013,35 @@ Result-ISerializerTests_KeyedSerializerTests_Value(82)-638518273184271212.xml: A
   * Outcome: Passed
 
 
+## Test Name: MakeSafeTest (System.AttributeTargets,"Enum",Enum)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000125
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.AttributeTargets,"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0010558
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.AttributeTargets'., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: MakeSafeTest (System.AttributeTargets,16,Enum)
 
 * Name: MakeSafeTest
@@ -9156,7 +13050,7 @@ Result-ISerializerTests_KeyedSerializerTests_Value(82)-638518273184271212.xml: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000368
+  * Duration: 00:00:00.0000128
   * Outcome: Passed
 
 
@@ -9168,7 +13062,7 @@ Result-ISerializerTests_KeyedSerializerTests_Value(82)-638518273184271212.xml: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000491
+  * Duration: 00:00:00.0000069
   * Outcome: Passed
 
 
@@ -9189,6 +13083,18 @@ Result-ISerializerTests_KeyedSerializerTests_Value(82)-638518273184271212.xml: A
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.AttributeTargets'., MessageCode = , Context = , MetaData =  }
 
+## Test Name: MakeSafeTest (System.Byte[],"QUJD",[65,66,67])
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0026980
+  * Outcome: Passed
+
+
 ## Test Name: MakeSafeTest (System.Byte[],QUJD,System.Byte[])
 
 * Name: MakeSafeTest
@@ -9198,6 +13104,30 @@ ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 
   * Unit
 * Details: 
   * Duration: 00:00:00.0032945
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.DateTime,"3/16/2022 12:00:00 AM",3/16/2022 12:00:00 AM)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000837
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.DateTime,"3/16/2022",3/16/2022 12:00:00 AM)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001655
   * Outcome: Passed
 
 
@@ -9225,6 +13155,18 @@ ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 
   * Outcome: Passed
 
 
+## Test Name: MakeSafeTest (System.DateTimeOffset,"3/16/2022 12:00:00 AM +05:00",3/16/2022 12:00:00 AM +05:00)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000321
+  * Outcome: Passed
+
+
 ## Test Name: MakeSafeTest (System.DateTimeOffset,3/16/2022 12:00:00 AM +05:00,3/16/2022 12:00:00 AM +05:00)
 
 * Name: MakeSafeTest
@@ -9237,6 +13179,36 @@ ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 
   * Outcome: Passed
 
 
+## Test Name: MakeSafeTest (System.Decimal,"1",1)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0008441
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Decimal,"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001096
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = The input string 'nope' was not in a correct format., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: MakeSafeTest (System.Decimal,1,1)
 
 * Name: MakeSafeTest
@@ -9245,7 +13217,7 @@ ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000321
+  * Duration: 00:00:00.0000069
   * Outcome: Passed
 
 
@@ -9258,6 +13230,36 @@ ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 
   * Unit
 * Details: 
   * Duration: 00:00:00.0003380
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = The input string 'nope' was not in a correct format., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: MakeSafeTest (System.Double,"1",1)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000596
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Double,"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0005418
   * Outcome: Passed
 
 
@@ -9297,6 +13299,36 @@ TestContext Messages:
 ResultMessage { Level = Warning, Message = The input string 'nope' was not in a correct format., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: MakeSafeTest (System.Guid,"18AACB9C-2989-4322-A490-C7167BEA0DB4",18aacb9c-2989-4322-a490-c7167bea0db4)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000634
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Guid,"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0010138
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Guid'., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: MakeSafeTest (System.Guid,18AACB9C-2989-4322-A490-C7167BEA0DB4,18aacb9c-2989-4322-a490-c7167bea0db4)
 
 * Name: MakeSafeTest
@@ -9327,6 +13359,36 @@ TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Guid'., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: MakeSafeTest (System.Int32,"1",1)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000891
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Int32,"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0006472
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = The input string 'nope' was not in a correct format., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: MakeSafeTest (System.Int32,1,1)
 
 * Name: MakeSafeTest
@@ -9347,7 +13409,7 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000409
+  * Duration: 00:00:00.0000185
   * Outcome: Passed
 
 
@@ -9369,6 +13431,23 @@ TestContext Messages:
 ResultMessage { Level = Warning, Message = The input string 'nope' was not in a correct format., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: MakeSafeTest (System.Nullable`1[System.AttributeTargets],"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001375
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.AttributeTargets, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: MakeSafeTest (System.Nullable`1[System.AttributeTargets],Enum,Enum)
 
 * Name: MakeSafeTest
@@ -9377,7 +13456,7 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000103
+  * Duration: 00:00:00.0000022
   * Outcome: Passed
 
 
@@ -9397,6 +13476,36 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.AttributeTargets, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Decimal],"1",1)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001932
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Decimal],"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000659
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
 ## Test Name: MakeSafeTest (System.Nullable`1[System.Decimal],1,1)
 
@@ -9426,6 +13535,36 @@ ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 
 
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Double],"1",1)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001412
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Double],"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000727
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
 ## Test Name: MakeSafeTest (System.Nullable`1[System.Double],1,1)
@@ -9458,6 +13597,36 @@ TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: MakeSafeTest (System.Nullable`1[System.Guid],"18AACB9C-2989-4322-A490-C7167BEA0DB4",18aacb9c-2989-4322-a490-c7167bea0db4)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001704
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Guid],"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001477
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: MakeSafeTest (System.Nullable`1[System.Guid],18AACB9C-2989-4322-A490-C7167BEA0DB4,18aacb9c-2989-4322-a490-c7167bea0db4)
 
 * Name: MakeSafeTest
@@ -9486,6 +13655,36 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Int32],"1",1)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001630
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Int32],"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000727
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
 ## Test Name: MakeSafeTest (System.Nullable`1[System.Int32],1,1)
@@ -9518,6 +13717,30 @@ TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: MakeSafeTest (System.String,"Hello World","Hello World")
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0916384
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.String,1,"1")
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0005234
+  * Outcome: Passed
+
+
 ## Test Name: MakeSafeTest (System.String,1,1)
 
 * Name: MakeSafeTest
@@ -9542,6 +13765,18 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
   * Outcome: Passed
 
 
+## Test Name: MakeSafeTest (System.TimeSpan,"16:00",16:00:00)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0007472
+  * Outcome: Passed
+
+
 ## Test Name: MakeSafeTest (System.TimeSpan,16:00,16:00:00)
 
 * Name: MakeSafeTest
@@ -9562,7 +13797,7 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009759
+  * Duration: 00:00:00.0008368
   * Outcome: Passed
 
 
@@ -9574,7 +13809,7 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0518528
+  * Duration: 00:00:00.0596581
   * Outcome: Passed
 
 
@@ -9586,7 +13821,7 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0752159
+  * Duration: 00:00:00.0555389
   * Outcome: Passed
 
 
@@ -9606,9 +13841,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_NullableCollectionQueryTest(186)-638518271936816911.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_NullableCollectionQueryTest(198)-638518271936857395.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_NullableCollectionQueryTest(201)-638518271937232681.json: Attached
+SearchQuery-QueryableExtensionsTests_NullableCollectionQueryTest(186)-638624249198550246.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_NullableCollectionQueryTest(198)-638624249198592408.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_NullableCollectionQueryTest(201)-638624249198869558.json: Attached
 
 ### Standard Error
 
@@ -9623,7 +13858,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[<
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0639195
+  * Duration: 00:00:00.0294004
   * Outcome: Passed
 
 
@@ -9643,9 +13878,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Array(45)-638518271966772947.json: Attached
-EnumerableQuery_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Array(52)-638518271966874970.json: Attached
-PagedQueryResult_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Array(55)-638518271967202433.json: Attached
+SearchQuery-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Array(45)-638624249207379387.json: Attached
+EnumerableQuery_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Array(52)-638624249207466802.json: Attached
+PagedQueryResult_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Array(55)-638624249207607024.json: Attached
 
 ### Standard Error
 
@@ -9660,7 +13895,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[<
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0596308
+  * Duration: 00:00:00.0223913
   * Outcome: Passed
 
 
@@ -9680,9 +13915,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Composite(22)-638518271966145990.json: Attached
-EnumerableQuery_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Composite(31)-638518271966382393.json: Attached
-PagedQueryResult_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Composite(34)-638518271966570837.json: Attached
+SearchQuery-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Composite(22)-638624249207140747.json: Attached
+EnumerableQuery_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Composite(31)-638624249207203539.json: Attached
+PagedQueryResult_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Composite(34)-638624249207299198.json: Attached
 
 ### Standard Error
 
@@ -9697,7 +13932,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[<
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0714731
+  * Duration: 00:00:00.0223538
   * Outcome: Passed
 
 
@@ -9717,9 +13952,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Element(66)-638518271967439385.json: Attached
-EnumerableQuery_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Element(72)-638518271967492896.json: Attached
-PagedQueryResult_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Element(75)-638518271967828742.json: Attached
+SearchQuery-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Element(66)-638624249207689162.json: Attached
+EnumerableQuery_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Element(72)-638624249207732794.json: Attached
+PagedQueryResult_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Element(75)-638624249207857325.json: Attached
 
 ### Standard Error
 
@@ -9734,7 +13969,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[<
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0095718
+  * Duration: 00:00:00.0107949
   * Outcome: Passed
 
 
@@ -9746,26 +13981,26 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[<
 * Categories
   * Simulate
 * Details: 
-  * Duration: 00:00:00.4697253
+  * Duration: 00:00:00.6685807
   * Outcome: Passed
 
 
 ### Standard Out
 
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sending: "{ hello = world }" [(null) -> 56940d44-a415-4eca-b84e-8966722e96b9] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
+      Sending: "{ hello = world }" [(null) -> ffb5652e-bf77-4bca-ab83-3582c7ab1c43] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
 info: Eliassen.MessageQueueing.Tests.TestItems.TestMessageSenderProvider[0]
       SendAsync({ hello = world }, Eliassen.MessageQueueing.Services.MessageContext)
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sent: [(null) -> 56940d44-a415-4eca-b84e-8966722e96b9] => ((null))
+      Sent: [(null) -> ffb5652e-bf77-4bca-ab83-3582c7ab1c43] => ((null))
 
 
 
 TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(107)-638518271545885324.txt: Attached
-message-TestMessageSenderProvider_SendAsync(22)-638518271547351085.json: Attached
-context-TestMessageSenderProvider_SendAsync(23)-638518271547548594.json: Attached
-correlationId: 56940d44-a415-4eca-b84e-8966722e96b9
+Configuration-MessageSenderTests_GetServiceProvider(107)-638624250750502988.txt: Attached
+message-TestMessageSenderProvider_SendAsync(22)-638624250751789896.json: Attached
+context-TestMessageSenderProvider_SendAsync(23)-638624250752046778.json: Attached
+correlationId: ffb5652e-bf77-4bca-ab83-3582c7ab1c43
 
 ## Test Name: SendAsyncTest_ByKeyed
 
@@ -9775,28 +14010,24 @@ correlationId: 56940d44-a415-4eca-b84e-8966722e96b9
 * Categories
   * Simulate
 * Details: 
-  * Duration: 00:00:00.0208493
+  * Duration: 00:00:00.0154251
   * Outcome: Passed
 
 
 ### Standard Out
 
-dbug: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Exception: System.ApplicationException: Error in the application.
-         at Eliassen.MessageQueueing.MessageSender`1.SendAsync(Object message, String correlationId) in C:\Repos\Nucleus\Net.Libs\Framework\Eliassen.MessageQueueing\MessageSender.cs:line 79
-       [(null) -> 703a7ac2-89fb-4e41-8166-40ae1c715bfd]
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sending: "{ hello = world }" [(null) -> c120b643-0344-4e75-9de3-a27140c3879a] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
+      Sending: "{ hello = world }" [(null) -> c5d24357-4d8e-4ba3-b96b-ce89e14c1aa8] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
 info: Eliassen.MessageQueueing.Tests.TestItems.TestMessageSenderProvider[0]
       SendAsync({ hello = world }, Eliassen.MessageQueueing.Services.MessageContext)
 
 
 
 TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(107)-638518271548036006.txt: Attached
-message-TestMessageSenderProvider_SendAsync(22)-638518271548094856.json: Attached
-context-TestMessageSenderProvider_SendAsync(23)-638518271548124459.json: Attached
-correlationId: c120b643-0344-4e75-9de3-a27140c3879a
+Configuration-MessageSenderTests_GetServiceProvider(107)-638624250752683997.txt: Attached
+message-TestMessageSenderProvider_SendAsync(22)-638624250752744631.json: Attached
+context-TestMessageSenderProvider_SendAsync(23)-638624250752771302.json: Attached
+correlationId: c5d24357-4d8e-4ba3-b96b-ce89e14c1aa8
 
 ## Test Name: SendAsyncTest_Error
 
@@ -9806,21 +14037,25 @@ correlationId: c120b643-0344-4e75-9de3-a27140c3879a
 * Categories
   * Simulate
 * Details: 
-  * Duration: 00:00:00.0107468
+  * Duration: 00:00:00.0145206
   * Outcome: Passed
 
 
 ### Standard Out
 
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sending: "{ hello = world }" [(null) -> 703a7ac2-89fb-4e41-8166-40ae1c715bfd] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
+      Sending: "{ hello = world }" [(null) -> 70768c1d-70c8-4abd-9560-890a1f41604a] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
 fail: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Error: "Error in the application." [(null) -> 703a7ac2-89fb-4e41-8166-40ae1c715bfd]
+      Error: "Error in the application." [(null) -> 70768c1d-70c8-4abd-9560-890a1f41604a]
+dbug: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
+      Exception: System.ApplicationException: Error in the application.
+         at Eliassen.MessageQueueing.MessageSender`1.SendAsync(Object message, String correlationId) in c:\Repos\Nucleus\Net.Libs\Framework\Eliassen.MessageQueueing\MessageSender.cs:line 79
+       [(null) -> 70768c1d-70c8-4abd-9560-890a1f41604a]
 
 
 
 TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(107)-638518271547916123.txt: Attached
+Configuration-MessageSenderTests_GetServiceProvider(107)-638624250752514596.txt: Attached
 
 ## Test Name: SerializeAsyncTest_Generic
 
@@ -9830,7 +14065,7 @@ Configuration-MessageSenderTests_GetServiceProvider(107)-638518271547916123.txt:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0023256
+  * Duration: 00:00:00.0013430
   * Outcome: Passed
 
 
@@ -9847,7 +14082,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0255425
+  * Duration: 00:00:00.0034308
   * Outcome: Passed
 
 
@@ -9864,14 +14099,14 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0066918
+  * Duration: 00:00:00.0055856
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-result-BsonIdConverterTests_SerializeTest(24)-638518271807005267.json: Attached
+result-BsonIdConverterTests_SerializeTest(24)-638624249153564094.json: Attached
 Hello World
 
 ## Test Name: SerializeTest_Anonymous
@@ -9882,15 +14117,15 @@ Hello World
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0308928
+  * Duration: 00:00:00.0099033
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-DefaultJsonSerializerTests_SerializeTest_Anonymous(23)-638518271808873401.txt: Attached
-__f__AnonymousType3_1-DefaultJsonSerializerTests_SerializeTest_Anonymous(24)-638518271808943916.json: Attached
+String-DefaultJsonSerializerTests_SerializeTest_Anonymous(23)-638624249154099317.txt: Attached
+__f__AnonymousType3_1-DefaultJsonSerializerTests_SerializeTest_Anonymous(24)-638624249154122609.json: Attached
 
 ## Test Name: SerializeTest_AnonymousWithStringObjectDictionary
 
@@ -9900,15 +14135,15 @@ __f__AnonymousType3_1-DefaultJsonSerializerTests_SerializeTest_Anonymous(24)-638
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1033714
+  * Duration: 00:00:00.0239843
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(48)-638518271809547231.txt: Attached
-__f__AnonymousType4_2-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(49)-638518271809849060.json: Attached
+String-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(48)-638624249154330629.txt: Attached
+__f__AnonymousType4_2-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(49)-638624249154353679.json: Attached
 
 ## Test Name: SerializeTest_Generic
 
@@ -9918,7 +14153,7 @@ __f__AnonymousType4_2-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStri
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0008972
+  * Duration: 00:00:00.0004976
   * Outcome: Passed
 
 
@@ -9935,15 +14170,15 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0334449
+  * Duration: 00:00:00.0106075
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(72)-638518271810304307.txt: Attached
-Configuration-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(73)-638518271810496102.txt: Attached
+String-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(72)-638624249154475682.txt: Attached
+Configuration-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(73)-638624249154501361.txt: Attached
 
 ## Test Name: SerializeTest_Nullable
 
@@ -9953,20 +14188,15 @@ Configuration-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(73)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0853327
+  * Duration: 00:00:00.0375863
   * Outcome: Passed
 
 
 ### Standard Out
 
-: Eliassen.System.Text.Templating.TemplateEngine[0]
-      Apply test template => { }
-
-
-
 TestContext Messages:
-result-BsonDateConverterTests_SerializeTest_Nullable(25)-638518271805811831.json: Attached
-2024-05-20T18:39:40.5085475-04:00
+result-BsonDateConverterTests_SerializeTest_Nullable(25)-638624249153113706.json: Attached
+2024-09-20T10:28:35.2799728-04:00
 
 ## Test Name: SerializeTest_Type
 
@@ -9976,7 +14206,7 @@ result-BsonDateConverterTests_SerializeTest_Nullable(25)-638518271805811831.json
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0039689
+  * Duration: 00:00:00.0019622
   * Outcome: Passed
 
 
@@ -9993,15 +14223,15 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0047763
+  * Duration: 00:00:00.0028150
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-result-BsonDateConverterTests_SerializeTest_Value(47)-638518271805959957.json: Attached
-2024-05-20T18:39:40.5956936-04:00
+result-BsonDateConverterTests_SerializeTest_Value(47)-638624249153182107.json: Attached
+2024-09-20T10:28:35.318074-04:00
 
 ## Test Name: SplitStreamAsyncTest
 
@@ -10011,7 +14241,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638518271805959957.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0134661
+  * Duration: 00:00:00.1083293
   * Outcome: Passed
 
 
@@ -10023,7 +14253,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638518271805959957.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0597358
+  * Duration: 00:00:00.0960947
   * Outcome: Passed
 
 
@@ -10230,6 +14460,7 @@ Spin! : 177
 Spin! : 178
 Spin! : 179
 Spin! : 180
+Ran Child!
 Spin! : 181
 Spin! : 182
 Spin! : 183
@@ -10237,473 +14468,6 @@ Spin! : 184
 Spin! : 185
 Spin! : 186
 Spin! : 187
-Spin! : 188
-Spin! : 189
-Spin! : 190
-Spin! : 191
-Spin! : 192
-Spin! : 193
-Spin! : 194
-Spin! : 195
-Spin! : 196
-Spin! : 197
-Spin! : 198
-Spin! : 199
-Spin! : 200
-Spin! : 201
-Spin! : 202
-Spin! : 203
-Spin! : 204
-Spin! : 205
-Spin! : 206
-Spin! : 207
-Spin! : 208
-Spin! : 209
-Spin! : 210
-Spin! : 211
-Spin! : 212
-Spin! : 213
-Spin! : 214
-Spin! : 215
-Spin! : 216
-Spin! : 217
-Spin! : 218
-Spin! : 219
-Spin! : 220
-Spin! : 221
-Spin! : 222
-Spin! : 223
-Spin! : 224
-Spin! : 225
-Spin! : 226
-Spin! : 227
-Spin! : 228
-Spin! : 229
-Spin! : 230
-Spin! : 231
-Spin! : 232
-Spin! : 233
-Spin! : 234
-Spin! : 235
-Spin! : 236
-Spin! : 237
-Spin! : 238
-Spin! : 239
-Spin! : 240
-Spin! : 241
-Spin! : 242
-Spin! : 243
-Spin! : 244
-Spin! : 245
-Spin! : 246
-Spin! : 247
-Spin! : 248
-Spin! : 249
-Spin! : 250
-Spin! : 251
-Spin! : 252
-Spin! : 253
-Spin! : 254
-Spin! : 255
-Spin! : 256
-Spin! : 257
-Spin! : 258
-Spin! : 259
-Spin! : 260
-Spin! : 261
-Spin! : 262
-Spin! : 263
-Spin! : 264
-Spin! : 265
-Spin! : 266
-Spin! : 267
-Spin! : 268
-Spin! : 269
-Spin! : 270
-Spin! : 271
-Spin! : 272
-Spin! : 273
-Spin! : 274
-Spin! : 275
-Spin! : 276
-Spin! : 277
-Spin! : 278
-Spin! : 279
-Spin! : 280
-Spin! : 281
-Spin! : 282
-Spin! : 283
-Spin! : 284
-Spin! : 285
-Spin! : 286
-Spin! : 287
-Spin! : 288
-Spin! : 289
-Spin! : 290
-Spin! : 291
-Spin! : 292
-Spin! : 293
-Spin! : 294
-Spin! : 295
-Spin! : 296
-Spin! : 297
-Spin! : 298
-Spin! : 299
-Spin! : 300
-Spin! : 301
-Spin! : 302
-Spin! : 303
-Spin! : 304
-Spin! : 305
-Spin! : 306
-Spin! : 307
-Spin! : 308
-Spin! : 309
-Spin! : 310
-Spin! : 311
-Spin! : 312
-Spin! : 313
-Spin! : 314
-Spin! : 315
-Spin! : 316
-Spin! : 317
-Spin! : 318
-Spin! : 319
-Spin! : 320
-Spin! : 321
-Spin! : 322
-Spin! : 323
-Spin! : 324
-Spin! : 325
-Spin! : 326
-Spin! : 327
-Spin! : 328
-Spin! : 329
-Spin! : 330
-Spin! : 331
-Spin! : 332
-Spin! : 333
-Spin! : 334
-Spin! : 335
-Spin! : 336
-Spin! : 337
-Spin! : 338
-Spin! : 339
-Spin! : 340
-Spin! : 341
-Spin! : 342
-Spin! : 343
-Spin! : 344
-Spin! : 345
-Spin! : 346
-Spin! : 347
-Spin! : 348
-Spin! : 349
-Spin! : 350
-Spin! : 351
-Spin! : 352
-Spin! : 353
-Spin! : 354
-Spin! : 355
-Spin! : 356
-Spin! : 357
-Spin! : 358
-Spin! : 359
-Spin! : 360
-Spin! : 361
-Spin! : 362
-Spin! : 363
-Spin! : 364
-Spin! : 365
-Spin! : 366
-Spin! : 367
-Spin! : 368
-Spin! : 369
-Spin! : 370
-Spin! : 371
-Spin! : 372
-Spin! : 373
-Spin! : 374
-Spin! : 375
-Spin! : 376
-Spin! : 377
-Spin! : 378
-Spin! : 379
-Spin! : 380
-Spin! : 381
-Spin! : 382
-Spin! : 383
-Spin! : 384
-Spin! : 385
-Spin! : 386
-Spin! : 387
-Spin! : 388
-Spin! : 389
-Spin! : 390
-Spin! : 391
-Spin! : 392
-Spin! : 393
-Spin! : 394
-Spin! : 395
-Spin! : 396
-Spin! : 397
-Spin! : 398
-Spin! : 399
-Spin! : 400
-Spin! : 401
-Spin! : 402
-Spin! : 403
-Spin! : 404
-Spin! : 405
-Spin! : 406
-Spin! : 407
-Spin! : 408
-Spin! : 409
-Spin! : 410
-Spin! : 411
-Spin! : 412
-Spin! : 413
-Spin! : 414
-Spin! : 415
-Spin! : 416
-Spin! : 417
-Spin! : 418
-Spin! : 419
-Spin! : 420
-Spin! : 421
-Spin! : 422
-Spin! : 423
-Spin! : 424
-Spin! : 425
-Spin! : 426
-Spin! : 427
-Spin! : 428
-Spin! : 429
-Spin! : 430
-Spin! : 431
-Spin! : 432
-Spin! : 433
-Spin! : 434
-Spin! : 435
-Spin! : 436
-Spin! : 437
-Spin! : 438
-Spin! : 439
-Spin! : 440
-Spin! : 441
-Spin! : 442
-Spin! : 443
-Spin! : 444
-Spin! : 445
-Spin! : 446
-Spin! : 447
-Spin! : 448
-Spin! : 449
-Spin! : 450
-Spin! : 451
-Spin! : 452
-Spin! : 453
-Spin! : 454
-Spin! : 455
-Spin! : 456
-Spin! : 457
-Spin! : 458
-Spin! : 459
-Spin! : 460
-Spin! : 461
-Spin! : 462
-Spin! : 463
-Spin! : 464
-Spin! : 465
-Spin! : 466
-Spin! : 467
-Spin! : 468
-Spin! : 469
-Spin! : 470
-Spin! : 471
-Spin! : 472
-Spin! : 473
-Spin! : 474
-Spin! : 475
-Spin! : 476
-Spin! : 477
-Spin! : 478
-Spin! : 479
-Spin! : 480
-Spin! : 481
-Spin! : 482
-Spin! : 483
-Spin! : 484
-Spin! : 485
-Spin! : 486
-Spin! : 487
-Spin! : 488
-Spin! : 489
-Spin! : 490
-Spin! : 491
-Spin! : 492
-Spin! : 493
-Spin! : 494
-Spin! : 495
-Spin! : 496
-Spin! : 497
-Spin! : 498
-Spin! : 499
-Spin! : 500
-Spin! : 501
-Spin! : 502
-Spin! : 503
-Spin! : 504
-Spin! : 505
-Spin! : 506
-Spin! : 507
-Spin! : 508
-Spin! : 509
-Spin! : 510
-Spin! : 511
-Spin! : 512
-Spin! : 513
-Spin! : 514
-Spin! : 515
-Spin! : 516
-Spin! : 517
-Spin! : 518
-Spin! : 519
-Spin! : 520
-Spin! : 521
-Spin! : 522
-Spin! : 523
-Spin! : 524
-Spin! : 525
-Spin! : 526
-Spin! : 527
-Spin! : 528
-Spin! : 529
-Spin! : 530
-Spin! : 531
-Spin! : 532
-Spin! : 533
-Spin! : 534
-Spin! : 535
-Spin! : 536
-Spin! : 537
-Spin! : 538
-Spin! : 539
-Spin! : 540
-Spin! : 541
-Spin! : 542
-Spin! : 543
-Spin! : 544
-Spin! : 545
-Spin! : 546
-Spin! : 547
-Spin! : 548
-Spin! : 549
-Spin! : 550
-Spin! : 551
-Spin! : 552
-Spin! : 553
-Spin! : 554
-Spin! : 555
-Spin! : 556
-Spin! : 557
-Spin! : 558
-Spin! : 559
-Spin! : 560
-Spin! : 561
-Spin! : 562
-Spin! : 563
-Spin! : 564
-Spin! : 565
-Spin! : 566
-Spin! : 567
-Spin! : 568
-Spin! : 569
-Spin! : 570
-Spin! : 571
-Spin! : 572
-Spin! : 573
-Spin! : 574
-Spin! : 575
-Spin! : 576
-Spin! : 577
-Spin! : 578
-Spin! : 579
-Spin! : 580
-Spin! : 581
-Spin! : 582
-Spin! : 583
-Spin! : 584
-Spin! : 585
-Spin! : 586
-Spin! : 587
-Spin! : 588
-Spin! : 589
-Spin! : 590
-Spin! : 591
-Spin! : 592
-Spin! : 593
-Spin! : 594
-Spin! : 595
-Spin! : 596
-Spin! : 597
-Spin! : 598
-Spin! : 599
-Spin! : 600
-Spin! : 601
-Spin! : 602
-Spin! : 603
-Spin! : 604
-Spin! : 605
-Spin! : 606
-Spin! : 607
-Spin! : 608
-Spin! : 609
-Spin! : 610
-Spin! : 611
-Spin! : 612
-Spin! : 613
-Spin! : 614
-Spin! : 615
-Spin! : 616
-Spin! : 617
-Spin! : 618
-Spin! : 619
-Spin! : 620
-Spin! : 621
-Spin! : 622
-Spin! : 623
-Spin! : 624
-Spin! : 625
-Spin! : 626
-Spin! : 627
-Spin! : 628
-Spin! : 629
-Spin! : 630
-Spin! : 631
-Spin! : 632
-Spin! : 633
-Spin! : 634
-Spin! : 635
-Spin! : 636
-Spin! : 637
-Spin! : 638
-Spin! : 639
-Spin! : 640
-Spin! : 641
-Spin! : 642
-Spin! : 643
-Ran Child!
-Spin! : 644
-Spin! : 645
-Spin! : 646
-Spin! : 647
-Spin! : 648
-Spin! : 649
-Spin! : 650
-Spin! : 651
-Spin! : 652
-Spin! : 653
 
 ## Test Name: StoreContentAsyncTest
 
@@ -10713,7 +14477,7 @@ Spin! : 653
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0024001
+  * Duration: 00:00:00.0062929
   * Outcome: Passed
 
 
@@ -10725,7 +14489,7 @@ Spin! : 653
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0024433
+  * Duration: 00:00:00.0044063
   * Outcome: Passed
 
 
@@ -10752,6 +14516,90 @@ Spin! : 653
   * Unit
 * Details: 
   * Duration: 00:00:00.0000077
+  * Outcome: Passed
+
+
+## Test Name: Test ("            ","
+")
+
+* Name: Test (            ,
+)
+* Test Class: Eliassen.Extensions.Tests.StringToolsTests
+  * Method: Test
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001546
+  * Outcome: Passed
+
+
+## Test Name: Test ("","")
+
+* Name: Test (,)
+* Test Class: Eliassen.Extensions.Tests.StringToolsTests
+  * Method: Test
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000189
+  * Outcome: Passed
+
+
+## Test Name: Test ("a            ","a
+")
+
+* Name: Test (a            ,a
+)
+* Test Class: Eliassen.Extensions.Tests.StringToolsTests
+  * Method: Test
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000240
+  * Outcome: Passed
+
+
+## Test Name: Test ("a            b","a
+   b")
+
+* Name: Test (a            b,a
+   b)
+* Test Class: Eliassen.Extensions.Tests.StringToolsTests
+  * Method: Test
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000236
+  * Outcome: Passed
+
+
+## Test Name: Test ("abcde fghijklmnop","abcde
+fghijklmno
+p")
+
+* Name: Test (abcde fghijklmnop,abcde
+fghijklmno
+p)
+* Test Class: Eliassen.Extensions.Tests.StringToolsTests
+  * Method: Test
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0004953
+  * Outcome: Passed
+
+
+## Test Name: Test ("abcdefghijklmnop","abcdefghij
+klmnop")
+
+* Name: Test (abcdefghijklmnop,abcdefghij
+klmnop)
+* Test Class: Eliassen.Extensions.Tests.StringToolsTests
+  * Method: Test
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1238981
   * Outcome: Passed
 
 
@@ -11038,6 +14886,258 @@ klmnop)
   * Unit
 * Details: 
   * Duration: 00:00:00.0028390
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("-1",-1)
+
+* Name: ToEnumTest (-1,-1)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000230
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("0",Val0)
+
+* Name: ToEnumTest (0,Val0)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000103
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("1",Val1)
+
+* Name: ToEnumTest (1,Val1)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000112
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("2",Val2)
+
+* Name: ToEnumTest (2,Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000109
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("3",Val1, Val2)
+
+* Name: ToEnumTest (3,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000174
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("4",WithEnumValue)
+
+* Name: ToEnumTest (4,WithEnumValue)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000132
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("name,name2|test name",WithEnumValue, WithMemberName, WithDisplay)
+
+* Name: ToEnumTest (name,name2|test name,WithEnumValue, WithMemberName, WithDisplay)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001769
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("name",WithEnumValue)
+
+* Name: ToEnumTest (name,WithEnumValue)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0012402
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("name2",WithMemberName)
+
+* Name: ToEnumTest (name2,WithMemberName)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001300
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("no data",null)
+
+* Name: ToEnumTest (no data,)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0018954
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("test description",WithDescription)
+
+* Name: ToEnumTest (test description,WithDescription)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000985
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("test display",WithDisplay)
+
+* Name: ToEnumTest (test display,WithDisplay)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000815
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("test name",WithDisplay)
+
+* Name: ToEnumTest (test name,WithDisplay)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000803
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("test short",WithDisplay)
+
+* Name: ToEnumTest (test short,WithDisplay)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000845
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val1",Val1)
+
+* Name: ToEnumTest (Val1,Val1)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0012536
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val2 , Val1",Val1, Val2)
+
+* Name: ToEnumTest (Val2 , Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000141
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val2 ,Val1",Val1, Val2)
+
+* Name: ToEnumTest (Val2 ,Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000111
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val2, Val1",Val1, Val2)
+
+* Name: ToEnumTest (Val2, Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000239
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val2,Val1",Val1, Val2)
+
+* Name: ToEnumTest (Val2,Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000191
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val2",Val2)
+
+* Name: ToEnumTest (Val2,Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000258
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val2|Val1",Val1, Val2)
+
+* Name: ToEnumTest (Val2|Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000115
   * Outcome: Passed
 
 
@@ -12778,6 +16878,18 @@ klmnop)
   * Unit
 * Details: 
   * Duration: 00:00:00.0020281
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (null,null)
+
+* Name: ToEnumTest (,)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0016531
   * Outcome: Passed
 
 
@@ -15165,7 +19277,7 @@ klmnop)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0077285
+  * Duration: 00:00:00.0650488
   * Outcome: Passed
 
 
@@ -15177,7 +19289,7 @@ klmnop)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0472558
+  * Duration: 00:00:00.0046412
   * Outcome: Passed
 
 
@@ -15187,7 +19299,7 @@ TestContext Messages:
 ["Hello!",1,3,false,null,true,4.5]
 ========================================
 <x><i>Hello!</i><i>1</i><i>3</i><i>false</i><i>true</i><i>4.5</i></x>
-XFragment-JNodeExtensionsTests_ToXNodeTest_Array(71)-638518271808246525.xml: Attached
+XFragment-JNodeExtensionsTests_ToXNodeTest_Array(71)-638624249153969148.xml: Attached
 
 ## Test Name: ToXNodeTest_Complex
 
@@ -15197,7 +19309,7 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_Array(71)-638518271808246525.xml: Att
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0073108
+  * Duration: 00:00:00.0035574
   * Outcome: Passed
 
 
@@ -15223,7 +19335,7 @@ TestContext Messages:
 
 ========================================
 <x name="John Doe" age="30" city="New York" isMarried="true"><children><i name="Alice" age="5" /><i name="Bob" age="8" /></children></x>
-XFragment-JNodeExtensionsTests_ToXNodeTest_Complex(102)-638518271808722254.xml: Attached
+XFragment-JNodeExtensionsTests_ToXNodeTest_Complex(102)-638624249154012687.xml: Attached
 
 ## Test Name: ToXNodeTest_Number
 
@@ -15233,7 +19345,7 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_Complex(102)-638518271808722254.xml: 
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0097647
+  * Duration: 00:00:00.0054625
   * Outcome: Passed
 
 
@@ -15243,7 +19355,7 @@ TestContext Messages:
 30
 ========================================
 30
-XFragment-JNodeExtensionsTests_ToXNodeTest_Number(40)-638518271808009938.xml: Attached
+XFragment-JNodeExtensionsTests_ToXNodeTest_Number(40)-638624249153876695.xml: Attached
 
 ## Test Name: ToXNodeTest_Simple
 
@@ -15253,7 +19365,7 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_Number(40)-638518271808009938.xml: At
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0330594
+  * Duration: 00:00:00.0082427
   * Outcome: Passed
 
 
@@ -15263,7 +19375,7 @@ TestContext Messages:
 {"prop1":"value"}
 ========================================
 <x prop1="value" />
-XFragment-JNodeExtensionsTests_ToXNodeTest_Simple(25)-638518271807730630.xml: Attached
+XFragment-JNodeExtensionsTests_ToXNodeTest_Simple(25)-638624249153806427.xml: Attached
 
 ## Test Name: ToXNodeTest_String
 
@@ -15273,7 +19385,7 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_Simple(25)-638518271807730630.xml: At
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0048174
+  * Duration: 00:00:00.0027781
   * Outcome: Passed
 
 
@@ -15283,7 +19395,7 @@ TestContext Messages:
 "Hello!"
 ========================================
 Hello!
-XFragment-JNodeExtensionsTests_ToXNodeTest_String(56)-638518271808095555.xml: Attached
+XFragment-JNodeExtensionsTests_ToXNodeTest_String(56)-638624249153914578.xml: Attached
 
 ## Test Name: TryGetValueTest
 
@@ -15293,7 +19405,19 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_String(56)-638518271808095555.xml: At
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0013332
+  * Duration: 00:00:00.0013833
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.AttributeTargets,"Enum",True,Enum)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000094
   * Outcome: Passed
 
 
@@ -15308,6 +19432,35 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_String(56)-638518271808095555.xml: At
   * Duration: 00:00:00.0000124
   * Outcome: Passed
 
+
+## Test Name: TryParseTest (System.Decimal,"1",True,1)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000154
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Decimal,"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000950
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
 ## Test Name: TryParseTest (System.Decimal,1,True,1)
 
@@ -15330,6 +19483,35 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_String(56)-638518271808095555.xml: At
   * Unit
 * Details: 
   * Duration: 00:00:00.0001423
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: TryParseTest (System.Double,"1",True,1)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000182
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Double,"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000890
   * Outcome: Passed
 
 
@@ -15367,6 +19549,35 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: TryParseTest (System.Guid,"18AACB9C-2989-4322-A490-C7167BEA0DB4",True,18aacb9c-2989-4322-a490-c7167bea0db4)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0012565
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Guid,"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001834
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: TryParseTest (System.Guid,18AACB9C-2989-4322-A490-C7167BEA0DB4,True,18aacb9c-2989-4322-a490-c7167bea0db4)
 
 * Name: TryParseTest
@@ -15388,6 +19599,35 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
   * Unit
 * Details: 
   * Duration: 00:00:00.0002634
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: TryParseTest (System.Int32,"1",True,1)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000174
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Int32,"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000999
   * Outcome: Passed
 
 
@@ -15425,6 +19665,35 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: TryParseTest (System.Nullable`1[System.Decimal],"1",True,1)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000096
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Nullable`1[System.Decimal],"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000683
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: TryParseTest (System.Nullable`1[System.Decimal],1,True,1)
 
 * Name: TryParseTest
@@ -15446,6 +19715,35 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
   * Unit
 * Details: 
   * Duration: 00:00:00.0000831
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: TryParseTest (System.Nullable`1[System.Double],"1",True,1)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000106
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Nullable`1[System.Double],"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000942
   * Outcome: Passed
 
 
@@ -15483,6 +19781,35 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: TryParseTest (System.Nullable`1[System.Guid],"18AACB9C-2989-4322-A490-C7167BEA0DB4",True,18aacb9c-2989-4322-a490-c7167bea0db4)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0004275
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Nullable`1[System.Guid],"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001175
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: TryParseTest (System.Nullable`1[System.Guid],18AACB9C-2989-4322-A490-C7167BEA0DB4,True,18aacb9c-2989-4322-a490-c7167bea0db4)
 
 * Name: TryParseTest
@@ -15504,6 +19831,35 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
   * Unit
 * Details: 
   * Duration: 00:00:00.0001536
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: TryParseTest (System.Nullable`1[System.Int32],"1",True,1)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000097
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Nullable`1[System.Int32],"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000592
   * Outcome: Passed
 
 
@@ -15549,9 +19905,78 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0723361
+  * Duration: 00:00:00.0513778
   * Outcome: Passed
 
+
+## Test Name: VisitTest_Contains ("Hello","el",True)
+
+* Name: VisitTest_Contains (Hello,el,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_Contains
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0014145
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched) with e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched)
+visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_Contains ("Hello","eL",True)
+
+* Name: VisitTest_Contains (Hello,eL,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_Contains
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0006955
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched) with e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched)
+visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_Contains ("Hello","EL",True)
+
+* Name: VisitTest_Contains (Hello,EL,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_Contains
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0011337
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched) with e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched)
+visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
 
 ## Test Name: VisitTest_Contains (Hello,el,True)
 
@@ -15621,6 +20046,98 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComp
 TestContext Messages:
 expression: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched)
 visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_EndsWith ("Hello","lo",True)
+
+* Name: VisitTest_EndsWith (Hello,lo,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EndsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0005314
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched) with e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched)
+visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_EndsWith ("Hello","lO",True)
+
+* Name: VisitTest_EndsWith (Hello,lO,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EndsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0015390
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched) with e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched)
+visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_EndsWith ("Hello","Lo",True)
+
+* Name: VisitTest_EndsWith (Hello,Lo,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EndsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0010709
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched) with e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched)
+visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_EndsWith ("Hello","LO",True)
+
+* Name: VisitTest_EndsWith (Hello,LO,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EndsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0007062
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched) with e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched)
+visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
 
 ## Test Name: VisitTest_EndsWith (Hello,lo,True)
 
@@ -15714,6 +20231,117 @@ TestContext Messages:
 expression: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched)
 visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
 
+## Test Name: VisitTest_EqualOperator
+
+* Name: VisitTest_EqualOperator
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests
+  * Method: VisitTest_EqualOperator
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0209762
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor]:Information:>
+	Rewrite VisitMethodCall: ThenBy(2) -> Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3) / System.Linq.Expressions.Expression`1[System.Func`2[Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData,System.String]]
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor+RewriteChildren]:Information:>
+	Rewriting VisitMember: System.String Prop3 [x] -> x.Prop3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor]:Information:>
+	Rewrite VisitMethodCall: OrderBy(2) -> Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1) / System.Linq.Expressions.Expression`1[System.Func`2[Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData,System.String]]
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor+RewriteChildren]:Information:>
+	Rewriting VisitMember: System.String Prop1 [x] -> x.Prop1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor]:Information:>
+	Rewrite VisitMethodCall: ThenBy(2) -> Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1.ToUpper()).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3) / System.Linq.Expressions.Expression`1[System.Func`2[Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData,System.String]]
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor+RewriteChildren]:Information:>
+	Rewriting VisitMember: System.String Prop3 [x] -> x.Prop3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor]:Information:>
+	Rewrite VisitMethodCall: ThenBy(3) -> Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1, value(System.OrdinalIgnoreCaseComparer)).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3, value(System.OrdinalIgnoreCaseComparer)) / System.Linq.Expressions.Expression`1[System.Func`2[Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData,System.String]]
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor+RewriteChildren]:Information:>
+	Rewriting VisitMember: System.String Prop3 [x] -> x.Prop3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor]:Information:>
+	Rewrite VisitMethodCall: OrderBy(3) -> Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1, value(System.OrdinalIgnoreCaseComparer)) / System.Linq.Expressions.Expression`1[System.Func`2[Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData,System.String]]
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor+RewriteChildren]:Information:>
+	Rewriting VisitMember: System.String Prop1 [x] -> x.Prop1
+
+
+
+TestContext Messages:
+---- 1
+Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3)
+---- 2
+Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1.ToUpper()).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3)
+---- 3
+Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1, value(System.OrdinalIgnoreCaseComparer)).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3, value(System.OrdinalIgnoreCaseComparer))
+++++ 1v
+Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1.ToUpper()).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3.ToUpper())
+++++ 2v
+Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1.ToUpper()).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3.ToUpper())
+++++ 3v
+Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1.ToUpper()).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3.ToUpper())
+==== 1r
+upper;Upper;UPPER;Upper;upper
+==== 2r
+upper;Upper;UPPER;Upper;upper
+==== 3r
+upper;Upper;UPPER;Upper;upper
+
+## Test Name: VisitTest_EqualOperator ("Hello","hello",True)
+
+* Name: VisitTest_EqualOperator (Hello,hello,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EqualOperator
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0019998
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => (e == value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass4_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_EqualOperator ("Hello","HeLlO",True)
+
+* Name: VisitTest_EqualOperator (Hello,HeLlO,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EqualOperator
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0003667
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => (e == value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass4_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_EqualOperator ("Hello","HELLO",True)
+
+* Name: VisitTest_EqualOperator (Hello,HELLO,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EqualOperator
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0007405
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => (e == value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass4_0).matched, CurrentCultureIgnoreCase)
+
 ## Test Name: VisitTest_EqualOperator (Hello,hello,True)
 
 * Name: VisitTest_EqualOperator (Hello,hello,True)
@@ -15796,6 +20424,132 @@ result: False
   * Unit
 * Details: 
   * Duration: 00:00:00.0014039
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => ((e != null) AndAlso e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched))
+result: False
+
+## Test Name: VisitTest_Equals ("Hello","hello",False)
+
+* Name: VisitTest_Equals (Hello,hello,False)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0016760
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => ((e != null) AndAlso e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched))
+result: False
+
+## Test Name: VisitTest_Equals ("Hello","hello",True)
+
+* Name: VisitTest_Equals (Hello,hello,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0037142
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched) with e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched)
+visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_Equals ("Hello","Hello",True)
+
+* Name: VisitTest_Equals (Hello,Hello,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0020402
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => ((e != null) AndAlso e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched))
+result: True
+
+## Test Name: VisitTest_Equals ("Hello","HeLlO",True)
+
+* Name: VisitTest_Equals (Hello,HeLlO,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0006571
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched) with e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched)
+visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_Equals ("Hello","HELLO",True)
+
+* Name: VisitTest_Equals (Hello,HELLO,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0007665
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched) with e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched)
+visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_Equals ("Hello",null,False)
+
+* Name: VisitTest_Equals (Hello,,False)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0015162
   * Outcome: Passed
 
 
@@ -15932,6 +20686,113 @@ TestContext Messages:
 expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched)
 visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
 
+## Test Name: VisitTest_Equals (null,"hello",False)
+
+* Name: VisitTest_Equals (,hello,False)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0013163
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => ((e != null) AndAlso e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched))
+result: False
+
+## Test Name: VisitTest_Equals (null,null,False)
+
+* Name: VisitTest_Equals (,,False)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0012624
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => ((e != null) AndAlso e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched))
+result: False
+
+## Test Name: VisitTest_StartsWith ("Hello","he",True)
+
+* Name: VisitTest_StartsWith (Hello,he,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_StartsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0005805
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched) with e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched)
+visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_StartsWith ("Hello","He",True)
+
+* Name: VisitTest_StartsWith (Hello,He,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_StartsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0012436
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched) with e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched)
+visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_StartsWith ("Hello","HE",True)
+
+* Name: VisitTest_StartsWith (Hello,HE,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_StartsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0009077
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched) with e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched)
+visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched, CurrentCultureIgnoreCase)
+
 ## Test Name: VisitTest_StartsWith (Hello,he,True)
 
 * Name: VisitTest_StartsWith (Hello,he,True)
@@ -16013,6 +20874,30 @@ visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringCo
   * Outcome: Passed
 
 
+## Test Name: WaitDelayTest ("100",100)
+
+* Name: WaitDelayTest (100,100)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: WaitDelayTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0010584
+  * Outcome: Passed
+
+
+## Test Name: WaitDelayTest ("5000",5000)
+
+* Name: WaitDelayTest (5000,5000)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: WaitDelayTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002969
+  * Outcome: Passed
+
+
 ## Test Name: WaitDelayTest (100,100)
 
 * Name: WaitDelayTest (100,100)
@@ -16037,6 +20922,18 @@ visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringCo
   * Outcome: Passed
 
 
+## Test Name: WaitDelayTest (null,1000)
+
+* Name: WaitDelayTest (,1000)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: WaitDelayTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1263844
+  * Outcome: Passed
+
+
 ## Test Name: WrapTest
 
 * Name: WrapTest
@@ -16045,7 +20942,7 @@ visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringCo
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0021343
+  * Duration: 00:00:00.0023250
   * Outcome: Passed
 
 

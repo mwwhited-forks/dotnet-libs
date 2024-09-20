@@ -23,6 +23,22 @@ A task representing the asynchronous operation.
 
 
 
+#### StoreVectorsAsync(System.Collections.Generic.IEnumerable{System.ValueTuple{System.ReadOnlyMemory{System.Single},System.Collections.Generic.Dictionary{System.String,System.Object}}},System.Collections.Generic.Dictionary{System.String,System.Object})
+Stores the specified embeddings and metadata. 
+
+
+##### Parameters
+* *items:* The embeddings to store.
+* *metadata:* The metadata to store.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
 #### ListAsync
 Lists the stored vectors. 
 

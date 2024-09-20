@@ -9,8 +9,8 @@ Initializes a new instance of the class.
 
 
 #### Constructor
-Initializes a new instance of the class.
-Represents a message handler for handling and sending email messages. 
+Initializes a new instance of the 
+ *See: T:Eliassen.Communications.MessageQueueing.EmailMessageHandler*class. 
 
 
 ##### Parameters

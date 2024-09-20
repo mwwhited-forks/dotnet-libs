@@ -157,6 +157,22 @@ A task representing the asynchronous operation. The task result contains the IDs
 
 
 
+#### StoreVectorsAsync(System.Collections.Generic.IEnumerable{System.ValueTuple{System.ReadOnlyMemory{System.Single},System.Collections.Generic.Dictionary{System.String,System.Object}}},System.Collections.Generic.Dictionary{System.String,System.Object})
+Stores the specified embeddings and metadata. 
+
+
+##### Parameters
+* *items:* The embeddings to store.
+* *metadata:* The metadata to store.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
 ## Class: Search.ServiceCollectionExtensions
 Provides extension methods for configuring search-related services. 
 
