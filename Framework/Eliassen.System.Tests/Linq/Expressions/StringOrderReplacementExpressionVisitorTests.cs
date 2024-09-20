@@ -1,4 +1,5 @@
 ﻿using Eliassen.System.Linq.Expressions;
+using Eliassen.System.ResponseModel;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -11,16 +12,24 @@ public class StringOrderReplacementExpressionVisitorTests
 {
     public required TestContext TestContext { get; set; }
 
+    public record TestData
+    {
+        public required string Prop1 { get; init; }
+        public required int Prop2 { get; init; }
+        public required string Prop3 { get; init; }
+
+    }
+
     [TestMethod]
     [TestCategory(TestCategories.Unit)]
     public void VisitTest_EqualOperator()
     {
-        var data = new[] {
-            new { Prop1 = "upper", Prop2 = 1, Prop3="ABC" },
-            new { Prop1 = "Upper", Prop2 = 2, Prop3="abc" },
-            new { Prop1 = "UPPER", Prop2 = 3, Prop3="AbC" },
-            new { Prop1 = "Upper", Prop2 = 4, Prop3="aBc" },
-            new { Prop1 = "upper", Prop2 = 5, Prop3="ABB" },
+        var data = new TestData[] {
+            new (){ Prop1 = "upper", Prop2 = 1, Prop3="ABC" },
+            new (){ Prop1 = "Upper", Prop2 = 2, Prop3="abc" },
+            new (){ Prop1 = "UPPER", Prop2 = 3, Prop3="AbC" },
+            new (){ Prop1 = "Upper", Prop2 = 4, Prop3="aBc" },
+            new (){ Prop1 = "upper", Prop2 = 5, Prop3="ABB" },
         }.AsQueryable();
 
         var queryRaw = data.OrderBy(x => x.Prop1).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3);
@@ -53,11 +62,23 @@ public class StringOrderReplacementExpressionVisitorTests
         var testFixed = queryFixed.ToList();
         var testCompare = queryCompare.ToList();
 
-        //var resultRaw = visitedRaw..ToList();
-        //var resultFixed = visitedFixed.ToList();
-        //var resultCompare = visitedCompare.ToList();
+        var resultRaw = queryRaw.Provider.CreateQuery<TestData>(visitedRaw).Select(i => i.Prop1);
+        var resultFixed = queryRaw.Provider.CreateQuery<TestData>(visitedFixed).Select(i => i.Prop1);
+        var resultCompare = queryRaw.Provider.CreateQuery<TestData>(visitedCompare).Select(i => i.Prop1);
 
-        //Assert.AreEqual(expected, result);
-        Assert.Inconclusive();
+        TestContext.WriteLine("==== 1r");
+        var checkRaw = string.Join(";", resultRaw);
+        TestContext.WriteLine($"{checkRaw}");
+        TestContext.WriteLine("==== 2r");
+        var checkFixed = string.Join(";", resultFixed);
+        TestContext.WriteLine($"{checkFixed}");
+        TestContext.WriteLine("==== 3r");
+        var checkCompare = string.Join(";", resultCompare);
+        TestContext.WriteLine($"{checkCompare}");
+
+        var expected = "upper;Upper;UPPER;Upper;upper";
+        Assert.AreEqual(expected, checkRaw);
+        Assert.AreEqual(expected, checkFixed);
+        Assert.AreEqual(expected, checkCompare);
     }
 }
