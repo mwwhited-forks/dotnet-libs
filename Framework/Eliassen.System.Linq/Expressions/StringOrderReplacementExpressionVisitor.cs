@@ -6,6 +6,12 @@ using System.Reflection;
 
 namespace Eliassen.System.Linq.Expressions;
 
+/// <summary>
+/// A custom expression visitor that replaces string casing in OrderBy expressions 
+/// within LINQ queries based on the specified <see cref="StringCasing"/>.
+/// </summary>
+/// <param name="stringCasing">Determines whether to convert strings to uppercase or lowercase in sorting operations.</param>
+/// <param name="logger">Optional logger to capture debug information.</param>
 public class StringOrderReplacementExpressionVisitor(
 #if DEBUG
     StringCasing stringCasing,
@@ -17,7 +23,7 @@ public class StringOrderReplacementExpressionVisitor(
 {
     private readonly ILogger _logger = logger ?? new ConsoleLogger<StringOrderReplacementExpressionVisitor>();
 
-    private static string[] TargetMethodNames = [
+    private static readonly string[] TargetMethodNames = [
         nameof(Queryable.OrderBy),
         nameof(Queryable.OrderByDescending),
         nameof(Queryable.ThenBy),
@@ -32,6 +38,12 @@ public class StringOrderReplacementExpressionVisitor(
         ;
     private readonly RewriteChildren Rewriter = new RewriteChildren(logger, stringCasing);
 
+    /// <summary>
+    /// Visits method call expressions, rewriting them to adjust string casing 
+    /// for order-by operations in LINQ queries.
+    /// </summary>
+    /// <param name="node">The method call expression being visited.</param>
+    /// <returns>The modified expression if applicable, otherwise the original expression.</returns>
     protected override Expression VisitMethodCall(MethodCallExpression node)
     {
         if (stringCasing != StringCasing.Default && TargetMethodNames.Contains(node.Method.Name) &&

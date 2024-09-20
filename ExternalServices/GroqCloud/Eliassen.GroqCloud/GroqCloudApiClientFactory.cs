@@ -24,5 +24,8 @@ public class GroqCloudApiClientFactory : IGroqCloudApiClientFactory
     /// Builds a new instance of the <see cref="GroqClient"/> with the specified host.
     /// </summary>
     /// <returns>A new instance of the <see cref="GroqClient"/>.</returns>
-    public GroqClient Build() => new(_options.Value.ApiKey ?? Environment.GetEnvironmentVariable("API_Key_Groq", EnvironmentVariableTarget.User), new GroqModel(_options.Value.Model));
+    public GroqClient Build() => new(
+        _options.Value.ApiKey ?? Environment.GetEnvironmentVariable("API_Key_Groq", EnvironmentVariableTarget.User) ?? throw new NotSupportedException("Missing API Key for Groq"),
+        new GroqModel(_options.Value.Model)
+        );
 }

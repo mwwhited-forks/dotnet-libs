@@ -13,8 +13,6 @@ namespace Eliassen.Communications.MessageQueueing;
 /// <remarks>
 /// Initializes a new instance of the <see cref="EmailMessageHandler"/> class.
 /// </remarks>
-/// <param name="email">The communication sender for email messages.</param>
-/// <param name="logger">The logger.</param>
 public class EmailMessageHandler : IMessageQueueHandler<EmailMessageModel, EmailMessageModel>
 {
     private readonly ILogger _logger;

@@ -25,9 +25,6 @@ public class RabbitMQQueueMessageSenderProviderTests
 
     public required TestContext TestContext { get; set; }
 
-
-
-
     [TestMethod]
     [TestCategory(TestCategories.DevLocal)]
     public async Task SendAsyncTest_ByFullType()

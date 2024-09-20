@@ -16,7 +16,7 @@ namespace Eliassen.MongoDB.Tests;
 [TestClass]
 public class MongoDBTests
 {
-    public TestContext TestContext { get; set; }
+    public required TestContext TestContext { get; set; }
 
     [TestMethod]
     [TestCategory(TestCategories.DevLocal)]
@@ -108,7 +108,7 @@ public class MongoDBTests
         services.TryAddMongoDatabase<ITestMongoDatabase>();
         var provider = services.BuildServiceProvider();
 
-        var db = provider.GetService<ITestMongoDatabase>();
+        var db = provider.GetRequiredService<ITestMongoDatabase>();
 
         var entity = new TestCollection
         {
@@ -127,7 +127,8 @@ public class MongoDBTests
             {
                 0 => "UPPER",
                 1 => "Upper",
-                2 => "upper"
+                2 => "upper",
+                _=> throw new NotSupportedException(),
             };
             entity.Value2 = $"{x} - {x % 3}";
             await db.Tests.InsertOneAsync(entity);
@@ -170,7 +171,7 @@ public class MongoDBTests
         services.TryAddMongoDatabase<ITestMongoDatabase>();
         var provider = services.BuildServiceProvider();
 
-        var db = provider.GetService<ITestMongoDatabase>();
+        var db = provider.GetRequiredService<ITestMongoDatabase>();
 
         var query1 = await db.Tests.AsQueryable().OrderBy(e => e.Value1).ThenBy(e => e.Value2).Select(e => new { e.Value1, e.Value2 }).ToListAsync();
         // var query2 = db.Tests.AsQueryable().OrderBy(e => e.Value1, StringComparer.OrdinalIgnoreCase).Select(e => e.Value1).ToList();
