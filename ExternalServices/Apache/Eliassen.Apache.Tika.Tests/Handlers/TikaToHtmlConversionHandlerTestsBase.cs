@@ -1,9 +1,7 @@
-﻿using Eliassen.Apache.Tika.Handlers;
-using Eliassen.Documents.Conversion;
+﻿using Eliassen.Documents.Conversion;
 using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;

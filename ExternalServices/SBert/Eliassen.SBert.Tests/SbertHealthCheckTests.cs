@@ -1,5 +1,4 @@
-﻿using Eliassen.SBert;
-using Eliassen.TestUtilities;
+﻿using Eliassen.TestUtilities;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;

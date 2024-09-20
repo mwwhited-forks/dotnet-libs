@@ -128,7 +128,7 @@ public class MongoDBTests
                 0 => "UPPER",
                 1 => "Upper",
                 2 => "upper",
-                _=> throw new NotSupportedException(),
+                _ => throw new NotSupportedException(),
             };
             entity.Value2 = $"{x} - {x % 3}";
             await db.Tests.InsertOneAsync(entity);
@@ -180,6 +180,6 @@ public class MongoDBTests
         TestContext.WriteLine("-------------- 111111111111111111111111");
         TestContext.WriteLine(string.Join(";" + Environment.NewLine, query1));
         TestContext.WriteLine("-------------- 222222222222222222222222");
-        TestContext.WriteLine(string.Join(";" +Environment.NewLine, query2));
+        TestContext.WriteLine(string.Join(";" + Environment.NewLine, query2));
     }
 }

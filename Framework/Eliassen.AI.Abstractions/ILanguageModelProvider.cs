@@ -18,7 +18,7 @@ public interface ILanguageModelProvider
     /// <param name="userInput">The user input.</param>
     /// <param name="cancellationToken">The Cancellation Token.</param>
     /// <returns>A task representing the asynchronous operation that returns the response.</returns>
-    Task<string> GetResponseAsync(string promptDetails, 
+    Task<string> GetResponseAsync(string promptDetails,
         string userInput,
 #pragma warning disable CS8424 // The EnumeratorCancellationAttribute will have no effect. The attribute is only effective on a parameter of type CancellationToken in an async-iterator method returning IAsyncEnumerable
         [EnumeratorCancellation] CancellationToken cancellationToken = default);

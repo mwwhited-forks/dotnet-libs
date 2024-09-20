@@ -1,5 +1,4 @@
 ﻿using Eliassen.System.Linq.Expressions;
-using Eliassen.System.ResponseModel;
 using Eliassen.TestUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
