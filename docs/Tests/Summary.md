@@ -1,30 +1,30 @@
 # Summary - Eliassen.Libs.sln - (Release)
 |||
 |:---|:---|
-| Generated on: | 9/20/2024 - 10:32:17 AM |
-| Coverage date: | 9/20/2024 - 10:27:57 AM - 9/20/2024 - 10:31:54 AM |
+| Generated on: | 9/20/2024 - 10:59:13 AM |
+| Coverage date: | 9/20/2024 - 10:56:39 AM - 9/20/2024 - 10:58:58 AM |
 | Parser: | MultiReport (54x Cobertura, 54x OpenCover) |
 | Assemblies: | 37 |
 | Classes: | 192 |
 | Files: | 191 |
-| **Line coverage:** | 49.8% (2198 of 4407) |
-| Covered lines: | 2198 |
-| Uncovered lines: | 2209 |
+| **Line coverage:** | 49% (2163 of 4407) |
+| Covered lines: | 2163 |
+| Uncovered lines: | 2244 |
 | Coverable lines: | 4407 |
 | Total lines: | 13796 |
-| **Branch coverage:** | 44.7% (1753 of 3918) |
-| Covered branches: | 1753 |
+| **Branch coverage:** | 44.1% (1731 of 3918) |
+| Covered branches: | 1731 |
 | Total branches: | 3918 |
 | **Method coverage:** | [Feature is only available for sponsors](https://reportgenerator.io/pro) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|
-|**Eliassen.Apache.Tika**|**22**|**88**|**110**|**321**|**20%**|**8**|**16**|**50%**|
+|**Eliassen.Apache.Tika**|**19**|**91**|**110**|**321**|**17.2%**|**4**|**16**|**25%**|
 |Eliassen.Apache.Tika.ApacheTikaClient|0|26|26|56|0%|0|0||
 |Eliassen.Apache.Tika.ApacheTikaHealthCheck|6|0|6|39|100%|0|0||
 |Eliassen.Apache.Tika.Detectors.TikaContentTypeDetector|4|0|4|42|100%|0|0||
 |Eliassen.Apache.Tika.Handlers.TikaConversionHandlerBase|9|0|9|73|100%|4|8|50%|
-|Eliassen.Apache.Tika.ServiceCollectionExtensions|3|62|65|111|4.6%|4|8|50%|
+|Eliassen.Apache.Tika.ServiceCollectionExtensions|0|65|65|111|0%|0|8|0%|
 |**Eliassen.AspNetCore.JwtAuthentication**|**13**|**50**|**63**|**225**|**20.6%**|**2**|**28**|**7.1%**|
 |Eliassen.AspNetCore.JwtAuthentication.ServiceCollectionExtensions|13|0|13|91|100%|2|4|50%|
 |Eliassen.AspNetCore.JwtAuthentication.SwaggerGen.ConfigureOAuthSwaggerGenOptions|0|41|41|93|0%|0|20|0%|
@@ -71,8 +71,8 @@
 |Eliassen.Common.ServiceCollectionExtensions|5|0|5|57|100%|0|0||
 |**Eliassen.Common.Extensions**|**20**|**1**|**21**|**82**|**95.2%**|**10**|**16**|**62.5%**|
 |Eliassen.Common.Extensions.ServiceCollectionExtensions|20|1|21|82|95.2%|10|16|62.5%|
-|**Eliassen.Common.Hosting**|**4**|**0**|**4**|**43**|**100%**|**6**|**8**|**75%**|
-|Eliassen.Common.Hosting.ServiceCollectionExtensions|4|0|4|43|100%|6|8|75%|
+|**Eliassen.Common.Hosting**|**0**|**4**|**4**|**43**|**0%**|**0**|**8**|**0%**|
+|Eliassen.Common.Hosting.ServiceCollectionExtensions|0|4|4|43|0%|0|8|0%|
 |**Eliassen.Communications**|**1**|**0**|**1**|**16**|**100%**|**0**|**0**|****|
 |Eliassen.Communications.ServiceCollectionExtensions|1|0|1|16|100%|0|0||
 |**Eliassen.Communications.MessageQueueing**|**2**|**17**|**19**|**97**|**10.5%**|**0**|**16**|**0%**|
@@ -99,13 +99,13 @@
 |Eliassen.Extensions.Reflection.ResourceExtensions|16|9|25|82|64%|27|44|61.3%|
 |Eliassen.Extensions.ServiceCollectionExtensions|2|3|5|44|40%|0|12|0%|
 |Eliassen.Extensions.StringTools|26|4|30|85|86.6%|26|32|81.2%|
-|**Eliassen.GroqCloud**|**13**|**35**|**48**|**217**|**27%**|**8**|**40**|**20%**|
+|**Eliassen.GroqCloud**|**0**|**48**|**48**|**217**|**0%**|**0**|**40**|**0%**|
 |Eliassen.GroqCloud.GroqCloudApiClientFactory|0|5|5|31|0%|0|8|0%|
 |Eliassen.GroqCloud.GroqCloudHealthCheck|0|7|7|47|0%|0|0||
 |Eliassen.GroqCloud.GroqCloudMessageCompletion|0|12|12|53|0%|0|0||
 |Eliassen.GroqCloud.GroqCloudModelMapper|0|10|10|33|0%|0|20|0%|
-|Eliassen.GroqCloud.ServiceCollectionExtensions|13|1|14|53|92.8%|8|12|66.6%|
-|**Eliassen.Handlebars**|**112**|**8**|**120**|**466**|**93.3%**|**38**|**64**|**59.3%**|
+|Eliassen.GroqCloud.ServiceCollectionExtensions|0|14|14|53|0%|0|12|0%|
+|**Eliassen.Handlebars**|**102**|**18**|**120**|**466**|**85%**|**38**|**64**|**59.3%**|
 |Eliassen.Handlebars.Helpers.DateNowHelperDescriptor|12|0|12|39|100%|0|0||
 |Eliassen.Handlebars.Helpers.GetHelperDescriptor|14|0|14|45|100%|0|0||
 |Eliassen.Handlebars.Helpers.GuidNewHelperDescriptor|6|0|6|32|100%|0|0||
@@ -114,7 +114,7 @@
 |Eliassen.Handlebars.Helpers.SetHelperDescriptor|15|0|15|42|100%|0|0||
 |Eliassen.Handlebars.Helpers.StateStore|7|1|8|46|87.5%|8|12|66.6%|
 |Eliassen.Handlebars.Helpers.StringReplaceHelperDescriptor|11|0|11|33|100%|20|28|71.4%|
-|Eliassen.Handlebars.ServiceCollectionExtensions|10|0|10|39|100%|0|0||
+|Eliassen.Handlebars.ServiceCollectionExtensions|0|10|10|39|0%|0|0||
 |Eliassen.Handlebars.Templating.HandlebarsTemplateProvider|26|6|32|103|81.2%|10|24|41.6%|
 |**Eliassen.Identity**|**2**|**9**|**11**|**58**|**18.1%**|**0**|**8**|**0%**|
 |Eliassen.Identity.ServiceCollectionExtensions|2|0|2|23|100%|0|0||
@@ -146,9 +146,9 @@
 |Eliassen.MessageQueueing.Services.MessagePropertyResolver|32|0|32|130|100%|30|52|57.6%|
 |Eliassen.MessageQueueing.Services.MessageReceiverProviderFactory|47|11|58|117|81%|24|44|54.5%|
 |Eliassen.MessageQueueing.Services.MessageSenderProviderFactory|7|0|7|42|100%|6|8|75%|
-|**Eliassen.MessageQueueing.Hosting**|**35**|**7**|**42**|**153**|**83.3%**|**16**|**20**|**80%**|
+|**Eliassen.MessageQueueing.Hosting**|**33**|**9**|**42**|**153**|**78.5%**|**16**|**20**|**80%**|
 |Eliassen.MessageQueueing.Hosting.MessageReceiverHost|33|7|40|131|82.5%|16|20|80%|
-|Eliassen.MessageQueueing.Hosting.ServiceCollectionExtensions|2|0|2|22|100%|0|0||
+|Eliassen.MessageQueueing.Hosting.ServiceCollectionExtensions|0|2|2|22|0%|0|0||
 |**Eliassen.MessageQueueing.Tests**|**0**|**192**|**192**|**413**|**0%**|**0**|**16**|**0%**|
 |AutoGeneratedProgram|0|1|1|4|0%|0|0||
 |Eliassen.MessageQueueing.Tests.Hosting.MessageReceiverHostTests|0|32|32|60|0%|0|8|0%|
@@ -176,13 +176,13 @@
 |Eliassen.MysticMind.ConverterFactory|1|0|1|15|100%|0|0||
 |Eliassen.MysticMind.HtmlToMarkdownConversionHandler|12|0|12|69|100%|4|8|50%|
 |Eliassen.MysticMind.ServiceCollectionExtensions|4|0|4|25|100%|0|0||
-|**Eliassen.Ollama**|**9**|**87**|**96**|**407**|**9.3%**|**4**|**54**|**7.4%**|
+|**Eliassen.Ollama**|**6**|**90**|**96**|**407**|**6.2%**|**0**|**54**|**0%**|
 |Eliassen.Ollama.OllamaApiClientExtensions|0|17|17|99|0%|0|6|0%|
 |Eliassen.Ollama.OllamaApiClientFactory|0|2|2|26|0%|0|0||
 |Eliassen.Ollama.OllamaHealthCheck|6|0|6|45|100%|0|0||
 |Eliassen.Ollama.OllamaMessageCompletion|0|41|41|140|0%|0|36|0%|
 |Eliassen.Ollama.OllamaModelMapper|0|16|16|43|0%|0|4|0%|
-|Eliassen.Ollama.ServiceCollectionExtensions|3|11|14|54|21.4%|4|8|50%|
+|Eliassen.Ollama.ServiceCollectionExtensions|0|14|14|54|0%|0|8|0%|
 |**Eliassen.OpenSearch**|**4**|**11**|**15**|**78**|**26.6%**|**0**|**8**|**0%**|
 |Eliassen.OpenSearch.OpenSearchClientFactory|0|11|11|43|0%|0|8|0%|
 |Eliassen.OpenSearch.ServiceCollectionExtensions|4|0|4|35|100%|0|0||

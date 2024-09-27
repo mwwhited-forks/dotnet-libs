@@ -1,22 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:e71d8825-bdca-4781-ad65-d76ab3ed5be2" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:d81a3e9b-f5a6-4085-9add-2a0b3525177a" version="1" xmlns="http://cyclonedx.org/schema/bom/1.6">
   <metadata>
-    <timestamp>2024-09-20T14:32:31.8358545Z</timestamp>
+    <timestamp>2024-09-20T14:59:23.8165398Z</timestamp>
     <tools>
       <tool>
         <vendor>CycloneDX</vendor>
         <name>CycloneDX module for .NET</name>
-        <version>3.0.6.0</version>
+        <version>4.0.0.0</version>
       </tool>
     </tools>
-    <component type="application" bom-ref="Eliassen.Libs@0.2.11-dev-ado-UpdateFramework.6">
+    <component type="application" bom-ref="Eliassen.Libs@0.2.1-dev-ado-UpdateFramework.1+163">
       <name>Eliassen.Libs</name>
-      <version>0.2.11-dev-ado-UpdateFramework.6</version>
+      <version>0.2.1-dev-ado-UpdateFramework.1+163</version>
     </component>
   </metadata>
   <components>
     <component type="library" bom-ref="pkg:nuget/AWSSDK.Core@3.7.100.14">
-      <author>Amazon Web Services</author>
+      <authors>
+        <author>
+          <name>Amazon Web Services</name>
+        </author>
+      </authors>
       <name>AWSSDK.Core</name>
       <version>3.7.100.14</version>
       <description>The Amazon Web Services SDK for .NET - Core Runtime</description>
@@ -38,7 +42,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/AWSSDK.SecurityToken@3.7.100.14">
-      <author>Amazon Web Services</author>
+      <authors>
+        <author>
+          <name>Amazon Web Services</name>
+        </author>
+      </authors>
       <name>AWSSDK.SecurityToken</name>
       <version>3.7.100.14</version>
       <description>The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.</description>
@@ -60,7 +68,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Azure.Core@1.38.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Azure.Core</name>
       <version>1.38.0</version>
       <description>This is the implementation of the Azure Client Pipeline</description>
@@ -85,7 +97,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Azure.Core@1.41.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Azure.Core</name>
       <version>1.41.0</version>
       <description>This is the implementation of the Azure Client Pipeline</description>
@@ -110,7 +126,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Azure.Core@1.42.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Azure.Core</name>
       <version>1.42.0</version>
       <description>This is the implementation of the Azure Client Pipeline</description>
@@ -135,7 +155,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Azure.Identity@1.11.4">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Azure.Identity</name>
       <version>1.11.4</version>
       <description>This is the implementation of the Azure SDK Client Library for Azure Identity</description>
@@ -160,7 +184,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Azure.Identity@1.12.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Azure.Identity</name>
       <version>1.12.0</version>
       <description>This is the implementation of the Azure SDK Client Library for Azure Identity</description>
@@ -185,7 +213,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Azure.Storage.Blobs@12.21.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Azure.Storage.Blobs</name>
       <version>12.21.2</version>
       <description>This client library enables working with the Microsoft Azure Storage Blob service for storing binary and text data.
@@ -215,7 +247,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Azure.Storage.Common@12.20.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Azure.Storage.Common</name>
       <version>12.20.1</version>
       <description>This client library enables working with the Microsoft Azure Storage services which include the blob and file services for storing binary and text data, and the queue service for storing messages that may be accessed by a client.
@@ -244,7 +280,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Azure.Storage.Queues@12.19.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Azure.Storage.Queues</name>
       <version>12.19.1</version>
       <description>This client library enables working with the Microsoft Azure Storage Queue service for storing messages that may be accessed by a client.
@@ -274,7 +314,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/BouncyCastle.Cryptography@2.4.0">
-      <author>Legion of the Bouncy Castle Inc.</author>
+      <authors>
+        <author>
+          <name>Legion of the Bouncy Castle Inc.</name>
+        </author>
+      </authors>
       <name>BouncyCastle.Cryptography</name>
       <version>2.4.0</version>
       <description>BouncyCastle.NET is a popular cryptography library for .NET</description>
@@ -299,7 +343,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Castle.Core@5.1.1">
-      <author>Castle Project Contributors</author>
+      <authors>
+        <author>
+          <name>Castle Project Contributors</name>
+        </author>
+      </authors>
       <name>Castle.Core</name>
       <version>5.1.1</version>
       <description>Castle Core, including DynamicProxy, Logging Abstractions and DictionaryAdapter</description>
@@ -324,7 +372,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/DnsClient@1.6.1">
-      <author>MichaCo</author>
+      <authors>
+        <author>
+          <name>MichaCo</name>
+        </author>
+      </authors>
       <name>DnsClient</name>
       <version>1.6.1</version>
       <description>DnsClient.NET is a simple yet very powerful and high performance open source library for the .NET Framework to do DNS lookups</description>
@@ -349,7 +401,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Flurl@3.0.6">
-      <author>Todd Menier</author>
+      <authors>
+        <author>
+          <name>Todd Menier</name>
+        </author>
+      </authors>
       <name>Flurl</name>
       <version>3.0.6</version>
       <description>A fluent, portable URL builder. To make HTTP calls off the fluent chain, check out Flurl.Http.</description>
@@ -373,7 +429,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Flurl.Http@3.2.4">
-      <author>Todd Menier</author>
+      <authors>
+        <author>
+          <name>Todd Menier</name>
+        </author>
+      </authors>
       <name>Flurl.Http</name>
       <version>3.2.4</version>
       <description>A fluent, portable, testable HTTP client library.</description>
@@ -397,7 +457,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Google.Protobuf@3.24.2">
-      <author>Google Inc.</author>
+      <authors>
+        <author>
+          <name>Google Inc.</name>
+        </author>
+      </authors>
       <name>Google.Protobuf</name>
       <version>3.24.2</version>
       <description>C# runtime library for Protocol Buffers - Google's data interchange format.</description>
@@ -422,7 +486,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/GroqNet@1.0.1">
-      <author>Ivaylo Gochkov</author>
+      <authors>
+        <author>
+          <name>Ivaylo Gochkov</name>
+        </author>
+      </authors>
       <name>GroqNet</name>
       <version>1.0.1</version>
       <description>A .NET Core client library for interacting with the Groq API, the quickest LLM inference method available. The library provides a simple and easy-to-use interface for accessing the Groq API, allowing developers to integrate the platform's capabilities into their applications.</description>
@@ -443,7 +511,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Grpc.Core.Api@2.57.0">
-      <author>The gRPC Authors</author>
+      <authors>
+        <author>
+          <name>The gRPC Authors</name>
+        </author>
+      </authors>
       <name>Grpc.Core.Api</name>
       <version>2.57.0</version>
       <description>gRPC C# Surface API</description>
@@ -468,7 +540,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Grpc.Net.Client@2.57.0">
-      <author>The gRPC Authors</author>
+      <authors>
+        <author>
+          <name>The gRPC Authors</name>
+        </author>
+      </authors>
       <name>Grpc.Net.Client</name>
       <version>2.57.0</version>
       <description>.NET client for gRPC</description>
@@ -493,7 +569,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Grpc.Net.Common@2.57.0">
-      <author>The gRPC Authors</author>
+      <authors>
+        <author>
+          <name>The gRPC Authors</name>
+        </author>
+      </authors>
       <name>Grpc.Net.Common</name>
       <version>2.57.0</version>
       <description>Infrastructure for common functionality in gRPC</description>
@@ -518,7 +598,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Handlebars.Net@2.1.6">
-      <author>Rex Morgan</author>
+      <authors>
+        <author>
+          <name>Rex Morgan</name>
+        </author>
+      </authors>
       <name>Handlebars.Net</name>
       <version>2.1.6</version>
       <description>Blistering-fast Handlebars.js templates in your .NET application.</description>
@@ -543,7 +627,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Handlebars.Net.Extension.Json@1.0.0">
-      <author>Oleh Formaniuk</author>
+      <authors>
+        <author>
+          <name>Oleh Formaniuk</name>
+        </author>
+      </authors>
       <name>Handlebars.Net.Extension.Json</name>
       <version>1.0.0</version>
       <description>System.Text.Json extension for Handlebars.Net</description>
@@ -568,7 +656,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Handlebars.Net.Helpers@2.4.5">
-      <author>Stef Heyenrath</author>
+      <authors>
+        <author>
+          <name>Stef Heyenrath</name>
+        </author>
+      </authors>
       <name>Handlebars.Net.Helpers</name>
       <version>2.4.5</version>
       <description>Several Handlebars.Net helpers in the categories: 'Boolean', 'Constants', 'DateTime', 'Path', 'Enumerable', 'Environment', 'Math', 'Regex', 'String' and 'Urls'.</description>
@@ -593,7 +685,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Handlebars.Net.Helpers.Core@2.4.5">
-      <author>Stef Heyenrath</author>
+      <authors>
+        <author>
+          <name>Stef Heyenrath</name>
+        </author>
+      </authors>
       <name>Handlebars.Net.Helpers.Core</name>
       <version>2.4.5</version>
       <description>Core functionality for Handlebars.Net.Helpers</description>
@@ -618,7 +714,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.93">
-      <author>rdvojmoc, HakanL, georgechond94</author>
+      <authors>
+        <author>
+          <name>rdvojmoc, HakanL, georgechond94</name>
+        </author>
+      </authors>
       <name>Haukcode.WkHtmlToPdfDotNet</name>
       <version>1.5.93</version>
       <description>.NET Core P/Invoke wrapper for wkhtmltopdf library that uses Webkit engine to convert HTML pages to PDF.</description>
@@ -642,7 +742,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/HtmlAgilityPack@1.11.61">
-      <author>ZZZ Projects,Simon Mourrier,Jeff Klawiter,Stephan Grell</author>
+      <authors>
+        <author>
+          <name>ZZZ Projects,Simon Mourrier,Jeff Klawiter,Stephan Grell</name>
+        </author>
+      </authors>
       <name>HtmlAgilityPack</name>
       <version>1.11.61</version>
       <description>This is an agile HTML parser that builds a read/write DOM and supports plain XPATH or XSLT (you actually don't HAVE to understand XPATH nor XSLT to use it, don't worry...). It is a .NET code library that allows you to parse "out of the web" HTML files. The parser is very tolerant with "real world" malformed HTML. The object model is very similar to what proposes System.Xml, but for HTML documents (or streams).</description>
@@ -667,7 +771,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/JsonDiffPatch.Net@2.3.0">
-      <author>William Bishop</author>
+      <authors>
+        <author>
+          <name>William Bishop</name>
+        </author>
+      </authors>
       <name>JsonDiffPatch.Net</name>
       <version>2.3.0</version>
       <description>JSON object diffs and reversible patching</description>
@@ -693,7 +801,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Keycloak.Net.Core@1.0.28">
-      <author>Luk Vermeulen, Peter Andersson, Galip Tolga Erdem, Silent Partner Software</author>
+      <authors>
+        <author>
+          <name>Luk Vermeulen, Peter Andersson, Galip Tolga Erdem, Silent Partner Software</name>
+        </author>
+      </authors>
       <name>Keycloak.Net.Core</name>
       <version>1.0.28</version>
       <description>C# client for Keycloak</description>
@@ -718,7 +830,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/MailKit@4.7.1.1">
-      <author>Jeffrey Stedfast</author>
+      <authors>
+        <author>
+          <name>Jeffrey Stedfast</name>
+        </author>
+      </authors>
       <name>MailKit</name>
       <version>4.7.1.1</version>
       <description>An Open Source .NET mail-client library for Windows, Mac, Linux, and mobile platforms such as iOS and Android.</description>
@@ -743,7 +859,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Markdig@0.37.0">
-      <author>Alexandre Mutel</author>
+      <authors>
+        <author>
+          <name>Alexandre Mutel</name>
+        </author>
+      </authors>
       <name>Markdig</name>
       <version>0.37.0</version>
       <description>A fast, powerful, CommonMark compliant, extensible Markdown processor for .NET with 20+ builtin extensions (pipetables, footnotes, definition lists... etc.)</description>
@@ -768,7 +888,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.ApplicationInsights@2.22.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.ApplicationInsights</name>
       <version>2.22.0</version>
       <description>Application Insights Base API. This package provides core functionality for transmission of all Application Insights Telemetry Types and is a dependent package for all other Application Insights packages. Please install the platform specific package for the best experience. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156</description>
@@ -793,7 +917,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.ApplicationInsights.AspNetCore@2.21.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.ApplicationInsights.AspNetCore</name>
       <version>2.21.0</version>
       <description>Application Insights for ASP.NET Core web applications. See https://azure.microsoft.com/documentation/articles/app-insights-asp-net-five/ for more information. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156</description>
@@ -818,7 +946,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.ApplicationInsights.DependencyCollector@2.21.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.ApplicationInsights.DependencyCollector</name>
       <version>2.21.0</version>
       <description>Application Insights Dependency Collector for .NET applications. This is a dependent package for Application Insights platform specific packages and provides automatic collection of dependency telemetry. Please install the platform specific packages directly for the best experience. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156</description>
@@ -843,7 +975,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.ApplicationInsights.EventCounterCollector@2.21.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.ApplicationInsights.EventCounterCollector</name>
       <version>2.21.0</version>
       <description>Application Insights Event Counter Collector allows you to send data sent from EventCounters to Application Insights. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156</description>
@@ -868,7 +1004,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.ApplicationInsights.PerfCounterCollector@2.21.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.ApplicationInsights.PerfCounterCollector</name>
       <version>2.21.0</version>
       <description>Application Insights Performance Counters Collector allows you to send data collected by Performance Counters to Application Insights. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156</description>
@@ -893,7 +1033,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.ApplicationInsights.SnapshotCollector@1.4.4">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.ApplicationInsights.SnapshotCollector</name>
       <version>1.4.4</version>
       <description>Monitors exceptions in your application and automatically collects snapshots for offline analysis.</description>
@@ -916,7 +1060,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.ApplicationInsights.WindowsServer@2.21.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.ApplicationInsights.WindowsServer</name>
       <version>2.21.0</version>
       <description>Application Insights Windows Server nuget package provides automatic collection of application insights telemetry for .NET applications. This package can be used as a dependent package for Application Insights platform specific packages or as a standalone package for .NET applications that are not covered by platform specific packages (like for .NET worker roles). Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156</description>
@@ -941,7 +1089,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel@2.21.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel</name>
       <version>2.21.0</version>
       <description>This nuget provides a telemetry channel to Application Insights Windows Server SDK that will preserve telemetry in offline scenarios. This is a dependent package, for the best experience please install the platform specific package. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156</description>
@@ -966,7 +1118,11 @@
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@8.0.8">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.AspNetCore.Authentication.JwtBearer</name>
       <version>8.0.8</version>
       <description>ASP.NET Core middleware that enables an application to receive an OpenID Connect bearer token.
@@ -993,7 +1149,11 @@ This package was built from the source code at https://github.com/dotnet/aspnetc
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Hosting@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.AspNetCore.Hosting</name>
       <version>2.1.1</version>
       <description>ASP.NET Core hosting infrastructure and startup logic for web applications.</description>
@@ -1019,7 +1179,11 @@ This package was built from the source code at https://github.com/dotnet/aspnetc
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Hosting.Abstractions@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.AspNetCore.Hosting.Abstractions</name>
       <version>2.1.1</version>
       <description>ASP.NET Core hosting and startup abstractions for web applications.</description>
@@ -1045,7 +1209,11 @@ This package was built from the source code at https://github.com/dotnet/aspnetc
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Hosting.Server.Abstractions@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.AspNetCore.Hosting.Server.Abstractions</name>
       <version>2.1.1</version>
       <description>ASP.NET Core hosting server abstractions for web applications.</description>
@@ -1071,7 +1239,11 @@ This package was built from the source code at https://github.com/dotnet/aspnetc
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Http@2.1.22">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.AspNetCore.Http</name>
       <version>2.1.22</version>
       <description>ASP.NET Core default HTTP feature implementations.</description>
@@ -1097,7 +1269,11 @@ This package was built from the source code at https://github.com/dotnet/aspnetc
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Http.Abstractions@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.AspNetCore.Http.Abstractions</name>
       <version>2.1.1</version>
       <description>ASP.NET Core HTTP object model for HTTP requests and responses and also common extension methods for registering middleware in an IApplicationBuilder.
@@ -1128,7 +1304,11 @@ Microsoft.AspNetCore.Http.HttpResponse</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Http.Extensions@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.AspNetCore.Http.Extensions</name>
       <version>2.1.1</version>
       <description>ASP.NET Core common extension methods for HTTP abstractions, HTTP headers, HTTP request/response, and session state.</description>
@@ -1154,7 +1334,11 @@ Microsoft.AspNetCore.Http.HttpResponse</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Http.Features@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.AspNetCore.Http.Features</name>
       <version>2.1.1</version>
       <description>ASP.NET Core HTTP feature interface definitions.</description>
@@ -1180,7 +1364,11 @@ Microsoft.AspNetCore.Http.HttpResponse</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.WebUtilities@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.AspNetCore.WebUtilities</name>
       <version>2.1.1</version>
       <description>ASP.NET Core utilities, such as for working with forms, multipart messages, and query strings.</description>
@@ -1206,7 +1394,11 @@ Microsoft.AspNetCore.Http.HttpResponse</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Azure.WebJobs@3.0.39">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Azure.WebJobs</name>
       <version>3.0.39</version>
       <description>This package contains the runtime assemblies for Microsoft.Azure.WebJobs.Host. It also adds rich diagnostics capabilities which makes it easier to monitor the WebJobs in the dashboard. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=320971</description>
@@ -1231,7 +1423,11 @@ Microsoft.AspNetCore.Http.HttpResponse</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Azure.WebJobs.Core@3.0.39">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Azure.WebJobs.Core</name>
       <version>3.0.39</version>
       <description>This library simplifies the task of adding background processing to your Microsoft Azure Web Sites. The SDK uses Microsoft Azure Storage, triggering a function in your program when items are added to Queues and Blobs. A dashboard provides rich monitoring and diagnostics for the programs that you write by using the SDK. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=320971</description>
@@ -1256,7 +1452,11 @@ Microsoft.AspNetCore.Http.HttpResponse</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Azure.WebJobs.Logging.ApplicationInsights@3.0.41">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Azure.WebJobs.Logging.ApplicationInsights</name>
       <version>3.0.41</version>
       <description>This package adds Application Insights based logging capabilities to the WebJobs SDK. For more information, please visit https://go.microsoft.com/fwlink/?linkid=2279708.</description>
@@ -1281,7 +1481,11 @@ Microsoft.AspNetCore.Http.HttpResponse</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Bcl.AsyncInterfaces@1.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Bcl.AsyncInterfaces</name>
       <version>1.1.1</version>
       <description>Provides the IAsyncEnumerable&lt;T&gt; and IAsyncDisposable interfaces and helper types for .NET Standard 2.0. This package is not required starting with .NET Standard 2.1 and .NET Core 3.0.
@@ -1310,7 +1514,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Bcl.AsyncInterfaces@6.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Bcl.AsyncInterfaces</name>
       <version>6.0.0</version>
       <description>Provides the IAsyncEnumerable&lt;T&gt; and IAsyncDisposable interfaces and helper types for .NET Standard 2.0. This package is not required starting with .NET Standard 2.1 and .NET Core 3.0.
@@ -1340,7 +1548,11 @@ System.Collections.Generic.IAsyncEnumerator</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Bcl.AsyncInterfaces@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Bcl.AsyncInterfaces</name>
       <version>8.0.0</version>
       <description>Provides the IAsyncEnumerable&lt;T&gt; and IAsyncDisposable interfaces and helper types for .NET Standard 2.0. This package is not required starting with .NET Standard 2.1 and .NET Core 3.0.
@@ -1370,7 +1582,11 @@ System.Collections.Generic.IAsyncEnumerator</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.CSharp@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.CSharp</name>
       <version>4.7.0</version>
       <description>Provides support for compilation and code generation, including dynamic, using the C# language.
@@ -1401,7 +1617,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.ApiDescription.Server@6.0.5">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.ApiDescription.Server</name>
       <version>6.0.5</version>
       <description>MSBuild tasks and targets for build-time Swagger and OpenApi document generation
@@ -1428,7 +1648,11 @@ This package was built from the source code at https://github.com/dotnet/aspnetc
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Caching.Abstractions@1.0.0">
-      <author>Microsoft.Extensions.Caching.Abstractions</author>
+      <authors>
+        <author>
+          <name>Microsoft.Extensions.Caching.Abstractions</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Caching.Abstractions</name>
       <version>1.0.0</version>
       <description>Caching abstractions for in-memory cache and distributed cache.
@@ -1454,7 +1678,11 @@ Microsoft.Extensions.Caching.Memory.IMemoryCache</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Caching.Memory@1.0.0">
-      <author>Microsoft.Extensions.Caching.Memory</author>
+      <authors>
+        <author>
+          <name>Microsoft.Extensions.Caching.Memory</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Caching.Memory</name>
       <version>1.0.0</version>
       <description>In-memory cache implementation of Microsoft.Extensions.Caching.Memory.IMemoryCache.</description>
@@ -1477,7 +1705,11 @@ Microsoft.Extensions.Caching.Memory.IMemoryCache</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration@3.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration</name>
       <version>3.1.0</version>
       <description>Implementation of key-value pair based configuration for Microsoft.Extensions.Configuration. Includes the memory configuration provider.</description>
@@ -1502,7 +1734,11 @@ Microsoft.Extensions.Caching.Memory.IMemoryCache</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration</name>
       <version>8.0.0</version>
       <description>Implementation of key-value pair based configuration for Microsoft.Extensions.Configuration. Includes the memory configuration provider.</description>
@@ -1527,7 +1763,11 @@ Microsoft.Extensions.Caching.Memory.IMemoryCache</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@3.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.Abstractions</name>
       <version>3.1.0</version>
       <description>Abstractions of key-value pair based configuration.
@@ -1558,7 +1798,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.Abstractions</name>
       <version>8.0.0</version>
       <description>Provides abstractions of key-value pair based configuration. Interfaces defined in this package are implemented by classes in Microsoft.Extensions.Configuration and other configuration packages.</description>
@@ -1583,7 +1827,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.Binder@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.Binder</name>
       <version>2.1.1</version>
       <description>Functionality to bind an object to data in configuration providers for Microsoft.Extensions.Configuration.</description>
@@ -1609,7 +1857,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.Binder@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.Binder</name>
       <version>8.0.0</version>
       <description>Provides the functionality to bind an object to data in configuration providers for Microsoft.Extensions.Configuration. This package enables you to represent the configuration data as strongly-typed classes defined in the application code. To bind a configuration, use the Microsoft.Extensions.Configuration.ConfigurationBinder.Get extension method on the IConfiguration object. To use this package, you also need to install a package for the configuration provider, for example, Microsoft.Extensions.Configuration.Json for the JSON provider.</description>
@@ -1634,7 +1886,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.Binder@8.0.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.Binder</name>
       <version>8.0.2</version>
       <description>Provides the functionality to bind an object to data in configuration providers for Microsoft.Extensions.Configuration. This package enables you to represent the configuration data as strongly-typed classes defined in the application code. To bind a configuration, use the Microsoft.Extensions.Configuration.ConfigurationBinder.Get extension method on the IConfiguration object. To use this package, you also need to install a package for the configuration provider, for example, Microsoft.Extensions.Configuration.Json for the JSON provider.</description>
@@ -1659,7 +1915,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.CommandLine@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.CommandLine</name>
       <version>8.0.0</version>
       <description>Command line configuration provider implementation for Microsoft.Extensions.Configuration. This package enables you to read configuration parameters from the command line arguments of your application. You can use CommandLineConfigurationExtensions.AddCommandLine extension method on IConfigurationBuilder to add the command line configuration provider to the configuration builder.</description>
@@ -1684,7 +1944,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.EnvironmentVariables@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.EnvironmentVariables</name>
       <version>2.1.1</version>
       <description>Environment variables configuration provider implementation for Microsoft.Extensions.Configuration.</description>
@@ -1710,7 +1974,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.EnvironmentVariables@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.EnvironmentVariables</name>
       <version>8.0.0</version>
       <description>Environment variables configuration provider implementation for Microsoft.Extensions.Configuration. This package enables you to read configuration parameters from environment variables. You can use EnvironmentVariablesExtensions.AddEnvironmentVariables extension method on IConfigurationBuilder to add the environment variables configuration provider to the configuration builder.</description>
@@ -1735,7 +2003,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.FileExtensions@3.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.FileExtensions</name>
       <version>3.1.0</version>
       <description>Extension methods for configuring file-based configuration providers for Microsoft.Extensions.Configuration.</description>
@@ -1760,7 +2032,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.FileExtensions@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.FileExtensions</name>
       <version>8.0.0</version>
       <description>Provides a base class for file-based configuration providers used with Microsoft.Extensions.Configuration and extension methods for configuring them.</description>
@@ -1785,7 +2061,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.Json@3.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.Json</name>
       <version>3.1.0</version>
       <description>JSON configuration provider implementation for Microsoft.Extensions.Configuration.</description>
@@ -1810,7 +2090,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.Json@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.Json</name>
       <version>8.0.0</version>
       <description>JSON configuration provider implementation for Microsoft.Extensions.Configuration. This package enables you to read your application's settings from a JSON file. You can use JsonConfigurationExtensions.AddJsonFile extension method on IConfigurationBuilder to add the JSON configuration provider to the configuration builder.</description>
@@ -1835,7 +2119,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Configuration.UserSecrets@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Configuration.UserSecrets</name>
       <version>8.0.0</version>
       <description>User secrets configuration provider implementation for Microsoft.Extensions.Configuration. User secrets mechanism enables you to override application configuration settings with values stored in the local secrets file. You can use UserSecretsConfigurationExtensions.AddUserSecrets extension method on IConfigurationBuilder to add user secrets provider to the configuration builder.</description>
@@ -1860,7 +2148,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.DependencyInjection@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.DependencyInjection</name>
       <version>2.1.1</version>
       <description>Default implementation of dependency injection for Microsoft.Extensions.DependencyInjection.</description>
@@ -1886,7 +2178,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.DependencyInjection@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.DependencyInjection</name>
       <version>8.0.0</version>
       <description>Default implementation of dependency injection for Microsoft.Extensions.DependencyInjection.</description>
@@ -1911,7 +2207,11 @@ Microsoft.Extensions.Configuration.IConfigurationSection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.DependencyInjection.Abstractions</name>
       <version>8.0.1</version>
       <description>Abstractions for dependency injection.
@@ -1939,7 +2239,11 @@ Microsoft.Extensions.DependencyInjection.IServiceCollection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Diagnostics@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Diagnostics</name>
       <version>8.0.0</version>
       <description>This package includes the default implementation of IMeterFactory and additional extension methods to easily register it with the Dependency Injection framework.</description>
@@ -1964,7 +2268,11 @@ Microsoft.Extensions.DependencyInjection.IServiceCollection</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Diagnostics.Abstractions@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Diagnostics.Abstractions</name>
       <version>8.0.0</version>
       <description>Diagnostic abstractions for Microsoft.Extensions.Diagnostics.
@@ -1997,7 +2305,11 @@ Microsoft.Extensions.Diagnostics.Metrics.MetricsOptions</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Diagnostics.HealthChecks@8.0.8">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Diagnostics.HealthChecks</name>
       <version>8.0.8</version>
       <description>Components for performing health checks in .NET applications
@@ -2029,7 +2341,11 @@ This package was built from the source code at https://github.com/dotnet/aspnetc
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions@8.0.8">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions</name>
       <version>8.0.8</version>
       <description>Abstractions for defining health checks in .NET applications
@@ -2060,7 +2376,11 @@ This package was built from the source code at https://github.com/dotnet/aspnetc
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.FileProviders.Abstractions@3.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.FileProviders.Abstractions</name>
       <version>3.1.0</version>
       <description>Abstractions of files and directories.
@@ -2089,7 +2409,11 @@ Microsoft.Extensions.FileProviders.IFileProvider</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.FileProviders.Abstractions@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.FileProviders.Abstractions</name>
       <version>8.0.0</version>
       <description>Abstractions of files and directories.
@@ -2119,7 +2443,11 @@ Microsoft.Extensions.FileProviders.IFileProvider</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.FileProviders.Physical@3.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.FileProviders.Physical</name>
       <version>3.1.0</version>
       <description>File provider for physical files for Microsoft.Extensions.FileProviders.</description>
@@ -2144,7 +2472,11 @@ Microsoft.Extensions.FileProviders.IFileProvider</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.FileProviders.Physical@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.FileProviders.Physical</name>
       <version>8.0.0</version>
       <description>File provider for physical files for Microsoft.Extensions.FileProviders.</description>
@@ -2169,7 +2501,11 @@ Microsoft.Extensions.FileProviders.IFileProvider</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.FileSystemGlobbing@3.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.FileSystemGlobbing</name>
       <version>3.1.0</version>
       <description>File system globbing to find files matching a specified pattern.</description>
@@ -2194,7 +2530,11 @@ Microsoft.Extensions.FileProviders.IFileProvider</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.FileSystemGlobbing@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.FileSystemGlobbing</name>
       <version>8.0.0</version>
       <description>File system globbing to find files matching a specified pattern.</description>
@@ -2219,7 +2559,11 @@ Microsoft.Extensions.FileProviders.IFileProvider</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Hosting@2.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Hosting</name>
       <version>2.1.0</version>
       <description>.NET Core hosting and startup infrastructures for applications.</description>
@@ -2245,7 +2589,11 @@ Microsoft.Extensions.FileProviders.IFileProvider</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Hosting@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Hosting</name>
       <version>8.0.0</version>
       <description>Hosting and startup infrastructures for applications.</description>
@@ -2270,7 +2618,11 @@ Microsoft.Extensions.FileProviders.IFileProvider</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Hosting.Abstractions</name>
       <version>2.1.1</version>
       <description>.NET Core hosting and startup abstractions for applications.</description>
@@ -2296,7 +2648,11 @@ Microsoft.Extensions.FileProviders.IFileProvider</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Hosting.Abstractions</name>
       <version>8.0.0</version>
       <description>Hosting and startup abstractions for applications.</description>
@@ -2321,7 +2677,11 @@ Microsoft.Extensions.FileProviders.IFileProvider</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Http@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Http</name>
       <version>8.0.0</version>
       <description>The HttpClient factory is a pattern for configuring and retrieving named HttpClients in a composable way. The HttpClient factory provides extensibility to plug in DelegatingHandlers that address cross-cutting concerns such as service location, load balancing, and reliability. The default HttpClient factory provides built-in diagnostics and logging and manages the lifetimes of connections in a performant way.
@@ -2349,7 +2709,11 @@ System.Net.Http.IHttpClientFactory</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Logging@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Logging</name>
       <version>2.1.1</version>
       <description>Logging infrastructure default implementation for Microsoft.Extensions.Logging.</description>
@@ -2375,7 +2739,11 @@ System.Net.Http.IHttpClientFactory</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Logging@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Logging</name>
       <version>8.0.0</version>
       <description>Logging infrastructure default implementation for Microsoft.Extensions.Logging.</description>
@@ -2400,7 +2768,11 @@ System.Net.Http.IHttpClientFactory</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Logging.Abstractions</name>
       <version>2.1.1</version>
       <description>Logging abstractions for Microsoft.Extensions.Logging.
@@ -2434,7 +2806,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@8.0.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Logging.Abstractions</name>
       <version>8.0.1</version>
       <description>Logging abstractions for Microsoft.Extensions.Logging.
@@ -2468,7 +2844,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Logging.ApplicationInsights@2.21.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Logging.ApplicationInsights</name>
       <version>2.21.0</version>
       <description>Application Insights ILogger allows forwarding events from ILogger to Application Insights. Application Insights will collect your logs from multiple sources and provide rich powerful search capabilities. Privacy statement: https://go.microsoft.com/fwlink/?LinkId=512156</description>
@@ -2493,7 +2873,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Logging.Configuration@2.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Logging.Configuration</name>
       <version>2.1.0</version>
       <description>Configuration support for Microsoft.Extensions.Logging.</description>
@@ -2519,7 +2903,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Logging.Configuration@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Logging.Configuration</name>
       <version>8.0.0</version>
       <description>Configuration support for Microsoft.Extensions.Logging.</description>
@@ -2544,7 +2932,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Logging.Console@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Logging.Console</name>
       <version>8.0.0</version>
       <description>Console logger provider implementation for Microsoft.Extensions.Logging.</description>
@@ -2569,7 +2961,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Logging.Debug@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Logging.Debug</name>
       <version>8.0.0</version>
       <description>Debug output logger provider implementation for Microsoft.Extensions.Logging. This logger logs messages to a debugger monitor by writing messages with System.Diagnostics.Debug.WriteLine().</description>
@@ -2594,7 +2990,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Logging.EventLog@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Logging.EventLog</name>
       <version>8.0.0</version>
       <description>Windows Event Log logger provider implementation for Microsoft.Extensions.Logging.</description>
@@ -2619,7 +3019,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Logging.EventSource@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Logging.EventSource</name>
       <version>8.0.0</version>
       <description>EventSource/EventListener logger provider implementation for Microsoft.Extensions.Logging.</description>
@@ -2644,7 +3048,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.ObjectPool@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.ObjectPool</name>
       <version>2.1.1</version>
       <description>A simple object pool implementation.</description>
@@ -2670,7 +3078,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Options@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Options</name>
       <version>2.1.1</version>
       <description>Provides a strongly typed way of specifying and accessing settings using dependency injection.</description>
@@ -2696,7 +3108,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Options@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Options</name>
       <version>8.0.0</version>
       <description>Provides a strongly typed way of specifying and accessing settings using dependency injection.</description>
@@ -2721,7 +3137,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Options@8.0.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Options</name>
       <version>8.0.2</version>
       <description>Provides a strongly typed way of specifying and accessing settings using dependency injection.</description>
@@ -2746,7 +3166,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Options.ConfigurationExtensions@2.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Options.ConfigurationExtensions</name>
       <version>2.1.0</version>
       <description>Provides additional configuration specific functionality related to Options.</description>
@@ -2772,7 +3196,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Options.ConfigurationExtensions@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Options.ConfigurationExtensions</name>
       <version>8.0.0</version>
       <description>Provides additional configuration specific functionality related to Options.</description>
@@ -2797,7 +3225,11 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Primitives@3.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Primitives</name>
       <version>3.1.0</version>
       <description>Primitives shared by framework extensions. Commonly used types include:
@@ -2825,7 +3257,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Primitives@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Extensions.Primitives</name>
       <version>8.0.0</version>
       <description>Primitives shared by framework extensions. Commonly used types include:
@@ -2855,7 +3291,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Graph@5.58.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Graph</name>
       <version>5.58.0</version>
       <description>Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience.</description>
@@ -2881,7 +3321,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Graph.Core@3.1.21">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Graph.Core</name>
       <version>3.1.21</version>
       <description>Microsoft Graph Core Client Library implements core functionality used by Microsoft Graph client libraries.</description>
@@ -2907,7 +3351,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Identity.Client@4.61.3">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Identity.Client</name>
       <version>4.61.3</version>
       <description>This package contains the binaries of the Microsoft Authentication Library for .NET (MSAL.NET).
@@ -2933,7 +3381,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Identity.Client@4.64.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Identity.Client</name>
       <version>4.64.1</version>
       <description>This package contains the binaries of the Microsoft Authentication Library for .NET (MSAL.NET).
@@ -2959,7 +3411,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Identity.Client.Extensions.Msal@4.61.3">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Identity.Client.Extensions.Msal</name>
       <version>4.61.3</version>
       <description>This package contains the public client (desktop) caching to Microsoft Authentication Library for .NET (MSAL.NET)</description>
@@ -2984,7 +3440,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@6.35.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.IdentityModel.Abstractions</name>
       <version>6.35.0</version>
       <description>A package containing thin abstractions for Microsoft.IdentityModel.</description>
@@ -3009,7 +3469,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Abstractions@8.0.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.IdentityModel.Abstractions</name>
       <version>8.0.2</version>
       <description>A package containing thin abstractions for Microsoft.IdentityModel.</description>
@@ -3034,7 +3498,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@7.1.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.IdentityModel.JsonWebTokens</name>
       <version>7.1.2</version>
       <description>Includes types that provide support for creating, serializing and validating JSON Web Tokens. This is a newer, faster version of System.IdentityModel.Tokens.Jwt that has additional functionality.</description>
@@ -3059,7 +3527,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.JsonWebTokens@8.0.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.IdentityModel.JsonWebTokens</name>
       <version>8.0.2</version>
       <description>Includes types that provide support for creating, serializing and validating JSON Web Tokens. This is a newer, faster version of System.IdentityModel.Tokens.Jwt that has additional functionality.</description>
@@ -3084,7 +3556,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Logging@8.0.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.IdentityModel.Logging</name>
       <version>8.0.2</version>
       <description>Includes Event Source based logging support.</description>
@@ -3109,7 +3585,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Protocols@7.1.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.IdentityModel.Protocols</name>
       <version>7.1.2</version>
       <description>Provides base protocol support for OpenIdConnect and WsFederation.</description>
@@ -3134,7 +3614,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Protocols@8.0.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.IdentityModel.Protocols</name>
       <version>8.0.2</version>
       <description>Provides base protocol support for OpenIdConnect and WsFederation.</description>
@@ -3159,7 +3643,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@7.1.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.IdentityModel.Protocols.OpenIdConnect</name>
       <version>7.1.2</version>
       <description>Includes types that provide support for OpenIdConnect protocol.</description>
@@ -3184,7 +3672,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Protocols.OpenIdConnect@8.0.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.IdentityModel.Protocols.OpenIdConnect</name>
       <version>8.0.2</version>
       <description>Includes types that provide support for OpenIdConnect protocol.</description>
@@ -3209,7 +3701,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Tokens@7.1.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.IdentityModel.Tokens</name>
       <version>7.1.2</version>
       <description>Includes types that provide support for SecurityTokens, Cryptographic operations: Signing, Verifying Signatures, Encryption.</description>
@@ -3234,7 +3730,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Tokens@8.0.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.IdentityModel.Tokens</name>
       <version>8.0.2</version>
       <description>Includes types that provide support for SecurityTokens, Cryptographic operations: Signing, Verifying Signatures, Encryption.</description>
@@ -3259,7 +3759,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.IdentityModel.Validators@8.0.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.IdentityModel.Validators</name>
       <version>8.0.2</version>
       <description>Includes types that provide token validators.</description>
@@ -3284,7 +3788,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Abstractions@1.12.3">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Kiota.Abstractions</name>
       <version>1.12.3</version>
       <description>Abstractions library for the Kiota generated SDKs in dotnet.</description>
@@ -3309,7 +3817,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Authentication.Azure@1.12.3">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Kiota.Authentication.Azure</name>
       <version>1.12.3</version>
       <description>Kiota authentication provider implementation with Azure Identity.</description>
@@ -3334,7 +3846,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Http.HttpClientLibrary@1.12.3">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Kiota.Http.HttpClientLibrary</name>
       <version>1.12.3</version>
       <description>Kiota Http provider implementation for dotnet with HttpClient.</description>
@@ -3359,7 +3875,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Serialization.Form@1.12.3">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Kiota.Serialization.Form</name>
       <version>1.12.3</version>
       <description>Kiota URI form encoded serialization provider.</description>
@@ -3384,7 +3904,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Serialization.Json@1.12.3">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Kiota.Serialization.Json</name>
       <version>1.12.3</version>
       <description>Kiota JSON serialization provider implementation with System.Text.Json.</description>
@@ -3409,7 +3933,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Serialization.Multipart@1.12.3">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Kiota.Serialization.Multipart</name>
       <version>1.12.3</version>
       <description>Kiota Multipart serialization provider implementation.</description>
@@ -3434,7 +3962,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Kiota.Serialization.Text@1.12.3">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Kiota.Serialization.Text</name>
       <version>1.12.3</version>
       <description>Text/plain serialization provider implementation for Kiota based SDKs.</description>
@@ -3459,7 +3991,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Net.Http.Headers@2.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Net.Http.Headers</name>
       <version>2.1.1</version>
       <description>HTTP header parser implementations.</description>
@@ -3485,7 +4021,11 @@ Microsoft.Extensions.Primitives.StringSegment</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.NETCore.Platforms@1.1.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.NETCore.Platforms</name>
       <version>1.1.1</version>
       <description>Provides runtime information required to resolve target framework, platform, and runtime specific implementations of .NETCore packages. 
@@ -3509,7 +4049,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.NETCore.Platforms@2.1.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.NETCore.Platforms</name>
       <version>2.1.2</version>
       <description>Provides runtime information required to resolve target framework, platform, and runtime specific implementations of .NETCore packages. 
@@ -3534,7 +4078,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.NETCore.Platforms@3.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.NETCore.Platforms</name>
       <version>3.1.0</version>
       <description>Provides runtime information required to resolve target framework, platform, and runtime specific implementations of .NETCore packages. 
@@ -3557,7 +4105,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.NETCore.Platforms@5.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.NETCore.Platforms</name>
       <version>5.0.0</version>
       <description>Provides runtime information required to resolve target framework, platform, and runtime specific implementations of .NETCore packages. 
@@ -3583,7 +4135,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.NETCore.Targets@1.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.NETCore.Targets</name>
       <version>1.1.0</version>
       <description>Provides supporting infrastructure for portable projects: support identifiers that define framework and runtime for support targets and packages that reference the minimum supported package versions when targeting these. 
@@ -3607,7 +4163,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.NETCore.Targets@1.1.3">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.NETCore.Targets</name>
       <version>1.1.3</version>
       <description>Provides supporting infrastructure for portable projects: support identifiers that define framework and runtime for support targets and packages that reference the minimum supported package versions when targeting these. 
@@ -3631,7 +4191,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.OpenApi@1.6.14">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.OpenApi</name>
       <version>1.6.14</version>
       <description>.NET models with JSON and YAML writers for OpenAPI specification</description>
@@ -3656,7 +4220,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Win32.Registry@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Win32.Registry</name>
       <version>4.7.0</version>
       <description>Provides support for accessing and modifying the Windows Registry.
@@ -3687,7 +4255,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Win32.Registry@5.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Win32.Registry</name>
       <version>5.0.0</version>
       <description>Provides support for accessing and modifying the Windows Registry.
@@ -3721,7 +4293,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Microsoft.Win32.SystemEvents@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>Microsoft.Win32.SystemEvents</name>
       <version>4.7.0</version>
       <description>Provides access to Windows system event notifications.
@@ -3748,7 +4324,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/MimeKit@4.7.1">
-      <author>Jeffrey Stedfast</author>
+      <authors>
+        <author>
+          <name>Jeffrey Stedfast</name>
+        </author>
+      </authors>
       <name>MimeKit</name>
       <version>4.7.1</version>
       <description>An Open Source library for creating and parsing MIME, S/MIME and PGP messages on desktop and mobile platforms.</description>
@@ -3773,7 +4353,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/MongoDB.Bson@2.28.0">
-      <author>MongoDB Inc.</author>
+      <authors>
+        <author>
+          <name>MongoDB Inc.</name>
+        </author>
+      </authors>
       <name>MongoDB.Bson</name>
       <version>2.28.0</version>
       <description>MongoDB's Official Bson Library.</description>
@@ -3798,7 +4382,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/MongoDB.Driver@2.28.0">
-      <author>MongoDB Inc.</author>
+      <authors>
+        <author>
+          <name>MongoDB Inc.</name>
+        </author>
+      </authors>
       <name>MongoDB.Driver</name>
       <version>2.28.0</version>
       <description>Official .NET driver for MongoDB.</description>
@@ -3823,7 +4411,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/MongoDB.Driver.Core@2.28.0">
-      <author>MongoDB Inc.</author>
+      <authors>
+        <author>
+          <name>MongoDB Inc.</name>
+        </author>
+      </authors>
       <name>MongoDB.Driver.Core</name>
       <version>2.28.0</version>
       <description>Core Component of the Official MongoDB .NET Driver.</description>
@@ -3848,7 +4440,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/MongoDB.Libmongocrypt@1.11.0">
-      <author>MongoDB Inc.</author>
+      <authors>
+        <author>
+          <name>MongoDB Inc.</name>
+        </author>
+      </authors>
       <name>MongoDB.Libmongocrypt</name>
       <version>1.11.0</version>
       <description>Libmongocrypt wrapper for the .NET driver.</description>
@@ -3871,7 +4467,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Moq@4.20.72">
-      <author>Daniel Cazzulino, kzu</author>
+      <authors>
+        <author>
+          <name>Daniel Cazzulino, kzu</name>
+        </author>
+      </authors>
       <name>Moq</name>
       <version>4.20.72</version>
       <description>Moq is the most popular and friendly mocking framework for .NET.</description>
@@ -3896,7 +4496,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/MSTest.TestFramework@3.6.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>MSTest.TestFramework</name>
       <version>3.6.0</version>
       <description>MSTest is Microsoft supported Test Framework.
@@ -3930,7 +4534,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Newtonsoft.Json@11.0.1">
-      <author>James Newton-King</author>
+      <authors>
+        <author>
+          <name>James Newton-King</name>
+        </author>
+      </authors>
       <name>Newtonsoft.Json</name>
       <version>11.0.1</version>
       <description>Json.NET is a popular high-performance JSON framework for .NET</description>
@@ -3956,7 +4564,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Newtonsoft.Json@12.0.2">
-      <author>James Newton-King</author>
+      <authors>
+        <author>
+          <name>James Newton-King</name>
+        </author>
+      </authors>
       <name>Newtonsoft.Json</name>
       <version>12.0.2</version>
       <description>Json.NET is a popular high-performance JSON framework for .NET</description>
@@ -3981,7 +4593,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Newtonsoft.Json@13.0.1">
-      <author>James Newton-King</author>
+      <authors>
+        <author>
+          <name>James Newton-King</name>
+        </author>
+      </authors>
       <name>Newtonsoft.Json</name>
       <version>13.0.1</version>
       <description>Json.NET is a popular high-performance JSON framework for .NET</description>
@@ -4006,7 +4622,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/OllamaSharp@2.1.3">
-      <author>OllamaSharp</author>
+      <authors>
+        <author>
+          <name>OllamaSharp</name>
+        </author>
+      </authors>
       <name>OllamaSharp</name>
       <version>2.1.3</version>
       <description>This project adds bindings to the Ollama API to include offline LLMs into your .NET apps</description>
@@ -4032,7 +4652,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/OpenSearch.Client@1.8.0">
-      <author>OpenSearch and contributors</author>
+      <authors>
+        <author>
+          <name>OpenSearch and contributors</name>
+        </author>
+      </authors>
       <name>OpenSearch.Client</name>
       <version>1.8.0</version>
       <description>Strongly typed interface to OpenSearch. Fluent and classic object initializer mappings of requests and 
@@ -4058,7 +4682,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/OpenSearch.Net@1.8.0">
-      <author>OpenSearch and contributors</author>
+      <authors>
+        <author>
+          <name>OpenSearch and contributors</name>
+        </author>
+      </authors>
       <name>OpenSearch.Net</name>
       <version>1.8.0</version>
       <description>Exposes all the OpenSearch API endpoints but leaves you in control of building the request and response bodies.
@@ -4084,7 +4712,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Qdrant.Client@1.11.0">
-      <author>Qdrant and Contributors</author>
+      <authors>
+        <author>
+          <name>Qdrant and Contributors</name>
+        </author>
+      </authors>
       <name>Qdrant.Client</name>
       <version>1.11.0</version>
       <description>.NET client for Qdrant vector database</description>
@@ -4109,7 +4741,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/RabbitMQ.Client@6.8.1">
-      <author>VMware</author>
+      <authors>
+        <author>
+          <name>VMware</name>
+        </author>
+      </authors>
       <name>RabbitMQ.Client</name>
       <version>6.8.1</version>
       <description>The RabbitMQ .NET client is the official client library for C# (and, implicitly, other .NET languages)</description>
@@ -4121,8 +4757,6 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         <license>
           <id>Apache-2.0</id>
         </license>
-      </licenses>
-      <licenses>
         <license>
           <id>MPL-2.0</id>
         </license>
@@ -4139,7 +4773,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/ReverseMarkdown@4.6.0">
-      <author>Babu Annamalai</author>
+      <authors>
+        <author>
+          <name>Babu Annamalai</name>
+        </author>
+      </authors>
       <name>ReverseMarkdown</name>
       <version>4.6.0</version>
       <description>ReverseMarkdown is a Html to Markdown converter library in c#</description>
@@ -4163,7 +4801,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl</name>
       <version>4.3.2</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4187,7 +4829,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl</name>
       <version>4.3.2</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4211,7 +4857,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl</name>
       <version>4.3.2</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4235,7 +4885,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.native.System@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.native.System</name>
       <version>4.3.0</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4259,7 +4913,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.native.System.Net.Http@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.native.System.Net.Http</name>
       <version>4.3.0</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4283,7 +4941,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.native.System.Security.Cryptography.Apple@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.native.System.Security.Cryptography.Apple</name>
       <version>4.3.0</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4307,7 +4969,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.native.System.Security.Cryptography.OpenSsl@4.3.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.native.System.Security.Cryptography.OpenSsl</name>
       <version>4.3.2</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4331,7 +4997,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl</name>
       <version>4.3.2</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4355,7 +5025,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl</name>
       <version>4.3.2</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4379,7 +5053,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple</name>
       <version>4.3.0</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4403,7 +5081,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl</name>
       <version>4.3.2</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4427,7 +5109,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl</name>
       <version>4.3.2</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4451,7 +5137,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl</name>
       <version>4.3.2</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4475,7 +5165,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl</name>
       <version>4.3.2</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4499,7 +5193,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl@4.3.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl</name>
       <version>4.3.2</version>
       <description>Internal implementation package not meant for direct consumption.  Please do not reference directly. 
@@ -4523,7 +5221,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/SharpCompress@0.30.1">
-      <author>Adam Hathcock</author>
+      <authors>
+        <author>
+          <name>Adam Hathcock</name>
+        </author>
+      </authors>
       <name>SharpCompress</name>
       <version>0.30.1</version>
       <description>SharpCompress is a compression library for NET Standard 2.0/2.1/NET 5.0 that can unrar, decompress 7zip, decompress xz, zip/unzip, tar/untar lzip/unlzip, bzip2/unbzip2 and gzip/ungzip with forward-only reading and file random access APIs. Write support for zip/tar/bzip2/gzip is implemented.</description>
@@ -4547,7 +5249,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Snappier@1.0.0">
-      <author>btburnett3</author>
+      <authors>
+        <author>
+          <name>btburnett3</name>
+        </author>
+      </authors>
       <name>Snappier</name>
       <version>1.0.0</version>
       <description>A near-C++ performance implementation of the Snappy compression algorithm for .NET. Snappier is ported to C# directly
@@ -4575,7 +5281,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Std.UriTemplate@1.0.6">
-      <author>Std.UriTemplate</author>
+      <authors>
+        <author>
+          <name>Std.UriTemplate</name>
+        </author>
+      </authors>
       <name>Std.UriTemplate</name>
       <version>1.0.6</version>
       <description>Std.Uritemplate for .NET - Implementation of RFC 6570 (Level 4)</description>
@@ -4596,7 +5306,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Stef.Validation@0.1.1">
-      <author>Stef Heyenrath</author>
+      <authors>
+        <author>
+          <name>Stef Heyenrath</name>
+        </author>
+      </authors>
       <name>Stef.Validation</name>
       <version>0.1.1</version>
       <description>Argument validation like: Guard.NotNull, Guard.NotNullOrEmpty, Guard.NotNullOrWhiteSpace, Guard.Condition en Guard.HasNoNulls.</description>
@@ -4621,7 +5335,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Swashbuckle.AspNetCore@6.7.3">
-      <author>domaindrivendev</author>
+      <authors>
+        <author>
+          <name>domaindrivendev</name>
+        </author>
+      </authors>
       <name>Swashbuckle.AspNetCore</name>
       <version>6.7.3</version>
       <description>Swagger tools for documenting APIs built on ASP.NET Core</description>
@@ -4645,7 +5363,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Swashbuckle.AspNetCore.Swagger@6.7.3">
-      <author>domaindrivendev</author>
+      <authors>
+        <author>
+          <name>domaindrivendev</name>
+        </author>
+      </authors>
       <name>Swashbuckle.AspNetCore.Swagger</name>
       <version>6.7.3</version>
       <description>Middleware to expose Swagger JSON endpoints from APIs built on ASP.NET Core</description>
@@ -4670,7 +5392,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Swashbuckle.AspNetCore.SwaggerGen@6.7.3">
-      <author>domaindrivendev</author>
+      <authors>
+        <author>
+          <name>domaindrivendev</name>
+        </author>
+      </authors>
       <name>Swashbuckle.AspNetCore.SwaggerGen</name>
       <version>6.7.3</version>
       <description>Swagger Generator for APIs built on ASP.NET Core</description>
@@ -4695,7 +5421,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/Swashbuckle.AspNetCore.SwaggerUI@6.7.3">
-      <author>domaindrivendev</author>
+      <authors>
+        <author>
+          <name>domaindrivendev</name>
+        </author>
+      </authors>
       <name>Swashbuckle.AspNetCore.SwaggerUI</name>
       <version>6.7.3</version>
       <description>Middleware to expose an embedded version of the swagger-ui from an ASP.NET Core application</description>
@@ -4720,7 +5450,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Buffers@4.5.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Buffers</name>
       <version>4.5.0</version>
       <description>Provides resource pooling of any type for performance-critical applications that allocate and deallocate objects frequently.
@@ -4749,7 +5483,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Buffers@4.5.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Buffers</name>
       <version>4.5.1</version>
       <description>Provides resource pooling of any type for performance-critical applications that allocate and deallocate objects frequently.
@@ -4778,7 +5516,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.ClientModel@1.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.ClientModel</name>
       <version>1.0.0</version>
       <description>Contains building blocks for clients that call cloud services.</description>
@@ -4803,7 +5545,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Collections@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Collections</name>
       <version>4.3.0</version>
       <description>Provides classes that define generic collections, which allow developers to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
@@ -4839,7 +5585,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Collections.Concurrent@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Collections.Concurrent</name>
       <version>4.3.0</version>
       <description>Provides several thread-safe collection classes that should be used in place of the corresponding types in the System.Collections.NonGeneric and System.Collections packages whenever multiple threads are accessing the collection concurrently.
@@ -4871,7 +5621,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.ComponentModel.Annotations@4.4.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.ComponentModel.Annotations</name>
       <version>4.4.0</version>
       <description>Provides attributes that are used to define metadata for objects used as data sources.
@@ -4909,7 +5663,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Configuration.ConfigurationManager@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Configuration.ConfigurationManager</name>
       <version>4.7.0</version>
       <description>Provides types that support using configuration files.
@@ -4937,7 +5695,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Diagnostics.Debug@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Diagnostics.Debug</name>
       <version>4.3.0</version>
       <description>Provides classes and attributes that allows basic interaction with a debugger.
@@ -4973,7 +5735,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Diagnostics.DiagnosticSource@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Diagnostics.DiagnosticSource</name>
       <version>4.3.0</version>
       <description>Provides Classes that allow you to decouple code logging rich (unserializable) diagnostics/telemetry (e.g. framework) from code that consumes it (e.g. tools)
@@ -5000,7 +5766,11 @@ System.Diagnostics.DiagnosticSource</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Diagnostics.DiagnosticSource@6.0.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Diagnostics.DiagnosticSource</name>
       <version>6.0.1</version>
       <description>Provides Classes that allow you to decouple code logging rich (unserializable) diagnostics/telemetry (e.g. framework) from code that consumes it (e.g. tools)
@@ -5029,7 +5799,11 @@ System.Diagnostics.DiagnosticSource</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Diagnostics.DiagnosticSource@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Diagnostics.DiagnosticSource</name>
       <version>8.0.0</version>
       <description>Provides Classes that allow you to decouple code logging rich (unserializable) diagnostics/telemetry (e.g. framework) from code that consumes it (e.g. tools)
@@ -5058,7 +5832,11 @@ System.Diagnostics.DiagnosticSource</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Diagnostics.EventLog@6.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Diagnostics.EventLog</name>
       <version>6.0.0</version>
       <description>Provides the System.Diagnostics.EventLog class, which allows the applications to use the windows event log service.
@@ -5086,7 +5864,11 @@ System.Diagnostics.EventLog</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Diagnostics.EventLog@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Diagnostics.EventLog</name>
       <version>8.0.0</version>
       <description>Provides the System.Diagnostics.EventLog class, which allows the applications to use the Windows event log service.
@@ -5114,7 +5896,11 @@ System.Diagnostics.EventLog</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Diagnostics.PerformanceCounter@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Diagnostics.PerformanceCounter</name>
       <version>4.7.0</version>
       <description>Provides the System.Diagnostics.PerformanceCounter class, which allows access to Windows performance counters.
@@ -5141,7 +5927,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Diagnostics.TraceSource@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Diagnostics.TraceSource</name>
       <version>4.3.0</version>
       <description>Provides classes that help you trace the execution of your code. Developers should prefer the classes in the ETW-based System.Diagnostics.Tracing package.
@@ -5174,7 +5964,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Diagnostics.Tracing@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Diagnostics.Tracing</name>
       <version>4.3.0</version>
       <description>Provides class that enable you to create high performance tracing events to be captured by event tracing for Windows (ETW).
@@ -5209,7 +6003,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Drawing.Common@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Drawing.Common</name>
       <version>4.7.0</version>
       <description>Provides access to GDI+ graphics functionality.
@@ -5241,7 +6039,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Formats.Asn1@8.0.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Formats.Asn1</name>
       <version>8.0.1</version>
       <description>Provides classes that can read and write the ASN.1 BER, CER, and DER data formats.
@@ -5270,7 +6072,11 @@ System.Formats.Asn1.AsnWriter</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Globalization@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Globalization</name>
       <version>4.3.0</version>
       <description>Provides classes that define culture-related information, including language, country/region, calendars in use, format patterns for dates, currency, and numbers, and sort order for strings.
@@ -5306,7 +6112,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Globalization.Calendars@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Globalization.Calendars</name>
       <version>4.3.0</version>
       <description>Provides classes for performing date calculations using specific calendars, including the Gregorian, Julian, Hijri and Korean calendars.
@@ -5343,7 +6153,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Globalization.Extensions@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Globalization.Extensions</name>
       <version>4.3.0</version>
       <description>Provides classes for performing Unicode string normalization, culture-specific string comparisons and support the use of non-ASCII characters for Internet domain names.
@@ -5373,7 +6187,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.IdentityModel.Tokens.Jwt@7.1.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.IdentityModel.Tokens.Jwt</name>
       <version>7.1.2</version>
       <description>Includes types that provide support for creating, serializing and validating JSON Web Tokens. As of IdentityModel 7x, this is a legacy tool that should be replaced with Microsoft.IdentityModel.JsonWebTokens.</description>
@@ -5398,7 +6216,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.IdentityModel.Tokens.Jwt@8.0.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.IdentityModel.Tokens.Jwt</name>
       <version>8.0.2</version>
       <description>Includes types that provide support for creating, serializing and validating JSON Web Tokens. As of IdentityModel 7x, this is a legacy tool that should be replaced with Microsoft.IdentityModel.JsonWebTokens.</description>
@@ -5423,7 +6245,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.IO@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.IO</name>
       <version>4.3.0</version>
       <description>Provides base input and output (I/O) types, including System.IO.Stream, System.IO.StreamReader and System.IO.StreamWriter, that allow reading and writing to data streams
@@ -5458,7 +6284,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.IO.FileSystem@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.IO.FileSystem</name>
       <version>4.3.0</version>
       <description>Provides types that allow reading and writing to files and types that provide basic file and directory support.
@@ -5493,7 +6323,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.IO.FileSystem.AccessControl@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.IO.FileSystem.AccessControl</name>
       <version>4.7.0</version>
       <description>Provides types for managing access and audit control lists for files and directories.
@@ -5526,7 +6360,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.IO.FileSystem.Primitives@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.IO.FileSystem.Primitives</name>
       <version>4.3.0</version>
       <description>Provides common enumerations and exceptions for path-based I/O libraries.
@@ -5560,7 +6398,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.IO.Hashing@6.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.IO.Hashing</name>
       <version>6.0.0</version>
       <description>Provides non-cryptographic hash algorithms, such as CRC-32.
@@ -5589,7 +6431,11 @@ System.IO.Hashing.XxHash32</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Linq@4.1.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Linq</name>
       <version>4.1.0</version>
       <description>Provides classes and interfaces that supports queries that use Language-Integrated Query (LINQ).
@@ -5621,7 +6467,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Linq@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Linq</name>
       <version>4.3.0</version>
       <description>Provides classes and interfaces that supports queries that use Language-Integrated Query (LINQ).
@@ -5653,7 +6503,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Memory@4.5.4">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Memory</name>
       <version>4.5.4</version>
       <description>Provides types for efficient representation and pooling of managed, stack, and native memory segments and sequences of such segments, along with primitives to parse and format UTF-8 encoded text stored in those memory segments.
@@ -5689,7 +6543,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Memory@4.5.5">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Memory</name>
       <version>4.5.5</version>
       <description>Provides types for efficient representation and pooling of managed, stack, and native memory segments and sequences of such segments, along with primitives to parse and format UTF-8 encoded text stored in those memory segments.
@@ -5725,7 +6583,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Memory.Data@1.0.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Memory.Data</name>
       <version>1.0.2</version>
       <description>Contains the BinaryData type, which is useful for converting between strings, streams, JSON, and bytes.</description>
@@ -5750,7 +6612,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Memory.Data@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Memory.Data</name>
       <version>8.0.0</version>
       <description>A lightweight abstraction for a payload of bytes. Provides methods for converting between strings, streams, JSON, and bytes.
@@ -5778,7 +6644,11 @@ System.BinaryData</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Net.Http@4.3.4">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Net.Http</name>
       <version>4.3.4</version>
       <description>Provides a programming interface for modern HTTP applications, including HTTP client components that allow applications to consume web services over HTTP and HTTP components that can be used by both clients and servers for parsing HTTP headers.
@@ -5815,7 +6685,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Net.Primitives@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Net.Primitives</name>
       <version>4.3.0</version>
       <description>Provides common types for network-based libraries, including System.Net.IPAddress, System.Net.IPEndPoint, and System.Net.CookieContainer.
@@ -5852,7 +6726,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Numerics.Vectors@4.5.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Numerics.Vectors</name>
       <version>4.5.0</version>
       <description>Provides hardware-accelerated numeric types, suitable for high-performance processing and graphics applications.
@@ -5888,7 +6766,11 @@ System.Numerics.Vector&lt;T&gt;
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Reflection@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Reflection</name>
       <version>4.3.0</version>
       <description>Provides types that retrieve information about assemblies, modules, members, parameters, and other entities in managed code by examining their metadata. These types also can be used to manipulate instances of loaded types, for example to hook up events or to invoke methods.
@@ -5924,7 +6806,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Reflection.Metadata@1.6.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Reflection.Metadata</name>
       <version>1.6.0</version>
       <description>This packages provides a low-level .NET (ECMA-335) metadata reader and writer. It's geared for performance and is the ideal choice for building higher-level libraries that intend to provide their own object model, such as compilers.
@@ -5957,7 +6843,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Reflection.Primitives@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Reflection.Primitives</name>
       <version>4.3.0</version>
       <description>Provides common enumerations for reflection-based libraries.
@@ -5994,7 +6884,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Reflection.TypeExtensions@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Reflection.TypeExtensions</name>
       <version>4.7.0</version>
       <description>Provides extensions methods for System.Type that are designed to be source-compatible with older framework reflection-based APIs.
@@ -6022,7 +6916,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Resources.ResourceManager@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Resources.ResourceManager</name>
       <version>4.3.0</version>
       <description>Provides classes and attributes that allow developers to create, store, and manage various culture-specific resources used in an application.
@@ -6053,7 +6951,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Runtime@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Runtime</name>
       <version>4.3.0</version>
       <description>Provides the fundamental primitives, classes and base classes that define commonly-used value and reference data types, events and event handlers, interfaces, attributes, and exceptions. This packages represents the core package, and provides the minimal set of types required to build a managed application.
@@ -6100,7 +7002,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Runtime@4.3.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Runtime</name>
       <version>4.3.1</version>
       <description>Provides the fundamental primitives, classes and base classes that define commonly-used value and reference data types, events and event handlers, interfaces, attributes, and exceptions. This packages represents the core package, and provides the minimal set of types required to build a managed application.
@@ -6147,7 +7053,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Runtime.CompilerServices.Unsafe@4.5.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Runtime.CompilerServices.Unsafe</name>
       <version>4.5.2</version>
       <description>Provides the System.Runtime.CompilerServices.Unsafe class, which provides generic, low-level functionality for manipulating pointers.
@@ -6176,7 +7086,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Runtime.CompilerServices.Unsafe@5.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Runtime.CompilerServices.Unsafe</name>
       <version>5.0.0</version>
       <description>Provides the System.Runtime.CompilerServices.Unsafe class, which provides generic, low-level functionality for manipulating pointers.
@@ -6206,7 +7120,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Runtime.CompilerServices.Unsafe@6.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Runtime.CompilerServices.Unsafe</name>
       <version>6.0.0</version>
       <description>Provides the System.Runtime.CompilerServices.Unsafe class, which provides generic, low-level functionality for manipulating pointers.
@@ -6234,7 +7152,11 @@ System.Runtime.CompilerServices.Unsafe</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Runtime.Extensions@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Runtime.Extensions</name>
       <version>4.3.0</version>
       <description>Provides commonly-used classes for performing mathematical functions, conversions, string comparisons and querying environment information.
@@ -6270,7 +7192,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Runtime.Handles@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Runtime.Handles</name>
       <version>4.3.0</version>
       <description>Provides base classes, including System.Runtime.InteropServices.CriticalHandle and System.Runtime.InteropServices.SafeHandle, for types that represent operating system handles.
@@ -6302,7 +7228,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Runtime.InteropServices@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Runtime.InteropServices</name>
       <version>4.3.0</version>
       <description>Provides types that support COM interop and platform invoke services.
@@ -6334,7 +7264,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Runtime.Numerics@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Runtime.Numerics</name>
       <version>4.3.0</version>
       <description>Provides the numeric types System.Numerics.BigInteger and System.Numerics.Complex, which complement the numeric primitives, such as System.Byte, System.Double and System.Int32.
@@ -6363,7 +7297,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.AccessControl@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.AccessControl</name>
       <version>4.7.0</version>
       <description>Provides base classes that enable managing access and audit control lists on securable objects.
@@ -6394,7 +7332,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.AccessControl@5.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.AccessControl</name>
       <version>5.0.0</version>
       <description>Provides base classes that enable managing access and audit control lists on securable objects.
@@ -6428,7 +7370,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.Cryptography.Algorithms@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.Cryptography.Algorithms</name>
       <version>4.3.0</version>
       <description>Provides base types for cryptographic algorithms, including hashing, encryption, and signing operations.
@@ -6467,7 +7413,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.Cryptography.Cng@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.Cryptography.Cng</name>
       <version>4.3.0</version>
       <description>Provides cryptographic algorithm implementations and key management with Windows Cryptographic Next Generation API (CNG).
@@ -6497,7 +7447,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.Cryptography.Csp@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.Cryptography.Csp</name>
       <version>4.3.0</version>
       <description>Provides cryptographic algorithm implementations and key management with Windows Cryptographic API (CryptoAPI).
@@ -6526,7 +7480,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.Cryptography.Encoding@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.Cryptography.Encoding</name>
       <version>4.3.0</version>
       <description>Provides types for representing Abstract Syntax Notation One (ASN.1)-encoded data.
@@ -6556,7 +7514,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.Cryptography.OpenSsl@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.Cryptography.OpenSsl</name>
       <version>4.3.0</version>
       <description>Provides cryptographic algorithm implementations and key management for non-Windows systems with OpenSSL.
@@ -6584,7 +7546,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.Cryptography.Pkcs@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.Cryptography.Pkcs</name>
       <version>8.0.0</version>
       <description>Provides support for PKCS and CMS algorithms.
@@ -6612,7 +7578,11 @@ System.Security.Cryptography.Pkcs.EnvelopedCms</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.Cryptography.Primitives@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.Cryptography.Primitives</name>
       <version>4.3.0</version>
       <description>Provides common types for the cryptographic libraries.
@@ -6651,7 +7621,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.Cryptography.ProtectedData@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.Cryptography.ProtectedData</name>
       <version>4.7.0</version>
       <description>Provides access to Windows Data Protection Api.
@@ -6679,7 +7653,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.Cryptography.X509Certificates@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.Cryptography.X509Certificates</name>
       <version>4.3.0</version>
       <description>Provides types for reading, exporting and verifying Authenticode X.509 v3 certificates. These certificates are signed with a private key that uniquely and positively identifies the holder of the certificate.
@@ -6716,7 +7694,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.Permissions@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.Permissions</name>
       <version>4.7.0</version>
       <description>Provides types supporting Code Access Security (CAS). 
@@ -6739,7 +7721,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.Principal.Windows@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.Principal.Windows</name>
       <version>4.7.0</version>
       <description>Provides classes for retrieving the current Windows user and for interacting with Windows users and groups.
@@ -6773,7 +7759,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Security.Principal.Windows@5.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Security.Principal.Windows</name>
       <version>5.0.0</version>
       <description>Provides classes for retrieving the current Windows user and for interacting with Windows users and groups.
@@ -6810,7 +7800,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Text.Encoding@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Text.Encoding</name>
       <version>4.3.0</version>
       <description>Provides base abstract encoding classes for converting blocks of characters to and from blocks of bytes.
@@ -6847,7 +7841,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Text.Encoding.CodePages@4.5.1">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Text.Encoding.CodePages</name>
       <version>4.5.1</version>
       <description>Provides support for code-page based encodings, including Windows-1252, Shift-JIS, and GB2312.
@@ -6876,7 +7874,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Text.Encodings.Web@4.7.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Text.Encodings.Web</name>
       <version>4.7.2</version>
       <description>Provides types for encoding and escaping strings for use in JavaScript, HyperText Markup Language (HTML), and uniform resource locators (URL).
@@ -6905,7 +7907,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Text.Encodings.Web@6.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Text.Encodings.Web</name>
       <version>6.0.0</version>
       <description>Provides types for encoding and escaping strings for use in JavaScript, HyperText Markup Language (HTML), and uniform resource locators (URL).
@@ -6935,7 +7941,11 @@ System.Text.Encodings.Web.JavaScriptEncoder</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Text.Encodings.Web@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Text.Encodings.Web</name>
       <version>8.0.0</version>
       <description>Provides types for encoding and escaping strings for use in JavaScript, HyperText Markup Language (HTML), and uniform resource locators (URL).
@@ -6965,7 +7975,11 @@ System.Text.Encodings.Web.JavaScriptEncoder</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Text.Json@4.7.2">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Text.Json</name>
       <version>4.7.2</version>
       <description>Provides high-performance and low-allocating types that serialize objects to JavaScript Object Notation (JSON) text and deserialize JSON text to objects, with UTF-8 support built-in. Also provides types to read and write JSON text encoded as UTF-8, and to create an in-memory document object model (DOM), that is read-only, for random access of the JSON elements within a structured view of the data.
@@ -6996,7 +8010,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Text.Json@5.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Text.Json</name>
       <version>5.0.0</version>
       <description>Provides high-performance and low-allocating types that serialize objects to JavaScript Object Notation (JSON) text and deserialize JSON text to objects, with UTF-8 support built-in. Also provides types to read and write JSON text encoded as UTF-8, and to create an in-memory document object model (DOM), that is read-only, for random access of the JSON elements within a structured view of the data.
@@ -7030,7 +8048,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Text.Json@8.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Text.Json</name>
       <version>8.0.0</version>
       <description>Provides high-performance and low-allocating types that serialize objects to JavaScript Object Notation (JSON) text and deserialize JSON text to objects, with UTF-8 support built-in. Also provides types to read and write JSON text encoded as UTF-8, and to create an in-memory document object model (DOM), that is read-only, for random access of the JSON elements within a structured view of the data.
@@ -7057,7 +8079,11 @@ The System.Text.Json library is built-in as part of the shared framework in .NET
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Text.Json@8.0.4">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Text.Json</name>
       <version>8.0.4</version>
       <description>Provides high-performance and low-allocating types that serialize objects to JavaScript Object Notation (JSON) text and deserialize JSON text to objects, with UTF-8 support built-in. Also provides types to read and write JSON text encoded as UTF-8, and to create an in-memory document object model (DOM), that is read-only, for random access of the JSON elements within a structured view of the data.
@@ -7084,7 +8110,11 @@ The System.Text.Json library is built-in as part of the shared framework in .NET
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Threading@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Threading</name>
       <version>4.3.0</version>
       <description>Provides the fundamental synchronization primitives, including System.Threading.Monitor and System.Threading.Mutex, that are required when writing asynchronous code.
@@ -7119,7 +8149,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Threading.Channels@7.0.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Threading.Channels</name>
       <version>7.0.0</version>
       <description>Provides types for passing data between producers and consumers.
@@ -7148,7 +8182,11 @@ System.Threading.Channel&lt;T&gt;</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Threading.Tasks@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Threading.Tasks</name>
       <version>4.3.0</version>
       <description>Provides types that simplify the work of writing concurrent and asynchronous code.
@@ -7181,7 +8219,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Threading.Tasks.Dataflow@4.8.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Threading.Tasks.Dataflow</name>
       <version>4.8.0</version>
       <description>TPL Dataflow promotes actor/agent-oriented designs through primitives for in-process message passing, dataflow, and pipelining. TDF builds upon the APIs and scheduling infrastructure provided by the Task Parallel Library (TPL), and integrates with the language support for asynchrony provided by C#, Visual Basic, and F#.
@@ -7220,7 +8262,11 @@ System.Threading.Tasks.Dataflow.WriteOnceBlock&lt;T&gt;
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Threading.Tasks.Extensions@4.5.4">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Threading.Tasks.Extensions</name>
       <version>4.5.4</version>
       <description>Provides additional types that simplify the work of writing concurrent and asynchronous code.
@@ -7248,7 +8294,11 @@ System.Threading.Tasks.ValueTask&lt;TResult&gt;
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Threading.Thread@4.3.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Threading.Thread</name>
       <version>4.3.0</version>
       <description>Provides the System.Threading.Thread class, which allows developers to create and control a thread, set its priority, and get its state.
@@ -7278,7 +8328,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/System.Windows.Extensions@4.7.0">
-      <author>Microsoft</author>
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
       <name>System.Windows.Extensions</name>
       <version>4.7.0</version>
       <description>Provides miscellaneous Windows-specific types
@@ -7306,7 +8360,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </externalReferences>
     </component>
     <component type="library" bom-ref="pkg:nuget/ZstdSharp.Port@0.7.3">
-      <author>Oleg Stepanischev</author>
+      <authors>
+        <author>
+          <name>Oleg Stepanischev</name>
+        </author>
+      </authors>
       <name>ZstdSharp.Port</name>
       <version>0.7.3</version>
       <description>Port of zstd compression library to c#</description>
@@ -7332,7 +8390,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     </component>
   </components>
   <dependencies>
-    <dependency ref="Eliassen.Libs@0.2.11-dev-ado-UpdateFramework.6">
+    <dependency ref="Eliassen.Libs@0.2.1-dev-ado-UpdateFramework.1+163">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.1" />
