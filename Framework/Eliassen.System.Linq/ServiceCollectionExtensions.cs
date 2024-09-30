@@ -15,14 +15,25 @@ public static class ServiceCollectionExtensions
     /// Add support for shared SearchQuery Extensions
     /// </summary>
     /// <param name="services"></param>
+    /// <param name="stringCasing">Force ordinal casing for sort</param>
     /// <returns></returns>
-    public static IServiceCollection TryAddSearchQueryExtensions(this IServiceCollection services)
+    public static IServiceCollection TryAddSearchQueryExtensions(
+        this IServiceCollection services,
+#if DEBUG
+        StringCasing stringCasing
+#else
+        StringCasing stringCasing = StringCasing.Default
+#endif
+        )
     {
         services.TryAddTransient(typeof(IQueryBuilder<>), typeof(QueryBuilder<>));
         services.TryAddTransient(typeof(ISortBuilder<>), typeof(SortBuilder<>));
         services.TryAddTransient(typeof(IExpressionTreeBuilder<>), typeof(ExpressionTreeBuilder<>));
 
         services.AddTransient<IPostBuildExpressionVisitor, StringComparisonReplacementExpressionVisitor>();
+
+        if (stringCasing != StringCasing.Default)
+            services.AddTransient<IPostBuildExpressionVisitor>(sp => ActivatorUtilities.CreateInstance<StringOrderReplacementExpressionVisitor>(sp, stringCasing));
 
         //services.AddTransient<IPostBuildExpressionVisitor, SkipInstanceMethodOnNullExpressionVisitor>();
 

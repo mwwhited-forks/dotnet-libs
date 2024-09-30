@@ -288,13 +288,14 @@ Resulting response object
 
 
 
-#### GetResponseAsync(System.String,System.String)
+#### GetResponseAsync(System.String,System.String,System.Threading.CancellationToken)
 Retrieves a response from the language model based on the provided prompt details and user input. 
 
 
 ##### Parameters
 * *promptDetails:* Details of the prompt or context.
 * *userInput:* The user input or query.
+* *cancellationToken:* The Cancellation Token.
 
 
 

@@ -14,15 +14,22 @@
 
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
-		<PackageReference Include="Microsoft.IdentityModel.Logging" Version="7.6.3" />
-		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.6.2" />
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+		<PackageReference Include="Microsoft.IdentityModel.Logging" Version="8.0.2" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.7.3" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Eliassen.AspNetCore.Abstractions\Eliassen.AspNetCore.Abstractions.csproj" />
 	  <ProjectReference Include="..\Eliassen.Extensions\Eliassen.Extensions.csproj" />
 		<ProjectReference Include="..\Eliassen.System\Eliassen.System.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="GitVersion.MsBuild" Version="6.0.2">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+	  </PackageReference>
 	</ItemGroup>
 
 </Project>

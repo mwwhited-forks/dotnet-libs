@@ -37,5 +37,12 @@
       <Link>\publish\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </None>
   </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Update="GitVersion.MsBuild" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
 </Project>

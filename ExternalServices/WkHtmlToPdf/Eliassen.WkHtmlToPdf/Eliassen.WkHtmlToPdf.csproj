@@ -18,7 +18,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
 
-    <PackageReference Include="Haukcode.WkHtmlToPdfDotNet" Version="1.5.90" />
+    <PackageReference Include="Haukcode.WkHtmlToPdfDotNet" Version="1.5.93" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +27,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Framework\Eliassen.Documents.Abstractions\Eliassen.Documents.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="GitVersion.MsBuild" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

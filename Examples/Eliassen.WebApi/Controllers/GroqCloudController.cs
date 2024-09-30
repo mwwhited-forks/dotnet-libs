@@ -1,11 +1,7 @@
 ﻿using Eliassen.AI;
 using Eliassen.AI.Models;
-using Eliassen.WebApi.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Eliassen.WebApi.Controllers;
@@ -26,7 +22,7 @@ public class GroqCloudController : ControllerBase
     public GroqCloudController(
         [FromKeyedServices("GroqCloud")] IMessageCompletion completion
         )
-    { 
+    {
         _completion = completion;
     }
 

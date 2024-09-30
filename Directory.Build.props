@@ -76,10 +76,10 @@
 
   <ItemGroup>
     <!-- GitVersion will automatically calculate and maintain the version of projects within your solution -->
-    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+    <!--<PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
+    </PackageReference>-->
   </ItemGroup>
 
   <ItemGroup>

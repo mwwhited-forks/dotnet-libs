@@ -18,6 +18,13 @@
     <ProjectReference Include="..\..\Common\Eliassen.Common.Complete\Eliassen.Common.Complete.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="GitVersion.MsBuild" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
   <Target Name="BuildSwagger">
     <!-- AfterTargets="PostBuildEvent" -->
     <MakeDir Directories="$(DocumentPath)" Condition="!Exists('$(DocumentPath)')" ContinueOnError="true" />

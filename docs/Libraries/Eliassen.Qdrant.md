@@ -237,6 +237,10 @@ constructor for QdrantVectorStoreProvider
 Gets or sets the name of the container. 
 
 
+#### StoreVectorsAsync(System.Collections.Generic.IEnumerable{System.ValueTuple{System.ReadOnlyMemory{System.Single},System.Collections.Generic.Dictionary{System.String,System.Object}}},System.Collections.Generic.Dictionary{System.String,System.Object})
+Gets or sets the name of the container. 
+
+
 #### ListAsync
 Finds nearest neighbors for a given vector. 
 

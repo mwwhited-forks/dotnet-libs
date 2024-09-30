@@ -1,5 +1,7 @@
 ﻿using Eliassen.Apache.Tika;
 using Eliassen.Azure.StorageAccount;
+using Eliassen.GroqCloud;
+using Eliassen.Handlebars;
 using Eliassen.Keycloak;
 using Eliassen.MailKit;
 using Eliassen.Markdig;
@@ -8,7 +10,6 @@ using Eliassen.Microsoft.B2C;
 using Eliassen.MongoDB;
 using Eliassen.MysticMind;
 using Eliassen.Ollama;
-using Eliassen.GroqCloud;
 using Eliassen.OpenSearch;
 using Eliassen.Qdrant;
 using Eliassen.RabbitMQ;
@@ -16,7 +17,6 @@ using Eliassen.SBert;
 using Eliassen.WkHtmlToPdf;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Eliassen.Handlebars;
 
 namespace Eliassen.Common.Extensions;
 

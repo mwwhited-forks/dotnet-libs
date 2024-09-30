@@ -83,8 +83,13 @@ public class OllamaMessageCompletion : IMessageCompletion, IEmbeddingProvider
     /// </summary>
     /// <param name="promptDetails">Details of the prompt or context.</param>
     /// <param name="userInput">The user input or query.</param>
+    /// <param name="cancellationToken">The Cancellation Token.</param>
     /// <returns>A task representing the asynchronous operation. The task result contains the response from the language model.</returns>
-    public async Task<string> GetResponseAsync(string promptDetails, string userInput, [EnumeratorCancellation] CancellationToken cancellationToken = default) =>
+    public async Task<string> GetResponseAsync(string promptDetails, string userInput,
+#pragma warning disable CS8424 // The EnumeratorCancellationAttribute will have no effect. The attribute is only effective on a parameter of type CancellationToken in an async-iterator method returning IAsyncEnumerable
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+#pragma warning restore CS8424 // The EnumeratorCancellationAttribute will have no effect. The attribute is only effective on a parameter of type CancellationToken in an async-iterator method returning IAsyncEnumerable
+        =>
         //TODO:should probably build a custom model but this works for now
         (await _client.GetCompletion(new()
         {
@@ -106,10 +111,13 @@ public class OllamaMessageCompletion : IMessageCompletion, IEmbeddingProvider
         var queue = new ConcurrentQueue<string>();
         var completed = false;
 
-        var streamer = new ActionResponseStreamer<GenerateCompletionResponseStream>(response =>
+        var streamer = new ActionResponseStreamer<GenerateCompletionResponseStream?>(response =>
         {
-            queue.Enqueue(response.Response);
-            completed = response.Done;
+            if (response != null)
+            {
+                queue.Enqueue(response.Response);
+            }
+            completed = response?.Done ?? true;
         });
         var context = await _client.StreamCompletion(new()
         {

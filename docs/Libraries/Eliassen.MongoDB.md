@@ -17,6 +17,20 @@ Applies a modification to the member map.
 
 
 
+## Class: MongoDB.Extensions.IAtlasVectorSearch
+Provide a centralized means to create the index for Atlas Vector Search 
+
+### Properties
+
+#### Type
+provide a centralized means to create Atlas Vector Search
+#### Path
+provide a centralized means to create Atlas Vector Search
+#### NumDimensions
+provide a centralized means to create Atlas Vector Search
+#### Similarity
+provide a centralized means to create Atlas Vector Search
+
 ## Class: MongoDB.Extensions.IMongoDatabaseFactory
 provide a centralized means to created MongoDB instances 
 
@@ -59,6 +73,21 @@ Common pattern for declaring MongoDB Settings
 MongoDB Connection String
 #### DatabaseName
 Name of database to map for MongoDB
+
+## Class: MongoDB.Extensions.IMongoVectorSearch
+provide a centralized means to create Atlas Vector Search 
+
+### Methods
+
+
+#### CreateVectorSearch``1
+Creates a vector search instance in the MongoDB database using the specified settings. 
+
+
+##### Return value
+An instance configured for vector search.
+
+
 
 ## Class: MongoDB.Extensions.MongoDatabaseFactory
 Factory for creating MongoDB database instances. 

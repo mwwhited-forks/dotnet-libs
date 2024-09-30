@@ -74,8 +74,6 @@ Represents an authorization requirement for user-specific authorization.
 
 ### Fields
 
-#### RequireApplicationUserIdDefault
-The default value indicating whether the application user ID is required for authorization.
 #### RequireAuthenticatedByDefault
 The default value indicating whether authentication is required for authorization.
 ### Properties

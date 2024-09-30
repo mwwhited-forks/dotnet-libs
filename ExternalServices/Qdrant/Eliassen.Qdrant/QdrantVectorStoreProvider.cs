@@ -78,7 +78,7 @@ public class QdrantVectorStoreProvider : IVectorStoreProvider
     /// Gets or sets the name of the container.
     /// </summary>
     public async Task<string[]> StoreVectorsAsync(
-        IEnumerable<(ReadOnlyMemory<float> embedding, Dictionary<string, object> metadata)> items, 
+        IEnumerable<(ReadOnlyMemory<float> embedding, Dictionary<string, object> metadata)> items,
         Dictionary<string, object> metadata
         )
     {

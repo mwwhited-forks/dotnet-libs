@@ -42,7 +42,7 @@ public static class Program
             aspNetBuilder: new()
             {
                 RequireApplicationUserId = false,
-                RequireAuthenticatedByDefault = identityProvider != IdentityProviders.None,                 
+                RequireAuthenticatedByDefault = identityProvider != IdentityProviders.None,
             },
             jwtBuilder: new()
             {

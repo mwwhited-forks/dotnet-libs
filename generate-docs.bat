@@ -1,5 +1,5 @@
 
-@ECHO OFF
+REM @ECHO OFF
 SETLOCAL EnableDelayedExpansion
 
 SET SolutionDir=%~dp0
@@ -14,15 +14,6 @@ SET TARGET_WEB_PROJECT=.\Examples\Eliassen.WebApi\Eliassen.WebApi.csproj
 SET TEMPLATE_COMMAND=run --project Tools\Eliassen.TemplateEngine.Cli
 REM SET TEMPLATE_COMMAND=templateengine
 
-IF /I "%1"=="docs" (
-    CALL :GENERATE_CODE_DOCS
-    EXIT /B
-)
-IF /I "%1"=="libs" (
-    CALL :GENERATE_LIBRARY_DOCS
-    EXIT /B
-)
-
 ECHO "restore current .net tools"
 dotnet tool restore
 
@@ -31,6 +22,19 @@ git fetch --prune
 FOR /F "tokens=* USEBACKQ" %%g IN (`dotnet gitversion /output json /showvariable FullSemVer`) DO (SET BUILD_VERSION=%%g)
 if "%BUILD_VERSION%"=="" GOTO error
 ECHO Building Version=  "%BUILD_VERSION%"
+
+IF /I "%1"=="docs" (
+    CALL :GENERATE_CODE_DOCS
+    EXIT /B
+)
+IF /I "%1"=="libs" (
+    CALL :GENERATE_LIBRARY_DOCS
+    EXIT /B
+)
+IF /I "%1"=="sbom" (
+    CALL :GENERATE_SOFTWARE_BOM
+    EXIT /B
+)
 
 CALL :FORMAT_SOURCE_CODE
 

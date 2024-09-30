@@ -9,8 +9,8 @@
 	</PropertyGroup>
   
 	<ItemGroup>
-		<PackageReference Include="Azure.Storage.Blobs" Version="12.20.0" />
-		<PackageReference Include="Azure.Storage.Queues" Version="12.18.0" />
+		<PackageReference Include="Azure.Storage.Blobs" Version="12.21.2" />
+		<PackageReference Include="Azure.Storage.Queues" Version="12.19.1" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
@@ -23,6 +23,13 @@
 		<ProjectReference Include="..\..\..\Framework\Eliassen.MessageQueueing.Abstractions\Eliassen.MessageQueueing.Abstractions.csproj" />
 		<ProjectReference Include="..\..\..\Framework\Eliassen.Search.Abstractions\Eliassen.Search.Abstractions.csproj" />
 		<ProjectReference Include="..\..\..\Framework\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="GitVersion.MsBuild" Version="6.0.2">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+	  </PackageReference>
 	</ItemGroup>
 
 </Project>

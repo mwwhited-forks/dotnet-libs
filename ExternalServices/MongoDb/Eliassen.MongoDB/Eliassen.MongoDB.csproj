@@ -9,12 +9,19 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MongoDB.Driver" Version="2.27.0" />
+		<PackageReference Include="MongoDB.Driver" Version="2.28.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\Framework\Eliassen.Extensions\Eliassen.Extensions.csproj" />
 		<ProjectReference Include="..\..\..\Framework\Eliassen.System.Abstractions\Eliassen.System.Abstractions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="GitVersion.MsBuild" Version="6.0.2">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+	  </PackageReference>
 	</ItemGroup>
 
 </Project>

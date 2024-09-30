@@ -42,5 +42,5 @@ public class FileRagEngineOptions
     /// Gets or sets the IncludePrompt
     /// </summary>
     [CommandParameter(Value = "include-prompt")]
-    public bool IncludePrompt{ get; set; }
+    public bool IncludePrompt { get; set; }
 }

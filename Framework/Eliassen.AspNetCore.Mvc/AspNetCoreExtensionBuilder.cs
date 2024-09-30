@@ -23,7 +23,7 @@ public record AspNetCoreExtensionBuilder
     /// </summary>
     /// <remarks>
     /// Set to <c>true</c> to require an application user ID; otherwise, set to <c>false</c>.
-    /// The default value is <see cref="UserAuthorizationRequirement.RequireApplicationUserIdDefault"/>.
+    /// The default value is <see cref="UserAuthorizationRequirement.RequireApplicationUserId"/>.
     /// </remarks>
     public bool RequireApplicationUserId { get; init; } = true; //TODO: should be able to detect if mapping claim is configured and use that instead
 

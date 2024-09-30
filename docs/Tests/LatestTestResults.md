@@ -8,7 +8,7 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0117046
+  * Duration: 00:00:00.0146156
   * Outcome: Passed
 
 
@@ -32,7 +32,7 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0047808
+  * Duration: 00:00:00.0068550
   * Outcome: Passed
 
 
@@ -44,7 +44,7 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0039935
+  * Duration: 00:00:00.0073990
   * Outcome: Passed
 
 
@@ -56,7 +56,7 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0061516
+  * Duration: 00:00:00.0027636
   * Outcome: Passed
 
 
@@ -68,14 +68,14 @@
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0033166
+  * Duration: 00:00:00.0018707
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-C:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240520T183937_14500\In\DESKTOP-3FN5V33\test-file.txt
+c:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240920T105824_22468\In\DESKTOP-3FN5V33\test-file.txt
 
 ## Test Name: AddResultTest_Json
 
@@ -85,14 +85,14 @@ C:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240520T183937_14500\In\DE
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0220871
+  * Duration: 00:00:00.0087337
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-JObject-TextContextExtensionsTests_AddResultTest_Json(190)-638518271784320119.json: Attached
+JObject-TextContextExtensionsTests_AddResultTest_Json(190)-638624267053559673.json: Attached
 
 ## Test Name: AddResultTest_Lines
 
@@ -102,14 +102,14 @@ JObject-TextContextExtensionsTests_AddResultTest_Json(190)-638518271784320119.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0072172
+  * Duration: 00:00:00.0032471
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String[]-TextContextExtensionsTests_AddResultTest_Lines(70)-638518271783648154.txt: Attached
+String[]-TextContextExtensionsTests_AddResultTest_Lines(70)-638624267053301845.txt: Attached
 
 ## Test Name: AddResultTest_Object
 
@@ -119,14 +119,14 @@ String[]-TextContextExtensionsTests_AddResultTest_Lines(70)-638518271783648154.t
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.5586893
+  * Duration: 00:00:00.2432511
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestData-TextContextExtensionsTests_AddResultTest_Object(30)-638518271782009753.json: Attached
+TestData-TextContextExtensionsTests_AddResultTest_Object(30)-638624267052774271.json: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameAndChangeExtension
 
@@ -136,14 +136,14 @@ TestData-TextContextExtensionsTests_AddResultTest_Object(30)-638518271782009753.
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0054288
+  * Duration: 00:00:00.0031121
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndChangeExtension(130)-638518271784040383.html: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndChangeExtension(130)-638624267053447168.html: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameAndExtension
 
@@ -153,14 +153,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndChan
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0084185
+  * Duration: 00:00:00.0031348
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndExtension(110)-638518271783932375.txt: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndExtension(110)-638624267053405111.txt: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameNoExtension
 
@@ -170,14 +170,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameAndExte
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0165358
+  * Duration: 00:00:00.0050313
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameNoExtension(90)-638518271783744381.json: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameNoExtension(90)-638624267053344552.json: Attached
 
 ## Test Name: AddResultTest_Object_WithFileNameRemoveExtension
 
@@ -187,14 +187,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameNoExten
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0052675
+  * Duration: 00:00:00.0026352
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameRemoveExtension(150)-638518271784116589: Attached
+TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameRemoveExtension(150)-638624267053487697: Attached
 
 ## Test Name: AddResultTest_Stream
 
@@ -204,14 +204,14 @@ TestFileName-TextContextExtensionsTests_AddResultTest_Object_WithFileNameRemoveE
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0084821
+  * Duration: 00:00:00.0029071
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-MemoryStream-TextContextExtensionsTests_AddResultTest_Stream(170)-638518271784192937.bin: Attached
+MemoryStream-TextContextExtensionsTests_AddResultTest_Stream(170)-638624267053520988.bin: Attached
 
 ## Test Name: AddResultTest_String
 
@@ -221,14 +221,14 @@ MemoryStream-TextContextExtensionsTests_AddResultTest_Stream(170)-63851827178419
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0060902
+  * Duration: 00:00:00.0034886
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-TextContextExtensionsTests_AddResultTest_String(50)-638518271783545316.txt: Attached
+String-TextContextExtensionsTests_AddResultTest_String(50)-638624267053244179.txt: Attached
 
 ## Test Name: AddResultTest_ValueOutFile
 
@@ -238,15 +238,15 @@ String-TextContextExtensionsTests_AddResultTest_String(50)-638518271783545316.tx
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0133328
+  * Duration: 00:00:00.0034999
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638518271785711208.json: Attached
-C:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240520T183937_14500\In\DESKTOP-3FN5V33\TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638518271785711208.json
+TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638624267054010812.json: Attached
+c:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240920T105824_22468\In\DESKTOP-3FN5V33\TestData-TextContextExtensionsTests_AddResultTest_ValueOutFile(210)-638624267054010812.json
 
 ## Test Name: ApplyAsyncTest
 
@@ -256,17 +256,14 @@ C:\Repos\Nucleus\Net.Libs\TestResults\Deploy_MWhited 20240520T183937_14500\In\DE
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1512988
+  * Duration: 00:00:00.0829056
   * Outcome: Passed
 
 
 ### Standard Out
 
-info
-
-
 TestContext Messages:
-XmlTextReaderImpl-XsltTemplateProviderTests_ApplyAsyncTest(93)-638518271804757720.xml: Attached
+XmlTextReaderImpl-XsltTemplateProviderTests_ApplyAsyncTest(93)-638624266346104047.xml: Attached
 
 ## Test Name: ApplyAsyncTest_ContextData_and_ContextDataStream
 
@@ -276,13 +273,9 @@ XmlTextReaderImpl-XsltTemplateProviderTests_ApplyAsyncTest(93)-63851827180475772
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0137176
+  * Duration: 00:00:00.0065107
   * Outcome: Passed
 
-
-### Standard Out
-
-info
 
 ## Test Name: ApplyAsyncTest_Simple
 
@@ -292,7 +285,7 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:01.4940772
+  * Duration: 00:00:00.7938157
   * Outcome: Passed
 
 
@@ -309,14 +302,16 @@ Hello World!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0582770
+  * Duration: 00:00:00.0277073
   * Outcome: Passed
 
 
 ### Standard Out
 
-: Eliassen.System.Text.Templating.FileTemplateSource[0]
-      Search for tmpis1dfq in "C:\Users\MWhited\AppData\Local\Temp"
+info: Eliassen.System.Text.Templating.TemplateEngine[0]
+      Apply test template => { }
+info: Eliassen.System.Text.Templating.TemplateEngine[0]
+      Applied test template => (Mock<ITemplateContext:3>.Object, Mock<ITemplateProvider:1>.Object)
 
 ## Test Name: ApplyAsyncTest_WithDate
 
@@ -326,7 +321,7 @@ Hello World!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1650728
+  * Duration: 00:00:00.0959834
   * Outcome: Passed
 
 
@@ -343,7 +338,7 @@ Now: 2/3/0001 4:05:06 AM +05:00
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0591378
+  * Duration: 00:00:00.0201913
   * Outcome: Passed
 
 
@@ -360,7 +355,7 @@ Today: 0001-02-03
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0383642
+  * Duration: 00:00:00.0237332
   * Outcome: Passed
 
 
@@ -377,7 +372,7 @@ Capture:  -> Output: hello!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0419759
+  * Duration: 00:00:00.0250036
   * Outcome: Passed
 
 
@@ -394,7 +389,7 @@ Guid :8847d0e5-1eca-4075-b0c1-e6bd606439d0
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0355069
+  * Duration: 00:00:00.0423271
   * Outcome: Passed
 
 
@@ -411,7 +406,7 @@ Hash: FakeHash
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0940878
+  * Duration: 00:00:00.0358012
   * Outcome: Passed
 
 
@@ -435,7 +430,7 @@ String Replace: How are you feeling?
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0202512
+  * Duration: 00:00:00.0154421
   * Outcome: Passed
 
 
@@ -467,7 +462,7 @@ EnumModel { Id = 32767, Name = All, Code = ALL, Description = , Order = 0, Value
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0243769
+  * Duration: 00:00:00.0065767
   * Outcome: Passed
 
 
@@ -490,7 +485,7 @@ EnumModel { Id = 32, Name = test name, Code = test short, Description = test dis
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0046218
+  * Duration: 00:00:00.0061132
   * Outcome: Passed
 
 
@@ -502,14 +497,144 @@ EnumModel { Id = 32, Name = test name, Code = test short, Description = test dis
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0156673
+  * Duration: 00:00:00.0149708
+  * Outcome: Passed
+
+
+## Test Name: CheckHealthAsyncTest_Degraded
+
+* Name: CheckHealthAsyncTest_Degraded
+* Test Class: Eliassen.Apache.Tika.Tests.ApacheTikaHealthCheckTests
+  * Method: CheckHealthAsyncTest_Degraded
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0133120
   * Outcome: Passed
 
 
 ### Standard Out
 
-: Eliassen.System.IO.TempFileHandle[0]
-      Deleting C:\Users\MWhited\AppData\Local\Temp\tmpis1dfq.tmp
+TestContext Messages:
+Status: Degraded
+Description: 
+Exception: Moq.MockException: IApacheTikaClient.GetHelloAsync() invocation failed with mock behavior Strict.
+All invocations on the mock must have a corresponding setup.
+   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 182
+   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
+   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 107
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.IApacheTikaClientProxy.GetHelloAsync()
+   at Eliassen.Apache.Tika.ApacheTikaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in c:\Repos\Nucleus\Net.Libs\ExternalServices\Apache\Eliassen.Apache.Tika\ApacheTikaHealthCheck.cs:line 31
+Data:
+
+## Test Name: CheckHealthAsyncTest_Degraded
+
+* Name: CheckHealthAsyncTest_Degraded
+* Test Class: Eliassen.MailKit.Tests.MailkitImapHealthCheckTests
+  * Method: CheckHealthAsyncTest_Degraded
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0257329
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Degraded
+Description: 
+Exception: Moq.MockException: IImapClientFactory.CreateAsync() invocation failed with mock behavior Strict.
+All invocations on the mock must have a corresponding setup.
+   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 182
+   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
+   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 107
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.IImapClientFactoryProxy.CreateAsync()
+   at Eliassen.MailKit.MailkitImapHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in c:\Repos\Nucleus\Net.Libs\ExternalServices\MailKit\Eliassen.MailKit\MailkitImapHealthCheck.cs:line 36
+Data:
+
+## Test Name: CheckHealthAsyncTest_Degraded
+
+* Name: CheckHealthAsyncTest_Degraded
+* Test Class: Eliassen.MailKit.Tests.MailkitSmtpHealthCheckTests
+  * Method: CheckHealthAsyncTest_Degraded
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0024596
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Degraded
+Description: 
+Exception: Moq.MockException: ISmtpClientFactory.CreateAsync() invocation failed with mock behavior Strict.
+All invocations on the mock must have a corresponding setup.
+   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 182
+   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
+   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 107
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.ISmtpClientFactoryProxy.CreateAsync()
+   at Eliassen.MailKit.MailkitSmtpHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in c:\Repos\Nucleus\Net.Libs\ExternalServices\MailKit\Eliassen.MailKit\MailkitSmtpHealthCheck.cs:line 36
+Data:
+
+## Test Name: CheckHealthAsyncTest_Degraded
+
+* Name: CheckHealthAsyncTest_Degraded
+* Test Class: Eliassen.SBert.Tests.SbertHealthCheckTests
+  * Method: CheckHealthAsyncTest_Degraded
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0181334
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Degraded
+Description: 
+Exception: Moq.MockException: ISentenceEmbeddingClient.GetHealthAsync() invocation failed with mock behavior Strict.
+All invocations on the mock must have a corresponding setup.
+   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 182
+   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
+   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 107
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.ISentenceEmbeddingClientProxy.GetHealthAsync()
+   at Eliassen.SBert.SbertHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in c:\Repos\Nucleus\Net.Libs\ExternalServices\SBert\Eliassen.SBert\SbertHealthCheck.cs:line 35
+Data:
+
+## Test Name: CheckHealthAsyncTest_Degraded
+
+* Name: CheckHealthAsyncTest_Degraded
+* Test Class: Eliassen.Ollama.Tests.OllamaHealthCheckTests
+  * Method: CheckHealthAsyncTest_Degraded
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0181874
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Degraded
+Description: 
+Exception: Moq.MockException: IOllamaApiClient.ListLocalModels(CancellationToken) invocation failed with mock behavior Strict.
+All invocations on the mock must have a corresponding setup.
+   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 182
+   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
+   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 107
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.IOllamaApiClientProxy.ListLocalModels(CancellationToken cancellationToken)
+   at Eliassen.Ollama.OllamaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in c:\Repos\Nucleus\Net.Libs\ExternalServices\Ollama\Eliassen.Ollama\OllamaHealthCheck.cs:line 37
+Data:
 
 ## Test Name: CheckHealthAsyncTest_Degraded
 
@@ -538,112 +663,104 @@ All invocations on the mock must have a corresponding setup.
    at Eliassen.SBert.SbertHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in C:\Repos\Nucleus\Net.Libs\ExternalServices\SBert\Eliassen.SBert\SbertHealthCheck.cs:line 35
 Data:
 
-## Test Name: CheckHealthAsyncTest_Degraded
+## Test Name: CheckHealthAsyncTest_Healthy
 
-* Name: CheckHealthAsyncTest_Degraded
+* Name: CheckHealthAsyncTest_Healthy
 * Test Class: Eliassen.Apache.Tika.Tests.ApacheTikaHealthCheckTests
-  * Method: CheckHealthAsyncTest_Degraded
+  * Method: CheckHealthAsyncTest_Healthy
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0417116
+  * Duration: 00:00:00.0655345
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-Status: Degraded
-Description: 
-Exception: Moq.MockException: IApacheTikaClient.GetHelloAsync() invocation failed with mock behavior Strict.
-All invocations on the mock must have a corresponding setup.
-   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 434
-   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
-   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 218
-   at Castle.DynamicProxy.AbstractInvocation.Proceed()
-   at Castle.Proxies.IApacheTikaClientProxy.GetHelloAsync()
-   at Eliassen.Apache.Tika.ApacheTikaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in C:\Repos\Nucleus\Net.Libs\ExternalServices\Apache\Eliassen.Apache.Tika\ApacheTikaHealthCheck.cs:line 31
+Status: Healthy
+Description: From Test
+Exception: 
 Data:
 
-## Test Name: CheckHealthAsyncTest_Degraded
+## Test Name: CheckHealthAsyncTest_Healthy
 
-* Name: CheckHealthAsyncTest_Degraded
+* Name: CheckHealthAsyncTest_Healthy
 * Test Class: Eliassen.MailKit.Tests.MailkitSmtpHealthCheckTests
-  * Method: CheckHealthAsyncTest_Degraded
+  * Method: CheckHealthAsyncTest_Healthy
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0017562
+  * Duration: 00:00:00.0259551
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-Status: Degraded
-Description: 
-Exception: Moq.MockException: ISmtpClientFactory.CreateAsync() invocation failed with mock behavior Strict.
-All invocations on the mock must have a corresponding setup.
-   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 434
-   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
-   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 218
-   at Castle.DynamicProxy.AbstractInvocation.Proceed()
-   at Castle.Proxies.ISmtpClientFactoryProxy.CreateAsync()
-   at Eliassen.MailKit.MailkitSmtpHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in C:\Repos\Nucleus\Net.Libs\ExternalServices\MailKit\Eliassen.MailKit\MailkitSmtpHealthCheck.cs:line 36
+Status: Healthy
+Description: Connected
+Exception: 
 Data:
 
-## Test Name: CheckHealthAsyncTest_Degraded
+## Test Name: CheckHealthAsyncTest_Healthy
 
-* Name: CheckHealthAsyncTest_Degraded
+* Name: CheckHealthAsyncTest_Healthy
 * Test Class: Eliassen.MailKit.Tests.MailkitImapHealthCheckTests
-  * Method: CheckHealthAsyncTest_Degraded
+  * Method: CheckHealthAsyncTest_Healthy
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0204380
+  * Duration: 00:00:00.3068488
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-Status: Degraded
-Description: 
-Exception: Moq.MockException: IImapClientFactory.CreateAsync() invocation failed with mock behavior Strict.
-All invocations on the mock must have a corresponding setup.
-   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 434
-   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
-   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 218
-   at Castle.DynamicProxy.AbstractInvocation.Proceed()
-   at Castle.Proxies.IImapClientFactoryProxy.CreateAsync()
-   at Eliassen.MailKit.MailkitImapHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in C:\Repos\Nucleus\Net.Libs\ExternalServices\MailKit\Eliassen.MailKit\MailkitImapHealthCheck.cs:line 36
+Status: Healthy
+Description: Connected
+Exception: 
 Data:
 
-## Test Name: CheckHealthAsyncTest_Degraded
+## Test Name: CheckHealthAsyncTest_Healthy
 
-* Name: CheckHealthAsyncTest_Degraded
-* Test Class: Eliassen.Ollama.Tests.OllamaHealthCheckTests
-  * Method: CheckHealthAsyncTest_Degraded
+* Name: CheckHealthAsyncTest_Healthy
+* Test Class: Eliassen.SBert.Tests.SbertHealthCheckTests
+  * Method: CheckHealthAsyncTest_Healthy
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0263541
+  * Duration: 00:00:00.2071782
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-Status: Degraded
-Description: 
-Exception: Moq.MockException: IOllamaApiClient.ListLocalModels(CancellationToken) invocation failed with mock behavior Strict.
-All invocations on the mock must have a corresponding setup.
-   at Moq.FailForStrictMock.Handle(Invocation invocation, Mock mock) in /_/src/Moq/Interception/InterceptionAspects.cs:line 434
-   at Moq.Mock.Moq.IInterceptor.Intercept(Invocation invocation) in /_/src/Moq/Interception/Mock.cs:line 27
-   at Moq.CastleProxyFactory.Interceptor.Intercept(IInvocation underlying) in /_/src/Moq/Interception/CastleProxyFactory.cs:line 218
-   at Castle.DynamicProxy.AbstractInvocation.Proceed()
-   at Castle.Proxies.IOllamaApiClientProxy.ListLocalModels(CancellationToken cancellationToken)
-   at Eliassen.Ollama.OllamaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in C:\Repos\Nucleus\Net.Libs\ExternalServices\Ollama\Eliassen.Ollama\OllamaHealthCheck.cs:line 37
+Status: Healthy
+Description: From tests
+Exception: 
+Data:
+
+## Test Name: CheckHealthAsyncTest_Healthy
+
+* Name: CheckHealthAsyncTest_Healthy
+* Test Class: Eliassen.Ollama.Tests.OllamaHealthCheckTests
+  * Method: CheckHealthAsyncTest_Healthy
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1488573
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Status: Healthy
+Description: Loaded models: 
+Exception: 
 Data:
 
 ## Test Name: CheckHealthAsyncTest_Healthy
@@ -666,86 +783,6 @@ Description: From tests
 Exception: 
 Data:
 
-## Test Name: CheckHealthAsyncTest_Healthy
-
-* Name: CheckHealthAsyncTest_Healthy
-* Test Class: Eliassen.Apache.Tika.Tests.ApacheTikaHealthCheckTests
-  * Method: CheckHealthAsyncTest_Healthy
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.3030351
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-Status: Healthy
-Description: From Test
-Exception: 
-Data:
-
-## Test Name: CheckHealthAsyncTest_Healthy
-
-* Name: CheckHealthAsyncTest_Healthy
-* Test Class: Eliassen.MailKit.Tests.MailkitSmtpHealthCheckTests
-  * Method: CheckHealthAsyncTest_Healthy
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0192621
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-Status: Healthy
-Description: Connected
-Exception: 
-Data:
-
-## Test Name: CheckHealthAsyncTest_Healthy
-
-* Name: CheckHealthAsyncTest_Healthy
-* Test Class: Eliassen.MailKit.Tests.MailkitImapHealthCheckTests
-  * Method: CheckHealthAsyncTest_Healthy
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.3200771
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-Status: Healthy
-Description: Connected
-Exception: 
-Data:
-
-## Test Name: CheckHealthAsyncTest_Healthy
-
-* Name: CheckHealthAsyncTest_Healthy
-* Test Class: Eliassen.Ollama.Tests.OllamaHealthCheckTests
-  * Method: CheckHealthAsyncTest_Healthy
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.3397613
-  * Outcome: Passed
-
-
-### Standard Out
-
-TestContext Messages:
-Status: Healthy
-Description: Loaded models: 
-Exception: 
-Data:
-
 ## Test Name: ContentTypeTest
 
 * Name: ContentTypeTest
@@ -754,9 +791,773 @@ Data:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001952
+  * Duration: 00:00:00.0002241
   * Outcome: Passed
 
+
+## Test Name: ConvertAsyncTest ("application/epub+zip","text/html")
+
+* Name: ConvertAsyncTest ("application/epub+zip","text/html")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaEpubToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0025139
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/epub+zip","text/xhtml")
+
+* Name: ConvertAsyncTest ("application/epub+zip","text/xhtml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaEpubToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0025532
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/epub+zip","text/xhtml+xml")
+
+* Name: ConvertAsyncTest ("application/epub+zip","text/xhtml+xml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaEpubToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0019300
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/msword","text/html")
+
+* Name: ConvertAsyncTest (application/msword,text/html)
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0771228
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/msword","text/xhtml")
+
+* Name: ConvertAsyncTest (application/msword,text/xhtml)
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0033173
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/msword","text/xhtml+xml")
+
+* Name: ConvertAsyncTest (application/msword,text/xhtml+xml)
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0025090
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/pdf","text/html")
+
+* Name: ConvertAsyncTest ("application/pdf","text/html")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaPdfToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0103912
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/pdf","text/xhtml")
+
+* Name: ConvertAsyncTest ("application/pdf","text/xhtml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaPdfToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0068685
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/pdf","text/xhtml+xml")
+
+* Name: ConvertAsyncTest ("application/pdf","text/xhtml+xml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaPdfToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0025585
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/rtf","text/html")
+
+* Name: ConvertAsyncTest ("application/rtf","text/html")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaRtfToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0034858
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/rtf","text/xhtml")
+
+* Name: ConvertAsyncTest ("application/rtf","text/xhtml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaRtfToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0035392
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/rtf","text/xhtml+xml")
+
+* Name: ConvertAsyncTest ("application/rtf","text/xhtml+xml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaRtfToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0020860
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/vnd.oasis.opendocument.text","text/html")
+
+* Name: ConvertAsyncTest ("application/vnd.oasis.opendocument.text","text/html")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaOdtToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0026287
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/vnd.oasis.opendocument.text","text/xhtml")
+
+* Name: ConvertAsyncTest ("application/vnd.oasis.opendocument.text","text/xhtml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaOdtToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0029656
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/vnd.oasis.opendocument.text","text/xhtml+xml")
+
+* Name: ConvertAsyncTest ("application/vnd.oasis.opendocument.text","text/xhtml+xml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaOdtToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0019691
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/html")
+
+* Name: ConvertAsyncTest ("application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/html")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocxToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0039720
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/xhtml")
+
+* Name: ConvertAsyncTest ("application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/xhtml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocxToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0018647
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/xhtml+xml")
+
+* Name: ConvertAsyncTest ("application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/xhtml+xml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocxToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0020242
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/x-tika-msoffice","text/html")
+
+* Name: ConvertAsyncTest (application/x-tika-msoffice,text/html)
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0049614
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/x-tika-msoffice","text/xhtml")
+
+* Name: ConvertAsyncTest (application/x-tika-msoffice,text/xhtml)
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0027194
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/x-tika-msoffice","text/xhtml+xml")
+
+* Name: ConvertAsyncTest (application/x-tika-msoffice,text/xhtml+xml)
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0027203
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/x-tika-ooxml","text/html")
+
+* Name: ConvertAsyncTest ("application/x-tika-ooxml","text/html")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocxToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0025747
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/x-tika-ooxml","text/xhtml")
+
+* Name: ConvertAsyncTest ("application/x-tika-ooxml","text/xhtml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocxToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0017919
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("application/x-tika-ooxml","text/xhtml+xml")
+
+* Name: ConvertAsyncTest ("application/x-tika-ooxml","text/xhtml+xml")
+* Test Class: Eliassen.Apache.Tika.Tests.Handlers.TikaDocxToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0021319
+  * Outcome: Passed
+
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/html","application/pdf")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/html,application/pdf)
+* Test Class: Eliassen.WkHtmlToPdf.Tests.HtmlToPdfConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:02.3858769
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 19949
+HelloWorld-HtmlToPdfConversionHandlerTests_ConvertAsyncTest(58)-638624266831449643.pdf: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/html","text/markdown")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/html,text/markdown)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.3262899
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624267186467593.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/html","text/plain")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/html,text/plain)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0057757
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624267186674652.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/html","text/x-markdown",".md")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/html,text/x-markdown,.md)
+* Test Class: Eliassen.Examples.Tests.Documents.IDocumentConversionTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0823375
+  * Outcome: Passed
+
+
+### Standard Out
+
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Build chain text/html -> text/x-markdown
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Chain text/html -> text/x-markdown [Eliassen.MysticMind.HtmlToMarkdownConversionHandler]
+
+
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-IDocumentConversionTests_InternalConvertAsyncTest(100)-638624267375959283.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/html","text/x-markdown")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/html,text/x-markdown)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0021907
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624267186723494.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml","application/pdf")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml,application/pdf)
+* Test Class: Eliassen.WkHtmlToPdf.Tests.HtmlToPdfConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:01.0098794
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 19949
+HelloWorld-HtmlToPdfConversionHandlerTests_ConvertAsyncTest(58)-638624266841897132.pdf: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml","text/markdown")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml,text/markdown)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0018299
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624267186750851.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml","text/plain")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml,text/plain)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0018581
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624267186774804.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml","text/x-markdown")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml,text/x-markdown)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0019965
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624267186799068.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml+xml","application/pdf")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml+xml,application/pdf)
+* Test Class: Eliassen.WkHtmlToPdf.Tests.HtmlToPdfConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.5712061
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 19949
+HelloWorld-HtmlToPdfConversionHandlerTests_ConvertAsyncTest(58)-638624266847647493.pdf: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml+xml","text/markdown")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml+xml,text/markdown)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0028098
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624267186827341.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml+xml","text/plain")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml+xml,text/plain)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0023050
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624267186861895.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.html","text/xhtml+xml","text/x-markdown")
+
+* Name: ConvertAsyncTest (HelloWorld.html,text/xhtml+xml,text/x-markdown)
+* Test Class: Eliassen.MysticMind.Tests.HtmlToMarkdownConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0058897
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 191
+HelloWorld-HtmlToMarkdownConversionHandlerTests_ConvertAsyncTest(57)-638624267186930233.md: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/markdown","text/html",".html")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/markdown,text/html,.html)
+* Test Class: Eliassen.Examples.Tests.Documents.IDocumentConversionTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0595095
+  * Outcome: Passed
+
+
+### Standard Out
+
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Build chain text/markdown -> text/html
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Chain text/markdown -> text/html [Eliassen.Markdig.MarkdownToHtmlConversionHandler]
+
+
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-IDocumentConversionTests_InternalConvertAsyncTest(100)-638624267376977710.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/markdown","text/html")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/markdown,text/html)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.5734328
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624266811259880.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/markdown","text/xhtml")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/markdown,text/xhtml)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0221946
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624266812235650.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/markdown","text/xhtml+xml")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/markdown,text/xhtml+xml)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0091023
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624266812603006.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/plain","text/html")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/plain,text/html)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0151490
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624266811812604.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/plain","text/xhtml")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/plain,text/xhtml)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0081769
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624266812355127.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/plain","text/xhtml+xml")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/plain,text/xhtml+xml)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0096969
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624266812715753.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/x-markdown","text/html")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/x-markdown,text/html)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0116682
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624266811985033.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/x-markdown","text/xhtml")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/x-markdown,text/xhtml)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0109236
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624266812478365.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.md","text/x-markdown","text/xhtml+xml")
+
+* Name: ConvertAsyncTest (HelloWorld.md,text/x-markdown,text/xhtml+xml)
+* Test Class: Eliassen.Markdig.Tests.MarkdownToHtmlConversionHandlerTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0081872
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Content Length: 10749
+HelloWorld-MarkdownToHtmlConversionHandlerTests_ConvertAsyncTest(57)-638624266812832779.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.txt","text/plain","text/html",".html")
+
+* Name: ConvertAsyncTest (HelloWorld.txt,text/plain,text/html,.html)
+* Test Class: Eliassen.Examples.Tests.Documents.IDocumentConversionTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0466689
+  * Outcome: Passed
+
+
+### Standard Out
+
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Build chain text/plain -> text/html
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Chain text/plain -> text/html [Eliassen.Markdig.MarkdownToHtmlConversionHandler]
+
+
+
+TestContext Messages:
+Content Length: 34
+HelloWorld-IDocumentConversionTests_InternalConvertAsyncTest(100)-638624267376435573.html: Attached
+
+## Test Name: ConvertAsyncTest ("HelloWorld.txt","text/plain","text/plain",".txt")
+
+* Name: ConvertAsyncTest (HelloWorld.txt,text/plain,text/plain,.txt)
+* Test Class: Eliassen.Examples.Tests.Documents.IDocumentConversionTests
+  * Method: ConvertAsyncTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0070185
+  * Outcome: Passed
+
+
+### Standard Out
+
+info: Eliassen.Documents.Conversion.DocumentConversion[0]
+      Bypass as input and output types match text/plain -> text/plain
+
+
+
+TestContext Messages:
+Content Length: 26
+HelloWorld-IDocumentConversionTests_InternalConvertAsyncTest(100)-638624267377170754.txt: Attached
 
 ## Test Name: ConvertAsyncTest (accessible_epub_3.epub,application/epub+zip,application/pdf,.pdf)
 
@@ -2015,7 +2816,7 @@ sample4-DocxToMarkdownConversionHandlerTests_ConvertAsyncTest(50)-63849666448203
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012952
+  * Duration: 00:00:00.0013678
   * Outcome: Passed
 
 
@@ -2027,16 +2828,9 @@ sample4-DocxToMarkdownConversionHandlerTests_ConvertAsyncTest(50)-63849666448203
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0101396
+  * Duration: 00:00:00.0348023
   * Outcome: Passed
 
-
-### Standard Out
-
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handle: test message id
-info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
-      Handled: test message id
 
 ## Test Name: CreateTest_ContainerTag
 
@@ -2046,14 +2840,14 @@ info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003967
+  * Duration: 00:00:00.0007951
   * Outcome: Passed
 
 
 ### Standard Out
 
 info: Eliassen.Documents.Containers.BlobContainerFactory[0]
-      Container: table -> Castle.Proxies.IBlobContainerProviderProxy
+      Container: container -> Castle.Proxies.IBlobContainerProviderProxy
 
 ## Test Name: CreateTest_Named_Factory
 
@@ -2063,7 +2857,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0199204
+  * Duration: 00:00:00.0297752
   * Outcome: Passed
 
 
@@ -2080,7 +2874,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.3515646
+  * Duration: 00:00:00.6431155
   * Outcome: Passed
 
 
@@ -2097,9 +2891,14 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012402
+  * Duration: 00:00:00.0022782
   * Outcome: Passed
 
+
+### Standard Out
+
+info: Eliassen.Documents.Containers.BlobContainerFactory[0]
+      Container: NoTag -> Castle.Proxies.IBlobContainerProviderProxy
 
 ## Test Name: CreateTest_TableTag
 
@@ -2109,14 +2908,14 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003292
+  * Duration: 00:00:00.0011196
   * Outcome: Passed
 
 
 ### Standard Out
 
 info: Eliassen.Documents.Containers.BlobContainerFactory[0]
-      Container: NoTag -> Castle.Proxies.IBlobContainerProviderProxy
+      Container: table -> Castle.Proxies.IBlobContainerProviderProxy
 
 ## Test Name: DefaultHashTest (Md5,Eliassen.System.Security.Cryptography.Md5Hash)
 
@@ -2126,7 +2925,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0013560
+  * Duration: 00:00:00.0008787
   * Outcome: Passed
 
 
@@ -2138,7 +2937,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012855
+  * Duration: 00:00:00.0009761
   * Outcome: Passed
 
 
@@ -2150,7 +2949,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006858
+  * Duration: 00:00:00.0004124
   * Outcome: Passed
 
 
@@ -2162,7 +2961,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0011794
+  * Duration: 00:00:00.0002807
   * Outcome: Passed
 
 
@@ -2174,7 +2973,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0082161
+  * Duration: 00:00:00.0078722
   * Outcome: Passed
 
 
@@ -2186,7 +2985,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1393227
+  * Duration: 00:00:00.0781787
   * Outcome: Passed
 
 
@@ -2198,7 +2997,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0307025
+  * Duration: 00:00:00.0006490
   * Outcome: Passed
 
 
@@ -2210,7 +3009,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:03.0731917
+  * Duration: 00:00:02.4340533
   * Outcome: Passed
 
 
@@ -2227,14 +3026,9 @@ Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0072592
+  * Duration: 00:00:00.0187432
   * Outcome: Passed
 
-
-### Standard Out
-
-info: Eliassen.Documents.Containers.BlobContainerFactory[0]
-      Container: container -> Castle.Proxies.IBlobContainerProviderProxy
 
 ## Test Name: DeserializeAsyncTest_StreamGeneric
 
@@ -2244,7 +3038,7 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012620
+  * Duration: 00:00:00.0013224
   * Outcome: Passed
 
 
@@ -2256,9 +3050,45 @@ info: Eliassen.Documents.Containers.BlobContainerFactory[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0011887
+  * Duration: 00:00:00.0012261
   * Outcome: Passed
 
+
+## Test Name: DeserializeTest ("{"_id":"Hello World"}","Hello World")
+
+* Name: DeserializeTest ({"_id":"Hello World"},Hello World)
+* Test Class: Eliassen.System.Tests.Text.Json.BsonIdConverterTests
+  * Method: DeserializeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0114811
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+input-BsonIdConverterTests_DeserializeTest(39)-638624266347572580.json: Attached
+result-BsonIdConverterTests_DeserializeTest(41)-638624266347599559.json: Attached
+
+## Test Name: DeserializeTest ("{"_id":{"$oid":"Hello World"}}","Hello World")
+
+* Name: DeserializeTest ({"_id":{"$oid":"Hello World"}},Hello World)
+* Test Class: Eliassen.System.Tests.Text.Json.BsonIdConverterTests
+  * Method: DeserializeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0074571
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+input-BsonIdConverterTests_DeserializeTest(39)-638624266347481566.json: Attached
+result-BsonIdConverterTests_DeserializeTest(41)-638624266347514396.json: Attached
 
 ## Test Name: DeserializeTest ({"_id":"Hello World"},Hello World)
 
@@ -2295,6 +3125,42 @@ result-BsonIdConverterTests_DeserializeTest(41)-638518271807486534.json: Attache
 TestContext Messages:
 input-BsonIdConverterTests_DeserializeTest(39)-638518271807074658.json: Attached
 result-BsonIdConverterTests_DeserializeTest(41)-638518271807123999.json: Attached
+
+## Test Name: DeserializeTest_Nullable ("{"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}}","2023-07-05T14:16:32.2015217-04:00")
+
+* Name: DeserializeTest_Nullable ({"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}},2023-07-05T14:16:32.2015217-04:00)
+* Test Class: Eliassen.System.Tests.Text.Json.BsonDateConverterTests
+  * Method: DeserializeTest_Nullable
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0171858
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+input-BsonDateConverterTests_DeserializeTest_Nullable(64)-638624266346895384.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638624266346994542.json: Attached
+
+## Test Name: DeserializeTest_Nullable ("{"Nullable":null,"Value":{"$date":"2023-07-05T14:17:05.2315812-04:00"}}",null)
+
+* Name: DeserializeTest_Nullable ({"Nullable":null,"Value":{"$date":"2023-07-05T14:17:05.2315812-04:00"}},)
+* Test Class: Eliassen.System.Tests.Text.Json.BsonDateConverterTests
+  * Method: DeserializeTest_Nullable
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0077446
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+input-BsonDateConverterTests_DeserializeTest_Nullable(64)-638624266347090102.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638624266347129882.json: Attached
 
 ## Test Name: DeserializeTest_Nullable ({"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}},2023-07-05T14:16:32.2015217-04:00)
 
@@ -2343,7 +3209,7 @@ result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638518271806450281.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004490
+  * Duration: 00:00:00.0004266
   * Outcome: Passed
 
 
@@ -2355,7 +3221,7 @@ result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638518271806450281.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006316
+  * Duration: 00:00:00.0008298
   * Outcome: Passed
 
 
@@ -2367,7 +3233,7 @@ result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638518271806450281.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0025123
+  * Duration: 00:00:00.0021428
   * Outcome: Passed
 
 
@@ -2379,9 +3245,45 @@ result-BsonDateConverterTests_DeserializeTest_Nullable(66)-638518271806450281.js
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0548407
+  * Duration: 00:00:00.0573659
   * Outcome: Passed
 
+
+## Test Name: DeserializeTest_Value ("{"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}}","0001-01-01T00:00:00+00:00")
+
+* Name: DeserializeTest_Value ({"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}},0001-01-01T00:00:00+00:00)
+* Test Class: Eliassen.System.Tests.Text.Json.BsonDateConverterTests
+  * Method: DeserializeTest_Value
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0108310
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+input-BsonDateConverterTests_DeserializeTest_Value(78)-638624266347189878.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Value(80)-638624266347221966.json: Attached
+
+## Test Name: DeserializeTest_Value ("{"Nullable":null,"Value":{"$date":"2023-07-05T14:17:05.2315812-04:00"}}","2023-07-05T14:17:05.2315812-04:00")
+
+* Name: DeserializeTest_Value ({"Nullable":null,"Value":{"$date":"2023-07-05T14:17:05.2315812-04:00"}},2023-07-05T14:17:05.2315812-04:00)
+* Test Class: Eliassen.System.Tests.Text.Json.BsonDateConverterTests
+  * Method: DeserializeTest_Value
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0057965
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+input-BsonDateConverterTests_DeserializeTest_Value(78)-638624266347315127.json: Attached
+result-BsonDateConverterTests_DeserializeTest_Value(80)-638624266347339580.json: Attached
 
 ## Test Name: DeserializeTest_Value ({"Nullable":{"$date":"2023-07-05T14:16:32.2015217-04:00"},"Value":{"$date":"0001-01-01T00:00:00+00:00"}},0001-01-01T00:00:00+00:00)
 
@@ -2432,7 +3334,7 @@ result-BsonDateConverterTests_DeserializeTest_Value(80)-638518271806910607.json:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0301940
+  * Duration: 00:00:00.0696406
   * Outcome: Passed
 
 
@@ -2528,7 +3430,7 @@ result-BsonDateConverterTests_DeserializeTest_Value(80)-638518271806910607.json:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0011811
+  * Duration: 00:00:00.0011314
   * Outcome: Passed
 
 
@@ -2541,6 +3443,54 @@ result-BsonDateConverterTests_DeserializeTest_Value(80)-638518271806910607.json:
   * Unit
 * Details: 
   * Duration: 00:00:00.0012415
+  * Outcome: Passed
+
+
+## Test Name: EnsureQueueExistsTest ("false",False)
+
+* Name: EnsureQueueExistsTest (false,False)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: EnsureQueueExistsTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002117
+  * Outcome: Passed
+
+
+## Test Name: EnsureQueueExistsTest ("False",False)
+
+* Name: EnsureQueueExistsTest (False,False)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: EnsureQueueExistsTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000177
+  * Outcome: Passed
+
+
+## Test Name: EnsureQueueExistsTest ("true",True)
+
+* Name: EnsureQueueExistsTest (true,True)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: EnsureQueueExistsTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000097
+  * Outcome: Passed
+
+
+## Test Name: EnsureQueueExistsTest ("True",True)
+
+* Name: EnsureQueueExistsTest (True,True)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: EnsureQueueExistsTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000098
   * Outcome: Passed
 
 
@@ -2568,6 +3518,18 @@ result-BsonDateConverterTests_DeserializeTest_Value(80)-638518271806910607.json:
   * Outcome: Passed
 
 
+## Test Name: EnsureQueueExistsTest (null,False)
+
+* Name: EnsureQueueExistsTest (,False)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: EnsureQueueExistsTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0006746
+  * Outcome: Passed
+
+
 ## Test Name: EnsureQueueExistsTest (true,True)
 
 * Name: EnsureQueueExistsTest (true,True)
@@ -2591,6 +3553,654 @@ result-BsonDateConverterTests_DeserializeTest_Value(80)-638518271806910607.json:
   * Duration: 00:00:00.0000341
   * Outcome: Passed
 
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",GreaterThan,"3/1/2020",10,"3,4,5,6,7,8,9,10,11,12")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.4988993
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: GreaterThan: 3/1/2020
+	F:Doesn't Exist: GreaterThan: 3/1/2020
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date > 3/1/2020 12:00:00 AM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266365581777.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266365629996.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266370450290.json: Attached
+resultKeys: 3,4,5,6,7,8,9,10,11,12
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	3/1/2020 parsed to 03/01/2020 00:00:00 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => GreaterThan: 3/1/2020
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",GreaterThanOrEqualTo,"3/1/2020",10,"2,3,4,5,6,7,8,9,10,11")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.4747282
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: GreaterThanOrEqualTo: 3/1/2020
+	F:Doesn't Exist: GreaterThanOrEqualTo: 3/1/2020
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date >= 3/1/2020 12:00:00 AM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266370582148.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266370616319.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266375086025.json: Attached
+resultKeys: 2,3,4,5,6,7,8,9,10,11
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	3/1/2020 parsed to 03/01/2020 00:00:00 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => GreaterThanOrEqualTo: 3/1/2020
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",LessThan,"2020-03-01",3,"-1,0,1")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.3637364
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: LessThan: 2020-03-01
+	F:Doesn't Exist: LessThan: 2020-03-01
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date < 3/1/2020 12:00:00 AM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266379760075.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266379820630.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266383227923.json: Attached
+resultKeys: -1,0,1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	2020-03-01 parsed to 03/01/2020 00:00:00 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 2020-03-01
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",LessThan,"2020-03-01T01:01:01.4356493+02:00",3,"-1,0,1")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.3627703
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: LessThan: 2020-03-01T01:01:01.4356493+02:00
+	F:Doesn't Exist: LessThan: 2020-03-01T01:01:01.4356493+02:00
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date < 2/29/2020 6:01:01 PM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266387227655.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266387279390.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266390705840.json: Attached
+resultKeys: -1,0,1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	2020-03-01T01:01:01.4356493+02:00 parsed to 02/29/2020 18:01:01 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 2020-03-01T01:01:01.4356493+02:00
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",LessThan,"2020-03-01T01:01:01",4,"-1,0,1,2")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.3784810
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: LessThan: 2020-03-01T01:01:01
+	F:Doesn't Exist: LessThan: 2020-03-01T01:01:01
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date < 3/1/2020 1:01:01 AM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266383397234.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266383757782.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266386884331.json: Attached
+resultKeys: -1,0,1,2
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	2020-03-01T01:01:01 parsed to 03/01/2020 01:01:01 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 2020-03-01T01:01:01
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",LessThan,"3/1/2020",3,"-1,0,1")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.4424026
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: LessThan: 3/1/2020
+	F:Doesn't Exist: LessThan: 3/1/2020
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date < 3/1/2020 12:00:00 AM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266375339741.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266375383478.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266379580655.json: Attached
+resultKeys: -1,0,1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	3/1/2020 parsed to 03/01/2020 00:00:00 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 3/1/2020
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"Date",LessThanOrEqualTo,"3/1/2020",4,"-1,0,1,2")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.3398712
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Date: LessThanOrEqualTo: 3/1/2020
+	F:Doesn't Exist: LessThanOrEqualTo: 3/1/2020
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.Date <= 3/1/2020 12:00:00 AM)).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266398080268.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266398128510.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266401336008.json: Attached
+resultKeys: -1,0,1,2
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	3/1/2020 parsed to 03/01/2020 00:00:00 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThanOrEqualTo: 3/1/2020
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"DateTimeNullable",LessThan,"2020-03-01T01:01:01.4356493+02:00",2,"0,1")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.3524565
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:DateTimeNullable: LessThan: 2020-03-01T01:01:01.4356493+02:00
+	F:Doesn't Exist: LessThan: 2020-03-01T01:01:01.4356493+02:00
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.DateTimeNullable < Convert(2/29/2020 6:01:01 PM, Nullable`1))).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266390814449.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266390871300.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266394155561.json: Attached
+resultKeys: 0,1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	2020-03-01T01:01:01.4356493+02:00 parsed to 02/29/2020 18:01:01 (System.DateTime)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 2020-03-01T01:01:01.4356493+02:00
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"DateTimeOffsetNullable",LessThan,"2020-03-01T01:01:01.4356493+02:00",2,"0,1")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.3723069
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:DateTimeOffsetNullable: LessThan: 2020-03-01T01:01:01.4356493+02:00
+	F:Doesn't Exist: LessThan: 2020-03-01T01:01:01.4356493+02:00
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.DateTimeOffsetNullable < Convert(3/1/2020 1:01:01 AM +02:00, Nullable`1))).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266394344995.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266394380919.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266397946117.json: Attached
+resultKeys: 0,1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	2020-03-01T01:01:01.4356493+02:00 parsed to 03/01/2020 01:01:01 +02:00 (System.DateTimeOffset)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 2020-03-01T01:01:01.4356493+02:00
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"FC",EqualTo,"ame1",2,"-1,0")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.3534889
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:FC: EqualTo: ame1
+	F:Doesn't Exist: EqualTo: ame1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(e => e.FName.Contains(value(Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel+<>c__DisplayClass47_0).value.ToString())).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266401487014.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266401530950.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266404897258.json: Attached
+resultKeys: -1,0
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: ame1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"May",EqualTo,"!",10,"-1,1,2,4,5,7,8,10,11,13")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.5176515
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:May: EqualTo: !
+	F:Doesn't Exist: EqualTo: !
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.May != "")).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266417410892.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266417458995.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266422272842.json: Attached
+resultKeys: -1,1,2,4,5,7,8,10,11,13
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: !
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"May",EqualTo,"",10,"0,3,6,9,12,15,18,21,24,27")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.4556056
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:May: EqualTo:
+	F:Doesn't Exist: EqualTo:
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.May == "")).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266407472126.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266407540769.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266411903628.json: Attached
+resultKeys: 0,3,6,9,12,15,18,21,24,27
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo:
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"May",NotEqualTo,"!",10,"-1,1,2,4,5,7,8,10,11,13")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.6251273
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:May: NotEqualTo: !
+	F:Doesn't Exist: NotEqualTo: !
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.May != "")).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266422604183.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266422792729.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266428714615.json: Attached
+resultKeys: -1,1,2,4,5,7,8,10,11,13
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo: !
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"May",NotEqualTo,"",10,"-1,1,2,4,5,7,8,10,11,13")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.5375333
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:May: NotEqualTo:
+	F:Doesn't Exist: NotEqualTo:
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => (n.May != "")).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266412027515.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266412068098.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266417268998.json: Attached
+resultKeys: -1,1,2,4,5,7,8,10,11,13
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo:
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,Date,GreaterThan,3/1/2020,10,3,4,5,6,7,8,9,10,11,12)
 
@@ -3239,6 +4849,1168 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:W
 	No filter mapped for property: Doesn't Exist => NotEqualTo: !
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Warning:>
 	Could not use properties: Doesn't Exist as they are not on the model
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"index",EqualTo,"!1",10,"0,2,3,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0448526
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:index: EqualTo: !1
+	F:Doesn't Exist: EqualTo: !1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index != 1)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266355456327.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266355490548.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266355795784.json: Attached
+resultKeys: 0,2,3,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	1 parsed to 1 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: !1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",EqualTo,"!1",10,"0,2,3,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1988970
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: EqualTo: !1
+	F:Doesn't Exist: EqualTo: !1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index != 1)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266353860057.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266353966923.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266355071204.json: Attached
+resultKeys: 0,2,3,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	1 parsed to 1 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: !1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"InDeX",EqualTo,"!1",10,"0,2,3,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0363633
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:InDeX: EqualTo: !1
+	F:Doesn't Exist: EqualTo: !1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index != 1)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266356229510.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266356271783.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266356474686.json: Attached
+resultKeys: 0,2,3,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	1 parsed to 1 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: !1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"INDEX",EqualTo,"!1",10,"0,2,3,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0331336
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:INDEX: EqualTo: !1
+	F:Doesn't Exist: EqualTo: !1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index != 1)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266355903049.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266355963397.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266356143274.json: Attached
+resultKeys: 0,2,3,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	1 parsed to 1 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: !1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",EqualTo,"0",1,"0")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0258676
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: EqualTo: 0
+	F:Doesn't Exist: EqualTo: 0
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index == 0)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266360461560.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266360502120.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266360650967.json: Attached
+resultKeys: 0
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	0 parsed to 0 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: 0
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",EqualTo,0,1,"0")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1168121
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: EqualTo: 0
+	F:Doesn't Exist: EqualTo: 0
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index == 0)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266361634111.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266361673394.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266361814081.json: Attached
+resultKeys: 0
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	0 parsed to 0 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: 0
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",EqualTo,1,1,"1")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0536232
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: EqualTo: 1
+	F:Doesn't Exist: EqualTo: 1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index == 1)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266356645232.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266356822771.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266356962524.json: Attached
+resultKeys: 1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	1 parsed to 1 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: 1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",GreaterThan,995,4,"996,997,998,999")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0418977
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: GreaterThan: 995
+	F:Doesn't Exist: GreaterThan: 995
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index > 995)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266359712167.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266359827543.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266360007531.json: Attached
+resultKeys: 996,997,998,999
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	995 parsed to 995 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => GreaterThan: 995
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",GreaterThanOrEqualTo,995,5,"995,996,997,998,999")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0380526
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: GreaterThanOrEqualTo: 995
+	F:Doesn't Exist: GreaterThanOrEqualTo: 995
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index >= 995)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266360093802.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266360152650.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266360372902.json: Attached
+resultKeys: 995,996,997,998,999
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	995 parsed to 995 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => GreaterThanOrEqualTo: 995
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",InSet,[1,2,3],3,"1,2,3")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0625954
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: InSet: 1; 2; 3
+	F:Doesn't Exist: InSet: 1; 2; 3
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => value(System.Int32[]).Contains(n.Index)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266357839314.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266357873797.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266358202144.json: Attached
+resultKeys: 1,2,3
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => InSet: 1; 2; 3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",LessThan,"5",5,"0,1,2,3,4")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0345100
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: LessThan: 5
+	F:Doesn't Exist: LessThan: 5
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index < 5)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266358891803.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266358990893.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266359135357.json: Attached
+resultKeys: 0,1,2,3,4
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	5 parsed to 5 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 5
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",LessThan,5,5,"0,1,2,3,4")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0437959
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: LessThan: 5
+	F:Doesn't Exist: LessThan: 5
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index < 5)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266358494782.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266358631508.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266358820841.json: Attached
+resultKeys: 0,1,2,3,4
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	5 parsed to 5 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThan: 5
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",LessThanOrEqualTo,"5",6,"0,1,2,3,4,5")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0418029
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: LessThanOrEqualTo: 5
+	F:Doesn't Exist: LessThanOrEqualTo: 5
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index <= 5)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266359242255.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266359279590.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266359561485.json: Attached
+resultKeys: 0,1,2,3,4,5
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	5 parsed to 5 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => LessThanOrEqualTo: 5
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Index",NotEqualTo,1,10,"0,2,3,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0369383
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Index: NotEqualTo: 1
+	F:Doesn't Exist: NotEqualTo: 1
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Index != 1)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266365234521.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266365287166.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266365489285.json: Attached
+resultKeys: 0,2,3,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	1 parsed to 1 (System.Int32)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo: 1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",EqualTo,"",0,"")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0475116
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo:
+	F:Doesn't Exist: EqualTo:
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Name == "")).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266406225496.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266406348780.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266406579393.json: Attached
+resultKeys:
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo:
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",EqualTo,"*",10,"0,1,2,3,4,5,6,7,8,9")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0354172
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo: *
+	F:Doesn't Exist: EqualTo: *
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266407111111.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266407161504.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266407370652.json: Attached
+resultKeys: 0,1,2,3,4,5,6,7,8,9
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Name => EqualTo: *
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: *
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo: *
+	F:Doesn't Exist: EqualTo: *
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",EqualTo,"*03",9,"103,203,303,403,503,603,703,803,903")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0321585
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo: *03
+	F:Doesn't Exist: EqualTo: *03
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => n.Name.EndsWith("03")).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266362427143.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266362467720.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266362643747.json: Attached
+resultKeys: 103,203,303,403,503,603,703,803,903
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: *03
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",EqualTo,"*e2*",10,"2,20,21,22,23,24,25,26,27,28")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0294970
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo: *e2*
+	F:Doesn't Exist: EqualTo: *e2*
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => n.Name.Contains("e2")).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266362750518.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266362790587.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266362948132.json: Attached
+resultKeys: 2,20,21,22,23,24,25,26,27,28
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: *e2*
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",EqualTo,"Name1*",10,"1,10,11,12,13,14,15,16,17,18")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0517237
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo: Name1*
+	F:Doesn't Exist: EqualTo: Name1*
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => n.Name.StartsWith("Name1")).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266363046386.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266363091570.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266363451557.json: Attached
+resultKeys: 1,10,11,12,13,14,15,16,17,18
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: Name1*
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",EqualTo,"Name3",1,"3")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0243555
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: EqualTo: Name3
+	F:Doesn't Exist: EqualTo: Name3
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => n.Name.Equals("Name3")).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266357131466.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266357165202.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266357312532.json: Attached
+resultKeys: 3
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: Name3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",InSet,["Name1","Name2","Name3"],3,"1,2,3")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0447959
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: InSet: Name1; Name2; Name3
+	F:Doesn't Exist: InSet: Name1; Name2; Name3
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => value(System.String[]).Contains(n.Name)).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266357381542.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266357417240.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266357749574.json: Attached
+resultKeys: 1,2,3
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => InSet: Name1; Name2; Name3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",NotEqualTo,"",10,"0,1,2,3,4,5,6,7,8,9")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0399931
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: NotEqualTo:
+	F:Doesn't Exist: NotEqualTo:
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => (n.Name != "")).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266406711153.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266406770679.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266406999508.json: Attached
+resultKeys: 0,1,2,3,4,5,6,7,8,9
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo:
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",NotEqualTo,"*3",10,"0,1,2,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0624072
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: NotEqualTo: *3
+	F:Doesn't Exist: NotEqualTo: *3
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => Not(n.Name.EndsWith("3"))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266363609742.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266363679339.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266363922793.json: Attached
+resultKeys: 0,1,2,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo: *3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",NotEqualTo,"*e2*",10,"0,1,3,4,5,6,7,8,9,10")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0579461
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: NotEqualTo: *e2*
+	F:Doesn't Exist: NotEqualTo: *e2*
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => Not(n.Name.Contains("e2"))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266364196494.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266364243483.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266364638139.json: Attached
+resultKeys: 0,1,3,4,5,6,7,8,9,10
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo: *e2*
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name",NotEqualTo,"Name1*",10,"0,2,3,4,5,6,7,8,9,20")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0430905
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Name: NotEqualTo: Name1*
+	F:Doesn't Exist: NotEqualTo: Name1*
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => Not(n.Name.StartsWith("Name1"))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266364778301.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266364828041.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266365049641.json: Attached
+resultKeys: 0,2,3,4,5,6,7,8,9,20
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => NotEqualTo: Name1*
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,index,EqualTo,!1,10,0,2,3,4,5,6,7,8,9,10)
 
@@ -4308,6 +7080,51 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
 	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
 
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel,"Children",EqualTo,"*001",10,"2,3,4,5,6,7,8,9,12,13")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0622148
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Children: EqualTo: *001
+	F:Doesn't Exist: EqualTo: *001
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel].Where(n => n.Children.Any(child => child.EndsWith("001"))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266405007129.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266405055562.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266405505728.json: Attached
+resultKeys: 2,3,4,5,6,7,8,9,12,13
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: *001
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel
+
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel,Children,EqualTo,*001,10,2,3,4,5,6,7,8,9,12,13)
 
 * Name: ExecuteByTest_Filter
@@ -4352,6 +7169,51 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 	Could not use properties: Doesn't Exist as they are not on the model
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel]]:Warning:>
 	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerArrayModel
+
+## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel,"Children",EqualTo,"*001",10,"2,3,4,5,6,7,8,9,12,13")
+
+* Name: ExecuteByTest_Filter
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Filter
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0608795
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	F:Children: EqualTo: *001
+	F:Doesn't Exist: EqualTo: *001
+	S:Doesn't Exist: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.ExpressionTreeBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel]]:Information:>
+	TryGetPropertyExpression: Doesn't Exist
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel].Where(n => n.Children.Any(child => child.EndsWith("001"))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266405616024.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266405667323.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266406123193.json: Attached
+resultKeys: 2,3,4,5,6,7,8,9,12,13
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filter mapped for property: Doesn't Exist => EqualTo: *001
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel]]:Warning:>
+	Could not use properties: Doesn't Exist as they are not on the model
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel
 
 ## Test Name: ExecuteByTest_Filter (Eliassen.System.Tests.Linq.TestTargets.TestTargetWithInnerListModel,Children,EqualTo,*001,10,2,3,4,5,6,7,8,9,12,13)
 
@@ -4406,7 +7268,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.2362446
+  * Duration: 00:00:00.0499813
   * Outcome: Passed
 
 
@@ -4429,9 +7291,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638518271921026252.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638518271921460377.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638518271922375774.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266429299757.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266429351947.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266429565995.json: Attached
 resultKeys: 3
 
 ### Standard Error
@@ -4451,7 +7313,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:01.1888753
+  * Duration: 00:00:00.7449751
   * Outcome: Passed
 
 
@@ -4476,9 +7338,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638518271922710224.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638518271922748660.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638518271933762721.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTestFilter(124)-638624266429812513.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestFilter(126)-638624266429865323.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestFilter(128)-638624266436983167.json: Attached
 resultKeys: 3,4,5,6,7,8,9,10,11,12
 
 ### Standard Error
@@ -4496,7 +7358,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[E
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.2198927
+  * Duration: 00:00:00.1589371
   * Outcome: Passed
 
 
@@ -4518,8 +7380,8 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(161)-638518271934599401.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(163)-638518271936736347.json: Attached
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(161)-638624266437271083.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Filter_Range_Bounds(163)-638624266438773154.json: Attached
 
 ### Standard Error
 
@@ -4536,9 +7398,69 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.Expression
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0424468
+  * Duration: 00:00:00.0386661
   * Outcome: Passed
 
+
+### Standard Out
+
+info: Eliassen.System.Linq.Search.QueryBuilder[0]
+      Build query for CurrentPage: 0
+      PageSize: 0
+      ExcludePageCount: False
+      SearchTerm: Search For
+      	F:Name: EqualTo: Name1
+      	F:DoesntExist: EqualTo: DoesntExistValue
+      	S:Name: Descending
+      	S:Email: Descending
+      	S:DoesntExist: Ascending
+      
+warn: Eliassen.System.Linq.Search.QueryBuilder[0]
+      No filter mapped for property: DoesntExist => EqualTo: DoesntExistValue
+info: Eliassen.System.Linq.Search.QueryBuilder[0]
+      Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Cast().OrderBy(_ => 1).Skip(0).Take(10)
+
+## Test Name: ExecuteByTest_Page (0,0,100,1000,0,10,"0,1,2,3,4,5,6,7,8,9")
+
+* Name: ExecuteByTest_Page (0,0,100,1000,0,10,0,1,2,3,4,5,6,7,8,9)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Page
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0313576
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(272)-638624266446122466.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(274)-638624266446175278.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(276)-638624266446353258.json: Attached
+resultKeys: 0,1,2,3,4,5,6,7,8,9
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
 
 ## Test Name: ExecuteByTest_Page (0,0,100,1000,0,10,0,1,2,3,4,5,6,7,8,9)
 
@@ -4576,6 +7498,48 @@ resultKeys: 0,1,2,3,4,5,6,7,8,9
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
 	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
 PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Page (0,1,1000,1000,0,1,"0")
+
+* Name: ExecuteByTest_Page (0,1,1000,1000,0,1,0)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Page
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0276376
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 1
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(_ => 0).Skip(0).Take(1)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(272)-638624266446448439.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(274)-638624266446494081.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(276)-638624266446653949.json: Attached
+resultKeys: 0
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 1
 ExcludePageCount: False
 SearchTerm: (null)
 
@@ -4665,6 +7629,89 @@ SearchTerm: (null)
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
 	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
 
+## Test Name: ExecuteByTest_Page (1,-1,null,null,null,1000,null)
+
+* Name: ExecuteByTest_Page (1,-1,,,,1000,)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Page
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0298568
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 1
+PageSize: -1
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute : System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(_ => 0)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(272)-638624266447287912.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(274)-638624266447328641.json: Attached
+QueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(276)-638624266447472900.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 1
+PageSize: -1
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Page (1,1,1000,1000,1,1,"1")
+
+* Name: ExecuteByTest_Page (1,1,1000,1000,1,1,1)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Page
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0523568
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 1
+PageSize: 1
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(_ => 0).Skip(1).Take(1)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Page(272)-638624266446742573.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTest_Page(274)-638624266446783727.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Page(276)-638624266447035254.json: Attached
+resultKeys: 1
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 1
+PageSize: 1
+ExcludePageCount: False
+SearchTerm: (null)
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
 ## Test Name: ExecuteByTest_Page (1,1,1000,1000,1,1,1)
 
 * Name: ExecuteByTest_Page (1,1,1000,1000,1,1,1)
@@ -4707,6 +7754,39 @@ SearchTerm: (null)
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
 	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
 
+## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,"FName0999 LName0001",1,1,1,"1")
+
+* Name: ExecuteByTest_SearchTerm
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_SearchTerm
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.5269653
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for SearchQuery { CurrentPage = 0, PageSize = 0, ExcludePageCount = False, SearchTerm = FName0999 LName0001, Filter = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.FilterParameter], OrderBy = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.OrderDirections] }
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel]]:Information:>
+	Applying default sort for Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel: (Index, Ascending)
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipMemberOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel].Where(n => ((n != null) AndAlso (((((((((((n.FName + " ") + n.LName) != null) AndAlso ((((n.FName + " ") + n.LName) != null) AndAlso ((n.FName + " ") + n.LName).Equals("FName0999 LName0001"))) OrElse ((((n.LName + " ") + n.FName) != null) AndAlso ((((n.LName + " ") + n.FName) != null) AndAlso ((n.LName + " ") + n.FName).Equals("FName0999 LName0001")))) OrElse ((n.FName != null) AndAlso ((n.FName != null) AndAlso n.FName.Equals("FName0999 LName0001")))) OrElse ((n.LName != null) AndAlso ((n.LName != null) AndAlso n.LName.Equals("FName0999 LName0001")))) OrElse ((n.Email != null) AndAlso ((n.Email != null) AndAlso n.Email.Equals("FName0999 LName0001")))) OrElse ((n.May != null) AndAlso ((n.May != null) AndAlso n.May.Equals("FName0999 LName0001")))) OrElse ((n.Modules != null) AndAlso n.Modules.Any(child => ((child != null) AndAlso child.Equals("FName0999 LName0001"))))) OrElse ((n.NullModules != null) AndAlso n.NullModules.Any(child => ((child != null) AndAlso child.Equals("FName0999 LName0001"))))))).OrderBy(n => Convert(n.Index, Object)).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(235)-638624266440803920.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(237)-638624266440845192.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(244)-638624266445989053.json: Attached
+resultKeys: 1
+
 ## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetExtendedModel,FName0999 LName0001,1,1,1,1)
 
 * Name: ExecuteByTest_SearchTerm
@@ -4739,6 +7819,150 @@ SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(235)-638518271943
 EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(237)-638518271943887738.json: Attached
 PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(244)-638518271952351816.json: Attached
 resultKeys: 1
+
+## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"*3",10,100,10,"3,13,23,33,43,53,63,73,83,93")
+
+* Name: ExecuteByTest_SearchTerm
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_SearchTerm
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0347777
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for SearchQuery { CurrentPage = 0, PageSize = 0, ExcludePageCount = False, SearchTerm = *3, Filter = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.FilterParameter], OrderBy = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.OrderDirections] }
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipMemberOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => ((n != null) AndAlso (((n.Name != null) AndAlso ((n.Name != null) AndAlso n.Name.EndsWith("3"))) OrElse ((n.Email != null) AndAlso ((n.Email != null) AndAlso n.Email.EndsWith("3")))))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(235)-638624266440169931.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(237)-638624266440212031.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(244)-638624266440449712.json: Attached
+resultKeys: 3,13,23,33,43,53,63,73,83,93
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"*e3*",12,111,10,"3,30,31,32,33,34,35,36,37,38")
+
+* Name: ExecuteByTest_SearchTerm
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_SearchTerm
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0280261
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for SearchQuery { CurrentPage = 0, PageSize = 0, ExcludePageCount = False, SearchTerm = *e3*, Filter = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.FilterParameter], OrderBy = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.OrderDirections] }
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipMemberOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => ((n != null) AndAlso (((n.Name != null) AndAlso ((n.Name != null) AndAlso n.Name.Contains("e3"))) OrElse ((n.Email != null) AndAlso ((n.Email != null) AndAlso n.Email.Contains("e3")))))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(235)-638624266440519343.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(237)-638624266440561006.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(244)-638624266440747858.json: Attached
+resultKeys: 3,30,31,32,33,34,35,36,37,38
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name3",1,1,1,"3")
+
+* Name: ExecuteByTest_SearchTerm
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_SearchTerm
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0370622
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for SearchQuery { CurrentPage = 0, PageSize = 0, ExcludePageCount = False, SearchTerm = Name3, Filter = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.FilterParameter], OrderBy = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.OrderDirections] }
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipMemberOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => ((n != null) AndAlso (((n.Name != null) AndAlso ((n.Name != null) AndAlso n.Name.Equals("Name3"))) OrElse ((n.Email != null) AndAlso ((n.Email != null) AndAlso n.Email.Equals("Name3")))))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(235)-638624266439522788.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(237)-638624266439584931.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(244)-638624266439809491.json: Attached
+resultKeys: 3
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,"Name3*",12,111,10,"3,30,31,32,33,34,35,36,37,38")
+
+* Name: ExecuteByTest_SearchTerm
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_SearchTerm
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0295301
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for SearchQuery { CurrentPage = 0, PageSize = 0, ExcludePageCount = False, SearchTerm = Name3*, Filter = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.FilterParameter], OrderBy = System.Collections.Generic.Dictionary`2[System.String,Eliassen.System.Linq.Search.OrderDirections] }
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipMemberOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Debug:>
+	Visited by: Eliassen.System.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitor
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Where(n => ((n != null) AndAlso (((n.Name != null) AndAlso ((n.Name != null) AndAlso n.Name.StartsWith("Name3"))) OrElse ((n.Email != null) AndAlso ((n.Email != null) AndAlso n.Email.StartsWith("Name3")))))).OrderBy(_ => 0).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(235)-638624266439880072.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(237)-638624266439925839.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTestSearchTerm(244)-638624266440119091.json: Attached
+resultKeys: 3,30,31,32,33,34,35,36,37,38
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
+	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
 
 ## Test Name: ExecuteByTest_SearchTerm (Eliassen.System.Tests.Linq.TestTargets.TestTargetModel,*3,10,100,10,3,13,23,33,43,53,63,73,83,93)
 
@@ -4883,6 +8107,162 @@ resultKeys: 3,30,31,32,33,34,35,36,37,38
 
 Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]]:Warning:>
 	Force sort by 0 applied for Eliassen.System.Tests.Linq.TestTargets.TestTargetModel
+
+## Test Name: ExecuteByTest_Sort ("Name",Ascending,"0,1,10,100,101,102,103,104,105,106")
+
+* Name: ExecuteByTest_Sort (Name,Ascending,0,1,10,100,101,102,103,104,105,106)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0193370
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(320)-638624266448344501.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(322)-638624266448485783.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Ascending
+
+## Test Name: ExecuteByTest_Sort ("name",Descending,"999,998,997,996,995,994,993,992,991,990")
+
+* Name: ExecuteByTest_Sort (name,Descending,999,998,997,996,995,994,993,992,991,990)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0177262
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:name: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(320)-638624266447959710.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(322)-638624266448081384.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:name: Descending
+
+## Test Name: ExecuteByTest_Sort ("Name",Descending,"999,998,997,996,995,994,993,992,991,990")
+
+* Name: ExecuteByTest_Sort (Name,Descending,999,998,997,996,995,994,993,992,991,990)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0223762
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(320)-638624266447714508.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(322)-638624266447839909.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Descending
+
+## Test Name: ExecuteByTest_Sort ("NAME",Descending,"999,998,997,996,995,994,993,992,991,990")
+
+* Name: ExecuteByTest_Sort (NAME,Descending,999,998,997,996,995,994,993,992,991,990)
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteByTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0173535
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:NAME: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteByTest_Sort(320)-638624266448151445.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteByTest_Sort(322)-638624266448272879.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:NAME: Descending
 
 ## Test Name: ExecuteByTest_Sort (Name,Ascending,0,1,10,100,101,102,103,104,105,106)
 
@@ -7692,6 +11072,162 @@ ExcludePageCount: False
 SearchTerm: (null)
 	S:NAME: Descending
 
+## Test Name: ExecuteTest_Sort ("Name",Ascending,"0,1,10,100,101,102,103,104,105,106")
+
+* Name: ExecuteTest_Sort ("Name",Ascending,"0,1,10,100,101,102,103,104,105,106")
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0184961
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Ascending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderBy(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteTest_Sort(348)-638624266449358693.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteTest_Sort(350)-638624266449493930.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Ascending
+
+## Test Name: ExecuteTest_Sort ("name",Descending,"999,998,997,996,995,994,993,992,991,990")
+
+* Name: ExecuteTest_Sort ("name",Descending,"999,998,997,996,995,994,993,992,991,990")
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0234149
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:name: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteTest_Sort(348)-638624266448879496.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteTest_Sort(350)-638624266449053009.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:name: Descending
+
+## Test Name: ExecuteTest_Sort ("Name",Descending,"999,998,997,996,995,994,993,992,991,990")
+
+* Name: ExecuteTest_Sort ("Name",Descending,"999,998,997,996,995,994,993,992,991,990")
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0283481
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteTest_Sort(348)-638624266448572069.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteTest_Sort(350)-638624266448710961.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:Name: Descending
+
+## Test Name: ExecuteTest_Sort ("NAME",Descending,"999,998,997,996,995,994,993,992,991,990")
+
+* Name: ExecuteTest_Sort ("NAME",Descending,"999,998,997,996,995,994,993,992,991,990")
+* Test Class: Eliassen.System.Tests.Linq.QueryableExtensionsTests
+  * Method: ExecuteTest_Sort
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0176624
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Build query for CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:NAME: Descending
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Information:>
+	Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].OrderByDescending(n => n.Name).Skip(0).Take(10)
+
+
+
+TestContext Messages:
+SearchQuery-QueryableExtensionsTests_ExecuteTest_Sort(348)-638624266449142556.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_ExecuteTest_Sort(350)-638624266449263973.json: Attached
+
+### Standard Error
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:Warning:>
+	No filtering detected: System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel]: CurrentPage: 0
+PageSize: 0
+ExcludePageCount: False
+SearchTerm: (null)
+	S:NAME: Descending
+
 ## Test Name: ExecuteTest_Sort (Name,Ascending,0,1,10,100,101,102,103,104,105,106)
 
 * Name: ExecuteTest_Sort (Name,Ascending,0,1,10,100,101,102,103,104,105,106)
@@ -8324,7 +11860,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0408665
+  * Duration: 00:00:00.0295291
   * Outcome: Passed
 
 
@@ -8336,7 +11872,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0027489
+  * Duration: 00:00:00.0053986
   * Outcome: Passed
 
 
@@ -8348,7 +11884,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0020575
+  * Duration: 00:00:00.0042924
   * Outcome: Passed
 
 
@@ -8360,7 +11896,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0012419
+  * Duration: 00:00:00.0012046
   * Outcome: Passed
 
 
@@ -8372,7 +11908,7 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009552
+  * Duration: 00:00:00.0005200
   * Outcome: Passed
 
 
@@ -8384,9 +11920,111 @@ SearchTerm: (null)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0036194
+  * Duration: 00:00:00.0043917
   * Outcome: Passed
 
+
+## Test Name: GetHash ("Hello World!","7Qdih1MuhjZehB6Sv8UNjA==")
+
+* Name: GetHash (Hello World!,7Qdih1MuhjZehB6Sv8UNjA==)
+* Test Class: Eliassen.System.Tests.Security.Cryptography.Md5HashTests
+  * Method: GetHash
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0018733
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+"Hello World!" => "7Qdih1MuhjZehB6Sv8UNjA=="
+
+## Test Name: GetHash ("Hello World!","f4OxZX/x/FO5LcGBSKHWXfwtSx+j1ncoSt3SABJtkGk=")
+
+* Name: GetHash (Hello World!,f4OxZX/x/FO5LcGBSKHWXfwtSx+j1ncoSt3SABJtkGk=)
+* Test Class: Eliassen.System.Tests.Security.Cryptography.Sha256HashTests
+  * Method: GetHash
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0007637
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+"Hello World!" => "f4OxZX/x/FO5LcGBSKHWXfwtSx+j1ncoSt3SABJtkGk="
+
+## Test Name: GetHash ("Hello World!","hhhE1nBOhXP+w02WfiC8/vPUJM9IvgTm3AjyvVjHKXQzcQFerYkcw88cnTS0kmS1EHUbH/nlN5N7xGtdb/TsyA==")
+
+* Name: GetHash (Hello World!,hhhE1nBOhXP+w02WfiC8/vPUJM9IvgTm3AjyvVjHKXQzcQFerYkcw88cnTS0kmS1EHUbH/nlN5N7xGtdb/TsyA==)
+* Test Class: Eliassen.System.Tests.Security.Cryptography.Sha512HashTests
+  * Method: GetHash
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0097183
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+"Hello World!" => "hhhE1nBOhXP+w02WfiC8/vPUJM9IvgTm3AjyvVjHKXQzcQFerYkcw88cnTS0kmS1EHUbH/nlN5N7xGtdb/TsyA=="
+
+## Test Name: GetHash ("hello world","MJ7MSJwS1utMxA9QyQLytNDtd+5RGnx6m808qG1M2G+YndNbxf9JlnDaNCVbRbDP2DDoH2Bdz33FVC6TrpzXbw==")
+
+* Name: GetHash (hello world,MJ7MSJwS1utMxA9QyQLytNDtd+5RGnx6m808qG1M2G+YndNbxf9JlnDaNCVbRbDP2DDoH2Bdz33FVC6TrpzXbw==)
+* Test Class: Eliassen.System.Tests.Security.Cryptography.Sha512HashTests
+  * Method: GetHash
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0006512
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+"hello world" => "MJ7MSJwS1utMxA9QyQLytNDtd+5RGnx6m808qG1M2G+YndNbxf9JlnDaNCVbRbDP2DDoH2Bdz33FVC6TrpzXbw=="
+
+## Test Name: GetHash ("hello world","uU0nuZNNPgilLlLX2n2r+sSE7+N6U4DukIj3rOLvzek=")
+
+* Name: GetHash (hello world,uU0nuZNNPgilLlLX2n2r+sSE7+N6U4DukIj3rOLvzek=)
+* Test Class: Eliassen.System.Tests.Security.Cryptography.Sha256HashTests
+  * Method: GetHash
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0004691
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+"hello world" => "uU0nuZNNPgilLlLX2n2r+sSE7+N6U4DukIj3rOLvzek="
+
+## Test Name: GetHash ("hello world","XrY7u+Ae7tCTyyK7j1rNww==")
+
+* Name: GetHash (hello world,XrY7u+Ae7tCTyyK7j1rNww==)
+* Test Class: Eliassen.System.Tests.Security.Cryptography.Md5HashTests
+  * Method: GetHash
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0006663
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+"hello world" => "XrY7u+Ae7tCTyyK7j1rNww=="
 
 ## Test Name: GetHash (hello world,MJ7MSJwS1utMxA9QyQLytNDtd+5RGnx6m808qG1M2G+YndNbxf9JlnDaNCVbRbDP2DDoH2Bdz33FVC6TrpzXbw==)
 
@@ -8532,7 +12170,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0032056
+  * Duration: 00:00:00.0027182
   * Outcome: Passed
 
 
@@ -8544,7 +12182,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0090193
+  * Duration: 00:00:00.0066821
   * Outcome: Passed
 
 
@@ -8556,7 +12194,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009315
+  * Duration: 00:00:00.0007039
   * Outcome: Passed
 
 
@@ -8568,7 +12206,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005481
+  * Duration: 00:00:00.0006344
   * Outcome: Passed
 
 
@@ -8580,7 +12218,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001589
+  * Duration: 00:00:00.0001453
   * Outcome: Passed
 
 
@@ -8592,7 +12230,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0530328
+  * Duration: 00:00:00.0097587
   * Outcome: Passed
 
 
@@ -8604,7 +12242,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0103368
+  * Duration: 00:00:00.0076091
   * Outcome: Passed
 
 
@@ -8616,7 +12254,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004466
+  * Duration: 00:00:00.0004947
   * Outcome: Passed
 
 
@@ -8628,7 +12266,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003601
+  * Duration: 00:00:00.0003130
   * Outcome: Passed
 
 
@@ -8640,7 +12278,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004251
+  * Duration: 00:00:00.0003131
   * Outcome: Passed
 
 
@@ -8652,7 +12290,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005564
+  * Duration: 00:00:00.0002548
   * Outcome: Passed
 
 
@@ -8664,7 +12302,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0007177
+  * Duration: 00:00:00.0006710
   * Outcome: Passed
 
 
@@ -8676,27 +12314,21 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003977
+  * Duration: 00:00:00.0002589
   * Outcome: Passed
 
 
-### Standard Out
+## Test Name: GetShortTypeNameTests (Eliassen.System.Tests.Reflection.ReflectionExtensionsTests,"Eliassen.System.Tests.Reflection.ReflectionExtensionsTests, Eliassen.System.Tests")
 
-info: Eliassen.System.Linq.Search.QueryBuilder[0]
-      Build query for CurrentPage: 0
-      PageSize: 0
-      ExcludePageCount: False
-      SearchTerm: Search For
-      	F:Name: EqualTo: Name1
-      	F:DoesntExist: EqualTo: DoesntExistValue
-      	S:Name: Descending
-      	S:Email: Descending
-      	S:DoesntExist: Ascending
-      
-warn: Eliassen.System.Linq.Search.QueryBuilder[0]
-      No filter mapped for property: DoesntExist => EqualTo: DoesntExistValue
-info: Eliassen.System.Linq.Search.QueryBuilder[0]
-      Execute (paged): System.Linq.Enumerable+SelectRangeIterator`1[Eliassen.System.Tests.Linq.TestTargets.TestTargetModel].Cast().OrderBy(_ => 1).Skip(0).Take(10)
+* Name: GetShortTypeNameTests
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: GetShortTypeNameTests
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0003192
+  * Outcome: Passed
+
 
 ## Test Name: GetShortTypeNameTests (Eliassen.System.Tests.Reflection.ReflectionExtensionsTests,Eliassen.System.Tests.Reflection.ReflectionExtensionsTests, Eliassen.System.Tests)
 
@@ -8707,6 +12339,18 @@ info: Eliassen.System.Linq.Search.QueryBuilder[0]
   * Unit
 * Details: 
   * Duration: 00:00:00.0003104
+  * Outcome: Passed
+
+
+## Test Name: GetShortTypeNameTests (System.String,"System.String, System.Private.CoreLib")
+
+* Name: GetShortTypeNameTests
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: GetShortTypeNameTests
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0004777
   * Outcome: Passed
 
 
@@ -8730,7 +12374,7 @@ info: Eliassen.System.Linq.Search.QueryBuilder[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0010980
+  * Duration: 00:00:00.0006533
   * Outcome: Passed
 
 
@@ -8742,7 +12386,7 @@ info: Eliassen.System.Linq.Search.QueryBuilder[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003807
+  * Duration: 00:00:00.0003096
   * Outcome: Passed
 
 
@@ -8754,7 +12398,19 @@ info: Eliassen.System.Linq.Search.QueryBuilder[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0031117
+  * Duration: 00:00:00.0023949
+  * Outcome: Passed
+
+
+## Test Name: GetTest
+
+* Name: GetTest
+* Test Class: Eliassen.System.Tests.Text.Templating.TemplateEngineTests
+  * Method: GetTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0090093
   * Outcome: Passed
 
 
@@ -8766,30 +12422,21 @@ info: Eliassen.System.Linq.Search.QueryBuilder[0]
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.6981604
+  * Duration: 00:00:00.3554368
   * Outcome: Passed
 
 
 ### Standard Out
+
+info: Eliassen.System.Text.Templating.FileTemplateSource[0]
+      Search for tmpvirsnq in "C:\Users\MWhited\AppData\Local\Temp"
+info: Eliassen.System.IO.TempFileHandle[0]
+      Deleting C:\Users\MWhited\AppData\Local\Temp\tmpvirsnq.tmp
+
+
 
 TestContext Messages:
-Temp File: C:\Users\MWhited\AppData\Local\Temp\tmpis1dfq.tmp
-
-## Test Name: GetTest
-
-* Name: GetTest
-* Test Class: Eliassen.System.Tests.Text.Templating.TemplateEngineTests
-  * Method: GetTest
-* Categories
-  * Unit
-* Details: 
-  * Duration: 00:00:00.0083535
-  * Outcome: Passed
-
-
-### Standard Out
-
-info
+Temp File: C:\Users\MWhited\AppData\Local\Temp\tmpvirsnq.tmp
 
 ## Test Name: GetTestDataAsyncTest
 
@@ -8799,7 +12446,7 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.8862562
+  * Duration: 00:00:00.2573635
   * Outcome: Passed
 
 
@@ -8811,7 +12458,7 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0087050
+  * Duration: 00:00:00.0024849
   * Outcome: Passed
 
 
@@ -8823,7 +12470,7 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0082856
+  * Duration: 00:00:00.0031077
   * Outcome: Passed
 
 
@@ -8835,7 +12482,7 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0084258
+  * Duration: 00:00:00.0042979
   * Outcome: Passed
 
 
@@ -8847,9 +12494,16 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0279427
+  * Duration: 00:00:00.0842335
   * Outcome: Passed
 
+
+### Standard Out
+
+info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
+      Handle: test message id
+info: Eliassen.MessageQueueing.Services.MessageHandlerProvider[0]
+      Handled: test message id
 
 ## Test Name: InOutTest
 
@@ -8859,21 +12513,55 @@ info
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0906941
+  * Duration: 00:00:00.2215466
   * Outcome: Passed
 
 
 ### Standard Out
 
-info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sent: [(null) -> c120b643-0344-4e75-9de3-a27140c3879a] => ((null))
 info: Eliassen.MessageQueueing.Services.InProcessMessageProvider[0]
-      Dequeue: 54aa0492-26af-4397-be6c-99f1700fec39
+      Dequeue: bca81692-8815-410d-a910-8eb0bd5227dc
 
 
 
 TestContext Messages:
 Handler Called!
+
+## Test Name: KeyedHashTest ("MD5",Eliassen.System.Security.Cryptography.Md5Hash)
+
+* Name: KeyedHashTest
+* Test Class: Eliassen.System.Tests.Security.Cryptography.HashSelectorTest
+  * Method: KeyedHashTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002212
+  * Outcome: Passed
+
+
+## Test Name: KeyedHashTest ("SHA256",Eliassen.System.Security.Cryptography.Sha256Hash)
+
+* Name: KeyedHashTest
+* Test Class: Eliassen.System.Tests.Security.Cryptography.HashSelectorTest
+  * Method: KeyedHashTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002220
+  * Outcome: Passed
+
+
+## Test Name: KeyedHashTest ("SHA512",Eliassen.System.Security.Cryptography.Sha512Hash)
+
+* Name: KeyedHashTest
+* Test Class: Eliassen.System.Tests.Security.Cryptography.HashSelectorTest
+  * Method: KeyedHashTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002099
+  * Outcome: Passed
+
 
 ## Test Name: KeyedHashTest (Md5,Eliassen.System.Security.Cryptography.Md5Hash)
 
@@ -8883,7 +12571,7 @@ Handler Called!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0006993
+  * Duration: 00:00:00.0004834
   * Outcome: Passed
 
 
@@ -8907,7 +12595,7 @@ Handler Called!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0152983
+  * Duration: 00:00:00.0003853
   * Outcome: Passed
 
 
@@ -8931,7 +12619,7 @@ Handler Called!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0004590
+  * Duration: 00:00:00.0001183
   * Outcome: Passed
 
 
@@ -8947,6 +12635,42 @@ Handler Called!
   * Outcome: Passed
 
 
+## Test Name: KeyedSerializerTest ("BSON",Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer)
+
+* Name: KeyedSerializerTest
+* Test Class: Eliassen.System.Tests.Text.SerializerSelectorTest
+  * Method: KeyedSerializerTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001017
+  * Outcome: Passed
+
+
+## Test Name: KeyedSerializerTest ("JSON",Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer)
+
+* Name: KeyedSerializerTest
+* Test Class: Eliassen.System.Tests.Text.SerializerSelectorTest
+  * Method: KeyedSerializerTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001237
+  * Outcome: Passed
+
+
+## Test Name: KeyedSerializerTest ("XML",Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer)
+
+* Name: KeyedSerializerTest
+* Test Class: Eliassen.System.Tests.Text.SerializerSelectorTest
+  * Method: KeyedSerializerTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000967
+  * Outcome: Passed
+
+
 ## Test Name: KeyedSerializerTest (Bson,Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer)
 
 * Name: KeyedSerializerTest
@@ -8955,7 +12679,7 @@ Handler Called!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0003875
+  * Duration: 00:00:00.0004125
   * Outcome: Passed
 
 
@@ -8979,7 +12703,7 @@ Handler Called!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0005786
+  * Duration: 00:00:00.0006641
   * Outcome: Passed
 
 
@@ -9003,7 +12727,7 @@ Handler Called!
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0001201
+  * Duration: 00:00:00.0002077
   * Outcome: Passed
 
 
@@ -9018,6 +12742,57 @@ Handler Called!
   * Duration: 00:00:00.0002171
   * Outcome: Passed
 
+
+## Test Name: KeyedSerializerTests ("BSON",Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer)
+
+* Name: KeyedSerializerTests
+* Test Class: Eliassen.Examples.Tests.Text.ISerializerTests
+  * Method: KeyedSerializerTests
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0056750
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer
+
+## Test Name: KeyedSerializerTests ("JSON",Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer)
+
+* Name: KeyedSerializerTests
+* Test Class: Eliassen.Examples.Tests.Text.ISerializerTests
+  * Method: KeyedSerializerTests
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0020361
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer
+
+## Test Name: KeyedSerializerTests ("XML",Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer)
+
+* Name: KeyedSerializerTests
+* Test Class: Eliassen.Examples.Tests.Text.ISerializerTests
+  * Method: KeyedSerializerTests
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0011731
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer
 
 ## Test Name: KeyedSerializerTests (BSON,Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer)
 
@@ -9069,6 +12844,60 @@ Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer
 
 TestContext Messages:
 Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer
+
+## Test Name: KeyedSerializerTests_Value ("BSON",Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer,".bson")
+
+* Name: KeyedSerializerTests_Value
+* Test Class: Eliassen.Examples.Tests.Text.ISerializerTests
+  * Method: KeyedSerializerTests_Value
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0081158
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer
+Result-ISerializerTests_KeyedSerializerTests_Value(82)-638624267375108117.bson: Attached
+
+## Test Name: KeyedSerializerTests_Value ("JSON",Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer,".json")
+
+* Name: KeyedSerializerTests_Value
+* Test Class: Eliassen.Examples.Tests.Text.ISerializerTests
+  * Method: KeyedSerializerTests_Value
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0815570
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Eliassen.System.Text.Json.Serialization.DefaultJsonSerializer
+Result-ISerializerTests_KeyedSerializerTests_Value(82)-638624267374779206.json: Attached
+
+## Test Name: KeyedSerializerTests_Value ("XML",Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer,".xml")
+
+* Name: KeyedSerializerTests_Value
+* Test Class: Eliassen.Examples.Tests.Text.ISerializerTests
+  * Method: KeyedSerializerTests_Value
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0226821
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer
+Result-ISerializerTests_KeyedSerializerTests_Value(82)-638624267375025474.xml: Attached
 
 ## Test Name: KeyedSerializerTests_Value (BSON,Eliassen.System.Text.Json.Serialization.DefaultBsonSerializer,.bson)
 
@@ -9124,6 +12953,18 @@ TestContext Messages:
 Eliassen.System.Text.Xml.Serialization.DefaultXmlSerializer
 Result-ISerializerTests_KeyedSerializerTests_Value(82)-638518273184271212.xml: Attached
 
+## Test Name: MakeSafeArrayTest (System.Decimal,[1,2.3,2.4,"1.2"],[1,2.3,2.4,1.2])
+
+* Name: MakeSafeArrayTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeArrayTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001291
+  * Outcome: Passed
+
+
 ## Test Name: MakeSafeArrayTest (System.Decimal,System.Object[],System.Decimal[])
 
 * Name: MakeSafeArrayTest
@@ -9133,6 +12974,30 @@ Result-ISerializerTests_KeyedSerializerTests_Value(82)-638518273184271212.xml: A
   * Unit
 * Details: 
   * Duration: 00:00:00.0002721
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeArrayTest (System.String,["Hello World",1],["Hello World","1"])
+
+* Name: MakeSafeArrayTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeArrayTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0010412
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeArrayTest (System.String,[],[])
+
+* Name: MakeSafeArrayTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeArrayTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002409
   * Outcome: Passed
 
 
@@ -9148,6 +13013,35 @@ Result-ISerializerTests_KeyedSerializerTests_Value(82)-638518273184271212.xml: A
   * Outcome: Passed
 
 
+## Test Name: MakeSafeTest (System.AttributeTargets,"Enum",Enum)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000306
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.AttributeTargets,"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0017162
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.AttributeTargets'., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: MakeSafeTest (System.AttributeTargets,16,Enum)
 
 * Name: MakeSafeTest
@@ -9156,7 +13050,7 @@ Result-ISerializerTests_KeyedSerializerTests_Value(82)-638518273184271212.xml: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000368
+  * Duration: 00:00:00.0000260
   * Outcome: Passed
 
 
@@ -9168,7 +13062,7 @@ Result-ISerializerTests_KeyedSerializerTests_Value(82)-638518273184271212.xml: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000491
+  * Duration: 00:00:00.0000123
   * Outcome: Passed
 
 
@@ -9189,6 +13083,18 @@ Result-ISerializerTests_KeyedSerializerTests_Value(82)-638518273184271212.xml: A
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.AttributeTargets'., MessageCode = , Context = , MetaData =  }
 
+## Test Name: MakeSafeTest (System.Byte[],"QUJD",[65,66,67])
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0042688
+  * Outcome: Passed
+
+
 ## Test Name: MakeSafeTest (System.Byte[],QUJD,System.Byte[])
 
 * Name: MakeSafeTest
@@ -9198,6 +13104,30 @@ ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 
   * Unit
 * Details: 
   * Duration: 00:00:00.0032945
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.DateTime,"3/16/2022 12:00:00 AM",3/16/2022 12:00:00 AM)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001286
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.DateTime,"3/16/2022",3/16/2022 12:00:00 AM)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002147
   * Outcome: Passed
 
 
@@ -9225,6 +13155,18 @@ ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 
   * Outcome: Passed
 
 
+## Test Name: MakeSafeTest (System.DateTimeOffset,"3/16/2022 12:00:00 AM +05:00",3/16/2022 12:00:00 AM +05:00)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000592
+  * Outcome: Passed
+
+
 ## Test Name: MakeSafeTest (System.DateTimeOffset,3/16/2022 12:00:00 AM +05:00,3/16/2022 12:00:00 AM +05:00)
 
 * Name: MakeSafeTest
@@ -9237,6 +13179,36 @@ ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 
   * Outcome: Passed
 
 
+## Test Name: MakeSafeTest (System.Decimal,"1",1)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0018611
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Decimal,"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002041
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = The input string 'nope' was not in a correct format., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: MakeSafeTest (System.Decimal,1,1)
 
 * Name: MakeSafeTest
@@ -9245,7 +13217,7 @@ ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000321
+  * Duration: 00:00:00.0000173
   * Outcome: Passed
 
 
@@ -9258,6 +13230,36 @@ ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 
   * Unit
 * Details: 
   * Duration: 00:00:00.0003380
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = The input string 'nope' was not in a correct format., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: MakeSafeTest (System.Double,"1",1)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001019
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Double,"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0009107
   * Outcome: Passed
 
 
@@ -9297,6 +13299,36 @@ TestContext Messages:
 ResultMessage { Level = Warning, Message = The input string 'nope' was not in a correct format., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: MakeSafeTest (System.Guid,"18AACB9C-2989-4322-A490-C7167BEA0DB4",18aacb9c-2989-4322-a490-c7167bea0db4)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001135
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Guid,"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0014403
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Guid'., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: MakeSafeTest (System.Guid,18AACB9C-2989-4322-A490-C7167BEA0DB4,18aacb9c-2989-4322-a490-c7167bea0db4)
 
 * Name: MakeSafeTest
@@ -9327,6 +13359,36 @@ TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Guid'., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: MakeSafeTest (System.Int32,"1",1)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001168
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Int32,"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0011875
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = The input string 'nope' was not in a correct format., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: MakeSafeTest (System.Int32,1,1)
 
 * Name: MakeSafeTest
@@ -9347,7 +13409,7 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000409
+  * Duration: 00:00:00.0000290
   * Outcome: Passed
 
 
@@ -9369,6 +13431,23 @@ TestContext Messages:
 ResultMessage { Level = Warning, Message = The input string 'nope' was not in a correct format., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: MakeSafeTest (System.Nullable`1[System.AttributeTargets],"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001569
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.AttributeTargets, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: MakeSafeTest (System.Nullable`1[System.AttributeTargets],Enum,Enum)
 
 * Name: MakeSafeTest
@@ -9377,7 +13456,7 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0000103
+  * Duration: 00:00:00.0000047
   * Outcome: Passed
 
 
@@ -9397,6 +13476,36 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.AttributeTargets, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Decimal],"1",1)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0003383
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Decimal],"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001396
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
 ## Test Name: MakeSafeTest (System.Nullable`1[System.Decimal],1,1)
 
@@ -9426,6 +13535,36 @@ ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 
 
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Double],"1",1)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002117
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Double],"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001372
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
 ## Test Name: MakeSafeTest (System.Nullable`1[System.Double],1,1)
@@ -9458,6 +13597,36 @@ TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: MakeSafeTest (System.Nullable`1[System.Guid],"18AACB9C-2989-4322-A490-C7167BEA0DB4",18aacb9c-2989-4322-a490-c7167bea0db4)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002655
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Guid],"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002311
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: MakeSafeTest (System.Nullable`1[System.Guid],18AACB9C-2989-4322-A490-C7167BEA0DB4,18aacb9c-2989-4322-a490-c7167bea0db4)
 
 * Name: MakeSafeTest
@@ -9486,6 +13655,36 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Int32],"1",1)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002482
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.Nullable`1[System.Int32],"nope",null)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001336
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
 ## Test Name: MakeSafeTest (System.Nullable`1[System.Int32],1,1)
@@ -9518,6 +13717,30 @@ TestContext Messages:
 ResultMessage { Level = Warning, Message = Invalid cast from 'System.String' to 'System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'., MessageCode = , Context = , MetaData =  }
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: MakeSafeTest (System.String,"Hello World","Hello World")
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1222335
+  * Outcome: Passed
+
+
+## Test Name: MakeSafeTest (System.String,1,"1")
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0005819
+  * Outcome: Passed
+
+
 ## Test Name: MakeSafeTest (System.String,1,1)
 
 * Name: MakeSafeTest
@@ -9542,6 +13765,18 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
   * Outcome: Passed
 
 
+## Test Name: MakeSafeTest (System.TimeSpan,"16:00",16:00:00)
+
+* Name: MakeSafeTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: MakeSafeTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0008560
+  * Outcome: Passed
+
+
 ## Test Name: MakeSafeTest (System.TimeSpan,16:00,16:00:00)
 
 * Name: MakeSafeTest
@@ -9562,7 +13797,7 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0009759
+  * Duration: 00:00:00.0008491
   * Outcome: Passed
 
 
@@ -9574,7 +13809,7 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0518528
+  * Duration: 00:00:00.0575144
   * Outcome: Passed
 
 
@@ -9586,7 +13821,7 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0752159
+  * Duration: 00:00:00.0607579
   * Outcome: Passed
 
 
@@ -9606,9 +13841,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-QueryableExtensionsTests_NullableCollectionQueryTest(186)-638518271936816911.json: Attached
-EnumerableQuery_1-QueryableExtensionsTests_NullableCollectionQueryTest(198)-638518271936857395.json: Attached
-PagedQueryResult_1-QueryableExtensionsTests_NullableCollectionQueryTest(201)-638518271937232681.json: Attached
+SearchQuery-QueryableExtensionsTests_NullableCollectionQueryTest(186)-638624266438874337.json: Attached
+EnumerableQuery_1-QueryableExtensionsTests_NullableCollectionQueryTest(198)-638624266438918183.json: Attached
+PagedQueryResult_1-QueryableExtensionsTests_NullableCollectionQueryTest(201)-638624266439194100.json: Attached
 
 ### Standard Error
 
@@ -9623,7 +13858,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[<
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0639195
+  * Duration: 00:00:00.0306390
   * Outcome: Passed
 
 
@@ -9643,9 +13878,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Array(45)-638518271966772947.json: Attached
-EnumerableQuery_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Array(52)-638518271966874970.json: Attached
-PagedQueryResult_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Array(55)-638518271967202433.json: Attached
+SearchQuery-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Array(45)-638624266450805206.json: Attached
+EnumerableQuery_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Array(52)-638624266450857419.json: Attached
+PagedQueryResult_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Array(55)-638624266451039514.json: Attached
 
 ### Standard Error
 
@@ -9660,7 +13895,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[<
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0596308
+  * Duration: 00:00:00.0221507
   * Outcome: Passed
 
 
@@ -9680,9 +13915,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Composite(22)-638518271966145990.json: Attached
-EnumerableQuery_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Composite(31)-638518271966382393.json: Attached
-PagedQueryResult_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Composite(34)-638518271966570837.json: Attached
+SearchQuery-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Composite(22)-638624266450528108.json: Attached
+EnumerableQuery_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Composite(31)-638624266450568057.json: Attached
+PagedQueryResult_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Composite(34)-638624266450672091.json: Attached
 
 ### Standard Error
 
@@ -9697,7 +13932,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[<
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0714731
+  * Duration: 00:00:00.0279171
   * Outcome: Passed
 
 
@@ -9717,9 +13952,9 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.QueryBuilder]:I
 
 
 TestContext Messages:
-SearchQuery-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Element(66)-638518271967439385.json: Attached
-EnumerableQuery_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Element(72)-638518271967492896.json: Attached
-PagedQueryResult_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Element(75)-638518271967828742.json: Attached
+SearchQuery-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Element(66)-638624266451129821.json: Attached
+EnumerableQuery_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Element(72)-638624266451171750.json: Attached
+PagedQueryResult_1-SkipMemberOnNullExpressionVisitorTests_NullableCollectionQueryTest_Element(75)-638624266451324392.json: Attached
 
 ### Standard Error
 
@@ -9734,7 +13969,7 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[<
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0095718
+  * Duration: 00:00:00.0148972
   * Outcome: Passed
 
 
@@ -9746,26 +13981,26 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Search.SortBuilder`1[<
 * Categories
   * Simulate
 * Details: 
-  * Duration: 00:00:00.4697253
+  * Duration: 00:00:01.1655474
   * Outcome: Passed
 
 
 ### Standard Out
 
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sending: "{ hello = world }" [(null) -> 56940d44-a415-4eca-b84e-8966722e96b9] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
+      Sending: "{ hello = world }" [(null) -> ff6bc4ce-00aa-44ee-b958-19a64b7f438c] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
 info: Eliassen.MessageQueueing.Tests.TestItems.TestMessageSenderProvider[0]
       SendAsync({ hello = world }, Eliassen.MessageQueueing.Services.MessageContext)
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sent: [(null) -> 56940d44-a415-4eca-b84e-8966722e96b9] => ((null))
+      Sent: [(null) -> ff6bc4ce-00aa-44ee-b958-19a64b7f438c] => ((null))
 
 
 
 TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(107)-638518271545885324.txt: Attached
-message-TestMessageSenderProvider_SendAsync(22)-638518271547351085.json: Attached
-context-TestMessageSenderProvider_SendAsync(23)-638518271547548594.json: Attached
-correlationId: 56940d44-a415-4eca-b84e-8966722e96b9
+Configuration-MessageSenderTests_GetServiceProvider(107)-638624266365276673.txt: Attached
+message-TestMessageSenderProvider_SendAsync(22)-638624266367641501.json: Attached
+context-TestMessageSenderProvider_SendAsync(23)-638624266368242148.json: Attached
+correlationId: ff6bc4ce-00aa-44ee-b958-19a64b7f438c
 
 ## Test Name: SendAsyncTest_ByKeyed
 
@@ -9775,28 +14010,26 @@ correlationId: 56940d44-a415-4eca-b84e-8966722e96b9
 * Categories
   * Simulate
 * Details: 
-  * Duration: 00:00:00.0208493
+  * Duration: 00:00:00.0903621
   * Outcome: Passed
 
 
 ### Standard Out
 
-dbug: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Exception: System.ApplicationException: Error in the application.
-         at Eliassen.MessageQueueing.MessageSender`1.SendAsync(Object message, String correlationId) in C:\Repos\Nucleus\Net.Libs\Framework\Eliassen.MessageQueueing\MessageSender.cs:line 79
-       [(null) -> 703a7ac2-89fb-4e41-8166-40ae1c715bfd]
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sending: "{ hello = world }" [(null) -> c120b643-0344-4e75-9de3-a27140c3879a] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
+      Sending: "{ hello = world }" [(null) -> 9681e6c1-63fe-46b0-a1f2-d5ae249055b4] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
 info: Eliassen.MessageQueueing.Tests.TestItems.TestMessageSenderProvider[0]
       SendAsync({ hello = world }, Eliassen.MessageQueueing.Services.MessageContext)
+info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
+      Sent: [(null) -> 9681e6c1-63fe-46b0-a1f2-d5ae249055b4] => ((null))
 
 
 
 TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(107)-638518271548036006.txt: Attached
-message-TestMessageSenderProvider_SendAsync(22)-638518271548094856.json: Attached
-context-TestMessageSenderProvider_SendAsync(23)-638518271548124459.json: Attached
-correlationId: c120b643-0344-4e75-9de3-a27140c3879a
+Configuration-MessageSenderTests_GetServiceProvider(107)-638624266369656776.txt: Attached
+message-TestMessageSenderProvider_SendAsync(22)-638624266370336960.json: Attached
+context-TestMessageSenderProvider_SendAsync(23)-638624266370387241.json: Attached
+correlationId: 9681e6c1-63fe-46b0-a1f2-d5ae249055b4
 
 ## Test Name: SendAsyncTest_Error
 
@@ -9806,21 +14039,25 @@ correlationId: c120b643-0344-4e75-9de3-a27140c3879a
 * Categories
   * Simulate
 * Details: 
-  * Duration: 00:00:00.0107468
+  * Duration: 00:00:00.0602159
   * Outcome: Passed
 
 
 ### Standard Out
 
 info: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Sending: "{ hello = world }" [(null) -> 703a7ac2-89fb-4e41-8166-40ae1c715bfd] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
+      Sending: "{ hello = world }" [(null) -> 2e70f8dc-0ef8-40ac-875b-f125684bea9a] to "Eliassen.MessageQueueing.Tests.MessageSenderTests" from "System.Runtime.CompilerServices.AsyncMethodBuilderCore::Void Start[TStateMachine](TStateMachine ByRef)"
 fail: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
-      Error: "Error in the application." [(null) -> 703a7ac2-89fb-4e41-8166-40ae1c715bfd]
+      Error: "Error in the application." [(null) -> 2e70f8dc-0ef8-40ac-875b-f125684bea9a]
+dbug: Eliassen.MessageQueueing.Tests.MessageSenderTests[0]
+      Exception: System.ApplicationException: Error in the application.
+         at Eliassen.MessageQueueing.MessageSender`1.SendAsync(Object message, String correlationId) in c:\Repos\Nucleus\Net.Libs\Framework\Eliassen.MessageQueueing\MessageSender.cs:line 79
+       [(null) -> 2e70f8dc-0ef8-40ac-875b-f125684bea9a]
 
 
 
 TestContext Messages:
-Configuration-MessageSenderTests_GetServiceProvider(107)-638518271547916123.txt: Attached
+Configuration-MessageSenderTests_GetServiceProvider(107)-638624266369148856.txt: Attached
 
 ## Test Name: SerializeAsyncTest_Generic
 
@@ -9830,7 +14067,7 @@ Configuration-MessageSenderTests_GetServiceProvider(107)-638518271547916123.txt:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0023256
+  * Duration: 00:00:00.0171019
   * Outcome: Passed
 
 
@@ -9847,7 +14084,7 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0255425
+  * Duration: 00:00:00.0059529
   * Outcome: Passed
 
 
@@ -9864,14 +14101,14 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0066918
+  * Duration: 00:00:00.0071150
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-result-BsonIdConverterTests_SerializeTest(24)-638518271807005267.json: Attached
+result-BsonIdConverterTests_SerializeTest(24)-638624266347411819.json: Attached
 Hello World
 
 ## Test Name: SerializeTest_Anonymous
@@ -9882,15 +14119,15 @@ Hello World
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0308928
+  * Duration: 00:00:00.0109119
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-DefaultJsonSerializerTests_SerializeTest_Anonymous(23)-638518271808873401.txt: Attached
-__f__AnonymousType3_1-DefaultJsonSerializerTests_SerializeTest_Anonymous(24)-638518271808943916.json: Attached
+String-DefaultJsonSerializerTests_SerializeTest_Anonymous(23)-638624266348154006.txt: Attached
+__f__AnonymousType3_1-DefaultJsonSerializerTests_SerializeTest_Anonymous(24)-638624266348177660.json: Attached
 
 ## Test Name: SerializeTest_AnonymousWithStringObjectDictionary
 
@@ -9900,15 +14137,15 @@ __f__AnonymousType3_1-DefaultJsonSerializerTests_SerializeTest_Anonymous(24)-638
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.1033714
+  * Duration: 00:00:00.0384181
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(48)-638518271809547231.txt: Attached
-__f__AnonymousType4_2-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(49)-638518271809849060.json: Attached
+String-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(48)-638624266348488086.txt: Attached
+__f__AnonymousType4_2-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStringObjectDictionary(49)-638624266348538934.json: Attached
 
 ## Test Name: SerializeTest_Generic
 
@@ -9918,7 +14155,7 @@ __f__AnonymousType4_2-DefaultJsonSerializerTests_SerializeTest_AnonymousWithStri
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0008972
+  * Duration: 00:00:00.0013798
   * Outcome: Passed
 
 
@@ -9935,15 +14172,15 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0334449
+  * Duration: 00:00:00.0144640
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-String-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(72)-638518271810304307.txt: Attached
-Configuration-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(73)-638518271810496102.txt: Attached
+String-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(72)-638624266348708840.txt: Attached
+Configuration-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(73)-638624266348743902.txt: Attached
 
 ## Test Name: SerializeTest_Nullable
 
@@ -9953,20 +14190,15 @@ Configuration-DefaultJsonSerializerTests_SerializeTest_IConfigurationSection(73)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0853327
+  * Duration: 00:00:00.0488688
   * Outcome: Passed
 
 
 ### Standard Out
 
-: Eliassen.System.Text.Templating.TemplateEngine[0]
-      Apply test template => { }
-
-
-
 TestContext Messages:
-result-BsonDateConverterTests_SerializeTest_Nullable(25)-638518271805811831.json: Attached
-2024-05-20T18:39:40.5085475-04:00
+result-BsonDateConverterTests_SerializeTest_Nullable(25)-638624266346710872.json: Attached
+2024-09-20T10:57:14.6299118-04:00
 
 ## Test Name: SerializeTest_Type
 
@@ -9976,7 +14208,7 @@ result-BsonDateConverterTests_SerializeTest_Nullable(25)-638518271805811831.json
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0039689
+  * Duration: 00:00:00.0047764
   * Outcome: Passed
 
 
@@ -9993,15 +14225,15 @@ TestContext Messages:
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0047763
+  * Duration: 00:00:00.0041336
   * Outcome: Passed
 
 
 ### Standard Out
 
 TestContext Messages:
-result-BsonDateConverterTests_SerializeTest_Value(47)-638518271805959957.json: Attached
-2024-05-20T18:39:40.5956936-04:00
+result-BsonDateConverterTests_SerializeTest_Value(47)-638624266346807347.json: Attached
+2024-09-20T10:57:14.6804462-04:00
 
 ## Test Name: SplitStreamAsyncTest
 
@@ -10011,7 +14243,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638518271805959957.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0134661
+  * Duration: 00:00:00.0222018
   * Outcome: Passed
 
 
@@ -10023,7 +14255,7 @@ result-BsonDateConverterTests_SerializeTest_Value(47)-638518271805959957.json: A
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0597358
+  * Duration: 00:00:00.1514301
   * Outcome: Passed
 
 
@@ -10036,7 +14268,2479 @@ info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
 info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
       Starting: Mock<IMessageReceiverProvider:2>.Object
 info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Started: Mock<IMessageReceiverProvider:2>.Object
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
       Request Stop
+info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
+      Starting: Mock<IMessageReceiverProvider:2>.Object
 info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
       Started: Mock<IMessageReceiverProvider:2>.Object
 info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
@@ -10050,660 +16754,625 @@ info: Eliassen.MessageQueueing.Hosting.MessageReceiverHost[0]
 
 TestContext Messages:
 Spin! : 0
-Spin! : 1
-Spin! : 2
-Spin! : 3
-Spin! : 4
-Spin! : 5
-Spin! : 6
-Spin! : 7
-Spin! : 8
-Spin! : 9
-Spin! : 10
-Spin! : 11
-Spin! : 12
-Spin! : 13
-Spin! : 14
-Spin! : 15
-Spin! : 16
-Spin! : 17
-Spin! : 18
-Spin! : 19
-Spin! : 20
-Spin! : 21
-Spin! : 22
-Spin! : 23
-Spin! : 24
-Spin! : 25
-Spin! : 26
-Spin! : 27
-Spin! : 28
-Spin! : 29
-Spin! : 30
-Spin! : 31
-Spin! : 32
-Spin! : 33
-Spin! : 34
-Spin! : 35
-Spin! : 36
-Spin! : 37
-Spin! : 38
-Spin! : 39
-Spin! : 40
-Spin! : 41
-Spin! : 42
-Spin! : 43
-Spin! : 44
-Spin! : 45
-Spin! : 46
-Spin! : 47
-Spin! : 48
-Spin! : 49
-Spin! : 50
-Spin! : 51
-Spin! : 52
-Spin! : 53
-Spin! : 54
-Spin! : 55
-Spin! : 56
-Spin! : 57
-Spin! : 58
-Spin! : 59
-Spin! : 60
-Spin! : 61
-Spin! : 62
-Spin! : 63
-Spin! : 64
-Spin! : 65
-Spin! : 66
-Spin! : 67
-Spin! : 68
-Spin! : 69
-Spin! : 70
-Spin! : 71
-Spin! : 72
-Spin! : 73
-Spin! : 74
-Spin! : 75
-Spin! : 76
-Spin! : 77
-Spin! : 78
-Spin! : 79
-Spin! : 80
-Spin! : 81
-Spin! : 82
-Spin! : 83
-Spin! : 84
-Spin! : 85
-Spin! : 86
-Spin! : 87
-Spin! : 88
-Spin! : 89
-Spin! : 90
-Spin! : 91
-Spin! : 92
-Spin! : 93
-Spin! : 94
-Spin! : 95
-Spin! : 96
-Spin! : 97
-Spin! : 98
-Spin! : 99
-Spin! : 100
-Spin! : 101
-Spin! : 102
-Spin! : 103
-Spin! : 104
-Spin! : 105
-Spin! : 106
-Spin! : 107
-Spin! : 108
-Spin! : 109
-Spin! : 110
-Spin! : 111
-Spin! : 112
-Spin! : 113
-Spin! : 114
-Spin! : 115
-Spin! : 116
-Spin! : 117
-Spin! : 118
-Spin! : 119
-Spin! : 120
-Spin! : 121
-Spin! : 122
-Spin! : 123
-Spin! : 124
-Spin! : 125
-Spin! : 126
-Spin! : 127
-Spin! : 128
-Spin! : 129
-Spin! : 130
-Spin! : 131
-Spin! : 132
-Spin! : 133
-Spin! : 134
-Spin! : 135
-Spin! : 136
-Spin! : 137
-Spin! : 138
-Spin! : 139
-Spin! : 140
-Spin! : 141
-Spin! : 142
-Spin! : 143
-Spin! : 144
-Spin! : 145
-Spin! : 146
-Spin! : 147
-Spin! : 148
-Spin! : 149
-Spin! : 150
-Spin! : 151
-Spin! : 152
-Spin! : 153
-Spin! : 154
-Spin! : 155
-Spin! : 156
-Spin! : 157
-Spin! : 158
-Spin! : 159
-Spin! : 160
-Spin! : 161
-Spin! : 162
-Spin! : 163
-Spin! : 164
-Spin! : 165
-Spin! : 166
-Spin! : 167
-Spin! : 168
-Spin! : 169
-Spin! : 170
-Spin! : 171
-Spin! : 172
-Spin! : 173
-Spin! : 174
-Spin! : 175
-Spin! : 176
-Spin! : 177
-Spin! : 178
-Spin! : 179
-Spin! : 180
-Spin! : 181
-Spin! : 182
-Spin! : 183
-Spin! : 184
-Spin! : 185
-Spin! : 186
-Spin! : 187
-Spin! : 188
-Spin! : 189
-Spin! : 190
-Spin! : 191
-Spin! : 192
-Spin! : 193
-Spin! : 194
-Spin! : 195
-Spin! : 196
-Spin! : 197
-Spin! : 198
-Spin! : 199
-Spin! : 200
-Spin! : 201
-Spin! : 202
-Spin! : 203
-Spin! : 204
-Spin! : 205
-Spin! : 206
-Spin! : 207
-Spin! : 208
-Spin! : 209
-Spin! : 210
-Spin! : 211
-Spin! : 212
-Spin! : 213
-Spin! : 214
-Spin! : 215
-Spin! : 216
-Spin! : 217
-Spin! : 218
-Spin! : 219
-Spin! : 220
-Spin! : 221
-Spin! : 222
-Spin! : 223
-Spin! : 224
-Spin! : 225
-Spin! : 226
-Spin! : 227
-Spin! : 228
-Spin! : 229
-Spin! : 230
-Spin! : 231
-Spin! : 232
-Spin! : 233
-Spin! : 234
-Spin! : 235
-Spin! : 236
-Spin! : 237
-Spin! : 238
-Spin! : 239
-Spin! : 240
-Spin! : 241
-Spin! : 242
-Spin! : 243
-Spin! : 244
-Spin! : 245
-Spin! : 246
-Spin! : 247
-Spin! : 248
-Spin! : 249
-Spin! : 250
-Spin! : 251
-Spin! : 252
-Spin! : 253
-Spin! : 254
-Spin! : 255
-Spin! : 256
-Spin! : 257
-Spin! : 258
-Spin! : 259
-Spin! : 260
-Spin! : 261
-Spin! : 262
-Spin! : 263
-Spin! : 264
-Spin! : 265
-Spin! : 266
-Spin! : 267
-Spin! : 268
-Spin! : 269
-Spin! : 270
-Spin! : 271
-Spin! : 272
-Spin! : 273
-Spin! : 274
-Spin! : 275
-Spin! : 276
-Spin! : 277
-Spin! : 278
-Spin! : 279
-Spin! : 280
-Spin! : 281
-Spin! : 282
-Spin! : 283
-Spin! : 284
-Spin! : 285
-Spin! : 286
-Spin! : 287
-Spin! : 288
-Spin! : 289
-Spin! : 290
-Spin! : 291
-Spin! : 292
-Spin! : 293
-Spin! : 294
-Spin! : 295
-Spin! : 296
-Spin! : 297
-Spin! : 298
-Spin! : 299
-Spin! : 300
-Spin! : 301
-Spin! : 302
-Spin! : 303
-Spin! : 304
-Spin! : 305
-Spin! : 306
-Spin! : 307
-Spin! : 308
-Spin! : 309
-Spin! : 310
-Spin! : 311
-Spin! : 312
-Spin! : 313
-Spin! : 314
-Spin! : 315
-Spin! : 316
-Spin! : 317
-Spin! : 318
-Spin! : 319
-Spin! : 320
-Spin! : 321
-Spin! : 322
-Spin! : 323
-Spin! : 324
-Spin! : 325
-Spin! : 326
-Spin! : 327
-Spin! : 328
-Spin! : 329
-Spin! : 330
-Spin! : 331
-Spin! : 332
-Spin! : 333
-Spin! : 334
-Spin! : 335
-Spin! : 336
-Spin! : 337
-Spin! : 338
-Spin! : 339
-Spin! : 340
-Spin! : 341
-Spin! : 342
-Spin! : 343
-Spin! : 344
-Spin! : 345
-Spin! : 346
-Spin! : 347
-Spin! : 348
-Spin! : 349
-Spin! : 350
-Spin! : 351
-Spin! : 352
-Spin! : 353
-Spin! : 354
-Spin! : 355
-Spin! : 356
-Spin! : 357
-Spin! : 358
-Spin! : 359
-Spin! : 360
-Spin! : 361
-Spin! : 362
-Spin! : 363
-Spin! : 364
-Spin! : 365
-Spin! : 366
-Spin! : 367
-Spin! : 368
-Spin! : 369
-Spin! : 370
-Spin! : 371
-Spin! : 372
-Spin! : 373
-Spin! : 374
-Spin! : 375
-Spin! : 376
-Spin! : 377
-Spin! : 378
-Spin! : 379
-Spin! : 380
-Spin! : 381
-Spin! : 382
-Spin! : 383
-Spin! : 384
-Spin! : 385
-Spin! : 386
-Spin! : 387
-Spin! : 388
-Spin! : 389
-Spin! : 390
-Spin! : 391
-Spin! : 392
-Spin! : 393
-Spin! : 394
-Spin! : 395
-Spin! : 396
-Spin! : 397
-Spin! : 398
-Spin! : 399
-Spin! : 400
-Spin! : 401
-Spin! : 402
-Spin! : 403
-Spin! : 404
-Spin! : 405
-Spin! : 406
-Spin! : 407
-Spin! : 408
-Spin! : 409
-Spin! : 410
-Spin! : 411
-Spin! : 412
-Spin! : 413
-Spin! : 414
-Spin! : 415
-Spin! : 416
-Spin! : 417
-Spin! : 418
-Spin! : 419
-Spin! : 420
-Spin! : 421
-Spin! : 422
-Spin! : 423
-Spin! : 424
-Spin! : 425
-Spin! : 426
-Spin! : 427
-Spin! : 428
-Spin! : 429
-Spin! : 430
-Spin! : 431
-Spin! : 432
-Spin! : 433
-Spin! : 434
-Spin! : 435
-Spin! : 436
-Spin! : 437
-Spin! : 438
-Spin! : 439
-Spin! : 440
-Spin! : 441
-Spin! : 442
-Spin! : 443
-Spin! : 444
-Spin! : 445
-Spin! : 446
-Spin! : 447
-Spin! : 448
-Spin! : 449
-Spin! : 450
-Spin! : 451
-Spin! : 452
-Spin! : 453
-Spin! : 454
-Spin! : 455
-Spin! : 456
-Spin! : 457
-Spin! : 458
-Spin! : 459
-Spin! : 460
-Spin! : 461
-Spin! : 462
-Spin! : 463
-Spin! : 464
-Spin! : 465
-Spin! : 466
-Spin! : 467
-Spin! : 468
-Spin! : 469
-Spin! : 470
-Spin! : 471
-Spin! : 472
-Spin! : 473
-Spin! : 474
-Spin! : 475
-Spin! : 476
-Spin! : 477
-Spin! : 478
-Spin! : 479
-Spin! : 480
-Spin! : 481
-Spin! : 482
-Spin! : 483
-Spin! : 484
-Spin! : 485
-Spin! : 486
-Spin! : 487
-Spin! : 488
-Spin! : 489
-Spin! : 490
-Spin! : 491
-Spin! : 492
-Spin! : 493
-Spin! : 494
-Spin! : 495
-Spin! : 496
-Spin! : 497
-Spin! : 498
-Spin! : 499
-Spin! : 500
-Spin! : 501
-Spin! : 502
-Spin! : 503
-Spin! : 504
-Spin! : 505
-Spin! : 506
-Spin! : 507
-Spin! : 508
-Spin! : 509
-Spin! : 510
-Spin! : 511
-Spin! : 512
-Spin! : 513
-Spin! : 514
-Spin! : 515
-Spin! : 516
-Spin! : 517
-Spin! : 518
-Spin! : 519
-Spin! : 520
-Spin! : 521
-Spin! : 522
-Spin! : 523
-Spin! : 524
-Spin! : 525
-Spin! : 526
-Spin! : 527
-Spin! : 528
-Spin! : 529
-Spin! : 530
-Spin! : 531
-Spin! : 532
-Spin! : 533
-Spin! : 534
-Spin! : 535
-Spin! : 536
-Spin! : 537
-Spin! : 538
-Spin! : 539
-Spin! : 540
-Spin! : 541
-Spin! : 542
-Spin! : 543
-Spin! : 544
-Spin! : 545
-Spin! : 546
-Spin! : 547
-Spin! : 548
-Spin! : 549
-Spin! : 550
-Spin! : 551
-Spin! : 552
-Spin! : 553
-Spin! : 554
-Spin! : 555
-Spin! : 556
-Spin! : 557
-Spin! : 558
-Spin! : 559
-Spin! : 560
-Spin! : 561
-Spin! : 562
-Spin! : 563
-Spin! : 564
-Spin! : 565
-Spin! : 566
-Spin! : 567
-Spin! : 568
-Spin! : 569
-Spin! : 570
-Spin! : 571
-Spin! : 572
-Spin! : 573
-Spin! : 574
-Spin! : 575
-Spin! : 576
-Spin! : 577
-Spin! : 578
-Spin! : 579
-Spin! : 580
-Spin! : 581
-Spin! : 582
-Spin! : 583
-Spin! : 584
-Spin! : 585
-Spin! : 586
-Spin! : 587
-Spin! : 588
-Spin! : 589
-Spin! : 590
-Spin! : 591
-Spin! : 592
-Spin! : 593
-Spin! : 594
-Spin! : 595
-Spin! : 596
-Spin! : 597
-Spin! : 598
-Spin! : 599
-Spin! : 600
-Spin! : 601
-Spin! : 602
-Spin! : 603
-Spin! : 604
-Spin! : 605
-Spin! : 606
-Spin! : 607
-Spin! : 608
-Spin! : 609
-Spin! : 610
-Spin! : 611
-Spin! : 612
-Spin! : 613
-Spin! : 614
-Spin! : 615
-Spin! : 616
-Spin! : 617
-Spin! : 618
-Spin! : 619
-Spin! : 620
-Spin! : 621
-Spin! : 622
-Spin! : 623
-Spin! : 624
-Spin! : 625
-Spin! : 626
-Spin! : 627
-Spin! : 628
-Spin! : 629
-Spin! : 630
-Spin! : 631
-Spin! : 632
-Spin! : 633
-Spin! : 634
-Spin! : 635
-Spin! : 636
-Spin! : 637
-Spin! : 638
-Spin! : 639
-Spin! : 640
-Spin! : 641
-Spin! : 642
-Spin! : 643
 Ran Child!
-Spin! : 644
-Spin! : 645
-Spin! : 646
-Spin! : 647
-Spin! : 648
-Spin! : 649
-Spin! : 650
-Spin! : 651
-Spin! : 652
-Spin! : 653
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
+Ran Child!
 
 ## Test Name: StoreContentAsyncTest
 
@@ -10713,7 +17382,7 @@ Spin! : 653
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0024001
+  * Duration: 00:00:00.0063183
   * Outcome: Passed
 
 
@@ -10725,7 +17394,7 @@ Spin! : 653
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0024433
+  * Duration: 00:00:00.0057166
   * Outcome: Passed
 
 
@@ -10752,6 +17421,90 @@ Spin! : 653
   * Unit
 * Details: 
   * Duration: 00:00:00.0000077
+  * Outcome: Passed
+
+
+## Test Name: Test ("            ","
+")
+
+* Name: Test (            ,
+)
+* Test Class: Eliassen.Extensions.Tests.StringToolsTests
+  * Method: Test
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001279
+  * Outcome: Passed
+
+
+## Test Name: Test ("","")
+
+* Name: Test (,)
+* Test Class: Eliassen.Extensions.Tests.StringToolsTests
+  * Method: Test
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000162
+  * Outcome: Passed
+
+
+## Test Name: Test ("a            ","a
+")
+
+* Name: Test (a            ,a
+)
+* Test Class: Eliassen.Extensions.Tests.StringToolsTests
+  * Method: Test
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000192
+  * Outcome: Passed
+
+
+## Test Name: Test ("a            b","a
+   b")
+
+* Name: Test (a            b,a
+   b)
+* Test Class: Eliassen.Extensions.Tests.StringToolsTests
+  * Method: Test
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000128
+  * Outcome: Passed
+
+
+## Test Name: Test ("abcde fghijklmnop","abcde
+fghijklmno
+p")
+
+* Name: Test (abcde fghijklmnop,abcde
+fghijklmno
+p)
+* Test Class: Eliassen.Extensions.Tests.StringToolsTests
+  * Method: Test
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0005479
+  * Outcome: Passed
+
+
+## Test Name: Test ("abcdefghijklmnop","abcdefghij
+klmnop")
+
+* Name: Test (abcdefghijklmnop,abcdefghij
+klmnop)
+* Test Class: Eliassen.Extensions.Tests.StringToolsTests
+  * Method: Test
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1276135
   * Outcome: Passed
 
 
@@ -11038,6 +17791,258 @@ klmnop)
   * Unit
 * Details: 
   * Duration: 00:00:00.0028390
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("-1",-1)
+
+* Name: ToEnumTest (-1,-1)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000291
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("0",Val0)
+
+* Name: ToEnumTest (0,Val0)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000168
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("1",Val1)
+
+* Name: ToEnumTest (1,Val1)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000168
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("2",Val2)
+
+* Name: ToEnumTest (2,Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000180
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("3",Val1, Val2)
+
+* Name: ToEnumTest (3,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000297
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("4",WithEnumValue)
+
+* Name: ToEnumTest (4,WithEnumValue)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000246
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("name,name2|test name",WithEnumValue, WithMemberName, WithDisplay)
+
+* Name: ToEnumTest (name,name2|test name,WithEnumValue, WithMemberName, WithDisplay)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002407
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("name",WithEnumValue)
+
+* Name: ToEnumTest (name,WithEnumValue)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0016608
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("name2",WithMemberName)
+
+* Name: ToEnumTest (name2,WithMemberName)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002466
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("no data",null)
+
+* Name: ToEnumTest (no data,)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0019144
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("test description",WithDescription)
+
+* Name: ToEnumTest (test description,WithDescription)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002138
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("test display",WithDisplay)
+
+* Name: ToEnumTest (test display,WithDisplay)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002116
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("test name",WithDisplay)
+
+* Name: ToEnumTest (test name,WithDisplay)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002550
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("test short",WithDisplay)
+
+* Name: ToEnumTest (test short,WithDisplay)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002173
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val1",Val1)
+
+* Name: ToEnumTest (Val1,Val1)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0014849
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val2 , Val1",Val1, Val2)
+
+* Name: ToEnumTest (Val2 , Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000220
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val2 ,Val1",Val1, Val2)
+
+* Name: ToEnumTest (Val2 ,Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000231
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val2, Val1",Val1, Val2)
+
+* Name: ToEnumTest (Val2, Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000370
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val2,Val1",Val1, Val2)
+
+* Name: ToEnumTest (Val2,Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000296
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val2",Val2)
+
+* Name: ToEnumTest (Val2,Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000265
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest ("Val2|Val1",Val1, Val2)
+
+* Name: ToEnumTest (Val2|Val1,Val1, Val2)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000212
   * Outcome: Passed
 
 
@@ -12778,6 +19783,18 @@ klmnop)
   * Unit
 * Details: 
   * Duration: 00:00:00.0020281
+  * Outcome: Passed
+
+
+## Test Name: ToEnumTest (null,null)
+
+* Name: ToEnumTest (,)
+* Test Class: Eliassen.System.Tests.Reflection.EnumExtensionsTests
+  * Method: ToEnumTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0022194
   * Outcome: Passed
 
 
@@ -15165,7 +22182,7 @@ klmnop)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0077285
+  * Duration: 00:00:00.0247953
   * Outcome: Passed
 
 
@@ -15177,7 +22194,7 @@ klmnop)
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0472558
+  * Duration: 00:00:00.0057794
   * Outcome: Passed
 
 
@@ -15187,7 +22204,7 @@ TestContext Messages:
 ["Hello!",1,3,false,null,true,4.5]
 ========================================
 <x><i>Hello!</i><i>1</i><i>3</i><i>false</i><i>true</i><i>4.5</i></x>
-XFragment-JNodeExtensionsTests_ToXNodeTest_Array(71)-638518271808246525.xml: Attached
+XFragment-JNodeExtensionsTests_ToXNodeTest_Array(71)-638624266347998197.xml: Attached
 
 ## Test Name: ToXNodeTest_Complex
 
@@ -15197,7 +22214,7 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_Array(71)-638518271808246525.xml: Att
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0073108
+  * Duration: 00:00:00.0034896
   * Outcome: Passed
 
 
@@ -15223,7 +22240,7 @@ TestContext Messages:
 
 ========================================
 <x name="John Doe" age="30" city="New York" isMarried="true"><children><i name="Alice" age="5" /><i name="Bob" age="8" /></children></x>
-XFragment-JNodeExtensionsTests_ToXNodeTest_Complex(102)-638518271808722254.xml: Attached
+XFragment-JNodeExtensionsTests_ToXNodeTest_Complex(102)-638624266348056793.xml: Attached
 
 ## Test Name: ToXNodeTest_Number
 
@@ -15233,7 +22250,7 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_Complex(102)-638518271808722254.xml: 
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0097647
+  * Duration: 00:00:00.0064607
   * Outcome: Passed
 
 
@@ -15243,7 +22260,7 @@ TestContext Messages:
 30
 ========================================
 30
-XFragment-JNodeExtensionsTests_ToXNodeTest_Number(40)-638518271808009938.xml: Attached
+XFragment-JNodeExtensionsTests_ToXNodeTest_Number(40)-638624266347889597.xml: Attached
 
 ## Test Name: ToXNodeTest_Simple
 
@@ -15253,7 +22270,7 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_Number(40)-638518271808009938.xml: At
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0330594
+  * Duration: 00:00:00.0095147
   * Outcome: Passed
 
 
@@ -15263,7 +22280,7 @@ TestContext Messages:
 {"prop1":"value"}
 ========================================
 <x prop1="value" />
-XFragment-JNodeExtensionsTests_ToXNodeTest_Simple(25)-638518271807730630.xml: Attached
+XFragment-JNodeExtensionsTests_ToXNodeTest_Simple(25)-638624266347799611.xml: Attached
 
 ## Test Name: ToXNodeTest_String
 
@@ -15273,7 +22290,7 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_Simple(25)-638518271807730630.xml: At
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0048174
+  * Duration: 00:00:00.0029712
   * Outcome: Passed
 
 
@@ -15283,7 +22300,7 @@ TestContext Messages:
 "Hello!"
 ========================================
 Hello!
-XFragment-JNodeExtensionsTests_ToXNodeTest_String(56)-638518271808095555.xml: Attached
+XFragment-JNodeExtensionsTests_ToXNodeTest_String(56)-638624266347934540.xml: Attached
 
 ## Test Name: TryGetValueTest
 
@@ -15293,7 +22310,19 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_String(56)-638518271808095555.xml: At
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0013332
+  * Duration: 00:00:00.0014472
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.AttributeTargets,"Enum",True,Enum)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000110
   * Outcome: Passed
 
 
@@ -15308,6 +22337,35 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_String(56)-638518271808095555.xml: At
   * Duration: 00:00:00.0000124
   * Outcome: Passed
 
+
+## Test Name: TryParseTest (System.Decimal,"1",True,1)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000135
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Decimal,"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000807
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
 ## Test Name: TryParseTest (System.Decimal,1,True,1)
 
@@ -15330,6 +22388,35 @@ XFragment-JNodeExtensionsTests_ToXNodeTest_String(56)-638518271808095555.xml: At
   * Unit
 * Details: 
   * Duration: 00:00:00.0001423
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: TryParseTest (System.Double,"1",True,1)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000161
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Double,"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000715
   * Outcome: Passed
 
 
@@ -15367,6 +22454,35 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: TryParseTest (System.Guid,"18AACB9C-2989-4322-A490-C7167BEA0DB4",True,18aacb9c-2989-4322-a490-c7167bea0db4)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0010066
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Guid,"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0002152
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: TryParseTest (System.Guid,18AACB9C-2989-4322-A490-C7167BEA0DB4,True,18aacb9c-2989-4322-a490-c7167bea0db4)
 
 * Name: TryParseTest
@@ -15388,6 +22504,35 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
   * Unit
 * Details: 
   * Duration: 00:00:00.0002634
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: TryParseTest (System.Int32,"1",True,1)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000266
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Int32,"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001566
   * Outcome: Passed
 
 
@@ -15425,6 +22570,35 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: TryParseTest (System.Nullable`1[System.Decimal],"1",True,1)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000086
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Nullable`1[System.Decimal],"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000730
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: TryParseTest (System.Nullable`1[System.Decimal],1,True,1)
 
 * Name: TryParseTest
@@ -15446,6 +22620,35 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
   * Unit
 * Details: 
   * Duration: 00:00:00.0000831
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: TryParseTest (System.Nullable`1[System.Double],"1",True,1)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000093
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Nullable`1[System.Double],"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000734
   * Outcome: Passed
 
 
@@ -15483,6 +22686,35 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 TestContext Messages:
 ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
 
+## Test Name: TryParseTest (System.Nullable`1[System.Guid],"18AACB9C-2989-4322-A490-C7167BEA0DB4",True,18aacb9c-2989-4322-a490-c7167bea0db4)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0004332
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Nullable`1[System.Guid],"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001590
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
 ## Test Name: TryParseTest (System.Nullable`1[System.Guid],18AACB9C-2989-4322-A490-C7167BEA0DB4,True,18aacb9c-2989-4322-a490-c7167bea0db4)
 
 * Name: TryParseTest
@@ -15504,6 +22736,35 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
   * Unit
 * Details: 
   * Duration: 00:00:00.0001536
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+ResultMessage { Level = Warning, Message = Exception has been thrown by the target of an invocation., MessageCode = , Context = , MetaData =  }
+
+## Test Name: TryParseTest (System.Nullable`1[System.Int32],"1",True,1)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000163
+  * Outcome: Passed
+
+
+## Test Name: TryParseTest (System.Nullable`1[System.Int32],"nope",False,null)
+
+* Name: TryParseTest
+* Test Class: Eliassen.System.Tests.Reflection.ReflectionExtensionsTests
+  * Method: TryParseTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0000727
   * Outcome: Passed
 
 
@@ -15549,9 +22810,78 @@ ResultMessage { Level = Warning, Message = Exception has been thrown by the targ
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0723361
+  * Duration: 00:00:00.0578858
   * Outcome: Passed
 
+
+## Test Name: VisitTest_Contains ("Hello","el",True)
+
+* Name: VisitTest_Contains (Hello,el,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_Contains
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0019635
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched) with e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched)
+visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_Contains ("Hello","eL",True)
+
+* Name: VisitTest_Contains (Hello,eL,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_Contains
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0005704
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched) with e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched)
+visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_Contains ("Hello","EL",True)
+
+* Name: VisitTest_Contains (Hello,EL,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_Contains
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0010541
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched) with e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched)
+visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
 
 ## Test Name: VisitTest_Contains (Hello,el,True)
 
@@ -15621,6 +22951,98 @@ Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComp
 TestContext Messages:
 expression: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched)
 visited: e => e.Contains(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass6_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_EndsWith ("Hello","lo",True)
+
+* Name: VisitTest_EndsWith (Hello,lo,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EndsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0004522
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched) with e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched)
+visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_EndsWith ("Hello","lO",True)
+
+* Name: VisitTest_EndsWith (Hello,lO,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EndsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0011221
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched) with e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched)
+visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_EndsWith ("Hello","Lo",True)
+
+* Name: VisitTest_EndsWith (Hello,Lo,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EndsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0010948
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched) with e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched)
+visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_EndsWith ("Hello","LO",True)
+
+* Name: VisitTest_EndsWith (Hello,LO,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EndsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0004901
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched) with e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched)
+visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
 
 ## Test Name: VisitTest_EndsWith (Hello,lo,True)
 
@@ -15714,6 +23136,117 @@ TestContext Messages:
 expression: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched)
 visited: e => e.EndsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass8_0).matched, CurrentCultureIgnoreCase)
 
+## Test Name: VisitTest_EqualOperator
+
+* Name: VisitTest_EqualOperator
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests
+  * Method: VisitTest_EqualOperator
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0227805
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor]:Information:>
+	Rewrite VisitMethodCall: ThenBy(2) -> Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3) / System.Linq.Expressions.Expression`1[System.Func`2[Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData,System.String]]
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor+RewriteChildren]:Information:>
+	Rewriting VisitMember: System.String Prop3 [x] -> x.Prop3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor]:Information:>
+	Rewrite VisitMethodCall: OrderBy(2) -> Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1) / System.Linq.Expressions.Expression`1[System.Func`2[Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData,System.String]]
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor+RewriteChildren]:Information:>
+	Rewriting VisitMember: System.String Prop1 [x] -> x.Prop1
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor]:Information:>
+	Rewrite VisitMethodCall: ThenBy(2) -> Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1.ToUpper()).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3) / System.Linq.Expressions.Expression`1[System.Func`2[Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData,System.String]]
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor+RewriteChildren]:Information:>
+	Rewriting VisitMember: System.String Prop3 [x] -> x.Prop3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor]:Information:>
+	Rewrite VisitMethodCall: ThenBy(3) -> Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1, value(System.OrdinalIgnoreCaseComparer)).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3, value(System.OrdinalIgnoreCaseComparer)) / System.Linq.Expressions.Expression`1[System.Func`2[Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData,System.String]]
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor+RewriteChildren]:Information:>
+	Rewriting VisitMember: System.String Prop3 [x] -> x.Prop3
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor]:Information:>
+	Rewrite VisitMethodCall: OrderBy(3) -> Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1, value(System.OrdinalIgnoreCaseComparer)) / System.Linq.Expressions.Expression`1[System.Func`2[Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData,System.String]]
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringOrderReplacementExpressionVisitor+RewriteChildren]:Information:>
+	Rewriting VisitMember: System.String Prop1 [x] -> x.Prop1
+
+
+
+TestContext Messages:
+---- 1
+Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3)
+---- 2
+Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1.ToUpper()).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3)
+---- 3
+Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1, value(System.OrdinalIgnoreCaseComparer)).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3, value(System.OrdinalIgnoreCaseComparer))
+++++ 1v
+Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1.ToUpper()).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3.ToUpper())
+++++ 2v
+Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1.ToUpper()).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3.ToUpper())
+++++ 3v
+Eliassen.System.Tests.Linq.Expressions.StringOrderReplacementExpressionVisitorTests+TestData[].OrderBy(x => x.Prop1.ToUpper()).ThenBy(x => x.Prop2).ThenBy(x => x.Prop3.ToUpper())
+==== 1r
+upper;Upper;UPPER;Upper;upper
+==== 2r
+upper;Upper;UPPER;Upper;upper
+==== 3r
+upper;Upper;UPPER;Upper;upper
+
+## Test Name: VisitTest_EqualOperator ("Hello","hello",True)
+
+* Name: VisitTest_EqualOperator (Hello,hello,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EqualOperator
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0025098
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => (e == value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass4_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_EqualOperator ("Hello","HeLlO",True)
+
+* Name: VisitTest_EqualOperator (Hello,HeLlO,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EqualOperator
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0010858
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => (e == value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass4_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_EqualOperator ("Hello","HELLO",True)
+
+* Name: VisitTest_EqualOperator (Hello,HELLO,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_EqualOperator
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0011876
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => (e == value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass4_0).matched, CurrentCultureIgnoreCase)
+
 ## Test Name: VisitTest_EqualOperator (Hello,hello,True)
 
 * Name: VisitTest_EqualOperator (Hello,hello,True)
@@ -15796,6 +23329,132 @@ result: False
   * Unit
 * Details: 
   * Duration: 00:00:00.0014039
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => ((e != null) AndAlso e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched))
+result: False
+
+## Test Name: VisitTest_Equals ("Hello","hello",False)
+
+* Name: VisitTest_Equals (Hello,hello,False)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0016862
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => ((e != null) AndAlso e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched))
+result: False
+
+## Test Name: VisitTest_Equals ("Hello","hello",True)
+
+* Name: VisitTest_Equals (Hello,hello,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0062174
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched) with e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched)
+visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_Equals ("Hello","Hello",True)
+
+* Name: VisitTest_Equals (Hello,Hello,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0020945
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => ((e != null) AndAlso e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched))
+result: True
+
+## Test Name: VisitTest_Equals ("Hello","HeLlO",True)
+
+* Name: VisitTest_Equals (Hello,HeLlO,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0006818
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched) with e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched)
+visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_Equals ("Hello","HELLO",True)
+
+* Name: VisitTest_Equals (Hello,HELLO,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0010413
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched) with e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched)
+visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_Equals ("Hello",null,False)
+
+* Name: VisitTest_Equals (Hello,,False)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0013581
   * Outcome: Passed
 
 
@@ -15932,6 +23591,113 @@ TestContext Messages:
 expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched)
 visited: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass5_0).matched, CurrentCultureIgnoreCase)
 
+## Test Name: VisitTest_Equals (null,"hello",False)
+
+* Name: VisitTest_Equals (,hello,False)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0009437
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => ((e != null) AndAlso e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched))
+result: False
+
+## Test Name: VisitTest_Equals (null,null,False)
+
+* Name: VisitTest_Equals (,,False)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests
+  * Method: VisitTest_Equals
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0012235
+  * Outcome: Passed
+
+
+### Standard Out
+
+TestContext Messages:
+expression: e => e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched)
+visited: e => ((e != null) AndAlso e.Equals(value(Eliassen.System.Tests.Linq.Expressions.SkipInstanceMethodOnNullExpressionVisitorTests+<>c__DisplayClass4_0).matched))
+result: False
+
+## Test Name: VisitTest_StartsWith ("Hello","he",True)
+
+* Name: VisitTest_StartsWith (Hello,he,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_StartsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0005858
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched) with e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched)
+visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_StartsWith ("Hello","He",True)
+
+* Name: VisitTest_StartsWith (Hello,He,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_StartsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0018289
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched) with e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched)
+visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched, CurrentCultureIgnoreCase)
+
+## Test Name: VisitTest_StartsWith ("Hello","HE",True)
+
+* Name: VisitTest_StartsWith (Hello,HE,True)
+* Test Class: Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests
+  * Method: VisitTest_StartsWith
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0018070
+  * Outcome: Passed
+
+
+### Standard Out
+
+Eliassen.System.Linq.ConsoleLogger`1[Eliassen.System.Linq.Expressions.StringComparisonReplacementExpressionVisitor]:Debug:>
+	Replace: e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched) with e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched, CurrentCultureIgnoreCase)
+
+
+
+TestContext Messages:
+expression: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched)
+visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringComparisonReplacementExpressionVisitorTests+<>c__DisplayClass7_0).matched, CurrentCultureIgnoreCase)
+
 ## Test Name: VisitTest_StartsWith (Hello,he,True)
 
 * Name: VisitTest_StartsWith (Hello,he,True)
@@ -16013,6 +23779,30 @@ visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringCo
   * Outcome: Passed
 
 
+## Test Name: WaitDelayTest ("100",100)
+
+* Name: WaitDelayTest (100,100)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: WaitDelayTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0005694
+  * Outcome: Passed
+
+
+## Test Name: WaitDelayTest ("5000",5000)
+
+* Name: WaitDelayTest (5000,5000)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: WaitDelayTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.0001021
+  * Outcome: Passed
+
+
 ## Test Name: WaitDelayTest (100,100)
 
 * Name: WaitDelayTest (100,100)
@@ -16037,6 +23827,18 @@ visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringCo
   * Outcome: Passed
 
 
+## Test Name: WaitDelayTest (null,1000)
+
+* Name: WaitDelayTest (,1000)
+* Test Class: Eliassen.Azure.StorageAccount.Tests.MessageQueueing.AzureStorageQueueMapperTests
+  * Method: WaitDelayTest
+* Categories
+  * Unit
+* Details: 
+  * Duration: 00:00:00.1095739
+  * Outcome: Passed
+
+
 ## Test Name: WrapTest
 
 * Name: WrapTest
@@ -16045,7 +23847,7 @@ visited: e => e.StartsWith(value(Eliassen.System.Tests.Linq.Expressions.StringCo
 * Categories
   * Unit
 * Details: 
-  * Duration: 00:00:00.0021343
+  * Duration: 00:00:00.0010401
   * Outcome: Passed
 
 
