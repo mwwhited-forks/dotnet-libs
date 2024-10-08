@@ -37,19 +37,17 @@ public class HtmlToDocxConversionHandler : IDocumentConversionHandler
         using var htmlReader = new StreamReader(source);
         var html = htmlReader.ReadToEnd();
 
-        using (MemoryStream generatedDocument = new MemoryStream())
+        using (var generatedDocument = new MemoryStream())
         {
-            using (WordprocessingDocument package =
-                           WordprocessingDocument.Create(generatedDocument,
-                           WordprocessingDocumentType.Document))
+            using (var package = WordprocessingDocument.Create(generatedDocument, WordprocessingDocumentType.Document))
             {
-                MainDocumentPart mainPart = package.MainDocumentPart;
+                var mainPart = package.MainDocumentPart;
                 if (mainPart == null)
                 {
                     mainPart = package.AddMainDocumentPart();
                     new Document(new Body()).Save(mainPart);
                 }
-                HtmlConverter converter = new HtmlConverter(mainPart);
+                var converter = new HtmlConverter(mainPart);
                 await converter.ParseBody(html);
                 mainPart.Document.Save();
             }
