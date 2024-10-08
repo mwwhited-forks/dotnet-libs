@@ -1,12 +1,10 @@
 ﻿using Eliassen.Common;
 using Eliassen.Common.Extensions;
 using Eliassen.Documents.Models;
-using Eliassen.System.Text.Templating;
 using Eliassen.TestUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MongoDB.Bson.IO;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -44,9 +42,8 @@ public class DocumentConversionTests
         var sourceFile = @"C:\Users\MWhited\OneDrive - Eliassen Group, LLC\Desktop\Matthew Whited.txt";
         var sourceFileType = fileTypes.FirstOrDefault(ft => ft.FileExtensions.Any(e => string.Equals(e, Path.GetExtension(sourceFile), StringComparison.OrdinalIgnoreCase)));
 
-        foreach (var fileType in fileTypes)
+        foreach (var ext in fileTypes.SelectMany(e => e.FileExtensions).Distinct().OrderBy(s => s))
         {
-            var ext = fileType.FileExtensions[0];
             try
             {
                 await using var source = File.OpenRead(sourceFile);
@@ -54,7 +51,7 @@ public class DocumentConversionTests
 
                 if (Path.GetFullPath(sourceFile) == Path.GetFullPath(targetFile)) continue;
 
-                this.TestContext.WriteLine(ext);
+                //this.TestContext.WriteLine(ext);
                 var targetFileType = fileTypes.FirstOrDefault(ft => ft.FileExtensions.Any(e => string.Equals(e, Path.GetExtension(targetFile), StringComparison.OrdinalIgnoreCase)));
 
                 using var target = new MemoryStream();
@@ -63,9 +60,10 @@ public class DocumentConversionTests
                     await using var targetOut = File.OpenWrite(targetFile);
                     this.TestContext.WriteLine($"out({ext}):{targetFile}");
                     await target.CopyToAsync(targetOut);
-                }else
+                }
+                else
                 {
-                    this.TestContext.WriteLine($"nope({ext}):{targetFile}");
+                    //  this.TestContext.WriteLine($"nope({ext}):{targetFile}");
                 }
             }
             catch (Exception ex)

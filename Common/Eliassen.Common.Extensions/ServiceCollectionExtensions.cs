@@ -2,6 +2,7 @@
 using Eliassen.Azure.StorageAccount;
 using Eliassen.GroqCloud;
 using Eliassen.Handlebars;
+using Eliassen.HtmlToOpenXml;
 using Eliassen.Keycloak;
 using Eliassen.MailKit;
 using Eliassen.Markdig;
@@ -76,6 +77,7 @@ public static class ServiceCollectionExtensions
         services.TryAddMarkdigServices();
         services.TryAddHandlebarServices();
         services.TryAddMysticMindServices();
+        services.TryAddHtmlToOpenXmlServices();
 
         return services;
     }
