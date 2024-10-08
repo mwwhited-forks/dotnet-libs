@@ -12,6 +12,10 @@ namespace Eliassen.Apache.Tika.Handlers;
 /// </summary>
 public class TikaPdfToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
 {
+    public static readonly string[] SOURCES = [
+        "application/pdf"
+        ];
+
     /// <summary>
     /// Constructor to convert Adobe PDF documents to HTML using Apache Tika.
     /// </summary>
@@ -29,5 +33,5 @@ public class TikaPdfToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
     /// Gets an array of supported source content types for conversion.
     /// </summary>
     [ExcludeFromCodeCoverage]
-    public override string[] Sources => ["application/pdf"];
+    public override string[] Sources => SOURCES;
 }

@@ -12,6 +12,11 @@ namespace Eliassen.Apache.Tika.Handlers;
 /// </summary>
 public class TikaDocxToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
 {
+    public static readonly string[] SOURCES = [
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "application/x-tika-ooxml"
+    ];
+
     /// <summary>
     /// Constructor to convert Microsoft Word (DOCX) documents to HTML using Apache Tika.
     /// </summary>
@@ -29,8 +34,5 @@ public class TikaDocxToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
     /// Gets an array of supported source content types for conversion.
     /// </summary>
     [ExcludeFromCodeCoverage]
-    public override string[] Sources => [
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        "application/x-tika-ooxml"
-    ];
+    public override string[] Sources => SOURCES;
 }

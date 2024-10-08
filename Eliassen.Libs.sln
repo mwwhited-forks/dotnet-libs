@@ -199,6 +199,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.GroqCloud", "Exter
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliassen.GroqCloud.Tests", "ExternalServices\GroqCloud\Eliassen.GroqCloud.Tests\Eliassen.GroqCloud.Tests.csproj", "{0BE68263-E38C-48FC-BA72-9A8B1BECC614}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eliassen.DocumentConverter.Cli", "Tools\Eliassen.DocumentConverter.Cli\Eliassen.DocumentConverter.Cli.csproj", "{48099390-6773-4192-A787-4FCFE18B48E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -513,6 +515,10 @@ Global
 		{0BE68263-E38C-48FC-BA72-9A8B1BECC614}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BE68263-E38C-48FC-BA72-9A8B1BECC614}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BE68263-E38C-48FC-BA72-9A8B1BECC614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48099390-6773-4192-A787-4FCFE18B48E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48099390-6773-4192-A787-4FCFE18B48E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48099390-6773-4192-A787-4FCFE18B48E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48099390-6773-4192-A787-4FCFE18B48E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -610,6 +616,7 @@ Global
 		{21EED705-3D78-49CE-A804-472B8E29FCB4} = {23338E7F-E943-4D99-B58C-CFBB7F2F53B2}
 		{142CB988-C6F8-421B-ABEF-844534AA3632} = {21EED705-3D78-49CE-A804-472B8E29FCB4}
 		{0BE68263-E38C-48FC-BA72-9A8B1BECC614} = {21EED705-3D78-49CE-A804-472B8E29FCB4}
+		{48099390-6773-4192-A787-4FCFE18B48E8} = {0D029514-4C08-465F-8842-D3E59E9F5099}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92959CB8-A44C-4F0D-BBCF-C99B014BEEAD}

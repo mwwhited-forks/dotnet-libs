@@ -12,6 +12,10 @@ namespace Eliassen.Apache.Tika.Handlers;
 /// </summary>
 public class TikaEpubToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
 {
+    public static readonly string[] SOURCES = [
+        "application/epub+zip"
+        ];
+
     /// <summary>
     /// Initializes a new instance of the <see cref="TikaEpubToHtmlConversionHandler"/> class.
     /// </summary>
@@ -29,6 +33,6 @@ public class TikaEpubToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
     /// Gets an array of supported source content types for conversion.
     /// </summary>
     [ExcludeFromCodeCoverage]
-    public override string[] Sources => ["application/epub+zip"];
+    public override string[] Sources => SOURCES;
 }
 
