@@ -57,7 +57,7 @@ public class DocumentConversionTests
                 using var target = new MemoryStream();
                 if (await documentConversion.ConvertAsync(source, sourceFileType.ContentTypes[0], target, targetFileType.ContentTypes[0]))
                 {
-                    await using var targetOut = File.OpenWrite(targetFile);
+                    await using var targetOut = File.Create(targetFile);
                     this.TestContext.WriteLine($"out({ext}):{targetFile}");
                     await target.CopyToAsync(targetOut);
                 }

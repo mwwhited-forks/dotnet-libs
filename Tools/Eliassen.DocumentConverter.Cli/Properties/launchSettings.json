@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Eliassen.DocumentConverter.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "--input \"C:\\Users\\MWhited\\OneDrive - Eliassen Group, LLC\\Desktop\\Matthew Whited.txt\"\r\n--output \"C:\\Users\\MWhited\\OneDrive - Eliassen Group, LLC\\Desktop\\Matthew Whited.docx\""
+    }
+  }
+}
