@@ -12,6 +12,12 @@ namespace Eliassen.Apache.Tika.Handlers;
 /// </summary>
 public abstract class TikaToHtmlConversionBaseHandler : TikaConversionHandlerBase
 {
+    public static readonly string[] DESTINATIONS = [
+        "text/html",
+        "text/xhtml",
+        "text/xhtml+xml",
+        ];
+
     /// <summary>
     /// Constructor to convert handler documents to HTML using Apache Tika.
     /// </summary>
@@ -29,5 +35,5 @@ public abstract class TikaToHtmlConversionBaseHandler : TikaConversionHandlerBas
     /// Gets an array of supported destination content types for conversion.
     /// </summary>
     [ExcludeFromCodeCoverage]
-    public override string[] Destinations => ["text/html", "text/xhtml", "text/xhtml+xml",];
+    public override string[] Destinations => DESTINATIONS;
 }

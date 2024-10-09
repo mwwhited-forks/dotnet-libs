@@ -1,10 +1,23 @@
-﻿namespace Eliassen.Documents.Conversion;
+﻿using System.IO;
+using System.Threading.Tasks;
+
+namespace Eliassen.Documents.Conversion;
 
 /// <summary>
 /// Represents a handler for document conversion.
 /// </summary>
-public interface IDocumentConversionHandler : IDocumentConversion
+public interface IDocumentConversionHandler
 {
+    /// <summary>
+    /// Converts a document from one format to another.
+    /// </summary>
+    /// <param name="source">The source stream containing the document to convert.</param>
+    /// <param name="sourceContentType">The content type of the source document.</param>
+    /// <param name="destination">The destination stream where the converted document will be written.</param>
+    /// <param name="destinationContentType">The desired content type of the converted document.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
+    Task ConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType);
+
     /// <summary>
     /// Gets the supported source content types for document conversion.
     /// </summary>

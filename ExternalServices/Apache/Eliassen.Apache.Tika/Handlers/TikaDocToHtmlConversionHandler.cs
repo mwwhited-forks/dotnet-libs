@@ -12,6 +12,11 @@ namespace Eliassen.Apache.Tika.Handlers;
 /// </summary>
 public class TikaDocToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
 {
+    public static readonly string[] SOURCES = [
+        "application/msword",
+        "application/x-tika-msoffice"
+        ];
+
     /// <summary>
     /// Constructor to convert Microsoft Word documents to HTML using Apache Tika.
     /// </summary>
@@ -29,5 +34,5 @@ public class TikaDocToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
     /// Gets an array of supported source content types for conversion.
     /// </summary>
     [ExcludeFromCodeCoverage]
-    public override string[] Sources => ["application/msword", "application/x-tika-msoffice"];
+    public override string[] Sources => SOURCES;
 }

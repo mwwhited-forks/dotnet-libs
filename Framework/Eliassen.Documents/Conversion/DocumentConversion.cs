@@ -43,9 +43,9 @@ public class DocumentConversion : IDocumentConversion
     /// <param name="destination">The destination stream where the converted content will be written.</param>
     /// <param name="destinationContentType">The content type of the converted content.</param>
     /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-    public virtual Task ConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType) =>
+    public virtual Task<bool> ConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType) =>
         InternalConvertAsync(source, sourceContentType, destination, destinationContentType, true);
-    internal async Task InternalConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType, bool recurse)
+    internal async Task<bool> InternalConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType, bool recurse)
     {
         ArgumentNullException.ThrowIfNull(source, nameof(source));
         ArgumentNullException.ThrowIfNull(sourceContentType, nameof(sourceContentType));
@@ -56,7 +56,7 @@ public class DocumentConversion : IDocumentConversion
         {
             _logger.LogInformation("Bypass as input and output types match {source} -> {destination}", sourceContentType, destinationContentType);
             await source.CopyToAsync(destination);
-            return;
+            return true;
         }
 
         ChainStep[] steps;
@@ -87,7 +87,7 @@ public class DocumentConversion : IDocumentConversion
                 {
                     _logger.LogWarning("Provided \"{source}\" but detected \"{detected}\" to try again", sourceContentType, detectedType);
                     source.Position = 0;
-                    await InternalConvertAsync(source, detectedType, destination, destinationContentType, false);
+                    return await InternalConvertAsync(source, detectedType, destination, destinationContentType, false);
                 }
             }
             else
@@ -99,7 +99,7 @@ public class DocumentConversion : IDocumentConversion
         else if (steps.Length == 1)
         {
             await steps[0].Handler.ConvertAsync(source, sourceContentType, destination, destinationContentType);
-            return;
+            return true;
         }
         else
         {
@@ -113,8 +113,10 @@ public class DocumentConversion : IDocumentConversion
             }
             await (temp ?? source).CopyToAsync(destination);
             destination.Position = 0;
-            return;
+            return steps.Length != 0;
         }
+
+        return false;
     }
 }
 

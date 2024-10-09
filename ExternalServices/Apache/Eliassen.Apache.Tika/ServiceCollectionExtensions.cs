@@ -63,47 +63,42 @@ public static class ServiceCollectionExtensions
             Name = "Microsoft Word",
             FileHeader = [],
             FileExtensions = [".doc",],
-            ContentTypes = [
-                    "application/msword",
-            ],
+            ContentTypes = TikaDocToHtmlConversionHandler.SOURCES,
         });
         services.AddTransient<IDocumentType>(_ => new DocumentType
         {
             Name = "Microsoft Word - OpenXML",
             FileHeader = [],
             FileExtensions = [".docx",],
-            ContentTypes = [
-                "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-                "application/x-tika-ooxml",
-            ],
+            ContentTypes = TikaDocxToHtmlConversionHandler.SOURCES,
         });
         services.AddTransient<IDocumentType>(_ => new DocumentType
         {
             Name = "Portable Document Format",
             FileHeader = [(byte)'%', (byte)'P', (byte)'D', (byte)'F', (byte)'-'],
             FileExtensions = [".pdf",],
-            ContentTypes = ["application/pdf"],
+            ContentTypes = TikaPdfToHtmlConversionHandler.SOURCES,
         });
         services.AddTransient<IDocumentType>(_ => new DocumentType
         {
             Name = "Open Office Document",
             FileHeader = [],
             FileExtensions = [".odt",],
-            ContentTypes = ["application/vnd.oasis.opendocument.text"],
+            ContentTypes = TikaOdtToHtmlConversionHandler.SOURCES,
         });
         services.AddTransient<IDocumentType>(_ => new DocumentType
         {
             Name = "Electronic publication",
             FileHeader = [],
             FileExtensions = [".epub",],
-            ContentTypes = ["application/epub+zip"],
+            ContentTypes = TikaEpubToHtmlConversionHandler.SOURCES,
         });
         services.AddTransient<IDocumentType>(_ => new DocumentType
         {
             Name = "Rich Text Format",
             FileHeader = [],
             FileExtensions = [".rtf",],
-            ContentTypes = ["application/rtf"],
+            ContentTypes = TikaRtfToHtmlConversionHandler.SOURCES,
         });
 
         return services;

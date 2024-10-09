@@ -16,5 +16,5 @@ public interface IDocumentConversion
     /// <param name="destination">The destination stream where the converted document will be written.</param>
     /// <param name="destinationContentType">The desired content type of the converted document.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
-    Task ConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType);
+    Task<bool> ConvertAsync(Stream source, string sourceContentType, Stream destination, string destinationContentType);
 }

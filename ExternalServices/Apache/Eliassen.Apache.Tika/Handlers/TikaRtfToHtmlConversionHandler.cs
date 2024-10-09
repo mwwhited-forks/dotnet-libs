@@ -12,6 +12,10 @@ namespace Eliassen.Apache.Tika.Handlers;
 /// </summary>
 public class TikaRtfToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
 {
+    public static readonly string[] SOURCES = [
+        "application/rtf"
+        ];
+
     /// <summary>
     /// Constructor to convert Rich Text Format (RTF) documents to HTML using Apache Tika.
     /// </summary>
@@ -29,5 +33,5 @@ public class TikaRtfToHtmlConversionHandler : TikaToHtmlConversionBaseHandler
     /// Gets an array of supported source content types for conversion.
     /// </summary>
     [ExcludeFromCodeCoverage]
-    public override string[] Sources => ["application/rtf"];
+    public override string[] Sources => SOURCES;
 }
