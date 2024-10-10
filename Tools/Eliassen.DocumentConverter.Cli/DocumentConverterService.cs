@@ -45,8 +45,14 @@ public class DocumentConverterService : IHostedService
 
         _log.LogInformation("convert \"{sourceFileType}\" to \"{targetFileType}\" \"{inFile}\"", sourceFileType, targetFileType, Path.GetFileName(_settings.Value.InputPath));
 
+        var sourcePath = _settings.Value.InputPath ?? throw new ApplicationException("Must provide input path");
+
+        if (!Path.Exists(sourcePath)) throw new ApplicationException("File not found");
+
         using var source = new MemoryStream();
-        using var sourceFile = File.OpenRead(_settings.Value.InputPath ?? throw new ApplicationException("Must provide input path"));
+        using var sourceFile = File.OpenRead(sourcePath);
+        await sourceFile.CopyToAsync(source, cancellationToken);
+        source.Position = 0;
 
         using var target = new MemoryStream();
         if (await _documentConversion.ConvertAsync(source, sourceFileType, target, targetFileType))
@@ -54,7 +60,9 @@ public class DocumentConverterService : IHostedService
             await using var targetOut = File.Create(_settings.Value.OutputPath ?? throw new ApplicationException("Must provide output path"));
 
             _log.LogInformation("converted \"{sourceFileType}\" to \"{targetFileType}\" \"{outFile}\"", sourceFileType, targetFileType, Path.GetFileName(_settings.Value.OutputPath));
-            await target.CopyToAsync(targetOut);
+            await target.CopyToAsync(targetOut, cancellationToken);
+            await targetOut.FlushAsync(cancellationToken);
+            targetOut.Close();
         }
         else
         {
