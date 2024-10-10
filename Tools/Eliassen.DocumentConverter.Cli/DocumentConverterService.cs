@@ -4,7 +4,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -35,39 +34,31 @@ public class DocumentConverterService : IHostedService
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
-        var sourceFileType = _documentTypes.FirstOrDefault(ft => ft.FileExtensions.Any(e => string.Equals(e, Path.GetExtension(_settings.Value.InputPath), StringComparison.OrdinalIgnoreCase)));
-        var targetFileType = _documentTypes.FirstOrDefault(ft => ft.FileExtensions.Any(e => string.Equals(e, Path.GetExtension(_settings.Value.OutputPath), StringComparison.OrdinalIgnoreCase)));
+        var sourceFileType =
+            _documentTypes.FirstOrDefault(ft => ft.FileExtensions.Any(e => string.Equals(e, Path.GetExtension(_settings.Value.InputPath), StringComparison.OrdinalIgnoreCase)))
+            ?.ContentTypes[0] ?? throw new ApplicationException("Unable to identify input file type")
+            ;
+        var targetFileType =
+            _documentTypes.FirstOrDefault(ft => ft.FileExtensions.Any(e => string.Equals(e, Path.GetExtension(_settings.Value.OutputPath), StringComparison.OrdinalIgnoreCase)))
+            ?.ContentTypes[0] ?? throw new ApplicationException("Unable to identify output file type")
+            ;
 
-        _log.LogInformation(
-            "convert \"{sourceFileType}\" to \"{targetFileType}\" \"{inFile}\"", 
-            sourceFileType.ContentTypes[0],
-            targetFileType.ContentTypes[0],
-            Path.GetFileName(_settings.Value.InputPath)
-            );
+        _log.LogInformation("convert \"{sourceFileType}\" to \"{targetFileType}\" \"{inFile}\"", sourceFileType, targetFileType, Path.GetFileName(_settings.Value.InputPath));
 
         using var source = new MemoryStream();
-        using var sourceFile = File.OpenRead(_settings.Value.InputPath);
+        using var sourceFile = File.OpenRead(_settings.Value.InputPath ?? throw new ApplicationException("Must provide input path"));
 
         using var target = new MemoryStream();
-        if (await _documentConversion.ConvertAsync(source, sourceFileType.ContentTypes[0], target, targetFileType.ContentTypes[0]))
+        if (await _documentConversion.ConvertAsync(source, sourceFileType, target, targetFileType))
         {
-            await using var targetOut = File.Create(_settings.Value.OutputPath);
+            await using var targetOut = File.Create(_settings.Value.OutputPath ?? throw new ApplicationException("Must provide output path"));
 
-            _log.LogInformation(
-                "converted \"{sourceFileType}\" to \"{targetFileType}\" \"{outFile}\"", 
-                sourceFileType.ContentTypes[0],
-                targetFileType.ContentTypes[0], 
-                Path.GetFileName(_settings.Value.OutputPath)
-                );
+            _log.LogInformation("converted \"{sourceFileType}\" to \"{targetFileType}\" \"{outFile}\"", sourceFileType, targetFileType, Path.GetFileName(_settings.Value.OutputPath));
             await target.CopyToAsync(targetOut);
         }
         else
         {
-            _log.LogInformation(
-                "no conversion \"{sourceFileType}\" to \"{targetFileType}\"",
-                sourceFileType.ContentTypes[0],
-                targetFileType.ContentTypes[0]
-                );
+            _log.LogInformation("no conversion \"{sourceFileType}\" to \"{targetFileType}\"", sourceFileType, targetFileType);
         }
     }
 

@@ -1,5 +1,4 @@
 ﻿using Eliassen.System.Configuration;
-using System.ComponentModel.DataAnnotations;
 
 namespace Eliassen.DocumentConverter.Cli;
 

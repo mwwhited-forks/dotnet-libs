@@ -6,7 +6,8 @@
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 
-		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>    
+    <PackageReadmeFile>Readme.Common.Extensions.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -23,6 +24,10 @@
 		<ProjectReference Remove="..\..\ExternalServices\**\*.Tests.csproj" />
 		<ProjectReference Remove="..\..\ExternalServices\**\*.Abstractions.csproj" />
 		<ProjectReference Remove="..\..\ExternalServices\**\*.Hosting.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <CodeDocumentation Remove="Readme.Common.Extensions.md" />
 	</ItemGroup>
 
 	<ItemGroup>

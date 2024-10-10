@@ -16,7 +16,7 @@ public abstract class TikaToHtmlConversionBaseHandler : TikaConversionHandlerBas
         "text/html",
         "text/xhtml",
         "text/xhtml+xml",
-        ];
+    ];
 
     /// <summary>
     /// Constructor to convert handler documents to HTML using Apache Tika.

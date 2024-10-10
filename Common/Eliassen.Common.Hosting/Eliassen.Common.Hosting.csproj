@@ -6,7 +6,8 @@
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 
-		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>   
+     <PackageReadmeFile>Readme.Common.Hosting.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -29,6 +30,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\ExternalServices\**\*.Hosting.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <CodeDocumentation Remove="Readme.Common.Hosting.md" />
   </ItemGroup>
 
   <ItemGroup>

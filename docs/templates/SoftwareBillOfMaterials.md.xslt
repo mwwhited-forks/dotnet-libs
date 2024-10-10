@@ -7,7 +7,7 @@
 ]>
 <xsl:stylesheet version="1.0"
 				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-				xmlns:bom="http://cyclonedx.org/schema/bom/1.5"
+				xmlns:bom="http://cyclonedx.org/schema/bom/1.6"
 				>
 	<xsl:output method="text" omit-xml-declaration="yes" indent="no" />
 
