@@ -15,6 +15,9 @@ namespace Eliassen.WkHtmlToPdf;
 /// </summary>
 public class HtmlToDocxConversionHandler : IDocumentConversionHandler
 {
+    /// <summary>
+    /// Target Content Types
+    /// </summary>
     public static readonly string[] DESTINATIONS = [
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     ];

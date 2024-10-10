@@ -40,7 +40,11 @@ public class DocumentConversionTests
         var fileTypes = services.GetServices<IDocumentType>();
 
         var sourceFile = @"C:\Users\MWhited\OneDrive - Eliassen Group, LLC\Desktop\Matthew Whited.txt";
-        var sourceFileType = fileTypes.FirstOrDefault(ft => ft.FileExtensions.Any(e => string.Equals(e, Path.GetExtension(sourceFile), StringComparison.OrdinalIgnoreCase)));
+        var sourceFileType = fileTypes
+            .FirstOrDefault(ft => ft.FileExtensions.Any(e => string.Equals(e, Path.GetExtension(sourceFile), StringComparison.OrdinalIgnoreCase)))
+            ?.ContentTypes[0]
+            ?? throw new ApplicationException($"unable to identify source file type")
+            ;
 
         foreach (var ext in fileTypes.SelectMany(e => e.FileExtensions).Distinct().OrderBy(s => s))
         {
@@ -52,10 +56,14 @@ public class DocumentConversionTests
                 if (Path.GetFullPath(sourceFile) == Path.GetFullPath(targetFile)) continue;
 
                 //this.TestContext.WriteLine(ext);
-                var targetFileType = fileTypes.FirstOrDefault(ft => ft.FileExtensions.Any(e => string.Equals(e, Path.GetExtension(targetFile), StringComparison.OrdinalIgnoreCase)));
+                var targetFileType = fileTypes
+                    .FirstOrDefault(ft => ft.FileExtensions.Any(e => string.Equals(e, Path.GetExtension(targetFile), StringComparison.OrdinalIgnoreCase)))
+                    ?.ContentTypes[0]
+                    ?? throw new ApplicationException($"unable to identify source file type")
+                    ;
 
                 using var target = new MemoryStream();
-                if (await documentConversion.ConvertAsync(source, sourceFileType.ContentTypes[0], target, targetFileType.ContentTypes[0]))
+                if (await documentConversion.ConvertAsync(source, sourceFileType, target, targetFileType))
                 {
                     await using var targetOut = File.Create(targetFile);
                     this.TestContext.WriteLine($"out({ext}):{targetFile}");

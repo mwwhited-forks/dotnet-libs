@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:d81a3e9b-f5a6-4085-9add-2a0b3525177a" version="1" xmlns="http://cyclonedx.org/schema/bom/1.6">
+<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:c378d689-306e-4224-b6eb-df8a93ba968b" version="1" xmlns="http://cyclonedx.org/schema/bom/1.6">
   <metadata>
-    <timestamp>2024-09-20T14:59:23.8165398Z</timestamp>
+    <timestamp>2024-10-10T14:40:17.0126557Z</timestamp>
     <tools>
       <tool>
         <vendor>CycloneDX</vendor>
@@ -9,12 +9,38 @@
         <version>4.0.0.0</version>
       </tool>
     </tools>
-    <component type="application" bom-ref="Eliassen.Libs@0.2.1-dev-ado-UpdateFramework.1+163">
+    <component type="application" bom-ref="Eliassen.Libs@0.2.1-dev-DocConverter.1+169">
       <name>Eliassen.Libs</name>
-      <version>0.2.1-dev-ado-UpdateFramework.1+163</version>
+      <version>0.2.1-dev-DocConverter.1+169</version>
     </component>
   </metadata>
   <components>
+    <component type="library" bom-ref="pkg:nuget/AngleSharp@1.1.0">
+      <authors>
+        <author>
+          <name>AngleSharp</name>
+        </author>
+      </authors>
+      <name>AngleSharp</name>
+      <version>1.1.0</version>
+      <description>AngleSharp is the ultimate angle brackets parser library. It parses HTML5, CSS3, and XML to construct a DOM based on the official W3C specification.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">C2019CAC504E1BE9CEF91D09F3B8DB285A6B5BA36AA4ACC1200A40300BB0628C45553282E4E26D6AA9D8F7D64D02A908CAE8D6B81E0A1CB5B1EE8336411DAF2A</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>Copyright 2013-2024, AngleSharp.</copyright>
+      <purl>pkg:nuget/AngleSharp@1.1.0</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://anglesharp.github.io/</url>
+        </reference>
+      </externalReferences>
+    </component>
     <component type="library" bom-ref="pkg:nuget/AWSSDK.Core@3.7.100.14">
       <authors>
         <author>
@@ -400,6 +426,80 @@
         </reference>
       </externalReferences>
     </component>
+    <component type="library" bom-ref="pkg:nuget/DocumentFormat.OpenXml@3.1.0">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>DocumentFormat.OpenXml</name>
+      <version>3.1.0</version>
+      <description>The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents. It supports scenarios such as:
+
+- High-performance generation of word-processing documents, spreadsheets, and presentations.
+- Populating content in Word files from an XML data source.
+- Splitting up (shredding) a Word or PowerPoint file into multiple files, and combining multiple Word/PowerPoint files into a single file.
+- Extraction of data from Excel documents.
+- Searching and replacing content in Word/PowerPoint using regular expressions.
+- Updating cached data and embedded spreadsheets for charts in Word/PowerPoint.
+- Document modification, such as removing tracked revisions or removing unacceptable content from documents.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">988A2D03DE5BFAABF473B78DCEADCCB19C90E1B5FDEC8A98E782CBA53A4C0B88545FFEE125F489FF8522A2BEEC5F901D473E03B0E4F75E7338D41788E542D3AC</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/DocumentFormat.OpenXml@3.1.0</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/dotnet/Open-XML-SDK</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/Open-XML-SDK</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/DocumentFormat.OpenXml.Framework@3.1.0">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>DocumentFormat.OpenXml.Framework</name>
+      <version>3.1.0</version>
+      <description>The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents. It supports scenarios such as:
+
+- High-performance generation of word-processing documents, spreadsheets, and presentations.
+- Populating content in Word files from an XML data source.
+- Splitting up (shredding) a Word or PowerPoint file into multiple files, and combining multiple Word/PowerPoint files into a single file.
+- Extraction of data from Excel documents.
+- Searching and replacing content in Word/PowerPoint using regular expressions.
+- Updating cached data and embedded spreadsheets for charts in Word/PowerPoint.
+- Document modification, such as removing tracked revisions or removing unacceptable content from documents.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">412293CBBEF3445CDE8268428B2ADBA7FFAC091F7F2F8E38F0C55D94E066D86619A4D223E3124A1DE6E68ECF86F626F58F40CB313BAF1EDA5ACB4F6D4F6A3B6F</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/DocumentFormat.OpenXml.Framework@3.1.0</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/dotnet/Open-XML-SDK</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/Open-XML-SDK</url>
+        </reference>
+      </externalReferences>
+    </component>
     <component type="library" bom-ref="pkg:nuget/Flurl@3.0.6">
       <authors>
         <author>
@@ -767,6 +867,35 @@
         </reference>
         <reference type="vcs">
           <url>https://github.com/zzzprojects/html-agility-pack/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/HtmlToOpenXml.dll@3.2.0">
+      <authors>
+        <author>
+          <name>Olivier Nizet</name>
+        </author>
+      </authors>
+      <name>HtmlToOpenXml.dll</name>
+      <version>3.2.0</version>
+      <description>A library to convert simple or advanced html to plain OpenXml document</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">AC1376410ECFEAE8C2E85CD74E2037C37299409C7DB7231E7B7E3CD487EC9E05C79CA6A992159966165E73074BBD36D2570D7B95F702B4FEC2DF425BC03D5000</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>Copyright 2009-2024 Olivier Nizet</copyright>
+      <purl>pkg:nuget/HtmlToOpenXml.dll@3.2.0</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/onizet/html2openxml</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/onizet/html2openxml</url>
         </reference>
       </externalReferences>
     </component>
@@ -6430,6 +6559,35 @@ System.IO.Hashing.XxHash32</description>
         </reference>
       </externalReferences>
     </component>
+    <component type="library" bom-ref="pkg:nuget/System.IO.Packaging@8.0.0">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>System.IO.Packaging</name>
+      <version>8.0.0</version>
+      <description>Provides classes that support storage of multiple data objects in a single container.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">141585B1465966C7D9A6CEF56100659054CF60330D1637FC76A7FBCEA9616195509081094B93DE3E5E01210EA8E5E90023E66C684392074AAA9B5BAD077FB15E</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/System.IO.Packaging@8.0.0</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://dot.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/runtime</url>
+        </reference>
+      </externalReferences>
+    </component>
     <component type="library" bom-ref="pkg:nuget/System.Linq@4.1.0">
       <authors>
         <author>
@@ -7873,6 +8031,38 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         </reference>
       </externalReferences>
     </component>
+    <component type="library" bom-ref="pkg:nuget/System.Text.Encoding.CodePages@8.0.0">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>System.Text.Encoding.CodePages</name>
+      <version>8.0.0</version>
+      <description>Provides support for code-page based encodings, including Windows-1252, Shift-JIS, and GB2312.
+
+Commonly Used Types:
+System.Text.CodePagesEncodingProvider</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">77DADF6B1A73EEEFB50507A6D76F5E3A20E0AE7D3F550C349265AE4E0D55F0AE4F0EF1B41BE08DD810798A8E01DBBA74E2CAAC746B5158B8E23D722523D473ED</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/System.Text.Encoding.CodePages@8.0.0</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://dot.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/runtime</url>
+        </reference>
+      </externalReferences>
+    </component>
     <component type="library" bom-ref="pkg:nuget/System.Text.Encodings.Web@4.7.2">
       <authors>
         <author>
@@ -8390,7 +8580,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     </component>
   </components>
   <dependencies>
-    <dependency ref="Eliassen.Libs@0.2.1-dev-ado-UpdateFramework.1+163">
+    <dependency ref="Eliassen.Libs@0.2.1-dev-DocConverter.1+169">
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@8.0.1" />
@@ -8417,6 +8607,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Handlebars.Net.Extension.Json@1.0.0" />
       <dependency ref="pkg:nuget/Handlebars.Net.Helpers@2.4.5" />
       <dependency ref="pkg:nuget/Haukcode.WkHtmlToPdfDotNet@1.5.93" />
+      <dependency ref="pkg:nuget/HtmlToOpenXml.dll@3.2.0" />
       <dependency ref="pkg:nuget/Keycloak.Net.Core@1.0.28" />
       <dependency ref="pkg:nuget/MailKit@4.7.1.1" />
       <dependency ref="pkg:nuget/Markdig@0.37.0" />
@@ -8438,6 +8629,9 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/Microsoft.Extensions.Configuration.EnvironmentVariables@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.FileSystemGlobbing@8.0.0" />
       <dependency ref="pkg:nuget/Microsoft.Extensions.Hosting@8.0.0" />
+    </dependency>
+    <dependency ref="pkg:nuget/AngleSharp@1.1.0">
+      <dependency ref="pkg:nuget/System.Text.Encoding.CodePages@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/AWSSDK.Core@3.7.100.14" />
     <dependency ref="pkg:nuget/AWSSDK.SecurityToken@3.7.100.14">
@@ -8511,10 +8705,16 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <dependency ref="pkg:nuget/DnsClient@1.6.1">
       <dependency ref="pkg:nuget/Microsoft.Win32.Registry@5.0.0" />
     </dependency>
+    <dependency ref="pkg:nuget/DocumentFormat.OpenXml.Framework@3.1.0">
+      <dependency ref="pkg:nuget/System.IO.Packaging@8.0.0" />
+    </dependency>
+    <dependency ref="pkg:nuget/DocumentFormat.OpenXml@3.1.0">
+      <dependency ref="pkg:nuget/DocumentFormat.OpenXml.Framework@3.1.0" />
+    </dependency>
     <dependency ref="pkg:nuget/Flurl.Http@3.2.4">
       <dependency ref="pkg:nuget/Flurl@3.0.6" />
       <dependency ref="pkg:nuget/Newtonsoft.Json@13.0.1" />
-      <dependency ref="pkg:nuget/System.Text.Encoding.CodePages@4.5.1" />
+      <dependency ref="pkg:nuget/System.Text.Encoding.CodePages@8.0.0" />
     </dependency>
     <dependency ref="pkg:nuget/Flurl@3.0.6" />
     <dependency ref="pkg:nuget/Google.Protobuf@3.24.2" />
@@ -8551,6 +8751,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Threading.Thread@4.3.0" />
     </dependency>
     <dependency ref="pkg:nuget/HtmlAgilityPack@1.11.61" />
+    <dependency ref="pkg:nuget/HtmlToOpenXml.dll@3.2.0">
+      <dependency ref="pkg:nuget/AngleSharp@1.1.0" />
+      <dependency ref="pkg:nuget/DocumentFormat.OpenXml@3.1.0" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@8.0.1" />
+    </dependency>
     <dependency ref="pkg:nuget/JsonDiffPatch.Net@2.3.0">
       <dependency ref="pkg:nuget/Newtonsoft.Json@11.0.1" />
     </dependency>
@@ -9290,6 +9495,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <dependency ref="pkg:nuget/System.Threading.Tasks@4.3.0" />
     </dependency>
     <dependency ref="pkg:nuget/System.IO.Hashing@6.0.0" />
+    <dependency ref="pkg:nuget/System.IO.Packaging@8.0.0" />
     <dependency ref="pkg:nuget/System.IO@4.3.0">
       <dependency ref="pkg:nuget/Microsoft.NETCore.Platforms@5.0.0" />
       <dependency ref="pkg:nuget/Microsoft.NETCore.Targets@1.1.3" />
@@ -9539,9 +9745,10 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <dependency ref="pkg:nuget/System.Security.Principal.Windows@4.7.0" />
     <dependency ref="pkg:nuget/System.Security.Principal.Windows@5.0.0" />
     <dependency ref="pkg:nuget/System.Text.Encoding.CodePages@4.5.1">
-      <dependency ref="pkg:nuget/Microsoft.NETCore.Platforms@5.0.0" />
-      <dependency ref="pkg:nuget/System.Runtime.CompilerServices.Unsafe@5.0.0" />
+      <dependency ref="pkg:nuget/Microsoft.NETCore.Platforms@2.1.2" />
+      <dependency ref="pkg:nuget/System.Runtime.CompilerServices.Unsafe@4.5.2" />
     </dependency>
+    <dependency ref="pkg:nuget/System.Text.Encoding.CodePages@8.0.0" />
     <dependency ref="pkg:nuget/System.Text.Encoding@4.3.0">
       <dependency ref="pkg:nuget/Microsoft.NETCore.Platforms@5.0.0" />
       <dependency ref="pkg:nuget/Microsoft.NETCore.Targets@1.1.3" />

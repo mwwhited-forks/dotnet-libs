@@ -97,6 +97,24 @@ Gets the supported destination content types for document conversion.
 ### Methods
 
 
+#### ConvertAsync(System.IO.Stream,System.String,System.IO.Stream,System.String)
+Converts a document from one format to another. 
+
+
+##### Parameters
+* *source:* The source stream containing the document to convert.
+* *sourceContentType:* The content type of the source document.
+* *destination:* The destination stream where the converted document will be written.
+* *destinationContentType:* The desired content type of the converted document.
+
+
+
+
+##### Return value
+A task representing the asynchronous operation.
+
+
+
 #### SupportedSource(System.String)
 Determines whether the specified content type is supported as a source for document conversion. 
 
