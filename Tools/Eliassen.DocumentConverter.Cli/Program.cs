@@ -20,6 +20,7 @@ public class Program
                 services.Configure<DocumentConverterOptions>(options => context.Configuration.Bind(nameof(DocumentConverterOptions), options));
 
                 services.AddHostedService<DocumentConverterService>();
+                services.AddHttpClient();
 
                 services.TryCommonExtensions(context.Configuration, new());
                 services.TryCommonExternalExtensions(context.Configuration, new(), new());

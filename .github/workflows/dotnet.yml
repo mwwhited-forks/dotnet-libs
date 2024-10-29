@@ -158,15 +158,15 @@ jobs:
         trx_files: ${{ steps.calculate-version.outputs.TestResultsPath }}/**/*.trx
         report_individual_runs: true
 
-    ## Don't publish PR's
-    - name: Publish Project to Nuget
-      if: github.event_name != 'pull_request'
-      run: >
-        dotnet nuget push 
-        "${{ steps.calculate-version.outputs.PackagesPath }}/*.nupkg" 
-        --api-key ${{secrets.NUGET_API_KEY}} 
-        --source https://api.nuget.org/v3/index.json 
-        --skip-duplicate
+    # ## Don't publish PR's
+    # - name: Publish Project to Nuget
+    #   if: github.event_name != 'pull_request'
+    #   run: >
+    #     dotnet nuget push 
+    #     "${{ steps.calculate-version.outputs.PackagesPath }}/*.nupkg" 
+    #     --api-key ${{secrets.NUGET_API_KEY}} 
+    #     --source https://api.nuget.org/v3/index.json 
+    #     --skip-duplicate
 
     - name: Tag Commit
       uses: thejeff77/action-push-tag@v1.0.0

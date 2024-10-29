@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,18 +19,21 @@ public class DocumentConverterService : IHostedService
     private readonly IOptions<DocumentConverterOptions> _settings;
     private readonly IDocumentConversion _documentConversion;
     private readonly IEnumerable<IDocumentType> _documentTypes;
+    private readonly IHttpClientFactory _httpClientFactory;
 
     public DocumentConverterService(
         ILogger<DocumentConverterService> log,
         IOptions<DocumentConverterOptions> settings,
         IDocumentConversion documentConversion,
-        IEnumerable<IDocumentType> documentTypes
+        IEnumerable<IDocumentType> documentTypes,
+        IHttpClientFactory httpClientFactory
         )
     {
         _log = log;
         _settings = settings;
         _documentConversion = documentConversion;
         _documentTypes = documentTypes;
+        _httpClientFactory = httpClientFactory;
     }
 
     public async Task StartAsync(CancellationToken cancellationToken)
@@ -47,10 +51,8 @@ public class DocumentConverterService : IHostedService
 
         var sourcePath = _settings.Value.InputPath ?? throw new ApplicationException("Must provide input path");
 
-        if (!Path.Exists(sourcePath)) throw new ApplicationException("File not found");
-
         using var source = new MemoryStream();
-        using var sourceFile = File.OpenRead(sourcePath);
+        using var sourceFile = await OpenPathAsync(sourcePath);
         await sourceFile.CopyToAsync(source, cancellationToken);
         source.Position = 0;
 
@@ -67,6 +69,23 @@ public class DocumentConverterService : IHostedService
         else
         {
             _log.LogInformation("no conversion \"{sourceFileType}\" to \"{targetFileType}\"", sourceFileType, targetFileType);
+        }
+    }
+
+    private async Task<Stream> OpenPathAsync(string sourcePath)
+    {
+        if (sourcePath.StartsWith("http:", StringComparison.InvariantCultureIgnoreCase) ||
+            sourcePath.StartsWith("https:", StringComparison.InvariantCultureIgnoreCase))
+        {
+            var client = _httpClientFactory.CreateClient();
+            var stream = await client.GetStreamAsync(sourcePath);
+            return stream;
+        }
+        else
+        {
+            return !Path.Exists(sourcePath) ?
+                throw new ApplicationException("File not found") :
+                (Stream)File.OpenRead(sourcePath);
         }
     }
 
